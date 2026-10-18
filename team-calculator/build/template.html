@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TEAM Episode Calculator</title>
+<meta name="description" content="Estimate what the CMS Transforming Episode Accountability Model (TEAM) pays or costs your hospital, by track and performance year, using the published PY1 preliminary target prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#0b0a10; --surface:#14111e; --panel:#1c1730; --line:#2b2542;
+  --fg:#ece9f5; --muted:#a79fc0;
+  --purple:#8366ea; --purple-soft:#b7a6ff;
+  --green:#22a85e; --green-soft:#6fe3a3;
+  --teal:#10a197; --red:#e0607a; --amber:#e5b35a;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--purple-soft);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--green-soft);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.2rem,4.8vw,3.8rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3vw,2.4rem)}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green-soft)}
+.eyebrow::before{content:"";display:inline-block;width:22px;height:1px;background:var(--green);vertical-align:middle;margin-right:10px}
+.lede{color:var(--muted);max-width:62ch;font-size:1.05rem}
+section{padding-block:clamp(48px,7vw,88px);border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:32px;align-items:end;margin-bottom:36px}
+@media(max-width:760px){.sec-head{grid-template-columns:1fr}}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
+.brand b{color:var(--green-soft);font-weight:400}
+.links{display:flex;gap:22px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+.links a{color:var(--muted)}
+.links a:hover{color:var(--fg);text-decoration:none}
+@media(max-width:860px){.links{display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:6px;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--purple);color:var(--fg);background:transparent;cursor:pointer}
+.btn.primary{background:var(--purple);border-color:var(--purple)}
+.btn.small{padding:7px 11px;font-size:.66rem}
+.btn:hover{text-decoration:none;filter:brightness(1.1)}
+
+.hero{padding-block:clamp(44px,6vw,84px);border-top:0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:44px;align-items:center}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.hero h1 em{font-style:italic;color:var(--green-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.board{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:14px}
+.board-head{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.board-head .live{color:var(--green-soft)}
+.board-head .live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:7px;vertical-align:1px}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tile{background:var(--panel);border-radius:8px;padding:14px 16px;display:grid;gap:4px;min-width:0}
+.tile .lab{font-size:.78rem;color:var(--muted)}
+.tile .val{font-size:1.7rem;font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.tile .val small{font-size:.85rem;font-weight:500;color:var(--muted)}
+.tile .delta{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.board-foot{font-size:.78rem;color:var(--muted)}
+
+/* calculator layout */
+.calc{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:28px;align-items:start}
+@media(max-width:980px){.calc{grid-template-columns:1fr}}
+.steps{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+.step,.cat,.board,figure{min-width:0}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
+.step .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green-soft);margin-bottom:6px}
+.step h3{margin-bottom:6px}
+.step .help{font-size:.88rem;color:var(--muted);margin-bottom:14px}
+.field{display:grid;gap:6px;min-width:0}
+.field label{font-size:.82rem;color:var(--muted)}
+.field input[type=text],.field input[type=number],.field input[type=search],.field input[type=email],.field select{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--fg);border-radius:6px;padding:10px 12px;font:inherit;font-size:.95rem;font-variant-numeric:tabular-nums}
+.field input:focus,.field select:focus{border-color:var(--purple)}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.row3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media(max-width:560px){.row,.row3{grid-template-columns:1fr}}
+.pick{position:relative}
+.pick ul{position:absolute;left:0;right:0;top:100%;z-index:6;margin:4px 0 0;padding:4px;list-style:none;background:var(--panel);border:1px solid var(--line);border-radius:8px;max-height:260px;overflow:auto;display:none;box-shadow:0 12px 30px rgba(0,0,0,.45)}
+.pick ul.open{display:block}
+.pick li{padding:8px 10px;border-radius:6px;cursor:pointer;font-size:.9rem;display:flex;justify-content:space-between;gap:10px}
+.pick li:hover,.pick li.act{background:var(--surface)}
+.pick li span{color:var(--muted);font-family:var(--mono);font-size:.7rem;white-space:nowrap}
+.checks{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:.9rem}
+.checks label{display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+input[type=checkbox]{accent-color:var(--green);width:16px;height:16px}
+input[type=radio]{accent-color:var(--purple)}
+.tracks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media(max-width:640px){.tracks{grid-template-columns:1fr}}
+.track{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px;cursor:pointer;display:grid;gap:4px;position:relative}
+.track.sel{border-color:var(--purple);box-shadow:0 0 0 1px var(--purple) inset}
+.track.off{opacity:.45;cursor:not-allowed}
+.track .t{font-weight:600}
+.track .d{font-size:.8rem;color:var(--muted)}
+.track .why{font-family:var(--mono);font-size:.64rem;color:var(--amber);letter-spacing:.06em}
+.track input{position:absolute;opacity:0;pointer-events:none}
+.cat{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--panel);display:grid;gap:12px}
+.cat.off > *:not(.cat-head){display:none}
+.cat-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.cat-head h4{margin:0;font-size:1rem;font-weight:600}
+.cat-head .sub{font-size:.78rem;color:var(--muted)}
+.cat .sum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;font-size:.8rem;color:var(--muted)}
+.cat .sum b{display:block;color:var(--fg);font-size:1rem;font-variant-numeric:tabular-nums;font-weight:600}
+@media(max-width:560px){.cat .sum{grid-template-columns:1fr 1fr}}
+.cat details{font-size:.85rem}
+.cat summary{cursor:pointer;color:var(--purple-soft);font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+.drgs{min-width:460px;width:100%;border-collapse:collapse;margin-top:8px;font-variant-numeric:tabular-nums}
+.drgs th,.drgs td{text-align:left;padding:6px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+.drgs th{color:var(--muted);font-weight:500;font-size:.75rem}
+.drgs td.n,.drgs th.n{text-align:right}
+.drgs input{width:76px;background:var(--surface);border:1px solid var(--line);color:var(--fg);border-radius:5px;padding:5px 7px;font:inherit;font-size:.85rem;text-align:right}
+.slider{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.slider input[type=range]{width:100%;accent-color:var(--purple)}
+.slider output{font-family:var(--mono);font-size:.8rem;min-width:7ch;text-align:right;color:var(--fg)}
+.note{font-size:.78rem;color:var(--muted)}
+.facts{display:grid;gap:8px;margin-top:10px}.fact{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px;font-size:.8rem;color:var(--muted);padding:8px 0;border-top:1px solid var(--line)}.fact .fl{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg);padding-top:2px}.fact .fv{line-height:1.45}.fact .fs{display:block;margin-top:3px;font-size:.68rem;opacity:.75}.fact .dim{opacity:.7}.fact.derived{display:block;background:rgba(124,92,255,.08);border:1px solid var(--line);border-radius:10px;padding:10px 12px;line-height:1.45}@media(max-width:640px){.fact{grid-template-columns:1fr}}
+.warn{font-size:.8rem;color:var(--amber)}
+
+/* results */
+.results{position:sticky;top:76px;display:grid;gap:18px}
+.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.charts figure:last-child{grid-column:1/-1}
+.cases{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.case{border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:8px;padding:8px 12px;font:inherit;font-size:.82rem;cursor:pointer;text-align:left;display:grid;gap:2px;min-width:0}
+.case small{color:var(--muted);font-size:.72rem}
+.case.sel{border-color:var(--green);box-shadow:0 0 0 1px var(--green) inset}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line);padding-bottom:0}
+.tab{background:transparent;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:10px 14px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.tab.sel{color:var(--fg);border-bottom-color:var(--green)}
+.tab:hover{color:var(--fg)}
+.tiles.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:900px){.tiles.five{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.lever{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--panel);display:grid;gap:10px;min-width:0}
+.lever h4{margin:0;font-size:1rem;font-weight:600}
+.lever .lv{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:center;font-size:.85rem}
+.lever .lv .n{color:var(--muted)}
+.lever .lv input{width:100%;background:var(--surface);border:1px solid var(--line);color:var(--fg);border-radius:5px;padding:6px 8px;font:inherit;font-size:.85rem;text-align:right}
+.lever .hd{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.lever .src{font-size:.75rem;color:var(--muted)}
+.charts figure:last-child .chart{max-width:700px;margin-inline:auto}
+@media(max-width:980px){.charts{grid-template-columns:1fr}}
+@media(max-width:980px){.results{position:static}}
+.big{display:grid;gap:4px}
+.big .lab{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.big .val{font-family:var(--display);font-size:clamp(2.2rem,4vw,3.2rem);line-height:1;font-variant-numeric:tabular-nums}
+.big .val.pos{color:var(--green-soft)}
+.big .val.neg{color:var(--red)}
+.big .sub{font-size:.88rem;color:var(--muted)}
+figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;min-width:0}
+figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;margin-bottom:12px}
+figcaption .t{font-weight:600}
+figcaption .s{font-size:.82rem;color:var(--muted);width:100%}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.78rem;color:var(--muted);margin-top:10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.chart{width:100%;height:auto;display:block;overflow:visible;font-family:var(--body)}
+.chart text{fill:var(--muted);font-size:12px}
+.chart text.strong{fill:var(--fg);font-weight:500}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .hit{fill:transparent;cursor:default}
+details.tbl{margin-top:10px;font-size:.84rem}
+details.tbl summary{cursor:pointer;color:var(--purple-soft);font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+details.tbl>div{overflow-x:auto}
+.cat details>div{overflow-x:auto}
+details.tbl table{min-width:420px;width:100%;border-collapse:collapse;margin-top:10px;font-variant-numeric:tabular-nums}
+details.tbl th,details.tbl td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+details.tbl th{color:var(--muted);font-weight:500}
+details.tbl td.n,details.tbl th.n{text-align:right}
+.tip{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--line);color:var(--fg);padding:8px 10px;border-radius:6px;font-size:.8rem;line-height:1.35;opacity:0;transform:translate(-50%,calc(-100% - 10px));transition:opacity .12s;z-index:50;white-space:nowrap}
+.tip b{display:block;font-weight:600}
+.moves{display:grid;gap:8px;font-size:.9rem}
+.moves li{color:var(--muted)}
+.moves li b{color:var(--fg);font-weight:500}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+
+/* methodology */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media(max-width:900px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}}
+.how{display:grid;gap:12px;padding-top:16px;border-top:1px solid var(--line)}
+.how .n{font-family:var(--mono);font-size:.7rem;color:var(--green-soft);letter-spacing:.12em}
+.how p{color:var(--muted);font-size:.93rem}
+.how code{font-family:var(--mono);font-size:.8rem;color:var(--fg);background:var(--panel);padding:2px 6px;border-radius:4px}
+.srcs{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.srcs li{display:grid;grid-template-columns:auto 1fr;gap:12px;font-size:.92rem;padding:10px 0;border-bottom:1px solid var(--line)}
+.srcs .d{font-family:var(--mono);font-size:.68rem;color:var(--muted);padding-top:3px;white-space:nowrap}
+.srcs small{display:block;color:var(--muted)}
+.disc{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:10px;padding:16px 18px;font-size:.9rem;color:var(--muted)}
+.capture{background:linear-gradient(135deg,var(--surface),var(--panel));border:1px solid var(--line);border-radius:12px;padding:24px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px;align-items:center}
+@media(max-width:760px){.capture{grid-template-columns:1fr}}
+.capture form{display:grid;gap:10px}
+.capture .ok{display:none;color:var(--green-soft);font-size:.9rem}
+footer{border-top:1px solid var(--line);padding-block:22px;font-size:.78rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sr{position:absolute;left:-9999px}
+@media print{
+  header,.actions,.capture,#method,#sources,footer,.steps{display:none!important}
+  body{background:#fff;color:#111}
+  :root{--bg:#fff;--surface:#fff;--panel:#f3f1f8;--line:#ccc;--fg:#111;--muted:#555;--green-soft:#15713f;--purple-soft:#4b3bb0;--red:#b0203f}
+  .calc{grid-template-columns:1fr}
+  .results{position:static}
+  section{padding-block:16px;border:0}
+  .print-only{display:block!important}
+}
+.print-only{display:none;font-size:.85rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="brand" href="https://www.jaybeatty.com">Jay <b>Beatty</b></a>
+  <div class="links">
+    <a href="#calc">Calculator</a><a href="#how">How TEAM pays</a><a href="#method">Methodology</a><a href="#sources">Sources</a><a href="https://www.jaybeatty.com">jaybeatty.com</a>
+  </div>
+  <a class="btn primary small" href="#capture">Talk to Jay</a>
+</nav></div></header>
+
+<main id="top">
+<div class="wrap">
+<section class="hero">
+  <div>
+    <div class="eyebrow">CMS TEAM · PY1 2026 preliminary target prices</div>
+    <h1 style="margin-top:16px">What will TEAM <em>pay your hospital</em>, or cost it?</h1>
+    <p class="lede" style="margin-top:20px">The Transforming Episode Accountability Model started January 1, 2026 and runs through 2030. It is mandatory for 711 hospitals across five surgical episodes. Pick your hospital, enter your episode volumes and spend, and see the estimated reconciliation under each participation track, with the quality adjustment, stop-gain and stop-loss rules applied the way CMS describes them.</p>
+    <div class="chips"><span class="chip">721 participant hospitals</span><span class="chip">5 episode categories</span><span class="chip">29 MS-DRGs · 9 regions</span><span class="chip">Tracks 1, 2 and 3</span><span class="chip">No patient data</span></div>
+    <div class="actions" style="margin-top:26px"><a class="btn primary" href="#calc">Run my hospital</a><a class="btn" href="#how">How TEAM pays</a></div>
+  </div>
+  <div class="board" aria-label="Model facts">
+    <div class="board-head"><span>TEAM at a glance</span><span class="live">From CMS fact sheets</span></div>
+    <div class="tiles">
+      <div class="tile"><div class="lab">Model window</div><div class="val">5 <small>years</small></div><div class="delta">Jan 1 2026 to Dec 31 2030</div></div>
+      <div class="tile"><div class="lab">Episode length</div><div class="val">30 <small>days</small></div><div class="delta">anchor stay plus post-discharge</div></div>
+      <div class="tile"><div class="lab">CMS discount on target</div><div class="val">1.5 to 2<small>%</small></div><div class="delta">by episode category</div></div>
+      <div class="tile"><div class="lab">Track 3 downside</div><div class="val">20<small>%</small></div><div class="delta">of aggregated target price</div></div>
+    </div>
+    <div class="board-foot">LEJR, hip and femur fracture, CABG, spinal fusion, major bowel. Traditional Medicare only. Reconciled once per performance year.</div>
+  </div>
+</section>
+
+<section id="calc">
+  <div class="sec-head">
+    <div><div class="eyebrow">Calculator</div><h2 style="margin-top:12px">Four inputs, one number.</h2></div>
+    <p class="lede">Everything here comes from the CMS PY1 preliminary target price workbook and the published reconciliation rules. The two things CMS has not published for your hospital, the risk-adjustment multiplier and your composite quality score, are sliders you control.</p>
+  </div>
+  <div class="calc">
+  <div class="steps">
+    <div class="step">
+      <div class="k">Step 1</div><h3>Your hospital</h3>
+      <p class="help">Start from one of six case hospitals, or search the CMS participant list. Picking any of the 721 hospitals prefills its 2024 Medicare volumes, Care Compare quality and post-discharge spending, county post-acute market and Medicare Advantage share, and FY2027 cost-report facts, then sets the sliders from them. Everything stays editable.</p>
+      <div class="cases" id="cases"></div>
+      <div class="row">
+        <div class="field pick"><label for="hosp">Hospital</label><input type="search" id="hosp" placeholder="Search 721 hospitals" autocomplete="off"><ul id="hospList" role="listbox"></ul></div>
+        <div class="field"><label for="region">Census division</label><select id="region"></select></div>
+      </div>
+      <div id="hospMeta" class="note" style="margin-top:8px"></div>
+      <div class="checks" style="margin-top:14px">
+        <label><input type="checkbox" id="safetyNet"> Safety-net hospital</label>
+        <label><input type="checkbox" id="ruralType"> Rural, SCH, MDH or EACH</label>
+      </div>
+      <p class="note" style="margin-top:8px">CMS names these hospitals before each performance year. They unlock Track 2 and later Track 1 years. When a hospital is picked, safety-net is estimated from its Medicare SSI share (above the 75th percentile of IPPS hospitals, 8.7%, in the FY2027 impact file) and rural from the impact file's geographic flag; CMS's own test also counts Part D low-income subsidy share and rural census tracts.</p>
+    </div>
+
+    <div class="step">
+      <div class="k">Step 2</div><h3>Performance year and track</h3>
+      <div class="row" style="margin-bottom:12px">
+        <div class="field"><label for="py">Performance year</label><select id="py">
+          <option value="1">PY1 · 2026</option><option value="2">PY2 · 2027</option><option value="3">PY3 · 2028</option><option value="4">PY4 · 2029</option><option value="5">PY5 · 2030</option></select></div>
+        <div class="field"><label for="improve">Yearly spend change for the five-year view</label>
+          <div class="slider"><input type="range" id="improve" min="-5" max="5" step="0.5" value="-2"><output id="improveOut">−2.0%/yr</output></div></div>
+      </div>
+      <div class="tracks" id="tracks"></div>
+      <p class="note" id="trackNote" style="margin-top:10px"></p>
+    </div>
+
+    <div class="step">
+      <div class="k">Step 3</div><h3>Episodes and spend</h3>
+      <p class="help">Annual traditional-Medicare episodes by MS-DRG, and your average episode spend (Part A and B, anchor through 30 days). Spend defaults to the regional target so you only have to move it. Turn off categories you do not perform. From October 1, 2026 the FY2027 rule adds MS-DRGs 523 to 525 as spinal fusion triggers; CMS prices them separately from PY2, so count them under the fusion MS-DRG they replaced for now.</p>
+      <div id="cats" style="display:grid;grid-template-columns:minmax(0,1fr);gap:12px"></div>
+    </div>
+
+    <div class="step">
+      <div class="k">Step 4</div><h3>Assumptions CMS has not published for you</h3>
+      <div class="row">
+        <div class="field"><label for="risk">Risk-adjustment multiplier</label>
+          <div class="slider"><input type="range" id="risk" min="0.8" max="1.2" step="0.01" value="1"><output id="riskOut">1.00×</output></div>
+          <span class="note">Your hospital-specific target = regional target × this. CMS sets it from patient HCCs, age, dual and LIS status, and hospital factors, then normalizes so the average stays flat.</span></div>
+        <div class="field"><label for="cqs">Composite quality score (0 to 100)</label>
+          <div class="slider"><input type="range" id="cqs" min="0" max="100" step="1" value="50"><output id="cqsOut">50</output></div>
+          <span class="note">PY1 measures: hybrid hospital-wide readmission, CMS PSI 90, and the THA/TKA patient-reported outcome measure for joint replacement. Scores are national percentiles weighted by episode volume, scored against a concurrent baseline (FY2027 rule). PY2 adds falls with injury, postoperative respiratory failure and 30-day surgical death after complications; a hospital that does not report a measure gets 50 for it. When a hospital is picked, this slider is set from its Care Compare readmission and PSI-90 percentiles with the patient-reported measure at 50.</span></div>
+      </div>
+      <div class="actions" style="margin-top:14px"><button class="btn small" type="button" id="loadExample">Load example hospital</button><button class="btn small" type="button" id="resetAll">Clear inputs</button></div>
+    </div>
+
+    <div class="step" id="step5">
+      <div class="k">Step 5</div><h3>Levers: what a care-redesign program is worth</h3>
+      <p class="help">TEAM counts nearly everything Medicare pays from admission through 30 days after discharge, so the money moves in the post-discharge window: where patients go, how long they stay, and who bounces back. Set where your hospital is today and where a program could take it. Defaults are national figures from the sources listed; replace them with your own claims data.</p>
+      <div class="checks" style="font-size:.9rem;margin-bottom:12px"><label><input type="checkbox" id="leversOn"> Apply these levers to the results and the five-year view</label><label><input type="checkbox" id="spineOrtho" checked> Count spinal fusion under Orthopedics (off: its own Spine line)</label></div>
+      <div id="levers" style="display:grid;grid-template-columns:minmax(0,1fr);gap:12px"></div>
+      <details style="margin-top:12px"><summary style="cursor:pointer;color:var(--purple-soft);font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase">Unit costs behind the levers (editable)</summary>
+        <div class="row3" style="margin-top:10px" id="unitCosts"></div>
+        <p class="note" style="margin-top:8px">SNF per day = MedPAC 2024 average payment per stay ($20,970) over the average stay (30.7 days). IRF = MedPAC 2024 average payment per stay. Home health = MedPAC 2024 average payment per 30-day period. Readmission = HCUP Statistical Brief 278, average cost of a Medicare 30-day readmission, 2018. SSI = Adeyemi and Trueman 2019, added 90-day episode cost of a surgical site infection after joint replacement. VTE = Cohoon et al. 2015, added cost in the first three months after a venous thromboembolism following major surgery. A patient kept out of a SNF or IRF is assumed to go home with home health.</p>
+      </details>
+      <div class="actions" style="margin-top:14px"><button class="btn small" type="button" id="leverPreset">Load a typical program</button><button class="btn small" type="button" id="leverReset">Targets = today</button></div>
+      <p class="note" style="margin-top:10px">Quality link: readmissions feed the hospital-wide readmission measure and VTE feeds PSI 90, both inside the composite quality score. Surgical site infection is not in PSI 90; it reaches TEAM through readmissions and post-acute cost. SSI and VTE costs here are increments beyond the readmission line, so lower the readmission lever if you count the same event twice.</p>
+    </div>
+  </div>
+
+  <div class="results" id="results">
+    <div class="board">
+      <div class="board-head"><span id="resHead">Estimated reconciliation</span><span class="live">Live</span></div>
+      <div class="big"><div class="lab" id="bigLab">Net payment reconciliation amount</div><div class="val" id="npra">$0</div><div class="sub" id="npraSub"></div></div>
+      <div class="tiles">
+        <div class="tile"><div class="lab">Episodes</div><div class="val" id="tEp">0</div><div class="delta" id="tEpD"></div></div>
+        <div class="tile"><div class="lab">Aggregated target price</div><div class="val" id="tTarget">$0</div><div class="delta" id="tTargetD"></div></div>
+        <div class="tile"><div class="lab">Reconciliation before adjustments</div><div class="val" id="tRecon">$0</div><div class="delta" id="tReconD"></div></div>
+        <div class="tile"><div class="lab">Quality adjustment</div><div class="val" id="tCqs">$0</div><div class="delta" id="tCqsD"></div></div>
+      </div>
+      <div class="board-foot" id="capNote"></div>
+      <div class="tile" id="leverTile" style="display:none"><div class="lab">With levers applied</div><div class="val" id="leverVal">$0</div><div class="delta" id="leverDelta"></div></div>
+      <ul class="moves" id="moves" style="margin:0;padding-left:18px"></ul>
+      <div class="actions"><button class="btn small" type="button" onclick="window.print()">Print this scenario</button><a class="btn small" href="#capture">Walk through it with Jay</a></div>
+      <p class="print-only" id="printMeta"></p>
+    </div>
+    <div class="board" id="caseNotes" style="display:none">
+      <div class="board-head"><span id="caseHead">Case notes</span><span id="caseTag"></span></div>
+      <p id="caseStory" style="font-size:.95rem"></p>
+      <p id="caseWatch" style="font-size:.9rem;color:var(--green-soft)"></p>
+      <p class="note" id="caseProv"></p>
+    </div>
+
+  </div>
+  </div>
+  <div class="tabs" id="tabs" role="tablist" style="margin-top:28px"></div>
+  <div class="board" id="lineBoard" style="margin-top:14px;display:none"></div>
+  <div class="charts" style="margin-top:18px">
+    <figure id="figLines">
+      <figcaption><span class="t">Service lines side by side</span><span class="s">Each line's dollars above or below target before quality and stop limits (bars), and the same per episode (dots). Spinal fusion sits under Orthopedics unless you move it.</span></figcaption>
+      <svg class="chart" id="chLines" viewBox="0 0 560 230" role="img" aria-label="Bars of reconciliation contribution by service line"></svg>
+      <details class="tbl"><summary>View as table</summary><div id="tblLines"></div></details>
+    </figure>
+
+    <figure>
+      <figcaption><span class="t">Where the money comes from</span><span class="s">Reconciliation amount by episode category before quality and stop limits. Green is below target, red is above.</span></figcaption>
+      <svg class="chart" id="chCats" viewBox="0 0 560 230" role="img" aria-label="Bar chart of reconciliation amount by episode category"></svg>
+      <details class="tbl"><summary>View as table</summary><div id="tblCats"></div></details>
+    </figure>
+
+    <figure>
+      <figcaption><span class="t">Same hospital, three tracks</span><span class="s">Estimated NPRA if every category ran this far above or below target. Dot marks your current inputs.</span></figcaption>
+      <svg class="chart" id="chSens" viewBox="0 0 560 260" role="img" aria-label="Line chart of net payment by spend versus target for each track"></svg>
+      <div class="legend"><span><i style="background:var(--green)"></i>Track 1 (upside only)</span><span><i style="background:var(--teal)"></i>Track 2</span><span><i style="background:var(--purple)"></i>Track 3</span></div>
+      <details class="tbl"><summary>View as table</summary><div id="tblSens"></div></details>
+    </figure>
+
+    <figure>
+      <figcaption><span class="t">Episode spend by setting</span><span class="s">Your average spend split with the national TEAM pattern (IAC analysis of 2021 to 2023 claims). Lighter bar: post-acute after the levers.</span></figcaption>
+      <svg class="chart" id="chSetting" viewBox="0 0 560 250" role="img" aria-label="Stacked bars of episode spend by setting for each category"></svg>
+      <div class="legend"><span><i style="background:var(--purple)"></i>Anchor stay</span><span><i style="background:var(--teal)"></i>Part B during anchor</span><span><i style="background:var(--green)"></i>Post-acute 30 days</span><span><i style="background:var(--green);opacity:.45"></i>Post-acute with levers</span></div>
+      <details class="tbl"><summary>View as table</summary><div id="tblSetting"></div></details>
+    </figure>
+
+    <figure>
+      <figcaption><span class="t">What each lever is worth</span><span class="s">Estimated NPRA today, then the change from each lever, to the result with every lever applied. Stop limits and quality adjustment included.</span></figcaption>
+      <svg class="chart" id="chLevers" viewBox="0 0 560 250" role="img" aria-label="Waterfall of net payment from baseline through each lever"></svg>
+      <details class="tbl"><summary>View as table</summary><div id="tblLevers"></div></details>
+    </figure>
+
+    <figure>
+      <figcaption><span class="t">Five performance years</span><span class="s" id="fiveSub"></span></figcaption>
+      <svg class="chart" id="chFive" viewBox="0 0 560 240" role="img" aria-label="Bar chart of estimated net payment by performance year with cumulative line"></svg>
+      <div class="legend"><span><i style="background:var(--green)"></i>Payment from CMS</span><span><i style="background:var(--red)"></i>Repayment to CMS</span><span><i style="background:var(--purple)"></i>Cumulative</span></div>
+      <details class="tbl"><summary>View as table</summary><div id="tblFive"></div></details>
+    </figure>
+  </div>
+</section>
+
+<section id="cases-compare">
+  <div class="sec-head">
+    <div><div class="eyebrow">Six hospitals, one model</div><h2 style="margin-top:12px">Same rules, very different answers.</h2></div>
+    <p class="lede">The six case hospitals run through the calculator with the same PY1 regional prices. Every input is drawn from public CMS files for a real participant: 2024 inpatient volumes, Care Compare readmission, complication and patient-safety measures, price-standardized post-discharge spending versus the hospital's state, county post-acute use and Medicare Advantage share, and FY2027 cost-report facts. Cases are named by type and city rather than by hospital, because the result is an estimate from those files, not a CMS reconciliation. Click a case in Step 1 to load it.</p>
+  </div>
+  <figure>
+    <figcaption><span class="t">Estimated first-year result by hospital</span><span class="s">Shown as a share of each hospital's target book so a 2,300-episode center and an 80-episode rural hospital sit on one scale; dollars on the bars. Track 1 (no downside) and Track 3 (20% both ways) at today's assumptions, then Track 3 with a typical post-acute program.</span></figcaption>
+    <svg class="chart" id="chCases" viewBox="0 0 900 300" role="img" aria-label="Grouped bars of estimated net payment by case hospital and track"></svg>
+    <div class="legend"><span><i style="background:var(--green)"></i>Track 1</span><span><i style="background:var(--purple)"></i>Track 3</span><span><i style="background:var(--teal)"></i>Track 3 with program</span></div>
+    <details class="tbl" open><summary>View as table</summary><div id="tblCases"></div></details>
+  </figure>
+</section>
+
+<section id="how">
+  <div class="sec-head">
+    <div><div class="eyebrow">How TEAM pays</div><h2 style="margin-top:12px">Six steps from a surgery to a check, or a bill.</h2></div>
+    <p class="lede">CMS keeps paying claims as usual during the year. After the year closes it adds up what traditional Medicare spent on each episode and compares it with a target price. The difference, after a few adjustments, is what changes hands.</p>
+  </div>
+  <div class="grid3">
+    <div class="how"><div class="n">01 · Trigger</div><h3>An anchor stay or procedure</h3><p>A traditional-Medicare patient has one of the five surgeries at your hospital. The episode runs from admission through 30 days after discharge and includes nearly all Part A and Part B spending in that window.</p></div>
+    <div class="how"><div class="n">02 · Target</div><h3>A regional target price</h3><p>CMS averages three baseline years of episode spending in your census division, trends it forward, and takes a 2% discount (1.5% for CABG and bowel). Then it adjusts for your patients' risk and your hospital's profile.</p></div>
+    <div class="how"><div class="n">03 · Compare</div><h3>Spend versus target</h3><p><code>(target − actual spend) × episodes</code> for each category. Below target earns a positive reconciliation amount; above target produces a negative one. Categories with 30 or fewer baseline episodes cannot go negative.</p></div>
+    <div class="how"><div class="n">04 · Quality</div><h3>The composite quality score</h3><p>A positive amount is reduced by up to 10% when quality is weak: <code>10% × (1 − CQS/100)</code>. A negative amount shrinks when quality is strong: <code>15% × CQS/100</code> in Track 2, <code>10% × CQS/100</code> in Track 3.</p></div>
+    <div class="how"><div class="n">05 · Limits</div><h3>Stop-gain and stop-loss</h3><p>Track 1 caps gains at 10% of your aggregated target price and has no downside. Track 2 caps both sides at 5%. Track 3 caps both sides at 20%.</p></div>
+    <div class="how"><div class="n">06 · Settle</div><h3>The net payment reconciliation amount</h3><p>Positive, CMS pays the hospital. Negative, the hospital repays CMS. One reconciliation per performance year, with a later true-up for trend and post-episode spending.</p></div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="sec-head">
+    <div><div class="eyebrow">Methodology</div><h2 style="margin-top:12px">What the calculator does, and what it leaves out.</h2></div>
+    <p class="lede">Built to be checked. Every rule links to the CMS document it came from.</p>
+  </div>
+  <div class="grid2">
+    <div>
+      <h3 style="margin-bottom:10px">Calculation order</h3>
+      <ol style="margin:0;padding-left:20px;color:var(--muted);display:grid;gap:8px;font-size:.95rem">
+        <li>Regional target per MS-DRG = benchmark × prospective trend × (1 − discount), read from the CMS PY1 workbook (29 MS-DRGs × 9 census divisions).</li>
+        <li>Category target = count-weighted regional target × your risk multiplier (normalization and retrospective trend assumed 1.00).</li>
+        <li>Reconciliation amount per category = (target − average spend) × episodes. Low-volume categories floored at zero.</li>
+        <li>Aggregate to the hospital. Track 1 sets a negative aggregate to zero.</li>
+        <li>Quality adjustment per the CMS worked tables.</li>
+        <li>Stop-gain and stop-loss applied as a share of the aggregated target price. Result is the estimated NPRA.</li>
+        <li>Five-year view holds PY1 prices flat in standardized dollars, compounds your yearly spend change, and moves you to Track 3 in any year your chosen track is not available.</li>
+        <li>Levers: savings per episode = (SNF share moved to home health × (SNF days × SNF per day − home health period)) + (SNF share kept × days cut × SNF per day) + (IRF share moved × (IRF stay − home health period)) + (readmission points cut × readmission cost) + (SSI points cut × SSI cost) + (VTE points cut × VTE cost). Average spend falls by that amount and steps 2 to 6 run again.</li>
+        <li>Service-line tabs filter the charts and show each line's contribution. CMS reconciles at the hospital level, so the net payment stays a hospital number; a line's "effect on the hospital result" is the hospital NPRA with only that line's levers applied, minus the NPRA without them.</li>
+        <li>Hospital prefill (any participant, and the six cases): MS-DRG volumes from the CMS Medicare Inpatient Hospitals by Provider and Service file for calendar 2024 (traditional Medicare inpatient discharges; cells under 11 suppressed; outpatient joint and spine episodes shown as a count but not priced). Spend versus target per category = that category's national post-acute share × (the hospital's price-standardized 30-day post-discharge spending per episode ÷ its state's, from the Care Compare Medicare Spending by Claim file, all conditions), capped at ±20%. The anchor stay is held at target because TEAM pays it at a fixed standardized MS-DRG price. Quality score = volume-weighted average of the hospital's national percentile on 30-day hip/knee and CABG readmission (proxy for the hybrid hospital-wide measure, which has no public scores yet), its PSI-90 percentile, and 50 for the THA/TKA patient-reported measure (not yet public). Lever starting points: hip/knee and CABG readmission rates read directly from Care Compare; other readmission defaults scaled by the hospital's 30-day readmission spending ratio; SNF share scaled by its SNF spending ratio (0.5 to 1.8×); SNF days by county SNF days per 1,000 versus national (0.7 to 1.4×); IRF share by county IRF spending per capita versus national (0.3 to 2×); VTE by the hospital's PSI-12 rate versus the national median (0.4 to 2×); major-bowel SSI by its NHSN colon SSI ratio (0.3 to 2.5×, when at least one predicted infection). Safety-net flag: Medicare SSI share above the 75th percentile of IPPS hospitals (8.7%, FY2027 impact file); rural: the impact file's geographic flag. Risk multiplier stays 1.00.</li>
+        <li>Spend by setting uses the national TEAM shares of anchor facility, anchor Part B and post-acute spend by category (IAC, 2021 to 2023 claims) applied to your average spend.</li>
+      </ol>
+    </div>
+    <div>
+      <h3 style="margin-bottom:10px">Not modeled</h3>
+      <ul style="margin:0;padding-left:20px;color:var(--muted);display:grid;gap:8px;font-size:.95rem">
+        <li>Your actual hospital-specific risk multiplier and normalization factor. CMS sends them in the preliminary target price report.</li>
+        <li>The 99th-percentile outlier cap on single episodes (already inside the CMS benchmark). Enter your average spend.</li>
+        <li>Episode cancellations, overlap with ACOs and other models, post-episode spending monitoring, beneficiary incentives, SNF three-day waiver effects.</li>
+        <li>Target prices for PY2 to PY5, which CMS has not published. PY1 regional prices are held flat. The FY2027 rule adds MS-DRG and APC update factors to the trend from PY1 (expected in late 2026) and, from PY2, builds the normalization factor from all three baseline years; neither is in the public workbook yet.</li>
+        <li>The hospital's actual TEAM performance. Prefilled spend and quality come from all-condition public measures and spending patterns, so they show where a hospital's post-discharge habits point, not its surgical episode results. Hospitals should replace them with their own numbers.</li>
+        <li>Sequestration. Medicare Advantage volume (TEAM is traditional Medicare only).</li>
+        <li>Where your readmissions originate. Only your claims feed can show whether they come from a particular SNF or home health agency. CMS provides TEAM participants with claims data on request; this tool prices what fixing it is worth.</li>
+      </ul>
+      <div class="disc" style="margin-top:18px"><b style="color:var(--fg)">Estimates only.</b> This tool is an independent educational model built from public CMS documents. It is not affiliated with or endorsed by CMS. It collects no patient data and stores nothing you type. Use your CMS target price report and reconciliation reports for decisions.</div>
+    </div>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="sec-head">
+    <div><div class="eyebrow">Sources</div><h2 style="margin-top:12px">Every number traces to CMS.</h2></div>
+    <p class="lede">Downloaded October 2026 from cms.gov. If CMS updates a file the calculator says which version it used.</p>
+  </div>
+  <ul class="srcs">
+    <li><span class="d">2025-12-10</span><span><a href="https://www.cms.gov/priorities/innovation/files/team-py1-prlim-target-prices.xlsx">TEAM PY1 Preliminary Target Prices, DRG-Region level (xlsx)</a><small>Benchmark price, prospective trend factor, discount factor and preliminary target price for each MS-DRG and census division. Baseline 2022 to 2024.</small></span></li>
+    <li><span class="d">2025-09</span><span><a href="https://www.cms.gov/files/document/team-risk-adj-prelim-target-specs.pdf">TEAM Risk Adjustment and Preliminary Target Price Specifications (PDF)</a><small>Benchmark construction, 17/33/50 baseline-year weights, winsorization, trend, risk adjusters, normalization.</small></span></li>
+    <li><span class="d">2025-09</span><span><a href="https://www.cms.gov/files/document/team-qualityscoring-fs.pdf">Quality Scoring in TEAM fact sheet (PDF)</a><small>Scaled measure scores, volume-based weights, CQS adjustment formulas and worked examples by track.</small></span></li>
+    <li><span class="d">2025</span><span><a href="https://www.cms.gov/files/document/team-intro-qm-fs.pdf">Introduction to Quality Measures in TEAM (PDF)</a><small>PY1 to PY3 measure sets and performance periods.</small></span></li>
+    <li><span class="d">2025</span><span><a href="https://www.cms.gov/files/document/team-participation-tracks-fact-sheet.pdf">TEAM Participation Tracks fact sheet (PDF)</a><small>Track eligibility by year, stop-gain and stop-loss limits.</small></span></li>
+    <li><span class="d">2025</span><span><a href="https://www.cms.gov/files/document/team-safetynet-rural-fs.pdf">Safety Net and Rural Hospitals in TEAM (PDF)</a><small>Hospital-type definitions, low-volume policy, stop-limit mechanics.</small></span></li>
+    <li><span class="d">2026</span><span><a href="https://www.cms.gov/files/document/team-overview-updated.pdf">TEAM Model Overview (PDF)</a><small>Episode definitions, exclusions, reconciliation order of operations.</small></span></li>
+    <li><span class="d">2026-08-18</span><span><a href="https://www.cms.gov/team-model-participant-list">TEAM participant list (xlsx)</a><small>721 hospitals (711 mandatory, 10 voluntary) with CCN, CBSA and state.</small></span></li>
+    <li><span class="d">2025-01-22</span><span><a href="https://facs.org/media/hyalbjyy/iac_acs_teamwebinarslides_jan2225.pdf">Institute for Accountable Care and American College of Surgeons TEAM webinar (PDF)</a><small>National average 30-day TEAM episode cost by setting for CABG, hip and femur, joint replacement, major bowel and spinal fusion, from 2021 to 2023 Medicare claims; sample post-discharge benchmarking.</small></span></li>
+    <li><span class="d">2026-07</span><span><a href="https://www.medpac.gov/wp-content/uploads/2026/07/July2026_MedPAC_DataBook_Sec8_SEC.pdf">MedPAC Data Book, Section 8 Post-acute care (PDF)</a><small>2024 SNF average stay 30.7 days, IRF 12.4 days; average payments per SNF stay ($20,970), IRF stay ($25,300) and home health 30-day period ($1,852) from the December 2025 MedPAC presentation.</small></span></li>
+    <li><span class="d">2026-09</span><span><a href="https://www.cms.gov/priorities/innovation/data-and-reports/2026/cjr-py6-8-annual-rpt-exec-summary">CJR final evaluation, PY6 to PY8 (PDF)</a><small>Elective joint replacement episode payments fell $1,226 per episode, mostly by shifting patients from inpatient rehab to home with home health; readmissions, complications and mortality unchanged.</small></span></li>
+    <li><span class="d">2026</span><span><a href="https://www.cms.gov/priorities/innovation/data-and-reports/2026/bpci-adv-ar7">BPCI Advanced final evaluation (PDF)</a><small>About $500 lower SNF payments per episode and 3 fewer SNF days; 1.45 fewer percentage points discharged to institutional post-acute care; no change in readmissions or mortality.</small></span></li>
+    <li><span class="d">2020</span><span><a href="https://hcup-us.ahrq.gov/reports/statbriefs/sb278-Conditions-Frequent-Readmissions-By-Payer-2018.jsp">AHRQ HCUP Statistical Brief 278</a><small>2018 Medicare 30-day readmissions: 16.9 per 100 index admissions, average cost $15,500.</small></span></li>
+    <li><span class="d">2019</span><span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6598267/">Adeyemi and Trueman, J Orthop Surg Res 2019</a><small>Surgical site infection within the 90-day episode after hip or knee replacement: 0.72 to 0.84 percent of patients; $12,689 to $12,890 added cost. Industry funded.</small></span></li>
+    <li><span class="d">2015</span><span><a href="https://pubmed.ncbi.nlm.nih.gov/25737004/">Cohoon et al., Surgery 2015</a><small>Venous thromboembolism after major surgery: about $12,381 added cost in the first three months versus matched controls.</small></span></li>
+    <li><span class="d">2026-04</span><span><a href="https://data.cms.gov/provider-summary-by-type-of-service/medicare-inpatient-hospitals/medicare-inpatient-hospitals-by-provider-and-service">CMS Medicare Inpatient Hospitals by Provider and Service, 2024</a><small>Discharges and average payments by hospital and MS-DRG. Source of the case hospitals' volumes and of the FY2024 MS-DRG titles.</small></span></li>
+    <li><span class="d">2026-09</span><span><a href="https://data.cms.gov/provider-data/topics/hospitals">Care Compare hospital files (Provider Data Catalog)</a><small>Unplanned Hospital Visits and Complications and Deaths (released 2026-09-10: 30-day hip/knee and CABG readmission, THA/TKA complications, PSI-90, PSI-12); Healthcare-Associated Infections (2026-07-22: colon SSI standardized infection ratio); Hospital General Information (star rating, type, county); Medicare Hospital Spending by Claim and Medicare Spending per Beneficiary (FY2026 release: price-standardized spending per episode by setting, 30 days after discharge, hospital, state and national); Hospital Readmissions Reduction Program FY2026 excess readmission ratios.</small></span></li>
+    <li><span class="d">2026-08</span><span><a href="https://www.cms.gov/medicare/payment/prospective-payment-systems/acute-inpatient-pps/fy-2027-ipps-final-rule-home-page">FY2027 IPPS final rule (CMS-1849-F) and impact file</a><small>TEAM changes: MS-DRGs 523 to 525 join spinal fusion from October 1, 2026; MS-DRG and APC update factors applied to the trend from PY1; concurrent CQS baseline with July to June measure periods; PY2 to PY5 measure periods for falls, postoperative respiratory failure and surgical death; normalization from all baseline years from PY2; CJR-X overlap guardrails. Impact file supplies beds, resident-to-bed ratio, DSH and Medicaid percentages, urban or rural flag for every IPPS hospital.</small></span></li>
+    <li><span class="d">2026-06</span><span><a href="https://data.cms.gov/provider-summary-by-type-of-service/medicare-inpatient-hospitals/medicare-outpatient-hospitals-by-provider-and-service">CMS Medicare Outpatient Hospitals by Provider and Service, 2024</a><small>Services and average Medicare payment by hospital and APC. APC 5115 (Level 5 musculoskeletal) holds outpatient knee and hip replacement.</small></span></li>
+    <li><span class="d">2026-05</span><span><a href="https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-geographic-comparisons/medicare-geographic-variation-by-national-state-county">Medicare Geographic Variation by National, State and County, 2024</a><small>County SNF covered days per 1,000, SNF, IRF and home health standardized spending per capita, readmission rate, dual-eligible and Medicare Advantage shares.</small></span></li>
+    <li><span class="d">2026-09</span><span><a href="https://data.cms.gov/summary-statistics-on-beneficiary-enrollment/medicare-and-medicaid-reports/medicare-monthly-enrollment">Medicare Monthly Enrollment, 2025</a><small>County Medicare Advantage share, which bounds how much of a hospital's surgical volume is TEAM-eligible.</small></span></li>
+    <li><span class="d">2026-06</span><span><a href="https://data.cms.gov/summary-statistics-on-use-and-payments/program-integrity-market-saturation-by-type-of-service/market-saturation-utilization-state-county">Market Saturation and Utilization, State-County, 2025</a><small>SNFs and home health agencies billing Medicare in each county.</small></span></li>
+    <li><span class="d">2026-09</span><span><a href="https://data.cms.gov/provider-data/topics/nursing-homes">Nursing Home Compare provider information and claims quality measures</a><small>Overall star rating and short-stay rehospitalization rate for every nursing home, summarized by county.</small></span></li>
+    <li><span class="d">2026-10</span><span><a href="https://www.cms.gov/priorities/innovation/files/team-snfwaiver-snflist-q4-2026.xlsx">TEAM qualified SNF list, Q4 2026 (xlsx)</a><small>9,867 SNFs and swing-bed hospitals rated three stars or better in at least 7 of 12 months, eligible for the TEAM three-day SNF rule waiver.</small></span></li>
+    <li><span class="d">2026-10</span><span><a href="https://data.cms.gov/provider-compliance/cost-report/hospital-provider-cost-report">Hospital Provider Cost Report, 2024</a><small>Fallback for bed counts and Medicare discharge share where the impact file has no row.</small></span></li>
+    <li><span class="d">Model page</span><span><a href="https://www.cms.gov/priorities/innovation/innovation-models/team-model">CMS Innovation Center: TEAM</a><small>Rule history (FY2025, FY2026 and FY2027 IPPS final rules), FAQs, webinars, qualified SNF lists.</small></span></li>
+  </ul>
+</section>
+
+<section id="capture">
+  <div class="capture">
+    <div>
+      <div class="eyebrow">About this tool</div>
+      <h2 style="margin-top:12px;font-size:clamp(1.5rem,2.6vw,2rem)">Built by a healthcare BD operator who sold into TEAM hospitals.</h2>
+      <p style="color:var(--muted);margin-top:12px">I'm Jay Beatty. I spent 2026 working with surgeons, orthopedic distributors and hospital executives on episode-based programs, and I built this so hospital leaders could see the TEAM math without waiting for a consultant's deck. If you'd like a walkthrough of your hospital's scenario, or you're hiring for a commercial leader who understands value-based care, send a note.</p>
+      <p style="margin-top:12px"><a href="mailto:jay@jaybeatty.com">jay@jaybeatty.com</a> · <a href="https://www.jaybeatty.com">jaybeatty.com</a> · Mechanicsburg, PA</p>
+    </div>
+    <form name="team-calculator" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="capForm">
+      <input type="hidden" name="form-name" value="team-calculator">
+      <p class="sr"><label>Leave empty: <input name="bot-field"></label></p>
+      <div class="field"><label for="cName">Name</label><input type="text" id="cName" name="name" required></div>
+      <div class="field"><label for="cEmail">Work email</label><input type="email" id="cEmail" name="email" required></div>
+      <div class="field"><label for="cHosp">Hospital or company</label><input type="text" id="cHosp" name="hospital"></div>
+      <input type="hidden" name="scenario" id="cScenario">
+      <button class="btn primary" type="submit">Send me this scenario</button>
+      <span class="note">No newsletter. One reply from Jay with your scenario summary.</span>
+      <span class="ok" id="capOk">Thanks. Jay will reply with your scenario summary.</span>
+    </form>
+  </div>
+</section>
+</div>
+</main>
+<footer><div class="wrap"><span>© 2026 Jay Beatty. Independent educational tool. Not affiliated with CMS.</span><span>Prices: CMS PY1 preliminary target price workbook, 2025-12-10</span></div></footer>
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script>
+const TP=__TP__;
+const PARTS=__PARTS__;
+const CASES=__CASES__;
+const HM=__HM__;
+</script>
+<script>
+__APP__
+</script>
+</body>
+</html>

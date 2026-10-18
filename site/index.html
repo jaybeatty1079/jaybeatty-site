@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jay Beatty</title>
+<meta name="description" content="Jay Beatty. Business development leader for healthcare companies: medical devices, diagnostics, healthcare AI and employer benefits. 20 years selling to surgeons, hospital executives, physician practices and payers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: one column of measured text on a deep-plum-and-gold identity; a dark hero band, then light sections with gold rules. */
+:root{
+  --navy:#2e1a3d; --navy-2:#3d2452; --gold:#d4a84b; --gold-deep:#b8902f;
+  --bg:#f7f4f1; --surface:#ffffff; --fg:#231a2b; --muted:#635a6c; --line:#ddd5da;
+  --hero-fg:#ffffff; --hero-muted:#d6c9de;
+  --display:"Outfit","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --body:"Source Sans 3","Source Sans Pro","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#170d1f; --surface:#22152d; --fg:#f2eef5; --muted:#b5a9bf; --line:#3a2a48; --navy:#100818; --navy-2:#1c1026; --gold:#e0b65a; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#170d1f; --surface:#22152d; --fg:#f2eef5; --muted:#b5a9bf; --line:#3a2a48; --navy:#100818; --navy-2:#1c1026; --gold:#e0b65a; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:20px}
+.eyebrow{font-family:var(--display);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.dark .eyebrow{color:var(--gold)}
+
+/* nav */
+nav{background:var(--navy);color:var(--hero-fg);position:sticky;top:env(safe-area-inset-top,0px);z-index:5;border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.01em;text-decoration:none}
+.brand b{color:var(--gold)}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;flex-wrap:wrap}
+nav ul a{text-decoration:none;font-size:15px;color:var(--hero-muted)}
+nav ul a:hover,nav ul a:focus-visible{color:var(--hero-fg)}
+
+/* hero */
+.hero{background:linear-gradient(120deg,var(--navy) 0%,var(--navy-2) 70%,#4d2f66 100%);color:var(--hero-fg);position:relative;overflow:hidden}
+.hero .wrap{padding-block:72px 64px;position:relative}
+.hero .rule{width:64px;height:4px;background:var(--gold);margin-bottom:22px}
+.hero h1{font-size:clamp(34px,5.2vw,56px);font-weight:700;max-width:16ch}
+.hero .lede{font-size:clamp(18px,2.1vw,22px);color:var(--hero-muted);max-width:52ch;margin-top:20px}
+.hero .tags{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;font-family:var(--display);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-block;padding:13px 22px;border-radius:4px;font-family:var(--display);font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid transparent}
+.btn.gold{background:var(--gold);color:#1b1a14;border-color:var(--gold)}
+.btn.gold:hover{background:#e3b95c}
+.btn.ghost{border-color:rgba(255,255,255,.45);color:var(--hero-fg)}
+.btn.ghost:hover{border-color:#fff}
+.net{position:absolute;right:-40px;top:-40px;width:520px;max-width:60%;opacity:.55;pointer-events:none}
+
+/* proof strip */
+.proof{background:var(--surface);border-bottom:1px solid var(--line)}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-block:28px}
+.proof .n{font-family:var(--display);font-size:32px;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1}
+.dark .proof .n{color:var(--fg)}
+.proof .l{font-size:14px;color:var(--muted);margin-top:6px;line-height:1.35}
+
+/* sections */
+section{padding-block:64px}
+section + section{border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:32px;align-items:start;margin-bottom:36px}
+.sec-head h2{font-size:clamp(26px,3.2vw,36px);font-weight:600}
+.sec-head p{color:var(--muted);font-size:18px;max-width:60ch}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px}
+.item h3{font-size:20px;font-weight:600;margin-bottom:8px}
+.item p{color:var(--muted)}
+
+/* programs */
+.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--gold);padding:24px 22px 26px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card .who{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-family:var(--display);font-weight:600}
+.card h3{font-size:21px;font-weight:600}
+.card p{color:var(--muted);font-size:16px}
+.card .fine{font-size:13.5px;color:var(--muted);margin-top:auto;padding-top:10px;border-top:1px dashed var(--line)}
+.card .more{font-family:var(--display);font-weight:600;font-size:14px;color:var(--gold-deep);text-decoration:none;margin-top:6px}
+.card .more:hover{text-decoration:underline}
+.dark .card .more{color:var(--gold)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
+.step{padding-top:16px;border-top:2px solid var(--navy)}
+.dark .step{border-top-color:var(--gold)}
+.step .k{font-family:var(--display);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:6px}
+.dark .step .k{color:var(--gold)}
+.step h3{font-size:20px;font-weight:600;margin-bottom:8px}
+.step p{color:var(--muted)}
+
+/* track record */
+.track{display:grid;grid-template-columns:150px 1fr;gap:12px 28px;max-width:820px}
+.track .y{font-family:var(--display);font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums;padding-top:2px}
+.dark .track .y{color:var(--gold)}
+.track .r h3{font-size:18px;font-weight:600}
+.track .r p{color:var(--muted);font-size:16px}
+.track .r{padding-bottom:18px;border-bottom:1px solid var(--line)}
+.track .y{border-bottom:1px solid var(--line);padding-bottom:18px}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:40px;align-items:start}
+.about p + p{margin-top:14px}
+.aside{background:var(--surface);border:1px solid var(--line);padding:22px}
+.aside h3{font-size:16px;font-weight:600;margin-bottom:10px}
+.aside ul{margin:0;padding-left:18px;color:var(--muted);font-size:15.5px}
+.aside li + li{margin-top:6px}
+
+/* contact */
+.contact{background:var(--navy);color:var(--hero-fg)}
+.contact .wrap{padding-block:64px;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:40px;align-items:start}
+.contact h2{font-size:clamp(26px,3.2vw,36px);font-weight:600}
+.contact p{color:var(--hero-muted);margin-top:14px;max-width:48ch}
+.contact .lines{display:flex;flex-direction:column;gap:12px;font-size:18px}
+.contact .lines a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);width:max-content;max-width:100%}
+.contact .lines a:hover{border-color:var(--gold)}
+.contact .lines span{font-family:var(--display);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:2px}
+footer{background:#1a0f22;color:#a898b3;font-size:13.5px}
+footer .wrap{padding-block:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .proof .wrap{grid-template-columns:1fr 1fr}
+  .sec-head,.grid2,.programs,.steps,.about,.contact .wrap{grid-template-columns:1fr}
+  .track{grid-template-columns:1fr}
+  .track .y{border-bottom:0;padding-bottom:0}
+  .net{display:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .btn{transition:background .15s,border-color .15s}
+}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+</style>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://jaybeatty.com/">
+<meta name="theme-color" content="#1c1321">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jay Beatty">
+<meta property="og:title" content="Jay Beatty">
+<meta property="og:description" content="Jay Beatty. Business development leader for healthcare companies: medical devices, diagnostics, healthcare AI and employer benefits. 20 years selling to surgeons, hospital executives, physician practices and payers.">
+<meta property="og:url" content="https://jaybeatty.com/">
+<meta property="og:image" content="https://jaybeatty.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="Jay Beatty, healthcare business development">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jaybeatty.com/og-image.jpg">
+<style id="polish">
+/* Polish pass 2026-09-30: aubergine-black + metallic gold, serif display, deco lattice. */
+:root{
+  --navy:#1c1321; --navy-2:#2a1c33; --gold:#c9a45c; --gold-deep:#9c7a35; --gold-lt:#e6cf98;
+  --bg:#faf7f2; --surface:#ffffff; --fg:#221a26; --muted:#62596a; --line:#e6dfd6;
+  --hero-fg:#fbf8f3; --hero-muted:#cfc3d6;
+  --display:"Cormorant Garamond","Cormorant",Georgia,serif;
+  --ui:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --metal:linear-gradient(100deg,#a8823c 0%,#e6cf98 45%,#c9a45c 60%,#9c7a35 100%);
+  --lattice:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23c9a45c' stroke-width='.8' opacity='.55'%3E%3Cpath d='M28 2 L54 28 L28 54 L2 28Z'/%3E%3Cpath d='M28 12 L44 28 L28 44 L12 28Z'/%3E%3Cpath d='M28 22 L34 28 L28 34 L22 28Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#141016; --surface:#1d1720; --fg:#f3eef4; --muted:#b3a8ba; --line:#352b3a; --navy:#0e0a10; --navy-2:#1a1320; --gold:#d4b06a; --gold-deep:#d4b06a }
+}
+:root[data-theme="dark"]{ --bg:#141016; --surface:#1d1720; --fg:#f3eef4; --muted:#b3a8ba; --line:#352b3a; --navy:#0e0a10; --navy-2:#1a1320; --gold:#d4b06a; --gold-deep:#d4b06a }
+body{font-family:var(--body);font-size:17px;letter-spacing:.005em;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:var(--display);font-weight:500!important;letter-spacing:.005em}
+h3,.btn,.eyebrow,.k,.who,.tags,nav ul a,.contact .lines span,.faq summary,.track .y,.proof .l{font-family:var(--ui)}
+h3{font-weight:600;letter-spacing:.005em}
+h1 em,h2 em{font-style:italic;color:var(--gold);font-weight:500}
+/* nav */
+nav{background:rgba(22,15,26,.94);backdrop-filter:saturate(140%) blur(8px);-webkit-backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(201,164,92,.35)}
+nav .wrap{flex-wrap:nowrap}
+.brand{font-family:var(--ui);font-weight:500;font-size:15px;letter-spacing:.32em;text-transform:uppercase;color:var(--hero-fg);white-space:nowrap}
+.brand b{font-weight:600;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav ul{gap:26px;flex-wrap:nowrap}
+nav ul a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% -10%,rgba(201,164,92,.16),transparent 60%),linear-gradient(160deg,#120c15 0%,var(--navy) 45%,var(--navy-2) 100%)}
+.hero::before{content:"";position:absolute;inset:0;background:var(--lattice);opacity:.22;-webkit-mask-image:linear-gradient(90deg,transparent 30%,#000 100%);mask-image:linear-gradient(90deg,transparent 30%,#000 100%);pointer-events:none}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--metal);opacity:.7}
+.net{display:none}
+.hero .wrap{padding-block:96px 88px}
+.sub-hero .wrap{padding-block:72px 64px}
+.hero .rule{width:88px;height:1px;background:var(--metal);margin-bottom:28px}
+.hero h1{font-size:clamp(38px,5.8vw,68px);line-height:1.04;max-width:17ch}
+.sub-hero h1{font-size:clamp(34px,4.8vw,54px);max-width:22ch}
+.hero .lede{font-weight:300;font-size:clamp(18px,2vw,21px);line-height:1.6;margin-top:24px}
+.hero .tags{font-size:11.5px;letter-spacing:.24em;gap:10px 26px;color:var(--gold-lt)}
+.hero .tags span+span::before{content:"\25C6";font-size:7px;vertical-align:2px;margin-right:26px;color:var(--gold);opacity:.8}
+.cta{margin-top:40px}
+.btn{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:16px 28px;border-radius:2px}
+.btn.gold{background:var(--metal);background-size:180% 100%;background-position:0 0;color:#1a1210;border:0;box-shadow:0 6px 24px -10px rgba(201,164,92,.7)}
+.btn.gold:hover{background:var(--metal);background-size:180% 100%;background-position:100% 0}
+.btn.ghost{border:1px solid rgba(230,207,152,.55);color:var(--gold-lt)}
+.btn.ghost:hover{border-color:var(--gold-lt);background:rgba(201,164,92,.08)}
+@media (prefers-reduced-motion:no-preference){.btn{transition:background-position .5s ease,border-color .2s,background-color .2s}}
+/* proof strip */
+.proof{background:var(--surface)}
+.proof .wrap{padding-block:40px}
+.proof .n{font-family:var(--display);font-weight:500;font-size:clamp(34px,4vw,46px);color:var(--fg)}
+.proof .n i{font-style:normal;color:var(--gold-deep)}
+.proof .l{font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-top:10px}
+.proof .wrap>div{border-left:1px solid var(--line);padding-left:20px}
+/* sections */
+section{padding-block:88px}
+section + section{border-top:0}
+section:nth-of-type(even):not(.contact){background:var(--surface)}
+.eyebrow{font-size:11.5px;letter-spacing:.26em;color:var(--gold-deep);display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.sec-head{margin-bottom:48px}
+.sec-head h2{font-size:clamp(32px,4vw,46px);line-height:1.08}
+.sec-head>p,.sec-head .prose{font-size:18px;line-height:1.65}
+.card{border:1px solid var(--line);border-top:0;position:relative;padding:30px 26px 28px;background:var(--bg)}
+section:nth-of-type(even) .card{background:var(--bg)}
+.card::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--metal)}
+.card .who{font-size:11px;letter-spacing:.18em}
+.card h3{font-family:var(--display);font-size:27px;font-weight:600;line-height:1.1}
+.card .more{font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.step{border-top:1px solid var(--gold)}
+.step .k{font-size:11px;letter-spacing:.24em}
+.step h3{font-family:var(--display);font-size:26px;font-weight:600}
+.item h3{font-family:var(--display);font-size:25px;font-weight:600}
+.track .y{font-size:13px;letter-spacing:.08em;color:var(--gold-deep)}
+.aside,.fit .box,.note{background:var(--bg)}
+section:nth-of-type(odd) .aside{background:var(--surface)}
+.fit .box.yes{border-top:2px solid var(--gold)}
+.cost .big{font-family:var(--display);font-weight:500;color:var(--fg)}
+.faq summary{font-size:17px}
+.faq summary::after{color:var(--gold-deep)}
+/* contact + footer */
+.contact{position:relative;background:linear-gradient(160deg,#120c15,var(--navy-2));overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background:var(--lattice);opacity:.14;pointer-events:none}
+.contact::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--metal);opacity:.7}
+.contact .wrap{position:relative;padding-block:88px}
+.contact h2{font-size:clamp(32px,4vw,46px);line-height:1.1}
+.contact .lines span{font-size:11px;letter-spacing:.24em;color:var(--gold)}
+.contact .lines a{font-size:19px;border-bottom-color:rgba(201,164,92,.35)}
+footer{background:#0d090f;color:#9d91a3;font-size:12.5px;letter-spacing:.04em;border-top:1px solid rgba(201,164,92,.2)}
+@media (max-width:820px){
+  nav ul{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:20px;width:100%;padding-bottom:2px}
+  nav ul::-webkit-scrollbar{display:none}
+  nav .wrap{flex-wrap:wrap;gap:10px}
+  .hero .wrap{padding-block:64px 60px}
+  section{padding-block:64px}
+  .proof .wrap>div:nth-child(odd){border-left:0;padding-left:0}
+  .hero .tags span+span::before{display:none}
+}
+.card .who,.step .k,.hero .tags,.contact .lines span,.proof .l,.track .y{font-family:var(--ui)}
+.brand b{margin-left:.45em}
+/* Portrait panel, added 2026-10-11 */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:56px;align-items:center}
+.portrait{margin:0;position:relative;justify-self:end;width:100%;max-width:340px}
+.portrait::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--gold);opacity:.7;pointer-events:none}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;position:relative;box-shadow:0 24px 60px -24px rgba(0,0,0,.65)}
+.hero-grid .tags{gap:10px 28px}
+.hero-grid .tags span+span::before{display:none}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .portrait{justify-self:start;max-width:260px;order:-1}
+}
+</style>
+
+</head>
+<body>
+<nav class="dark">
+  <div class="wrap">
+    <a class="brand" href="#top">Jay<b>Beatty</b></a>
+    <ul>
+      <li><a href="#work">What I do</a></li>
+      <li><a href="no-surprises-act.html">No Surprises Act</a></li>
+      <li><a href="section-125.html">Section 125</a></li>
+      <li><a href="deferred-comp.html">Deferred comp</a></li>
+      <li><a href="#track">Track record</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero dark" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+    <div class="rule"></div>
+    <h1>Healthcare business development that <em>opens doors</em> and closes contracts.</h1>
+    <p class="lede">Twenty years selling to surgeons, hospital executives, physician practices and payers. I build the pipeline, the channel and the contracts for healthcare companies in a growth phase, as a fractional operator or in a full-time seat.</p>
+    <div class="tags"><span>Medical devices</span><span>Diagnostics</span><span>Healthcare AI</span><span>Employer benefits</span></div>
+    <div class="cta">
+      <a class="btn gold" href="#contact">Book a 20-minute call</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/jaybeatty" target="_blank" rel="noopener">LinkedIn profile</a>
+    </div>
+    </div>
+    <figure class="portrait"><img src="jay-beatty.jpg" width="620" height="775" alt="Jay Beatty" fetchpriority="high"></figure>
+  </div>
+</header>
+
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Business development</div><h2>What an engagement delivers</h2></div>
+      <p>The work of a senior BD leader for companies in an early growth phase or opening a new market: find the buyer, earn the meeting, close, then build the system so it repeats. On contract or as a full-time hire, with a weekly scoreboard your leadership can audit.</p>
+    </div>
+    <div class="grid2">
+      <div class="item"><h3>Pipeline built from zero</h3><p>Target mapping, list building and multi-channel outreach by phone, email and LinkedIn, run with CRM discipline and weekly activity reporting. Surgeons, hospital leaders and physician practices, reached through the channels they actually answer.</p></div>
+      <div class="item"><h3>Channel and partner programs</h3><p>Distributor networks, referral partnerships and the incentive structures behind them. Independent reps and distributors for devices and diagnostics; CPAs, payroll firms and PEOs for employer programs.</p></div>
+      <div class="item"><h3>Clinical and economic selling</h3><p>Fluent with surgeons, service-line leaders, CFOs and payers. Comfortable moving a conversation from the OR to episode-based reimbursement (ACO, CMS TEAM) without losing either audience.</p></div>
+      <div class="item"><h3>Government and enterprise contracting</h3><p>State and municipal RFPs, IDN and value-analysis approvals, GPO negotiations and VA contracting. I know what the committee needs to see before it says yes, and how long it really takes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">How it works</div><h2>Three phases, one operator</h2></div>
+      <p>For fractional engagements. Every one starts with a diagnosis your team keeps whether or not we continue; most clients move to a monthly retainer for the run phase.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="k">Phase 1</div><h3>Diagnose</h3><p>Two to three weeks. Market map, target list, message strategy and a pipeline plan with numbers attached.</p></div>
+      <div class="step"><div class="k">Phase 2</div><h3>Build</h3><p>The outreach engine stood up: lists, sequences, scripts, CRM structure and the reporting cadence.</p></div>
+      <div class="step"><div class="k">Phase 3</div><h3>Run</h3><p>Ongoing fractional execution. Booked meetings, a managed pipeline and a weekly scoreboard to leadership.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Programs I represent</div><h2>Current offerings</h2></div>
+      <p>Alongside consulting work, I represent three programs directly. Each one has a specific buyer, and I only bring it up when the fit is real.</p>
+    </div>
+    <div class="programs">
+      <div class="card">
+        <div class="who">For business owners, CPAs, payroll firms and PEOs</div>
+        <h3>Section 125 wellness plan</h3>
+        <p>An employer benefits program built on a Section 125 cafeteria plan. Employees get added health and wellness benefits; employers see a reduction in payroll tax on participating employees. Designed by ERISA counsel with an independent opinion letter and audit protection on file.</p>
+        <p class="fine">Results depend on the employer's payroll and participation. I share the compliance file first and let you or your CPA judge it.</p>
+        <a class="more" href="section-125.html">How the program works &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="who">For companies with high-earning 1099 producers</div>
+        <h3>Non-qualified deferred compensation</h3>
+        <p>Executive benefit plans for firms whose top producers are independent contractors and locked out of standard retirement vehicles. A vesting deferred structure that helps attract and keep producers, and that a competitor can't copy the way they copy a split.</p>
+        <p class="fine">Common fits: real estate brokerages, insurance agencies, physician groups. The ERISA attorney models the plan; I run the first conversation.</p>
+        <a class="more" href="deferred-comp.html">How the plan works &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="who">For independent hospital-based physician groups</div>
+        <h3>No Surprises Act revenue recovery</h3>
+        <p>An automated service that takes out-of-network claims through the federal IDR process so physician-owned radiology, anesthesia, emergency and pathology groups collect what they're owed. Paid as a percentage of what's recovered, so the group carries no upfront cost.</p>
+        <p class="fine">No group is promised a specific recovery. We look at your claim mix first. Offered with Advantify.</p>
+        <a class="more" href="no-surprises-act.html">Who it's for and how it works &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="track">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Track record</div><h2>Where the numbers come from</h2></div>
+      <p>The specifics, role by role. Every figure here is from a role I held; references and case detail on request.</p>
+    </div>
+    <div class="track">
+      <div class="y">2026</div><div class="r"><h3>West Coast go-to-market, AI surgical diagnostics (contract)</h3><p>Built a 150-plus surgeon and hospital pipeline across nine states for a post-operative blood test that predicts complications. Sold clinical value to surgeons and episode economics to service-line leaders under CMS's TEAM model. Worked through independent ortho reps and distributors to reach surgeons.</p></div>
+      <div class="y">2026 &ndash; present</div><div class="r"><h3>Director of Business Development, employer benefits program</h3><p>Founding BD hire for a Section 125 wellness program. Built the CPA, payroll, PEO and broker channel from zero, wrote the partner materials and run the presentations to owners, CFOs and HR leaders.</p></div>
+      <div class="y">2019 &ndash; 2026</div><div class="r"><h3>Chief Operating Officer, Advanced Testing in Clinical Genetics</h3><p>Ran sales, operations, compliance and budget for a CLIA laboratory. Took the business to $20M a year with a 34-person team. Won a City of Denver testing contract, then a statewide long-term care program that grew from 47 facilities to more than 80, all onboarded within 30 days.</p></div>
+      <div class="y">2013 &ndash; 2019</div><div class="r"><h3>National Director of Sales, Specialized Orthopedic Solutions</h3><p>Grew the sales organization from 6 reps in Southern California to 22 nationwide and revenue from about $2M to $4M. Managed VA contracting across Southern California. Launched toxicology and pharmacogenomic testing lines into pain and addiction practices.</p></div>
+      <div class="y">2010 &ndash; 2013</div><div class="r"><h3>Regional Sales Manager, West, Olympus Biotech</h3><p>Opened IDN approvals for OP-1 at Cedars-Sinai, Loma Linda and UCSD. Grew the territory from $12K to $100K a month. First in the company in new IRB approvals.</p></div>
+      <div class="y">2005 &ndash; 2010</div><div class="r"><h3>Territory Manager, Team Surgical</h3><p>Orthopedic implants and biologics in the OR. Biomet Biologics Rep of the Year. Managed junior reps while carrying the territory.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">About</div><h2>Jay Beatty</h2></div>
+      <p>I started in operating rooms and ended up running a laboratory. The thread through all of it is the same: find the buyer, earn the meeting, close, then build the system so it happens again without me in every room.</p>
+    </div>
+    <div class="about">
+      <div>
+        <p>I've spent my career in healthcare sales and operations, first selling implants and biologics to orthopedic surgeons, then leading national sales through independent distributors, then running a clinical laboratory as COO through the largest testing program in its history. Since 2026 I've worked as an independent business development consultant, usually running two engines at once for companies in an early growth phase.</p>
+        <p>I work remotely from central Pennsylvania and travel when the work calls for it. I hold a Life, Accident and Health producer license. My degree is in biomedical physics, which mostly means I read the clinical papers before I sell the product.</p>
+      </div>
+      <div class="aside">
+        <h3>Good fit if you are</h3>
+        <ul>
+          <li>A medtech, diagnostics or healthcare AI company opening a territory or a new specialty</li>
+          <li>A founder who needs booked meetings with surgeons, hospital executives or physician practices</li>
+          <li>A company entering government or IDN contracting for the first time</li>
+          <li>A benefits, payroll or accounting firm looking for a program to bring to business-owner clients</li>
+          <li>A company hiring a full-time BD or sales leader who has built the function before</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact dark" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>If your pipeline needs a senior operator, fractional or full-time, let's talk.</h2>
+      <p>Twenty minutes is enough for me to tell you whether I can help and what the first three weeks would look like.</p>
+    </div>
+    <div class="lines">
+      <div><span>Email</span><a href="mailto:jay@jaybeatty.com">jay@jaybeatty.com</a></div>
+      <div><span>Phone</span><a href="tel:+18052184663">805.218.4663</a></div>
+      <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/jaybeatty" target="_blank" rel="noopener">linkedin.com/in/jaybeatty</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; 2026 Jay Beatty. JAB Industries LLC. Remote-first. Open to fractional engagements and full-time leadership roles.</div>
+    <div>Central Pennsylvania</div>
+  </div>
+</footer>
+</body>
+</html>

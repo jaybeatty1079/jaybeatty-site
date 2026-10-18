@@ -1,0 +1,6 @@
+.DS_Store
+*.bak
+*.bak-*
+node_modules/
+cms-sources/
+data_hospital_metrics*.json

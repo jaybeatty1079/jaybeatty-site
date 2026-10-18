@@ -1,0 +1,80 @@
+[
+ {
+  "id": "metro",
+  "name": "Metro academic medical center",
+  "place": "Manhattan, New York",
+  "archetype": "Large academic center, Middle Atlantic",
+  "region": 2,
+  "ccn": "330214",
+  "track": 3,
+  "beds": "1,661 beds, major teaching, five-star CMS rating, flagged safety-net by its Medicare SSI share",
+  "story": "The biggest TEAM book in the model: about 2,300 inpatient episodes a year, half of them joint replacements, plus another 1,100 outpatient Level 5 musculoskeletal cases the public file does not price. Quality sits at the top of the country: hip and knee readmission 3.7% against a 5.8% national median, CABG readmission 6.8% against 10.9%, PSI-90 of 0.67, which puts the proxy quality score at 89 and leaves almost nothing withheld. Post-discharge spending runs about 5% under the New York pattern, mostly because SNF spend per episode is $4,700 against the state's $6,000, so every category lands a point or two below target and the Track 3 estimate is about $1.2 million on a $77 million target book, well inside the 20% stop-gain.",
+  "watch": "Hip fracture carries the money. Manhattan uses SNF days at 2,100 per 1,000 beneficiaries, half again the national rate, and the prefilled 43% SNF share with 28-day stays is why a typical post-acute program takes the estimate to $4.8 million.",
+  "prov": "Volumes: CMS Medicare Inpatient Hospitals by Provider and Service, calendar 2024 (traditional-Medicare inpatient discharges by MS-DRG; cells under 11 suppressed; outpatient joint and spine episodes counted but not priced). Quality: Care Compare Unplanned Hospital Visits, Complications and Deaths and HAI files, September and July 2026 releases. Spending: Care Compare Medicare Hospital Spending by Claim, FY2026 release, 30 days after discharge, price-standardized, hospital versus state. Market: Medicare Geographic Variation 2024, Market Saturation 2025, Nursing Home Compare September 2026, TEAM qualified SNF list Q4 2026, Medicare Monthly Enrollment 2025. Hospital facts: FY2027 IPPS impact file. Risk multiplier held at 1.00; CMS has not published hospital factors."
+ },
+ {
+  "id": "community",
+  "name": "Large community system hospital",
+  "place": "Jacksonville, Florida",
+  "archetype": "Flagship community hospital of a regional system, South Atlantic",
+  "region": 5,
+  "ccn": "100088",
+  "track": 1,
+  "beds": "1,051 beds, open-heart program, four-star CMS rating, not flagged safety-net",
+  "story": "About 790 inpatient episodes spread across all five categories, with hip fracture and bowel surgery the largest lines and another 770 outpatient musculoskeletal cases outside the model. Spending after discharge is 12% under the Florida pattern: readmission spend per episode is $3,400 against the state's $5,000 and SNF spend is a touch under the state, so every category prefills two to six points below target and Track 1 shows about $1.0 million on a $32 million book. Quality is split: readmissions are good, with CABG at 9.5%, but PSI-90 of 1.17 sits in the bottom eighth of hospitals, which drags the proxy quality score to 46 and costs about 5% of the positive reconciliation.",
+  "watch": "Patient safety, not cost. Every ten points of composite quality score is worth about one percent of a positive reconciliation here, and the PSI-90 component is the one the hospital controls. A typical post-acute program roughly doubles the estimate to $2.3 million.",
+  "prov": "Volumes: CMS Medicare Inpatient Hospitals by Provider and Service, calendar 2024 (traditional-Medicare inpatient discharges by MS-DRG; cells under 11 suppressed; outpatient joint and spine episodes counted but not priced). Quality: Care Compare Unplanned Hospital Visits, Complications and Deaths and HAI files, September and July 2026 releases. Spending: Care Compare Medicare Hospital Spending by Claim, FY2026 release, 30 days after discharge, price-standardized, hospital versus state. Market: Medicare Geographic Variation 2024, Market Saturation 2025, Nursing Home Compare September 2026, TEAM qualified SNF list Q4 2026, Medicare Monthly Enrollment 2025. Hospital facts: FY2027 IPPS impact file. Risk multiplier held at 1.00; CMS has not published hospital factors."
+ },
+ {
+  "id": "cardiac",
+  "name": "Metro cardiac and spine hospital",
+  "place": "Minneapolis, Minnesota",
+  "archetype": "Large metro hospital known for heart and spine, West North Central",
+  "region": 4,
+  "ccn": "240057",
+  "track": 3,
+  "beds": "605 beds, teaching, four-star CMS rating, destination heart and spine programs",
+  "story": "A reminder that TEAM only sees traditional Medicare. Hennepin County has 61% of its Medicare beneficiaries in Medicare Advantage, so a 600-bed heart and spine center shows just over 400 TEAM-eligible inpatient episodes a year and a $15 million target book. Spending after discharge is 8% under the Minnesota pattern, with SNF spend of $2,700 per episode against the state's $3,600, so categories prefill one to four points below target and the Track 3 estimate is about $260,000. Quality is average on both public measures, so the proxy score of 49 withholds about half of the possible 10%.",
+  "watch": "CABG readmission at 12.1% against a 10.9% national median is the single lever with a dollar value attached, and spine, the largest line by volume, has the thinnest margin per episode. A typical program takes the estimate to about $770,000.",
+  "prov": "Volumes: CMS Medicare Inpatient Hospitals by Provider and Service, calendar 2024 (traditional-Medicare inpatient discharges by MS-DRG; cells under 11 suppressed; outpatient joint and spine episodes counted but not priced). Quality: Care Compare Unplanned Hospital Visits, Complications and Deaths and HAI files, September and July 2026 releases. Spending: Care Compare Medicare Hospital Spending by Claim, FY2026 release, 30 days after discharge, price-standardized, hospital versus state. Market: Medicare Geographic Variation 2024, Market Saturation 2025, Nursing Home Compare September 2026, TEAM qualified SNF list Q4 2026, Medicare Monthly Enrollment 2025. Hospital facts: FY2027 IPPS impact file. Risk multiplier held at 1.00; CMS has not published hospital factors."
+ },
+ {
+  "id": "mountain",
+  "name": "Growing micropolitan hospital",
+  "place": "Bozeman, Montana",
+  "archetype": "Regional hospital serving a fast-growing area, Mountain division",
+  "region": 8,
+  "ccn": "270057",
+  "track": 1,
+  "beds": "139 beds, four-star CMS rating, urban under the FY2027 impact file, no open-heart or fusion program in the public file",
+  "story": "A home-discharge market. Gallatin County uses 430 SNF days per 1,000 beneficiaries, less than a third of the national 1,400, and only 27% of its Medicare beneficiaries are in Medicare Advantage, so nearly every Medicare surgery is a TEAM episode. About 200 inpatient episodes in joint replacement, hip fracture and bowel surgery, plus 340 outpatient musculoskeletal cases that outnumber the inpatient joint program. Post-discharge spending is 14% under the Montana pattern, so categories prefill three to eight points below target and Track 1 shows about $300,000 on a $6.5 million book. PSI-90 of 1.07 holds the proxy quality score to 46.",
+  "watch": "The SNF lever barely exists here: the county has two SNFs and one nursing home rated two stars. Readmissions and the quality score are the controllable items, and because the impact file calls Bozeman urban, Track 1 ends after 2026 unless CMS applies its rural census-tract test.",
+  "prov": "Volumes: CMS Medicare Inpatient Hospitals by Provider and Service, calendar 2024 (traditional-Medicare inpatient discharges by MS-DRG; cells under 11 suppressed; outpatient joint and spine episodes counted but not priced). Quality: Care Compare Unplanned Hospital Visits, Complications and Deaths and HAI files, September and July 2026 releases. Spending: Care Compare Medicare Hospital Spending by Claim, FY2026 release, 30 days after discharge, price-standardized, hospital versus state. Market: Medicare Geographic Variation 2024, Market Saturation 2025, Nursing Home Compare September 2026, TEAM qualified SNF list Q4 2026, Medicare Monthly Enrollment 2025. Hospital facts: FY2027 IPPS impact file. Risk multiplier held at 1.00; CMS has not published hospital factors."
+ },
+ {
+  "id": "rural",
+  "name": "Rural community hospital",
+  "place": "Harrison, Arkansas",
+  "archetype": "Rural hospital in the Ozarks, West South Central",
+  "region": 7,
+  "ccn": "040017",
+  "track": 1,
+  "beds": "120 beds, two-star CMS rating, rural under the FY2027 impact file, sole hospital for several counties",
+  "story": "Eighty inpatient episodes a year, joint replacement and hip fracture only; bowel surgery falls under the public file's suppression threshold. The spending pattern is SNF-heavy and readmission-light: $7,300 of SNF spend per episode, more than twice the Arkansas figure, against $2,900 of readmission spend, less than half the state. The two nearly cancel, so categories prefill within a point or two of target and Track 1 shows about $26,000 on a $3.0 million book. Quality is below average on PSI-90, so the proxy score of 43 withholds most of the 10% quality adjustment.",
+  "watch": "Hip fracture discharge destination. The prefill caps the SNF share at 90% after hip fracture, and the three county nursing homes average 4.7 stars and all sit on the TEAM waiver list, so a preferred-SNF program with shorter stays is realistic: a typical program lifts the estimate to about $180,000. Rural status makes Track 2 available from 2027.",
+  "prov": "Volumes: CMS Medicare Inpatient Hospitals by Provider and Service, calendar 2024 (traditional-Medicare inpatient discharges by MS-DRG; cells under 11 suppressed; outpatient joint and spine episodes counted but not priced). Quality: Care Compare Unplanned Hospital Visits, Complications and Deaths and HAI files, September and July 2026 releases. Spending: Care Compare Medicare Hospital Spending by Claim, FY2026 release, 30 days after discharge, price-standardized, hospital versus state. Market: Medicare Geographic Variation 2024, Market Saturation 2025, Nursing Home Compare September 2026, TEAM qualified SNF list Q4 2026, Medicare Monthly Enrollment 2025. Hospital facts: FY2027 IPPS impact file. Risk multiplier held at 1.00; CMS has not published hospital factors."
+ },
+ {
+  "id": "centralpa",
+  "name": "Central Pennsylvania academic medical center",
+  "place": "Hershey, Pennsylvania",
+  "archetype": "Academic medical center in a mid-size metro, Middle Atlantic",
+  "region": 2,
+  "ccn": "390256",
+  "track": 1,
+  "beds": "645 beds, major teaching (0.59 residents per bed), four-star CMS rating, not flagged safety-net",
+  "story": "The one case the public files put over target. About 300 inpatient episodes, led by bowel surgery and hip fracture, and spending after discharge 15% above the Pennsylvania pattern: readmission spend of $7,000 per episode against the state's $4,600, while SNF spend is lower than the state and Dauphin County's inpatient rehab spending per capita runs 2.7 times the national rate. Categories prefill three to eight points above target. On Track 3 that is a repayment of about $520,000 on an $11.4 million book; Track 1 in 2026 sets it to zero. Hip and knee readmission of 6.8% and CABG readmission of 11.7% put the readmission percentile at 23, while PSI-90 of 0.87 scores well, for a proxy quality score of 52.",
+  "watch": "The clock. Track 1 shields 2026 only; from 2027 a hospital that is neither safety-net nor rural moves to Track 3 with 20% downside, so the $520,000 gap has one year to close. Readmissions and inpatient rehab use are the levers, and a typical program brings the Track 3 estimate to about break-even.",
+  "prov": "Volumes: CMS Medicare Inpatient Hospitals by Provider and Service, calendar 2024 (traditional-Medicare inpatient discharges by MS-DRG; cells under 11 suppressed; outpatient joint and spine episodes counted but not priced). Quality: Care Compare Unplanned Hospital Visits, Complications and Deaths and HAI files, September and July 2026 releases. Spending: Care Compare Medicare Hospital Spending by Claim, FY2026 release, 30 days after discharge, price-standardized, hospital versus state. Market: Medicare Geographic Variation 2024, Market Saturation 2025, Nursing Home Compare September 2026, TEAM qualified SNF list Q4 2026, Medicare Monthly Enrollment 2025. Hospital facts: FY2027 IPPS impact file. Risk multiplier held at 1.00; CMS has not published hospital factors."
+ }
+]

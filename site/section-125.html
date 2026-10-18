@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 125 wellness program · Jay Beatty</title>
+<meta name="description" content="A Section 125 preventive wellness program for employers: added health benefits and higher take-home pay for employees, lower payroll tax for the company, funded from payroll tax already being paid. Built to be examined by your CPA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: one column of measured text on a deep-plum-and-gold identity; a dark hero band, then light sections with gold rules. */
+:root{
+  --navy:#2e1a3d; --navy-2:#3d2452; --gold:#d4a84b; --gold-deep:#b8902f;
+  --bg:#f7f4f1; --surface:#ffffff; --fg:#231a2b; --muted:#635a6c; --line:#ddd5da;
+  --hero-fg:#ffffff; --hero-muted:#d6c9de;
+  --display:"Outfit","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --body:"Source Sans 3","Source Sans Pro","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#170d1f; --surface:#22152d; --fg:#f2eef5; --muted:#b5a9bf; --line:#3a2a48; --navy:#100818; --navy-2:#1c1026; --gold:#e0b65a; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#170d1f; --surface:#22152d; --fg:#f2eef5; --muted:#b5a9bf; --line:#3a2a48; --navy:#100818; --navy-2:#1c1026; --gold:#e0b65a; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:20px}
+.eyebrow{font-family:var(--display);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.dark .eyebrow{color:var(--gold)}
+
+/* nav */
+nav{background:var(--navy);color:var(--hero-fg);position:sticky;top:env(safe-area-inset-top,0px);z-index:5;border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.01em;text-decoration:none}
+.brand b{color:var(--gold)}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;flex-wrap:wrap}
+nav ul a{text-decoration:none;font-size:15px;color:var(--hero-muted)}
+nav ul a:hover,nav ul a:focus-visible{color:var(--hero-fg)}
+
+/* hero */
+.hero{background:linear-gradient(120deg,var(--navy) 0%,var(--navy-2) 70%,#4d2f66 100%);color:var(--hero-fg);position:relative;overflow:hidden}
+.hero .wrap{padding-block:72px 64px;position:relative}
+.hero .rule{width:64px;height:4px;background:var(--gold);margin-bottom:22px}
+.hero h1{font-size:clamp(34px,5.2vw,56px);font-weight:700;max-width:16ch}
+.hero .lede{font-size:clamp(18px,2.1vw,22px);color:var(--hero-muted);max-width:52ch;margin-top:20px}
+.hero .tags{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;font-family:var(--display);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-block;padding:13px 22px;border-radius:4px;font-family:var(--display);font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid transparent}
+.btn.gold{background:var(--gold);color:#1b1a14;border-color:var(--gold)}
+.btn.gold:hover{background:#e3b95c}
+.btn.ghost{border-color:rgba(255,255,255,.45);color:var(--hero-fg)}
+.btn.ghost:hover{border-color:#fff}
+.net{position:absolute;right:-40px;top:-40px;width:520px;max-width:60%;opacity:.55;pointer-events:none}
+
+/* proof strip */
+.proof{background:var(--surface);border-bottom:1px solid var(--line)}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-block:28px}
+.proof .n{font-family:var(--display);font-size:32px;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1}
+.dark .proof .n{color:var(--fg)}
+.proof .l{font-size:14px;color:var(--muted);margin-top:6px;line-height:1.35}
+
+/* sections */
+section{padding-block:64px}
+section + section{border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:32px;align-items:start;margin-bottom:36px}
+.sec-head h2{font-size:clamp(26px,3.2vw,36px);font-weight:600}
+.sec-head p{color:var(--muted);font-size:18px;max-width:60ch}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px}
+.item h3{font-size:20px;font-weight:600;margin-bottom:8px}
+.item p{color:var(--muted)}
+
+/* programs */
+.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--gold);padding:24px 22px 26px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card .who{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-family:var(--display);font-weight:600}
+.card h3{font-size:21px;font-weight:600}
+.card p{color:var(--muted);font-size:16px}
+.card .fine{font-size:13.5px;color:var(--muted);margin-top:auto;padding-top:10px;border-top:1px dashed var(--line)}
+.card .more{font-family:var(--display);font-weight:600;font-size:14px;color:var(--gold-deep);text-decoration:none;margin-top:6px}
+.card .more:hover{text-decoration:underline}
+.dark .card .more{color:var(--gold)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
+.step{padding-top:16px;border-top:2px solid var(--navy)}
+.dark .step{border-top-color:var(--gold)}
+.step .k{font-family:var(--display);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:6px}
+.dark .step .k{color:var(--gold)}
+.step h3{font-size:20px;font-weight:600;margin-bottom:8px}
+.step p{color:var(--muted)}
+
+/* track record */
+.track{display:grid;grid-template-columns:150px 1fr;gap:12px 28px;max-width:820px}
+.track .y{font-family:var(--display);font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums;padding-top:2px}
+.dark .track .y{color:var(--gold)}
+.track .r h3{font-size:18px;font-weight:600}
+.track .r p{color:var(--muted);font-size:16px}
+.track .r{padding-bottom:18px;border-bottom:1px solid var(--line)}
+.track .y{border-bottom:1px solid var(--line);padding-bottom:18px}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:40px;align-items:start}
+.about p + p{margin-top:14px}
+.aside{background:var(--surface);border:1px solid var(--line);padding:22px}
+.aside h3{font-size:16px;font-weight:600;margin-bottom:10px}
+.aside ul{margin:0;padding-left:18px;color:var(--muted);font-size:15.5px}
+.aside li + li{margin-top:6px}
+
+/* contact */
+.contact{background:var(--navy);color:var(--hero-fg)}
+.contact .wrap{padding-block:64px;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:40px;align-items:start}
+.contact h2{font-size:clamp(26px,3.2vw,36px);font-weight:600}
+.contact p{color:var(--hero-muted);margin-top:14px;max-width:48ch}
+.contact .lines{display:flex;flex-direction:column;gap:12px;font-size:18px}
+.contact .lines a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);width:max-content;max-width:100%}
+.contact .lines a:hover{border-color:var(--gold)}
+.contact .lines span{font-family:var(--display);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:2px}
+footer{background:#1a0f22;color:#a898b3;font-size:13.5px}
+footer .wrap{padding-block:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .proof .wrap{grid-template-columns:1fr 1fr}
+  .sec-head,.grid2,.programs,.steps,.about,.contact .wrap{grid-template-columns:1fr}
+  .track{grid-template-columns:1fr}
+  .track .y{border-bottom:0;padding-bottom:0}
+  .net{display:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .btn{transition:background .15s,border-color .15s}
+}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+</style>
+
+<style>
+.sub-hero .wrap{padding-block:56px 48px}
+.sub-hero h1{font-size:clamp(30px,4.4vw,48px);max-width:20ch}
+.sub-hero .lede{max-width:58ch}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.fit .box{background:var(--surface);border:1px solid var(--line);padding:24px 22px}
+.fit .box.yes{border-top:3px solid var(--gold)}
+.fit .box.no{border-top:3px solid var(--muted)}
+.fit h3{font-size:18px;font-weight:600;margin-bottom:10px}
+.fit ul{margin:0;padding-left:18px;color:var(--muted);font-size:16px}
+.fit li+li{margin-top:8px}
+.prose{max-width:68ch}
+.prose p+p{margin-top:14px}
+.prose p{color:var(--fg)}
+.steps.four{grid-template-columns:repeat(4,1fr)}
+.cost{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 40px;align-items:start}
+.cost .big{font-family:var(--display);font-size:clamp(26px,3vw,34px);font-weight:600;color:var(--navy);line-height:1.2}
+.dark .cost .big{color:var(--gold)}
+.cost p{color:var(--muted);margin-top:10px}
+.faq{max-width:820px}
+.faq details{border-top:1px solid var(--line);padding:16px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{font-family:var(--display);font-weight:600;font-size:18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold-deep);font-weight:600;flex:none}
+.faq details[open] summary::after{content:"\2013"}
+.faq details p{color:var(--muted);margin-top:10px;max-width:66ch}
+.note{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);padding:18px 20px;max-width:820px;color:var(--muted);font-size:15.5px}
+.crumb{font-size:14px;color:var(--hero-muted);margin-bottom:18px}
+.crumb a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.crumb a:hover{border-color:var(--gold)}
+@media (max-width:820px){.fit,.cost{grid-template-columns:1fr}.steps.four{grid-template-columns:1fr}}
+</style>
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://jaybeatty.com/section-125.html">
+<meta name="theme-color" content="#1c1321">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jay Beatty">
+<meta property="og:title" content="Section 125 wellness program · Jay Beatty">
+<meta property="og:description" content="A Section 125 preventive wellness program for employers: added health benefits and higher take-home pay for employees, lower payroll tax for the company, funded from payroll tax already being paid. Built to be examined by your CPA.">
+<meta property="og:url" content="https://jaybeatty.com/section-125.html">
+<meta property="og:image" content="https://jaybeatty.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="Jay Beatty, healthcare business development">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jaybeatty.com/og-image.jpg">
+<style id="polish">
+/* Polish pass 2026-09-30: aubergine-black + metallic gold, serif display, deco lattice. */
+:root{
+  --navy:#1c1321; --navy-2:#2a1c33; --gold:#c9a45c; --gold-deep:#9c7a35; --gold-lt:#e6cf98;
+  --bg:#faf7f2; --surface:#ffffff; --fg:#221a26; --muted:#62596a; --line:#e6dfd6;
+  --hero-fg:#fbf8f3; --hero-muted:#cfc3d6;
+  --display:"Cormorant Garamond","Cormorant",Georgia,serif;
+  --ui:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --metal:linear-gradient(100deg,#a8823c 0%,#e6cf98 45%,#c9a45c 60%,#9c7a35 100%);
+  --lattice:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23c9a45c' stroke-width='.8' opacity='.55'%3E%3Cpath d='M28 2 L54 28 L28 54 L2 28Z'/%3E%3Cpath d='M28 12 L44 28 L28 44 L12 28Z'/%3E%3Cpath d='M28 22 L34 28 L28 34 L22 28Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#141016; --surface:#1d1720; --fg:#f3eef4; --muted:#b3a8ba; --line:#352b3a; --navy:#0e0a10; --navy-2:#1a1320; --gold:#d4b06a; --gold-deep:#d4b06a }
+}
+:root[data-theme="dark"]{ --bg:#141016; --surface:#1d1720; --fg:#f3eef4; --muted:#b3a8ba; --line:#352b3a; --navy:#0e0a10; --navy-2:#1a1320; --gold:#d4b06a; --gold-deep:#d4b06a }
+body{font-family:var(--body);font-size:17px;letter-spacing:.005em;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:var(--display);font-weight:500!important;letter-spacing:.005em}
+h3,.btn,.eyebrow,.k,.who,.tags,nav ul a,.contact .lines span,.faq summary,.track .y,.proof .l{font-family:var(--ui)}
+h3{font-weight:600;letter-spacing:.005em}
+h1 em,h2 em{font-style:italic;color:var(--gold);font-weight:500}
+/* nav */
+nav{background:rgba(22,15,26,.94);backdrop-filter:saturate(140%) blur(8px);-webkit-backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(201,164,92,.35)}
+nav .wrap{flex-wrap:nowrap}
+.brand{font-family:var(--ui);font-weight:500;font-size:15px;letter-spacing:.32em;text-transform:uppercase;color:var(--hero-fg);white-space:nowrap}
+.brand b{font-weight:600;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav ul{gap:26px;flex-wrap:nowrap}
+nav ul a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% -10%,rgba(201,164,92,.16),transparent 60%),linear-gradient(160deg,#120c15 0%,var(--navy) 45%,var(--navy-2) 100%)}
+.hero::before{content:"";position:absolute;inset:0;background:var(--lattice);opacity:.22;-webkit-mask-image:linear-gradient(90deg,transparent 30%,#000 100%);mask-image:linear-gradient(90deg,transparent 30%,#000 100%);pointer-events:none}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--metal);opacity:.7}
+.net{display:none}
+.hero .wrap{padding-block:96px 88px}
+.sub-hero .wrap{padding-block:72px 64px}
+.hero .rule{width:88px;height:1px;background:var(--metal);margin-bottom:28px}
+.hero h1{font-size:clamp(38px,5.8vw,68px);line-height:1.04;max-width:17ch}
+.sub-hero h1{font-size:clamp(34px,4.8vw,54px);max-width:22ch}
+.hero .lede{font-weight:300;font-size:clamp(18px,2vw,21px);line-height:1.6;margin-top:24px}
+.hero .tags{font-size:11.5px;letter-spacing:.24em;gap:10px 26px;color:var(--gold-lt)}
+.hero .tags span+span::before{content:"\25C6";font-size:7px;vertical-align:2px;margin-right:26px;color:var(--gold);opacity:.8}
+.cta{margin-top:40px}
+.btn{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:16px 28px;border-radius:2px}
+.btn.gold{background:var(--metal);background-size:180% 100%;background-position:0 0;color:#1a1210;border:0;box-shadow:0 6px 24px -10px rgba(201,164,92,.7)}
+.btn.gold:hover{background:var(--metal);background-size:180% 100%;background-position:100% 0}
+.btn.ghost{border:1px solid rgba(230,207,152,.55);color:var(--gold-lt)}
+.btn.ghost:hover{border-color:var(--gold-lt);background:rgba(201,164,92,.08)}
+@media (prefers-reduced-motion:no-preference){.btn{transition:background-position .5s ease,border-color .2s,background-color .2s}}
+/* proof strip */
+.proof{background:var(--surface)}
+.proof .wrap{padding-block:40px}
+.proof .n{font-family:var(--display);font-weight:500;font-size:clamp(34px,4vw,46px);color:var(--fg)}
+.proof .n i{font-style:normal;color:var(--gold-deep)}
+.proof .l{font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-top:10px}
+.proof .wrap>div{border-left:1px solid var(--line);padding-left:20px}
+/* sections */
+section{padding-block:88px}
+section + section{border-top:0}
+section:nth-of-type(even):not(.contact){background:var(--surface)}
+.eyebrow{font-size:11.5px;letter-spacing:.26em;color:var(--gold-deep);display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.sec-head{margin-bottom:48px}
+.sec-head h2{font-size:clamp(32px,4vw,46px);line-height:1.08}
+.sec-head>p,.sec-head .prose{font-size:18px;line-height:1.65}
+.card{border:1px solid var(--line);border-top:0;position:relative;padding:30px 26px 28px;background:var(--bg)}
+section:nth-of-type(even) .card{background:var(--bg)}
+.card::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--metal)}
+.card .who{font-size:11px;letter-spacing:.18em}
+.card h3{font-family:var(--display);font-size:27px;font-weight:600;line-height:1.1}
+.card .more{font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.step{border-top:1px solid var(--gold)}
+.step .k{font-size:11px;letter-spacing:.24em}
+.step h3{font-family:var(--display);font-size:26px;font-weight:600}
+.item h3{font-family:var(--display);font-size:25px;font-weight:600}
+.track .y{font-size:13px;letter-spacing:.08em;color:var(--gold-deep)}
+.aside,.fit .box,.note{background:var(--bg)}
+section:nth-of-type(odd) .aside{background:var(--surface)}
+.fit .box.yes{border-top:2px solid var(--gold)}
+.cost .big{font-family:var(--display);font-weight:500;color:var(--fg)}
+.faq summary{font-size:17px}
+.faq summary::after{color:var(--gold-deep)}
+/* contact + footer */
+.contact{position:relative;background:linear-gradient(160deg,#120c15,var(--navy-2));overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background:var(--lattice);opacity:.14;pointer-events:none}
+.contact::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--metal);opacity:.7}
+.contact .wrap{position:relative;padding-block:88px}
+.contact h2{font-size:clamp(32px,4vw,46px);line-height:1.1}
+.contact .lines span{font-size:11px;letter-spacing:.24em;color:var(--gold)}
+.contact .lines a{font-size:19px;border-bottom-color:rgba(201,164,92,.35)}
+footer{background:#0d090f;color:#9d91a3;font-size:12.5px;letter-spacing:.04em;border-top:1px solid rgba(201,164,92,.2)}
+@media (max-width:820px){
+  nav ul{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:20px;width:100%;padding-bottom:2px}
+  nav ul::-webkit-scrollbar{display:none}
+  nav .wrap{flex-wrap:wrap;gap:10px}
+  .hero .wrap{padding-block:64px 60px}
+  section{padding-block:64px}
+  .proof .wrap>div:nth-child(odd){border-left:0;padding-left:0}
+  .hero .tags span+span::before{display:none}
+}
+.card .who,.step .k,.hero .tags,.contact .lines span,.proof .l,.track .y{font-family:var(--ui)}
+.brand b{margin-left:.45em}
+</style>
+
+</head>
+<body>
+<nav class="dark">
+  <div class="wrap">
+    <a class="brand" href="./">Jay<b>Beatty</b></a>
+    <ul>
+      <li><a href="./#work">What I do</a></li>
+      <li><a href="no-surprises-act.html">No Surprises Act</a></li>
+      <li><a href="section-125.html">Section 125</a></li>
+      <li><a href="deferred-comp.html">Deferred comp</a></li>
+      <li><a href="./#about">About</a></li>
+      <li><a href="./#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero sub-hero dark" id="top">
+  <div class="wrap">
+    <div class="crumb"><a href="./">Jay Beatty</a> &nbsp;/&nbsp; Section 125 wellness program</div>
+    <div class="rule"></div>
+    <h1>A benefit your employees will actually use, funded by payroll tax <em>you're already paying.</em></h1>
+    <p class="lede">A preventive health program paired with a Section 125 cafeteria plan. Employees typically take home more, get virtual care, therapy and prescriptions with no copay, and the company's payroll tax typically goes down after every program cost is paid. Nothing changes in your group health plan. It sits alongside it.</p>
+    <div class="tags"><span>Business owners</span><span>CFOs</span><span>CPAs</span><span>Payroll firms</span><span>PEOs</span></div>
+    <div class="cta">
+      <a class="btn gold" href="#contact">Book a 20-minute call</a>
+      <a class="btn ghost" href="./">Back to jaybeatty.com</a>
+    </div>
+  </div>
+</header>
+
+<section id="fit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Fit</div><h2>Who this is for</h2></div>
+      <p>Most of the value in a first call is telling you quickly whether this applies to you. Here is the short version.</p>
+    </div>
+    <div class="fit">
+      <div class="box yes"><h3>This is built for</h3><ul><li>Companies with W-2 employees and an existing group health plan</li><li>Owners and CFOs who want to raise take-home pay and add benefits without adding cost, in a labor market where that matters</li><li>CPAs whose clients are being pitched "Section 125 wellness" and want the one that was built to survive scrutiny</li><li>Payroll companies and PEOs looking for a program that runs as a standard deduction on rails they already own, with the compliance carried for them</li></ul></div>
+      <div class="box no"><h3>This is not for</h3><ul><li>Companies staffed mostly by 1099 contractors; the plan is for W-2 employees</li><li>Owners of S corporations above 2%, partners and K-1 members as participants; they benefit through the company's savings, not personally</li><li>Anyone who wants a guaranteed number before a payroll analysis; every employer's result is different</li><li>Anyone who has been told a program like this is "IRS-approved." The IRS does not approve programs. What you can get is independent legal and accounting review in writing, and this one has it</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">The problem</div><h2>The money is already leaving. The question is where it goes.</h2></div>
+      <div class="prose"><p>Every pay period, payroll and income taxes on wages leave the company and its employees, and neither side keeps them. A Section 125 wellness program redirects a portion of those dollars. The employee elects a pre-tax contribution to a preventive health plan, that contribution funds qualified medical care for the employee and dependents, and when the employee completes a simple monthly wellness activity the plan pays a reward. The paycheck shows all three lines, and take-home pay typically ends up higher than before.</p><p>The company's side is simpler: its share of payroll tax on the pre-tax contribution goes away, and that saving is larger than the program's administration fee. That is what makes it cost-neutral by design, with a net saving that depends on wages, participation and state.</p><p>The reason to be careful is that the market is full of look-alike programs sold with claims that don't hold up, and the IRS has said so in writing. Owners and their CPAs are right to be skeptical. The way through is not a louder pitch, it's paper: plan documents drafted by outside ERISA counsel with a written opinion letter, an independent review and opinion letter from a national accounting firm, a third opinion from a firm of former IRS auditors, and an audit defense agreement signed with your company directly. You read all of it before you sign anything, and so does your CPA.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">How it works</div><h2>Eight weeks from a payroll file to the first payroll</h2></div>
+      <p>Your team's time is a payroll file, a few signatures and help scheduling enrollment meetings. The program's team does the rest.</p>
+    </div>
+    <div class="steps four"><div class="step"><div class="k">Step 1</div><h3>Payroll analysis</h3><p>Send a census with wages, filing status and pay frequency under a Business Associate Agreement. You get back the company's estimated saving, each employee's before-and-after paycheck, and who qualifies at which tier. No cost, no commitment.</p></div><div class="step"><div class="k">Step 2</div><h3>Review with your advisors</h3><p>Share the opinion letters and plan documents with your own tax and ERISA counsel. If the numbers and the paper hold up, you sign the employer agreement and cafeteria plan documents.</p></div><div class="step"><div class="k">Step 3</div><h3>Payroll setup and enrollment</h3><p>The program is set up as a standard deduction in your payroll system with a dry run. Employees see a personal paycheck comparison and choose. Participation is voluntary.</p></div><div class="step"><div class="k">Step 4</div><h3>Go live</h3><p>First payroll runs about eight weeks after signing. Employees open the app, complete a five-minute health profile and one wellness activity a month. One monthly invoice to the company.</p></div></div>
+  </div>
+</section>
+
+<section id="cost">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">What it costs</div><h2>Priced so the decision is easy</h2></div>
+    </div>
+    <div class="cost">
+      <div><div class="big">One monthly invoice per enrolled employee, offset by the company's payroll tax saving.</div><p>The invoice has two parts: a flat administration fee paid by the company, and the employee's share of the benefit cost, which is withheld from the employee's own tax saving. The company's net is its payroll tax saving less the admin fee. In the illustrative case of the standard plan tier, that net is positive per enrolled employee per month; the exact figure for your company comes from the payroll analysis, not from this page.</p></div>
+      <div class="aside"><h3>What employees get</h3><ul><li>24/7 telemedicine and a dedicated virtual primary care doctor</li><li>Mental health therapy and dermatology with no copay</li><li>70-plus common prescriptions at $0</li><li>Health coaching, an annual health risk assessment and identity theft protection</li><li>Discounted dental and vision</li><li>Dependents included. One app. No claim forms</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Questions</div><h2>What people ask first</h2></div>
+    </div>
+    <div class="faq"><details><summary>Is this replacing our health insurance?</summary><p>No. It supplements your group health plan and does not touch it. The preventive care, virtual visits and prescriptions are added on top of the coverage you already offer.</p></details><details><summary>Is it IRS-approved?</summary><p>No program is, and anyone who tells you theirs is should worry you. What this program has is written opinion letters from outside ERISA counsel, from an independent national accounting firm and from a firm of former IRS auditors, plus an audit defense and indemnification agreement that the last of those signs with your company directly. Your CPA can read all of it before you decide.</p></details><details><summary>Can we guarantee employees will take home more?</summary><p>No, and the program doesn't. Each employee sees a personal paycheck comparison before enrolling and can opt out. Most typically do take home more; reward payments in excess of unreimbursed medical expenses may be taxable to the employee, and the enrollment materials say so.</p></details><details><summary>What does it cost the employee?</summary><p>A share of the benefit cost is withheld from the employee's own tax saving, so it doesn't come out of their existing take-home pay. The health benefits themselves carry no copays.</p></details><details><summary>Can owners participate?</summary><p>Owners of S corporations above 2%, partners and K-1 members are treated as self-employed and cannot participate in a Section 125 plan. They benefit through the company's savings.</p></details><details><summary>How is a CPA or payroll firm involved?</summary><p>As a partner. CPAs get a compliance-first program to evaluate for their clients, with a CPE course taught by the ERISA counsel who built it. Payroll firms and PEOs run it as a standard deduction on their existing book, with the compliance carried by the program.</p></details></div>
+    <div class="note" style="margin-top:28px">Illustrative only. No specific tax outcome can be guaranteed; results depend on a payroll analysis, on participation and on current federal and state law. This is a marketing communication, not tax, legal or financial advice. I encourage review by your own tax and ERISA counsel before any agreement is signed. I represent this program as its business development director.</div>
+  </div>
+</section>
+
+<section class="contact dark" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>One payroll file tells you whether this works for your company.</h2>
+      <p>The analysis is free and takes about a week. If it shows a real saving, we go through the opinion letters together with your CPA. If it doesn't, you've lost nothing.</p>
+    </div>
+    <div class="lines">
+      <div><span>Email</span><a href="mailto:jay@jaybeatty.com">jay@jaybeatty.com</a></div>
+      <div><span>Phone</span><a href="tel:+18052184663">805.218.4663</a></div>
+      <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/jaybeatty" target="_blank" rel="noopener">linkedin.com/in/jaybeatty</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; 2026 Jay Beatty. JAB Industries LLC. Remote-first. Open to fractional engagements and full-time leadership roles.</div>
+    <div>Central Pennsylvania</div>
+  </div>
+</footer>
+
+</body>
+</html>

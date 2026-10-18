@@ -1,0 +1,386 @@
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const NS='http://www.w3.org/2000/svg';
+const el=(n,a={},t)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e;};
+const C={purple:'#8366ea',green:'#22a85e',teal:'#10a197',red:'#e0607a',amber:'#e5b35a',line:'#2b2542',fg:'#ece9f5',muted:'#a79fc0'};
+const tip=$('tip');
+function bindTip(node,html){node.addEventListener('mousemove',e=>{tip.innerHTML=html;tip.style.left=e.clientX+'px';tip.style.top=e.clientY+'px';tip.style.opacity=1;});node.addEventListener('mouseleave',()=>tip.style.opacity=0);node.addEventListener('focus',()=>{const r=node.getBoundingClientRect();tip.innerHTML=html;tip.style.left=(r.left+r.width/2)+'px';tip.style.top=r.top+'px';tip.style.opacity=1;});node.addEventListener('blur',()=>tip.style.opacity=0);node.setAttribute('tabindex','0');}
+const fmt=n=>{const s=n<0?'−':'';n=Math.abs(n);if(n>=1e6)return s+'$'+(n/1e6).toFixed(n>=1e7?1:2)+'M';if(n>=1e3)return s+'$'+(n/1e3).toFixed(n>=1e5?0:1)+'K';return s+'$'+Math.round(n);};
+const fmtFull=n=>(n<0?'−':'')+'$'+Math.round(Math.abs(n)).toLocaleString('en-US');
+const pct=(n,d=1)=>(n>0?'+':n<0?'−':'')+Math.abs(n).toFixed(d)+'%';
+const num=n=>Math.round(n).toLocaleString('en-US');
+
+/* ---------- reference data ---------- */
+const DIVS={1:'New England',2:'Middle Atlantic',3:'East North Central',4:'West North Central',5:'South Atlantic',6:'East South Central',7:'West South Central',8:'Mountain',9:'Pacific and territories'};
+const DIVSTATES={1:'CT ME MA NH RI VT',2:'NJ NY PA',3:'IL IN MI OH WI',4:'IA KS MN MO NE ND SD',5:'DE DC FL GA MD NC SC VA WV',6:'AL KY MS TN',7:'AR LA OK TX',8:'AZ CO ID MT NV NM UT WY',9:'AK CA HI OR WA AS GU MP PR VI'};
+const STATE2DIV={};for(const d in DIVSTATES)DIVSTATES[d].split(' ').forEach(s=>STATE2DIV[s]=+d);
+const CATS=[
+ {key:'lejr',cat:'MS-Lower extremity joint replacement',label:'Lower extremity joint replacement',short:'LEJR',disc:2,drgs:[['469','Major hip and knee joint replacement or reattachment w MCC, or total ankle replacement'],['470','Major hip and knee joint replacement or reattachment w/o MCC'],['521','Hip replacement w principal dx of hip fracture w MCC'],['522','Hip replacement w principal dx of hip fracture w/o MCC']]},
+ {key:'shfft',cat:'IP-Surgical hip/femur fracture treatment',label:'Surgical hip and femur fracture treatment',short:'Hip/femur fracture',disc:2,drgs:[['480','Hip and femur procedures except major joint w MCC'],['481','Hip and femur procedures except major joint w CC'],['482','Hip and femur procedures except major joint w/o CC/MCC']]},
+ {key:'cabg',cat:'IP-Coronary artery bypass graft',label:'Coronary artery bypass graft',short:'CABG',disc:1.5,drgs:[['231','CABG w PTCA w MCC'],['232','CABG w PTCA w/o MCC'],['233','CABG w cardiac cath w MCC'],['234','CABG w cardiac cath w/o MCC'],['235','CABG w/o cardiac cath w MCC'],['236','CABG w/o cardiac cath w/o MCC']]},
+ {key:'spine',cat:'MS-Spinal fusion',label:'Spinal fusion',short:'Spinal fusion',disc:2,drgs:[['402','Single level combined anterior and posterior spinal fusion except cervical'],['426','Multiple level combined anterior and posterior spinal fusion except cervical w MCC'],['427','Multiple level combined anterior and posterior spinal fusion except cervical w CC'],['428','Multiple level combined anterior and posterior spinal fusion except cervical w/o CC/MCC'],['429','Combined anterior and posterior spinal fusion (FY2025 regrouping) w MCC'],['430','Combined anterior and posterior spinal fusion (FY2025 regrouping) w/o MCC'],['447','Multiple level spinal fusion except cervical w MCC'],['448','Multiple level spinal fusion except cervical w/o MCC'],['450','Single level spinal fusion except cervical w MCC'],['451','Single level spinal fusion except cervical w/o MCC'],['471','Cervical spinal fusion w MCC'],['472','Cervical spinal fusion w CC'],['473','Cervical spinal fusion w/o CC/MCC']]},
+ {key:'bowel',cat:'IP-Major bowel procedure',label:'Major bowel procedure',short:'Major bowel',disc:1.5,drgs:[['329','Major small and large bowel procedures w MCC'],['330','Major small and large bowel procedures w CC'],['331','Major small and large bowel procedures w/o CC/MCC']]}
+];
+const TRACKS={1:{name:'Track 1',gain:.10,loss:0,negAdj:0,desc:'Upside only. 10% stop-gain. No repayment.'},2:{name:'Track 2',gain:.05,loss:.05,negAdj:.15,desc:'Two-sided. 5% stop-gain and stop-loss. Up to 15% quality relief on repayments.'},3:{name:'Track 3',gain:.20,loss:.20,negAdj:.10,desc:'Two-sided. 20% stop-gain and stop-loss. Up to 10% quality relief on repayments.'}};
+const price=(drg,region)=>{const r=TP.find(x=>x.drg===drg&&x.region===region);return r?r.target:0;};
+const priceRow=(drg,region)=>TP.find(x=>x.drg===drg&&x.region===region);
+
+/* ---------- eligibility ---------- */
+function eligible(track,py,sn,rural){
+  if(track===3)return {ok:true};
+  if(track===1){ if(py===1)return {ok:true}; if(py<=3&&sn)return {ok:true}; return {ok:false,why:py<=3?'PY2 to PY3: safety-net hospitals only':'Not offered after PY3'}; }
+  if(track===2){ if(py===1)return {ok:false,why:'Starts in PY2'}; if(sn||rural)return {ok:true}; return {ok:false,why:'Safety-net, rural, SCH, MDH or EACH only'}; }
+}
+
+/* ---------- state ---------- */
+const S={hospital:null,region:2,py:1,track:1,sn:false,rural:false,risk:1,cqs:50,improve:-2,cats:{}};
+CATS.forEach(c=>{S.cats[c.key]={on:true,counts:{},spend:null,lowvol:false};c.drgs.forEach(d=>S.cats[c.key].counts[d[0]]=0);});
+/* ---------- levers (post-discharge mix and complications) ---------- */
+const UNIT={snfDay:683,irf:25300,hh:1852,readmit:15500,ssi:12800,vte:12381};
+const UNIT_LAB={snfDay:'SNF cost per day',irf:'IRF stay',hh:'Home health 30-day period',readmit:'Readmission',ssi:'Surgical site infection (added cost)',vte:'VTE (added cost)'};
+/* national TEAM 30-day episode cost by setting, IAC analysis of 2021-2023 claims (read from the published chart, rounded to $500) */
+const SETTING={lejr:[13000,2000,4000],shfft:[14500,3500,20500],cabg:[41000,6000,10000],spine:[25000,5000,7500],bowel:[17000,3000,6000]};
+const LEVER_DEF={
+ lejr:{snf:15,days:10,irf:4,ra:4,ssi:0.8,vte:0.6,src:'Readmission about 4% (elective TKA, Nationwide Readmissions Database). SSI 0.7 to 0.8% and VTE under 1% after joint replacement. Discharge mix illustrative: CJR hospitals moved steadily toward home with home health.'},
+ shfft:{snf:55,days:20,irf:18,ra:12,ssi:1.5,vte:0.8,src:'Fewer than one in five Medicare hip fracture patients go straight home; SNF stays average 24 to 27 days. Readmission about 12% overall and over 20% for SNF discharges. VTE 0.3% DVT plus 0.5% PE (National Inpatient Sample).'},
+ cabg:{snf:21,days:12,irf:5,ra:12,ssi:1.8,vte:0.8,src:'21.2% of Medicare CABG patients discharged to a SNF (2016 to 2017 cohort of 73,164). Medicare CABG readmission 12.7% (2013); 9.7% all-payer in Pennsylvania 2022 to 2023. Deep sternal wound infection about 0.2 to 2.9%.'},
+ spine:{snf:20,days:12,irf:10,ra:8,ssi:1.4,vte:0.6,src:'About half of Medicare lumbar fusion patients used rehabilitation-based post-acute care (2012 to 2014). 30-day readmission 7.5 to 13% depending on source. SSI 1.4% in elective spine surgery (PearlDiver).'},
+ bowel:{snf:20,days:12,irf:4,ra:12,ssi:10,vte:1.5,src:'Colectomy readmission 11 to 16% in Medicare cohorts. SSI 6.2% superficial plus 4.7% deep or organ-space (NSQIP, 27,011 colectomies). SNF discharge 11% laparoscopic to 31% open among older patients.'}
+};
+S.levers={on:false,unit:Object.assign({},UNIT),cur:{},tgt:{}};
+CATS.forEach(c=>{const d=LEVER_DEF[c.key];S.levers.cur[c.key]={snf:d.snf,days:d.days,irf:d.irf,ra:d.ra,ssi:d.ssi,vte:d.vte};S.levers.tgt[c.key]=Object.assign({},S.levers.cur[c.key]);});
+
+
+/* ---------- public hospital data (Care Compare, data.cms.gov, FY2027 impact file) ---------- */
+const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
+const HN=HM.nat;
+function derivePublic(h){
+  if(!h)return null;
+  const rt=h.rt||{},cx=h.cx||{};
+  const counts=Object.assign({},h.ip||{});
+  const shift={},lev={};let E=0,El=0;
+  CATS.forEach(c=>{let n=0;c.drgs.forEach(d=>n+=counts[d[0]]||0);E+=n;if(c.key==='lejr')El=n;
+    const sh=SETTING[c.key],p=sh[2]/(sh[0]+sh[1]+sh[2]);
+    shift[c.key]=rt.pac?+clamp(100*p*(rt.pac-1),-20,20).toFixed(1):0;
+    const d=LEVER_DEF[c.key],L={snf:d.snf,days:d.days,irf:d.irf,ra:d.ra,ssi:d.ssi,vte:d.vte};
+    if(rt.snf)L.snf=+Math.min(90,d.snf*clamp(rt.snf,.5,1.8)).toFixed(1);
+    if(rt.days)L.days=+(d.days*clamp(rt.days,.7,1.4)).toFixed(1);
+    if(rt.irf)L.irf=+(d.irf*clamp(rt.irf,.3,2)).toFixed(1);
+    if(c.key==='lejr'&&h.q&&h.q.rhk!=null)L.ra=h.q.rhk;else if(c.key==='cabg'&&h.q&&h.q.rcb!=null)L.ra=h.q.rcb;else if(rt.ip)L.ra=+(d.ra*clamp(rt.ip,.6,1.6)).toFixed(1);
+    if(c.key==='bowel'&&rt.ssi!=null)L.ssi=+(d.ssi*clamp(rt.ssi,.3,2.5)).toFixed(1);
+    if(rt.vte)L.vte=+(d.vte*clamp(rt.vte,.4,2)).toFixed(2);
+    lev[c.key]=L;});
+  const rd=cx.readm??50,ps=cx.psi90??50;
+  const cqs=Math.round(E?(E*rd+E*ps+El*50)/(2*E+El):(rd+ps+50)/3);
+  return {counts,shift,lev,cqs,E,El,sn:!!h.sn,rural:!!h.rural};
+}
+const fmtK=n=>n==null?'n/a':'$'+Math.round(n).toLocaleString('en-US');
+const vs=(a,b,unit='')=>a==null?'not reported':`${a}${unit}${b!=null?` <span class="dim">(${b}${unit})</span>`:''}`;
+function factsHTML(h,dv){
+  const q=h.q||{},c=h.cty||{},sp=h.sp||{},nh=h.nh,nq=HN.q,per=HN.per||{};
+  const teach=h.rbr>=.25?'major teaching':h.rbr>0?'teaching':'non-teaching';
+  const urb={LURBAN:'large urban',OURBAN:'other urban',RURAL:'rural'}[h.urb]||'';
+  const ma=c.ma!=null?Math.round(c.ma*100)+'% of county Medicare beneficiaries in Medicare Advantage (2025), so roughly '+(100-Math.round(c.ma*100))+'% of the hospital\'s Medicare surgical patients are TEAM-eligible':'';
+  const rows=[
+   ['Profile',`${h.beds?h.beds.toLocaleString('en-US')+' beds · ':''}${teach}${urb?' · '+urb:''}${h.sr?' · CMS overall rating '+h.sr+' stars':''}${h.co?' · '+h.co+' County, '+h.st:''}. ${ma}`,'FY2027 IPPS impact file; Care Compare; Medicare Monthly Enrollment'],
+   ['Quality (Care Compare)',`Hip/knee 30-day readmission ${vs(q.rhk,nq.rhk,'%')} · CABG readmission ${vs(q.rcb,nq.rcb,'%')} · THA/TKA complications ${vs(q.chk,nq.chk,'%')} · PSI-90 ${vs(q.p90,nq.p90)} · PSI-12 perioperative VTE ${vs(q.p12,nq.p12,' per 1,000')} · colon SSI ratio ${vs(q.ssi,'1.00 benchmark')}. National medians in parentheses; ${per.rhk||''} readmissions, ${per.p90||''} PSIs.`,'Unplanned Hospital Visits, Complications and Deaths, HAI files, Sept and July 2026'],
+   ['Spending after discharge (all conditions, price-standardized, per episode)',`SNF ${fmtK(sp.snf&&sp.snf[0])} vs state ${fmtK(sp.snf&&sp.snf[1])} · home health ${fmtK(sp.hh&&sp.hh[0])} vs ${fmtK(sp.hh&&sp.hh[1])} · readmissions ${fmtK(sp.ip&&sp.ip[0])} vs ${fmtK(sp.ip&&sp.ip[1])} · whole episode ${fmtK(h.tot&&h.tot[0])} vs ${fmtK(h.tot&&h.tot[1])}. Thirty-day post-discharge window, ${per.sp?per.sp.replace(/^(\d{4})-\1$/,'$1'):'2024'} episodes.`,'Medicare Hospital Spending by Claim (MSPB), FY2026 release'],
+   ['Post-acute market',`${c.snfprov!=null?c.snfprov+' SNFs billing in the county':''}${nh?` · ${nh.n} nursing homes averaging ${nh.r??'n/a'} stars, ${nh.w} on the TEAM Q4-2026 three-day-waiver list${nh.rh!=null?`, short-stay rehospitalization ${nh.rh}%`:''}`:''}${c.snfd!=null?` · county SNF days ${Math.round(c.snfd).toLocaleString('en-US')} per 1,000 beneficiaries (national ${Math.round(HN.cty.snfd).toLocaleString('en-US')})`:''}${c.readm!=null?` · county readmission rate ${c.readm}% (national ${HN.cty.readm}%)`:''}.`,'Market Saturation 2025; Nursing Home Compare Sept 2026; TEAM qualified SNF list; Geographic Variation 2024'],
+   ['Volume',`${dv.E.toLocaleString('en-US')} traditional-Medicare inpatient TEAM discharges in 2024 (MS-DRG cells under 11 suppressed)${h.op?`, plus ${h.op.toLocaleString('en-US')} outpatient Level 5 musculoskeletal services (APC 5115, which holds outpatient knee and hip replacement). TEAM prices outpatient episodes by HCPCS code; they are not in this model, so the true book is larger`:''}.`,'Medicare Inpatient and Outpatient Hospitals by Provider and Service, CY2024']];
+  const rt=h.rt||{};
+  const derived=`<b style="color:var(--fg)">Prefilled from this public data, so edit anything:</b> volumes from the 2024 file; spend set ${rt.pac?(rt.pac>1?'above':'below')+' target by the post-acute share of each category × '+Math.round(Math.abs(rt.pac-1)*100)+'% (this hospital\'s 30-day post-discharge spend vs its state)':'at target (no spending file)'}; quality score ${dv.cqs} (readmission percentile ${h.cx&&h.cx.readm!=null?h.cx.readm:'n/a'}, PSI-90 percentile ${h.cx&&h.cx.psi90!=null?h.cx.psi90:'n/a'}, patient-reported outcome at 50 because it is not yet public); readmission, SNF, IRF, VTE and SSI levers scaled by the same files; ${dv.sn?'flagged safety-net (Medicare SSI share '+Math.round(h.ssi*1000)/10+'% is above the 8.7% 75th percentile)':'not flagged safety-net (Medicare SSI share '+(h.ssi!=null?Math.round(h.ssi*1000)/10+'%':'n/a')+' vs the 8.7% 75th percentile)'}; ${dv.rural?'rural':'urban'} per the FY2027 impact file. Risk multiplier left at 1.00. This is an estimate from public spending patterns, not the hospital\'s TEAM result.`;
+  return `<div class="facts">${rows.map(r=>`<div class="fact"><span class="fl">${r[0]}</span><span class="fv">${r[1]}<small class="fs">${r[2]}</small></span></div>`).join('')}<div class="fact derived">${derived}</div></div>`;
+}
+function applyPublic(ccn){const h=HM.h[ccn];const dv=derivePublic(h);if(!dv)return null;
+  S.sn=dv.sn;S.rural=dv.rural;S.cqs=dv.cqs;S.risk=1;S.levers.on=false;
+  CATS.forEach(c=>{const st=S.cats[c.key];let n=0;c.drgs.forEach(d=>{st.counts[d[0]]=dv.counts[d[0]]||0;n+=st.counts[d[0]];});st.on=n>0;st.lowvol=false;
+    const base=catCalc(c,Object.assign({},st,{spend:null}),S.region,S.risk);st.spend=Math.round(base.target*(1+dv.shift[c.key]/100));
+    S.levers.cur[c.key]=Object.assign({},dv.lev[c.key]);S.levers.tgt[c.key]=Object.assign({},dv.lev[c.key]);});
+  return dv;}
+
+/* ---------- service lines ---------- */
+S.view='all';S.spineOrtho=true;S.caseId=null;
+function LINES(){const l=[{key:'ortho',label:'Orthopedics',cats:['lejr','shfft'].concat(S.spineOrtho?['spine']:[])}];if(!S.spineOrtho)l.push({key:'spine',label:'Spine',cats:['spine']});l.push({key:'cardiac',label:'Cardiac',cats:['cabg']},{key:'abd',label:'Abdominal surgery',cats:['bowel']});return l;}
+function activeCats(){if(S.view==='all')return CATS.map(c=>c.key);const l=LINES().find(x=>x.key===S.view);return l?l.cats:CATS.map(c=>c.key);}
+function leverSavings(key){const u=S.levers.unit,c=S.levers.cur[key],t=S.levers.tgt[key];
+  const snfMoved=Math.max(0,c.snf-t.snf)/100, snfKept=Math.min(c.snf,t.snf)/100;
+  const parts={
+    snf: snfMoved*(c.days*u.snfDay-u.hh) + snfKept*Math.max(0,c.days-t.days)*u.snfDay,
+    irf: Math.max(0,c.irf-t.irf)/100*(u.irf-u.hh),
+    ra: (c.ra-t.ra)/100*u.readmit,
+    ssi:(c.ssi-t.ssi)/100*u.ssi,
+    vte:(c.vte-t.vte)/100*u.vte};
+  parts.total=parts.snf+parts.irf+parts.ra+parts.ssi+parts.vte;return parts;}
+
+
+/* ---------- engine ---------- */
+function catCalc(c,st,region,risk,spendShift){
+  const counts=st.counts;let n=0,tsum=0;
+  c.drgs.forEach(d=>{const k=counts[d[0]]||0;n+=k;tsum+=k*price(d[0],region);});
+  const regional=n?tsum/n:price(c.drgs[Math.min(1,c.drgs.length-1)][0],region);
+  const target=regional*risk;
+  let spend=st.spend==null?regional:st.spend;
+  if(spendShift!=null)spend=target*(1+spendShift);
+  let recon=(target-spend)*n;
+  const capped=st.lowvol&&recon<0;if(capped)recon=0;
+  return {n,regional,target,spend,recon,capped,aggTarget:target*n,aggSpend:spend*n};
+}
+function run(opts={}){
+  const region=opts.region??S.region,risk=opts.risk??S.risk,cqs=opts.cqs??S.cqs,track=opts.track??S.track,shift=opts.shift,spendMult=opts.spendMult??1;
+  const rows=[];let recon=0,aggT=0,aggS=0,eps=0;
+  CATS.forEach(c=>{const st=S.cats[c.key];if(!st.on)return;
+    const st2=spendMult===1?st:Object.assign({},st,{spend:(st.spend==null?null:st.spend*spendMult)});
+    let r;
+    if(spendMult!==1&&st.spend==null){const base=catCalc(c,st,region,risk,null);r=catCalc(c,Object.assign({},st,{spend:base.regional*spendMult}),region,risk,shift);}
+    else r=catCalc(c,st2,region,risk,shift);
+    if(r.n===0)return;
+    const lv=(opts.levers??S.levers.on)&&(!opts.leverCats||opts.leverCats.includes(c.key)); const lvParts=opts.leverParts; 
+    if(lv){const sv=leverSavings(c.key);let cut=sv.total;if(lvParts)cut=lvParts.reduce((q,k)=>q+sv[k],0);if(cut){r=catCalc(c,Object.assign({},st,{spend:r.spend-cut,lowvol:st.lowvol}),region,risk,null);r.leverCut=cut;}}
+    r.c=c;rows.push(r);recon+=r.recon;aggT+=r.aggTarget;aggS+=r.aggSpend;eps+=r.n;});
+  const T=TRACKS[track];
+  let base=recon; if(track===1&&base<0)base=0;
+  let adjPct=0;
+  if(base>0)adjPct=.10*(1-cqs/100); else if(base<0)adjPct=T.negAdj*cqs/100;
+  const adjAmt=base*adjPct; const qa=base-adjAmt;
+  const gainCap=T.gain*aggT, lossCap=T.loss*aggT;
+  let npra=qa,capHit=null;
+  if(npra>gainCap){npra=gainCap;capHit='gain';}
+  if(npra<-lossCap){npra=-lossCap;capHit='loss';}
+  return {rows,recon,base,adjPct,adjAmt,qa,gainCap,lossCap,npra,capHit,aggT,aggS,eps,track};
+}
+
+/* ---------- UI build ---------- */
+const regionSel=$('region');
+for(const d in DIVS){const o=document.createElement('option');o.value=d;o.textContent=`${d} · ${DIVS[d]} (${DIVSTATES[d]})`;regionSel.appendChild(o);}
+regionSel.value=S.region;
+regionSel.addEventListener('change',()=>{clearCase();S.region=+regionSel.value;S.hospital=null;$('hosp').value='';$('hospMeta').textContent='Region set manually.';refreshCats();update();});
+
+/* hospital picker */
+const hospIn=$('hosp'),hospList=$('hospList');let act=-1,matches=[];
+function renderList(){hospList.innerHTML='';matches.slice(0,40).forEach((p,i)=>{const li=document.createElement('li');li.setAttribute('role','option');li.innerHTML=`<span style="color:var(--fg);font-family:var(--body);font-size:.9rem;white-space:normal">${esc(p.name)}</span><span>${esc(p.state)} · ${esc(p.cbsa_name||'').split(',')[0]}</span>`;li.addEventListener('mousedown',e=>{e.preventDefault();pick(p);});if(i===act)li.className='act';hospList.appendChild(li);});hospList.classList.toggle('open',matches.length>0);}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+hospIn.addEventListener('input',()=>{const q=hospIn.value.trim().toLowerCase();act=-1;if(q.length<2){matches=[];renderList();return;}const toks=q.split(/\s+/);matches=PARTS.filter(p=>{const h=(p.name+' '+p.state+' '+(p.cbsa_name||'')+' '+p.ccn).toLowerCase();return toks.every(t=>h.includes(t));});renderList();});
+hospIn.addEventListener('keydown',e=>{if(!matches.length)return;if(e.key==='ArrowDown'){act=Math.min(act+1,Math.min(matches.length,40)-1);renderList();e.preventDefault();}else if(e.key==='ArrowUp'){act=Math.max(act-1,0);renderList();e.preventDefault();}else if(e.key==='Enter'){if(act>=0)pick(matches[act]);e.preventDefault();}else if(e.key==='Escape'){matches=[];renderList();}});
+hospIn.addEventListener('blur',()=>{setTimeout(()=>{matches=[];renderList();},120);});
+function pick(p){clearCase();S.hospital=p;hospIn.value=p.name;matches=[];renderList();const d=STATE2DIV[p.state]||S.region;S.region=d;regionSel.value=d;
+  const h=HM.h[p.ccn];const dv=h?applyPublic(p.ccn):null;
+  $('hospMeta').innerHTML=`<b style="color:var(--fg)">${esc(p.type)}</b> participant · CCN ${esc(p.ccn)} · ${esc(p.cbsa_name||'')} · census division ${d}, ${DIVS[d]}.${p.new?' Newly identified on the August 2026 list.':''}`+(dv?factsHTML(h,dv):'<div class="note" style="margin-top:6px">No public Care Compare or cost report record matched this CCN, so nothing was prefilled.</div>');
+  if(dv){syncDom(true);}else{refreshCats();}update();}
+
+/* tracks */
+function buildTracks(){const box=$('tracks');box.innerHTML='';[1,2,3].forEach(t=>{const e=eligible(t,S.py,S.sn,S.rural);const d=document.createElement('label');d.className='track'+(S.track===t?' sel':'')+(e.ok?'':' off');d.innerHTML=`<input type="radio" name="track" value="${t}" ${S.track===t?'checked':''} ${e.ok?'':'disabled'}><span class="t">${TRACKS[t].name}</span><span class="d">${TRACKS[t].desc}</span>${e.ok?'':`<span class="why">${e.why}</span>`}`;d.addEventListener('click',()=>{if(!e.ok)return;S.track=t;buildTracks();update();});box.appendChild(d);});
+  const cur=eligible(S.track,S.py,S.sn,S.rural);if(!cur.ok){S.track=3;buildTracks();return;}
+  $('trackNote').textContent=S.py===1?'In PY1 every participant may choose Track 1 (no downside) or Track 3. Track 2 begins in PY2 for safety-net and rural-type hospitals.':'From PY2 the default is Track 3. Track 1 stays open to safety-net hospitals through PY3; Track 2 is open to safety-net, rural, SCH, MDH and EACH hospitals.';}
+
+/* categories */
+function buildCats(){const box=$('cats');box.innerHTML='';CATS.forEach(c=>{const st=S.cats[c.key];const d=document.createElement('div');d.className='cat'+(st.on?'':' off');d.id='cat-'+c.key;
+  d.innerHTML=`<div class="cat-head"><div><h4>${c.label}</h4><div class="sub">MS-DRG ${c.drgs.map(x=>x[0]).join(', ')} · CMS discount ${c.disc}%</div></div><label class="checks" style="font-size:.85rem"><input type="checkbox" data-on="${c.key}" ${st.on?'checked':''}> Included</label></div>
+  <div class="sum"><div>Episodes / yr<b data-sum-n="${c.key}">0</b></div><div>Regional target (blended)<b data-sum-t="${c.key}">$0</b></div><div>Reconciliation<b data-sum-r="${c.key}">$0</b></div></div>
+  <details><summary>Episodes by MS-DRG</summary><div><table class="drgs"><thead><tr><th>MS-DRG</th><th>Title</th><th class="n">Regional target</th><th class="n">Episodes</th></tr></thead><tbody>${c.drgs.map(x=>`<tr><td><b>${x[0]}</b></td><td style="color:var(--muted)">${x[1]}</td><td class="n" data-p="${c.key}-${x[0]}"></td><td class="n"><input type="number" min="0" step="1" inputmode="numeric" data-drg="${c.key}" data-code="${x[0]}" value="${st.counts[x[0]]||''}" placeholder="0"></td></tr>`).join('')}</tbody></table></div></details>
+  <div class="row"><div class="field"><label>Average episode spend</label><input type="number" min="0" step="100" inputmode="decimal" data-spend="${c.key}" placeholder="defaults to regional target"></div>
+  <div class="field"><label>Spend vs. target</label><div class="slider"><input type="range" min="-20" max="20" step="0.5" value="0" data-shift="${c.key}"><output data-shiftout="${c.key}">0.0%</output></div></div></div>
+  <label class="checks" style="font-size:.85rem"><input type="checkbox" data-lowvol="${c.key}" ${st.lowvol?'checked':''}> Low volume: 30 or fewer episodes in this category across the 2022 to 2024 baseline (no downside here)</label>`;
+  box.appendChild(d);});
+  box.addEventListener('input',onCatInput);box.addEventListener('change',onCatInput);refreshCats();}
+function onCatInput(e){const t=e.target;
+  if(t.dataset.on!=null){S.cats[t.dataset.on].on=t.checked;$('cat-'+t.dataset.on).classList.toggle('off',!t.checked);}
+  else if(t.dataset.drg){S.cats[t.dataset.drg].counts[t.dataset.code]=Math.max(0,parseInt(t.value)||0);syncSpendDefault(t.dataset.drg);}
+  else if(t.dataset.spend!=null){const k=t.dataset.spend;S.cats[k].spend=t.value===''?null:Math.max(0,parseFloat(t.value)||0);const r=catCalc(CATS.find(c=>c.key===k),S.cats[k],S.region,S.risk);const sh=r.target?((r.spend/r.target)-1)*100:0;const sl=document.querySelector(`[data-shift="${k}"]`);sl.value=Math.max(-20,Math.min(20,sh));document.querySelector(`[data-shiftout="${k}"]`).textContent=pct(sh);}
+  else if(t.dataset.shift!=null){const k=t.dataset.shift;const sh=parseFloat(t.value);const r=catCalc(CATS.find(c=>c.key===k),Object.assign({},S.cats[k],{spend:null}),S.region,S.risk);S.cats[k].spend=Math.round(r.target*(1+sh/100));document.querySelector(`[data-spend="${k}"]`).value=S.cats[k].spend;document.querySelector(`[data-shiftout="${k}"]`).textContent=pct(sh);}
+  else if(t.dataset.lowvol!=null){S.cats[t.dataset.lowvol].lowvol=t.checked;}
+  update();}
+function syncSpendDefault(k){const inp=document.querySelector(`[data-spend="${k}"]`);const r=catCalc(CATS.find(c=>c.key===k),Object.assign({},S.cats[k],{spend:null}),S.region,S.risk);inp.placeholder='regional target '+fmtFull(r.regional);}
+function refreshCats(){CATS.forEach(c=>{c.drgs.forEach(x=>{const cell=document.querySelector(`[data-p="${c.key}-${x[0]}"]`);if(cell)cell.textContent=fmtFull(price(x[0],S.region));});syncSpendDefault(c.key);
+  const sl=document.querySelector(`[data-shift="${c.key}"]`);const st=S.cats[c.key];if(st.spend!=null&&sl){const r=catCalc(c,Object.assign({},st,{spend:null}),S.region,S.risk);S.cats[c.key].spend=Math.round(r.target*(1+parseFloat(sl.value)/100));document.querySelector(`[data-spend="${c.key}"]`).value=S.cats[c.key].spend;}});}
+
+
+/* levers UI */
+const LV_ROWS=[['snf','Discharged to SNF (% of episodes)','%'],['days','Average SNF days inside the episode','d'],['irf','Discharged to inpatient rehab (%)','%'],['ra','30-day readmission rate (%)','%'],['ssi','Surgical site infection rate (%)','%'],['vte','VTE (DVT or PE) rate (%)','%']];
+function buildLevers(){const box=$('levers');box.innerHTML='';CATS.forEach(c=>{const cur=S.levers.cur[c.key],tgt=S.levers.tgt[c.key];const d=document.createElement('div');d.className='lever';d.id='lv-'+c.key;
+  d.innerHTML=`<h4>${c.label}</h4><div class="lv"><span class="hd">Lever</span><span class="hd" style="text-align:right">Today</span><span class="hd" style="text-align:right">With program</span></div>`+LV_ROWS.map(r=>`<div class="lv"><span class="n">${r[1]}</span><input type="number" min="0" step="0.1" inputmode="decimal" data-lv="cur" data-cat="${c.key}" data-k="${r[0]}" value="${cur[r[0]]}"><input type="number" min="0" step="0.1" inputmode="decimal" data-lv="tgt" data-cat="${c.key}" data-k="${r[0]}" value="${tgt[r[0]]}"></div>`).join('')+`<div class="lv"><span class="n"><b style="color:var(--fg)">Savings per episode</b></span><span></span><b style="text-align:right;color:var(--green-soft)" data-lvsave="${c.key}">$0</b></div><div class="src">${LEVER_DEF[c.key].src}</div>`;
+  box.appendChild(d);});
+  const uc=$('unitCosts');uc.innerHTML=Object.keys(UNIT).map(k=>`<div class="field"><label>${UNIT_LAB[k]}</label><input type="number" min="0" step="10" data-unit="${k}" value="${S.levers.unit[k]}"></div>`).join('');
+  box.addEventListener('input',e=>{const t=e.target;if(!t.dataset.lv)return;S.levers[t.dataset.lv][t.dataset.cat][t.dataset.k]=Math.max(0,parseFloat(t.value)||0);update();});
+  uc.addEventListener('input',e=>{const t=e.target;if(!t.dataset.unit)return;S.levers.unit[t.dataset.unit]=Math.max(0,parseFloat(t.value)||0);update();});}
+function syncLeverInputs(){document.querySelectorAll('[data-lv]').forEach(i=>{i.value=S.levers[i.dataset.lv][i.dataset.cat][i.dataset.k];});}
+$('leversOn').addEventListener('change',()=>{S.levers.on=$('leversOn').checked;update();});
+$('leverPreset').addEventListener('click',()=>{applyPreset();S.levers.on=true;$('leversOn').checked=true;syncLeverInputs();update();});
+$('leverReset').addEventListener('click',()=>{CATS.forEach(c=>{S.levers.tgt[c.key]=Object.assign({},S.levers.cur[c.key]);});syncLeverInputs();update();});
+/* sliders */
+const bind=(id,out,key,f)=>{const i=$(id);i.addEventListener('input',()=>{S[key]=parseFloat(i.value);$(out).textContent=f(S[key]);if(key==='risk')refreshCats();update();});$(out).textContent=f(S[key]);};
+bind('risk','riskOut','risk',v=>v.toFixed(2)+'×');
+bind('cqs','cqsOut','cqs',v=>String(Math.round(v)));
+bind('improve','improveOut','improve',v=>pct(v)+'/yr');
+$('py').addEventListener('change',()=>{S.py=+$('py').value;buildTracks();update();});
+$('safetyNet').addEventListener('change',()=>{S.sn=$('safetyNet').checked;buildTracks();update();});
+$('ruralType').addEventListener('change',()=>{S.rural=$('ruralType').checked;buildTracks();update();});
+
+/* example / reset */
+const EXAMPLE={region:2,counts:{lejr:{470:260,469:25,521:10,522:20},shfft:{480:12,481:48,482:18},cabg:{235:14,236:34,233:8,234:10},spine:{473:60,472:18,451:22,450:8,428:10},bowel:{329:22,330:42,331:20}},shift:{lejr:-5,shfft:6,cabg:0,spine:3,bowel:-2}};
+function loadExample(){clearCase();S.hospital=null;hospIn.value='';$('hospMeta').textContent='Example: a mid-size Middle Atlantic hospital. Numbers are illustrative, not any real hospital.';S.region=EXAMPLE.region;regionSel.value=S.region;
+  CATS.forEach(c=>{const st=S.cats[c.key];st.on=true;st.lowvol=false;st.spend=null;c.drgs.forEach(d=>st.counts[d[0]]=(EXAMPLE.counts[c.key]||{})[d[0]]||0);});
+  buildCats();CATS.forEach(c=>{const sl=document.querySelector(`[data-shift="${c.key}"]`);sl.value=EXAMPLE.shift[c.key];sl.dispatchEvent(new Event('input',{bubbles:true}));});
+  S.risk=1;$('risk').value=1;$('riskOut').textContent='1.00×';S.cqs=50;$('cqs').value=50;$('cqsOut').textContent='50';update();}
+function resetAll(){clearCase();S.hospital=null;hospIn.value='';$('hospMeta').textContent='';CATS.forEach(c=>{const st=S.cats[c.key];st.on=true;st.lowvol=false;st.spend=null;c.drgs.forEach(d=>st.counts[d[0]]=0);});buildCats();update();}
+$('loadExample').addEventListener('click',loadExample);$('resetAll').addEventListener('click',resetAll);
+
+/* ---------- results ---------- */
+function update(){const R=run();const T=TRACKS[S.track];
+  const v=$('npra');v.textContent=R.eps?fmt(R.npra):'$0';v.className='val '+(R.npra>0?'pos':R.npra<0?'neg':'');
+  $('resHead').textContent=`${S.caseId?CASES.find(c=>c.id===S.caseId).name+' · ':''}${T.name} · PY${S.py} ${2025+S.py} · division ${S.region}`;
+  $('npraSub').textContent=!R.eps?'Enter episodes in Step 3 or load the example.':R.npra>0?`Estimated payment from CMS. ${fmtFull(R.npra)}, ${pct(R.npra/R.aggT*100,2)} of your aggregated target price.`:R.npra<0?`Estimated repayment to CMS. ${fmtFull(R.npra)}, ${pct(R.npra/R.aggT*100,2)} of your aggregated target price.`:(S.track===1&&R.recon<0?`Spending ran ${fmtFull(-R.recon)} over target, but Track 1 has no repayment. In Track 3 this would be ${fmtFull(run({track:3}).npra)}.`:'Breaks even at these inputs.');
+  $('tEp').textContent=num(R.eps);$('tEpD').textContent=R.rows.length+' of 5 categories';
+  $('tTarget').textContent=fmt(R.aggT);$('tTargetD').textContent='spend '+fmt(R.aggS)+' ('+pct(R.aggT?(R.aggS/R.aggT-1)*100:0)+')';
+  $('tRecon').textContent=fmt(R.recon);$('tReconD').textContent=S.track===1&&R.recon<0?'Track 1: negative set to $0':(R.rows.some(r=>r.capped)?'low-volume floor applied':'target minus spend, all categories');
+  $('tCqs').textContent=fmt(-R.adjAmt);$('tCqsD').textContent=R.base>0?`${(R.adjPct*100).toFixed(1)}% withheld at CQS ${Math.round(S.cqs)}`:R.base<0?`${(R.adjPct*100).toFixed(1)}% relief at CQS ${Math.round(S.cqs)}`:'no amount to adjust';
+  $('capNote').textContent=R.capHit==='gain'?`Stop-gain hit: payment capped at ${(T.gain*100)}% of aggregated target (${fmtFull(R.gainCap)}). Uncapped it would be ${fmtFull(R.qa)}.`:R.capHit==='loss'?`Stop-loss hit: repayment capped at ${(T.loss*100)}% of aggregated target (${fmtFull(R.lossCap)}). Uncapped it would be ${fmtFull(R.qa)}.`:`Stop limits: gain ${(T.gain*100)}%${T.loss?`, loss ${(T.loss*100)}%`:', no downside'} of aggregated target (${fmt(R.aggT)}). Not binding here.`;
+  // what moves it
+  const mv=[];if(R.eps){const R100=run({cqs:100}),R0=run({cqs:0});mv.push(`<li><b>Quality:</b> CQS 100 gives ${fmt(R100.npra)}, CQS 0 gives ${fmt(R0.npra)}.</li>`);
+    const Rp=run({risk:S.risk+.03}),Rm=run({risk:S.risk-.03});mv.push(`<li><b>Risk multiplier ±0.03:</b> ${fmt(Rm.npra)} to ${fmt(Rp.npra)}.</li>`);
+    const big=R.rows.slice().sort((a,b)=>Math.abs(b.recon)-Math.abs(a.recon))[0];if(big)mv.push(`<li><b>Biggest driver:</b> ${big.c.label}, ${fmtFull(big.recon)} on ${num(big.n)} episodes at ${pct((big.spend/big.target-1)*100)} vs target.</li>`);
+    const one=run({shift:-0.01});mv.push(`<li><b>Every 1% below target</b> across all categories is worth about ${fmt(one.npra-run({shift:0}).npra)} after the quality adjustment, before stop limits.</li>`);}
+  $('moves').innerHTML=mv.join('');
+  $('printMeta').textContent=`${S.hospital?S.hospital.name+' · ':''}${T.name}, PY${S.py}, census division ${S.region}, risk ${S.risk.toFixed(2)}×, CQS ${Math.round(S.cqs)}. Printed ${new Date().toLocaleDateString('en-US')}. Estimates only; not affiliated with CMS.`;
+  $('cScenario').value=JSON.stringify({hospital:S.hospital?S.hospital.name:null,region:S.region,py:S.py,track:S.track,risk:S.risk,cqs:S.cqs,episodes:R.eps,aggTarget:Math.round(R.aggT),aggSpend:Math.round(R.aggS),npra:Math.round(R.npra),levers:S.levers.on?{unit:S.levers.unit,target:S.levers.tgt}:null});
+  CATS.forEach(c=>{const st=S.cats[c.key];const r=catCalc(c,st,S.region,S.risk);const q=k=>document.querySelector(`[data-sum-${k}="${c.key}"]`);if(!q('n'))return;q('n').textContent=st.on?num(r.n):'off';q('t').textContent=fmtFull(r.regional);q('r').textContent=st.on&&r.n?fmtFull(r.recon)+(r.capped?' (floored)':''):'$0';});
+  CATS.forEach(c=>{const e=document.querySelector(`[data-lvsave="${c.key}"]`);if(e)e.textContent=fmtFull(leverSavings(c.key).total);});
+  const RL=run({levers:true}),RB=run({levers:false});const lt=$('leverTile');
+  if(S.levers.on&&R.eps){lt.style.display='';$('leverVal').textContent=fmt(RL.npra);$('leverDelta').textContent=`vs ${fmt(RB.npra)} without levers (${fmt(RL.npra-RB.npra)})`;$('bigLab').textContent='Net payment reconciliation amount (levers applied)';}
+  else{lt.style.display='none';$('bigLab').textContent='Net payment reconciliation amount';}
+  renderLineBoard();drawLines();drawCats(R);drawSens();drawSetting();drawLevers();drawFive();}
+
+function drawCats(R){const svg=$('chCats');svg.innerHTML='';const W=560,H=230,L=150,Rm=70,top=14,bot=24;const ac=activeCats();const rows=R.rows.filter(r=>ac.includes(r.c.key));if(!rows.length){svg.appendChild(el('text',{x:W/2,y:H/2,'text-anchor':'middle'},'No episodes entered'));$('tblCats').innerHTML='';return;}
+  const max=Math.max(1,...rows.map(r=>Math.abs(r.recon)));const bh=Math.min(34,(H-top-bot)/rows.length-8);const x0=L+(W-L-Rm)/2;const sc=(W-L-Rm)/2/max;
+  svg.appendChild(el('line',{x1:x0,x2:x0,y1:top,y2:H-bot,class:'grid'}));
+  rows.forEach((r,i)=>{const y=top+i*((H-top-bot)/rows.length)+((H-top-bot)/rows.length-bh)/2;const w=Math.abs(r.recon)*sc;const x=r.recon>=0?x0:x0-w;const g=el('g');
+    g.appendChild(el('rect',{x,y,width:Math.max(w,1),height:bh,rx:3,fill:r.recon>=0?C.green:C.red,opacity:r.capped?.5:1}));
+    g.appendChild(el('text',{x:L-8,y:y+bh/2+4,'text-anchor':'end',class:'strong'},r.c.short));
+    g.appendChild(el('text',{x:r.recon>=0?x+w+6:x0+6,y:y+bh/2+4,'text-anchor':'start'},fmt(r.recon)));
+    bindTip(g,`<b>${r.c.label}</b>${num(r.n)} episodes · target ${fmtFull(r.target)} · spend ${fmtFull(r.spend)}<br>${fmtFull(r.recon)}${r.capped?' (low-volume floor)':''}`);svg.appendChild(g);});
+  $('tblCats').innerHTML='<table><thead><tr><th>Category</th><th class="n">Episodes</th><th class="n">Target</th><th class="n">Spend</th><th class="n">Reconciliation</th></tr></thead><tbody>'+rows.map(r=>`<tr><td>${r.c.label}</td><td class="n">${num(r.n)}</td><td class="n">${fmtFull(r.target)}</td><td class="n">${fmtFull(r.spend)}</td><td class="n">${fmtFull(r.recon)}</td></tr>`).join('')+'</tbody></table>';}
+
+function drawSens(){const svg=$('chSens');svg.innerHTML='';const W=560,H=260,L=64,Rm=16,top=14,bot=34;const xs=[];for(let s=-15;s<=15;s+=1)xs.push(s);
+  const series=[1,2,3].map(t=>({t,col:{1:C.green,2:C.teal,3:C.purple}[t],pts:xs.map(s=>run({track:t,shift:s/100}).npra)}));
+  const all=series.flatMap(s=>s.pts);const R0=run();if(!R0.eps){svg.appendChild(el('text',{x:W/2,y:H/2,'text-anchor':'middle'},'No episodes entered'));$('tblSens').innerHTML='';return;}
+  let lo=Math.min(0,...all),hi=Math.max(0,...all);if(hi===lo){hi=1;lo=-1;}const pad=(hi-lo)*.08;lo-=pad;hi+=pad;
+  const X=s=>L+((s+15)/30)*(W-L-Rm),Y=v=>top+(hi-v)/(hi-lo)*(H-top-bot);
+  for(let i=0;i<=4;i++){const v=lo+(hi-lo)*i/4;svg.appendChild(el('line',{x1:L,x2:W-Rm,y1:Y(v),y2:Y(v),class:'grid'}));svg.appendChild(el('text',{x:L-6,y:Y(v)+4,'text-anchor':'end'},fmt(v)));}
+  svg.appendChild(el('line',{x1:L,x2:W-Rm,y1:Y(0),y2:Y(0),stroke:C.muted,'stroke-dasharray':'3 3'}));
+  [-15,-10,-5,0,5,10,15].forEach(s=>svg.appendChild(el('text',{x:X(s),y:H-10,'text-anchor':'middle'},pct(s,0))));
+  svg.appendChild(el('text',{x:W/2,y:H+2,'text-anchor':'middle',style:'font-size:11px'},'episode spend vs. target, all categories'));
+  series.forEach(s=>{const d=s.pts.map((v,i)=>(i?'L':'M')+X(xs[i]).toFixed(1)+' '+Y(v).toFixed(1)).join(' ');svg.appendChild(el('path',{d,fill:'none',stroke:s.col,'stroke-width':s.t===S.track?3:1.8,opacity:s.t===S.track?1:.75}));
+    xs.forEach((x,i)=>{const h=el('rect',{x:X(x)-9,y:top,width:18,height:H-top-bot,class:'hit'});bindTip(h,`<b>Spend ${pct(x,0)} vs target</b>Track 1 ${fmt(series[0].pts[i])} · Track 2 ${fmt(series[1].pts[i])} · Track 3 ${fmt(series[2].pts[i])}`);svg.appendChild(h);});});
+  const cur=R0.aggT?((R0.aggS/R0.aggT)-1)*100:0;if(cur>=-15&&cur<=15){svg.appendChild(el('circle',{cx:X(cur),cy:Y(R0.npra),r:5,fill:C.fg,stroke:{1:C.green,2:C.teal,3:C.purple}[S.track],'stroke-width':2}));}
+  $('tblSens').innerHTML='<table><thead><tr><th>Spend vs target</th><th class="n">Track 1</th><th class="n">Track 2</th><th class="n">Track 3</th></tr></thead><tbody>'+[-15,-10,-5,-2,0,2,5,10,15].map(s=>{const i=xs.indexOf(s);return `<tr><td>${pct(s,0)}</td><td class="n">${fmtFull(series[0].pts[i])}</td><td class="n">${fmtFull(series[1].pts[i])}</td><td class="n">${fmtFull(series[2].pts[i])}</td></tr>`;}).join('')+'</tbody></table>';}
+
+
+function drawSetting(){const svg=$('chSetting');svg.innerHTML='';const W=560,H=250,L=64,Rm=16,top=14,bot=44;const rows=[];
+  const acS=activeCats();CATS.forEach(c=>{const st=S.cats[c.key];if(!st.on||!acS.includes(c.key))return;const r=catCalc(c,st,S.region,S.risk);if(!r.n)return;const sh=SETTING[c.key],tot=sh[0]+sh[1]+sh[2];const sp=r.spend;const seg=[sp*sh[0]/tot,sp*sh[1]/tot,sp*sh[2]/tot];const cut=Math.min(seg[2],leverSavings(c.key).total);rows.push({c,sp,seg,cut,n:r.n});});
+  if(!rows.length){svg.appendChild(el('text',{x:W/2,y:H/2,'text-anchor':'middle'},'No episodes entered'));$('tblSetting').innerHTML='';return;}
+  const max=Math.max(...rows.map(r=>r.sp))*1.08;const slot=(W-L-Rm)/rows.length;const Y=v=>top+(1-v/max)*(H-top-bot);
+  for(let i=0;i<=4;i++){const v=max*i/4;svg.appendChild(el('line',{x1:L,x2:W-Rm,y1:Y(v),y2:Y(v),class:'grid'}));svg.appendChild(el('text',{x:L-6,y:Y(v)+4,'text-anchor':'end'},fmt(v)));}
+  rows.forEach((r,i)=>{const x=L+slot*i+slot*.18,bw=slot*.64;let y0=0;const cols=[C.purple,C.teal,C.green];const g=el('g');
+    r.seg.forEach((v,j)=>{const rect=el('rect',{x,y:Y(y0+v),width:bw,height:Math.max(0,Y(y0)-Y(y0+v)),fill:cols[j],opacity:j===2&&r.cut>0?.45:1});g.appendChild(rect);if(j===2&&r.cut>0){g.appendChild(el('rect',{x,y:Y(y0+v-r.cut),width:bw,height:Math.max(0,Y(y0)-Y(y0+v-r.cut)),fill:C.green}));}y0+=v;});
+    g.appendChild(el('text',{x:x+bw/2,y:Y(r.sp)-5,'text-anchor':'middle',class:'strong'},fmt(r.sp)));
+    g.appendChild(el('text',{x:x+bw/2,y:H-bot+16,'text-anchor':'middle'},r.c.short));
+    g.appendChild(el('text',{x:x+bw/2,y:H-bot+30,'text-anchor':'middle',style:'font-size:10px'},`post-acute ${Math.round(r.seg[2]/r.sp*100)}%`));
+    bindTip(g,`<b>${r.c.label}</b>Anchor stay ${fmtFull(r.seg[0])} · Part B ${fmtFull(r.seg[1])} · post-acute ${fmtFull(r.seg[2])}${r.cut>0?`<br>Levers cut post-acute by ${fmtFull(r.cut)} per episode`:''}`);svg.appendChild(g);});
+  $('tblSetting').innerHTML='<table><thead><tr><th>Category</th><th class="n">Anchor stay</th><th class="n">Part B anchor</th><th class="n">Post-acute</th><th class="n">Post-acute share</th><th class="n">Lever savings</th></tr></thead><tbody>'+rows.map(r=>`<tr><td>${r.c.label}</td><td class="n">${fmtFull(r.seg[0])}</td><td class="n">${fmtFull(r.seg[1])}</td><td class="n">${fmtFull(r.seg[2])}</td><td class="n">${Math.round(r.seg[2]/r.sp*100)}%</td><td class="n">${fmtFull(r.cut)}</td></tr>`).join('')+'</tbody></table>';}
+
+function drawLevers(){const svg=$('chLevers');svg.innerHTML='';const W=560,H=250,L=64,Rm=16,top=14,bot=40;const lc=S.view==='all'?null:activeCats();const R0=run({levers:false});if(!R0.eps){svg.appendChild(el('text',{x:W/2,y:H/2,'text-anchor':'middle'},'No episodes entered'));$('tblLevers').innerHTML='';return;}
+  const keys=[['snf','SNF use and days'],['irf','Inpatient rehab'],['ra','Readmissions'],['ssi','SSI'],['vte','VTE']];const steps=[{lab:'Today',v:R0.npra,abs:true}];let acc=[];let prev=R0.npra;
+  keys.forEach(k=>{acc.push(k[0]);const r=run({levers:true,leverParts:acc.slice(),leverCats:lc});steps.push({lab:k[1],v:r.npra-prev,from:prev});prev=r.npra;});
+  const RL=run({levers:true,leverCats:lc});steps.push({lab:'With program',v:RL.npra,abs:true});
+  const vals=steps.map(s=>s.abs?s.v:s.from+s.v).concat(steps.map(s=>s.abs?s.v:s.from),[0]);let lo=Math.min(...vals),hi=Math.max(...vals);if(hi===lo){hi=lo+1;}const pad=(hi-lo)*.1;lo-=pad;hi+=pad;
+  const slot=(W-L-Rm)/steps.length,Y=v=>top+(hi-v)/(hi-lo)*(H-top-bot);
+  for(let i=0;i<=4;i++){const v=lo+(hi-lo)*i/4;svg.appendChild(el('line',{x1:L,x2:W-Rm,y1:Y(v),y2:Y(v),class:'grid'}));svg.appendChild(el('text',{x:L-6,y:Y(v)+4,'text-anchor':'end'},fmt(v)));}
+  svg.appendChild(el('line',{x1:L,x2:W-Rm,y1:Y(0),y2:Y(0),stroke:C.muted}));
+  steps.forEach((s,i)=>{const x=L+slot*i+slot*.2,bw=slot*.6;let a,b,col;if(s.abs){a=0;b=s.v;col=s.v>=0?C.purple:C.red;}else{a=s.from;b=s.from+s.v;col=s.v>=0?C.green:C.red;}
+    const g=el('g');g.appendChild(el('rect',{x,y:Math.min(Y(a),Y(b)),width:bw,height:Math.max(1,Math.abs(Y(a)-Y(b))),rx:3,fill:col}));
+    g.appendChild(el('text',{x:x+bw/2,y:Math.min(Y(a),Y(b))-5,'text-anchor':'middle',style:'font-size:11px'},s.abs?fmt(s.v):(s.v>=0?'+':'')+fmt(s.v)));
+    const lab=s.lab.split(' ');g.appendChild(el('text',{x:x+bw/2,y:H-bot+14,'text-anchor':'middle',style:'font-size:10.5px'},lab.slice(0,2).join(' ')));if(lab.length>2)g.appendChild(el('text',{x:x+bw/2,y:H-bot+26,'text-anchor':'middle',style:'font-size:10.5px'},lab.slice(2).join(' ')));
+    bindTip(g,`<b>${s.lab}</b>${s.abs?fmtFull(s.v):(s.v>=0?'+':'')+fmtFull(s.v)}`);svg.appendChild(g);});
+  $('tblLevers').innerHTML='<table><thead><tr><th>Step</th><th class="n">Change</th><th class="n">Running NPRA</th></tr></thead><tbody>'+steps.map(s=>`<tr><td>${s.lab}</td><td class="n">${s.abs?'':(s.v>=0?'+':'')+fmtFull(s.v)}</td><td class="n">${fmtFull(s.abs?s.v:s.from+s.v)}</td></tr>`).join('')+'</tbody></table>';}
+
+function drawFive(){const svg=$('chFive');svg.innerHTML='';const W=560,H=240,L=64,Rm=16,top=14,bot=30;const R0=run();if(!R0.eps){svg.appendChild(el('text',{x:W/2,y:H/2,'text-anchor':'middle'},'No episodes entered'));$('tblFive').innerHTML='';$('fiveSub').textContent='';return;}
+  const years=[1,2,3,4,5].map(py=>{let t=S.track;if(!eligible(t,py,S.sn,S.rural).ok)t=3;const mult=Math.pow(1+S.improve/100,py-1);const r=run({track:t,spendMult:mult});return {py,t,mult,npra:r.npra,aggT:r.aggT};});
+  let cum=0;years.forEach(y=>{cum+=y.npra;y.cum=cum;});
+  const all=years.flatMap(y=>[y.npra,y.cum]);let lo=Math.min(0,...all),hi=Math.max(0,...all);if(hi===lo){hi=1;lo=-1;}const pad=(hi-lo)*.1;lo-=pad;hi+=pad;
+  const slot=(W-L-Rm)/5,X=i=>L+slot*i+slot/2,Y=v=>top+(hi-v)/(hi-lo)*(H-top-bot);
+  for(let i=0;i<=4;i++){const v=lo+(hi-lo)*i/4;svg.appendChild(el('line',{x1:L,x2:W-Rm,y1:Y(v),y2:Y(v),class:'grid'}));svg.appendChild(el('text',{x:L-6,y:Y(v)+4,'text-anchor':'end'},fmt(v)));}
+  svg.appendChild(el('line',{x1:L,x2:W-Rm,y1:Y(0),y2:Y(0),stroke:C.muted}));
+  years.forEach((y,i)=>{const bw=slot*.46;const g=el('g');g.appendChild(el('rect',{x:X(i)-bw/2,y:Math.min(Y(0),Y(y.npra)),width:bw,height:Math.max(1,Math.abs(Y(y.npra)-Y(0))),rx:3,fill:y.npra>=0?C.green:C.red}));
+    g.appendChild(el('text',{x:X(i),y:H-12,'text-anchor':'middle',class:'strong'},`PY${y.py} · ${2025+y.py}`));g.appendChild(el('text',{x:X(i),y:H+1,'text-anchor':'middle',style:'font-size:10px'},`${TRACKS[y.t].name} · ${pct((y.mult-1)*100,1)} spend`));
+    bindTip(g,`<b>PY${y.py} (${2025+y.py}) · ${TRACKS[y.t].name}</b>Spend ${pct((y.mult-1)*100,1)} vs PY1 · NPRA ${fmtFull(y.npra)}<br>Cumulative ${fmtFull(y.cum)}`);svg.appendChild(g);});
+  const d=years.map((y,i)=>(i?'L':'M')+X(i)+' '+Y(y.cum)).join(' ');svg.appendChild(el('path',{d,fill:'none',stroke:C.purple,'stroke-width':2.5}));years.forEach((y,i)=>svg.appendChild(el('circle',{cx:X(i),cy:Y(y.cum),r:4,fill:C.purple})));
+  const last=years[4];$('fiveSub').textContent=`Same volumes every year, spend changing ${pct(S.improve)} per year from PY1${S.levers.on?', levers applied':''}, PY1 regional prices held flat. Five-year total ${fmtFull(last.cum)}.`;
+  $('tblFive').innerHTML='<table><thead><tr><th>Year</th><th>Track</th><th class="n">Spend vs PY1</th><th class="n">NPRA</th><th class="n">Cumulative</th></tr></thead><tbody>'+years.map(y=>`<tr><td>PY${y.py} · ${2025+y.py}</td><td>${TRACKS[y.t].name}</td><td class="n">${pct((y.mult-1)*100,1)}</td><td class="n">${fmtFull(y.npra)}</td><td class="n">${fmtFull(y.cum)}</td></tr>`).join('')+'</tbody></table>';}
+
+
+/* ---------- tabs and line scorecard ---------- */
+function renderTabs(){const box=$('tabs');box.innerHTML='';const items=[{key:'all',label:'Hospital'}].concat(LINES().map(l=>({key:l.key,label:l.label})));items.forEach(it=>{const b=document.createElement('button');b.type='button';b.className='tab'+(S.view===it.key?' sel':'');b.setAttribute('role','tab');b.textContent=it.label;b.addEventListener('click',()=>{S.view=it.key;renderTabs();update();});box.appendChild(b);});}
+function lineStats(l){const R=run({levers:false});let n=0,aggT=0,aggS=0,recon=0,pac=0,lev=0;const rows=[];
+  CATS.forEach(c=>{if(!l.cats.includes(c.key))return;const st=S.cats[c.key];if(!st.on)return;const r=catCalc(c,st,S.region,S.risk);if(!r.n)return;rows.push(r);n+=r.n;aggT+=r.aggTarget;aggS+=r.aggSpend;recon+=r.recon;const sh=SETTING[c.key];pac+=r.aggSpend*sh[2]/(sh[0]+sh[1]+sh[2]);lev+=leverSavings(c.key).total*r.n;});
+  const RL=run({levers:true,leverCats:l.cats});return {l,n,aggT,aggS,recon,pac,lev,rows,share:R.recon?recon/R.recon:0,hospRecon:R.recon,effect:RL.npra-run({levers:false}).npra,var:aggT?(aggS/aggT-1)*100:0,perEp:n?recon/n:0};}
+function renderLineBoard(){const b=$('lineBoard');if(S.view==='all'){b.style.display='none';$('figLines').style.display='';return;}$('figLines').style.display='none';const l=LINES().find(x=>x.key===S.view);const st=lineStats(l);b.style.display='';
+  const q=l.key==='ortho'?'Quality: the THA/TKA patient-reported outcome measure applies only to joint replacement, so this line carries a quality lever the others lack. Readmissions and PSI 90 apply to every line.':l.key==='cardiac'?'Quality: readmissions and PSI 90 only. CABG has the smallest post-acute share of the five categories, so the money here is in the anchor stay and readmissions.':l.key==='abd'?'Quality: readmissions and PSI 90. Infection is the lever: colectomy carries the highest surgical site infection rate in the model.':'Quality: readmissions and PSI 90. Inpatient rehab use is the lever for multi-level fusions.';
+  b.innerHTML=`<div class="board-head"><span>${l.label} · contribution to the hospital result</span><span class="live">${st.n?num(st.n)+' episodes':'no episodes'}</span></div>
+  <div class="tiles five">
+    <div class="tile"><div class="lab">Spend vs target</div><div class="val">${pct(st.var)}</div><div class="delta">${fmt(st.aggS)} on ${fmt(st.aggT)} target</div></div>
+    <div class="tile"><div class="lab">Dollars vs target</div><div class="val" style="color:${st.recon>=0?'var(--green-soft)':'var(--red)'}">${fmt(st.recon)}</div><div class="delta">${fmtFull(st.perEp)} per episode</div></div>
+    <div class="tile"><div class="lab">Share of hospital result</div><div class="val">${st.hospRecon?Math.round(st.share*100)+'%':'n/a'}</div><div class="delta">of ${fmt(st.hospRecon)} before adjustments</div></div>
+    <div class="tile"><div class="lab">Post-acute spend</div><div class="val">${fmt(st.pac)}</div><div class="delta">${st.aggS?Math.round(st.pac/st.aggS*100):0}% of this line's spend</div></div>
+    <div class="tile"><div class="lab">This line's levers</div><div class="val" style="color:var(--green-soft)">${fmt(st.lev)}</div><div class="delta">${S.levers.on?'changes hospital NPRA by '+fmt(st.effect):'turn on levers in Step 5 to apply'}</div></div>
+  </div>
+  <div class="board-foot">${q} CMS reconciles the hospital as one book: the net payment above the charts is always the hospital number, and this line's levers move it by ${fmt(st.effect)}.</div>`;}
+function drawLines(){const svg=$('chLines');svg.innerHTML='';const W=560,H=230,L=64,Rm=64,top=26,bot=40;const stats=LINES().map(lineStats).filter(s=>s.n>0);if(!stats.length){svg.appendChild(el('text',{x:W/2,y:H/2,'text-anchor':'middle'},'No episodes entered'));$('tblLines').innerHTML='';return;}
+  const maxB=Math.max(1,...stats.map(s=>Math.abs(s.recon)));const maxD=Math.max(1,...stats.map(s=>Math.abs(s.perEp)));const slot=(W-L-Rm)/stats.length;const Y=v=>top+(0.5-v/maxB/2)*(H-top-bot);const YD=v=>top+(0.5-v/maxD/2)*(H-top-bot);
+  [-1,-.5,0,.5,1].forEach(f=>{svg.appendChild(el('line',{x1:L,x2:W-Rm,y1:Y(f*maxB),y2:Y(f*maxB),class:'grid'}));svg.appendChild(el('text',{x:L-6,y:Y(f*maxB)+4,'text-anchor':'end'},fmt(f*maxB)));svg.appendChild(el('text',{x:W-Rm+6,y:YD(f*maxD)+4,'text-anchor':'start'},fmt(f*maxD)));});
+  svg.appendChild(el('text',{x:L-6,y:top-4,'text-anchor':'end',style:'font-size:10px'},'total'));svg.appendChild(el('text',{x:W-Rm+6,y:top-4,'text-anchor':'start',style:'font-size:10px'},'per episode'));
+  stats.forEach((s,i)=>{const x=L+slot*i+slot*.25,bw=slot*.5;const g=el('g');g.appendChild(el('rect',{x,y:Math.min(Y(0),Y(s.recon)),width:bw,height:Math.max(1,Math.abs(Y(0)-Y(s.recon))),rx:3,fill:s.recon>=0?C.green:C.red}));
+    g.appendChild(el('circle',{cx:x+bw/2,cy:YD(s.perEp),r:5,fill:C.fg,stroke:C.purple,'stroke-width':2}));
+    g.appendChild(el('text',{x:x+bw/2,y:H-bot+16,'text-anchor':'middle',class:'strong'},s.l.label));g.appendChild(el('text',{x:x+bw/2,y:H-bot+30,'text-anchor':'middle',style:'font-size:10px'},`${num(s.n)} ep · ${pct(s.var)}`));
+    bindTip(g,`<b>${s.l.label}</b>${fmtFull(s.recon)} vs target on ${num(s.n)} episodes<br>${fmtFull(s.perEp)} per episode · spend ${pct(s.var)} vs target<br>Levers worth ${fmtFull(s.lev)}`);svg.appendChild(g);});
+  $('tblLines').innerHTML='<table><thead><tr><th>Line</th><th class="n">Episodes</th><th class="n">Spend vs target</th><th class="n">Dollars vs target</th><th class="n">Per episode</th><th class="n">Post-acute</th><th class="n">Levers</th></tr></thead><tbody>'+stats.map(s=>`<tr><td>${s.l.label}</td><td class="n">${num(s.n)}</td><td class="n">${pct(s.var)}</td><td class="n">${fmtFull(s.recon)}</td><td class="n">${fmtFull(s.perEp)}</td><td class="n">${fmtFull(s.pac)}</td><td class="n">${fmtFull(s.lev)}</td></tr>`).join('')+'</tbody></table>';}
+$('spineOrtho').addEventListener('change',()=>{S.spineOrtho=$('spineOrtho').checked;if(!LINES().some(l=>l.key===S.view))S.view='all';renderTabs();update();});
+
+/* ---------- case hospitals ---------- */
+function applyPreset(){CATS.forEach(c=>{const cu=S.levers.cur[c.key],t=S.levers.tgt[c.key];t.snf=+Math.max(0,cu.snf-5).toFixed(1);t.days=+Math.max(0,cu.days-3).toFixed(1);t.irf=+Math.max(0,cu.irf-2).toFixed(1);t.ra=+(cu.ra*0.8).toFixed(2);t.ssi=+(cu.ssi*0.7).toFixed(2);t.vte=+(cu.vte*0.75).toFixed(2);});}
+function applyCaseState(cs){S.hospital=null;S.caseId=cs.id;S.region=cs.region;S.py=1;S.track=cs.track;S.levers.on=false;
+  const dv=applyPublic(cs.ccn);
+  if(!dv){S.sn=!!cs.sn;S.rural=!!cs.rural;S.cqs=cs.cqs||50;S.risk=1;}
+  if(cs.sn!=null)S.sn=!!cs.sn; if(cs.rural!=null)S.rural=!!cs.rural;
+  cs.episodes=dv?dv.E:0;}
+function syncDom(keepHosp){if(!keepHosp)hospIn.value='';regionSel.value=S.region;$('safetyNet').checked=S.sn;$('ruralType').checked=S.rural;$('py').value=S.py;$('risk').value=S.risk;$('riskOut').textContent=S.risk.toFixed(2)+'×';$('cqs').value=S.cqs;$('cqsOut').textContent=String(Math.round(S.cqs));$('leversOn').checked=S.levers.on;
+  const shifts={};CATS.forEach(c=>{const st=S.cats[c.key];const base=catCalc(c,Object.assign({},st,{spend:null}),S.region,S.risk);shifts[c.key]=base.target&&st.spend!=null?((st.spend/base.target)-1)*100:0;});
+  buildTracks();buildCats();
+  CATS.forEach(c=>{const st=S.cats[c.key];const base=catCalc(c,Object.assign({},st,{spend:null}),S.region,S.risk);const sh=shifts[c.key];st.spend=Math.round(base.target*(1+sh/100));const sl=document.querySelector(`[data-shift="${c.key}"]`);if(sl){sl.value=Math.max(-20,Math.min(20,sh));document.querySelector(`[data-shiftout="${c.key}"]`).textContent=pct(sh);}const si=document.querySelector(`[data-spend="${c.key}"]`);if(si)si.value=st.spend;});
+  syncLeverInputs();renderCases();}
+function renderCases(){const box=$('cases');box.innerHTML='';CASES.forEach(cs=>{const b=document.createElement('button');b.type='button';b.className='case'+(S.caseId===cs.id?' sel':'');const dvE=derivePublic(HM.h[cs.ccn]);b.innerHTML=`<span>${cs.name}</span><small>${cs.place} · ${num(dvE?dvE.E:0)} episodes</small>`;b.addEventListener('click',()=>loadCase(cs.id));box.appendChild(b);});}
+function loadCase(id){const cs=CASES.find(c=>c.id===id);if(!cs)return;applyCaseState(cs);syncDom();
+  const h=HM.h[cs.ccn],dv=derivePublic(h);
+  $('caseNotes').style.display='';$('caseHead').textContent=cs.name+' · '+cs.place;$('caseTag').textContent=cs.archetype;$('caseStory').textContent=cs.story;$('caseWatch').textContent='Watch: '+cs.watch;$('caseProv').textContent=cs.beds+'. '+cs.prov;
+  $('hospMeta').innerHTML=`Case hospital loaded: ${esc(cs.name)}, ${esc(cs.place)}. Census division ${cs.region}, ${DIVS[cs.region]}.${S.sn?' Flagged safety-net from its Medicare SSI share.':''}${S.rural?' Rural per the FY2027 impact file.':''} Every input below comes from the public files listed; the case is named by type and city, not by hospital.`+(dv?factsHTML(h,dv).replace(/<div class="fact"><span class="fl">Profile.*?<\/div>/,''):'');
+  update();}
+function clearCase(){if(S.caseId){S.caseId=null;$('caseNotes').style.display='none';renderCases();}}
+function drawCases(){const svg=$('chCases');svg.innerHTML='';const W=900,H=300,L=70,Rm=16,top=16,bot=50;const saved=JSON.stringify({cats:S.cats,levers:S.levers,region:S.region,sn:S.sn,rural:S.rural,py:S.py,track:S.track,cqs:S.cqs,risk:S.risk,hospital:S.hospital,caseId:S.caseId,view:S.view});
+  const rows=CASES.map(cs=>{applyCaseState(cs);const t1=eligible(1,1,S.sn,S.rural).ok?run({track:1,levers:false}).npra:null;const t3=run({track:3,levers:false}).npra;applyPreset();const t3p=run({track:3,levers:true}).npra;const aggT=run({track:3,levers:false}).aggT;return {cs,t1,t3,t3p,aggT};});
+  const o=JSON.parse(saved);S.cats=o.cats;S.levers=o.levers;S.region=o.region;S.sn=o.sn;S.rural=o.rural;S.py=o.py;S.track=o.track;S.cqs=o.cqs;S.risk=o.risk;S.hospital=o.hospital;S.caseId=o.caseId;S.view=o.view;
+  rows.forEach(r=>{r.p1=r.t1==null?null:r.t1/r.aggT*100;r.p3=r.t3/r.aggT*100;r.p3p=r.t3p/r.aggT*100;});const all=rows.flatMap(r=>[r.p1||0,r.p3,r.p3p,0]);let lo=Math.min(...all),hi=Math.max(...all);const pad=(hi-lo)*.12;lo-=pad;hi+=pad;const slot=(W-L-Rm)/rows.length,Y=v=>top+(hi-v)/(hi-lo)*(H-top-bot);
+  for(let i=0;i<=4;i++){const v=lo+(hi-lo)*i/4;svg.appendChild(el('line',{x1:L,x2:W-Rm,y1:Y(v),y2:Y(v),class:'grid'}));svg.appendChild(el('text',{x:L-6,y:Y(v)+4,'text-anchor':'end'},pct(v,1)));}
+  svg.appendChild(el('text',{x:L-6,y:top-4,'text-anchor':'end',style:'font-size:10px'},'% of target book'));
+  svg.appendChild(el('line',{x1:L,x2:W-Rm,y1:Y(0),y2:Y(0),stroke:C.muted}));
+  rows.forEach((r,i)=>{const bw=slot*.22;const xs=[L+slot*i+slot*.14,L+slot*i+slot*.39,L+slot*i+slot*.64];const vals=[r.p1,r.p3,r.p3p];const dol=[r.t1,r.t3,r.t3p];const cols=[C.green,C.purple,C.teal];const g=el('g');
+    vals.forEach((v,j)=>{if(v==null)return;g.appendChild(el('rect',{x:xs[j],y:Math.min(Y(0),Y(v)),width:bw,height:Math.max(1,Math.abs(Y(0)-Y(v))),rx:3,fill:cols[j]}));g.appendChild(el('text',{x:xs[j]+bw/2,y:(v>=0?Y(v)-4:Y(v)+12),'text-anchor':'middle',style:'font-size:9.5px'},fmt(dol[j])));});
+    g.appendChild(el('text',{x:L+slot*i+slot/2,y:H-bot+16,'text-anchor':'middle',class:'strong'},r.cs.name.length>26?r.cs.name.slice(0,24)+'…':r.cs.name));g.appendChild(el('text',{x:L+slot*i+slot/2,y:H-bot+30,'text-anchor':'middle',style:'font-size:10px'},`${r.cs.place} · ${num(r.cs.episodes)} ep · target ${fmt(r.aggT)}`));
+    bindTip(g,`<b>${r.cs.name}, ${r.cs.place}</b>Track 1 ${r.t1==null?'not available':fmtFull(r.t1)} · Track 3 ${fmtFull(r.t3)} (${pct(r.p3,1)} of target)<br>Track 3 with program ${fmtFull(r.t3p)} (${pct(r.p3p,1)})`);svg.appendChild(g);});
+  $('tblCases').innerHTML='<table><thead><tr><th>Hospital</th><th>Region</th><th class="n">Episodes</th><th class="n">Target book</th><th class="n">Track 1</th><th class="n">Track 3</th><th class="n">Track 3 + program</th></tr></thead><tbody>'+rows.map(r=>`<tr><td>${r.cs.name}<br><small style="color:var(--muted)">${r.cs.place}</small></td><td>${DIVS[r.cs.region]}</td><td class="n">${num(r.cs.episodes)}</td><td class="n">${fmtFull(r.aggT)}</td><td class="n">${r.t1==null?'n/a':fmtFull(r.t1)}</td><td class="n">${fmtFull(r.t3)}</td><td class="n">${fmtFull(r.t3p)}</td></tr>`).join('')+'</tbody></table>';}
+
+/* form: Netlify handles the POST on jaybeatty.com; elsewhere show the scenario to copy */
+$('capForm').addEventListener('submit',e=>{const h=window.location.hostname;if(h.endsWith('jaybeatty.com')||h.endsWith('netlify.app'))return;e.preventDefault();const s=JSON.parse($('cScenario').value||'{}');const ok=$('capOk');ok.style.display='block';ok.innerHTML='Preview build: nothing was sent. Email <b>jay@jaybeatty.com</b> with this scenario: '+esc(JSON.stringify(s));});
+
+/* init */
+buildTracks();buildCats();buildLevers();renderTabs();renderCases();drawCases();loadCase('community');
+window.TEAMCALC={S,CATS,run,catCalc,applyCaseState,derivePublic,leverSavings,applyPreset,eligible,HM,CASES,loadCase,pick,PARTS};
+})();
