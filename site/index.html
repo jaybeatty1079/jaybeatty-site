@@ -133,6 +133,7 @@ footer .wrap{padding-block:18px;display:flex;justify-content:space-between;gap:1
 }
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .hero-grid{grid-template-columns:minmax(0,1fr)}.hero-text{max-width:720px}
+.projects{grid-template-columns:repeat(2,minmax(0,1fr));max-width:980px}@media(max-width:860px){.projects{grid-template-columns:1fr}}
 </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://jaybeatty.com/">
@@ -272,6 +273,7 @@ footer{background:#0d090f;color:#9d91a3;font-size:12.5px;letter-spacing:.04em;bo
       <li><a href="no-surprises-act.html">No Surprises Act</a></li>
       <li><a href="section-125.html">Section 125</a></li>
       <li><a href="deferred-comp.html">Deferred comp</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#track">Track record</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -351,6 +353,31 @@ footer{background:#0d090f;color:#9d91a3;font-size:12.5px;letter-spacing:.04em;bo
         <p>An automated service that takes out-of-network claims through the federal IDR process so physician-owned radiology, anesthesia, emergency and pathology groups collect what they're owed. Paid as a percentage of what's recovered, so the group carries no upfront cost.</p>
         <p class="fine">No group is promised a specific recovery. We look at your claim mix first. Offered with Advantify.</p>
         <a class="more" href="no-surprises-act.html">Who it's for and how it works &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Projects</div><h2>Tools I built so buyers can see the math</h2></div>
+      <p>Value-based care only sells when the CFO can see the number. So I built the number: a public, checkable model of the CMS TEAM bundled-payment program that 711 hospitals were mandated into in 2026, with every rule traced to the CMS document it came from.</p>
+    </div>
+    <div class="programs projects">
+      <div class="card">
+        <div class="who">For hospital finance, strategy and service-line leaders</div>
+        <h3>CMS TEAM Episode Calculator</h3>
+        <p>Pick any of the 721 participant hospitals and the tool prefills its 2024 Medicare volumes, Care Compare quality, post-discharge spending and county market from thirteen public CMS datasets, then shows the estimated payment or repayment under Tracks 1, 2 and 3 with the quality adjustment, stop-loss rules and sequestration applied. Post-acute levers, a five-year view, and net to the hospital after program cost.</p>
+        <p class="fine">Estimates only, from public data. Not affiliated with CMS. No patient data. Validated against the CMS worked examples on the page.</p>
+        <a class="more" href="/team-calculator/">Open the calculator &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="who">For anyone who wants to see how it was reasoned</div>
+        <h3>The decision record</h3>
+        <p>Eight days of work, kept honest: the timeline, the thirteen datasets and what each supplies, twenty-two modeling decisions with the alternatives that lost, a CFO-style review that reshaped the engine, and the roadmap from a portfolio piece to a product. Built with Claude as the engineering partner, with the calls that were mine marked as mine.</p>
+        <p class="fine">Charts for the data vintage, the build timeline, and the case results before and after the review.</p>
+        <a class="more" href="/team-calculator/docs/decisions.html">Read the decision record &rarr;</a>
       </div>
     </div>
   </div>
