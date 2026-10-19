@@ -4,3 +4,4 @@
 node_modules/
 cms-sources/
 data_hospital_metrics*.json
+dist/
