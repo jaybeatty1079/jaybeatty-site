@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TEAM Calculator Decision Record</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="How the CMS TEAM Episode Calculator was built: the timeline, the thirteen public datasets, every modeling decision with the alternatives considered, the CFO review that reshaped it, and what comes next.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a long-form record in the calculator's Scoreboard palette; one reading column, full-width figures, a sticky section nav. Single committed dark look, matching the tool it documents. */
+:root{
+  --bg:#0b0a10; --surface:#14111e; --panel:#1c1730; --line:#2b2542;
+  --fg:#ece9f5; --muted:#a79fc0; --dim:#7d75a0;
+  --purple:#8366ea; --purple-soft:#b7a6ff;
+  --green:#22a85e; --green-soft:#6fe3a3;
+  --teal:#10a197; --red:#e0607a; --amber:#e5b35a; --magenta:#d65db1;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--purple-soft);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--green-soft);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.1rem,4.6vw,3.6rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,2.8vw,2.2rem)}
+h3{font-size:1.1rem;font-weight:600;font-family:var(--body)}
+p{margin:0}
+.wrap{max-width:1120px;margin-inline:auto}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green-soft)}
+.eyebrow::before{content:"";display:inline-block;width:22px;height:1px;background:var(--green);vertical-align:middle;margin-right:10px}
+.lede{color:var(--muted);max-width:64ch;font-size:1.05rem}
+.prose{max-width:68ch;color:var(--muted);display:grid;gap:12px}
+.prose b{color:var(--fg);font-weight:500}
+section{padding-block:clamp(40px,6vw,72px);border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:28px;align-items:end;margin-bottom:28px}
+@media(max-width:760px){.sec-head{grid-template-columns:1fr}}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px))) calc(-1 * max(16px,env(safe-area-inset-right,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px))}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.brand{font-family:var(--display);font-size:1.05rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
+.brand b{color:var(--green-soft);font-weight:400}
+.links{display:flex;gap:18px;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;overflow-x:auto;white-space:nowrap}
+.links a{color:var(--muted)}
+.links a:hover{color:var(--fg);text-decoration:none}
+@media(max-width:860px){.links{display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:6px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--purple);color:var(--fg);background:transparent}
+.btn.primary{background:var(--purple);border-color:var(--purple)}
+.btn:hover{text-decoration:none;filter:brightness(1.1)}
+.hero{padding-block:clamp(40px,6vw,72px);border-top:0;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:center}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.hero h1 em{font-style:italic;color:var(--green-soft)}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tile{background:var(--panel);border-radius:8px;padding:14px 16px;display:grid;gap:4px;min-width:0}
+.tile .lab{font-size:.78rem;color:var(--muted)}
+.tile .val{font-size:1.7rem;font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.tile .val small{font-size:.85rem;font-weight:500;color:var(--muted)}
+.tile .delta{font-family:var(--mono);font-size:.66rem;color:var(--muted)}
+.board{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:14px;min-width:0}
+.board-head{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;min-width:0}
+figcaption{display:grid;gap:4px;margin-bottom:12px}
+figcaption .t{font-weight:600}
+figcaption .s{font-size:.82rem;color:var(--muted)}
+.chart{width:100%;height:auto;display:block;overflow:visible;font-family:var(--body)}
+.chart text{fill:var(--muted);font-size:12px}
+.chart text.strong{fill:var(--fg);font-weight:500}
+.chart text.mono{font-family:var(--mono);font-size:10.5px}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.78rem;color:var(--muted);margin-top:10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.tip{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--line);color:var(--fg);padding:8px 10px;border-radius:6px;font-size:.8rem;line-height:1.35;opacity:0;transform:translate(-50%,calc(-100% - 10px));transition:opacity .12s;z-index:50;max-width:280px}
+.tip b{display:block;font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media(max-width:860px){.grid2{grid-template-columns:1fr}}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.88rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:500;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase}
+td.n,th.n{text-align:right;white-space:nowrap}
+td small{display:block;color:var(--muted);font-size:.8rem}
+.dec{display:grid;gap:10px}
+.d{display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;padding:16px 0;border-top:1px solid var(--line)}
+.d:first-child{border-top:0}
+.d .no{font-family:var(--mono);font-size:.72rem;color:var(--green-soft);letter-spacing:.08em;padding-top:4px}
+.d h3{margin-bottom:6px}
+.d .meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.chip{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.chip.k{color:var(--purple-soft);border-color:var(--purple)}
+.chip.r{color:var(--amber);border-color:var(--amber)}
+.d p{color:var(--muted);font-size:.93rem}
+.d p b{color:var(--fg);font-weight:500}
+.d .alt{margin-top:6px}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;align-items:stretch}
+@media(max-width:860px){.flow{grid-template-columns:1fr}}
+.node{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;min-width:0;display:grid;gap:6px;position:relative}
+.node .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green-soft)}
+.node h3{font-size:1rem}
+.node p{font-size:.85rem;color:var(--muted)}
+.node ul{margin:0;padding-left:16px;font-size:.84rem;color:var(--muted);display:grid;gap:3px}
+.node code{font-family:var(--mono);font-size:.76rem;color:var(--fg);background:var(--surface);padding:1px 5px;border-radius:4px}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media(max-width:860px){.cols{grid-template-columns:1fr}}
+.col{display:grid;gap:8px;padding-top:14px;border-top:1px solid var(--line)}
+.col .n{font-family:var(--mono);font-size:.68rem;color:var(--green-soft);letter-spacing:.12em}
+.col p{color:var(--muted);font-size:.92rem}
+.disc{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:10px;padding:14px 16px;font-size:.9rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-block:22px;font-size:.78rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="brand" href="https://www.jaybeatty.com">Jay <b>Beatty</b></a>
+  <div class="links"><a href="#timeline">Timeline</a><a href="#data">Data</a><a href="#model">Model</a><a href="#decisions">Decisions</a><a href="#review">CFO review</a><a href="#next">Next</a></div>
+  <a class="btn primary" href="../team-calculator.html">Open the calculator</a>
+</nav></header>
+
+<main>
+<div class="wrap">
+<section class="hero">
+  <div>
+    <div class="eyebrow">Decision record · CMS TEAM Episode Calculator</div>
+    <h1 style="margin-top:16px">How this tool was <em>reasoned</em> into existence.</h1>
+    <p class="lede" style="margin-top:18px">A calculator is only as good as the choices behind it. This page keeps every one: the eight days of work, the thirteen public datasets and what each supplies, each modeling decision with the alternatives that lost, the CFO-style review that reshaped the engine, and the roadmap from a portfolio piece to a product. Written by Jay Beatty with Claude as the engineering partner; Jay set direction, challenged numbers, and made the calls marked as his.</p>
+  </div>
+  <div class="board" aria-label="Record at a glance">
+    <div class="board-head"><span>The record at a glance</span><span>Oct 12 to Oct 19, 2026</span></div>
+    <div class="tiles">
+      <div class="tile"><div class="lab">Working sessions</div><div class="val">6</div><div class="delta">over eight days</div></div>
+      <div class="tile"><div class="lab">Public datasets joined</div><div class="val">13</div><div class="delta">all CMS or MedPAC</div></div>
+      <div class="tile"><div class="lab">Hospitals prefilled</div><div class="val">721</div><div class="delta">every TEAM participant</div></div>
+      <div class="tile"><div class="lab">Decisions logged</div><div class="val">22</div><div class="delta">16 from the CFO review</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="sec-head">
+    <div><div class="eyebrow">Timeline</div><h2 style="margin-top:12px">Eight days, six passes, one direction.</h2></div>
+    <p class="lede">Each pass answered a question the previous one raised. The first version proved the reconciliation math; the last one answered a CFO's objections. Hover a marker for what shipped.</p>
+  </div>
+  <figure>
+    <figcaption><span class="t">Build timeline</span><span class="s">Markers are sessions; the band under them is what the tool could do at that point. Dates are 2026.</span></figcaption>
+    <svg class="chart" id="chTimeline" viewBox="0 0 1080 300" role="img" aria-label="Timeline of the six build sessions from October 12 to October 19, 2026"></svg>
+  </figure>
+  <div class="cols" style="margin-top:24px">
+    <div class="col"><div class="n">OCT 12 TO 13 · GROUNDWORK</div><h3>The site that would host it</h3><p>Three redesign concepts for jaybeatty.com in black, purple and green. Jay chose Scoreboard. That palette, type and layout became the calculator's identity, which is why the tool reads as part of the site rather than a widget bolted on.</p></div>
+    <div class="col"><div class="n">OCT 15 TO 16 · THE MODEL</div><h3>From rules to a working engine</h3><p>Jay said GO. Version one implemented the published reconciliation order from the CMS PY1 target price workbook and fact sheets. The next day added the levers module, because Jay asked whether post-discharge care and complications belonged, and the evening added service-line tabs and five case hospitals on real 2024 volumes.</p></div>
+    <div class="col"><div class="n">OCT 18 TO 19 · THE DATA AND THE CRITIQUE</div><h3>Real data, then hard questions</h3><p>Jay asked what public data had not been used. Thirteen datasets later, every participant prefills. Then he asked for a CFO's objections, sixteen of them, and had all sixteen fixed in priority order, followed by a margin-context line prompted by a Kaufman Hall report he shared.</p></div>
+  </div>
+</section>
+
+<section id="data">
+  <div class="sec-head">
+    <div><div class="eyebrow">Data sourcing</div><h2 style="margin-top:12px">Thirteen public files, one hospital record.</h2></div>
+    <p class="lede">Nothing private, nothing licensed. Every file is downloadable from cms.gov, data.cms.gov or medpac.gov, and each line of the calculator's facts panel names the file it came from. The chart shows how current each source is against the window TEAM actually prices.</p>
+  </div>
+  <figure>
+    <figcaption><span class="t">Data vintage against the TEAM window</span><span class="s">Each bar is the period a dataset measures. The shaded band is the 2022 to 2024 baseline CMS used for PY1 target prices; the dashed line is PY1 itself, 2026. Hover a bar for the release date.</span></figcaption>
+    <svg class="chart" id="chVintage" viewBox="0 0 1080 520" role="img" aria-label="Gantt-style chart of the measurement period of each public dataset from 2020 to 2026"></svg>
+    <div class="legend"><span><i style="background:var(--purple)"></i>Volumes, hospital facts and policy</span><span><i style="background:var(--green)"></i>Quality</span><span><i style="background:var(--magenta)"></i>Spending and market</span></div>
+  </figure>
+  <div style="margin-top:22px" class="board">
+    <div class="board-head"><span>Source manifest</span><span>pulled Oct 15 to 19, 2026</span></div>
+    <div class="tbl"><table>
+      <thead><tr><th>Source</th><th>Release</th><th class="n">Rows read</th><th>What the calculator takes from it</th></tr></thead>
+      <tbody id="manifest"></tbody>
+    </table></div>
+  </div>
+  <div style="margin-top:22px">
+    <figure>
+      <figcaption><span class="t">How the files become one page</span><span class="s">Three scripts, run in order, turn the raw downloads into the embedded data the page reads. Raw files stay out of the repository; the scripts re-download them.</span></figcaption>
+      <div class="flow">
+        <div class="node"><div class="k">1 · raw downloads</div><h3>cms-sources/</h3><p>About 500 MB of CSV, JSON, XLSX and PDF, kept beside the project with the original file names.</p><ul><li>Care Compare CSVs</li><li>data.cms.gov API pulls</li><li>FY2027 impact file and rule text</li><li>TEAM workbooks and fact sheets</li></ul></div>
+        <div class="node"><div class="k">2 · join by CCN</div><h3><code>build_metrics.py</code></h3><p>Reads every file, keys it on the six-digit CMS certification number, computes percentiles among IPPS hospitals eligible for TEAM, and writes the full record.</p><ul><li>721 hospitals, 1.3 MB</li><li>national and state comparators</li><li>county context from FIPS codes</li></ul></div>
+        <div class="node"><div class="k">3 · compact and ratio</div><h3><code>derive.py</code></h3><p>Keeps only what the page needs and pre-computes the ratios the prefill uses: post-discharge spend versus census division, SNF days versus national, state SNF per diem.</p><ul><li>521 KB embedded</li><li>cost-report revenue</li><li>division comparators</li></ul></div>
+        <div class="node"><div class="k">4 · assemble</div><h3><code>assemble.py</code></h3><p>Inlines the price table, participant list, cases and the compact record into the template with the application script. One 800 KB file, no server, no tracking.</p><ul><li>team-calculator.html</li><li>artifact variant for previews</li><li>copy to the site folder</li></ul></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section id="model">
+  <div class="sec-head">
+    <div><div class="eyebrow">The model</div><h2 style="margin-top:12px">What the engine does with a hospital.</h2></div>
+    <p class="lede">Two layers. The reconciliation engine applies the published CMS rules to whatever inputs it is given. The prefill layer turns a hospital's public record into those inputs, and labels each one as real, derived or assumed.</p>
+  </div>
+  <div class="grid2">
+    <figure>
+      <figcaption><span class="t">Reconciliation engine, in CMS order</span><span class="s">Every step cites the document it came from on the calculator's Methodology section.</span></figcaption>
+      <div class="dec">
+        <div class="d"><div class="no">01</div><div><h3>Regional target per MS-DRG</h3><p>Benchmark × prospective trend × (1 − discount), read from the CMS PY1 workbook: 29 MS-DRGs × 9 census divisions. Outpatient joint and fusion rows take the matching MS-DRG price, as the workbook's note directs.</p></div></div>
+        <div class="d"><div class="no">02</div><div><h3>Hospital target</h3><p>Regional target × the risk multiplier. CMS's hospital-specific factor is not public, so the slider is seeded from bed size, safety-net flag and county dual share, and the results show the ±0.06 range and the break-even point.</p></div></div>
+        <div class="d"><div class="no">03</div><div><h3>Reconciliation per category</h3><p>(Target − average spend) × episodes, floored at zero for low-volume categories (30 or fewer episodes across the three baseline years).</p></div></div>
+        <div class="d"><div class="no">04</div><div><h3>Aggregate and quality-adjust</h3><p>Track 1 zeroes a negative total. Positive amounts lose 10% × (1 − CQS/100); negative amounts gain 15% × CQS/100 relief in Track 2, 10% in Track 3. These formulas reproduce the CMS worked examples on the page's Checks section.</p></div></div>
+        <div class="d"><div class="no">05</div><div><h3>Stop-gain, stop-loss, sequestration</h3><p>Caps at 10% (Track 1, upside only), 5% or 20% of the aggregated target. Then 2% sequestration on a positive payment. The final-price band reruns the result with the target 3% either way.</p></div></div>
+        <div class="d"><div class="no">06</div><div><h3>Levers and net to hospital</h3><p>Savings per episode from SNF, IRF, readmission, infection and VTE changes, times a realization share, with home health and outpatient allowances charged back. Net to the hospital subtracts program cost and lost margin.</p></div></div>
+      </div>
+    </figure>
+    <figure>
+      <figcaption><span class="t">Prefill layer, from public record to inputs</span><span class="s">What happens when one of the 721 hospitals is picked. Each output carries a label on the page.</span></figcaption>
+      <div class="dec">
+        <div class="d"><div class="no">A</div><div><h3>Volumes · <span class="chip k">real</span></h3><p>2024 traditional-Medicare inpatient discharges by MS-DRG, plus outpatient joint services as a labeled upper bound. Cells under 11 are suppressed by CMS and can be typed in.</p></div></div>
+        <div class="d"><div class="no">B</div><div><h3>Spend versus target · <span class="chip r">derived</span></h3><p>Each category's national post-acute share × (the hospital's price-standardized 30-day post-discharge spend ÷ its census division's), then a category adjustment where a surgical signal exists: excess hip/knee or CABG readmissions, colon infection ratio. Capped ±20%.</p></div></div>
+        <div class="d"><div class="no">C</div><div><h3>Quality score · <span class="chip r">proxy</span></h3><p>Volume-weighted percentiles, ranked among IPPS hospitals eligible for TEAM: hip/knee and CABG readmission as the stand-in for the hybrid hospital-wide measure (no public scores yet), PSI-90 as itself, and 50 for the patient-reported measure, which is not public.</p></div></div>
+        <div class="d"><div class="no">D</div><div><h3>Levers · <span class="chip k">real where measured</span></h3><p>Hip/knee and CABG readmission rates read straight from Care Compare; SNF share, days and IRF use scaled from the hospital's spending and county use; VTE from PSI-12; bowel infection from the NHSN colon ratio.</p></div></div>
+        <div class="d"><div class="no">E</div><div><h3>Flags and finance · <span class="chip r">proxy</span></h3><p>Safety-net from the Medicare SSI share at the IPPS 75th percentile; rural from the impact file; revenue from the cost report; margin defaulted to the Kaufman Hall 2.5% figure. CMS's notifications govern the flags.</p></div></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section id="decisions">
+  <div class="sec-head">
+    <div><div class="eyebrow">Decision log</div><h2 style="margin-top:12px">Twenty-two choices, with what lost.</h2></div>
+    <p class="lede">In the order they were made. "Jay" marks a call he made against or beyond the suggestion on the table; the rest were proposed by Claude and accepted. Each entry names the alternative considered and why it was not taken.</p>
+  </div>
+  <div class="dec" id="declog"></div>
+</section>
+
+<section id="review">
+  <div class="sec-head">
+    <div><div class="eyebrow">The CFO review</div><h2 style="margin-top:12px">Sixteen objections, sixteen fixes, and what they did to the numbers.</h2></div>
+    <p class="lede">On October 19 Jay asked for the critique a hospital CFO would give, point by point, then had every point fixed in the order a CFO would raise them: net to the hospital first, risk adjustment second, the moving target third. The chart shows the six case hospitals before and after.</p>
+  </div>
+  <figure>
+    <figcaption><span class="t">Case results before and after the review</span><span class="s">Estimated PY1 net payment on each case's chosen track, with the typical program off. The after bars include sequestration, the risk-multiplier seed, census-division comparators and the outpatient joint row, which is why the target books grew. Hover for the target book.</span></figcaption>
+    <svg class="chart" id="chBeforeAfter" viewBox="0 0 1080 340" role="img" aria-label="Grouped bars of estimated net payment per case hospital before and after the CFO review"></svg>
+    <div class="legend"><span><i style="background:var(--purple)"></i>Oct 18, before the review</span><span><i style="background:var(--green)"></i>Oct 19, after the fixes</span><span>Bars below the line are repayments.</span></div>
+  </figure>
+  <div class="board" style="margin-top:22px">
+    <div class="board-head"><span>The sixteen, in the order they were fixed</span><span>all shipped Oct 19</span></div>
+    <div class="tbl"><table>
+      <thead><tr><th>#</th><th>The objection</th><th>What the page does now</th></tr></thead>
+      <tbody id="fixes"></tbody>
+    </table></div>
+  </div>
+</section>
+
+<section id="validation">
+  <div class="sec-head">
+    <div><div class="eyebrow">Validation</div><h2 style="margin-top:12px">Where the engine has been checked.</h2></div>
+    <p class="lede">The page recomputes the CMS worked examples every time it loads and compares its lever arithmetic with the per-episode savings two CMS evaluations measured. This is what is proven, and what is not.</p>
+  </div>
+  <div class="grid2">
+    <div class="board"><div class="board-head"><span>Reproduced</span><span>on the page, live</span></div>
+      <div class="tbl"><table><thead><tr><th>Check</th><th class="n">Published</th><th class="n">This tool</th></tr></thead><tbody>
+        <tr><td>CMS quality weighting example<small>650 / 650 / 400 episodes, scaled 60 / 50 / 40</small></td><td class="n">51.4</td><td class="n">51.5</td></tr>
+        <tr><td>Positive $10,000 at CQS 0 / 50 / 100</td><td class="n">9,000 / 9,500 / 10,000</td><td class="n">same</td></tr>
+        <tr><td>Negative −$10,000, Track 2 at CQS 100</td><td class="n">−8,500</td><td class="n">−8,500</td></tr>
+        <tr><td>Negative −$10,000, Track 3 at CQS 100 / 50</td><td class="n">−9,000 / −9,500</td><td class="n">same</td></tr>
+        <tr><td>CJR evaluation, elective joints<small>5 points IRF to home, 2 points out of SNF</small></td><td class="n">$1,226 / episode</td><td class="n">about $1,120</td></tr>
+        <tr><td>BPCI Advanced, three fewer SNF days</td><td class="n">about $500</td><td class="n">$1,878 at $626 a day</td></tr>
+      </tbody></table></div>
+      <p class="disc">The BPCI figure is the one place the arithmetic runs hot: three fewer days at a full per diem overstates what the evaluation measured, which is why the typical-program preset is capped at $1,200 per episode and scaled by the 60% realization slider.</p>
+    </div>
+    <div class="board"><div class="board-head"><span>Not yet checked</span><span>needs data the tool does not have</span></div>
+      <div class="prose">
+        <p><b>Against a real reconciliation.</b> No hospital's PY1 reconciliation report exists yet; the first arrives in 2027. Until then the engine is validated against CMS examples, not CMS outcomes.</p>
+        <p><b>The prefilled spend.</b> It is derived from all-condition spending patterns. The only test is a hospital comparing it with its own CMS baseline report, which is why the field is labeled and the badge asks for the real number.</p>
+        <p><b>The risk-multiplier seed.</b> A labeled proxy. CMS's target price reports will show how far off it is; the break-even and the ±0.06 band exist so the answer survives being wrong.</p>
+        <p><b>Automated tests.</b> The checks run in the browser. A test file a reviewer can run from the command line is on the roadmap below.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="next">
+  <div class="sec-head">
+    <div><div class="eyebrow">What comes next</div><h2 style="margin-top:12px">From a calculator to a product, in order.</h2></div>
+    <p class="lede">A twenty-year healthcare software developer's verdict on the tool was "decent free tool, would never pay for it." That review is kept here because it is the roadmap. The single-file design was the right call for a portfolio piece and the wrong starting point for a product; everything below needs a backend.</p>
+  </div>
+  <div class="cols">
+    <div class="col"><div class="n">1 · OWN THE HOSPITAL'S DATA</div><h3>Ingest the CMS baseline and claims files</h3><p>Every participant receives its baseline episode file, target price report and quarterly claims feed. Reading those replaces the derived spend with actual episodes and makes episode construction, exclusions and overlaps real instead of modeled.</p></div>
+    <div class="col"><div class="n">2 · MAKE IT A RECORD</div><h3>Accounts, saved scenarios, Excel export</h3><p>Scenarios persist, compare across months, carry an audit trail, and export with formulas intact. A board pack a finance team can drop into its own workbook.</p></div>
+    <div class="col"><div class="n">3 · USE THE ASSET ALREADY LOADED</div><h3>Peer benchmarking across 721 hospitals</h3><p>The dataset to rank any hospital's post-discharge spend, readmissions and quality against every other participant in its division is already in the file. Nobody is showing a CFO that view.</p></div>
+    <div class="col"><div class="n">4 · ESTIMATE RISK PROPERLY</div><h3>HCC-based risk multiplier from the hospital's own claims</h3><p>CMS publishes enough of its methodology to replace the seeded proxy with a real estimate once the claims are in.</p></div>
+    <div class="col"><div class="n">5 · SYSTEM VIEW</div><h3>Roll up a dozen CCNs</h3><p>Systems run TEAM across many hospitals. Side-by-side cases exist; a roll-up with shared assumptions does not.</p></div>
+    <div class="col"><div class="n">6 · ENGINEERING HYGIENE</div><h3>Tests, manifest, history</h3><p>A command-line test file for the engine, a data manifest with pull dates and row counts (the table above is its first draft), and a commit history that shows the iteration rather than three large commits.</p></div>
+  </div>
+  <p class="disc" style="margin-top:24px"><b style="color:var(--fg)">Estimates only.</b> The calculator and this record are independent educational work built from public CMS documents. Not affiliated with or endorsed by CMS. No patient data is involved anywhere in the project.</p>
+</section>
+</div>
+</main>
+<footer><div class="wrap"><span>© 2026 Jay Beatty. Decision record for the TEAM Episode Calculator.</span><span>Last updated October 19, 2026</span></div></footer>
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const NS='http://www.w3.org/2000/svg';
+const el=(n,a={},t)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e;};
+/* chart palette validated with the dataviz checks on the #14111e surface (all pairs): purple, green, magenta */
+const C={purple:'#8366ea',green:'#22a85e',magenta:'#d65db1',teal:'#10a197',red:'#e0607a',amber:'#e5b35a',dim:'#7d75a0',line:'#2b2542',fg:'#ece9f5',muted:'#a79fc0',surface:'#14111e'};
+const tip=$('tip');
+function bindTip(node,html){node.addEventListener('mousemove',e=>{tip.innerHTML=html;tip.style.left=e.clientX+'px';tip.style.top=e.clientY+'px';tip.style.opacity=1;});node.addEventListener('mouseleave',()=>{tip.style.opacity=0;});}
+const fmt=n=>{const s=n<0?'−':'';n=Math.abs(n);if(n>=1e6)return s+'$'+(n/1e6).toFixed(n>=1e7?1:2)+'M';if(n>=1e3)return s+'$'+(n/1e3).toFixed(0)+'K';return s+'$'+Math.round(n);};
+
+/* ---------- timeline ---------- */
+const EVENTS=[
+ {d:12,t:'Site redesign',s:'Three concepts for jaybeatty.com; Scoreboard chosen the next day. Its palette and type became the calculator\'s.'},
+ {d:15,t:'Version one',s:'Reconciliation engine from the CMS PY1 workbook and fact sheets: 29 MS-DRGs × 9 divisions, three tracks, quality adjustment, stop limits, five-year view, 721-hospital picker.'},
+ {d:16,t:'Levers',s:'Post-discharge mix and complication levers with editable unit costs, spend-by-setting chart, waterfall. Prompted by Jay asking whether SNF, home health and infections belonged.'},
+ {d:16.6,t:'Lines and cases',s:'Service-line tabs and five case hospitals on real 2024 CMS volumes, named by archetype and city.'},
+ {d:18,t:'Public data layer',s:'Thirteen datasets joined by CCN; every participant prefills. FY2027 rule read from the Federal Register text. Sixth case added.'},
+ {d:19,t:'CFO review',s:'Sixteen objections fixed in priority order, then a margin-context line from a Kaufman Hall report Jay shared.'}];
+const BANDS=[{a:12,b:15,l:'design system'},{a:15,b:18,l:'engine, levers, cases'},{a:18,b:19.9,l:'data layer, review'}];
+(function(){const svg=$('chTimeline');const W=1080,H=300,L=40,R=40,top=70,axisY=170;const x=d=>L+(d-11.5)/(20.2-11.5)*(W-L-R);
+  BANDS.forEach((b,i)=>{svg.appendChild(el('rect',{x:x(b.a),y:axisY+40,width:x(b.b)-x(b.a),height:28,rx:4,fill:[C.purple,C.magenta,C.green][i],opacity:.22}));svg.appendChild(el('text',{x:(x(b.a)+x(b.b))/2,y:axisY+59,'text-anchor':'middle',class:'mono'},b.l));});
+  svg.appendChild(el('line',{x1:L,x2:W-R,y1:axisY,y2:axisY,stroke:C.line,'stroke-width':2}));
+  for(let d=12;d<=19;d++){svg.appendChild(el('line',{x1:x(d),x2:x(d),y1:axisY-5,y2:axisY+5,stroke:C.muted}));svg.appendChild(el('text',{x:x(d),y:axisY+24,'text-anchor':'middle',class:'mono'},'Oct '+d));}
+  EVENTS.forEach((ev,i)=>{const up=i%2===0;const y=up?top:top+50;const g=el('g',{class:'hit'});
+    g.appendChild(el('line',{x1:x(ev.d),x2:x(ev.d),y1:y+14,y2:axisY,stroke:C.line}));
+    g.appendChild(el('circle',{cx:x(ev.d),cy:axisY,r:7,fill:C.green,stroke:C.surface,'stroke-width':2}));
+    g.appendChild(el('text',{x:x(ev.d),y:y+4,'text-anchor':'middle',class:'strong'},ev.t));
+    g.appendChild(el('rect',{x:x(ev.d)-18,y:y-14,width:36,height:axisY-y+30,fill:'transparent'}));
+    bindTip(g,`<b>${ev.t} · Oct ${Math.floor(ev.d)}</b>${ev.s}`);svg.appendChild(g);});
+  svg.appendChild(el('text',{x:L,y:H-6,class:'mono'},'Six sessions. Each marker is a session; hover for what it shipped.'));})();
+
+/* ---------- data vintage ---------- */
+const SOURCES=[
+ {n:'TEAM PY1 preliminary target prices',cat:'policy',a:2022,b:2025,rel:'2025-12-10',rows:'261 price rows',use:'Benchmark, trend, discount and target for 29 MS-DRGs × 9 divisions; baseline 2022 to 2024.'},
+ {n:'TEAM participant list',cat:'policy',a:2026,b:2026.9,rel:'2026-08-18',rows:'721 hospitals',use:'Who is in the model, with CCN, CBSA and state.'},
+ {n:'FY2027 IPPS final rule and impact file',cat:'policy',a:2025,b:2026.9,rel:'2026-08-04',rows:'3,085 hospitals',use:'Beds, residents per bed, DSH and Medicaid shares, urban or rural flag; the TEAM policy changes for PY1 and PY2.'},
+ {n:'Medicare Inpatient by Provider & Service',cat:'vol',a:2024,b:2025,rel:'2026-04-23',rows:'11,164 rows',use:'2024 inpatient discharges and payment by MS-DRG for every hospital; national and state averages.'},
+ {n:'Medicare Outpatient by Provider & Service',cat:'vol',a:2024,b:2025,rel:'2026-06-25',rows:'7,725 rows',use:'APC 5114 to 5116 services; the outpatient joint row.'},
+ {n:'Hospital Provider Cost Report',cat:'facts',a:2024,b:2025.5,rel:'2026-10-05',rows:'6,109 hospitals',use:'Net patient revenue, patient-service margin; fallback beds.'},
+ {n:'Care Compare: readmissions and complications',cat:'qual',a:2023.5,b:2025.5,rel:'2026-09-10',rows:'162,860 rows',use:'Hip/knee and CABG 30-day readmission, THA/TKA complications, PSI-90 and PSI-12.'},
+ {n:'Care Compare: infections (HAI)',cat:'qual',a:2024.75,b:2025.75,rel:'2026-07-22',rows:'172,440 rows',use:'Colon surgery SSI standardized infection ratio.'},
+ {n:'Care Compare: HRRP FY2026',cat:'qual',a:2021.5,b:2024.5,rel:'2026-01-26',rows:'18,330 rows',use:'Excess readmission ratios, predicted and expected rates for hip/knee and CABG.'},
+ {n:'Care Compare: Medicare spending by claim',cat:'spend',a:2024,b:2025,rel:'2026-01-26',rows:'63,646 rows',use:'Price-standardized spending per episode by setting, 30 days after discharge; hospital, state, national.'},
+ {n:'Medicare Geographic Variation, county',cat:'spend',a:2024,b:2025,rel:'2026-05-15',rows:'3,253 rows',use:'County SNF days per 1,000, SNF, IRF and home health spend per capita, readmission rate, dual share; state SNF per diem.'},
+ {n:'Medicare Monthly Enrollment',cat:'spend',a:2025,b:2026,rel:'2026-09-23',rows:'3,337 rows',use:'County Medicare Advantage share.'},
+ {n:'Market Saturation and Utilization',cat:'spend',a:2025,b:2026,rel:'2026-06-10',rows:'5,938 rows',use:'SNFs and home health agencies billing in each county.'},
+ {n:'Nursing Home Compare',cat:'spend',a:2025.75,b:2026.75,rel:'2026-09-30',rows:'73,450 rows',use:'Nursing homes per county, star ratings, short-stay rehospitalization.'},
+ {n:'TEAM qualified SNF list, Q4 2026',cat:'policy',a:2025.5,b:2026.6,rel:'2026-10',rows:'9,867 facilities',use:'SNFs eligible for the three-day-rule waiver, counted per county.'},
+ {n:'MedPAC data book and CMS evaluations',cat:'facts',a:2021,b:2024.9,rel:'2026-07',rows:'5 reports',use:'IRF stay cost, home health period cost; CJR and BPCI Advanced per-episode savings for the checks.'},
+ {n:'Kaufman Hall flash report',cat:'facts',a:2026,b:2026.65,rel:'2026-10-13',rows:'1 report',use:'2.5% year-to-date operating margin default for the margin-context line.'}];
+const CATC={vol:C.purple,qual:C.green,spend:C.magenta,facts:C.purple,policy:C.purple};
+(function(){const svg=$('chVintage');const W=1080,L=330,R=30,top=34,rowH=26;const x=y=>L+(y-2020)/(2027-2020)*(W-L-R);
+  const H=top+SOURCES.length*rowH+40;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.appendChild(el('rect',{x:x(2022),y:top-10,width:x(2025)-x(2022),height:SOURCES.length*rowH+20,fill:C.purple,opacity:.08}));
+  svg.appendChild(el('text',{x:(x(2022)+x(2025))/2,y:top-14,'text-anchor':'middle',class:'mono'},'PY1 baseline 2022 to 2024'));
+  for(let y=2020;y<=2027;y++){svg.appendChild(el('line',{x1:x(y),x2:x(y),y1:top-10,y2:H-30,class:'grid'}));svg.appendChild(el('text',{x:x(y),y:H-12,'text-anchor':'middle',class:'mono'},String(y)));}
+  svg.appendChild(el('line',{x1:x(2026),x2:x(2026),y1:top-10,y2:H-30,stroke:C.green,'stroke-dasharray':'4 4'}));svg.appendChild(el('text',{x:x(2026)+4,y:top-14,class:'mono',fill:C.green},'PY1'));
+  SOURCES.forEach((s,i)=>{const y=top+i*rowH;const g=el('g');
+    g.appendChild(el('text',{x:L-10,y:y+15,'text-anchor':'end'},s.n.length>44?s.n.slice(0,43)+'…':s.n));
+    g.appendChild(el('rect',{x:x(s.a),y:y+4,width:Math.max(6,x(s.b)-x(s.a)),height:16,rx:4,fill:CATC[s.cat]}));
+    g.appendChild(el('rect',{x:L-320,y:y,width:W-R-(L-320),height:rowH,fill:'transparent'}));
+    bindTip(g,`<b>${s.n}</b>Measures ${s.a%1?String(Math.floor(s.a))+' onward':s.a} to ${Math.floor(s.b-0.01)} · released ${s.rel} · ${s.rows}<br>${s.use}`);svg.appendChild(g);});})();
+$('manifest').innerHTML=SOURCES.map(s=>`<tr><td>${s.n}</td><td>${s.rel}</td><td class="n">${s.rows}</td><td>${s.use}</td></tr>`).join('');
+
+/* ---------- decisions ---------- */
+const DECISIONS=[
+ {d:'Oct 12',who:'jay',t:'Black, deep purple and green, with charts and photos',alt:'Keep the live text-only site and add a page.',why:'A tool that looks like a demo gets judged as one. The site identity came first so the calculator would inherit it, and the Scoreboard concept won because its data tiles already read like a results board.'},
+ {d:'Oct 15',who:'jay',t:'Build a TEAM calculator at all, on public CMS sources only',alt:'A slide deck about TEAM; or a tool fed by licensed hospital data from past roles.',why:'The point was a checkable, public artifact that proves value-based-care fluency to employers. Anything licensed or from a former employer could not be shown, so public data became a hard rule, not a preference.'},
+ {d:'Oct 15',who:'claude',t:'One HTML file, no backend, no tracking',alt:'A React app with an API and a database.',why:'Deployable anywhere, including as a private preview, with nothing to maintain. The cost is known and documented under What comes next: no persistence, no ingestion, no multi-user.'},
+ {d:'Oct 15',who:'claude',t:'Hold PY1 regional prices flat for the five-year view',alt:'Project prices forward with the trend factor.',why:'CMS has published PY1 prices only. Inventing PY2 to PY5 prices would present a guess as a table. Later, the review added a regional ratchet assumption the user controls instead.'},
+ {d:'Oct 15',who:'claude',t:'Risk multiplier and quality score as sliders',alt:'Hard-code 1.00 and 50.',why:'CMS has not published either for any hospital, and both move the answer. Making them visible controls says so. The data layer later seeded both from public proxies, labeled.'},
+ {d:'Oct 16',who:'jay',t:'Model post-discharge care and complications as levers',alt:'Leave spend as a single number per category.',why:'Jay asked whether SNF, home health, physical therapy and infections belonged. They are where TEAM money moves, so the levers module was built with editable unit costs from MedPAC, HCUP and peer-reviewed sources.'},
+ {d:'Oct 16',who:'claude',t:'Keep the net payment at the hospital level under service-line tabs',alt:'Reconcile each line separately.',why:'CMS reconciles one book per hospital. A line tab shows its contribution and its effect on the hospital result, never its own NPRA, so the page cannot be read as implying line-level settlements.'},
+ {d:'Oct 16',who:'jay',t:'Case hospitals named by archetype and city, never by hospital',alt:'Name the real hospitals; the volumes are public.',why:'Volumes were public but performance was modeled, and later derived from all-condition patterns. A real name beside an estimated result reads as a claim about that hospital. Source CCNs live in the spec only.'},
+ {d:'Oct 18',who:'claude',t:'Join thirteen public datasets by CCN and prefill every participant',alt:'Prefill only the six cases by hand.',why:'The same work that fills six cases fills 721 hospitals if it runs as a pipeline, and a pipeline is checkable. It also produced the dataset that makes peer benchmarking possible later.'},
+ {d:'Oct 18',who:'claude',t:'Derive spend from the hospital\'s post-discharge pattern, holding the anchor at target',alt:'Scale the whole episode by the hospital\'s inpatient payment ratio.',why:'TEAM pays the anchor stay at a standardized MS-DRG price, so hospital-level anchor cost differences are mostly wage index and teaching add-ons that standardization removes. The variance that counts is after discharge.'},
+ {d:'Oct 18',who:'claude',t:'Proxy the hybrid hospital-wide readmission measure with hip/knee and CABG readmissions',alt:'Set the quality score to 50 for everyone.',why:'The hybrid measure has no public scores yet. Surgical readmission measures are the closest public signal and are weighted by their denominators. The page says which component is a proxy.'},
+ {d:'Oct 18',who:'claude',t:'Safety-net flag from the Medicare SSI share, not the full DSH percentage',alt:'Use DSH patient percentage, which is more familiar.',why:'DSH includes Medicaid days from non-Medicare patients and flagged academic centers that are not safety-net by CMS\'s dual-eligible test. The SSI share is the Medicare-only component and tracks dual eligibility.'},
+ {d:'Oct 18',who:'jay',t:'Keep the derived estimate on the named-hospital prefill, labeled',alt:'Prefill only facts and volumes for a searched hospital; keep estimates for anonymized cases.',why:'Jay decided the labeled estimate was more useful than a blank slider, provided the page says it is an estimate from public patterns and not the hospital\'s TEAM result. It does, in the facts panel and the badges.'},
+ {d:'Oct 19',who:'jay',t:'Fix all sixteen CFO objections, in the order a CFO would raise them',alt:'Fix the top five and note the rest.',why:'The critique was asked for in order to act on it. Net to the hospital went first because it is the number a CFO signs; the moving target and unit costs next because they are what a CFO would use to dismiss the tool.'},
+ {d:'Oct 19',who:'claude',t:'Price outpatient joint and fusion episodes at the matching MS-DRG',alt:'Invent outpatient target prices from OPPS payments.',why:'The CMS workbook states that HCPCS episode types are mapped and reported under the corresponding MS-DRG. Using that mapping keeps the tool on CMS\'s own method; the APC-based prefill is labeled an upper bound.'},
+ {d:'Oct 19',who:'claude',t:'Rank quality percentiles among IPPS hospitals eligible for TEAM',alt:'Rank among all 4,700 Care Compare hospitals.',why:'The quality scoring fact sheet says the national set is hospitals eligible for TEAM. Critical access hospitals are not. The impact file is the public list of IPPS hospitals; Maryland is excluded as CMS does.'},
+ {d:'Oct 19',who:'claude',t:'Compare post-discharge spend against the census division, not the state',alt:'Keep the state, which the Care Compare file provides directly.',why:'TEAM prices by census division. The division figure is built as the hospital-count-weighted average of its states\' values, so the comparator matches the pricing geography.'},
+ {d:'Oct 19',who:'claude',t:'Cap the typical-program preset at $1,200 per episode and add a 60% realization slider',alt:'Let the arithmetic run: three fewer SNF days at a full per diem.',why:'CJR measured $1,226 per episode and BPCI Advanced about $500 in SNF savings. Modeled savings above what two evaluations found would be a promise the evidence does not support.'},
+ {d:'Oct 19',who:'claude',t:'Seed the risk multiplier from bed size, safety-net flag and county dual share',alt:'Leave it at 1.00 for everyone.',why:'CMS\'s hospital-level adjusters include bed size and safety-net status, and dual eligibility is in the patient model. The seed is small, clamped and labeled; the break-even and ±0.06 band carry the real uncertainty.'},
+ {d:'Oct 19',who:'claude',t:'Clamp the state SNF per diem to $450 to $900',alt:'Use the computed value as is.',why:'Montana and Alaska compute above $1,000 a day because swing-bed stays in critical access hospitals dominate their SNF days. That is not what a freestanding SNF costs, which is what the lever moves.'},
+ {d:'Oct 19',who:'claude',t:'Default the margin line to Kaufman Hall\'s 2.5%, not the cost-report margin',alt:'Use each hospital\'s patient-service margin from its cost report.',why:'The cost-report figure excludes investment and other income and depends on allocation choices; across participants its median is −1.6% with a bottom quartile at −13%. Revenue from the cost report is solid, so it prefills; the margin defaults to the industry figure and is editable.'},
+ {d:'Oct 19',who:'jay',t:'Keep this record beside the tool, in the repository and on the site',alt:'A private notes file.',why:'A hiring manager or a CFO who reads the calculator should be able to see how it was reasoned, with the alternatives that lost. That is the difference between a weekend project and strategic work, and it only counts if it is visible.'}];
+$('declog').innerHTML=DECISIONS.map((x,i)=>`<div class="d"><div class="no">${String(i+1).padStart(2,'0')}</div><div><h3>${x.t}</h3><div class="meta"><span class="chip">${x.d}</span><span class="chip ${x.who==='jay'?'k':''}">${x.who==='jay'?'Jay\'s call':'Proposed by Claude'}</span></div><p><b>Instead of:</b> ${x.alt}</p><p class="alt"><b>Why:</b> ${x.why}</p></div></div>`).join('');
+
+/* ---------- CFO fixes ---------- */
+const FIXES=[
+ ['Gross Medicare savings is not my margin','Net-to-hospital panel: program cost, margin lost per avoided readmission, revenue lost on owned post-acute days, beside the do-nothing figure.'],
+ ['Risk adjustment moves the target more than anything you modeled','±0.06 range and a break-even multiplier on the results board; slider seeded from public hospital factors, labeled a proxy.'],
+ ['The target will move at reconciliation','Final-price band: the result at a target 3% lower and 3% higher.'],
+ ['Your unit costs are national and stale','State SNF per diem, readmission cost inflated to 2024, home health and outpatient allowances charged back, 60% realization slider, preset capped at the evidence.'],
+ ['Half my joints are outpatient and you do not price them','Outpatient joint and fusion rows priced at the matching MS-DRG, prefilled as a labeled upper bound.'],
+ ['You floored low-volume categories wrong','Flag sets itself at 30 or fewer baseline episodes; suppressed MS-DRGs can be typed in.'],
+ ['That quality score is a guess dressed as a number','Slider labeled a proxy; a note shows the three components, which are real, and the weights.'],
+ ['Percentile against whom?','Ranked among the 3,032 IPPS hospitals eligible for TEAM, per the CMS fact sheet.'],
+ ['Safety-net status is inferred','Checkbox says CMS notification governs; SSI share shown against the 8.7% threshold with the county dual share.'],
+ ['Gross savings, no program cost','Covered by the net-to-hospital panel and the realization slider.'],
+ ['The regional target will chase me down','Five-year view ratchets the target by a user-set yearly change, default −1%.'],
+ ['Sequestration and cash timing','2% sequestration toggle on positive payments; each year labeled with its settlement year.'],
+ ['Why should I believe the engine?','Checks section reproduces the CMS worked examples and compares lever math with CJR and BPCI Advanced.'],
+ ['One shift for all five lines','Category-specific adjustments from HRRP excess readmissions and the colon infection ratio; lines without a signal say so.'],
+ ['State is not my region','Census-division comparator for post-discharge spend.'],
+ ['What happens to my scenario when I click send?','Payload holds only the inputs and the hospital name typed in the form; 30-day retention stated.']];
+$('fixes').innerHTML=FIXES.map((f,i)=>`<tr><td class="n">${i+1}</td><td>${f[0]}</td><td>${f[1]}</td></tr>`).join('');
+
+/* ---------- before / after ---------- */
+const CASES=[
+ {n:'Manhattan academic',track:'Track 3',before:1150189,after:2296502,bookB:77472369,bookA:101322842},
+ {n:'Jacksonville community',track:'Track 1',before:1032796,after:545535,bookB:32135785,bookA:46665362},
+ {n:'Minneapolis cardiac',track:'Track 3',before:262903,after:670578,bookB:14771386,bookA:16024080},
+ {n:'Bozeman micropolitan',track:'Track 1',before:302101,after:986768,bookB:6468598,bookA:12175729},
+ {n:'Harrison rural',track:'Track 1',before:26277,after:71162,bookB:3001995,bookA:4895609},
+ {n:'Hershey academic',track:'Track 3 shown',before:-519985,after:-359574,bookB:11442919,bookA:14980371}];
+(function(){const svg=$('chBeforeAfter');const W=1080,H=340,L=70,R=20,top=20,bot=60;const vals=CASES.flatMap(c=>[c.before,c.after]);let lo=Math.min(0,...vals),hi=Math.max(0,...vals);const pad=(hi-lo)*.12;lo-=pad;hi+=pad;
+  const slot=(W-L-R)/CASES.length,X=i=>L+slot*i+slot/2,Y=v=>top+(hi-v)/(hi-lo)*(H-top-bot);
+  const step=500000;for(let v=Math.ceil(lo/step)*step;v<=hi;v+=step){svg.appendChild(el('line',{x1:L,x2:W-R,y1:Y(v),y2:Y(v),class:'grid'}));svg.appendChild(el('text',{x:L-8,y:Y(v)+4,'text-anchor':'end',class:'mono'},v===0?'$0':fmt(v)));}
+  svg.appendChild(el('line',{x1:L,x2:W-R,y1:Y(0),y2:Y(0),stroke:C.muted}));
+  CASES.forEach((c,i)=>{const bw=slot*.26,g=el('g');
+    const bar=(x,v,fill,lab)=>{const r=el('rect',{x:x-bw/2,y:Math.min(Y(0),Y(v)),width:bw,height:Math.max(1,Math.abs(Y(v)-Y(0))),rx:3,fill});g.appendChild(r);g.appendChild(el('text',{x,y:v>=0?Y(v)-6:Y(v)+14,'text-anchor':'middle',class:'mono'},fmt(v)));};
+    bar(X(i)-bw*.6,c.before,C.purple);bar(X(i)+bw*.6,c.after,C.green);
+    g.appendChild(el('text',{x:X(i),y:H-bot+18,'text-anchor':'middle',class:'strong'},c.n));g.appendChild(el('text',{x:X(i),y:H-bot+34,'text-anchor':'middle',style:'font-size:10.5px'},c.track));
+    g.appendChild(el('rect',{x:L+slot*i,y:top,width:slot,height:H-top-bot,fill:'transparent'}));
+    bindTip(g,`<b>${c.n} · ${c.track}</b>Before: ${fmt(c.before)} on a ${fmt(c.bookB)} target book<br>After: ${fmt(c.after)} on ${fmt(c.bookA)}<br>The book grew with the outpatient joint row and the risk seed.`);svg.appendChild(g);});})();
+})();
+</script>
+</body>
+</html>
