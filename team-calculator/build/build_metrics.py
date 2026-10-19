@@ -150,17 +150,20 @@ def pct_rank(vals,v,lower_better=True):
     below=sum(1 for x in xs if x<v); eq=sum(1 for x in xs if x==v)
     p=(below+0.5*eq)/len(xs)*100
     return round(100-p if lower_better else p,1)
+# CMS scales measures against hospitals eligible for TEAM: IPPS acute care hospitals, excluding Maryland (quality scoring fact sheet). Use the FY2027 impact file as the IPPS list.
+ELIG=set(c for c in imp if not c.startswith('21'))
+ALLE={k:{c:v for c,v in d.items() if c in ELIG} for k,d in ALL.items()}
 for c in M:
     m=M[c]; sc={}
     for k in ['rhk','rcb','chk','p90','p12']:
-        if m.get(k) is not None: sc[k]=pct_rank(ALL[k].values(),m[k],True)
-    if c in ALL['mspbr']: sc['mspbr']=pct_rank(ALL['mspbr'].values(),ALL['mspbr'][c],True); m['mspbr']=round(ALL['mspbr'][c],3)
+        if m.get(k) is not None: sc[k]=pct_rank(ALLE[k].values(),m[k],True)
+    if c in ALL['mspbr']: sc['mspbr']=pct_rank(ALLE['mspbr'].values(),ALL['mspbr'][c],True); m['mspbr']=round(ALL['mspbr'][c],3)
     m['pct']=sc
     # proxy CQS: readmission proxy (rhk, rcb weighted by denominators) 50% ; PSI-90 50%; PRO-PM not public -> 50 for LEJR share handled on page
     rd_parts=[(sc[k],m.get(k+'n') or 1) for k in ('rhk','rcb') if k in sc]
     rdp=sum(p*w for p,w in rd_parts)/sum(w for p,w in rd_parts) if rd_parts else None
     m['cqsx']={'readm':round(rdp,1) if rdp is not None else None,'psi90':sc.get('p90')}
-NAT={'rhk':round(statistics.median(ALL['rhk'].values()),1),'rcb':round(statistics.median(ALL['rcb'].values()),1),'chk':round(statistics.median(ALL['chk'].values()),1),'p90':round(statistics.median(ALL['p90'].values()),2),'p12':round(statistics.median(ALL['p12'].values()),2),
+NAT={'rhk':round(statistics.median(ALLE['rhk'].values()),1),'rcb':round(statistics.median(ALLE['rcb'].values()),1),'chk':round(statistics.median(ALLE['chk'].values()),1),'p90':round(statistics.median(ALLE['p90'].values()),2),'p12':round(statistics.median(ALLE['p12'].values()),2),'elig_n':len(ELIG),
      'cty':gpick(geoN),'ma25':mashare(enN),'drg':NATDRG,'states':{k:gpick(v) for k,v in geoS.items()},'ma25_state':{k:mashare(v) for k,v in enS.items()}}
 NAT['cty']['name']='National'
 json.dump({'meta':{'built':'2026-10-18','sources':{'carecompare':'Care Compare hospital files downloaded 2026-10-18 (Unplanned Hospital Visits and Complications released 2026-09-10; HAI and MSPB 2026-07-22; HRRP and Spending by Claim FY2026 2026-01-26)','impact':'FY2027 IPPS final rule impact file (Aug 2026)','hcris':'Hospital Provider Cost Report 2024 (data.cms.gov)','inpatient':'Medicare Inpatient Hospitals by Provider and Service CY2024','outpatient':'Medicare Outpatient Hospitals by Provider and Service CY2024, APC 5114-5116','geovar':'Medicare Geographic Variation by National, State & County 2024','enrollment':'Medicare Monthly Enrollment 2025 (year)','marketsat':'Market Saturation & Utilization State-County, 2025','nh':'Nursing Home Provider Information and Medicare Claims Quality Measures, Sep 2026','waiver':'TEAM Qualified SNF List Q4 2026'}},'nat':NAT,'h':M},open('data_hospital_metrics.json','w'))

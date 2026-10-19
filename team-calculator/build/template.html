@@ -122,6 +122,7 @@ input[type=radio]{accent-color:var(--purple)}
 .slider input[type=range]{width:100%;accent-color:var(--purple)}
 .slider output{font-family:var(--mono);font-size:.8rem;min-width:7ch;text-align:right;color:var(--fg)}
 .note{font-size:.78rem;color:var(--muted)}
+.badge{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}.badge.user{color:var(--green-soft);border-color:var(--green)}.badge.derived{color:var(--amber);border-color:var(--amber)}
 .facts{display:grid;gap:8px;margin-top:10px}.fact{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px;font-size:.8rem;color:var(--muted);padding:8px 0;border-top:1px solid var(--line)}.fact .fl{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg);padding-top:2px}.fact .fv{line-height:1.45}.fact .fs{display:block;margin-top:3px;font-size:.68rem;opacity:.75}.fact .dim{opacity:.7}.fact.derived{display:block;background:rgba(124,92,255,.08);border:1px solid var(--line);border-radius:10px;padding:10px 12px;line-height:1.45}@media(max-width:640px){.fact{grid-template-columns:1fr}}
 .warn{font-size:.8rem;color:var(--amber)}
 
@@ -262,7 +263,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       </div>
       <div id="hospMeta" class="note" style="margin-top:8px"></div>
       <div class="checks" style="margin-top:14px">
-        <label><input type="checkbox" id="safetyNet"> Safety-net hospital</label>
+        <label><input type="checkbox" id="safetyNet"> Safety-net hospital (CMS notification governs)</label>
         <label><input type="checkbox" id="ruralType"> Rural, SCH, MDH or EACH</label>
       </div>
       <p class="note" style="margin-top:8px">CMS names these hospitals before each performance year. They unlock Track 2 and later Track 1 years. When a hospital is picked, safety-net is estimated from its Medicare SSI share (above the 75th percentile of IPPS hospitals, 8.7%, in the FY2027 impact file) and rural from the impact file's geographic flag; CMS's own test also counts Part D low-income subsidy share and rural census tracts.</p>
@@ -278,11 +279,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       </div>
       <div class="tracks" id="tracks"></div>
       <p class="note" id="trackNote" style="margin-top:10px"></p>
+      <div class="row" style="margin-top:12px">
+        <div class="field"><label for="regional">Regional target change per year (five-year view)</label>
+          <div class="slider"><input type="range" id="regional" min="-3" max="1" step="0.5" value="-1"><output id="regionalOut">−1.0%/yr</output></div>
+          <span class="note">The benchmark rebases on a rolling three-year baseline, so as the division improves the target follows it down. Default assumes 1% a year; set 0 to hold PY1 prices flat.</span></div>
+        <div class="field"><label>Payment timing</label><label class="checks" style="font-size:.9rem"><input type="checkbox" id="seq" checked> Apply 2% sequestration to positive payments</label>
+          <span class="note">CMS pays or bills the reconciliation in the year after the performance year, with a later true-up for trend and post-episode spending. Repayments are not reduced by sequestration.</span></div>
+      </div>
     </div>
 
     <div class="step">
       <div class="k">Step 3</div><h3>Episodes and spend</h3>
-      <p class="help">Annual traditional-Medicare episodes by MS-DRG, and your average episode spend (Part A and B, anchor through 30 days). Spend defaults to the regional target so you only have to move it. Turn off categories you do not perform. From October 1, 2026 the FY2027 rule adds MS-DRGs 523 to 525 as spinal fusion triggers; CMS prices them separately from PY2, so count them under the fusion MS-DRG they replaced for now.</p>
+      <p class="help">Annual traditional-Medicare episodes by MS-DRG, and your average episode spend (Part A and B, anchor through 30 days). Spend defaults to the regional target so you only have to move it. Turn off categories you do not perform. Outpatient joint and fusion episodes count in TEAM and are priced under the matching MS-DRG, so each has its own row. From October 1, 2026 the FY2027 rule adds MS-DRGs 523 to 525 as spinal fusion triggers; CMS prices them separately from PY2, so count them under the fusion MS-DRG they replaced for now. The badge on each category says whether the spend figure is yours, estimated from public data, or simply the regional target.</p>
       <div id="cats" style="display:grid;grid-template-columns:minmax(0,1fr);gap:12px"></div>
     </div>
 
@@ -291,10 +299,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="row">
         <div class="field"><label for="risk">Risk-adjustment multiplier</label>
           <div class="slider"><input type="range" id="risk" min="0.8" max="1.2" step="0.01" value="1"><output id="riskOut">1.00×</output></div>
-          <span class="note">Your hospital-specific target = regional target × this. CMS sets it from patient HCCs, age, dual and LIS status, and hospital factors, then normalizes so the average stays flat.</span></div>
-        <div class="field"><label for="cqs">Composite quality score (0 to 100)</label>
+          <span class="note">Your hospital-specific target = regional target × this. CMS sets it from patient HCCs, age, dual and LIS status, and hospital factors, then normalizes so the average stays flat. A move of 0.05 here usually outweighs every lever below, so the results panel shows a ±0.06 range and the break-even multiplier. When a hospital is picked the slider is seeded from bed size, safety-net flag and county dual-eligible share, a rough proxy until CMS's target price report arrives.</span></div>
+        <div class="field"><label for="cqs">Composite quality score (0 to 100; a proxy when prefilled)</label>
           <div class="slider"><input type="range" id="cqs" min="0" max="100" step="1" value="50"><output id="cqsOut">50</output></div>
-          <span class="note">PY1 measures: hybrid hospital-wide readmission, CMS PSI 90, and the THA/TKA patient-reported outcome measure for joint replacement. Scores are national percentiles weighted by episode volume, scored against a concurrent baseline (FY2027 rule). PY2 adds falls with injury, postoperative respiratory failure and 30-day surgical death after complications; a hospital that does not report a measure gets 50 for it. When a hospital is picked, this slider is set from its Care Compare readmission and PSI-90 percentiles with the patient-reported measure at 50.</span></div>
+          <span class="note">PY1 measures: hybrid hospital-wide readmission, CMS PSI 90, and the THA/TKA patient-reported outcome measure for joint replacement. Scores are national percentiles weighted by episode volume, scored against a concurrent baseline (FY2027 rule). PY2 adds falls with injury, postoperative respiratory failure and 30-day surgical death after complications; a hospital that does not report a measure gets 50 for it. When a hospital is picked, this slider is set from its Care Compare readmission and PSI-90 percentiles with the patient-reported measure at 50.</span><div class="note" id="cqsNote" style="margin-top:6px"></div></div>
       </div>
       <div class="actions" style="margin-top:14px"><button class="btn small" type="button" id="loadExample">Load example hospital</button><button class="btn small" type="button" id="resetAll">Clear inputs</button></div>
     </div>
@@ -302,13 +310,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="step" id="step5">
       <div class="k">Step 5</div><h3>Levers: what a care-redesign program is worth</h3>
       <p class="help">TEAM counts nearly everything Medicare pays from admission through 30 days after discharge, so the money moves in the post-discharge window: where patients go, how long they stay, and who bounces back. Set where your hospital is today and where a program could take it. Defaults are national figures from the sources listed; replace them with your own claims data.</p>
+      <div class="row" style="margin-bottom:12px"><div class="field"><label for="real">Realization: share of modeled savings a program actually captures</label><div class="slider"><input type="range" id="real" min="20" max="100" step="5" value="60"><output id="realOut">60%</output></div><span class="note">Published bundled-payment programs captured well under their modeled savings. 60% is a middle case; 100% is the raw arithmetic.</span></div></div>
       <div class="checks" style="font-size:.9rem;margin-bottom:12px"><label><input type="checkbox" id="leversOn"> Apply these levers to the results and the five-year view</label><label><input type="checkbox" id="spineOrtho" checked> Count spinal fusion under Orthopedics (off: its own Spine line)</label></div>
       <div id="levers" style="display:grid;grid-template-columns:minmax(0,1fr);gap:12px"></div>
       <details style="margin-top:12px"><summary style="cursor:pointer;color:var(--purple-soft);font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase">Unit costs behind the levers (editable)</summary>
         <div class="row3" style="margin-top:10px" id="unitCosts"></div>
-        <p class="note" style="margin-top:8px">SNF per day = MedPAC 2024 average payment per stay ($20,970) over the average stay (30.7 days). IRF = MedPAC 2024 average payment per stay. Home health = MedPAC 2024 average payment per 30-day period. Readmission = HCUP Statistical Brief 278, average cost of a Medicare 30-day readmission, 2018. SSI = Adeyemi and Trueman 2019, added 90-day episode cost of a surgical site infection after joint replacement. VTE = Cohoon et al. 2015, added cost in the first three months after a venous thromboembolism following major surgery. A patient kept out of a SNF or IRF is assumed to go home with home health.</p>
+        <p class="note" style="margin-top:8px">SNF per day = standardized Medicare SNF payment per covered day from the Geographic Variation file, 2024: $626 national, replaced by your state's figure when a hospital is picked (MedPAC's actual-dollar average is $683). IRF = MedPAC 2024 average payment per stay. Home health = MedPAC 2024 average payment per 30-day period, charged against every patient moved out of a facility, plus an outpatient therapy and visit allowance. Readmission = HCUP Statistical Brief 278, average cost of a Medicare 30-day readmission, 2018, inflated 25% to 2024 hospital-services prices. SSI = Adeyemi and Trueman 2019, added 90-day episode cost of a surgical site infection after joint replacement. VTE = Cohoon et al. 2015, added cost in the first three months after a venous thromboembolism following major surgery. A patient kept out of a SNF or IRF is assumed to go home with home health.</p>
       </details>
       <div class="actions" style="margin-top:14px"><button class="btn small" type="button" id="leverPreset">Load a typical program</button><button class="btn small" type="button" id="leverReset">Targets = today</button></div>
+      <p class="note" style="margin-top:8px">The typical program moves 5 points out of SNF, cuts 3 SNF days, moves 2 points out of inpatient rehab, and trims readmissions 20%, infections 30% and VTE 25%, then is capped at $1,200 of raw savings per episode, the magnitude CJR and BPCI Advanced actually measured, before the realization slider applies.</p>
       <p class="note" style="margin-top:10px">Quality link: readmissions feed the hospital-wide readmission measure and VTE feeds PSI 90, both inside the composite quality score. Surgical site infection is not in PSI 90; it reaches TEAM through readmissions and post-acute cost. SSI and VTE costs here are increments beyond the readmission line, so lower the readmission lever if you count the same event twice.</p>
     </div>
   </div>
@@ -324,8 +334,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div class="tile"><div class="lab">Quality adjustment</div><div class="val" id="tCqs">$0</div><div class="delta" id="tCqsD"></div></div>
       </div>
       <div class="board-foot" id="capNote"></div>
+      <div class="board-foot" id="bandNote" style="color:var(--amber)"></div>
+      <div class="board-foot" id="seqNote"></div>
       <div class="tile" id="leverTile" style="display:none"><div class="lab">With levers applied</div><div class="val" id="leverVal">$0</div><div class="delta" id="leverDelta"></div></div>
       <ul class="moves" id="moves" style="margin:0;padding-left:18px"></ul>
+      <div class="tile" id="netBoard" style="display:none;gap:10px"><div class="lab">Net to the hospital, not to Medicare</div><div class="val" id="netVal">$0</div><div class="delta" id="netDetail" style="white-space:normal"></div>
+        <div class="row3" style="margin-top:6px"><div class="field"><label>Program cost per year</label><input type="number" min="0" step="10000" data-net="cost" value="250000"></div><div class="field"><label>Margin lost per avoided readmission</label><input type="number" min="0" step="100" data-net="raMargin" value="3500"></div><div class="field"><label>Revenue lost per SNF day in owned facilities</label><input type="number" min="0" step="10" data-net="snfRev" value="0"></div></div>
+        <span class="note">Program cost covers navigators and network management. The readmission margin is the contribution margin the hospital gives up on an admission it no longer has (default about a quarter of the Medicare payment). Set the SNF figure if your system owns the nursing facilities patients would have used.</span></div>
       <div class="actions"><button class="btn small" type="button" onclick="window.print()">Print this scenario</button><a class="btn small" href="#capture">Walk through it with Jay</a></div>
       <p class="print-only" id="printMeta"></p>
     </div>
@@ -410,6 +425,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
 </section>
 
+<section id="checks">
+  <div class="sec-head">
+    <div><div class="eyebrow">Checks</div><h2 style="margin-top:12px">Does the engine reproduce what CMS published?</h2></div>
+    <p class="lede">The quality adjustment is run against the worked examples in the CMS quality scoring fact sheet, and the lever arithmetic against the per-episode savings the CJR and BPCI Advanced evaluations measured. Recomputed every time the page loads, with the page's current unit costs.</p>
+  </div>
+  <details class="tbl" open><summary>Checks table</summary><div id="checksBody"></div></details>
+</section>
+
 <section id="method">
   <div class="sec-head">
     <div><div class="eyebrow">Methodology</div><h2 style="margin-top:12px">What the calculator does, and what it leaves out.</h2></div>
@@ -420,15 +443,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <h3 style="margin-bottom:10px">Calculation order</h3>
       <ol style="margin:0;padding-left:20px;color:var(--muted);display:grid;gap:8px;font-size:.95rem">
         <li>Regional target per MS-DRG = benchmark × prospective trend × (1 − discount), read from the CMS PY1 workbook (29 MS-DRGs × 9 census divisions).</li>
-        <li>Category target = count-weighted regional target × your risk multiplier (normalization and retrospective trend assumed 1.00).</li>
-        <li>Reconciliation amount per category = (target − average spend) × episodes. Low-volume categories floored at zero.</li>
+        <li>Category target = count-weighted regional target × your risk multiplier. Outpatient joint and fusion rows take the matching MS-DRG price, as the CMS workbook does. Normalization and the retrospective trend are held at 1.00 in the point estimate; the final-price band reruns the result at ±3% on the target.</li>
+        <li>Reconciliation amount per category = (target − average spend) × episodes. Low-volume categories (30 or fewer episodes across the three baseline years, flagged automatically when three times the annual count is 30 or fewer) floored at zero.</li>
         <li>Aggregate to the hospital. Track 1 sets a negative aggregate to zero.</li>
         <li>Quality adjustment per the CMS worked tables.</li>
-        <li>Stop-gain and stop-loss applied as a share of the aggregated target price. Result is the estimated NPRA.</li>
-        <li>Five-year view holds PY1 prices flat in standardized dollars, compounds your yearly spend change, and moves you to Track 3 in any year your chosen track is not available.</li>
-        <li>Levers: savings per episode = (SNF share moved to home health × (SNF days × SNF per day − home health period)) + (SNF share kept × days cut × SNF per day) + (IRF share moved × (IRF stay − home health period)) + (readmission points cut × readmission cost) + (SSI points cut × SSI cost) + (VTE points cut × VTE cost). Average spend falls by that amount and steps 2 to 6 run again.</li>
+        <li>Stop-gain and stop-loss applied as a share of the aggregated target price, then 2% sequestration on a positive amount if the toggle is on. Result is the estimated NPRA. The results panel also reports the risk multiplier at which it crosses zero.</li>
+        <li>Five-year view compounds your yearly spend change and a yearly regional target change (the rolling baseline ratchet), and moves you to Track 3 in any year your chosen track is not available. Each year's amount is settled the following year.</li>
+        <li>Levers: savings per episode = (SNF share moved home × (SNF days × SNF per day − home health period − outpatient allowance)) + (SNF share kept × days cut × SNF per day) + (IRF share moved home × (IRF stay − home health period − outpatient allowance)) + (readmission points cut × readmission cost) + (SSI points cut × SSI cost) + (VTE points cut × VTE cost), all multiplied by the realization share. Average spend falls by that amount and steps 2 to 6 run again. Net to hospital = that result − program cost − avoided readmissions × margin − avoided SNF days × owned-facility revenue.</li>
         <li>Service-line tabs filter the charts and show each line's contribution. CMS reconciles at the hospital level, so the net payment stays a hospital number; a line's "effect on the hospital result" is the hospital NPRA with only that line's levers applied, minus the NPRA without them.</li>
-        <li>Hospital prefill (any participant, and the six cases): MS-DRG volumes from the CMS Medicare Inpatient Hospitals by Provider and Service file for calendar 2024 (traditional Medicare inpatient discharges; cells under 11 suppressed; outpatient joint and spine episodes shown as a count but not priced). Spend versus target per category = that category's national post-acute share × (the hospital's price-standardized 30-day post-discharge spending per episode ÷ its state's, from the Care Compare Medicare Spending by Claim file, all conditions), capped at ±20%. The anchor stay is held at target because TEAM pays it at a fixed standardized MS-DRG price. Quality score = volume-weighted average of the hospital's national percentile on 30-day hip/knee and CABG readmission (proxy for the hybrid hospital-wide measure, which has no public scores yet), its PSI-90 percentile, and 50 for the THA/TKA patient-reported measure (not yet public). Lever starting points: hip/knee and CABG readmission rates read directly from Care Compare; other readmission defaults scaled by the hospital's 30-day readmission spending ratio; SNF share scaled by its SNF spending ratio (0.5 to 1.8×); SNF days by county SNF days per 1,000 versus national (0.7 to 1.4×); IRF share by county IRF spending per capita versus national (0.3 to 2×); VTE by the hospital's PSI-12 rate versus the national median (0.4 to 2×); major-bowel SSI by its NHSN colon SSI ratio (0.3 to 2.5×, when at least one predicted infection). Safety-net flag: Medicare SSI share above the 75th percentile of IPPS hospitals (8.7%, FY2027 impact file); rural: the impact file's geographic flag. Risk multiplier stays 1.00.</li>
+        <li>Hospital prefill (any participant, and the six cases): MS-DRG volumes from the CMS Medicare Inpatient Hospitals by Provider and Service file for calendar 2024 (traditional Medicare inpatient discharges; cells under 11 suppressed; outpatient joint and spine episodes shown as a count but not priced). Spend versus target per category = that category's national post-acute share × (the hospital's price-standardized 30-day post-discharge spending per episode ÷ its census division's, from the Care Compare Medicare Spending by Claim file, all conditions), plus a category-specific adjustment where a public surgical signal exists (hip/knee and CABG: HRRP predicted minus expected readmissions × readmission cost; major bowel: colon SSI ratio minus 1 × 10% × SSI cost), capped at ±20%. The anchor stay is held at target because TEAM pays it at a fixed standardized MS-DRG price. Quality score = volume-weighted average of the hospital's percentile among IPPS hospitals eligible for TEAM on 30-day hip/knee and CABG readmission (proxy for the hybrid hospital-wide measure, which has no public scores yet), its PSI-90 percentile, and 50 for the THA/TKA patient-reported measure (not yet public). Risk multiplier seeded from bed-size band (±0.01 to +0.02), safety-net flag (+0.01) and county dual-eligible share versus national (0.25 × the difference), clamped 0.94 to 1.06. Lever starting points: hip/knee and CABG readmission rates read directly from Care Compare; other readmission defaults scaled by the hospital's 30-day readmission spending ratio; SNF share scaled by its SNF spending ratio (0.5 to 1.8×); SNF days by county SNF days per 1,000 versus national (0.7 to 1.4×); IRF share by county IRF spending per capita versus national (0.3 to 2×); VTE by the hospital's PSI-12 rate versus the national median (0.4 to 2×); major-bowel SSI by its NHSN colon SSI ratio (0.3 to 2.5×, when at least one predicted infection). Safety-net flag: Medicare SSI share above the 75th percentile of IPPS hospitals (8.7%, FY2027 impact file), shown against the threshold with the county dual share; rural: the impact file's geographic flag. CMS's annual notification governs both.</li>
         <li>Spend by setting uses the national TEAM shares of anchor facility, anchor Part B and post-acute spend by category (IAC, 2021 to 2023 claims) applied to your average spend.</li>
       </ol>
     </div>
@@ -439,8 +462,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <li>The 99th-percentile outlier cap on single episodes (already inside the CMS benchmark). Enter your average spend.</li>
         <li>Episode cancellations, overlap with ACOs and other models, post-episode spending monitoring, beneficiary incentives, SNF three-day waiver effects.</li>
         <li>Target prices for PY2 to PY5, which CMS has not published. PY1 regional prices are held flat. The FY2027 rule adds MS-DRG and APC update factors to the trend from PY1 (expected in late 2026) and, from PY2, builds the normalization factor from all three baseline years; neither is in the public workbook yet.</li>
-        <li>The hospital's actual TEAM performance. Prefilled spend and quality come from all-condition public measures and spending patterns, so they show where a hospital's post-discharge habits point, not its surgical episode results. Hospitals should replace them with their own numbers.</li>
-        <li>Sequestration. Medicare Advantage volume (TEAM is traditional Medicare only).</li>
+        <li>The hospital's actual TEAM performance. Prefilled spend and quality come from all-condition public measures and spending patterns, so they show where a hospital's post-discharge habits point, not its surgical episode results. Hospitals should replace them with the category spend in their CMS baseline report; the badge on each category says which it is.</li>
+        <li>Interest, discounting and the timing of CMS's true-ups beyond the settlement year shown.</li>
+        <li>Medicare Advantage volume (TEAM is traditional Medicare only); the county MA share is shown so you can see how much of your surgical book is in scope.</li>
         <li>Where your readmissions originate. Only your claims feed can show whether they come from a particular SNF or home health agency. CMS provides TEAM participants with claims data on request; this tool prices what fixing it is worth.</li>
       </ul>
       <div class="disc" style="margin-top:18px"><b style="color:var(--fg)">Estimates only.</b> This tool is an independent educational model built from public CMS documents. It is not affiliated with or endorsed by CMS. It collects no patient data and stores nothing you type. Use your CMS target price report and reconciliation reports for decisions.</div>
@@ -499,7 +523,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="field"><label for="cHosp">Hospital or company</label><input type="text" id="cHosp" name="hospital"></div>
       <input type="hidden" name="scenario" id="cScenario">
       <button class="btn primary" type="submit">Send me this scenario</button>
-      <span class="note">No newsletter. One reply from Jay with your scenario summary.</span>
+      <span class="note">No newsletter. One reply from Jay with your scenario summary. The summary holds only the inputs on this page and the hospital name you type here; it is kept in the form inbox for 30 days and then deleted. No patient data is involved.</span>
       <span class="ok" id="capOk">Thanks. Jay will reply with your scenario summary.</span>
     </form>
   </div>

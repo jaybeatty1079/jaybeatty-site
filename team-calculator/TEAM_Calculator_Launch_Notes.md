@@ -54,3 +54,8 @@ Talking points the cases give you: (1) the metro academic center earns about $0.
 - The page is now about 725 KB because it embeds `data_hospital_slim.json` (470 KB) for all 721 participants. Still a single file; Netlify and the claude.ai artifact handle it. If size matters later, move the JSON to a sidecar file fetched at load (breaks the artifact variant) or gzip on the host.
 - Rebuild order after any data refresh: `python3 build/build_metrics.py` (re-downloads nothing; reads the saved CSVs and pulls), `python3 build/derive.py`, `python3 build/assemble.py`. Delete `cms-sources/pulls/inpatient2024_teamdrgs_all.json` to re-pull inpatient volumes.
 - Resume and LinkedIn lines can now say: "built on 13 public CMS datasets, prefilled for every one of the 721 mandatory hospitals."
+
+## 2026-10-19: CFO review
+
+- Sixteen fixes from a CFO-style critique are in (spec section "CFO review fixes"). Page is now about 760 KB.
+- The resume line can add: "validated against the CMS worked examples and the CJR and BPCI Advanced evaluations; shows net-to-hospital after program cost and lost revenue."

@@ -1,6 +1,6 @@
 # CMS TEAM Episode Calculator: model spec (plain English)
 
-Prepared 2026-10-15 for Jay Beatty; public data layer and FY2027 rule added 2026-10-18. Every rule below comes from public CMS documents saved in `cms-sources/` (FY2025 and FY2026 IPPS final rules as summarized in the CMS fact sheets, the September 2025 Risk Adjustment and Preliminary Target Price Specifications, the September 2025 Quality Scoring fact sheet, and the 2025-12-10 PY1 preliminary target price workbook). Nothing in here uses Surge Care materials, Definitive data or any hospital's private numbers.
+Prepared 2026-10-15 for Jay Beatty; public data layer and FY2027 rule added 2026-10-18; CFO review fixes added 2026-10-19. Every rule below comes from public CMS documents saved in `cms-sources/` (FY2025 and FY2026 IPPS final rules as summarized in the CMS fact sheets, the September 2025 Risk Adjustment and Preliminary Target Price Specifications, the September 2025 Quality Scoring fact sheet, and the 2025-12-10 PY1 preliminary target price workbook). Nothing in here uses Surge Care materials, Definitive data or any hospital's private numbers.
 
 ## What the calculator answers
 
@@ -127,6 +127,30 @@ Read from the rule text in `cms-sources/ipps-fy2027/fy2027-team-section.txt`. Wh
 The TEAM PY1 preliminary target price workbook and the updated overview deck on the CMS TEAM page are byte-identical to the copies saved 2026-10-15, so prices are unchanged.
 
 MS-DRG titles for the FY2025 spinal fusion regrouping now come from the CMS public file (402, 426 to 428, 448, 451 confirmed; 429, 430, 447, 450 inferred from the CMS mapping summary).
+
+
+## CFO review fixes (added 2026-10-19)
+
+Sixteen weaknesses a hospital CFO would raise, each with what the page now does. Numbers below are the Jacksonville case after the change.
+
+1. **Spend is not the hospital's spend.** Each category now carries a badge: "your number", "estimated from public pattern, replace with your baseline", or "at regional target". The spend field is labeled as the place for the CMS baseline report figure. A hospital's own number clears the derived estimate.
+2. **Risk adjustment dominates.** Results list a ±0.06 risk-multiplier range and a break-even multiplier found by bisection (Track 1: no break-even, Track 3 equivalent shown instead). When a hospital is picked the slider is seeded from public factors: bed-size band (≤250 beds −0.01, 501 to 850 +0.01, 851+ +0.02), safety-net flag (+0.01), and 0.25 × (county dual-eligible share − national 14.6%), clamped 0.94 to 1.06. CMS's coefficients are not public; this is a labeled proxy.
+3. **The target moves at reconciliation.** A final-price band reruns the result with the target 3% lower and 3% higher (the retrospective trend cap) and prints both ends.
+4. **Outpatient episodes.** The CMS workbook says HCPCS episode types are mapped and reported under the corresponding MS-DRG, so the page adds an outpatient joint row priced at MS-DRG 470 and an outpatient fusion row priced at MS-DRG 473. The joint row prefills from APC 5115 services, labeled an upper bound because that APC also holds other Level 5 procedures. The PRO-PM weight in the proxy CQS still uses inpatient joints only, as CMS's example does.
+5. **Low-volume floor.** The flag sets itself when three times the annual count is 30 or fewer, and users can type counts for MS-DRGs the public file suppresses.
+6. **Proxy quality score.** The slider is labeled a proxy when prefilled and a note under it shows the three components, which are real, which are proxies, and the weights, with the PRO-PM caveat about the 50% response-rate floor.
+7. **Comparison group.** The quality scoring fact sheet says percentiles come from a national set of hospitals eligible for TEAM, not just participants. Percentiles are now computed among the 3,032 IPPS hospitals in the FY2027 impact file excluding Maryland (critical access hospitals dropped).
+8. **Safety-net flag.** Checkbox relabeled "CMS notification governs"; the facts panel shows the SSI share against the 8.7% threshold and the county dual-eligible share.
+9. **Net to the hospital.** A panel below the results (shown when levers are on) subtracts program cost per year (default $250,000), contribution margin lost per avoided readmission (default $3,500), and revenue lost per avoided SNF day in owned facilities (default $0) from the with-program reconciliation, and shows the do-nothing figure beside it. Avoided readmissions and SNF days are computed from the lever deltas × episodes × realization.
+10. **Unit costs.** SNF per day is the standardized Medicare payment per covered day from the Geographic Variation file ($626 national, state value when a hospital is picked, clamped $450 to $900 because swing-bed-heavy states show per-diems above $1,000). Readmission cost inflated from HCUP's 2018 $15,500 to $19,400. A $900 outpatient therapy allowance and the home health period are charged against every patient moved home. A realization slider (default 60%) scales every lever. The typical-program preset is capped at $1,200 raw savings per episode (CJR measured $1,226; BPCI Advanced about $500 to $1,000) before realization.
+11. **Regional ratchet.** Five-year view adds a regional target change per year (default −1%) applied as a target multiplier alongside the hospital's own spend change.
+12. **Sequestration and timing.** A 2% sequestration toggle (default on) reduces positive amounts only; the five-year chart labels each year's settlement year and the caption explains the true-up.
+13. **Validation.** A Checks section recomputes the CMS quality-scoring worked examples (weighting example 51.4 vs 51.5 from unrounded weights; all six positive and negative adjustment rows match) and compares the lever arithmetic with CJR ($1,226 per episode) and BPCI Advanced (about $500 SNF) findings at the page's current unit costs.
+14. **Category signals.** Where a public surgical signal exists it adjusts that category's spend shift in dollars per episode: joints and CABG use HRRP predicted minus expected readmission rate × readmission cost; bowel uses (colon SSI ratio − 1) × 10% × SSI cost. The facts panel names the categories that have no signal.
+15. **Division comparator.** The 30-day spending comparator is now the census division (hospital-count-weighted average of its states' Care Compare values) instead of the state, matching how TEAM prices.
+16. **Form privacy.** The scenario payload carries only the inputs and the hospital name typed in the form; the note states 30-day retention in the form inbox.
+
+Case figures after the fixes (PY1, sequestration on, realization 60%): Manhattan +$2.30M on $101.3M (Track 3; program $4.53M); Jacksonville +$546K on $46.7M (Track 1; program $1.53M, net to hospital about $1.24M after a $250K program and lost readmission margin); Minneapolis +$671K on $16.0M; Bozeman +$987K on $12.2M (Track 1, near its 10% stop-gain); Harrison +$71K on $4.9M; Hershey −$360K on $15.0M at Track 3, $0 at Track 1, program −$63K.
 
 ## What is deliberately left out
 
