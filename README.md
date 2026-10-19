@@ -6,8 +6,7 @@ Source for [jaybeatty.com](https://www.jaybeatty.com), the personal site of Jay 
 
 | Folder | What it is |
 |---|---|
-| `site/` | The site as deployed today: home page and three program explainers (Section 125 wellness plans, deferred compensation, the No Surprises Act), favicon, robots and sitemap. Static HTML, no build step. |
-| `redesign/` | The "Scoreboard" redesign of the home page: black, deep purple and green, with charts and photos inlined so the page is one file. |
+| `site/` | The live site: the "Scoreboard" design (black, deep purple and green) with the home page, three program explainers (Section 125 wellness plans, deferred compensation, the No Surprises Act), favicon, robots and sitemap. Static HTML; photos are inlined so each page is one file. |
 | `team-calculator/` | **CMS TEAM Episode Calculator.** A single-page estimator of what the Transforming Episode Accountability Model pays or costs a hospital, built entirely from public CMS files. |
 
 ## The TEAM calculator
