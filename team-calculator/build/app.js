@@ -6,7 +6,7 @@ const el=(n,a={},t)=>{const e=document.createElementNS(NS,n);for(const k in a)e.
 const C={purple:'#8366ea',green:'#22a85e',teal:'#10a197',red:'#e0607a',amber:'#e5b35a',line:'#2b2542',fg:'#ece9f5',muted:'#a79fc0'};
 const tip=$('tip');
 function bindTip(node,html){node.addEventListener('mousemove',e=>{tip.innerHTML=html;tip.style.left=e.clientX+'px';tip.style.top=e.clientY+'px';tip.style.opacity=1;});node.addEventListener('mouseleave',()=>tip.style.opacity=0);node.addEventListener('focus',()=>{const r=node.getBoundingClientRect();tip.innerHTML=html;tip.style.left=(r.left+r.width/2)+'px';tip.style.top=r.top+'px';tip.style.opacity=1;});node.addEventListener('blur',()=>tip.style.opacity=0);node.setAttribute('tabindex','0');}
-const fmt=n=>{const s=n<0?'−':'';n=Math.abs(n);if(n>=1e6)return s+'$'+(n/1e6).toFixed(n>=1e7?1:2)+'M';if(n>=1e3)return s+'$'+(n/1e3).toFixed(n>=1e5?0:1)+'K';return s+'$'+Math.round(n);};
+const fmt=n=>{const s=n<0?'−':'';n=Math.abs(n);if(n>=1e9)return s+'$'+(n/1e9).toFixed(2)+'B';if(n>=1e6)return s+'$'+(n/1e6).toFixed(n>=1e7?1:2)+'M';if(n>=1e3)return s+'$'+(n/1e3).toFixed(n>=1e5?0:1)+'K';return s+'$'+Math.round(n);};
 const fmtFull=n=>(n<0?'−':'')+'$'+Math.round(Math.abs(n)).toLocaleString('en-US');
 const pct=(n,d=1)=>(n>0?'+':n<0?'−':'')+Math.abs(n).toFixed(d)+'%';
 const num=n=>Math.round(n).toLocaleString('en-US');
@@ -35,7 +35,8 @@ function eligible(track,py,sn,rural){
 }
 
 /* ---------- state ---------- */
-const S={hospital:null,region:2,py:1,track:1,sn:false,rural:false,risk:1,cqs:50,improve:-2,regional:-1,seq:true,cats:{},net:{cost:250000,raMargin:3500,snfRev:0},pub:null};
+const S={hospital:null,region:2,py:1,track:1,sn:false,rural:false,risk:1,cqs:50,improve:-2,regional:-1,seq:true,cats:{},net:{cost:250000,raMargin:3500,snfRev:0},pub:null,op:{rev:null,margin:2.5,src:'default',fy:null,cm:null}};
+const KH_MARGIN=2.5; /* Kaufman Hall National Hospital Flash Report, year-to-date operating margin through August 2026 */
 CATS.forEach(c=>{S.cats[c.key]={on:true,counts:{},spend:null,lowvol:false,src:'default'};c.drgs.forEach(d=>S.cats[c.key].counts[d[0]]=0);});
 /* ---------- levers (post-discharge mix and complications) ---------- */
 const UNIT={snfDay:626,irf:25300,hh:1852,optx:900,readmit:19400,ssi:12800,vte:12381};
@@ -102,6 +103,7 @@ function factsHTML(h,dv){
    ['Quality (Care Compare)',`Hip/knee 30-day readmission ${vs(q.rhk,nq.rhk,'%')} · CABG readmission ${vs(q.rcb,nq.rcb,'%')} · THA/TKA complications ${vs(q.chk,nq.chk,'%')} · PSI-90 ${vs(q.p90,nq.p90)} · PSI-12 perioperative VTE ${vs(q.p12,nq.p12,' per 1,000')} · colon SSI ratio ${vs(q.ssi,'1.00 benchmark')}. National medians in parentheses; ${per.rhk||''} readmissions, ${per.p90||''} PSIs.`,'Unplanned Hospital Visits, Complications and Deaths, HAI files, Sept and July 2026'],
    ['Spending after discharge (all conditions, price-standardized, per episode)',`SNF ${fmtK(sp.snf&&sp.snf[0])} vs census division ${fmtK(sp.snf&&sp.snf[1])} · home health ${fmtK(sp.hh&&sp.hh[0])} vs ${fmtK(sp.hh&&sp.hh[1])} · readmissions ${fmtK(sp.ip&&sp.ip[0])} vs ${fmtK(sp.ip&&sp.ip[1])} · whole episode ${fmtK(h.tot&&h.tot[0])} vs ${fmtK(h.tot&&h.tot[1])}. The division figure is the hospital-count-weighted average of its states, since TEAM prices by census division. Thirty-day post-discharge window, ${per.sp?per.sp.replace(/^(\d{4})-\1$/,'$1'):'2024'} episodes.`,'Medicare Hospital Spending by Claim (MSPB), FY2026 release'],
    ['Post-acute market',`${c.snfprov!=null?c.snfprov+' SNFs billing in the county':''}${nh?` · ${nh.n} nursing homes averaging ${nh.r??'n/a'} stars, ${nh.w} on the TEAM Q4-2026 three-day-waiver list${nh.rh!=null?`, short-stay rehospitalization ${nh.rh}%`:''}`:''}${c.snfd!=null?` · county SNF days ${Math.round(c.snfd).toLocaleString('en-US')} per 1,000 beneficiaries (national ${Math.round(HN.cty.snfd).toLocaleString('en-US')})`:''}${c.readm!=null?` · county readmission rate ${c.readm}% (national ${HN.cty.readm}%)`:''}.`,'Market Saturation 2025; Nursing Home Compare Sept 2026; TEAM qualified SNF list; Geographic Variation 2024'],
+   ['Finances (cost report)',h.fin?`Net patient revenue ${fmt(h.fin.rev)} for the fiscal year ending ${h.fin.fy}; patient-service margin ${pct(h.fin.m)} on the cost-report basis, which excludes investment and other income and is not comparable with reported operating margin. The margin field below defaults to the Kaufman Hall ${KH_MARGIN}% industry figure instead.`:'No 2024 cost report row for this CCN.','Hospital Provider Cost Report 2024, data.cms.gov'],
    ['Volume',`${dv.E.toLocaleString('en-US')} traditional-Medicare inpatient TEAM discharges in 2024 (MS-DRG cells under 11 suppressed)${h.op?`, plus ${h.op.toLocaleString('en-US')} outpatient Level 5 musculoskeletal services (APC 5115, which holds outpatient knee and hip replacement). TEAM prices outpatient episodes by HCPCS code; they are not in this model, so the true book is larger`:''}.`,'Medicare Inpatient and Outpatient Hospitals by Provider and Service, CY2024']];
   const rt=h.rt||{};
   const sigTxt=CATS.map(c=>dv.sig[c.key]!=null?`${c.short} ${pct(dv.sig[c.key])} from its ${c.key==='bowel'?'colon-infection ratio':'excess-readmission ratio'}`:null).filter(Boolean).join(', ');
@@ -112,6 +114,7 @@ function factsHTML(h,dv){
 function applyPublic(ccn){const h=HM.h[ccn];const dv=derivePublic(h);if(!dv)return null;
   S.pub=ccn;S.sn=dv.sn;S.rural=dv.rural;S.cqs=dv.cqs;S.risk=dv.risk;S.levers.on=false;
   if(HN.snfday&&HN.snfday[h.st])S.levers.unit.snfDay=HN.snfday[h.st];
+  if(h.fin&&h.fin.rev){S.op.rev=h.fin.rev;S.op.src='cost report';S.op.fy=h.fin.fy;S.op.cm=h.fin.m;}else{S.op.rev=null;S.op.src='default';S.op.fy=null;S.op.cm=null;}S.op.margin=KH_MARGIN;syncOpInputs();
   CATS.forEach(c=>{const st=S.cats[c.key];let n=0;c.drgs.forEach(d=>{st.counts[d[0]]=dv.counts[d[0]]||0;n+=st.counts[d[0]];});st.on=n>0;st.lowvol=n>0&&n*3<=30;st.src='derived';
     const base=catCalc(c,Object.assign({},st,{spend:null}),S.region,S.risk);st.spend=Math.round(base.target*(1+dv.shift[c.key]/100));
     S.levers.cur[c.key]=Object.assign({},dv.lev[c.key]);S.levers.tgt[c.key]=Object.assign({},dv.lev[c.key]);});
@@ -242,7 +245,7 @@ function loadExample(){clearCase();S.hospital=null;S.pub=null;$('cqsNote').inner
   CATS.forEach(c=>{const st=S.cats[c.key];st.on=true;st.lowvol=false;st.spend=null;c.drgs.forEach(d=>st.counts[d[0]]=(EXAMPLE.counts[c.key]||{})[d[0]]||0);});
   buildCats();CATS.forEach(c=>{const sl=document.querySelector(`[data-shift="${c.key}"]`);sl.value=EXAMPLE.shift[c.key];sl.dispatchEvent(new Event('input',{bubbles:true}));});
   S.risk=1;$('risk').value=1;$('riskOut').textContent='1.00×';S.cqs=50;$('cqs').value=50;$('cqsOut').textContent='50';update();}
-function resetAll(){clearCase();S.hospital=null;S.pub=null;hospIn.value='';$('hospMeta').textContent='';$('cqsNote').innerHTML='';S.levers.unit.snfDay=UNIT.snfDay;CATS.forEach(c=>{const st=S.cats[c.key];st.on=true;st.lowvol=false;st.spend=null;st.src='default';c.drgs.forEach(d=>st.counts[d[0]]=0);});buildCats();buildLevers();update();}
+function resetAll(){clearCase();S.hospital=null;S.pub=null;S.op={rev:null,margin:KH_MARGIN,src:'default',fy:null,cm:null};syncOpInputs();hospIn.value='';$('hospMeta').textContent='';$('cqsNote').innerHTML='';S.levers.unit.snfDay=UNIT.snfDay;CATS.forEach(c=>{const st=S.cats[c.key];st.on=true;st.lowvol=false;st.spend=null;st.src='default';c.drgs.forEach(d=>st.counts[d[0]]=0);});buildCats();buildLevers();update();}
 $('loadExample').addEventListener('click',loadExample);$('resetAll').addEventListener('click',resetAll);
 
 /* ---------- results ---------- */
@@ -265,9 +268,9 @@ function update(){const R=run();const T=TRACKS[S.track];
   $('moves').innerHTML=mv.join('');
   const Blo=run({targetMult:.97}),Bhi=run({targetMult:1.03});$('bandNote').textContent=R.eps?`Final-price band: ${fmt(Math.min(Blo.npra,Bhi.npra))} to ${fmt(Math.max(Blo.npra,Bhi.npra))} if CMS's retrospective trend and case-mix normalization move the target 3% either way at reconciliation.`:'';
   CATS.forEach(c=>{const b=document.querySelector(`[data-srcbadge="${c.key}"]`);if(b){const src=S.cats[c.key].src;b.textContent=src==='user'?'spend: your number':src==='derived'?'spend: estimated from public pattern, replace with your baseline':'spend: at regional target';b.className='badge '+src;}});
-  renderNet();
+  renderNet();renderMargin(R);
   $('printMeta').textContent=`${S.hospital?S.hospital.name+' · ':''}${T.name}, PY${S.py}, census division ${S.region}, risk ${S.risk.toFixed(2)}×, CQS ${Math.round(S.cqs)}. Printed ${new Date().toLocaleDateString('en-US')}. Estimates only; not affiliated with CMS.`;
-  $('cScenario').value=JSON.stringify({hospital:$('cHosp').value||null,region:S.region,py:S.py,track:S.track,risk:S.risk,cqs:S.cqs,episodes:R.eps,aggTarget:Math.round(R.aggT),aggSpend:Math.round(R.aggS),npra:Math.round(R.npra),levers:S.levers.on?{unit:S.levers.unit,target:S.levers.tgt}:null});
+  $('cScenario').value=JSON.stringify({hospital:$('cHosp').value||null,opRev:S.op.rev,opMargin:S.op.margin,region:S.region,py:S.py,track:S.track,risk:S.risk,cqs:S.cqs,episodes:R.eps,aggTarget:Math.round(R.aggT),aggSpend:Math.round(R.aggS),npra:Math.round(R.npra),levers:S.levers.on?{unit:S.levers.unit,target:S.levers.tgt}:null});
   CATS.forEach(c=>{const st=S.cats[c.key];const r=catCalc(c,st,S.region,S.risk);const q=k=>document.querySelector(`[data-sum-${k}="${c.key}"]`);if(!q('n'))return;q('n').textContent=st.on?num(r.n):'off';q('t').textContent=fmtFull(r.regional);q('r').textContent=st.on&&r.n?fmtFull(r.recon)+(r.capped?' (floored)':''):'$0';});
   CATS.forEach(c=>{const e=document.querySelector(`[data-lvsave="${c.key}"]`);if(e)e.textContent=fmtFull(leverSavings(c.key).total);});
   const RL=run({levers:true}),RB=run({levers:false});const lt=$('leverTile');
@@ -276,6 +279,12 @@ function update(){const R=run();const T=TRACKS[S.track];
   $('seqNote').textContent=S.seq?'2% sequestration applied to positive payments.':'Sequestration off.';
   renderLineBoard();drawLines();drawCats(R);drawSens();drawSetting();drawLevers();drawFive();}
 
+function syncOpInputs(){const a=$('opRev'),b=$('opMargin');if(a)a.value=S.op.rev!=null?Math.round(S.op.rev):'';if(b)b.value=S.op.margin;const n=$('opSrc');if(n)n.textContent=S.op.src==='cost report'?`Revenue prefilled from the 2024 Medicare cost report (fiscal year ending ${S.op.fy}); margin is the Kaufman Hall ${KH_MARGIN}% industry year-to-date figure. Replace both with your budget.`:S.op.src==='user'?'Your figures.':`Margin defaults to ${KH_MARGIN}%, the Kaufman Hall National Hospital Flash Report year-to-date average through August 2026, when 43% of hospitals ran at a loss. Enter your revenue to see the result in margin points.`;}
+function renderMargin(R){const e=$('marginNote');if(!e)return;if(!R.eps){e.textContent='';return;}
+  const rev=S.op.rev,m=S.op.margin;const RL=S.levers.on?R:run({levers:false});const npra=R.npra;
+  if(!rev){e.innerHTML=`<b style="color:var(--fg)">Margin context:</b> at a ${m}% operating margin${S.op.src==='default'?' (Kaufman Hall year-to-date average; 43% of hospitals ran at a loss in August 2026)':''}, this result is ${fmtFull(Math.abs(npra))} ${npra>=0?'added to':'taken from'} operating income. Enter operating revenue in Step 1 to see it in margin points.`;return;}
+  const pts=npra/rev*100,inc=rev*m/100;const share=inc>0?npra/inc*100:null;const t3=S.track===3?R:run({track:3});const t3share=inc>0?t3.npra/inc*100:null;
+  e.innerHTML=`<b style="color:var(--fg)">Margin context:</b> on ${fmt(rev)} of operating revenue at a ${m}% margin (${fmt(inc)} operating income), this result is <b style="color:var(--fg)">${pts>=0?'+':'−'}${Math.abs(pts).toFixed(2)} points of operating margin</b>${share!=null?` and ${Math.abs(share).toFixed(1)}% of operating income`:''}.${S.track!==3?` The same inputs in Track 3 would be ${fmtFull(t3.npra)}${t3share!=null&&t3.npra<0?`, a repayment equal to ${Math.abs(t3share).toFixed(1)}% of operating income`:''}.`:''}${m<=KH_MARGIN&&t3.npra<0?' At this margin that repayment is not a rounding error; the break-even multiplier above is the number to watch.':''}`;}
 function breakEvenRisk(){const T=TRACKS[S.track];if(S.track===1)return 'Track 1 has no repayment, so there is no break-even to find; in Track 3 the same inputs give '+fmt(run({track:3}).npra)+'.';
   const f=r=>run({risk:r}).npra;const lo=f(.8),hi=f(1.2);if(lo>0)return `stays positive even if CMS's risk multiplier fell to 0.80 (target 20% lower than the slider).`;if(hi<0)return `stays negative even at a 1.20 multiplier; the fix has to come from spend, not case mix.`;
   let a=.8,b=1.2;for(let i=0;i<30;i++){const m=(a+b)/2;if(f(m)>0)b=m;else a=m;}const r=(a+b)/2;return `the result crosses zero at a risk multiplier of ${r.toFixed(3)}×, ${r<S.risk?'so you stay positive down to a target '+((1-r/S.risk)*100).toFixed(1)+'% below the slider':'so you need a target '+((r/S.risk-1)*100).toFixed(1)+'% above the slider to break even'}.`;}
@@ -427,11 +436,13 @@ function renderChecks(){const box=$('checksBody');if(!box)return;const rows=[];
   const bp=3*u.snfDay;rows.push(['BPCI Advanced evaluation (AR7)','Three fewer SNF days per episode at this page\'s SNF per-diem','about $500 lower SNF payments per episode',fmtFull(bp),'Within range; the evaluation also found 1.45 fewer percentage points discharged to institutional care and no change in readmissions.']);
   box.innerHTML='<table><thead><tr><th>Check</th><th>Inputs</th><th class="n">Published</th><th class="n">This page</th><th>Note</th></tr></thead><tbody>'+rows.map(r=>`<tr><td>${r[0]}</td><td style="color:var(--muted)">${r[1]}</td><td class="n">${r[2]}</td><td class="n"><b>${r[3]}</b></td><td style="color:var(--muted)">${r[4]}</td></tr>`).join('')+'</tbody></table>';}
 $('seq').addEventListener('change',e=>{S.seq=e.target.checked;update();});
+$('opRev').addEventListener('input',e=>{S.op.rev=e.target.value===''?null:Math.max(0,parseFloat(e.target.value)||0);S.op.src='user';$('opSrc').textContent='Your figures.';update();});
+$('opMargin').addEventListener('input',e=>{S.op.margin=parseFloat(e.target.value)||0;S.op.src='user';$('opSrc').textContent='Your figures.';update();});
 $('regional').addEventListener('input',e=>{S.regional=parseFloat(e.target.value);$('regionalOut').textContent=pct(S.regional)+'/yr';update();});
 $('real').addEventListener('input',e=>{S.levers.real=parseFloat(e.target.value);$('realOut').textContent=S.levers.real+'%';update();});
 document.querySelectorAll('[data-net]').forEach(i=>i.addEventListener('input',e=>{S.net[e.target.dataset.net]=Math.max(0,parseFloat(e.target.value)||0);update();}));
 
 /* init */
-renderChecks();buildTracks();buildCats();buildLevers();renderTabs();renderCases();drawCases();loadCase('community');
+renderChecks();syncOpInputs();buildTracks();buildCats();buildLevers();renderTabs();renderCases();drawCases();loadCase('community');
 window.TEAMCALC={S,CATS,run,catCalc,applyCaseState,derivePublic,leverSavings,applyPreset,eligible,HM,CASES,loadCase,pick,PARTS};
 })();

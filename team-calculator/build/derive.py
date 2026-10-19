@@ -30,6 +30,12 @@ for row in json.load(open('cms-sources/pulls/geovar2024.json')):
             pu=float(row['SNF_MDCR_STDZD_PYMT_PER_USER']); d1000=float(row['SNF_CVRD_DAYS_PER_1000_BENES']); pct=float(row['BENES_SNF_PCT'])
             SNFDAY['US' if row['BENE_GEO_LVL']=='National' else row['BENE_GEO_DESC']]=max(450,min(900,round(pu/(d1000/(pct*1000)))))  # clamped: swing-bed-heavy states (MT, AK) show per-diems above $1,000 that do not describe a freestanding SNF
         except: pass
+HC={}
+for row in json.load(open('cms-sources/pulls/hcris2024.json')):
+    try:
+        npr=float(row['Net Patient Revenue']); ni=float(row['Net Income from Service to Patients'])
+        if npr>0: HC[row['Provider CCN']]={'rev':round(npr),'m':round(ni/npr*100,1),'fy':row['Fiscal Year End Date'][:7]}
+    except: pass
 out={}; natsp={}
 for c,m in M.items():
     sp=m.get('sp30') or {}
@@ -49,6 +55,7 @@ for c,m in M.items():
         'nh':{'n':nh.get('n'),'r':nh.get('rating'),'w':nh.get('waiver'),'rh':nh.get('rehosp')} if nh else None,
         'ip':{d:v[0] for d,v in m.get('ip24',{}).items()},'op':(m.get('op24') or {}).get('5115',[None])[0],
         'rt':{'pac':ratio(tot_h,tot_s) if tot_h and tot_s else None,'snf':ratio(sp['snf'][0],dv_.get('snf')) if sp.get('snf') and sp['snf'][0] is not None else None,'ip':ratio(sp['ip'][0],dv_.get('ip')) if sp.get('ip') and sp['ip'][0] is not None else None,'days':ratio(cty.get('snfdays'),nc['snfdays']),'irf':ratio(cty.get('irfpc'),nc['irfpc']),'vte':ratio(m.get('p12'),NAT['p12']),'ssi':r(m['ssi'],2) if m.get('ssi') is not None and (m.get('ssin') or 0)>=1 else None},
+        'fin':HC.get(c),
         'sn':bool(ssi_share is not None and ssi_share>=SSI_P75),'rural':m.get('urb')=='RURAL'}
     for k in list(out[c]['cty']): 
         if out[c]['cty'][k] is None: del out[c]['cty'][k]

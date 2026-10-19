@@ -266,6 +266,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <label><input type="checkbox" id="safetyNet"> Safety-net hospital (CMS notification governs)</label>
         <label><input type="checkbox" id="ruralType"> Rural, SCH, MDH or EACH</label>
       </div>
+      <div class="row" style="margin-top:14px">
+        <div class="field"><label for="opRev">Annual operating revenue, $ (optional)</label><input type="number" id="opRev" min="0" step="1000000" inputmode="numeric" placeholder="e.g. 450000000"></div>
+        <div class="field"><label for="opMargin">Operating margin, %</label><input type="number" id="opMargin" step="0.1" inputmode="decimal" value="2.5"></div>
+      </div>
+      <p class="note" id="opSrc" style="margin-top:6px"></p>
       <p class="note" style="margin-top:8px">CMS names these hospitals before each performance year. They unlock Track 2 and later Track 1 years. When a hospital is picked, safety-net is estimated from its Medicare SSI share (above the 75th percentile of IPPS hospitals, 8.7%, in the FY2027 impact file) and rural from the impact file's geographic flag; CMS's own test also counts Part D low-income subsidy share and rural census tracts.</p>
     </div>
 
@@ -336,6 +341,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="board-foot" id="capNote"></div>
       <div class="board-foot" id="bandNote" style="color:var(--amber)"></div>
       <div class="board-foot" id="seqNote"></div>
+      <div class="board-foot" id="marginNote" style="color:var(--muted)"></div>
       <div class="tile" id="leverTile" style="display:none"><div class="lab">With levers applied</div><div class="val" id="leverVal">$0</div><div class="delta" id="leverDelta"></div></div>
       <ul class="moves" id="moves" style="margin:0;padding-left:18px"></ul>
       <div class="tile" id="netBoard" style="display:none;gap:10px"><div class="lab">Net to the hospital, not to Medicare</div><div class="val" id="netVal">$0</div><div class="delta" id="netDetail" style="white-space:normal"></div>
@@ -502,7 +508,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <li><span class="d">2026-06</span><span><a href="https://data.cms.gov/summary-statistics-on-use-and-payments/program-integrity-market-saturation-by-type-of-service/market-saturation-utilization-state-county">Market Saturation and Utilization, State-County, 2025</a><small>SNFs and home health agencies billing Medicare in each county.</small></span></li>
     <li><span class="d">2026-09</span><span><a href="https://data.cms.gov/provider-data/topics/nursing-homes">Nursing Home Compare provider information and claims quality measures</a><small>Overall star rating and short-stay rehospitalization rate for every nursing home, summarized by county.</small></span></li>
     <li><span class="d">2026-10</span><span><a href="https://www.cms.gov/priorities/innovation/files/team-snfwaiver-snflist-q4-2026.xlsx">TEAM qualified SNF list, Q4 2026 (xlsx)</a><small>9,867 SNFs and swing-bed hospitals rated three stars or better in at least 7 of 12 months, eligible for the TEAM three-day SNF rule waiver.</small></span></li>
-    <li><span class="d">2026-10</span><span><a href="https://data.cms.gov/provider-compliance/cost-report/hospital-provider-cost-report">Hospital Provider Cost Report, 2024</a><small>Fallback for bed counts and Medicare discharge share where the impact file has no row.</small></span></li>
+    <li><span class="d">2026-10</span><span><a href="https://data.cms.gov/provider-compliance/cost-report/hospital-provider-cost-report">Hospital Provider Cost Report, 2024</a><small>Net patient revenue and patient-service margin for the margin-context line; fallback for bed counts and Medicare discharge share where the impact file has no row.</small></span></li>
+    <li><span class="d">2026-10-13</span><span><a href="https://www.vizient.com/insights/reports/national-hospital-flash-report/august-2026-data">Kaufman Hall National Hospital Flash Report, August 2026 data</a><small>Year-to-date operating margin about 2.5%; 43% of hospitals operating at a loss versus 33% before the pandemic. Default margin for the margin-context line.</small></span></li>
     <li><span class="d">Model page</span><span><a href="https://www.cms.gov/priorities/innovation/innovation-models/team-model">CMS Innovation Center: TEAM</a><small>Rule history (FY2025, FY2026 and FY2027 IPPS final rules), FAQs, webinars, qualified SNF lists.</small></span></li>
   </ul>
 </section>
