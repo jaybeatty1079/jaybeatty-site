@@ -136,6 +136,18 @@ function leverSavings(key,raw){const u=S.levers.unit,c=S.levers.cur[key],t=S.lev
   parts.total=parts.snf+parts.irf+parts.ra+parts.ssi+parts.vte;
   parts.raAvoided=Math.max(0,c.ra-t.ra)/100*f; parts.snfDays=(snfMoved*c.days+snfKept*daysCut)*f; parts.irfAvoided=Math.max(0,c.irf-t.irf)/100*f;
   return parts;}
+/* ---------- motion helpers: number tweens, chart easing, pulse ---------- */
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const easeOut=t=>1-Math.pow(1-t,3);
+function tweenText(el,value,fmtFn,dur=450){if(!el)return;const from=el._v;el._v=value;if(RM||from==null||!isFinite(from)||from===value){el.textContent=fmtFn(value);return;}
+  if(el._raf)cancelAnimationFrame(el._raf);const t0=performance.now();const step=now=>{const k=easeOut(Math.min(1,(now-t0)/dur));el.textContent=fmtFn(from+(value-from)*k);if(k<1)el._raf=requestAnimationFrame(step);};el._raf=requestAnimationFrame(step);}
+function snapRects(svg){return [...svg.querySelectorAll('rect')].filter(r=>r.getAttribute('fill')!=='transparent').map(r=>({x:+r.getAttribute('x'),y:+r.getAttribute('y'),w:+r.getAttribute('width'),h:+r.getAttribute('height')}));}
+function withMorph(ids,fn){if(RM)return fn();const before={};ids.forEach(id=>{const s=$(id);if(s)before[id]=snapRects(s);});fn();
+  ids.forEach(id=>{const s=$(id),old=before[id];if(!s||!old||!old.length)return;const now=[...s.querySelectorAll('rect')].filter(r=>r.getAttribute('fill')!=='transparent');if(now.length!==old.length)return;
+    now.forEach((r,i)=>{const o=old[i],n={x:+r.getAttribute('x'),y:+r.getAttribute('y'),w:+r.getAttribute('width'),h:+r.getAttribute('height')};if(o.x===n.x&&o.y===n.y&&o.w===n.w&&o.h===n.h)return;
+      r.style.transition='none';r.style.x=o.x+'px';r.style.y=o.y+'px';r.style.width=o.w+'px';r.style.height=o.h+'px';r.getBBox();r.style.transition='';r.style.x=n.x+'px';r.style.y=n.y+'px';r.style.width=n.w+'px';r.style.height=n.h+'px';});});}
+let pulseT=null;function pulseResults(){if(RM)return;const b=document.querySelector('#results .board');if(!b)return;b.classList.remove('pulse');void b.offsetWidth;b.classList.add('pulse');clearTimeout(pulseT);pulseT=setTimeout(()=>b.classList.remove('pulse'),700);}
+
 /* ---------- engine ---------- */
 function catCalc(c,st,region,risk,spendShift){
   const counts=st.counts;let n=0,tsum=0;
@@ -250,13 +262,13 @@ $('loadExample').addEventListener('click',loadExample);$('resetAll').addEventLis
 
 /* ---------- results ---------- */
 function update(){const R=run();const T=TRACKS[S.track];
-  const v=$('npra');v.textContent=R.eps?fmt(R.npra):'$0';v.className='val '+(R.npra>0?'pos':R.npra<0?'neg':'');
+  const v=$('npra');tweenText(v,R.eps?R.npra:0,x=>R.eps?fmt(x):'$0');v.className='val '+(R.npra>0?'pos':R.npra<0?'neg':'');if(v._prev!=null&&v._prev!==R.npra)pulseResults();v._prev=R.npra;
   $('resHead').textContent=`${S.caseId?CASES.find(c=>c.id===S.caseId).name+' · ':''}${T.name} · PY${S.py} ${2025+S.py} · division ${S.region}`;
   $('npraSub').textContent=!R.eps?'Enter episodes in Step 3 or load the example.':R.npra>0?`Estimated payment from CMS. ${fmtFull(R.npra)}, ${pct(R.npra/R.aggT*100,2)} of your aggregated target price.`:R.npra<0?`Estimated repayment to CMS. ${fmtFull(R.npra)}, ${pct(R.npra/R.aggT*100,2)} of your aggregated target price.`:(S.track===1&&R.recon<0?`Spending ran ${fmtFull(-R.recon)} over target, but Track 1 has no repayment. In Track 3 this would be ${fmtFull(run({track:3}).npra)}.`:'Breaks even at these inputs.');
-  $('tEp').textContent=num(R.eps);$('tEpD').textContent=R.rows.length+' of 5 categories';
-  $('tTarget').textContent=fmt(R.aggT);$('tTargetD').textContent='spend '+fmt(R.aggS)+' ('+pct(R.aggT?(R.aggS/R.aggT-1)*100:0)+')';
-  $('tRecon').textContent=fmt(R.recon);$('tReconD').textContent=S.track===1&&R.recon<0?'Track 1: negative set to $0':(R.rows.some(r=>r.capped)?'low-volume floor applied':'target minus spend, all categories');
-  $('tCqs').textContent=fmt(-R.adjAmt);$('tCqsD').textContent=R.base>0?`${(R.adjPct*100).toFixed(1)}% withheld at CQS ${Math.round(S.cqs)}`:R.base<0?`${(R.adjPct*100).toFixed(1)}% relief at CQS ${Math.round(S.cqs)}`:'no amount to adjust';
+  tweenText($('tEp'),R.eps,x=>num(x));$('tEpD').textContent=R.rows.length+' of 5 categories';
+  tweenText($('tTarget'),R.aggT,fmt);$('tTargetD').textContent='spend '+fmt(R.aggS)+' ('+pct(R.aggT?(R.aggS/R.aggT-1)*100:0)+')';
+  tweenText($('tRecon'),R.recon,fmt);$('tReconD').textContent=S.track===1&&R.recon<0?'Track 1: negative set to $0':(R.rows.some(r=>r.capped)?'low-volume floor applied':'target minus spend, all categories');
+  tweenText($('tCqs'),-R.adjAmt,fmt);$('tCqsD').textContent=R.base>0?`${(R.adjPct*100).toFixed(1)}% withheld at CQS ${Math.round(S.cqs)}`:R.base<0?`${(R.adjPct*100).toFixed(1)}% relief at CQS ${Math.round(S.cqs)}`:'no amount to adjust';
   $('capNote').textContent=R.capHit==='gain'?`Stop-gain hit: payment capped at ${(T.gain*100)}% of aggregated target (${fmtFull(R.gainCap)}). Uncapped it would be ${fmtFull(R.qa)}.`:R.capHit==='loss'?`Stop-loss hit: repayment capped at ${(T.loss*100)}% of aggregated target (${fmtFull(R.lossCap)}). Uncapped it would be ${fmtFull(R.qa)}.`:`Stop limits: gain ${(T.gain*100)}%${T.loss?`, loss ${(T.loss*100)}%`:', no downside'} of aggregated target (${fmt(R.aggT)}). Not binding here.`;
   // what moves it
   const mv=[];if(R.eps){const R100=run({cqs:100}),R0=run({cqs:0});mv.push(`<li><b>Quality:</b> CQS 100 gives ${fmt(R100.npra)}, CQS 0 gives ${fmt(R0.npra)}.</li>`);
@@ -274,10 +286,10 @@ function update(){const R=run();const T=TRACKS[S.track];
   CATS.forEach(c=>{const st=S.cats[c.key];const r=catCalc(c,st,S.region,S.risk);const q=k=>document.querySelector(`[data-sum-${k}="${c.key}"]`);if(!q('n'))return;q('n').textContent=st.on?num(r.n):'off';q('t').textContent=fmtFull(r.regional);q('r').textContent=st.on&&r.n?fmtFull(r.recon)+(r.capped?' (floored)':''):'$0';});
   CATS.forEach(c=>{const e=document.querySelector(`[data-lvsave="${c.key}"]`);if(e)e.textContent=fmtFull(leverSavings(c.key).total);});
   const RL=run({levers:true}),RB=run({levers:false});const lt=$('leverTile');
-  if(S.levers.on&&R.eps){lt.style.display='';$('leverVal').textContent=fmt(RL.npra);$('leverDelta').textContent=`vs ${fmt(RB.npra)} without levers (${fmt(RL.npra-RB.npra)})`;$('bigLab').textContent='Net payment reconciliation amount (levers applied)';}
+  if(S.levers.on&&R.eps){lt.style.display='';tweenText($('leverVal'),RL.npra,fmt);$('leverDelta').textContent=`vs ${fmt(RB.npra)} without levers (${fmt(RL.npra-RB.npra)})`;$('bigLab').textContent='Net payment reconciliation amount (levers applied)';}
   else{lt.style.display='none';$('bigLab').textContent='Net payment reconciliation amount';}
   $('seqNote').textContent=S.seq?'2% sequestration applied to positive payments.':'Sequestration off.';
-  renderLineBoard();drawLines();drawCats(R);drawSens();drawSetting();drawLevers();drawFive();}
+  renderLineBoard();withMorph(['chLines','chCats','chSetting','chLevers','chFive'],()=>{drawLines();drawCats(R);drawSens();drawSetting();drawLevers();drawFive();});}
 
 function syncOpInputs(){const a=$('opRev'),b=$('opMargin');if(a)a.value=S.op.rev!=null?Math.round(S.op.rev):'';if(b)b.value=S.op.margin;const n=$('opSrc');if(n)n.textContent=S.op.src==='cost report'?`Revenue prefilled from the 2024 Medicare cost report (fiscal year ending ${S.op.fy}); margin is the Kaufman Hall ${KH_MARGIN}% industry year-to-date figure. Replace both with your budget.`:S.op.src==='user'?'Your figures.':`Margin defaults to ${KH_MARGIN}%, the Kaufman Hall National Hospital Flash Report year-to-date average through August 2026, when 43% of hospitals ran at a loss. Enter your revenue to see the result in margin points.`;}
 function renderMargin(R){const e=$('marginNote');if(!e)return;if(!R.eps){e.textContent='';return;}
@@ -291,7 +303,7 @@ function breakEvenRisk(){const T=TRACKS[S.track];if(S.track===1)return 'Track 1 
 function renderNet(){const box=$('netBoard');if(!box)return;if(!S.levers.on||!run().eps){box.style.display='none';return;}box.style.display='';
   const RL=run({levers:true});let ra=0,days=0,irf=0;CATS.forEach(c=>{const st=S.cats[c.key];if(!st.on)return;const n=catCalc(c,st,S.region,S.risk).n;const p=leverSavings(c.key);ra+=n*p.raAvoided;days+=n*p.snfDays;irf+=n*p.irfAvoided;});
   const lostRA=ra*S.net.raMargin,lostSNF=days*S.net.snfRev,net=RL.npra-S.net.cost-lostRA-lostSNF;
-  $('netVal').textContent=fmt(net);$('netVal').className='val '+(net>0?'pos':net<0?'neg':'');
+  tweenText($('netVal'),net,fmt);$('netVal').className='val '+(net>0?'pos':net<0?'neg':'');
   $('netDetail').innerHTML=`${fmtFull(RL.npra)} CMS reconciliation with the program − ${fmtFull(S.net.cost)} program cost − ${fmtFull(lostRA)} margin on ${ra.toFixed(0)} avoided readmissions − ${fmtFull(lostSNF)} on ${days.toFixed(0)} avoided SNF days in owned facilities${irf?` (${irf.toFixed(0)} patients kept out of inpatient rehab)`:''}. Compare with ${fmtFull(run({levers:false}).npra)} doing nothing.`;}
 function drawCats(R){const svg=$('chCats');svg.innerHTML='';const W=560,H=230,L=150,Rm=70,top=14,bot=24;const ac=activeCats();const rows=R.rows.filter(r=>ac.includes(r.c.key));if(!rows.length){svg.appendChild(el('text',{x:W/2,y:H/2,'text-anchor':'middle'},'No episodes entered'));$('tblCats').innerHTML='';return;}
   const max=Math.max(1,...rows.map(r=>Math.abs(r.recon)));const bh=Math.min(34,(H-top-bot)/rows.length-8);const x0=L+(W-L-Rm)/2;const sc=(W-L-Rm)/2/max;
