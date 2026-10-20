@@ -3,7 +3,7 @@
 const $=id=>document.getElementById(id);
 const NS='http://www.w3.org/2000/svg';
 const el=(n,a={},t)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e;};
-const C={purple:'#8366ea',green:'#22a85e',teal:'#10a197',red:'#e0607a',amber:'#e5b35a',line:'#2b2542',fg:'#ece9f5',muted:'#a79fc0'};
+const C={panel:'#1c1730',purple:'#8366ea',green:'#22a85e',teal:'#10a197',red:'#e0607a',amber:'#e5b35a',line:'#2b2542',fg:'#ece9f5',muted:'#a79fc0'};
 const tip=$('tip');
 function bindTip(node,html){node.addEventListener('mousemove',e=>{tip.innerHTML=html;tip.style.left=e.clientX+'px';tip.style.top=e.clientY+'px';tip.style.opacity=1;});node.addEventListener('mouseleave',()=>tip.style.opacity=0);node.addEventListener('focus',()=>{const r=node.getBoundingClientRect();tip.innerHTML=html;tip.style.left=(r.left+r.width/2)+'px';tip.style.top=r.top+'px';tip.style.opacity=1;});node.addEventListener('blur',()=>tip.style.opacity=0);node.setAttribute('tabindex','0');}
 const fmt=n=>{const s=n<0?'−':'';n=Math.abs(n);if(n>=1e9)return s+'$'+(n/1e9).toFixed(2)+'B';if(n>=1e6)return s+'$'+(n/1e6).toFixed(n>=1e7?1:2)+'M';if(n>=1e3)return s+'$'+(n/1e3).toFixed(n>=1e5?0:1)+'K';return s+'$'+Math.round(n);};
@@ -289,7 +289,7 @@ function update(){const R=run();const T=TRACKS[S.track];
   if(S.levers.on&&R.eps){lt.style.display='';tweenText($('leverVal'),RL.npra,fmt);$('leverDelta').textContent=`vs ${fmt(RB.npra)} without levers (${fmt(RL.npra-RB.npra)})`;$('bigLab').textContent='Net payment reconciliation amount (levers applied)';}
   else{lt.style.display='none';$('bigLab').textContent='Net payment reconciliation amount';}
   $('seqNote').textContent=S.seq?'2% sequestration applied to positive payments.':'Sequestration off.';
-  renderLineBoard();withMorph(['chLines','chCats','chSetting','chLevers','chFive'],()=>{drawLines();drawCats(R);drawSens();drawSetting();drawLevers();drawFive();});}
+  renderLineBoard();withMorph(['chLines','chCats','chSetting','chLevers','chFive','chFlow'],()=>{drawLines();drawCats(R);drawSens();drawSetting();drawLevers();drawFive();drawFlow(false);});}
 
 function syncOpInputs(){const a=$('opRev'),b=$('opMargin');if(a)a.value=S.op.rev!=null?Math.round(S.op.rev):'';if(b)b.value=S.op.margin;const n=$('opSrc');if(n)n.textContent=S.op.src==='cost report'?`Revenue prefilled from the 2024 Medicare cost report (fiscal year ending ${S.op.fy}); margin is the Kaufman Hall ${KH_MARGIN}% industry year-to-date figure. Replace both with your budget.`:S.op.src==='user'?'Your figures.':`Margin defaults to ${KH_MARGIN}%, the Kaufman Hall National Hospital Flash Report year-to-date average through August 2026, when 43% of hospitals ran at a loss. Enter your revenue to see the result in margin points.`;}
 function renderMargin(R){const e=$('marginNote');if(!e)return;if(!R.eps){e.textContent='';return;}
@@ -437,6 +437,44 @@ function drawCases(){const svg=$('chCases');svg.innerHTML='';const W=900,H=300,L
 /* form: Netlify handles the POST on jaybeatty.com; elsewhere show the scenario to copy */
 $('capForm').addEventListener('submit',e=>{const h=window.location.hostname;if(h.endsWith('jaybeatty.com')||h.endsWith('netlify.app'))return;e.preventDefault();const s=JSON.parse($('cScenario').value||'{}');const ok=$('capOk');ok.style.display='block';ok.innerHTML='Preview build: nothing was sent. Email <b>jay@jaybeatty.com</b> with this scenario: '+esc(JSON.stringify(s));});
 
+
+/* ---------- how TEAM pays: animated six-step flow on the loaded hospital's numbers ---------- */
+let flowPlayed=false,flowTimers=[];
+function drawFlow(animate){const svg=$('chFlow');if(!svg)return;flowTimers.forEach(clearTimeout);flowTimers=[];svg.innerHTML='';
+  const R=run(),R0=run({seq:false});const T=TRACKS[S.track];
+  $('flowTitle').textContent=(S.caseId?CASES.find(c=>c.id===S.caseId).name:S.hospital?S.hospital.name:'Your inputs')+' · '+T.name+' · PY'+S.py+', step by step';
+  if(!R.eps){svg.setAttribute('viewBox','0 0 1080 120');svg.appendChild(el('text',{x:540,y:64,'text-anchor':'middle'},'Load a case or enter episodes and the six steps play here with your numbers.'));return;}
+  const vert=svg.getBoundingClientRect().width<620;const W=vert?480:1080,H=vert?6*118+20:330;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const pos=R.recon>=0;const col=pos?C.green:C.red;const sgn=v=>v>0?'+'+fmt(v):v<0?fmt(v):'$0';
+  const big=Math.max(R.aggT,R.aggS)||1;const small=Math.max(Math.abs(R.base),Math.abs(R.qa),Math.abs(R.npra),Math.abs(R0.npra),1)*1.15;
+  const stages=[
+   {n:'01 · Trigger',t:`${num(R.eps)} episodes`,s:'traditional-Medicare surgeries this year'},
+   {n:'02 · Target',t:fmt(R.aggT)+' target book',s:'regional price × risk multiplier × episodes'},
+   {n:'03 · Compare',t:sgn(R.recon),s:`spend ${fmt(R.aggS)}, ${pct(R.aggT?(R.aggS/R.aggT-1)*100:0)} vs target`},
+   {n:'04 · Quality',t:sgn(R.qa),s:S.track===1&&R.recon<0?'Track 1: negative set to $0':R.base>0?`${(R.adjPct*100).toFixed(1)}% withheld at CQS ${Math.round(S.cqs)}`:R.base<0?`${(R.adjPct*100).toFixed(1)}% relief at CQS ${Math.round(S.cqs)}`:'nothing to adjust'},
+   {n:'05 · Limits',t:sgn(R0.npra),s:R.capHit==='gain'?`stop-gain: capped at ${(T.gain*100)}% of target`:R.capHit==='loss'?`stop-loss: capped at ${(T.loss*100)}% of target`:`inside the ${(T.gain*100)}% ${T.loss?'/ '+(T.loss*100)+'% ':''}limits`},
+   {n:'06 · Settle',t:sgn(R.npra),s:R.npra>0?(R.seqAmt?`paid by CMS in ${2026+S.py}, after 2% sequestration`:`paid by CMS in ${2026+S.py}`):R.npra<0?`repaid to CMS in ${2026+S.py}`:'nothing changes hands'}];
+  const cell=k=>vert?{x:20,y:10+k*118,w:W-40,h:108}:{x:20+k*176,y:16,w:160,h:H-32};
+  const groups=[];
+  stages.forEach((st,k)=>{const c=cell(k);const g=el('g',{class:'stage',opacity:animate?0:1});groups.push(g);
+    g.appendChild(el('rect',{x:c.x,y:c.y,width:c.w,height:c.h,rx:10,fill:C.panel||'#1c1730',stroke:C.line}));
+    g.appendChild(el('text',{x:c.x+12,y:c.y+20,class:'mono',fill:C.green},st.n));
+    const lab=el('text',{x:c.x+12,y:c.y+(vert?44:c.h-34),class:'strong',style:'font-size:15px'},st.t);g.appendChild(lab);
+    const sub=el('text',{x:c.x+12,y:c.y+(vert?62:c.h-16),style:'font-size:10.5px'},st.s);g.appendChild(sub);
+    // plot area
+    const px=vert?c.x+12:c.x+12,py=vert?c.y+74:c.y+34,pw=vert?c.w-24:c.w-24,ph=vert?22:c.h-84;
+    const bars=[];const bar=(frac,fill,opt={})=>{frac=Math.max(0,Math.min(1,frac));let r;if(vert){r=el('rect',{x:px+(opt.off||0)*pw,y:py+(opt.lane||0)*(ph/2+2),width:frac*pw,height:opt.lanes?ph/2:ph,rx:3,fill,opacity:opt.op||1});}else{const bw=opt.lanes?(pw-6)/2:pw;const x=px+(opt.lane||0)*(bw+6);const h=frac*ph;r=el('rect',{x:x+(opt.off||0)*bw,y:py+ph-h,width:bw,height:h,rx:3,fill,opacity:opt.op||1});}g.appendChild(r);bars.push({r,frac});return r;};
+    if(k===0){const n=Math.min(R.eps,vert?40:72),cols=vert?20:12,sz=vert?(pw/20-3):(pw/12-3);for(let i=0;i<n;i++){const cx=px+(i%cols)*(sz+3),cy=vert?py:py+ph-sz-Math.floor(i/cols)*(sz+3);g.appendChild(el('rect',{x:cx,y:cy,width:sz,height:sz,rx:2,fill:C.purple,opacity:.85}));}if(R.eps>n)g.appendChild(el('text',{x:px+pw,y:vert?py+ph+12:py+12,'text-anchor':'end',style:'font-size:10px'},`each square ≈ ${Math.ceil(R.eps/n)} episodes`));}
+    if(k===1)bar(R.aggT/big,C.purple);
+    if(k===2){bar(R.aggT/big,C.purple,{lanes:true,lane:0});bar(R.aggS/big,C.teal,{lanes:true,lane:1});}
+    if(k===3){const b=Math.abs(R.base)/small;bar(b,col,{});if(R.adjAmt)bar(Math.abs(R.adjAmt)/small,C.amber,{op:.95});}
+    if(k===4){bar(Math.abs(R.qa)/small,col,{op:.35});bar(Math.abs(R0.npra)/small,col,{});const cap=(R0.npra>=0?R.gainCap:R.lossCap)/small;if(cap<=1&&cap>0){if(vert)g.appendChild(el('line',{x1:px+cap*pw,x2:px+cap*pw,y1:py-4,y2:py+ph+4,stroke:C.amber,'stroke-dasharray':'3 3'}));else g.appendChild(el('line',{x1:px,x2:px+pw,y1:py+ph-cap*ph,y2:py+ph-cap*ph,stroke:C.amber,'stroke-dasharray':'3 3'}));}}
+    if(k===5){bar(Math.abs(R.npra)/small,col,{});if(R.seqAmt)bar((Math.abs(R.npra)+R.seqAmt)/small,C.amber,{op:.35});}
+    svg.appendChild(g);
+    if(k<5){const a=el('path',{class:'arrow',d:vert?`M${c.x+c.w/2} ${c.y+c.h+1} l-5 -7 h10 z`:`M${c.x+c.w+2} ${c.y+c.h/2} l-7 -5 v10 z`,fill:C.muted,opacity:animate?0:.9});svg.appendChild(a);groups[k].arrow=a;}
+    if(animate){bars.forEach(b=>{const r=b.r;r.style.transition='none';if(vert){r.style.width='0px';}else{r.style.y=(py+ph)+'px';r.style.height='0px';}r.getBBox();r.style.transition='';});groups[k].bars=bars;groups[k].play=()=>{bars.forEach(b=>{const r=b.r;if(vert)r.style.width=r.getAttribute('width')+'px';else{r.style.y=r.getAttribute('y')+'px';r.style.height=r.getAttribute('height')+'px';}});};}});
+  if(animate){groups.forEach((g,k)=>{flowTimers.push(setTimeout(()=>{g.setAttribute('opacity',1);g.play&&g.play();if(g.arrow)setTimeout(()=>g.arrow.setAttribute('opacity',.9),350);},200+k*700));});}}
+
 /* ---------- checks against CMS worked examples and published evaluations ---------- */
 function renderChecks(){const box=$('checksBody');if(!box)return;const rows=[];
   const w=[650,650,400],sc=[60,50,40],tot=w[0]+w[1]+w[2];const cqs=(w[0]*sc[0]+w[1]*sc[1]+w[2]*sc[2])/tot;
@@ -455,6 +493,7 @@ $('real').addEventListener('input',e=>{S.levers.real=parseFloat(e.target.value);
 document.querySelectorAll('[data-net]').forEach(i=>i.addEventListener('input',e=>{S.net[e.target.dataset.net]=Math.max(0,parseFloat(e.target.value)||0);update();}));
 
 /* init */
+(function(){const f=$('figFlow');if(!f)return;const io=new IntersectionObserver(es=>{es.forEach(x=>{if(x.isIntersecting&&!flowPlayed){flowPlayed=true;if(!RM)drawFlow(true);io.disconnect();}});},{threshold:.35});io.observe(f);$('flowReplay').addEventListener('click',()=>{if(RM)return drawFlow(false);drawFlow(true);});let rt=null;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>drawFlow(false),200);});})();
 renderChecks();syncOpInputs();buildTracks();buildCats();buildLevers();renderTabs();renderCases();drawCases();loadCase('community');
 window.TEAMCALC={S,CATS,run,catCalc,applyCaseState,derivePublic,leverSavings,applyPreset,eligible,HM,CASES,loadCase,pick,PARTS};
 })();

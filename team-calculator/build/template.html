@@ -221,6 +221,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .js .pulse{animation:pulse .6s ease-out}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(111,227,163,.45)}100%{box-shadow:0 0 0 14px rgba(111,227,163,0)}}
 @media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.js .chart rect{transition:none}.js .pulse{animation:none}}
+#chFlow g.stage{transition:opacity .5s ease}#chFlow .arrow{transition:opacity .4s ease}
 </style>
 </head>
 <body>
@@ -429,6 +430,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div><div class="eyebrow">How TEAM pays</div><h2 style="margin-top:12px">Six steps from a surgery to a check, or a bill.</h2></div>
     <p class="lede">CMS keeps paying claims as usual during the year. After the year closes it adds up what traditional Medicare spent on each episode and compares it with a target price. The difference, after a few adjustments, is what changes hands.</p>
   </div>
+  <figure id="figFlow" style="margin-bottom:24px">
+    <figcaption><span class="t" id="flowTitle">Your number, step by step</span><span class="s">The hospital loaded above, run through the six steps in order. Steps 1 to 3 are drawn to the scale of the target book; steps 4 to 6 zoom in to the reconciliation dollars, which are usually a few percent of it. It plays once when it scrolls into view.</span></figcaption>
+    <svg class="chart" id="chFlow" viewBox="0 0 1080 330" role="img" aria-label="Animated sequence of the six TEAM reconciliation steps using the loaded hospital's figures"></svg>
+    <div class="legend" style="justify-content:space-between;align-items:center"><span><span><i style="background:var(--purple)"></i>Target</span> <span><i style="background:var(--teal)"></i>Spend</span> <span><i style="background:var(--green)"></i>Payment</span> <span><i style="background:var(--red)"></i>Repayment</span> <span><i style="background:var(--amber)"></i>Withheld, capped or sequestered</span></span><button class="btn small" type="button" id="flowReplay">Replay</button></div>
+  </figure>
   <div class="grid3">
     <div class="how"><div class="n">01 · Trigger</div><h3>An anchor stay or procedure</h3><p>A traditional-Medicare patient has one of the five surgeries at your hospital. The episode runs from admission through 30 days after discharge and includes nearly all Part A and Part B spending in that window.</p></div>
     <div class="how"><div class="n">02 · Target</div><h3>A regional target price</h3><p>CMS averages three baseline years of episode spending in your census division, trends it forward, and takes a 2% discount (1.5% for CABG and bowel). Then it adjusts for your patients' risk and your hospital's profile.</p></div>
