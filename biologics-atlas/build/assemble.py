@@ -55,7 +55,11 @@ data_js = json.dumps(data, separators=(",", ":"), ensure_ascii=False).replace("<
 tpl = open(os.path.join(ROOT, "app/template.html")).read()
 app = open(os.path.join(ROOT, "app/app.js")).read()
 svg = open(os.path.join(ROOT, "app/skeleton.svg")).read()
-html = tpl.replace("__SKELETON__", svg).replace("__DATA__", data_js).replace("__APP__", app)
+viewer = open(os.path.join(ROOT, "app/viewer3d.js")).read()
+vcfg_path = os.path.join(ROOT, "app/viewer-config.json")
+vcfg = open(vcfg_path).read().strip() if os.path.exists(vcfg_path) else "{}"
+credit = json.load(open(vcfg_path)).get("credit_html", "") if os.path.exists(vcfg_path) else ""
+html = tpl.replace("__SKELETON__", svg).replace("__DATA__", data_js).replace("__APP__", app).replace("__VIEWER__", viewer).replace("__VIEWER_CONFIG__", vcfg).replace("__CREDIT__", credit)
 
 os.makedirs(os.path.dirname(out), exist_ok=True)
 open(out, "w").write(html)
@@ -71,7 +75,11 @@ if out.startswith(SITE):
         for f in os.listdir(os.path.join(ROOT, sub)):
             if f.endswith((".json", ".md", ".py")) and not f.startswith("."):
                 shutil.copy(os.path.join(ROOT, sub, f), os.path.join(dst, f))
-    for f in ("template.html", "app.js", "skeleton.svg"):
+    for f in ("skeleton.glb",):
+        src = os.path.join(ROOT, "app", f)
+        if os.path.exists(src): shutil.copy(src, os.path.join(SITE, f))
+    for f in ("template.html", "app.js", "skeleton.svg", "viewer3d.js", "viewer-config.json"):
+        if not os.path.exists(os.path.join(ROOT, "app", f)): continue
         os.makedirs(os.path.join(SITE, "app"), exist_ok=True); shutil.copy(os.path.join(ROOT, "app", f), os.path.join(SITE, "app", f))
 
 # artifact variant: no document wrapper, absolute links to the live site, no favicon link

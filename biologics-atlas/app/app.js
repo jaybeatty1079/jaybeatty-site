@@ -86,7 +86,9 @@ function regionBox(region, sub) {
   hits.forEach(h => { const b = h.getBBox(); x0 = Math.min(x0, b.x); y0 = Math.min(y0, b.y); x1 = Math.max(x1, b.x + b.width); y1 = Math.max(y1, b.y + b.height); });
   return { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
 }
+const is3d = () => window.ATLAS3D && window.ATLAS3D.ready && !wrap.classList.contains('flat');
 function focusRegion(region, sub) {
+  if (window.ATLAS3D && (window.ATLAS3D.ready || !window.ATLAS3D.failed) && !wrap.classList.contains('flat')) { window.ATLAS3D.focus(region, sub); if (window.ATLAS3D.ready) { svg.querySelectorAll('.hit').forEach(h => h.classList.toggle('active', !!region && h.dataset.region === region && (!sub || !h.dataset.sub || h.dataset.sub === sub))); return; } }
   svg.querySelectorAll('.hit').forEach(h => h.classList.toggle('active', !!region && h.dataset.region === region && (!sub || !h.dataset.sub || h.dataset.sub === sub)));
   if (!region) { animateTo(HOME); return; }
   const b = regionBox(region, sub) || regionBox(region); if (b) animateTo(fitBox(b));
@@ -100,12 +102,15 @@ svg.querySelectorAll('.hit').forEach(h => {
 });
 let pendingSub = null;
 function svgPoint(evt) { const pt = new DOMPoint(evt.clientX, evt.clientY); return pt.matrixTransform(svg.getScreenCTM().inverse()); }
-wrap.addEventListener('wheel', e => { e.preventDefault(); const p = svgPoint(e); const f = Math.exp(e.deltaY * 0.0016); let w = Math.min(HOME.w * 1.1, Math.max(70, vb.w * f)); const h = w / ASPECT; const kx = (p.x - vb.x) / vb.w, ky = (p.y - vb.y) / vb.h; if (animId) { cancelAnimationFrame(animId); animId = null; } setVB({ x: p.x - kx * w, y: p.y - ky * h, w, h }); }, { passive: false });
+wrap.addEventListener('wheel', e => { if (is3d()) return; e.preventDefault(); const p = svgPoint(e); const f = Math.exp(e.deltaY * 0.0016); let w = Math.min(HOME.w * 1.1, Math.max(70, vb.w * f)); const h = w / ASPECT; const kx = (p.x - vb.x) / vb.w, ky = (p.y - vb.y) / vb.h; if (animId) { cancelAnimationFrame(animId); animId = null; } setVB({ x: p.x - kx * w, y: p.y - ky * h, w, h }); }, { passive: false });
 let drag = null, dragMoved = false;
-wrap.addEventListener('pointerdown', e => { if (e.button !== 0) return; drag = { x: e.clientX, y: e.clientY, vb: Object.assign({}, vb) }; dragMoved = false; window.addEventListener('pointermove', onMove); window.addEventListener('pointerup', endDrag, { once: true }); window.addEventListener('pointercancel', endDrag, { once: true }); });
+wrap.addEventListener('pointerdown', e => { if (e.button !== 0 || is3d()) return; drag = { x: e.clientX, y: e.clientY, vb: Object.assign({}, vb) }; dragMoved = false; window.addEventListener('pointermove', onMove); window.addEventListener('pointerup', endDrag, { once: true }); window.addEventListener('pointercancel', endDrag, { once: true }); });
 function onMove(e) { if (!drag) return; const rect = wrap.getBoundingClientRect(); const dx = (e.clientX - drag.x) * vb.w / rect.width, dy = (e.clientY - drag.y) * vb.h / rect.height; if (Math.abs(e.clientX - drag.x) + Math.abs(e.clientY - drag.y) > 5) { dragMoved = true; wrap.classList.add('dragging'); } if (dragMoved) { if (animId) { cancelAnimationFrame(animId); animId = null; } setVB({ x: drag.vb.x - dx, y: drag.vb.y - dy, w: vb.w, h: vb.h }); } }
 function endDrag() { drag = null; wrap.classList.remove('dragging'); window.removeEventListener('pointermove', onMove); setTimeout(() => { dragMoved = false; }, 0); }
-document.getElementById('zoom-out').addEventListener('click', () => { if (state.region) go('r-' + state.region); focusRegion(state.region || null); if (!state.region) animateTo(HOME); });
+document.getElementById('zoom-out').addEventListener('click', () => { if (state.region) go('r-' + state.region); focusRegion(state.region || null); if (!state.region) { animateTo(HOME); if (window.ATLAS3D && window.ATLAS3D.ready) window.ATLAS3D.reset(); } });
+const flatBtn = document.getElementById('flat-toggle');
+flatBtn.addEventListener('click', () => { const flat = wrap.classList.toggle('flat'); flatBtn.textContent = flat ? '3D view' : 'Flat view'; focusRegion(state.region || null, pendingSub); });
+(function watch3d() { if (window.ATLAS3D && window.ATLAS3D.ready) { flatBtn.hidden = false; const c = document.getElementById('skel-credit'); if (c) c.hidden = false; return; } if (window.ATLAS3D && window.ATLAS3D.failed) return; setTimeout(watch3d, 400); })();
 
 /* ---------- region chips ---------- */
 const chipsEl = document.getElementById('region-chips');
@@ -270,5 +275,5 @@ dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 if ('IntersectionObserver' in window && !reduced) { const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 }); document.querySelectorAll('.rv').forEach(el => io.observe(el)); } else document.querySelectorAll('.rv').forEach(el => el.classList.add('in'));
 
 route();
-window.ATLAS = { D, go, state, openProduct, focusRegion };
+window.ATLAS = { D, go, state, openProduct, focusRegion, regionLabel: r => (REGION[r] || {}).label || r, get pendingSub() { return pendingSub; }, set pendingSub(v) { pendingSub = v; } };
 })();
