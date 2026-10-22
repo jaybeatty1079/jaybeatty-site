@@ -1,0 +1,739 @@
+{
+  "applications": [
+    {
+      "id": "cmf-cranioplasty",
+      "region": "skull-cmf",
+      "subregion": "cranium",
+      "name": "Cranioplasty: cranial defect reconstruction after decompressive craniectomy or tumor resection",
+      "type": "bone-void",
+      "classifications": [
+        {"name": "Cranial defect size (labeling and literature convention)", "summary": "Small defects up to 25 cm2 are the labeled ceiling for every US calcium phosphate and HA cranial cement and for PCL scaffolds; defects larger than 25 cm2 (a typical hemicraniectomy flap is 80 to 150 cm2) are reconstructed with the banked autologous flap or a custom alloplastic implant. CPT splits cranioplasty at 5 cm diameter (62140 up to 5 cm, 62141 over 5 cm)."},
+        {"name": "Defect etiology", "summary": "Post-decompressive craniectomy (trauma, malignant stroke, hemorrhage), post-tumor resection, infected or resorbed prior flap, congenital or post-craniofacial surgery contour defect. Trauma etiology and younger age raise resorption risk of autologous flaps."},
+        {"name": "Timing of cranioplasty", "summary": "Ultra-early (30 to 45 days), intermediate (45 to 70 days), early (80 to 100 days) and delayed (120 to 180 days) after craniectomy; a 2026 meta-analysis of 55 studies found better functional recovery with cranioplasty within 100 days and no increase in complications."}
+      ],
+      "why_biologic": "Biologics here are the self-setting calcium phosphate and hydroxyapatite cements, beta-TCP, bioactive glass and DBM used to fill small defects or restore contour; they are osteoconductive void fillers, not structural. They do not compete with the autologous flap for large defects; the competition for large defects is custom PEEK, titanium or PMMA implants (hardware, see adjacent note).",
+      "autograft_standard": "Reimplantation of the patient's own bone flap, banked by cryopreservation or in a subcutaneous abdominal pocket, is the benchmark. Its failure modes are aseptic bone flap resorption (pooled 15 to 20 percent in adults, around 40 percent for banked flaps in children) and infection (around 7 percent), which together drive reoperation odds about 1.9 times those of synthetic implants. Cryopreservation and subcutaneous storage give similar infection and resorption rates. Split calvarial graft is the autograft for smaller defects and for children.",
+      "volume_note": "No single US annual cranioplasty count is published. National Inpatient Sample series report 49,305 weighted adult cranioplasty encounters for 2012 to 2014 (about 16,000 per year; PMID 33055559) and 105,714 adult cranioplasty admissions for 2002 to 2017 (about 6,600 per year; PMID 35526812); the two code definitions differ, so the app should show the range and the sources. Upstream, decompressive craniectomy for stroke was performed in 124,718 NIS patients over 2006 to 2016 (PMID 32173551) and 6.8 percent (23,743 of 349,164) of severe TBI admissions had a craniectomy over 2004 to 2014 (PMID 36202343).",
+      "hardware_note": "Custom patient-specific cranial implants are hardware, cleared under product codes GXN and GWO (21 CFR 882.5330 and 882.5320): Stryker PEEK Customized Cranial Implant (K203055, 2021) and Cranial iD, DePuy Synthes Patient Specific Implants (K243715, 2025) and TRUMATCH CMF, KLS Martin IPS-Ti and IPS-PEEK (consolidated MR-conditional clearance K252573, 2025), Oxford Performance Materials OsteoFab PEKK (K180064, 2018), Longeviti ClearFit sonolucent PMMA (K203349, K231920, K260709), Kelyniam, 3D Systems VSP PEEK (K231834), Fin-Ceramica CustomizedBone porous HA (K240567), OssDsign Cranial PSI (K161090). A 2025 systematic review of 3,260 custom heterologous cranioplasties reported infection and explantation of 8.2 and 3.7 percent for titanium, 6.7 and 5.3 percent for porous hydroxyapatite, 14.9 and 6.1 percent for PMMA and 11.1 and 3.8 percent for PEEK (PMID 40971008).",
+      "sources": ["PMID:29753896", "PMID:35593924", "PMID:27647038", "PMID:41719704", "PMID:41823425", "PMID:39495337", "PMID:40971008", "PMID:41464559", "PMID:33055559", "PMID:35526812", "PMID:32173551", "PMID:36202343", "PMID:31461029", "https://www.ZimmerBiomet.com/content/dam/zb-corporate/en/support/coding-guides/4111.1-US-en%20Cranioplasty%20Procedures%20Coding%20Reference%20Guide.pdf"]
+    },
+    {
+      "id": "cmf-burr-hole",
+      "region": "skull-cmf",
+      "subregion": "cranium",
+      "name": "Burr hole and craniotomy gap fill",
+      "type": "bone-void",
+      "classifications": [
+        {"name": "Defect type", "summary": "Burr holes (about 14 mm) from trephination, chronic subdural hematoma drainage or craniotomy, and the contiguous kerf gap left after a craniotomy bone flap is replaced. All US cements are labeled for burr holes, contiguous craniotomy cuts and other cranial defects not intrinsic to the stability of the bony structure, usually with a 25 cm2 ceiling (4 cm2 for Stryker DirectInject)."}
+      ],
+      "why_biologic": "Cosmetic and protective fill of the hole or gap so the scalp does not dimple; the material is a resorbable or non-resorbable osteoconductive plug or paste. Autologous bone dust packed into burr holes resorbs: one comparative series found partial or complete resorption at one year in every bone-dust hole and a visible contour defect in 60 percent, against stable hydroxyapatite plugs.",
+      "autograft_standard": "Autologous bone dust from the craniotomy, or leaving the hole open under a titanium burr-hole cover (hardware). Many centers use nothing. Burr hole covers and plates are hardware.",
+      "volume_note": "No public count of US burr holes or craniotomies with gap fill exists. Craniotomy volume is the denominator; the NIS cranioplasty counts above are a lower bound for cranial closure procedures.",
+      "hardware_note": "Titanium burr-hole covers and craniotomy fixation plates (Stryker Universal Neuro, DePuy Synthes MatrixNEURO, KLS Martin, Zimmer Biomet) are the hardware alternative. RevBio TETRANITE bone adhesive for cranial flap fixation is in a 20-patient FDA-approved first-in-human study (IDE 2023, NIH SBIR 2024); Abyrx has registered NCT07103330 (n=100, start 2026) for cranial flap fixation with Montage Flowable paste, an unlabeled use.",
+      "sources": ["PMID:36253335", "PMID:19710975", "https://www.stryker.com/us/en/craniomaxillofacial/products/hydroset-injectable-bone-substitute.html", "https://clinicaltrials.gov/study/NCT07103330", "https://www.businesswire.com/news/home/20240916810983/en"]
+    },
+    {
+      "id": "cmf-skull-base-sinus",
+      "region": "skull-cmf",
+      "subregion": "cranium",
+      "name": "Lateral skull base defect repair (translabyrinthine, retrosigmoid, temporal bone) and frontal sinus obliteration",
+      "type": "bone-void",
+      "classifications": [
+        {"name": "Approach-defined defects", "summary": "Translabyrinthine and retrosigmoid craniectomy defects after vestibular schwannoma or other cerebellopontine angle surgery; mastoid and temporal bone defects; frontal sinus obliteration after osteoplastic flap for chronic frontal sinusitis or fracture."}
+      ],
+      "why_biologic": "Hydroxyapatite cement is used to seal air-cell tracts and reconstruct the craniectomy so cerebrospinal fluid cannot leak and the postauricular contour is restored; this is the one cranial application where cement has comparative data showing lower CSF leak and pseudomeningocele odds than fat graft or no reconstruction. Bioactive glass S53P4 granules (Bonalive) are used to obliterate the frontal sinus because they are osteoconductive and bacteriostatic.",
+      "autograft_standard": "Abdominal fat graft for translabyrinthine closure and autologous bone or fat for frontal sinus obliteration; fat alone has historically carried about 12 percent CSF leak after translabyrinthine resection. HA cement should not touch sinus mucosa or be used to obliterate an infected mastoid cavity (three of three mastoid obliterations failed in one pediatric series).",
+      "volume_note": "No US volume count found for translabyrinthine or retrosigmoid craniectomy reconstruction or frontal sinus obliteration (PubMed searched 2026-10-22).",
+      "sources": ["PMID:41254416", "PMID:28059442", "PMID:12075225", "PMID:30843619", "PMID:34642820", "PMID:18984257", "PMID:16823870", "PMID:10925438", "PMID:14709991"]
+    },
+    {
+      "id": "cmf-craniosynostosis",
+      "region": "skull-cmf",
+      "subregion": "cranium",
+      "name": "Craniosynostosis and pediatric cranial vault reconstruction (primary remodeling and secondary contour cranioplasty)",
+      "type": "other",
+      "classifications": [
+        {"name": "Suture involved", "summary": "Sagittal (scaphocephaly), metopic (trigonocephaly), unicoronal (anterior plagiocephaly), bicoronal (brachycephaly), lambdoid (posterior plagiocephaly); single-suture nonsyndromic versus multisuture syndromic (Apert, Crouzon, Pfeiffer, Saethre-Chotzen, Muenke)."},
+        {"name": "Procedure", "summary": "Endoscopic strip craniectomy with helmet (under about 6 months), open cranial vault remodeling or fronto-orbital advancement (6 to 12 months), posterior vault distraction; secondary contour cranioplasty in adolescence for residual temporal or supraorbital hollowing after fronto-orbital advancement (reported in up to 55 to 75 percent, with up to 20 percent needing correction)."}
+      ],
+      "why_biologic": "In primary surgery the vault is reshaped with the child's own bone; bone gaps left after remodeling are usually left to the osteogenic dura in infants, with DBM or particulate bone used to bridge gaps in older children or large defects. In secondary contour cranioplasty, hydroxyapatite and carbonated calcium phosphate cements are onlayed over intact cranium; this is an off-label-adjacent use (cements are labeled for contour restoration up to 25 cm2) with infection and removal rates of 5 to 10 percent and higher when large volumes are used.",
+      "autograft_standard": "Autologous calvarial bone (split or particulate) is the standard; children under about 2 years lack a diploic space for split grafts, which is why DBM and resorbable mesh bilaminate was developed for large defects. Resorbable fixation (DePuy Synthes RapidSorb, KLS Martin Resorb-x, Stryker Delta, Zimmer Biomet LactoSorb) is hardware with a 7.9 percent wound complication rate in a 325-patient series.",
+      "volume_note": "Kids' Inpatient Database: 3,426 craniosynostosis repairs in the four sampled years 1997, 2000, 2003 and 2006 (PMID 23030675); 2012 KID counts about 1,600 to 1,800 repairs in infants under 12 months; NSQIP-Pediatric captured 11,279 repairs over 2012 to 2021 (PMID 38940557). Birth prevalence is about 1 in 2,000 to 2,500 live births (literature convention; no single CDC national estimate located).",
+      "sources": ["PMID:19319063", "PMID:31592945", "PMID:36947197", "PMID:32969929", "PMID:20613591", "PMID:34398868", "PMID:23030675", "PMID:38940557", "PMID:31461029"]
+    },
+    {
+      "id": "cmf-orbital-fracture",
+      "region": "skull-cmf",
+      "subregion": "midface-orbit",
+      "name": "Orbital floor and wall fracture reconstruction",
+      "type": "fracture",
+      "classifications": [
+        {"name": "Orbital fracture pattern", "summary": "Pure blowout (floor, medial wall, combined floor and medial wall), impure blowout with rim involvement, trapdoor fracture in children with muscle entrapment, orbital roof fracture, and orbital fractures as part of zygomaticomaxillary complex or naso-orbito-ethmoid fractures. Surgical indications are enophthalmos over 2 mm, persistent diplopia, entrapment, or a defect larger than about 50 percent of the floor or 2 cm2."}
+      ],
+      "why_biologic": "Almost none. Orbital floor reconstruction is an implant market: titanium mesh and preformed orbital plates, porous polyethylene (Medpor) and polyethylene-titanium composites, resorbable PDS and PLLA/PGA sheets, patient-specific titanium. Biologics enter only as autologous bone (calvarial, iliac, maxillary wall) or as cartilage; no bone graft substitute or growth factor has a labeled or evidence-based role on the orbital floor. A 2026 meta-analysis found no functional advantage of autologous bone over alloplastic implants and more donor morbidity.",
+      "autograft_standard": "Autologous calvarial bone was the historical gold standard and still used in children and in contaminated or large defects; it resorbs unpredictably and adds a donor site, which is why alloplasts dominate.",
+      "volume_note": "Nationwide Emergency Department Sample: an estimated 350,379 US ED visits with a primary diagnosis of orbital floor fracture over 2006 to 2017, incidence rising from 7.7 to 11.3 per 100,000 (about 37,000 per year by 2017), 14 percent admitted, assault 43 percent and falls 26 percent (PMID 32659309). Sports-related orbital fractures: national estimate 49,765 over 2014 to 2023 in NEISS (PMID 40550362).",
+      "hardware_note": "Preformed and patient-specific orbital plates and meshes (Stryker, DePuy Synthes MatrixORBITAL, KLS Martin, Zimmer Biomet, OsteoMed/Acumed), porous polyethylene (Stryker Medpor), resorbable sheets (Synthes PDS, KLS Martin Resorb-x, Stryker Delta, Biomet LactoSorb).",
+      "sources": ["PMID:32659309", "PMID:40550362", "PMID:42690464", "PMID:23154365", "PMID:23422151", "PMID:29863555"]
+    },
+    {
+      "id": "cmf-midface-fracture",
+      "region": "skull-cmf",
+      "subregion": "midface-orbit",
+      "name": "Zygomaticomaxillary complex and Le Fort midface fractures",
+      "type": "fracture",
+      "classifications": [
+        {"name": "Le Fort I to III", "summary": "Le Fort I: horizontal maxillary fracture above the tooth roots separating the palate from the midface. Le Fort II: pyramidal fracture through the nasal bones, medial orbital walls and zygomaticomaxillary buttresses. Le Fort III: craniofacial disjunction through the zygomatic arches, lateral and medial orbital walls and nasofrontal junction. Real injuries are usually mixed and asymmetric."},
+        {"name": "Zygomaticomaxillary complex (ZMC, tetrapod)", "summary": "Fracture through the zygomaticofrontal suture, infraorbital rim and orbital floor, zygomaticomaxillary buttress and zygomatic arch; classified as non-displaced, displaced without comminution, or comminuted; fixation at one to four points."},
+        {"name": "Midface buttresses", "summary": "Vertical nasomaxillary, zygomaticomaxillary and pterygomaxillary buttresses and horizontal frontal bar, infraorbital rims and palate; comminution or loss of a buttress is the indication for a bone graft."}
+      ],
+      "why_biologic": "Rarely. These are plate-and-screw fractures. Bone graft is used only to bridge a comminuted or missing buttress or to restore orbital volume, and the graft is almost always autologous calvarial bone. No bone graft substitute carries a midface fracture indication, and no comparative evidence exists for substitutes in acute midface trauma. Calcium phosphate cements and bioactive glass are used off the shelf for secondary contour of the malar and frontal region (Norian CRS, Mimix and HydroSet are labeled for augmentation or restoration of bony contour of the craniofacial skeleton).",
+      "autograft_standard": "Split calvarial bone for buttress and orbital reconstruction; rib and iliac crest less often. Morbidity is a second scalp incision and rare dural exposure.",
+      "volume_note": "No US annual count specific to ZMC or Le Fort fractures found. NTDB 2010 to 2019: 155,136 pediatric craniofacial fracture admissions, of which midface 21 percent and orbital floor 13.7 percent (PMID 39042070); NTDB 2016 included 14,447 adult patients with facial fractures in one comparison (PMID 31559862).",
+      "hardware_note": "Midface plating systems (Stryker, DePuy Synthes MatrixMIDFACE, KLS Martin, Zimmer Biomet, OsteoMed/Acumed) and resorbable fixation for children.",
+      "sources": ["PMID:39042070", "PMID:31559862", "PMID:18642322", "PMID:40956362"]
+    },
+    {
+      "id": "cmf-mandible-fracture",
+      "region": "skull-cmf",
+      "subregion": "mandible",
+      "name": "Mandible fracture",
+      "type": "fracture",
+      "classifications": [
+        {"name": "Anatomic site", "summary": "Symphysis and parasymphysis, body, angle, ramus, condyle and subcondylar, coronoid, dentoalveolar; body, condyle, angle and symphysis make up about two thirds of fractures in the US NTDB."},
+        {"name": "Favorable versus unfavorable, and load-sharing versus load-bearing", "summary": "Fracture line orientation relative to muscle pull; simple fractures are treated with load-sharing miniplates (Champy) or closed reduction with maxillomandibular fixation, while comminuted, atrophic-edentulous, defect and infected fractures need load-bearing reconstruction plates."},
+        {"name": "Mechanism (US NTDB)", "summary": "Assault 37 to 42 percent, motor vehicle crash 22 to 31 percent, falls 15 to 20 percent and rising in elderly women; 78 to 80 percent male."}
+      ],
+      "why_biologic": "Standard mandible fractures need no graft. Bone graft is used for comminuted gunshot fractures, atrophic edentulous fractures, infected nonunion and segmental loss, and the graft is autologous (iliac crest, tibia) under a load-bearing plate. rhBMP-2 has been used off-label in defect fractures and nonunion with mixed results (2 of 4 continuity-defect cases failed in the only US series) and no controlled data. Stem cell adjuncts to ORIF are investigational outside the US (NCT02755922, NCT07671183).",
+      "autograft_standard": "Iliac crest cancellous or corticocancellous block, or proximal tibia, under a reconstruction plate; for large or irradiated defects, the fibula free flap.",
+      "volume_note": "Nationwide Emergency Department Sample 2018: 28,357 ED encounters with mandibular fracture as the primary diagnosis, 10.2 percent transferred (PMID 36055371); 27,238 weighted isolated mandible fracture encounters, 20 percent admitted (PMID 38403271). NTDB captured 13,142 patients in 2001 to 2005 and 20,391 in 2017 (PMID 26006752, PMID 37291803). Nonunion accounts for 3.6 percent of NIS mandible fracture admissions (PMID 31261344).",
+      "hardware_note": "Mandible plating systems: Stryker, DePuy Synthes MatrixMANDIBLE (preformed reconstruction plates, 71-patient series PMID 22868032), KLS Martin, Zimmer Biomet, OsteoMed/Acumed; patient-specific selective-laser-melted plates (PMID 40550483).",
+      "sources": ["PMID:36055371", "PMID:38403271", "PMID:26006752", "PMID:37291803", "PMID:31261344", "PMID:18571026", "PMID:22868032", "PMID:40550483"]
+    },
+    {
+      "id": "cmf-mandible-continuity",
+      "region": "skull-cmf",
+      "subregion": "mandible",
+      "name": "Mandibular continuity (segmental) defect reconstruction",
+      "type": "bone-void",
+      "classifications": [
+        {"name": "Jewer / HCL (Boyd) classification", "summary": "Defects described by segment: C (central, canine to canine), L (lateral, excluding the condyle), H (hemimandible including the condyle), with combinations such as LC, LCL, HC, HCL; modifiers for soft tissue (s, m, o) in the Boyd extension."},
+        {"name": "Brown classification (2016)", "summary": "Class I lateral not crossing the midline, class II hemimandibulectomy including the condyle, class III anterior crossing the midline, class IV extensive anterior and bilateral; with c for condyle."},
+        {"name": "Etiology", "summary": "Oral cancer and benign tumors (ameloblastoma), osteoradionecrosis, medication-related osteonecrosis, osteomyelitis, gunshot and other trauma."}
+      ],
+      "why_biologic": "The fibula free flap is the standard and biologics cannot replace a vascularized flap in irradiated or soft-tissue-deficient beds. rhBMP-2 on collagen sponge under a reconstruction plate, with or without a compression-resistant matrix, is used off-label for benign and non-irradiated defects (Herford and Boyne 14-patient series with regeneration in all; Carter 5-patient series with 2 of 4 continuity defects failing); a 2019 safety review graded the evidence as failing to support rhBMP-2 for mandibular reconstruction. Tissue-engineered constructs (EpiBone EB-CMF, axially vascularized ceramics, 3D-printed scaffolds) are first-in-human or preclinical.",
+      "autograft_standard": "Fibula osteocutaneous free flap with virtual surgical planning; iliac crest free flap and scapula are alternatives with similar failure and complication rates (meta-analysis of 942 patients). Nonvascularized iliac crest block is used for defects under about 6 cm in non-irradiated beds. Donor morbidity is the leg or hip.",
+      "volume_note": "No public US annual count found for segmental mandibulectomy or mandibular reconstruction (PubMed searched 2026-10-22). Free flap series for osteoradionecrosis pooled 424 flaps across 19 studies (PMID 39580338).",
+      "hardware_note": "Load-bearing reconstruction plates and patient-specific plates and cutting guides (DePuy Synthes TRUMATCH, Stryker, KLS Martin, Zimmer Biomet); porous polyethylene or titanium mesh containment for rhBMP-2 (30 percent exposure in one 10-defect series, PMID 22209107).",
+      "sources": ["PMID:18355584", "PMID:18571026", "PMID:31592029", "PMID:35125268", "PMID:31633539", "PMID:39580338", "PMID:21549480", "PMID:40283548", "PMID:41136443", "https://clinicaltrials.gov/study/NCT03678467", "https://clinicaltrials.gov/study/NCT04001842"]
+    },
+    {
+      "id": "cmf-alveolar-cleft",
+      "region": "skull-cmf",
+      "subregion": "dental-alveolar",
+      "name": "Alveolar cleft bone grafting (secondary alveolar bone graft)",
+      "type": "bone-void",
+      "classifications": [
+        {"name": "Veau classification of cleft palate", "summary": "Veau I: cleft of the soft palate only. Veau II: cleft of the soft and hard palate up to the incisive foramen. Veau III: complete unilateral cleft of the soft and hard palate and the alveolus and lip. Veau IV: complete bilateral cleft of lip, alveolus and palate. The alveolar cleft is present in Veau III and IV and in isolated cleft lip and alveolus."},
+        {"name": "Timing of alveolar grafting", "summary": "Primary (under 2 years, with lip repair; largely abandoned), secondary (mixed dentition, 6 to 11 years, before canine eruption; the standard), late secondary or tertiary (after canine eruption, worse outcomes)."},
+        {"name": "Outcome scales", "summary": "Bergland or Kindelan scale on occlusal radiograph (type I bone to normal height to type IV no bony bridge), and CBCT volumetric fill percentage; a 2024 series defined a critical-size cleft volume of about 810 mm3 for iliac crest and 885 mm3 for rhBMP-2 plus DBM beyond which both fail more often."}
+      ],
+      "why_biologic": "To avoid the iliac crest donor site in a child; rhBMP-2 on collagen sponge (off-label, patients under 18 are excluded from the Infuse label), DBM alone or as a carrier, and bone marrow aspirate concentrate are used. Pooled RCT and cohort data show bone fill roughly equal to iliac crest with shorter operations and stays, more facial swelling, and low-certainty evidence; graft failure rises sharply above the critical-size cleft volume for both materials.",
+      "autograft_standard": "Iliac crest cancellous bone graft in the mixed dentition is the standard of care; donor site pain in up to 87.5 percent in one RCT, gait disturbance, longer stay. Mandibular symphysis, calvarium and rib are alternatives with less bone (symphysis performs at least as well, calvarium and rib worse in the 2017 best-evidence synthesis).",
+      "volume_note": "CDC National Birth Defects Prevention Network 2010 to 2014: cleft lip with or without cleft palate 10.00 per 10,000 live births (about 1 in 1,000, often quoted as 1 in 1,050 by NIDCR) and cleft palate alone about 1 in 1,600; the 2016 to 2020 update reports a decreasing prevalence of cleft lip with or without palate (PMID 38277408). ACPA quotes 6,000 to 8,000 US children born each year with a cleft; roughly 60 to 75 percent of complete clefts involve the alveolus and reach secondary grafting age.",
+      "sources": ["PMID:20163243", "PMID:23147291", "PMID:24909628", "PMID:31698953", "PMID:40003593", "PMID:35184916", "PMID:32151557", "PMID:41944755", "PMID:28863859", "PMID:38684030", "PMID:37794139", "PMID:38277408", "https://www.nidcr.nih.gov/research/data-statistics/craniofacial-birth-defects/prevalence", "https://clinicaltrials.gov/study/NCT04234971"]
+    },
+    {
+      "id": "cmf-sinus-ridge-augmentation",
+      "region": "skull-cmf",
+      "subregion": "dental-alveolar",
+      "name": "Maxillary sinus floor augmentation and localized alveolar ridge augmentation (extraction socket defects) for dental implants",
+      "type": "bone-void",
+      "classifications": [
+        {"name": "Residual bone height", "summary": "Lateral-window (two-stage) sinus lift when residual posterior maxillary bone is under about 5 to 6 mm; transcrestal (osteotome) lift when 5 to 8 mm remains; the Infuse pivotal trial enrolled patients with under 6 mm."},
+        {"name": "Extraction socket defect (buccal wall)", "summary": "Intact four-wall socket versus buccal wall dehiscence of 50 percent or more; the Infuse ridge indication covers localized augmentation of defects associated with extraction sockets, not vertical or lateral ridge augmentation of the edentulous ridge."},
+        {"name": "Cawood and Howell ridge atrophy classes I to VI", "summary": "From dentate (I) through immediate post-extraction (II), rounded well-formed (III), knife-edge (IV), flat (V) and depressed basal bone (VI); vertical and lateral augmentation of class IV to VI ridges with rhBMP-2 is off-label and usually needs a titanium mesh containment."}
+      ],
+      "why_biologic": "This is the one craniomaxillofacial application where a growth factor is on-label: Infuse (rhBMP-2 on absorbable collagen sponge) was approved by PMA P050053 on 2007-03-09 as an alternative to autogenous bone for sinus augmentation and for localized alveolar ridge augmentation for defects associated with extraction sockets, on a 160-patient pivotal RCT. Most sinus lifts are nevertheless done with xenograft (Bio-Oss), allograft (including cellular allografts such as Osteocel Plus) or synthetic particulate because they are cheaper and the Infuse height gain was lower than autograft; adding rhBMP-2 to Bio-Oss reduced new bone in one RCT.",
+      "autograft_standard": "Intraoral autograft (ramus, symphysis, tuberosity) or iliac crest for large sinus and ridge augmentations; the pivotal trial recorded 17 percent long-term paresthesia, pain or gait disturbance at the autograft donor site.",
+      "volume_note": "No public US annual count of sinus lifts; dental procedures are not captured by NIS or NEDS. CDT D7951 (lateral sinus augmentation), D7952 (vertical), D7953 (bone replacement graft) are dental codes and the procedure is often excluded or partially covered by dental plans, so volume is private-pay driven.",
+      "sources": ["PMID:19686934", "PMID:16297689", "PMID:22254226", "PMID:31147568", "PMID:32596764", "PMID:22776413", "PMID:30318113", "https://api.fda.gov/device/pma.json?search=pma_number:P050053"]
+    },
+    {
+      "id": "cmf-periodontal-intrabony",
+      "region": "skull-cmf",
+      "subregion": "dental-alveolar",
+      "name": "Periodontal intrabony and furcation defect regeneration (adjacent dental application)",
+      "type": "other",
+      "classifications": [
+        {"name": "Intrabony defect walls", "summary": "One-, two- and three-wall intrabony defects of 4 mm or more; Glickman furcation grades I to IV; gingival recession associated with periodontal defects. These are the labeled GEM 21S indications."}
+      ],
+      "why_biologic": "Included because GEM 21S (rhPDGF-BB with beta-TCP) is the second CMF growth-factor PMA (P040013, 2005) and the only rhPDGF product in the mouth; the 180-patient pivotal RCT showed faster attachment gain and more bone fill at six months. Enamel matrix derivative (Emdogain), bone allograft and barrier membranes are the competing regenerative approaches.",
+      "autograft_standard": "Open flap debridement with or without autogenous intraoral bone; the comparison in the pivotal trial was beta-TCP alone.",
+      "volume_note": "No public US annual count; periodontal regenerative surgery is coded under CDT D4263 and D4265 and is not in hospital datasets.",
+      "sources": ["PMID:16332231", "PMID:31147568", "https://api.fda.gov/device/pma.json?search=pma_number:P040013"]
+    }
+  ],
+  "products": [
+    {
+      "id": "hydroset",
+      "name": "HydroSet Injectable HA Bone Substitute (cranial) and HydroSet XT",
+      "company": "Stryker",
+      "category": "calcium-phosphate-cement",
+      "status": "established",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K060763 (Stryker Injectable Cement, GXP cranioplasty code, 2006-09-22) for the cranial product; K161447 (HydroSet XT, MQV orthopedic bone void filler, 2016-10-06)",
+        "us_market_year": 2006,
+        "on_label_indications": [
+          "Cranial (K060763, per Stryker labeling): self-setting calcium phosphate cement intended for use in the repair of neurosurgical burr holes, contiguous craniotomy cuts and other cranial defects, and in the augmentation or restoration of bony contour in the craniofacial skeleton",
+          "HydroSet XT (K161447): fill bony voids or gaps of the skeletal system (extremities, craniofacial, posterolateral spine and pelvis) that are not intrinsic to the stability of the bony structure; the XT 510(k) does not name burr holes or craniotomy cuts"
+        ],
+        "challenge": "The cranial indication sits on the 2006 Stryker Injectable Cement clearance, not on the 2016 HydroSet XT 510(k); a CMF manager will ask which SKU is being sold into neurosurgery and under which labeling. The 25 cm2 ceiling appears on competitors' labels but was not found on the HydroSet pages or K060763 summaries retrieved."
+      },
+      "applications": [
+        {"application_id": "cmf-burr-hole", "tier": "established", "on_label": true, "evidence_grade": "IV", "evidence_summary": "No HydroSet-specific burr hole trial; class evidence for hydroxyapatite plugs versus bone dust (20-patient within-patient comparison) and the pooled HA cement literature.", "caveats": "Bench and animal data only in the 510(k); the cranial product and the XT product have different labels."},
+        {"application_id": "cmf-cranioplasty", "tier": "established", "on_label": true, "evidence_grade": "IV", "evidence_summary": "HA cement for small full-thickness defects: pooled infection or explantation 7.5 percent for large-defect cranioplasty across 35 studies and 1,983 patients; no HydroSet-named comparative study.", "caveats": "Class-level evidence; cements fail more often above 25 cm2 and in children."},
+        {"application_id": "cmf-skull-base-sinus", "tier": "established", "on_label": true, "evidence_grade": "III", "evidence_summary": "HA cement cranioplasty after translabyrinthine and retrosigmoid craniectomy lowers CSF leak odds (OR 0.25) and pseudomeningocele versus no cement in an 8-study meta-analysis; single-center series of 369 implants with 3.8 percent adverse events.", "caveats": "Brand not always reported; HydroSet is one of several HA cements used in the series."}
+      ],
+      "evidence": [
+        {"ref": "PMID:41254416", "title": "Utility of bone cement for cranioplasty following retrosigmoid or translabyrinthine craniectomy: systematic review and meta-analysis", "year": 2025, "design": "meta-analysis", "n": 2065, "finding": "Across 8 studies (1,044 cement, 1,021 no cement), bone cement after retrosigmoid craniectomy was associated with lower odds of CSF leak (OR 0.25), pseudomeningocele (OR 0.25) and surgical site infection (OR 0.27).", "sponsor_funded": false, "applications": ["cmf-skull-base-sinus"]},
+        {"ref": "PMID:28059442", "title": "Hydroxyapatite cement cranioplasty following translabyrinthine approach: long-term study of 369 cases", "year": 2017, "design": "retrospective", "n": 369, "finding": "Seven CSF leaks and seven infections (combined 3.8 percent) in 369 HAC implants with follow-up to 15 years; fewer adverse events than published fat-graft-alone rates.", "sponsor_funded": false, "applications": ["cmf-skull-base-sinus"]},
+        {"ref": "PMID:39404591", "title": "Outcomes of hydroxyapatite bone cement for craniofacial reconstruction in 1983 patients", "year": 2024, "design": "meta-analysis", "n": 1983, "finding": "Infection or explantation 7.5 percent for large-defect cranioplasty, 1.5 percent for retrosigmoid cranioplasty and 6.2 percent for secondary contouring after congenital craniofacial surgery; CSF leak 0 to 0.8 percent.", "sponsor_funded": false, "applications": ["cmf-cranioplasty", "cmf-skull-base-sinus", "cmf-craniosynostosis"]},
+        {"ref": "PMID:36253335", "title": "Craniotomy burr hole covers: comparative study of three plug materials", "year": 2022, "design": "prospective-cohort", "n": 20, "finding": "Autologous bone dust resorbed partially or completely in every burr hole at one year with visible contour irregularity in 60 percent; porous hydroxyapatite plugs kept thickness and cosmesis with no added complications.", "sponsor_funded": true, "applications": ["cmf-burr-hole"]}
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate HCPCS; bundled in MS-DRG 025 to 027 for inpatient craniotomy and cranioplasty (CPT 62140, 62141 are inpatient-only, status indicator C) and packaged in any outpatient cranial procedure.",
+        "notes": "Sold by Stryker Craniomaxillofacial alongside DirectInject (the pre-mixed on-demand version) and the PEEK Customized Implant; Stryker's current US CMF catalog lists HydroSet and DirectInject but not BoneSource."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://www.stryker.com/us/en/craniomaxillofacial/products/hydroset-injectable-bone-substitute.html", "https://api.fda.gov/device/510k.json?search=k_number:K060763", "https://api.fda.gov/device/510k.json?search=k_number:K161447"]
+    },
+    {
+      "id": "directinject",
+      "name": "DirectInject On-Demand HA Cement",
+      "company": "Stryker",
+      "category": "calcium-phosphate-cement",
+      "composition": "Pre-filled two-paste calcium phosphate cement in a double-barrel syringe with mixer cannula; hardens to hydroxyapatite",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K143661 (2015-09-02, product code GXP)",
+        "us_market_year": 2015,
+        "on_label_indications": [
+          "Repair of neurosurgical burr holes, contiguous craniotomy cuts and other cranial defects with a surface area of 4 cm2 or less that are not intrinsic to the stability of the bony structure; augmentation or restoration of bony contour in the craniofacial skeleton including the cranial and zygomatic bones; patients whose skeletal growth is complete"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {"application_id": "cmf-burr-hole", "tier": "established", "on_label": true, "evidence_grade": "V", "evidence_summary": "No clinical data in the 510(k) (bench and animal only); no published DirectInject series found on PubMed as of 2026-10-22.", "caveats": "4 cm2 ceiling is far smaller than the 25 cm2 on competing cements, so this is a burr-hole and kerf product, not a cranioplasty product."}
+      ],
+      "evidence": [],
+      "bd": {"sales_channel": "direct", "reimbursement": "Bundled; no separate code.", "notes": "Positioned on ease of use (no mixing) for craniotomy closure; Stryker CMF direct sales force."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://www.stryker.com/us/en/craniomaxillofacial/products/directinject-on-demand-ha-cement.html", "https://api.fda.gov/device/510k.json?search=k_number:K143661"]
+    },
+    {
+      "id": "bonesource",
+      "name": "BoneSource Hydroxyapatite Cement (HAC), Fast Setting and Rapid Setting",
+      "company": "Stryker (originally Osteogenics; Leibinger; Howmedica Osteonics / Stryker Instruments)",
+      "ownership_history": "Developed at the American Dental Association Paffenbarger Research Center (Chow and Takagi); cleared to Osteogenics in 1996 and 1997 (K953339, K964537), then Stryker Leibinger (K991398, 1999), Stryker Instruments (K021440 2002, K032366 Fast Setting 2003, K043334 Rapid Setting 2005) and a BoneSource BVF orthopedic version to Howmedica Osteonics (K031435, MQV, 2003). Stryker's current US CMF catalog does not list BoneSource; HydroSet (2006) and DirectInject (2015) appear to have replaced it.",
+      "category": "calcium-phosphate-cement",
+      "composition": "Tetracalcium phosphate and dicalcium phosphate powder mixed with a sodium phosphate solution, setting to carbonated hydroxyapatite",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K953339 (1996), K964537 (1997), K991398 (1999), K021440 (2002), K032366 (2003), K043334 (2005); all product code GXP",
+        "us_market_year": 1996,
+        "on_label_indications": ["Self-setting calcium phosphate cement intended for repairing neurosurgical burr holes and cranial defects and for restoring bony contour in the craniofacial skeleton (per the 2002 to 2005 510(k) summaries; no clinical data provided, bench testing only)"]
+      },
+      "status": "off-market",
+      "unverified": true,
+      "challenge": "Current US availability could not be confirmed either way: no discontinuation notice was found, but BoneSource is absent from Stryker's CMF product pages and no 510(k) activity since 2005. Treat as legacy; the clinical literature (Friedman, Costantino, Kveton) is the origin of the HA cement evidence base now claimed by HydroSet.",
+      "applications": [
+        {"application_id": "cmf-skull-base-sinus", "tier": "established", "on_label": true, "evidence_grade": "II", "evidence_summary": "Friedman 2000 three-center controlled cohort of 40 patients with frontal sinus and frontofacial defects up to 25 cm2: 82 percent successful reconstruction at 24 months and about 5 percent infection-related removal versus historical methyl methacrylate controls; Costantino 2001 sealed 21 of 21 sphenoethmoid CSF leaks.", "caveats": "Nonrandomized, historical controls, investigator-developed material (ADA Paffenbarger and NIST patents)."},
+        {"application_id": "cmf-cranioplasty", "tier": "established", "on_label": true, "evidence_grade": "IV", "evidence_summary": "Reinforced BoneSource with tantalum mesh for nine cranioplasties over 25 cm2 (mean 128 cm2): two constructs removed for infection within three months; pediatric series of 78 children (Mimix or BoneSource) with 7 complications and 6 removals.", "caveats": "Off-label when reinforced above 25 cm2; infection when contiguous with sinus mucosa."},
+        {"application_id": "cmf-craniosynostosis", "tier": "established", "on_label": true, "evidence_grade": "IV", "evidence_summary": "Secondary contour cranioplasty in 48 patients with fast-setting HAC: five complications including two infections, 38 good results (Magee 2004).", "caveats": "Single surgeon, no comparator."}
+      ],
+      "evidence": [
+        {"ref": "PMID:10925438", "title": "Reconstruction of the frontal sinus and frontofacial skeleton with hydroxyapatite cement", "year": 2000, "design": "prospective-cohort", "n": 40, "finding": "82 percent successful reconstruction of frontal-cranial defects up to 25 cm2 at 24 months; two implants (about 5 percent) removed for infection; osseointegration confirmed on explant biopsy.", "sponsor_funded": true, "applications": ["cmf-skull-base-sinus", "cmf-cranioplasty"]},
+        {"ref": "PMID:11346439", "title": "Sphenoethmoid cerebrospinal fluid leak repair with hydroxyapatite cement", "year": 2001, "design": "prospective-cohort", "n": 21, "finding": "All 21 sphenoethmoid CSF leaks sealed on first application with no recurrence at mean 36 months; extrusion when placed transnasally in the ethmoid region.", "sponsor_funded": true, "applications": ["cmf-skull-base-sinus"]},
+        {"ref": "PMID:12657179", "title": "Correction of large (over 25 cm2) cranial defects with reinforced hydroxyapatite cement", "year": 2003, "design": "case-series", "n": 9, "finding": "Nine cranioplasties of 40 to 196 cm2 using HAC over tantalum mesh and titanium bars; two constructs removed for infection at one and three months.", "sponsor_funded": false, "applications": ["cmf-cranioplasty"]},
+        {"ref": "PMID:15277791", "title": "Use of fast-setting hydroxyapatite cement for secondary craniofacial contouring", "year": 2004, "design": "case-series", "n": 48, "finding": "Five complications (two infections, one seroma, one persistent swelling, one retained drain); 38 good and 7 acceptable results, 3 reoperations for contour.", "sponsor_funded": false, "applications": ["cmf-craniosynostosis"]},
+        {"ref": "PMID:20613591", "title": "Use of hydroxyapatite cement in pediatric craniofacial reconstructive surgery: strategies for avoiding complications", "year": 2010, "design": "retrospective", "n": 78, "finding": "78 children reconstructed with Mimix or BoneSource (mean 57 g): 7 complications (trauma, infection, exposure), 6 requiring removal; every complication followed a traumatic event.", "sponsor_funded": false, "applications": ["cmf-craniosynostosis", "cmf-cranioplasty"]},
+        {"ref": "PMID:9855201", "title": "BoneSource hydroxyapatite cement: a novel biomaterial for craniofacial skeletal tissue engineering and reconstruction", "year": 1998, "design": "case-series", "n": null, "finding": "Review of material chemistry and clinical use guidelines by the developers; sets the 25 cm2 and no-sinus-contact rules later written into labels.", "sponsor_funded": true, "applications": ["cmf-cranioplasty"]}
+      ],
+      "bd": {"sales_channel": "direct", "reimbursement": "Bundled (see hydroset).", "notes": "Legacy brand; evidence base inherited by HydroSet in Stryker marketing."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://api.fda.gov/device/510k.json?search=device_name:%22BoneSource%22", "https://www.accessdata.fda.gov/cdrh_docs/pdf3/K032366.pdf"]
+    },
+    {
+      "id": "norian",
+      "name": "Norian CRS, Norian CRS Fast Set Putty, Norian Reinforced (cranial repair system)",
+      "company": "DePuy Synthes (Johnson & Johnson MedTech)",
+      "category": "calcium-phosphate-cement",
+      "status": "established",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K973789 (Norian Corp, Norian Cranial Repair System CRS, 1998-05-18, GXP); K060443 (CRS Fast Set Putty) and K060445 (CRS Bone Cement), both 2006-04-13; K102018 (Norian Reinforced and Reinforced Fast Set Putty, 2% PLGA fibers, 2010-09-23)",
+        "us_market_year": 1998,
+        "on_label_indications": [
+          "Norian CRS and CRS Fast Set Putty (2006): filling craniofacial defects in the restoration or augmentation of bony contours of the craniofacial skeleton, including burr hole voids, with a surface area no larger than 25 cm2; not for spinal use or in the presence of active or suspected infection",
+          "Norian Reinforced (2010): repair or filling of cranial defects and craniotomy cuts with a surface area no larger than 25 cm2, burr hole voids, and restoration or augmentation of bony contours of the cranial skeleton"
+        ],
+        "challenge": "Norian Corporation was acquired by Synthes in 1999 and pleaded guilty in 2009 to off-label promotion of Norian XR for vertebroplasty (the spine product, not CRS). Whether every CRS SKU is still in the DePuy Synthes US catalog in 2026 was not verified; the pass-2 log found a Norian Putty leaflet dated September 2026, which supports continued sale of the family."
+      },
+      "applications": [
+        {"application_id": "cmf-cranioplasty", "tier": "established", "on_label": true, "evidence_grade": "IV", "evidence_summary": "Gilardino 2009 long-term series of 46 Norian cranioplasties (mean 44 months): 26 percent complications, 9 infections, mean onset 20 months; complications tracked with the amount of cement and with onlay use in contaminated fields, and full-thickness defects over 25 cm2 trended worse.", "caveats": "Single institution, no comparator; complications appeared years after implantation."},
+        {"application_id": "cmf-craniosynostosis", "tier": "established", "on_label": true, "evidence_grade": "IV", "evidence_summary": "Secondary forehead contouring in 20 children with Norian: 10 of 17 followed (59 percent) developed infection at mean 17 months, 9 needing removal; infected patients had received more cement (32.5 vs 14.3 mL).", "caveats": "Worst published outcome for any HA cement; large onlay volumes in a growing skull."},
+        {"application_id": "cmf-midface-fracture", "tier": "emerging", "on_label": true, "evidence_grade": "V", "evidence_summary": "Labeled for craniofacial contour augmentation (fronto-orbital, malar, mental); used for secondary malar and frontal contour after trauma, no comparative data.", "caveats": "Not for acute fracture fixation."}
+      ],
+      "evidence": [
+        {"ref": "PMID:19319064", "title": "Long-term follow-up experience with carbonated calcium phosphate cement (Norian) for cranioplasty in children and adults", "year": 2009, "design": "retrospective", "n": 46, "finding": "Overall complication rate 26 percent (9 infections, 1 seroma, 2 draining sinuses) at mean 44 months; risk rose with cement volume and contaminated onlay use; defects over 25 cm2 trended worse.", "sponsor_funded": false, "applications": ["cmf-cranioplasty", "cmf-craniosynostosis"]},
+        {"ref": "PMID:21233736", "title": "Complications of hydroxyapatite bone cement in secondary pediatric craniofacial reconstruction", "year": 2011, "design": "retrospective", "n": 20, "finding": "59 percent infectious complications after secondary forehead cranioplasty with Norian in children, mean onset 17.3 months, 9 of 10 requiring removal.", "sponsor_funded": false, "applications": ["cmf-craniosynostosis"]},
+        {"ref": "PMID:36947197", "title": "Utilization of carbonated calcium phosphate cement for contouring cranioplasty in syndromic craniosynostosis", "year": 2023, "design": "retrospective", "n": 21, "finding": "Forehead contouring (mean area 135 cm2, 17 g cement) improved Whitaker scores and held at over one year; two infections (9.5 percent) needed removal.", "sponsor_funded": false, "applications": ["cmf-craniosynostosis"]},
+        {"ref": "NCT03841643", "title": "Comparison of calcium phosphate cement with patient-specific implants for cranial reconstruction: randomized controlled trial (AZ Sint-Jan, Belgium)", "year": 2018, "design": "RCT", "n": 20, "finding": "Completed 2018; results not located on PubMed as of 2026-10-22.", "sponsor_funded": false, "applications": ["cmf-cranioplasty"]}
+      ],
+      "bd": {"sales_channel": "direct", "reimbursement": "Bundled in MS-DRG 025 to 027 and CMF DRGs; no separate code.", "notes": "DePuy Synthes CMF direct sales; AO Foundation technical approval pages 2008 and 2010."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://api.fda.gov/device/510k.json?search=device_name:%22Norian%22", "https://www.aofoundation.org/approved/approvedsolutionsfolder/2010/norian-reinforced", "https://www.thefdalawblog.com/2009/06/the-united-states-files-criminal-charges-against-orthopedic-device-manufacturers-and-four-executives/"]
+    },
+    {
+      "id": "mimix",
+      "name": "Mimix and Mimix QS Bone Replacement (QuickSet Mimix, Mimix MP)",
+      "company": "Zimmer Biomet (Biomet Microfixation, formerly Walter Lorenz Surgical)",
+      "ownership_history": "Walter Lorenz Surgical (a Biomet subsidiary) cleared Mimix in 2001 and QuickSet Mimix in 2002; Biomet, Inc. cleared Mimix MP in 2004; Biomet became Zimmer Biomet in 2015 and the CMF line sits in Zimmer Biomet CMF and Thoracic (Jacksonville). GUDID still lists Biomet Microfixation as labeler.",
+      "category": "calcium-phosphate-cement",
+      "composition": "Hydroxyapatite-forming cement of tetracalcium phosphate and alpha-tricalcium phosphate; Mimix QS has finer particles and a roughly 3-minute set",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K003494 (Mimix Bone Replacement System, LYC, 2001-04-09); K012569 (Injectable Mimix, GXP, 2001-12-21); K023718 (QuickSet Mimix Bone Void Filler, GXP, 2002-12-04); K043280 (Mimix MP, GXP, 2004-12-21)",
+        "us_market_year": 2001,
+        "on_label_indications": ["Repair of neurosurgical burr holes, craniotomy cuts and other cranial defects, and augmentation or restoration of bony contour in the craniofacial skeleton, for areas no larger than 25 cm2 (K023718)"]
+      },
+      "status": "established",
+      "unverified": true,
+      "challenge": "Zimmer Biomet's US CMF web page lists Mimix and Mimix QS under neurosurgery and the EU product page is live, but no 2024 to 2026 US brochure or catalog entry was retrieved; confirm active US distribution before presenting as a current competitor.",
+      "applications": [
+        {"application_id": "cmf-burr-hole", "tier": "established", "on_label": true, "evidence_grade": "V", "evidence_summary": "No Mimix-specific burr hole study; relies on class evidence.", "caveats": "Commodity product."},
+        {"application_id": "cmf-craniosynostosis", "tier": "established", "on_label": true, "evidence_grade": "IV", "evidence_summary": "Included in the 78-child Emory series (Mimix or BoneSource, 6 removals) and an 18-case Korean facial contouring series with no infections at 23 months.", "caveats": "Small, uncontrolled."},
+        {"application_id": "cmf-midface-fracture", "tier": "emerging", "on_label": true, "evidence_grade": "IV", "evidence_summary": "Secondary malar, forehead, chin and paranasal contouring in 18 patients (mean 16 g) with no infection, seroma or migration at 23 months.", "caveats": "Contour augmentation, not fracture repair."}
+      ],
+      "evidence": [
+        {"ref": "PMID:20613576", "title": "Use of rapidly hardening hydroxyapatite cement (Mimix) for facial contouring surgery", "year": 2010, "design": "case-series", "n": 18, "finding": "No postoperative infection, seroma or migration over 23 months of follow-up after forehead, malar, chin and paranasal augmentation with a mean 16 g of Mimix.", "sponsor_funded": false, "applications": ["cmf-midface-fracture", "cmf-craniosynostosis"]},
+        {"ref": "PMID:20613591", "title": "Use of hydroxyapatite cement in pediatric craniofacial reconstructive surgery", "year": 2010, "design": "retrospective", "n": 78, "finding": "Seven complications and six removals among 78 children treated with Mimix or BoneSource.", "sponsor_funded": false, "applications": ["cmf-craniosynostosis"]}
+      ],
+      "bd": {"sales_channel": "direct", "reimbursement": "Bundled.", "notes": "Zimmer Biomet CMF and Thoracic (the former Biomet Microfixation business in Jacksonville, FL); Zimmer Biomet also distributes Osteopore PCL scaffolds in EMEA and APAC since July 2024, which may position PCL over cement in those markets."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://www.zimmerbiomet.eu/en/products/mimix-and-mimixqs-bone-replacement", "https://www.zimmerbiomet.com/medical-professionals/cmf.html", "https://www.accessdata.fda.gov/cdrh_docs/pdf2/K023718.pdf", "https://api.fda.gov/device/510k.json?search=device_name:%22Mimix%22"]
+    },
+    {
+      "id": "montage-xt-cranial",
+      "name": "Montage XT Cranial Cement (Montage and Permatage settable bone putty family)",
+      "company": "Abyrx, Inc. (manufacturer of record Orthocon, Inc.)",
+      "ownership_history": "Orthocon, Inc. is the 510(k) holder and FDA letters are addressed in care of Abyrx, Inc., Stamford, CT; Abyrx markets Montage. A reported transaction created MedEdge Holdings as owner of Abyrx and Kairuku (date and terms unverified). SurgiCor was the announced US distributor from 2014 to 2017.",
+      "category": "calcium-phosphate-cement",
+      "composition": "Two-component settable, resorbable calcium phosphate putty (Montage) and a flowable paste; XT doubles hardening time; Permatage is a non-resorbable variant",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K221933 (Montage Settable, Resorbable Bone Putty, cranial GXP, 2023-01-13); K231475 (Montage-QS, 2023-10-12); K232771 (Montage Flowable, 2024-02-16); K241027 (Permatage, 2024-09-26); K253854 (Montage XT Cranial Cement, Special 510(k), 2026-01-02); K253732 (Permatage Flowable, 2026-03-13); K261265 (Permatage XT, 2026-06-15); separate MQV bone void filler clearances K222063 and K243526",
+        "us_market_year": 2023,
+        "on_label_indications": ["Self-setting calcium phosphate cement indicated for use in the repair of neurosurgical burr holes, contiguous craniotomy cuts and other cranial defects with a surface area no larger than 25 cm2; should be used only in skeletally mature individuals (K253854, identical to predicate K221933)", "Cardiothoracic (sternotomy) clearance September 2023 for Montage Settable Bone Putty"]
+      },
+      "status": "emerging",
+      "applications": [
+        {"application_id": "cmf-burr-hole", "tier": "emerging", "on_label": true, "evidence_grade": "V", "evidence_summary": "No published clinical data found on PubMed as of 2026-10-22; the January 2026 XT cranial clearance was a Special 510(k) (30-day review) resting on the 2023 predicate.", "caveats": "Cranial flap fixation with Montage Flowable (NCT07103330, n=100, start March 2026) is outside the labeled indication."},
+        {"application_id": "cmf-cranioplasty", "tier": "emerging", "on_label": true, "evidence_grade": "V", "evidence_summary": "Labeled to 25 cm2 like the legacy cements; no cranioplasty series.", "caveats": "Eight cranial and bone-void 510(k)s in three years with no clinical publications."}
+      ],
+      "evidence": [
+        {"ref": "NCT07103330", "title": "Evaluation of cranial flap fixation with Montage Flowable Settable Bone Paste", "year": 2026, "design": "prospective-cohort", "n": 100, "finding": "Not yet recruiting as of July 2025 verification; estimated start March 2026, primary completion December 2027; compares flap fixation with paste alone against metallic hardware.", "sponsor_funded": true, "applications": ["cmf-burr-hole"]}
+      ],
+      "pipeline": {"stage": "launched-2023", "trials": ["NCT07103330"], "expected_milestone": "Flap-fixation data 2027 to 2028 if the study enrolls; any flap-fixation claim would need a new 510(k) or De Novo (source: ClinicalTrials.gov record and K253854 labeling)."},
+      "bd": {"sales_channel": "hybrid", "reimbursement": "Bundled; no separate code.", "notes": "Fastest-moving 510(k) filer in product code GXP (8 clearances 2023 to 2026); distribution historically through SurgiCor and Abyrx's own channels, with Acumed and OsteoMed hosting Montage 510(k) PDFs on their sites, which suggests but does not prove a CMF distribution relationship (unverified)."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://www.accessdata.fda.gov/cdrh_docs/pdf25/K253854.pdf", "https://api.fda.gov/device/510k.json?search=product_code:GXP", "https://clinicaltrials.gov/study/NCT07103330", "https://www.orthoworld.com/abyrx-gains-additional-fda-clearances-for-montage-bone-putty", "https://www.osteomed.com/wp-content/uploads/2023/05/Montage-Calcium-Phosphate-Cement-510K-K221933.pdf"]
+    },
+    {
+      "id": "kryptonite",
+      "name": "Kryptonite Bone Cement",
+      "company": "Doctors Research Group, Inc. (Southbury, CT)",
+      "category": "other",
+      "composition": "Calcified triglyceride (castor-oil-derived polyurethane with calcium carbonate) expanding adhesive cement; not a calcium phosphate",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K091382 (2009-11-16, product code GXP, Methyl Methacrylate for Cranioplasty); FDA recall Z-1496-2012, event 61709",
+        "us_market_year": 2010,
+        "on_label_indications": ["Repair of cranial defects (cranioplasty)"]
+      },
+      "status": "withdrawn",
+      "applications": [
+        {"application_id": "cmf-cranioplasty", "tier": "investigational", "on_label": true, "evidence_grade": "IV", "evidence_summary": "Marketed 2010 to 2012 as an adhesive, expanding cranioplasty cement; a bench study found unpredictable expansion (mean 49 percent, SD 22) and a single-center cohort reported post-craniotomy infection of 17.8 percent in exposed versus 0.42 percent in unexposed patients (RR 42). The firm initiated a Class 2 recall of all lots (3,100 kits) on 2012-04-06 because strength and stiffness fell below specification at body temperature; the recall was terminated 2015-07-14 and the product has not reappeared.", "caveats": "The FDA record is a voluntary recall, not a formal withdrawal; no relaunch, sale of the asset or new 510(k) was found."}
+      ],
+      "evidence": [
+        {"ref": "PMID:24699097", "title": "The expansile properties of Kryptonite relating to cranioplasty", "year": 2014, "design": "preclinical", "n": 10, "finding": "Ten reconstituted samples expanded a mean 49 percent (SD 22) in saline, most within two hours, explaining the contour irregularities seen clinically.", "sponsor_funded": false, "applications": ["cmf-cranioplasty"]},
+        {"ref": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=108767", "title": "FDA recall record Z-1496-2012, Kryptonite Bone Cement 5cc and 10cc kits", "year": 2012, "design": "registry", "n": 3100, "finding": "Class 2 recall of 3,100 kits distributed January 2010 to April 2012 because bone cement strength and stiffness fall below specification at body temperature; terminated 2015-07-14.", "sponsor_funded": false, "applications": ["cmf-cranioplasty"]},
+        {"ref": "https://assets.cureus.com/uploads/original_article/pdf/2285/1511799275-20171127-8247-1ifs8x8.pdf", "title": "Single-hospital retrospective cohort of post-craniotomy infection with Kryptonite exposure (Cureus, 2014)", "year": 2014, "design": "retrospective", "n": null, "finding": "Infection 17.8 percent in Kryptonite-exposed craniotomies versus 0.42 percent unexposed, relative risk 42.1 (95 percent CI 5.1 to 348).", "sponsor_funded": false, "applications": ["cmf-cranioplasty"]}
+      ],
+      "bd": {"sales_channel": "unknown", "reimbursement": "n/a", "notes": "Cautionary case for the GXP product code: cleared on bench data as substantially equivalent to PMMA, failed in the field within two years."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://api.fda.gov/device/510k.json?search=k_number:K091382", "https://www.massdevice.com/?p=5146"]
+    },
+    {
+      "id": "chronos",
+      "name": "chronOS beta-tricalcium phosphate (CMF and oral-maxillofacial forms)",
+      "company": "DePuy Synthes",
+      "category": "synthetic-ceramic",
+      "status": "established",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K041350 (Synthes chronOS, GXP cranial, 2004-07-08); K053022 (chronOS-Beta-TCP, LYC dental, 2006-01-23); K043045 and K013072 (MQV orthopedic); K071046 (chronOS Composite)",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "Cranial (K041350): filling craniofacial defects and craniotomy openings up to 25 cm2 and restoring bony contours of the craniofacial skeleton (fronto-orbital, malar, mental areas); predicates Norian CRS and Etex alpha-BSM",
+          "Oral-maxillofacial (K053022): filling and reconstruction of periodontal or bony defects of the oral and maxillofacial region including ridge augmentation, sinus lift, craniofacial augmentation, cyst and extraction-site filling; no clinical data provided"
+        ]
+      },
+      "applications": [
+        {"application_id": "cmf-cranioplasty", "tier": "established", "on_label": true, "evidence_grade": "V", "evidence_summary": "Cleared for craniofacial defects and craniotomy openings to 25 cm2 on substantial equivalence; no chronOS-named cranial clinical series located.", "caveats": "Granular beta-TCP lacks the cohesion of a cement and needs containment."},
+        {"application_id": "cmf-sinus-ridge-augmentation", "tier": "established", "on_label": true, "evidence_grade": "V", "evidence_summary": "Dental 510(k) with no clinical data; beta-TCP in sinus lifts is supported by generic beta-TCP literature rather than chronOS trials.", "caveats": "Commodity."},
+        {"application_id": "cmf-alveolar-cleft", "tier": "investigational", "on_label": false, "evidence_grade": "IV", "evidence_summary": "A 2023 systematic review of beta-TCP as alveolar cleft graft found only small series and no RCT against iliac crest.", "caveats": "Off-label in children; no brand-specific data."}
+      ],
+      "evidence": [
+        {"ref": "PMID:37886919", "title": "Beta-tricalcium phosphate as alveolar bone grafting in cleft lip and palate: systematic review", "year": 2023, "design": "meta-analysis", "n": null, "finding": "Small heterogeneous studies; beta-TCP alone or with autograft produced bone fill but without controlled comparison to iliac crest.", "sponsor_funded": false, "applications": ["cmf-alveolar-cleft"]}
+      ],
+      "bd": {"sales_channel": "direct", "reimbursement": "Bundled.", "notes": "DePuy Synthes CMF and the dental channel."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://api.fda.gov/device/510k.json?search=device_name:%22chronOS%22", "https://www.accessdata.fda.gov/cdrh_docs/pdf4/K041350.pdf"]
+    },
+    {
+      "id": "tnr-cranial-implant",
+      "name": "TnR Cranial Implant (formerly TnR CFI)",
+      "company": "T&R Biofab Co., Ltd. (Seongnam, Korea)",
+      "category": "synthetic-ceramic",
+      "composition": "3D-printed porous, osteoconductive, resorbable scaffold of polycaprolactone and beta-tricalcium phosphate with interconnected pores, in burr-hole plug, strip and block geometries (15 x 33 to 67 mm strips, 15 x 30 to 50 mm blocks); resorbs over roughly 18 to 24 months per company",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K251959 (2026-07-30, product code GXP, Traditional 510(k)); predicate Osteopore PCL Scaffold Bone Void Filler K051093",
+        "us_market_year": 2026,
+        "on_label_indications": ["Repair of neurosurgical burr holes, craniotomy cuts, and other cranial defects; augmentation or restoration of bony contour in the cranial skeleton"]
+      },
+      "status": "emerging",
+      "applications": [
+        {"application_id": "cmf-burr-hole", "tier": "emerging", "on_label": true, "evidence_grade": "V", "evidence_summary": "US clearance July 2026 rested on biocompatibility, toxicological risk assessment and GLP animal studies; the company claims more than 20,000 clinical uses in Korea since a 2021 MFDS approval, which is a promotional figure with no published US or peer-reviewed series located.", "caveats": "No US distributor named as of October 2026; the 510(k) summary carries no size ceiling, unlike the cements."},
+        {"application_id": "cmf-cranioplasty", "tier": "investigational", "on_label": true, "evidence_grade": "V", "evidence_summary": "Block and strip geometries are labeled for other cranial defects without a cm2 limit, but no clinical data exist for use beyond burr holes and kerfs.", "caveats": "Label breadth exceeds evidence."}
+      ],
+      "evidence": [],
+      "pipeline": {"stage": "launched-2026", "trials": [], "expected_milestone": "US commercial launch and distributor announcement pending (Korean press, August 2026)."},
+      "bd": {"sales_channel": "unknown", "reimbursement": "Bundled; no code.", "notes": "Second 3D-printed PCL-TCP cranial scaffold cleared in the US after Osteopore; T&R Biofab sells PCL craniofacial implants in Korea and Europe."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://www.accessdata.fda.gov/cdrh_docs/pdf25/K251959.pdf", "https://api.fda.gov/device/510k.json?search=k_number:K251959", "https://en.edaily.co.kr/news/eda202608035159/"]
+    },
+    {
+      "id": "osteopore-pcl",
+      "name": "Osteopore PCL Scaffold Bone Filler (Osteoplug, Osteoplug-C, Osteomesh)",
+      "company": "Osteopore International (Singapore; ASX: OSX)",
+      "category": "synthetic-ceramic",
+      "composition": "3D-printed bioresorbable polycaprolactone scaffold (mushroom-shaped 14 mm burr-hole plug, mesh sheets 50 x 50 x 1 mm) with 400 to 600 micron pores; resorbs over 18 to 24 months",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K051093 (Osteopore, Inc., Osteopore PCL Scaffold, 2006-03-17, product code GXP)",
+        "us_market_year": 2006,
+        "on_label_indications": ["Repair of neurosurgical burr holes, craniotomy cuts and other cranial defects; augmentation or restoration of bony contour in the craniofacial skeleton"]
+      },
+      "status": "established",
+      "applications": [
+        {"application_id": "cmf-burr-hole", "tier": "emerging", "on_label": true, "evidence_grade": "IV", "evidence_summary": "12-patient Singapore series of Osteoplug after chronic subdural hematoma drainage: no depressions, no infection, osteointegration on CT at one year, mean 16 months follow-up.", "caveats": "No comparative study; US sales small and through a non-exclusive distributor."}
+      ],
+      "evidence": [
+        {"ref": "PMID:19710975", "title": "Use of Osteoplug polycaprolactone implants as novel burr-hole covers", "year": 2009, "design": "case-series", "n": 12, "finding": "Good cosmesis in all 12 patients, radiographic osteointegration at one year, no infection or adverse systemic reaction at mean 16 months.", "sponsor_funded": false, "applications": ["cmf-burr-hole"]}
+      ],
+      "bd": {"sales_channel": "distributor", "reimbursement": "Bundled.", "notes": "Zimmer Biomet holds exclusive craniofacial distribution for EMEA and APAC (24 countries, signed July 2024, five-year term; sales began in Europe, Australia and Hong Kong, three-fold unit growth 2024 H2 to 2025 H1; Saudi access July 2026). US distribution is a separate, non-exclusive two-year agreement with Bioplate for cranial and neurosurgery (date unverified). The TnR clearance used Osteopore as predicate, so a second PCL entrant now competes in the same niche."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://api.fda.gov/device/510k.json?search=k_number:K051093", "https://www.marketindex.com.au/asx/osx/announcements/osteopore-strikes-exclusive-distribution-with-zimmer-biomet-6A1215861", "https://investorpa.com/announcement/165539/", "https://accessgudid.nlm.nih.gov/devices/08885013201871"]
+    },
+    {
+      "id": "osteovation-cmf",
+      "name": "OsteoVation CMF, OsteoVation Impact and Callos CMF Bone Void Filler",
+      "company": "Skeletal Kinetics, LLC (Cupertino, CA)",
+      "category": "calcium-phosphate-cement",
+      "composition": "Self-setting calcium phosphate cement (apatitic) in putty and impact-resistant formulations",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K042072 (Callos CMF, 2004-09-16), K051784 (OsteoVation CMF, 2005-07-20), K162864 (OsteoVation Impact, 2017-01-13); all product code GXP",
+        "us_market_year": 2004,
+        "on_label_indications": ["Repair of neurosurgical burr holes, craniotomy cuts and other cranial defects and restoration of craniofacial contour (per GXP class labeling; exact text not retrieved)"]
+      },
+      "status": "established",
+      "unverified": true,
+      "challenge": "Included to show the long tail of GXP cements; current distribution and any clinical publication were not found, so grade V and unverified status.",
+      "applications": [
+        {"application_id": "cmf-burr-hole", "tier": "established", "on_label": true, "evidence_grade": "V", "evidence_summary": "No published clinical data located.", "caveats": "Commodity cement, private company."}
+      ],
+      "evidence": [],
+      "bd": {"sales_channel": "unknown", "reimbursement": "Bundled.", "notes": "Skeletal Kinetics also supplies calcium phosphate cement OEM to orthopedic companies (Callos); the CMF line's channel is unverified."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://api.fda.gov/device/510k.json?search=product_code:GXP"]
+    },
+    {
+      "id": "bonalive",
+      "name": "Bonalive granules (S53P4 bioactive glass), Bonalive Maxillofacial, Bonalive granules CMF",
+      "company": "Bonalive Biomaterials Ltd (Turku, Finland; formerly Vivoxid)",
+      "category": "bioactive-glass",
+      "status": "established",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K070055 (Bonalive Granules and Plates, LYC dental and craniomaxillofacial, 2007-06-25); K071937 (KKY, 2007-10-19); K071199 and K191274 (granules, MQV, 2008 and 2019); K231528 (Bonalive Orthopedics granules, MQV, 2023-07-11); K253883 (Bonalive Maxillofacial, Special 510(k), LYC, 21 CFR 872.3930, 2026-05-14)",
+        "us_market_year": 2007,
+        "on_label_indications": [
+          "Bonalive Maxillofacial (K253883, 2026): sterile bioactive glass S53P4 granules, a bone grafting material intended to fill, augment or reconstruct bony defects, indicated for use in the maxillofacial area; same device as K191274 granules with a new applicator, gamma sterilization and name (the summary notes dental bone grafting materials are not indicated for regions outside the maxillofacial area)",
+          "Bonalive Granules (K070055, 2007): fill, augment or reconstruct periodontal or bony defects in the craniomaxillofacial area including the jaws; Bonalive Plates for augmentation or reconstruction of the craniomaxillofacial skeleton"
+        ]
+      },
+      "applications": [
+        {"application_id": "cmf-skull-base-sinus", "tier": "established", "on_label": true, "evidence_grade": "III", "evidence_summary": "Peltola 2006: 42 patients with chronic frontal sinusitis obliterated with S53P4 granules, accurate obliteration in 39, uneventful outcome in 92 percent, histology at 1, 5 and 10 years showing progressive bony obliteration with no bacterial growth.", "caveats": "Finnish investigator series, Turku group developed the glass; no randomized comparison to fat or bone."},
+        {"application_id": "cmf-sinus-ridge-augmentation", "tier": "established", "on_label": true, "evidence_grade": "V", "evidence_summary": "Maxillofacial clearance rests on substantial equivalence to the 2007 granules; no US dental trial located.", "caveats": "Launch of the renamed Maxillofacial product in the US had no press release as of October 2026."},
+        {"application_id": "cmf-cranioplasty", "tier": "emerging", "on_label": true, "evidence_grade": "IV", "evidence_summary": "S53P4 granules and plates have Finnish long-term series in orbital floor and cranial reconstruction (Aitasalo, Peltola group) but no US data.", "caveats": "Granules need containment; not a load-bearing cranioplasty."}
+      ],
+      "evidence": [
+        {"ref": "PMID:16823870", "title": "Bioactive glass S53P4 in frontal sinus obliteration: a long-term clinical experience", "year": 2006, "design": "prospective-cohort", "n": 42, "finding": "Obliteration achieved in 39 of 42 patients, 92 percent uneventful recovery; biopsies at 1, 5 and 10 years showed bone replacing fibrous tissue around residual granules, with sterile cultures.", "sponsor_funded": false, "applications": ["cmf-skull-base-sinus"]},
+        {"ref": "PMID:18634960", "title": "Long-term microscopic and tissue analytical findings for two frontal sinus obliteration materials", "year": 2008, "design": "case-series", "n": null, "finding": "Explant analysis after bioactive glass and autologous bone obliteration showing bone formation around glass granules over years.", "sponsor_funded": false, "applications": ["cmf-skull-base-sinus"]}
+      ],
+      "bd": {"sales_channel": "distributor", "reimbursement": "Bundled inpatient; dental use is CDT-coded and largely private pay.", "notes": "FDA Breakthrough Device designation (February 2022) for the orthopedic granules on a proposed antimicrobial-protection indication; the 2026 Maxillofacial Special 510(k) repackages the dental granules with an applicator. US distribution partner for dental not identified."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://www.accessdata.fda.gov/cdrh_docs/pdf25/K253883.pdf", "https://api.fda.gov/device/510k.json?search=device_name:%22BonAlive%22", "https://www.healio.com/news/orthopedics/20220218/bonalive-receives-fda-breakthrough-device-designation-for-bone-graft-substitute"]
+    },
+    {
+      "id": "novabone",
+      "name": "NovaBone Putty and NovaBone Dental Putty and Morsels (45S5 bioactive glass)",
+      "company": "NovaBone Products, LLC (Alachua, FL)",
+      "category": "bioactive-glass",
+      "status": "established",
+      "regulatory": {
+        "path": "510k",
+        "reference": "Dental: K091484 and K100671 (NovaBone Dental Putty, LYC, 2009 and 2010), K112428 (Dental Morsels, LYC, 2011); orthopedic MQV family K080009 through K242299 (2008 to 2024)",
+        "us_market_year": 2008,
+        "on_label_indications": ["Dental (LYC): bone grafting material for periodontal, oral and maxillofacial defects including extraction sockets, ridge augmentation and sinus lift (per LYC class labeling; exact text not retrieved)"]
+      },
+      "applications": [
+        {"application_id": "cmf-sinus-ridge-augmentation", "tier": "established", "on_label": true, "evidence_grade": "V", "evidence_summary": "Dental putty and morsels are sold into sinus lift and socket grafting on substantial equivalence; no NovaBone-named RCT in sinus augmentation located on PubMed.", "caveats": "Commodity synthetic in a xenograft-dominated segment."},
+        {"application_id": "cmf-cranioplasty", "tier": "investigational", "on_label": false, "evidence_grade": "V", "evidence_summary": "A comparative thesis from Ain Shams University (Egypt) on NovaBone versus Norian in cranioplasty exists in a university repository but is not peer-reviewed.", "caveats": "No cranial indication on any NovaBone 510(k) (MQV and LYC only)."}
+      ],
+      "evidence": [],
+      "bd": {"sales_channel": "hybrid", "reimbursement": "Dental CDT codes; bundled when used in hospital.", "notes": "NovaBone Dental products are sold through dental distributors; Alachua, FL manufacturer."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://api.fda.gov/device/510k.json?search=device_name:%22NovaBone%22", "https://research.asu.edu.eg/handle/123456789/191248"]
+    },
+    {
+      "id": "dbx",
+      "name": "DBX Demineralized Bone Matrix (CMF)",
+      "company": "DePuy Synthes (processed by MTF Biologics)",
+      "category": "DBM",
+      "status": "established",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "Human tissue regulated under 21 CFR 1271 (MTF Biologics); DePuy Synthes lists a DBX CMF product line (putty, paste, mix, strip and the DBX Inject delivery system) on jnjmedtech.com",
+        "us_market_year": 2003,
+        "on_label_indications": ["Bone void filler for voids or gaps not intrinsic to the stability of the bony structure, including craniomaxillofacial defects (361 tissue; labeling not retrieved)"]
+      },
+      "applications": [
+        {"application_id": "cmf-craniosynostosis", "tier": "established", "on_label": true, "evidence_grade": "IV", "evidence_summary": "DBM with resorbable mesh bilaminate for large pediatric calvarial defects: 11 patients, 13 reconstructions in primary cranioplasty (Rogers 2009); the same technique failed in all 7 children used for secondary reconstruction over scarred dura (major revision at mean 2.5 years, Rogers group 2020).", "caveats": "Brand of DBM not always stated; effective only with intact dural osteogenic potential."},
+        {"application_id": "cmf-alveolar-cleft", "tier": "emerging", "on_label": true, "evidence_grade": "III", "evidence_summary": "rhBMP-2 plus DBM in 63 of 93 alveolar grafts at Children's Hospital Los Angeles: failure 14 percent below and 65 percent above a critical cleft volume of 885 mm3 (ICBG: 0 and 71 percent around 810 mm3); a 2023 series used DBX for cleft revision after prior BMP-2 grafting.", "caveats": "DBM is the carrier, rhBMP-2 the active; off-label in children."},
+        {"application_id": "cmf-mandible-continuity", "tier": "investigational", "on_label": false, "evidence_grade": "IV", "evidence_summary": "Six pediatric benign-tumor mandibular defects grafted with DBX, rhBMP-2 and freeze-dried bone chips: no graft failures, 100 percent take in four and about 80 percent in two at six months (2025).", "caveats": "Case series; non-load-bearing defects with periosteum preserved."}
+      ],
+      "evidence": [
+        {"ref": "PMID:19319063", "title": "Demineralized bone matrix and resorbable mesh bilaminate cranioplasty for large-scale pediatric calvarial defects", "year": 2009, "design": "case-series", "n": 11, "finding": "13 reconstructions in 11 children with large defects reossified using DBM between resorbable mesh layers in primary cranioplasty.", "sponsor_funded": false, "applications": ["cmf-craniosynostosis", "cmf-cranioplasty"]},
+        {"ref": "PMID:31592945", "title": "Demineralized bone matrix and resorbable mesh bilaminate cranioplasty is ineffective for secondary reconstruction of large pediatric cranial defects", "year": 2020, "design": "retrospective", "n": 7, "finding": "All seven children (mean age 4.2) treated for post-craniectomy defects over scarred dura had poor ossification and needed major revision at mean 2.5 years.", "sponsor_funded": false, "applications": ["cmf-cranioplasty", "cmf-craniosynostosis"]},
+        {"ref": "PMID:38684030", "title": "Failure rates based on alveolar cleft volume: analysis of the critical-size defect for alveolar bone grafting", "year": 2024, "design": "retrospective", "n": 93, "finding": "Critical-size cleft volume 810 mm3 for ICBG (failure 0 vs 71 percent) and 885 mm3 for rhBMP-2 plus DBM (14 vs 65 percent).", "sponsor_funded": false, "applications": ["cmf-alveolar-cleft"]},
+        {"ref": "PMID:40496987", "title": "Successful grafting with allogenic bone following benign pediatric mandibular tumor removal", "year": 2025, "design": "case-series", "n": 6, "finding": "DBX plus rhBMP-2 plus freeze-dried bone chips achieved 100 percent take in 4 and about 80 percent in 2 of 6 pediatric mandibular defects at six months.", "sponsor_funded": false, "applications": ["cmf-mandible-continuity"]}
+      ],
+      "bd": {"sales_channel": "direct", "reimbursement": "Bundled inpatient; no separate HCPCS for DBM in CMF.", "notes": "DePuy Synthes CMF sells the DBX CMF line; MTF added Kolosis BIO as a second DBX distributor in 2025 so exclusivity cannot be claimed (pass-2 log)."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://www.jnjmedtech.com/en-US/product/dbx-demineralized-bone-matrix-cmf", "PMID:19319063", "PMID:31592945"]
+    },
+    {
+      "id": "grafton",
+      "name": "Grafton DBM and Grafton Plus DBM (dental and craniomaxillofacial labeling)",
+      "company": "Medtronic (originally Osteotech)",
+      "category": "DBM",
+      "status": "established",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K051188 (Grafton DBM, Osteotech, 2005) and K042707 (Grafton Plus paste); Medtronic Grafton DBM K251193 (2025-06-12, MQV); dental and craniomaxillofacial labeling on Medtronic ISW pages",
+        "us_market_year": 1991,
+        "on_label_indications": ["Grafton DBM (excluding Orthoblend) and Grafton Plus DBM are also intended to be packed into bony voids or gaps to fill or augment dental intraosseous, oral and cranio-/maxillofacial defects: periodontal and infrabony defects, alveolar ridge augmentation (sinusotomy, osteotomy, cystectomy), extraction sites, sinus lifts, cystic defects and craniofacial augmentation; only voids not intrinsic to the stability of the bony structure"]
+      },
+      "applications": [
+        {"application_id": "cmf-sinus-ridge-augmentation", "tier": "established", "on_label": true, "evidence_grade": "V", "evidence_summary": "Labeled for sinus lift, socket and ridge augmentation; Medtronic sells Grafton alongside Infuse and Mastergraft into oral surgery; no Grafton-named dental RCT located.", "caveats": "Osteoinductivity varies by lot and carrier; DBM is rarely used alone in sinus lifts."},
+        {"application_id": "cmf-craniosynostosis", "tier": "emerging", "on_label": true, "evidence_grade": "V", "evidence_summary": "Craniofacial augmentation is on the label; the 2000 rabbit study of Grafton Flex and putty in 15 mm cranial defects showed healing, but pediatric clinical cranial data are DBM-generic.", "caveats": "Animal and generic data."}
+      ],
+      "evidence": [],
+      "bd": {"sales_channel": "direct", "reimbursement": "Bundled; dental use under CDT.", "notes": "Medtronic's oral-maxillofacial bone grafting portfolio is Infuse, Mastergraft and Grafton; Osteotech was acquired by Medtronic in 2010."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://www.medtronic.com/en-us/l/isw/grafton-dbm-indications-safety-warnings.html", "https://api.fda.gov/device/510k.json?search=k_number:K251193"]
+    },
+    {
+      "id": "infuse",
+      "name": "Infuse Bone Graft (rhBMP-2/ACS), oral-maxillofacial PMA",
+      "company": "Medtronic",
+      "category": "rhBMP",
+      "status": "established",
+      "regulatory": {
+        "path": "PMA",
+        "reference": "P050053 approved 2007-03-09 (oral-maxillofacial), with supplements through S066 (2026-08-26); P000058 (spine, 2002) and P000054 (open tibia, 2004) are the other two PMAs",
+        "us_market_year": 2007,
+        "on_label_indications": [
+          "Alternative to autogenous bone graft for sinus augmentations, and for localized alveolar ridge augmentations for defects associated with extraction sockets (P050053 approval order, 2007-03-09)",
+          "Contraindicated near a resected or existing tumor, in active malignancy, pregnancy, active infection at the site and hypersensitivity to rhBMP-2 or bovine collagen; not studied in patients under 18 or without radiographic epiphyseal closure, so every cleft and pediatric craniofacial use is off-label; women of childbearing potential advised to avoid pregnancy for one year"
+        ]
+      },
+      "applications": [
+        {"application_id": "cmf-sinus-ridge-augmentation", "tier": "established", "on_label": true, "evidence_grade": "I", "evidence_summary": "Pivotal 21-center RCT (Triplett 2009, n=160, under 6 mm residual bone): mean bone height gain 7.83 mm with rhBMP-2/ACS versus 9.46 mm with autograft, denser induced bone, 199 of 241 versus 201 of 251 implants integrated and loaded at six months, 79 percent subject success, no rhBMP-2-related adverse events, and 17 percent long-term donor-site morbidity in the autograft arm; phase II dose-ranging RCT (Boyne 2005, n=48) preceded it. This is the only on-label growth factor anywhere in the craniomaxillofacial skeleton.", "caveats": "Sponsor-run; height gain was lower than autograft; adding rhBMP-2/ACS to Bio-Oss reduced new bone in a separate RCT (PMID 22254226); a 2019 meta-analysis found the labeled 1.5 mg/mL dose gives orofacial gains similar to but not better than conventional grafts (PMID 31147568)."},
+        {"application_id": "cmf-alveolar-cleft", "tier": "emerging", "on_label": false, "evidence_grade": "I", "evidence_summary": "Six RCTs and two non-randomized studies (2025 meta-analysis, PMID 40003593) and earlier meta-analyses find bone volume equivalent to iliac crest (about 61 vs 59 percent), lower bone height, shorter operations and stays, and significant facial swelling in up to 37.5 percent (Alonso 2010 RCT, n=16); a 2021 umbrella review rated all included reviews at uncertain or high risk of bias. A US RCT of DBM/BMP versus ICBG with a cost primary endpoint (NCT04234971, n=40, UT Houston) is recruiting to 2028.", "caveats": "Off-label in children; CHLA retrospective of 93 grafts shows 65 percent failure above an 885 mm3 cleft volume; long-term craniofacial growth data lacking."},
+        {"application_id": "cmf-mandible-continuity", "tier": "investigational", "on_label": false, "evidence_grade": "IV", "evidence_summary": "Herford and Boyne 2008: 14 continuity defects after tumor or osteomyelitis regenerated with 4 to 8 mg rhBMP-2 on collagen alone under a tented titanium bar or mesh, all restored to prosthetic function; Carter 2008: 2 of 4 continuity defects failed and needed iliac crest. A 2019 safety review (PMID 31592029) concluded the evidence fails to support rhBMP-2 for mandibular reconstruction, calvarial reconstruction or distraction.", "caveats": "Off-label; no controlled study; the label contraindicates use near a resected tumor, which is the usual mandibular indication."},
+        {"application_id": "cmf-mandible-fracture", "tier": "investigational", "on_label": false, "evidence_grade": "IV", "evidence_summary": "Only case-level data for defect fractures and nonunion within the Carter 2008 series.", "caveats": "Off-label."},
+        {"application_id": "cmf-cranioplasty", "tier": "investigational", "on_label": false, "evidence_grade": "IV", "evidence_summary": "Retrospective cohorts and case reports only for calvarial defects; two pediatric calvarial studies in the 2026 systematic review of 21 rhBMP-2 craniofacial studies (PMID 41944755).", "caveats": "Off-label; heterotopic bone and swelling risk near dura and scalp."}
+      ],
+      "evidence": [
+        {"ref": "PMID:19686934", "title": "Pivotal, randomized, parallel evaluation of rhBMP-2/ACS and autogenous bone graft for maxillary sinus floor augmentation", "year": 2009, "design": "RCT", "n": 160, "finding": "rhBMP-2/ACS gave 7.83 mm versus 9.46 mm height with autograft, denser bone, equivalent implant integration (199/241 vs 201/251) at six months after loading, no treatment-related adverse events, and avoided the 17 percent donor-site morbidity of autograft.", "sponsor_funded": true, "applications": ["cmf-sinus-ridge-augmentation"]},
+        {"ref": "PMID:16297689", "title": "De novo bone induction by rhBMP-2 in maxillary sinus floor augmentation (phase II)", "year": 2005, "design": "RCT", "n": 48, "finding": "0.75 and 1.50 mg/mL rhBMP-2/ACS produced ridge height gains of 9.5 and 10.2 mm versus 11.3 mm with bone graft at four months; 1.5 mg/mL chosen for the pivotal trial.", "sponsor_funded": true, "applications": ["cmf-sinus-ridge-augmentation"]},
+        {"ref": "PMID:22254226", "title": "The negative effect of combining rhBMP-2 and Bio-Oss on bone formation for maxillary sinus augmentation", "year": 2012, "design": "RCT", "n": null, "finding": "Histologic new bone was lower with rhBMP-2/ACS plus Bio-Oss than with Bio-Oss alone.", "sponsor_funded": false, "applications": ["cmf-sinus-ridge-augmentation"]},
+        {"ref": "PMID:31147568", "title": "Efficacy of rhBMP-2 and rhPDGF-BB in orofacial bone regeneration: systematic review and meta-analysis of RCTs", "year": 2019, "design": "meta-analysis", "n": null, "finding": "Pooled RCTs show rhBMP-2 and rhPDGF-BB produce orofacial bone gains comparable to conventional grafts without a clear advantage, with dose and indication effects unresolved.", "sponsor_funded": false, "applications": ["cmf-sinus-ridge-augmentation", "cmf-periodontal-intrabony"]},
+        {"ref": "PMID:20163243", "title": "Evaluation of maxillary alveolar reconstruction using a resorbable collagen sponge with rhBMP-2 in cleft lip and palate patients", "year": 2010, "design": "RCT", "n": 16, "finding": "Children 8 to 12: rhBMP-2 group reached 65 percent mean bone height at 12 months versus 83.8 percent at 6 months with iliac crest; significant swelling in 37.5 percent of the rhBMP-2 arm versus donor-site pain in 87.5 percent of the ICBG arm.", "sponsor_funded": false, "applications": ["cmf-alveolar-cleft"]},
+        {"ref": "PMID:23147291", "title": "Human bone morphogenetic protein-2 use for maxillary reconstruction in cleft lip and palate patients", "year": 2012, "design": "RCT", "n": 18, "finding": "Formed bone volume, formation rate, height repair and density were similar for rhBMP-2 and iliac crest at one year; periosteoplasty arm abandoned for insufficient bone.", "sponsor_funded": false, "applications": ["cmf-alveolar-cleft"]},
+        {"ref": "PMID:40003593", "title": "Efficacy of rhBMP-2 in alveolar cleft treatment for children: systematic review and meta-analysis", "year": 2025, "design": "meta-analysis", "n": null, "finding": "Six RCTs and two non-randomized studies: bone volume 61.1 percent with rhBMP-2 versus 59.1 percent with iliac crest, bone height lower with rhBMP-2 (about 61 versus 79 percent), moderate-quality evidence of no significant difference.", "sponsor_funded": false, "applications": ["cmf-alveolar-cleft"]},
+        {"ref": "PMID:35184916", "title": "Effectiveness of rhBMP-2 versus iliac autogenous bone graft in cleft patients: umbrella review", "year": 2021, "design": "meta-analysis", "n": null, "finding": "Six systematic reviews, bone fill 74.2 percent rhBMP-2 versus 72.4 percent autogenous, none at low risk of bias; recommends caution in children.", "sponsor_funded": false, "applications": ["cmf-alveolar-cleft"]},
+        {"ref": "PMID:41944755", "title": "rhBMP-2 as an alternative to autologous bone graft in pediatric craniofacial reconstruction: systematic review", "year": 2026, "design": "meta-analysis", "n": null, "finding": "21 studies (6 RCTs): in alveolar cleft 4 of 12 favored rhBMP-2 for bone formation, 1 favored ICBG, 7 no difference; facial edema the commonest rhBMP-2 complication; all five operative-time studies favored rhBMP-2.", "sponsor_funded": false, "applications": ["cmf-alveolar-cleft", "cmf-cranioplasty"]},
+        {"ref": "PMID:18355584", "title": "Reconstruction of mandibular continuity defects with rhBMP-2", "year": 2008, "design": "case-series", "n": 14, "finding": "14 body and angle defects from tumor or osteomyelitis regenerated with rhBMP-2 on collagen alone under tenting hardware; all restored to prosthetic function at 6 to 18 months.", "sponsor_funded": false, "applications": ["cmf-mandible-continuity"]},
+        {"ref": "PMID:18571026", "title": "Off-label use of rhBMP-2 for reconstruction of mandibular bone defects in humans", "year": 2008, "design": "case-series", "n": 5, "finding": "Three of five defects healed; both failures were continuity defects, salvaged with iliac crest.", "sponsor_funded": false, "applications": ["cmf-mandible-continuity", "cmf-mandible-fracture"]},
+        {"ref": "PMID:31592029", "title": "Safety and efficacy of rhBMP-2 in craniofacial surgery", "year": 2019, "design": "meta-analysis", "n": null, "finding": "17 RCTs (n 7 to 160) support use in sinus and alveolar settings; evidence fails to support rhBMP-2 for maxillary sinus wall augmentation, calvarial reconstruction, mandibular reconstruction or distraction osteogenesis.", "sponsor_funded": false, "applications": ["cmf-mandible-continuity", "cmf-cranioplasty", "cmf-alveolar-cleft"]},
+        {"ref": "NCT04234971", "title": "Cost effectiveness in alveolar bone grafting in patients with cleft lip and palate: randomized clinical trial (DBM/BMP vs ICBG)", "year": 2021, "design": "RCT", "n": 40, "finding": "Recruiting at UT Health Houston, ages 6 to 15, primary endpoint health-system cost per successful graft at one year; completion 2028.", "sponsor_funded": false, "applications": ["cmf-alveolar-cleft"]}
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Dental sinus lift and ridge augmentation are CDT D7951, D7952 and D7953 and are frequently excluded or covered at 40 to 50 percent by dental plans; Infuse is not separately reimbursed in the dental setting and no Infuse HCPCS or C-code exists. In hospital CMF use it is bundled in the MS-DRG.",
+        "notes": "Sold by Medtronic's oral-maxillofacial and dental channel together with Mastergraft and Grafton; the FDA's July 2008 public health notification on life-threatening neck and airway swelling after off-label cervical spine use (38 reports) is the origin of the head-and-neck swelling concern; the dental label's warnings as summarized by Medtronic cover pregnancy, malignancy, infection and skeletal immaturity rather than airway swelling, while the cleft literature documents facial edema as the most common rhBMP-2 complication."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://api.fda.gov/device/pma.json?search=pma_number:P050053", "https://www.medtronic.com/en-us/l/patients/treatments-therapies/bone-grafting-dental/important-safety-information.html", "https://www.healio.com/news/orthopedics/20120331/fda-issues-notification-about-recombinant-bone-morphogenetic-proteins-used-in-spinal-fusion", "PMID:19686934"]
+    },
+    {
+      "id": "gem-21s",
+      "name": "GEM 21S Growth-factor Enhanced Matrix (rhPDGF-BB with beta-TCP)",
+      "company": "Lynch Biologics, LLC (Franklin, TN)",
+      "ownership_history": "Developed by BioMimetic Pharmaceuticals (Samuel Lynch); PMA held by Lynch Biologics, LLC since approval; the orthopedic sibling Augment (rhPDGF-BB) went BioMimetic to Wright Medical (2013) to Stryker (2020). GEM 21S was marketed in dentistry by Osteohealth (a Luitpold Pharmaceuticals unit, which also packaged the kit) and Luitpold's Shirley, NY plant manufactured the rhPDGF syringe; current distributor not verified.",
+      "category": "rhPDGF",
+      "composition": "0.3 mg/mL recombinant human PDGF-BB (0.5 mL syringe) mixed chairside with 0.5 cc beta-tricalcium phosphate particles",
+      "regulatory": {
+        "path": "PMA",
+        "reference": "P040013 approved 2005-11-18; supplements through S032 (2024-11-22)",
+        "us_market_year": 2005,
+        "on_label_indications": ["Treatment of periodontally related defects: intrabony periodontal defects, furcation periodontal defects, and gingival recession associated with periodontal defects"]
+      },
+      "status": "established",
+      "applications": [
+        {"application_id": "cmf-periodontal-intrabony", "tier": "established", "on_label": true, "evidence_grade": "I", "evidence_summary": "Pivotal 11-center RCT (Nevins 2005, n=180, intrabony defects of 4 mm or more): rhPDGF-BB with beta-TCP accelerated clinical attachment gain and increased linear bone fill at six months versus beta-TCP alone.", "caveats": "Sponsor-run; six-month surrogate endpoints; a 2019 meta-analysis found rhPDGF gains comparable to conventional grafting."},
+        {"application_id": "cmf-sinus-ridge-augmentation", "tier": "investigational", "on_label": false, "evidence_grade": "V", "evidence_summary": "Off-label in sinus lifts and ridge augmentation; the 2013 systematic review found no evidence to support rhPDGF in sinus lift, socket healing or ridge augmentation.", "caveats": "Off-label."},
+        {"application_id": "cmf-alveolar-cleft", "tier": "investigational", "on_label": false, "evidence_grade": "IV", "evidence_summary": "Three-patient pilot of cultured marrow MSCs on biphasic scaffold with PDGF in alveolar clefts gave 51 percent fill at three months (2011).", "caveats": "Off-label, cell-plus-growth-factor construct."}
+      ],
+      "evidence": [
+        {"ref": "PMID:16332231", "title": "Platelet-derived growth factor stimulates bone fill and rate of attachment level gain: results of a large multicenter randomized controlled trial", "year": 2005, "design": "RCT", "n": 180, "finding": "rhPDGF-BB with beta-TCP produced faster clinical attachment gain and more linear bone fill at six months than beta-TCP alone in advanced intrabony defects.", "sponsor_funded": true, "applications": ["cmf-periodontal-intrabony"]},
+        {"ref": "PMID:23837644", "title": "Clinical efficacy of growth factors to enhance tissue repair in oral and maxillofacial reconstruction: systematic review", "year": 2013, "design": "meta-analysis", "n": null, "finding": "rhPDGF-BB reliably increases linear bone fill in intrabony pockets with weaker evidence for lasting attachment gains; no evidence for recession, sinus lift, socket or ridge augmentation; rhBMP-2 effective in sockets and sinus lifts; no controlled data for mandibular segmental repair.", "sponsor_funded": false, "applications": ["cmf-periodontal-intrabony", "cmf-sinus-ridge-augmentation", "cmf-mandible-continuity"]},
+        {"ref": "PMID:21420310", "title": "Repair of alveolar cleft defect with mesenchymal stem cells and platelet derived growth factors: preliminary report", "year": 2011, "design": "case-series", "n": 3, "finding": "Mean 51.3 percent defect fill at three months in four alveolar clefts treated with cultured marrow MSCs on biphasic scaffold plus rhPDGF.", "sponsor_funded": false, "applications": ["cmf-alveolar-cleft"]}
+      ],
+      "bd": {"sales_channel": "distributor", "reimbursement": "Periodontal regeneration is CDT D4263 and D4265; private pay or dental plan; no medical code.", "notes": "The only rhPDGF product in dentistry; low visibility, no new indication since 2005; post-approval study protocols approved 2008 and 2015."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://api.fda.gov/device/pma.json?search=pma_number:P040013", "PMID:16332231"]
+    },
+    {
+      "id": "osteocel",
+      "name": "Osteocel Plus (viable cellular allograft)",
+      "company": "Globus Medical (formerly NuVasive)",
+      "category": "cellular-allograft",
+      "status": "established",
+      "applications": [
+        {"application_id": "cmf-sinus-ridge-augmentation", "tier": "emerging", "on_label": false, "evidence_grade": "II", "evidence_summary": "Single-site blinded RCT (Whitt 2020, 11 subjects, 18 sinuses): Osteocel Plus gave a higher vital bone percentage than conventional corticocancellous allograft at posterior sinus sites at 14 weeks; no difference anteriorly.", "caveats": "Tiny split-mouth trial, histologic surrogate; 361 tissue used in dentistry on homologous-use grounds; CMS and commercial payers call cellular allografts investigational in spine, and dental use is private pay."}
+      ],
+      "evidence": [
+        {"ref": "PMID:32596764", "title": "Efficacy of stem cell allograft in maxillary sinus bone regeneration: randomized controlled clinical and blinded histomorphometric study", "year": 2020, "design": "RCT", "n": 11, "finding": "Osteocel Plus produced significantly more vital bone than alloOss allograft at posterior grafted sites (p=0.03) in 18 sinuses; no anterior difference.", "sponsor_funded": false, "applications": ["cmf-sinus-ridge-augmentation"]}
+      ],
+      "bd": {"sales_channel": "direct", "reimbursement": "No dental coverage; CDT D7953 bone replacement graft at best.", "notes": "Dental use is a small adjacent channel; no Globus dental sales program identified."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["PMID:32596764"]
+    },
+    {
+      "id": "trinity-elite",
+      "name": "Trinity Elite (viable cellular allograft)",
+      "company": "Orthofix (processed by MTF Biologics)",
+      "category": "cellular-allograft",
+      "status": "established",
+      "applications": [
+        {"application_id": "cmf-sinus-ridge-augmentation", "tier": "investigational", "on_label": false, "evidence_grade": "V", "evidence_summary": "No dental or maxillofacial clinical study of Trinity Elite located on PubMed as of 2026-10-22; Orthofix positions it for general bone grafting and does not market a dental program.", "caveats": "Listed for completeness; the cellular allograft dental evidence is the Osteocel Plus pilot RCT."}
+      ],
+      "evidence": [],
+      "bd": {"sales_channel": "direct", "reimbursement": "No dental coverage.", "notes": "MTF single-source supply to Orthofix through 2032 (business layer)."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://corp.orthofix.com/international/ifus/trinity-elite/"]
+    },
+    {
+      "id": "autologous-bone-flap",
+      "name": "Autologous bone flap banking (cryopreservation or subcutaneous abdominal pocket): the cranioplasty benchmark, not a product",
+      "company": "n/a (hospital tissue storage; some centers use AATB-accredited tissue banks for flap storage)",
+      "category": "other",
+      "composition": "The patient's own craniectomy flap stored at minus 20 to minus 80 C or in a subcutaneous abdominal pocket and reimplanted weeks to months later",
+      "regulatory": {"path": "none-unapproved", "reference": "Not a regulated product; FDA 361 tissue rules do not apply to autologous use within the same institution", "us_market_year": null, "on_label_indications": []},
+      "status": "established",
+      "applications": [
+        {"application_id": "cmf-cranioplasty", "tier": "established", "on_label": true, "evidence_grade": "I", "evidence_summary": "Meta-analysis of 1 RCT and 11 cohorts (1,586 implants): autologous flaps had 1.91 times the reoperation odds of synthetic implants, driven by resorption (20 percent pooled) and infection, with no difference in infection alone; network meta-analysis of 30 studies found resorption only in autologous bone (15.1 percent) and no other complication difference once resorption is excluded. Storage method does not matter: 48 studies and 5,346 patients show infection 7.3 versus 7.1 percent and resorption 9.7 versus 7.7 percent for cryopreserved versus subcutaneous flaps; a 2026 meta-analysis of 7 comparative studies (811 patients) agrees.", "caveats": "Pediatric banked flaps resorb in about 40 percent and fail in 40 percent, which is why children get fresh bone or custom implants. The economic case for custom implants rests on avoiding the 15 to 20 percent resorption reoperation."}
+      ],
+      "evidence": [
+        {"ref": "PMID:29753896", "title": "Autologous cranioplasty is associated with increased reoperation rate: systematic review and meta-analysis", "year": 2018, "design": "meta-analysis", "n": 1586, "finding": "Autologous implants had more reoperations than synthetic (OR 1.91, 95 percent CI 1.40 to 2.61); 54 percent of reoperations for resorption, 41 percent for infection; pooled resorption 20 percent; no difference in infection (OR 1.24).", "sponsor_funded": false, "applications": ["cmf-cranioplasty"]},
+        {"ref": "PMID:35593924", "title": "Complications and cosmetic outcomes of materials used in cranioplasty following decompressive craniectomy: network meta-analysis", "year": 2022, "design": "meta-analysis", "n": null, "finding": "30 studies: overall complications higher for autologous bone than alloplasts (RR 1.56), hydroxyapatite (RR 2.60), PMMA (RR 1.50) and titanium (RR 1.56); resorption 15.1 percent in autologous bone and 0 in alloplasts; no difference once resorption excluded.", "sponsor_funded": false, "applications": ["cmf-cranioplasty"]},
+        {"ref": "PMID:27647038", "title": "Complications after in vivo and ex vivo autologous bone flap storage for cranioplasty", "year": 2016, "design": "meta-analysis", "n": 5346, "finding": "48 studies: cryopreserved versus subcutaneous flaps showed infection 7.3 versus 7.1 percent, revision 15.9 versus 7.6 percent and resorption 9.7 versus 7.7 percent, none significant.", "sponsor_funded": false, "applications": ["cmf-cranioplasty"]},
+        {"ref": "PMID:41719704", "title": "Biological and clinical implications of autologous bone flap preservation strategies after decompressive craniectomy: systematic review and meta-analysis", "year": 2026, "design": "meta-analysis", "n": 811, "finding": "Seven studies (337 subcutaneous, 474 cryogenic) with GRADE-rated outcomes for infection, revision and resorption and a UK NHS cost analysis built on randomized revision rates.", "sponsor_funded": false, "applications": ["cmf-cranioplasty"]},
+        {"ref": "PMID:41823425", "title": "Optimal timing of cranioplasty after craniectomy: systematic review and meta-analysis", "year": 2026, "design": "meta-analysis", "n": 8602, "finding": "55 studies: cranioplasty within 100 days improved Barthel and FIM scores versus delayed cranioplasty; ultra-early (30 to 45 days) reduced bone flap resorption; no increase in complications; material did not change the effect.", "sponsor_funded": false, "applications": ["cmf-cranioplasty"]},
+        {"ref": "PMID:31461029", "title": "Outcomes and complications of pediatric cranioplasty: systematic review", "year": 2019, "design": "meta-analysis", "n": 640, "finding": "Banked bone flaps in children had 51 percent overall complications, 39.7 percent resorption and 40.2 percent failure; fresh bone and titanium had the lowest infection (0.4 and 3.3 percent); PEEK had the highest infection (16.1 percent).", "sponsor_funded": false, "applications": ["cmf-cranioplasty", "cmf-craniosynostosis"]},
+        {"ref": "PMID:39495337", "title": "The role of autologous bone in cranioplasty: systematic review of complications and risk factors by using stored bone", "year": 2024, "design": "meta-analysis", "n": 13592, "finding": "132 studies, 13,592 patients and 14,960 implants; a third of studies had under three months of follow-up and 19 to 30 percent did not report complication management, so published rates understate failure.", "sponsor_funded": false, "applications": ["cmf-cranioplasty"]}
+      ],
+      "bd": {"sales_channel": "unknown", "reimbursement": "CPT 62143 (replacement of bone flap or prosthetic plate) and 62140, 62141; MS-DRG 025 to 027; the cost of flap storage is hospital overhead.", "notes": "Benchmark for every cranial biologic and implant claim; the 15 to 20 percent resorption reoperation is the number custom-implant makers sell against."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["PMID:29753896", "PMID:35593924", "PMID:27647038", "PMID:41719704", "PMID:41823425", "PMID:31461029"]
+    },
+    {
+      "id": "epibone-cmf",
+      "name": "EpiBone-CMF (EB-CMF) engineered living bone graft",
+      "company": "EpiBone, Inc. (Brooklyn, NY)",
+      "category": "MSC",
+      "composition": "Patient-specific, CT-shaped decellularized bone scaffold seeded with the patient's adipose-derived stem cells and matured in a perfusion bioreactor",
+      "regulatory": {"path": "IND-only", "reference": "IND cleared May 2019 for a Phase 1/2 first-in-human study (NCT03678467); no BLA", "us_market_year": null, "on_label_indications": []},
+      "status": "investigational",
+      "applications": [
+        {"application_id": "cmf-mandible-continuity", "tier": "investigational", "on_label": false, "evidence_grade": "V", "evidence_summary": "Open-label, single-arm, six-patient first-in-human study of EB-CMF for mandibular ramus reconstruction (three US sites) registered with a 2021 start and August 2023 primary completion; the record was last updated May 2022 with status unknown, and no results have been published or presented in sources located as of 2026-10-22.", "caveats": "Autologous cell-based combination product under FDA's cellular therapy pathway; funding rounds (Hackensack Meridian 2020, NetScientific) but no clinical readout; treat as stalled until a status update appears."}
+      ],
+      "evidence": [
+        {"ref": "NCT03678467", "title": "Open-label first-in-human single intervention study of EpiBone-CMF engineered living bone graft for mandibular ramus reconstruction", "year": 2021, "design": "case-series", "n": 6, "finding": "Phase 1/2, status unknown since May 2022; no results posted.", "sponsor_funded": true, "applications": ["cmf-mandible-continuity"]}
+      ],
+      "pipeline": {"stage": "phase-1", "trials": ["NCT03678467"], "expected_milestone": "No public milestone; ClinicalTrials.gov status unknown (record last verified May 2022)."},
+      "bd": {"sales_channel": "unknown", "reimbursement": "n/a", "notes": "Only US tissue-engineered mandible construct to reach an IND; related academic programs (axially vascularized ceramic in Alexandria NCT04001842; ovine patient-matched permanent scaffolds, Nat Commun 2025) remain preclinical or non-US."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://clinicaltrials.gov/study/NCT03678467", "https://www.odtmag.com/contents/view_breaking-news/2019-05-29/fda-oks-epibone-to-begin-first-in-human-phase-12-trial-of-stem-cell-derived-bone-graft/48595", "https://www.hackensackmeridianhealth.org/en/news/2020/05/19/hackensack-meridian-health-invests-in-epibone-inc-a-regenerative-medicine-company"]
+    },
+    {
+      "id": "tetranite-cranial",
+      "name": "TETRANITE regenerative bone adhesive (cranial flap fixation)",
+      "company": "RevBio, Inc. (Lowell, MA)",
+      "category": "other",
+      "composition": "Synthetic, injectable, self-setting calcium phosphate and phosphoserine-based bone adhesive that resorbs and is replaced by bone; derived from sandcastle-worm chemistry (LaunchPad Medical origin)",
+      "regulatory": {"path": "IDE-only", "reference": "FDA IDE approval December 2023 for a 20-patient pilot of stand-alone cranial flap fixation; NIH NINDS Phase II SBIR $2.4M September 2024; sites Semmes Murphey (Memphis) and Brigham and Women's (Boston)", "us_market_year": null, "on_label_indications": []},
+      "status": "investigational",
+      "applications": [
+        {"application_id": "cmf-burr-hole", "tier": "investigational", "on_label": false, "evidence_grade": "V", "evidence_summary": "First five patients enrolled by September 2024 with company-reported radiographic adhesion and no complications at over three months in the first patient; no peer-reviewed results or NCT number located as of 2026-10-22.", "caveats": "Company statements only; would replace plates and screws rather than a biologic; a De Novo or PMA is the likely path."}
+      ],
+      "evidence": [
+        {"ref": "https://www.businesswire.com/news/home/20240916810983/en", "title": "RevBio receives $2.4 million NIH grant for first-in-human trial of regenerative bone adhesive for cranial flap fixation and enrolls first five patients", "year": 2024, "design": "case-series", "n": 20, "finding": "20-patient pilot under an FDA-approved IDE; five enrolled; early radiographs reported as showing continued adhesion of the flap with no complications.", "sponsor_funded": true, "applications": ["cmf-burr-hole"]}
+      ],
+      "pipeline": {"stage": "phase-1", "trials": [], "expected_milestone": "Completion of the 20-patient pilot and a pivotal design; no date published (RevBio press releases 2023 and 2024)."},
+      "bd": {"sales_channel": "unknown", "reimbursement": "n/a", "notes": "If it works, it competes with cranial fixation plates (hardware) and with Montage Flowable's registered flap-fixation study, not with void fillers."},
+      "last_reviewed": "2026-10-22",
+      "sources": ["https://www.businesswire.com/news/home/20231208749209/en", "https://www.businesswire.com/news/home/20240916810983/en"]
+    }
+  ]
+}

@@ -1,0 +1,489 @@
+[
+  {
+    "file": "spine.json",
+    "kind": "application",
+    "id": "si-joint-fusion",
+    "set": {
+      "why_biologic": "Two segments. (1) Lateral/posterolateral transfixing implants (SI-BONE iFuse, iFuse-3D, iFuse TORQ, iFuse Bedrock Granite; Globus SI-LOK/SI-LOK SELECT; Orthofix FIREBIRD SI; Medtronic Rialto, K251395 2025; Camber Siconus; Spinal Simplicity Liberty-SI; Aurora SiLO TFX, K221047; CornerLoc TransLoc 3D, K232878; Tenon Catamaran; Tenon SImmetry+) are 510(k) titanium devices whose fusion claim rests on porous/coated surfaces and, in the fenestrated screws, bone that the implant self-harvests through its flutes (iFuse-3D 'fenestrated design to self-harvest bone'; FIREBIRD 'radial fenestrations allow self-harvesting of autograft'; SI-LOK 'optional graft slot'; Rialto IFU 'autograft and/or allograft may be placed in conjunction'). The INSITE, iMIA and SALLY trials of iFuse used no added graft. None of these vendors' product pages names a cellular allograft or DBM for the SI joint, so biologic use with transfixing screws is surgeon-discretionary and unbranded. (2) Posterior intra-articular 'fusion' implants ARE the biologic: machined structural cortical allograft dowels or spacers placed into the decorticated joint, regulated as 361 HCT/Ps (homologous use) rather than cleared devices. Products: PainTEQ LinQ (and the cortical-piercing TRAQ), SI-BONE iFuse INTRA V/INTRA X (supplied by an undisclosed third-party tissue bank), Aurora Spine SiLO, CornerLoc grafts (cortical graft plus a DBM sponge), Omnia Medical PsiF allograft, Vyrsa Pro (Vyrsa -> Nevro 2023 -> Globus 2025). Several are packed with DBM in a graft window at the surgeon's discretion. Titanium posterior 'in-line' implants (Camber SI, Spinal Simplicity Patriot-SI, CornerLoc TransLoc 3D posterior, Omnia PsiF DNA K-cleared May 2025, SI-BONE iFuse INTRA Ti) are moving the posterior approach back to 510(k) metal that must be paired with, or itself pierces, cortical bone.",
+      "autograft_standard": "No iliac crest is harvested in MIS SI fusion. For transfixing screws the 'autograft' is local bone self-harvested by the fenestrated implant; for posterior allograft systems the graft is the implant itself (structural cortical allograft, optionally with DBM in the window). Open SI arthrodesis historically used iliac crest from the adjacent ilium.",
+      "volume_note": "Medicare fee-for-service: 33,963 SI joint fusions 2010-2020, rising from 318 (2010) to 7,794 (2020); 68.5% MIS (CPT 27279) since 2015 (Federico 2023, PMID 37192412). SI-BONE FY2025 10-K: 'over 140,000 procedures have been performed using our products since we introduced iFuse in 2009' (as of 31 Dec 2025); 2025 revenue $200.9M (+20.2%), US $191.1M, international $9.8M, gross margin 79.6%. Aurora Spine reported >2,500 SiLO procedures (June 2025 release). No public procedure count for LinQ, CornerLoc, PsiF or Vyrsa.",
+      "coverage_note": "CPT: 27279 (lateral/transfixing, since 2015; device-intensive in ASC, 2026 CMS unadjusted ASC $14,518, HOPD APC 5116 $17,914) and 27278 (posterior intra-articular, no transfixation; Category I since 1 Jan 2024 replacing Category III 0775T, which existed 2022-2023; 2026 ASC $15,048, same APC 5116). For 2026 the AMA revised both descriptors: 27279 = transarticular and/or intra-articular device(s) piercing the ilium/sacrum cortices, 27278 = intra-articular device(s) without cortical piercing, so cortical-piercing posterior products (PainTEQ TRAQ, SI-BONE INTRA Ti) bill 27279 and hybrids (posterior in-line plus transfixing screw) bill 27279. Medicare physician fee 2026: 27279 $762; 27278 $441 facility / $13,834 office-based lab (SI-BONE 10-K). Inpatient (rare): ICD-10-PCS 0SG734Z/0SG834Z group to FY2026 MS-DRG 450/451 Single Level Spinal Fusion Except Cervical with/without MCC ($38,782 / $23,507 unadjusted; SI-BONE facility guide Feb 2026). Device C-codes C1889/C1776 are packaged (no separate payment). Medicare coverage: CGS (L39802, KY/OH), Noridian (L39810/L39812, JE/JF; JF retired 23 Oct 2025 into the JE policy) and Palmetto (L39797, JJ/JM) finalized LCDs effective 17 Apr 2025 (Noridian 16 Feb 2025) stating that MI arthrodesis of the SIJ 'WITHOUT placement of a transfixation device is NOT considered medically reasonable and necessary', i.e. 27278/posterior allograft is non-covered in those jurisdictions; the Noridian evidence review quotes ISASS that posterior MI SIJF is 'unproven and not recommended'. SI-BONE's 10-K says these LCDs 'precluding coverage for CPT 27278' reduced demand for INTRA X. NGS/Wellpoint (L36406, revised 1 Apr 2026) and WPS (L36000, rev. 27 Jun 2024) still describe the covered procedure as 'percutaneous insertion of a metallic device across the SIJ' without naming 27278; Novitas and First Coast have no SI fusion LCD that this pass could find. ACR, ASPN and NANS objected to the three 2025 LCDs; the LCDs stand as of Oct 2026. iFuse Bedrock Granite received hospital-outpatient/ASC transitional pass-through from 1 Jan 2025 and iFuse TORQ TNT an NTAP (hardware, not biologics).",
+      "nonunion_note": "iFuse: INSITE RCT (n=148, SI-BONE sponsored, no added graft) 6-month success 81.4% surgical vs 26.1% nonsurgical; 3 revisions in 102 fusions at 24 months. SALLY (NCT03122899, iFuse-3D, n=51): independent CT bridging bone 77% at 12 months and 90% at 5 years (Patel 2020 PMID 32607011; Patel 2024 PMID 39344079); iMIA RCT (NCT01741025) CT at 12 months: radiolucency adjacent to 4.0% of implants (Dengler 2019 PMID 30845034). Posterior allograft: SECURE (LinQ, NCT04423120, n=122 implanted) reports composite responder 73.5% at 12 months with no CT fusion endpoint; the only CT-graded posterior series retrieved is SImmetry decortication-plus-graft (lateral), 94% bridging at 24 months. No independent fusion or nonunion rate for any posterior allograft product was found, which is the basis of the LCD non-coverage."
+    },
+    "append_sources": [
+      "https://www.sec.gov/Archives/edgar/data/1459839/000145983926000036/sibn-20251231.htm",
+      "https://assets.si-bone.com/doc/PM-12022-US-E-SI-Joint-Dysfunction-Facility-Coding-Guide-February-2026.pdf",
+      "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=39797",
+      "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=39802",
+      "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=39812",
+      "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=36406",
+      "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=36000",
+      "https://www.acr.org/News-and-Publications/ACR-Others-Challenge-MAC-Position-on-Minimally-Invasive-Arthrodesis-of-the-Sacroiliac-Joint",
+      "https://spinelinemag.spine.org/marapr24/coding",
+      "https://www.painteq.com/clinician",
+      "https://www.painteq.com/clinician/news/ama-announces-category-1-billing-code-for-posterior-si-joint-fusion",
+      "PMID:32607011",
+      "PMID:39344079",
+      "PMID:30845034",
+      "PMID:38524688",
+      "PMID:40832586",
+      "PMID:39087970",
+      "PMID:40539775",
+      "PMID:36420375",
+      "PMID:42237893",
+      "NCT04423120",
+      "NCT07558278",
+      "NCT07547215",
+      "NCT03122899",
+      "NCT01741025",
+      "https://fda.innolitics.com/device/K251395",
+      "https://fda.innolitics.com/device/K221047",
+      "https://fda.innolitics.com/device/K232878",
+      "https://fda.innolitics.com/device/K203503",
+      "https://510k.innolitics.com/device/K210667",
+      "https://www.biospace.com/nevro-announces-acquisition-of-vyrsa-technologies",
+      "https://s28.q4cdn.com/260621474/files/doc_news/2025/03/Globus-Medical-completes-acquisition-of-Nevro-Corp.pdf",
+      "https://www.orthoworld.com/omnia-medical-launches-psif-dna-system/",
+      "https://www.orthoworld.com/aurora-spine-launches-silo-posterior-si-joint-fusion-system",
+      "https://aurora-spine.com/silo/",
+      "https://cornerloc.com/",
+      "https://www.globusmedical.com/products/si-lok-select/",
+      "https://orthofix.com/?p=799"
+    ],
+    "clear_unverified": true,
+    "challenge": "Products are now identified, but no posterior allograft vendor discloses its tissue bank (SI-BONE's 10-K says only 'a third-party' HCT/P manufacturer; PainTEQ's FAQ says 'treated, sterile bone'). The SI-BONE cumulative count is a company figure and the earlier 'nearly 150,000' (Q4 2025 release, IR site not fetchable) does not match the 10-K's 'over 140,000'; the 10-K figure is used. No cellular allograft or DBM brand could be tied to any SI system from a primary source, so Trinity/Osteocel 'with' FIREBIRD/SI-LOK remains unverified and is not paired."
+  },
+  {
+    "file": "spine.json",
+    "kind": "product",
+    "id": "linq",
+    "new_record": {
+      "id": "linq",
+      "name": "LinQ SI Joint Stabilization System (and TRAQ)",
+      "company": "PainTEQ",
+      "category": "structural-allograft",
+      "composition": "Machined structural cortical bone allograft ('almond-shaped' with a graft window), placed posteriorly into the decorticated mid-joint; TRAQ (2026) is a cortical-piercing allograft variant engaging sacral and iliac cortices at four points. Window may be packed with DBM at surgeon discretion (physician descriptions; not in the IFU text retrieved).",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": null,
+        "us_market_year": 2019,
+        "on_label_indications": [
+          "Homologous use: structural allograft bone placed in the sacroiliac joint (HCT/P, no FDA-cleared indication)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "si-joint-fusion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "SECURE (NCT04423120; Calodney 2024, PMID 38524688): prospective single-arm, 16 US sites, 122 implanted, composite responder 73.5% at 12 months, one procedure-related SAE; no CT fusion endpoint. Bovinet 2025 (PMID 40832586): retrospective 6-site cohort n=258, NRS 7.6 to 1.6 at mean 1.75 years. Ampomah 2025 (PMID 40828365): n=260, AE 1.9% at 6 months. LINQT RCT vs conservative management (NCT07558278, n=200, started Jul 2026) is the first randomized trial of any posterior allograft.",
+          "caveats": "All clinical data are pain/function case series by interventional pain physicians with company involvement; no radiographic fusion rate; no comparison to lateral transfixing implants; three MAC LCDs (2025) non-cover procedures without a transfixation device."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT04423120",
+          "title": "SECURE: single-arm multicenter prospective study of LinQ",
+          "year": 2024,
+          "design": "prospective-cohort",
+          "n": 122,
+          "finding": "73.5% composite responders at 12 months; one procedure-related serious AE.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "PMID:38524688",
+          "title": "Safety, efficacy and durability of outcomes: results from SECURE",
+          "year": 2024,
+          "design": "prospective-cohort",
+          "n": 122,
+          "finding": "VAS and ODI significantly improved at 12 months; responder rate stable 66-74% across visits.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "PMID:40832586",
+          "title": "Minimally invasive posterior SI joint fusion with a novel cortical allograft: real-world long-term outcomes, multisite US cohort",
+          "year": 2025,
+          "design": "retrospective",
+          "n": 258,
+          "finding": "Mean NRS reduction 6.0 points at 91 weeks; no serious AEs reported.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "PMID:40828365",
+          "title": "Retrospective evaluation of adverse events in posterior approach with bone allograft",
+          "year": 2025,
+          "design": "retrospective",
+          "n": 260,
+          "finding": "AE incidence 2.3% at 3 months and 1.9% at 6 months; no device-related events.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "PMID:34703300",
+          "title": "Multicenter retrospective analysis of a posterior sacroiliac fusion device (LinQ)",
+          "year": 2021,
+          "design": "retrospective",
+          "n": 50,
+          "finding": "NRS 6.98 to 3.06 at mean 612 days; no major AEs.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "NCT07558278",
+          "title": "LINQT: open-label RCT of LinQ vs conventional medical management",
+          "year": 2026,
+          "design": "RCT",
+          "n": 200,
+          "finding": "Enrolling; primary endpoint composite responder at 6 months, follow-up 24 months.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "NCT07547215",
+          "title": "TRAQTION: post-market single-arm study of TRAQ",
+          "year": 2026,
+          "design": "prospective-cohort",
+          "n": 100,
+          "finding": "Enrolling; 24-month follow-up.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "CPT 27278 (intra-articular, no cortical piercing) unless a cortical-piercing variant or hybrid (27279); ASC device-intensive 2026; non-covered by CGS/Noridian/Palmetto LCDs (transfixation required); implant packaged, no separate HCPCS.",
+        "notes": "PainTEQ's clinician page states LinQ and TRAQ are HCT/Ps 'regulated solely under Section 361' and 'not FDA-cleared or FDA-approved medical devices'. PainTEQ drove the 0775T (2022) and 27278 (2024) code applications using SECURE interim data. Company ranked on Inc. 5000 (2024). Office-based-lab 27278 physician payment ($13,834 in 2026) is the economic engine for interventional pain practices."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.painteq.com/clinician",
+        "https://www.painteq.com/clinician/news/ama-announces-category-1-billing-code-for-posterior-si-joint-fusion",
+        "https://www.prnewswire.com/news-releases/painteq-secures-majority-growth-recapitalization-co-led-by-signet-healthcare-partners--windham-capital-partners-302539471.html",
+        "PMID:38524688",
+        "PMID:40832586",
+        "PMID:40828365",
+        "PMID:42237893"
+      ],
+      "ownership_history": "PainTEQ (Tampa, FL) private; majority growth recapitalization co-led by Signet Healthcare Partners and Windham Capital Partners, Aug 2025.",
+      "unverified": true,
+      "challenge": "Tissue bank that processes LinQ not disclosed in any public source retrieved; 'DBM packed in the window' comes from physician/trade descriptions, not the IFU."
+    }
+  },
+  {
+    "file": "spine.json",
+    "kind": "product",
+    "id": "ifuse-intra-allograft",
+    "new_record": {
+      "id": "ifuse-intra-allograft",
+      "name": "iFuse INTRA V and iFuse INTRA X Allograft Implant Systems",
+      "company": "SI-BONE",
+      "category": "structural-allograft",
+      "composition": "INTRA V (formerly INTRA): single triangular cortical allograft; INTRA X: two small cylindrical bone allografts; both 'implantable bone products manufactured from sterilized recovered cadaveric bone tissue', placed intra-articularly through a ~2 cm posterior incision.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": null,
+        "us_market_year": 2024,
+        "on_label_indications": [
+          "Homologous use: structural allograft bone placed in the sacroiliac joint (HCT/P, no FDA-cleared indication)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "si-joint-fusion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No clinical study retrieved; SI-BONE's product pages cite only finite-element analysis of SI joint motion and state the results are 'not necessarily indicative of human clinical results'. The FY2025 10-K attributes reduced INTRA X demand to the 2024-2025 MAC LCDs precluding coverage of CPT 27278.",
+          "caveats": "Launched 2024 as a defensive entry into the interventional-pain posterior segment; no SI-BONE-sponsored trial lists the allograft products (NCT07565545 is the titanium INTRA Ti). Manufactured and distributed as HCT/Ps by an undisclosed third-party tissue bank."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT07565545",
+          "title": "iFuse INTRA Ti (titanium posterior-inferior intra-articular cortical-piercing implant) safety and effectiveness",
+          "year": 2026,
+          "design": "prospective-cohort",
+          "n": 120,
+          "finding": "Not yet recruiting (start Sep 2026); titanium successor billed under 27279, not the allograft.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "CPT 27278 (intra-articular, no cortical piercing) unless a cortical-piercing variant or hybrid (27279); ASC device-intensive 2026; non-covered by CGS/Noridian/Palmetto LCDs (transfixation required); implant packaged, no separate HCPCS.",
+        "notes": "10-K: 'Our iFuse INTRA/INTRA X implants are derived from human bone tissue ... manufactured and distributed by a third-party as HCT/P products'; 10-K maps INTRA X to CPT 27278 ($441 facility / $13,834 OBL physician fee 2026) and the titanium products to 27279. SI-BONE sells direct (89 territory managers, 83 clinical specialists, 320 agents, FY2025)."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1459839/000145983926000036/sibn-20251231.htm",
+        "https://assets.si-bone.com/doc/PM-12022-US-E-SI-Joint-Dysfunction-Facility-Coding-Guide-February-2026.pdf",
+        "https://si-bone.com/si-joint-pain-treatment/ifuse-implant-systems/ifuse-intra-v",
+        "https://si-bone.com/si-joint-pain-treatment/ifuse-implant-systems/ifuse-intra-x",
+        "https://si-bone.com/label"
+      ],
+      "unverified": true,
+      "challenge": "Tissue bank not named; no clinical data; the 2024 launch year comes from the 10-K product chronology, not a dated release."
+    }
+  },
+  {
+    "file": "spine.json",
+    "kind": "product",
+    "id": "silo",
+    "new_record": {
+      "id": "silo",
+      "name": "SiLO Posterior SI-Fusion System (allograft)",
+      "company": "Aurora Spine",
+      "category": "structural-allograft",
+      "composition": "Single dowel of human cortical bone with three circumferential ridges ('Dowel Anchorage Design') and dual vertical side channels that accept additional bone graft during insertion; posterior intra-articular, non-transfixing. SiLO TFX (K221047, Oct 2022; titanium cone plus ilium and sacrum screws, graft placed in the barrel) is the company's 510(k) transfixing hybrid and is a device, not a biologic.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": null,
+        "us_market_year": 2021,
+        "on_label_indications": [
+          "Homologous use: structural allograft bone placed in the sacroiliac joint (HCT/P, no FDA-cleared indication)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "si-joint-fusion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No peer-reviewed clinical series for the SiLO allograft was retrieved; the company reported >2,500 SiLO procedures in the US (June 2025 release) and a cadaveric study of SiLO TFX. Aurora launched 'Aurora Biologics' in late 2025 to sell biologics with its implants.",
+          "caveats": "Company-reported volume only; SiLO TFX revenue grew 135% in 2024 and aggregate SI implant sales +8.4% in 2025 (press releases), implying the titanium hybrid, not the allograft, is the growth product after the 2025 LCDs."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "CPT 27278 (intra-articular, no cortical piercing) unless a cortical-piercing variant or hybrid (27279); ASC device-intensive 2026; non-covered by CGS/Noridian/Palmetto LCDs (transfixation required); implant packaged, no separate HCPCS.",
+        "notes": "Aurora Spine (TSXV: ASG / OTC: ASAPF), FY2025 revenue $18.4M (+4.6%); SI implants are one of three product lines. Distributor-based sales."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://aurora-spine.com/silo/",
+        "https://www.orthoworld.com/aurora-spine-launches-silo-posterior-si-joint-fusion-system",
+        "https://fda.innolitics.com/device/K221047",
+        "https://seekingalpha.com/pr/20131299-aurora-spine-surpasses-milestone-of-2500-procedures-using-silo-si-joint-fusion-system",
+        "https://www.beckersspine.com/spine/aurora-spines-big-2025-10-updates-to-know-so-far/"
+      ],
+      "unverified": true,
+      "challenge": "Tissue processor not disclosed; no clinical outcomes paper found for the allograft; SiLO vs SiLO TFX volumes not separated."
+    }
+  },
+  {
+    "file": "spine.json",
+    "kind": "product",
+    "id": "cornerloc-grafts",
+    "new_record": {
+      "id": "cornerloc-grafts",
+      "name": "CornerLoc SI Joint Fusion grafts",
+      "company": "CornerLoc (Foundation Fusion Solutions, LLC)",
+      "category": "structural-allograft",
+      "composition": "Two machined cortical bone allografts placed orthogonally into the prepared posterior joint through two small incisions, with a demineralized bone matrix sponge; non-transfixing. The company's TransLoc 3D (K232878, Oct 2023) is a 3D-printed titanium modular posterior implant plus lateral-oblique screws (hybrid) and is a device.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": null,
+        "us_market_year": 2018,
+        "on_label_indications": [
+          "Homologous use: structural allograft bone placed in the sacroiliac joint (HCT/P, no FDA-cleared indication)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "si-joint-fusion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No peer-reviewed clinical series of the allograft retrieved; physician and hospital pages (UK HealthCare) describe the technique and a 12-month ossification timeline. CornerLoc's registered studies (NCT05916092 SPARTAN n=240; NCT06487936 registry) cover the titanium TransLoc 3D.",
+          "caveats": "Company founded 2017 (Tulsa, OK); evidence for the graft product is descriptive only; the hybrid TransLoc 3D exists because the posterior allograft alone is non-covered under the 2025 LCDs."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT05916092",
+          "title": "SPARTAN: post-market study of TransLoc 3D screw-only vs hybrid constructs",
+          "year": 2023,
+          "design": "prospective-cohort",
+          "n": 240,
+          "finding": "Company reports 91.7% improved in pain and function at 6 months (interim, unpublished).",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "CPT 27278 (intra-articular, no cortical piercing) unless a cortical-piercing variant or hybrid (27279); ASC device-intensive 2026; non-covered by CGS/Noridian/Palmetto LCDs (transfixation required); implant packaged, no separate HCPCS.",
+        "notes": "Private; sells surgery-ready trays to pain practices and ASCs. The DBM sponge is unbranded in all sources."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://cornerloc.com/",
+        "https://ukhealthcare.uky.edu/interventional-pain-medicine/treatments/cornerloc-sacroiliac-joint-fusion",
+        "https://fda.innolitics.com/device/K232878",
+        "https://www.orthoworld.com/cornerloc-launches-transloc-3d-si-joint-fusion/"
+      ],
+      "unverified": true,
+      "challenge": "Tissue bank and the DBM brand are not disclosed; launch year inferred from the 2017 founding and 2018-2019 physician adoption, not a dated release."
+    }
+  },
+  {
+    "file": "spine.json",
+    "kind": "product",
+    "id": "psif-allograft",
+    "new_record": {
+      "id": "psif-allograft",
+      "name": "PsiF Posterior SI Fusion allograft",
+      "company": "Omnia Medical",
+      "category": "structural-allograft",
+      "composition": "Structural allograft bone implant placed through a postero-inferior intra-articular trajectory into a decorticated channel in the articular joint, secured mortise-and-tenon in subchondral bone (Lynch 2022). PsiF DNA (510(k) May 2025, launched Jan 2026) is a titanium double-helix transfixing implant placed ilium-to-sacrum that is packed with graft and leverages self-harvested autograft; PsiFGuard (SpineGuard, K-cleared Oct 2024) is the drilling-guidance device.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": null,
+        "us_market_year": 2020,
+        "on_label_indications": [
+          "Homologous use: structural allograft bone placed in the sacroiliac joint (HCT/P, no FDA-cleared indication)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "si-joint-fusion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Lynch 2022 (PMID 36420375): 57-patient multicenter registry, back pain 6.8 to 3.8 at 6 months. Kaye 2024 (PMID 39087970): LSU Shreveport single-center series of 72 posterior fusions (83% LinQ, remainder PsiF), VAS -3.6 cm, no procedure-related AEs, 54% with one-year follow-up. Latif 2023 (PMID 37511749) is a technique paper for PsiF DNA.",
+          "caveats": "Small registries with company-affiliated authors; PsiF results are pooled with LinQ in the only independent series; no fusion imaging endpoint."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:36420375",
+          "title": "Minimally invasive inferior intra-articular SI joint fusion with allograft bone",
+          "year": 2022,
+          "design": "registry",
+          "n": 57,
+          "finding": "Back pain 6.8 to 3.8 at 6 months; all outcomes p<0.001; no fusion endpoint.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "PMID:39087970",
+          "title": "Posterior sacroiliac fusion surgery: retrospective single-center study (LinQ and PsiF)",
+          "year": 2024,
+          "design": "retrospective",
+          "n": 53,
+          "finding": "VAS -3.6 cm from 9.5; 38.5% with >=50% improvement; zero procedure-related AEs; 26% withdrawal.",
+          "sponsor_funded": false,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "CPT 27278 (intra-articular, no cortical piercing) unless a cortical-piercing variant or hybrid (27279); ASC device-intensive 2026; non-covered by CGS/Noridian/Palmetto LCDs (transfixation required); implant packaged, no separate HCPCS.",
+        "notes": "Omnia Medical (Morgantown, WV), private. The shift from the PsiF allograft to the 510(k) titanium PsiF DNA (transfixing, 27279-eligible) is the clearest example of a posterior vendor re-engineering around the 2025 LCDs."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://omniamedical.com/",
+        "https://www.orthoworld.com/omnia-medical-launches-psif-dna-system/",
+        "PMID:36420375",
+        "PMID:39087970",
+        "PMID:37511749",
+        "https://www.orthoworld.com/?p=75174"
+      ],
+      "unverified": true,
+      "challenge": "Omnia's site does not describe the original PsiF implant's material; its allograft nature is taken from Kaye 2024 ('sacroiliac fusion allograft implants ... PsiF System from Omnia Medical') and Lynch 2022. Tissue bank and launch year not disclosed."
+    }
+  },
+  {
+    "file": "spine.json",
+    "kind": "product",
+    "id": "vyrsa-pro",
+    "new_record": {
+      "id": "vyrsa-pro",
+      "name": "Vyrsa Pro cortical allograft (Vyrsa V1 titanium is the device)",
+      "company": "Globus Medical (via Nevro, via Vyrsa Technologies)",
+      "category": "structural-allograft",
+      "composition": "Custom cortical allograft implant for posterior SI joint fusion delivered through an 'inferior inlet' approach (Nevro acquisition release, Nov 2023). Vyrsa V1 (introduced end-2022) and Nevro1 (NCT06909292, 'SI transfixing and fusion system') are the titanium transfixing systems in the same portfolio.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": null,
+        "us_market_year": 2022,
+        "on_label_indications": [
+          "Homologous use: structural allograft bone placed in the sacroiliac joint (HCT/P, no FDA-cleared indication)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "si-joint-fusion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No clinical publication retrieved for Vyrsa Pro. Nevro's post-market study NCT06909292 (n=180, completed May 2025) covers the titanium Nevro1 transfixing system.",
+          "caveats": "Portfolio changed hands twice in 17 months (Vyrsa -> Nevro, 30 Nov 2023, $40M plus up to $35M milestones; Nevro -> Globus, closed 3 Apr 2025, ~$250M); current Globus branding and catalog status of the allograft not confirmed."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT06909292",
+          "title": "Post-market multicenter study of the Nevro1 SI transfixing and fusion system",
+          "year": 2025,
+          "design": "prospective-cohort",
+          "n": 180,
+          "finding": "Completed May 2025; results not posted; titanium transfixing device, not the allograft.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "CPT 27278 (intra-articular, no cortical piercing) unless a cortical-piercing variant or hybrid (27279); ASC device-intensive 2026; non-covered by CGS/Noridian/Palmetto LCDs (transfixation required); implant packaged, no separate HCPCS.",
+        "notes": "Globus now owns both a lateral HA-coated screw line (SI-LOK/SI-LOK SELECT) and the Vyrsa posterior portfolio; Globus product pages name no graft brand for either, so the Osteocel-with-SI-LOK pairing in the brief is unverified."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.biospace.com/nevro-announces-acquisition-of-vyrsa-technologies",
+        "https://s28.q4cdn.com/260621474/files/doc_news/2025/03/Globus-Medical-completes-acquisition-of-Nevro-Corp.pdf",
+        "https://www.beckersspine.com/spinal-tech/globus-medical-completes-250m-nevro-acquisition/"
+      ],
+      "ownership_history": "Vyrsa Technologies (founded 2021) -> Nevro Corp (30 Nov 2023) -> Globus Medical (3 Apr 2025).",
+      "unverified": true,
+      "challenge": "Vyrsa Pro's current availability under Globus, tissue bank and procedure volumes are not public."
+    }
+  }
+]

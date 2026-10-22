@@ -1,0 +1,1183 @@
+{
+  "schema_note": "Companion file to SCHEMA.md: bd-lens layer (not product records). Figures labelled third-party estimate where sourced from market reports; 'unverified': true where a fact rests on memory or a secondary page.",
+  "generated": "2026-10-21",
+  "companies": [
+    {
+      "id": "medtronic",
+      "name": "Medtronic (Spine & Biologics; Medtronic Sofamor Danek USA)",
+      "hq": "Minneapolis, MN (Memphis, TN spine/biologics ops)",
+      "public_or_private": "public (NYSE: MDT)",
+      "orthobiologics_portfolio": [
+        "Infuse Bone Graft (rhBMP-2/ACS; PMA P000058; TLIF indication added via P000058/S096, FDA Feb 13 2026)",
+        "Infuse/Mastergraft Posterolateral Revision Device",
+        "Mastergraft ceramic family",
+        "Grafton DBM family (Orthoblend, Paste, Matrix PLF)",
+        "MagnetOs (Kuros) as exclusive US spine sales agent, 5-yr agreement from Jan 2025"
+      ],
+      "sales_model": "direct (own spine sales force); acts as sales agent for Kuros MagnetOs in designated US spine geographies",
+      "notes": "Orthoworld estimates Medtronic as the #1 orthobiologics vendor at $563.1M 2025 sales (+3%). Infuse in TLIF received Medicare NTAP effective Oct 1 2026 (max $4,396.60 FY2027; code XW0U0CC/XW0U3CC/XW0U4CC). Class 2 recall of Grafton Orthoblend/Paste batch A62881 initiated Aug 12 2026 (donor bone positive for Clostridium butyricum).",
+      "sources": [
+        "https://www.orthoworld.com/?p=67921",
+        "https://news.medtronic.com/2026-09-02-INFUSE-Bone-Graft-for-TLIF-receives-eligibility-for-Medicare-New-Technology-Add-on-Payment,-Advancing-Reimbursement-Support-for-Hospitals-and-Spine-Surgeons",
+        "https://www.medtronic.com/content/dam/medtronic-wide/public/united-states/customer-support-services/reimbursement/cst-infuse-NATP-guide.pdf",
+        "https://www.medtechdive.com/news/medtronic-kuros-partnership-spine-fusion/736878/",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=222236",
+        "https://www.cms.gov/files/document/spring-2026-update-pcs-questions-answers-updated-03-23-2026.pdf"
+      ]
+    },
+    {
+      "id": "stryker",
+      "name": "Stryker (Spine; Trauma & Extremities biologics)",
+      "hq": "Kalamazoo / Portage, MI",
+      "public_or_private": "public (NYSE: SYK)",
+      "orthobiologics_portfolio": [
+        "Vitoss, Vitoss BA, Vitoss BA2X, Vitoss BBTrauma (beta-TCP/bioactive glass; ex-Orthovita 2011)",
+        "Augment Bone Graft / Augment Injectable (rhPDGF-BB/beta-TCP; ex-Wright Medical 2020; OPPS pass-through C1734 from Jan 1 2020)",
+        "BIO4 viable bone matrix (made by Osiris, now Smith+Nephew; marketed by Stryker)",
+        "Pro-Dense, Pro-Dense LoVisc, Pro-Stim (calcium sulfate/phosphate; ex-Wright)",
+        "OsteoSet (calcium sulfate)",
+        "FusionFlex, Ignite (DBM; ex-Wright)",
+        "AlloFiber, AlloMatrix, DBM, HydroSet XT, Tensix, Traditional allografts, X-Ream"
+      ],
+      "sales_model": "direct (spine and trauma/extremities direct reps), with some agency territories",
+      "notes": "Orthoworld estimates $328.2M 2025 orthobiologics sales (+1.3%). BIO4 is a textbook case of a brand marketed by one company and manufactured by a tissue processor owned by a competitor (Osiris acquired by Smith+Nephew in 2019).",
+      "sources": [
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html",
+        "https://www.stryker.com/content/dam/stryker/foot-and-ankle/products/augment/resources/Augment-FAQ--Device-Pass-Through-Payment.pdf",
+        "https://www.orthoworld.com/?p=67921",
+        "https://www.beckersspine.com/?p=40479",
+        "https://medicalpolicy.bcbsok.com/content/dam/bcbs/medicalpolicy/pdf/surgery/SUR703.051_2026-04-15.pdf"
+      ]
+    },
+    {
+      "id": "jnj-depuy-synthes",
+      "name": "Johnson & Johnson MedTech / DePuy Synthes",
+      "hq": "Raynham, MA / West Chester, PA",
+      "public_or_private": "public (NYSE: JNJ)",
+      "orthobiologics_portfolio": [
+        "ViviGen cellular allograft (LifeNet Health; distributed by DePuy Synthes) [unverified: not confirmed on J&J site this sweep]",
+        "chronOS beta-TCP",
+        "Fibergraft bioactive glass (ex-Prosidyon) [unverified]",
+        "DBX DBM (MTF Biologics; MTF lists DePuy Synthes fixation/trephine compatibility)",
+        "NOVOSIS (CGBIO, rhBMP-2 on a carrier; exclusive US/Canada/Australia distribution signed May 26 2026; US spine IDE enrolling, not FDA approved)",
+        "Confidence spinal cement (vertebral augmentation)"
+      ],
+      "sales_model": "direct (spine and trauma direct reps)",
+      "notes": "Orthoworld estimates $343.7M 2025 orthobiologics sales (-1.8%), the only top-10 decliner. NOVOSIS deal signals a growth-factor strategy to compete with Infuse; it is investigational in the US.",
+      "unverified": true,
+      "sources": [
+        "https://www.jnjmedtech.com/en-US/company/depuy-synthes/news/depuy-synthes-enters-exclusive-us-canada-and-australia-distribution-agreement-cgbios",
+        "https://www.businesswire.com/news/home/20260526608509/en/",
+        "https://www.orthoworld.com/?p=67921",
+        "https://www.mtfbiologics.org/our-products",
+        "https://www.jnjmedtech.com/en-US/specialty/spine"
+      ]
+    },
+    {
+      "id": "zimmer-biomet",
+      "name": "Zimmer Biomet",
+      "hq": "Warsaw, IN",
+      "public_or_private": "public (NYSE: ZBH)",
+      "orthobiologics_portfolio": [
+        "Bone grafting products (DBM/allograft, synthetics)",
+        "Platelet/plasma concentration systems and blood-and-bone-marrow-aspirate (BBMA) concentration system",
+        "Human tissue allograft offering (PrimaGen Advanced Allograft cited by UHC/ECRI)",
+        "Genex bone graft substitute (Biocomposites; exclusive US distribution)"
+      ],
+      "sales_model": "hybrid; actively converting 1099 contractor territories to direct reps (CEO: avg rep ~7 cases/week vs 16-17 at lead competitor)",
+      "notes": "FY2025 orthobiologics sales $148.7M (+4.2%); 1Q26 $25.3M (+7.6%). Orthoworld notes ZB cited reimbursement changes/channel restructuring/budget issues in biologics.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1136869/000119312526059853/zbh-20251231.htm",
+        "https://www.orthoworld.com/zimmer-biomet-transformation-off-to-strong-start-in-2026/",
+        "https://www.zimmerbiomet.com/medical-professionals/biologics.html",
+        "https://www.beckersspine.com/biologics/zimmer-biomet-inks-exclusive-deal-with-bone-graft-developer/"
+      ]
+    },
+    {
+      "id": "globus-medical",
+      "name": "Globus Medical (incl. NuVasive since Sep 1 2023; Nevro since Apr 3 2025)",
+      "hq": "Audubon, PA",
+      "public_or_private": "public (NYSE: GMED)",
+      "orthobiologics_portfolio": [
+        "Osteocel Plus / Osteocel Pro cellular allograft (third-party tissue bank supply; ex-NuVasive)",
+        "ViaCell cellular allograft",
+        "Attrax synthetic (ex-NuVasive; predicate for MagnetOs) [status in current catalog unverified]",
+        "Propel DBM (ex-NuVasive) [unverified]",
+        "Kinex / Kinex Plus bioactive bone void fillers (strip/putty/gel not for spine)",
+        "DBM/allograft line",
+        "Amniotic barrier",
+        "Harvest autologous biologics systems (Harvest Biologics acquired Q4 2022)"
+      ],
+      "sales_model": "hybrid: direct employed reps plus exclusive independent distributors paid on commission; 350+ reps added from NuVasive",
+      "notes": "No Globus-Kuros transaction exists; MagnetOs is sold by Kuros with Medtronic as spine sales agent. Globus's 2025 deal was Nevro ($5.85/share). 10-K does not break out biologics revenue.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1237831/000162828026011209/gmed-20251231.htm",
+        "https://www.globusmedical.com/products/biologics/",
+        "https://www.sec.gov/Archives/edgar/data/1237831/000119312525071923/d931031dex991.htm",
+        "https://gabelli.com/research/orthopedics-market-2026/"
+      ]
+    },
+    {
+      "id": "orthofix",
+      "name": "Orthofix Medical (incl. SeaSpine, merged Jan 2023; IsoTis OrthoBiologics unit)",
+      "hq": "Lewisville, TX; biologics manufacturing Irvine, CA (IsoTis OrthoBiologics)",
+      "public_or_private": "public (Nasdaq: OFIX)",
+      "orthobiologics_portfolio": [
+        "Trinity Elite and Virtuos Lyograft cellular allografts (MTF Biologics; exclusive worldwide marketing rights)",
+        "FiberFuse (MTF; exclusive US)",
+        "Strand / Strand Plus demineralized fibers (IsoTis)",
+        "Evo3 / Evo3c (Accell), Torrent, DynaGraft II, OrthoBlast II, Legacy Flowable DBM putties",
+        "Cove, Mozaik synthetics",
+        "Ballast, NorthStar/Flash facet fusion, RAPID, O-Genesis procedure kits",
+        "Versashield",
+        "OsteoCove / OsteoStrand naming per earnings call [unverified]"
+      ],
+      "sales_model": "independent distributors and sales agents managed by regional/territory business managers for spine implants and biologics; hybrid direct/distributor for bone growth therapies; 2025-2026 'distributor transition' to larger, more capital-efficient commercial partners",
+      "notes": "No divestiture or strategic review of biologics found; Q2 2026 call says biologics moved from double-digit declines to roughly flat and the company is investing in evidence (OsteoCov, Virtuos, Strength+ registry). 1Q25 orthobiologics $33.7M (-3.2%). FDA warning letter to IsoTis OrthoBiologics (Irvine) Feb 24 2026 over Accell family particulate CAPA, press validation and risk analysis (possible particulate contamination 2008-2024). 10-K: certain DBM products priced above competitors; GPOs require discounts.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/884624/000119312526065189/ofix-20251231.htm",
+        "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/isotis-orthobiologics-inc-723370-02242026",
+        "https://www.orthoworld.com/orthofix-distributor-transition-aimed-at-unlocking-growth/",
+        "https://www.fool.com/earnings/call-transcripts/2026/08/12/orthofix-ofix-q2-2026-earnings-call-transcript/",
+        "https://www.sec.gov/Archives/edgar/data/0000884624/000119312526333822/ofix-20260630.htm"
+      ]
+    },
+    {
+      "id": "bioventus",
+      "name": "Bioventus",
+      "hq": "Durham, NC",
+      "public_or_private": "public (Nasdaq: BVS)",
+      "orthobiologics_portfolio": [
+        "OsteoAMP allograft growth-factor bone graft",
+        "Signafuse bioactive bone graft (bi-phasic ceramic + bioactive glass)",
+        "Exogen ultrasound bone stimulator (Restorative Therapies)",
+        "MOTYS (development-stage) [unverified status]"
+      ],
+      "sales_model": "hybrid (direct and independent agents) [sales-model detail unverified this sweep]",
+      "notes": "Surgical Solutions (incl. bone graft substitutes) $203.7M in 2025 (+7.6%); Orthoworld estimates total orthobiologics incl. HA injections at $408.3M (+5.4%). Divested Advanced Rehabilitation to Accelmed Dec 31 2024 ($45M).",
+      "unverified": true,
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1665988/000166598826000010/bioventusex-991q42025.htm",
+        "https://www.massdevice.com/bioventus-divests-advanced-rehabilitation-business-to-pe-firm/",
+        "https://www.orthoworld.com/?p=67921"
+      ]
+    },
+    {
+      "id": "smith-nephew",
+      "name": "Smith+Nephew (Osiris Therapeutics)",
+      "hq": "Watford, UK; Osiris in Columbia, MD",
+      "public_or_private": "public (LSE/NYSE: SNN)",
+      "orthobiologics_portfolio": [
+        "BIO4 viable bone matrix (manufactured by Osiris; marketed by Stryker)",
+        "Grafix / Grafix Core placental products",
+        "Cartiform cartilage allograft",
+        "REGENETEN bioinductive implant, CARTIHEAL Agili-C (sports med biologics, not bone graft)"
+      ],
+      "sales_model": "direct (sports medicine, trauma); BIO4 goes to market through Stryker",
+      "notes": "S+N bought Osiris for $660M in 2019; it is a manufacturer/supplier in bone grafting more than a branded seller.",
+      "sources": [
+        "https://www.beckersspine.com/?p=40479",
+        "https://www.tipranks.com/news/press-releases/smithnephew-unveils-expanded-sports-medicine-portfolio-to-enable-biological-healing-at-aaos-2024-annual-meeting"
+      ]
+    },
+    {
+      "id": "arthrex",
+      "name": "Arthrex",
+      "hq": "Naples, FL",
+      "public_or_private": "private",
+      "orthobiologics_portfolio": [
+        "AlloSync DBM family (Pure, Expand, cancellous sponges, cortical fibers, putty/gel/paste, wedges)",
+        "Angel cPRP and bone marrow processing system",
+        "ACP / ACP Max PRP double-syringe",
+        "BioSurge kits (AlloSync + Angel)",
+        "JRF Ortho fresh osteochondral allografts (local support by Arthrex)"
+      ],
+      "sales_model": "direct via independent Arthrex agencies (exclusive regional agencies) [channel detail unverified]",
+      "notes": "Orthoworld estimates $158.9M 2025 orthobiologics sales (+3.8%).",
+      "unverified": true,
+      "sources": [
+        "https://www.arthrex.com/orthobiologics",
+        "https://ad.arthrex.com/knee/allosync-allograft-bone",
+        "https://www.orthoworld.com/?p=67921",
+        "https://sportsmedicineweekly.com/interviews/treating-cartilage-defects-with-allograft-tissue/"
+      ]
+    },
+    {
+      "id": "enovis",
+      "name": "Enovis (DJO Surgical, Novastep, Mathys)",
+      "hq": "Wilmington, DE",
+      "public_or_private": "public (NYSE: ENOV)",
+      "orthobiologics_portfolio": [
+        "OssiGraft / OssiGraft Prime cryopreserved viable bone allograft (Ossium Health; distribution partnership)",
+        "NovaBone bioactive-glass synthetics referenced on Feb 2026 earnings call (NovaBone itself sold to Isto Aug 2026) [relationship unverified]",
+        "Manafuse bone growth stimulator (2025)"
+      ],
+      "sales_model": "hybrid (direct + agencies) in foot & ankle",
+      "unverified": true,
+      "notes": "Enovis is a distributor rather than a biologics manufacturer in bone grafting.",
+      "sources": [
+        "https://www.orthoworld.com/enovis-and-ossium-partner-for-ossigraft-distribution",
+        "https://www.marketbeat.com/instant-alerts/enovis-q4-earnings-call-highlights-2026-02-28/",
+        "https://www.beckersspine.com/?p=66554"
+      ]
+    },
+    {
+      "id": "baxter",
+      "name": "Baxter International (Advanced Surgery)",
+      "hq": "Deerfield, IL",
+      "public_or_private": "public (NYSE: BAX)",
+      "orthobiologics_portfolio": [
+        "Actifuse ABX / Shape / MIS / Flow (silicate-substituted calcium phosphate; ex-ApaTech 2010, $240M upfront + $90M milestones)",
+        "Altapore"
+      ],
+      "sales_model": "direct (Advanced Surgery)",
+      "notes": "No divestiture of Actifuse found; the US product catalog still lists Actifuse. Treat 'Baxter divested spine biologics' as unsupported.",
+      "sources": [
+        "https://catalog.baxter.com/baxterUS/en/Products/Surgical-Equipment-%26-Technologies/ACTIFUSE-bone-graft-substitute/p/ACTIFUSE",
+        "https://www.fiercebiotech.com/biotech/baxter-international-and-apatech-ltd-announce-definitive-agreement-baxter-to-acquire-all",
+        "https://www.medtechdive.com/news/fda-clears-new-version-of-baxter-bone-graft-substitute/531814/"
+      ]
+    },
+    {
+      "id": "integra",
+      "name": "Integra LifeSciences (historical orthobiologics owner)",
+      "hq": "Princeton, NJ",
+      "public_or_private": "public (Nasdaq: IART)",
+      "orthobiologics_portfolio": [
+        "None in current orthobiologics catalog: Accell Evo3, OrthoBlast, DynaGraft, Mozaik, IsoTis OrthoBiologics went with the 2015 SeaSpine spin-off and are now Orthofix products",
+        "Legacy HCPCS C9359/C9362 (Integra Mozaik/OS collagen-ceramic void filler, per 0.5 cc) still exist in payer code tables"
+      ],
+      "sales_model": "n/a for orthobiologics (direct in its remaining neuro/tissue businesses)",
+      "notes": "The 2015 SeaSpine spin-off year is from memory and not re-verified this sweep; Orthofix 10-K confirms Evo3/Mozaik/IsoTis are Orthofix assets today. Integra sold extremity orthopedics to Smith+Nephew in Jan 2021 ($240M).",
+      "unverified": true,
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/884624/000119312526065189/ofix-20251231.htm",
+        "https://hcpcs.codes/c-codes/C9359/",
+        "https://www.biospace.com/integra-lifesciences-completes-the-sale-of-its-extremity-orthopedics-business-to-smith-nephew"
+      ]
+    },
+    {
+      "id": "isto-biologics",
+      "name": "Isto Biologics (Arteriocyte, Isto Technologies, Progenicare, Biologica Technologies, NovaBone)",
+      "hq": "Hopkinton, MA",
+      "public_or_private": "private (Keensight Capital growth-buyout investment ~Oct 2025)",
+      "orthobiologics_portfolio": [
+        "Magellan autologous concentration system (PRP, BMAC, PPP)",
+        "Precise PRP",
+        "Influx allograft line (Influx, ProteiOS, Fibrant, SPARC, PLUS, Sponge), OsseoGEN",
+        "InQu biosynthetic bone graft",
+        "NovaBone bioactive-glass synthetics (acquired from Halma plc, announced Aug 4 2026; >40 countries)"
+      ],
+      "sales_model": "rep-based (independent agents/distributors with direct support) [unverified]",
+      "notes": "First acquisition after Keensight investment; combined Biologica (Oct 2023). Terms undisclosed.",
+      "unverified": true,
+      "sources": [
+        "https://www.newswire.com/news/isto-biologics-strengthens-its-bone-graft-substitutes-platform-with-the",
+        "https://www.istobiologics.com/",
+        "https://www.beckersspine.com/biologics/isto-biologics-acquires-bone-graft-company/",
+        "https://www.cbinsights.com/investor/biologica-technologies"
+      ]
+    },
+    {
+      "id": "cerapedics",
+      "name": "Cerapedics",
+      "hq": "Westminster, CO",
+      "public_or_private": "private (venture-backed)",
+      "orthobiologics_portfolio": [
+        "i-FACTOR P-15 peptide enhanced bone graft (PMA P140019, Nov 3 2015; ACDF)",
+        "PearlMatrix P-15 (PMA approved Jun 23 2025 for lumbar fusion; expanded indications ALIF/PLIF/OLIF/LLIF Jan 13 2026)"
+      ],
+      "sales_model": "direct plus independent agents [unverified]; Vizient supplier agreement claimed to reach 65%+ of US acute-care providers (secondary source)",
+      "notes": "Only company with two PMA-approved spine biologics. 2026 reimbursement guide confirms CPT 20930 is work RVU 0.00, OPPS SI N, ASC N1 (packaged).",
+      "unverified": true,
+      "sources": [
+        "https://info.cerapedics.com/hubfs/2026%20Reimbursement%20Guide%20PearlMatrix%C2%AE%20%26%20i-FACTOR%C2%AE%20P-15.pdf?hsLang=en",
+        "https://cerapedics.com/news",
+        "https://yespress.io/valeska-schroeder.md",
+        "https://www.aetna.com/cpb/medical/data/400_499/0411.html"
+      ]
+    },
+    {
+      "id": "bonesupport",
+      "name": "BONESUPPORT Holding AB",
+      "hq": "Lund, Sweden; US HQ Boston area",
+      "public_or_private": "public (Nasdaq Stockholm: BONEX)",
+      "orthobiologics_portfolio": [
+        "CERAMENT BVF (calcium sulfate/hydroxyapatite)",
+        "CERAMENT G (gentamicin-eluting; De Novo 2022) - US driver",
+        "CERAMENT V (vancomycin; US De Novo pending, questions due end Aug 2026)",
+        "CERAMENT for Spine (BVF launch on track)"
+      ],
+      "sales_model": "US: direct sales force with commissioned agents (selling expenses + 'sales commissions and fees' SEK 95.3M in Q2 2026); EUROW: direct, hybrid and distributor markets",
+      "notes": "Q2 2026 net sales SEK 355.7M (+25% reported, +30% CER); US SEK 295.2M (+25%), US CERAMENT G SEK 243.5M; US gross margin 93.8%. 2025 US growth 36% (46% CER). FY2027 IPPS final rule retitles DRGs 403/463/474/477/480/492/616/628 to include 'insertion of antibiotic-eluting bone void filler', paying those cases at the higher severity level from Oct 1 2026. HCPCS C1602 (antimicrobial-eluting absorbable bone void filler) is an active OPPS device pass-through category in CY2026.",
+      "sources": [
+        "https://storage.mfn.se/a/bonesupport-holding/d54f2be9-7207-476b-9823-b7a345a4a543/bonesupport-presentation-q2-2026.pdf",
+        "https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx",
+        "https://www.cms.gov/files/document/mm14361-hospital-outpatient-prospective-payment-system-january-2026-update.pdf",
+        "https://www.orthoworld.com/?p=67921"
+      ]
+    },
+    {
+      "id": "biocomposites",
+      "name": "Biocomposites Ltd",
+      "hq": "Keele, UK; US office Wilmington, NC",
+      "public_or_private": "private",
+      "orthobiologics_portfolio": [
+        "Stimulan (antibiotic-loadable calcium sulfate)",
+        "Genex (calcium sulfate/phosphate; exclusive US distribution via Zimmer Biomet)",
+        "NanoBone / SBX Putty (Artoss GmbH acquired Jun 2023)"
+      ],
+      "sales_model": "hybrid: direct in US for Stimulan plus distribution partners (Zimmer Biomet for Genex) [unverified]",
+      "unverified": true,
+      "notes": "",
+      "sources": [
+        "https://www.orthoworld.com/biocomposites-acquires-artoss-and-nanobone-technology",
+        "https://www.beckersspine.com/biologics/zimmer-biomet-inks-exclusive-deal-with-bone-graft-developer/"
+      ]
+    },
+    {
+      "id": "kuros",
+      "name": "Kuros Biosciences",
+      "hq": "Schlieren, Switzerland; US: Boston, MA",
+      "public_or_private": "public (SIX: KURN)",
+      "orthobiologics_portfolio": [
+        "MagnetOs Granules, Putty, Easypack Putty, Flex Matrix, MIS Delivery System (biphasic calcium phosphate with submicron needle-shaped surface; 510(k) with NuVasive Attrax as predicate)"
+      ],
+      "sales_model": "hybrid: own direct US sales force plus Medtronic as exclusive sales agent in designated US spine geographies (5-yr agreement, Jan 2025); extremities via dedicated team and distributors",
+      "notes": "2025 sales USD 146.1M (+72%); MagnetOs USD 143.9M; US >$140M per Orthoworld; 100,000 surgeries; 2026 guidance >=35% growth; 2028 target USD 300-330M. Cites iData Research Feb 2025 for a USD 1.3B extremities market. Not acquired by Globus.",
+      "sources": [
+        "https://www.biospace.com/press-releases/kuros-biosciences-delivers-72-year-over-year-sales-growth-reaching-usd-146-1-million-for-2025",
+        "https://www.medtechdive.com/news/medtronic-kuros-partnership-spine-fusion/736878/",
+        "https://www.orthoworld.com/?p=67921",
+        "https://kurosbio.gcs-web.com/news-releases/news-release-details/kuros-biosciences-debuts-commercial-launch-magnetos-mis-delivery"
+      ]
+    },
+    {
+      "id": "elutia-berkeley",
+      "name": "Elutia (formerly Aziyo Biologics) -> Berkeley Biologics LLC (GNI Group)",
+      "hq": "Silver Spring, MD (Elutia); Richmond, CA (Berkeley Biologics)",
+      "public_or_private": "Elutia public (Nasdaq: ELUT); Berkeley Biologics subsidiary of GNI Group",
+      "orthobiologics_portfolio": [
+        "ViBone / Viable Bone Matrix, FiberCel / Fiber Viable Bone Matrix, OsteGro V / Osteo Viable Bone Matrix, Cellular Fiber Matrix - sold to Berkeley Biologics Sep 2023 (up to $35M: $15M at close + $20M earnout)"
+      ],
+      "sales_model": "n/a (Elutia exited); Berkeley Biologics private-label/OEM supplier [unverified]",
+      "notes": "FDA CBER warning letter to Berkeley Biologics Jun 28 2024: VBM, CFM/EFM and OVM do not meet 361 criteria (not minimally manipulated; combined with another article) and are unapproved biologics; CGMP and donor-screening (sepsis) failures tied to the 2021 FiberCel tuberculosis outbreak. Jul 2023 recall of viable bone matrix products preceded the sale.",
+      "sources": [
+        "https://www.globenewswire.com/news-release/2023/09/18/2745185/0/en/Elutia-Announces-Sale-of-Orthobiologics-Business-Unit-for-Cash-Proceeds-of-Up-to-35-Million.html",
+        "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/berkeley-biologics-llc-previously-operating-elutia-inc-orthobiologics-business-unit-formerly-aziyo",
+        "https://www.orthoworld.com/elutia-sells-off-orthobiologics-business-unit/"
+      ]
+    },
+    {
+      "id": "spinal-elements",
+      "name": "Spinal Elements",
+      "hq": "Carlsbad, CA",
+      "public_or_private": "private (Kohlberg & Co.)",
+      "orthobiologics_portfolio": [
+        "Orios XT / Orios Moldable viable bone matrix",
+        "Nevos Fiber XT, Nevos Fiber Strips XT, Nevos DBM Putty, Hero DBM Putty, Telegraft DBM Fiber Putty",
+        "Vidross XG, Stylos BA bioactive glass",
+        "Provenda placental membrane",
+        "Hero Allograft, Allos CC7, Allos MC5, Nevos Sponge, Hero Granules (structural/cancellous allograft)",
+        "TeleGraft MIS graft delivery"
+      ],
+      "sales_model": "independent distributors [unverified]",
+      "unverified": true,
+      "notes": "Ownership (Kohlberg) from memory, not re-verified.",
+      "sources": [
+        "https://spinalelements.com/products/biologics/"
+      ]
+    },
+    {
+      "id": "spineart",
+      "name": "SpineArt",
+      "hq": "Geneva, Switzerland; US Irvine, CA",
+      "public_or_private": "private",
+      "orthobiologics_portfolio": [
+        "Site lists a 'Biologics' solution category but names no products; US bone graft offering not verified"
+      ],
+      "sales_model": "unknown",
+      "unverified": true,
+      "notes": "Treat as a minor/unknown US biologics player pending verification.",
+      "sources": [
+        "https://www.spineart.com/"
+      ]
+    },
+    {
+      "id": "alphatec",
+      "name": "Alphatec (ATEC)",
+      "hq": "Carlsbad, CA",
+      "public_or_private": "public (Nasdaq: ATEC)",
+      "orthobiologics_portfolio": [
+        "AlphaGRAFT DBM, DBM Fibers, Cellular Bone Matrix (growth-factor-enriched)",
+        "3D ProFuse bioscaffold",
+        "BioCORE moldable mineral-collagen synthetic",
+        "Amnioshield amniotic barrier",
+        "Allograft spacers"
+      ],
+      "sales_model": "hybrid: strategic independent distributors and direct sales reps",
+      "notes": "",
+      "sources": [
+        "https://gabelli.com/research/orthopedics-market-2026/",
+        "https://www.datanyze.com/companies/atec/5312781"
+      ]
+    },
+    {
+      "id": "xtant-medical",
+      "name": "Xtant Medical (Bacterin + X-spine; Surgalign hardware/biologics assets 2023; RTI/Pioneer nanOss)",
+      "hq": "Belgrade, MT",
+      "public_or_private": "public (NYSE American: XTNT)",
+      "orthobiologics_portfolio": [
+        "OsteoSponge, OsteoSelect DBM Putty (510(k) BVF), OsteoSelect PLUS, 3Demin",
+        "OsteoVive Plus cellular allograft",
+        "OsteoFactor Pro allogeneic growth factor (launched May 28 2025; BioHorizons dental private label 'Prolifica' Aug 2026)",
+        "Trivium DBM (2025)",
+        "nanOss line incl. nanOss Strata (ex-RTI/Pioneer)",
+        "FibreX",
+        "SimpliGraft/SimpliMax (license terminated Dec 31 2025)",
+        "CollagenX wound product"
+      ],
+      "sales_model": "distributor-led: >670 commissioned independent sales agents and stocking agents as of Dec 31 2025, supported by 28 direct sales & marketing employees (151 total); plus private-label/OEM channel (lower margin) and GPO/IDN national accounts program",
+      "notes": "Bought Surgalign hardware/biologics out of bankruptcy for $5M (Aug 10 2023) after Coflex/CoFix (~$17M, Mar 2023); sold Coflex/CoFix and OUS Paradigm Spine to Companion Spine for $19.2M (Dec 2025). 2025 license revenue $18.7M. 10-K cites CMS skin-substitute rate $127.14/cm2 and warns OEM-channel sales may not repeat in 2026 because of a reimbursement change.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1453593/000149315226013792/form10-k.htm",
+        "https://investor.xtantmedical.com/node/14846",
+        "https://www.biospace.com/xtant-medical-completes-acquisition-of-surgalign-s-hardware-and-biologics-business",
+        "https://www.medtechdive.com/news/augmedics-acquire-surgalign-assets-bankruptcy/689576/",
+        "https://www.beckersspine.com/?p=69649"
+      ]
+    },
+    {
+      "id": "surgalign-rti-evergen",
+      "name": "RTI Surgical -> Surgalign (bankrupt 2023) ; RTI's tissue business -> Evergen (CDMO)",
+      "hq": "Alachua, FL (Evergen); Deerfield, IL (Surgalign)",
+      "public_or_private": "Surgalign public until Ch.11 Jun 2023; Evergen private (Montagu-backed) [Montagu ownership unverified]",
+      "orthobiologics_portfolio": [
+        "Evergen: allograft mineralized/demineralized bone, machined bone implants, SIS/collagen biomaterials (Cook Biotech, Collagen Solutions) - sold as CDMO/private label to brands",
+        "Surgalign spine hardware + biologics (nanOss etc.) -> Xtant (Aug 2023); digital health -> Augmedics ($900K)"
+      ],
+      "sales_model": "Evergen: B2B contract manufacturer/private label (no branded end-user sales); Surgalign had used independent distributors",
+      "notes": "RTI's OEM tissue business was sold to Montagu in 2020 and the public remainder became Surgalign, which the SEC charged with revenue pull-forward (settled $2M) before Chapter 11. Evergen is the CDMO behind many branded allografts.",
+      "unverified": true,
+      "sources": [
+        "https://www.beckersspine.com/?p=56684",
+        "https://mtec-sc.org/life-sciences/evergen",
+        "https://www.medtechdive.com/news/augmedics-acquire-surgalign-assets-bankruptcy/689576/",
+        "https://www.mddionline.com/digital-health/surgalign-s-assets-find-new-homes-after-bankruptcy"
+      ]
+    },
+    {
+      "id": "mtf-biologics",
+      "name": "MTF Biologics (Musculoskeletal Transplant Foundation)",
+      "hq": "Edison, NJ",
+      "public_or_private": "private non-profit tissue bank",
+      "orthobiologics_portfolio": [
+        "Trinity ELITE (sold by Orthofix)",
+        "DBX (DBM; historically DePuy Synthes)",
+        "fiberFUSE (Orthofix US)",
+        "Virtuos Lyograft (Orthofix; per Orthofix 10-K)",
+        "FlexHD, CONFORM, Kore Fiber, Prime HD, ENHANCE",
+        "Luminary/Oracle/ACF spacers, VerteFill, Arch-ODL (DePuy Synthes system compatibility)"
+      ],
+      "sales_model": "processor supplying branded distribution partners (Orthofix, DePuy Synthes) plus own sales",
+      "notes": "Orthoworld estimates $525.0M 2025 sales (+2.5%), #2 in orthobiologics - larger than any device company except Medtronic. Orthofix's Trinity rights run through 2032 (2022 renewal).",
+      "sources": [
+        "https://www.mtfbiologics.org/our-products",
+        "https://www.sec.gov/Archives/edgar/data/884624/000119312526065189/ofix-20251231.htm",
+        "https://www.orthoworld.com/?p=67921",
+        "https://scientificspine.com/materials/orthofix"
+      ]
+    },
+    {
+      "id": "lifenet-health",
+      "name": "LifeNet Health",
+      "hq": "Virginia Beach, VA",
+      "public_or_private": "private non-profit tissue bank",
+      "orthobiologics_portfolio": [
+        "ViviGen / ViviGen Formable cellular allograft (DePuy Synthes distribution) [unverified this sweep]",
+        "Optium DBM, spine/trauma/CMF allograft franchises",
+        "Nexeon vascular allograft"
+      ],
+      "sales_model": "processor + partner distribution (DePuy Synthes) and own sales",
+      "notes": "Orthoworld estimates $351.0M 2025 sales (+3.5%).",
+      "unverified": true,
+      "sources": [
+        "https://www.lifenethealth.org/",
+        "https://www.orthoworld.com/?p=67921"
+      ]
+    },
+    {
+      "id": "allosource",
+      "name": "AlloSource",
+      "hq": "Centennial, CO",
+      "public_or_private": "private non-profit tissue bank",
+      "orthobiologics_portfolio": [
+        "AlloFuse DBM family",
+        "AlloStem (adipose-MSC seeded allograft; cited in BCBS policy)",
+        "ProChondrix CR, AlloMend, cellular bone, cortical/cancellous, fiber bone",
+        "JRF Ortho joint venture (fresh osteochondral) with Community Tissue Services"
+      ],
+      "sales_model": "processor; private label for device companies; own sales",
+      "notes": "Orthoworld estimates $185.0M 2025 sales (+3.1%). Becker's: 'world's largest processor of cellular bone allografts'.",
+      "sources": [
+        "https://allosource.org/",
+        "https://www.orthoworld.com/?p=67921",
+        "https://www.beckersspine.com/?p=37294"
+      ]
+    },
+    {
+      "id": "bone-bank-allografts",
+      "name": "Bone Bank Allografts",
+      "hq": "San Antonio, TX [HQ unverified]",
+      "public_or_private": "private tissue bank",
+      "orthobiologics_portfolio": [
+        "Sterile DBM, sterile demineralized cortical bone, SteriScaf HSA cortical bone fibers, traditional bone allografts, precision specialty allografts",
+        "AmnioArmor, SteriShield II amnion patches"
+      ],
+      "sales_model": "direct/distributor and private label [unverified]",
+      "unverified": true,
+      "notes": "",
+      "sources": [
+        "https://bonebank.com/"
+      ]
+    },
+    {
+      "id": "community-tissue-services",
+      "name": "Community Tissue Services (CTS)",
+      "hq": "Dayton, OH",
+      "public_or_private": "private non-profit tissue bank",
+      "orthobiologics_portfolio": [
+        "Maxxeus brand allografts (incl. Maxxeus Dental)",
+        "Processing for JRF Ortho fresh osteochondral allografts (with AlloSource)"
+      ],
+      "sales_model": "processor; private label and partner brands",
+      "unverified": true,
+      "notes": "Website refused connection during this sweep; product list from secondary sources.",
+      "sources": [
+        "https://tissuebank.dcids.org/wp-content/uploads/sites/10/2019/05/dental-allografts.pdf",
+        "https://sportsmedicineweekly.com/interviews/treating-cartilage-defects-with-allograft-tissue/"
+      ]
+    },
+    {
+      "id": "jrf-ortho",
+      "name": "JRF Ortho (Joint Restoration Foundation)",
+      "hq": "Centennial, CO",
+      "public_or_private": "private non-profit (AlloSource + CTS JV, 2006)",
+      "orthobiologics_portfolio": [
+        "Fresh osteochondral allografts, meniscus, presutured tendons (cartilage/joint restoration, not bone void fill)"
+      ],
+      "sales_model": "own reps with local support from Arthrex",
+      "notes": "",
+      "sources": [
+        "https://sportsmedicineweekly.com/science/about-jrf-ortho/",
+        "https://www.beckersspine.com/?p=39639"
+      ]
+    },
+    {
+      "id": "vivex",
+      "name": "VIVEX Biologics",
+      "hq": "Miami, FL [unverified]",
+      "public_or_private": "private",
+      "orthobiologics_portfolio": [
+        "Amniotic membrane allografts",
+        "Moldable bioactive scaffolds (bone void fillers)",
+        "Demineralized bone fibers",
+        "VIA Disc NP injectable nucleus pulposus allograft (Aetna: experimental)"
+      ],
+      "sales_model": "distributors/private label [unverified]",
+      "unverified": true,
+      "notes": "",
+      "sources": [
+        "https://mtec-sc.org/life-sciences/vivex-biologics-inc",
+        "https://www.aetna.com/health-care-professionals/clinical-policy-bulletins/dental-clinical-policy-bulletins/DCPB037.html"
+      ]
+    },
+    {
+      "id": "nexus",
+      "name": "Nexus (unidentified)",
+      "hq": "unknown",
+      "public_or_private": "unknown",
+      "orthobiologics_portfolio": [],
+      "sales_model": "unknown",
+      "unverified": true,
+      "notes": "No orthobiologics company named 'Nexus' or 'Nexus Spine' was found in this sweep; may be a misremembered name (candidates: Nexxt Spine, NovaBone, Biogennix).",
+      "sources": []
+    },
+    {
+      "id": "cgbio",
+      "name": "CGBIO (Korea)",
+      "hq": "Seongnam, South Korea",
+      "public_or_private": "private",
+      "orthobiologics_portfolio": [
+        "NOVOSIS (rhBMP-2 growth-factor bone graft) - US/Canada/Australia exclusive distribution via DePuy Synthes (May 26 2026); US spine IDE enrolling"
+      ],
+      "sales_model": "partner distribution",
+      "notes": "Investigational in the US.",
+      "sources": [
+        "https://www.businesswire.com/news/home/20260526608509/en/",
+        "https://kyodonewsprwire.jp/release/202605279795"
+      ]
+    }
+  ],
+  "reimbursement": [
+    {
+      "id": "drg-402",
+      "setting": "inpatient",
+      "code_type": "MS-DRG",
+      "code": "402",
+      "description": "Single level combined anterior and posterior spinal fusion except cervical",
+      "payment_note": "FY2027 relative weight 4.0951; HFMA-computed national unadjusted base payment $30,259; weight +0.0746 vs FY2026. Bone graft substitute, rhBMP and cellular allograft costs are bundled; no separate payment.",
+      "year": 2027,
+      "source": "https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx (CMS FY2027 Table 5, file dated Jul 28 2026)",
+      "sources": [
+        "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+      ],
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "drg-426-428",
+      "setting": "inpatient",
+      "code_type": "MS-DRG",
+      "code": "426/427/428",
+      "description": "Multiple level combined anterior and posterior spinal fusion except cervical with MCC / with CC / without CC/MCC",
+      "payment_note": "FY2027 weights 9.9191 / 6.7023 / 5.9200; base payments $73,292 / $49,523 / $43,743. 426 fell 1.1021 weight vs FY2026 (custom-made interbody device cases moved out of its title).",
+      "year": 2027,
+      "source": "https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx",
+      "sources": [
+        "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+      ],
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "drg-429-430",
+      "setting": "inpatient",
+      "code_type": "MS-DRG",
+      "code": "429/430",
+      "description": "Combined anterior and posterior cervical spinal fusion with MCC / without MCC",
+      "payment_note": "FY2027 weights 8.8413 / 5.8941; base payments $65,328 / $43,552.",
+      "year": 2027,
+      "source": "https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx"
+    },
+    {
+      "id": "drg-447-448",
+      "setting": "inpatient",
+      "code_type": "MS-DRG",
+      "code": "447/448",
+      "description": "Multiple level spinal fusion except cervical with MCC / without MCC",
+      "payment_note": "FY2027 weights 6.9656 / 4.3497; base payments $51,469 / $32,140.",
+      "year": 2027,
+      "source": "https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx",
+      "sources": [
+        "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+      ],
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "drg-450-451",
+      "setting": "inpatient",
+      "code_type": "MS-DRG",
+      "code": "450/451",
+      "description": "Single level spinal fusion except cervical with MCC / without MCC",
+      "payment_note": "FY2027 weights 5.2339 / 3.2596; base payments $38,673 / $24,085. FY2026 national unadjusted rates per Cerapedics guide: $38,782 / $23,507. This is the DRG pair most lumbar biologics cases land in.",
+      "year": 2027,
+      "source": "https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx; https://info.cerapedics.com/hubfs/2026%20Reimbursement%20Guide%20PearlMatrix%C2%AE%20%26%20i-FACTOR%C2%AE%20P-15.pdf?hsLang=en",
+      "sources": [
+        "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+      ],
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "drg-453-455-459-460-retired",
+      "setting": "inpatient",
+      "code_type": "MS-DRG",
+      "code": "453-455, 459-460 (retired)",
+      "description": "Legacy 'Combined anterior/posterior spinal fusion' and 'Spinal fusion except cervical' DRGs",
+      "payment_note": "Not present in the FY2027 Table 5 and not in the FY2027 deletion list. The FY2027 final rule text (CMS-1849-F, 91 FR, Aug 4 2026) states that the level-based MS-DRGs 426, 427, 428, 447 and 448 'had recently become effective October 1, 2024' (i.e. created in the FY2025 rule) and cites the FY2026 final rule (90 FR 36552) for continuing GROUPER-logic requests on them; it names MS-DRG 402 (Single Level Combined Anterior and Posterior Spinal Fusion Except Cervical), 426-428 (Multiple Level Combined A/P, 426 title also carries 'or Custom-Made Anatomically Designed Interbody Fusion Device'), 447-448 (Multiple Level Spinal Fusion Except Cervical; 447 also carries the custom-device title) and 450-451 (Single Level Spinal Fusion Except Cervical; 450 title also carries the custom-device clause). Any reimbursement guide still quoting 453-460 is at least two fiscal years stale.",
+      "year": 2027,
+      "source": "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and; https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx",
+      "sources": [
+        "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+      ],
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "drg-456-458",
+      "setting": "inpatient",
+      "code_type": "MS-DRG",
+      "code": "456/457/458",
+      "description": "Spinal fusion except cervical with spinal curvature, malignancy, or infection with MCC / CC / without (FY2026 title also included 'or extensive fusions')",
+      "payment_note": "FY2027 weights 7.6211 / 5.3668 / 4.0371; base payments $56,312 / $39,655 / $29,830; weights fell 0.7823 / 0.5963 / 0.1355 because extensive fusions moved to new DRGs 523-525.",
+      "year": 2027,
+      "source": "https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx",
+      "sources": [
+        "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+      ],
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "drg-523-525",
+      "setting": "inpatient",
+      "code_type": "MS-DRG",
+      "code": "523/524/525 (new FY2027)",
+      "description": "Extensive or complex spinal fusion procedures except cervical with MCC / CC / without CC/MCC",
+      "payment_note": "New for FY2027 (effective Oct 1 2026): weights 13.7383 / 9.8322 / 7.2950; base payments $101,512 / $72,650 / $53,903. Final rule text: cases reporting an extensive spinal fusion are reassigned from MS-DRGs 426-428 and 456-458, and cases reporting a custom-made anatomically designed interbody fusion device or SI-joint fusion with an internal fixation device with tulip connector are reassigned from MS-DRGs 402, 426-428, 447-448, 450-451 and 456-458, to new 523-525 (Extensive or Complex Spinal Fusion Procedures Except Cervical with MCC / with CC / without CC/MCC). Created from SI-Bone (iFuse Bedrock Granite) and Carlsmed (aprevo) requests.",
+      "year": 2027,
+      "source": "https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx; https://www.beckersspine.com/spinal-tech/cms-finalizes-3-new-ms-drgs-for-complex-spinal-fusion-cases/",
+      "sources": [
+        "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+      ],
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "drg-471-473",
+      "setting": "inpatient",
+      "code_type": "MS-DRG",
+      "code": "471/472/473",
+      "description": "Cervical spinal fusion with MCC / with CC / without CC/MCC",
+      "payment_note": "FY2027 weights 4.9361 / 2.9809 / 2.4525; base payments $36,473 / $22,026 / $18,122 (FY2026: $35,137 / $21,438 / $17,765 per Cerapedics). rhBMP in cervical fusion is off-label and widely excluded by payers; no separate payment regardless.",
+      "year": 2027,
+      "source": "https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx; https://info.cerapedics.com/hubfs/2026%20Reimbursement%20Guide%20PearlMatrix%C2%AE%20%26%20i-FACTOR%C2%AE%20P-15.pdf?hsLang=en"
+    },
+    {
+      "id": "drg-480-482",
+      "setting": "inpatient",
+      "code_type": "MS-DRG",
+      "code": "480/481/482",
+      "description": "Hip and femur procedures except major joint with MCC or insertion of antibiotic-eluting bone void filler (FY2027 title) / with CC / without CC/MCC",
+      "payment_note": "FY2027 weights 2.9195 / 2.1266 / 1.6397; base payments $21,572 / $15,713 / $12,116. FY2027 adds antibiotic-eluting bone void filler (CERAMENT G type) cases to the MCC tier of 480 (and similarly 403, 463, 474, 477, 492, 616, 628).",
+      "year": 2027,
+      "source": "https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx",
+      "sources": [
+        "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+      ],
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "drg-492-494",
+      "setting": "inpatient",
+      "code_type": "MS-DRG",
+      "code": "492/493/494",
+      "description": "Lower extremity and humerus procedures except hip, foot and femur with MCC or insertion of antibiotic-eluting bone void filler / with CC / without CC/MCC",
+      "payment_note": "FY2027 weights 493 = 2.5526 ($18,861), 494 = 2.0254 ($14,966); 492 retitled to include antibiotic-eluting bone void filler (weight not captured in this extract).",
+      "year": 2027,
+      "source": "https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx",
+      "sources": [
+        "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+      ],
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "drg-495-500",
+      "setting": "inpatient",
+      "code_type": "MS-DRG",
+      "code": "495-500",
+      "description": "Local excision/removal of internal fixation devices (495-497 except hip/femur; 498-499 hip/femur); 500 soft tissue procedures with MCC",
+      "payment_note": "FY2027 weights: 495 3.3360 ($24,650), 496 1.7781 ($13,138), 497 1.1714 ($8,655), 498 3.1885 ($23,560), 499 2.1666 ($16,009), 500 3.3601 ($24,828). Relevant to nonunion/implant-removal cases using void fillers.",
+      "year": 2027,
+      "source": "https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx"
+    },
+    {
+      "id": "drg-515-517",
+      "setting": "inpatient",
+      "code_type": "MS-DRG",
+      "code": "515/516/517",
+      "description": "Other musculoskeletal system and connective tissue O.R. procedures with MCC / CC / without",
+      "payment_note": "FY2027 weights 3.1892 / 2.1180 / 1.5728; base payments $23,565 / $15,650 / $11,621.",
+      "year": 2027,
+      "source": "https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx"
+    },
+    {
+      "id": "ntap-infuse-tlif",
+      "setting": "inpatient",
+      "code_type": "ICD-10-PCS",
+      "code": "XW0U0CC / XW0U3CC / XW0U4CC",
+      "description": "Introduction of recombinant human BMP-2 with collagen scaffold (Infuse) into joints, open/percutaneous/endoscopic, New Technology Group 12 - created from the Spring 2026 C&M request (Option 2, body part changed from Bones to Joints)",
+      "payment_note": "Medicare NTAP effective Oct 1 2026 for Infuse in TLIF only: max $4,396.60 FY2027 (65% of cost above DRG payment); inpatient Medicare FFS only; ALIF/OLIF, dental and trauma not eligible. Hospital must report the X code plus the 0SG fusion code.",
+      "year": 2027,
+      "source": "https://www.medtronic.com/content/dam/medtronic-wide/public/united-states/customer-support-services/reimbursement/cst-infuse-NATP-guide.pdf; https://www.cms.gov/files/document/spring-2026-update-pcs-questions-answers-updated-03-23-2026.pdf"
+    },
+    {
+      "id": "pcs-rhbmp-3e0",
+      "setting": "inpatient",
+      "code_type": "ICD-10-PCS",
+      "code": "3E0U0GB / 3E0U3GB / 3E0V0GB / 3E0V3GB",
+      "description": "Introduction of recombinant bone morphogenetic protein into joints (U) or bones (V), open (0) or percutaneous (3); substance G other therapeutic substance, qualifier B recombinant BMP",
+      "payment_note": "Pre-existing codes for rhBMP; CMS says 3E0U0GB remains correct for Infuse in ALIF/OLIF and 3E0V0GB for tibial fracture/other bone uses. Informational only: no payment impact outside NTAP.",
+      "year": 2026,
+      "source": "https://www.cms.gov/files/document/spring-2026-update-pcs-questions-answers-updated-03-23-2026.pdf; https://www.aapc.com/codes/pcs-code/3E0V3GB"
+    },
+    {
+      "id": "pcs-fusion-device-values",
+      "setting": "inpatient",
+      "code_type": "ICD-10-PCS",
+      "code": "0SG/0RG fusion tables, character 6 device: 7 / A / J / K",
+      "description": "Fusion of joints: device 7 = Autologous Tissue Substitute (autograft), A = Interbody Fusion Device, J = Synthetic Substitute (ceramic/synthetic bone graft), K = Nonautologous Tissue Substitute (allograft/DBM/cellular allograft). 'Z' no-device fusion codes were deleted in FY2019.",
+      "payment_note": "Device value drives MDC 08 DRG assignment logic only; no separate payment for the graft material. Example codes in CMS DRG definitions: 0RG73J0, 0RG73K0, 0RG73A0, 0RG8070.",
+      "year": 2026,
+      "source": "https://www.cms.gov/icd10m/version40-fullcode-cms/fullcode_cms/P2795.html; https://medlearn.com/icd10monitor/icd-10-coding-new-character-surfaces-in-spinal-fusion-codes/"
+    },
+    {
+      "id": "pcs-antibiotic-bvf",
+      "setting": "inpatient",
+      "code_type": "ICD-10-PCS",
+      "code": "XW0V0P7 (gentamicin-eluting, CERAMENT G); XW0V0BC (vancomycin-eluting, CERAMENT V, new FY2027)",
+      "description": "XW0V0P7: Introduction of gentamicin-eluting bone void filler into bones, open approach, new technology group 7 (title revised for FY2027 from 'antibiotic-eluting'; code created Oct 1, 2021 for CERAMENT G). XW0V0BC: Introduction of vancomycin-eluting bone void filler into bones, open approach, new technology group 12 (new FY2027, CERAMENT V, tied to an FY2027 NTAP application).",
+      "payment_note": "FY2027 final rule (CMS-1849-F, Federal Register Aug 4 2026): XW0V0P7 redesignated from non-O.R. to 'non-O.R. affecting specified MS-DRGs', and cases reporting it reassigned from the lower severity levels (without CC/MCC or with CC) to the highest (with MCC) level in MS-DRGs 463, 474, 477, 480, 492, 616 and 628, plus new MS-DRG 403 (Hip or Knee Procedures with Principal Diagnosis of Periprosthetic Joint Infection with MCC or Insertion of Antibiotic-eluting Bone Void Filler) paired with 404 (without MCC); affected DRG titles gain 'or Insertion of Antibiotic-eluting Bone Void Filler'. XW0V0BC inherits the same O.R. status and MS-DRG assignments. CERAMENT G's infection NTAP ran Oct 1 2022 to Sep 30 2025; an open-fracture NTAP was approved for FY2026. Effective Oct 1, 2026.",
+      "year": 2027,
+      "source": "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and",
+      "sources": [
+        "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+      ],
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "cpt-20930",
+      "setting": "hopd",
+      "code_type": "CPT",
+      "code": "20930",
+      "description": "Allograft, morselized, or placement of osteopromotive material, for spine surgery only (add-on)",
+      "payment_note": "MPFS work RVU 0.00 (bundled); OPPS status indicator N (packaged, no separate APC); ASC payment indicator N1 (packaged). The bone graft substitute is paid inside the primary fusion APC (e.g., 22551 APC 5115 $13,117; 22630/22558 APC 5117 $27,722 in CY2026).",
+      "year": 2026,
+      "source": "https://info.cerapedics.com/hubfs/2026%20Reimbursement%20Guide%20PearlMatrix%C2%AE%20%26%20i-FACTOR%C2%AE%20P-15.pdf?hsLang=en"
+    },
+    {
+      "id": "cpt-20931",
+      "setting": "hopd",
+      "code_type": "CPT",
+      "code": "20931",
+      "description": "Allograft, structural, for spine surgery only (add-on)",
+      "payment_note": "Same family as 20930: bundled on MPFS, packaged (N / N1) in HOPD and ASC. Listed in UHC 2026T0410KK and Cigna 0118 code tables.",
+      "year": 2026,
+      "source": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/spinal-fusion-bone-healing-products.pdf"
+    },
+    {
+      "id": "cpt-20936-20938",
+      "setting": "hopd",
+      "code_type": "CPT",
+      "code": "20936 / 20937 / 20938",
+      "description": "Autograft for spine surgery only: local (20936), morselized through separate incision (20937), structural bicortical/tricortical (20938) (add-ons)",
+      "payment_note": "Bundled (status B) on the MPFS and packaged in HOPD/ASC since CMS's 2018 bundling of spine graft add-ons; no separate payment.",
+      "year": 2026,
+      "source": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/spinal-fusion-bone-healing-products.pdf",
+      "unverified": true,
+      "challenge": "Status-B assignment for 20936-20938 was not re-verified against the CY2026 MPFS file in this sweep."
+    },
+    {
+      "id": "cpt-20939",
+      "setting": "hopd",
+      "code_type": "CPT",
+      "code": "20939",
+      "description": "Bone marrow aspiration for bone grafting, spine surgery only, through separate skin or fascial incision (add-on, created 2018)",
+      "payment_note": "Listed as a covered autograft technique by UHC (BMA used for bone grafting is 'proven'); MPFS payment status not verified here.",
+      "year": 2026,
+      "source": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/spinal-fusion-bone-healing-products.pdf",
+      "unverified": true
+    },
+    {
+      "id": "cpt-38230-38232",
+      "setting": "hopd",
+      "code_type": "CPT",
+      "code": "38230 / 38232",
+      "description": "Bone marrow harvesting for transplantation; allogeneic (38230) / autologous (38232)",
+      "payment_note": "Transplant harvest codes; Cigna 0118 lists 38232 and 38241 among codes that are experimental/unproven when used to report BMAC for bone healing. For spine grafting the correct code is 20939, not 38232.",
+      "year": 2026,
+      "source": "https://static.cigna.com/assets/chcp/pdf/coveragePolicies/medical/mm_0118_coveragepositioncriteria_recombinant_human_bone_morphogenetic_protein.pdf"
+    },
+    {
+      "id": "cpt-0232T",
+      "setting": "office",
+      "code_type": "CPT",
+      "code": "0232T",
+      "description": "Injection(s), platelet rich plasma, any site, including image guidance, harvesting and preparation when performed (Category III)",
+      "payment_note": "Carrier/contractor priced on the MPFS (work RVU 0); packaged under OPPS; Medicare MACs treat MSK PRP as not reasonable and necessary (NCD 270.3 covers only chronic diabetic wounds). Commercial payers (Aetna, BCBSM) call PRP experimental.",
+      "year": 2026,
+      "source": "https://arthrex.com/resources/DOC1-001671-en-US/intraosseous-bioplasty-technique-2025-coding-and-reimbursement-guidelines; https://www.aetna.com/cpb/medical/data/400_499/0411.html"
+    },
+    {
+      "id": "cpt-0263T-0265T",
+      "setting": "office",
+      "code_type": "CPT",
+      "code": "0263T / 0264T / 0265T",
+      "description": "Intramuscular autologous bone marrow cell therapy, with/without preparation and harvest (Category III)",
+      "payment_note": "Carrier priced; coverage 'extremely limited' and generally denied for MSK/pain indications.",
+      "year": 2026,
+      "source": "https://www.aapc.com/discuss/goto/post?id=500083"
+    },
+    {
+      "id": "cpt-1095T-bmac",
+      "setting": "hopd",
+      "code_type": "CPT",
+      "code": "1095T (and 0565T/0566T adipose)",
+      "description": "Harvesting and processing of autologous BMAC with application onto scaffold or injection into recipient site, excluding spine (Category III); 0565T/0566T autologous adipose-derived regenerative cell therapy",
+      "payment_note": "Cigna 0118 lists 1095T as experimental/unproven for bone healing; Category III codes carry no RVUs and are contractor priced. 0565T/0566T were not located in any payer policy in this sweep.",
+      "year": 2026,
+      "source": "https://static.cigna.com/assets/chcp/pdf/coveragePolicies/medical/mm_0118_coveragepositioncriteria_recombinant_human_bone_morphogenetic_protein.pdf",
+      "unverified": true
+    },
+    {
+      "id": "hcpcs-c1734",
+      "setting": "hopd",
+      "code_type": "HCPCS",
+      "code": "C1734",
+      "description": "Orthopedic/device/drug matrix for opposing bone-to-bone or soft tissue-to-bone (implantable) - created for Stryker Augment Bone Graft/Augment Injectable",
+      "payment_note": "Transitional pass-through status effective Jan 1 2020 for 2-3 years (expired no later than Dec 31 2022); device offset applied; billed only with listed arthrodesis CPTs. Code persists in payer tables (Cigna 0118) as a descriptor but no longer pays separately. This is the clearest precedent for orthobiologic pass-through.",
+      "year": 2026,
+      "source": "https://www.stryker.com/content/dam/stryker/foot-and-ankle/products/augment/resources/Augment-FAQ--Device-Pass-Through-Payment.pdf; https://static.cigna.com/assets/chcp/pdf/coveragePolicies/medical/mm_0118_coveragepositioncriteria_recombinant_human_bone_morphogenetic_protein.pdf"
+    },
+    {
+      "id": "hcpcs-c1602",
+      "setting": "hopd",
+      "code_type": "HCPCS",
+      "code": "C1602",
+      "description": "Orthopedic/device/drug matrix/absorbable bone void filler, antimicrobial-eluting (implantable) (CERAMENT G category)",
+      "payment_note": "Active OPPS device pass-through category in CY2026: CMS updated the CPT codes billable with C1602 effective Jan 1 2026 as procedures left the inpatient-only list; it is not among the categories expiring Dec 31 2025 (C1826, C1827, C1747). This is the only orthobiologic device category with live pass-through status found for CY2026.",
+      "year": 2026,
+      "source": "https://www.cms.gov/files/document/mm14361-hospital-outpatient-prospective-payment-system-january-2026-update.pdf",
+      "unverified": true,
+      "challenge": "Start date of C1602 pass-through (and therefore its expiry, no later than 3 years after) not verified; check the CMS pass-through device category list (Table 6 / Addendum B)."
+    },
+    {
+      "id": "hcpcs-c9359-c9362",
+      "setting": "hopd",
+      "code_type": "HCPCS",
+      "code": "C9359 / C9362",
+      "description": "Porous purified collagen matrix bone void filler (Integra Mozaik Osteoconductive Scaffold Putty / Integra OS; Mozaik Strip), per 0.5 cc",
+      "payment_note": "Legacy C-codes effective Oct 1 2008 and Jul 1 2009; their pass-through period ended long ago and the products now sit with Orthofix (via SeaSpine). Payer tables (Cigna) still list them with 'may not be separately reimbursed'. These are NOT Infuse codes; no Infuse-specific C-code was found.",
+      "year": 2026,
+      "source": "https://hcpcs.codes/c-codes/C9359/; https://hcpcs.codes/c-codes/C9362/; https://static.cigna.com/assets/chcp/pdf/coveragePolicies/medical/mm_0118_coveragepositioncriteria_recombinant_human_bone_morphogenetic_protein.pdf"
+    },
+    {
+      "id": "opps-passthrough-cy2026-new",
+      "setting": "hopd",
+      "code_type": "HCPCS",
+      "code": "C1607, C1608 (Jan 1 2026); C1743 (Apr 1 2026); C1609 (Jul 1 2026)",
+      "description": "New device pass-through categories approved for CY2026",
+      "payment_note": "None of the new CY2026 pass-through categories is a bone graft substitute or orthobiologic (C1741 absorbable metallic anchor/screw was a descriptor update). Pass-through lasts 2-3 years, then packages into the APC.",
+      "year": 2026,
+      "source": "https://www.cms.gov/files/document/mm14361-hospital-outpatient-prospective-payment-system-january-2026-update.pdf; https://www.cms.gov/files/document/r13836cp.pdf"
+    },
+    {
+      "id": "opps-ipo-phaseout",
+      "setting": "hopd",
+      "code_type": "APC",
+      "code": "IPO list / APC 5115, 5116, 5117",
+      "description": "CY2026 OPPS removes 285 procedures (mostly musculoskeletal) from the inpatient-only list in year 1 of a 3-year phase-out; spine fusion APCs: 22551 -> APC 5115 ($13,117), 22630/22558 -> APC 5117 ($27,722); ASC 22551 J8 $9,031, 22630 $20,859, 22558 $20,101",
+      "payment_note": "More fusion cases migrate to HOPD/ASC where the biologic is fully packaged and the facility eats the graft cost against a single APC/ASC rate. Device-intensive status applies to the cage, not the biologic.",
+      "year": 2026,
+      "source": "https://www.cms.gov/files/document/mm14361-hospital-outpatient-prospective-payment-system-january-2026-update.pdf; https://info.cerapedics.com/hubfs/2026%20Reimbursement%20Guide%20PearlMatrix%C2%AE%20%26%20i-FACTOR%C2%AE%20P-15.pdf?hsLang=en"
+    },
+    {
+      "id": "skin-sub-cy2026",
+      "setting": "office",
+      "code_type": "APC",
+      "code": "APC 6000 / 6001 / 6002; status indicator S1; Q4431-Q4433",
+      "description": "CY2026 skin substitute overhaul: products unpackaged from application CPTs 15271-15278 and paid per cm2 by FDA category (PMA / 510(k) / 361 HCT/P) under OPPS, and as incident-to supplies under the PFS",
+      "payment_note": "Single CY2026 rate $127.14 per cm2 for APCs 6000-6002 (CMS MM14361; PFS summaries cite ~$127.28 from the final rule display). Replaced ASP-based payment after spending rose from $252M (2019) to >$10B (2024). CMS intends to differentiate rates by FDA category in later years; CMMI prior-auth model adds skin substitutes in 2026. Context for 361 orthobiologics: the same 361-vs-510(k)-vs-PMA framing is now written into payment policy.",
+      "year": 2026,
+      "source": "https://www.cms.gov/files/document/mm14361-hospital-outpatient-prospective-payment-system-january-2026-update.pdf; https://www.kslaw.com/news-and-insights/health-headlines-november-10-2025; https://www.mcdermottplus.com/?p=158801"
+    },
+    {
+      "id": "ncd-270-3",
+      "setting": "office",
+      "code_type": "HCPCS",
+      "code": "NCD 270.3 (G0460, G0465)",
+      "description": "Blood-derived products for chronic non-healing wounds (autologous PRP)",
+      "payment_note": "Effective Apr 13 2021: covers autologous PRP for chronic non-healing diabetic wounds for 20 weeks when prepared by a device FDA-cleared for exuding cutaneous wounds; PDGF products, becaplermin, and PRP for acute surgical/dehiscent wounds are non-covered; other chronic wounds and >20 weeks left to MAC discretion. No national coverage for orthopedic PRP.",
+      "year": 2021,
+      "source": "https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?ncdid=217"
+    },
+    {
+      "id": "lcd-l39116",
+      "setting": "office",
+      "code_type": "HCPCS",
+      "code": "LCD L39116 / article A58865",
+      "description": "Amniotic and placental-derived product injections and/or applications for musculoskeletal indications, non-wound (Noridian JE/JF)",
+      "payment_note": "NON-coverage LCD, original effective Nov 12 2023, revised Oct 23 2025 (JE/JF consolidated); evidence insufficient for MSK injections/applications; similar non-coverage LCDs exist in other jurisdictions (CGS J15 draft discussed Jul 2023).",
+      "year": 2025,
+      "source": "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=39116; https://www.CGSMedicare.com/pdf/j15/cac_transcripts/j15_open_draft_discussion_07-11-23.pdf"
+    }
+  ],
+  "payer_policies": [
+    {
+      "payer": "Aetna",
+      "policy_number": "CPB 0411",
+      "title": "Bone and Tendon Graft Substitutes and Adjuncts",
+      "date": "Last review 08/18/2026; next review 04/22/2027 (effective since 05/04/2000)",
+      "covered": [
+        "rhBMP-2 (Infuse) for lumbar fusion in skeletally mature members meeting CPB 0743 criteria via ALIF/lateral approach or 1-2 level TLIF",
+        "rhBMP-2 for acute open tibial shaft fracture with IM nail within 14 days",
+        "Cadaveric allograft and DBM for spinal fusion and osteochondral/void fill",
+        "beta-TCP based extenders/substitutes for spine fusion",
+        "BMAC only for unicameral bone cysts"
+      ],
+      "not_covered_or_experimental": [
+        "Infuse for cervical fusion, ankle fusion, 3+ level TLIF, posterior/posterolateral lumbar fusion",
+        "Mesenchymal stem cell allografts (AlloStem, Osteocel/Osteocel Plus, Ovation, Trinity Evolution; ViviGen listed not covered) for all orthopedic uses",
+        "BMAC for nonunion, OA, spine fusion adjunct",
+        "PRP/platelet gels for all indications",
+        "i-Factor peptide enhanced bone graft",
+        "Bioglass 45S5 and non-TCP ceramics; chronOS outside spine fusion",
+        "VIA Disc NP nucleus pulposus allograft (dental CPB cross-ref, Mar 20 2025)"
+      ],
+      "url": "https://www.aetna.com/cpb/medical/data/400_499/0411.html"
+    },
+    {
+      "payer": "Cigna",
+      "policy_number": "0118",
+      "title": "Bone Graft Substitutes",
+      "date": "Effective 10/1/2026; next review 2/15/2027 (prior version effective 2/15/2026)",
+      "covered": [
+        "Allograft-based incl. DBM",
+        "Ceramic or polymer synthetic substitutes",
+        "Inorganic bone material (bovine, coral) alone or with a covered substitute",
+        "rhBMP-2 (Infuse) only for acute open tibial shaft fracture with IM nail within 14 days",
+        "Spine bone graft decisions routed to EviCore spine guidelines; stem cells to policy 0552; PRP to policy 0507"
+      ],
+      "not_covered_or_experimental": [
+        "rhBMP-2 for ALL other indications incl. sinus/alveolar ridge",
+        "rhBMP-7 (OP-1) all indications",
+        "Human amniotic membrane/amniotic fluid stem cell substitutes",
+        "Cell-based substitutes (MSC alone, on scaffolds, or allograft processed to retain cells)",
+        "Human growth factor substitutes (FGF, IGF)",
+        "BMAC alone, on scaffold, injected, or mixed with allograft (codes 38232, 38241, 1095T)",
+        "Substitutes used to reduce donor-site morbidity"
+      ],
+      "url": "https://static.cigna.com/assets/chcp/pdf/coveragePolicies/medical/mm_0118_coveragepositioncriteria_recombinant_human_bone_morphogenetic_protein.pdf"
+    },
+    {
+      "payer": "UnitedHealthcare (Commercial & Individual Exchange)",
+      "policy_number": "2026T0410KK",
+      "title": "Spinal Fusion and Bone Healing Enhancement Products",
+      "date": "Effective January 1, 2026",
+      "covered": [
+        "Autografts incl. bone marrow aspirate used for grafting",
+        "DBM without unproven additives",
+        "Allograft-based products not listed as unproven",
+        "Infuse for single-level L2-S1 lumbar fusion, anterior or oblique approach with FDA-approved interbody device, skeletally mature, DDD, spondylolisthesis <= grade 1",
+        "Infuse/Mastergraft posterolateral revision device for symptomatic posterolateral lumbar pseudoarthrosis when autograft not feasible"
+      ],
+      "not_covered_or_experimental": [
+        "Cell-based allografts (MSC)",
+        "Human amniotic tissue materials",
+        "rhBMP-2 for all other indications (incl. cervical, TLIF, multilevel)",
+        "Ceramic-based products (b-TCP, calcium phosphate, calcium sulfate) alone or combined, incl. with BMA",
+        "Bioactive glass alone or combined",
+        "Expandable interbody fusion systems"
+      ],
+      "url": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/spinal-fusion-bone-healing-products.pdf",
+      "challenge": "UHC's exclusion of ceramics and bioactive glass is the most restrictive big-payer stance on synthetics (MagnetOs, Vitoss, Signafuse, Kinex, NovaBone all fall here); surgeons bill 20930 anyway because the biologic is packaged, so the policy bites mainly on prior auth and audits."
+    },
+    {
+      "payer": "Blue Cross Blue Shield of Illinois (HCSC; also BCBSTX/OK/NM/MT)",
+      "policy_number": "SUR705.038",
+      "title": "Bone Morphogenetic Protein",
+      "date": "Effective 01/01/2026 (end date 11/14/2026)",
+      "covered": [
+        "rhBMP-2 (Infuse) in skeletally mature individuals for ALIF when autograft not feasible",
+        "Instrumented posterolateral intertransverse fusion when autograft not feasible",
+        "Acute open tibial shaft fracture when autograft not feasible"
+      ],
+      "not_covered_or_experimental": [
+        "rhBMP-2 for all other indications incl. spinal fusion when autograft is feasible and craniomaxillofacial surgery",
+        "rhBMP-7 (OP-1) not available in US"
+      ],
+      "url": "https://medicalpolicy.bcbsil.com/content/dam/bcbs/medicalpolicy/pdf/surgery/SUR705.038_2026-01-01.pdf"
+    },
+    {
+      "payer": "Blue Cross Blue Shield of Oklahoma (HCSC)",
+      "policy_number": "SUR703.051",
+      "title": "Orthopedic Applications of Stem Cell Therapy (Including Allografts and Bone Substitutes Used with Autologous Bone Marrow)",
+      "date": "Effective 04/15/2026",
+      "covered": [
+        "Unprocessed allograft bone and products not requiring mixing with stem cells are outside the policy (not addressed)"
+      ],
+      "not_covered_or_experimental": [
+        "Mesenchymal stem cell therapy for all orthopedic applications",
+        "Allograft bone containing viable stem cells (AlloStem, Osteocel Plus, Trinity Evolution, Trinity Elite named) - experimental for all orthopedic uses",
+        "Allograft or synthetic substitutes that must be combined with autologous blood or bone marrow (FusionFlex, Ignite named)"
+      ],
+      "url": "https://medicalpolicy.bcbsok.com/content/dam/bcbs/medicalpolicy/pdf/surgery/SUR703.051_2026-04-15.pdf"
+    },
+    {
+      "payer": "Blue Shield of California",
+      "policy_number": "7.01.100",
+      "title": "Bone Morphogenetic Protein",
+      "date": "Effective July 1, 2026 (original March 1, 2005)",
+      "covered": [
+        "rhBMP-2 for ALIF, instrumented posterolateral fusion, and acute open tibial shaft fracture, each only when autograft is not feasible (prior ICBG harvest or insufficient volume, e.g., multilevel)"
+      ],
+      "not_covered_or_experimental": [
+        "rhBMP-2 for all other indications incl. fusion when autograft feasible and craniomaxillofacial surgery",
+        "Notes 2013 IPD meta-analyses found little/no benefit over ICBG and uncertain harm incl. cancer signal"
+      ],
+      "url": "https://www.blueshieldca.com/content/dam/bsca/en/provider/docs/medical-policies/Bone-Morph-Protein.pdf"
+    },
+    {
+      "payer": "Anthem / Elevance Health (Anthem Blue Cross and Blue Shield, Ohio)",
+      "policy_number": "CG-SURG-45 (enterprise clinical UM guideline, title 'Bone Graft Substitutes'; not adopted/listed in Ohio commercial)",
+      "title": "Bone Graft Substitutes (CG-SURG-45); no separate BMP policy found",
+      "date": "Ohio commercial adopted-guideline list update 10/1/2026 (CG-SURG-45 absent); TRANS.00035 cross-reference publish 10/01/2026, last review 05/14/2026",
+      "covered": [],
+      "not_covered_or_experimental": [],
+      "notes": "Ohio library search 2026-10-22 found no bone graft substitute, BMP, or cellular bone matrix policy; bone graft products with exogenous MSCs fall under TRANS.00035 (investigational), endogenous-MSC bone grafts are cross-referenced to CG-SURG-45. The Ohio commercial adopted list (pw_ad083614.pdf) contains 63 CG guidelines and no CG-SURG-45, so a standalone graft-substitute criteria set does not appear to be applied to Ohio commercial members.",
+      "url": "https://www.anthem.com/provider/policies/clinical-guidelines/search/?q=bone%20graft&cnslocale=en_US_oh",
+      "sources": [
+        "https://www.anthem.com/provider/policies/clinical-guidelines/search/?q=bone%20graft&cnslocale=en_US_oh",
+        "https://www.anthem.com/docs/public/inline/pw_ad083614.pdf",
+        "https://www.anthem.com/medpolicies/abcbs/active/mp_pw_b094276.html",
+        "https://www.anthem.com/provider/policies/clinical-guidelines/search/?q=CG-SURG-45&cnslocale=en_US_oh",
+        "https://providers.anthem.com/docs/gpp/NV_CAID_Q42017CUMG.pdf"
+      ],
+      "unverified": true,
+      "challenge": "Anthem Ohio's provider policy library (state-gated; Ohio selected 2026-10-22) returns no bone graft substitute or BMP document: searches for 'bone graft', 'bone graft substitute', 'morphogenetic' and 'CG-SURG-45' return only wound/soft-tissue grafting (SURG.00011, CG-SURG-127), fat grafting and stem-cell policies, and 'spinal fusion' returns hardware/discography policies. The enterprise guideline CG-SURG-45 'Bone Graft Substitutes' exists by title in Anthem Medicaid adopted-guideline lists (NV 2017; CA/NV/IN Aug 2024) and is cross-referenced by TRANS.00035 for bone graft products with endogenous MSCs, but it is absent from the Ohio commercial adopted list (update 10/1/2026, 63 guidelines, no CG-SURG-45) and its document URL was not located. Treat Anthem commercial as having no standalone bone-graft/BMP coverage criteria in Ohio (MCG and spinal-fusion criteria apply) until the CG-SURG-45 text is pulled.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "payer": "Medicare (CMS national)",
+      "policy_number": "NCD 270.3",
+      "title": "Blood-Derived Products for Chronic Non-Healing Wounds",
+      "date": "Effective April 13, 2021 (implemented Nov 9 2021)",
+      "covered": [
+        "Autologous PRP for chronic non-healing diabetic wounds, 20 weeks, FDA-cleared wound-indicated device"
+      ],
+      "not_covered_or_experimental": [
+        "Autologous PDGF for chronic wounds",
+        "Becaplermin",
+        "PRP for acute surgical wounds/dehiscence",
+        "No NCD for orthopedic PRP, BMAC or amniotic injections (MAC LCDs govern)"
+      ],
+      "url": "https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?ncdid=217"
+    },
+    {
+      "payer": "Medicare (Noridian JE/JF MAC)",
+      "policy_number": "LCD L39116 / A58865",
+      "title": "Amniotic and Placental-Derived Product Injections and/or Applications for Musculoskeletal Indications, Non-Wound",
+      "date": "Original Nov 12 2023; revised Oct 23 2025",
+      "covered": [],
+      "not_covered_or_experimental": [
+        "All amniotic/placental membrane injections or applications for musculoskeletal injuries, joint conditions and other non-listed conditions (non-coverage LCD)"
+      ],
+      "url": "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=39116"
+    },
+    {
+      "payer": "Anthem / Elevance Health (Anthem Blue Cross and Blue Shield, Ohio)",
+      "policy_number": "CG-SURG-45 (enterprise clinical UM guideline, title 'Bone Graft Substitutes'; not adopted/listed in Ohio commercial)",
+      "title": "Bone Graft Substitutes (CG-SURG-45); no separate BMP policy found",
+      "date": "Ohio commercial adopted-guideline list update 10/1/2026 (CG-SURG-45 absent); TRANS.00035 cross-reference publish 10/01/2026, last review 05/14/2026",
+      "covered": [],
+      "not_covered_or_experimental": [],
+      "notes": "Ohio library search 2026-10-22 found no bone graft substitute, BMP, or cellular bone matrix policy; bone graft products with exogenous MSCs fall under TRANS.00035 (investigational), endogenous-MSC bone grafts are cross-referenced to CG-SURG-45. The Ohio commercial adopted list (pw_ad083614.pdf) contains 63 CG guidelines and no CG-SURG-45, so a standalone graft-substitute criteria set does not appear to be applied to Ohio commercial members.",
+      "url": "https://www.anthem.com/provider/policies/clinical-guidelines/search/?q=bone%20graft&cnslocale=en_US_oh",
+      "sources": [
+        "https://www.anthem.com/provider/policies/clinical-guidelines/search/?q=bone%20graft&cnslocale=en_US_oh",
+        "https://www.anthem.com/docs/public/inline/pw_ad083614.pdf",
+        "https://www.anthem.com/medpolicies/abcbs/active/mp_pw_b094276.html",
+        "https://www.anthem.com/provider/policies/clinical-guidelines/search/?q=CG-SURG-45&cnslocale=en_US_oh",
+        "https://providers.anthem.com/docs/gpp/NV_CAID_Q42017CUMG.pdf"
+      ],
+      "unverified": true,
+      "challenge": "Anthem Ohio's provider policy library (state-gated; Ohio selected 2026-10-22) returns no bone graft substitute or BMP document: searches for 'bone graft', 'bone graft substitute', 'morphogenetic' and 'CG-SURG-45' return only wound/soft-tissue grafting (SURG.00011, CG-SURG-127), fat grafting and stem-cell policies, and 'spinal fusion' returns hardware/discography policies. The enterprise guideline CG-SURG-45 'Bone Graft Substitutes' exists by title in Anthem Medicaid adopted-guideline lists (NV 2017; CA/NV/IN Aug 2024) and is cross-referenced by TRANS.00035 for bone graft products with endogenous MSCs, but it is absent from the Ohio commercial adopted list (update 10/1/2026, 63 guidelines, no CG-SURG-45) and its document URL was not located. Treat Anthem commercial as having no standalone bone-graft/BMP coverage criteria in Ohio (MCG and spinal-fusion criteria apply) until the CG-SURG-45 text is pulled.",
+      "last_reviewed": "2026-10-22"
+    }
+  ]
+}

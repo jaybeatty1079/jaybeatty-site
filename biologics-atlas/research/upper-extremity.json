@@ -1,0 +1,2339 @@
+{
+  "_meta": {
+    "slice": "upper-extremity",
+    "regions": [
+      "shoulder-humerus",
+      "forearm-wrist-hand"
+    ],
+    "compiled": "2026-10-21",
+    "schema": "SCHEMA.md v0.1",
+    "method": "PubMed (NCBI E-utilities), ClinicalTrials.gov API v2, openFDA 510(k)/PMA/De Novo endpoints, FDA accessdata decision PDFs, company product pages. Web search budget was exhausted mid-sweep, so ownership dates not confirmed from a primary page are flagged unverified in the notes file.",
+    "volume_extrapolation_note": "Where a volume note says 'extrapolated', the atlas author multiplied the Karl 2015 (PMID:25714441) per-10,000 incidence by the 2010 US census population (~308.7M). That is an atlas calculation, not a figure from the paper."
+  },
+  "applications": [
+    {
+      "id": "proximal-humerus-fracture-orif",
+      "region": "shoulder-humerus",
+      "subregion": "proximal humerus",
+      "name": "Proximal humerus fracture, locked plating with augmentation",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "Neer (in words)",
+          "summary": "Counts displaced parts (head, shaft, greater tuberosity, lesser tuberosity); 2-, 3- and 4-part fractures, with fracture-dislocation and head-split variants. Displacement threshold 1 cm or 45 degrees. Interobserver reliability is poor (Pandey 2023, PMID:37636006)."
+        },
+        {
+          "name": "AO/OTA 11",
+          "summary": "11-A extra-articular unifocal, 11-B extra-articular bifocal, 11-C articular/anatomic neck. Medial hinge integrity and metaphyseal comminution drive the decision to augment."
+        }
+      ],
+      "why_biologic": "Locked plates fail by varus collapse and screw cut-out, especially in osteoporotic bone with medial comminution; the biologic (an endosteal fibular strut allograft, a calcium phosphate or calcium sulfate/HA void filler, or cancellous chips) is used to restore medial column support and fill the metaphyseal void so screws do not settle. Most proximal humerus fractures are treated nonoperatively and most ORIFs still use no augmentation.",
+      "autograft_standard": "No true autograft standard here; tricortical iliac crest or vascularized pectoralis-pedicle graft is used by some for 4-part fractures (Karslioglu 2024 RCT, PMID:37625692) but the practical comparator is plate alone, with hemiarthroplasty or reverse arthroplasty as the alternative for unreconstructable fractures.",
+      "volume_note": "US ED visits for humerus fractures were ~370,000 in 2008, half of them proximal (Kim 2012, PMID:22162357). Karl 2015 (PMID:25714441) found 6.0 proximal humerus fractures per 10,000 persons per year in an 8-state all-payer sample (extrapolated ~185,000/yr). Surgically treated volume rose 13% from 2010-2019; ORIF remained the most common surgery while reverse arthroplasty volume rose >300% (Cooke 2024, PMID:38706683). Nonunion after ORIF is uncommon; mechanical failure (settling, screw penetration, varus collapse) is the dominant complication (Gardner 2007, PMID:17473755).",
+      "sources": [
+        "PMID:22162357",
+        "PMID:25714441",
+        "PMID:38706683",
+        "PMID:17473755",
+        "PMID:18317054",
+        "PMID:22192764",
+        "PMID:34906682",
+        "PMID:42750779",
+        "PMID:38589503",
+        "PMID:30805708",
+        "PMID:40885162",
+        "NCT01847508",
+        "NCT07538700"
+      ]
+    },
+    {
+      "id": "humeral-shaft-fracture",
+      "region": "shoulder-humerus",
+      "subregion": "humeral diaphysis",
+      "name": "Humeral shaft fracture (acute)",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "AO/OTA 12",
+          "summary": "12-A simple (spiral, oblique, transverse), 12-B wedge, 12-C multifragmentary; sub-coded by level (proximal, middle, distal third)."
+        }
+      ],
+      "why_biologic": "Essentially none in the acute setting. Functional bracing or plate/nail fixation without graft is standard; the biologic question only arises if the fracture fails to unite. Included so the atlas is honest that this is a no-biologic segment.",
+      "autograft_standard": "Not applicable acutely. Anderson-style compression plating with autograft reserved for segmental bone loss.",
+      "volume_note": "Humeral shaft fractures are a minority of the ~370,000 annual US humerus-fracture ED visits (Kim 2012, PMID:22162357). Nonoperative treatment carries a pooled nonunion rate of 17.6% vs 6.3% with fixation (Sargeant 2020, PMID:32788928); a single-center series found 17% nonunion with bracing, worst in proximal-third fractures (Ali 2015, PMID:25088479). Operative treatment reduced nonunion (OR 0.30) across 4 RCTs and 13 cohorts (Li 2024, PMID:39165869).",
+      "sources": [
+        "PMID:22162357",
+        "PMID:32788928",
+        "PMID:25088479",
+        "PMID:39165869",
+        "PMID:38578605"
+      ]
+    },
+    {
+      "id": "humeral-shaft-nonunion",
+      "region": "shoulder-humerus",
+      "subregion": "humeral diaphysis",
+      "name": "Humeral shaft nonunion",
+      "type": "nonunion",
+      "classifications": [
+        {
+          "name": "Weber-Cech (in words)",
+          "summary": "Hypertrophic (viable, needs stability) vs atrophic/oligotrophic (biologically inert, needs stability plus graft); infected nonunion handled separately."
+        }
+      ],
+      "why_biologic": "The classic upper-extremity biologics case: atrophic nonunion after bracing or failed nailing is revised with compression plating plus autogenous cancellous or structural graft. DBM, rhBMP-2 (Infuse, off-label), rhBMP-7 (historically), cellular allograft and BMAC have all been used as extenders or substitutes, mostly without comparative evidence. Oliver 2021 (PMID:34267148) showed 93% union with plate alone and only 13% grafted, which is the strongest argument that biologics are not routinely needed.",
+      "autograft_standard": "Compression plate plus iliac crest cancellous autograft: 98% union in pooled series (Peters 2015 systematic review, n=672 plated with autograft, PMID:26499226). Downsides are donor-site pain, hematoma and added operative time; Oliver 2021 argues grafting is not routinely required.",
+      "volume_note": "No US volume figure found. France records fewer than 700 aseptic humeral shaft nonunions per year (Begue 2023, PMID:36942794); scaling by population suggests low thousands per year in the US (atlas extrapolation, unverified). Medicare 5% sample: 2.5% of all fractures coded as nonunion (Zura 2017, PMID:27836732).",
+      "sources": [
+        "PMID:26499226",
+        "PMID:34267148",
+        "PMID:36942794",
+        "PMID:27836732",
+        "PMID:39429996",
+        "PMID:28784168",
+        "PMID:35815488",
+        "PMID:39253680"
+      ]
+    },
+    {
+      "id": "distal-humerus-fracture-nonunion",
+      "region": "shoulder-humerus",
+      "subregion": "distal humerus / elbow",
+      "name": "Distal humerus fracture and supracondylar nonunion",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "AO/OTA 13",
+          "summary": "13-A extra-articular, 13-B partial articular (lateral/medial condyle, coronal shear capitellum/trochlea), 13-C complete articular with metaphyseal and articular comminution subtypes."
+        }
+      ],
+      "why_biologic": "Rarely used acutely; dual-plate fixation without graft is standard. Supracondylar nonunion revision uses autogenous cancellous graft with rigid fixation; DBM or BMP is occasionally added off-label. Total elbow arthroplasty is the fallback in poor bone.",
+      "autograft_standard": "Iliac crest cancellous autograft with revision ORIF; pooled ORIF success 90% vs 74% for TEA in nonunion series (Vicenti 2025, PMID:40690057).",
+      "volume_note": "Distal humeral fractures are ~1% of all fractures (Vicenti 2025, PMID:40690057); Karl 2015 lists distal humerus among the less common adult upper-extremity fractures. No US biologic-use volume exists.",
+      "sources": [
+        "PMID:40690057",
+        "PMID:25714441",
+        "PMID:22162357"
+      ]
+    },
+    {
+      "id": "clavicle-fracture-nonunion",
+      "region": "shoulder-humerus",
+      "subregion": "clavicle",
+      "name": "Clavicle fracture and nonunion",
+      "type": "nonunion",
+      "classifications": [
+        {
+          "name": "Allman (in words)",
+          "summary": "Group I middle third, Group II lateral third, Group III medial third."
+        },
+        {
+          "name": "Robinson / Edinburgh (in words)",
+          "summary": "Type 1 medial fifth, Type 2 diaphyseal (2A undisplaced, 2B displaced; B1 simple/wedge, B2 comminuted/segmental), Type 3 lateral fifth; displacement and comminution drive nonunion risk."
+        }
+      ],
+      "why_biologic": "Acute fractures use no biologic. Nonunion revision (plate with or without graft) is where cancellous autograft, DBM or a cellular allograft is used; bone graft lowered delayed union (0.6% vs 3.6%) but was associated with higher complication and reoperation rates in pooled nonunion series (Yetter 2023, PMID:36722838).",
+      "autograft_standard": "Compression plating with local or iliac crest cancellous autograft for atrophic nonunion; 95% union after primary nonunion surgery across 53 studies, 1,258 nonunions.",
+      "volume_note": "Karl 2015 (PMID:25714441): 5.8 clavicle fractures per 10,000 persons per year (extrapolated ~179,000/yr). Nonoperative nonunion prevalence 6.2% overall and 4.5% for diaphyseal fractures (Robinson 2004, n=868, PMID:15252081); 13.3% for displaced midshaft fractures in adults, with smoking the strongest risk factor (Murray 2013, n=941, PMID:23824382).",
+      "sources": [
+        "PMID:25714441",
+        "PMID:15252081",
+        "PMID:23824382",
+        "PMID:36722838",
+        "PMID:36313007"
+      ]
+    },
+    {
+      "id": "olecranon-fracture",
+      "region": "forearm-wrist-hand",
+      "subregion": "proximal ulna / elbow",
+      "name": "Olecranon fracture and olecranon osteotomy",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "Mayo (in words)",
+          "summary": "Type I undisplaced, Type II displaced-stable, Type III displaced-unstable; A noncomminuted, B comminuted."
+        },
+        {
+          "name": "AO/OTA 2U1",
+          "summary": "Proximal ulna segment; A extra-articular, B partial articular, C complete articular (2018 revision)."
+        }
+      ],
+      "why_biologic": "Almost never. Tension band, plate or suture fixation without graft; the olecranon's cancellous bed heals reliably. Delayed union after olecranon osteotomy (used to approach distal humerus fractures) was 4.2% pooled (Feinstein 2023, PMID:37790831). Included to document a no-biologic segment the same reps call on.",
+      "autograft_standard": "Not applicable; comminuted defects occasionally receive local cancellous graft.",
+      "volume_note": "Olecranon fractures are ~1% of upper-extremity fractures (Matar 2014 Cochrane, PMID:25426876). No US biologic volume.",
+      "sources": [
+        "PMID:25426876",
+        "PMID:37790831",
+        "PMID:41179418"
+      ]
+    },
+    {
+      "id": "radial-head-fracture",
+      "region": "forearm-wrist-hand",
+      "subregion": "proximal radius / elbow",
+      "name": "Radial head fracture",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "Mason / Hotchkiss-modified (in words)",
+          "summary": "Type I minimally displaced, Type II displaced partial articular (>2 mm) amenable to fixation, Type III comminuted whole-head, Type IV with elbow dislocation."
+        }
+      ],
+      "why_biologic": "None in practice. Fixation of fragmented heads is prone to failure and nonunion, and the answer is radial head arthroplasty, not a graft (Duckworth 2013, PMID:23365021). Listed to close the loop on elbow trauma.",
+      "autograft_standard": "Not applicable.",
+      "volume_note": "No reliable US volume source found; radial head fractures are commonly cited as the most frequent elbow fracture in adults (unverified).",
+      "unverified": true,
+      "sources": [
+        "PMID:23365021"
+      ],
+      "challenge": "No US volume source found. Searched PubMed 2026-10-22 '(radial head[Title]) AND (United States OR national OR nationwide) AND (incidence OR epidemiology OR trends)': the only hit is pediatric radial head subluxation in NEISS (PMID 34363491), not adult fractures. 'Most frequent adult elbow fracture' remains unverified. Flag retained.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "forearm-shaft-fracture-nonunion",
+      "region": "forearm-wrist-hand",
+      "subregion": "radius and ulna diaphysis",
+      "name": "Both-bone forearm fracture and forearm nonunion",
+      "type": "nonunion",
+      "classifications": [
+        {
+          "name": "AO/OTA 2R2 / 2U2",
+          "summary": "Radial and ulnar diaphysis; A simple, B wedge, C multifragmentary. Monteggia (ulna fracture with radial head dislocation, Bado I-IV) and Galeazzi variants named separately."
+        }
+      ],
+      "why_biologic": "Acute both-bone fractures are plated without graft; even 1970s compression plating gave 97.9% (radius) and 96.3% (ulna) union with iliac graft used only in 26% severely comminuted cases (Anderson 1975, PMID:1091653). Biologics enter for atrophic nonunion, segmental defects and Monteggia ulna nonunion, where cancellous autograft, structural allograft or vascularized fibula are used.",
+      "autograft_standard": "Iliac crest cancellous autograft with compression plating for atrophic nonunion; free vascularized fibula for large defects (case-level evidence only).",
+      "volume_note": "No US volume found for adult forearm nonunion. Ulna nonunion was the leading reason for revision (28%) after Monteggia injuries in a pooled review of 651 cases (Weber 2023, PMID:36056930).",
+      "sources": [
+        "PMID:1091653",
+        "PMID:36056930",
+        "PMID:37805573"
+      ]
+    },
+    {
+      "id": "distal-radius-fracture",
+      "region": "forearm-wrist-hand",
+      "subregion": "distal radius",
+      "name": "Distal radius fracture (void fill in osteoporotic bone)",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "AO/OTA 23 (now 2R3)",
+          "summary": "A extra-articular, B partial articular, C complete articular; metaphyseal comminution subtypes drive void size."
+        },
+        {
+          "name": "Frykman (in words)",
+          "summary": "Types I-VIII by radiocarpal and radioulnar joint involvement and presence of an ulnar styloid fracture."
+        },
+        {
+          "name": "Fernandez (in words)",
+          "summary": "Mechanism-based: I bending (Colles/Smith), II shearing (Barton), III compression (die-punch), IV avulsion/fracture-dislocation, V high-energy combined."
+        }
+      ],
+      "why_biologic": "Historically a calcium phosphate cement (Norian SRS) was injected to hold the reduction of an osteoporotic metaphyseal void after closed reduction or pinning. Volar locking plates made the void mechanically irrelevant: the only RCT of cement plus volar plate (Kim 2011, n=50 fractures, PMID:21471414) found no benefit, beta-TCP granules added nothing to plating (Jakubietz 2011, PMID:21600042), and injectable DBM added nothing to K-wire fixation (D'Agostino 2013, PMID:24151272). Today biologic use in distal radius fractures is rare and hard to justify on evidence.",
+      "autograft_standard": "Autogenous cancellous graft was the historical comparator in the Cochrane review (Handoll 2008, 10 trials, 874 adults, PMID:18425972); it did not change outcomes with external fixation and carried one serious donor-site complication.",
+      "volume_note": "Distal radius and ulna fractures are the most common US upper-extremity fracture at 16.2 per 10,000 persons per year (Karl 2015, PMID:25714441; extrapolated ~500,000/yr), with bimodal pediatric and elderly peaks (Nellans 2012, PMID:22554654). Nonunion is rare; there were no nonunions in either arm of Kim 2011.",
+      "sources": [
+        "PMID:25714441",
+        "PMID:22554654",
+        "PMID:18425972",
+        "PMID:14630841",
+        "PMID:12582792",
+        "PMID:21471414",
+        "PMID:21600042",
+        "PMID:24151272",
+        "NCT01091415",
+        "NCT00274378"
+      ]
+    },
+    {
+      "id": "distal-radius-malunion-osteotomy",
+      "region": "forearm-wrist-hand",
+      "subregion": "distal radius",
+      "name": "Distal radius corrective osteotomy (opening-wedge void)",
+      "type": "osteotomy",
+      "classifications": [
+        {
+          "name": "Not classified by fracture scheme",
+          "summary": "Dorsal or volar opening-wedge osteotomy for symptomatic malunion; the gap was traditionally filled with iliac crest tricortical autograft."
+        }
+      ],
+      "why_biologic": "This is the one wrist indication where a void filler had a defensible role, because the osteotomy gap is surgeon-created. Two double-blind RCTs now show that with a volar plate and maintained cortical contact, filling the gap with HydroSet calcium phosphate cement (Andreasson 2020, PMID:32472263) or an injectable bone substitute (Angelomenos 2025, n=42, PMID:40063246) does not change function or micromotion vs leaving the gap empty.",
+      "autograft_standard": "Tricortical iliac crest wedge; prolongs surgery and adds donor-site morbidity, and is increasingly omitted.",
+      "volume_note": "Small elective volume; no US figure found.",
+      "sources": [
+        "PMID:32472263",
+        "PMID:40063246",
+        "NCT06093763",
+        "NCT05690477"
+      ]
+    },
+    {
+      "id": "scaphoid-fracture-nonunion",
+      "region": "forearm-wrist-hand",
+      "subregion": "carpus",
+      "name": "Scaphoid fracture and nonunion",
+      "type": "nonunion",
+      "classifications": [
+        {
+          "name": "Herbert (in words)",
+          "summary": "Type A stable acute (A1 tubercle, A2 incomplete waist), Type B unstable acute (B1 distal oblique, B2 complete waist, B3 proximal pole, B4 trans-scaphoid perilunate), Type C delayed union, Type D established nonunion (D1 fibrous, D2 pseudarthrosis)."
+        },
+        {
+          "name": "Mayo / Russe (in words)",
+          "summary": "Location-based: distal third, waist, proximal pole; and fracture-line orientation (horizontal oblique, transverse, vertical oblique)."
+        }
+      ],
+      "why_biologic": "The nonunion site is debrided and grafted because the proximal pole has a retrograde blood supply and sclerotic ends; graft restores length (humpback correction) and supplies osteogenic bone. Vascularized grafts (1,2-ICSRA distal radius, medial femoral condyle free flap) are used for avascular proximal poles. Off-the-shelf biologics (DBM, BMAC, rhBMP-7 historically) have only small series or a 17-patient RCT behind them.",
+      "autograft_standard": "Nonvascularized iliac crest (Matti-Russe or Fisk-Fernandez wedge) or distal radius cancellous/corticocancellous graft with a headless compression screw. Union 79-96% for ICBG and 87-100% for distal radius graft with no significant difference, but ICBG carries 20% donor-site pain or hematoma vs 0% (Ghaderi 2026 meta, n=166, PMID:42537801). Vascularized vs nonvascularized: pooled OR 1.57 for union, not significant, with shorter time to union for vascularized graft (Guria 2025 meta of 5 RCTs, PMID:39974267).",
+      "volume_note": "Scaphoid fractures are the most common carpal fracture (70%) and the second most common wrist fracture. Adjusted true incidence 22 per 100,000 person-years in Sweden (Sward 2019, PMID:31106681); around 14% progressed to nonunion in a 16,691-fracture Swiss insurance cohort (Rothenfluh 2025, PMID:41258412). US-specific incidence not found.",
+      "sources": [
+        "PMID:31106681",
+        "PMID:41258412",
+        "PMID:42537801",
+        "PMID:39974267",
+        "PMID:18977834",
+        "PMID:16506027",
+        "PMID:42098735",
+        "PMID:39090587",
+        "NCT05574582"
+      ]
+    },
+    {
+      "id": "metacarpal-phalangeal-fracture",
+      "region": "forearm-wrist-hand",
+      "subregion": "hand",
+      "name": "Metacarpal and phalangeal fractures",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "Descriptive (in words)",
+          "summary": "By bone (metacarpal, proximal/middle/distal phalanx), location (head, neck, shaft, base), pattern (transverse, oblique, spiral, comminuted) and named injuries (boxer's, Bennett, Rolando, mallet)."
+        }
+      ],
+      "why_biologic": "Rarely biologic. These fractures unite reliably with splinting, K-wires, intramedullary screws or plates; nonunion is uncommon and when it occurs is treated with debridement, local or distal radius cancellous autograft and rigid fixation (Czerniecki 2024, PMID:37979984). Cancellous allograft chips or DBM are occasionally used for comminuted defects. This is the highest-volume, lowest-biologic segment in the upper extremity.",
+      "autograft_standard": "Distal radius or iliac crest cancellous autograft for nonunion or bone loss; rarely needed.",
+      "volume_note": "Phalangeal (12.5 per 10,000) and metacarpal (8.4 per 10,000) fractures are the second and third most common US upper-extremity fractures (Karl 2015, PMID:25714441; extrapolated ~386,000 and ~259,000/yr). A claims database identified 80,787 metacarpal fixations over 2010-2022 (Kishan 2025, PMID:40583362). Nonunion rate not quantified in the sources found (unverified).",
+      "sources": [
+        "PMID:25714441",
+        "PMID:37979984",
+        "PMID:40583362",
+        "PMID:30894028"
+      ]
+    },
+    {
+      "id": "glenoid-bone-loss-instability",
+      "region": "shoulder-humerus",
+      "subregion": "glenoid",
+      "name": "Anterior glenoid bone loss in recurrent instability (bone block)",
+      "type": "other",
+      "classifications": [
+        {
+          "name": "Glenoid bone loss threshold (in words)",
+          "summary": "Percent loss of the inferior glenoid circle on en-face CT; 'critical' loss commonly cited at 20-25% and 'subcritical' at 13.5-20%, with bipolar (Hill-Sachs on-track/off-track) assessment."
+        }
+      ],
+      "why_biologic": "Adjacent to trauma but a real allograft market: when glenoid bone loss exceeds the subcritical threshold, soft-tissue Bankart repair fails and the surgeon restores the arc with a bone block. Latarjet (coracoid autograft transfer) is the dominant procedure; fresh distal tibia allograft (DTA) is the main allograft alternative because its curvature and dense cartilage match the glenoid, with iliac crest autograft (Eden-Hybbinette) and femoral head allograft as other options.",
+      "autograft_standard": "Latarjet coracoid transfer: no donor-site harvest beyond the coracoid, but graft resorption, screw problems and nonanatomic reconstruction; iliac crest autograft carries donor-site morbidity.",
+      "volume_note": "No national US Latarjet count found. New York State Latarjet volume rose 950% from 2003 to 2014 (12 to 126 procedures/yr) while open Bankart fell 77% (Paoli 2018, PMID:29570763). DTA remains a small share; the first RCT vs Latarjet (NCT05658289, n=68, Nova Scotia) is due to complete primary follow-up in 2026.",
+      "sources": [
+        "PMID:29570763",
+        "PMID:28017469",
+        "PMID:29389219",
+        "PMID:32524228",
+        "PMID:30095986",
+        "PMID:38825225",
+        "NCT05658289"
+      ]
+    },
+    {
+      "id": "upper-extremity-osteomyelitis-fri",
+      "region": "shoulder-humerus",
+      "subregion": "any upper-extremity long bone or hand",
+      "name": "Upper-extremity osteomyelitis and fracture-related infection (dead-space management)",
+      "type": "bone-void",
+      "classifications": [
+        {
+          "name": "Cierny-Mader (in words)",
+          "summary": "Anatomic type I medullary, II superficial, III localized, IV diffuse; host class A normal, B compromised (local/systemic), C treatment worse than disease."
+        },
+        {
+          "name": "Fracture-related infection consensus (in words)",
+          "summary": "Confirmatory criteria (fistula, purulence, two positive cultures, histology) vs suggestive criteria; early, delayed and late by time from fixation."
+        }
+      ],
+      "why_biologic": "After debridement the dead space is filled with an absorbable carrier that elutes antibiotic locally and is replaced by bone, avoiding a second surgery to remove PMMA beads. Antibiotic-loaded calcium sulfate (Stimulan, mixed by the surgeon, off-label in the US) and the gentamicin-eluting calcium sulfate/hydroxyapatite composite (Cerament G, FDA De Novo 2022) are the two main products; S53P4 bioactive glass is a non-antibiotic antibacterial alternative with European evidence. Upper-extremity cases are a minority of the published series, which are dominated by tibia, femur and calcaneus.",
+      "autograft_standard": "Staged: antibiotic PMMA beads or spacer, then autogenous cancellous graft (Masquelet induced membrane for segmental defects) once infection is controlled. The single-stage biocomposite protocol (McNally 2016, PMID:27587534) is the challenger.",
+      "volume_note": "No upper-extremity-specific US volume. In the single-stage Cerament G series the 105 infected bones were predominantly lower limb (McNally 2016); the S53P4 multinational registry was mainly tibia, femur and calcaneus (Lindfors 2017, PMID:28050878). Hand and forearm osteomyelitis is uncommon and usually post-traumatic or diabetic.",
+      "sources": [
+        "PMID:27587534",
+        "PMID:28050878",
+        "PMID:41800468",
+        "NCT04805164",
+        "NCT06555848",
+        "NCT06283979",
+        "DEN210044",
+        "K234008"
+      ]
+    },
+    {
+      "id": "rotator-cuff-augmentation",
+      "region": "shoulder-humerus",
+      "subregion": "rotator cuff",
+      "name": "Rotator cuff repair augmentation (adjacent soft-tissue biologics)",
+      "type": "other",
+      "classifications": [
+        {
+          "name": "Tear size (in words)",
+          "summary": "Partial-thickness (articular, bursal, intrasubstance; grade by percent thickness), full-thickness small <1 cm, medium 1-3 cm, large 3-5 cm, massive >5 cm or two or more tendons; retear graded on MRI by Sugaya type IV-V."
+        }
+      ],
+      "why_biologic": "One-paragraph adjacent note, not a bone biologic: the same sports-medicine and extremities reps who carry bone void fillers also sell onlay patches that are placed over the repaired tendon to thicken it and lower retear. Options are a bioinductive bovine collagen implant (Regeneten, Smith+Nephew, 510(k) K222501/K242631), acellular human dermal allograft (GraftJacket, ArthroFlex, 361 HCT/Ps) and an interpositional nanofiber wick (Rotium, Atreon/Nanofiber Solutions, K250021). Evidence is mostly industry-sponsored single-arm cohorts; the one sponsor-run RCT in large/massive tears (NCT04450342, n=119) was terminated early and its posted 6-month retear rates were 57.1% augmented vs 50.0% control, which cuts against the marketing. A small investigator RCT of dermal allograft in 2-tendon tears >3 cm (Barber 2012, n=42, PMID:21978432) favored augmentation.",
+      "autograft_standard": "Not applicable; primary double-row repair without augmentation is the comparator. Autologous options (biceps tendon autograft, fascia lata) exist but are not commercial products.",
+      "volume_note": "US rotator cuff repair volume rose 141% from 1996 to 2006 with the shift to ambulatory surgery (Colvin 2012, PMID:22298054); New York State volume rose from 6,656 to 10,128 per year between 1997 and 2002 with ambulatory share reaching 82% (Sherman 2008, PMID:18264848). This is a far larger procedure base than any upper-extremity bone-biologic indication.",
+      "sources": [
+        "PMID:22298054",
+        "PMID:18264848",
+        "PMID:35788057",
+        "PMID:33220413",
+        "PMID:21978432",
+        "PMID:40939824",
+        "NCT04450342",
+        "NCT06857084",
+        "NCT05981833"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "hydroset",
+      "name": "HydroSet / HydroSet XT injectable HA bone substitute",
+      "company": "Stryker (Orthovita, Inc. is the Stryker subsidiary named as 510(k) applicant)",
+      "ownership_history": "HydroSet launched by Stryker in the mid-2000s; HydroSet XT with a mixing/delivery system cleared to Orthovita (Stryker) in 2016. Stryker acquired Orthovita (Vitoss) in 2011.",
+      "category": "calcium-phosphate-cement",
+      "composition": "Self-setting tetracalcium phosphate / dicalcium phosphate cement that converts to hydroxyapatite; sets in a wet field within about 8 minutes per Stryker product page.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K161447 (HydroSet XT, Orthovita, Inc., decision 2016-10-06); earlier Stryker Injectable Cement K060061 (2006-03-01, MQV), K060763 (2006-09-22, product code GXP; cited by FDA recall Z-2054-2013), K060750 (Stryker CMF, 2006-04-19), K051603 (2005-12-30)",
+        "us_market_year": 2005,
+        "on_label_indications": [
+          "fill bony voids or gaps of the skeletal system (extremities, craniofacial, posterolateral spine, pelvis) that are not intrinsic to the stability of the bony structure",
+          "cured in situ, can augment provisional hardware (k-wires, plates, screws) to help support bone fragments during the surgical procedure; temporary support only, not structural support during healing"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "proximal-humerus-fracture-orif",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "Calcium phosphate cement augmentation of locked plating reduced head settling and intra-articular screw penetration vs no augmentation or cancellous chips in a 92-patient retrospective cohort (Egol 2012, PMID:22192764); the cement brand in that series is not HydroSet-specific.",
+          "caveats": "Single-center retrospective; no HydroSet-specific RCT in the proximal humerus."
+        },
+        {
+          "application_id": "distal-radius-malunion-osteotomy",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Double-blind RCT of HydroSet vs no graft in volar-plated opening-wedge distal radius osteotomy found no difference in PRWE, QuickDASH, motion or grip at 12 months (Andreasson 2020, PMID:32472263).",
+          "caveats": "A negative trial for the product: it shows the void can be left empty when cortical contact is maintained."
+        },
+        {
+          "application_id": "distal-radius-fracture",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Class evidence: calcium phosphate cement plus volar locking plate gave no clinical or radiographic benefit over plate alone in elderly unstable fractures (Kim 2011 RCT, n=50, PMID:21471414).",
+          "caveats": "Cement brand in Kim 2011 not HydroSet; class-level inference."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:32472263",
+          "title": "Functional outcome after corrective osteotomy for malunion of the distal radius: a randomised, controlled, double-blind trial",
+          "year": 2020,
+          "design": "RCT",
+          "n": null,
+          "finding": "No difference in PROMs, motion or grip at 3, 6 and 12 months with HydroSet vs empty osteotomy void.",
+          "sponsor_funded": false,
+          "applications": [
+            "distal-radius-malunion-osteotomy"
+          ]
+        },
+        {
+          "ref": "PMID:22192764",
+          "title": "Fracture site augmentation with calcium phosphate cement reduces screw penetration after ORIF of proximal humeral fractures",
+          "year": 2012,
+          "design": "retrospective",
+          "n": 92,
+          "finding": "Less humeral head settling and significantly less screw penetration with calcium phosphate cement than with no augmentation (P=.02) or cancellous chips (P=.009).",
+          "sponsor_funded": false,
+          "applications": [
+            "proximal-humerus-fracture-orif"
+          ]
+        },
+        {
+          "ref": "PMID:21288333",
+          "title": "Microstructure and biomechanical characteristics of bone substitutes for trauma and orthopaedic surgery",
+          "year": 2011,
+          "design": "preclinical",
+          "n": 9,
+          "finding": "Bench comparison of nine cements including HydroSet and Norian SRS; mechanical properties differ widely among products registered for trauma.",
+          "sponsor_funded": false,
+          "applications": [
+            "proximal-humerus-fracture-orif",
+            "distal-radius-fracture"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment: packaged into the MS-DRG inpatient, the OPPS APC or the ASC procedure payment for the ORIF code; no HCPCS pass-through. In the ASC the filler comes out of the facility's packaged implant allowance, so price sensitivity is high.",
+        "notes": "Sold by Stryker Trauma & Extremities reps alongside plates; contracting rides on the plate/nail agreement. Evidence base is mechanical (settling, cut-out), not union, which is how it should be positioned."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.stryker.com/us/en/trauma-and-extremities/products/hydroset.html",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K161447",
+        "PMID:32472263",
+        "PMID:22192764",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22HYDROSET%22&sort=decision_date:desc&limit=30",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22STRYKER%22+AND+device_name:%22INJECTABLE+CEMENT%22&sort=decision_date:desc&limit=30",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "challenge": "Stryker's catalog page lists the product as 'HydroSet XT' (2026-10-22); use that name.",
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "norian-srs",
+      "name": "Norian SRS / Norian XR / Norian Drillable (calcium phosphate cement)",
+      "company": "Historically Norian Corp. then Synthes; Norian assets were divested after the 2010 plea (successor ownership not confirmed from a primary source)",
+      "ownership_history": "Norian Corp. (Cupertino, CA) developed the first commercial calcium phosphate cement; Synthes acquired Norian in 1999. In 2009 the US Attorney in Philadelphia charged Synthes, Norian and four executives over unauthorized clinical use of Norian XR in vertebral compression fractures (a labeled contraindication); Norian pleaded guilty in 2010 (about a $23 million fine) and Synthes agreed to divest Norian; executives were sentenced in 2011. J&J acquired Synthes in 2012. Despite the 2010 divestiture agreement, DePuy Synthes (J&J MedTech) still carries the Norian brand in 2026: its Norian Drillable inventory control form is on jnjmedtech.com and a 'Norian Putty / Fast Set Putty Bone Void Filler' patient leaflet (TV-TEC-216396 Rev B, September 2026, sponsor DePuy Synthes (Australia) Pty Ltd) lists 'Norian'. The most recent Norian 510(k) is K102722 (Norian Drillable Inject / Fast Set Putty, 2011-01-27, Synthes USA Products LLC). What the divestiture covered is not clear from public sources.",
+      "category": "calcium-phosphate-cement",
+      "composition": "Injectable carbonated apatite (dahllite) cement that hardens in situ; XR variant added barium sulfate radiopacity.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K041842 and K060406 (Norian SRS Fast Set Putty), K060408 (Norian SRS Bone Void Filler, 2006-03-21), K060443/K060445 (Norian CRS, 2006-04-13), K073303 (Norian Drillable, 2008-07-02), K102018 (Norian Reinforced, 2010-09-23), K102722 (Norian Drillable Inject / Fast Set Putty, 2011-01-27); applicant Synthes (USA) / Synthes USA Products LLC",
+        "us_market_year": 1998,
+        "on_label_indications": [
+          "bone void filler for voids or gaps not intrinsic to the stability of the bony structure (extremities, pelvis, spine per product); FDA-cleared labeling for Norian XR warned against use in vertebral compression fractures"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "distal-radius-fracture",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Largest biologic RCT ever run in the wrist: 323 patients randomized to closed reduction with or without Norian SRS; better grip, motion and function at 6-8 weeks, no clinical difference at one year, more extraosseous cement deposits and slightly greater ulnar variance change (Cassidy 2003, PMID:14630841). Cochrane (Handoll 2008, PMID:18425972) pooled this with smaller trials and found short-term anatomic gains but no durable functional benefit.",
+          "caveats": "Pre-dates volar locking plates; industry-era trial; product line effectively ended by the 2009-2010 DOJ case. Historical reference only."
+        },
+        {
+          "application_id": "proximal-humerus-fracture-orif",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "Calcium phosphate cement class evidence (Egol 2012) was largely generated with Norian-era cements.",
+          "caveats": "Brand attribution in the published series is inconsistent."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:14630841",
+          "title": "Norian SRS cement compared with conventional fixation in distal radial fractures. A randomized study",
+          "year": 2003,
+          "design": "RCT",
+          "n": 323,
+          "finding": "Early (6-8 week) functional advantage that disappeared by one year; extraosseous deposits were the main complication.",
+          "sponsor_funded": true,
+          "applications": [
+            "distal-radius-fracture"
+          ]
+        },
+        {
+          "ref": "PMID:12582792",
+          "title": "Injectable calcium phosphate bone cement Norian SRS for intra-articular compression fractures of the distal radius in osteoporotic women",
+          "year": 2003,
+          "design": "prospective-cohort",
+          "n": 52,
+          "finding": "Cement plus pinning allowed 3 weeks of casting vs 6 weeks, with maintained reduction in osteoporotic women.",
+          "sponsor_funded": null,
+          "applications": [
+            "distal-radius-fracture"
+          ]
+        },
+        {
+          "ref": "PMID:18425972",
+          "title": "Bone grafts and bone substitutes for treating distal radial fractures in adults (Cochrane)",
+          "year": 2008,
+          "design": "meta-analysis",
+          "n": 874,
+          "finding": "Ten heterogeneous trials; scaffolding improved anatomical outcomes vs cast alone in four trials, but Norian SRS vs cast/external fixation showed no functional or anatomic difference at one year.",
+          "sponsor_funded": false,
+          "applications": [
+            "distal-radius-fracture"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "Not applicable today; historically packaged into the fracture procedure payment.",
+        "notes": "The DOJ case is the compliance cautionary tale every orthobiologics hiring manager knows: a cleared bone void filler promoted and studied off-label in the spine without an IDE. Any BD candidate should be able to recite it. Current ownership of the Norian name after Synthes' divestiture is flagged unverified in the notes. Do not call Norian 'divested and gone': DePuy Synthes still publishes Norian Drillable/Putty documents in 2026."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Synthes",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K060408",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K023862",
+        "PMID:14630841",
+        "PMID:18425972",
+        "https://p1.aprimocdn.net/jjamp/en/fact-sheets-faqs/tv-tec-216396-rev-b-fast-set-putty-bone-void-filler-pil---pil-1001684.pdf",
+        "https://www.jnjmedtech.com/system/files/pdf/Inventory%20Control%20Form%20-%20Norian%20Drillable.pdf",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22NORIAN%22&sort=decision_date:desc&limit=10"
+      ],
+      "challenge": "Status changed from off-market to established on the strength of DePuy Synthes/J&J MedTech documents dated through September 2026; the US J&J MedTech product page is behind Cloudflare and was not read, so confirm US availability and the Norian XR (spinal) labeling with a DePuy Synthes rep."
+    },
+    {
+      "id": "chronos-tcp",
+      "name": "chronOS beta-TCP granules / chronOS Inject",
+      "company": "DePuy Synthes (Johnson & Johnson MedTech)",
+      "ownership_history": "Synthes product line (Mathys-origin beta-TCP ceramic); Synthes acquired by Johnson & Johnson in 2012 and folded into DePuy Synthes.",
+      "category": "synthetic-ceramic",
+      "composition": "Pure-phase beta-tricalcium phosphate granules/blocks (chronOS); chronOS Inject is an injectable brushite-forming calcium phosphate cement containing beta-TCP granules.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K013072 (chronOS TCP, 2002-11-26); K041350 (chronOS, 2004-07-08); K043045 (chronOS, 2005-01-07; may be combined with autogenous blood/marrow); K053022 (chronOS beta-TCP, 2006-01-23); K071046 (chronOS Composite, 2007-10-23); applicant Synthes (USA)",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "resorbable bone void filler for voids or gaps not intrinsic to the stability of the bony structure, extremities, pelvis and posterolateral spine (class labeling)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "distal-radius-fracture",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Granular beta-TCP added to dorsal angle-stable plating gave no functional, radiographic or complication difference in a 39-patient RCT (Jakubietz 2011, PMID:21600042).",
+          "caveats": "Small, dorsal plating (now uncommon); negative result."
+        },
+        {
+          "application_id": "proximal-humerus-fracture-orif",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Synthetic void fillers appear in the augmentation systematic review (Biermann 2019, PMID:30903343) with level II-IV clinical data; the 2026 RCT meta-analysis found synthetic graft reduced complications but, unlike biologic graft, did not shorten healing time or reduce pain (Daher 2026, PMID:42750779).",
+          "caveats": "Product-specific proximal humerus data for chronOS not found."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:21600042",
+          "title": "The use of beta-tricalcium phosphate bone graft substitute in dorsally plated, comminuted distal radius fractures",
+          "year": 2011,
+          "design": "RCT",
+          "n": 39,
+          "finding": "No advantage of additional granular bone graft substitute with angle-stable plating.",
+          "sponsor_funded": false,
+          "applications": [
+            "distal-radius-fracture"
+          ]
+        },
+        {
+          "ref": "PMID:42750779",
+          "title": "Bone graft augmentation reduces complications in osteosynthesis of proximal humerus fractures: a meta-analysis of RCTs",
+          "year": 2026,
+          "design": "meta-analysis",
+          "n": 350,
+          "finding": "Five RCTs; graft augmentation lowered complication odds (OR 0.21); synthetic subgroup did not improve healing time or pain.",
+          "sponsor_funded": false,
+          "applications": [
+            "proximal-humerus-fracture-orif"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Packaged into the fracture procedure payment in every setting; no separate code.",
+        "notes": "Sold through DePuy Synthes trauma reps as a line extension to the plating system; low ASP commodity ceramic."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K013072",
+        "PMID:21600042",
+        "PMID:42750779",
+        "PMID:30903343",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22CHRONOS%22+AND+applicant:%22SYNTHES%22&sort=decision_date:desc&limit=30"
+      ]
+    },
+    {
+      "id": "traumacem-v-plus",
+      "name": "TRAUMACEM V+ Injectable Bone Cement",
+      "company": "DePuy Synthes (Synthes (USA) Products, LLC)",
+      "ownership_history": "Synthes product; US clearance 2017 under Johnson & Johnson ownership.",
+      "category": "other",
+      "composition": "Radiopaque PMMA (acrylic) bone cement formulated for long working time and injection through cannulated implants; it is not a calcium phosphate and does not resorb.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K170802 (TRAUMACEM V+ Injectable Bone Cement; Synthes (USA) Products, LLC; decision 2017-09-28; product code LOD, 21 CFR 888.3027)",
+        "us_market_year": 2017,
+        "on_label_indications": [
+          "augmentation of the TFN-ADVANCED Proximal Femoral Nailing System through cannulated implants and instruments for patients with poor bone quality (e.g., osteoporosis)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "proximal-humerus-fracture-orif",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "I",
+          "evidence_summary": "The PHILOS screw-tip cement augmentation studied in Europe uses this cement, but the only RCT (Hengg 2019, PMID:30805708; NCT01847508, AO-sponsored) was stopped early at 67 patients with mechanical failure 16.1% augmented vs 14.8% control (RR 1.09, p=1.0). A meta-analysis of 1 RCT plus 5 observational studies (n=541) found fewer implant-related complications with augmentation (10.4% vs 19.9%) but no functional difference (Lecoultre 2024, PMID:38589503).",
+          "caveats": "US label is hip-only; proximal humerus screw augmentation is off-label in the US. The RCT was underpowered and negative."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:30805708",
+          "title": "Cement augmentation of the proximal humerus internal locking system in elderly patients: a multicenter randomized controlled trial",
+          "year": 2019,
+          "design": "RCT",
+          "n": 67,
+          "finding": "Terminated early; no difference in mechanical failure at one year (16.1% vs 14.8%).",
+          "sponsor_funded": true,
+          "applications": [
+            "proximal-humerus-fracture-orif"
+          ]
+        },
+        {
+          "ref": "PMID:38589503",
+          "title": "Cement augmentation for proximal humerus fractures: a meta-analysis of randomized trials and observational studies",
+          "year": 2024,
+          "design": "meta-analysis",
+          "n": 541,
+          "finding": "Overall complications 15.6% vs 25.4% (OR 0.54) favoring augmentation, driven by implant-related complications; no difference in reintervention or function.",
+          "sponsor_funded": false,
+          "applications": [
+            "proximal-humerus-fracture-orif"
+          ]
+        },
+        {
+          "ref": "NCT01847508",
+          "title": "PHILOS Augmented - a Multicenter Randomized Controlled Trial",
+          "year": 2017,
+          "design": "RCT",
+          "n": 69,
+          "finding": "Primary endpoint radiographic mechanical failure in year one; completed 2017-11, no results posted.",
+          "sponsor_funded": true,
+          "applications": [
+            "proximal-humerus-fracture-orif"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Packaged into the procedure payment (hip nailing); no separate payment.",
+        "notes": "Included because the atlas brief listed it with calcium phosphate cements; it is PMMA and its US label is the hip. A hiring manager will catch a candidate who calls it a calcium phosphate or a proximal humerus product."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf17/K170802.pdf",
+        "PMID:30805708",
+        "PMID:38589503",
+        "NCT01847508",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22TRAUMACEM%22&sort=decision_date:desc&limit=30"
+      ]
+    },
+    {
+      "id": "cerament-bvf",
+      "name": "CERAMENT Bone Void Filler",
+      "company": "Bonesupport AB (Lund, Sweden; US subsidiary Bonesupport Inc., Needham MA)",
+      "ownership_history": "Bonesupport, founded 1999, listed on Nasdaq Stockholm 2017; CERAMENT BVF first cleared in the US in 2005, expanded indications 2020 and 2024.",
+      "category": "calcium-sulfate",
+      "composition": "60% calcium sulfate hemihydrate / 40% hydroxyapatite powder mixed with an iohexol-containing liquid; injectable, sets in vivo, drillable once cured.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K051951 (2005); K073316 (2008); K090871 (2009); K201535 (2020-10-16); K240459 (2024-03-05)",
+        "us_market_year": 2005,
+        "on_label_indications": [
+          "ceramic bone graft substitute for gaps and voids not intrinsic to the stability of the bony structure, injected or placed into bony voids of the extremities, pelvis and posterolateral spine (open surgery only in spine)",
+          "defects from benign bone cysts and tumors (adults and children 9 years and older) or osseous defects from surgery or trauma",
+          "can augment hardware and support bone fragments during the surgical procedure; temporary support only; can be drilled and screws placed through it (K201535 expansion)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "proximal-humerus-fracture-orif",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "Prospective cohort of 24 proximal humerus ORIFs augmented with CERAMENT BVF, propensity-matched 1:1 to unaugmented controls: union 92% vs 83% (ns), screw penetration 4% vs 21% (p=0.08), revision 4% vs 17% (ns); multivariate OR for screw penetration 0.007 (Sinkler 2025, PMID:40885162).",
+          "caveats": "Small single-center cohort, retrospective comparator, wide confidence intervals; no RCT."
+        },
+        {
+          "application_id": "distal-radius-fracture",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "No distal radius clinical data found; biomechanical augmentation work only (Kok 2019/2022).",
+          "caveats": "No clinical evidence in the wrist."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:40885162",
+          "title": "Outcomes of proximal humerus ORIF augmented with calcium sulfate hydroxyapatite bio-composite (CERAMENT BONE VOID FILLER)",
+          "year": 2025,
+          "design": "prospective-cohort",
+          "n": 48,
+          "finding": "Lower screw penetration and revision in the augmented group; differences not statistically significant except on multivariate analysis.",
+          "sponsor_funded": null,
+          "applications": [
+            "proximal-humerus-fracture-orif"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Packaged into the fracture procedure payment; Bonesupport's US growth has come from CERAMENT G, where Breakthrough Device status gives access to CMS new-technology programs (company claim; details unverified).",
+        "notes": "US sales through a combination of direct reps and independent agents (hybrid; unverified). The proximal humerus is one of the few upper-extremity void-fill indications with product-specific comparative data, which makes this the most defensible void filler to position in shoulder trauma."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf20/K201535.pdf",
+        "https://www.bonesupport.com/en-us/",
+        "PMID:40885162"
+      ]
+    },
+    {
+      "id": "cerament-g",
+      "name": "CERAMENT G (gentamicin-eluting bone void filler)",
+      "company": "Bonesupport AB",
+      "ownership_history": "CE-marked in Europe since 2013; FDA Breakthrough Device designation; De Novo granted 2022-05-17 (DEN210044) creating product code QRR and 21 CFR 888.3046; 510(k) K234008 (2024-03-13) expanded the indication to open fractures using the Manchester real-world cohort.",
+      "category": "calcium-sulfate",
+      "composition": "CERAMENT (calcium sulfate / hydroxyapatite) with 17.5 mg gentamicin per mL (per EU labeling; US dose not independently confirmed); device-drug combination product.",
+      "regulatory": {
+        "path": "De-Novo",
+        "reference": "DEN210044 (2022-05-17); K234008 (2024-03-13)",
+        "us_market_year": 2022,
+        "on_label_indications": [
+          "(DEN210044) resorbable gentamicin-eluting ceramic bone void filler for skeletally mature patients as an adjunct to systemic antibiotic therapy and surgical debridement as part of the surgical treatment of osteomyelitis in defects in the extremities; reduces recurrence of chronic osteomyelitis from gentamicin-sensitive organisms; can augment provisional hardware as temporary support",
+          "(K234008) adds: as part of the standard treatment approach to bone infection and open fractures; can reduce the occurrence and reoccurrence of bone infection from gentamicin-sensitive microorganisms in order to protect bone healing",
+          "FDA product-code definition states the device is not intended to treat infection"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "upper-extremity-osteomyelitis-fri",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "Prospective single-stage series of 100 patients / 105 bones with chronic osteomyelitis: infection eradicated in 96% with one procedure, 19.5-month mean follow-up (McNally 2016, PMID:27587534). K234008 cites a Manchester open-fracture cohort (2013-2021) with 3.7% deep infection, 96.3% limb salvage and 96% union vs literature standard of care. Upper-extremity bones are a minority in both.",
+          "caveats": "No RCT yet; the French CONVICTION RCT (NCT04805164, n=220, primary endpoint cost-utility) completes 2027. Company-sponsored US registry NCT06010433 and single-stage cohort NCT06555848 ongoing. Humerus cases appear only as a handful in open-fracture series (Sandilands 2026, PMID:41800468)."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:27587534",
+          "title": "Single-stage treatment of chronic osteomyelitis with a new absorbable, gentamicin-loaded, calcium sulphate/hydroxyapatite biocomposite: a prospective series of 100 cases",
+          "year": 2016,
+          "design": "prospective-cohort",
+          "n": 100,
+          "finding": "96% infection eradication after a single procedure; adverse events uncommon (3 fractures, 6 wound leaks).",
+          "sponsor_funded": null,
+          "applications": [
+            "upper-extremity-osteomyelitis-fri"
+          ]
+        },
+        {
+          "ref": "NCT04805164",
+          "title": "CONVICTION: Cerament-G in chronic osteomyelitis of long bones, randomized multicentre study",
+          "year": 2021,
+          "design": "RCT",
+          "n": 220,
+          "finding": "Recruiting; primary completion 2027-11; primary endpoint incremental cost-utility ratio.",
+          "sponsor_funded": false,
+          "applications": [
+            "upper-extremity-osteomyelitis-fri"
+          ]
+        },
+        {
+          "ref": "PMID:41800468",
+          "title": "Intramedullary nailing with absorbable antibiotic-eluting ceramic for FRI prophylaxis in high-risk open fractures",
+          "year": 2026,
+          "design": "case-series",
+          "n": 9,
+          "finding": "Nine open tibia/femur/humerus fractures nailed with Cerament G delivered intramedullary; all united, no FRI at 9 months.",
+          "sponsor_funded": null,
+          "applications": [
+            "upper-extremity-osteomyelitis-fri"
+          ]
+        }
+      ],
+      "pipeline": {
+        "stage": "launched-2022",
+        "trials": [
+          "NCT04805164",
+          "NCT06555848",
+          "NCT06010433"
+        ],
+        "expected_milestone": "CONVICTION RCT primary completion November 2027 (ClinicalTrials.gov); CERAMENT V (vancomycin) US status not confirmed in this sweep"
+      },
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Inpatient: Bonesupport states Breakthrough designation eased access to CMS new-technology programs (an NTAP for CERAMENT G has been reported by the company; not verified from a CMS page in this sweep). Outpatient/ASC: packaged into the procedure payment unless a pass-through or HCPCS code applies (none confirmed).",
+        "notes": "The first and so far only FDA-authorized antibiotic-eluting bone void filler; competitors mix antibiotics into calcium sulfate off-label. Upper-extremity use is a small slice of a product aimed at tibial FRI and diabetic foot.",
+        "challenge": "An NTAP claim without the CMS final-rule citation will be challenged; verify before using in a pitch."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf21/DEN210044.pdf",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K234008.pdf",
+        "https://www.bonesupport.com/en-us/",
+        "PMID:27587534",
+        "NCT04805164"
+      ]
+    },
+    {
+      "id": "stimulan",
+      "name": "STIMULAN Kit / STIMULAN Rapid Cure (and investigational STIMULAN VG)",
+      "company": "Biocomposites Ltd (Keele, UK)",
+      "ownership_history": "Privately held UK company; STIMULAN first cleared in the US in 1999 (K982663, via Encore Orthopedics) with Biocomposites as applicant from 2000.",
+      "category": "calcium-sulfate",
+      "composition": "Pharmaceutical-grade synthetic calcium sulfate hemihydrate powder and mixing solution forming a paste that can be injected, packed or molded into beads; resorbs in roughly 30-60 days.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K141830 (2015-01-23, Stimulan Kit / Stimulan Rapid Cure); predicates K021551, K003954, K001724, K982663",
+        "us_market_year": 1999,
+        "on_label_indications": [
+          "bone void filler for voids or gaps not intrinsic to the stability of the bony structure (extremities, pelvis, posterolateral spine), surgically created or from traumatic injury",
+          "biocompatible and may be used at an infected site",
+          "the US label does not include mixing with antibiotics; surgeon-mixed vancomycin, gentamicin or tobramycin beads are off-label in the US (the company states mixing approvals vary by regulator and are labeled in the EU, UK and Canada)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "upper-extremity-osteomyelitis-fri",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Antibiotic-loaded calcium sulfate beads are the most common US dead-space filler in bone infection, but the evidence is retrospective series dominated by the lower limb and diabetic foot; no upper-extremity-specific comparative study was found. Biocomposites is now running FDA-pathway trials of a premixed vancomycin-gentamicin version, STIMULAN VG, in diabetic foot osteomyelitis (NCT05539963, n=61) and pressure-ulcer osteomyelitis (NCT06283979, phase II, n=60), with an expanded-access program (NCT06808568).",
+          "caveats": "Off-label antibiotic mixing in the US; hypercalcemia and wound drainage are the known class complications."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT06283979",
+          "title": "Randomized phase II trial of STIMULAN VG with debridement and systemic antibiotics vs standard of care for osteomyelitis in stage IV pressure ulcers",
+          "year": 2025,
+          "design": "RCT",
+          "n": 60,
+          "finding": "Recruiting; primary completion December 2026.",
+          "sponsor_funded": true,
+          "applications": [
+            "upper-extremity-osteomyelitis-fri"
+          ]
+        },
+        {
+          "ref": "NCT05539963",
+          "title": "Randomized feasibility trial of STIMULAN VG with abbreviated vs full systemic antibiotics for diabetic foot osteomyelitis",
+          "year": 2023,
+          "design": "RCT",
+          "n": 61,
+          "finding": "Active, not recruiting; primary completion June 2025; results not yet posted.",
+          "sponsor_funded": true,
+          "applications": [
+            "upper-extremity-osteomyelitis-fri"
+          ]
+        }
+      ],
+      "pipeline": {
+        "stage": "phase-2",
+        "trials": [
+          "NCT06283979",
+          "NCT05539963",
+          "NCT06808568"
+        ],
+        "expected_milestone": "STIMULAN VG would be the first premixed antibiotic calcium sulfate with a US label; timing unknown"
+      },
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Packaged into the procedure payment in all settings; no separate code. In ASC-based hand and wrist infection cases the bead cost is absorbed by the facility.",
+        "notes": "Company cites use in over 80,000 cases per year worldwide (promotional claim). US sales via direct reps plus independent distributors (unverified mix). STIMULAN VG, if cleared, would directly challenge CERAMENT G's exclusivity."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf14/K141830.pdf",
+        "https://www.biocomposites.com/our-products/stimulan/",
+        "NCT06283979",
+        "NCT05539963",
+        "https://clinicaltrials.gov/study/NCT06283979",
+        "https://clinicaltrials.gov/study/NCT06808568",
+        "https://clinicaltrials.gov/study/NCT05539963"
+      ]
+    },
+    {
+      "id": "grafton-dbm",
+      "name": "Grafton DBM / Grafton Plus / Magnifuse",
+      "company": "Medtronic (Medtronic Sofamor Danek)",
+      "ownership_history": "Developed by Osteotech (Eatontown, NJ); Medtronic completed its acquisition of Osteotech on 2010-11-16 ($6.50 per share, about $123 million) (date from memory, unverified in this sweep). Clearances: K051188/K051195 (Osteotech, 2005-2006), K082615 (Grafton II eDBM, 2008), K123691 (Magnifuse, 2013), K251193 (Grafton DBM, Grafton Plus DBM Paste, Magnifuse; Medtronic, 2025-06-12).",
+      "category": "DBM",
+      "composition": "Human demineralized bone matrix fibers in a glycerol carrier (Grafton), or DBM with calcium salt bone void filler constituents (eDBM/Magnifuse, regulated as 510(k) devices under 21 CFR 888.3045).",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K251193 (2025-06-12); K051188; K082615; K123691",
+        "us_market_year": 1991,
+        "on_label_indications": [
+          "bone void filler / bone graft extender for voids or gaps not intrinsic to the stability of the bony structure in the extremities, pelvis and posterolateral spine (class labeling; exact 2025 wording not extracted from the PDF)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "humeral-shaft-nonunion",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "DBM is the most common off-the-shelf extender mixed with autograft or cellular allograft at upper-extremity nonunion revision, but no DBM-specific comparative humeral nonunion study was found; the practice rests on surgeon habit and lower-limb/spine data.",
+          "caveats": "Osteoinductivity varies by donor and lot; DBM products are tested by the manufacturer in athymic rodent assays, not in humans."
+        },
+        {
+          "application_id": "scaphoid-fracture-nonunion",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Arthroscopic fixation with DBM plus BMAC injection united 15 of 17 early scaphoid nonunions in athletes at a mean 15.4 weeks (Lee 2026, PMID:42098735).",
+          "caveats": "Case series; DBM brand not specified; selected mildly sclerotic nonunions."
+        },
+        {
+          "application_id": "clavicle-fracture-nonunion",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "Pooled clavicle nonunion series show graft use lowers delayed union but raises complication and reoperation rates; graft type (autograft vs DBM vs allograft) is not separable (Yetter 2023, PMID:36722838).",
+          "caveats": "Class-level inference only."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:42098735",
+          "title": "Arthroscopic osteosynthesis with DBM and BMAC for nonunion of scaphoid in athletes",
+          "year": 2026,
+          "design": "case-series",
+          "n": 17,
+          "finding": "88% union, 88% return to pre-injury sport or work at 2 years.",
+          "sponsor_funded": null,
+          "applications": [
+            "scaphoid-fracture-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:36722838",
+          "title": "Complications and outcomes after surgical intervention in clavicular nonunion: a systematic review",
+          "year": 2023,
+          "design": "meta-analysis",
+          "n": 1258,
+          "finding": "Bone graft use: delayed union 0.6% vs 3.6% but complications 15% vs 8% and reoperation 29% vs 14%.",
+          "sponsor_funded": false,
+          "applications": [
+            "clavicle-fracture-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Packaged into the procedure payment; in the inpatient nonunion revision (bundled in the MS-DRG) and in HOPD/ASC (packaged). No pass-through.",
+        "notes": "Medtronic sells Grafton mainly through its spine channel; upper-extremity trauma usage rides on hospital-wide biologics contracts and GPO DBM categories where price per cc is the lever. The 2025 510(k) is a supplier/processing change, not a new indication."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K251193",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K051188",
+        "PMID:42098735",
+        "PMID:36722838",
+        "https://news.medtronic.com/2010-11-16-Medtronic-Completes-Acquisition-of-Osteotech",
+        "https://fda.innolitics.com/device/K251193",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22GRAFTON%22&sort=decision_date:desc&limit=30"
+      ]
+    },
+    {
+      "id": "dbx",
+      "name": "DBX Demineralized Bone Matrix (Putty, Paste, Mix, Strip)",
+      "company": "MTF Biologics (Musculoskeletal Transplant Foundation); historically distributed by Synthes / DePuy Synthes",
+      "ownership_history": "Processed by the Musculoskeletal Transplant Foundation (MTF Biologics, Edison NJ). Marketed by Synthes and, since 2012, DePuy Synthes (J&J MedTech lists DBX Trauma and DBX CMF/Inject as DePuy Synthes products; a DePuy Synthes Spine brochure describes an exclusive MTF partnership of more than 10 years). On 2025-03-13 MTF expanded its agreement with Kolosis BIO, which now also represents and distributes DBX Mix and DBX Putty alongside Kore Fiber and Prime HD, so DBX is no longer sold only through DePuy Synthes; the contract terms and whether DePuy's rights are still exclusive are not public.",
+      "category": "DBM",
+      "composition": "Human DBM in a sodium hyaluronate carrier; putty, paste, mix (with cancellous chips) and strip forms.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "MTF 510(k)s verified in openFDA: K040262 (2005-03-17), K040501 (2005-04-29), K042829 (DBX Strip, 2006-01-13), K053218 (2006-12-28), K062205 (DBX Strip, 2007-02-05), K063676 (DBX Mix, 2007-03-05), K080399 (2008-10-10), K091218 (2009-09-28), K091217 (2009-10-02), K103784 and K103795 (2011-04-13); applicant Musculoskeletal Transplant Foundation (product codes MQV/MBP/NUN)",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "bone void filler for voids or gaps not intrinsic to the stability of the bony structure (extremities, pelvis, posterolateral spine) (class labeling; the scanned 510(k) PDF could not be text-extracted)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "humeral-shaft-nonunion",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Used as an extender at nonunion revision through the DePuy Synthes trauma channel; no product-specific upper-extremity evidence found.",
+          "caveats": "Expert-opinion tier."
+        },
+        {
+          "application_id": "forearm-shaft-fracture-nonunion",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Same as above; forearm nonunion series do not separate DBM brands.",
+          "caveats": "No evidence."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Packaged into the procedure payment; no separate code.",
+        "notes": "The DePuy Synthes trauma bag typically carries DBX plus chronOS, which gives DePuy an upper-extremity biologics presence without a growth-factor product. MTF also processes Trinity Elite for Orthofix, so one tissue bank sits behind two competing sales forces. MTF-Kolosis BIO agreement (2025-03-13) means DBX Mix and Putty also reach surgeons through an independent distributor, so DePuy Synthes exclusivity should not be assumed."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K103795",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K040501",
+        "https://www.jnjmedtech.com/en-US/product/dbx-demineralized-bone-matrix-trauma",
+        "https://www.orthoworld.com/?p=78296",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22MUSCULOSKELETAL+TRANSPLANT%22+AND+device_name:%22DBX%22&sort=decision_date:desc&limit=30"
+      ],
+      "challenge": "DePuy Synthes distribution of DBX confirmed from J&J MedTech product pages; MTF added Kolosis BIO as a second distributor (Mix and Putty) in March 2025; indications wording is class-typical (the 510(k) PDFs are scanned images)."
+    },
+    {
+      "id": "allomatrix",
+      "name": "ALLOMATRIX (Injectable Putty, C, DR, Custom)",
+      "company": "Stryker (Wright Medical Technology, Inc., a Stryker company)",
+      "ownership_history": "Developed by Wright Medical Technology (clearances 2004-2006); Stryker completed its acquisition of Wright Medical on 2020-11-11; K252085 cleared 2025-09-30 to 'Wright Medical Technology, Inc. (Stryker Corporation)' for a change in DBM and cancellous supplier.",
+      "category": "DBM",
+      "composition": "Human DBM (and cancellous chips in some SKUs) in a surgical-grade calcium sulfate carrier; injectable.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K020895 (2004); K040980, K041168 (2004-08-02), K041663 (2004-09-16); K053319 (2006-03-06); K061939 (2006-07-18); K252085 (Allomatrix Injectable Putty, Allomatrix C and other forms; Wright Medical Technology, Inc.; 2025-09-30)",
+        "us_market_year": 2004,
+        "on_label_indications": [
+          "indicated only for bony voids or gaps that are not intrinsic to the stability of the bony structure; gently packed into bony voids or gaps of the skeletal system (extremities and pelvis), surgically created or from traumatic injury (K252085)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "distal-radius-fracture",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "The only upper-extremity DBM RCT found: 50 unstable distal radius fractures treated with K-wires, randomized to AlloMatrix or no graft; no difference in function, speed of recovery, union, complications or BMD, longer operating time with graft, and transient extraosseous leakage (D'Agostino 2013, PMID:24151272; NCT00274378).",
+          "caveats": "Negative trial; investigator-initiated (Louvain)."
+        },
+        {
+          "application_id": "humeral-shaft-nonunion",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Used as an extender in Stryker trauma accounts; no humeral data.",
+          "caveats": "No evidence."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:24151272",
+          "title": "An investigation of the effect of AlloMatrix bone graft in distal radial fracture: a prospective randomised controlled clinical trial",
+          "year": 2013,
+          "design": "RCT",
+          "n": 50,
+          "finding": "No beneficial effect of AlloMatrix DBM in K-wire-fixed unstable distal radius fractures; operating time longer with graft.",
+          "sponsor_funded": false,
+          "applications": [
+            "distal-radius-fracture"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Packaged into the procedure payment.",
+        "notes": "After the Wright acquisition Stryker carries two DBM-family extenders (Allomatrix and Vitoss BA/BiModal line extensions) plus HydroSet in the Trauma & Extremities bag; the 2025 510(k) shows the line is being maintained, not retired."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K252085.pdf",
+        "PMID:24151272",
+        "NCT00274378",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22ALLOMATRIX%22&sort=decision_date:desc&limit=30",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "optium-dbm",
+      "name": "Optium DBM Gel and Putty",
+      "company": "LifeNet Health",
+      "ownership_history": "LifeNet Health (Virginia Beach, VA) product: 510(k) K053098 'Optium DBM Gel and Putty' (human demineralized cortical bone in USP glycerol; applicant 'Lifenet', decision 2005-11-28, no human clinical data in the clearance). LifeNet lists Optium DBM Gel and Putty on its own site (general orthopedics and spine). No DePuy Synthes listing or distribution agreement for Optium was found; DePuy Synthes's DBM is DBX (MTF) and its LifeNet product is ViviGen.",
+      "category": "DBM",
+      "composition": "Human DBM in a glycerol carrier (gel and putty).",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K053098 (2005-11-28; applicant Lifenet; product code MBP; glycerol carrier)",
+        "us_market_year": 2006,
+        "on_label_indications": [
+          "Bone void filler for bony voids or gaps in the extremities, spine and pelvis that are not intrinsic to the stability of the bony structure (FDA 510(k) summary K053098); remodeled into the patient's skeleton"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "humeral-shaft-nonunion",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "No upper-extremity evidence found.",
+          "caveats": "Expert-opinion tier."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Packaged into the procedure payment.",
+        "notes": "Commodity DBM from LifeNet Health. Not in the DePuy Synthes bag (DePuy carries DBX and LifeNet's ViviGen); the Optium relationship is LifeNet-direct."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K053098",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf5/K053098.pdf",
+        "https://lifenethealth.org/general-orthopedics/demineralized-bone-matrices/optiumr-dbm-putty",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22OPTIUM%22&sort=decision_date:desc&limit=10"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "infuse",
+      "name": "INFUSE Bone Graft (rhBMP-2 on absorbable collagen sponge)",
+      "company": "Medtronic (Medtronic Sofamor Danek USA); rhBMP-2 manufactured by Pfizer (Wyeth) in Andover, MA per PMA supplements",
+      "ownership_history": "Developed by Genetics Institute/Wyeth with Medtronic Sofamor Danek; PMA P000058 approved 2002-07-02 (ALIF with LT-CAGE), P000054 approved 2004-04-30 (open tibial shaft fracture), P050053 approved 2007-03-09 (sinus and alveolar ridge). 2012 labeling supplements (S033/S048) added a warning about use in patients with suspected cancer at the application site.",
+      "category": "rhBMP",
+      "composition": "Recombinant human BMP-2 (dibotermin alfa) 1.5 mg/mL reconstituted onto a bovine type I collagen sponge.",
+      "regulatory": {
+        "path": "PMA",
+        "reference": "P000058 (2002); P000054 (2004); P050053 (2007); TLIF supplement P000058/S096 approved 2026-02-13 (one or two adjacent levels, L2-S1)",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "spinal fusion in skeletally mature patients with degenerative disc disease at one level from L4-S1 (up to Grade I spondylolisthesis) implanted via anterior open or laparoscopic approach with the LT-CAGE, after at least six months of nonoperative treatment (P000058 original order)",
+          "acute, open tibial shaft fractures stabilized with IM nail fixation, applied within 14 days of the initial fracture, in skeletally mature patients (P000054)",
+          "alternative to autogenous bone graft for sinus augmentation and localized alveolar ridge augmentation for defects associated with extraction sockets (P050053)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "humeral-shaft-nonunion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "III",
+          "evidence_summary": "Entirely off-label in the upper extremity. A 2024 systematic review and meta-analysis of 18 studies (16 pooled) found no significant improvement in humerus nonunion healing with rhBMP plus graft vs graft alone and a trend toward more infection (Alhakbani 2024, PMID:39429996). rhBMP-7 added to revision of 22 humeral nonunions made no difference (Hackl 2017, PMID:28784168). Local soft-tissue swelling after rhBMP-2 in a humeral nonunion has been reported (PMID:27299059).",
+          "caveats": "No RCT in any upper-extremity site; heterogeneous retrospective data; cost (thousands of dollars per kit) is hard to justify against 93-98% union with plate and autograft."
+        },
+        {
+          "application_id": "scaphoid-fracture-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "II",
+          "evidence_summary": "The only BMP RCT in the wrist used rhBMP-7 (OP-1), not Infuse: 17 proximal-pole nonunions randomized to iliac autograft, autograft plus OP-1, or allograft plus OP-1; OP-1 shortened radiographic healing from 9 to 4 weeks and let allograft match autograft (Bilic 2006, PMID:16506027).",
+          "caveats": "n=17, single center, product withdrawn from the US market; not transferable to rhBMP-2 dosing."
+        },
+        {
+          "application_id": "distal-radius-fracture",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Wyeth ran a phase 1 dose-escalation of rhBMP-2 on a calcium phosphate matrix injected into closed distal radius fractures (NCT00161629, n=40, completed 2005-2007); no efficacy program followed.",
+          "caveats": "Abandoned development path."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:39429996",
+          "title": "Healing of humerus non-union fracture using rhBMP with bone graft compared to bone graft alone: systematic review and meta-analysis",
+          "year": 2024,
+          "design": "meta-analysis",
+          "n": null,
+          "finding": "Pooled OR for union 0.65 (95% CI 0.07-6.38), not significant; infection rate OR 1.18, not significant; no RCTs available.",
+          "sponsor_funded": false,
+          "applications": [
+            "humeral-shaft-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:28784168",
+          "title": "Long-term outcome following additional rhBMP-7 application in revision surgery of aseptic humeral, femoral, and tibial shaft nonunion",
+          "year": 2017,
+          "design": "retrospective",
+          "n": 112,
+          "finding": "102 of 112 nonunions (19 of 22 humeral) healed within 12 months regardless of rhBMP-7; no difference in DASH.",
+          "sponsor_funded": false,
+          "applications": [
+            "humeral-shaft-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:16506027",
+          "title": "Osteogenic protein-1 (BMP-7) accelerates healing of scaphoid non-union with proximal pole sclerosis",
+          "year": 2006,
+          "design": "RCT",
+          "n": 17,
+          "finding": "OP-1 reduced radiographic healing time to 4 weeks vs 9 weeks with autograft alone.",
+          "sponsor_funded": null,
+          "applications": [
+            "scaphoid-fracture-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:16818967",
+          "title": "Recombinant human BMP-2 and allograft compared with autogenous bone graft for reconstruction of diaphyseal tibial fractures with cortical defects (BESTT-ALL)",
+          "year": 2006,
+          "design": "RCT",
+          "n": 30,
+          "finding": "Lower-limb reference trial: rhBMP-2 plus allograft matched autograft for tibial defects; cited when surgeons extrapolate to the humerus.",
+          "sponsor_funded": true,
+          "applications": [
+            "humeral-shaft-nonunion"
+          ]
+        },
+        {
+          "ref": "NCT00161629",
+          "title": "Phase 1 dose-escalating study of rhBMP-2/calcium phosphate matrix as adjuvant therapy for closed distal radius fractures",
+          "year": 2005,
+          "design": "RCT",
+          "n": 40,
+          "finding": "Safety/feasibility only; no results posted.",
+          "sponsor_funded": true,
+          "applications": [
+            "distal-radius-fracture"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Inpatient: bundled in the MS-DRG. Outpatient: HCPCS C9359 and the OPPS/ASC packaging history for Infuse relate to spine; for upper-extremity nonunion the kit cost is packaged into the procedure and frequently flagged by hospital value-analysis committees because it is off-label.",
+        "notes": "Off-label promotion is the compliance red line (Medtronic's 2006-2012 Infuse history); the correct BD posture is that the surgeon decides, the company does not detail off-label use. Expect a hiring manager to probe whether the candidate knows the three labeled indications and the 14-day tibial window.",
+        "challenge": "C9359 attribution and current OPPS packaging status for Infuse not re-verified in this sweep."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P000058",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P000054",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P050053",
+        "PMID:39429996",
+        "PMID:28784168",
+        "PMID:16506027",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf/P000058S096B.pdf",
+        "https://api.fda.gov/device/pma.json?search=pma_number:P000058&sort=decision_date:desc&limit=8"
+      ]
+    },
+    {
+      "id": "op-1",
+      "name": "OP-1 Implant / OP-1 Putty (rhBMP-7, eptotermin alfa)",
+      "company": "Olympus Biotech Corporation (final HDE holder); originally Creative BioMolecules / Stryker Biotech",
+      "ownership_history": "Developed by Creative BioMolecules and Stryker Biotech; HDE H010002 (OP-1 Implant, long bone nonunion) approved 2001-10-17 and HDE H020008 (OP-1 Putty, posterolateral spinal fusion revision) approved 2004-04-07, both now listed under Olympus Biotech (Hopkinton, MA). Stryker agreed on 2010-12-06 to sell the OP-1 family to Olympus Corporation for $60 million and closed the sale on 2011-02-01; Olympus Biotech announced its US exit in February 2014 and the product is no longer marketed.",
+      "category": "rhBMP",
+      "composition": "Recombinant human BMP-7 (3.5 mg) with bovine type I collagen carrier; Putty adds carboxymethylcellulose.",
+      "regulatory": {
+        "path": "HDE",
+        "reference": "H010002 (OP-1 Implant; HDE original received 2001-05-29, approved 2001-10-17; product code OKD); H020008 (OP-1 Putty; received 2002-12-23, approved 2004-04-07; product code OJZ; revision posterolateral lumbar fusion); both combination products with supplements through S033/S022",
+        "us_market_year": 2001,
+        "on_label_indications": [
+          "(H010002, paraphrased from the HDE generic name and approval order) alternative to autograft in recalcitrant long bone nonunions where autograft is unfeasible and alternative treatments have failed",
+          "(H020008) alternative to autograft in compromised patients requiring revision posterolateral lumbar spinal fusion"
+        ]
+      },
+      "status": "off-market",
+      "applications": [
+        {
+          "application_id": "humeral-shaft-nonunion",
+          "tier": "investigational",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "The HDE long-bone nonunion indication covered the humerus; comparative data (Hackl 2017, PMID:28784168) showed no benefit of adding rhBMP-7 to properly revised humeral, femoral and tibial nonunions.",
+          "caveats": "Product withdrawn; included for history and because surgeons still cite OP-1 data when arguing for BMP in the upper extremity."
+        },
+        {
+          "application_id": "scaphoid-fracture-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "II",
+          "evidence_summary": "Bilic 2006 RCT (n=17) is the only randomized BMP evidence in the carpus.",
+          "caveats": "Tiny trial; not reproducible with any marketed product."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:16506027",
+          "title": "Osteogenic protein-1 (BMP-7) accelerates healing of scaphoid non-union with proximal pole sclerosis",
+          "year": 2006,
+          "design": "RCT",
+          "n": 17,
+          "finding": "Faster radiographic healing with OP-1; allograft plus OP-1 equaled autograft.",
+          "sponsor_funded": null,
+          "applications": [
+            "scaphoid-fracture-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:28784168",
+          "title": "Long-term outcome following additional rhBMP-7 application in revision surgery of aseptic humeral, femoral, and tibial shaft nonunion",
+          "year": 2017,
+          "design": "retrospective",
+          "n": 112,
+          "finding": "No difference in healing or function with rhBMP-7.",
+          "sponsor_funded": false,
+          "applications": [
+            "humeral-shaft-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "Not applicable (withdrawn). Under the HDE, use required IRB oversight, which limited uptake.",
+        "notes": "Lesson for BD: an HDE with an IRB requirement and a $5,000-class price could not sustain a nonunion-only franchise once the spine PMA (OP-1 Putty for primary fusion) was refused by FDA in 2009 (unverified)."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfhde/hde.cfm?id=H010002",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfhde/hde.cfm?id=H020008",
+        "PMID:16506027",
+        "PMID:28784168",
+        "https://www.sec.gov/Archives/edgar/data/0000310764/000031076410000083/sykex991.htm",
+        "https://www.biospace.com/stryker-corporation-completes-sale-of-op-1-for-use-in-orthopaedic-bone-applications-to-olympus-corporation"
+      ]
+    },
+    {
+      "id": "trinity-elite",
+      "name": "Trinity Elite (cellular bone allograft)",
+      "company": "Orthofix Medical (processed exclusively by MTF Biologics)",
+      "ownership_history": "Trinity Evolution launched by Orthofix with MTF in 2009; Trinity Elite (moldable fiber format) followed; Orthofix and SeaSpine completed their all-stock merger effective 2023-01-05 (SeaSpine survives as an Orthofix subsidiary). Company claims 15+ years on market and 350,000+ patients.",
+      "category": "cellular-allograft",
+      "composition": "Cryopreserved cancellous bone with viable endogenous cells (minimum 70% viability, 750,000 cells/cc, at least 250,000 MSC/osteoprogenitor/bone-forming cells per cc per company page) plus demineralized cortical fibers; lot-tested for osteoinductive potential.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "No premarket number; regulated as a minimally manipulated, homologous-use human tissue under 21 CFR 1271 (FDA has not reviewed any osteoinductive or osteogenic claim)",
+        "us_market_year": 2009,
+        "on_label_indications": [
+          "none; 361 HCT/Ps carry no FDA-cleared indications. Company describes use as a bone graft substitute that can eliminate the need for autograft harvest"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "humeral-shaft-nonunion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "Marketed into nonunion revision as an autograft replacement; the company's cited studies are all spine (cervical and lumbar fusion). No upper-extremity clinical data found.",
+          "caveats": "FDA position: a 361 HCT/P may not be labeled or promoted with osteoinductive/osteogenic claims that imply more than minimal manipulation and homologous use; the cell-count claims are manufacturer specifications, not clinical outcomes."
+        },
+        {
+          "application_id": "clavicle-fracture-nonunion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No evidence; usage anecdotal.",
+          "caveats": "As above."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "No separate payment; inpatient bundled, outpatient/ASC packaged. Because it is tissue, some facilities route it through tissue-bank purchasing rather than implant contracts, which changes the buyer.",
+        "notes": "Orthofix sells through a mix of direct reps and independent distributors (hybrid). Price per cc is several times DBM; in upper-extremity trauma the justification is avoiding iliac crest harvest in an ASC where a second incision adds time."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.orthofix.com/products/trinity-elite/",
+        "https://www.businesswire.com/news/home/20230104005893/en/5363709/Orthofix-and-SeaSpine-Announce-Completion-of-Merger-of-Equals-to-Create-a-Leading-Global-Spine-and-Orthopedics-Company"
+      ]
+    },
+    {
+      "id": "vivigen",
+      "name": "ViviGen / ViviGen Formable / ViviGen MIS (cellular bone matrix)",
+      "company": "LifeNet Health (processor/owner); DePuy Synthes (exclusive worldwide marketer)",
+      "ownership_history": "Processed and owned by LifeNet Health (Virginia Beach, VA nonprofit tissue bank); LifeNet's own page calls it 'a 361 Human Cells, Tissues, and Cellular-based Product'. DePuy Synthes holds an exclusive worldwide agreement to market and promote ViviGen (launched late 2014, full US release January 2015) and ViviGen Formable (2017), per OrthoWorld/Becker's; J&J MedTech still lists 'ViviGen Cellular Bone Matrix' as a DePuy Synthes product in 2026 (the page carries no IFU or processor statement). Terms of the agreement are not public.",
+      "category": "cellular-allograft",
+      "composition": "Cryopreserved corticocancellous bone with viable lineage-committed bone cells (osteoblasts, osteocytes, bone-lining cells; marrow and MSCs removed) plus demineralized bone; processed within 72 hours of recovery.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "No premarket number; LifeNet states ViviGen is a 361 HCT/P (21 CFR 1271)",
+        "us_market_year": 2014,
+        "on_label_indications": [
+          "none; company lists foot and ankle, craniomaxillofacial, general orthopaedics, trauma and extremities, and spine as areas of use"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "humeral-shaft-nonunion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "LifeNet is running a 250-patient prospective registry of ViviGen in fracture care including nonunion and arm fractures (NCT04299022, primary endpoint reintervention, completion 2028). Published data are spine fusion (96-patient and multilevel series) and foot/ankle; the company page itself says further study vs autograft is needed.",
+          "caveats": "No upper-extremity outcomes published; registry is sponsor-run."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT04299022",
+          "title": "Safety, efficacy and use of ViviGen cellular bone matrix allograft in orthopaedic fracture care: multi-center prospective registry",
+          "year": 2021,
+          "design": "registry",
+          "n": 250,
+          "finding": "Recruiting; conditions include nonunion, open fractures and arm fractures; primary completion July 2028.",
+          "sponsor_funded": true,
+          "applications": [
+            "humeral-shaft-nonunion",
+            "forearm-shaft-fracture-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:34404368",
+          "title": "Lumbar spine fusion outcomes using a cellular bone allograft with lineage-committed bone-forming cells in 96 patients",
+          "year": 2021,
+          "design": "retrospective",
+          "n": 96,
+          "finding": "Spine reference series cited by the company; not upper extremity.",
+          "sponsor_funded": true,
+          "applications": []
+        }
+      ],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "No separate payment in any setting.",
+        "notes": "The only cellular allograft with a fracture-specific registry that names arm fractures; if it reads out favorably in 2028 it becomes the first cellular allograft with upper-extremity trauma data. LifeNet (processor, also sells its own Optium DBM) and DePuy Synthes (exclusive marketer) are separate companies; Optium is not part of the DePuy channel."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.lifenethealth.org/vivigen",
+        "NCT04299022",
+        "https://www.jnjmedtech.com/en-US/product/vivigen-cellular-bone-matrix",
+        "https://www.beckersspine.com/spinal-tech/depuy-synthes-and-lifenet-health-collaborate-to-create-vivigen-formable-cellular-bone-matrix-6-details/"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "osteocel",
+      "name": "Osteocel Pro / Osteocel Plus (cellular allograft)",
+      "company": "Globus Medical (via NuVasive)",
+      "ownership_history": "Osteocel developed by Osiris Therapeutics; NuVasive acquired the Osteocel business from Osiris in 2008; Globus Medical completed its merger with NuVasive on 2023-09-01. Product now hosted on the Globus Biologics site.",
+      "category": "cellular-allograft",
+      "composition": "Cancellous bone with viable cells plus DBM from the same donor (company page gives no cell counts).",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "No premarket number; 21 CFR 1271; No Osteocel 510(k)/PMA in openFDA (device_name OSTEOCEL: no matches); Globus FY2025 10-K treats Osteocel Plus and Pro as allograft tissue implants supplied by tissue banks (361 HCT/P status inferred)",
+        "us_market_year": 2005,
+        "on_label_indications": [
+          "none; marketed for spinal fusion"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "humeral-shaft-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "Spine-positioned product; included only because Globus/NuVasive trauma reps can access it. No upper-extremity data.",
+          "caveats": "No evidence."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "No separate payment.",
+        "notes": "Globus entered trauma in 2017 and now has a NuVasive-derived biologics shelf; whether Osteocel is pushed into extremities is a channel question, not an evidence one."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.globusmedical.com/musculoskeletal-solutions/biologics/osteocel/",
+        "https://www.sec.gov/Archives/edgar/data/1237831/000162828026011209/gmed-20251231.htm",
+        "https://www.investors.globusmedical.com/node/12061"
+      ]
+    },
+    {
+      "id": "fibular-strut-allograft",
+      "name": "Fibular strut allograft (endosteal, for proximal humerus medial support)",
+      "company": "Tissue banks (MTF Biologics, AlloSource, LifeNet Health, RTI/others); supplied through trauma company allograft catalogs",
+      "ownership_history": "Not a branded product; cortical fibula segments are standard tissue-bank inventory. The endosteal technique was described by Gardner, Helfet and Lorich at HSS (Gardner 2008, PMID:18317054).",
+      "category": "structural-allograft",
+      "composition": "Freeze-dried or frozen cortical fibular diaphysis, cut to 6-8 cm and placed endosteally so the locking screws engage the strut.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "No premarket number; 21 CFR 1271 tissue",
+        "us_market_year": 2008,
+        "on_label_indications": [
+          "none; structural allograft used at surgeon discretion"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "proximal-humerus-fracture-orif",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "I",
+          "evidence_summary": "Best-supported augmentation in upper-extremity trauma: meta-analysis of 10 studies (n=802) found fibular allograft with a locking plate preserved humeral head height (WMD -2.40 mm) and neck-shaft angle (WMD -5.71 degrees), improved ASES (+5.08) and cut major complications (OR 0.37) with no difference in revision (Dasari 2022, PMID:34906682). A 2026 meta-analysis restricted to 5 RCTs (n=350) found graft augmentation lowered complications (OR 0.21) and biologic grafts shortened healing by 3.25 weeks (Daher 2026, PMID:42750779). Cadaver loading: 0 of 8 augmented vs 6 of 8 unaugmented constructs collapsed (PMID:21782474).",
+          "caveats": "Mostly retrospective comparisons and Chinese single-center RCTs; graft fate (incorporation vs resorption) and long-term outcomes undefined (PMID:32030961); a new RCT uses femoral head allograft instead (NCT07538700, 2025-2029). No proof that augmentation beats reverse arthroplasty in the 75+ group where ORIF volume is falling."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:34906682",
+          "title": "Improved outcomes for proximal humerus fracture ORIF augmented with a fibular allograft in elderly patients: systematic review and meta-analysis",
+          "year": 2022,
+          "design": "meta-analysis",
+          "n": 802,
+          "finding": "Better radiographic maintenance, ASES and fewer major complications with fibular allograft; no revision difference.",
+          "sponsor_funded": false,
+          "applications": [
+            "proximal-humerus-fracture-orif"
+          ]
+        },
+        {
+          "ref": "PMID:42750779",
+          "title": "Bone graft augmentation reduces complications in osteosynthesis of proximal humerus fractures: meta-analysis of RCTs",
+          "year": 2026,
+          "design": "meta-analysis",
+          "n": 350,
+          "finding": "Five RCTs; OR 0.21 for complications; biologic grafts healed 3.25 weeks faster with less pain.",
+          "sponsor_funded": false,
+          "applications": [
+            "proximal-humerus-fracture-orif"
+          ]
+        },
+        {
+          "ref": "PMID:18317054",
+          "title": "Indirect medial reduction and strut support of proximal humerus fractures using an endosteal implant",
+          "year": 2008,
+          "design": "case-series",
+          "n": null,
+          "finding": "Technique description of the endosteal fibular allograft incorporated into the locking construct.",
+          "sponsor_funded": false,
+          "applications": [
+            "proximal-humerus-fracture-orif"
+          ]
+        },
+        {
+          "ref": "PMID:21782474",
+          "title": "Proximal humeral fracture fixation: locking plate construct with or without intramedullary fibular allograft",
+          "year": 2011,
+          "design": "preclinical",
+          "n": 8,
+          "finding": "No augmented construct collapsed under 25,000 cycles vs 6 of 8 unaugmented.",
+          "sponsor_funded": false,
+          "applications": [
+            "proximal-humerus-fracture-orif"
+          ]
+        },
+        {
+          "ref": "NCT07538700",
+          "title": "Hip-allograft in proximal humerus fractures versus plate implantation alone: RCT",
+          "year": 2025,
+          "design": "RCT",
+          "n": 56,
+          "finding": "Recruiting (Netherlands); femoral head allograft vs plate alone; primary completion May 2029.",
+          "sponsor_funded": false,
+          "applications": [
+            "proximal-humerus-fracture-orif"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Inpatient bundled; outpatient/ASC packaged. Fibular strut allograft is a low-cost tissue item compared with synthetic cements, which is part of why surgeons prefer it.",
+        "notes": "No company owns this evidence, so it does not drive a branded sale; trauma companies offer it as a convenience SKU with the plate. For BD it is the benchmark any new proximal humerus augment (cement, cellular, synthetic) must beat."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "PMID:34906682",
+        "PMID:42750779",
+        "PMID:18317054",
+        "PMID:21782474",
+        "PMID:35580343",
+        "NCT07538700"
+      ]
+    },
+    {
+      "id": "distal-tibia-allograft-glenoid",
+      "name": "Fresh distal tibia allograft (DTA) for glenoid reconstruction",
+      "company": "Tissue banks supplying fresh osteochondral grafts (JRF Ortho, MTF Biologics); technique popularized by Provencher",
+      "ownership_history": "Not branded; fresh (non-frozen) lateral distal tibia plafond segments are allocated by tissue banks with a short shelf life.",
+      "category": "structural-allograft",
+      "composition": "Fresh osteochondral lateral distal tibia, cut to match the anterior glenoid defect and fixed with two screws or suture buttons.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "No premarket number; fresh osteochondral allograft under 21 CFR 1271",
+        "us_market_year": 2009,
+        "on_label_indications": [
+          "none"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "glenoid-bone-loss-instability",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "III",
+          "evidence_summary": "Matched cohort of 50 DTA vs 50 Latarjet with at least 15% bone loss: equivalent ASES, WOSI and SANE at 45 months despite larger defects in the DTA group (Frank 2018, PMID:29389219). DTA case series: 89% graft healing on CT, 3% lysis, no recurrence in 27 patients (Provencher 2017, PMID:28017469). Systematic review of allograft glenoid reconstruction (283 shoulders): recurrence 3.9%, healing 93.5% (Villatte 2020, PMID:32524228). First RCT vs Latarjet recruiting (NCT05658289, n=68).",
+          "caveats": "Retrospective and single-surgeon data; fresh graft logistics and cost; resorption concerns after arthroscopic DTA (Wong 2018, PMID:30095986)."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:29389219",
+          "title": "Outcomes of Latarjet versus distal tibia allograft for anterior shoulder instability repair: a matched cohort analysis",
+          "year": 2018,
+          "design": "retrospective",
+          "n": 100,
+          "finding": "No significant difference in postoperative scores between Latarjet and DTA.",
+          "sponsor_funded": false,
+          "applications": [
+            "glenoid-bone-loss-instability"
+          ]
+        },
+        {
+          "ref": "PMID:28017469",
+          "title": "Distal tibia allograft glenoid reconstruction in recurrent anterior shoulder instability: clinical and radiographic outcomes",
+          "year": 2017,
+          "design": "case-series",
+          "n": 27,
+          "finding": "ASES 63 to 91; 89% allograft healing; no recurrent instability at 45 months.",
+          "sponsor_funded": false,
+          "applications": [
+            "glenoid-bone-loss-instability"
+          ]
+        },
+        {
+          "ref": "PMID:32524228",
+          "title": "Use of allograft to reconstruct anterior bony glenoid defect in chronic glenohumeral instability: a systematic review",
+          "year": 2020,
+          "design": "meta-analysis",
+          "n": 283,
+          "finding": "Recurrence 3.9%, allograft healing 93.5% across 10 studies.",
+          "sponsor_funded": false,
+          "applications": [
+            "glenoid-bone-loss-instability"
+          ]
+        },
+        {
+          "ref": "NCT05658289",
+          "title": "Latarjet vs anatomic glenoid reconstruction (DTA with Bankart repair): prospective multicentre RCT",
+          "year": 2023,
+          "design": "RCT",
+          "n": 68,
+          "finding": "Recruiting; primary completion January 2026.",
+          "sponsor_funded": false,
+          "applications": [
+            "glenoid-bone-loss-instability"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Shoulder stabilization with bone block is an outpatient/ASC procedure; the fresh graft is packaged into the facility payment (in HOPD it may be reported with the connective-tissue HCPCS C1762 but is still packaged). The graft's price (thousands of dollars) is the commercial obstacle vs a free coracoid.",
+        "notes": "Sports-medicine reps (Arthrex, Smith+Nephew, Stryker, DePuy Mitek) sell the fixation and the instruments; the tissue bank sells the graft. A BD role here is about tissue-bank partnerships, not a device."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "PMID:29389219",
+        "PMID:28017469",
+        "PMID:32524228",
+        "PMID:30095986",
+        "NCT05658289"
+      ]
+    },
+    {
+      "id": "bmac",
+      "name": "Bone marrow aspirate concentrate (BMAC) systems",
+      "company": "Multiple device makers (e.g., Terumo BCT/Harvest SmartPReP, Arthrex Angel, Zimmer Biomet BioCUE, EmCyte); the biologic is the patient's own marrow",
+      "ownership_history": "Terumo Americas agreed to acquire Harvest Technologies on 2011-05-11. Concentration devices are 510(k)-cleared as cell separators; the clinical use is the surgeon's.",
+      "category": "BMAC",
+      "composition": "Autologous iliac crest bone marrow centrifuged to concentrate nucleated cells (mean 612 progenitors/cc before and 2,579/cc after concentration in Hernigou's series) and injected or mixed with a scaffold.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "Device clearances for the centrifuge/separator (various); the same-surgical-procedure exception under 21 CFR 1271.15(b) covers point-of-care autologous use; Device clearances: Harvest SmartPReP2 BMAC K103340 (CDRH, product code JQC, 2010-12-06); CBER 510(k)s under product code ORG 'platelet and plasma separator for bone graft handling' (21 CFR 864.9245): Arthrex/Cytomedix Angel BK110046 (decision 2012-11-07) and Arthrex Angel System Kits BK180180 (2018-07-05), Arthrex ACP Max BK210655 (2022-09-22), Isto/Arteriocyte Precise Cell Concentration System BK200540 (2022-03-17). The ORG labeling is PRP from blood (or a blood and bone-marrow-aspirate mixture) mixed with autograft/allograft to improve handling; no device carries a cell-therapy, fracture-healing or nonunion claim",
+        "us_market_year": 2005,
+        "on_label_indications": [
+          "devices are cleared to prepare a platelet- and cell-rich concentrate from bone marrow at the point of care; no device carries a fracture-healing or nonunion indication"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "scaphoid-fracture-nonunion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Arthroscopic fixation plus DBM and BMAC injection united 15 of 17 early scaphoid nonunions (Lee 2026, PMID:42098735); a French case report describes concentrated marrow injection in scaphoid nonunion (Maincourt 2025, PMID:39732339). No comparative study.",
+          "caveats": "Selected nonunions with minimal sclerosis; adds iliac aspiration morbidity and a centrifuge disposable."
+        },
+        {
+          "application_id": "humeral-shaft-nonunion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "The foundational percutaneous BMAC data are tibial (Hernigou 2005, PMID 15995108: 60 atrophic tibial nonunions, 53 united, failures received fewer progenitors; technique paper PMID 16951103). Humeral nonunions were included in the ORTHO-1 expanded-MSC feasibility trial (28 femur/tibia/humerus nonunions; PMID 29598897).",
+          "caveats": "Dose-response depends on progenitor count, which most surgeons do not measure; evidence does not separate the humerus."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:15995108",
+          "title": "Percutaneous autologous bone-marrow grafting for nonunions. Influence of the number and concentration of progenitor cells (J Bone Joint Surg Am 2005;87(7):1430-7); the 2006 technique paper is PMID 16951103",
+          "year": 2005,
+          "design": "case-series",
+          "n": 60,
+          "finding": "Union in 53 of 60 tibial nonunions; healing correlated with number of progenitors injected.",
+          "sponsor_funded": false,
+          "applications": [
+            "humeral-shaft-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:42098735",
+          "title": "Arthroscopic osteosynthesis with DBM and BMAC for nonunion of scaphoid in athletes",
+          "year": 2026,
+          "design": "case-series",
+          "n": 17,
+          "finding": "88% union at a mean 15.4 weeks.",
+          "sponsor_funded": null,
+          "applications": [
+            "scaphoid-fracture-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:29598897",
+          "title": "ORTHO-1: expanded bone marrow MSCs with biphasic calcium phosphate in tibia, femur and humerus nonunions",
+          "year": 2019,
+          "design": "prospective-cohort",
+          "n": 28,
+          "finding": "EU multicenter first-in-human feasibility; safe, with healing in most patients; not a marketed product.",
+          "sponsor_funded": false,
+          "applications": [
+            "humeral-shaft-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment for BMAC harvest or concentration in a surgical case (CPT 38232/0232T coverage is denied by most payers for orthopaedic use); the disposable is packaged into the procedure and is a pure facility cost.",
+        "notes": "Sold as a capital-plus-disposable program by sports-medicine and biologics reps; in upper-extremity trauma it is a surgeon-preference item with no payer support."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "PMID:16951103",
+        "PMID:42098735",
+        "PMID:39732339",
+        "PMID:29598897",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK180180",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK110046",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK200540",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK210655",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22SMARTPREP%22&sort=decision_date:desc&limit=30",
+        "PMID:15995108"
+      ]
+    },
+    {
+      "id": "prp",
+      "name": "Platelet-rich plasma (PRP) for upper-extremity fracture healing",
+      "company": "Multiple device makers (Arthrex ACP, Zimmer Biomet GPS, Harvest/Terumo, EmCyte, others)",
+      "ownership_history": "Not applicable; autologous preparation.",
+      "category": "PRP",
+      "composition": "Autologous platelet concentrate; leukocyte-rich or -poor depending on system; growth factors (PDGF, TGF-beta, VEGF) at supraphysiologic concentration.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "Separator devices cleared to produce PRP for mixing with autograft/allograft in orthopaedic sites; no fracture-healing indication; Cleared by CBER under product code ORG 'platelet and plasma separator for bone graft handling' (21 CFR 864.9245), e.g., Arthrex ACP Max BK210655 (2022-09-22), Arthrex Angel BK180180 (2018-07-05), Isto Precise BK200540 (2022-03-17), RegenLab RegenKit-THT BK090048 (2010-05-18, product code FMF), and older CDRH centrifuges (JQC); labeling is PRP for mixing with bone graft to improve handling, no fracture-healing indication",
+        "us_market_year": 2000,
+        "on_label_indications": [
+          "device labels: preparation of platelet-rich plasma from a small sample of blood at the point of care, to be mixed with autograft and/or allograft bone prior to application to an orthopaedic site"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "distal-radius-fracture",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "II",
+          "evidence_summary": "Weak. A 30-patient trial of intra-articular PRP after pinning of intra-articular distal radius fractures reported better PRWE pain and function at 3 and 6 months (Namazi 2016, PMID:26774901), self-graded level III; a 14-patient scaphoid trial from the same group (PMID:27999456) is uninterpretable. The 2022 PRP-in-fractures meta-analysis has been retracted (PMID:35693268).",
+          "caveats": "Small single-center trials without blinding; no union endpoint; the only meta-analysis is retracted. The honest position is that PRP has no demonstrated role in upper-extremity fracture or nonunion healing."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:26774901",
+          "title": "Investigating the effect of intra-articular PRP injection on pain and function improvement in patients with distal radius fracture",
+          "year": 2016,
+          "design": "RCT",
+          "n": 30,
+          "finding": "Lower PRWE pain and disability scores with PRP at 3 and 6 months.",
+          "sponsor_funded": false,
+          "applications": [
+            "distal-radius-fracture"
+          ]
+        },
+        {
+          "ref": "PMID:35693268",
+          "title": "Efficacy of platelet-rich plasma in the treatment of fractures: a meta-analysis (RETRACTED)",
+          "year": 2022,
+          "design": "meta-analysis",
+          "n": null,
+          "finding": "Retracted publication; must not be cited as support.",
+          "sponsor_funded": false,
+          "applications": [
+            "distal-radius-fracture"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "CPT 0232T (PRP injection) is non-covered by Medicare except for chronic wounds under a coverage-with-evidence decision; in surgery the disposable is packaged.",
+        "notes": "PRP sells on sports-medicine soft-tissue indications; attaching it to fracture healing invites challenge."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "PMID:26774901",
+        "PMID:27999456",
+        "PMID:35693268",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK210655",
+        "https://www.fda.gov/media/190993/download"
+      ]
+    },
+    {
+      "id": "vitoss-tcp",
+      "name": "Vitoss family (beta-TCP, Vitoss BA/BiModal with bioactive glass, Vitoss BBTrauma)",
+      "company": "Stryker (Orthovita, Inc.; cleared to Stryker Spine from 2024)",
+      "ownership_history": "Orthovita (Malvern, PA) launched Vitoss in 2003; Stryker completed its acquisition of Orthovita on 2011-06-28. K032409/K032288 (2003), K083033 (2008), K103173 (Vitoss BA Bimodal, 2011), K153608 (2016), K242280 (2024-08-29, includes Vitoss BBTrauma), K261008 (2026-04-24).",
+      "category": "synthetic-ceramic",
+      "composition": "Ultraporous (90% porosity) beta-tricalcium phosphate; BA/BiModal versions add 45S5 bioactive glass and a collagen carrier.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K083033 (Vitoss, 2008-11-06); K103173 (Vitoss BA BiModal, 2011-02-07); K153608 (BiModal foam strip, 2016-02-12); K163621 (Vitoss BA Injectable, 2017-05-02); K242280 (BiModal foam strip, 2024-08-29); K261008 (BiModal family, 2026-04-24); applicant Orthovita / Stryker Spine; K102545 is a special 510(k) for a Vitoss formulation",
+        "us_market_year": 2003,
+        "on_label_indications": [
+          "resorbable bone void filler for voids or gaps not intrinsic to the stability of the bony structure in the extremities, pelvis and posterolateral spine, surgically created or from traumatic injury; may be combined with autograft or bone marrow aspirate (class labeling; the 2024 PDF could not be text-extracted)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "distal-radius-fracture",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Class evidence only: granular beta-TCP added nothing to angle-stable plating in a 39-patient RCT (Jakubietz 2011, PMID:21600042). No Vitoss-specific wrist trial found.",
+          "caveats": "Negative class-level result."
+        },
+        {
+          "application_id": "proximal-humerus-fracture-orif",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Synthetic void fill for the metaphyseal defect is described in the augmentation literature (Biermann 2019) without Vitoss-specific outcomes.",
+          "caveats": "No product data."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:21600042",
+          "title": "The use of beta-tricalcium phosphate bone graft substitute in dorsally plated, comminuted distal radius fractures",
+          "year": 2011,
+          "design": "RCT",
+          "n": 39,
+          "finding": "No advantage of granular beta-TCP with angle-stable plating.",
+          "sponsor_funded": false,
+          "applications": [
+            "distal-radius-fracture"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Packaged into the procedure payment.",
+        "notes": "The 2024 clearance naming a 'BBTrauma' SKU signals Stryker is re-packaging the spine ceramic for its trauma bag; expect it to be bundled with plate contracts rather than sold on evidence."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K242280",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K032409",
+        "PMID:21600042",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22VITOSS%22&sort=decision_date:desc&limit=30",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "bioactive-glass-s53p4",
+      "name": "Bioactive glass granules and putties (Bonalive S53P4; NovaBone 45S5 putty; Fibergraft BG)",
+      "company": "Bonalive Biomaterials (Turku, Finland); NovaBone Products (Alachua, FL; Isto Biologics since August 2026); Prosidyan (Fibergraft)",
+      "ownership_history": "BonAlive granules cleared via Vivoxid in 2007-2008 (K071199), re-cleared to Bonalive Biomaterials 2019 (K191274) and as 'Bonalive Orthopedics granules' 2023 (K231528). NovaBone putty cleared 2006-2024 (K060728 to K240404). Fibergraft BG morsels/putty/matrix cleared 2014-2025 (K141956 to K253147).",
+      "category": "bioactive-glass",
+      "composition": "S53P4 (53% SiO2) or 45S5 silicate glass; S53P4 raises local pH and osmotic pressure, which is the basis of its antibacterial claim in Europe.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K231528 (Bonalive, 2023-07-11); K240404 (NovaBone, 2024-03-05); K253147 (Fibergraft, 2025-10-22); Bonalive 510(k)s in openFDA: K070055 and K071199 (2007-2008, applicant Vivoxid), K191274 (2019-08-07), K231528 (Bonalive Orthopedics granules, 2023-07-11, adults and pediatric patients 6 years and older, extremities and pelvis), K253883 (Bonalive Maxillofacial, 2026-05-14)",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "bone void filler for voids or gaps not intrinsic to the stability of the bony structure (extremities, pelvis, posterolateral spine); US labels carry no antibacterial or osteomyelitis indication (class labeling; PDFs not text-extracted)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "upper-extremity-osteomyelitis-fri",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "III",
+          "evidence_summary": "Multinational registry of 116 chronic osteomyelitis patients treated with S53P4 as a one-stage dead-space filler without local antibiotics in 85%: cure in 104 of 116 (90%) at median 31 months, sites mainly tibia, femur and calcaneus (Lindfors 2017, PMID:28050878). The antibacterial use is off-label in the US.",
+          "caveats": "Registry without control; upper-extremity cases rare; US label is void-fill only."
+        },
+        {
+          "application_id": "distal-radius-fracture",
+          "tier": "investigational",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Bioactive glass was listed among cleared wrist void fillers in 1999 (Ladd 1999, PMID:10504355) but no clinical wrist outcome series was found.",
+          "caveats": "No data."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:28050878",
+          "title": "Antibacterial bioactive glass, S53P4, for chronic bone infections - a multinational study",
+          "year": 2017,
+          "design": "registry",
+          "n": 116,
+          "finding": "90% cure rate as a one-stage treatment in chronic osteomyelitis.",
+          "sponsor_funded": null,
+          "applications": [
+            "upper-extremity-osteomyelitis-fri"
+          ]
+        },
+        {
+          "ref": "PMID:20624692",
+          "title": "Bioactive glass S53P4 as bone graft substitute in treatment of osteomyelitis",
+          "year": 2010,
+          "design": "case-series",
+          "n": 11,
+          "finding": "9 of 11 healed without recurrence; lower extremity and spine.",
+          "sponsor_funded": null,
+          "applications": [
+            "upper-extremity-osteomyelitis-fri"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Packaged into the procedure payment.",
+        "notes": "Bonalive's 2023 US re-entry and Fibergraft's 2025 clearance show the category is active, but every US pitch has to avoid the European antibacterial claim; that gap is exactly what Cerament G's De Novo label fills."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K231528",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K240404",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K253147",
+        "PMID:28050878",
+        "PMID:20624692",
+        "https://www.bonalive.com/en-us/",
+        "https://fda.innolitics.com/device/K231528",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22BONALIVE%22&sort=decision_date:desc&limit=30"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "teriparatide",
+      "name": "Teriparatide (Forteo and generics/biosimilars) as a fracture-healing adjunct",
+      "company": "Eli Lilly (Forteo); multiple generic and 505(b)(2) teriparatide products since 2019-2023",
+      "ownership_history": "FDA-approved 2002 for osteoporosis; the fracture-healing use is off-label. Lilly sponsored the only distal radius RCT (NCT00190944).",
+      "category": "pharmacologic",
+      "composition": "Recombinant PTH(1-34), 20 micrograms subcutaneously daily.",
+      "regulatory": {
+        "path": "NDA",
+        "reference": "NDA 021318 (Drugs@FDA: NDA, not a BLA) (Forteo); fracture healing is not a labeled indication",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "treatment of postmenopausal women with osteoporosis at high risk for fracture; increase of bone mass in men with primary or hypogonadal osteoporosis at high risk; glucocorticoid-induced osteoporosis (not fracture healing)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "distal-radius-fracture",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "I",
+          "evidence_summary": "Lilly-sponsored double-blind RCT of 102 postmenopausal women with non-operated distal radius fractures: median time to cortical bridging 9.1 weeks placebo, 7.4 weeks with 20 micrograms, 8.8 weeks with 40 micrograms; the prespecified primary comparison (40 micrograms vs placebo) was not significant (p=0.52) and the 20-microgram benefit was post hoc (Aspenberg 2010, PMID:19594305; NCT00190944). A blinded callus-quality substudy favored teriparatide (PMID:20367417). Pooled across 5 RCTs (n=380) teriparatide did not shorten radiographic healing (Shi 2016, PMID:27997614).",
+          "caveats": "Failed primary endpoint; sponsor-funded; surrogate radiographic outcome; cost and daily injection. A Chinese weekly-teriparatide RCT (NCT04473989, n=80) has unknown status."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:19594305",
+          "title": "Teriparatide for acceleration of fracture repair in humans: a prospective, randomized, double-blind study of 102 postmenopausal women with distal radial fractures",
+          "year": 2010,
+          "design": "RCT",
+          "n": 102,
+          "finding": "Primary 40-microgram comparison not significant; post hoc 20-microgram group bridged 1.7 weeks earlier.",
+          "sponsor_funded": true,
+          "applications": [
+            "distal-radius-fracture"
+          ]
+        },
+        {
+          "ref": "PMID:27997614",
+          "title": "Effectiveness of teriparatide on fracture healing: a systematic review and meta-analysis",
+          "year": 2016,
+          "design": "meta-analysis",
+          "n": 380,
+          "finding": "No significant effect on time to radiographic healing, healing rate or pain; function improved.",
+          "sponsor_funded": false,
+          "applications": [
+            "distal-radius-fracture"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Pharmacy benefit (Part D) for the osteoporosis indication; off-label fracture-healing use is not reimbursed as such and is prescribed, not sold by device reps.",
+        "notes": "Relevant to a device BD person only as the pharmacologic comparator surgeons mention, and as the osteoporosis-treatment gap that fragility fractures of the wrist and shoulder expose."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "PMID:19594305",
+        "PMID:20367417",
+        "PMID:27997614",
+        "NCT00190944",
+        "https://api.fda.gov/drug/drugsfda.json?search=openfda.brand_name:%22Forteo%22&limit=2"
+      ]
+    },
+    {
+      "id": "regeneten",
+      "name": "REGENETEN Bioinductive Implant",
+      "company": "Smith+Nephew (Endoscopy division, Andover MA)",
+      "ownership_history": "Developed by Rotation Medical (Plymouth, MN; Collagen Tendon Sheet K112423 cleared 2011, K122048 2013, K140300 2014); Smith+Nephew agreed to acquire Rotation Medical on 2017-10-23 ($125 million upfront plus up to $85 million contingent) and completed the acquisition on 2017-12-06. Smith+Nephew clearances K222501 (2023-05-11) and K242631 (2024-11-26).",
+      "category": "other",
+      "composition": "Bioabsorbable, highly porous bovine type I collagen sheet fixed over the bursal surface of the tendon with staples; induces a layer of new tendon-like tissue.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K242631 (2024-11-26); K222501 (2023-05-11); predicate line from K112423",
+        "us_market_year": 2014,
+        "on_label_indications": [
+          "management and protection of tendon or extra-articular ligament injuries in which there has been no substantial loss of tendon or ligament tissue (bioinductivity demonstrated for tendon only); the delivery system is indicated for arthroscopic delivery (K242631)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "rotator-cuff-augmentation",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "Sponsor-run prospective cohort of 115 full-thickness tears augmented at repair: supraspinatus thickness increased 12.5% (medium) and 17.1% (large) and radiographic retear was 11.5% in medium tears at 2 years (Bushnell 2022, PMID:35788057). Partial-thickness isolated bioinductive repair (n=33) showed tissue fill-in in 95-100% (Schlegel 2021, PMID:33220413). The sponsor's RCT in large/massive tears (NCT04450342, n=119) was terminated for a 'sponsor decision not related to safety' and the posted primary endpoint shows 6-month retear 57.1% (95% CI 41-72) augmented vs 50.0% (34-66) repair alone. A 2026 multicenter revision-repair cohort reported 28.6% retear at 12 months (Delgado 2026, PMID:40939824). A 400-patient global registry (NCT06857084) and an investigator RCT (NCT05439850, n=78) are ongoing.",
+          "caveats": "The only randomized data are unfavorable and unpublished; cohort data are company-funded with MRI surrogate endpoints; terminated trial NCT03734536 (partial-thickness, n=168) also has no publication found.",
+          "challenge": "A hiring manager will ask why the pivotal-style RCT was stopped and whether the candidate has read the posted results."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT04450342",
+          "title": "Prospective multicenter RCT of ARCR augmented with REGENETEN vs ARCR alone in large or massive full-thickness tears",
+          "year": 2023,
+          "design": "RCT",
+          "n": 119,
+          "finding": "Terminated; posted 6-month retear 57.14% augmented vs 50.00% control; no statistical analysis posted.",
+          "sponsor_funded": true,
+          "applications": [
+            "rotator-cuff-augmentation"
+          ]
+        },
+        {
+          "ref": "PMID:35788057",
+          "title": "Two-year outcomes with a bioinductive collagen implant used in augmentation of arthroscopic repair of full-thickness rotator cuff tears",
+          "year": 2022,
+          "design": "prospective-cohort",
+          "n": 115,
+          "finding": "Retear 11.5% in medium tears at 2 years; tendon thickness increased.",
+          "sponsor_funded": true,
+          "applications": [
+            "rotator-cuff-augmentation"
+          ]
+        },
+        {
+          "ref": "PMID:33220413",
+          "title": "Isolated bioinductive repair of partial-thickness rotator cuff tears using a resorbable bovine collagen implant: two-year outcomes",
+          "year": 2021,
+          "design": "prospective-cohort",
+          "n": 33,
+          "finding": "Clinically and statistically improved ASES and Constant scores; MRI tissue fill-in in 95-100%.",
+          "sponsor_funded": true,
+          "applications": [
+            "rotator-cuff-augmentation"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Rotator cuff repair is an ASC/HOPD procedure; the implant is packaged into the facility payment with no separate device code; Smith+Nephew has pursued a Category III CPT add-on code for bioinductive augmentation (status unverified).",
+        "notes": "Sold by Smith+Nephew sports-medicine reps, the same people who carry the company's bone-void and soft-tissue biologics; the commercial case rests on implant volume (tens of thousands per year, company claim) rather than randomized outcomes."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K242631.pdf",
+        "NCT04450342",
+        "PMID:35788057",
+        "PMID:33220413",
+        "PMID:40939824",
+        "NCT06857084",
+        "https://www.sec.gov/Archives/edgar/data/845982/000165495417011353/a4645y.htm",
+        "https://www.sec.gov/Archives/edgar/data/845982/000165495417009621/a3580u.htm"
+      ]
+    },
+    {
+      "id": "dermal-allograft-rotator-cuff",
+      "name": "Acellular human dermal allograft patches for rotator cuff augmentation (GraftJacket, ArthroFlex, others)",
+      "company": "GraftJacket: LifeCell/Allergan-processed, marketed by Wright Medical, now Stryker (orthopaedic rights; unverified); ArthroFlex: LifeNet Health, distributed by Arthrex",
+      "ownership_history": "GraftJacket (Wright Medical, 2002 onward) moved to Stryker with the 2020 Wright acquisition; ArthroFlex launched by Arthrex/LifeNet around 2011 (dates from memory, unverified).",
+      "category": "structural-allograft",
+      "composition": "Decellularized human dermis, 1-2 mm thick, sutured over or bridging the repaired cuff; regulated as a 361 HCT/P (no openFDA 510(k) record found for either brand).",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "No premarket number",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "none; 361 tissue used at surgeon discretion for tendon augmentation or superior capsular reconstruction"
+        ],
+        "unverified": true
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "rotator-cuff-augmentation",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "I",
+          "evidence_summary": "Multicenter RCT of 42 patients with 2-tendon tears >3 cm: GraftJacket augmentation improved ASES (98.9 vs 94.8) and Constant (91.9 vs 85.3) scores at 24 months with better MRI intact-repair rates (Barber 2012, PMID:21978432). Arthrex is running a 120-patient randomized post-market study of dermal allograft augmentation in large/massive tears (NCT05981833, 2023-2025, status unknown).",
+          "caveats": "Single small RCT, industry-supported; most other data are superior capsular reconstruction series rather than augmentation."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:21978432",
+          "title": "A prospective, randomized evaluation of acellular human dermal matrix augmentation for arthroscopic rotator cuff repair",
+          "year": 2012,
+          "design": "RCT",
+          "n": 42,
+          "finding": "Statistically better ASES and Constant scores with augmentation at mean 24 months.",
+          "sponsor_funded": true,
+          "applications": [
+            "rotator-cuff-augmentation"
+          ]
+        },
+        {
+          "ref": "NCT05981833",
+          "title": "Randomized post-market study evaluating dermal allograft augmentation of large and massive rotator cuff tears",
+          "year": 2023,
+          "design": "RCT",
+          "n": 120,
+          "finding": "Arthrex-sponsored; primary completion September 2025; status unknown.",
+          "sponsor_funded": true,
+          "applications": [
+            "rotator-cuff-augmentation"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Packaged into the ASC/HOPD procedure payment; in HOPD the tissue may be reported with HCPCS C1762 (connective tissue, human) but it is packaged, not separately paid.",
+        "notes": "Tissue-bank margin flows to the distributor (Arthrex, Stryker); the same reps sell anchors and the bone biologics in the atlas."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "PMID:21978432",
+        "NCT05981833",
+        "NCT03425500"
+      ],
+      "challenge": "Tried Stryker's US GraftJacket and trauma-and-extremities pages (404) and openFDA (no GraftJacket 510(k) under the GRAFTJACKET or LIFECELL names); no primary source stating the regulatory status or the current Stryker/LifeCell/Allergan rights was retrieved. 361 status is the working assumption."
+    },
+    {
+      "id": "rotium",
+      "name": "Rotium Bioresorbable Wick",
+      "company": "Atreon Orthopedics (Columbus, OH; 510(k) applicant Nanofiber Solutions, LLC)",
+      "ownership_history": "Nanofiber Solutions spun out Atreon Orthopedics to commercialize Rotium; clearances K183236 (2019-03-11), K201414 (2020), K231641 (2023), K250021 (2025-02-27, new product code OWW).",
+      "category": "other",
+      "composition": "Electrospun bioresorbable synthetic nanofiber scaffold placed as an interpositional wick between the tendon and the greater tuberosity footprint during repair.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K250021 (Rotium; Nanofiber Solutions, LLC; decision 2025-02-27; 21 CFR 878.3300 surgical mesh, product code OWW, Class II); earlier Rotium Bioresorbable Wick K183236 (2019-03-11), K201414 (2020-06-25), K231641 (2023-07-05; product code MAI)",
+        "us_market_year": 2019,
+        "on_label_indications": [
+          "Management and protection of tendon injuries without substantial loss of tendon tissue in patients requiring surgical intervention (K250021 Indications for Use; this is not a rotator-cuff-reinforcement or suture-augmentation indication)"
+        ]
+      },
+      "status": "emerging",
+      "applications": [
+        {
+          "application_id": "rotator-cuff-augmentation",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Technique papers only (Beleckas 2023, PMID:36814979; Mousad 2025, PMID:40656718); a planned ultrasound-healing RCT was withdrawn with zero enrollment (NCT04361266).",
+          "caveats": "No clinical outcome data."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:40656718",
+          "title": "Bioaugmentation of rotator cuff repair with an interpositional nanofiber scaffold",
+          "year": 2025,
+          "design": "case-series",
+          "n": null,
+          "finding": "Surgical technique description; no outcomes.",
+          "sponsor_funded": null,
+          "applications": [
+            "rotator-cuff-augmentation"
+          ]
+        }
+      ],
+      "pipeline": {
+        "stage": "launched-2019",
+        "trials": [
+          "NCT04361266"
+        ],
+        "expected_milestone": "No registered outcome trial active; next milestone is any comparative clinical series"
+      },
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Packaged into the procedure payment.",
+        "notes": "Start-up in a category dominated by Smith+Nephew and Arthrex; included as the 'emerging' example in the rotator cuff adjacent note."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K250021",
+        "PMID:36814979",
+        "PMID:40656718",
+        "NCT04361266",
+        "https://fda.innolitics.com/device/K250021",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22ROTIUM%22&sort=decision_date:desc&limit=30"
+      ],
+      "challenge": "K250021 is a tendon-injury management/protection indication; any rotator-cuff augmentation claim is outside the cleared wording."
+    }
+  ]
+}

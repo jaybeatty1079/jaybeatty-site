@@ -1,0 +1,31 @@
+# Unverified fields (auto-extracted, after gap passes 2026-10-22)
+
+- **magellan.regulatory** [Isto Biologics (Hopkinton, MA; legal nam]: 
+- **cortoss** [Stryker]: Cortoss has no dedicated stryker.com product page as of 2026-10-22 and appears only in VCF brochures; treat current US availability as unconfirmed. K number and IFU still not retrieved.
+- **kyphos-fs** [Medtronic (Kyphon)]: Could not confirm any US clearance or current availability. Tried openFDA name and applicant searches (Kyphon, Medtronic, 'calcium phosphate'), Medtronic news (2010 US launch was of KYPHON ActivOs 10 hydroxyapatite-PMMA 
+- **dermal-allograft-rotator-cuff.regulatory** [GraftJacket: LifeCell/Allergan-processed]: 
+- **cornerloc-grafts** [CornerLoc (Foundation Fusion Solutions, ]: Tissue bank and the DBM brand are not disclosed; launch year inferred from the 2017 founding and 2018-2019 physician adoption, not a dated release.
+- **linq** [PainTEQ]: Tissue bank that processes LinQ not disclosed in any public source retrieved; 'DBM packed in the window' comes from physician/trade descriptions, not the IFU.
+- **psif-allograft** [Omnia Medical]: Omnia's site does not describe the original PsiF implant's material; its allograft nature is taken from Kaye 2024 ('sacroiliac fusion allograft implants ... PsiF System from Omnia Medical') and Lynch 2022. Tissue bank an
+- **silo** [Aurora Spine]: Tissue processor not disclosed; no clinical outcomes paper found for the allograft; SiLO vs SiLO TFX volumes not separated.
+- **vyrsa-pro** [Globus Medical (via Nevro, via Vyrsa Tec]: Vyrsa Pro's current availability under Globus, tissue bank and procedure volumes are not public.
+- **ifuse-intra-allograft** [SI-BONE]: Tissue bank not named; no clinical data; the 2024 launch year comes from the 10-K product chronology, not a dated release.
+- **osteogrow** [Genera Research]: EU CTR results page read directly on 2026-10-22. As posted: arms Standard of Care n=62 (55 mITT), HD Osteogrow n=61 (56 mITT), LD Osteogrow n=20 (19 mITT); primary 'overall clinical success' at 20 months 1.9% SoC vs 0.2%
+- **via-disc-np** [VIVEX Biologics, Inc.]: Trial records re-checked on ClinicalTrials.gov (NCT06615505 active not recruiting, NCT06778447 recruiting). No FDA letter, RFD or BLA statement about VIA Disc NP was found in FDA letters or web search, so the 361-versus-
+- **kur-113-fibrin-pth** [Kuros Biosciences]: Registry record confirms the Phase 2 (NCT04294004, n=50, status UNKNOWN since 2023). The discontinuation decision still rests on a secondary summary; Kuros IR pages return 403, so the primary document was not read.
+- **APP:ankle-fracture-syndesmosis**: Volume is now sourced to NEISS (ED-presenting, not operative). Nonunion remains unpooled: no meta-analysis reports an overall ankle-fracture nonunion rate; only diabetic and nicotine-stratified cohort
+- **APP:diabetic-foot-osteomyelitis-dead-space**: No US annual count for diabetic foot osteomyelitis admissions or resections was found. Searched PubMed 2026-10-22: '(diabetic foot osteomyelitis[Title]) AND (United States OR national OR nationwide) A
+- **APP:foot-ankle-nonunion**: Volume is derived (8.1% of foot/ankle fusions, PMID 35705455), not counted. Searched PubMed 2026-10-22 for US nonunion counts (foot/ankle nonunion AND United States/national AND incidence/trends): non
+- **APP:first-mtp-arthrodesis**: No national annual count for first-MTP arthrodesis was found (searched PubMed 2026-10-22 for first metatarsophalangeal/hallux AND United States/national AND incidence/volume/utilization; the only nati
+- **APP:bunion-osteotomy-lapidus**: Searched PubMed 2026-10-22 (hallux valgus/bunion/Lapidus AND United States/national AND incidence/trends/volume): only the Medicare-only trend paper (PMID 40154771) is US; the annual counts are in its
+- **APP:fifth-metatarsal-jones**: Nonunion is now sourced to a 2026 systematic review (surgical 3.3% vs conservative 11.6%). No US annual Jones-fracture count exists: the only nationwide fifth-metatarsal surgery epidemiology found is 
+- **APP:calcaneus-fracture**: No US annual count found. Searched PubMed 2026-10-22 '(calcaneal fracture OR calcaneus fracture)[Title] AND (United States OR national OR nationwide) AND (incidence OR epidemiology OR trends)': no US 
+- **APP:subtalar-hindfoot-arthrodesis**: Searched PubMed 2026-10-22 (subtalar[Title] AND United States/national AND incidence/volume/utilization): no subtalar-specific national count. Flag retained.
+- **APP:talus-fracture-avn**: No US volume source. Searched PubMed 2026-10-22 (talus[Title] AND United States/national AND incidence/epidemiology): only a Finnish register study (PMID 39702100) and a US-military osteochondral-lesi
+- **APP:ttc-arthrodesis**: No US annual count. Searched PubMed 2026-10-22 (tibiotalocalcaneal/ankle arthrodesis AND United States/national): NIS ankle-arthrodesis counts (PMID 39931642) do not separate TTC from tibiotalar fusio
+- **APP:distal-femur-fracture**: No US annual count found. Searched PubMed 2026-10-22 '(distal femur OR distal femoral)[Title] AND (United States OR nationwide OR national) AND (incidence OR epidemiology OR trends)': only a Danish na
+- **APP:femoral-shaft-fracture**: No US annual count found. Searched PubMed 2026-10-22 (femoral shaft[Title] AND United States/nationwide/national AND incidence/epidemiology/trends): only Swedish national data (6,409 inpatients 1998-2
+- **APP:femoral-shaft-nonunion**: Nonunion after reamed nailing remains a secondary-source range (<5-10%); no US count. Searched PubMed 2026-10-22 for femoral shaft nonunion incidence in US databases: none found. Flag retained.
+- **APP:radial-head-fracture**: No US volume source found. Searched PubMed 2026-10-22 '(radial head[Title]) AND (United States OR national OR nationwide) AND (incidence OR epidemiology OR trends)': the only hit is pediatric radial h
+- **APP:femoral-neck-nonunion**: Nonunion after fixation of displaced femoral neck fractures in young adults (10-30%) remains a secondary-source range; no US annual count was found (searched PubMed 2026-10-22 for femoral neck nonunio
+- **APP:subtrochanteric-fracture**: No US count separate from hip fractures. Searched PubMed 2026-10-22 (subtrochanteric[Title] AND United States/nationwide/national AND incidence/trends): only a Korean claims study (PMID 22618268). The

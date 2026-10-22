@@ -1,0 +1,134 @@
+<svg id="skel" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 440 950" role="group" aria-label="Interactive skeleton. Choose a body region.">
+  <defs>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+    <radialGradient id="halo" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#8366ea" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#8366ea" stop-opacity="0"/>
+    </radialGradient>
+    <!-- one side of the body; mirrored for the other -->
+    <g id="side">
+      <!-- clavicle -->
+      <path class="bone thin" d="M214 166 C 190 160, 168 158, 148 170"/>
+      <!-- scapula hint -->
+      <path class="bone fill-soft" d="M150 180 L 172 176 L 176 230 L 156 226 Z"/>
+      <!-- humerus -->
+      <circle class="bone knob" cx="143" cy="180" r="9"/>
+      <path class="bone shaft" d="M143 182 L 119 338"/>
+      <circle class="bone knob" cx="118" cy="340" r="8"/>
+      <!-- radius and ulna -->
+      <path class="bone shaft2" d="M112 346 L 92 498"/>
+      <path class="bone shaft2" d="M124 348 L 104 500"/>
+      <circle class="bone knob" cx="96" cy="502" r="6"/>
+      <!-- hand -->
+      <path class="bone fill-soft" d="M84 506 L 110 506 L 114 526 L 82 528 Z"/>
+      <path class="bone thin" d="M86 528 L 70 578"/>
+      <path class="bone thin" d="M94 530 L 86 586"/>
+      <path class="bone thin" d="M101 530 L 100 590"/>
+      <path class="bone thin" d="M108 529 L 112 584"/>
+      <path class="bone thin" d="M114 522 L 128 556"/>
+      <!-- ribs -->
+      <path class="bone rib" d="M212 184 C 186 182, 160 194, 152 222"/>
+      <path class="bone rib" d="M212 200 C 182 200, 154 214, 148 246"/>
+      <path class="bone rib" d="M212 216 C 180 218, 150 236, 148 270"/>
+      <path class="bone rib" d="M212 232 C 180 236, 152 258, 152 292"/>
+      <path class="bone rib" d="M212 248 C 182 254, 156 280, 158 312"/>
+      <path class="bone rib" d="M212 264 C 184 272, 162 300, 166 328"/>
+      <path class="bone rib" d="M212 280 C 188 290, 170 316, 176 340"/>
+      <path class="bone rib thin" d="M212 296 C 192 306, 180 326, 186 346"/>
+      <!-- pelvis -->
+      <path class="bone fill" d="M212 404 C 190 396, 160 400, 150 420 C 142 436, 150 456, 160 468 C 170 480, 178 486, 184 494 L 196 500 C 206 494, 214 488, 216 480 L 216 424 Z"/>
+      <path class="bone fill-soft" d="M186 496 C 180 506, 188 520, 200 522 C 212 522, 216 512, 214 500 Z"/>
+      <!-- femur -->
+      <circle class="bone knob" cx="178" cy="496" r="11"/>
+      <path class="bone shaft" d="M180 500 L 192 686"/>
+      <circle class="bone knob" cx="186" cy="690" r="11"/>
+      <circle class="bone knob" cx="200" cy="690" r="9"/>
+      <!-- patella -->
+      <circle class="bone knob small" cx="193" cy="684" r="6"/>
+      <!-- tibia and fibula -->
+      <path class="bone shaft" d="M192 704 L 196 876"/>
+      <path class="bone shaft2" d="M174 712 L 180 870"/>
+      <circle class="bone knob" cx="194" cy="704" r="9"/>
+      <circle class="bone knob" cx="196" cy="878" r="7"/>
+      <circle class="bone knob small" cx="180" cy="872" r="5"/>
+      <!-- foot -->
+      <path class="bone fill-soft" d="M176 884 L 212 884 L 218 906 L 170 908 Z"/>
+      <path class="bone thin" d="M176 908 L 166 938"/>
+      <path class="bone thin" d="M186 909 L 182 940"/>
+      <path class="bone thin" d="M196 909 L 196 940"/>
+      <path class="bone thin" d="M206 908 L 210 938"/>
+      <path class="bone thin" d="M214 906 L 222 932"/>
+    </g>
+  </defs>
+
+  <ellipse class="halo" cx="220" cy="470" rx="200" ry="420" fill="url(#halo)"/>
+
+  <g id="bones">
+    <!-- skull -->
+    <ellipse class="bone fill" cx="220" cy="72" rx="40" ry="46"/>
+    <path class="bone fill-soft" d="M190 104 C 194 124, 246 124, 250 104 L 246 120 C 240 134, 200 134, 194 120 Z"/>
+    <ellipse class="socket" cx="205" cy="78" rx="8" ry="9"/>
+    <ellipse class="socket" cx="235" cy="78" rx="8" ry="9"/>
+    <path class="socket-line" d="M213 96 L 220 90 L 227 96"/>
+    <!-- cervical vertebrae -->
+    <rect class="bone fill" x="212" y="120" width="16" height="6" rx="2"/>
+    <rect class="bone fill" x="211" y="128" width="18" height="6" rx="2"/>
+    <rect class="bone fill" x="211" y="136" width="18" height="6" rx="2"/>
+    <rect class="bone fill" x="210" y="144" width="20" height="6" rx="2"/>
+    <rect class="bone fill" x="210" y="152" width="20" height="6" rx="2"/>
+    <rect class="bone fill" x="209" y="160" width="22" height="6" rx="2"/>
+    <!-- thoracic vertebrae -->
+    <rect class="bone fill" x="208" y="170" width="24" height="9" rx="2"/>
+    <rect class="bone fill" x="208" y="182" width="24" height="9" rx="2"/>
+    <rect class="bone fill" x="208" y="194" width="24" height="9" rx="2"/>
+    <rect class="bone fill" x="208" y="206" width="24" height="9" rx="2"/>
+    <rect class="bone fill" x="207" y="218" width="26" height="9" rx="2"/>
+    <rect class="bone fill" x="207" y="230" width="26" height="9" rx="2"/>
+    <rect class="bone fill" x="207" y="242" width="26" height="9" rx="2"/>
+    <rect class="bone fill" x="206" y="254" width="28" height="9" rx="2"/>
+    <rect class="bone fill" x="206" y="266" width="28" height="9" rx="2"/>
+    <rect class="bone fill" x="206" y="278" width="28" height="9" rx="2"/>
+    <rect class="bone fill" x="205" y="290" width="30" height="9" rx="2"/>
+    <rect class="bone fill" x="205" y="302" width="30" height="9" rx="2"/>
+    <!-- sternum -->
+    <path class="bone fill-soft" d="M214 184 L 226 184 L 228 288 L 220 300 L 212 288 Z"/>
+    <!-- lumbar vertebrae -->
+    <rect class="bone fill" x="204" y="316" width="32" height="12" rx="3"/>
+    <rect class="bone fill" x="203" y="332" width="34" height="12" rx="3"/>
+    <rect class="bone fill" x="202" y="348" width="36" height="12" rx="3"/>
+    <rect class="bone fill" x="201" y="364" width="38" height="12" rx="3"/>
+    <rect class="bone fill" x="200" y="380" width="40" height="12" rx="3"/>
+    <!-- sacrum and coccyx -->
+    <path class="bone fill" d="M200 400 L 240 400 L 230 470 L 220 486 L 210 470 Z"/>
+    <path class="sacral" d="M220 410 L 220 470"/>
+    <!-- left side and mirrored right side -->
+    <use xlink:href="#side" href="#side"/>
+    <use xlink:href="#side" href="#side" transform="translate(440 0) scale(-1 1)"/>
+  </g>
+
+  <!-- hit regions: transparent shapes that light up; data-region maps to the data model -->
+  <g id="hits">
+    <ellipse class="hit" data-region="skull-cmf" data-sub="cranium" cx="220" cy="66" rx="48" ry="46"/>
+    <polygon class="hit" data-region="skull-cmf" data-sub="face" points="180,96 260,96 256,118 244,134 196,134 184,118"/>
+    <polygon class="hit" data-region="shoulder-humerus" data-side="L" cx="140" cy="250" points="208,150 208,176 164,194 142,352 100,352 124,178 146,152"/>
+    <polygon class="hit" data-region="shoulder-humerus" data-side="R" points="232,150 232,176 276,194 298,352 340,352 316,178 294,152"/>
+    <polygon class="hit" data-region="forearm-wrist-hand" data-side="L" points="100,352 142,352 136,600 62,600"/>
+    <polygon class="hit" data-region="forearm-wrist-hand" data-side="R" points="298,352 340,352 378,600 304,600"/>
+    <rect class="hit" data-region="spine" data-sub="cervical" x="200" y="112" width="40" height="56" rx="8"/>
+    <rect class="hit" data-region="spine" data-sub="thoracolumbar" x="196" y="168" width="48" height="230" rx="8"/>
+    <polygon class="hit" data-region="pelvis-hip" points="146,396 294,396 300,470 272,520 220,536 168,520 140,470"/>
+    <polygon class="hit" data-region="spine" data-sub="sacroiliac" points="190,398 250,398 244,470 232,492 208,492 196,470"/>
+    <polygon class="hit" data-region="femur-knee" data-side="L" points="164,520 206,536 214,676 178,676"/>
+    <polygon class="hit" data-region="femur-knee" data-side="R" points="276,520 234,536 226,676 262,676"/>
+    <polygon class="hit" data-region="tibia" data-side="L" points="164,676 218,676 212,882 168,882"/>
+    <polygon class="hit" data-region="tibia" data-side="R" points="276,676 222,676 228,882 272,882"/>
+    <polygon class="hit" data-region="ankle-foot" data-side="L" points="160,882 222,882 230,946 156,946"/>
+    <polygon class="hit" data-region="ankle-foot" data-side="R" points="280,882 218,882 210,946 284,946"/>
+  </g>
+</svg>

@@ -1,0 +1,2638 @@
+{
+  "checked": [
+    {
+      "product": "montage-xt-cranial",
+      "number": "K221933",
+      "result": {
+        "k": "K221933",
+        "device": "MONTAGE Settable, Resorbable Bone Putty",
+        "applicant": "Orthocon, Inc.",
+        "date": "2023-01-13",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "montage-xt-cranial",
+      "number": "K222063",
+      "result": {
+        "k": "K222063",
+        "device": "MONTAGE Settable, Resorbable Bone Putty",
+        "applicant": "Orthocon, Inc.",
+        "date": "2023-02-03",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "montage-xt-cranial",
+      "number": "K231475",
+      "result": {
+        "k": "K231475",
+        "device": "MONTAGE-QS Settable, Resorbable Bone Putty",
+        "applicant": "Orthocon, Inc.",
+        "date": "2023-10-12",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "montage-xt-cranial",
+      "number": "K232771",
+      "result": {
+        "k": "K232771",
+        "device": "Montage Flowable Settable, Resorbable Bone Paste",
+        "applicant": "Orthocon, Inc.",
+        "date": "2024-02-16",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "montage-xt-cranial",
+      "number": "K241027",
+      "result": {
+        "k": "K241027",
+        "device": "Permatage Settable Bone Putty",
+        "applicant": "Orthocon, Inc.",
+        "date": "2024-09-26",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "montage-xt-cranial",
+      "number": "K243526",
+      "result": {
+        "k": "K243526",
+        "device": "MONTAGE Settable, Resorbable Bone Putty  MONTAGE-QS Settable, Resorbable Bone Putty  MONTAGE Flowable Settable, Resorbable Bone Paste  MONTAGE-XT Settable, Resorbable Hemostatic Bone Putty",
+        "applicant": "Orthocon, Inc.",
+        "date": "2024-12-05",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "montage-xt-cranial",
+      "number": "K253732",
+      "result": {
+        "k": "K253732",
+        "device": "Permatage Flowable, Settable Bone Paste",
+        "applicant": "Orthocon, Inc.",
+        "date": "2026-03-13",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "montage-xt-cranial",
+      "number": "K253854",
+      "result": {
+        "k": "K253854",
+        "device": "MONTAGE XT Cranial Cement",
+        "applicant": "Orthocon, Inc.",
+        "date": "2026-01-02",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "montage-xt-cranial",
+      "number": "K261265",
+      "result": {
+        "k": "K261265",
+        "device": "Permatage XT Settable Bone Putty",
+        "applicant": "Orthocon, Inc.",
+        "date": "2026-06-15",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "rotium",
+      "number": "K183236",
+      "result": {
+        "k": "K183236",
+        "device": "Rotium Bioresorbable Wick",
+        "applicant": "Nanofiber Solutions, LLC",
+        "date": "2019-03-11",
+        "code": "MAI"
+      }
+    },
+    {
+      "product": "rotium",
+      "number": "K201414",
+      "result": {
+        "k": "K201414",
+        "device": "Rotium Bioresorbable Wick",
+        "applicant": "Nanofiber Solutions, LLC",
+        "date": "2020-06-25",
+        "code": "MAI"
+      }
+    },
+    {
+      "product": "rotium",
+      "number": "K231641",
+      "result": {
+        "k": "K231641",
+        "device": "Rotium Bioresorbable Wick",
+        "applicant": "Nanofiber Solutions, LLC",
+        "date": "2023-07-05",
+        "code": "MAI"
+      }
+    },
+    {
+      "product": "rotium",
+      "number": "K250021",
+      "result": {
+        "k": "K250021",
+        "device": "Rotium",
+        "applicant": "Nanofiber Solutions, LLC",
+        "date": "2025-02-27",
+        "code": "OWW"
+      }
+    },
+    {
+      "product": "pearlmatrix",
+      "number": "P140019",
+      "result": {
+        "p": "P140019",
+        "trade": "I-FACTOR PEPTIDE ENHANCED BONE GRAFT",
+        "applicant": "Cerapedics, LLC",
+        "date": "2015-11-03",
+        "generic": "Filler, bone void, synthetic peptide",
+        "supplements": 14
+      }
+    },
+    {
+      "product": "pearlmatrix",
+      "number": "P240001",
+      "result": {
+        "p": "P240001",
+        "trade": "PearlMatrix\u0099 Bone Graft",
+        "applicant": "Cerapedics, Inc.",
+        "date": "2025-06-18",
+        "generic": "Filler, bone void, synthetic peptide",
+        "supplements": 3
+      }
+    },
+    {
+      "product": "new-bvf-clearances-2024-2026",
+      "number": "K212083",
+      "result": {
+        "k": "K212083",
+        "device": "Tactoset Injectable Bone Substitute",
+        "applicant": "Anika Therapeutics, Inc.",
+        "date": "2021-08-31",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "new-bvf-clearances-2024-2026",
+      "number": "K231968",
+      "result": {
+        "k": "K231968",
+        "device": "Tactoset\u00ae Injectable Bone Substitute",
+        "applicant": "Anika Therapeutics, Inc.",
+        "date": "2023-12-20",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "new-bvf-clearances-2024-2026",
+      "number": "K240450",
+      "result": {
+        "k": "K240450",
+        "device": "Citrepore\u0099",
+        "applicant": "Acuitive Technologies, Inc.",
+        "date": "2024-11-06",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "new-bvf-clearances-2024-2026",
+      "number": "K241555",
+      "result": {
+        "k": "K241555",
+        "device": "Moldable Bone Void Filler and Moldable Bone Void Filler + CCC",
+        "applicant": "Rti Surgical, Inc.",
+        "date": "2025-02-21",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "new-bvf-clearances-2024-2026",
+      "number": "K242797",
+      "result": {
+        "k": "K242797",
+        "device": "OsteoFlo HydroFiber",
+        "applicant": "SurGenTec, LLC",
+        "date": "2024-12-23",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "new-bvf-clearances-2024-2026",
+      "number": "K243949",
+      "result": {
+        "k": "K243949",
+        "device": "OsteoFlo HydroFiber",
+        "applicant": "SurGenTec, LLC",
+        "date": "2025-05-28",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "new-bvf-clearances-2024-2026",
+      "number": "K250346",
+      "result": {
+        "k": "K250346",
+        "device": "BonVie+",
+        "applicant": "Elute, Inc.",
+        "date": "2025-02-26",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "new-bvf-clearances-2024-2026",
+      "number": "K250521",
+      "result": {
+        "k": "K250521",
+        "device": "NanoBone\u00ae SBX Putty ; NanoBone\u00ae QD",
+        "applicant": "Biocomposites, Ltd.",
+        "date": "2025-04-07",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "new-bvf-clearances-2024-2026",
+      "number": "K251720",
+      "result": {
+        "k": "K251720",
+        "device": "OsteoFlo HydroFiber",
+        "applicant": "SurGenTec, LLC",
+        "date": "2025-07-02",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "new-bvf-clearances-2024-2026",
+      "number": "K252797",
+      "result": {
+        "k": "K252797",
+        "device": "JAZBI\u0099 Resorbable Bone Void Filler",
+        "applicant": "Sdip Innovations Pty, Ltd.",
+        "date": "2026-05-26",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "new-bvf-clearances-2024-2026",
+      "number": "K253147",
+      "result": {
+        "k": "K253147",
+        "device": "FIBERGRAFT\u0099 BG Putty GPS Bone Graft Substitute FIBERGRAFT\u0099 BG Putty Bone Graft Substitute FIBERGRAFT\u0099 AERIDYAN\u0099 Matrix Bone Graft Substitute FIBERGRAFT\u0099 BG Matrix Bone Graft Substitute",
+        "applicant": "Prosidyan, Inc.",
+        "date": "2025-10-22",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "new-bvf-clearances-2024-2026",
+      "number": "K261008",
+      "result": {
+        "k": "K261008",
+        "device": "Vitoss\u00ae BiModal Bioactive Bone Graft Substitute Foam Strip; Vitoss\u00ae BiModal Bioactive Bone Graft Substitute; Vitoss BBTrauma\u00ae Bioactive Bone Graft Substitute; Vitoss\u00ae BA2X Bioactive Bone Graft Substitute; Vitoss\u00ae Bioactive Foam Bone Graft Substitute Pack; Vitoss\u00ae Bioactive Foam Bone Graft Substitute; Vitoss\u00ae Foam Bone Graft Substitute; Vitoss\u00ae Bone Graft Substitute Filled Canister; Vitoss\u00ae Bone Graft Substitute",
+        "applicant": "Stryker Spine",
+        "date": "2026-04-24",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "tnr-cranial-implant",
+      "number": "K051093",
+      "result": {
+        "k": "K051093",
+        "device": "OSTEOPORE PCL SCAFFOLD",
+        "applicant": "Osteopore, Inc.",
+        "date": "2006-03-17",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "tnr-cranial-implant",
+      "number": "K251959",
+      "result": {
+        "k": "K251959",
+        "device": "TnR Cranial Implant",
+        "applicant": "T&R BIOFAB CO., Ltd.",
+        "date": "2026-07-30",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "arthrex-angel",
+      "number": "K042473",
+      "result": {
+        "k": "K042473",
+        "device": "COBE ANGEL WHOLE BLOOD SEPARATION SYSTEM",
+        "applicant": "Cobe Cardiovascular, Inc.",
+        "date": "2004-11-19",
+        "code": "JQC"
+      }
+    },
+    {
+      "product": "bmac",
+      "number": "K103340",
+      "result": {
+        "k": "K103340",
+        "device": "SMARTPREP2 BMAC SYSTEM, SMARTPREP PLATELET CONCENTRATION SYSTEM",
+        "applicant": "Harvest Technologies, Corp.",
+        "date": "2010-12-06",
+        "code": "JQC"
+      }
+    },
+    {
+      "product": "harvest-smartprep-bmac",
+      "number": "K052925",
+      "result": {
+        "k": "K052925",
+        "device": "SMARTPREP2 CENTRIFUGE SYSTEM",
+        "applicant": "Harvest Technologies, Corp.",
+        "date": "2006-01-04",
+        "code": "JQC"
+      }
+    },
+    {
+      "product": "harvest-smartprep-bmac",
+      "number": "K103340",
+      "result": {
+        "k": "K103340",
+        "device": "SMARTPREP2 BMAC SYSTEM, SMARTPREP PLATELET CONCENTRATION SYSTEM",
+        "applicant": "Harvest Technologies, Corp.",
+        "date": "2010-12-06",
+        "code": "JQC"
+      }
+    },
+    {
+      "product": "harvest-smartprep-bmac",
+      "number": "K991430",
+      "result": {
+        "k": "K991430",
+        "device": "SMARTPREP CENTRIFUGE SYSTEM",
+        "applicant": "Harvest Technologies, LLC",
+        "date": "1999-05-28",
+        "code": "JQC"
+      }
+    },
+    {
+      "product": "magellan",
+      "number": "K021902",
+      "result": {
+        "k": "K021902",
+        "device": "MAGELLAN AUTOLOGUS PLATELET SEPARATOR, MAG100, MAGELLAN AUTOLOGOUS PLATELET SEPARATOR DEISPOSABLE KIT, MKT300",
+        "applicant": "Medtronic Vascular",
+        "date": "2002-08-12",
+        "code": "JQC"
+      }
+    },
+    {
+      "product": "allomatrix",
+      "number": "K020895",
+      "result": {
+        "k": "K020895",
+        "device": "ALLOMATRIX MODEL# 86",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2004-03-05",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "allomatrix",
+      "number": "K040980",
+      "result": {
+        "k": "K040980",
+        "device": "ALLOMATRIX C PUTTY, ALLOMATRIX CUSTOM PUTTY, ALLOMATRIX DR PUTTY, IGNITE SCAFFOLD, MODELS 860C, 86XC, 86DR, 860D, 860T",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2004-07-14",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "allomatrix",
+      "number": "K041168",
+      "result": {
+        "k": "K041168",
+        "device": "ALLOMATRIX PUTTY",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2004-08-02",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "allomatrix",
+      "number": "K041663",
+      "result": {
+        "k": "K041663",
+        "device": "ALLOMATRIX TCP, ALLOMATRIX W/CASO4 FILLED TCP, AND ALLOMATRIX PLUS CBM",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2004-09-16",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "allomatrix",
+      "number": "K053319",
+      "result": {
+        "k": "K053319",
+        "device": "ALLOMATRIX CUSTOM",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2006-03-06",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "allomatrix",
+      "number": "K061939",
+      "result": {
+        "k": "K061939",
+        "device": "MODIFICATION TO ALLOMATRIX CUSTOM",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2006-07-18",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "allomatrix",
+      "number": "K252085",
+      "result": {
+        "k": "K252085",
+        "device": "Allomatrix (Allomatrix Injectable Putty; Allomatrix C; Allomatrix DR; Allomatrix Custom)",
+        "applicant": "Wright Medical Technology, Inc. (Stryker Corporation)",
+        "date": "2025-09-30",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "accell-evo3",
+      "number": "K060306",
+      "result": {
+        "k": "K060306",
+        "device": "ACCELL CONNEXUS DEMINERALIZED BONE MATRIX PUTTY",
+        "applicant": "Isotis NV",
+        "date": "2006-03-27",
+        "code": "NUN"
+      }
+    },
+    {
+      "product": "accell-evo3",
+      "number": "K081817",
+      "result": {
+        "k": "K081817",
+        "device": "ACCELL TBM-R",
+        "applicant": "Isotis Orthobiologics, Inc.",
+        "date": "2008-09-24",
+        "code": "MBP"
+      }
+    },
+    {
+      "product": "accell-evo3",
+      "number": "K091193",
+      "result": {
+        "k": "K091193",
+        "device": "ACCELL EVO3C",
+        "applicant": "Isotis Orthobiologics, Inc.",
+        "date": "2009-08-10",
+        "code": "MBP"
+      }
+    },
+    {
+      "product": "accell-evo3",
+      "number": "K103742",
+      "result": {
+        "k": "K103742",
+        "device": "ACCELL EVO3 (FORMERLY ACCELL A2I)",
+        "applicant": "Integra Life Sciences",
+        "date": "2011-03-17",
+        "code": "MBP"
+      }
+    },
+    {
+      "product": "allofuse",
+      "number": "K071849",
+      "result": {
+        "k": "K071849",
+        "device": "ALLOFUSE GEL AND PUTTY",
+        "applicant": "Allosource, Inc.",
+        "date": "2008-12-04",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "allofuse",
+      "number": "K103036",
+      "result": {
+        "k": "K103036",
+        "device": "ALLOFUSE PLUS",
+        "applicant": "Allosource, Inc.",
+        "date": "2011-01-10",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "dbx",
+      "number": "K040262",
+      "result": {
+        "k": "K040262",
+        "device": "DBX DEMINERALIZED BONE MATRIX PUTTY, BONE MATRIX PASTE AND BONE MATRIX MIX",
+        "applicant": "Musculoskeletal Transplant Foundation",
+        "date": "2005-03-17",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "dbx",
+      "number": "K040501",
+      "result": {
+        "k": "K040501",
+        "device": "DBX DEMINERALIZED BONE MATRIX PUTTY, PASTE AND MIX",
+        "applicant": "Musculoskeletal Transplant Foundation",
+        "date": "2005-04-29",
+        "code": "NUN"
+      }
+    },
+    {
+      "product": "dbx",
+      "number": "K042829",
+      "result": {
+        "k": "K042829",
+        "device": "DBX STRIP",
+        "applicant": "Musculoskeletal Transplant Foundation",
+        "date": "2006-01-13",
+        "code": "MBP"
+      }
+    },
+    {
+      "product": "dbx",
+      "number": "K053218",
+      "result": {
+        "k": "K053218",
+        "device": "DBX DEMINERALIZED BONE MATRIX PUTTY/PASTE/MIX",
+        "applicant": "Musculoskeletal Transplant Foundation",
+        "date": "2006-12-28",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "dbx",
+      "number": "K062205",
+      "result": {
+        "k": "K062205",
+        "device": "DBX STRIP",
+        "applicant": "Musculoskeletal Transplant Foundation",
+        "date": "2007-02-05",
+        "code": "MBP"
+      }
+    },
+    {
+      "product": "dbx",
+      "number": "K063676",
+      "result": {
+        "k": "K063676",
+        "device": "DBX DEMINERALIZED BONE MATRIX MIX",
+        "applicant": "Musculoskeletal Transplant Foundation",
+        "date": "2007-03-05",
+        "code": "MBP"
+      }
+    },
+    {
+      "product": "dbx",
+      "number": "K080399",
+      "result": {
+        "k": "K080399",
+        "device": "DBX DEMINERALIZED BONE MATRIX PUTTY, DBX DEMINERALIZED BONE MATRIX PASTE",
+        "applicant": "Musculoskeletal Transplant Foundation",
+        "date": "2008-10-10",
+        "code": "MBP"
+      }
+    },
+    {
+      "product": "dbx",
+      "number": "K091217",
+      "result": {
+        "k": "K091217",
+        "device": "DBX DEMINERALIZED BONE MATRIX PUTTY",
+        "applicant": "Musculoskeletal Transplant Foundation",
+        "date": "2009-10-02",
+        "code": "NUN"
+      }
+    },
+    {
+      "product": "dbx",
+      "number": "K091218",
+      "result": {
+        "k": "K091218",
+        "device": "DBX DEMINERALIZED BONE MATRIX PUTTY",
+        "applicant": "Musculoskeletal Transplant Foundation",
+        "date": "2009-09-28",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "dbx",
+      "number": "K103784",
+      "result": {
+        "k": "K103784",
+        "device": "DBX DEMINERALIZED BONE MATRIX PUTTY",
+        "applicant": "Musculoskeletal Transplant Foundation",
+        "date": "2011-04-13",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "dbx",
+      "number": "K103795",
+      "result": {
+        "k": "K103795",
+        "device": "DBX DEMINERALIZED BONE MATRIX PUTTY",
+        "applicant": "Musculoskeletal Transplant Foundation",
+        "date": "2011-04-13",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "grafton",
+      "number": "K042707",
+      "result": {
+        "k": "K042707",
+        "device": "GRAFTON PLUS DBM PASTE",
+        "applicant": "Osteotech, Inc.",
+        "date": "2005-11-30",
+        "code": "NUN"
+      }
+    },
+    {
+      "product": "grafton",
+      "number": "K043048",
+      "result": {
+        "k": "K043048",
+        "device": "GRAFTON PLUS DBM PASTE",
+        "applicant": "Osteotech, Inc.",
+        "date": "2005-11-23",
+        "code": "MBP"
+      }
+    },
+    {
+      "product": "grafton",
+      "number": "K051188",
+      "result": {
+        "k": "K051188",
+        "device": "GRAFTON DBM",
+        "applicant": "Osteotech, Inc.",
+        "date": "2006-01-03",
+        "code": "NUN"
+      }
+    },
+    {
+      "product": "grafton",
+      "number": "K051195",
+      "result": {
+        "k": "K051195",
+        "device": "GRAFTON DBM",
+        "applicant": "Osteotech, Inc.",
+        "date": "2005-12-16",
+        "code": "MBP"
+      }
+    },
+    {
+      "product": "grafton",
+      "number": "K251193",
+      "result": {
+        "k": "K251193",
+        "device": "Grafton\u0099 DBM; Grafton Plus\u0099 DBM Paste; Magnifuse\u0099 Bone Graft",
+        "applicant": "Medtronic Sofamor Danek, Inc.",
+        "date": "2025-06-12",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnifuse",
+      "number": "K123691",
+      "result": {
+        "k": "K123691",
+        "device": "MAGNIFUSE BONE GRAFT (CLEARED AS GRAFTON II EDBM)",
+        "applicant": "Medtronic Sofamor Danek, Inc.",
+        "date": "2013-01-31",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnifuse",
+      "number": "K131673",
+      "result": {
+        "k": "K131673",
+        "device": "MAGNIFUSE BONE GRAFT, MAGIFUSE II BONE GRAFT",
+        "applicant": "Medtronic Sofamor Danek USA, Inc.",
+        "date": "2013-10-03",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnifuse",
+      "number": "K251193",
+      "result": {
+        "k": "K251193",
+        "device": "Grafton\u0099 DBM; Grafton Plus\u0099 DBM Paste; Magnifuse\u0099 Bone Graft",
+        "applicant": "Medtronic Sofamor Danek, Inc.",
+        "date": "2025-06-12",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "optium-dbm",
+      "number": "K053098",
+      "result": {
+        "k": "K053098",
+        "device": "OPTIUM DBM GEL AND PUTTY",
+        "applicant": "Lifenet",
+        "date": "2005-11-28",
+        "code": "MBP"
+      }
+    },
+    {
+      "product": "bioactive-glass-foot-ankle",
+      "number": "K103173",
+      "result": {
+        "k": "K103173",
+        "device": "VITOSS BA BIMODAL BIOACTIVE BONE GRAFT SUBSTITUTE",
+        "applicant": "Orthovita, Inc.",
+        "date": "2011-02-07",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "bioactive-glass-foot-ankle",
+      "number": "K142463",
+      "result": {
+        "k": "K142463",
+        "device": "Bio2 CLM BG Bioactive Scaffold",
+        "applicant": "Bio2 Technologies, Inc.",
+        "date": "2014-12-18",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "bioactive-glass-foot-ankle",
+      "number": "K152589",
+      "result": {
+        "k": "K152589",
+        "device": "Bio2 CLM BG Bioactive Scaffold",
+        "applicant": "Bio2 Technologies, Inc.",
+        "date": "2016-01-12",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "bioactive-glass-foot-ankle",
+      "number": "K163621",
+      "result": {
+        "k": "K163621",
+        "device": "Vitoss Bioactive (BA) Injectable",
+        "applicant": "Orthovita, Inc.",
+        "date": "2017-05-02",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "bioactive-glass-foot-ankle",
+      "number": "K231528",
+      "result": {
+        "k": "K231528",
+        "device": "Bonalive Orthopedics granules",
+        "applicant": "Bonalive Biomaterials, Ltd.",
+        "date": "2023-07-11",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "bioactive-glass-foot-ankle",
+      "number": "K240404",
+      "result": {
+        "k": "K240404",
+        "device": "NovaBone Putty - Bioactive Synthetic Bone Graft (NB6600, NB6610, NB6615)",
+        "applicant": "Novabone Products, LLC",
+        "date": "2024-03-05",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "bioactive-glass-foot-ankle",
+      "number": "K242299",
+      "result": {
+        "k": "K242299",
+        "device": "NovaBone Putty - Synthetic Bioactive Bone Graft",
+        "applicant": "Novabone Products, LLC",
+        "date": "2024-09-25",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "bonalive",
+      "number": "K070055",
+      "result": {
+        "k": "K070055",
+        "device": "BONALIVE GRANULES AND BONALIVE PLATES",
+        "applicant": "Vivoxid , Ltd.",
+        "date": "2007-06-25",
+        "code": "LYC"
+      }
+    },
+    {
+      "product": "bonalive",
+      "number": "K071199",
+      "result": {
+        "k": "K071199",
+        "device": "BONALIVE GRANULES",
+        "applicant": "Vivoxid , Ltd.",
+        "date": "2008-02-01",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "bonalive",
+      "number": "K191274",
+      "result": {
+        "k": "K191274",
+        "device": "BonAlive Granules",
+        "applicant": "Bonalive Biomaterials, Ltd.",
+        "date": "2019-08-07",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "bonalive",
+      "number": "K231528",
+      "result": {
+        "k": "K231528",
+        "device": "Bonalive Orthopedics granules",
+        "applicant": "Bonalive Biomaterials, Ltd.",
+        "date": "2023-07-11",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "bonalive",
+      "number": "K253883",
+      "result": {
+        "k": "K253883",
+        "device": "Bonalive Maxillofacial",
+        "applicant": "Bonalive , Ltd.",
+        "date": "2026-05-14",
+        "code": "LYC"
+      }
+    },
+    {
+      "product": "cortoss",
+      "number": "K080108",
+      "result": {
+        "k": "K080108",
+        "device": "CORTOSS BONE AUGMENTATION MATERIAL",
+        "applicant": "Orthovita, Inc.",
+        "date": "2009-06-05",
+        "code": "NDN"
+      }
+    },
+    {
+      "product": "fibergraft",
+      "number": "K180080",
+      "result": {
+        "k": "K180080",
+        "device": "FIBERGRAFT BG Matrix Bone Graft Substitute",
+        "applicant": "Prosidyan, Inc.",
+        "date": "2018-04-06",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "fibergraft",
+      "number": "K182670",
+      "result": {
+        "k": "K182670",
+        "device": "FIBERGRAFT AERIDYAN Matrix Bone Graft Substitute",
+        "applicant": "Prosidyan, Inc.",
+        "date": "2018-12-20",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "fibergraft",
+      "number": "K213803",
+      "result": {
+        "k": "K213803",
+        "device": "FIBERGRAFT Aeridyan Matrix Bone Graft Substitute",
+        "applicant": "Prosidyan, Inc.",
+        "date": "2022-08-23",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "novabone",
+      "number": "K051617",
+      "result": {
+        "k": "K051617",
+        "device": "NOVABONE PUTTY - RESORBABLE BONE VOID FILLER",
+        "applicant": "Novabone Products, LLC",
+        "date": "2006-03-06",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "novabone",
+      "number": "K052494",
+      "result": {
+        "k": "K052494",
+        "device": "NOVABONE-BIOACTIVE SYNTHETIC GRAFT",
+        "applicant": "Novabone Products, LLC",
+        "date": "2005-11-03",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "novabone",
+      "number": "K060728",
+      "result": {
+        "k": "K060728",
+        "device": "NOVABONE PUTTY - BIOACTIVE SYNTHETIC GRAFT",
+        "applicant": "Novabone Products, LLC",
+        "date": "2006-05-01",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "novabone",
+      "number": "K080009",
+      "result": {
+        "k": "K080009",
+        "device": "NOVABONE PUTTY- BIOACTIVE SYNTHETIC GRAFT",
+        "applicant": "Novabone Products, LLC",
+        "date": "2008-05-06",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "novabone",
+      "number": "K082672",
+      "result": {
+        "k": "K082672",
+        "device": "NOVABONE PUTTY-BIOACTIVE SYNTHETIC BONE GRAFT",
+        "applicant": "Novabone Products, LLC",
+        "date": "2008-12-09",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "novabone",
+      "number": "K101860",
+      "result": {
+        "k": "K101860",
+        "device": "NOVABONE PUTTY- BIOACTIVE SYNTHETIC BONE GRAFT",
+        "applicant": "Novabone Products, LLC",
+        "date": "2010-09-01",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "novabone",
+      "number": "K110368",
+      "result": {
+        "k": "K110368",
+        "device": "NOVABONE PUTTY - BIOACTIVE SYNTHETIC BONE GRAFT",
+        "applicant": "Novabone Products, LLC",
+        "date": "2011-04-14",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "novabone",
+      "number": "K140946",
+      "result": {
+        "k": "K140946",
+        "device": "NOVABONE MACROFORM BIOACTIVE PACKABLE, NOVABONE MACROFORM BIOACTIVE COMPOSITE",
+        "applicant": "Novabone Products, LLC",
+        "date": "2014-08-22",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "novabone",
+      "number": "K141207",
+      "result": {
+        "k": "K141207",
+        "device": "NOVABONE BIOACTIVE STRIP",
+        "applicant": "Novabone Products, LLC",
+        "date": "2014-10-31",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "novabone",
+      "number": "K152071",
+      "result": {
+        "k": "K152071",
+        "device": "NovaBone MacroFORM MIS Composite - 2.5cc, NovaBone MIS Cartridge Delivery System (cartridge handle only)",
+        "applicant": "Novabone Products, LLC",
+        "date": "2015-08-26",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "novabone",
+      "number": "K163310",
+      "result": {
+        "k": "K163310",
+        "device": "NovaBone IRM",
+        "applicant": "Novabone Products, LLC",
+        "date": "2017-01-18",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "novabone",
+      "number": "K240404",
+      "result": {
+        "k": "K240404",
+        "device": "NovaBone Putty - Bioactive Synthetic Bone Graft (NB6600, NB6610, NB6615)",
+        "applicant": "Novabone Products, LLC",
+        "date": "2024-03-05",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "novabone",
+      "number": "K242299",
+      "result": {
+        "k": "K242299",
+        "device": "NovaBone Putty - Synthetic Bioactive Bone Graft",
+        "applicant": "Novabone Products, LLC",
+        "date": "2024-09-25",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "signafuse",
+      "number": "K193513",
+      "result": {
+        "k": "K193513",
+        "device": "SIGNAFUSE Bioactive Bone Graft",
+        "applicant": "Bioventus",
+        "date": "2020-06-18",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "signafuse",
+      "number": "K233490",
+      "result": {
+        "k": "K233490",
+        "device": "SIGNAFUSE Bioactive Strip (SBS); SIGNAFUSE Putty",
+        "applicant": "Bioventus, LLC",
+        "date": "2023-12-05",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "directinject",
+      "number": "K143661",
+      "result": {
+        "k": "K143661",
+        "device": "DirectInject",
+        "applicant": "Stryker",
+        "date": "2015-09-02",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "hydroset",
+      "number": "K051603",
+      "result": {
+        "k": "K051603",
+        "device": "STRYKER INJECTABLE CEMENT",
+        "applicant": "Stryker Leibinger Micro Implants",
+        "date": "2005-12-30",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "hydroset",
+      "number": "K060061",
+      "result": {
+        "k": "K060061",
+        "device": "STRYKER INJECTABLE CEMENT",
+        "applicant": "Stryker Corp.",
+        "date": "2006-03-01",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "hydroset",
+      "number": "K060750",
+      "result": {
+        "k": "K060750",
+        "device": "STRYKER INJECTABLE CEMENT",
+        "applicant": "Stryker Cmf",
+        "date": "2006-04-19",
+        "code": "NEA"
+      }
+    },
+    {
+      "product": "hydroset",
+      "number": "K060763",
+      "result": {
+        "k": "K060763",
+        "device": "STRYKER INJECTABLE CEMENT",
+        "applicant": "Stryker",
+        "date": "2006-09-22",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "hydroset",
+      "number": "K161447",
+      "result": {
+        "k": "K161447",
+        "device": "HydroSet XT",
+        "applicant": "Orthovita, Inc.",
+        "date": "2016-10-06",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "kyphos-fs",
+      "number": "K041584",
+      "result": {
+        "k": "K041584",
+        "device": "KYPHX HV-R BONE CEMENT, MODEL C01A",
+        "applicant": "Kyphon, Inc.",
+        "date": "2004-07-07",
+        "code": "NDN"
+      }
+    },
+    {
+      "product": "kyphos-fs",
+      "number": "K163032",
+      "result": {
+        "k": "K163032",
+        "device": "Kyphon Xpede Bone Cement",
+        "applicant": "Medtronic, Inc.",
+        "date": "2017-02-27",
+        "code": "NDN"
+      }
+    },
+    {
+      "product": "kyphos-fs",
+      "number": "K171938",
+      "result": {
+        "k": "K171938",
+        "device": "KYPHON Xpede Bone Cement, CD HORIZON Fenestrated Screw Set",
+        "applicant": "Medtronic",
+        "date": "2017-10-23",
+        "code": "PML"
+      }
+    },
+    {
+      "product": "kyphos-fs",
+      "number": "K180700",
+      "result": {
+        "k": "K180700",
+        "device": "KYPHON HV-R Bone Cement",
+        "applicant": "Medtronic Sofamor Danek USA, Inc.",
+        "date": "2018-05-18",
+        "code": "NDN"
+      }
+    },
+    {
+      "product": "kyphos-fs",
+      "number": "K191148",
+      "result": {
+        "k": "K191148",
+        "device": "Medtronic HV-R\u0099 Bone Cement, Kyphon\u0099 Xpede\u0099 Bone Cement, CD Horizon\u0099 Fenestrated Screw Set",
+        "applicant": "Medtronic Sofamor Danek USA, Inc.",
+        "date": "2019-09-12",
+        "code": "PML"
+      }
+    },
+    {
+      "product": "mimix",
+      "number": "K003494",
+      "result": {
+        "k": "K003494",
+        "device": "MIMIX BONE REPLACEMENT SYSTEM",
+        "applicant": "Biomet, Inc.",
+        "date": "2001-04-09",
+        "code": "LYC"
+      }
+    },
+    {
+      "product": "mimix",
+      "number": "K012569",
+      "result": {
+        "k": "K012569",
+        "device": "MODIFICATION TO: INJECTABLE MIMIX",
+        "applicant": "Biomet, Inc.",
+        "date": "2001-12-21",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "mimix",
+      "number": "K023718",
+      "result": {
+        "k": "K023718",
+        "device": "QUICKSET MIMIX BONE VOID FILLER",
+        "applicant": "Walter Lorenz Surgical, Inc.",
+        "date": "2002-12-04",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "mimix",
+      "number": "K043280",
+      "result": {
+        "k": "K043280",
+        "device": "MIMIX MP BONE VOID FILLER",
+        "applicant": "Biomet, Inc.",
+        "date": "2004-12-21",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "norian",
+      "number": "K041842",
+      "result": {
+        "k": "K041842",
+        "device": "NORIAN SRS FAST SET PUTTY",
+        "applicant": "Synthes (Usa)",
+        "date": "2004-07-23",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "norian",
+      "number": "K060406",
+      "result": {
+        "k": "K060406",
+        "device": "NORIAN SRS FAST SET PUTTY",
+        "applicant": "Synthes (Usa)",
+        "date": "2006-03-20",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "norian",
+      "number": "K060408",
+      "result": {
+        "k": "K060408",
+        "device": "NORIAN SRS BONE VOID FILLER",
+        "applicant": "Synthes (Usa)",
+        "date": "2006-03-21",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "norian",
+      "number": "K060443",
+      "result": {
+        "k": "K060443",
+        "device": "NORIAN CRS FAST SET PUTTY",
+        "applicant": "Synthes (Usa)",
+        "date": "2006-04-13",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "norian",
+      "number": "K060445",
+      "result": {
+        "k": "K060445",
+        "device": "NORIAN CRS BONE CEMENT",
+        "applicant": "Synthes (Usa)",
+        "date": "2006-04-13",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "norian",
+      "number": "K073303",
+      "result": {
+        "k": "K073303",
+        "device": "NORIAN DRILLABLE",
+        "applicant": "Synthes (Usa)",
+        "date": "2008-07-02",
+        "code": "OIS"
+      }
+    },
+    {
+      "product": "norian",
+      "number": "K102018",
+      "result": {
+        "k": "K102018",
+        "device": "NORIAN REINFORCED, NORIAN REINFORCED FAST SET PUTTY",
+        "applicant": "Synthes USA Products, LLC",
+        "date": "2010-09-23",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "norian",
+      "number": "K102722",
+      "result": {
+        "k": "K102722",
+        "device": "NORIAN DRILLABLE INJECT, NORIAN DRILLABLE FAST SET PUTTY",
+        "applicant": "Synthes USA Products, LLC",
+        "date": "2011-01-27",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "osteovation-cmf",
+      "number": "K042072",
+      "result": {
+        "k": "K042072",
+        "device": "CALLOS CMF BONE VOID FILLER",
+        "applicant": "Skeletal Kinetics, LLC",
+        "date": "2004-09-16",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "osteovation-cmf",
+      "number": "K051784",
+      "result": {
+        "k": "K051784",
+        "device": "OSTEOVATION CMF BONE VOID FILLER",
+        "applicant": "Skeletal Kinetics, LLC",
+        "date": "2005-07-20",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "osteovation-cmf",
+      "number": "K162864",
+      "result": {
+        "k": "K162864",
+        "device": "OsteoVation Impact",
+        "applicant": "Skeletal Kinetics, LLC",
+        "date": "2017-01-13",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "chronos-inject",
+      "number": "K013072",
+      "result": {
+        "k": "K013072",
+        "device": "CHRONOS TRICALCIUM PROSPHATE (CHRONOS TCP)",
+        "applicant": "Synthes",
+        "date": "2002-11-26",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "chronos-inject",
+      "number": "K041350",
+      "result": {
+        "k": "K041350",
+        "device": "SYNTHES (USA) CHRONOS",
+        "applicant": "Synthes (Usa)",
+        "date": "2004-07-08",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "chronos-inject",
+      "number": "K043045",
+      "result": {
+        "k": "K043045",
+        "device": "SYNTHES (USA) CHRONOS",
+        "applicant": "Synthes (Usa)",
+        "date": "2005-01-07",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "chronos-inject",
+      "number": "K053022",
+      "result": {
+        "k": "K053022",
+        "device": "SYNTHES (USA) CHRONOS-BETA-TCP",
+        "applicant": "Synthes (Usa)",
+        "date": "2006-01-23",
+        "code": "LYC"
+      }
+    },
+    {
+      "product": "chronos-inject",
+      "number": "K071046",
+      "result": {
+        "k": "K071046",
+        "device": "SYNTHES CHRONOS COMPOSITE",
+        "applicant": "Synthes (Usa)",
+        "date": "2007-10-23",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "osteoset",
+      "number": "K010532",
+      "result": {
+        "k": "K010532",
+        "device": "OSTEOSET BVF KIT",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2001-10-26",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "osteoset",
+      "number": "K022828",
+      "result": {
+        "k": "K022828",
+        "device": "OSTEOSET DBM PELLETS, MODEL 8600-48XX",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2004-04-02",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "osteoset",
+      "number": "K053642",
+      "result": {
+        "k": "K053642",
+        "device": "OSTEOSET DBM PELLETS",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2006-01-26",
+        "code": "MBP"
+      }
+    },
+    {
+      "product": "perossal",
+      "number": "K192394",
+      "result": {
+        "k": "K192394",
+        "device": "Hi-Fatigue Bone Cement",
+        "applicant": "Osartis GmbH",
+        "date": "2019-12-02",
+        "code": "LOD"
+      }
+    },
+    {
+      "product": "perossal",
+      "number": "K202458",
+      "result": {
+        "k": "K202458",
+        "device": "BonOs Inject, Pedicle screw kits, Cement pusher",
+        "applicant": "Osartis GmbH",
+        "date": "2021-05-18",
+        "code": "LOD"
+      }
+    },
+    {
+      "product": "perossal",
+      "number": "K210120",
+      "result": {
+        "k": "K210120",
+        "device": "BonOs HV, BonOs MV, BonOs LV",
+        "applicant": "Osartis GmbH",
+        "date": "2021-03-19",
+        "code": "LOD"
+      }
+    },
+    {
+      "product": "perossal",
+      "number": "K210125",
+      "result": {
+        "k": "K210125",
+        "device": "BonOs HV Genta, BonOs MV Genta, BonOs LV Genta",
+        "applicant": "Osartis GmbH",
+        "date": "2021-03-19",
+        "code": "LOD"
+      }
+    },
+    {
+      "product": "perossal",
+      "number": "K240856",
+      "result": {
+        "k": "K240856",
+        "device": "Hip Spacer Molds; Knee Spacer Molds; Shoulder Spacer Molds",
+        "applicant": "Osartis GmbH",
+        "date": "2024-11-20",
+        "code": "MBB"
+      }
+    },
+    {
+      "product": "stimulan",
+      "number": "K001724",
+      "result": {
+        "k": "K001724",
+        "device": "STIMULAN -CALCIUM SULFATE BONE VOID FILTER",
+        "applicant": "Biocomposites, Ltd.",
+        "date": "2000-08-04",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "stimulan",
+      "number": "K003954",
+      "result": {
+        "k": "K003954",
+        "device": "STIMULAN - CALCIUM SULFATE BONE VOID FILLER KIT",
+        "applicant": "Biocomposites, Ltd.",
+        "date": "2001-07-12",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "stimulan",
+      "number": "K021551",
+      "result": {
+        "k": "K021551",
+        "device": "STIMULAN - CALCIUM SULFATE BONE VOID FILLER KIT",
+        "applicant": "Biocomposites, Ltd.",
+        "date": "2002-11-01",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "stimulan",
+      "number": "K141830",
+      "result": {
+        "k": "K141830",
+        "device": "STIMULAN KIT, STIMULAN RAPID CURE",
+        "applicant": "Biocomposites, Ltd.",
+        "date": "2015-01-23",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "osteoamp",
+      "number": "K233368",
+      "result": {
+        "k": "K233368",
+        "device": "Allograft Delivery Device (OFAC-C)",
+        "applicant": "Bioventus, LLC",
+        "date": "2024-06-25",
+        "code": "FMF"
+      }
+    },
+    {
+      "product": "lipus-pemf-stimulators",
+      "number": "P900009",
+      "result": {
+        "p": "P900009",
+        "trade": "SONIC ACCELERATED FRACTURE HEALING SYSTEM MODEL 2A",
+        "applicant": "Bioventus, LLC",
+        "date": "1994-10-05",
+        "generic": "Stimulator, bone growth, non-invasive",
+        "supplements": 44
+      }
+    },
+    {
+      "product": "regeneten",
+      "number": "K112423",
+      "result": {
+        "k": "K112423",
+        "device": "COLLAGEN TENDON SHEET",
+        "applicant": "Rotation Medical, Inc.",
+        "date": "2011-12-22",
+        "code": "FTM"
+      }
+    },
+    {
+      "product": "regeneten",
+      "number": "K222501",
+      "result": {
+        "k": "K222501",
+        "device": "Regeneten Bioinductive Implant",
+        "applicant": "Smith and Nephew, Inc.",
+        "date": "2023-05-11",
+        "code": "OWY"
+      }
+    },
+    {
+      "product": "regeneten",
+      "number": "K242631",
+      "result": {
+        "k": "K242631",
+        "device": "REGENETEN\u0099 Bioinductive Implant",
+        "applicant": "Smith & Nephew Inc., Endoscopy Div.",
+        "date": "2024-11-26",
+        "code": "OWY"
+      }
+    },
+    {
+      "product": "ria",
+      "number": "K013527",
+      "result": {
+        "k": "K013527",
+        "device": "MODIFICATION TO SYNTHES (USA) REAMER IRRIGATOR ASPIRATOR (RIA) SYSTEM",
+        "applicant": "Synthes (Usa)",
+        "date": "2001-12-21",
+        "code": "HTO"
+      }
+    },
+    {
+      "product": "ria",
+      "number": "K042899",
+      "result": {
+        "k": "K042899",
+        "device": "SYNTHES (USA) RIA SYSTEM - EXPANDED INDICATIONS",
+        "applicant": "Synthes (Usa)",
+        "date": "2005-03-16",
+        "code": "HTO"
+      }
+    },
+    {
+      "product": "ria",
+      "number": "K111437",
+      "result": {
+        "k": "K111437",
+        "device": "SYNTHES RIA SYSTEM (EXPANDED INDICATIONS)",
+        "applicant": "Synthes (USA) Products, LLC",
+        "date": "2011-08-10",
+        "code": "HTO"
+      }
+    },
+    {
+      "product": "ria",
+      "number": "K993335",
+      "result": {
+        "k": "K993335",
+        "device": "SYNTHES REAMER/IRRIGATOR/ASPIRATOR (RIA) SYSTEM",
+        "applicant": "Synthes (Usa)",
+        "date": "2000-06-12",
+        "code": "HTO"
+      }
+    },
+    {
+      "product": "traumacem-v-plus",
+      "number": "K170802",
+      "result": {
+        "k": "K170802",
+        "device": "TRAUMACEM\u0099 V+ Injectable Bone Cement",
+        "applicant": "Synthes (USA) Products, LLC",
+        "date": "2017-09-28",
+        "code": "LOD"
+      }
+    },
+    {
+      "product": "i-factor",
+      "number": "P140019",
+      "result": {
+        "p": "P140019",
+        "trade": "I-FACTOR PEPTIDE ENHANCED BONE GRAFT",
+        "applicant": "Cerapedics, LLC",
+        "date": "2015-11-03",
+        "generic": "Filler, bone void, synthetic peptide",
+        "supplements": 14
+      }
+    },
+    {
+      "product": "infuse",
+      "number": "P000054",
+      "result": {
+        "p": "P000054",
+        "trade": "INFUSE BONE GRAFT",
+        "applicant": "Medtronic Sofamor Danek USA, Inc.",
+        "date": "2004-04-30",
+        "generic": "Filler, recombinant human bone morphogenetic protein, collagen scaffold, osteoinduction",
+        "supplements": 72
+      }
+    },
+    {
+      "product": "infuse",
+      "number": "P000058",
+      "result": {
+        "p": "P000058",
+        "trade": "INFUSE BONE GRAFT/LT-CAGE LUMBAR TAPERED FUSION DEVICE",
+        "applicant": "Medtronic Sofamor Danek USA, Inc.",
+        "date": "2002-07-02",
+        "generic": "Filler, recombinant human bone morphogenetic protein, collagen scaffold with metal prosthesis, osteoinduction",
+        "supplements": 90
+      }
+    },
+    {
+      "product": "infuse",
+      "number": "P050053",
+      "result": {
+        "p": "P050053",
+        "trade": "INFUSE BONE GRAFT",
+        "applicant": "Medtronic, Inc.",
+        "date": "2007-03-09",
+        "generic": "Bone grafting material, dental, with biologic component",
+        "supplements": 63
+      }
+    },
+    {
+      "product": "augment-bone-graft",
+      "number": "P100006",
+      "result": {
+        "p": "P100006",
+        "trade": "AUGMENT BONE GRAFT",
+        "applicant": "Biomimetic Therapeutics, LLC",
+        "date": "2015-09-01",
+        "generic": "Filler, bone void, synthetic peptide",
+        "supplements": 12
+      }
+    },
+    {
+      "product": "augment-injectable",
+      "number": "P100006",
+      "result": {
+        "p": "P100006",
+        "trade": "AUGMENT BONE GRAFT",
+        "applicant": "Biomimetic Therapeutics, LLC",
+        "date": "2015-09-01",
+        "generic": "Filler, bone void, synthetic peptide",
+        "supplements": 12
+      }
+    },
+    {
+      "product": "gem-21s",
+      "number": "P040013",
+      "result": {
+        "p": "P040013",
+        "trade": "GEM 21S (GROWTH-FACTOR ENHANCED MATRIX",
+        "applicant": "Lynch Biologics, LLC",
+        "date": "2005-11-18",
+        "generic": "Bone grafting material, dental, with biologic component",
+        "supplements": 29
+      }
+    },
+    {
+      "product": "actifuse",
+      "number": "K082575",
+      "result": {
+        "k": "K082575",
+        "device": "ACTIFUSE BONE GRAFT SUBSTITUTE AND ABX E-Z-FIL AND SHAPE BONE GRAFT SUBSTITUTES",
+        "applicant": "Apatech , Ltd.",
+        "date": "2008-11-25",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "actifuse",
+      "number": "K090850",
+      "result": {
+        "k": "K090850",
+        "device": "ACTIFUSE BONE GRAFT SUBSTITUTE, ACTIFUSE MICROGRANULES BONE GRAFT SUBSTITUTE",
+        "applicant": "Apatech , Ltd.",
+        "date": "2009-07-30",
+        "code": "LYC"
+      }
+    },
+    {
+      "product": "cerament-bvf",
+      "number": "K051951",
+      "result": {
+        "k": "K051951",
+        "device": "CERAMENT BONE VOID FILLER",
+        "applicant": "Bonesupport AB",
+        "date": "2005-09-28",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "cerament-bvf",
+      "number": "K073316",
+      "result": {
+        "k": "K073316",
+        "device": "CERAMENT BONE VOID FILLER, MODEL A0210",
+        "applicant": "Bonesupport AB",
+        "date": "2008-06-20",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "cerament-bvf",
+      "number": "K090871",
+      "result": {
+        "k": "K090871",
+        "device": "CERAMENT IBONE VOID FILLER HIGH CONTRAST, MODEL A 0210-12",
+        "applicant": "Bonesupport AB",
+        "date": "2009-09-04",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "cerament-bvf",
+      "number": "K201535",
+      "result": {
+        "k": "K201535",
+        "device": "Cerament Bone Void Filler",
+        "applicant": "Bonesupport AB",
+        "date": "2020-10-16",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "cerament-bvf",
+      "number": "K240459",
+      "result": {
+        "k": "K240459",
+        "device": "Cerament Bone Void Filler",
+        "applicant": "Bonesupport AB",
+        "date": "2024-03-05",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "cerament-g",
+      "number": "K234008",
+      "result": {
+        "k": "K234008",
+        "device": "CERAMENT G",
+        "applicant": "Bonesupport AB",
+        "date": "2024-03-13",
+        "code": "QRR"
+      }
+    },
+    {
+      "product": "magnetos",
+      "number": "K161859",
+      "result": {
+        "k": "K161859",
+        "device": "MagnetOs",
+        "applicant": "Xpand Biotechnology BV",
+        "date": "2017-02-24",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnetos",
+      "number": "K171563",
+      "result": {
+        "k": "K171563",
+        "device": "MagnetOs Putty",
+        "applicant": "Kuros Biosciences B.V",
+        "date": "2017-08-24",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnetos",
+      "number": "K181958",
+      "result": {
+        "k": "K181958",
+        "device": "MagnetOs Putty",
+        "applicant": "Kuros Biosciences B.V",
+        "date": "2018-12-06",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnetos",
+      "number": "K211201",
+      "result": {
+        "k": "K211201",
+        "device": "MagnetOs Easypack Putty",
+        "applicant": "Kuros Biosciences B.V",
+        "date": "2021-09-02",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnetos",
+      "number": "K213111",
+      "result": {
+        "k": "K213111",
+        "device": "MagnetOs granules",
+        "applicant": "Kuros Biosciences B.V",
+        "date": "2022-01-10",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnetos",
+      "number": "K213959",
+      "result": {
+        "k": "K213959",
+        "device": "MagnetOs Flex Matrix",
+        "applicant": "Kuros Biosciences B.V",
+        "date": "2022-04-14",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnetos",
+      "number": "K230736",
+      "result": {
+        "k": "K230736",
+        "device": "MagnetOs Putty",
+        "applicant": "Kuros Biosciences B.V",
+        "date": "2023-12-20",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnetos",
+      "number": "K232347",
+      "result": {
+        "k": "K232347",
+        "device": "MagnetOs Granules",
+        "applicant": "Kuros Biosciences B.V",
+        "date": "2024-01-19",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnetos",
+      "number": "K233245",
+      "result": {
+        "k": "K233245",
+        "device": "MagnetOs Flex Matrix",
+        "applicant": "Kuros Biosciences B.V",
+        "date": "2023-11-21",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnetos",
+      "number": "K233607",
+      "result": {
+        "k": "K233607",
+        "device": "MagnetOs Easypack Putty",
+        "applicant": "Kuros Biosciences B.V",
+        "date": "2023-12-15",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnetos",
+      "number": "K240442",
+      "result": {
+        "k": "K240442",
+        "device": "MagnetOs Putty",
+        "applicant": "Kuros Biosciences B.V",
+        "date": "2024-04-01",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnetos",
+      "number": "K241212",
+      "result": {
+        "k": "K241212",
+        "device": "MagnetOs Easypack Putty",
+        "applicant": "Kuros Biosciences",
+        "date": "2024-06-27",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "magnetos",
+      "number": "K243474",
+      "result": {
+        "k": "K243474",
+        "device": "MagnetOs MIS",
+        "applicant": "Kuros Biosciences B.V",
+        "date": "2025-05-23",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K012506",
+      "result": {
+        "k": "K012506",
+        "device": "MASTERGRAFT RESORBABLE CERAMIC GRANULES",
+        "applicant": "Medtronic Sofamor Danek USA, Inc.",
+        "date": "2002-03-07",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K020986",
+      "result": {
+        "k": "K020986",
+        "device": "MASTERGRAFT RESORBABLE CERAMIC",
+        "applicant": "Medtronic Sofamor Danek, Inc.",
+        "date": "2002-07-22",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K023553",
+      "result": {
+        "k": "K023553",
+        "device": "MASTERGRAFT MATRIX",
+        "applicant": "Medtronic Sofamor Danek, Inc.",
+        "date": "2003-04-22",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K051386",
+      "result": {
+        "k": "K051386",
+        "device": "MASTERGRAFT PUTTY BONE VOID FILLER",
+        "applicant": "Medtronic Vascular",
+        "date": "2005-12-16",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K071813",
+      "result": {
+        "k": "K071813",
+        "device": "MASTERGRAFT PUTTY",
+        "applicant": "Medtronic Sofamor Danek",
+        "date": "2007-11-09",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K081784",
+      "result": {
+        "k": "K081784",
+        "device": "MASTERGRAFT PUTTY",
+        "applicant": "Medtronic Sofamor Danek",
+        "date": "2008-09-17",
+        "code": "LYC"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K082166",
+      "result": {
+        "k": "K082166",
+        "device": "MASTERGRAFT STRIP",
+        "applicant": "Medtronic Sofamor Danek",
+        "date": "2009-06-02",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K082917",
+      "result": {
+        "k": "K082917",
+        "device": "MASTERGRAFT RESORBABLE CERAMIC GRANULES",
+        "applicant": "Medtronic Sofamor Danek",
+        "date": "2009-01-09",
+        "code": "LYC"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K082918",
+      "result": {
+        "k": "K082918",
+        "device": "MASTERGRAFT RESORBABLE CERAMIC GRANULES",
+        "applicant": "Medtronic Sofamor Danek",
+        "date": "2009-02-09",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K130335",
+      "result": {
+        "k": "K130335",
+        "device": "MASTERGRAFT STRIP; MASTERGRAFT ULTRAMATRIX",
+        "applicant": "Medtronic Sofamor Danek USA, Inc.",
+        "date": "2013-04-19",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K140374",
+      "result": {
+        "k": "K140374",
+        "device": "MASTERGRAFT PUTTY",
+        "applicant": "Medtronic Sofamor Danek USA, Inc.",
+        "date": "2014-06-10",
+        "code": "LYC"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K140375",
+      "result": {
+        "k": "K140375",
+        "device": "MASTERGRAFT PUTTY, MASTERGRAFT STRIP",
+        "applicant": "Medtronic Sofamor Danek USA, Inc.",
+        "date": "2014-04-18",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K141824",
+      "result": {
+        "k": "K141824",
+        "device": "MASTERGRAFT MATRIX EXT; MASTERGRAFT PUTTY, MASTERGRAFT STRIP",
+        "applicant": "Medtronic Sofamor Danek, Inc.",
+        "date": "2014-09-05",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K151172",
+      "result": {
+        "k": "K151172",
+        "device": "MASTERGRAFT Contain",
+        "applicant": "Medtronic Sofamor Danek USA, Inc.",
+        "date": "2015-08-14",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "mastergraft",
+      "number": "K243706",
+      "result": {
+        "k": "K243706",
+        "device": "Mastergraft Matrix EXT; Mastergraft Strip; Mastergraft Putty; Mastergraft Granules",
+        "applicant": "Medtronic Sofamor Danek, Inc.",
+        "date": "2025-01-17",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "hto-ceramic-wedges",
+      "number": "K040381",
+      "result": {
+        "k": "K040381",
+        "device": "HATRIC, 6&7MM, 9&10MM, 11&12MM, 14&15MM, MODELS AR-13000B-07, -10, -12, -15",
+        "applicant": "Arthrex, Inc.",
+        "date": "2004-05-12",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "hto-ceramic-wedges",
+      "number": "K071876",
+      "result": {
+        "k": "K071876",
+        "device": "CROSS.BONE",
+        "applicant": "TriMed, Inc.",
+        "date": "2007-12-17",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "osteopore-pcl",
+      "number": "K051093",
+      "result": {
+        "k": "K051093",
+        "device": "OSTEOPORE PCL SCAFFOLD",
+        "applicant": "Osteopore, Inc.",
+        "date": "2006-03-17",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "pro-dense",
+      "number": "K070437",
+      "result": {
+        "k": "K070437",
+        "device": "PRO-DENSE BONE VOID FILLER",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2007-05-09",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "pro-dense",
+      "number": "K072597",
+      "result": {
+        "k": "K072597",
+        "device": "PRO-DENSE CORE DECOMPRESSION PROCEDURE KIT",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2007-10-15",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "pro-dense",
+      "number": "K113871",
+      "result": {
+        "k": "K113871",
+        "device": "PRO-DENSE BONE GRAFT SUBSTITUTE",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2013-03-25",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "pro-dense",
+      "number": "K132656",
+      "result": {
+        "k": "K132656",
+        "device": "PRODENSE BONE GRAFT SUBSTITUTE",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2014-03-24",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "pro-dense",
+      "number": "K182823",
+      "result": {
+        "k": "K182823",
+        "device": "PRODENSE Bone Graft Substitute",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2018-11-02",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "pro-dense",
+      "number": "K200507",
+      "result": {
+        "k": "K200507",
+        "device": "PRO-DENSE LoVisc Bone Graft Substitute",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2020-10-21",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "pro-dense",
+      "number": "K213342",
+      "result": {
+        "k": "K213342",
+        "device": "PRO-DENSE LoVisc Bone Graft Substitute",
+        "applicant": "Wrightmedicaltechnologyinc",
+        "date": "2022-01-05",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "vitoss",
+      "number": "K083033",
+      "result": {
+        "k": "K083033",
+        "device": "VITOSS BONE GRAFT SUBSTITUTE, BONE GRAFT SUBSTITUTE FILLED CANISTER, FOAM & BIOACTIVE FOAM BONE GRAFT SUBSTITUTE",
+        "applicant": "Orthovita, Inc.",
+        "date": "2008-11-06",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "vitoss",
+      "number": "K102545",
+      "result": {
+        "k": "K102545",
+        "device": "FM-02 BONE GRAFT SUBSTITUTE",
+        "applicant": "Orthovita, Inc.",
+        "date": "2010-10-27",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "vitoss",
+      "number": "K103173",
+      "result": {
+        "k": "K103173",
+        "device": "VITOSS BA BIMODAL BIOACTIVE BONE GRAFT SUBSTITUTE",
+        "applicant": "Orthovita, Inc.",
+        "date": "2011-02-07",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "vitoss",
+      "number": "K153608",
+      "result": {
+        "k": "K153608",
+        "device": "Vitoss BiModal Bone Graft Substitute Foam Strip",
+        "applicant": "Orthovita, Inc.",
+        "date": "2016-02-12",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "vitoss",
+      "number": "K163621",
+      "result": {
+        "k": "K163621",
+        "device": "Vitoss Bioactive (BA) Injectable",
+        "applicant": "Orthovita, Inc.",
+        "date": "2017-05-02",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "vitoss",
+      "number": "K242280",
+      "result": {
+        "k": "K242280",
+        "device": "Vitoss\u00ae BiModal Bioactive Bone Graft Substitute Foam Strip, Vitoss\u00ae BiModal Bioactive Bone Graft Substitute, Vitoss BBTrauma\u00ae Bioactive Bone Graft Substitute,Vitoss\u00ae BA2X Bioactive Bone Graft Substitute, Vitoss\u00ae Bioactive Bone Graft Substitute Pack,Vitoss\u00ae Bioactive Bone Graft Substitute, Vitoss\u00ae Foam Bone Graft Substitute, Vitoss\u00ae Bone Graft Substitute Filled Canister, Vitoss\u00ae Bone Graft Substitute, Vitoss\u00ae Bone Graft Substitute - Synthetic Cancellous Chips",
+        "applicant": "Stryker Spine",
+        "date": "2024-08-29",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "vitoss",
+      "number": "K261008",
+      "result": {
+        "k": "K261008",
+        "device": "Vitoss\u00ae BiModal Bioactive Bone Graft Substitute Foam Strip; Vitoss\u00ae BiModal Bioactive Bone Graft Substitute; Vitoss BBTrauma\u00ae Bioactive Bone Graft Substitute; Vitoss\u00ae BA2X Bioactive Bone Graft Substitute; Vitoss\u00ae Bioactive Foam Bone Graft Substitute Pack; Vitoss\u00ae Bioactive Foam Bone Graft Substitute; Vitoss\u00ae Foam Bone Graft Substitute; Vitoss\u00ae Bone Graft Substitute Filled Canister; Vitoss\u00ae Bone Graft Substitute",
+        "applicant": "Stryker Spine",
+        "date": "2026-04-24",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "chronos",
+      "number": "K013072",
+      "result": {
+        "k": "K013072",
+        "device": "CHRONOS TRICALCIUM PROSPHATE (CHRONOS TCP)",
+        "applicant": "Synthes",
+        "date": "2002-11-26",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "chronos",
+      "number": "K041350",
+      "result": {
+        "k": "K041350",
+        "device": "SYNTHES (USA) CHRONOS",
+        "applicant": "Synthes (Usa)",
+        "date": "2004-07-08",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "chronos",
+      "number": "K043045",
+      "result": {
+        "k": "K043045",
+        "device": "SYNTHES (USA) CHRONOS",
+        "applicant": "Synthes (Usa)",
+        "date": "2005-01-07",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "chronos",
+      "number": "K053022",
+      "result": {
+        "k": "K053022",
+        "device": "SYNTHES (USA) CHRONOS-BETA-TCP",
+        "applicant": "Synthes (Usa)",
+        "date": "2006-01-23",
+        "code": "LYC"
+      }
+    },
+    {
+      "product": "chronos",
+      "number": "K071046",
+      "result": {
+        "k": "K071046",
+        "device": "SYNTHES CHRONOS COMPOSITE",
+        "applicant": "Synthes (Usa)",
+        "date": "2007-10-23",
+        "code": "MQV"
+      }
+    },
+    {
+      "product": "amplex",
+      "number": "P010029",
+      "result": {
+        "p": "P010029",
+        "trade": "EUFLEXXA (1% SODIUM HYALURONATE)",
+        "applicant": "Ferring Pharmaceuticals, Inc.",
+        "date": "2004-12-03",
+        "generic": "Acid, hyaluronic, intraarticular",
+        "supplements": 40
+      }
+    },
+    {
+      "product": "bonesource",
+      "number": "K021440",
+      "result": {
+        "k": "K021440",
+        "device": "BONESOURCE HAC",
+        "applicant": "Stryker Instruments",
+        "date": "2002-08-02",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "bonesource",
+      "number": "K032366",
+      "result": {
+        "k": "K032366",
+        "device": "BONESOURCE HAC FAST SETTING CEMENT",
+        "applicant": "Stryker Instruments",
+        "date": "2003-10-30",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "bonesource",
+      "number": "K043334",
+      "result": {
+        "k": "K043334",
+        "device": "BONE SOURCE HAC RAPID SETTING CEMENT",
+        "applicant": "Stryker Instruments",
+        "date": "2005-02-09",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "bonesource",
+      "number": "K953339",
+      "result": {
+        "k": "K953339",
+        "device": "BONESOURCE HYDROXYAPATITE CEMENT (HAC)",
+        "applicant": "Osteogenics, Inc.",
+        "date": "1996-06-27",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "bonesource",
+      "number": "K964537",
+      "result": {
+        "k": "K964537",
+        "device": "BONESOURCE HYDROXYAPATITE CEMENT (HAC)",
+        "applicant": "Osteogenics, Inc.",
+        "date": "1997-01-24",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "bonesource",
+      "number": "K991398",
+      "result": {
+        "k": "K991398",
+        "device": "BONESOURCE HYDROXYAPATITE CEMENT (HAC) EXPANDED KIT",
+        "applicant": "Stryker Leibinger",
+        "date": "1999-09-22",
+        "code": "GXP"
+      }
+    },
+    {
+      "product": "kryptonite",
+      "number": "K091382",
+      "result": {
+        "k": "K091382",
+        "device": "KRYPTONITE BONE CEMENT",
+        "applicant": "Doctors Research Group, Inc.",
+        "date": "2009-11-16",
+        "code": "GXP"
+      }
+    }
+  ],
+  "candidates": {
+    "osteoset-t": {
+      "term": "OSTEOSET",
+      "hits": [
+        {
+          "k": "K053642",
+          "device": "OSTEOSET DBM PELLETS",
+          "applicant": "Wrightmedicaltechnologyinc",
+          "date": "2006-01-26"
+        },
+        {
+          "k": "K022828",
+          "device": "OSTEOSET DBM PELLETS, MODEL 8600-48XX",
+          "applicant": "Wrightmedicaltechnologyinc",
+          "date": "2004-04-02"
+        },
+        {
+          "k": "K010532",
+          "device": "OSTEOSET BVF KIT",
+          "applicant": "Wrightmedicaltechnologyinc",
+          "date": "2001-10-26"
+        }
+      ]
+    },
+    "induce-xt": {
+      "term": "Induce",
+      "hits": []
+    },
+    "kur-113-fibrin-pth": {
+      "term": "KUR-113 / Fibrin-PTH",
+      "hits": []
+    },
+    "ldgraft": {
+      "term": "LDGraft",
+      "hits": []
+    },
+    "novosis-rhbmp2-korea": {
+      "term": "Novosis",
+      "hits": []
+    },
+    "cerament-v": {
+      "term": "CERAMENT",
+      "hits": [
+        {
+          "k": "K234008",
+          "device": "CERAMENT G",
+          "applicant": "Bonesupport AB",
+          "date": "2024-03-13"
+        },
+        {
+          "k": "K240459",
+          "device": "Cerament Bone Void Filler",
+          "applicant": "Bonesupport AB",
+          "date": "2024-03-05"
+        },
+        {
+          "k": "DEN210044",
+          "device": "CERAMENT G",
+          "applicant": "Bonesupport AB",
+          "date": "2022-05-17"
+        },
+        {
+          "k": "K201535",
+          "device": "Cerament Bone Void Filler",
+          "applicant": "Bonesupport AB",
+          "date": "2020-10-16"
+        },
+        {
+          "k": "K090871",
+          "device": "CERAMENT IBONE VOID FILLER HIGH CONTRAST, MODEL A 0210-12",
+          "applicant": "Bonesupport AB",
+          "date": "2009-09-04"
+        },
+        {
+          "k": "K073316",
+          "device": "CERAMENT BONE VOID FILLER, MODEL A0210",
+          "applicant": "Bonesupport AB",
+          "date": "2008-06-20"
+        }
+      ]
+    },
+    "op-1": {
+      "term": "OP-1 Implant / OP-1 Putty",
+      "hits": []
+    }
+  },
+  "not_checkable": [
+    {
+      "product": "arthrex-angel",
+      "number": "BK110046"
+    },
+    {
+      "product": "arthrex-angel",
+      "number": "BK180180"
+    },
+    {
+      "product": "bmac",
+      "number": "BK110046"
+    },
+    {
+      "product": "bmac",
+      "number": "BK180180"
+    },
+    {
+      "product": "bmac",
+      "number": "BK200540"
+    },
+    {
+      "product": "bmac",
+      "number": "BK210655"
+    },
+    {
+      "product": "magellan",
+      "number": "BK030040"
+    },
+    {
+      "product": "magellan",
+      "number": "BK200540"
+    },
+    {
+      "product": "prp",
+      "number": "BK090048"
+    },
+    {
+      "product": "prp",
+      "number": "BK180180"
+    },
+    {
+      "product": "prp",
+      "number": "BK200540"
+    },
+    {
+      "product": "prp",
+      "number": "BK210655"
+    },
+    {
+      "product": "cerament-g",
+      "number": "DEN210044"
+    },
+    {
+      "product": "op-1",
+      "number": "H010002"
+    },
+    {
+      "product": "op-1",
+      "number": "H020008"
+    }
+  ]
+}

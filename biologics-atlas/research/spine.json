@@ -1,0 +1,2869 @@
+{
+  "applications": [
+    {
+      "id": "cervical-acdf",
+      "region": "spine",
+      "subregion": "cervical",
+      "name": "Anterior cervical discectomy and fusion (ACDF), single and multilevel",
+      "type": "fusion",
+      "classifications": [],
+      "why_biologic": "The interbody space is filled with a structural spacer (cortical ring allograft, PEEK or titanium cage; PEEK and titanium are not biologics) plus a graft material whose job is to bridge the endplates. Biologics here are osteoconductive fillers packed inside the ring or cage, cellular allografts, or the one PMA-approved osteoconductive/peptide composite (i-FACTOR). rhBMP-2 is not approved in the cervical spine and carries an FDA warning.",
+      "autograft_standard": "Local autograft (vertebral osteophyte and endplate shavings) packed into the spacer, or historically tricortical iliac crest; iliac crest harvest adds donor-site pain, a second incision and limited volume, so most US ACDFs now use allograft ring plus a filler rather than iliac crest.",
+      "volume_note": "Primary NIS analysis (Saifi 2018, Spine J, PMID 29128581): 1,059,403 ACDFs and 13,099 CDAs in the US 2006-2013; annual ACDF rose 5.7% from 120,617 (2006) to 127,500 (2013), mean 132,425 per year (range 120,617-147,966); ACDF revision burden 2.3%. NIS 2003-2016 Poisson model projects 153,288 to 173,699 ACDFs per year across 2020-2040 (Neifert 2020, PMID 32416237). Single-level ACDF in hospital-owned ASCs rose from 33,687 (2016) to 73,024 (2021). NIS counts inpatient discharges only, so ASC migration since 2013 is not captured.",
+      "nonunion_note": "Meta-analysis of 21 studies/2,682 patients: fusion 97.1% for single-level plated ACDF, 94.6% for two-level, 82.5% for three-level (Fraser & Hartl 2007). Pooled pseudarthrosis in prospective plated ACDF series 2.6% overall, 0.9% with autograft vs 4.8% with allograft (Shriver 2015).",
+      "sources": [
+        "PMID:17436916",
+        "PMID:25982430",
+        "PMID:38319436",
+        "https://www.beckersspine.com/spine/cervical-disc-replacement-increases-190-in-7-years-fusion-up-5-7-5-key-trends/",
+        "PMID:32416237",
+        "PMID:29128581"
+      ],
+      "challenge": "NIS is inpatient-only and weighted; the 2006-2013 counts predate the ASC shift, and the 2020-2040 figures are model projections, not observed volumes.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "cervical-pcf",
+      "region": "spine",
+      "subregion": "cervical",
+      "name": "Posterior cervical fusion (lateral mass / pedicle screw constructs, including cervicothoracic)",
+      "type": "fusion",
+      "classifications": [],
+      "why_biologic": "Posterolateral onlay fusion over decorticated lateral masses and facets; the graft bed is small and the host bone is thin, so surgeons extend local autograft with DBM, cellular allograft or synthetic putty. Off-label rhBMP-2 is used in long posterior cervical constructs and revisions but the FDA cervical warning applies to anterior use; posterior use has its own seroma/ectopic bone concerns.",
+      "autograft_standard": "Local autograft from laminectomy/facetectomy, often supplemented with iliac crest in long or revision constructs; iliac crest adds donor-site morbidity and operative time.",
+      "volume_note": "NIS 2003-2016 Poisson model projects 29,620 to 35,335 posterior cervical decompression and fusions per year across 2020-2040, with the largest growth in the 75-84 age group (Neifert 2020, World Neurosurg, PMID 32416237; abstract retrieved 2026-10-22).",
+      "nonunion_note": "Meta-analysis of 10 studies/1,120 multilevel posterior cervical fusions: pooled fusion 86% (constructs ending at C7) and 90% (crossing the cervicothoracic junction); revision 17% vs 7%, not statistically different (Coban 2022).",
+      "sources": [
+        "PMID:35120314",
+        "PMID:32416237"
+      ],
+      "challenge": "No biologic has a posterior-cervical-specific pivotal trial; evidence for any product here is extrapolated from lumbar posterolateral data. The volume figure is a projection from inpatient NIS data.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "lumbar-plf",
+      "region": "spine",
+      "subregion": "lumbar",
+      "name": "Posterolateral lumbar fusion (PLF), instrumented",
+      "type": "fusion",
+      "classifications": [],
+      "why_biologic": "The intertransverse gutter is a large, poorly vascularized onlay bed with no compressive loading, so graft volume and osteoinductive signal both matter. Biologics are used as extenders of local bone (DBM, ceramics, bioactive glass, cellular allograft) or as full substitutes (rhBMP-2 off-label; MagnetOs and some ceramics are 510(k)-cleared as standalone posterolateral fillers). This is the application where most 510(k) bone void filler labels say 'autograft extender in the posterolateral spine'.",
+      "autograft_standard": "Iliac crest bone graft (ICBG) plus local decompression bone; in the Dimar 2009 pivotal control arm 60% of ICBG patients still reported donor-site pain at 24 months, and ICBG fused only 89% at 24 months.",
+      "volume_note": "Elective lumbar fusion volume (all approaches) rose 62.3% from 122,679 (2004) to 199,140 (2015) in the NIS; spondylolisthesis and scoliosis were the fastest-growing indications (Martin 2019).",
+      "nonunion_note": "ICBG control arms in RCTs: 89% fusion at 24 months (Dimar 2009, n=463); side-by-side Grafton vs ICBG 52% vs 54% per-side fusion at 24 months by blinded plain radiograph (Cammisa 2004, n=120); autograft side fused only 47% by CT at 1 year in the MagnetOs intra-patient RCT (Stempels 2024). Nonunion rates therefore range from about 10% to over 40% depending on imaging and definition.",
+      "sources": [
+        "PMID:19487515",
+        "PMID:15014276",
+        "PMID:38881258",
+        "PMID:30074971"
+      ]
+    },
+    {
+      "id": "lumbar-tlif-plif",
+      "region": "spine",
+      "subregion": "lumbar",
+      "name": "Transforaminal / posterior lumbar interbody fusion (TLIF, PLIF, MIS-TLIF)",
+      "type": "fusion",
+      "classifications": [],
+      "why_biologic": "The cage is packed with graft to bridge the endplates under compression; local bone from the decompression is often insufficient for cage plus posterolateral gutters, so extenders and substitutes are used inside the cage. Until 2025 no biologic carried a TLIF indication; PearlMatrix (June 2025) and Infuse (February 2026) now do, which changes the on-label conversation for the single largest lumbar fusion category.",
+      "autograft_standard": "Local autograft from the facetectomy and laminectomy; iliac crest is rarely harvested for TLIF today. Local bone alone had the lowest pooled fusion rate (91.8%) in a MIS-TLIF meta-analysis, and only 58.5% fused by strict CT criteria at 24 months in the ASPIRE control arm.",
+      "volume_note": "Included in the 199,140 elective lumbar fusions (2015, NIS; Martin 2019); interbody approaches are the majority of these but the NIS does not separate TLIF from PLIF.",
+      "nonunion_note": "MIS-TLIF meta-analysis of 40 series/1,533 patients: fusion 91.8% (local bone alone) to 99.1% (local bone + extender + rhBMP-2); 96.6% all rhBMP-2 series vs 92.5% non-rhBMP-2 (Parajon 2017). ASPIRE RCT control arm (local autograft, PEEK cage, pedicle screws): fusion 58.5% at 24 months by CT with about 60% high-risk patients (Harrop 2025).",
+      "sources": [
+        "PMID:28419312",
+        "PMID:41307132",
+        "PMID:30074971",
+        "NCT04073563"
+      ]
+    },
+    {
+      "id": "lumbar-alif",
+      "region": "spine",
+      "subregion": "lumbar",
+      "name": "Anterior lumbar interbody fusion (ALIF), stand-alone or with posterior fixation",
+      "type": "fusion",
+      "classifications": [],
+      "why_biologic": "Large interbody cage packed with graft under compressive load; this is the original on-label Infuse indication (LT-Cage, 2002) and the approach with the best fusion biology, so biologics are used as full autograft replacements inside the cage. rhBMP-2 in ALIF carries a signal for retrograde ejaculation and urogenital events (Fu 2013; Carragee 2011).",
+      "autograft_standard": "Iliac crest (the Burkus 2002 control) or local bone; in that trial 32% of ICBG patients reported graft-site discomfort at 24 months.",
+      "volume_note": "Included in NIS elective lumbar fusion totals; no public ALIF-specific annual count found.",
+      "nonunion_note": "Pooled pseudarthrosis 8.17% across 14 studies/917 patients (2013-2024): 8.95% stand-alone vs 6.76% with posterior fixation, not significant, but stand-alone had RR 6.8 for reoperation for symptomatic pseudarthrosis (Riechelmann 2026). Burkus 2002 pivotal: 94.5% (rhBMP-2) vs 88.7% (ICBG) fusion at 24 months.",
+      "sources": [
+        "PMID:42234274",
+        "PMID:12394656",
+        "PMID:37071155",
+        "PMID:23778906"
+      ]
+    },
+    {
+      "id": "lumbar-lateral",
+      "region": "spine",
+      "subregion": "lumbar",
+      "name": "Lateral lumbar interbody fusion (LLIF / XLIF / OLIF)",
+      "type": "fusion",
+      "classifications": [],
+      "why_biologic": "Wide-footprint cage packed with graft; no local bone is generated by the approach, so nearly every lateral fusion uses an allograft, DBM, cellular allograft, synthetic or rhBMP-2 in the cage. Infuse is on-label for OLIF25 (Clydesdale, Pivox; L2-L5) and OLIF51 (Perimeter, Divergence-L; L5-S1) at a single level, and PearlMatrix added single-level OLIF and LLIF in January 2026.",
+      "autograft_standard": "No local autograft is available from a lateral approach; iliac crest or a separate posterior harvest would be needed, which defeats the minimally invasive intent, so biologics are the de facto standard here.",
+      "volume_note": "Included in NIS elective lumbar fusion totals; no public lateral-specific annual count found.",
+      "nonunion_note": "Meta-analysis of 19 XLIF studies/1,409 patients: 12-month fusion rates ranged 85.0% to 93.3% (reported as a range, not a single pooled estimate), transient neurologic events 2.2%, nerve root injury 1.0% (Palacios 2024, PMID 38398273). Stand-alone vs instrumented LLIF meta-analysis (13 studies/1,090 patients): stand-alone fusion RR 0.92 (95% CI 0.87-0.98) with higher subsidence (RR 1.68) and reoperation (RR 2.12) (Yang 2021, PMID 34509241); a 2025 meta-analysis of 12 cohorts/781 patients reached the same direction (Kou 2025, PMID 39948572). Systematic review of MIS lateral surgery (237 articles) did not pool a fusion rate (Lehmen 2015). Product-specific sources: NuVasive-sponsored Osteocel Plus XLIF cohort (n=104, NCT00948532) and PearlMatrix/Infuse labels.",
+      "sources": [
+        "PMID:25850387",
+        "NCT00948532",
+        "https://global.medtronic.com/xg-en/e/response/infuse-bone-graft.html",
+        "PMID:38398273",
+        "PMID:34509241",
+        "PMID:39948572"
+      ],
+      "challenge": "Lateral fusion evidence is a range (85-93% at 12 months) from single-arm series pooled in a 2024 meta-analysis; there is no independent pooled nonunion estimate for lateral fusion with any specific graft.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "adult-deformity",
+      "region": "spine",
+      "subregion": "thoracolumbar",
+      "name": "Adult spinal deformity / long-segment fusion to the sacrum or pelvis",
+      "type": "fusion",
+      "classifications": [],
+      "why_biologic": "Long constructs (often 8-12 levels) with osteotomies, older patients and fusion to S1/pelvis have the highest pseudarthrosis rates in spine surgery and need more graft than any patient can donate. rhBMP-2 is used off-label in roughly three quarters of ISSG deformity cases at a mean 23.6 mg per patient, usually with allograft or ceramic extenders, and revision for pseudarthrosis was 8.6% with BMP vs 17% without (Jain 2020).",
+      "autograft_standard": "Local bone from osteotomies plus iliac crest; iliac crest is often inadequate in volume for 10+ levels, is compromised by pelvic fixation, and in the Maeda 2009 series the ICBG group had a 28.1% pseudarthrosis rate vs 4.3% with rhBMP-2.",
+      "volume_note": "NIS elective lumbar fusions coded for degenerative scoliosis grew 186.6% (+16,129 operations) from 2004 to 2015, implying roughly 24,800 such fusions in 2015 (derived from Martin 2019).",
+      "nonunion_note": "Pseudarthrosis 24% in 144 long fusions to the sacrum (Kim 2006, Spine) and 17% in 232 long adult deformity fusions (Kim 2006, JBJS); 11% revision for symptomatic pseudarthrosis in 367 ISSG patients with 5+ levels (Jain 2020).",
+      "sources": [
+        "PMID:16985461",
+        "PMID:16595461",
+        "PMID:32097274",
+        "PMID:34062501",
+        "PMID:19752707",
+        "PMID:30074971"
+      ]
+    },
+    {
+      "id": "si-joint-fusion",
+      "region": "spine",
+      "subregion": "sacroiliac",
+      "name": "Minimally invasive sacroiliac joint fusion",
+      "type": "fusion",
+      "classifications": [],
+      "why_biologic": "Two segments. (1) Lateral/posterolateral transfixing implants (SI-BONE iFuse, iFuse-3D, iFuse TORQ, iFuse Bedrock Granite; Globus SI-LOK/SI-LOK SELECT; Orthofix FIREBIRD SI; Medtronic Rialto, K251395 2025; Camber Siconus; Spinal Simplicity Liberty-SI; Aurora SiLO TFX, K221047; CornerLoc TransLoc 3D, K232878; Tenon Catamaran; Tenon SImmetry+) are 510(k) titanium devices whose fusion claim rests on porous/coated surfaces and, in the fenestrated screws, bone that the implant self-harvests through its flutes (iFuse-3D 'fenestrated design to self-harvest bone'; FIREBIRD 'radial fenestrations allow self-harvesting of autograft'; SI-LOK 'optional graft slot'; Rialto IFU 'autograft and/or allograft may be placed in conjunction'). The INSITE, iMIA and SALLY trials of iFuse used no added graft. None of these vendors' product pages names a cellular allograft or DBM for the SI joint, so biologic use with transfixing screws is surgeon-discretionary and unbranded. (2) Posterior intra-articular 'fusion' implants ARE the biologic: machined structural cortical allograft dowels or spacers placed into the decorticated joint, regulated as 361 HCT/Ps (homologous use) rather than cleared devices. Products: PainTEQ LinQ (and the cortical-piercing TRAQ), SI-BONE iFuse INTRA V/INTRA X (supplied by an undisclosed third-party tissue bank), Aurora Spine SiLO, CornerLoc grafts (cortical graft plus a DBM sponge), Omnia Medical PsiF allograft, Vyrsa Pro (Vyrsa -> Nevro 2023 -> Globus 2025). Several are packed with DBM in a graft window at the surgeon's discretion. Titanium posterior 'in-line' implants (Camber SI, Spinal Simplicity Patriot-SI, CornerLoc TransLoc 3D posterior, Omnia PsiF DNA K-cleared May 2025, SI-BONE iFuse INTRA Ti) are moving the posterior approach back to 510(k) metal that must be paired with, or itself pierces, cortical bone.",
+      "autograft_standard": "No iliac crest is harvested in MIS SI fusion. For transfixing screws the 'autograft' is local bone self-harvested by the fenestrated implant; for posterior allograft systems the graft is the implant itself (structural cortical allograft, optionally with DBM in the window). Open SI arthrodesis historically used iliac crest from the adjacent ilium.",
+      "volume_note": "Medicare fee-for-service: 33,963 SI joint fusions 2010-2020, rising from 318 (2010) to 7,794 (2020); 68.5% MIS (CPT 27279) since 2015 (Federico 2023). SI-BONE reports supporting 'a total of over 140,000 procedures' since 2009 and about 1,640 US physicians performing a procedure in Q4 2025; FY2025 worldwide revenue $200.9M (+20.2%), US $191.1M, 2026 guidance $228.5-232.5M (8-K exhibit 99.1, Feb 23 2026).",
+      "nonunion_note": "INSITE RCT (n=148, SI-BONE sponsored): 6-month success 81.4% surgical vs 26.1% nonsurgical; 3 revisions in 102 fusions at 24 months. Pooled figures: meta-analysis of 48 studies found pooled fusion rates numerically similar across lateral, posterior and posterolateral approaches, with pooled revision 2.4% lateral vs 0.6% posterior and complications 9.2% vs 1% (Xu 2025, PMID 39917851); meta-analysis of 2 RCTs and 9 prospective cohorts (1,181 fusions, mean 27.8 months) found implant-related reoperation 3% (95% CI 2-4%) (Baur 2026, PMID 42023816); a 57-cohort review (2,851 patients) notes independent radiographic fusion evidence exists only for lateral transiliac devices (Whang 2023, SI-BONE-authored, PMID 37798076). No independent nonunion rate for graft-packed posterior SI systems was found.",
+      "sources": [
+        "PMID:37192412",
+        "PMID:26291338",
+        "PMID:27652199",
+        "https://investor.si-bone.com/news-releases/news-release-details/si-bone-inc-reports-record-financial-results-fourth-quarter-2025",
+        "https://www.sec.gov/Archives/edgar/data/1459839/000145983926000036/sibn-20251231.htm",
+        "https://assets.si-bone.com/doc/PM-12022-US-E-SI-Joint-Dysfunction-Facility-Coding-Guide-February-2026.pdf",
+        "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=39797",
+        "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=39802",
+        "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=39812",
+        "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=36406",
+        "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=36000",
+        "https://www.acr.org/News-and-Publications/ACR-Others-Challenge-MAC-Position-on-Minimally-Invasive-Arthrodesis-of-the-Sacroiliac-Joint",
+        "https://spinelinemag.spine.org/marapr24/coding",
+        "https://www.painteq.com/clinician",
+        "https://www.painteq.com/clinician/news/ama-announces-category-1-billing-code-for-posterior-si-joint-fusion",
+        "PMID:32607011",
+        "PMID:39344079",
+        "PMID:30845034",
+        "PMID:38524688",
+        "PMID:40832586",
+        "PMID:39087970",
+        "PMID:40539775",
+        "PMID:36420375",
+        "PMID:42237893",
+        "NCT04423120",
+        "NCT07558278",
+        "NCT07547215",
+        "NCT03122899",
+        "NCT01741025",
+        "https://fda.innolitics.com/device/K251395",
+        "https://fda.innolitics.com/device/K221047",
+        "https://fda.innolitics.com/device/K232878",
+        "https://fda.innolitics.com/device/K203503",
+        "https://510k.innolitics.com/device/K210667",
+        "https://www.biospace.com/nevro-announces-acquisition-of-vyrsa-technologies",
+        "https://s28.q4cdn.com/260621474/files/doc_news/2025/03/Globus-Medical-completes-acquisition-of-Nevro-Corp.pdf",
+        "https://www.orthoworld.com/omnia-medical-launches-psif-dna-system/",
+        "https://www.orthoworld.com/aurora-spine-launches-silo-posterior-si-joint-fusion-system",
+        "https://aurora-spine.com/silo/",
+        "https://cornerloc.com/",
+        "https://www.globusmedical.com/products/si-lok-select/",
+        "https://orthofix.com/?p=799",
+        "PMID:39917851",
+        "PMID:42023816",
+        "PMID:37798076",
+        "https://www.sec.gov/Archives/edgar/data/1459839/000145983926000022/exhibit991_sibn12312025ear.htm"
+      ],
+      "challenge": "The cumulative SI-BONE count (over 140,000 since 2009, replacing the earlier 'nearly 150,000' wording) is a company figure from its 8-K. Which graft products are packed in posterior SI systems, and by whom, was still not verified; pooled 'fusion' for posterior interpositional systems rests on company-affiliated reviews.",
+      "coverage_note": "CPT: 27279 (lateral/transfixing, since 2015; device-intensive in ASC, 2026 CMS unadjusted ASC $14,518, HOPD APC 5116 $17,914) and 27278 (posterior intra-articular, no transfixation; Category I since 1 Jan 2024 replacing Category III 0775T, which existed 2022-2023; 2026 ASC $15,048, same APC 5116). For 2026 the AMA revised both descriptors: 27279 = transarticular and/or intra-articular device(s) piercing the ilium/sacrum cortices, 27278 = intra-articular device(s) without cortical piercing, so cortical-piercing posterior products (PainTEQ TRAQ, SI-BONE INTRA Ti) bill 27279 and hybrids (posterior in-line plus transfixing screw) bill 27279. Medicare physician fee 2026: 27279 $762; 27278 $441 facility / $13,834 office-based lab (SI-BONE 10-K). Inpatient (rare): ICD-10-PCS 0SG734Z/0SG834Z group to FY2026 MS-DRG 450/451 Single Level Spinal Fusion Except Cervical with/without MCC ($38,782 / $23,507 unadjusted; SI-BONE facility guide Feb 2026). Device C-codes C1889/C1776 are packaged (no separate payment). Medicare coverage: CGS (L39802, KY/OH), Noridian (L39810/L39812, JE/JF; JF retired 23 Oct 2025 into the JE policy) and Palmetto (L39797, JJ/JM) finalized LCDs effective 17 Apr 2025 (Noridian 16 Feb 2025) stating that MI arthrodesis of the SIJ 'WITHOUT placement of a transfixation device is NOT considered medically reasonable and necessary', i.e. 27278/posterior allograft is non-covered in those jurisdictions; the Noridian evidence review quotes ISASS that posterior MI SIJF is 'unproven and not recommended'. SI-BONE's 10-K says these LCDs 'precluding coverage for CPT 27278' reduced demand for INTRA X. NGS/Wellpoint (L36406, revised 1 Apr 2026) and WPS (L36000, rev. 27 Jun 2024) still describe the covered procedure as 'percutaneous insertion of a metallic device across the SIJ' without naming 27278; Novitas and First Coast have no SI fusion LCD that this pass could find. ACR, ASPN and NANS objected to the three 2025 LCDs; the LCDs stand as of Oct 2026. iFuse Bedrock Granite received hospital-outpatient/ASC transitional pass-through from 1 Jan 2025 and iFuse TORQ TNT an NTAP (hardware, not biologics).",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "vcf-augmentation",
+      "region": "spine",
+      "subregion": "thoracolumbar",
+      "name": "Vertebral compression fracture: vertebral augmentation with resorbable or bioactive fill (biologic/resorbable materials only)",
+      "type": "vcf",
+      "classifications": [
+        {
+          "name": "Genant semiquantitative grading (1993)",
+          "summary": "Visual grading of vertebral height loss on lateral radiographs: grade 0 normal; grade 1 mild (about 20-25% height reduction); grade 2 moderate (about 25-40%); grade 3 severe (more than 40%); each with wedge, biconcave or crush morphology. Thresholds are the commonly cited values; the original paper is PMID 8237484."
+        },
+        {
+          "name": "AO Spine-DGOU osteoporotic fracture (OF) classification (Schnake 2018)",
+          "summary": "OF1 no deformation, edema on MRI only; OF2 deformation of one endplate with no or minor (<1/5) posterior wall involvement; OF3 deformation with distinct (>1/5) posterior wall involvement; OF4 loss of vertebral frame integrity, body collapse or pincer fracture; OF5 injuries with distraction or rotation. Interobserver kappa 0.63."
+        }
+      ],
+      "why_biologic": "Standard augmentation uses PMMA, which is not a biologic and does not remodel; resorbable calcium phosphate cements (e.g., KyphOs FS) and the bioactive glass-ceramic composite Cortoss were developed to osseointegrate or better match bone stiffness. The RCT evidence shows CPC can fail mechanically in burst-type fractures, so resorbable fill is a niche, not the standard.",
+      "autograft_standard": "No autograft role; the comparator is PMMA vertebroplasty/kyphoplasty, or non-operative bracing.",
+      "volume_note": "Medicare: 77,276 augmentation claims at the 2008 peak; 2015 counts were 13,478 vertebroplasties and 57,646 kyphoplasties (Rabei 2019). A separate 2012-2017 physician-claims analysis found kyphoplasty fell to 21,681 and vertebroplasty to 2,987 by 2017 (Lopez 2020); the two papers use different Medicare files so they are not comparable.",
+      "nonunion_note": "Not a fusion; failure modes are cement failure/loss of correction and adjacent fracture. CPC kyphoplasty RCT (n=56): 9 radiographic losses of correction in the CPC arm vs 0 with PMMA (Blattert 2009). Cortoss vs PMMA RCT (n=256): noninferior, 4.3% serious device-related events in both arms, subsequent fractures 27.8% vs 31.9% (Bae 2012; Gilula 2012).",
+      "sources": [
+        "PMID:8237484",
+        "PMID:30210960",
+        "PMID:19139662",
+        "PMID:21738093",
+        "PMID:22743641",
+        "PMID:30562331",
+        "PMID:32925685"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "infuse",
+      "name": "Infuse Bone Graft (rhBMP-2/ACS)",
+      "company": "Medtronic",
+      "ownership_history": "Developed by Genetics Institute/Wyeth (rhBMP-2) and Sofamor Danek; Medtronic acquired Sofamor Danek in 1999 and has held the spine franchise since. Wyeth's rights passed to Pfizer; Medtronic holds the spine/orthopedic franchise.",
+      "category": "rhBMP",
+      "composition": "Recombinant human BMP-2 (1.5 mg/mL) reconstituted onto an absorbable bovine type I collagen sponge; sold in kit sizes (XX-small through large) with a mandated Medtronic interbody device for spine use",
+      "regulatory": {
+        "path": "PMA",
+        "reference": "P000058 (spine, approved 2002-07-02); P000054 (open tibial shaft fracture); P050053 (oral-maxillofacial); TLIF supplement P000058/S096 approved 2026-02-13 (one or two adjacent levels, L2-S1)",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "Single-level ALIF L2-S1 with LT-Cage, Inter Fix, Inter Fix RP, Perimeter or Divergence-L (DDD, up to Grade I spondylolisthesis/retrolisthesis)",
+          "Single-level OLIF25 L2-L5 with Clydesdale or Pivox; single-level OLIF51 L5-S1 with Perimeter or Divergence-L (approved Dec 2015 and Apr 2018)",
+          "One or two adjacent levels L2-S1 by TLIF, with an FDA-cleared interbody fusion device and a metallic screw-and-rod system, for symptomatic DDD confirmed by history and radiographic studies after at least six months of nonoperative treatment (P000058/S096, Panel-Track supplement approved 2026-02-13; Breakthrough Device designation 2024-04-06)",
+          "Acute open tibial shaft fracture with IM nail within 14 days",
+          "Sinus augmentation; localized alveolar ridge augmentation for extraction-socket defects"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-alif",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Pivotal RCT (Burkus 2002, n=279) with LT-Cage: 94.5% fusion vs 88.7% ICBG at 24 months with similar clinical outcomes; YODA IPD meta-analysis confirmed a 12% higher fusion rate but clinically trivial ODI benefit and a nonsignificant retrograde ejaculation signal in ALIF.",
+          "caveats": "All RCTs sponsor-funded; YODA reanalyses (Fu 2013, Simmonds 2013) found selective reporting in the original publications."
+        },
+        {
+          "application_id": "lumbar-lateral",
+          "tier": "established",
+          "on_label": true,
+          "evidence_summary": "On-label for single-level OLIF25/OLIF51 with named Medtronic cages via PMA supplements (2015, 2018); approval rested on existing ALIF data and device equivalence rather than a new lateral RCT.",
+          "evidence_grade": "II",
+          "caveats": "No published lateral-specific RCT located; the 2015/2018 supplements were based on prior Infuse data."
+        },
+        {
+          "application_id": "lumbar-tlif-plif",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Pivotal RCT NCT04073563 (n=493 randomized 1:1:1 to Infuse 2.1 mg/level, 4.2 mg/level or local autograft; Bayesian adaptive design) met primary endpoints for both dose arms at first interim analysis; Medtronic reports >90% fusion in single-level TLIF. Historically off-label TLIF use was the largest rhBMP-2 use case and carried radiculitis/ectopic bone/osteolysis concerns (Carragee 2011); the earlier PLIF IDE (NCT01491464) was terminated.",
+          "caveats": "Full results not yet published as of this review; numbers come from the February 2026 press release and sponsored coverage. Two-level fusion numbers reported only as 'up to 87%'."
+        },
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "I",
+          "evidence_summary": "Dimar 2009 RCT (n=463) used rhBMP-2 on a compression-resistant matrix (the 'Amplify' formulation, never approved): 96% vs 89% fusion and fewer nonunion reoperations; Glassman 2008 RCT in patients over 60 (n=102) found fewer complications and revisions with rhBMP-2/ACS than ICBG. Posterolateral use of the marketed ACS product remains off-label.",
+          "caveats": "Amplify (rhBMP-2/CRM) received a non-approvable decision in 2011 amid cancer-signal concerns; the YODA cancer analysis (RR 3.45 at 24 months, low event counts) and 15-20% early back/leg pain events (Carragee) are the standing objections."
+        },
+        {
+          "application_id": "adult-deformity",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "III",
+          "evidence_summary": "ISSG registry: rhBMP-2 used in 73.9% of 1,180 ASD patients (2008-2018), mean 23.6 mg; revision for pseudarthrosis 8.6% with BMP vs 17% without (Jain 2020); Maeda 2009 single-center comparison 4.3% vs 28.1% pseudarthrosis. All off-label and high-dose.",
+          "caveats": "Observational, industry-supported registry; dose per patient far exceeds any labeled dose."
+        },
+        {
+          "application_id": "cervical-acdf",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "II",
+          "evidence_summary": "FDA Public Health Notification (2008) warned of life-threatening neck/airway swelling with off-label cervical rhBMP; Smucker 2006 found clinically significant swelling in 27.5% vs 3.6%; Cahill 2009 (NIS) found higher wound and dysphagia complications. Medtronic's own single-arm cervical pivotal (NCT00485173, n=224 vs 486 historical controls) reported 99.4% fusion and 80.9% overall success but ossification in the target region in 78.6%; no cervical approval was granted.",
+          "caveats": "Not approved; FDA position is that safety and efficacy in the cervical spine have not been demonstrated."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:12394656",
+          "title": "Anterior lumbar interbody fusion using rhBMP-2 with tapered interbody cages",
+          "year": 2002,
+          "design": "RCT",
+          "n": 279,
+          "finding": "24-month fusion 94.5% rhBMP-2 vs 88.7% ICBG; 32% of ICBG patients had graft-site discomfort at 24 months.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-alif"
+          ]
+        },
+        {
+          "ref": "PMID:19487515",
+          "title": "Clinical and radiographic analysis of an optimized rhBMP-2 formulation as an autograft replacement in posterolateral lumbar spine arthrodesis",
+          "year": 2009,
+          "design": "RCT",
+          "n": 463,
+          "finding": "rhBMP-2/CRM 96% vs ICBG 89% fusion at 24 months; nonunion failures 6 vs 18; 60% of ICBG patients reported donor-site pain at 24 months.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-plf"
+          ]
+        },
+        {
+          "ref": "PMID:19092613",
+          "title": "RhBMP-2 versus iliac crest bone graft for lumbar spine fusion: a randomized, controlled trial in patients over sixty years of age",
+          "year": 2008,
+          "design": "RCT",
+          "n": 102,
+          "finding": "20 complications with ICBG vs 8 with rhBMP-2/ACS; revisions for nonunion 5 vs 1; better CT fusion grade with rhBMP-2.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-plf"
+          ]
+        },
+        {
+          "ref": "PMID:23778906",
+          "title": "Effectiveness and harms of recombinant human bone morphogenetic protein-2 in spine fusion: a systematic review and meta-analysis (YODA)",
+          "year": 2013,
+          "design": "meta-analysis",
+          "n": 1408,
+          "finding": "Lumbar fusion: rhBMP-2 and ICBG similar in overall success and fusion; cancer RR 3.45 at 24 months on low event counts; early industry publications misrepresented harms through selective reporting.",
+          "sponsor_funded": false,
+          "applications": [
+            "lumbar-alif",
+            "lumbar-plf",
+            "lumbar-tlif-plif",
+            "cervical-acdf"
+          ]
+        },
+        {
+          "ref": "PMID:23778905",
+          "title": "Safety and effectiveness of rhBMP-2 for spinal fusion: a meta-analysis of individual-participant data (YODA)",
+          "year": 2013,
+          "design": "meta-analysis",
+          "n": 1408,
+          "finding": "At 24 months ODI 3.5 points better and radiographic fusion 12% higher with rhBMP-2 than ICBG; more early postoperative pain; cancer RR 1.98, inconclusive.",
+          "sponsor_funded": false,
+          "applications": [
+            "lumbar-alif",
+            "lumbar-plf"
+          ]
+        },
+        {
+          "ref": "PMID:21729796",
+          "title": "A critical review of rhBMP-2 trials in spinal surgery: emerging safety concerns and lessons learned",
+          "year": 2011,
+          "design": "retrospective",
+          "n": 780,
+          "finding": "Industry-sponsored publications reported 0% rhBMP-2-related adverse events in 780 patients; FDA summaries and later data suggest 10-50% event rates depending on approach; the 2011 Spine Journal issue that triggered the YODA reanalyses.",
+          "sponsor_funded": false,
+          "applications": [
+            "lumbar-alif",
+            "lumbar-plf",
+            "lumbar-tlif-plif",
+            "cervical-acdf"
+          ]
+        },
+        {
+          "ref": "PMID:19567440",
+          "title": "Prevalence, complications, and hospital charges associated with use of bone-morphogenetic proteins in spinal fusion procedures",
+          "year": 2009,
+          "design": "retrospective",
+          "n": 328468,
+          "finding": "BMP use rose from 0.69% of fusions (2002) to 24.89% (2006); anterior cervical use associated with more complications (7.09% vs 4.68%) and dysphagia/hoarseness; charges 11-41% higher.",
+          "sponsor_funded": false,
+          "applications": [
+            "cervical-acdf",
+            "lumbar-plf",
+            "lumbar-tlif-plif"
+          ]
+        },
+        {
+          "ref": "PMID:17108835",
+          "title": "Increased swelling complications associated with off-label usage of rhBMP-2 in the anterior cervical spine",
+          "year": 2006,
+          "design": "retrospective",
+          "n": 234,
+          "finding": "Clinically significant prevertebral swelling in 27.5% with rhBMP-2 vs 3.6% without.",
+          "sponsor_funded": false,
+          "applications": [
+            "cervical-acdf"
+          ]
+        },
+        {
+          "ref": "NCT00485173",
+          "title": "Pivotal clinical investigation of INFUSE with a PEEK interbody spacer and anterior cervical plate (single level)",
+          "year": 2012,
+          "design": "prospective-cohort",
+          "n": 224,
+          "finding": "Posted results: overall success 80.9% vs 59.9% propensity-matched historical control; fusion 99.4% vs 87.2%; ossification in target region 78.6% vs 59.2%; no cervical approval followed.",
+          "sponsor_funded": true,
+          "applications": [
+            "cervical-acdf"
+          ]
+        },
+        {
+          "ref": "NCT04073563",
+          "title": "Prospective, randomized, controlled, blinded pivotal study of Infuse in one- or two-level TLIF",
+          "year": 2026,
+          "design": "RCT",
+          "n": 493,
+          "finding": "Three-arm RCT (2.1 mg/level, 4.2 mg/level, local autograft) stopped for success at first interim analysis; supported panel-track PMA supplement approved 2026-02-13. Results unpublished.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-tlif-plif"
+          ]
+        },
+        {
+          "ref": "PMID:34062501",
+          "title": "Use of rhBMP-2 for adult spinal deformity surgery: patterns of usage and changes over the past decade (ISSG)",
+          "year": 2021,
+          "design": "registry",
+          "n": 1180,
+          "finding": "rhBMP-2 used in 73.9% of ASD patients, mean dose 23.6 mg and falling over time.",
+          "sponsor_funded": true,
+          "applications": [
+            "adult-deformity"
+          ]
+        },
+        {
+          "ref": "PMID:32097274",
+          "title": "Cost-utility analysis of rhBMP-2 use in adult spinal deformity surgery",
+          "year": 2020,
+          "design": "registry",
+          "n": 367,
+          "finding": "Revision for symptomatic pseudarthrosis 8.6% with BMP vs 17% without; mean BMP cost $14,000 per index surgery.",
+          "sponsor_funded": true,
+          "applications": [
+            "adult-deformity"
+          ]
+        },
+        {
+          "ref": "FDA-PHN-2008-07-01",
+          "title": "FDA Public Health Notification: Life-threatening Complications Associated with Recombinant Human Bone Morphogenetic Protein in Cervical Spine Fusion",
+          "year": 2008,
+          "design": "registry",
+          "n": 38,
+          "finding": "At least 38 MDR reports in four years of neck/throat swelling with airway or neurological compression after cervical rhBMP use, most 2-14 days post-op; FDA states safety and effectiveness in the cervical spine have not been demonstrated and recommends approved alternatives or enrollment in approved studies.",
+          "sponsor_funded": false,
+          "applications": [
+            "cervical-acdf",
+            "cervical-pcf"
+          ],
+          "source": "https://web.archive.org/web/20101230063033/http://www.fda.gov/MedicalDevices/Safety/AlertsandNotices/PublicHealthNotifications/ucm062000.htm"
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Inpatient: bundled in the level-based spinal fusion MS-DRG family in force since FY2025 (402, 426-430, 447-451, 456-458; 523-525 added FY2027; 471-473 cervical) and 471-473 (cervical); no separate HCPCS; physician add-on +20930 (osteopromotive material) is a bundled 0-RVU code for Medicare. Payer medical policies commonly cover rhBMP-2 only for on-label lumbar interbody use and deny cervical use.",
+        "notes": "Priced at several thousand dollars per kit (ISSG mean $14,000 per deformity case); Medtronic's TLIF label (Feb 2026) and Breakthrough designation (Apr 2024) are the first new spine indications since 2018. Kuros MagnetOs is now sold by the Medtronic spine sales force under a 2025 agency agreement, giving Medtronic a non-BMP alternative in the same bag."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P000058",
+        "https://global.medtronic.com/xg-en/e/response/infuse-bone-graft.html",
+        "https://news.medtronic.com/2026-02-17-Medtronic-Announces-FDA-approval-of-Infuse-TM-bone-graft-for-one-and-two-level-Transforaminal-Lumbar-Interbody-Fusion-TLIF-spine-procedures",
+        "https://news.medtronic.com/2015-12-11-Medtronic-Announces-FDA-Approval-of-Infuse-R-Bone-Graft-for-Three-New-Spine-Surgery-Indications",
+        "https://news.medtronic.com/2018-04-30-Medtronic-Announces-FDA-Approval-of-Infuse-TM-Bone-Graft-in-New-Spine-Surgery-Indications-Using-PEEK-Interbody-Implants",
+        "https://www.bcbsnc.com/providers/policies-guidelines-codes/commercial/surgery/updates/bone-morphogenetic-protein",
+        "https://clinicaltrials.gov/api/v2/studies/NCT00485173",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf/P000058S096B.pdf",
+        "https://api.fda.gov/device/pma.json?search=pma_number:P000058&sort=decision_date:desc&limit=8",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P000058S096",
+        "https://web.archive.org/web/20101230063033/http://www.fda.gov/MedicalDevices/Safety/AlertsandNotices/PublicHealthNotifications/ucm062000.htm",
+        "https://www.beckersspine.com/biologics/medtronic-spinal-bone-graft-earns-expanded-fda-approval/"
+      ],
+      "challenge": "FDA's July 1, 2008 Public Health Notification (CDRH, signed Daniel G. Schultz) was retrieved via the Wayback Machine: at least 38 reports over four years of neck/throat swelling with airway compression after cervical rhBMP use, most at 2-14 days; FDA states safety and effectiveness in the cervical spine 'have not been demonstrated' and recommends approved alternatives or enrollment in approved studies. The TLIF supplement is P000058/S096 (panel track, decision 02/13/2026). Remaining gap: Medtronic's release gives only 'fusion rates exceeding 90 percent in single-level TLIF' for Infuse (493 randomized 1:1:1 to 2.1 mg/level, 4.2 mg/level, local autograft; stopped for success at the first interim analysis of 480 treated patients); the autograft-arm and two-level percentages are unpublished."
+    },
+    {
+      "id": "i-factor",
+      "name": "i-FACTOR Peptide Enhanced Bone Graft",
+      "company": "Cerapedics",
+      "ownership_history": "Cerapedics (Westminster, CO), private; P-15 technology originally developed as PepGen P-15 (Dentsply/CeraMed) for dental use.",
+      "category": "peptide",
+      "composition": "P-15 synthetic 15-amino-acid collagen-mimetic peptide adsorbed onto anorganic bovine bone mineral (ABM), suspended in an inert hydrogel carrier (putty); must be placed inside an allograft bone ring with anterior plate",
+      "regulatory": {
+        "path": "PMA",
+        "reference": "P140019 (approved 2015-11-03; received 2014-08-27; 14 supplements listed)",
+        "us_market_year": 2015,
+        "on_label_indications": [
+          "Single-level ACDF C3-C4 to C6-C7 in skeletally mature patients with radiculopathy (with or without neck pain) or myelopathy from a single-level disc abnormality, after 6 weeks of conservative care, inside an allograft bone ring with supplemental anterior plate"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "cervical-acdf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "FDA IDE RCT (Arnold 2016, n=319, single-blind, noninferiority to local autograft in a cortical ring allograft): 12-month fusion 88.97% vs 85.82%, composite overall success 68.75% vs 56.94% (p=0.038); 2-year fusion 97.3% vs 94.4% (Arnold 2018); 6-year post-approval follow-up met all four noninferiority endpoints with 99% vs 98.2% fusion (Arnold 2022).",
+          "caveats": "Sponsor-funded; control was local autograft in a ring, not iliac crest; overall-success superiority is a composite that is driven partly by NDI and reoperation components."
+        },
+        {
+          "application_id": "lumbar-plf",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "Lumbar use of the i-FACTOR putty is off-label in the US (it is CE-marked more broadly); the lumbar program was carried by the P-15L / PearlMatrix product instead.",
+          "caveats": "No US lumbar data for the original i-FACTOR formulation retrieved."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:26825787",
+          "title": "Efficacy of i-Factor bone graft versus autograft in ACDF: results of the prospective, randomized, single-blinded FDA IDE study",
+          "year": 2016,
+          "design": "RCT",
+          "n": 319,
+          "finding": "Met all four FDA noninferiority endpoints at 12 months; overall success 68.75% vs 56.94% (p=0.0382).",
+          "sponsor_funded": true,
+          "applications": [
+            "cervical-acdf"
+          ]
+        },
+        {
+          "ref": "PMID:28945914",
+          "title": "i-Factor bone graft vs autograft in ACDF: 2-year follow-up of the randomized single-blinded FDA IDE study",
+          "year": 2018,
+          "design": "RCT",
+          "n": 319,
+          "finding": "2-year fusion 97.30% vs 94.44% (ns); overall success 69.83% vs 56.35% (p=0.03); reoperation 7.45% vs 10.53%.",
+          "sponsor_funded": true,
+          "applications": [
+            "cervical-acdf"
+          ]
+        },
+        {
+          "ref": "PMID:36700705",
+          "title": "Six-year follow-up of a randomized controlled trial of i-FACTOR versus local autograft in single-level ACDF",
+          "year": 2022,
+          "design": "RCT",
+          "n": 220,
+          "finding": "Fusion 99% vs 98.2%; noninferior on all four co-primary endpoints at 72 months; secondary cervical surgery 18.9% vs 20.2%.",
+          "sponsor_funded": true,
+          "applications": [
+            "cervical-acdf"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Bundled in cervical fusion MS-DRGs 471-473 inpatient; outpatient ACDF packaged under the APC; no product-specific HCPCS. Physician +20930 bundled.",
+        "notes": "Cerapedics sells through a mix of direct reps and independent distributors (channel mix not disclosed in sources reviewed). Being one of only three PMA-approved spine bone grafts (with Infuse and PearlMatrix) is the core positioning against 361 cellular allografts."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P140019",
+        "https://www.cerapedics.com/news/cerapedics-receives-fda-approval-i-factor-peptide-enhanced-bone-graft-cervical-spine-surgery"
+      ]
+    },
+    {
+      "id": "pearlmatrix",
+      "name": "PearlMatrix P-15 Peptide Enhanced Bone Graft (formerly P-15L / i-FACTOR+ Matrix)",
+      "company": "Cerapedics",
+      "ownership_history": "Cerapedics; investigational name P-15L / i-FACTOR+ Matrix during the ASPIRE IDE (2018-2025).",
+      "category": "peptide",
+      "composition": "P-15 peptide on anorganic bone mineral in a collagen-based matrix (the lumbar/interbody formulation of the ABM/P-15 technology); Class III drug-device combination product",
+      "regulatory": {
+        "path": "PMA",
+        "reference": "P240001 (PearlMatrix P-15 Peptide Enhanced Bone Graft; FDA decision 2025-06-18; Cerapedics press releases are dated June 23, 2025). S001 approved 2025-12-11 (180-day track) adds ALIF, TLIF, PLIF, OLIF/ATP and LLIF approaches and titanium alloy and PEEK/titanium cages; S002 (2026-04-07) and S003 (2026-09-16) are manufacturing/lab-site notices. Predecessor i-FACTOR is P140019 (2015-11-03).",
+        "us_market_year": 2025,
+        "on_label_indications": [
+          "PearlMatrix is indicated for intervertebral body fusion in skeletally mature patients: one level, L2-S1, DDD with up to Grade I spondylolisthesis, with a PEEK TLIF fusion device and supplemental internal fixation, after at least six months of nonoperative treatment (P240001, 2025-06-18)",
+          "S001 (approved 2025-12-11): additional open or minimally invasive approaches (ALIF, TLIF, PLIF, OLIF/ATP, LLIF) and use with titanium alloy and PEEK/titanium cages"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-tlif-plif",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "ASPIRE pivotal RCT (NCT03438747; Harrop 2025, n=290 at 33 US sites, single-blind, ~60% high-risk): composite clinical success 55.5% vs 37.5% local autograft (noninferior and superior, p=0.002); CT fusion 84.3% vs 58.5% at 24 months; time to fusion HR 1.87. Device-related SAEs similar; the January 2026 company release notes a higher rate of secondary surgical interventions with PearlMatrix than autograft.",
+          "caveats": "Sponsor-funded; control arm fusion (58.5%) is far below typical TLIF literature because of strict CT criteria and high-risk enrollment, which flatters the treatment delta."
+        },
+        {
+          "application_id": "lumbar-alif",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "ALIF, PLIF, OLIF and LLIF indications were added by supplement in January 2026 on the strength of the TLIF pivotal plus cage/approach equivalence; no approach-specific RCT.",
+          "caveats": "Label expansion without new pivotal data for each approach."
+        },
+        {
+          "application_id": "lumbar-lateral",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "On-label single-level OLIF/LLIF since January 2026 via supplement; evidence extrapolated from ASPIRE TLIF.",
+          "caveats": "Same as ALIF."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:41307132",
+          "title": "P-15 peptide enhanced bone graft in TLIF: a randomized, controlled IDE study demonstrating improved composite clinical success",
+          "year": 2025,
+          "design": "RCT",
+          "n": 290,
+          "finding": "CCS 55.5% vs 37.5%; fusion 84.3% vs 58.5% at 24 months; similar device-related SAEs.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-tlif-plif"
+          ]
+        },
+        {
+          "ref": "PMID:41307110",
+          "title": "P-15 peptide enhanced bone graft improves time to fusion in TLIF: a randomized, controlled IDE study",
+          "year": 2025,
+          "design": "RCT",
+          "n": 290,
+          "finding": "Kaplan-Meier fusion 57.6% vs 26.9% at 6 months and 81.1% vs 54.9% at 24 months; HR 1.87 for time to fusion.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-tlif-plif"
+          ]
+        },
+        {
+          "ref": "NCT03438747",
+          "title": "An assessment of P-15L bone graft in TLIF with instrumentation (ASPIRE)",
+          "year": 2018,
+          "design": "RCT",
+          "n": 290,
+          "finding": "Active, not recruiting; 72-month follow-up continues to 2028.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-tlif-plif"
+          ]
+        }
+      ],
+      "pipeline": {
+        "stage": "launched-2025",
+        "trials": [
+          "NCT03438747"
+        ],
+        "expected_milestone": "Approved 2025-06-18 (P240001); first US patient July 2025; S001 approach/cage expansion approved 2025-12-11 (company announced January 2026)."
+      },
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Bundled in the level-based spinal fusion MS-DRG family in force since FY2025 (402, 426-430, 447-451, 456-458; 523-525 added FY2027; 471-473 cervical) inpatient; no NTAP or pass-through found in sources reviewed; physician +20930 bundled. Cerapedics publishes a PearlMatrix coding guide (PDF, not text-extractable in this sweep).",
+        "notes": "Breakthrough Device designation April 2021; approval came 180 days-class on a panel-track PMA. The TLIF label puts PearlMatrix head-to-head with Infuse for the first on-label TLIF biologic, eight months before Medtronic's TLIF approval."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.cerapedics.com/news/cerapedics-announces-fda-approval-pearlmatrixtm-p-15-peptide-enhanced-bone-graft-first-and",
+        "https://www.cerapedics.com/news/cerapedics-pearlmatrix-p-15-peptide-enhanced-bone-graft-first-and-only-proven-bone-growth",
+        "https://www.orthoworld.com/cerapedics-gains-fda-approval-of-pearlmatrix-p-15-bone-graft/",
+        "https://api.fda.gov/device/pma.json?search=pma_number:P240001&limit=10",
+        "https://api.fda.gov/device/pma.json?search=applicant:%22CERAPEDICS%22&limit=100",
+        "https://www.beckersspine.com/spine/cerapedics-spinal-bone-graft-earns-additional-indications/"
+      ],
+      "challenge": "PMA P240001 approved 2025-06-18 (openFDA, pass 2); supplement S001 label expansion approved 2025-12-11 and announced 2026-01-13. Pass 3 could not reach the FDA PMA search page (bot challenge)."
+    },
+    {
+      "id": "grafton",
+      "name": "Grafton DBM / Grafton Plus DBM Paste / Grafton DBF fibers",
+      "company": "Medtronic",
+      "ownership_history": "Developed by Osteotech (Eatontown, NJ); Medtronic completed its acquisition of Osteotech on 2010-11-16 ($6.50 per share, about $123 million). Older 510(k)s (K042707, K043048, K051188, K051195) list Osteotech as sponsor.",
+      "category": "DBM",
+      "composition": "Human demineralized bone matrix (particles or fibers) in a glycerol carrier (gel, putty, flex, matrix, paste forms); each lot sourced from a single donor",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K251193 (Grafton DBM, Grafton Plus DBM Paste, Magnifuse; cleared 2025-06-12; 21 CFR 888.3045, product codes MQV/MBP); earlier Osteotech clearances K042707, K043048, K051188, K051195",
+        "us_market_year": 1991,
+        "on_label_indications": [
+          "Bone graft extender, bone graft substitute and bone void filler for voids or gaps in the spine, pelvis and extremities that are not intrinsic to the stability of the bony structure (per K251193 summary as described in the FDA listing)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "Prospective intra-patient trial (Cammisa 2004, n=120): Grafton gel/autograft composite fused 52% of sides vs 54% for ICBG at 24 months by blinded plain radiograph (kappa 0.51); Korean intra-patient comparison (Chang 2021, n=19): Grafton 70.4% vs DBX 66.7% side fusion at 24 months.",
+          "caveats": "Sponsor-funded 2004 study with 30% loss to follow-up; DBM osteoinductivity varies by donor and lot, and a 2020 rat study (SeaSpine-funded) found large between-brand differences."
+        },
+        {
+          "application_id": "cervical-pcf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Widely used as a local-bone extender in posterior cervical fusion under the general spine void-filler label; no posterior-cervical-specific study retrieved.",
+          "caveats": "Extrapolated from lumbar data."
+        },
+        {
+          "application_id": "adult-deformity",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Commonly used as the extender alongside rhBMP-2 in long constructs; no deformity-specific comparative study retrieved.",
+          "caveats": "Usage inferred from practice patterns, not trial data."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:15014276",
+          "title": "Two-year fusion rate equivalency between Grafton DBM gel and autograft in posterolateral spine fusion: side-by-side comparison in the same patient",
+          "year": 2004,
+          "design": "prospective-cohort",
+          "n": 120,
+          "finding": "Fusion 52% (Grafton/autograft side) vs 54% (autograft side) at 24 months in 81 patients with complete radiographs.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-plf"
+          ]
+        },
+        {
+          "ref": "PMID:33596888",
+          "title": "Surgical outcomes of two kinds of DBM putties/local autograft composites in instrumented posterolateral lumbar fusion",
+          "year": 2021,
+          "design": "prospective-cohort",
+          "n": 19,
+          "finding": "Grafton 70.4% vs DBX 66.7% side fusion at 24 months (ns); no revisions for nonunion.",
+          "sponsor_funded": false,
+          "applications": [
+            "lumbar-plf"
+          ]
+        },
+        {
+          "ref": "PMID:32266283",
+          "title": "Performance of seven commercially available DBM fiber and putty products in a rat posterolateral fusion model",
+          "year": 2020,
+          "design": "preclinical",
+          "n": 69,
+          "finding": "Grafton DBF and Grafton Flex fused at rates not statistically lower than the SeaSpine Strand family; DBX Putty and Optium Putty were significantly lower, suggesting carriers hurt performance.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-plf"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in fusion MS-DRGs; +20930 bundled for Medicare physician payment; no separate HCPCS.",
+        "notes": "Sold by Medtronic Spine direct reps alongside Infuse and Mastergraft; Grafton is also distributed in Japan. Tissue sourced from US tissue banks (Medtronic processes DBM in its own facilities)."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K251193",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=112937",
+        "https://www.massdevice.com/medtronic-launches-grafton-dbm-in-japan/",
+        "https://news.medtronic.com/2010-11-16-Medtronic-Completes-Acquisition-of-Osteotech",
+        "https://fda.innolitics.com/device/K251193",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22GRAFTON%22&sort=decision_date:desc&limit=30"
+      ],
+      "challenge": "Grafton launched under 361 tissue rules in 1991; it has carried 510(k)s since the mid-2000s because the glycerol carrier makes it a device. K251193 indications (FDA decision record): bone graft extender, bone graft substitute and bone void filler in the posterolateral spine, intervertebral disc space (excluding Flex or Crunch), pelvis and extremities."
+    },
+    {
+      "id": "magnifuse",
+      "name": "Magnifuse Bone Graft (DBM in resorbable mesh)",
+      "company": "Medtronic",
+      "ownership_history": "Medtronic (Osteotech lineage); Magnifuse II is the current generation.",
+      "category": "DBM",
+      "composition": "Demineralized cortical bone fibers and chips contained in a resorbable polyglycolic acid mesh bag that holds the graft in the fusion bed and can be hydrated with marrow aspirate",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K251193 (with Grafton; decision 2025-06-12); K123691 (Magnifuse Bone Graft, cleared under Grafton II eDBM, 2013-01-31); K131673 (Magnifuse / Magnifuse II, 2013-10-03); applicant Medtronic Sofamor Danek",
+        "us_market_year": 2009,
+        "on_label_indications": [
+          "Bone graft substitute for voids or gaps in the spine, pelvis and extremities not intrinsic to the stability of the bony structure; for interbody use must be combined with an FDA-cleared intervertebral body fusion device labeled for use with a bone void filler"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Marketed for posterolateral gutters and lateral cages; no peer-reviewed comparative clinical study retrieved in this sweep.",
+          "caveats": "Evidence gap; rests on DBM class data."
+        },
+        {
+          "application_id": "lumbar-lateral",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "The mesh format is positioned for lateral and OLIF cages; the 2025 clearance explicitly ties interbody use to cages cleared for bone void fillers.",
+          "caveats": "No clinical data retrieved."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in fusion MS-DRGs; no separate payment.",
+        "notes": "Medtronic direct reps; packaged with Medtronic interbody systems."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K251193",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22MAGNIFUSE%22&sort=decision_date:desc&limit=30",
+        "https://fda.innolitics.com/device/K251193"
+      ]
+    },
+    {
+      "id": "dbx",
+      "name": "DBX Demineralized Bone Matrix (Putty, Paste, Mix, Strip)",
+      "company": "DePuy Synthes (processed by MTF Biologics)",
+      "ownership_history": "Processed by the Musculoskeletal Transplant Foundation (MTF Biologics, Edison NJ). Marketed by Synthes and, since 2012, DePuy Synthes (J&J MedTech lists DBX Trauma and DBX CMF/Inject as DePuy Synthes products; a DePuy Synthes Spine brochure describes an exclusive MTF partnership of more than 10 years). On 2025-03-13 MTF expanded its agreement with Kolosis BIO, which now also represents and distributes DBX Mix and DBX Putty alongside Kore Fiber and Prime HD, so DBX is no longer sold only through DePuy Synthes; the contract terms and whether DePuy's rights are still exclusive are not public.",
+      "category": "DBM",
+      "composition": "Human demineralized bone matrix in a sodium hyaluronate carrier (putty, paste, mix with cancellous chips, and strip forms)",
+      "regulatory": {
+        "path": "510k",
+        "reference": "MTF 510(k)s verified in openFDA: K040262 (2005-03-17), K040501 (2005-04-29), K042829 (DBX Strip, 2006-01-13), K053218 (2006-12-28), K062205 (DBX Strip, 2007-02-05), K063676 (DBX Mix, 2007-03-05), K080399 (2008-10-10), K091218 (2009-09-28), K091217 (2009-10-02), K103784 and K103795 (2011-04-13); applicant Musculoskeletal Transplant Foundation (product codes MQV/MBP/NUN)",
+        "us_market_year": 2001,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps that are not intrinsic to the stability of the bony structure, in the extremities, spine and pelvis (typical MQV labeling; verify exact DBX wording)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "Intra-patient comparison vs Grafton (Chang 2021, n=19): DBX side fusion 51.9% at 12 months and 66.7% at 24 months, not different from Grafton; DBX Putty is the DBM control in the DePuy Synthes FIBERGRAFT Aeridyan PLF trial (NCT07059065, n=316) and in Kuros's MagnetOs Easypack trial (NCT04679844).",
+          "caveats": "No sponsor-funded RCT of DBX itself; rat model (Russell 2020) ranked DBX Putty among the lowest fusion performers, which competitors cite."
+        },
+        {
+          "application_id": "cervical-acdf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "Served as the noncellular allograft comparator in a matched ACDF cohort (Zakko 2023, n=68): fusion and PROMs no different from ViviGen.",
+          "caveats": "Retrospective single-surgeon series."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:33596888",
+          "title": "Surgical outcomes of two kinds of DBM putties/local autograft composites in instrumented posterolateral lumbar fusion",
+          "year": 2021,
+          "design": "prospective-cohort",
+          "n": 19,
+          "finding": "DBX 66.7% vs Grafton 70.4% side fusion at 24 months.",
+          "sponsor_funded": false,
+          "applications": [
+            "lumbar-plf"
+          ]
+        },
+        {
+          "ref": "PMID:37381143",
+          "title": "ACDFs supplemented with cellular or noncellular allografts have similar radiographic fusion and clinical outcomes",
+          "year": 2023,
+          "design": "retrospective",
+          "n": 68,
+          "finding": "No difference in fusion at 3, 6, 12 months between DBM and ViviGen groups.",
+          "sponsor_funded": false,
+          "applications": [
+            "cervical-acdf"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in fusion MS-DRGs; no separate payment.",
+        "notes": "MTF is the processor and OEM supplier; DePuy Synthes sells through its direct spine force. MTF's OEM/private-label model also supplies Orthofix (Trinity, FiberFuse) and others, so the same tissue bank sits behind several competing brands. MTF-Kolosis BIO agreement (2025-03-13) means DBX Mix and Putty also reach surgeons through an independent distributor, so DePuy Synthes exclusivity should not be assumed."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "NCT07059065",
+        "NCT04679844",
+        "https://www.jnjmedtech.com/en-US/product/vivigen-cellular-bone-matrix",
+        "https://www.jnjmedtech.com/en-US/product/dbx-demineralized-bone-matrix-trauma",
+        "https://www.orthoworld.com/?p=78296",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22MUSCULOSKELETAL+TRANSPLANT%22+AND+device_name:%22DBX%22&sort=decision_date:desc&limit=30"
+      ],
+      "challenge": "DePuy Synthes distribution of DBX confirmed from J&J MedTech product pages; MTF added Kolosis BIO as a second distributor (Mix and Putty) in March 2025; indications wording is class-typical (the 510(k) PDFs are scanned images)."
+    },
+    {
+      "id": "accell-evo3",
+      "name": "Accell Evo3 / Evo3c DBM (Accell Bone Matrix)",
+      "company": "Orthofix",
+      "ownership_history": "IsoTis OrthoBiologics (Irvine, CA) developed the Accell reverse-phase carrier; Integra LifeSciences acquired IsoTis in 2007 and sold it as Integra Orthobiologics; Integra spun its spine/orthobiologics business out as SeaSpine in 2015; SeaSpine merged into Orthofix (completed 2023-01-05, all-stock, 0.4163 Orthofix shares per SeaSpine share). Orthofix's FY2025 Form 10-K (filed 2026) says Strand Plus, Strand, Evo3, Evo3c, Ballast, Cove and Mozaik 'are all processed internally through IsoTis Orthobiologics, Inc.' and names Accell Bone Matrix as proprietary technology. IsoTis is not Isto Biologics. The FY2025 10-K does not mention 'Progenix'.",
+      "category": "DBM",
+      "composition": "Demineralized bone matrix including a dispersed, open-structured 'Accell Bone Matrix' fraction in a reverse-phase medium; Evo3c adds cortical chips",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K103742 (Accell Evo3, formerly Accell A2i; Integra LifeSciences; decision 2011-03-17, product code MBP); K091193 (Accell Evo3c, IsoTis Orthobiologics, 2009-08-10); K081817 (Accell TBM-R, 2008-09-24); K060306 (Accell Connexus, IsoTis NV, 2006-03-27)",
+        "us_market_year": 2007,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure, extremities, spine and pelvis (typical MQV wording; verify)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Only preclinical comparative data located: athymic rat PLF (Brecevich 2017, n=48) with Accell Evo3 66% and Grafton 100% fusion by palpation at 9 weeks vs 33% for autograft.",
+          "caveats": "Integra-affiliated author; no human comparative study retrieved."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:28126356",
+          "title": "Efficacy comparison of Accell Evo3 and Grafton DBM putties against autologous bone in a rat posterolateral spine fusion model",
+          "year": 2017,
+          "design": "preclinical",
+          "n": 48,
+          "finding": "9-week palpation fusion 66% (Evo3) vs 100% (Grafton) vs 33% (ICBG).",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-plf"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Bundled in fusion MS-DRGs.",
+        "notes": "Orthofix sells biologics through distributors and sales representatives (10-K); Accell products are Orthofix-owned, unlike the MTF-supplied Trinity line."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/0001637761/000163776118000034/spne-2017123110xk.htm",
+        "https://www.sec.gov/Archives/edgar/data/884624/000095017025026066/ofix-20241231.htm",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf10/K103742.pdf",
+        "https://www.sec.gov/Archives/edgar/data/884624/000119312526065189/ofix-20251231.htm",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22ACCELL%22&sort=decision_date:desc&limit=30",
+        "https://www.businesswire.com/news/home/20230104005893/en/5363709/Orthofix-and-SeaSpine-Announce-Completion-of-Merger-of-Equals-to-Create-a-Leading-Global-Spine-and-Orthopedics-Company"
+      ],
+      "challenge": "Accell ownership confirmed (Orthofix via IsoTis Orthobiologics, FY2025 10-K). Progenix is not named in the FY2025 10-K, so its current brand status/ownership remains unconfirmed."
+    },
+    {
+      "id": "allofuse",
+      "name": "AlloFuse DBM (Putty, Gel, Plus)",
+      "company": "AlloSource",
+      "ownership_history": "AlloSource (Centennial, CO), non-profit tissue bank; AlloFuse has been marketed since the early 2000s.",
+      "category": "DBM",
+      "composition": "Human demineralized bone matrix in a reverse-phase (thermoresponsive) carrier; AlloFuse Plus adds cancellous chips",
+      "regulatory": {
+        "path": "510k",
+        "reference": "By form: AlloFuse Gel and Putty = 510(k) K071849 (decision 2008-12-04; AlloSource; predicates DynaGraft II, AlloMatrix Putty); AlloFuse Plus Paste/Putty = 510(k) K103036 (decision 2011-01-10; predicates OrthoBlast II, AlloFuse Gel/Putty). AlloFuse Select cellular bone matrix, AlloFuse Fibers/Fiber Boats and AlloFuse Cervical Spacers have no 510(k) in openFDA and are presumed 361 HCT/Ps (AlloSource's Select brochure cites only FDA tissue-testing regulations and AATB standards). GUDID lists AlloFuse gel as an HCT/P.",
+        "us_market_year": 2003,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure (assumed MQV wording; verify)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "No peer-reviewed spine fusion clinical study retrieved; sold as an extender under the general DBM class.",
+          "caveats": "Evidence gap."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Bundled in fusion MS-DRGs.",
+        "notes": "AlloSource sells directly to hospitals and supplies private-label tissue to device companies; specific spine OEM partners not verified."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://fda.innolitics.com/device/K071849",
+        "https://fda.innolitics.com/device/K103036",
+        "https://allosource.org/wp-content/uploads/securepdfs/2026/07/AlloFuse-Select-Brochure.pdf",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22ALLOFUSE%22&sort=decision_date:desc&limit=10"
+      ],
+      "challenge": "Regulatory path depends on the form: DBM paste/putty/gel are 510(k) devices; Select, Fibers and Spacers are presumed 361 (no 510(k) found; AlloSource does not state it on the brochures read)."
+    },
+    {
+      "id": "vitoss",
+      "name": "Vitoss / Vitoss BA / Vitoss BA2X (beta-TCP with bioactive glass)",
+      "company": "Stryker",
+      "ownership_history": "Orthovita (Malvern, PA) launched Vitoss in 2000; Stryker completed its acquisition of Orthovita on 2011-06-28 (tender offer at $3.85 per share, agreement dated 2011-05-16, about $316 million).",
+      "category": "synthetic-ceramic",
+      "composition": "Ultraporous beta-tricalcium phosphate (nanoscale pores, ~90% porosity) with bovine collagen in Foam/Flow forms; Vitoss BA and BA2X add 45S5 bioactive glass (20% and 2x that amount) to the collagen-TCP composite",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K083033 (Vitoss, 2008-11-06); K103173 (Vitoss BA BiModal, 2011-02-07); K153608 (BiModal foam strip, 2016-02-12); K163621 (Vitoss BA Injectable, 2017-05-02); K242280 (BiModal foam strip, 2024-08-29); K261008 (BiModal family, 2026-04-24); applicant Orthovita / Stryker Spine; K102545 is a special 510(k) for a Vitoss formulation",
+        "us_market_year": 2000,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure in the extremities, pelvis and posterolateral spine; posterolateral spine use as an autograft extender (typical Vitoss labeling; verify)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Single-surgeon prospective series with lamina autograft/Vitoss: 100 instrumented PLFs with 3.8% (one-level) and 9.5% (two-level) pseudarthrosis by CT (Epstein 2009); 60 noninstrumented geriatric PLFs with 15% pseudarthrosis (Epstein 2008); 40 instrumented PLFs with 3 pseudarthroses (Epstein 2006). A Chinese RCT of generic beta-TCP + local bone vs ICBG (Dai 2008, n=62) found 100% fusion in both arms.",
+          "caveats": "No RCT of the Vitoss brand; the Dai RCT used a beta-TCP whose brand is not stated in the abstract; Vitoss BA bioactive glass versions have no published spine RCT."
+        },
+        {
+          "application_id": "adult-deformity",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Ceramic extenders such as Vitoss are routinely mixed with rhBMP-2 in long constructs; no deformity-specific trial retrieved.",
+          "caveats": "Practice-pattern inference."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:19501025",
+          "title": "Beta tricalcium phosphate: observation of use in 100 posterolateral lumbar instrumented fusions",
+          "year": 2009,
+          "design": "case-series",
+          "n": 100,
+          "finding": "Pseudarthrosis 3.8% (one-level) and 9.5% (two-level) with lamina autograft/Vitoss by dynamic X-ray and CT.",
+          "sponsor_funded": false,
+          "applications": [
+            "lumbar-plf"
+          ]
+        },
+        {
+          "ref": "PMID:18280215",
+          "title": "Noninstrumented posterolateral lumbar fusions in predominantly geriatric patients using lamina autograft and beta tricalcium phosphate",
+          "year": 2008,
+          "design": "case-series",
+          "n": 60,
+          "finding": "15% pseudarthrosis in noninstrumented 1-2 level fusions with Vitoss strips soaked in marrow aspirate.",
+          "sponsor_funded": false,
+          "applications": [
+            "lumbar-plf"
+          ]
+        },
+        {
+          "ref": "PMID:18496340",
+          "title": "Single-level instrumented posterolateral fusion of lumbar spine with beta-tricalcium phosphate versus autograft: a prospective, randomized study with 3-year follow-up",
+          "year": 2008,
+          "design": "RCT",
+          "n": 62,
+          "finding": "100% radiographic fusion in both beta-TCP + local bone and ICBG arms; all ICBG patients had donor-site pain.",
+          "sponsor_funded": false,
+          "applications": [
+            "lumbar-plf"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in fusion MS-DRGs.",
+        "notes": "Stryker Spine direct reps; Stryker's biologics bag also includes Bio4 (Osiris/Smith+Nephew manufactured) and Cortoss for VCF."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/0000913756/000119312511140926/dex991.htm",
+        "https://www.massdevice.com/stryker-snaps-orthovita-316-million/",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22VITOSS%22&sort=decision_date:desc&limit=30",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "challenge": "Vitoss, Vitoss BA and BA2X are current on Stryker's catalog page (2026-10-22); K numbers still not retrieved (FDA 510(k) search is bot-gated).",
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "chronos",
+      "name": "chronOS beta-TCP (granules, blocks, Strip, Vivify)",
+      "company": "DePuy Synthes",
+      "ownership_history": "Developed by Synthes/Mathys (Switzerland); Synthes acquired by Johnson & Johnson in 2012 and merged into DePuy Synthes.",
+      "category": "synthetic-ceramic",
+      "composition": "Pure-phase beta-tricalcium phosphate, 60% porosity with interconnected 100-500 micron pores; chronOS Strip combines beta-TCP granules with a polylactide-co-caprolactone polymer; chronOS Vivify adds collagen",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K013072 (chronOS TCP, 2002-11-26); K041350 (chronOS, 2004-07-08); K043045 (chronOS, 2005-01-07; may be combined with autogenous blood/marrow); K053022 (chronOS beta-TCP, 2006-01-23); K071046 (chronOS Composite, 2007-10-23); applicant Synthes (USA)",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps that are not intrinsic to the stability of the bony structure; gently packed into bony voids or gaps of the skeletal system (extremities, spine and pelvis); may be combined with autogenous blood and/or bone marrow (K043045)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "The best RCT for beta-TCP as a local-bone extender in instrumented PLF (Dai 2008, n=62) showed 100% fusion in both the beta-TCP and ICBG arms at 3 years with no donor-site pain in the TCP arm; brand of beta-TCP not specified in the abstract.",
+          "caveats": "Small single-center RCT, fusion by plain radiograph; the K013072 label does not say 'posterolateral' explicitly."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:18496340",
+          "title": "Single-level instrumented posterolateral fusion with beta-tricalcium phosphate versus autograft: prospective randomized study, 3-year follow-up",
+          "year": 2008,
+          "design": "RCT",
+          "n": 62,
+          "finding": "Equivalent fusion and outcomes; eliminated iliac crest harvest morbidity.",
+          "sponsor_funded": false,
+          "applications": [
+            "lumbar-plf"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in fusion MS-DRGs.",
+        "notes": "DePuy Synthes direct force; the company's spine biologics bag is DBX (MTF), ViviGen (LifeNet), chronOS and FIBERGRAFT (Prosidyan, promoted under an exclusive US agreement since 2018)."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://510k.innolitics.com/device/K013072",
+        "https://510k.innolitics.com/device/K043045",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22CHRONOS%22+AND+applicant:%22SYNTHES%22&sort=decision_date:desc&limit=30"
+      ]
+    },
+    {
+      "id": "mastergraft",
+      "name": "Mastergraft (Granules, Matrix, Putty, Strip)",
+      "company": "Medtronic",
+      "ownership_history": "Medtronic Sofamor Danek original product line (first clearance 2002).",
+      "category": "synthetic-ceramic",
+      "composition": "Biphasic calcium phosphate (15% hydroxyapatite / 85% beta-TCP) granules; Matrix/Putty/Strip combine the ceramic with bovine type I collagen",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K012506 (2002-03-07); K020986 (2002-07-22); K023553 (Matrix, 2003-04-22); K051386 (Putty, 2005-12-16); K071813 (Putty, 2007-11-09); K081784 (Putty, 2008-09-17); K082166 (Strip, 2009-06-02); K082917/K082918 (Granules, 2009); K130335 (Strip/UltraMatrix, 2013); K140374/K140375 (Putty/Strip, 2014); K141824 (Matrix EXT, 2014-09-05); K151172 (Contain, 2015-08-14); K243706 (Mastergraft Matrix EXT, Strip, Putty; 2025-01-17); applicant Medtronic Sofamor Danek",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure in the extremities, pelvis and posterolateral spine, as an autograft extender (per Mastergraft family labeling; verify form-specific wording)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "No peer-reviewed comparative clinical study of Mastergraft retrieved; it is the ceramic extender most often paired with Infuse in Medtronic constructs and is the ceramic component of the rhBMP-2/CRM (Amplify) carrier studied by Dimar 2009.",
+          "caveats": "Evidence gap for the standalone product."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in fusion MS-DRGs.",
+        "notes": "Medtronic direct reps; frequently bundled with Infuse kits in pricing conversations."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://fda.innolitics.com/device/K012506",
+        "https://510k.innolitics.com/device/K071813",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K082918.pdf",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22MASTERGRAFT%22&sort=decision_date:desc&limit=30"
+      ]
+    },
+    {
+      "id": "magnetos",
+      "name": "MagnetOs (Granules, Putty, Easypack Putty, Flex Matrix)",
+      "company": "Kuros Biosciences",
+      "ownership_history": "Technology from Xpand Biotechnology (Netherlands; AttraX predicate); Kuros Biosciences (SIX: KURN) acquired Xpand in 2016. Kuros remains independent; On 2025-01-07 Kuros Biosciences USA, Inc. announced a five-year exclusive sales agency agreement under which Medtronic's spinal division acts as exclusive sales agent for MagnetOs in mutually agreed US spine territories, converting an earlier trial arrangement into a strategic alliance. Per the Kuros investor release as summarized by search (the IR page returned HTTP 403 to direct fetch; the structure and term are mirrored by BoneZone and Medical Design & Development), Kuros keeps contracts, hospital partnerships and revenue recognition and may sell directly in non-contracted territories and non-spine markets. No financial terms were disclosed. No Globus Medical acquisition occurred (Globus's 2025 deal was Nevro).",
+      "category": "synthetic-ceramic",
+      "composition": "Biphasic calcium phosphate (65-70% beta-TCP / 30-35% hydroxyapatite) with a submicron, needle-shaped surface topography ('NeedleGrip'); Putty/Easypack add a resorbable polymer binder; Flex Matrix is a collagen-based strip",
+      "regulatory": {
+        "path": "510k",
+        "reference": "openFDA (FDA 510(k) database) MagnetOs entries: K161859 (MagnetOs, Xpand Biotechnology BV, 2017-02-24); K171563 (Putty, 2017-08-24); K181958 (Putty, 2018-12-06); K211201 (Easypack Putty, 2021-09-02); K213111 (Granules, 2022-01-10); K213959 (Flex Matrix, 2022-04-14); K230736 (Putty, 2023-12-20); K233245 (Flex Matrix, 2023-11-21); K233607 (Easypack Putty, 2023-12-15); K232347 (Granules, 2024-01-19); K240442 (Putty, 2024-04-01); K241212 (Easypack Putty, 2024-06-27); K243474 (MagnetOs MIS, 2025-05-23); applicant Kuros Biosciences B.V. (Xpand earlier). All product code MQV bone void fillers.",
+        "us_market_year": 2017,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure; posterolateral spine (extender and, for Granules/Putty, standalone); interbody use with a cleared cage (Easypack Putty, Granules, Flex Matrix). Not cleared as osteoinductive by FDA or TGA."
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Dutch multicenter intra-patient RCT (Stempels 2024, NCT03625544, n=100, 128 segments): 1-year CT fusion 79% on the MagnetOs Granules side vs 47% on the autograft side, noninferior and indicating superiority. Ongoing: Easypack Putty standalone vs DBM+local bone (NCT04679844, n=60), Flex Matrix + local bone vs Trinity ELITE (NCT05037968, n=100), Flex Matrix vs cellular allograft observational (NCT06415123), Putty vs local autograft up to 3 levels (NCT04679896, n=30, completed).",
+          "caveats": "Investigator-sponsored with Kuros as collaborator; the surprisingly low autograft-side fusion (47%) is a per-side CT metric that makes the delta look larger than clinical nonunion rates; the osteoinductive mechanism (M2 macrophage polarization) is a company claim supported by preclinical work and is not an FDA-cleared claim."
+        },
+        {
+          "application_id": "lumbar-tlif-plif",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Interbody clearance (2024) for Easypack Putty, Granules and Flex Matrix with cleared cages; no interbody clinical outcomes published.",
+          "caveats": "Interbody evidence gap; a single-arm LLIF study (NCT04128852) was withdrawn."
+        },
+        {
+          "application_id": "adult-deformity",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "The MaxA RCT enrolled deformity and up-to-6-level constructs (T10-S2), so part of the evidence applies to longer fusions; a 140-patient adolescent idiopathic scoliosis intra-patient RCT (NCT07512336, UMC Utrecht) starts 2026.",
+          "caveats": "Subgroup data not published separately."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:38881258",
+          "title": "Efficacy of biphasic calcium phosphate ceramic with a needle-shaped surface topography versus autograft in instrumented posterolateral spinal fusion",
+          "year": 2024,
+          "design": "RCT",
+          "n": 100,
+          "finding": "Per-side 1-year CT fusion 79% MagnetOs vs 47% autograft (difference 32 points, 95% CI 23-41); noninferiority met.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-plf",
+            "adult-deformity"
+          ]
+        },
+        {
+          "ref": "NCT05037968",
+          "title": "MagnetOs Flex Matrix mixed with local autograft vs Trinity Elite mixed with local autograft in up to four-level instrumented PLF",
+          "year": 2024,
+          "design": "RCT",
+          "n": 100,
+          "finding": "Recruiting; primary completion December 2026; first head-to-head of a ceramic vs a cellular allograft.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-plf"
+          ]
+        },
+        {
+          "ref": "NCT04679844",
+          "title": "MagnetOs Easypack Putty standalone vs DBX/Grafton mixed with local autograft in 1-2 level instrumented PLF",
+          "year": 2024,
+          "design": "RCT",
+          "n": 60,
+          "finding": "Recruiting; primary completion June 2027.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-plf"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Bundled in fusion MS-DRGs; no separate payment.",
+        "notes": "Kuros IR (Jan 7, 2025 release): five-year exclusive sales agency agreement under which Medtronic's spine division sells MagnetOs in mutually agreed US spine territories; Kuros supports Medtronic's sales force but keeps responsibility for contracts, hospital partnerships and revenue recognition, and continues to sell directly in non-contracted territories and outside spine; the deal converted an initial trial agreement. FY2025 (Mar 10, 2026 release): group revenue USD 146.1M (+72%), direct MagnetOs sales USD 143.9M (+71%), first net profit USD 2.6M, 2026 guidance at least 35% growth, 2028 target USD 300-330M; a 510(k) for the MagnetOs MIS Delivery System is cited without a date; the release states MagnetOs is not FDA cleared as an osteoinductive bone graft."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.orthoworld.com/kuros-biosciences-enters-agreement-with-medtronic/",
+        "https://www.medtechdive.com/news/medtronic-kuros-partnership-spine-fusion/736878/",
+        "https://www.manilatimes.net/2026/03/10/tmt-newswire/globenewswire/kuros-biosciences-delivers-72-year-over-year-sales-growth-reaching-usd-1461-million-for-2025/2296543",
+        "https://www.sec.gov/Archives/edgar/data/1237831/000162828026011209/gmed-20251231.htm",
+        "https://www.orthoworld.com/kuros-gains-fda-clearance-for-expanded-magnetos-putty-indications/",
+        "NCT03625544",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22MAGNETOS%22&sort=decision_date:desc&limit=30",
+        "https://bonezonepub.com/?p=51829",
+        "https://ir.kurosbio.com/news-releases/news-release-details/kuros-biosciences-usa-inc-announces-exclusive-strategic",
+        "https://www.biospace.com/press-releases/kuros-biosciences-delivers-72-year-over-year-sales-growth-reaching-usd-146-1-million-for-2025"
+      ],
+      "challenge": "Medtronic agreement terms and FY2025 revenue (USD 146.1M; MagnetOs 143.9M) read from Kuros IR pages 2026-10-22. 510(k) numbers confirmed in openFDA (K230736, K233607, K232347, K240442, K241212, K243474). The 'osteoinductive' language is marketing; FDA cleared MagnetOs as an osteoconductive bone void filler."
+    },
+    {
+      "id": "fibergraft",
+      "name": "FIBERGRAFT (BG Morsels, BG Matrix, Aeridyan Matrix)",
+      "company": "Prosidyan (promoted in US spine by DePuy Synthes)",
+      "ownership_history": "Prosidyan Inc. (Warren, NJ), private, holds the FIBERGRAFT trademarks (renewed 2024); DePuy Synthes has had an exclusive US agreement to promote FIBERGRAFT for spine since May 2018. 'Aeridyan' is Prosidyan's trade name for its boron-based bioactive glass, not a company.",
+      "category": "bioactive-glass",
+      "composition": "45S5 bioactive glass fibers/granules; Aeridyan Matrix adds boron-containing bioactive glass microspheres and bovine type I collagen",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K180080 (FIBERGRAFT BG Matrix), K182670 (FIBERGRAFT Aeridyan Matrix), K213803",
+        "us_market_year": 2014,
+        "on_label_indications": [
+          "Bone graft substitute / void filler for voids or gaps not intrinsic to the stability of the bony structure in the extremities, pelvis and posterolateral spine (verify form-specific wording)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "No published spine clinical data; DePuy Synthes launched a post-market controlled study of FIBERGRAFT Aeridyan Matrix vs DBM in 1-3 level instrumented PLF (NCT07059065, n=316, 10 US sites, started Aug 2025, primary completion 2029).",
+          "caveats": "Evidence will not exist until 2029; current use rests on bioactive glass class data."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT07059065",
+          "title": "Post-market controlled study of FIBERGRAFT Aeridyan Matrix vs DBM in lumbar posterolateral fusion",
+          "year": 2025,
+          "design": "prospective-cohort",
+          "n": 316,
+          "finding": "Recruiting; primary endpoint percent levels fused at 12 months.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-plf"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in fusion MS-DRGs.",
+        "notes": "Sold by DePuy Synthes spine reps under a promotion agreement; Prosidyan retains ownership and manufacturing."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://fda.innolitics.com/device/K182670",
+        "https://fda.innolitics.com/device/K180080",
+        "https://trademarks.justia.com/owners/prosidyan-inc-1656622",
+        "NCT07059065"
+      ]
+    },
+    {
+      "id": "novabone",
+      "name": "NovaBone Putty / Morsels (45S5 bioactive glass)",
+      "company": "NovaBone Products LLC (Isto Biologics since August 2026)",
+      "ownership_history": "NovaBone Products LLC (Alachua, FL), spun out of USBiomaterials; PerioGlas was the original dental product. Halma plc acquired NovaBone in January 2020 (initial consideration $97 million). Halma completed the sale of NovaBone Products LLC and subsidiaries to Isto Biologics on 2026-08-04 for $60 million on a cash and debt-free basis (Halma RNS; Isto announced the deal the same day). Isto Biologics is itself majority-owned by Keensight Capital since September 2025.",
+      "category": "bioactive-glass",
+      "composition": "45S5 calcium-phosphosilicate bioactive glass particulate in a polyethylene glycol/glycerin binder (putty) or as morsels",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K052494 (NovaBone resorbable graft, 2005-11-03); putty clearances K051617 (2006-03-06), K060728 (2006-05-01), K080009 (2008-05-06), K082672 (2008-12-09), K101860 (2010-09-01), K110368 (2011-04-14), K240404 (2024-03-05), K242299 (2024-09-25); MacroFORM K140946 (2014-08-22), K152071 (2015-08-26); Bioactive Strip K141207; IRM K163310 (2017-01-18); applicant NovaBone Products, LLC (USBiomaterials earlier)",
+        "us_market_year": 2005,
+        "on_label_indications": [
+          "Gently packed into bony voids or gaps of the skeletal system (extremities, spine and pelvis) not intrinsic to the stability of the bony structure (K052494)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "No NovaBone-specific spine RCT retrieved; bioactive glass posterolateral fusion literature exists (e.g., Finnish long-term BAG vs autograft studies) but was not retrieved in this sweep.",
+          "caveats": "Evidence gap for the brand."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Bundled in fusion MS-DRGs.",
+        "notes": "Sells direct and through private-label/OEM arrangements with device companies (several spine companies' bioactive glass putties are NovaBone-made; partners not verified here)."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://510k.innolitics.com/device/K052494",
+        "https://www.investegate.co.uk/announcement/rns/halma--hlma/disposal/9702404",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22NOVABONE%22&sort=decision_date:desc&limit=30",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22NOVABONE%22&sort=decision_date:desc&limit=30",
+        "https://www.istobiologics.com/"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "signafuse",
+      "name": "SIGNAFUSE Bioactive Bone Graft (Putty, Strip)",
+      "company": "Bioventus",
+      "ownership_history": "Bioventus (Durham, NC; spun out of Smith+Nephew's biologics unit in 2012, IPO 2021); SIGNAFUSE was developed internally (510(k) filed through subsidiary MRC-X). Bioventus divested its Advanced Rehabilitation (Bioness) business in 2024 but not its bone graft lines.",
+      "category": "bioactive-glass",
+      "composition": "Biphasic mineral granules (60% hydroxyapatite / 40% beta-TCP) plus 45S5 bioactive glass suspended in a porous type I collagen matrix; combined with autologous bone marrow aspirate before use",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K193513 (SIGNAFUSE Bioactive Bone Graft, cleared 2020-06-18, 21 CFR 888.3045, product code MQV); K233490 (SIGNAFUSE Bioactive Strip and Putty, 2023-12-05, expanded indications)",
+        "us_market_year": 2020,
+        "on_label_indications": [
+          "Verbatim K193513: a bone graft substitute intended for use in bony voids or gaps of the skeletal system not intrinsic to the stability of the bony structure; to be combined with autologous bone marrow aspirate and packed into osseous defects of the extremities, pelvis and posterolateral spine; when used in the posterolateral spine, to be used as an autograft extender"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "No peer-reviewed clinical outcome study retrieved; cleared on substantial equivalence to prior ceramic/bioactive glass fillers.",
+          "caveats": "Evidence gap."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Bundled in fusion MS-DRGs.",
+        "notes": "Bioventus Surgical Solutions sells through US direct teams plus a complementary indirect (distributor) team (10-K FY2024); the bag also includes OsteoAMP, PUREBONE and Reficio DBM."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K193513.pdf",
+        "https://www.regdatalab.com/510k/K233490",
+        "https://www.sec.gov/Archives/edgar/data/1665988/000162828025011831/bvs-20241231.htm"
+      ]
+    },
+    {
+      "id": "actifuse",
+      "name": "Actifuse (ABX, Flow, Shape, Mis System) silicate-substituted calcium phosphate",
+      "company": "Baxter",
+      "ownership_history": "Developed by ApaTech (UK); Baxter acquired ApaTech for $330 million in 2010 and continues to list Actifuse and Altapore under Baxter Advanced Surgery (no divestiture found through 2025).",
+      "category": "synthetic-ceramic",
+      "composition": "Silicate-substituted calcium phosphate (0.8 wt% silicon in hydroxyapatite), 80% porosity granules; Flow and Shape add a polymer/aqueous carrier",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K082575 (ApaTech, cleared 2008-11-25; spine including posterolateral fusion with stabilizing hardware); K090850 (dental, 2009); later Baxter clearances for Actifuse Flow/Shape and Altapore (2018)",
+        "us_market_year": 2005,
+        "on_label_indications": [
+          "Packed gently into bony voids or gaps of the skeletal system including the spine, and in posterolateral fusion procedures with appropriate stabilizing hardware (K082575)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Small Australian RCT (Licina 2015, n=19): Actifuse 9/9 vs Infuse 8/9 fused at 12 months with similar clinical outcomes.",
+          "caveats": "n=19, single center; underpowered to show noninferiority."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:26682097",
+          "title": "Comparison of silicate-substituted calcium phosphate (Actifuse) with rhBMP-2 (Infuse) in posterolateral instrumented lumbar fusion",
+          "year": 2015,
+          "design": "RCT",
+          "n": 19,
+          "finding": "Fusion 9/9 (SiCaP) vs 8/9 (rhBMP-2); comparable pain and QoL.",
+          "sponsor_funded": false,
+          "applications": [
+            "lumbar-plf"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in fusion MS-DRGs.",
+        "notes": "Baxter Advanced Surgery sells direct; Actifuse is a small line inside a large surgical-sealant portfolio and periodically appears on divestiture speculation lists, but no sale was found."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://510k.innolitics.com/device/K082575",
+        "https://advancedsurgery.baxter.com/products/bone-repair-technology",
+        "https://www.fiercebiotech.com/biotech/baxter-and-apatech-announce-definitive-agreement-baxter-to-acquire-all-outstanding-equity"
+      ]
+    },
+    {
+      "id": "trinity-elite",
+      "name": "Trinity ELITE / Trinity Evolution viable cellular bone allograft",
+      "company": "Orthofix (processed by MTF Biologics)",
+      "ownership_history": "Trinity Evolution launched 2009 (Orthofix/MTF); Trinity ELITE (moldable) 2014; Orthofix holds exclusive worldwide marketing rights and MTF processes, holds inventory and invoices customers, paying Orthofix a marketing service fee ($51.7 million in 2024, ~31% of Orthofix Biologics revenue). The May 2022 renewal runs through 2032. Orthofix and SeaSpine completed their all-stock merger effective 2023-01-05 (SeaSpine survives as an Orthofix subsidiary).",
+      "category": "cellular-allograft",
+      "composition": "Cryopreserved cancellous bone containing viable mesenchymal stem/osteoprogenitor cells, combined with demineralized cortical bone (ELITE adds demineralized fibers for moldability)",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "Regulated solely under Section 361 PHS Act / 21 CFR 1271 (no premarket review); homologous use as a bone void filler",
+        "us_market_year": 2009,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps that are not intrinsic to the stability of the bony structure (361 HCT/P homologous-use statement)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "cervical-acdf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "Prospective multicenter single-arm studies (NCT00951938): single-level ACDF with Trinity Evolution in a PEEK cage fused 93.5% at 12 months (Vanichkachorn 2016, n=31); two-level ACDF fused 89.4% per subject at 12 months (Peppers 2017, n=40).",
+          "caveats": "Orthofix-funded, single-arm with historical comparison; a 2021 systematic review found no comparative multicenter trial of any cellular bone matrix free of industry conflicts."
+        },
+        {
+          "application_id": "lumbar-tlif-plif",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Orthofix PLIF/TLIF cohort (NCT00965380, n=207) completed 2014; a 300-patient Trinity ELITE lumbar post-market study (NCT02969616) has unknown status. Trinity ELITE is the comparator in Kuros's MagnetOs Flex Matrix PLF RCT (NCT05037968).",
+          "caveats": "Lumbar results not retrieved as a publication in this sweep."
+        },
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Rat PLF model ranked Trinity ELITE highest among cellular matrices (8/15 fused vs 0/15 Osteocel Pro, 2/15 ViviGen; Lin 2020); human PLF comparative data pending NCT05037968.",
+          "caveats": "Animal data; payer policies (e.g., Blue Cross FEP 8.01.52) list Trinity, Osteocel and ViviGen as investigational for spine fusion."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:26849141",
+          "title": "Prospective 12-month outcome study of single-level ACDF using Trinity Evolution with comparison to historical controls",
+          "year": 2016,
+          "design": "prospective-cohort",
+          "n": 31,
+          "finding": "Fusion 78.6% at 6 months, 93.5% at 12 months; no graft-related serious AEs.",
+          "sponsor_funded": true,
+          "applications": [
+            "cervical-acdf"
+          ]
+        },
+        {
+          "ref": "PMID:28446192",
+          "title": "Prospective evaluation of Trinity Evolution in two-level ACDF",
+          "year": 2017,
+          "design": "prospective-cohort",
+          "n": 40,
+          "finding": "Per-subject fusion 89.4%, per-level 93.4% at 12 months; no revisions.",
+          "sponsor_funded": true,
+          "applications": [
+            "cervical-acdf"
+          ]
+        },
+        {
+          "ref": "PMID:34062506",
+          "title": "Existing clinical evidence on the use of cellular bone matrix grafts in spinal fusion: updated systematic review",
+          "year": 2021,
+          "design": "meta-analysis",
+          "n": 755,
+          "finding": "12 studies of 6 products (Osteocel n=354, Trinity n=114, ViviGen n=171, map3 n=41, VIA Graft n=75) all reported 87-100% fusion but were single-center/noncomparative; 7 disclosed industry COI; insufficient evidence to recommend CBMs over cheaper materials.",
+          "sponsor_funded": false,
+          "applications": [
+            "cervical-acdf",
+            "lumbar-plf",
+            "lumbar-tlif-plif"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Bundled in fusion MS-DRGs; +20930 bundled; many commercial payers deem cellular allografts for spine fusion investigational, which can trigger denials when itemized.",
+        "notes": "Orthofix books marketing-service fees rather than product revenue; MTF is single-source for Trinity and FiberFuse (10-K risk factor). Orthofix distributes biologics globally through distributors and sales representatives; the 2025 Trinity ELITE 'full market release' refers to a relaunch of updated formulations."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/884624/000095017025026066/ofix-20241231.htm",
+        "https://www.biospace.com/orthofix-and-mtf-biologics-expand-partnership-agreement",
+        "https://www.fepblue.org/-/media/PDFs/Medical-Policies/2026/January/Medical-Policies/Remove-and-Replace/80152-Orthopedic-Applications-of-Stem-Cell.pdf",
+        "https://onlinelibrary.wiley.com/doi/full/10.1002/jsp2.1084",
+        "NCT00951938",
+        "NCT00965380",
+        "NCT02969616",
+        "https://www.businesswire.com/news/home/20230104005893/en/5363709/Orthofix-and-SeaSpine-Announce-Completion-of-Merger-of-Equals-to-Create-a-Leading-Global-Spine-and-Orthopedics-Company"
+      ]
+    },
+    {
+      "id": "osteocel",
+      "name": "Osteocel Plus / Osteocel Pro cellular allograft",
+      "company": "Globus Medical",
+      "ownership_history": "Developed by Osiris Therapeutics (Osteocel, 2005); NuVasive acquired the Osteocel business from Osiris in 2008 and launched Osteocel Plus (2009) and Osteocel Pro; Globus Medical completed its merger with NuVasive on 2023-09-01. Globus's FY2025 10-K names Osteocel Plus and Osteocel Pro as its allograft cellular lines, processed in San Antonio, TX and Audubon, PA.",
+      "category": "cellular-allograft",
+      "composition": "Cancellous bone with retained viable mesenchymal stem and osteoprogenitor cells combined with demineralized bone matrix; Pro is a next-generation formulation with higher cell viability claims",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "Section 361 HCT/P (21 CFR 1271); Globus is FDA-registered and state-licensed as a tissue processor; No Osteocel 510(k)/PMA in openFDA (device_name OSTEOCEL: no matches); Globus FY2025 10-K treats Osteocel Plus and Pro as allograft tissue implants supplied by tissue banks (361 HCT/P status inferred)",
+        "us_market_year": 2005,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps that are not intrinsic to the stability of the bony structure (361 homologous use)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "cervical-acdf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "NuVasive-sponsored prospective multicenter cohort (Eastlack 2014, NCT00942045, n=182, 249 levels): 92% of single-level and 87% of combined 1-2 level segments showed solid bridging at 24 months; no revision for pseudarthrosis.",
+          "caveats": "Nonrandomized, sponsor-funded; largest cellular allograft dataset in ACDF."
+        },
+        {
+          "application_id": "lumbar-tlif-plif",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Retrospective MIS-TLIF series (Ammerman 2012, n=23): 91.3% fusion at 12 months; NuVasive TLIF (NCT00947583, n=19) and PLIF (NCT00941980, n=28) cohorts completed 2012.",
+          "caveats": "Small, single-surgeon."
+        },
+        {
+          "application_id": "lumbar-lateral",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "Osteocel Plus was NuVasive's house biologic for XLIF; a 104-patient multicenter XLIF cohort (NCT00948532) completed 2012 and a 51-patient ALIF cohort (NCT00948831).",
+          "caveats": "Publications for the XLIF/ALIF cohorts not retrieved here."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:25188591",
+          "title": "Osteocel Plus cellular allograft in ACDF: clinical and radiographic outcomes from a prospective multicenter study",
+          "year": 2014,
+          "design": "prospective-cohort",
+          "n": 182,
+          "finding": "Solid bridging in 92% of single-level and 87% of all levels at 24 months; 93% patient satisfaction.",
+          "sponsor_funded": true,
+          "applications": [
+            "cervical-acdf"
+          ]
+        },
+        {
+          "ref": "PMID:23182179",
+          "title": "The role of Osteocel Plus as a fusion substrate in minimally invasive instrumented TLIF",
+          "year": 2012,
+          "design": "retrospective",
+          "n": 23,
+          "finding": "91.3% of patients and 92.3% of levels fused by 12 months.",
+          "sponsor_funded": false,
+          "applications": [
+            "lumbar-tlif-plif"
+          ]
+        },
+        {
+          "ref": "NCT00948532",
+          "title": "Osteocel Plus in XLIF: evaluation of radiographic and patient outcomes",
+          "year": 2012,
+          "design": "prospective-cohort",
+          "n": 104,
+          "finding": "Completed 2012; 13 sites.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-lateral"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Bundled in fusion MS-DRGs; payer policies list Osteocel as investigational for spine fusion.",
+        "notes": "Globus sells primarily through an exclusive global sales force, with some US reps employed by exclusive independent distributors; Globus relies on several tissue banks for allograft supply and processes Osteocel in-house (former NuVasive facilities)."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1237831/000162828026011209/gmed-20251231.htm",
+        "NCT00942045",
+        "NCT00948532",
+        "https://www.investors.globusmedical.com/node/12061"
+      ]
+    },
+    {
+      "id": "vivigen",
+      "name": "ViviGen / ViviGen Formable / ViviGen MIS cellular bone matrix",
+      "company": "LifeNet Health (processor/owner); DePuy Synthes (exclusive worldwide marketer)",
+      "ownership_history": "Processed and owned by LifeNet Health (Virginia Beach, VA nonprofit tissue bank); LifeNet's own page calls it 'a 361 Human Cells, Tissues, and Cellular-based Product'. DePuy Synthes holds an exclusive worldwide agreement to market and promote ViviGen (launched late 2014, full US release January 2015) and ViviGen Formable (2017), per OrthoWorld/Becker's; J&J MedTech still lists 'ViviGen Cellular Bone Matrix' as a DePuy Synthes product in 2026 (the page carries no IFU or processor statement). Terms of the agreement are not public.",
+      "category": "cellular-allograft",
+      "composition": "Cryopreserved viable lineage-committed bone cells within corticocancellous bone matrix plus demineralized bone; Formable adds a moldable DBM fiber component",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "No premarket number; LifeNet states ViviGen is a 361 HCT/P (21 CFR 1271)",
+        "us_market_year": 2014,
+        "on_label_indications": [
+          "Bone void filler / repair or reconstruction of musculoskeletal defects (361 homologous use; voids not intrinsic to the stability of the bony structure)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "cervical-acdf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "Matched retrospective cohort (Zakko 2023, n=68): no difference in fusion or PROMs between ViviGen and DBM in 1-4 level ACDF; DePuy's 100-patient 2-3 level ACDF cohort (NCT02814825) completed 2021 (publication not retrieved).",
+          "caveats": "Only comparative data show equivalence to a much cheaper DBM."
+        },
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "Investigator-initiated RCT vs local autograft in PLF (NCT03733626, Corewell Health, n=46) completed 2024, results not yet published; an Ohio State single-arm PLF study (NCT04007094) was terminated; a Swiss RCT vs rhBMP-2 in ALIF/XLIF (NCT05238740, n=168) is recruiting to 2032.",
+          "caveats": "Rat PLF model: ViviGen 2/15 fused vs Trinity ELITE 8/15 (Lin 2020)."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:37381143",
+          "title": "ACDFs supplemented with cellular or noncellular allografts have similar radiographic fusion and clinical outcomes",
+          "year": 2023,
+          "design": "retrospective",
+          "n": 68,
+          "finding": "No difference in fusion at any time point; no revisions for pseudarthrosis in either group.",
+          "sponsor_funded": false,
+          "applications": [
+            "cervical-acdf"
+          ]
+        },
+        {
+          "ref": "NCT03733626",
+          "title": "Clinical outcomes with ViviGen in conjunction with posterolateral fusion for lumbar DDD (vs local autograft)",
+          "year": 2024,
+          "design": "RCT",
+          "n": 46,
+          "finding": "Completed June 2024; results pending.",
+          "sponsor_funded": false,
+          "applications": [
+            "lumbar-plf"
+          ]
+        },
+        {
+          "ref": "NCT05238740",
+          "title": "ALIF and XLIF with rhBMP-2 vs ViviGen: prospective randomised assessor-blind monocentric trial (Lindenhofgruppe)",
+          "year": 2022,
+          "design": "RCT",
+          "n": 168,
+          "finding": "Recruiting; primary completion 2032.",
+          "sponsor_funded": false,
+          "applications": [
+            "lumbar-alif",
+            "lumbar-lateral"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in fusion MS-DRGs; listed as investigational by several payers.",
+        "notes": "LifeNet Health processes and owns the tissue; DePuy Synthes markets through its direct spine force. LifeNet also sells its own branded grafts (e.g., Optium DBM), so the OEM supplier competes with its distributor in some accounts. LifeNet (processor, also sells its own Optium DBM) and DePuy Synthes (exclusive marketer) are separate companies; Optium is not part of the DePuy channel."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.beckersspine.com/spinal-tech/depuy-synthes-and-lifenet-health-collaborate-to-create-vivigen-formable-cellular-bone-matrix-6-details/",
+        "https://www.jnjmedtech.com/en-US/product/vivigen-cellular-bone-matrix",
+        "NCT02814825",
+        "NCT03733626",
+        "https://www.lifenethealth.org/vivigen"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "osteoamp",
+      "name": "OSTEOAMP / OSTEOAMP SELECT Fibers / OSTEOAMP Flowable",
+      "company": "Bioventus",
+      "ownership_history": "Developed by Advanced Biologics LLC; Bioventus acquired the OsteoAMP product line, IP and commercial business in October 2014. Still a Bioventus Surgical Solutions product in the FY2024 10-K (no divestiture).",
+      "category": "cellular-allograft",
+      "composition": "Allograft bone processed to retain endogenous growth factors (BMP-2, BMP-7, VEGF, TGF-beta per company claims) in fibers, putty, sponge, granule and flowable (cannula-delivered, 2024) formats; donor bone from AATB-accredited, FDA-registered US tissue banks",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "No 510(k) for OsteoAMP in openFDA (device_name OSTEOAMP: no matches). The only Bioventus 510(k) tied to it is K233368 'Allograft Delivery Device (OFAC-C)' (2024-06-25, product code FMF), which clears the cannula for delivering hydrated allograft, not the allograft itself. Bioventus FY2025 10-K: allograft from AATB-certified, FDA-registered US tissue banks; sold only in the US.",
+        "us_market_year": 2011,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure (361 homologous use)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Bioventus registered an intra-patient RCT of OSTEOAMP SELECT Fibers vs Infuse in lumbar fusion (NCT05405374, n=101, 9 sites, started 2022, status unknown as of this review); no peer-reviewed spine fusion outcome paper retrieved.",
+          "caveats": "Evidence gap; the Infuse-comparator design, if completed, would be the strongest cellular/allograft dataset."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT05405374",
+          "title": "OSTEOAMP SELECT Fibers vs Infuse as autograft substitute in lumbar fusion: prospective randomized intra-patient controlled multicenter investigation",
+          "year": 2022,
+          "design": "RCT",
+          "n": 101,
+          "finding": "Status unknown; primary completion was planned October 2024.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-plf"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Bundled in fusion MS-DRGs.",
+        "notes": "Bioventus direct Surgical Solutions reps plus an indirect team; two issued US patents expire 2029. K233368 (2024-06-25) clears only the cannula-based Allograft Delivery Device used with OsteoAMP Flowable; do not describe OsteoAMP as 510(k)-cleared."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.bioventus.com/de/bioventus-acquires-osteoamp-from-advanced-biologics/",
+        "https://www.sec.gov/Archives/edgar/data/1665988/000162828025011831/bvs-20241231.htm",
+        "NCT05405374",
+        "https://fda.innolitics.com/device/K233368",
+        "https://www.sec.gov/Archives/edgar/data/1665988/000166598826000011/bvs-20251231.htm",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22BIOVENTUS%22&sort=decision_date:desc&limit=15"
+      ],
+      "challenge": "OsteoAMP itself is a 361 HCT/P with no premarket review; Bioventus's 2024 'FDA approval' of the cannula delivery system is the K233368 510(k) for the delivery device only."
+    },
+    {
+      "id": "bio4",
+      "name": "BIO4 viable bone matrix",
+      "company": "Stryker (manufactured by Osiris Therapeutics, a Smith+Nephew company)",
+      "ownership_history": "Osiris Therapeutics developed the viable bone matrix (marketed earlier as OvationOS). Osiris announced an exclusive worldwide commercialization agreement with Stryker in December 2014 (Osiris manufactures and does research; Stryker markets); Stryker launched BIO4 at AAOS in March 2015. Smith+Nephew completed its acquisition of Osiris on 2019-04-17, so a Stryker competitor's subsidiary manufactures BIO4. Stryker's US spine and trauma/foot-and-ankle BIO4 pages, checked 2026-10-22, still state 'BIO4 is manufactured by Osiris Therapeutics, Inc.'; Smith+Nephew's FY2025 Form 20-F does not discuss BIO4 or the Stryker agreement, and the agreement's current term and renewal terms are not public.",
+      "category": "cellular-allograft",
+      "composition": "Viable bone matrix containing endogenous bone-forming cells, cancellous bone and demineralized bone; 1-10 cc sizes",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "Section 361 HCT/P (21 CFR 1271)",
+        "us_market_year": 2015,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure (361 homologous use)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "cervical-acdf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Single-center 1-2 level ACDF study with BIO4 in an allograft spacer (NCT03077204, Seton Healthcare, n=20) completed 2020; publication not retrieved. A 2021 systematic review listed one ongoing BIO4 trial and no published BIO4 spine series.",
+          "caveats": "Weakest published evidence among the major cellular allografts."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT03077204",
+          "title": "Clinical and radiographic outcomes of BIO4 bone matrix in 1 or 2-level ACDF",
+          "year": 2020,
+          "design": "prospective-cohort",
+          "n": 20,
+          "finding": "Completed January 2020; no results posted.",
+          "sponsor_funded": false,
+          "applications": [
+            "cervical-acdf"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in fusion MS-DRGs.",
+        "notes": "Stryker direct spine and trauma reps; supply dependency on a Smith+Nephew subsidiary is a structural oddity worth asking about in any Stryker biologics conversation. Confirmed 2026-10-22: Stryker still lists BIO4 on its US spine and trauma pages with Osiris named as manufacturer; terms of the Stryker-Osiris agreement after the Smith+Nephew deal are not in any public filing found."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.stryker.com/us/en/spine/products/bio4.html",
+        "https://www.biospace.com/osiris-therapeutics-inc-enters-exclusive-partnership-financial-terms-undisclosed",
+        "NCT03077204",
+        "https://www.stryker.com/us/en/trauma-and-extremities/products/bio4.html",
+        "https://www.sec.gov/Archives/edgar/data/845982/000165495419004505/a5231w.htm",
+        "https://www.sec.gov/Archives/edgar/data/845982/000110465926028258/snn-20251231x20f.htm",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "challenge": "BIO4 is listed as a current Stryker bone grafting product on stryker.com (2026-10-22), which supports the Stryker-Osiris arrangement continuing; the contract itself was not seen.",
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "map3",
+      "name": "map3 Cellular Allogeneic Bone Graft",
+      "company": "RTI Surgical (map3 discontinued 2018)",
+      "ownership_history": "Launched by RTI Surgical in 2014 using multipotent adult progenitor cell (MAPC) technology licensed from Athersys. FDA issued RTI a Warning Letter on 2017-11-08 (OBPO-1 18-01) holding that map3 could not be regulated solely as a 361 HCT/P. RTI ceased manufacturing and distributing map3 and incinerated its remaining inventory on 2018-12-19 under FDA observation; FDA's closeout letter is dated 2019-04-12 (MARCS-CMS 525318). RTI's spine business became Surgalign in 2020 (Surgalign went bankrupt in 2023; Xtant bought its assets), and RTI Surgical's OEM business was sold to Montagu Private Equity (announced 2020). Neither Xtant's FY2025 10-K nor RTI's current site lists map3: the product has been off the market since 2018.",
+      "category": "cellular-allograft",
+      "composition": "Cortical cancellous allograft chips, demineralized bone and cryopreserved multipotent adult progenitor cells (MAPC)",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "Section 361 HCT/P as claimed by RTI; FDA Warning Letter 2017-11-08 disputed this (map3 also subject to drug and biological product requirements); closeout letter 2019-04-12 after RTI stopped manufacture and distribution",
+        "us_market_year": 2013,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure (361 homologous use)"
+        ]
+      },
+      "status": "withdrawn",
+      "applications": [
+        {
+          "application_id": "lumbar-alif",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "One retrospective ALIF series (n=41) reported fusion equivalent to rhBMP-2 at 1 year (cited in the 2021 CBM systematic review); RTI's 30-patient ALIF/LLIF cohort (NCT02628210) completed 2020.",
+          "caveats": "Product may no longer be sold; a 2014 foot/ankle study was terminated after one patient."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT02628210",
+          "title": "Interbody spacers with map3 cellular allogeneic bone graft in ALIF or LLIF",
+          "year": 2020,
+          "design": "prospective-cohort",
+          "n": 30,
+          "finding": "Completed June 2020; no results posted.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-alif",
+            "lumbar-lateral"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "Bundled in fusion MS-DRGs.",
+        "notes": "Illustrates the OEM-tissue-bank problem: when the distributor (Surgalign) failed, the brand effectively disappeared even though the processor (RTI) survived."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1453593/000149315225009391/form10-k.htm",
+        "https://www.fiercebiotech.com/medtech/surgalign-sells-digital-health-hardware-assets-59m-bankruptcy-auction",
+        "PMID:34062506",
+        "NCT02628210",
+        "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/rti-surgical-inc-dba-rti-biologics-inc-525318-04122019",
+        "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/rti-surgical-inc-525318-11082017"
+      ],
+      "challenge": "Discontinued 2018 (not merely absent from Xtant's list): FDA closeout letter 2019-04-12."
+    },
+    {
+      "id": "osteovive-plus",
+      "name": "OsteoVive Plus viable bone allograft",
+      "company": "Xtant Medical",
+      "ownership_history": "Xtant Medical (Belgrade, MT; formerly Bacterin); Xtant acquired Surgalign's biologics assets (2023) and the nanOss production line from RTI, and sells OsteoSponge, OsteoSelect DBM, 3Demin fibers and OsteoVive Plus.",
+      "category": "cellular-allograft",
+      "composition": "Viable cell-containing cancellous bone with demineralized bone (Xtant describes OsteoVive Plus as a viable bone allograft)",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "No 510(k) for OsteoVive in openFDA (device_name OSTEOVIVE: no matches). Xtant FY2025 10-K (filed 2026-03-31) describes OsteoVive Plus as a viable bone allograft introduced in 2024 and carries a disease-transmission risk factor for it; 361 HCT/P status is inferred from the 10-K's statement that Xtant's products are HCT/Ps, 510(k)-cleared, or both",
+        "us_market_year": 2017,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure (361 homologous use)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "No clinical study retrieved.",
+          "caveats": "Evidence gap."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Bundled in fusion MS-DRGs; Xtant holds biologics contracts with Vizient, Premier and HealthTrust.",
+        "notes": "Over 670 independent commissioned sales agents and stocking distributors (10-K FY2024); growing private-label/OEM business, including supplying SimpliGraft and SimpliMax under distributor brands. Representative of the small-cap tissue-based spine biologics tier."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1453593/000149315225009391/form10-k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1453593/000149315226013792/form10-k.htm"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "ossigraft-prime",
+      "name": "OssiGraft Prime viable bone matrix",
+      "company": "Ossium Health",
+      "ownership_history": "Ossium Health (Indianapolis/San Francisco), private; raised a $52 million Series C; core business is organ-donor-derived bone marrow for transplant. OssiGraft distribution agreements with Extremity Medical (US) and Enovis.",
+      "category": "cellular-allograft",
+      "composition": "Vertebral-body-derived viable bone matrix, about 80% cancellous, from organ donors averaging 35 years; first case was an ankle fusion (July 2024); won a 2024 Orthopedics This Week Spine Technology Award",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "OssiGraft IFU (OHC-IFU-0002 Rev 05, hosted by Enovis): OssiGraft is an HCT/P that meets the 21 CFR 1271.10 criteria for regulation solely under section 361; no 510(k)/PMA/De Novo found",
+        "us_market_year": 2024,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure (361 homologous use, presumed)"
+        ]
+      },
+      "status": "emerging",
+      "applications": [
+        {
+          "application_id": "lumbar-plf",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "No clinical data; marketing rests on younger donor age and vertebral-body sourcing (a 2018 lab study found vertebral-body marrow MSCs at least as osteogenic as iliac crest MSCs, PMID 29795650, unrelated to Ossium).",
+          "caveats": "Company claims only."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Bundled in fusion MS-DRGs.",
+        "notes": "Distribution-partner model (Extremity Medical, Enovis); a new entrant competing on donor sourcing rather than clinical data."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.biospace.com/press-releases/ossium-healths-ossigraft-prime-wins-spine-technology-award-presented-by-orthopedics-this-week",
+        "https://www.odtmag.com/breaking-news/ossium-health-extremity-medical-team-up-on-ossigraft-bone-matrix-distribution/",
+        "https://enovis.com/sites/default/files/IFU/OHC-IFU-0002%20REV.%2005%20OssiGraft%20Viable%20Bone%20Matrix%20%281%29.pdf",
+        "https://www.businesswire.com/news/home/20240131369656/en/Ossium-Health-and-Extremity-Medical-Create-Strategic-Partnership-for-Nationwide-Distribution-of-OssiGraft-Viable-Bone-Matrix"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "structural-allograft-acdf",
+      "name": "Structural cortical allograft rings and blocks for ACDF (e.g., Cornerstone-SR, AVS/ Bio AVS, MTF and AlloSource cortical rings)",
+      "company": "Multiple (MTF Biologics, AlloSource, LifeNet Health, RTI/Xtant; branded by Medtronic, Stryker, DePuy Synthes, Globus and others)",
+      "ownership_history": "Commodity tissue-bank product supplied under private label to most spine companies; Medtronic's Cornerstone-SR ring was the carrier in its cervical rhBMP-2 trials.",
+      "category": "structural-allograft",
+      "composition": "Machined cortical (fibula or femoral ring) or corticocancellous allograft spacers with a central window for graft; often paired with a filler (local bone, DBM, i-FACTOR, cellular allograft)",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "Section 361 HCT/P (minimally manipulated structural bone)",
+        "us_market_year": 1990,
+        "on_label_indications": [
+          "Structural bone graft for cervical interbody fusion (homologous use); PEEK and titanium spacers are devices, not biologics"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "cervical-acdf",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Meta-analysis of prospective plated ACDF studies: pseudarthrosis 4.8% with allograft vs 0.9% with autograft (Shriver 2015); 2024 meta-analysis of 34 studies/3,451 segments found structural allograft fusion rates not different from cages at 3-12 months but more hardware complications (Li 2024).",
+          "caveats": "Comparisons are across studies, not head-to-head RCTs; dysphagia rates do not differ between allograft and autograft (Shriver 2017)."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:25982430",
+          "title": "Pseudoarthrosis rates in anterior cervical discectomy and fusion: a meta-analysis",
+          "year": 2015,
+          "design": "meta-analysis",
+          "n": 0,
+          "finding": "Overall pseudarthrosis 2.6%; autograft 0.9% vs allograft 4.8%.",
+          "sponsor_funded": false,
+          "applications": [
+            "cervical-acdf"
+          ]
+        },
+        {
+          "ref": "PMID:38319436",
+          "title": "Fusion rates at different times of cortical iliac crest autograft or allograft compared with cages after ACDF: a meta-analysis",
+          "year": 2024,
+          "design": "meta-analysis",
+          "n": 2398,
+          "finding": "Structural allograft vs cage: no significant fusion difference at 3, 6 or 12 months; higher hardware complications with allograft.",
+          "sponsor_funded": false,
+          "applications": [
+            "cervical-acdf"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Inpatient bundled in MS-DRGs 471-473; physician add-on +20931 (structural allograft) is separately reportable and, unlike +20930, is not a Medicare 0-RVU bundled code (confirm current status indicator).",
+        "notes": "Low-margin commodity; the strategic value is in the filler sold with the ring (i-FACTOR, cellular allografts). MTF, AlloSource and LifeNet all private-label rings for device companies."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "PMID:25982430",
+        "PMID:38319436",
+        "PMID:28451514",
+        "https://www.aapc.com/codes/coding-newsletters/my-part-b-coding-alert/part-b-coding-coach-follow-these-steps-to-code-spinal-bone-grafts-148242-article"
+      ]
+    },
+    {
+      "id": "cortoss",
+      "name": "Cortoss Bone Augmentation Material",
+      "company": "Stryker",
+      "ownership_history": "Orthovita developed Cortoss (CE mark 2001; FDA 510(k) clearance June 2009 after an IDE RCT); Stryker completed its acquisition of Orthovita on 2011-06-28.",
+      "category": "bioactive-glass",
+      "composition": "Injectable bis-GMA/bis-EMA resin composite reinforced with bioactive glass-ceramic particles (about 70% by weight); self-setting, nonresorbable, lower exotherm and stiffness closer to cortical bone than PMMA. PMMA itself is not a biologic.",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K080108 (Cortoss Bone Augmentation Material; Orthovita; decision 2009-06-05; product code NDN, vertebroplasty cement). FDA recall Z-2101-2021 (Class 2, 10 cc cartridge, temperature excursion, terminated 2022-04-15) cites K080108 and shows US distribution in 2021.",
+        "us_market_year": 2009,
+        "on_label_indications": [
+          "Augmentation of vertebral compression fractures via vertebroplasty (verify current Stryker IFU wording, including screw augmentation)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "vcf-augmentation",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "FDA-IDE RCT (Bae 2012, n=256, 2:1 vs PMMA, 21 US sites): noninferior; better pain at 3 months and function at 24 months; serious device-related AEs 4.3% in both arms; subsequent fractures 27.8% vs 31.9% (Gilula 2012).",
+          "caveats": "Orthovita-funded; modest clinical differences; Cortoss is bioactive but nonresorbable, so it is a 'biologic' only in the sense of surface bioactivity."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:21738093",
+          "title": "A prospective randomized FDA-IDE trial comparing Cortoss with PMMA for vertebroplasty: 24-month follow-up",
+          "year": 2012,
+          "design": "RCT",
+          "n": 256,
+          "finding": "Noninferiority met; pain relief at 3 months and function at 24 months favored Cortoss; serious device-related AEs 4.3% each arm.",
+          "sponsor_funded": true,
+          "applications": [
+            "vcf-augmentation"
+          ]
+        },
+        {
+          "ref": "PMID:22743641",
+          "title": "Subsequent fractures post-vertebral augmentation: analysis of a prospective randomized trial",
+          "year": 2012,
+          "design": "RCT",
+          "n": 256,
+          "finding": "New fractures 27.8% Cortoss vs 31.9% PMMA; adjacent fractures 10.3% vs 18.2% in first-fracture subgroup.",
+          "sponsor_funded": true,
+          "applications": [
+            "vcf-augmentation"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Inpatient VCF augmentation bundled in MS-DRGs 518-520 (back and neck procedures except spinal fusion); outpatient kyphoplasty/vertebroplasty paid under APCs with the material packaged; no separate HCPCS for the fill material.",
+        "notes": "Stryker Interventional Spine; niche vs Stryker's own PMMA products."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://s22.q4cdn.com/857738142/files/doc_news/archive/f821e452-0dc1-4a93-827c-a82e0140509d.pdf",
+        "PMID:21738093",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22CORTOSS%22&sort=decision_date:desc&limit=10",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=188151",
+        "https://www.stryker.com/hk/en/interventional-spine/products/cortoss-bone-augmentation-material.html",
+        "https://www.stryker.com/us/en/search.html?q=Cortoss"
+      ],
+      "unverified": true,
+      "challenge": "Cortoss has no dedicated stryker.com product page as of 2026-10-22 and appears only in VCF brochures; treat current US availability as unconfirmed. K number and IFU still not retrieved.",
+      "catalog_status_2026": "Not on Stryker's bone grafting catalog page; a stryker.com site search for 'Cortoss' (2026-10-22) returns only a 'VCF Solutions Brochure', a '2019 IVS Portfolio Notebook', a VCF competitive comparison guide and an orthobiologics patents page, with no product page (the guessed /spine/products/cortoss.html URL is a 404)."
+    },
+    {
+      "id": "kyphos-fs",
+      "name": "KyphOs FS calcium phosphate bone cement (and other resorbable CPCs for vertebral augmentation)",
+      "company": "Medtronic (Kyphon)",
+      "ownership_history": "Kyphon developed KyphOs FS for use with its balloon kyphoplasty system; Medtronic acquired Kyphon in 2007.",
+      "category": "calcium-phosphate-cement",
+      "composition": "Injectable, self-setting magnesium-substituted calcium phosphate cement that converts to a resorbable apatite; fast-setting 'FS' formulation for use after balloon tamp cavity creation",
+      "regulatory": {
+        "path": "none-unapproved",
+        "reference": "No 510(k)/PMA record under 'KyphOs FS' in openFDA (device_name KYPHOS: no matches; Kyphon/Medtronic Kyphon bone-cement 510(k)s are PMMA cements and tamps: K041584, K163032, K171938, K180700, K191148). Australia's TGA lists the Medtronic KyphOs FS calcium phosphate substitute (model C02B) as cancelled.",
+        "us_market_year": 2004,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure; use with balloon kyphoplasty to fill the cavity in vertebral compression fractures (verify current labeling)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "vcf-augmentation",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "RCT of CPC vs PMMA in balloon kyphoplasty (Blattert 2009, n=56 patients/60 fractures): equivalent pain relief, but 9 radiographic losses of correction from cement failure in the CPC arm (burst-type fractures) vs none with PMMA; authors did not recommend routine CPC kyphoplasty. Small Korean series showed better Cobb correction but weaker support with CaP.",
+          "caveats": "The Blattert RCT tested a CPC (brand not stated in abstract); the mechanical weakness of resorbable cements in burst morphology is the class-level caution. PMMA is not a biologic and remains the standard."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:19139662",
+          "title": "Suitability of a calcium phosphate cement in osteoporotic vertebral body fracture augmentation: RCT of balloon kyphoplasty, CaP vs PMMA",
+          "year": 2009,
+          "design": "RCT",
+          "n": 56,
+          "finding": "Pain relief similar; 9/30 CaP vertebrae lost correction (cement failure in burst fractures) vs 0/30 PMMA; 2 PMMA embolisms.",
+          "sponsor_funded": false,
+          "applications": [
+            "vcf-augmentation"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Packaged into kyphoplasty payment (inpatient MS-DRG or outpatient APC); no separate payment for the cement.",
+        "notes": "Medtronic Interventional Spine; CPC is a small share of augmentation volume, which is dominated by PMMA kyphoplasty (57,646 Medicare kyphoplasties in 2015)."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "PMID:19139662",
+        "PMID:30562331",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3175823",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22KYPHOS%22",
+        "https://news.medtronic.com/2010-06-21-Medtronic-Launches-Bone-Cement-with-Hydroxyapatite-in-the-United-States",
+        "https://tga.gov.au/node/171633"
+      ],
+      "unverified": true,
+      "challenge": "Could not confirm any US clearance or current availability. Tried openFDA name and applicant searches (Kyphon, Medtronic, 'calcium phosphate'), Medtronic news (2010 US launch was of KYPHON ActivOs 10 hydroxyapatite-PMMA cement, not KyphOs FS) and web search; the only hard record is the TGA cancellation. Treat as ex-US/unverified until Medtronic confirms."
+    },
+    {
+      "id": "ldgraft",
+      "name": "LDGraft (low-dose encapsulated rhBMP-2)",
+      "company": "Locate Bio",
+      "ownership_history": "Locate Bio Ltd (Nottingham, UK), private; raised GBP 9.2 million in April 2024 to fund the RESTORE study; US subsidiary Locate Bio Pty/Inc.",
+      "category": "rhBMP",
+      "composition": "rhBMP-2 pre-encapsulated in a resorbable polymer (dose-shielding microparticles) within a bone graft substitute carrier, designed for sustained 28-day release at doses well below Infuse",
+      "regulatory": {
+        "path": "IND-only",
+        "reference": "Breakthrough Device designation May 2023 (single-level ALIF, L3-S1, DDD); FDA IDE approval announced 2025-09-08. ClinicalTrials.gov has two LDGraft records: NCT06462729 (Locate Bio Pty Ltd; Phase 1/2, ALIF, n=40 estimated; IDE-flagged unapproved device; recruiting since 2024-11-12; sites in Newcastle, Australia and Fort Wayne, Nashville and Pinehurst, US; last update 2026-08-26) and NCT07858643 (Locate Bio Ltd; 'AMBITION', n=25, sites in Tbilisi, Georgia; started 2026-04-08). NCT06462729 is the registration that matches the Australia-plus-US IDE study.",
+        "us_market_year": 0,
+        "on_label_indications": []
+      },
+      "status": "investigational",
+      "applications": [
+        {
+          "application_id": "lumbar-alif",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "RESTORE (NCT06462729): first-in-human, randomized 3:3:2 dose-finding, single-blind, two LDGraft doses vs 100% allograft in single-level ALIF (L3-S1) with cage and plate; n=40; sites in Australia (Newcastle) and US (Fort Wayne, Pinehurst, Nashville); started November 2024, primary completion December 2027. Preclinical: 120-sheep study reported all three doses equivalent to ICBG at 6 months.",
+          "caveats": "No human efficacy data; the brief's description of a TLIF/PLF trial was wrong, the trial is ALIF only."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT06462729",
+          "title": "A randomized study of LDGraft in single-level ALIF (RESTORE)",
+          "year": 2024,
+          "design": "RCT",
+          "n": 40,
+          "finding": "Recruiting; primary endpoints CT fusion, no secondary surgery, ODI 15-point improvement, neuro status and no device-related SAE at 12 and 24 months.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-alif"
+          ]
+        }
+      ],
+      "pipeline": {
+        "stage": "phase-1",
+        "trials": [
+          "NCT06462729",
+          "NCT07858643"
+        ],
+        "expected_milestone": "RESTORE primary completion December 2027; pivotal IDE would follow (company statements)"
+      },
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "Not applicable; would be bundled like Infuse if approved.",
+        "notes": "Positioned as 'Infuse efficacy at a fraction of the dose' to neutralize the YODA safety narrative; small company likely to need a commercial partner."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.businesswire.com/news/home/20240428231515/en/Locate-Bio-Raises-%C2%A39.2-Million-to-Progress-LDGraft-Clinical-Study-for-Anterior-Lumbar-Interbody-Fusion",
+        "https://locatebio.com/us/",
+        "NCT06462729",
+        "https://clinicaltrials.gov/study/NCT06462729",
+        "https://clinicaltrials.gov/study/NCT07858643"
+      ],
+      "challenge": "Two separate registrations exist; the Australia-plus-US IDE study is NCT06462729. The sponsor's 'RESTORE' name was not seen on either record."
+    },
+    {
+      "id": "nb1",
+      "name": "NB1 (rhNELL-1 with DBM)",
+      "company": "Bone Biologics",
+      "ownership_history": "Bone Biologics Corp (NASDAQ: BBLG), Burlington, MA; exclusive worldwide license from UCLA for NELL-1 in spine fusion, trauma and osteoporosis; historically MTF Biologics was a major shareholder and the DBM carrier partner (not confirmed in sources fetched here).",
+      "category": "other",
+      "composition": "Recombinant human NEL-like molecule-1 (NELL-1) osteoinductive protein combined with demineralized bone matrix; proposed as a more bone-specific signal than BMP-2 with less ectopic bone and inflammation",
+      "regulatory": {
+        "path": "IND-only",
+        "reference": "No US IDE yet; pilot study design reviewed by FDA Division of Orthopedic Devices in a Pre-Submission; pilot run under Australian HREC approval",
+        "us_market_year": 0,
+        "on_label_indications": []
+      },
+      "status": "investigational",
+      "applications": [
+        {
+          "application_id": "lumbar-tlif-plif",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "NCT03810573: multicenter randomized pilot in up to 30 adults with single-level DDD (L2-S1, up to Grade 1 listhesis) undergoing TLIF in Australia; first two patients treated June 2024; expanded to six Australian sites September 2026 with enrollment targeted to finish by end of 2026; primary endpoints fusion at 12 and 24 months and ODI change; 12-month data expected Q4 2027. Only preclinical efficacy data exist.",
+          "caveats": "Comparator not specified in public materials; company reports cash runway only through Q2 2027."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT03810573",
+          "title": "Multi-center, prospective, parallel group, randomized pilot study of NB1 bone graft device in DDD patients undergoing TLIF",
+          "year": 2024,
+          "design": "RCT",
+          "n": 30,
+          "finding": "Recruiting (Australia); primary completion December 2026.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-tlif-plif"
+          ]
+        }
+      ],
+      "pipeline": {
+        "stage": "phase-1",
+        "trials": [
+          "NCT03810573"
+        ],
+        "expected_milestone": "Pilot 12-month data Q4 2027, then US IDE pivotal and PMA (company statements, Sept 2026)"
+      },
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "Not applicable.",
+        "notes": "Micro-cap with a single asset; the 'hard healers' (smokers, diabetics, obese) positioning overlaps directly with PearlMatrix's high-risk subgroup claims."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.biospace.com/first-two-patients-treated-in-pilot-clinical-study-with-bone-biologics-nb1-bone-graft-device-in-spine-fusion",
+        "https://www.orthoworld.com/bone-biologics-targets-the-hard-healers-in-spinal-fusion/",
+        "https://www.sec.gov/Archives/edgar/data/1419554/000149315224008412/ex99-1.htm",
+        "NCT03810573"
+      ]
+    },
+    {
+      "id": "osteogrow",
+      "name": "Osteogrow (rhBMP6 in autologous blood coagulum) / Osteogrow-C",
+      "company": "Genera Research",
+      "ownership_history": "Genera Research Ltd (Zagreb, Croatia; Slobodan Vukicevic), EU FP7-funded OSTEOGROW project; a related rhBMP6 product (AGA111, Angitia Biopharmaceuticals) was tested in a US/China TLIF RCT, relationship to Genera unverified.",
+      "category": "other",
+      "composition": "Recombinant human BMP-6 delivered in an autologous blood coagulum carrier, mixed with cancellous allograft (Osteogrow-A) or synthetic calcium phosphate ceramics (Osteogrow-C)",
+      "regulatory": {
+        "path": "IND-only",
+        "reference": "EU clinical trials only: EudraCT 2017-000860-14 (Osteogrow-A, PLIF, 143 randomized in Austria, ended 13 Mar 2023, results posted 11 Feb 2026) and a TLIF trial; no US IDE/IND found",
+        "us_market_year": 0,
+        "on_label_indications": []
+      },
+      "status": "investigational",
+      "applications": [
+        {
+          "application_id": "lumbar-tlif-plif",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "II",
+          "evidence_summary": "Osteogrow-A phase II (EudraCT 2017-000860-14): randomized, double-blind, n=143 at three Austrian centers (62 ICBG standard of care, 61 high-dose 2 mg rhBMP6, 20 low-dose 1 mg) in PLIF for L3-S1 DDD; 20-month composite 'overall clinical success' was very low in every arm, bilateral bridging was observed in only 4-6% of subjects in any arm, and the sponsor concluded the success definition was overly strict; fewer serious AEs with Osteogrow (31.1% HD vs 54.1% SoC); results posted February 2026. A separate 63-patient placebo-controlled rhBMP6 (AGA111) TLIF RCT was presented at AAOS 2025. Earlier Genera trials were in distal radius fracture and high tibial osteotomy.",
+          "caveats": "The posted PLIF fusion numbers are implausibly low for any arm and should be read from the EU register directly before being quoted; no peer-reviewed spine publication retrieved."
+        },
+        {
+          "application_id": "lumbar-plf",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "Preclinical only: rabbit and sheep posterolateral fusion with rhBMP6/ABC plus ceramics (PMID 38086987).",
+          "caveats": "No human PLF data."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "EudraCT:2017-000860-14",
+          "title": "Patient- and evaluator-blinded non-inferiority study of Osteogrow in adults undergoing PLIF for degenerative disc disease (Osteogrow-A)",
+          "year": 2026,
+          "design": "RCT",
+          "n": 143,
+          "finding": "Non-inferiority claimed on a composite endpoint with very low success in all arms; fewer SAEs with rhBMP6; trial ended March 2023, results posted February 2026.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-tlif-plif"
+          ]
+        },
+        {
+          "ref": "PMID:38086987",
+          "title": "Calcium phosphate ceramics combined with rhBMP6 within autologous blood coagulum promote posterolateral lumbar fusion in sheep",
+          "year": 2023,
+          "design": "preclinical",
+          "n": 0,
+          "finding": "Osteogrow-C produced radiographic fusion with complete integration to transverse processes in sheep.",
+          "sponsor_funded": true,
+          "applications": [
+            "lumbar-plf"
+          ]
+        }
+      ],
+      "pipeline": {
+        "stage": "phase-2",
+        "trials": [
+          "EudraCT:2017-000860-14"
+        ],
+        "expected_milestone": "No US filing announced; next step unclear (company website undated)"
+      },
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "Not applicable.",
+        "notes": "Academic-origin program; the autologous-blood-carrier concept avoids collagen sponge and is pitched as lower-dose, lower-inflammation BMP."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.clinicaltrialsregister.eu/ctr-search/trial/2017-000860-14/results",
+        "https://www.genera-research.com/product2.html",
+        "https://index.mirasmart.com/AAOS2025/PDFfiles/AAOS2025-007405.PDF",
+        "https://pubmed.ncbi.nlm.nih.gov/38086987/"
+      ],
+      "unverified": true,
+      "challenge": "EU CTR results page read directly on 2026-10-22. As posted: arms Standard of Care n=62 (55 mITT), HD Osteogrow n=61 (56 mITT), LD Osteogrow n=20 (19 mITT); primary 'overall clinical success' at 20 months 1.9% SoC vs 0.2% HD (LD none), difference -1.7 points, one-sided 95% lower limit -5.2 against a -10 margin, reported as non-inferior; radiographic fusion 3.8/5.6% at 6 months, 4.4/6.0% at 12 months, 6.2% SoC vs 4.2% HD at 20 months (difference -2, lower limit -9.5); serious TEAEs 54.1% SoC, 31.1% HD, 25.0% LD; 3 deaths in SoC. These success and fusion proportions are implausibly low for PLIF and almost certainly reflect a unit or data-entry error in the register posting (e.g. fractions mislabeled as percent); the extraction is verified but the numbers should not be quoted as fusion rates without the sponsor's publication."
+    },
+    {
+      "id": "intradiscal-biologics-note",
+      "name": "Intradiscal / degenerative disc biologics (rexlemestrocel-L, IDCT, VIA Disc NP) - not fusion products",
+      "company": "Mesoblast; DiscGenics; VIVEX Biologics",
+      "ownership_history": "Mesoblast (ASX/NASDAQ: MESO), DiscGenics (private, Salt Lake City), VIVEX Biologics (private, Miami; VIA Disc NP is a 361 HCT/P nucleus pulposus allograft).",
+      "category": "MSC",
+      "composition": "Rexlemestrocel-L: allogeneic STRO-3+ mesenchymal precursor cells, 6 million cells with hyaluronic acid, single intradiscal injection. IDCT (rebonuputemcel): allogeneic discogenic progenitor cells in a viscous carrier. VIA Disc NP: processed allogeneic nucleus pulposus tissue reconstituted with saline.",
+      "regulatory": {
+        "path": "IND-only",
+        "reference": "Mesoblast: FDA IND, RMAT designation, BLA planned Q3 2027 after MSB-DR004 (NCT06325566). DiscGenics: Fast Track; phase 3 NCT07254806 started December 2025. VIVEX: VIA Disc NP marketed as a 361 HCT/P (not an approved therapy) while running an IND-stage RCT (NCT06778447).",
+        "us_market_year": 0,
+        "on_label_indications": []
+      },
+      "status": "investigational",
+      "applications": [],
+      "evidence": [
+        {
+          "ref": "PMID:40174800",
+          "title": "Efficacy and safety of allogeneic mesenchymal precursor cells with and without hyaluronic acid for chronic low back pain: randomized, double-blind, concurrent-controlled 36-month study (MSB-DR003)",
+          "year": 2025,
+          "design": "RCT",
+          "n": 404,
+          "finding": "Primary composite responder endpoint at 12 and 24 months not met in all subjects; MPC+HA reduced LS-mean pain vs saline at 12 and 24 months, with larger effects in patients with CLBP under 68 months; no treatment-related SAEs.",
+          "sponsor_funded": true,
+          "applications": []
+        },
+        {
+          "ref": "NCT06325566",
+          "title": "Rexlemestrocel-L + HA vs saline in moderate to severe chronic low back pain (MSB-DR004)",
+          "year": 2024,
+          "design": "RCT",
+          "n": 300,
+          "finding": "Active, not recruiting; primary completion July 2027; company guides top-line mid-2027 and BLA Q3 2027.",
+          "sponsor_funded": true,
+          "applications": []
+        },
+        {
+          "ref": "NCT07254806",
+          "title": "IDCT (rebonuputemcel) vs sham in single-level mild-to-moderate lumbar disc degeneration (phase 3)",
+          "year": 2025,
+          "design": "RCT",
+          "n": 162,
+          "finding": "Recruiting at 31 sites; primary completion November 2027; follows completed phase 1/2 NCT03347708 (n=60).",
+          "sponsor_funded": true,
+          "applications": []
+        },
+        {
+          "ref": "NCT06778447",
+          "title": "Nucleus pulposus allograft (VIA Disc NP) vs sham for lumbar discogenic pain",
+          "year": 2025,
+          "design": "RCT",
+          "n": 325,
+          "finding": "Recruiting at 19 sites; primary completion October 2027; the earlier VIA Disc NP registry (NCT04652687) was terminated and a 500-patient registry 3.0 (NCT06345690) is active.",
+          "sponsor_funded": true,
+          "applications": []
+        }
+      ],
+      "pipeline": {
+        "stage": "pivotal",
+        "trials": [
+          "NCT06325566",
+          "NCT07254806",
+          "NCT06778447"
+        ],
+        "expected_milestone": "Mesoblast BLA Q3 2027 if MSB-DR004 succeeds; DiscGenics and VIVEX phase 3 readouts late 2027"
+      },
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "Not applicable; VIA Disc NP is billed today as a 361 tissue product in office/ASC settings with no established coverage.",
+        "notes": "Included only as context: these are injectables aimed at avoiding fusion, not fusion biologics. The first MSB-DR003 phase 3 missed its primary endpoint, which is why Mesoblast is running a second phase 3; VIA Disc NP's commercialization under 361 while in an RCT is a regulatory grey zone FDA has scrutinized for other 'structural tissue' allografts."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.clinicaltrialsarena.com/news/mesoblast-back-pain-trial/",
+        "NCT02412735",
+        "NCT03347708",
+        "NCT06615505"
+      ]
+    },
+    {
+      "id": "linq",
+      "name": "LinQ SI Joint Stabilization System (and TRAQ)",
+      "company": "PainTEQ",
+      "category": "structural-allograft",
+      "composition": "Machined structural cortical bone allograft ('almond-shaped' with a graft window), placed posteriorly into the decorticated mid-joint; TRAQ (2026) is a cortical-piercing allograft variant engaging sacral and iliac cortices at four points. Window may be packed with DBM at surgeon discretion (physician descriptions; not in the IFU text retrieved).",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": null,
+        "us_market_year": 2019,
+        "on_label_indications": [
+          "Homologous use: structural allograft bone placed in the sacroiliac joint (HCT/P, no FDA-cleared indication)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "si-joint-fusion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "SECURE (NCT04423120; Calodney 2024, PMID 38524688): prospective single-arm, 16 US sites, 122 implanted, composite responder 73.5% at 12 months, one procedure-related SAE; no CT fusion endpoint. Bovinet 2025 (PMID 40832586): retrospective 6-site cohort n=258, NRS 7.6 to 1.6 at mean 1.75 years. Ampomah 2025 (PMID 40828365): n=260, AE 1.9% at 6 months. LINQT RCT vs conservative management (NCT07558278, n=200, started Jul 2026) is the first randomized trial of any posterior allograft.",
+          "caveats": "All clinical data are pain/function case series by interventional pain physicians with company involvement; no radiographic fusion rate; no comparison to lateral transfixing implants; three MAC LCDs (2025) non-cover procedures without a transfixation device."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT04423120",
+          "title": "SECURE: single-arm multicenter prospective study of LinQ",
+          "year": 2024,
+          "design": "prospective-cohort",
+          "n": 122,
+          "finding": "73.5% composite responders at 12 months; one procedure-related serious AE.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "PMID:38524688",
+          "title": "Safety, efficacy and durability of outcomes: results from SECURE",
+          "year": 2024,
+          "design": "prospective-cohort",
+          "n": 122,
+          "finding": "VAS and ODI significantly improved at 12 months; responder rate stable 66-74% across visits.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "PMID:40832586",
+          "title": "Minimally invasive posterior SI joint fusion with a novel cortical allograft: real-world long-term outcomes, multisite US cohort",
+          "year": 2025,
+          "design": "retrospective",
+          "n": 258,
+          "finding": "Mean NRS reduction 6.0 points at 91 weeks; no serious AEs reported.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "PMID:40828365",
+          "title": "Retrospective evaluation of adverse events in posterior approach with bone allograft",
+          "year": 2025,
+          "design": "retrospective",
+          "n": 260,
+          "finding": "AE incidence 2.3% at 3 months and 1.9% at 6 months; no device-related events.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "PMID:34703300",
+          "title": "Multicenter retrospective analysis of a posterior sacroiliac fusion device (LinQ)",
+          "year": 2021,
+          "design": "retrospective",
+          "n": 50,
+          "finding": "NRS 6.98 to 3.06 at mean 612 days; no major AEs.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "NCT07558278",
+          "title": "LINQT: open-label RCT of LinQ vs conventional medical management",
+          "year": 2026,
+          "design": "RCT",
+          "n": 200,
+          "finding": "Enrolling; primary endpoint composite responder at 6 months, follow-up 24 months.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "NCT07547215",
+          "title": "TRAQTION: post-market single-arm study of TRAQ",
+          "year": 2026,
+          "design": "prospective-cohort",
+          "n": 100,
+          "finding": "Enrolling; 24-month follow-up.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "CPT 27278 (intra-articular, no cortical piercing) unless a cortical-piercing variant or hybrid (27279); ASC device-intensive 2026; non-covered by CGS/Noridian/Palmetto LCDs (transfixation required); implant packaged, no separate HCPCS.",
+        "notes": "PainTEQ's clinician page states LinQ and TRAQ are HCT/Ps 'regulated solely under Section 361' and 'not FDA-cleared or FDA-approved medical devices'. PainTEQ drove the 0775T (2022) and 27278 (2024) code applications using SECURE interim data. Company ranked on Inc. 5000 (2024). Office-based-lab 27278 physician payment ($13,834 in 2026) is the economic engine for interventional pain practices."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.painteq.com/clinician",
+        "https://www.painteq.com/clinician/news/ama-announces-category-1-billing-code-for-posterior-si-joint-fusion",
+        "https://www.prnewswire.com/news-releases/painteq-secures-majority-growth-recapitalization-co-led-by-signet-healthcare-partners--windham-capital-partners-302539471.html",
+        "PMID:38524688",
+        "PMID:40832586",
+        "PMID:40828365",
+        "PMID:42237893"
+      ],
+      "ownership_history": "PainTEQ (Tampa, FL) private; majority growth recapitalization co-led by Signet Healthcare Partners and Windham Capital Partners, Aug 2025.",
+      "unverified": true,
+      "challenge": "Tissue bank that processes LinQ not disclosed in any public source retrieved; 'DBM packed in the window' comes from physician/trade descriptions, not the IFU."
+    },
+    {
+      "id": "ifuse-intra-allograft",
+      "name": "iFuse INTRA V and iFuse INTRA X Allograft Implant Systems",
+      "company": "SI-BONE",
+      "category": "structural-allograft",
+      "composition": "INTRA V (formerly INTRA): single triangular cortical allograft; INTRA X: two small cylindrical bone allografts; both 'implantable bone products manufactured from sterilized recovered cadaveric bone tissue', placed intra-articularly through a ~2 cm posterior incision.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": null,
+        "us_market_year": 2024,
+        "on_label_indications": [
+          "Homologous use: structural allograft bone placed in the sacroiliac joint (HCT/P, no FDA-cleared indication)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "si-joint-fusion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No clinical study retrieved; SI-BONE's product pages cite only finite-element analysis of SI joint motion and state the results are 'not necessarily indicative of human clinical results'. The FY2025 10-K attributes reduced INTRA X demand to the 2024-2025 MAC LCDs precluding coverage of CPT 27278.",
+          "caveats": "Launched 2024 as a defensive entry into the interventional-pain posterior segment; no SI-BONE-sponsored trial lists the allograft products (NCT07565545 is the titanium INTRA Ti). Manufactured and distributed as HCT/Ps by an undisclosed third-party tissue bank."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT07565545",
+          "title": "iFuse INTRA Ti (titanium posterior-inferior intra-articular cortical-piercing implant) safety and effectiveness",
+          "year": 2026,
+          "design": "prospective-cohort",
+          "n": 120,
+          "finding": "Not yet recruiting (start Sep 2026); titanium successor billed under 27279, not the allograft.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "CPT 27278 (intra-articular, no cortical piercing) unless a cortical-piercing variant or hybrid (27279); ASC device-intensive 2026; non-covered by CGS/Noridian/Palmetto LCDs (transfixation required); implant packaged, no separate HCPCS.",
+        "notes": "10-K: 'Our iFuse INTRA/INTRA X implants are derived from human bone tissue ... manufactured and distributed by a third-party as HCT/P products'; 10-K maps INTRA X to CPT 27278 ($441 facility / $13,834 OBL physician fee 2026) and the titanium products to 27279. SI-BONE sells direct (89 territory managers, 83 clinical specialists, 320 agents, FY2025)."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1459839/000145983926000036/sibn-20251231.htm",
+        "https://assets.si-bone.com/doc/PM-12022-US-E-SI-Joint-Dysfunction-Facility-Coding-Guide-February-2026.pdf",
+        "https://si-bone.com/si-joint-pain-treatment/ifuse-implant-systems/ifuse-intra-v",
+        "https://si-bone.com/si-joint-pain-treatment/ifuse-implant-systems/ifuse-intra-x",
+        "https://si-bone.com/label"
+      ],
+      "unverified": true,
+      "challenge": "Tissue bank not named; no clinical data; the 2024 launch year comes from the 10-K product chronology, not a dated release."
+    },
+    {
+      "id": "silo",
+      "name": "SiLO Posterior SI-Fusion System (allograft)",
+      "company": "Aurora Spine",
+      "category": "structural-allograft",
+      "composition": "Single dowel of human cortical bone with three circumferential ridges ('Dowel Anchorage Design') and dual vertical side channels that accept additional bone graft during insertion; posterior intra-articular, non-transfixing. SiLO TFX (K221047, Oct 2022; titanium cone plus ilium and sacrum screws, graft placed in the barrel) is the company's 510(k) transfixing hybrid and is a device, not a biologic.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": null,
+        "us_market_year": 2021,
+        "on_label_indications": [
+          "Homologous use: structural allograft bone placed in the sacroiliac joint (HCT/P, no FDA-cleared indication)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "si-joint-fusion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No peer-reviewed clinical series for the SiLO allograft was retrieved; the company reported >2,500 SiLO procedures in the US (June 2025 release) and a cadaveric study of SiLO TFX. Aurora launched 'Aurora Biologics' in late 2025 to sell biologics with its implants.",
+          "caveats": "Company-reported volume only; SiLO TFX revenue grew 135% in 2024 and aggregate SI implant sales +8.4% in 2025 (press releases), implying the titanium hybrid, not the allograft, is the growth product after the 2025 LCDs."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "CPT 27278 (intra-articular, no cortical piercing) unless a cortical-piercing variant or hybrid (27279); ASC device-intensive 2026; non-covered by CGS/Noridian/Palmetto LCDs (transfixation required); implant packaged, no separate HCPCS.",
+        "notes": "Aurora Spine (TSXV: ASG / OTC: ASAPF), FY2025 revenue $18.4M (+4.6%); SI implants are one of three product lines. Distributor-based sales."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://aurora-spine.com/silo/",
+        "https://www.orthoworld.com/aurora-spine-launches-silo-posterior-si-joint-fusion-system",
+        "https://fda.innolitics.com/device/K221047",
+        "https://seekingalpha.com/pr/20131299-aurora-spine-surpasses-milestone-of-2500-procedures-using-silo-si-joint-fusion-system",
+        "https://www.beckersspine.com/spine/aurora-spines-big-2025-10-updates-to-know-so-far/"
+      ],
+      "unverified": true,
+      "challenge": "Tissue processor not disclosed; no clinical outcomes paper found for the allograft; SiLO vs SiLO TFX volumes not separated."
+    },
+    {
+      "id": "cornerloc-grafts",
+      "name": "CornerLoc SI Joint Fusion grafts",
+      "company": "CornerLoc (Foundation Fusion Solutions, LLC)",
+      "category": "structural-allograft",
+      "composition": "Two machined cortical bone allografts placed orthogonally into the prepared posterior joint through two small incisions, with a demineralized bone matrix sponge; non-transfixing. The company's TransLoc 3D (K232878, Oct 2023) is a 3D-printed titanium modular posterior implant plus lateral-oblique screws (hybrid) and is a device.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": null,
+        "us_market_year": 2018,
+        "on_label_indications": [
+          "Homologous use: structural allograft bone placed in the sacroiliac joint (HCT/P, no FDA-cleared indication)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "si-joint-fusion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No peer-reviewed clinical series of the allograft retrieved; physician and hospital pages (UK HealthCare) describe the technique and a 12-month ossification timeline. CornerLoc's registered studies (NCT05916092 SPARTAN n=240; NCT06487936 registry) cover the titanium TransLoc 3D.",
+          "caveats": "Company founded 2017 (Tulsa, OK); evidence for the graft product is descriptive only; the hybrid TransLoc 3D exists because the posterior allograft alone is non-covered under the 2025 LCDs."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT05916092",
+          "title": "SPARTAN: post-market study of TransLoc 3D screw-only vs hybrid constructs",
+          "year": 2023,
+          "design": "prospective-cohort",
+          "n": 240,
+          "finding": "Company reports 91.7% improved in pain and function at 6 months (interim, unpublished).",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "CPT 27278 (intra-articular, no cortical piercing) unless a cortical-piercing variant or hybrid (27279); ASC device-intensive 2026; non-covered by CGS/Noridian/Palmetto LCDs (transfixation required); implant packaged, no separate HCPCS.",
+        "notes": "Private; sells surgery-ready trays to pain practices and ASCs. The DBM sponge is unbranded in all sources."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://cornerloc.com/",
+        "https://ukhealthcare.uky.edu/interventional-pain-medicine/treatments/cornerloc-sacroiliac-joint-fusion",
+        "https://fda.innolitics.com/device/K232878",
+        "https://www.orthoworld.com/cornerloc-launches-transloc-3d-si-joint-fusion/"
+      ],
+      "unverified": true,
+      "challenge": "Tissue bank and the DBM brand are not disclosed; launch year inferred from the 2017 founding and 2018-2019 physician adoption, not a dated release."
+    },
+    {
+      "id": "psif-allograft",
+      "name": "PsiF Posterior SI Fusion allograft",
+      "company": "Omnia Medical",
+      "category": "structural-allograft",
+      "composition": "Structural allograft bone implant placed through a postero-inferior intra-articular trajectory into a decorticated channel in the articular joint, secured mortise-and-tenon in subchondral bone (Lynch 2022). PsiF DNA (510(k) May 2025, launched Jan 2026) is a titanium double-helix transfixing implant placed ilium-to-sacrum that is packed with graft and leverages self-harvested autograft; PsiFGuard (SpineGuard, K-cleared Oct 2024) is the drilling-guidance device.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": null,
+        "us_market_year": 2020,
+        "on_label_indications": [
+          "Homologous use: structural allograft bone placed in the sacroiliac joint (HCT/P, no FDA-cleared indication)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "si-joint-fusion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Lynch 2022 (PMID 36420375): 57-patient multicenter registry, back pain 6.8 to 3.8 at 6 months. Kaye 2024 (PMID 39087970): LSU Shreveport single-center series of 72 posterior fusions (83% LinQ, remainder PsiF), VAS -3.6 cm, no procedure-related AEs, 54% with one-year follow-up. Latif 2023 (PMID 37511749) is a technique paper for PsiF DNA.",
+          "caveats": "Small registries with company-affiliated authors; PsiF results are pooled with LinQ in the only independent series; no fusion imaging endpoint."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:36420375",
+          "title": "Minimally invasive inferior intra-articular SI joint fusion with allograft bone",
+          "year": 2022,
+          "design": "registry",
+          "n": 57,
+          "finding": "Back pain 6.8 to 3.8 at 6 months; all outcomes p<0.001; no fusion endpoint.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        },
+        {
+          "ref": "PMID:39087970",
+          "title": "Posterior sacroiliac fusion surgery: retrospective single-center study (LinQ and PsiF)",
+          "year": 2024,
+          "design": "retrospective",
+          "n": 53,
+          "finding": "VAS -3.6 cm from 9.5; 38.5% with >=50% improvement; zero procedure-related AEs; 26% withdrawal.",
+          "sponsor_funded": false,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "CPT 27278 (intra-articular, no cortical piercing) unless a cortical-piercing variant or hybrid (27279); ASC device-intensive 2026; non-covered by CGS/Noridian/Palmetto LCDs (transfixation required); implant packaged, no separate HCPCS.",
+        "notes": "Omnia Medical (Morgantown, WV), private. The shift from the PsiF allograft to the 510(k) titanium PsiF DNA (transfixing, 27279-eligible) is the clearest example of a posterior vendor re-engineering around the 2025 LCDs."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://omniamedical.com/",
+        "https://www.orthoworld.com/omnia-medical-launches-psif-dna-system/",
+        "PMID:36420375",
+        "PMID:39087970",
+        "PMID:37511749",
+        "https://www.orthoworld.com/?p=75174"
+      ],
+      "unverified": true,
+      "challenge": "Omnia's site does not describe the original PsiF implant's material; its allograft nature is taken from Kaye 2024 ('sacroiliac fusion allograft implants ... PsiF System from Omnia Medical') and Lynch 2022. Tissue bank and launch year not disclosed."
+    },
+    {
+      "id": "vyrsa-pro",
+      "name": "Vyrsa Pro cortical allograft (Vyrsa V1 titanium is the device)",
+      "company": "Globus Medical (via Nevro, via Vyrsa Technologies)",
+      "category": "structural-allograft",
+      "composition": "Custom cortical allograft implant for posterior SI joint fusion delivered through an 'inferior inlet' approach (Nevro acquisition release, Nov 2023). Vyrsa V1 (introduced end-2022) and Nevro1 (NCT06909292, 'SI transfixing and fusion system') are the titanium transfixing systems in the same portfolio.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": null,
+        "us_market_year": 2022,
+        "on_label_indications": [
+          "Homologous use: structural allograft bone placed in the sacroiliac joint (HCT/P, no FDA-cleared indication)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "si-joint-fusion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No clinical publication retrieved for Vyrsa Pro. Nevro's post-market study NCT06909292 (n=180, completed May 2025) covers the titanium Nevro1 transfixing system.",
+          "caveats": "Portfolio changed hands twice in 17 months (Vyrsa -> Nevro, 30 Nov 2023, $40M plus up to $35M milestones; Nevro -> Globus, closed 3 Apr 2025, ~$250M); current Globus branding and catalog status of the allograft not confirmed."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT06909292",
+          "title": "Post-market multicenter study of the Nevro1 SI transfixing and fusion system",
+          "year": 2025,
+          "design": "prospective-cohort",
+          "n": 180,
+          "finding": "Completed May 2025; results not posted; titanium transfixing device, not the allograft.",
+          "sponsor_funded": true,
+          "applications": [
+            "si-joint-fusion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "CPT 27278 (intra-articular, no cortical piercing) unless a cortical-piercing variant or hybrid (27279); ASC device-intensive 2026; non-covered by CGS/Noridian/Palmetto LCDs (transfixation required); implant packaged, no separate HCPCS.",
+        "notes": "Globus now owns both a lateral HA-coated screw line (SI-LOK/SI-LOK SELECT) and the Vyrsa posterior portfolio; Globus product pages name no graft brand for either, so the Osteocel-with-SI-LOK pairing in the brief is unverified."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.biospace.com/nevro-announces-acquisition-of-vyrsa-technologies",
+        "https://s28.q4cdn.com/260621474/files/doc_news/2025/03/Globus-Medical-completes-acquisition-of-Nevro-Corp.pdf",
+        "https://www.beckersspine.com/spinal-tech/globus-medical-completes-250m-nevro-acquisition/"
+      ],
+      "ownership_history": "Vyrsa Technologies (founded 2021) -> Nevro Corp (30 Nov 2023) -> Globus Medical (3 Apr 2025).",
+      "unverified": true,
+      "challenge": "Vyrsa Pro's current availability under Globus, tissue bank and procedure volumes are not public."
+    }
+  ]
+}

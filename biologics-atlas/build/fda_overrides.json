@@ -1,0 +1,10 @@
+{
+  "_note": "Regulatory references confirmed in openFDA on 2026-10-21 by build/fda_check.py name search; merge.py appends these to regulatory.reference and clears unverified on the regulatory object.",
+  "allofuse": {"reference": "K071849 (AlloFuse Gel and Putty, AlloSource, 2008-12-04); K103036 (AlloFuse Plus, 2011-01-10)"},
+  "dbx": {"reference": "K063676 (DBX Mix, MTF, 2007-03-05); K080399 (DBX Putty and Paste, 2008-10-10); K091217/K091218 (2009); K103784/K103795 (2011-04-13). Applicant is Musculoskeletal Transplant Foundation, not DePuy Synthes."},
+  "optium-dbm": {"reference": "K053098 (Optium DBM Gel and Putty, LifeNet, 2005-11-28)"},
+  "cortoss": {"reference": "K080108 (Cortoss Bone Augmentation Material, Orthovita, 2009-06-05)"},
+  "magnetos": {"reference": "K230736 (MagnetOs Putty, 2023-12-20); K233607 (Easypack Putty, 2023-12-15); K232347 (Granules, 2024-01-19); K240442 (Putty, 2024-04-01); K241212 (Easypack Putty, 2024-06-27); K243474 (MagnetOs MIS, 2025-05-23). Applicant Kuros Biosciences B.V."},
+  "vitoss": {"reference": "K083033 (Vitoss BGS and Foam, Orthovita, 2008-11-06); K103173 (Vitoss BA BiModal, 2011-02-07); K153608 (2016); K163621 (Vitoss BA Injectable, 2017-05-02); K242280 (Vitoss family incl. BBTrauma and BA2X, Stryker Spine, 2024-08-29); K261008 (Vitoss family, Stryker Spine, 2026-04-24)"},
+  "new-bvf-clearances-2024-2026": {"reference": "K241555 (RTI Moldable BVF, 2025-02-21); K250346 (Elute BonVie+, 2025-02-26); K250521 (Biocomposites NanoBone SBX, 2025-04-07); K252797 (SDIP JAZBI, 2026-05-26); K261008 (Stryker Vitoss family, 2026-04-24)"}
+}

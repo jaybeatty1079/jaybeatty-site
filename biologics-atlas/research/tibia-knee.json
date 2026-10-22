@@ -1,0 +1,2595 @@
+{
+  "applications": [
+    {
+      "id": "tibial-plateau",
+      "region": "tibia",
+      "subregion": "proximal tibia / knee",
+      "name": "Tibial plateau fracture: ORIF with subchondral void fill",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "Schatzker I-VI",
+          "summary": "I lateral split; II lateral split-depression; III pure lateral depression; IV medial plateau; V bicondylar; VI bicondylar with metaphyseal-diaphyseal dissociation. Depression patterns (II, III, and many V/VI) leave a subchondral metaphyseal void after elevation."
+        },
+        {
+          "name": "AO/OTA 41-B/41-C",
+          "summary": "41-B partial articular (B2 pure depression, B3 split-depression); 41-C complete articular (bicondylar). CERTiFy and most void-filler RCTs enrolled 41-B2/B3."
+        }
+      ],
+      "why_biologic": "After the depressed articular segment is elevated, the metaphyseal cavity must be filled so the joint surface does not re-subside; the filler is a structural, osteoconductive void fill (calcium phosphate cement, calcium sulfate/HA composite, beta-TCP) rather than an osteoinductive agent. This is the single largest trauma use of synthetic bone void fillers.",
+      "autograft_standard": "Autologous iliac crest cancellous graft is the historical standard but is weak in compression, adds donor-site pain (reported in all 38 autograft patients in one RCT) and blood loss; RCTs show calcium phosphate cement reduces subsidence versus autograft and CERAMENT BVF is noninferior.",
+      "volume_note": "No US-specific annual count found in public sources. Danish population data give tibial plateau fractures about 10 per 100,000 per year; US tibial fracture volumes are reported only in aggregate. Cochrane 2024 pooled 15 RCTs (948 patients), six of them void-filler trials.",
+      "sources": [
+        "PMID:18829901",
+        "PMID:31809394",
+        "PMID:39171616",
+        "PMID:35285251",
+        "PMID:40979149",
+        "PMID:26370268"
+      ]
+    },
+    {
+      "id": "tibial-shaft-open",
+      "region": "tibia",
+      "subregion": "tibial diaphysis",
+      "name": "Open tibial shaft fracture: IM nail with adjunct biologic",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "Gustilo-Anderson",
+          "summary": "I wound under 1 cm, clean; II wound 1-10 cm without extensive soft-tissue damage; IIIA extensive soft-tissue damage but adequate coverage; IIIB periosteal stripping requiring flap coverage; IIIC arterial injury requiring repair. BESTT and FORTIFY enrolled Gustilo II-IIIB."
+        },
+        {
+          "name": "AO/OTA 42",
+          "summary": "42-A simple, 42-B wedge, 42-C multifragmentary diaphyseal tibia."
+        }
+      ],
+      "why_biologic": "Open tibial shaft fractures have the highest infection and nonunion rates of any common long-bone injury; the biologic is used at definitive closure either as an osteoinductive adjunct to reduce secondary intervention (rhBMP-2, the only on-label BMP trauma indication) or, since 2024, as an antibiotic-eluting void filler to fill bone loss and lower infection (CERAMENT G).",
+      "autograft_standard": "Standard of care is reamed or unreamed IM nailing with staged autograft (ICBG or RIA) only if a defect or delayed union declares itself; acute bone grafting of an open wound is avoided because of infection risk, which is the gap biologics try to fill.",
+      "volume_note": "US-specific incidence not found. Swedish registry: 12% of tibial shaft fractures are open, about 2.3 per 100,000 person-years; Dutch 2018-2019 hospital data: 34% of admitted tibial fractures coded open. Overall tibial shaft incidence about 16.9 per 100,000 per year (Danish data).",
+      "sources": [
+        "PMID:12473698",
+        "PMID:16757759",
+        "PMID:21454742",
+        "PMID:38490848",
+        "PMID:37491610",
+        "https://clinicaltrials.gov/study/NCT02820363"
+      ]
+    },
+    {
+      "id": "tibial-shaft-closed",
+      "region": "tibia",
+      "subregion": "tibial diaphysis",
+      "name": "Closed tibial shaft fracture: reamed IM nail (biologics not indicated)",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "AO/OTA 42",
+          "summary": "42-A simple, 42-B wedge, 42-C multifragmentary; closed soft-tissue injury graded by Tscherne (C0-C3)."
+        }
+      ],
+      "why_biologic": "Included as a negative control application: two sponsored RCTs (rhBMP-2/calcium phosphate matrix in closed fractures, n=369; rhBMP-2/ACS with reamed nails in open fractures, n=277) showed no acceleration of healing, and the LIPUS TRUST trial (n=501) was negative. No biologic has an on-label indication here and routine use is not supported.",
+      "autograft_standard": "Reamed, locked IM nailing alone; SPRINT showed a possible benefit of reaming for closed fractures. Grafting is reserved for established delayed union or nonunion.",
+      "volume_note": "Tibial shaft fractures are the most common long-bone fracture; Danish incidence 16.9 per 100,000 per year. No US count found.",
+      "sources": [
+        "PMID:24306695",
+        "PMID:21454742",
+        "PMID:27797787",
+        "PMID:20399363"
+      ]
+    },
+    {
+      "id": "pilon",
+      "region": "tibia",
+      "subregion": "distal tibia / ankle",
+      "name": "Pilon (tibial plafond) fracture: staged ORIF with metaphyseal void fill",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "R\u00fcedi-Allg\u00f6wer",
+          "summary": "Type I articular fracture without significant displacement; type II displaced articular surface without comminution; type III comminuted, impacted articular surface with metaphyseal defect."
+        },
+        {
+          "name": "AO/OTA 43",
+          "summary": "43-A extra-articular, 43-B partial articular, 43-C complete articular (C3 comminuted). Metaphyseal impaction in 43-C leaves a void after articular reduction."
+        }
+      ],
+      "why_biologic": "Impacted metaphyseal bone leaves a cavity after reduction of the plafond; a void filler supports the articular segment. Because the soft-tissue envelope is fragile and infection risk high (pooled SSI 17%), surgeons favor fillers that do not need a second incision, and an antibiotic-eluting filler is being studied for open pilons.",
+      "autograft_standard": "Autograft (ICBG or local) for metaphyseal defects when needed; staged protocol (spanning external fixation, then ORIF when soft tissue allows) is the main driver of outcomes. No RCT of void fillers specific to pilon was found.",
+      "volume_note": "No public US volume found; pilon fractures are a small fraction of tibial fractures. Systematic reviews report nonunion 0.6% (MIPO series) to about 10% malunion/nonunion in staged treatment of C3 fractures.",
+      "sources": [
+        "PMID:40834913",
+        "PMID:34663412",
+        "PMID:37532663",
+        "PMID:42622215",
+        "https://clinicaltrials.gov/study/NCT07227493"
+      ]
+    },
+    {
+      "id": "tibial-nonunion-aseptic",
+      "region": "tibia",
+      "subregion": "tibial diaphysis",
+      "name": "Aseptic tibial nonunion: revision fixation with biologic augmentation",
+      "type": "nonunion",
+      "classifications": [
+        {
+          "name": "Weber-Cech / FDA nonunion definition",
+          "summary": "Hypertrophic (vascular, needs stability), oligotrophic, and atrophic (avascular, needs biology). FDA-style definition used in trials: fracture at least 9 months old with no radiographic progression for 3 months."
+        }
+      ],
+      "why_biologic": "Atrophic and oligotrophic nonunions need biological stimulus as well as mechanical stability; the biologic supplies osteoinduction (rhBMP-7 historically, rhBMP-2 off-label), osteogenic cells (BMAC, percutaneous marrow injection) or an osteoconductive scaffold (DBM, ceramics) in the diamond-concept framework.",
+      "autograft_standard": "Exchange reamed nailing for hypertrophic shaft nonunion; autogenous cancellous graft (ICBG or RIA) plus revision fixation for atrophic nonunion. ICBG complication rate 19.4% versus 6% for RIA in a 6,682-patient systematic review.",
+      "volume_note": "US claims analysis of 309,330 fractures: overall nonunion 4.9%, with tibia plus fibula among the three highest-risk sites; open fracture OR 1.66 and operative treatment OR 1.78 for nonunion.",
+      "sources": [
+        "PMID:27603155",
+        "PMID:11314793",
+        "PMID:15995108",
+        "PMID:21704997",
+        "PMID:30976944",
+        "PMID:41316346"
+      ]
+    },
+    {
+      "id": "tibial-nonunion-infected",
+      "region": "tibia",
+      "subregion": "tibial diaphysis",
+      "name": "Infected tibial nonunion / fracture-related infection: debridement, dead-space fill, staged reconstruction",
+      "type": "nonunion",
+      "classifications": [
+        {
+          "name": "Cierny-Mader",
+          "summary": "Anatomic type I medullary, II superficial, III localized, IV diffuse; host class A healthy, B compromised (local or systemic), C treatment worse than disease. Most tibial FRI series are type III-IV in B hosts."
+        }
+      ],
+      "why_biologic": "After radical debridement the dead space must be filled to prevent hematoma and reinfection; antibiotic-eluting calcium sulfate or calcium sulfate/hydroxyapatite composites deliver local antibiotic at concentrations far above MIC while resorbing, allowing single-stage treatment instead of PMMA beads plus a second surgery.",
+      "autograft_standard": "Historical standard is two-stage: debridement with PMMA antibiotic beads or an antibiotic spacer, systemic antibiotics, then autograft (ICBG, RIA) or bone transport once infection is controlled; union rates 73-100% across series.",
+      "volume_note": "No US count found. Tibia is the most common osteomyelitis site in multinational series (116-patient S53P4 registry). METRC is running a 250-patient RCT of oral versus IV antibiotics for infected nonunion after fixation (NCT05699174).",
+      "sources": [
+        "PMID:27587534",
+        "PMID:35183215",
+        "PMID:32487197",
+        "PMID:28050878",
+        "PMID:33269583",
+        "https://clinicaltrials.gov/study/NCT05699174"
+      ]
+    },
+    {
+      "id": "tibia-segmental-defect",
+      "region": "tibia",
+      "subregion": "tibial diaphysis",
+      "name": "Segmental tibial bone defect: induced membrane (Masquelet) versus bone transport",
+      "type": "bone-void",
+      "classifications": [
+        {
+          "name": "Defect size / Paley",
+          "summary": "Critical-size diaphyseal loss is commonly taken as more than 2-2.5 cm or more than 50% circumference; outcomes stratified under and over 7 cm (infection risk rises above 7 cm after induced membrane). Paley classifies nonunion-defect by mobility and bone loss."
+        }
+      ],
+      "why_biologic": "In the two-stage induced membrane technique the PMMA spacer creates a vascularized membrane and the second stage is filled with autograft, which is the biologic step; graft volume limits drive the use of RIA, allograft chips, DBM, ceramics and, off-label, rhBMP-2 as extenders. Bone transport (Ilizarov or magnetic intramedullary) is the non-biologic alternative that avoids graft altogether.",
+      "autograft_standard": "Stage-two autograft: RIA from the femur (large volume) or ICBG, often mixed with allograft or synthetic extender. Pooled tibial union after Masquelet 84% (643 tibiae) versus 94.6% for distraction osteogenesis in infected tibial defects (not significant).",
+      "volume_note": "No public US volume. Masquelet series pool a few hundred tibiae worldwide; US military trauma drove much of the literature.",
+      "sources": [
+        "PMID:36026545",
+        "PMID:32596336",
+        "PMID:28040090",
+        "PMID:37921889",
+        "PMID:41964783",
+        "PMID:42800611"
+      ]
+    },
+    {
+      "id": "osteomyelitis-dead-space",
+      "region": "general",
+      "subregion": "long bone",
+      "name": "Chronic long-bone osteomyelitis: single-stage debridement with antibiotic-eluting dead-space filler",
+      "type": "bone-void",
+      "classifications": [
+        {
+          "name": "Cierny-Mader",
+          "summary": "Anatomic type I-IV and host class A-C; single-stage antibiotic-biocomposite series were mostly type III-IV, class B hosts, and most defects were in the tibia."
+        }
+      ],
+      "why_biologic": "Dead-space management is the step that determines recurrence; a resorbable carrier that elutes gentamicin, vancomycin or tobramycin fills the cavity, sterilizes it locally and is replaced by bone, removing the second operation needed to retrieve PMMA beads. This is the only trauma-adjacent application where an FDA-authorized antibiotic-device combination exists (CERAMENT G, De Novo 2022) and where CMS has created product-specific inpatient payment (NTAP FY2026, DRG reassignment FY2027).",
+      "autograft_standard": "Debridement plus PMMA antibiotic beads and staged autograft; or antibiotic-loaded calcium sulfate beads mixed off-label in the US. Pooled eradication with antibiotic calcium sulfate 92% (917 patients, no RCTs) and 96% with gentamicin CS/HA in a 100-patient prospective series.",
+      "volume_note": "Inpatient osteomyelitis is paid under MS-DRGs 539-541; counts not retrieved. Bonesupport reports CERAMENT G US sales of USD 18.3 million in Q2 2025 (+84%), the best public proxy for adoption.",
+      "sources": [
+        "PMID:27587534",
+        "PMID:35183215",
+        "PMID:42100185",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/denovo.cfm?id=DEN210044",
+        "https://www.cms.gov/icd10m/FY2027-nprm-v44-fullcode-cms/fullcode_cms/P0230.html"
+      ]
+    },
+    {
+      "id": "hto-wedge",
+      "region": "tibia",
+      "subregion": "proximal tibia / knee",
+      "name": "Medial opening-wedge high tibial osteotomy: gap fill",
+      "type": "osteotomy",
+      "classifications": [
+        {
+          "name": "Osteotomy gap size",
+          "summary": "Gaps under 10 mm are usually left unfilled with a locking plate; gaps over 10 mm (large corrections) are where wedges or fillers are used. Lateral hinge fracture (Takeuchi I-III) raises nonunion risk."
+        }
+      ],
+      "why_biologic": "The opening wedge creates a defect that must consolidate under a locking plate; fillers (beta-TCP or HA/TCP wedges, allograft wedges, calcium phosphate cement) are structural extenders meant to reduce loss of correction and nonunion for large gaps. Evidence says filler choice does not change outcomes for gaps under 10 mm.",
+      "autograft_standard": "Iliac crest autograft was the historical gap filler; an RCT (n=46) found iliac allograft equivalent with no nonunions in either arm, and 52% of autograft patients had worse donor-site pain than osteotomy pain.",
+      "volume_note": "No US count found; HTO volume in the US is small relative to arthroplasty. A 2026 systematic review of 1,640 knees found 36% allograft, 30% no filler, 22% synthetic, 12% autograft.",
+      "sources": [
+        "PMID:35166617",
+        "PMID:42500162",
+        "PMID:32839849",
+        "PMID:41685086",
+        "https://fda.innolitics.com/device/K040381"
+      ]
+    },
+    {
+      "id": "patella",
+      "region": "tibia",
+      "subregion": "knee",
+      "name": "Patella fracture: fixation with occasional graft of comminuted or periprosthetic defects",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "AO/OTA 34",
+          "summary": "34-A extra-articular (avulsion), 34-B partial articular (vertical), 34-C complete articular (C1 transverse, C2 transverse with second fragment, C3 comminuted); 34-C3 is the most common pattern (25%)."
+        }
+      ],
+      "why_biologic": "Biologics have almost no role in primary patella fixation; the only niche is bone loss in comminuted or periprosthetic patellar fractures and patellar nonunion, where small-volume void fillers or DBM are used ad hoc. Included so the knee section is complete and to document that no product carries patella-specific evidence.",
+      "autograft_standard": "Tension-band or suture-anchor fixation without graft; partial patellectomy for an unreconstructable pole. Periprosthetic patellar fracture ORIF with wiring has nonunion/failure rates reported as high as 90%.",
+      "volume_note": "Danish incidence 13.1 per 100,000 per year (756 fractures over 10 years). No US count found.",
+      "sources": [
+        "PMID:27536953",
+        "PMID:17477924",
+        "PMID:42152092"
+      ]
+    },
+    {
+      "id": "general-long-bone-nonunion",
+      "region": "general",
+      "subregion": "long bone",
+      "name": "General long-bone nonunion (femur, tibia, humerus, forearm): biologic augmentation under the diamond concept",
+      "type": "nonunion",
+      "classifications": [
+        {
+          "name": "Diamond concept (Giannoudis 2007)",
+          "summary": "Successful healing needs osteogenic cells, osteoinductive growth factor, osteoconductive scaffold and mechanical stability, plus host optimization (vascularity, infection control, metabolic work-up). Hypertrophic nonunions need stability; atrophic need biology."
+        }
+      ],
+      "why_biologic": "Reference application for other regions: a biologic is chosen by which diamond element is missing. BMAC or marrow injection adds cells, rhBMP (OP-1 historically, rhBMP-2 off-label) adds growth factor, DBM/ceramic/allograft add scaffold; PRP evidence is weak and cellular allografts have no trauma evidence.",
+      "autograft_standard": "Autogenous cancellous graft (ICBG or RIA) with revision fixation remains the comparator in every RCT; donor-site complications 19.4% for ICBG. A 2025 network meta-analysis of 15 RCTs (1,286 patients) ranked PRP+autograft and PRP+BMAC highest for healing time, but the trials are small and heterogeneous.",
+      "volume_note": "US claims data: 4.9% of 309,330 fractures progressed to nonunion within 12 months (2011 cohort); 5-10% is the commonly cited range. No annual nonunion procedure count found.",
+      "sources": [
+        "PMID:27603155",
+        "PMID:30976944",
+        "PMID:26747919",
+        "PMID:41316346",
+        "PMID:39060552",
+        "PMID:21704997"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "infuse",
+      "name": "Infuse Bone Graft",
+      "company": "Medtronic",
+      "ownership_history": "rhBMP-2 licensed from Genetics Institute/Wyeth (later Pfizer); Medtronic Sofamor Danek is the PMA holder since 2002. Sold ex-US as InductOs.",
+      "category": "rhBMP",
+      "composition": "Recombinant human BMP-2 (dibotermin alfa) 1.5 mg/mL applied to an absorbable bovine type I collagen sponge",
+      "regulatory": {
+        "path": "PMA",
+        "reference": "P000054 (trauma, approved 2004-04-30); P000058 (ALIF/LT-Cage, 2002); TLIF supplement P000058/S096 approved 2026-02-13 (one or two adjacent levels, L2-S1)",
+        "us_market_year": 2004,
+        "on_label_indications": [
+          "Acute, open tibial shaft fractures that have been stabilized with IM nail fixation after appropriate wound management; must be applied within 14 days after the initial fracture; patients should be skeletally mature",
+          "ALIF with LT-Cage L2-S1 single level (spine PMA)",
+          "Sinus augmentation and localized alveolar ridge augmentation (dental PMA)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "tibial-shaft-open",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "BESTT (Govender 2002, n=450) found the 1.50 mg/mL dose reduced secondary interventions and infection in open tibial fractures with IM nails; the pooled subgroup analysis (n=510) localized the benefit to Gustilo IIIA/IIIB fractures and found none with reamed nailing. A later sponsored RCT with reamed nails (Aro 2011, n=277) showed no acceleration and a non-significant infection excess (19% vs 11%).",
+          "caveats": "Sponsor-funded; the label was built on a mostly unreamed-nail cohort while US practice is reamed nailing; FDA panel in 2004 argued for limiting use to 'problem' fractures. No public 2024-2026 trauma sales data; a trauma biologics manager will note most Infuse revenue is spine.",
+          "challenge": "Reamed-nail RCT (Aro 2011) failed its primary endpoint, so on-label use in the modern reamed-nail standard is on contested ground."
+        },
+        {
+          "application_id": "tibial-shaft-closed",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "I",
+          "evidence_summary": "rhBMP-2 on an injectable calcium phosphate matrix in closed tibial fractures (Lyon 2013, n=369) was terminated at interim analysis for no effect on time to union; the CPM formulation was never commercialized.",
+          "caveats": "Negative RCT; not an indication."
+        },
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Off-label use in nonunion rests on case series (e.g., prospective rhBMP-2/HA series 2024; Pakistani audit n=62) and a 2025 network meta-analysis that pools BMP RCTs mostly from the OP-1 era; no US RCT of Infuse in nonunion.",
+          "caveats": "Off-label; payer policies (e.g., Medica) list other long-bone uses as investigational and not covered."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:12473698",
+          "title": "Recombinant human bone morphogenetic protein-2 for treatment of open tibial fractures: a prospective, controlled, randomized study of four hundred and fifty patients (BESTT)",
+          "year": 2002,
+          "design": "RCT",
+          "n": 450,
+          "finding": "Standard care vs 0.75 vs 1.50 mg/mL rhBMP-2/ACS at wound closure; the 1.50 mg/mL arm had fewer secondary interventions, faster healing and fewer infections than control (basis of the 2004 PMA).",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-shaft-open"
+          ]
+        },
+        {
+          "ref": "PMID:16757759",
+          "title": "rhBMP-2 in open tibial fractures: a subgroup analysis of data combined from two prospective randomized studies",
+          "year": 2006,
+          "design": "RCT",
+          "n": 510,
+          "finding": "In Gustilo IIIA/IIIB fractures (n=131) rhBMP-2 reduced bone-grafting (p=0.0005), invasive secondary interventions (p=0.0065) and infection (p=0.0234); in the reamed-nail subgroup (n=113) no difference.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-shaft-open"
+          ]
+        },
+        {
+          "ref": "PMID:21454742",
+          "title": "rhBMP-2: a randomized trial in open tibial fractures treated with reamed nail fixation",
+          "year": 2011,
+          "design": "RCT",
+          "n": 277,
+          "finding": "Healing 60% vs 48% at 13 weeks (p=0.054) and 68% vs 67% at 20 weeks; secondary procedures 12% in each arm; infection 19% vs 11% (p=0.065). Primary endpoint not met.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-shaft-open"
+          ]
+        },
+        {
+          "ref": "PMID:24306695",
+          "title": "rhBMP-2/calcium phosphate matrix for closed tibial diaphyseal fracture: double-blind RCT phase II/III",
+          "year": 2013,
+          "design": "RCT",
+          "n": 369,
+          "finding": "Terminated at interim analysis; median time to union 13.1 weeks (control) vs 13.0 and 15.9 weeks (rhBMP-2/CPM 1.0 and 2.0 mg/mL); no benefit.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-shaft-closed"
+          ]
+        },
+        {
+          "ref": "PMID:39003882",
+          "title": "rhBMP-2 combined with autologous bone for long bone nonunion: prospective case series",
+          "year": 2024,
+          "design": "case-series",
+          "n": null,
+          "finding": "rhBMP-2 on HA granules mixed 1:1 with autograft (max 6 mg) in nonunion and FRI defects; single-center outcome series, n not stated in abstract.",
+          "sponsor_funded": false,
+          "applications": [
+            "general-long-bone-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in the inpatient MS-DRG (lower-extremity procedure DRGs 492-494 for tibial nailing); no separate HCPCS or pass-through for Infuse; some commercial payers (Medica policy) cover rhBMP-2 only for the FDA-approved open tibial fracture indication.",
+        "notes": "Medtronic positions Infuse trauma as a 'more than a decade' safety record with the 2004 PMA numbers (41% fewer secondary interventions, 29% less nonunion, 44% fewer IIIA/B infections). Medtronic 'administrators quick reference' lists three PMAs. Trauma unit sales are not disclosed; most Infuse revenue is spine and much historical use was off-label."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P000054",
+        "https://medtronic.com/us-en/healthcare-professionals/therapies-procedures/spinal-orthopaedic/bone-grafting/evidence/infuse-bone-graft-trauma.html",
+        "https://mo-central.medica.com/Document-Library/pdf/Medical-Policies/Recombinant-Human-Bone-Morphogenic-9763",
+        "https://medtech.pharmaintelligence.informa.com/MT017543/Wyeth-BMP2-Should-Be-Limited-To-Problem-Fractures--Panel",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf/P000058S096B.pdf",
+        "https://api.fda.gov/device/pma.json?search=pma_number:P000058&sort=decision_date:desc&limit=8"
+      ]
+    },
+    {
+      "id": "op1-implant",
+      "name": "OP-1 Implant / OP-1 Putty (rhBMP-7, eptotermin alfa)",
+      "company": "Olympus Biotech (withdrawn); originally Stryker Biotech / Creative BioMolecules-Curis",
+      "ownership_history": "Developed by Creative BioMolecules (later Curis) and licensed to Stryker; Stryker Biotech held the HDE from 2001; FDA panel voted against OP-1 Putty PMA (March 2009); Stryker agreed on 2010-12-06 to sell the OP-1 family to Olympus Corporation for $60 million and closed the sale on 2011-02-01; Olympus Biotech announced exit 2014-02-28 with US/Canada availability ending 2014-05-30; Hopkinton MA site closed and the West Lebanon NH plant was sold to Novo Nordisk (2014).",
+      "category": "rhBMP",
+      "composition": "Recombinant human OP-1 (BMP-7) 3.5 mg with 1 g bovine type I collagen carrier (Implant); Putty adds carboxymethylcellulose",
+      "regulatory": {
+        "path": "HDE",
+        "reference": "H010002 (OP-1 Implant; HDE original received 2001-05-29, approved 2001-10-17; product code OKD); H020008 (OP-1 Putty; received 2002-12-23, approved 2004-04-07; product code OJZ; revision posterolateral lumbar fusion); both combination products with supplements through S033/S022",
+        "us_market_year": 2001,
+        "on_label_indications": [
+          "Alternative to autograft in recalcitrant long bone nonunions where use of autograft is unfeasible and alternative treatments have failed (HDE, humanitarian use device, IRB oversight required)"
+        ]
+      },
+      "status": "withdrawn",
+      "applications": [
+        {
+          "application_id": "tibial-nonunion-aseptic",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Friedlaender 2001 (n=122 patients, 124 tibial nonunions) randomized OP-1 vs autograft with IM nailing; OP-1 reached clinical and radiographic success comparable to autograft without donor-site morbidity. This remains the only RCT of a BMP against autograft in tibial nonunion.",
+          "caveats": "HDE, not PMA: FDA did not require demonstrated effectiveness; partially blinded; product withdrawn 2014 so the evidence has no commercial vehicle in the US.",
+          "challenge": "A hiring manager will ask why the best nonunion RCT in the field belongs to a dead product and whether rhBMP-2 can borrow it (it cannot, legally)."
+        },
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "Diamond-concept series (Giannoudis group) used rhBMP-7 with RIA graft and BMAC in femoral and tibial nonunions (n=64; n=14 subtrochanteric) with high union rates; the 2025 network meta-analysis pools these BMP-7 era trials.",
+          "caveats": "Series are European and used BMP-7 that is no longer sold; cannot be reproduced in the US."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:11314793",
+          "title": "Osteogenic protein-1 (bone morphogenetic protein-7) in the treatment of tibial nonunions",
+          "year": 2001,
+          "design": "RCT",
+          "n": 122,
+          "finding": "Prospective, randomized, partially blinded multicenter IDE trial (122 patients, 124 tibial nonunions; IM rod plus OP-1 in type I collagen vs fresh autograft): at 9 months (primary endpoint) 81% of OP-1 nonunions (n=63) and 85% of autograft nonunions (n=61) were clinically successful (p=0.524); verified against the PubMed abstract.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-nonunion-aseptic"
+          ]
+        },
+        {
+          "ref": "PMID:26747919",
+          "title": "Long bone non-unions treated with the diamond concept: a case series of 64 patients",
+          "year": 2015,
+          "design": "case-series",
+          "n": 64,
+          "finding": "Revision fixation plus RIA graft, BMP-7 and concentrated marrow aspirate in femoral (55%) and tibial (34%) nonunions; high union with painless weight bearing as the clinical definition.",
+          "sponsor_funded": false,
+          "applications": [
+            "general-long-bone-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Historical: bundled inpatient; HDE products may be sold only at cost-recovery under the HDE rules in force at the time; no current reimbursement because off-market.",
+        "notes": "Case study in BD failure modes: HDE ceiling on patient numbers, a failed PMA for the spine Putty (2009 panel), a USD 60 million divestiture, then a strategic exit by the acquirer three years later. Olympus said the decision was financial, not product performance."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfhde/hde.cfm?id=H010002",
+        "https://investors.stryker.com/press-releases/news-details/2001/Stryker-Receives-Humanitarian-Device-Exemption-For-OP-1-Strykers-Patented-Bone-Morphogenetic-Protein-BMP-Is-the-First-Approved-in-the-US/default.aspx",
+        "https://www.sec.gov/Archives/edgar/data/0000310764/000119312511039845/d10k1.pdf",
+        "https://www.fiercepharma.com/manufacturing/olympus-corporation-announces-plans-to-discontinue-operations-for-its-biotechnology",
+        "https://www.biopharma-reporter.com/Article/2014/08/29/Novo-Nordisk-snaps-up-Olympus-plant-and-rehires-laid-off-NH-workers",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfhde/hde.cfm?id=H020008",
+        "https://www.sec.gov/Archives/edgar/data/0000310764/000031076410000083/sykex991.htm",
+        "https://www.biospace.com/stryker-corporation-completes-sale-of-op-1-for-use-in-orthopaedic-bone-applications-to-olympus-corporation",
+        "https://pubmed.ncbi.nlm.nih.gov/11314793/"
+      ]
+    },
+    {
+      "id": "hydroset",
+      "name": "HydroSet / HydroSet XT Injectable HA Bone Substitute",
+      "company": "Stryker",
+      "ownership_history": "Original HydroSet cleared to Stryker (K060763, 2006, cranial/craniofacial); HydroSet XT cleared to Orthovita (a Stryker company since the 2011 acquisition, K161447, 2016).",
+      "category": "calcium-phosphate-cement",
+      "composition": "Self-setting tetracalcium phosphate / dicalcium phosphate cement that converts to hydroxyapatite in situ; injectable, sets in a wet field",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K161447 (HydroSet XT, Orthovita, Inc., decision 2016-10-06); earlier Stryker Injectable Cement K060061 (2006-03-01, MQV), K060763 (2006-09-22, product code GXP; cited by FDA recall Z-2054-2013), K060750 (Stryker CMF, 2006-04-19), K051603 (2005-12-30)",
+        "us_market_year": 2006,
+        "on_label_indications": [
+          "Fill bony voids or gaps of the skeletal system (extremities, craniofacial, posterolateral spine, pelvis) that are not intrinsic to the stability of the bony structure; defects may be surgically created or from traumatic injury",
+          "Cured in situ it can augment provisional hardware (k-wires, plates, screws) to help support bone fragments during the surgical procedure; acts only as a temporary support medium and is not intended to provide structural support during healing"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "tibial-plateau",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Class evidence: calcium phosphate cement reduced articular subsidence vs ICBG in a 120-fracture RCT (Russell 2008, using Norian SRS) and a 2008 meta-analysis of CPC RCTs in appendicular fractures; no HydroSet-specific plateau RCT found.",
+          "caveats": "Evidence is borrowed from a different CPC brand (Norian); HydroSet XT clearance rested on bench testing only. Label explicitly disclaims structural support."
+        },
+        {
+          "application_id": "pilon",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Used for metaphyseal voids by labeling (extremities, traumatic defects); no pilon-specific outcome data found.",
+          "caveats": "No clinical evidence located."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:18829901",
+          "title": "Comparison of autogenous bone graft and endothermic calcium phosphate cement for defect augmentation in tibial plateau fractures (Russell & Leighton)",
+          "year": 2008,
+          "design": "RCT",
+          "n": 119,
+          "finding": "120 Schatzker I-VI fractures randomized 2:1 to CPC (82) or ICBG (38); union and time to union equal; articular subsidence at 3-12 months significantly higher with autograft (p=0.009). Level I.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-plateau"
+          ]
+        },
+        {
+          "ref": "PMID:18519310",
+          "title": "The use of calcium phosphate bone cement in fracture treatment: a meta-analysis of randomized trials",
+          "year": 2008,
+          "design": "meta-analysis",
+          "n": null,
+          "finding": "Pooled RCTs of CPC vs conventional treatment (with or without autograft) in appendicular fractures; CPC associated with less loss of reduction and less pain (abstract truncated in retrieval).",
+          "sponsor_funded": false,
+          "applications": [
+            "tibial-plateau"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in inpatient MS-DRG; in hospital outpatient the filler is packaged into the fracture-repair APC; no separate HCPCS.",
+        "notes": "Sold through Stryker Trauma & Extremities as a hardware-adjacent consumable; competes with CERAMENT BVF, which has the only plateau RCT run against ICBG (CERTiFy)."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://fda.innolitics.com/device/K161447",
+        "https://www.stryker.com/us/en/trauma-and-extremities/products/hydroset.html",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=120159",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22HYDROSET%22&sort=decision_date:desc&limit=30",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22STRYKER%22+AND+device_name:%22INJECTABLE+CEMENT%22&sort=decision_date:desc&limit=30",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "challenge": "Stryker's catalog page lists the product as 'HydroSet XT' (2026-10-22); use that name.",
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "norian-srs",
+      "name": "Norian SRS / Norian XR calcium phosphate cement (historical)",
+      "company": "DePuy Synthes (Johnson & Johnson)",
+      "ownership_history": "Norian Corp. (Cupertino, CA) developed the first commercial calcium phosphate cement; Synthes acquired Norian in 1999. In 2009 the US Attorney in Philadelphia charged Synthes, Norian and four executives over unauthorized clinical use of Norian XR in vertebral compression fractures (a labeled contraindication); Norian pleaded guilty in 2010 (about a $23 million fine) and Synthes agreed to divest Norian; executives were sentenced in 2011. J&J acquired Synthes in 2012. Despite the 2010 divestiture agreement, DePuy Synthes (J&J MedTech) still carries the Norian brand in 2026: its Norian Drillable inventory control form is on jnjmedtech.com and a 'Norian Putty / Fast Set Putty Bone Void Filler' patient leaflet (TV-TEC-216396 Rev B, September 2026, sponsor DePuy Synthes (Australia) Pty Ltd) lists 'Norian'. The most recent Norian 510(k) is K102722 (Norian Drillable Inject / Fast Set Putty, 2011-01-27, Synthes USA Products LLC). What the divestiture covered is not clear from public sources.",
+      "category": "calcium-phosphate-cement",
+      "composition": "Carbonated apatite (dahllite) calcium phosphate cement; SRS fast-set formulations for metaphyseal fractures",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K041842 and K060406 (Norian SRS Fast Set Putty), K060408 (Norian SRS Bone Void Filler, 2006-03-21), K060443/K060445 (Norian CRS, 2006-04-13), K073303 (Norian Drillable, 2008-07-02), K102018 (Norian Reinforced, 2010-09-23), K102722 (Norian Drillable Inject / Fast Set Putty, 2011-01-27); applicant Synthes (USA) / Synthes USA Products LLC",
+        "us_market_year": 1998,
+        "on_label_indications": [
+          "Bone voids or defects of the skeletal system not intrinsic to structural stability (SRS); label warned against use in vertebral compression fractures (XR)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "tibial-plateau",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Norian SRS is the cement used in the Russell & Leighton 2008 RCT that showed less subsidence than ICBG; it is the evidentiary anchor for the whole CPC class in plateau fractures.",
+          "caveats": "Product line's current US availability could not be confirmed (marked unverified); the brand is inseparable from the Synthes criminal case, which a hiring manager will raise.",
+          "challenge": "Whether any Norian SKU remains on the DePuy Synthes US catalog in 2026 was not verifiable from public sources."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:18829901",
+          "title": "Comparison of autogenous bone graft and endothermic calcium phosphate cement for defect augmentation in tibial plateau fractures",
+          "year": 2008,
+          "design": "RCT",
+          "n": 119,
+          "finding": "CPC (Norian SRS) matched ICBG on union and had significantly less articular subsidence.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-plateau"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled inpatient MS-DRG.",
+        "notes": "Compliance case study: off-label promotion into VCF led to felony pleas for the company and misdemeanor pleas for four executives (2009-2010) and the divestiture order. Do not call Norian 'divested and gone': DePuy Synthes still publishes Norian Drillable/Putty documents in 2026."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Synthes",
+        "https://www.massdevice.com/?p=52964",
+        "https://medical-technology.nridigital.com/medical_technology_may21/orthopaedic_depuy_synthes",
+        "https://p1.aprimocdn.net/jjamp/en/fact-sheets-faqs/tv-tec-216396-rev-b-fast-set-putty-bone-void-filler-pil---pil-1001684.pdf",
+        "https://www.jnjmedtech.com/system/files/pdf/Inventory%20Control%20Form%20-%20Norian%20Drillable.pdf",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22NORIAN%22&sort=decision_date:desc&limit=10"
+      ],
+      "challenge": "Status changed from off-market to established on the strength of DePuy Synthes/J&J MedTech documents dated through September 2026; the US J&J MedTech product page is behind Cloudflare and was not read, so confirm US availability and the Norian XR (spinal) labeling with a DePuy Synthes rep."
+    },
+    {
+      "id": "chronos",
+      "name": "chronOS beta-TCP (granules, blocks, Inject, Composite)",
+      "company": "DePuy Synthes (Johnson & Johnson)",
+      "ownership_history": "Developed by Mathys / Synthes (Switzerland); Synthes USA 510(k)s 2002-2007; part of DePuy Synthes after J&J's 2012 Synthes acquisition.",
+      "category": "synthetic-ceramic",
+      "composition": "Porous synthetic beta-tricalcium phosphate (about 60% porosity) granules and preforms; chronOS Composite embeds beta-TCP in a polymer",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K013072 (chronOS TCP, 2002-11-26); K041350 (chronOS, 2004-07-08); K043045 (chronOS, 2005-01-07; may be combined with autogenous blood/marrow); K053022 (chronOS beta-TCP, 2006-01-23); K071046 (chronOS Composite, 2007-10-23); applicant Synthes (USA)",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure, created surgically or through traumatic injury, in the extremities, spine and pelvis",
+          "May be combined with autogenous blood and/or bone marrow (chronOS IM)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "tibial-plateau",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "Beta-TCP granules are among the synthetic fillers pooled in plateau meta-analyses (Cooper 2022: 6 RCTs, 353 fractures, synthetics equal to autograft on depression with less blood loss and shorter surgery); no chronOS-specific plateau RCT found.",
+          "caveats": "Class-level evidence; granular TCP offers less immediate structural support than cement."
+        },
+        {
+          "application_id": "hto-wedge",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "Beta-TCP wedges and granules are the most studied synthetic HTO fillers (Bei 2022 meta-analysis: 5 RCTs, 8 NRS, 769 patients; no difference in nonunion overall but higher nonunion when combined with long locking plates). chronOS wedge is sold ex-US; US HTO wedges with 510(k) are Arthrex HATriC and OSferion.",
+          "caveats": "chronOS HTO wedge US clearance not confirmed; evidence is class-level."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:35285251",
+          "title": "Autologous versus synthetic bone grafts for the surgical management of tibial plateau fractures: systematic review and meta-analysis of RCTs",
+          "year": 2022,
+          "design": "meta-analysis",
+          "n": 353,
+          "finding": "Six RCTs; no significant difference in articular depression; synthetic grafts had 90 mL less blood loss and 16 min shorter surgery; other outcomes comparable.",
+          "sponsor_funded": false,
+          "applications": [
+            "tibial-plateau"
+          ]
+        },
+        {
+          "ref": "PMID:35166617",
+          "title": "Effectiveness of bone substitute materials in opening wedge high tibial osteotomy: systematic review and meta-analysis",
+          "year": 2022,
+          "design": "meta-analysis",
+          "n": 769,
+          "finding": "Bone substitutes safe for gaps over 10 mm with locking plates; no overall nonunion difference; low-quality evidence.",
+          "sponsor_funded": false,
+          "applications": [
+            "hto-wedge"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled inpatient MS-DRG / packaged in outpatient APC.",
+        "notes": "Sold alongside DePuy Synthes trauma plating; J&J's trauma biologics portfolio is thin relative to Stryker (Vitoss, HydroSet, Pro-Dense) and the company has signaled an orthopaedics separation (DePuy Synthes spin-off announced 2025), which a BD lead would flag as a channel risk."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://fda.innolitics.com/device/K013072",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf4/K043045.pdf",
+        "https://510k.innolitics.com/device/K071046",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22CHRONOS%22+AND+applicant:%22SYNTHES%22&sort=decision_date:desc&limit=30"
+      ]
+    },
+    {
+      "id": "vitoss",
+      "name": "Vitoss / Vitoss BA / Vitoss BiModal beta-TCP bone graft substitute",
+      "company": "Stryker",
+      "ownership_history": "Developed by Orthovita (Malvern PA); first 510(k) 2003; Stryker acquired Orthovita for about USD 316 million (announced 2011-05-16); Vitoss BBTrauma launched 2012; new Vitoss 510(k) K261008 cleared 2026-04-24.",
+      "category": "synthetic-ceramic",
+      "composition": "Ultra-porous (about 90%) beta-TCP nanocrystals; BA versions add 45S5 bioactive glass; foam and strip forms with collagen",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K083033 (Vitoss, 2008-11-06); K103173 (Vitoss BA BiModal, 2011-02-07); K153608 (BiModal foam strip, 2016-02-12); K163621 (Vitoss BA Injectable, 2017-05-02); K242280 (BiModal foam strip, 2024-08-29); K261008 (BiModal family, 2026-04-24); applicant Orthovita / Stryker Spine; K102545 is a special 510(k) for a Vitoss formulation",
+        "us_market_year": 2003,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure, surgically created or from traumatic injury, in the extremities, pelvis and posterolateral spine",
+          "May be combined with saline, autogenous blood or bone marrow; resorbs and is replaced by bone"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "tibial-plateau",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "Marketed for trauma voids (BBTrauma); evidence is class-level from plateau meta-analyses of synthetic fillers versus autograft; no Vitoss-specific RCT in trauma found.",
+          "caveats": "Non-structural foam; surgeons often pair it with a cement or hardware raft for plateau depression."
+        },
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Used as an autograft extender in nonunion and Masquelet second stage; no comparative trauma data found.",
+          "caveats": "Expert-opinion level."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:39171616",
+          "title": "Surgical fixation methods for tibial plateau fractures (Cochrane review)",
+          "year": 2024,
+          "design": "meta-analysis",
+          "n": 948,
+          "finding": "Six trials (368 participants) compared bone substitute vs autograft; all small and at high risk of bias; insufficient evidence to pick the best void filler.",
+          "sponsor_funded": false,
+          "applications": [
+            "tibial-plateau"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled inpatient MS-DRG / packaged in outpatient APC; no HCPCS.",
+        "notes": "Stryker's volume synthetic; largest share is spine. The 2026 K261008 clearance shows continued investment. Vitoss BA (with bioactive glass) is the trauma-facing SKU."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://fda.innolitics.com/device/K083033",
+        "https://fda.innolitics.com/device/K163621",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K261008",
+        "https://www.massdevice.com/stryker-snaps-orthovita-316-million/",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22VITOSS%22&sort=decision_date:desc&limit=30",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "cerament-bvf",
+      "name": "CERAMENT Bone Void Filler (CERAMENT BVF)",
+      "company": "Bonesupport AB (Lund, Sweden)",
+      "ownership_history": "Bonesupport founded 2000 (Lars Lidgren, Lund); listed Nasdaq Stockholm 2017 (BONEX); moved to a direct US sales force in 2018-2019 after ending a Zimmer Biomet distribution deal.",
+      "category": "synthetic-ceramic",
+      "composition": "Injectable 60% calcium sulfate hemihydrate / 40% hydroxyapatite with iohexol radiocontrast; sets in situ, drillable",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K073316 (2008); K090871 (2009); K201535 (2020-10-16); K240459 (2024-03-05, adds intervertebral disc space)",
+        "us_market_year": 2008,
+        "on_label_indications": [
+          "Ceramic bone graft substitute for gaps and voids not intrinsic to the stability of the bony structure in the extremities, pelvis and posterolateral spine (open surgery), from benign cysts/tumors (adults and pediatric patients 9 years and older) or surgically created or traumatic defects",
+          "Can augment hardware and support bone fragments during the surgical procedure; cured paste is a temporary support medium only; can be drilled and screws placed through it"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "tibial-plateau",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "CERTiFy (Hofmann 2020, n=135, 20 German centers, NCT01828905) randomized OTA 41-B2/B3 fractures to ICBG or CERAMENT BVF: noninferior on SF-12 PCS and pain at 26 weeks, less blood loss and day-1 pain, equal healing, remodeling and subsidence.",
+          "caveats": "Sponsor-funded; open-label; German sites; primary endpoint is quality of life not subsidence; 26-week horizon."
+        },
+        {
+          "application_id": "pilon",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "On-label by site; no pilon data.",
+          "caveats": "None found."
+        },
+        {
+          "application_id": "hto-wedge",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Injectable CS/HA fill of the osteotomy gap is reported in small European series; no RCT.",
+          "caveats": "Thin evidence."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:31809394",
+          "title": "Autologous iliac bone graft compared with biphasic hydroxyapatite and calcium sulfate cement for bone defects in tibial plateau fractures: prospective, randomized, open-label, multicenter study (CERTiFy)",
+          "year": 2020,
+          "design": "RCT",
+          "n": 135,
+          "finding": "Noninferiority of CBVF to ICBG on SF-12 PCS and VAS at week 26 met; significantly less blood loss (p=0.007) and day-1 pain (p=0.008); no difference in healing, remodeling or subsidence. Level I.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-plateau"
+          ]
+        },
+        {
+          "ref": "PMID:24606670",
+          "title": "CERTiFy protocol (Trials 2014)",
+          "year": 2014,
+          "design": "RCT",
+          "n": 136,
+          "finding": "Protocol: 13 German centers, AO 41-B2/B3, primary SF-12 PCS at 26 weeks, NCT01828905.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-plateau"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled inpatient MS-DRG; packaged in outpatient APC. Bonesupport reported US CERAMENT BVF growth of only 1.6% (LTM, Q2 2025) while CERAMENT G grew 84%, showing the plain filler is now the trailing product.",
+        "notes": "Bonesupport FY2024 net sales SEK 899 million; Q2 2026 net sales SEK 356 million (+30% constant currency) with US CERAMENT sales SEK 295.2 million (+31%); FY2026 guidance 33-36% growth."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://fda.innolitics.com/device/K201535",
+        "https://510k.innolitics.com/device/K240459",
+        "https://storage.mfn.se/f8e0e34e-8f06-4ff5-9b56-7a2579cca982/bonesupport-q2-2025-en.pdf",
+        "https://quartr.com/events/bonesupport-holding-bonex-q2-2026_3gDUeMVL"
+      ]
+    },
+    {
+      "id": "cerament-g",
+      "name": "CERAMENT G (gentamicin-eluting bone void filler)",
+      "company": "Bonesupport AB",
+      "ownership_history": "Same company as CERAMENT BVF; CE-marked 2012; FDA Breakthrough Device designation then De Novo granted 2022-05-17; 510(k) K234008 added open fractures 2024-03-13.",
+      "category": "calcium-sulfate",
+      "composition": "Injectable calcium sulfate / hydroxyapatite composite with 17.5 mg gentamicin per mL, iohexol contrast; elutes gentamicin locally over weeks while resorbing",
+      "regulatory": {
+        "path": "De-Novo",
+        "reference": "DEN210044 (granted 2022-05-17, 21 CFR 888.3046, product code QRR, 'resorbable calcium salt bone void filler containing a single approved aminoglycoside antibacterial'); K234008 (2024-03-13, open fractures); classification codified by Federal Register order 2026-06-05 (2026-11308)",
+        "us_market_year": 2022,
+        "on_label_indications": [
+          "Resorbable, gentamicin-eluting ceramic bone void filler intended for use in defects in the extremities of skeletally mature patients as an adjunct to systemic antibiotic therapy and surgical debridement as part of the standard treatment approach to bone infection and open fractures (K234008)",
+          "Original De Novo: adjunct to systemic antibiotics and surgical debridement in the surgical treatment of osteomyelitis in extremity defects; cured paste is a temporary support medium, not structural"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "osteomyelitis-dead-space",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "McNally 2016 (Oxford, n=100, 105 bones, mean follow-up 19.5 months) single-stage protocol with CERAMENT G: infection eradicated in 96%, 10 infected nonunions included; the De Novo cited this plus animal and bench data. A 220-patient French RCT (CONVICTION, NCT04805164) and a Bonesupport post-market cohort (NCT06555848) are ongoing.",
+          "caveats": "Pivotal human evidence is a prospective single-arm series from an expert unit; no RCT has read out; wound leakage is the recurring complication of calcium sulfate carriers."
+        },
+        {
+          "application_id": "tibial-nonunion-infected",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "Covered by the bone-infection indication; infected nonunions formed 10% of the McNally cohort; Lyon Masquelet series used CERAMENT G and V as the stage-one spacer adjunct (NCT03970941, n=8).",
+          "caveats": "Small numbers for the nonunion subset."
+        },
+        {
+          "application_id": "tibial-shaft-open",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "FORTIFY (NCT02820363, n=201, Gustilo II-IIIB tibial shaft with 3-27.5 mm gap, 31 sites US/EU) was inconclusive: 12-month composite success 64% CERAMENT G vs 66% control, non-significant, 29% dropout, safety endpoint met; the company then obtained the open-fracture indication through a 510(k) in 2024 rather than PMA, and CMS granted an NTAP for open fractures from 2025-10-01.",
+          "caveats": "Negative/inconclusive RCT underpins an indication cleared by substantial equivalence; a trauma biologics manager will ask what clinical data justify the open-fracture claim beyond safety.",
+          "challenge": "FORTIFY failed its primary endpoint; the open-fracture indication rests on the De Novo predicate plus safety, not efficacy."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:27587534",
+          "title": "Single-stage treatment of chronic osteomyelitis with a new absorbable, gentamicin-loaded, calcium sulphate/hydroxyapatite biocomposite: a prospective series of 100 cases",
+          "year": 2016,
+          "design": "prospective-cohort",
+          "n": 100,
+          "finding": "Multidisciplinary single-stage protocol (debridement, culture-directed systemic antibiotics, stabilization, CERAMENT G dead-space fill, primary closure); infection eradicated in 96 of 100 at mean 19.5 months; 80% Cierny-Mader class B hosts.",
+          "sponsor_funded": false,
+          "applications": [
+            "osteomyelitis-dead-space",
+            "tibial-nonunion-infected"
+          ]
+        },
+        {
+          "ref": "NCT02820363",
+          "title": "FORTIFY: prospective randomized multicenter controlled trial of CERAMENT G as part of surgical repair of open diaphyseal tibial fractures",
+          "year": 2021,
+          "design": "RCT",
+          "n": 201,
+          "finding": "Composite endpoint (no deep infection, no secondary procedure for union, SF-36 PCS improvement) 64% vs 66% at 12 months, not significant; only 143 of 201 evaluable; company stated the data do not support a PMA.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-shaft-open"
+          ]
+        },
+        {
+          "ref": "PMID:42100185",
+          "title": "Outcomes and safety of antibiotic-loaded calcium sulfate beads in orthopaedics: systematic review and meta-analysis",
+          "year": 2026,
+          "design": "meta-analysis",
+          "n": null,
+          "finding": "41 studies, no RCTs; pooled osteomyelitis eradication 88%, infected-nonunion union 93%; wound complications 17% in osteomyelitis cases.",
+          "sponsor_funded": false,
+          "applications": [
+            "osteomyelitis-dead-space"
+          ]
+        },
+        {
+          "ref": "NCT04805164",
+          "title": "CONVICTION: randomized multicenter study of CERAMENT G in chronic long-bone osteomyelitis (CRIOAc network, Lyon)",
+          "year": 2021,
+          "design": "RCT",
+          "n": 220,
+          "finding": "Recruiting; corticotomy with vs without CERAMENT G; primary completion 2027.",
+          "sponsor_funded": false,
+          "applications": [
+            "osteomyelitis-dead-space"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Inpatient: NTAP for open fractures effective 2025-10-01 (FY2026 IPPS), up to USD 5,687.50 per qualifying case under the Breakthrough-device alternative pathway (company-reported); FY2027 IPPS final rule (effective 2026-10-01) reassigns qualifying gentamicin-eluting bone void filler cases to the highest-paying MS-DRGs within their clinical categories (osteomyelitis DRGs 539-541, PJI and FRI groupings), per Bonesupport's 2026-08-03 release; verify codes in the Federal Register.",
+        "notes": "The commercial engine of US trauma biologics growth in 2025-2026: US CERAMENT G sales USD 18.3 million in Q2 2025 (+84%), SEK 192 million in Q3 2025 (+59% cc); Bonesupport sells direct in the US with a hospital-by-hospital value-analysis approach. The De Novo created a new regulation (888.3046) that competitors (Biocomposites genex G, NCT07270380) can now use as a 510(k) predicate."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/denovo.cfm?id=DEN210044",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K234008.pdf",
+        "https://fda.innolitics.com/device/K234008",
+        "https://news.cision.com/bonesupport-holding-ab/r/study-results-on-fortify-are-inconclusive,c3412837",
+        "https://www.placera.se/pressmeddelanden/bonesupport-cms-approves-ntap-for-cerament-g-in-open-fractures-providing-additional-hospital-reimbursement-starting-october-1-2025-20250812",
+        "https://www.inderes.fi/en/releases/cms-finalizes-higher-payment-for-ceramentr-g-in-the-us",
+        "https://www.federalregister.gov/documents/2026/06/05/2026-11308/medical-devices-orthopedic-devices-classification-of-the-resorbable-calcium-salt-bone-void-filler"
+      ]
+    },
+    {
+      "id": "cerament-v",
+      "name": "CERAMENT V (vancomycin-eluting bone void filler)",
+      "company": "Bonesupport AB",
+      "ownership_history": "CE-marked 2015; FDA Breakthrough Device designation for bone infection; US submission planned as 510(k) with CERAMENT G as predicate (July 2024 announcement), transferred to De Novo in December 2025; complete additional data package submitted 2026-09-21.",
+      "category": "calcium-sulfate",
+      "composition": "Calcium sulfate / hydroxyapatite composite with 66 mg vancomycin per mL",
+      "regulatory": {
+        "path": "De-Novo",
+        "reference": "No US authorization as of 2026-10-22. The submission was moved from 510(k) to the De Novo process on 2025-12-02 (company release); BONESUPPORT's Q3 2026 interim report (2026-10-22) says it submitted the supplemental data package FDA requested under De Novo and the dialogue is 'constructive'. FDA granted Breakthrough Device designation (bone infection). CMS's FY2027 final rule creates a code for vancomycin-eluting bone void fillers effective 2026-10-01 and would assign CERAMENT V to it only if FDA grants De Novo classification. BONESUPPORT's US portfolio page lists only CERAMENT G and CERAMENT Bone Void Filler.",
+        "us_market_year": null,
+        "on_label_indications": [
+          "Proposed: adjunct to systemic antibiotics and debridement in the treatment of bone infection in extremity defects (vancomycin for gram-positive/MRSA coverage); not yet authorized in the US"
+        ]
+      },
+      "status": "investigational",
+      "applications": [
+        {
+          "application_id": "osteomyelitis-dead-space",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "European use in osteomyelitis, PJI and diabetic foot; UK post-market study of CERAMENT V/G in foot osteomyelitis (NCT06628115, n=25) and Italian revision-arthroplasty study (NCT03389646); no US data.",
+          "caveats": "Not authorized in the US as of this review; evidence is observational."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT06628115",
+          "title": "Post-market study of CERAMENT V/G in foot osteomyelitis (Mid and South Essex NHS)",
+          "year": 2024,
+          "design": "prospective-cohort",
+          "n": 25,
+          "finding": "Completed August 2026; results not yet public.",
+          "sponsor_funded": false,
+          "applications": [
+            "osteomyelitis-dead-space"
+          ]
+        }
+      ],
+      "pipeline": {
+        "stage": "under-review",
+        "trials": [
+          "NCT06628115",
+          "NCT03389646"
+        ],
+        "expected_milestone": "FDA De Novo decision pending (no date given; supplemental data package submitted per the 2026-10-22 Q3 report)."
+      },
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "None in US yet; FY2027 IPPS created a vancomycin-eluting BVF procedure code per company release; Bonesupport's 2026 guidance excludes CERAMENT V sales.",
+        "notes": "Key 2026-2027 catalyst for the only antibiotic-eluting BVF franchise in the US; a vancomycin SKU matters because MRSA/gram-positive FRI is the dominant US pathogen profile and gentamicin alone leaves a coverage gap."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://mfn.se/all/a/bonesupport-holding/cerament-r-v-application-in-the-u-s-transferred-to-the-de-novo-process",
+        "https://mfn.se/a/bonesupport-holding/the-market-submission-for-cerament-r-v-in-the-us-will-be-a-510-k",
+        "https://www.tipranks.com/news/company-announcements/bonesupport-submits-full-data-package-for-cerament-v-de-novo-to-fda",
+        "https://www.inderes.fi/en/releases/cms-finalizes-higher-payment-for-ceramentr-g-in-the-us",
+        "https://mfn.se/a/bonesupport-holding/cerament-r-v-application-in-the-u-s-transferred-to-the-de-novo-process",
+        "https://storage.mfn.se/fb7c50c0-bd11-4973-a409-e6d99e16eca0/bonesupport-q3-2026-en.pdf",
+        "https://mfn.se/a/bonesupport-holding/cms-finalizes-higher-payment-for-cerament-r-g-in-the-us",
+        "https://www.bonesupport.com/us/products/"
+      ],
+      "challenge": "Ex-US only today (CE-marked); US De Novo still under review as of 2026-10-22."
+    },
+    {
+      "id": "pro-dense",
+      "name": "PRO-DENSE / PRO-DENSE LoVisc Bone Graft Substitute",
+      "company": "Stryker (via Wright Medical)",
+      "ownership_history": "Wright Medical Technology product (first 510(k) 2007); Stryker completed the Wright Medical acquisition in November 2020; PRO-DENSE LoVisc cleared to Wright 2020-10-21 just before close.",
+      "category": "calcium-sulfate",
+      "composition": "Injectable composite of calcium sulfate and calcium phosphate (brushite and beta-TCP granules) that cures in situ; triphasic resorption",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K070437 (2007); K181255 / K182823 (2018, pediatric 6 years and older added); K200507 (LoVisc, 2020-10-21)",
+        "us_market_year": 2007,
+        "on_label_indications": [
+          "Bone graft substitute injected or digitally packed into open bone voids or gaps not intrinsic to skeletal structural stability, in the extremities and pelvis, from benign cysts and tumors (adults and pediatric patients 6 years and older), surgically created defects, or traumatic injury; cures in situ as a temporary support medium, not intended for structural support during healing"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "tibial-plateau",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Marketed for metaphyseal trauma voids on the strength of a canine proximal humerus model and bone-tumor series; no plateau RCT; Wright's brochure itself states canine results may not translate to humans.",
+          "caveats": "Preclinical plus case-series evidence only for trauma."
+        },
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Used as an injectable extender; no nonunion data found.",
+          "caveats": "Expert opinion."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "https://www.accessdata.fda.gov/cdrh_docs/pdf18/K182823.pdf",
+          "title": "PRO-DENSE 510(k) K182823 summary",
+          "year": 2018,
+          "design": "preclinical",
+          "n": null,
+          "finding": "Substantial equivalence with bench and animal data; indication expanded to pediatric patients 6 years and older.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-plateau"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled inpatient MS-DRG / packaged outpatient APC.",
+        "notes": "Now a Stryker Trauma & Extremities SKU alongside HydroSet and Vitoss; overlap is a portfolio-rationalization question a hiring manager may raise."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://510k.innolitics.com/device/K200507",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf18/K182823.pdf",
+        "https://fda.innolitics.com/device/K070437",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "stimulan",
+      "name": "STIMULAN Kit / STIMULAN Rapid Cure (and genex G, investigational)",
+      "company": "Biocomposites Ltd (Keele, UK)",
+      "ownership_history": "Privately held UK company; first US 510(k) for STIMULAN 2000 (K001724); Rapid Cure 2015 (K141830); EU MDR certification for antibiotic mixing 2026; gentamicin-preloaded genex G entering a US pivotal trial (NCT07270380, start June 2026).",
+      "category": "calcium-sulfate",
+      "composition": "Pharmaceutical-grade synthetic calcium sulfate hemihydrate beads/paste; Rapid Cure formulation sets quickly and is designed to be mixed with liquid antibiotics (ex-US labeling)",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K141830 (2015-01-23, STIMULAN Kit and Rapid Cure, product code MQV, 21 CFR 888.3045); K001724 (2000)",
+        "us_market_year": 2000,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure, gently packed into bony voids of the skeletal system (extremities, pelvis, posterolateral spine); defects created by surgery, a cyst, a tumour, osteomyelitis, or traumatic injury",
+          "Biodegradable and biocompatible and may be used at an infected site",
+          "US labeling does not include mixing with antibiotics; antibiotic-mixing claims (vancomycin, gentamicin, tobramycin) are approved only in the EU/UK, Canada and Saudi Arabia per the company's own FAQ"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "osteomyelitis-dead-space",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "Antibiotic-loaded calcium sulfate is the most used dead-space carrier worldwide: 2022 meta-analysis of 16 studies (917 patients) pooled eradication 92%, reoperation 9%, delayed wound healing 20%, aseptic leakage 12%; a 2026 review of 41 studies found no RCTs. US surgeons mix antibiotics into STIMULAN off-label.",
+          "caveats": "'May be used at an infected site' is not an antibiotic-delivery claim; US antibiotic mixing is off-label and the company cannot promote it. Wound leakage from calcium sulfate is a known trade-off.",
+          "challenge": "A hiring manager will probe whether the rep knows the exact line between 'infected site' labeling and off-label antibiotic loading in the US."
+        },
+        {
+          "application_id": "tibial-nonunion-infected",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "Single-stage tibial osteomyelitis series (n=42, 88.4% remission at 42.8 months) and 163-patient Chinese cohort with autograft (15.3% recurrence) used antibiotic-loaded calcium sulfate; bone-transport docking-site series report new bone around resorbing beads.",
+          "caveats": "Retrospective, non-comparative."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:35183215",
+          "title": "Antibiotic-loaded calcium sulfate in clinical treatment of chronic osteomyelitis: systematic review and meta-analysis",
+          "year": 2022,
+          "design": "meta-analysis",
+          "n": 917,
+          "finding": "Overall eradication 92%; reoperation 9%, refracture 2%, delayed wound healing 20%, aseptic leakage 12%; tobramycin vs vancomycin+gentamicin loading did not change eradication.",
+          "sponsor_funded": false,
+          "applications": [
+            "osteomyelitis-dead-space"
+          ]
+        },
+        {
+          "ref": "PMID:32487197",
+          "title": "Single-stage treatment of chronic localized tibial osteomyelitis with local debridement and antibiotic-loaded calcium sulfate implantation: 42 patients",
+          "year": 2020,
+          "design": "retrospective",
+          "n": 42,
+          "finding": "88.4% infection remission without recurrence at mean 42.8 months; prolonged aseptic drainage in 30%.",
+          "sponsor_funded": false,
+          "applications": [
+            "tibial-nonunion-infected",
+            "osteomyelitis-dead-space"
+          ]
+        },
+        {
+          "ref": "NCT07270380",
+          "title": "Multi-center, single-arm, historically controlled pivotal trial of genex G in surgical treatment of osteomyelitis of the extremities",
+          "year": 2026,
+          "design": "prospective-cohort",
+          "n": 139,
+          "finding": "Recruiting; Biocomposites' gentamicin-preloaded calcium sulfate aimed at the 888.3046 regulation created by CERAMENT G; primary completion October 2027.",
+          "sponsor_funded": true,
+          "applications": [
+            "osteomyelitis-dead-space"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Bundled inpatient MS-DRG; as a plain calcium-salt filler it has no NTAP or product-specific DRG treatment; osteomyelitis cases fall in MS-DRGs 539-541.",
+        "notes": "Biocomposites sells through a US direct team plus independent agents (hybrid) and leads on price per cc versus CERAMENT G; genex G is its route to an on-label antibiotic claim and to the FY2027 DRG reassignment that currently names only gentamicin-eluting fillers."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf14/k141830.pdf",
+        "https://fda.innolitics.com/device/K141830",
+        "https://www.biocomposites.com/our-products/stimulan/",
+        "https://biocomposites.com/news/biocomposites-gains-mdr-certification-for-stimulan-rapid-cure-and-stimulan-kit/",
+        "https://clinicaltrials.gov/study/NCT07270380",
+        "https://clinicaltrials.gov/study/NCT06283979",
+        "https://clinicaltrials.gov/study/NCT06808568",
+        "https://clinicaltrials.gov/study/NCT05539963"
+      ]
+    },
+    {
+      "id": "osteoset-t",
+      "name": "OSTEOSET T (tobramycin-impregnated calcium sulfate pellets)",
+      "company": "Stryker (via Wright Medical); ex-US only",
+      "ownership_history": "Wright Medical product (OSTEOSET calcium sulfate pellets cleared in the US; OSTEOSET T with 4% tobramycin CE-marked); Wright acquired by Stryker 2020. A planned US military open-fracture study was announced while 'awaiting FDA clearance' (Becker's, undated); no US clearance found.",
+      "category": "calcium-sulfate",
+      "composition": "Medical-grade calcium sulfate pellets impregnated with 4% tobramycin sulfate",
+      "regulatory": {
+        "path": "none-unapproved",
+        "reference": "No OSTEOSET T (tobramycin) record in the openFDA 510(k) database (the only OSTEOSET device_name hits are the BVF kit and DBM pellets); Stryker's US catalog lists only 'OsteoSet resorbable beads'.",
+        "us_market_year": null,
+        "on_label_indications": [
+          "Not marketed in the US; CE-marked ex-US as an antibiotic-impregnated bone void filler"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "osteomyelitis-dead-space",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "UK series (n=21, chronic post-traumatic tibial osteomyelitis) reported eradication in 20 of 21 at 15-16 months with 33% early wound discharge; Lausanne pharmacokinetic study (NCT01938417) found no toxicity concern at 10-20 g doses without renal failure.",
+          "caveats": "Ex-US evidence; small retrospective series; not available to US surgeons."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMC4278971",
+          "title": "Adjuvant treatment of chronic osteomyelitis of the tibia following exogenous trauma using OSTEOSET-T: a review of 21 patients in a regional trauma centre",
+          "year": 2014,
+          "design": "case-series",
+          "n": 21,
+          "finding": "Infection eradicated in 20/21; early wound discharge 7/21 (33%), overall wound complications 52%; no industry funding.",
+          "sponsor_funded": false,
+          "applications": [
+            "osteomyelitis-dead-space"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Not applicable in the US.",
+        "notes": "Illustrates the pre-CERAMENT G regulatory gap: FDA treated antibiotic-loaded calcium sulfate as a drug-device combination requiring more than a 510(k), which kept OSTEOSET T, PerOssal with antibiotics and Herafill out of the US for two decades."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4278971/",
+        "https://clinicaltrials.gov/study/NCT01938417",
+        "https://beckersspine.com/spinal-tech/2202",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22OSTEOSET%22&sort=decision_date:desc&limit=10",
+        "https://www.stryker.com/us/en/foot-and-ankle/products/osteoset.html",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "catalog_status_2026": "Plain OsteoSet is listed on Stryker's US bone grafting catalog page (2026-10-22); no tobramycin (OsteoSet T) listing appears, consistent with ex-US-only status."
+    },
+    {
+      "id": "perossal",
+      "name": "PerOssal (nanocrystalline HA / calcium sulfate pellets)",
+      "company": "OSARTIS GmbH (Germany)",
+      "ownership_history": "Developed by Coripharm/aap Implantate; now OSARTIS GmbH (M\u00fcnster). Heraeus Medical distributes in some markets. No US clearance found.",
+      "category": "calcium-sulfate",
+      "composition": "51.5% nanocrystalline hydroxyapatite and 48.5% calcium sulfate pellets, intended to be soaked in antibiotic solution before implantation",
+      "regulatory": {
+        "path": "none-unapproved",
+        "reference": "No FDA 510(k) found under PerOssal; openFDA applicant OSARTIS returns only BonOs bone cements (K192394, K202458, K210120, K210125) and spacer molds (K240856)",
+        "us_market_year": null,
+        "on_label_indications": [
+          "Not marketed in the US; CE-marked as a resorbable bone substitute that can be loaded with antibiotics"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "osteomyelitis-dead-space",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "German series in non-weight-bearing cancellous defects and osteomyelitis; no US data.",
+          "caveats": "Ex-US only; small series."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "https://link.springer.com/article/10.1007/s00113-007-1229-3",
+          "title": "PerOssal in cancellous bone defects (Unfallchirurg 2007)",
+          "year": 2007,
+          "design": "case-series",
+          "n": null,
+          "finding": "Adequate support of cancellous defects in non-weight-bearing areas or with osteosynthesis.",
+          "sponsor_funded": false,
+          "applications": [
+            "osteomyelitis-dead-space"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Not applicable in the US.",
+        "notes": "Included because US trauma surgeons trained in Europe ask for it; a US entry would now have a predicate pathway via 888.3046 only if preloaded with an aminoglycoside."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://product.statnano.com/product/12998/perossal",
+        "https://link.springer.com/article/10.1007/s00113-007-1229-3",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22OSARTIS%22&sort=decision_date:desc&limit=30"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "novabone-putty",
+      "name": "NovaBone Putty / NovaBone 45S5 bioactive glass",
+      "company": "NovaBone Products LLC (Isto Biologics since August 2026)",
+      "ownership_history": "NovaBone Products LLC (Alachua, FL), spun out of USBiomaterials; PerioGlas was the original dental product. Halma plc acquired NovaBone in January 2020 (initial consideration $97 million). Halma completed the sale of NovaBone Products LLC and subsidiaries to Isto Biologics on 2026-08-04 for $60 million on a cash and debt-free basis (Halma RNS; Isto announced the deal the same day). Isto Biologics is itself majority-owned by Keensight Capital since September 2025.",
+      "category": "bioactive-glass",
+      "composition": "45S5 calcium-phosphorus-sodium-silicate bioactive glass particulate in a synthetic binder; animal data show over 98% absorbed by 12 months",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K052494 (NovaBone resorbable graft, 2005-11-03); putty clearances K051617 (2006-03-06), K060728 (2006-05-01), K080009 (2008-05-06), K082672 (2008-12-09), K101860 (2010-09-01), K110368 (2011-04-14), K240404 (2024-03-05), K242299 (2024-09-25); MacroFORM K140946 (2014-08-22), K152071 (2015-08-26); Bioactive Strip K141207; IRM K163310 (2017-01-18); applicant NovaBone Products, LLC (USBiomaterials earlier)",
+        "us_market_year": 2006,
+        "on_label_indications": [
+          "Bony voids or gaps not intrinsic to the stability of the bony structure, gently packed into voids in the extremities, posterolateral spine and pelvis; not for load-bearing; standard internal or external fixation required"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Osteostimulative claims rest on in-vitro ion release; no trauma or nonunion comparative data found for 45S5 putty.",
+          "caveats": "Evidence gap; most NovaBone clinical data are dental and spine."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "https://www.accessdata.fda.gov/cdrh_docs/pdf10/K101860.pdf",
+          "title": "NovaBone Putty special 510(k) K101860",
+          "year": 2010,
+          "design": "preclinical",
+          "n": null,
+          "finding": "Modification clearance; animal resorption data only.",
+          "sponsor_funded": true,
+          "applications": [
+            "general-long-bone-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Bundled inpatient MS-DRG.",
+        "notes": "Private-label and OEM supply (bioactive glass is the 'BA' in Vitoss BA) is the real business; direct trauma sales are small."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf10/K101860.pdf",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf11/K112773.pdf",
+        "https://www.investegate.co.uk/announcement/rns/halma--hlma/disposal/9702404",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22NOVABONE%22&sort=decision_date:desc&limit=30",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22NOVABONE%22&sort=decision_date:desc&limit=30",
+        "https://www.istobiologics.com/"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "bonalive",
+      "name": "Bonalive granules (S53P4 bioactive glass)",
+      "company": "Bonalive Biomaterials Ltd (Turku, Finland)",
+      "ownership_history": "Spun out of \u00c5bo Akademi/Vivoxid; first US 510(k)s 2007-2008 (craniomaxillofacial then extremities); K191274 cleared 2019-08-07; FDA Breakthrough Device designation February 2022 for granules with a proposed claim of protecting against microbial colonization; US distributor is Bonalive Inc (La Jolla, CA), per Bonalive's US page.",
+      "category": "bioactive-glass",
+      "composition": "S53P4 bioactive glass granules (53% SiO2, 23% Na2O, 20% CaO, 4% P2O5); raises local pH and osmolarity, giving antibacterial activity without antibiotics",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K071199 (2008, extremities and pelvis, not posterolateral spine, not load-bearing); K191274 (2019-08-07); Breakthrough Device designation 2022 (no new clearance found); Bonalive 510(k)s in openFDA: K070055 and K071199 (2007-2008, applicant Vivoxid), K191274 (2019-08-07), K231528 (Bonalive Orthopedics granules, 2023-07-11, adults and pediatric patients 6 years and older, extremities and pelvis), K253883 (Bonalive Maxillofacial, 2026-05-14)",
+        "us_market_year": 2008,
+        "on_label_indications": [
+          "Bony voids or gaps not intrinsic to the stability of the bone in the extremities and pelvis; not for load-bearing applications (US labeling carries no antibacterial claim)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "osteomyelitis-dead-space",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "III",
+          "evidence_summary": "Multinational registry (Lindfors 2017, n=116, 11 centers, mostly tibia) treated chronic osteomyelitis with S53P4 mostly single-stage without local antibiotics; 2025 systematic review (99 studies) rates bone-infection evidence level 1-2 but all ex-US. The antibacterial claim is not on the US label.",
+          "caveats": "Off-label in the US for infection; no RCT versus antibiotic carriers; CE-marked antibacterial claim only.",
+          "challenge": "Breakthrough designation (2022) has not produced a cleared infection indication after four years."
+        },
+        {
+          "application_id": "tibial-plateau",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "Finnish series used S53P4 for plateau and other metaphyseal fractures; pooled in Alshahrani 2025 plateau meta-analysis as one of the substitute classes.",
+          "caveats": "Small series."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:28050878",
+          "title": "Antibacterial bioactive glass, S53P4, for chronic bone infections: a multinational study",
+          "year": 2017,
+          "design": "registry",
+          "n": 116,
+          "finding": "11 centers in six countries; tibia most common site; 85% one-stage without local antibiotics; minimum 1-year follow-up with high eradication (abstract truncated).",
+          "sponsor_funded": true,
+          "applications": [
+            "osteomyelitis-dead-space"
+          ]
+        },
+        {
+          "ref": "PMID:41340359",
+          "title": "Clinical use of S53P4 bioactive glass in bone defects and infected bone: systematic review and GRADE assessment",
+          "year": 2025,
+          "design": "meta-analysis",
+          "n": null,
+          "finding": "99 clinical studies 1990-2024; highest-level evidence in benign tumors, oral/maxillofacial, bone infection, spine and trauma.",
+          "sponsor_funded": true,
+          "applications": [
+            "osteomyelitis-dead-space"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Bundled inpatient MS-DRG; no product-specific payment.",
+        "notes": "Positioned as the antibiotic-free alternative in antimicrobial stewardship conversations; US presence small. Prosidyan's FIBERGRAFT Aeridyan (bioactive glass fiber) is in a US open-pilon acute grafting study (NCT07227493)."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://510k.innolitics.com/device/K071199",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K191274",
+        "https://www.orthoworld.com/?p=40527",
+        "https://clinicaltrials.gov/study/NCT07227493",
+        "https://www.bonalive.com/en-us/",
+        "https://fda.innolitics.com/device/K231528",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22BONALIVE%22&sort=decision_date:desc&limit=30"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "grafton-dbm",
+      "name": "Grafton DBM (gel, putty, flex, crunch, Grafton Plus)",
+      "company": "Medtronic",
+      "ownership_history": "Osteotech (Eatontown NJ) product since 1991; FDA reclassified DBM with carrier as a device in 2002 (510(k) rather than tissue); Medtronic completed its acquisition of Osteotech on 2010-11-16 ($6.50 per share, about $123 million).",
+      "category": "DBM",
+      "composition": "Human demineralized bone matrix in glycerol (gel/putty/flex) or with cortical bone chips (crunch, Plus)",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K251193 (2025-06-12); K122513 (2013-03-06); K082615 (2008-10-16); K051188 (2006-01-03); K051195 (2005-12-16); applicant Osteotech then Medtronic Sofamor Danek; DBM-with-carrier is a Class II device (21 CFR 888.3045)",
+        "us_market_year": 1991,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure in the extremities, pelvis and posterolateral spine; may be used with autograft as an extender"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "DBM is the default autograft extender in nonunion and Masquelet second stage, but PubMed search found no RCT of any DBM in long-bone nonunion; evidence is case series and lot-to-lot osteoinductivity variability is documented. A 2025 foot-and-ankle systematic review (363 patients) found 'limited evidence'.",
+          "caveats": "Osteoinductive potency varies by donor and processing; no tibial nonunion comparative data; claims of osteoinduction are product-marketing, not label.",
+          "challenge": "If asked for the best DBM nonunion study, the honest answer is that there is none at Level I-II."
+        },
+        {
+          "application_id": "tibia-segmental-defect",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Used as a volume extender with RIA/ICBG in the Masquelet second stage in many series; no isolated effect estimate.",
+          "caveats": "Confounded by autograft."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:39850040",
+          "title": "Limited evidence to support demineralized bone matrix in foot and ankle surgical procedures: a systematic review",
+          "year": 2025,
+          "design": "meta-analysis",
+          "n": 363,
+          "finding": "13 studies; union 85.6% in ankle/hindfoot fusion, 100% in small fracture cohorts; nonunion 8.8% overall; low level and quality of evidence.",
+          "sponsor_funded": false,
+          "applications": [
+            "general-long-bone-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled inpatient MS-DRG; no separate HCPCS for DBM in the hospital setting.",
+        "notes": "Medtronic's DBM is mostly a spine line item; trauma pull-through is incidental. Processing is by Medtronic's tissue operations (formerly Osteotech)."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.beckersspine.com/?p=1805",
+        "https://www.sec.gov/Archives/edgar/data/0000874734/000095012310078329/c59836exv99w1.htm",
+        "https://news.medtronic.com/2010-11-16-Medtronic-Completes-Acquisition-of-Osteotech",
+        "https://fda.innolitics.com/device/K251193",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22GRAFTON%22&sort=decision_date:desc&limit=30"
+      ]
+    },
+    {
+      "id": "dbx",
+      "name": "DBX Demineralized Bone Matrix (putty, paste, mix, strip)",
+      "company": "MTF Biologics (processor); historically distributed by Synthes / DePuy Synthes",
+      "ownership_history": "Processed by the Musculoskeletal Transplant Foundation (MTF Biologics, Edison NJ). Marketed by Synthes and, since 2012, DePuy Synthes (J&J MedTech lists DBX Trauma and DBX CMF/Inject as DePuy Synthes products; a DePuy Synthes Spine brochure describes an exclusive MTF partnership of more than 10 years). On 2025-03-13 MTF expanded its agreement with Kolosis BIO, which now also represents and distributes DBX Mix and DBX Putty alongside Kore Fiber and Prime HD, so DBX is no longer sold only through DePuy Synthes; the contract terms and whether DePuy's rights are still exclusive are not public.",
+      "category": "DBM",
+      "composition": "Human DBM in sodium hyaluronate carrier",
+      "regulatory": {
+        "path": "510k",
+        "reference": "MTF 510(k)s verified in openFDA: K040262 (2005-03-17), K040501 (2005-04-29), K042829 (DBX Strip, 2006-01-13), K053218 (2006-12-28), K062205 (DBX Strip, 2007-02-05), K063676 (DBX Mix, 2007-03-05), K080399 (2008-10-10), K091218 (2009-09-28), K091217 (2009-10-02), K103784 and K103795 (2011-04-13); applicant Musculoskeletal Transplant Foundation (product codes MQV/MBP/NUN)",
+        "us_market_year": 2000,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to bony stability in the extremities, pelvis and posterolateral spine; autograft extender"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Same evidence position as Grafton: extender use in nonunion with no comparative long-bone trials located; one retrospective alveolar-cleft revision series (n=17) found DBX equal to ICBG, which is not transferable.",
+          "caveats": "No trauma-specific evidence."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:36850061",
+          "title": "Efficacy of demineralized bone matrix (DBX) for revision alveolar bone grafting after BMP-2",
+          "year": 2023,
+          "design": "retrospective",
+          "n": 17,
+          "finding": "DBX and ICBG achieved similar union in a small craniofacial series; cited only to show the evidence base is outside trauma.",
+          "sponsor_funded": false,
+          "applications": [
+            "general-long-bone-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Bundled inpatient MS-DRG.",
+        "notes": "MTF processes and invoices; the distributor earns a marketing fee, a model MTF also uses with Orthofix (Trinity Elite). Ownership/distribution is the main thing to re-verify. MTF-Kolosis BIO agreement (2025-03-13) means DBX Mix and Putty also reach surgeons through an independent distributor, so DePuy Synthes exclusivity should not be assumed."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.cbinsights.com/company/mtf-biologics/financials",
+        "https://www.jnjmedtech.com/en-US/product/dbx-demineralized-bone-matrix-trauma",
+        "https://www.orthoworld.com/?p=78296",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22MUSCULOSKELETAL+TRANSPLANT%22+AND+device_name:%22DBX%22&sort=decision_date:desc&limit=30"
+      ],
+      "challenge": "DePuy Synthes distribution of DBX confirmed from J&J MedTech product pages; MTF added Kolosis BIO as a second distributor (Mix and Putty) in March 2025; indications wording is class-typical (the 510(k) PDFs are scanned images)."
+    },
+    {
+      "id": "allomatrix",
+      "name": "ALLOMATRIX DBM putty (and IGNITE injectable with BMAC)",
+      "company": "Stryker (via Wright Medical)",
+      "ownership_history": "Wright Medical product (DBM in calcium sulfate carrier); ALLOMATRIX was once the subject of a 2010 Wright DOJ settlement unrelated to the product; Stryker acquired Wright in 2020. Current catalog status not verified.",
+      "category": "DBM",
+      "composition": "Human DBM in a calcium sulfate / carboxymethylcellulose carrier (injectable and putty)",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K020895 (2004); K040980, K041168 (2004-08-02), K041663 (2004-09-16); K053319 (2006-03-06); K061939 (2006-07-18); K252085 (Allomatrix Injectable Putty, Allomatrix C and other forms; Wright Medical Technology, Inc.; 2025-09-30)",
+        "us_market_year": 2001,
+        "on_label_indications": [
+          "Bone void filler for voids not intrinsic to bony stability in the extremities, pelvis and spine"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Marketed for nonunion as an injectable DBM with the option of mixing BMAC (IGNITE); series-level evidence only.",
+          "caveats": "No comparative data located."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled inpatient MS-DRG.",
+        "notes": "Overlaps Stryker's own DBM lines after the Wright integration; likely rationalized."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/310764/000031076421000027/syk-20201231.htm",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22ALLOMATRIX%22&sort=decision_date:desc&limit=30",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "optium-dbm",
+      "name": "Optium DBM",
+      "company": "LifeNet Health",
+      "ownership_history": "LifeNet Health (Virginia Beach, VA) product: 510(k) K053098 'Optium DBM Gel and Putty' (human demineralized cortical bone in USP glycerol; applicant 'Lifenet', decision 2005-11-28, no human clinical data in the clearance). LifeNet lists Optium DBM Gel and Putty on its own site (general orthopedics and spine). No DePuy Synthes listing or distribution agreement for Optium was found; DePuy Synthes's DBM is DBX (MTF) and its LifeNet product is ViviGen.",
+      "category": "DBM",
+      "composition": "Human DBM in a glycerol-based carrier",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K053098 (2005-11-28; applicant Lifenet; product code MBP; glycerol carrier)",
+        "us_market_year": 2006,
+        "on_label_indications": [
+          "Bone void filler for bony voids or gaps in the extremities, spine and pelvis that are not intrinsic to the stability of the bony structure (FDA 510(k) summary K053098); remodeled into the patient's skeleton"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "No product-specific clinical evidence located.",
+          "caveats": "Placeholder record pending verification."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled inpatient MS-DRG.",
+        "notes": "LifeNet sells Optium itself (hospital tissue-services contracts); not carried by DePuy Synthes reps. Compare DBX (MTF via DePuy Synthes and Kolosis BIO)."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf5/K053098.pdf",
+        "https://lifenethealth.org/general-orthopedics/demineralized-bone-matrices/optiumr-dbm-putty",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22OPTIUM%22&sort=decision_date:desc&limit=10"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "bmac",
+      "name": "Bone marrow aspirate concentrate (BMAC) and percutaneous marrow injection",
+      "company": "Multiple device makers (Terumo/Harvest SmartPrep, Arthrex Angel, Zimmer Biomet BioCUE, EmCyte, Celling); autologous point-of-care",
+      "ownership_history": "Terumo Americas agreed to acquire Harvest Technologies on 2011-05-11. Device clearances are for the centrifuge/concentration system, not for a cellular claim.",
+      "category": "BMAC",
+      "composition": "Autologous iliac crest marrow aspirate concentrated 4-10x at point of care; osteoprogenitor (CFU-F) dose is the biologically relevant variable",
+      "regulatory": {
+        "path": "510k",
+        "reference": "Concentration systems cleared under 510(k) (e.g., SmartPrep, Angel) for preparing autologous PRP/BMC; same-surgical-procedure exception under 21 CFR 1271.15(b) covers minimal manipulation; any osteoinductive claim is off-label; Device clearances: Harvest SmartPReP2 BMAC K103340 (CDRH, product code JQC, 2010-12-06); CBER 510(k)s under product code ORG 'platelet and plasma separator for bone graft handling' (21 CFR 864.9245): Arthrex/Cytomedix Angel BK110046 (decision 2012-11-07) and Arthrex Angel System Kits BK180180 (2018-07-05), Arthrex ACP Max BK210655 (2022-09-22), Isto/Arteriocyte Precise Cell Concentration System BK200540 (2022-03-17). The ORG labeling is PRP from blood (or a blood and bone-marrow-aspirate mixture) mixed with autograft/allograft to improve handling; no device carries a cell-therapy, fracture-healing or nonunion claim",
+        "us_market_year": 2000,
+        "on_label_indications": [
+          "Devices: rapid preparation of autologous bone marrow concentrate / platelet concentrate at the point of care; no labeled fracture-healing claim"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "tibial-nonunion-aseptic",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "II",
+          "evidence_summary": "Hernigou 2005 injected concentrated marrow into 60 atrophic tibial nonunions and showed union correlated with CFU-F count and concentration (threshold about 1,500 progenitors per mL); a 2024 systematic review of 25 studies found aseptic nonunion success 79-100% (marrow) and 50-100% (BMAC) but extremely heterogeneous designs.",
+          "caveats": "No US RCT; dose-response data from a single French group; outcomes confounded by concomitant fixation and grafts.",
+          "challenge": "Ask which centrifuge delivers the Hernigou progenitor dose; most cannot be shown to."
+        },
+        {
+          "application_id": "tibial-shaft-open",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "III",
+          "evidence_summary": "Hernigou 2020: early percutaneous BMC in 231 Gustilo II-III open fractures (gap under 10 mm) vs 67 no-graft and 76 early ICBG controls, with lower infection and better healing in the BMC group.",
+          "caveats": "Non-randomized, single-center."
+        },
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "II",
+          "evidence_summary": "2025 network meta-analysis of 15 RCTs (1,286 patients) ranked PRP+BMAC among the best strategies for healing time; diamond-concept series use BMAC with RIA graft.",
+          "caveats": "Pooled RCTs are small and mostly ex-US."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:15995108",
+          "title": "Percutaneous autologous bone-marrow grafting for nonunions: influence of the number and concentration of progenitor cells",
+          "year": 2005,
+          "design": "prospective-cohort",
+          "n": 60,
+          "finding": "Concentrated marrow (20 mL) injected into 60 noninfected atrophic tibial nonunions; mineralized callus volume and healing correlated with number and concentration of CFU-F; nonunions that failed received fewer progenitors.",
+          "sponsor_funded": false,
+          "applications": [
+            "tibial-nonunion-aseptic"
+          ]
+        },
+        {
+          "ref": "PMID:33423770",
+          "title": "Early injection of autologous bone marrow concentrates decreases infection risk and improves healing of acute severe open tibial fractures",
+          "year": 2020,
+          "design": "retrospective",
+          "n": 374,
+          "finding": "231 BMC-treated open tibial fractures vs 67 no-graft and 76 ICBG controls; BMC associated with lower infection and better healing (abstract truncated).",
+          "sponsor_funded": false,
+          "applications": [
+            "tibial-shaft-open"
+          ]
+        },
+        {
+          "ref": "PMID:39060552",
+          "title": "Bone marrow aspirate and BMAC: does the literature support use in long-bone nonunion?",
+          "year": 2024,
+          "design": "meta-analysis",
+          "n": null,
+          "finding": "25 studies; aseptic nonunion success 79-100% (BM) and 50-100% (BMAC); 18/24 report union over 80%; Level III; needs Level I data.",
+          "sponsor_funded": false,
+          "applications": [
+            "general-long-bone-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:41316346",
+          "title": "BMP, PRP and BMAC in delayed union or nonunion: systematic review and network meta-analysis of RCTs",
+          "year": 2025,
+          "design": "meta-analysis",
+          "n": 1286,
+          "finding": "15 RCTs; PRP and BMP shortened healing time and raised healing rate vs standard care; PRP+autograft and PRP+BMAC ranked highest by SUCRA.",
+          "sponsor_funded": false,
+          "applications": [
+            "general-long-bone-nonunion",
+            "tibial-nonunion-aseptic"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Harvest/concentration is bundled into the surgical procedure; CPT 38220/38222 marrow aspiration may be reported by some surgeons; CPT 0232T (PRP injection) is Category III and widely non-covered; no separate payment for BMAC in the facility.",
+        "notes": "Capital-plus-disposable model (centrifuge placement, per-case kit); device makers cannot make osteogenic claims so the sell is 'autologous, point-of-care, no tissue bank'."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://doi.org/10.2106/JBJS.D.02215",
+        "https://doi.org/10.1007/s00590-024-04048-9",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK180180",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK110046",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK200540",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK210655",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22SMARTPREP%22&sort=decision_date:desc&limit=30"
+      ]
+    },
+    {
+      "id": "ria",
+      "name": "Reamer-Irrigator-Aspirator (RIA / RIA 2) intramedullary autograft harvest",
+      "company": "DePuy Synthes (Johnson & Johnson)",
+      "ownership_history": "Synthes product (2000s), continued as DePuy Synthes RIA 2 System.",
+      "category": "other",
+      "composition": "Single-pass reaming system that collects femoral or tibial canal autograft (typically 40-90 mL) with marrow-rich filtrate",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K993335 (RIA System, 2000-06-12); K013527 (modification, 2001-12-21); K042899 (RIA System expanded indications, 2005-03-16); K111437 (RIA System expanded indications, 2011-08-10); applicant Synthes (USA) / Synthes (USA) Products LLC; product code HTO. No separate RIA 2 clearance appears under the name in openFDA.",
+        "us_market_year": 2000,
+        "on_label_indications": [
+          "Reaming of the intramedullary canal with irrigation and aspiration; harvested bone used as autograft"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "tibia-segmental-defect",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "RIA is the preferred large-volume autograft source for the Masquelet second stage; meta-analysis of 4,819 patients found RIA had less donor-site pain, fewer infections and adverse events than ICBG, while ICBG had a higher union rate.",
+          "caveats": "Union advantage for ICBG in the pooled data; RIA has its own femoral fracture and blood-loss risks."
+        },
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "Dimitriou 2011: complication rate 6% after RIA (233 patients) vs 19.4% after ICBG (6,449 patients).",
+          "caveats": "Historical, heterogeneous data."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:21704997",
+          "title": "Complications following autologous bone graft harvesting from the iliac crest and using the RIA: a systematic review",
+          "year": 2011,
+          "design": "meta-analysis",
+          "n": 6682,
+          "finding": "Complication rate 6% after RIA vs 19.37% after ICBG; anterior crest had more infection, hematoma and fracture; posterior more chronic pain and sensory disturbance.",
+          "sponsor_funded": false,
+          "applications": [
+            "general-long-bone-nonunion",
+            "tibia-segmental-defect"
+          ]
+        },
+        {
+          "ref": "PMID:34851462",
+          "title": "Outcomes and complications of RIA versus iliac crest bone graft harvesting: systematic review and meta-analysis",
+          "year": 2021,
+          "design": "meta-analysis",
+          "n": 4819,
+          "finding": "RIA: lower site pain, fewer infections and adverse events; ICBG: greater rate of bone union; no difference in VAS.",
+          "sponsor_funded": false,
+          "applications": [
+            "tibia-segmental-defect"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in the procedure; CPT 20902 (bone graft, major) may be billed for the harvest by the surgeon.",
+        "notes": "The product that competes with every bone graft substitute in the nonunion and defect market; its existence is why 'autograft extender' is the realistic positioning for synthetics in trauma."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://doi.org/10.1016/j.injury.2011.06.015",
+        "https://doi.org/10.1186/s10195-021-00612-9",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22REAMER+IRRIGATOR+ASPIRATOR%22&sort=decision_date:desc&limit=30",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22RIA%22+AND+applicant:%22SYNTHES%22&sort=decision_date:desc&limit=30"
+      ]
+    },
+    {
+      "id": "trinity-elite",
+      "name": "Trinity Elite (and Trinity Evolution) viable cellular allograft",
+      "company": "Orthofix (marketing) / MTF Biologics (processor)",
+      "ownership_history": "Trinity Evolution launched 2009 under an Orthofix-MTF collaboration; Trinity Elite (moldable) followed; Orthofix holds exclusive worldwide marketing rights and MTF processes, holds inventory and invoices (Orthofix FY2025 10-K). Orthofix and SeaSpine completed their all-stock merger effective 2023-01-05 (SeaSpine survives as an Orthofix subsidiary).",
+      "category": "cellular-allograft",
+      "composition": "Cryopreserved cancellous bone with viable mesenchymal and osteoprogenitor cells plus demineralized cortical bone; cryopreserved or shelf-stable (Virtuos Lyograft) formats",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "Regulated as a Section 361 HCT/P under 21 CFR 1271 (registration, donor screening, GTP); no premarket review; Orthofix 10-K describes allografts as regulated under the HCT/P paradigm rather than as a device, biologic or drug",
+        "us_market_year": 2009,
+        "on_label_indications": [
+          "Homologous use as a bone graft to aid spinal fusion or bone fusion procedures (company description); no FDA-reviewed indication"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "PubMed search for Trinity/ViviGen/Osteocel in fracture, nonunion or trauma returned no relevant clinical studies; the evidence base is spine (and some foot-and-ankle fusion). FDA position: a 361 HCT/P may not be marketed with osteoinductive or cell-potency claims, and nonunion use is a homologous-use argument at best.",
+          "caveats": "Price per cc is the highest in the trauma graft set with no trauma data; the 'viable cells' claim is unproven in fracture healing. Treated as investigational for trauma per the atlas rules.",
+          "challenge": "A trauma biologics manager will ask for one nonunion study; there is none."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled inpatient MS-DRG; no separate payment; in outpatient the allograft is packaged.",
+        "notes": "Orthofix 10-K: Biologics is part of Global Spine (84% of 2025 sales); Orthofix receives marketing fees via MTF. Orthofix's Bone Growth Therapies (AccelStim LIPUS, PhysioStim/CervicalStim PEMF) are the adjacent nonunion franchise."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/884624/000119312526065189/ofix-20251231.htm",
+        "https://www.biospace.com/orthofix-international-nv-signs-development-and-commercialization-agreements-with-musculoskeletal-transplant-foundation",
+        "https://www.businesswire.com/news/home/20230104005893/en/5363709/Orthofix-and-SeaSpine-Announce-Completion-of-Merger-of-Equals-to-Create-a-Leading-Global-Spine-and-Orthopedics-Company"
+      ]
+    },
+    {
+      "id": "vivigen",
+      "name": "ViviGen / ViviGen Formable cellular bone matrix",
+      "company": "LifeNet Health (processor/owner); DePuy Synthes (exclusive worldwide marketer)",
+      "ownership_history": "Processed and owned by LifeNet Health (Virginia Beach, VA nonprofit tissue bank); LifeNet's own page calls it 'a 361 Human Cells, Tissues, and Cellular-based Product'. DePuy Synthes holds an exclusive worldwide agreement to market and promote ViviGen (launched late 2014, full US release January 2015) and ViviGen Formable (2017), per OrthoWorld/Becker's; J&J MedTech still lists 'ViviGen Cellular Bone Matrix' as a DePuy Synthes product in 2026 (the page carries no IFU or processor statement). Terms of the agreement are not public.",
+      "category": "cellular-allograft",
+      "composition": "Viable cryopreserved corticocancellous bone matrix (lineage-committed bone cells) plus demineralized bone",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "No premarket number; LifeNet states ViviGen is a 361 HCT/P (21 CFR 1271)",
+        "us_market_year": 2014,
+        "on_label_indications": [
+          "Homologous bone graft use; no FDA-reviewed indication"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No trauma or nonunion clinical evidence found; spine case series only.",
+          "caveats": "Same FDA constraints as Trinity."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Bundled inpatient MS-DRG.",
+        "notes": "DePuy Synthes trauma reps carry it as the 'cellular' option; verify current distribution before using in a competitive deck. LifeNet (processor, also sells its own Optium DBM) and DePuy Synthes (exclusive marketer) are separate companies; Optium is not part of the DePuy channel."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://lifenethealth.org/node/5296",
+        "https://www.lifenethealth.org/vivigen",
+        "https://www.jnjmedtech.com/en-US/product/vivigen-cellular-bone-matrix",
+        "https://www.beckersspine.com/spinal-tech/depuy-synthes-and-lifenet-health-collaborate-to-create-vivigen-formable-cellular-bone-matrix-6-details/"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "osteocel",
+      "name": "Osteocel Plus / Osteocel Pro cellular allograft",
+      "company": "Globus Medical (via NuVasive)",
+      "ownership_history": "Developed by Osiris Therapeutics; NuVasive bought the Osteocel business in 2008 (USD 35 million plus up to USD 50 million milestones); Globus Medical completed its merger with NuVasive on 2023-09-01.",
+      "category": "cellular-allograft",
+      "composition": "Cancellous bone with viable MSCs and DBM, cryopreserved",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "Section 361 HCT/P; no premarket review; No Osteocel 510(k)/PMA in openFDA (device_name OSTEOCEL: no matches); Globus FY2025 10-K treats Osteocel Plus and Pro as allograft tissue implants supplied by tissue banks (361 HCT/P status inferred)",
+        "us_market_year": 2005,
+        "on_label_indications": [
+          "Homologous bone graft use; no FDA-reviewed indication"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No trauma data; all published evidence is spinal fusion.",
+          "caveats": "Same FDA constraints as Trinity."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled inpatient MS-DRG.",
+        "notes": "Globus has no meaningful trauma biologics franchise; included for completeness of the cellular-allograft class."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.biospace.com/osiris-therapeutics-inc-and-nuvasive-inc-enter-into-definitive-agreement-for-osteocel-r-for-up-to-85-million-in-upfront-and-milestone-payments",
+        "https://www.sec.gov/Archives/edgar/data/1237831/000162828026011209/gmed-20251231.htm",
+        "https://www.investors.globusmedical.com/node/12061"
+      ]
+    },
+    {
+      "id": "prp-trauma",
+      "name": "Platelet-rich plasma (autologous, point-of-care)",
+      "company": "Multiple device makers (Arthrex ACP/Angel, Zimmer Biomet GPS, Harvest/Terumo, EmCyte)",
+      "ownership_history": "Device-only market; no product owns the biologic.",
+      "category": "PRP",
+      "composition": "Autologous platelet concentrate (leukocyte-rich or -poor) with growth factors (PDGF, TGF-beta, VEGF); no osteoinductive protein",
+      "regulatory": {
+        "path": "510k",
+        "reference": "Centrifuge systems cleared for preparing autologous PRP for mixing with bone graft (e.g., K-numbers for GPS, Angel); injection claims are off-label; Cleared by CBER under product code ORG 'platelet and plasma separator for bone graft handling' (21 CFR 864.9245), e.g., Arthrex ACP Max BK210655 (2022-09-22), Arthrex Angel BK180180 (2018-07-05), Isto Precise BK200540 (2022-03-17), RegenLab RegenKit-THT BK090048 (2010-05-18, product code FMF), and older CDRH centrifuges (JQC); labeling is PRP for mixing with bone graft to improve handling, no fracture-healing indication",
+        "us_market_year": 2000,
+        "on_label_indications": [
+          "Devices: preparation of platelet concentrate to be mixed with autograft or allograft bone prior to application to an orthopedic surgical site"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "I",
+          "evidence_summary": "Evidence is weak and inconsistent: a 2024 umbrella meta-analysis (5 meta-analyses, 13 studies, 1,362 patients) found PRP improved healing rate only when meta-analyses were pooled, not when individual studies were pooled, and shortened healing time by about 2 weeks with no effect on pain; the 2022 Front Med review (13 studies, 459 patients, 3 RCTs) reached similar tentative conclusions.",
+          "caveats": "Small, heterogeneous, mostly ex-US trials; PRP formulations are not standardized; Category III CPT with no payment.",
+          "challenge": "Do not present PRP as a nonunion treatment option; present it as unproven."
+        },
+        {
+          "application_id": "tibial-shaft-open",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No acute fracture RCT supports PRP; the 2014 and later meta-analyses of acute fracture adjuncts exclude it for lack of data.",
+          "caveats": "No evidence."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:39572270",
+          "title": "Platelet-rich plasma in the treatment of delayed union and nonunion fractures: an umbrella meta-analysis",
+          "year": 2024,
+          "design": "meta-analysis",
+          "n": 1362,
+          "finding": "Pooled meta-analyses: healing rate RR 1.30 (1.06-1.60), healing time MD -1.25 weeks; pooled individual studies: no effect on healing rate, healing time MD -2.15 weeks; no effect on pain.",
+          "sponsor_funded": false,
+          "applications": [
+            "general-long-bone-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:35145974",
+          "title": "Clinical effectiveness of PRP for long-bone delayed union and nonunion: systematic review and meta-analysis",
+          "year": 2022,
+          "design": "meta-analysis",
+          "n": 459,
+          "finding": "13 studies (3 RCTs); PRP associated with higher healing rate and shorter time but low-quality evidence.",
+          "sponsor_funded": false,
+          "applications": [
+            "general-long-bone-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "CPT 0232T (PRP injection) is Category III and non-covered by Medicare and most payers; in surgery the PRP kit is bundled into the procedure.",
+        "notes": "Trauma PRP sales are a byproduct of sports-medicine centrifuge placements; no trauma company builds a strategy on it."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://doi.org/10.1016/j.jos.2024.10.015",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK210655",
+        "https://www.fda.gov/media/190993/download"
+      ]
+    },
+    {
+      "id": "lipus-pemf-stimulators",
+      "name": "EXOGEN (LIPUS) and PEMF bone growth stimulators (adjacent, not biologics)",
+      "company": "Bioventus (EXOGEN); Orthofix (AccelStim LIPUS, PhysioStim PEMF); Zimmer Biomet (EBI/OrthoPak); DJO/Enovis (CMF)",
+      "ownership_history": "EXOGEN: Exogen Inc (1994 PMA) acquired by Smith & Nephew (1999), spun into Bioventus (2012); Bioventus IPO 2021. AccelStim: Orthofix 2023. PEMF devices date to the 1979 EBI PMA.",
+      "category": "other",
+      "composition": "Non-invasive external devices: low-intensity pulsed ultrasound (1.5 MHz, 30 mW/cm2, 20 min/day) or pulsed electromagnetic fields; no implant, no biologic",
+      "regulatory": {
+        "path": "PMA",
+        "reference": "EXOGEN P900009 (approved 1994-10-05, 'Sonic Accelerated Fracture Healing System', 44 supplements; 2020 labeling update added adjunct use in nonunion with hardware, infection or poor bone quality)",
+        "us_market_year": 1994,
+        "on_label_indications": [
+          "EXOGEN: non-invasive treatment of established nonunions excluding skull and vertebra",
+          "EXOGEN: accelerating healing of fresh, closed, posteriorly displaced distal radius fractures and fresh, closed or Grade I open tibial diaphysis fractures managed by closed reduction and cast immobilization in skeletally mature individuals"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "tibial-shaft-closed",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "One-paragraph adjacent note. The TRUST trial (BMJ 2016, n=501, 43 North American centers, sham-controlled) found LIPUS did not accelerate radiographic healing or functional recovery after IM nailing of tibial fractures; a 2014 meta-analysis of 13 RCTs (737 patients) found no reduction in nonunion with PEMF or LIPUS in acute fractures. The PMA fresh-fracture indication is limited to cast-managed fractures and predates TRUST. Stimulators are not biologics and do not compete for the surgeon's graft decision, but they do compete for the nonunion-prevention budget and are the only nonunion product class with a dedicated HCPCS/DME payment.",
+          "caveats": "Negative Level I data for the operatively treated tibia; nonunion indication rests on older uncontrolled PMA data; industry-funded registries dominate the rest.",
+          "challenge": "TRUST is the trial a hiring manager will cite; the rep must know it and the 2020 label change."
+        },
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Nonunion indication (established nonunion, excluding skull and vertebra) is based on self-controlled PMA series; no RCT against surgery.",
+          "caveats": "Uncontrolled evidence."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:27797787",
+          "title": "Re-evaluation of low intensity pulsed ultrasound in treatment of tibial fractures (TRUST): randomized clinical trial",
+          "year": 2016,
+          "design": "RCT",
+          "n": 501,
+          "finding": "Sham-controlled, blinded, 43 centers; LIPUS did not improve radiographic healing or SF-36 physical component after operatively managed tibial fractures.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-shaft-closed",
+            "tibial-shaft-open"
+          ]
+        },
+        {
+          "ref": "PMID:24895156",
+          "title": "Effects of LIPUS and PEMF bone growth stimulation in acute fractures: systematic review and meta-analysis of RCTs",
+          "year": 2014,
+          "design": "meta-analysis",
+          "n": 737,
+          "finding": "13 trials; no significant difference in proportion of nonunion between PEMF/LIPUS and control.",
+          "sponsor_funded": false,
+          "applications": [
+            "tibial-shaft-closed"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Durable medical equipment: HCPCS E0760 (ultrasound osteogenesis stimulator) and E0747 (electrical, non-spinal); Medicare NCD 150.2 covers LIPUS for nonunion with documented failure to progress on serial radiographs over at least 3 months (criteria to be re-verified); Orthofix 10-K notes bone growth therapy devices are exempt from DMEPOS competitive bidding and that CMS has considered prior authorization.",
+        "notes": "Adjacent-only record per the atlas brief. Sales model is DME prescription and prior-authorization support, a different channel from the operating room."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P900009",
+        "https://www.odtmag.com/contents/view_breaking-news/2020-02-10/bioventus-updates-us-label-for-ultrasound-bone-healing-system/",
+        "https://doi.org/10.1136/bmj.i5351",
+        "https://www.sec.gov/Archives/edgar/data/884624/000119312526065189/ofix-20251231.htm"
+      ]
+    },
+    {
+      "id": "teriparatide",
+      "name": "Teriparatide (Forteo and generics/biosimilars) for nonunion, off-label",
+      "company": "Eli Lilly (Forteo); Teva, Alvogen/Bonsity, Apotex generics",
+      "ownership_history": "Forteo approved 2002 for osteoporosis; US generics from 2019-2020 (Teva, Bonsity); the 2-year lifetime limit was removed from the label in 2020.",
+      "category": "pharmacologic",
+      "composition": "Recombinant human PTH(1-34), 20 mcg subcutaneous daily",
+      "regulatory": {
+        "path": "NDA",
+        "reference": "NDA 021318 (Drugs@FDA: NDA, not a BLA) (Forteo, 2002); nonunion/fracture-healing use is off-label",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "Osteoporosis at high risk of fracture (postmenopausal women, men, glucocorticoid-induced); no fracture-healing or nonunion indication"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Short pharmacologic note. Evidence for nonunion is case reports and small series: a 20-patient Italian multicenter series reported 85% of delayed/nonunions healed by 6 months of off-label teriparatide; a 40-patient comparative study of Ilizarov with or without teriparatide in septic tibial nonunion found shorter frame time. No RCT in established nonunion; the fracture-healing RCTs (distal radius, pelvis) showed modest or no effect on the primary endpoints.",
+          "caveats": "Off-label, osteosarcoma boxed-warning history (removed 2020), cost; outcomes in series are uncontrolled. Not a device-company product; relevant to BD as a prescribing trend that competes with surgical biologics in osteoporotic nonunion.",
+          "challenge": "Do not overstate; 'adjunct a surgeon might prescribe' is the honest framing."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:36906529",
+          "title": "Use of teriparatide in preventing delayed bone healing and nonunion: multicentric study on a series of 20 patients",
+          "year": 2023,
+          "design": "case-series",
+          "n": 20,
+          "finding": "Off-label 6-month course with or without surgery; healing progression in 80% at 3 months and 85% healed at 6 months.",
+          "sponsor_funded": false,
+          "applications": [
+            "general-long-bone-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:33269583",
+          "title": "Effectiveness of teriparatide combined with the Ilizarov technique in septic tibial non-union",
+          "year": 2021,
+          "design": "prospective-cohort",
+          "n": 40,
+          "finding": "Ilizarov with vs without teriparatide in ASAMI type C septic nonunions; teriparatide group had less time in frame (p<0.05); clinical outcome scores similar.",
+          "sponsor_funded": false,
+          "applications": [
+            "tibial-nonunion-infected",
+            "general-long-bone-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "Pharmacy benefit (Part D / commercial); off-label nonunion use is typically denied or needs appeal; generics reduced cost substantially.",
+        "notes": "Included only as the pharmacologic comparator."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://doi.org/10.1186/s12891-023-06278-0",
+        "https://api.fda.gov/drug/drugsfda.json?search=openfda.brand_name:%22Forteo%22&limit=2"
+      ]
+    },
+    {
+      "id": "ldgraft",
+      "name": "LDGraft (controlled-release rhBMP-2 on degradable polymer scaffold)",
+      "company": "Locate Bio Ltd (Nottingham, UK)",
+      "ownership_history": "Spun out of University of Nottingham; venture-backed; FDA Breakthrough Device designation May 2023 for single-level ALIF L3-S1; FDA IDE approval September 2025 expanding the RESTORE study to US sites.",
+      "category": "rhBMP",
+      "composition": "rhBMP-2 encapsulated in a degradable polymer (ReGenerOs/TAOS platform) for sustained low-dose release rather than burst release from collagen sponge",
+      "regulatory": {
+        "path": "IND-only",
+        "reference": "Breakthrough Device designation May 2023 (single-level ALIF, L3-S1, DDD); FDA IDE approval announced 2025-09-08. ClinicalTrials.gov has two LDGraft records: NCT06462729 (Locate Bio Pty Ltd; Phase 1/2, ALIF, n=40 estimated; IDE-flagged unapproved device; recruiting since 2024-11-12; sites in Newcastle, Australia and Fort Wayne, Nashville and Pinehurst, US; last update 2026-08-26) and NCT07858643 (Locate Bio Ltd; 'AMBITION', n=25, sites in Tbilisi, Georgia; started 2026-04-08). NCT06462729 is the registration that matches the Australia-plus-US IDE study.",
+        "us_market_year": null,
+        "on_label_indications": [
+          "Investigational: single-level ALIF for degenerative disc disease (spine); no trauma indication proposed"
+        ]
+      },
+      "status": "investigational",
+      "applications": [
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No trauma program announced; included because a controlled-release BMP-2 would be the natural successor to Infuse in open fractures and nonunion if the spine study succeeds.",
+          "caveats": "Spine-only development; no trauma data."
+        }
+      ],
+      "evidence": [],
+      "pipeline": {
+        "stage": "pivotal",
+        "trials": [
+          "NCT06462729",
+          "NCT07858643"
+        ],
+        "expected_milestone": "RESTORE study US enrollment from late 2025 (company release, September 2025); no PMA timeline public."
+      },
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "None.",
+        "notes": "Watch item for anyone building a trauma BMP thesis; the IP angle is dose reduction, which addresses the inflammation/seroma issues that limited Infuse."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.businesswire.com/news/home/20230517005663/en",
+        "https://www.infrontfinance.com/external-news/business-wire-en/business-wire-locate-bio-expands-restore-clinical-study-to-the-united-states-following-fda-ide-appr",
+        "https://clinicaltrials.gov/study/NCT06462729",
+        "https://clinicaltrials.gov/study/NCT07858643"
+      ],
+      "challenge": "Two separate registrations exist; the Australia-plus-US IDE study is NCT06462729. The sponsor's 'RESTORE' name was not seen on either record."
+    },
+    {
+      "id": "osteogrow",
+      "name": "OSTEOGROW / OSTEOGROW-C (rhBMP6 in autologous blood coagulum)",
+      "company": "Genera Research Ltd (Zagreb, Croatia) with Perform Biologics (US affiliate)",
+      "ownership_history": "Originated in the EU FP7 OSTEOGROW project (grant 279239, 2012-2017, coordinator University of Zagreb, EU contribution EUR 5.68 million); Genera Research holds the IP (company states patents to 2043).",
+      "category": "rhBMP",
+      "composition": "Recombinant human BMP6 bound to an autologous whole-blood-coagulum carrier (WBCD), with or without allograft/ceramic particles (OSTEOGROW-C)",
+      "regulatory": {
+        "path": "IND-only",
+        "reference": "No US IDE/IND or registry entry found; EU phase I/II trials in distal radius fracture and HTO were conducted under the FP7 project; company materials cite over 300 patients treated and a Phase III protocol approval targeted for March 2027",
+        "us_market_year": null,
+        "on_label_indications": [
+          "Investigational: fracture nonunion, HTO gap healing, distal radius fracture, dental (company list)"
+        ]
+      },
+      "status": "investigational",
+      "unverified": true,
+      "applications": [
+        {
+          "application_id": "hto-wedge",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "EU-funded phase I/II in HTO distraction-gap healing and distal radius fractures (CORDIS project page describes plans; peer-reviewed phase II results were not retrieved in this sweep). ClinicalTrials.gov search for OSTEOGROW/rhBMP6 returned nothing.",
+          "caveats": "Company-reported status only; no registry or FDA footprint found.",
+          "challenge": "Verify any trial claim against EU CTIS before citing."
+        },
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "Phase III in nonunion is a stated plan, not a registered trial.",
+          "caveats": "Unverified."
+        }
+      ],
+      "evidence": [],
+      "pipeline": {
+        "stage": "phase-2",
+        "trials": [],
+        "expected_milestone": "Company states Phase III protocol regulatory approval expected March 2027 (BIO 2026 exhibitor profile); unverified."
+      },
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "None.",
+        "notes": "Scientific interest (BMP6 is less inhibited by noggin and the blood carrier avoids collagen) but the commercial organization is thin; a BD lead would treat it as a licensing target, not a competitor."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.cordis.europa.eu/project/id/279239",
+        "https://convention.bio.org/exhibitors/genera-research",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3936094",
+        "https://www.clinicaltrialsregister.eu/ctr-search/trial/2017-000860-14/results"
+      ],
+      "challenge": "EU register results for the PLIF trial (2017-000860-14, posted 11 Feb 2026) were read on 2026-10-22; see the spine.json osteogrow record for the posted proportions and the unit-error caveat."
+    },
+    {
+      "id": "nvd-003",
+      "name": "NVD-003 (autologous adipose-derived osteogenic 3D graft)",
+      "company": "Novadip Biosciences (Mont-Saint-Guibert, Belgium)",
+      "ownership_history": "Spun out of UCLouvain (2013); FDA Orphan Drug and Rare Pediatric Disease designations for congenital pseudarthrosis of the tibia (December 2020), RMAT designation, IND (March 2021); Phase 3 in CPT started September 2025.",
+      "category": "MSC",
+      "composition": "Autologous adipose-derived stem cells differentiated into a scaffold-free 3D osteogenic implant with HA/beta-TCP particles (3M3 platform); manufactured per patient",
+      "regulatory": {
+        "path": "IND-only",
+        "reference": "IND (2021); Orphan Drug and Rare Pediatric Disease designations (2020); RMAT; eligible for a priority review voucher if approved",
+        "us_market_year": null,
+        "on_label_indications": [
+          "Investigational: congenital pseudarthrosis of the tibia (pediatric, Paley type 3-4 diaphyseal); recalcitrant lower-limb nonunion in adults"
+        ]
+      },
+      "status": "investigational",
+      "applications": [
+        {
+          "application_id": "tibial-nonunion-aseptic",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Adult phase 1/2 in recalcitrant lower-limb nonunion (NCT06335394, n=11 enrolled, company reported 9 treated): clinical healing in 8/9 at 2 years, median 6 months, no implant-related complications (company release, December 2022). Pediatric CPT Phase 3 vs ICBG (NCT07112443, n=12, 7 sites US/EU, primary completion October 2026) is recruiting.",
+          "caveats": "Tiny uncontrolled adult series; company-reported; the Phase 3 is powered as an orphan study (n=12). Manufacturing is autologous and weeks-long, unsuited to acute trauma.",
+          "challenge": "Orphan CPT is a route to a BLA, not a trauma market; the adult nonunion path would need a separate pivotal."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT07112443",
+          "title": "Phase 3 randomized controlled study of NVD003 vs iliac crest bone graft in pediatric congenital pseudarthrosis of the tibia",
+          "year": 2025,
+          "design": "RCT",
+          "n": 12,
+          "finding": "Recruiting at Phoenix Children's, Loma Linda, Sinai Baltimore, Mayo, Brussels, Amiens, Barcelona; primary endpoint overall healing at 12 months (mRUST 13 or more, no pain on weight bearing, no secondary intervention).",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-nonunion-aseptic"
+          ]
+        },
+        {
+          "ref": "NCT06335394",
+          "title": "Single-arm study of NVD-003 for recalcitrant lower limb nonunion in adults",
+          "year": 2018,
+          "design": "case-series",
+          "n": 11,
+          "finding": "Active, not recruiting; company reported 8/9 clinical healing at 2 years.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-nonunion-aseptic",
+            "general-long-bone-nonunion"
+          ]
+        }
+      ],
+      "pipeline": {
+        "stage": "pivotal",
+        "trials": [
+          "NCT07112443",
+          "NCT06335394",
+          "NCT05693558"
+        ],
+        "expected_milestone": "Phase 3 primary completion October 2026, study completion July 2027 (ClinicalTrials.gov); BLA timing not public."
+      },
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "Would be a biologic (BLA) with potential for separate payment; none today.",
+        "notes": "Sister product NVD-X3 (allogeneic) has an IND for cervical fusion (2024). The priority review voucher is the financial story."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://clinicaltrials.gov/study/NCT07112443",
+        "https://clinicaltrials.gov/study/NCT06335394",
+        "https://www.biospace.com/novadip-biosciences-sa-announces-positive-results-from-phase-1-2-clinical-trial-in-patients-with-severe-bone-non-union-of-the-lower-limb-following-trauma",
+        "https://globalgenes.org/?p=357181"
+      ]
+    },
+    {
+      "id": "allob",
+      "name": "ALLOB (allogeneic osteoblastic cell therapy) - failed",
+      "company": "BioSenic (formerly Bone Therapeutics), Belgium",
+      "ownership_history": "Bone Therapeutics (Gosselies) developed ALLOB and PREOB; reverse merger with Medsenic created BioSenic (2022); ALLOB Phase IIb in tibial fracture failed (June 2023); company pivoted to oral arsenic trioxide and later licensed/returned ALLOB rights amid a terminated Pregene license (2023).",
+      "category": "MSC",
+      "composition": "Allogeneic bone-marrow MSCs differentiated to osteoblastic lineage, cryopreserved, injected percutaneously",
+      "regulatory": {
+        "path": "IND-only",
+        "reference": "EU ATMP trials (EudraCT 2018-001054-96); no US IND found",
+        "us_market_year": null,
+        "on_label_indications": [
+          "None; development discontinued"
+        ]
+      },
+      "status": "off-market",
+      "applications": [
+        {
+          "application_id": "tibial-shaft-closed",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "I",
+          "evidence_summary": "Phase IIb (n=57 treated) in acute tibial fractures at risk of delayed union gave ALLOB days after injury; it failed to accelerate healing and BioSenic suspended the program (June 2023), concluding MSCs should not be given in the acute inflammatory window. An earlier mid-phase delayed-union study had been positive.",
+          "caveats": "Negative RCT; informative for anyone proposing early cell therapy in acute fracture.",
+          "challenge": "Cited as the reason cell therapy in acute trauma is out of favor."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "https://www.fiercebiotech.com/biotech/bone-therapeutics-final-asset-buried-after-failure-phase-2-fracture-study",
+          "title": "Bone Therapeutics' final asset buried after failure in phase 2 fracture study (Fierce Biotech)",
+          "year": 2023,
+          "design": "RCT",
+          "n": 57,
+          "finding": "ALLOB did not accelerate fracture healing in the Phase IIb; safety acceptable; program suspended.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-shaft-closed"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "None.",
+        "notes": "Case study for diligence: a cell therapy with positive delayed-union signal that failed when moved to acute fracture."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.fiercebiotech.com/biotech/bone-therapeutics-final-asset-buried-after-failure-phase-2-fracture-study",
+        "https://www.vfb.be/Media/Default/pdf/BIOSENIC-CP-20230223-EN.pdf"
+      ]
+    },
+    {
+      "id": "ossigraft",
+      "name": "OssiGraft / OssiGraft Prime viable bone matrix",
+      "company": "Ossium Health (San Francisco / Indianapolis)",
+      "ownership_history": "Ossium is a bone-marrow bank (deceased-donor vertebral marrow for HPC transplant); OssiGraft launched 2023 from bone left after marrow recovery; national distribution agreement with Extremity Medical (January 2024); OssiGraft Prime 2024.",
+      "category": "cellular-allograft",
+      "composition": "Viable bone matrix allograft derived from vertebral bodies after marrow harvest; company describes it as processed viable bone matrix with retained cells",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "OssiGraft IFU (OHC-IFU-0002 Rev 05, hosted by Enovis): OssiGraft is an HCT/P that meets the 21 CFR 1271.10 criteria for regulation solely under section 361; no 510(k)/PMA/De Novo found",
+        "us_market_year": 2023,
+        "on_label_indications": [
+          "Homologous bone graft use in orthopedic and spine procedures (company description)"
+        ]
+      },
+      "status": "emerging",
+      "applications": [
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "First case was an ankle surgery (2023); no published outcomes; no trauma data.",
+          "caveats": "Press releases only."
+        }
+      ],
+      "evidence": [],
+      "pipeline": {
+        "stage": "launched-2023",
+        "trials": [],
+        "expected_milestone": "None public."
+      },
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "Bundled inpatient MS-DRG.",
+        "notes": "Extremity Medical (foot/ankle implants) is the channel; supply advantage is a vertically integrated donor pipeline. Verify pathway before describing as cleared."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.businesswire.com/news/home/20240131369656/en/Ossium-Health-and-Extremity-Medical-Create-Strategic-Partnership-for-Nationwide-Distribution-of-OssiGraft-Viable-Bone-Matrix",
+        "https://www.businesswire.com/news/home/20240730242333/en/First-Surgery-with-OssiGraft-Prime-Highlights-its-Exceptional-Utility",
+        "https://enovis.com/sites/default/files/IFU/OHC-IFU-0002%20REV.%2005%20OssiGraft%20Viable%20Bone%20Matrix%20%281%29.pdf"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "amplex",
+      "name": "AMPLEX (B2A peptide on HA/beta-TCP granules)",
+      "company": "Ferring Pharmaceuticals (sponsor of pivotal); originally BioSET Inc",
+      "ownership_history": "BioSET (Texas) developed the B2A synthetic BMP-2 receptor-targeting peptide; Ferring sponsored the hindfoot/ankle pivotal (NCT03028415) after licensing; commercial status after 2020 completion not public.",
+      "category": "peptide",
+      "composition": "Synthetic peptide B2A that augments BMP-2 receptor signaling, coated on hydroxyapatite/beta-TCP ceramic granules",
+      "regulatory": {
+        "path": "none-unapproved",
+        "reference": "Pivotal IDE study NCT03028415 (Ferring; ankle fusion and hindfoot; n=56; completed, primary completion 2020-01-09); no PMA exists: openFDA PMA search for trade name AMPLEX returns nothing and Ferring's only PMAs are Euflexxa (P010029) and Nuxflexxa",
+        "us_market_year": null,
+        "on_label_indications": [
+          "Investigational: supplemental graft in single, double or triple hindfoot or ankle arthrodesis (not trauma)"
+        ]
+      },
+      "status": "investigational",
+      "applications": [
+        {
+          "application_id": "general-long-bone-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "Included because the brief asked; AMPLEX has no trauma program. The pivotal (n=56 randomized vs autograft, 38 US/Canada sites, completed July 2020) has results posted on ClinicalTrials.gov but the outcome was not retrieved and no PMA has been announced, which suggests the program stalled.",
+          "caveats": "No trauma relevance; elective fusion only."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT03028415",
+          "title": "Multi-center randomized pivotal study evaluating AMPLEX compared to autogenous bone graft in hindfoot or ankle arthrodesis",
+          "year": 2020,
+          "design": "RCT",
+          "n": 56,
+          "finding": "Completed; primary endpoint a 5-part composite at 52 weeks; results posted; no publication or PMA found.",
+          "sponsor_funded": true,
+          "applications": [
+            "general-long-bone-nonunion"
+          ]
+        }
+      ],
+      "pipeline": {
+        "stage": "pivotal",
+        "trials": [
+          "NCT03028415"
+        ],
+        "expected_milestone": "Unknown; no public update since 2020."
+      },
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "None.",
+        "notes": "Peptide-on-ceramic is the same construct class as i-Factor (P-15); that is the comparator a hiring manager will raise."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://clinicaltrials.gov/study/NCT03028415",
+        "https://newmarketsvp.com/?p=1253",
+        "https://api.fda.gov/device/pma.json?search=trade_name:%22AMPLEX%22&limit=3"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "new-bvf-clearances-2024-2026",
+      "name": "Recent US bone void filler clearances relevant to trauma (2024-2026 tracker)",
+      "company": "Various (Elute, RTI Surgical, Artoss, SDIP Innovations, Stryker, SurGenTec, Anika, Acuitive)",
+      "ownership_history": "Tracker record, not a single product.",
+      "category": "synthetic-ceramic",
+      "composition": "Mixed: synthetic resorbable calcium salts, nanocrystalline HA, citrate-based polymer/ceramic (CITREPORE), hyaluronic-acid-based injectable, moldable allograft",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K241555 RTI Surgical Moldable Bone Void Filler (2025-02-21, RTI Surgical, Inc.); K250346 Elute BonVie+ (2025-02-26, Elute, Inc.); K250521 NanoBone SBX Putty / NanoBone QD (2025-04-07, applicant Biocomposites, Ltd., which owns Artoss/NanoBone); K252797 JAZBI Resorbable Bone Void Filler (2026-05-26, SDIP Innovations Pty Ltd); K261008 Vitoss BiModal foam strip family (2026-04-24, Stryker Spine); K240450 Citrepore (2024-11-06, Acuitive Technologies); SurGenTec OsteoFlo HydroFiber K242797 (2024-12-23), K243949 (2025-05-28), K251720 (2025-07-02); Anika Tactoset Injectable Bone Substitute K212083 (2021-08-31), K231968 (2023-12-20); Fibergraft BG Putty GPS K253147 (2025-10-22, Prosidyan)",
+        "us_market_year": 2025,
+        "on_label_indications": [
+          "All are standard MQV 'bone void filler for voids not intrinsic to the stability of the bony structure' clearances; none is antibiotic-eluting; the only new antibiotic-eluting authorization in the window is CERAMENT G's open-fracture 510(k) (K234008, 2024-03-13)"
+        ]
+      },
+      "status": "emerging",
+      "applications": [
+        {
+          "application_id": "tibial-plateau",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "None of these clearances carried clinical data; they expand the commodity void-filler field. Artoss is running a 200-patient US trauma registry of NanoBone (NCT06256458) and Advanced Medical Solutions a 200-patient RCT of its FDBS filler vs MBCP putty in orthopaedic defects (NCT06326827, start October 2026).",
+          "caveats": "Bench-only clearances; the list was built from product-code listings and may be incomplete."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT06256458",
+          "title": "Multicenter prospective registry of NanoBone bone graft substitute in acute trauma patients (Artoss)",
+          "year": 2023,
+          "design": "registry",
+          "n": 200,
+          "finding": "Recruiting; primary completion December 2026.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-plateau"
+          ]
+        },
+        {
+          "ref": "NCT06326827",
+          "title": "Randomised investigation of FDBS (GraftR3) vs MBCP Putty in filling orthopaedic bone defects (Advanced Medical Solutions)",
+          "year": 2026,
+          "design": "RCT",
+          "n": 200,
+          "finding": "Not yet recruiting; start October 2026.",
+          "sponsor_funded": true,
+          "applications": [
+            "tibial-plateau"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Bundled inpatient MS-DRG / packaged outpatient APC for all.",
+        "notes": "Signal: FDA cleared at least five MQV fillers in 2025-2026 but no antibiotic-eluting competitor to CERAMENT G; Biocomposites' genex G pivotal (start June 2026) is the first real one."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://fda.report/Product-Code/MQV",
+        "https://www.orthoworld.com/elute-earns-fda-510k-for-bonvie-bone-void-filler/",
+        "https://orthotw.com/2026/06/sdip-innovations-announces-fda-510-k-clearance-of-jazbi-bone-void-filler-marking-the-first-commercial-application-of-proprietary-jazbi-biomaterial-technology",
+        "https://www.healio.com/news/orthopedics/20241123/acuitivetechnologies-receives-fda-510k-clearance-of-bioactive-bone-void-filler",
+        "https://clinicaltrials.gov/study/NCT06256458",
+        "https://clinicaltrials.gov/study/NCT06326827",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22BIOCOMPOSITES%22&sort=decision_date:desc&limit=30",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22OSTEOFLO%22&sort=decision_date:desc&limit=30",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22CITREPORE%22&sort=decision_date:desc&limit=30",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22PROSIDYAN%22&sort=decision_date:desc&limit=30"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "hto-ceramic-wedges",
+      "name": "Opening-wedge osteotomy ceramic wedges (Arthrex HATriC, OSferion; Cross.Bone)",
+      "company": "Arthrex (HATriC, OSferion); others",
+      "ownership_history": "HATriC cleared to Arthrex 2004 (K040381); OSferion (Olympus Terumo Biomaterials beta-TCP) distributed by Arthrex as an osteotomy wedge; Cross.Bone wedge K071876.",
+      "category": "synthetic-ceramic",
+      "composition": "HATriC: 60% HA / 40% beta-TCP biphasic ceramic wedge; OSferion: 100% high-purity beta-TCP wedge",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K040381 (HATriC, 2004-05-12); K071876 (Cross.Bone wedge, tibial osteotomy with internal fixation); OSferion wedge K number not retrieved",
+        "us_market_year": 2004,
+        "on_label_indications": [
+          "Bone void filler or bone graft substitute in bony voids or gaps not intrinsic to the stability of the bony structure (extremities, pelvis, spine); not a load-bearing device; use with adequate post-operative immobilization (HATriC)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "hto-wedge",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "Beta-TCP and HA/TCP wedges fill large opening-wedge gaps with locking plates; meta-analyses show no overall nonunion difference vs no filler or graft, and a 2026 systematic review of 1,640 knees found no outcome benefit from any filler for gaps under 10 mm. A 2026 bilateral-knee RCT (n=42) found TCP granules gave better WOMAC/VAS than allograft.",
+          "caveats": "Clearance is for a void filler with a 'not load-bearing' statement, while the clinical use is structural gap support under a plate; cleared without clinical data."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:42500162",
+          "title": "The use of bone void fillers may not impact outcomes after medial opening wedge HTO: systematic review",
+          "year": 2026,
+          "design": "meta-analysis",
+          "n": 1640,
+          "finding": "28 studies; 36% allograft, 30% no filler, 22% synthetic, 12% autograft; no outcome difference; fillers may add complications for gaps under 10 mm.",
+          "sponsor_funded": false,
+          "applications": [
+            "hto-wedge"
+          ]
+        },
+        {
+          "ref": "PMID:41685086",
+          "title": "Allogenous bone graft versus synthetic calcium-phosphate graft in opening wedge HTO",
+          "year": 2026,
+          "design": "RCT",
+          "n": 42,
+          "finding": "84 knees (bilateral), randomized by knee; TCP granules superior on WOMAC and VAS at 2.1 years; consolidation 54.8%; no loss of correction.",
+          "sponsor_funded": false,
+          "applications": [
+            "hto-wedge"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled inpatient MS-DRG or packaged into the outpatient osteotomy APC (HTO is increasingly outpatient).",
+        "notes": "Sold as a system accessory with Arthrex's osteotomy plates; evidence says the plate, not the wedge, is doing the work."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://fda.innolitics.com/device/K040381",
+        "https://fda.innolitics.com/device/K071876",
+        "https://www.arthrex.com/knee/osferion-osteotomy-wedge"
+      ]
+    }
+  ]
+}

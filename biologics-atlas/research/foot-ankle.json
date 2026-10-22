@@ -1,0 +1,2711 @@
+{
+  "applications": [
+    {
+      "id": "ankle-fracture-syndesmosis",
+      "region": "ankle-foot",
+      "subregion": "ankle",
+      "name": "Ankle fracture (malleolar) and syndesmosis injury",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "Danis-Weber",
+          "summary": "Level of the fibular fracture relative to the syndesmosis: A below (syndesmosis intact), B at the level (syndesmosis variably injured), C above (syndesmosis disrupted)"
+        },
+        {
+          "name": "Lauge-Hansen",
+          "summary": "Mechanism-based: foot position (supination or pronation) plus deforming force (adduction, abduction, external rotation); supination-external rotation is the most common pattern and is staged I-IV by the sequence of structures that fail"
+        },
+        {
+          "name": "AO/OTA 44",
+          "summary": "Malleolar segment; 44A infrasyndesmotic, 44B transsyndesmotic, 44C suprasyndesmotic, each subdivided by medial-side and posterior-malleolar involvement"
+        }
+      ],
+      "why_biologic": "Mostly a hardware procedure (plates, screws, fibular nails, syndesmotic screws or suture-button devices); biologics enter only at the margins: injectable calcium-phosphate cement to augment screw purchase in osteoporotic metaphyseal bone or to fill an impaction void in posterior-malleolar or pilon-type extension, DBM or BMAC at a medial malleolar or fibular nonunion, and antibiotic-eluting carriers in open fractures. The syndesmosis itself is a ligament repair with no accepted bone-biologic role.",
+      "autograft_standard": "Acute fixation rarely uses graft. For malleolar nonunion the standard is revision fixation with local or iliac-crest cancellous autograft; iliac harvest carries donor-site pain and a second incision in a largely outpatient population.",
+      "volume_note": "NEISS (US emergency departments) estimated 673,214 ankle fractures over 2012-2016, about 135,000 per year, incidence 4.22 per 10,000 person-years, 16.0% admitted (Scheer 2020, PMID 32354504). In adults 65+ NEISS estimated 241,449 ankle fractures over 2016-2023 with incidence rising from 49.1 to 63.0 per 100,000 (PMID 41616724). These are ED-presenting counts, not operative counts; no US ORIF volume was found.",
+      "unverified": true,
+      "challenge": "Volume is now sourced to NEISS (ED-presenting, not operative). Nonunion remains unpooled: no meta-analysis reports an overall ankle-fracture nonunion rate; only diabetic and nicotine-stratified cohorts were found (searched 2026-10-22). Biologics are not routine in malleolar fixation and the record should not imply otherwise.",
+      "sources": [
+        "PMID:29413771",
+        "https://www.aofoundation.org/",
+        "PMID:32354504",
+        "PMID:41616724",
+        "PMID:32600558",
+        "PMID:36251594",
+        "PMID:41441890"
+      ],
+      "nonunion_note": "No pooled ankle-fracture nonunion figure exists in a meta-analysis: PubMed '(ankle fracture OR malleolar) AND nonunion AND (systematic review OR meta-analysis)' returned 19 records, none pooling nonunion after ORIF. Cohort data: Lavery 2020 (n=439, nonunion defined as not healed at 6 months) found diabetes OR 6.5 for nonunion (PMID 32600558) and a diabetic-only cohort (n=139) had 24.5% nonunion (PMID 36251594); a TriNetX bimalleolar-ORIF cohort (8,882 matched pairs) reported nonunion RR 1.65 at 2 years with smoked nicotine (PMID 41441890). Rates in non-diabetic, non-smoking patients are low single digits in these series.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "calcaneus-fracture",
+      "region": "ankle-foot",
+      "subregion": "hindfoot",
+      "name": "Calcaneal fracture (intra-articular) with void fill after reduction",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "Sanders",
+          "summary": "CT-based count of posterior-facet articular fragments on the coronal cut: I nondisplaced, II two-part, III three-part, IV four or more (comminuted); subtypes A-C by fracture-line position"
+        },
+        {
+          "name": "Essex-Lopresti",
+          "summary": "Plain-film pattern: tongue-type (fracture exits posteriorly through the tuberosity) versus joint-depression (posterior facet driven into the body)"
+        }
+      ],
+      "why_biologic": "Reduction of a depressed posterior facet leaves a cancellous void in the neutral triangle; a resorbable void filler or injectable calcium-phosphate cement is used to support the reduced facet and allow earlier weight-bearing. This is the clearest 'void fill' use in the foot. Cement augmentation has been studied in small series for 25 years; a Czech series found no outcome difference with or without filling, and a Dutch series associated void-filler use with wound complications through the extensile lateral approach.",
+      "autograft_standard": "Historically iliac-crest or local cancellous autograft packed under the facet; many surgeons now leave the void empty or use a synthetic because the extensile approach already carries a high wound-complication rate and a second harvest site adds morbidity.",
+      "volume_note": "No verified US count. Danish population data (PMID 32499146, 5,912 foot fractures) put all hindfoot fractures at 13.7 per 100,000 per year; the calcaneus is the most commonly fractured tarsal bone, and roughly three-quarters of calcaneal fractures are intra-articular in the older literature (that 75% figure is not verified in this sweep).",
+      "unverified": true,
+      "sources": [
+        "PMID:15913516",
+        "PMID:16210159",
+        "PMID:23318101",
+        "PMID:31941568",
+        "PMID:30415676",
+        "PMID:32499146"
+      ],
+      "challenge": "No US annual count found. Searched PubMed 2026-10-22 '(calcaneal fracture OR calcaneus fracture)[Title] AND (United States OR national OR nationwide) AND (incidence OR epidemiology OR trends)': no US national result; Danish population data (PMID 32499146) remain the only incidence source. The 75% intra-articular share is still unverified. Flag retained.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "talus-fracture-avn",
+      "region": "ankle-foot",
+      "subregion": "hindfoot",
+      "name": "Talar neck and body fracture; post-traumatic talar osteonecrosis",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "Hawkins (with Canale-Kelly modification)",
+          "summary": "Talar neck: I nondisplaced; II displaced with subtalar subluxation or dislocation (IIA subluxed, IIB dislocated); III displaced with subtalar and tibiotalar dislocation; IV adds talonavicular dislocation. Osteonecrosis risk rises with grade."
+        }
+      ],
+      "why_biologic": "Acute fixation uses no biologic. The biologic use case is the downstream salvage: talar osteonecrosis or collapse leading to tibiotalocalcaneal or pantalar arthrodesis with a structural bone block (femoral-head allograft), bulk autograft, or a custom 3D-printed titanium cage, often with BMAC or rhBMP-2 used off-label by the surgeon. Core decompression with BMAC for early AVN is reported only in small series.",
+      "autograft_standard": "For salvage fusion the standard is iliac-crest structural autograft or fibular strut; volume is limited for the large defects seen after talar collapse, which is why bulk allograft and metal cages dominate.",
+      "volume_note": "Rare injury; no US volume source found. Talus fractures are a small fraction of hindfoot fractures (hindfoot incidence 13.7 per 100,000 per year in PMID 32499146).",
+      "unverified": true,
+      "sources": [
+        "PMID:34088463",
+        "PMID:34972563",
+        "PMID:35585002",
+        "PMID:41724588",
+        "PMID:32499146"
+      ],
+      "challenge": "No US volume source. Searched PubMed 2026-10-22 (talus[Title] AND United States/national AND incidence/epidemiology): only a Finnish register study (PMID 39702100) and a US-military osteochondral-lesion study (PMID 22224323) were returned; neither gives a US talus-fracture count. Flag retained.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "lisfranc-injury",
+      "region": "ankle-foot",
+      "subregion": "midfoot",
+      "name": "Lisfranc (tarsometatarsal) fracture-dislocation: ORIF versus primary arthrodesis",
+      "type": "fracture",
+      "classifications": [
+        {
+          "name": "Myerson (modified Hardcastle)",
+          "summary": "A total incongruity of the tarsometatarsal joint; B partial incongruity (B1 medial column, B2 lateral columns); C divergent (C1 partial, C2 total)"
+        },
+        {
+          "name": "Nunley-Vertullo",
+          "summary": "Subtle (ligamentous, athletic) injuries: stage I no diastasis on weight-bearing films, II 2-5 mm diastasis without arch collapse, III diastasis with loss of arch height"
+        }
+      ],
+      "why_biologic": "Primary arthrodesis of the medial two or three tarsometatarsal joints has become common for purely ligamentous injuries because it halves reoperation versus ORIF in randomized data; the fusion bed is small and surgeons pack it with local autograft, DBM, or a cellular allograft. In ORIF there is no biologic role. Nonunion after primary arthrodesis is uncommon but not pooled in the studies found.",
+      "autograft_standard": "Local bone from joint preparation or calcaneal/proximal-tibial cancellous autograft; small volumes needed, so donor-site morbidity is modest.",
+      "volume_note": "US TriNetX Collaborative Network 2014-2024: 21,964 primary Lisfranc injuries presenting to EDs or ambulatory settings, overall incidence 22.4 per 100,000 person-years, peaking at 33.6 per 100,000 at ages 40-44 (PMID 40839129). Lisfranc injuries are about 0.2% of all fractures (PMID 26022112); midfoot fracture incidence is 6.5 per 100,000 per year in Danish data (PMID 32499146). No US operative count.",
+      "sources": [
+        "PMID:19796583",
+        "PMID:26022112",
+        "PMID:30850102",
+        "PMID:31036779",
+        "PMID:34384419",
+        "PMID:42406178",
+        "PMID:32499146",
+        "PMID:40839129"
+      ],
+      "challenge": "TriNetX incidence is a network-based estimate (participating health systems), not a census; surgical-intervention rates are in the paper, not extracted here.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "fifth-metatarsal-jones",
+      "region": "ankle-foot",
+      "subregion": "forefoot",
+      "name": "Proximal fifth metatarsal (Jones, zone II-III) fracture and nonunion",
+      "type": "nonunion",
+      "classifications": [
+        {
+          "name": "Lawrence-Botte zones",
+          "summary": "Zone 1 tuberosity avulsion; zone 2 metaphyseal-diaphyseal junction (the true Jones fracture, watershed blood supply); zone 3 proximal diaphyseal stress fracture"
+        },
+        {
+          "name": "Torg",
+          "summary": "Diaphyseal stress fractures: I acute (sharp margins, no intramedullary sclerosis), II delayed union (widened line, intramedullary sclerosis), III nonunion (sclerotic obliteration of the canal)"
+        }
+      ],
+      "why_biologic": "Intramedullary screw fixation is the standard in athletes; the watershed blood supply drives delayed union, nonunion and refracture, so surgeons add BMAC, DBM, or calcaneal autograft at the fracture site. A 2022 meta-analysis of 718 athlete fractures found union of 98.5% with orthobiologic augmentation versus 93.8% with fixation alone, with no comparative trials. Revision for nonunion or refracture uses a larger screw plus autograft or BMA plus DBM.",
+      "autograft_standard": "Calcaneal or iliac cancellous autograft at open bone grafting; most primary cases are percutaneous and use BMAC drawn from the iliac crest or calcaneus instead.",
+      "volume_note": "No US annual count found. Forefoot fractures dominate foot-fracture incidence (123.9 per 100,000 per year in PMID 32499146) but the Jones subset is not broken out.",
+      "unverified": true,
+      "sources": [
+        "PMID:33740393",
+        "PMID:22956165",
+        "PMID:35612823",
+        "PMID:21212308",
+        "PMID:21632977",
+        "PMID:26353796",
+        "PMID:26781131",
+        "PMID:32499146",
+        "PMID:42319275"
+      ],
+      "nonunion_note": "Systematic review of 10 studies/998 patients comparing surgical and conservative treatment of zone-2 (Jones) fractures: nonunion 7/211 (3.3%) with surgical fixation vs 91/787 (11.6%) nonoperatively, total complications 8.5% vs 15.6% (Encinas 2026, JAAOS, PMID 42319275).",
+      "challenge": "Nonunion is now sourced to a 2026 systematic review (surgical 3.3% vs conservative 11.6%). No US annual Jones-fracture count exists: the only nationwide fifth-metatarsal surgery epidemiology found is Japanese (PMID 40011147). Flag retained for volume.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "ankle-arthrodesis",
+      "region": "ankle-foot",
+      "subregion": "ankle",
+      "name": "Tibiotalar (ankle) arthrodesis, open or arthroscopic",
+      "type": "fusion",
+      "classifications": [],
+      "why_biologic": "Autograft or a substitute is packed into the prepared joint to bridge gaps and, in high-risk hosts (smokers, diabetics, prior triple fusion, osteonecrosis, revision), to add osteoinductive or osteogenic signal. Augment (rhPDGF-BB/beta-TCP) is the only product with an FDA label for this use. A 2026 series of 227 CT-verified fusions found no difference with or without graft (92.4% vs 92.8%), supporting selective rather than routine use.",
+      "autograft_standard": "Local bone from joint preparation, with iliac-crest, proximal-tibial, or calcaneal cancellous autograft for defects; iliac harvest adds donor-site pain, which the Augment pivotal trial used as its principal clinical argument.",
+      "volume_note": "Nationwide Inpatient Sample 2016-2019 identified 12,325 inpatient ankle arthrodeses, about 3,100 per year, inpatient only (PMID 39931642). Medicare FFS: 19,120 ankle arthrodeses vs 9,059 total ankle replacements in the study window, with annual AA falling from 2,080 (2005) to 1,823 (2014) (PMID 32830583). All foot-and-ankle arthrodeses rose from 8.2 to 20.2 per 100,000 between 1994 and 2006 in NSAS/NHDS data (PMID 26213159). No all-payer, all-setting US count exists; outpatient/ASC cases are not in NIS.",
+      "challenge": "Pooled nonunion for screw-fixed ankle arthrodesis is about 4% (Izzo 2023), well below the historical 10-15%; quoting the higher figure invites challenge. Volume figures are inpatient (NIS) or Medicare-only; there is no all-payer count that includes ASC cases.",
+      "sources": [
+        "PMID:17768184",
+        "PMID:37212175",
+        "PMID:35705455",
+        "PMID:42297664",
+        "PMID:35807177",
+        "PMID:37165889",
+        "PMID:37903965",
+        "PMID:36795152",
+        "PMID:39931642",
+        "PMID:32830583",
+        "PMID:26213159"
+      ],
+      "nonunion_note": "Proportional meta-analysis of 38 studies/1,990 ankles fixed with screws: pooled fusion 96% (95% CI 95-98), i.e. about 4% nonunion; complications 15%, reoperation excluding hardware removal 3% (Izzo 2023, PMID 36795152). Older figures: 9% revision with nonunion 65% of revisions (PMID 17768184), 7.7% nonunion in 284 arthroscopic cases (PMID 37212175), 6.1% for single-joint foot/ankle fusions in an umbrella meta-analysis (PMID 35705455).",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "subtalar-hindfoot-arthrodesis",
+      "region": "ankle-foot",
+      "subregion": "hindfoot",
+      "name": "Subtalar, double and triple (hindfoot) arthrodesis",
+      "type": "fusion",
+      "classifications": [],
+      "why_biologic": "Posterior-facet preparation leaves a cancellous bed that surgeons fill with local autograft or a substitute; distraction or bone-block subtalar fusion after calcaneal malunion needs structural graft. Subtalar nonunion pooled at 6-10% (open 10.9%, arthroscopic 5.9%); revision subtalar fusion fails in about 20%; subtalar fusion after a prior tibiotalar fusion united in 80%. Augment's label covers hindfoot fusion, and the Augment pivotal cohort was largely subtalar, talonavicular and calcaneocuboid joints.",
+      "autograft_standard": "Local cancellous bone, calcaneal or proximal-tibial autograft, iliac-crest tricortical block for distraction arthrodesis; iliac harvest morbidity is the usual argument for substitutes.",
+      "volume_note": "No subtalar-specific US count. All foot-and-ankle arthrodeses rose from 8.2 to 20.2 per 100,000 between 1994 and 2006 in NSAS/NHDS data, with outpatient volume up 415% (PMID 26213159); hindfoot joints are not broken out.",
+      "unverified": true,
+      "sources": [
+        "PMID:39433174",
+        "PMID:33940969",
+        "PMID:37434387",
+        "PMID:35705455",
+        "PMID:23824386",
+        "PMID:26213159"
+      ],
+      "challenge": "Searched PubMed 2026-10-22 (subtalar[Title] AND United States/national AND incidence/volume/utilization): no subtalar-specific national count. Flag retained.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "ttc-arthrodesis",
+      "region": "ankle-foot",
+      "subregion": "hindfoot",
+      "name": "Tibiotalocalcaneal (TTC) and tibiocalcaneal arthrodesis, including bulk-defect salvage",
+      "type": "fusion",
+      "classifications": [],
+      "why_biologic": "The highest-nonunion fusion in the foot and ankle: 27.1% pooled in an umbrella meta-analysis, with much of the indication mix being failed total ankle replacement, talar osteonecrosis, Charcot, and infection. Large defects are filled with femoral-head structural allograft (union 67.4% pooled; 50% in a 32-patient series where every diabetic failed) or a 3D-printed titanium cage (union 88-89% pooled), and surgeons layer BMAC, DBM, and off-label rhBMP-2 onto the construct. Revision TTC with a retrograde nail achieved a stable limb in about 70% with or without BMP-2 in a 23-patient series.",
+      "autograft_standard": "Fibular strut (resected distal fibula) or iliac-crest autograft; volume is insufficient for the multi-centimeter defects that define the salvage subgroup, which is why structural allograft and cages dominate.",
+      "volume_note": "No US annual count found; a niche, high-acuity procedure concentrated in tertiary foot-and-ankle and limb-salvage centers.",
+      "unverified": true,
+      "sources": [
+        "PMID:35705455",
+        "PMID:35585002",
+        "PMID:23650649",
+        "PMID:41724588",
+        "PMID:42600975",
+        "PMID:22575061",
+        "PMID:38274151",
+        "PMID:38726323",
+        "PMID:31640417"
+      ],
+      "challenge": "No US annual count. Searched PubMed 2026-10-22 (tibiotalocalcaneal/ankle arthrodesis AND United States/national): NIS ankle-arthrodesis counts (PMID 39931642) do not separate TTC from tibiotalar fusion. Union for 3D-titanium TTC in critical defects pooled 88.2% in 15 studies/142 patients (PMID 41724588). Flag retained.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "charcot-midfoot-reconstruction",
+      "region": "ankle-foot",
+      "subregion": "midfoot",
+      "name": "Charcot neuroarthropathy midfoot and hindfoot reconstruction",
+      "type": "fusion",
+      "classifications": [
+        {
+          "name": "Eichenholtz",
+          "summary": "Stage 0 prodromal (warm, swollen, normal films); I development/fragmentation; II coalescence; III consolidation/remodeling"
+        },
+        {
+          "name": "Brodsky anatomic",
+          "summary": "Type 1 midfoot (tarsometatarsal and naviculocuneiform, about 60%); 2 hindfoot (subtalar, talonavicular, calcaneocuboid); 3A ankle; 3B calcaneal tuberosity"
+        }
+      ],
+      "why_biologic": "Neuropathic, osteopenic, often ulcerated and infected bone with very high nonunion and hardware-failure rates; surgeons use extended internal fixation (beams, bolts, plates) or external fixation and routinely add BMAC, DBM, PRP, structural allograft, and off-label rhBMP-2 because autograft volume is inadequate and the host is compromised. A systematic review of intramedullary beaming found high nonunion and complication rates with poor-quality evidence; external fixation was 8 times more likely to show radiographic nonunion than internal fixation in a 2016 review. Infected Charcot is where antibiotic-eluting carriers enter.",
+      "autograft_standard": "Iliac-crest or proximal-tibial autograft; the volume needed after wedge resection usually exceeds what can be harvested, and diabetic hosts tolerate a second site poorly.",
+      "volume_note": "No US procedure count found. Texas hospital-discharge data show rising age-standardized Charcot rates in diabetic patients from 2006 to 2016 with increasing amputations (PMID 38944563). Charcot midfoot-fusion TTC nails pooled a 3.3% nonunion rate in a 2025 meta-analysis of 147 patients, a figure most foot-and-ankle surgeons would treat as optimistic.",
+      "challenge": "Any single Charcot nonunion percentage will be challenged because series count stable fibrous nonunion with a plantigrade, ulcer-free foot as success (PMID 34587806, PMID 25862129); the 11.9% pooled figure (PMID 38548584) is the best-sourced number, and the 3.3% TTC-nail figure is optimistic.",
+      "sources": [
+        "PMID:35701302",
+        "PMID:27280625",
+        "PMID:19254506",
+        "PMID:40702500",
+        "PMID:38944563",
+        "PMID:25586504",
+        "PMID:38548584",
+        "PMID:34587806",
+        "PMID:25862129"
+      ],
+      "nonunion_note": "Proportional meta-analysis of 30 studies/492 internal-fixation Charcot reconstructions: nonunion 11.9% (95% CI 6.6-18.1), deep infection 6.7%, amputation after infection 36.6% (Tsikopoulos 2024, PMID 38548584). Union definitions differ: Kavarthapu 2021 counted 9/15 midfoot fusions (60%) with the other six as 'stable and painless fibrous nonunion' and all limbs salvaged (PMID 34587806); Mittlmeier 2015 states the outcome 'does not depend on definite osseous healing of the arthrodesis' (PMID 25862129).",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "first-mtp-arthrodesis",
+      "region": "ankle-foot",
+      "subregion": "forefoot",
+      "name": "First metatarsophalangeal joint arthrodesis (hallux rigidus, severe hallux valgus, failed implant salvage)",
+      "type": "fusion",
+      "classifications": [
+        {
+          "name": "Coughlin-Shurnas (hallux rigidus)",
+          "summary": "Grade 0 stiffness only; 1 mild osteophytes; 2 moderate joint narrowing; 3 severe narrowing with cysts, pain at end range; 4 grade 3 plus mid-range pain"
+        }
+      ],
+      "why_biologic": "Primary fusion needs little or no graft and nonunion is 5-9%; salvage after a failed silicone or metallic implant leaves a shortening defect that requires a structural interposition graft (iliac autograft or allograft block) and carries a 16.5% pooled nonunion. Biologic use is therefore concentrated in revision and salvage, not primary cases.",
+      "autograft_standard": "Local bone for primary; iliac-crest tricortical autograft for interposition in salvage, with donor-site morbidity driving use of allograft blocks.",
+      "volume_note": "No US annual count found. NSAS/NHDS data put all foot-and-ankle arthrodeses at 20.2 per 100,000 in 2006 (PMID 26213159) without a first-MTP breakout. A 2026 PearlDiver national claims study of primary vs revision first-MTP arthrodesis (2,099 matched pairs) reports 2-year nonunion diagnoses of 4.1% after primary and 9.9% after revision/salvage fusion, repeat fusion 4.4% vs 7.2% (PMID 42602317); the study does not report a national annual volume.",
+      "unverified": true,
+      "sources": [
+        "PMID:41534781",
+        "PMID:30201557",
+        "PMID:31582288",
+        "PMID:37165627",
+        "PMID:26213159",
+        "PMID:42602317"
+      ],
+      "nonunion_note": "Claims-coded nonunion diagnosis at 2 years: 4.1% primary vs 9.9% revision/salvage first-MTP arthrodesis (PearlDiver, PMID 42602317).",
+      "challenge": "No national annual count for first-MTP arthrodesis was found (searched PubMed 2026-10-22 for first metatarsophalangeal/hallux AND United States/national AND incidence/volume/utilization; the only national database study, PMID 42602317, reports matched cohorts, not totals). Flag retained for volume.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "bunion-osteotomy-lapidus",
+      "region": "ankle-foot",
+      "subregion": "forefoot",
+      "name": "Hallux valgus correction: distal/shaft osteotomy and Lapidus (first TMT) arthrodesis",
+      "type": "osteotomy",
+      "classifications": [],
+      "why_biologic": "A minor biologic use. Chevron and scarf osteotomies heal reliably without graft. Lapidus arthrodesis nonunion ranges from 0.7% (plantar plating) to 5.3% (screws only) in a 1,176-patient meta-analysis, so some surgeons add DBM, BMAC, or a small cellular allograft, and opening-wedge medial-cuneiform (Cotton) osteotomies use a structural wedge (allograft, bioactive glass, titanium, or porous PEEK). Treace Medical's Lapiplasty system is the volume driver in this segment.",
+      "autograft_standard": "Local bone from joint preparation; a Cotton wedge historically used iliac-crest tricortical autograft, now largely replaced by allograft or synthetic wedges.",
+      "volume_note": "No verified all-payer US count. CMS Medicare Part B data 2013-2022 show a substantial decline in bunionectomies in Medicare beneficiaries with a rising share of Lapidus procedures (PMID 40154771; counts are in the paper, not the abstract). Hallux valgus surgery is overwhelmingly outpatient/ASC and so is invisible to NIS.",
+      "unverified": true,
+      "sources": [
+        "PMID:38483102",
+        "PMID:37669405",
+        "PMID:40154771"
+      ],
+      "challenge": "Searched PubMed 2026-10-22 (hallux valgus/bunion/Lapidus AND United States/national AND incidence/trends/volume): only the Medicare-only trend paper (PMID 40154771) is US; the annual counts are in its tables, not retrieved here. Flag retained.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "diabetic-foot-osteomyelitis-dead-space",
+      "region": "ankle-foot",
+      "subregion": "foot",
+      "name": "Diabetic foot osteomyelitis and calcaneal osteomyelitis: dead-space management after debridement",
+      "type": "bone-void",
+      "classifications": [
+        {
+          "name": "Cierny-Mader",
+          "summary": "Anatomic type I medullary, II superficial, III localized, IV diffuse; host class A healthy, B compromised (local, systemic or both), C treatment worse than disease"
+        },
+        {
+          "name": "IWGDF/IDSA infection severity",
+          "summary": "Grade 1 uninfected, 2 mild (skin only), 3 moderate (deeper or larger), 4 severe (systemic signs); osteomyelitis flagged with an O suffix in the 2023 IWGDF/IDSA classification"
+        }
+      ],
+      "why_biologic": "After resection of infected bone the cavity must be filled to avoid hematoma and recurrence; resorbable calcium-sulfate or calcium-sulfate/hydroxyapatite carriers deliver local antibiotic at concentrations systemic therapy cannot reach and resorb without a second procedure. Cerament G is the only US-authorized antibiotic-eluting void filler; surgeon-mixed Stimulan beads are widespread but off-label for the antibiotic. The strongest data are from long-bone osteomyelitis (96% eradication at one procedure in 100 patients; 94% infection-free at 6 years), while diabetic-foot-specific series are small and mixed (42% recurrence in one 45-case US calcium-sulfate series; no benefit in a 25-patient Greek comparison).",
+      "autograft_standard": "No autograft standard; the comparator is debridement plus systemic antibiotics with the cavity left open, packed, or managed with PMMA beads that need removal.",
+      "volume_note": "No verified US count for diabetic foot osteomyelitis admissions found in this sweep.",
+      "unverified": true,
+      "sources": [
+        "PMID:27587534",
+        "PMID:36047024",
+        "PMID:37400090",
+        "PMID:38371037",
+        "PMID:33295248",
+        "PMID:33358382",
+        "PMID:39615516",
+        "PMID:40732148",
+        "NCT07057817",
+        "NCT05316298"
+      ],
+      "challenge": "No US annual count for diabetic foot osteomyelitis admissions or resections was found. Searched PubMed 2026-10-22: '(diabetic foot osteomyelitis[Title]) AND (United States OR national OR nationwide) AND (incidence OR epidemiology OR trends OR burden OR hospitalizations)' returned no US national count; HCUP/NIS diabetic-foot amputation counts exist but do not isolate osteomyelitis dead-space management. Flag retained.",
+      "last_reviewed": "2026-10-22"
+    },
+    {
+      "id": "foot-ankle-nonunion",
+      "region": "ankle-foot",
+      "subregion": "foot-ankle",
+      "name": "Foot and ankle nonunion and high-risk revision fusion (general)",
+      "type": "nonunion",
+      "classifications": [
+        {
+          "name": "Weber-Cech",
+          "summary": "Hypertrophic (viable, mechanically unstable), oligotrophic, atrophic (biologically inert); infected nonunion is managed as a separate category"
+        }
+      ],
+      "why_biologic": "Across foot and ankle fusions the pooled nonunion prevalence is 8.1% (6.1% for single joints, 27.1% for TTC). Revision for atrophic nonunion needs osteoinduction and osteogenic cells beyond what the bed provides, so BMAC, DBM, cellular allograft, rhPDGF-BB (on-label only for primary hindfoot/ankle fusion), and off-label rhBMP-2 are stacked onto revised fixation. A 2025 review concludes BMAC has moderate-to-high evidence for percutaneous treatment of delayed union and nonunion but that systematic reviews question its benefit in arthrodesis.",
+      "autograft_standard": "Iliac-crest cancellous autograft remains the reference for atrophic nonunion; it is limited by volume and donor-site pain, and many foot/ankle patients are smokers or diabetics in whom harvest morbidity is higher.",
+      "volume_note": "Derived rather than counted: 8.1% of all foot/ankle fusions (PMID 35705455); no US nonunion count found.",
+      "unverified": true,
+      "sources": [
+        "PMID:35705455",
+        "PMID:40680688",
+        "PMID:15995108",
+        "PMID:28416462",
+        "PMID:19589304",
+        "PMID:38704857",
+        "PMID:27797787"
+      ],
+      "challenge": "Volume is derived (8.1% of foot/ankle fusions, PMID 35705455), not counted. Searched PubMed 2026-10-22 for US nonunion counts (foot/ankle nonunion AND United States/national AND incidence/trends): none found. Flag retained; the derived figure is the best available.",
+      "last_reviewed": "2026-10-22"
+    }
+  ],
+  "products": [
+    {
+      "id": "augment-bone-graft",
+      "name": "Augment Bone Graft",
+      "company": "Stryker",
+      "ownership_history": "Developed by BioMimetic Therapeutics (Franklin, TN); BioMimetic acquired by Wright Medical Group 2013; Wright Medical acquired by Stryker (closed November 2020). Stryker still lists Augment Bone Graft and Augment Injectable in its Trauma & Extremities biologics line as of this review; no divestiture found.",
+      "category": "rhPDGF",
+      "composition": "Recombinant human platelet-derived growth factor-BB (0.3 mg/mL, yeast-expressed) with beta-tricalcium phosphate granules; drug-device combination product",
+      "regulatory": {
+        "path": "PMA",
+        "reference": "P100006",
+        "us_market_year": 2015,
+        "on_label_indications": [
+          "As an alternative to autograft in arthrodesis (surgical fusion) of the ankle and/or hindfoot joints in patients with osteoarthritis, post-traumatic, rheumatoid or psoriatic arthritis, avascular necrosis, joint instability or deformity, congenital defects, or other joint arthropathies, who need supplemental graft material on pre- or intraoperative assessment (summary of the approval order; FDA PMA P100006, decision 2015-09-01)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "ankle-arthrodesis",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "DiGiovanni 2013 (JBJS; PMID 23824386): 434 patients at 37 North American sites randomized 2:1 to rhPDGF-BB/beta-TCP or autograft for hindfoot or ankle fusion; CT fusion at 6 months 61.2% of patients (66.5% of joints) vs 62.0% (62.6%), clinical healing at 52 weeks 86.2% vs 87.6%, noninferior with less pain and fewer graft-site complications.",
+          "caveats": "Sponsor-funded (BioMimetic); noninferiority design against autograft; absolute 6-month CT fusion rates in the low 60s on both arms; two-thirds of enrolled joints were hindfoot rather than tibiotalar."
+        },
+        {
+          "application_id": "subtalar-hindfoot-arthrodesis",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Same pivotal RCT (PMID 23824386); subtalar, talonavicular and calcaneocuboid joints made up most of the 597 joints analyzed.",
+          "caveats": "Sponsor-funded; no subgroup powered for any single joint."
+        },
+        {
+          "application_id": "foot-ankle-nonunion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "Label is for primary arthrodesis; no revision or nonunion trial found.",
+          "caveats": "Off-label in revision; CMS cited a post-hoc finding that patients 65 and older were more than twice as likely to fuse with Augment than autograft, which has not been prospectively replicated."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:23824386",
+          "title": "Recombinant human platelet-derived growth factor-BB and beta-tricalcium phosphate (rhPDGF-BB/beta-TCP): an alternative to autogenous bone graft",
+          "year": 2013,
+          "design": "RCT",
+          "n": 434,
+          "finding": "Noninferior to autograft for hindfoot/ankle fusion on CT at 6 months and clinical healing at 52 weeks, with less pain and fewer side effects.",
+          "sponsor_funded": true,
+          "applications": [
+            "ankle-arthrodesis",
+            "subtalar-hindfoot-arthrodesis"
+          ]
+        },
+        {
+          "ref": "PMID:21733435",
+          "title": "Prospective, randomized, multi-center feasibility trial of rhPDGF-BB versus autologous bone graft in a foot and ankle fusion model",
+          "year": 2011,
+          "design": "RCT",
+          "n": 20,
+          "finding": "Radiographic union 77% Augment vs 50% autograft at 36 weeks in a 20-patient pilot; surgery 26 minutes shorter without harvest.",
+          "sponsor_funded": true,
+          "applications": [
+            "ankle-arthrodesis",
+            "subtalar-hindfoot-arthrodesis"
+          ]
+        },
+        {
+          "ref": "NCT00583375",
+          "title": "Pivotal trial of Augment Bone Graft vs autologous bone graft in foot and ankle fusions",
+          "year": 2010,
+          "design": "RCT",
+          "n": 414,
+          "finding": "Registry entry for the pivotal trial (enrollment 414 listed; 434 in the publication); completed, primary completion January 2010.",
+          "sponsor_funded": true,
+          "applications": [
+            "ankle-arthrodesis",
+            "subtalar-hindfoot-arthrodesis"
+          ]
+        },
+        {
+          "ref": "NCT02879149",
+          "title": "Post-approval trial of Augment Bone Graft vs autologous bone graft in foot and ankle fusions",
+          "year": 2018,
+          "design": "prospective-cohort",
+          "n": 150,
+          "finding": "FDA-required post-approval study; status listed as unknown on ClinicalTrials.gov, no results posted.",
+          "sponsor_funded": true,
+          "applications": [
+            "ankle-arthrodesis"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Inpatient: bundled in the MS-DRG. Hospital outpatient and ASC: CMS granted transitional pass-through status under device category C1734 effective 2020-01-01, billed with ankle/hindfoot arthrodesis CPT codes (27870 and related), after finding substantial clinical improvement from eliminating donor-site pain; pass-through lasts two to three years, so the product is now packaged into the procedure APC/ASC rate (exact expiry date not verified in this sweep).",
+        "notes": "Carried by Stryker Foot & Ankle (ex-Wright) reps alongside Prophecy/Infinity ankle and hindfoot nail systems; the only PMA-approved osteoinductive product with a foot-and-ankle label, which is its core contracting argument against 361 cellular allografts. The pass-through window (2020-2022/23) was the main commercial catalyst after approval."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=p100006",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf10/P100006d.pdf",
+        "https://www.stryker.com/content/dam/stryker/foot-and-ankle/products/augment/resources/Augment-FAQ--Device-Pass-Through-Payment.pdf",
+        "https://www.stryker.com/content/dam/stryker/foot-and-ankle/products/augment/resources/Augment-Regenerative-Solutions-AP-017085.pdf",
+        "PMID:23824386",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "augment-injectable",
+      "name": "Augment Injectable Bone Graft",
+      "company": "Stryker",
+      "ownership_history": "Same chain as Augment Bone Graft: BioMimetic Therapeutics to Wright Medical (2013) to Stryker (2020).",
+      "category": "rhPDGF",
+      "composition": "rhPDGF-BB (0.3 mg/mL) with an injectable beta-tricalcium phosphate and bovine type I collagen matrix",
+      "regulatory": {
+        "path": "PMA",
+        "reference": "P100006/S005",
+        "us_market_year": 2018,
+        "on_label_indications": [
+          "Same indication as Augment Bone Graft: alternative to autograft in ankle and hindfoot arthrodesis (PMA supplement S005, approval notice dated 2018-06-12)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "ankle-arthrodesis",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Daniels 2015 (FAI; PMID 25848134): 75 patients randomized 5:1 (63 Augment Injectable, 12 autograft) plus 142 autograft controls from the parallel Augment trial; complete CT fusion at 24 weeks 84% vs 65% (p<0.001), clinical success at 52 weeks 91% vs 78%.",
+          "caveats": "Sponsor-funded (Wright Medical author); only 12 concurrent randomized controls, the rest borrowed from a separate trial with an identical protocol; superiority signal rests on that pooled control."
+        },
+        {
+          "application_id": "subtalar-hindfoot-arthrodesis",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "Same trial (PMID 25848134); NCT01305356 lists 299 enrolled.",
+          "caveats": "As above."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:25848134",
+          "title": "Prospective randomized controlled trial of hindfoot and ankle fusions treated with rhPDGF-BB in combination with a beta-TCP-collagen matrix",
+          "year": 2015,
+          "design": "RCT",
+          "n": 217,
+          "finding": "24-week CT fusion 84% vs 65% autograft; mean time to fusion 14.3 vs 19.7 weeks; two harvest-site infections in controls.",
+          "sponsor_funded": true,
+          "applications": [
+            "ankle-arthrodesis",
+            "subtalar-hindfoot-arthrodesis"
+          ]
+        },
+        {
+          "ref": "NCT01305356",
+          "title": "Pivotal trial of Augment Injectable Bone Graft vs autologous bone graft in hindfoot fusions",
+          "year": 2013,
+          "design": "RCT",
+          "n": 299,
+          "finding": "Completed April 2013 at 25 sites; supported the 2018 PMA supplement.",
+          "sponsor_funded": true,
+          "applications": [
+            "subtalar-hindfoot-arthrodesis"
+          ]
+        },
+        {
+          "ref": "NCT03998137",
+          "title": "Post-approval trial of Augment Injectable vs autologous bone graft in foot and ankle fusions",
+          "year": 2021,
+          "design": "prospective-cohort",
+          "n": 94,
+          "finding": "Post-approval study; status unknown, no results posted.",
+          "sponsor_funded": true,
+          "applications": [
+            "ankle-arthrodesis"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Covered by the same C1734 pass-through category as Augment Bone Graft from 2020-01-01 in HOPD and ASC; now packaged. Inpatient bundled in MS-DRG.",
+        "notes": "Injectable form was built for percutaneous and arthroscopic fusions and ASC workflow; 1.5 cc and 3.0 cc kits."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf10/P100006S005b.pdf",
+        "https://www.odtmag.com/contents/view_breaking-news/2018-06-14/fda-approves-wright-medicals-injectable-bone-graft-for-ankle-and-hindfoot-fusion/",
+        "PMID:25848134",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "infuse",
+      "name": "Infuse Bone Graft",
+      "company": "Medtronic",
+      "ownership_history": "Developed by Genetics Institute/Wyeth with Medtronic Sofamor Danek; Medtronic has held it since the 2002 approval.",
+      "category": "rhBMP",
+      "composition": "rhBMP-2 (1.5 mg/mL) on absorbable bovine type I collagen sponge",
+      "regulatory": {
+        "path": "PMA",
+        "reference": "P000058; TLIF supplement P000058/S096 approved 2026-02-13 (one or two adjacent levels, L2-S1)",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "Spinal fusion in skeletally mature patients with degenerative disc disease at one level L4-S1 with the LT-Cage via anterior approach (P000058, approved 2002-07-02, with later supplements for additional interbody devices)",
+          "Acute open tibial shaft fractures stabilized with an intramedullary nail, applied within 14 days (separate PMA; number not verified in this sweep)",
+          "Sinus augmentation and localized alveolar ridge augmentation (separate PMA; number not verified in this sweep)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "ttc-arthrodesis",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "III",
+          "evidence_summary": "DeVries 2012 (PMID 22575061): 23 revision TTC fusions with a retrograde nail, 7 with rhBMP-2 and 16 without; stable functional limb in 71.4% vs 68.8%, no difference in complications or time to union.",
+          "caveats": "Off-label; FDA labeling does not cover any foot or ankle use. Tiny comparison, retrospective, underpowered."
+        },
+        {
+          "application_id": "foot-ankle-nonunion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Bibbo 2009 (PMID 19589304): 69 patients, 112 high-risk ankle and hindfoot fusion sites (64% smokers, 32% talar AVN) treated with rhBMP-2; 96% union at a mean 11 weeks by CT, 4% nonunion, one deep infection.",
+          "caveats": "Single-surgeon retrospective series without controls; off-label use; the 2014 review by the same group states rhBMP-2 outside spinal fusion is FDA off-label and should be reserved for high-risk patients."
+        },
+        {
+          "application_id": "charcot-midfoot-reconstruction",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "Used off-label by some Charcot surgeons; no comparative series found in this sweep.",
+          "caveats": "Off-label; cost and heterotopic bone and seroma concerns from the spine literature carry over."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:19589304",
+          "title": "Recombinant bone morphogenetic protein-2 (rhBMP-2) in high-risk ankle and hindfoot fusions",
+          "year": 2009,
+          "design": "retrospective",
+          "n": 69,
+          "finding": "96% union across 112 fusion sites in high-risk patients; 5 of 112 joints did not unite.",
+          "sponsor_funded": false,
+          "applications": [
+            "foot-ankle-nonunion",
+            "ankle-arthrodesis",
+            "subtalar-hindfoot-arthrodesis"
+          ]
+        },
+        {
+          "ref": "PMID:22575061",
+          "title": "The effect of recombinant bone morphogenetic protein-2 in revision tibiotalocalcaneal arthrodesis",
+          "year": 2012,
+          "design": "retrospective",
+          "n": 23,
+          "finding": "No statistically significant difference in salvage or complications with rhBMP-2 in revision TTC nailing.",
+          "sponsor_funded": false,
+          "applications": [
+            "ttc-arthrodesis"
+          ]
+        },
+        {
+          "ref": "PMID:25440416",
+          "title": "Bone morphogenetic proteins: indications and uses",
+          "year": 2014,
+          "design": "case-series",
+          "n": 0,
+          "finding": "Narrative review: only a few foot/ankle BMP studies exist; rhBMP-2 is off-label outside spine and should be used only in high-risk patients.",
+          "sponsor_funded": false,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Bundled in inpatient MS-DRG; packaged in HOPD/ASC with no pass-through. Payers and hospital value-analysis committees commonly restrict off-label use, and some require documentation of high-risk status.",
+        "notes": "Sold by Medtronic Spine and Biologics reps, not by foot-and-ankle hardware reps, which limits pull-through in the ASC-heavy foot/ankle channel. Unit cost is the main objection in foot/ankle value analysis."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P000058",
+        "PMID:19589304",
+        "PMID:22575061",
+        "PMID:25440416",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf/P000058S096B.pdf",
+        "https://api.fda.gov/device/pma.json?search=pma_number:P000058&sort=decision_date:desc&limit=8"
+      ]
+    },
+    {
+      "id": "trinity-elite",
+      "name": "Trinity ELITE (successor to Trinity Evolution)",
+      "company": "Orthofix",
+      "ownership_history": "Developed with and exclusively processed by MTF Biologics; marketed by Orthofix since 2009 (Trinity Evolution) and 2015 (Trinity ELITE). Orthofix and SeaSpine completed their all-stock merger effective 2023-01-05 (SeaSpine survives as an Orthofix subsidiary).",
+      "category": "cellular-allograft",
+      "composition": "Cryopreserved cancellous bone granules and demineralized cortical fibers from a single donor with viable cells (Orthofix states at least 750,000 cells/cc, at least 250,000 of them MSCs, osteoprogenitors or other bone-forming cells, minimum 70% viability)",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "none (regulated as a minimally manipulated human cellular and tissue-based product under 21 CFR 1271; no premarket review)",
+        "us_market_year": 2015,
+        "on_label_indications": [
+          "No FDA-reviewed indication; labeled for homologous use as a bone graft (filling or augmenting bony voids) at the surgeon's discretion"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "ankle-arthrodesis",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "II",
+          "evidence_summary": "Jones 2015 (FAI; PMID 25976919; NCT00988338): prospective, multicenter, open-label, single-arm trial of Trinity Evolution in 92 patients (153 joints) with foot and/or ankle arthrodesis; fusion at 12 months 71.1% of patients and 86.8% of joints, with no CBA-attributed adverse events.",
+          "caveats": "Orthofix-funded with Orthofix employees as authors; predecessor product; no control arm, so the 'comparable to autograft' claim is against historical rates; 16 of 92 patients lost by 12 months."
+        },
+        {
+          "application_id": "subtalar-hindfoot-arthrodesis",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "II",
+          "evidence_summary": "Same single-arm trial (PMID 25976919) included subtalar, talonavicular, calcaneocuboid, double and triple fusions.",
+          "caveats": "As above."
+        },
+        {
+          "application_id": "foot-ankle-nonunion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Donaghue 2024 (PMID 38562146): single-site retrospective series of 22 patients (29 joints) with at least one nonunion risk factor fused with Trinity ELITE; 95% fusion at 12 months.",
+          "caveats": "Single author, single site, 22 patients, no comparator; cited by Orthofix marketing."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:25976919",
+          "title": "Prospective, multicenter evaluation of allogeneic bone matrix containing viable osteogenic cells in foot and/or ankle arthrodesis",
+          "year": 2015,
+          "design": "prospective-cohort",
+          "n": 92,
+          "finding": "12-month fusion 71.1% per patient and 86.8% per joint with Trinity Evolution; high-risk subgroups fused at similar rates.",
+          "sponsor_funded": true,
+          "applications": [
+            "ankle-arthrodesis",
+            "subtalar-hindfoot-arthrodesis"
+          ]
+        },
+        {
+          "ref": "NCT00988338",
+          "title": "Trinity Evolution Matrix in subjects undergoing foot and ankle fusion",
+          "year": 2013,
+          "design": "prospective-cohort",
+          "n": 106,
+          "finding": "Registry record for the Jones 2015 study; completed January 2013, 10 sites.",
+          "sponsor_funded": true,
+          "applications": [
+            "ankle-arthrodesis"
+          ]
+        },
+        {
+          "ref": "PMID:38562146",
+          "title": "Radiographical outcomes of a cellular based allograft following foot/ankle arthrodesis in patients with risk for non-union",
+          "year": 2024,
+          "design": "case-series",
+          "n": 22,
+          "finding": "21 of 22 patients fused by 12 months with Trinity ELITE as the primary graft.",
+          "sponsor_funded": false,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:34062506",
+          "title": "Existing clinical evidence on the use of cellular bone matrix grafts in spinal fusion: updated systematic review",
+          "year": 2021,
+          "design": "meta-analysis",
+          "n": 0,
+          "finding": "Across commercially available cellular bone matrices, clinical outcome studies are few and mostly uncontrolled.",
+          "sponsor_funded": false,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "No separate payment in any facility setting; bundled in MS-DRG inpatient and packaged in HOPD/ASC procedure payment. Priced per cc; the ASC absorbs the cost against a fixed procedure rate.",
+        "notes": "Orthofix sells through a direct plus independent-distributor model; Trinity is cross-sold with Orthofix's own foot/ankle hardware and bone-growth-stimulation franchise. Per-cc pricing against an ASC's fixed fee is the recurring objection in foot/ankle, where cases need 1-5 cc."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://orthofix.com/products/trinity-elite/",
+        "https://orthofix.com/blog/new-clinical-studies-reinforce-trinity-elites-efficacy-in-bone-fusion-procedures/",
+        "https://www.odtmag.com/contents/view_breaking-news/2015-09-28/orthofix-reports-successful-study-results-for-its-cellular-bone-allograft-in-food-and-ankle-fusion/",
+        "PMID:25976919",
+        "PMID:38562146",
+        "https://www.businesswire.com/news/home/20230104005893/en/5363709/Orthofix-and-SeaSpine-Announce-Completion-of-Merger-of-Equals-to-Create-a-Leading-Global-Spine-and-Orthopedics-Company"
+      ]
+    },
+    {
+      "id": "vivigen",
+      "name": "ViviGen Cellular Bone Matrix",
+      "company": "LifeNet Health (processor/owner); DePuy Synthes (exclusive worldwide marketer)",
+      "ownership_history": "Processed and owned by LifeNet Health (Virginia Beach, VA nonprofit tissue bank); LifeNet's own page calls it 'a 361 Human Cells, Tissues, and Cellular-based Product'. DePuy Synthes holds an exclusive worldwide agreement to market and promote ViviGen (launched late 2014, full US release January 2015) and ViviGen Formable (2017), per OrthoWorld/Becker's; J&J MedTech still lists 'ViviGen Cellular Bone Matrix' as a DePuy Synthes product in 2026 (the page carries no IFU or processor statement). Terms of the agreement are not public.",
+      "category": "cellular-allograft",
+      "composition": "Cryopreserved corticocancellous bone with demineralized bone and viable lineage-committed bone cells (osteoblasts, osteocytes, bone-lining cells); marrow elements including MSCs are removed in processing. Forms: particulate, Formable fibers, MIS cannula.",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "No premarket number; LifeNet states ViviGen is a 361 HCT/P (21 CFR 1271)",
+        "us_market_year": 2014,
+        "on_label_indications": [
+          "No FDA-reviewed indication; homologous use as bone graft in orthopaedic procedures including foot and ankle"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "ankle-arthrodesis",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "LifeNet cites Moran, Sequeira and Park (Foot Ankle Specialist 2020), a retrospective review of foot and ankle arthrodesis and ORIF augmented with ViviGen, and Roukis 2020 comparing ViviGen with Trinity in foot/ankle arthrodesis; neither was retrieved with a PMID in this sweep.",
+          "caveats": "Small retrospective series from authors featured on the manufacturer's site; the strongest independent data are in spine (prospective 20-patient intrapatient PLF comparison, PMID 39667224, and ACDF series)."
+        },
+        {
+          "application_id": "foot-ankle-nonunion",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Case series only (Roukis and Samsell 2018 ankle/hindfoot arthrodesis; salvage of failed ankle arthroplasty case report).",
+          "caveats": "No comparator; no foot/ankle prospective trial found."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:39667224",
+          "title": "A prospective evaluation of cellular bone matrix for posterolateral lumbar fusion",
+          "year": 2024,
+          "design": "prospective-cohort",
+          "n": 20,
+          "finding": "Intrapatient ViviGen vs autograft in PLF: grade A fusion 62% vs 44% (p=0.056) at 12 months; spine, not foot/ankle.",
+          "sponsor_funded": true,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:36434165",
+          "title": "Characterization of an advanced viable bone allograft with preserved native bone-forming cells",
+          "year": 2022,
+          "design": "preclinical",
+          "n": 0,
+          "finding": "Bench characterization of lineage-committed cell content; industry-authored.",
+          "sponsor_funded": true,
+          "applications": [
+            "ankle-arthrodesis"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "No separate payment; bundled inpatient, packaged HOPD/ASC. Tissue-bank products are often contracted through the hospital's tissue-services agreement rather than the orthopaedic implant contract.",
+        "notes": "Pull-through comes from DePuy Synthes foot/ankle and trauma reps who also carry chronOS and DBX; an ACDF charge-and-readmission database study (PMID 34794470) is used commercially against rhBMP-2 but is spine data. LifeNet (processor, also sells its own Optium DBM) and DePuy Synthes (exclusive marketer) are separate companies; Optium is not part of the DePuy channel."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.lifenethealth.org/vivigen",
+        "PMID:39667224",
+        "PMID:36434165",
+        "PMID:34794470",
+        "https://www.jnjmedtech.com/en-US/product/vivigen-cellular-bone-matrix",
+        "https://www.beckersspine.com/spinal-tech/depuy-synthes-and-lifenet-health-collaborate-to-create-vivigen-formable-cellular-bone-matrix-6-details/"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "osteocel",
+      "name": "Osteocel Pro (Osteocel Plus)",
+      "company": "Globus Medical",
+      "ownership_history": "Developed by Osiris Therapeutics; sold to NuVasive in July 2008 (up to $85M plus supply agreement); Globus Medical completed its merger with NuVasive on 2023-09-01.",
+      "category": "cellular-allograft",
+      "composition": "Cancellous bone rich in viable marrow-derived cells (MSC-containing) combined with demineralized bone matrix from the same donor",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "none; No Osteocel 510(k)/PMA in openFDA (device_name OSTEOCEL: no matches); Globus FY2025 10-K treats Osteocel Plus and Pro as allograft tissue implants supplied by tissue banks (361 HCT/P status inferred)",
+        "us_market_year": 2005,
+        "on_label_indications": [
+          "No FDA-reviewed indication; homologous bone-graft use"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "foot-ankle-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No foot or ankle clinical study found; the product's published evidence is spine (single-level ACDF multi-institutional pseudarthrosis analysis, PMID 34062497).",
+          "caveats": "Spine-focused franchise; foot/ankle use is extrapolation."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:34062497",
+          "title": "Pseudarthrosis rate following anterior cervical discectomy with fusion using an allograft cellular bone matrix: a multi-institutional analysis",
+          "year": 2021,
+          "design": "retrospective",
+          "n": 0,
+          "finding": "Multi-institutional ACDF series with Osteocel; spine only.",
+          "sponsor_funded": false,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Globus has a trauma and foot/ankle plating line, but Osteocel is sold mainly through the spine channel; expect little presence in foot/ankle ASCs."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.globusmedical.com/musculoskeletal-solutions/biologics/osteocel/",
+        "https://www.biospace.com/osiris-therapeutics-inc-and-nuvasive-inc-enter-into-definitive-agreement-for-osteocel-r-for-up-to-85-million-in-upfront-and-milestone-payments",
+        "https://www.sec.gov/Archives/edgar/data/1237831/000162828026011209/gmed-20251231.htm",
+        "PMID:34062497",
+        "https://www.investors.globusmedical.com/node/12061"
+      ]
+    },
+    {
+      "id": "bio4",
+      "name": "BIO4 Viable Bone Matrix",
+      "company": "Stryker (marketing); Osiris Therapeutics (manufacturer)",
+      "ownership_history": "Osiris Therapeutics developed the viable bone matrix (marketed earlier as OvationOS). Osiris announced an exclusive worldwide commercialization agreement with Stryker in December 2014 (Osiris manufactures and does research; Stryker markets); Stryker launched BIO4 at AAOS in March 2015. Smith+Nephew completed its acquisition of Osiris on 2019-04-17, so a Stryker competitor's subsidiary manufactures BIO4. Stryker's US spine and trauma/foot-and-ankle BIO4 pages, checked 2026-10-22, still state 'BIO4 is manufactured by Osiris Therapeutics, Inc.'; Smith+Nephew's FY2025 Form 20-F does not discuss BIO4 or the Stryker agreement, and the agreement's current term and renewal terms are not public.",
+      "category": "cellular-allograft",
+      "composition": "Viable bone matrix with endogenous bone-forming cells (MSCs, osteoprogenitors, osteoblasts), at least 600,000 cells/cc, lot-tested for VEGF and at least 70% post-thaw viability (Stryker product page)",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "none",
+        "us_market_year": 2015,
+        "on_label_indications": [
+          "No FDA-reviewed indication; alternative to autograft for homologous bone-graft use"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "ankle-fracture-syndesmosis",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "Stryker's Trauma & Extremities page links a 'BIO4: high-energy pilon fractures' case resource; no peer-reviewed foot/ankle study was found.",
+          "caveats": "Marketing case material only."
+        },
+        {
+          "application_id": "foot-ankle-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No published foot/ankle series found in PubMed searches for this sweep.",
+          "caveats": "Evidence gap."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Positioned by Stryker Foot & Ankle reps as the cellular option next to Augment, so a Stryker rep can offer PMA-grade (Augment) and cellular (BIO4) in one bag; the exclusive marketing agreement's current terms after Smith+Nephew's purchase of Osiris are not public in the sources found. Confirmed 2026-10-22: Stryker still lists BIO4 on its US spine and trauma pages with Osiris named as manufacturer; terms of the Stryker-Osiris agreement after the Smith+Nephew deal are not in any public filing found."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.stryker.com/us/en/trauma-and-extremities/products/bio4.html",
+        "https://www.massdevice.com/osiris-strikes-deal-with-stryker-bone-repair-product/",
+        "https://ryortho.com/2014/12/stryker-get-exclusive-rights-to-osiris-bone-allograft/",
+        "https://www.sec.gov/Archives/edgar/data/845982/000165495419004505/a5231w.htm",
+        "https://www.biospace.com/osiris-therapeutics-inc-enters-exclusive-partnership-financial-terms-undisclosed",
+        "https://www.sec.gov/Archives/edgar/data/845982/000110465926028258/snn-20251231x20f.htm",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "osteoamp",
+      "name": "OsteoAMP",
+      "company": "Bioventus",
+      "ownership_history": "Developed by Advanced Biologics; product line acquired by Bioventus in 2015. Bioventus' FY2025 10-K states it currently markets OsteoAMP in the United States; the 2024-2025 divestiture was the Advanced Rehabilitation business, not OsteoAMP.",
+      "category": "cellular-allograft",
+      "composition": "Allograft-derived bone graft processed to retain endogenous growth factors (marketed as 'growth-factor-enhanced' allograft; not a viable-cell product)",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "No 510(k) for OsteoAMP in openFDA (device_name OSTEOAMP: no matches). The only Bioventus 510(k) tied to it is K233368 'Allograft Delivery Device (OFAC-C)' (2024-06-25, product code FMF), which clears the cannula for delivering hydrated allograft, not the allograft itself. Bioventus FY2025 10-K: allograft from AATB-certified, FDA-registered US tissue banks; sold only in the US.",
+        "us_market_year": 2015,
+        "on_label_indications": [
+          "No FDA-reviewed indication; homologous bone-graft use in orthopaedic, neurosurgical and reconstructive procedures (company description)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "foot-ankle-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No foot/ankle clinical data found; published comparison is TLIF/PLIF vs rhBMP-2 (PMID 38759243). A 2026 rat muscle-pouch study found OsteoAMP failed to form bone histologically (PMID 42774656, from a competitor-affiliated group).",
+          "caveats": "Classification as 'cellular-allograft' is for atlas grouping; it is a growth-factor-retaining allograft without viable cells. The growth-factor claim is contested in the independent preclinical literature."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:38759243",
+          "title": "Comparison of TLIF and PLIF outcomes in patients receiving a novel allograft versus rhBMP-2",
+          "year": 2024,
+          "design": "prospective-cohort",
+          "n": 0,
+          "finding": "Spine interbody comparison of OsteoAMP vs rhBMP-2; not foot/ankle.",
+          "sponsor_funded": true,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:42774656",
+          "title": "A novel growth factor bioavailability-enhanced allograft for use in craniomaxillofacial bone regeneration",
+          "year": 2026,
+          "design": "preclinical",
+          "n": 0,
+          "finding": "Athymic rat muscle pouch: OsteoAMP, OsteoFactor and i-FACTOR failed to form bone; cellular allografts formed bone inconsistently.",
+          "sponsor_funded": true,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Bioventus distributes OsteoAMP through its network of independent distributors alongside Exogen (LIPUS) and its HA injectables; Bioventus has no foot/ankle hardware, so pull-through depends on distributor relationships. K233368 (2024-06-25) clears only the cannula-based Allograft Delivery Device used with OsteoAMP Flowable; do not describe OsteoAMP as 510(k)-cleared."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1665988/000166598826000011/bvs-20251231.htm",
+        "https://www.beckersspine.com/?p=18771",
+        "PMID:38759243",
+        "PMID:42774656",
+        "https://fda.innolitics.com/device/K233368",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22BIOVENTUS%22&sort=decision_date:desc&limit=15"
+      ],
+      "challenge": "OsteoAMP itself is a 361 HCT/P with no premarket review; Bioventus's 2024 'FDA approval' of the cannula delivery system is the K233368 510(k) for the delivery device only."
+    },
+    {
+      "id": "grafton-dbm",
+      "name": "Grafton DBM",
+      "company": "Medtronic",
+      "ownership_history": "Developed by Osteotech (Eatontown, NJ); Medtronic completed its acquisition of Osteotech on 2010-11-16 ($6.50 per share, about $123 million). Medtronic's product page and 2023-2026 regulatory records still list Medtronic as owner; no divestiture found.",
+      "category": "DBM",
+      "composition": "Demineralized human cortical bone fibers (and crunch/putty forms) in a glycerol carrier; lot-tested for osteoinductivity",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K251193 (Grafton DBM, Grafton Plus DBM Paste, Magnifuse Bone Graft; Medtronic Sofamor Danek; decision 2025-06-12; 21 CFR 888.3045, code MQV); earlier Osteotech clearances K051188 (2006-01-03), K051195 (2005-12-16), K082615 (Grafton R II eDBM, 2008-10-16) and Medtronic K122513 (2013-03-06). Grafton DBM-with-carrier is a 510(k) device, not a 361 HCT/P.",
+        "us_market_year": 1991,
+        "on_label_indications": [
+          "Bone graft extender, bone graft substitute and bone void filler in bony voids or gaps of the skeletal system (posterolateral spine, intervertebral disc space excluding Flex or Crunch, pelvis, extremities) not intrinsic to the stability of the bony structure (K251193)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "ankle-arthrodesis",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "III",
+          "evidence_summary": "Class-level evidence: Hartman 2025 systematic review (PMID 39850040) of 13 DBM foot/ankle studies, 363 patients; union 85.6% for ankle/hindfoot arthrodesis, 100% for fifth-metatarsal and calcaneal fracture cohorts, nonunion 8.8% overall. Schlickewei 2022 (PMID 35807177) found no difference in arthroscopic ankle fusion nonunion with DBM (12.9%) vs without (14.8%).",
+          "caveats": "Low-level, heterogeneous evidence; no study shows superiority over autograft or over no graft; brand not always specified."
+        },
+        {
+          "application_id": "fifth-metatarsal-jones",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "DBM combined with bone marrow aspirate is the common adjunct in NFL Jones-fracture series (Lareau 2015, PMID 26353796; Hunt and Anderson 2011 revision series, PMID 21632977).",
+          "caveats": "Case series; DBM never isolated from BMA or fixation."
+        },
+        {
+          "application_id": "charcot-midfoot-reconstruction",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Used routinely as a graft extender in Charcot and TTC bone-block series (e.g., PMID 34677103 combined femoral-head allograft, BMAC and DBM fibers in 14 TTC fusions).",
+          "caveats": "Never studied alone in Charcot."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:39850040",
+          "title": "Limited evidence to support demineralized bone matrix in foot and ankle surgical procedures: a systematic review",
+          "year": 2025,
+          "design": "meta-analysis",
+          "n": 363,
+          "finding": "Union 85.6% in ankle/hindfoot arthrodesis cohorts; overall complication 27.2%, nonunion 8.8%; low level and quality of evidence.",
+          "sponsor_funded": false,
+          "applications": [
+            "ankle-arthrodesis",
+            "fifth-metatarsal-jones",
+            "calcaneus-fracture"
+          ]
+        },
+        {
+          "ref": "PMID:35807177",
+          "title": "Does demineralized bone matrix affect the nonunion rate in arthroscopic ankle arthrodesis?",
+          "year": 2022,
+          "design": "retrospective",
+          "n": 58,
+          "finding": "Nonunion 12.9% with DBM vs 14.8% without (p=0.83).",
+          "sponsor_funded": false,
+          "applications": [
+            "ankle-arthrodesis"
+          ]
+        },
+        {
+          "ref": "PMID:42421266",
+          "title": "Demineralized bone matrix in foot and ankle surgery: products, mechanisms, and clinical outcomes",
+          "year": 2026,
+          "design": "case-series",
+          "n": 0,
+          "finding": "Review naming DBX, AlloSync, AlloMatrix, OrthoBlast II and Grafton; strongest DBM evidence is in fracture fixation, with arthrodesis union comparable to but not better than autograft.",
+          "sponsor_funded": false,
+          "applications": [
+            "ankle-arthrodesis"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment; bundled or packaged. DBM is typically the lowest-cost osteoinductive option on a hospital's biologics formulary.",
+        "notes": "Sold through Medtronic Spine and Biologics; in foot/ankle it competes on price and formulary presence rather than rep coverage."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.medtronic.com/uk-en/healthcare-professionals/products/spinal-orthopaedic/bone-grafting/grafton-bone-graft.html",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRes/res.cfm?id=222236",
+        "PMID:39850040",
+        "PMID:35807177",
+        "PMID:42421266",
+        "https://news.medtronic.com/2010-11-16-Medtronic-Completes-Acquisition-of-Osteotech",
+        "https://fda.innolitics.com/device/K251193",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22GRAFTON%22&sort=decision_date:desc&limit=30"
+      ]
+    },
+    {
+      "id": "dbx",
+      "name": "DBX Demineralized Bone Matrix",
+      "company": "MTF Biologics (processor); DePuy Synthes (distributor)",
+      "ownership_history": "Processed by the Musculoskeletal Transplant Foundation (MTF Biologics, Edison NJ). Marketed by Synthes and, since 2012, DePuy Synthes (J&J MedTech lists DBX Trauma and DBX CMF/Inject as DePuy Synthes products; a DePuy Synthes Spine brochure describes an exclusive MTF partnership of more than 10 years). On 2025-03-13 MTF expanded its agreement with Kolosis BIO, which now also represents and distributes DBX Mix and DBX Putty alongside Kore Fiber and Prime HD, so DBX is no longer sold only through DePuy Synthes; the contract terms and whether DePuy's rights are still exclusive are not public.",
+      "category": "DBM",
+      "composition": "Demineralized human bone in a sodium hyaluronate carrier (putty, paste, mix, strip); lot-specific osteoinductivity testing",
+      "regulatory": {
+        "path": "510k",
+        "reference": "MTF 510(k)s verified in openFDA: K040262 (2005-03-17), K040501 (2005-04-29), K042829 (DBX Strip, 2006-01-13), K053218 (2006-12-28), K062205 (DBX Strip, 2007-02-05), K063676 (DBX Mix, 2007-03-05), K080399 (2008-10-10), K091218 (2009-09-28), K091217 (2009-10-02), K103784 and K103795 (2011-04-13); applicant Musculoskeletal Transplant Foundation (product codes MQV/MBP/NUN)",
+        "us_market_year": 2003,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure, in the extremities, pelvis and posterolateral spine (typical cleared wording for this class; exact DBX wording not retrieved)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "ankle-arthrodesis",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "Class-level DBM evidence as for Grafton (PMID 39850040, PMID 35807177); no DBX-specific foot/ankle trial found.",
+          "caveats": "Brand-agnostic evidence."
+        },
+        {
+          "application_id": "lisfranc-injury",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Commonly packed into primary tarsometatarsal arthrodesis; no outcome study isolates it.",
+          "caveats": "Expert practice only."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:39850040",
+          "title": "Limited evidence to support demineralized bone matrix in foot and ankle surgical procedures: a systematic review",
+          "year": 2025,
+          "design": "meta-analysis",
+          "n": 363,
+          "finding": "Class-level DBM union 85.6% in ankle/hindfoot arthrodesis.",
+          "sponsor_funded": false,
+          "applications": [
+            "ankle-arthrodesis"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Carried by DePuy Synthes foot/ankle and trauma reps with chronOS and ViviGen; the J&J contract position (GPO and IDN agreements) is the main lever. MTF-Kolosis BIO agreement (2025-03-13) means DBX Mix and Putty also reach surgeons through an independent distributor, so DePuy Synthes exclusivity should not be assumed."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "PMID:42421266",
+        "PMID:39850040",
+        "https://www.jnjmedtech.com/en-US/product/dbx-demineralized-bone-matrix-trauma",
+        "https://www.orthoworld.com/?p=78296",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22MUSCULOSKELETAL+TRANSPLANT%22+AND+device_name:%22DBX%22&sort=decision_date:desc&limit=30"
+      ],
+      "challenge": "DePuy Synthes distribution of DBX confirmed from J&J MedTech product pages; MTF added Kolosis BIO as a second distributor (Mix and Putty) in March 2025; indications wording is class-typical (the 510(k) PDFs are scanned images)."
+    },
+    {
+      "id": "allomatrix",
+      "name": "AlloMatrix (DBM putty with OsteoSet calcium sulfate)",
+      "company": "Stryker",
+      "ownership_history": "Wright Medical product line; passed to Stryker with the Wright acquisition (2020). Still listed on Stryker's Trauma & Extremities site.",
+      "category": "DBM",
+      "composition": "Demineralized bone matrix putties and injectables containing OsteoSet surgical-grade calcium sulfate; processed, per Stryker, to expose BMP-2",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K020895 (2004); K040980, K041168 (2004-08-02), K041663 (2004-09-16); K053319 (2006-03-06); K061939 (2006-07-18); K252085 (Allomatrix Injectable Putty, Allomatrix C and other forms; Wright Medical Technology, Inc.; 2025-09-30)",
+        "us_market_year": 2000,
+        "on_label_indications": [
+          "Bone void filler for non-structural defects of the extremities, pelvis and posterolateral spine (class-typical wording; exact cleared text not retrieved)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "subtalar-hindfoot-arthrodesis",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Class-level DBM evidence; Stryker's own efficacy claims rest on a canine proximal-humerus defect model with relevance to humans stated as unknown.",
+          "caveats": "No AlloMatrix-specific foot/ankle outcome study found."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:42421266",
+          "title": "Demineralized bone matrix in foot and ankle surgery: products, mechanisms, and clinical outcomes",
+          "year": 2026,
+          "design": "case-series",
+          "n": 0,
+          "finding": "Lists AlloMatrix among carrier-based DBMs; evidence is level III-IV with no superiority over autograft.",
+          "sponsor_funded": false,
+          "applications": [
+            "subtalar-hindfoot-arthrodesis"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Stryker's low-cost DBM option in the same bag as Augment, BIO4, Pro-Dense and OsteoSet."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.stryker.com/us/en/trauma-and-extremities/products/allomatrix.html",
+        "PMID:42421266",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22ALLOMATRIX%22&sort=decision_date:desc&limit=30",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "vitoss",
+      "name": "Vitoss",
+      "company": "Stryker",
+      "ownership_history": "Developed by Orthovita; Orthovita acquired by Stryker in 2011.",
+      "category": "synthetic-ceramic",
+      "composition": "Ultra-porous (up to 90%) beta-tricalcium phosphate, in packs, strips and morsels; hydrated with bone marrow aspirate, blood or saline; Vitoss BA adds bioactive glass",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K083033 (Vitoss, 2008-11-06); K103173 (Vitoss BA BiModal, 2011-02-07); K153608 (BiModal foam strip, 2016-02-12); K163621 (Vitoss BA Injectable, 2017-05-02); K242280 (BiModal foam strip, 2024-08-29); K261008 (BiModal family, 2026-04-24); applicant Orthovita / Stryker Spine; K102545 is a special 510(k) for a Vitoss formulation",
+        "us_market_year": 2000,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure, in the extremities, spine and pelvis (class-typical wording)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "charcot-midfoot-reconstruction",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "Class-level: Lee 2023 (PMID 38018529) retrospective comparison of highly porous beta-TCP plus BMAC vs no graft in midfoot arthrodesis, 44 patients/89 joints; union 91.5% vs 76.2% (p=0.048).",
+          "caveats": "Brand not stated; BMAC confounds; midfoot arthrodesis for arthritis and deformity, not all Charcot."
+        },
+        {
+          "application_id": "calcaneus-fracture",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Used as a void filler under the reduced posterior facet; no Vitoss-specific calcaneal series found.",
+          "caveats": "Granular TCP does not provide the immediate structural support a setting cement does."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:38018529",
+          "title": "The efficiency of highly porous beta-tricalcium phosphate with bone marrow aspirate concentrate in midfoot joint arthrodesis",
+          "year": 2023,
+          "design": "retrospective",
+          "n": 44,
+          "finding": "Union 91.5% with beta-TCP plus BMAC vs 76.2% without.",
+          "sponsor_funded": false,
+          "applications": [
+            "charcot-midfoot-reconstruction",
+            "foot-ankle-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:36214330",
+          "title": "Midfoot joint arthrodesis using compression plate with lag screw augmenting with highly porous beta-TCP and BMAC",
+          "year": 2022,
+          "design": "case-series",
+          "n": 36,
+          "finding": "97.3% joint union (73 of 75 joints).",
+          "sponsor_funded": false,
+          "applications": [
+            "charcot-midfoot-reconstruction"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Stryker's synthetic for mixing with BMAC; competes with chronOS (DePuy Synthes) and MagnetOs (Kuros) on the hospital synthetic contract."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.stryker.com/us/en/trauma-and-extremities/products/vitoss.html",
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf10/K102545.pdf",
+        "PMID:38018529",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22VITOSS%22&sort=decision_date:desc&limit=30",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "chronos",
+      "name": "chronOS",
+      "company": "DePuy Synthes (Johnson & Johnson MedTech)",
+      "ownership_history": "Synthes (originally Mathys) product; Synthes acquired by Johnson & Johnson in 2012.",
+      "category": "synthetic-ceramic",
+      "composition": "Beta-tricalcium phosphate granules, blocks, wedges and preforms (60% porosity); chronOS Inject is a brushite calcium-phosphate cement",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K013072 (chronOS TCP, 2002-11-26); K041350 (chronOS, 2004-07-08); K043045 (chronOS, 2005-01-07; may be combined with autogenous blood/marrow); K053022 (chronOS beta-TCP, 2006-01-23); K071046 (chronOS Composite, 2007-10-23); applicant Synthes (USA)",
+        "us_market_year": 2002,
+        "on_label_indications": [
+          "Bone void filler for non-load-bearing voids in the extremities, pelvis and spine; wedges for opening-wedge osteotomies (class-typical wording; exact text not retrieved)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "calcaneus-fracture",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Used as a resorbable void filler after calcaneal and tibial-plateau reduction; no chronOS-specific calcaneal outcome study found.",
+          "caveats": "Evidence gap."
+        },
+        {
+          "application_id": "bunion-osteotomy-lapidus",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Preformed beta-TCP wedges are one option for Cotton and Evans opening-wedge osteotomies.",
+          "caveats": "No comparative data."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Bundled with DePuy Synthes foot/ankle plating and the 'Synthes trauma contract'; J&J's broad IDN agreements give it formulary presence."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "PMID:38704857",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22CHRONOS%22+AND+applicant:%22SYNTHES%22&sort=decision_date:desc&limit=30"
+      ]
+    },
+    {
+      "id": "hydroset",
+      "name": "HydroSet Injectable HA Bone Substitute",
+      "company": "Stryker",
+      "ownership_history": "Stryker product since the mid-2000s.",
+      "category": "calcium-phosphate-cement",
+      "composition": "Injectable, self-setting tetracalcium phosphate cement that converts to hydroxyapatite",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K161447 (HydroSet XT, Orthovita, Inc., decision 2016-10-06); earlier Stryker Injectable Cement K060061 (2006-03-01, MQV), K060763 (2006-09-22, product code GXP; cited by FDA recall Z-2054-2013), K060750 (Stryker CMF, 2006-04-19), K051603 (2005-12-30)",
+        "us_market_year": 2005,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure; indicated to augment provisional hardware to support bone fragments during the surgical procedure (Stryker product page wording)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "calcaneus-fracture",
+          "tier": "established",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Class-level calcium-phosphate cement evidence: Thordarson 2005 (PMID 15913516) 15 ORIF cases with Norian SRS, no loss of reduction with weight-bearing at 3-6 weeks; Elsner 2005 (PMID 16210159) 18 patients, full weight-bearing at a mean 4 weeks but functional outcome no better than graft; Zeman 2019 (PMID 31941568) no outcome difference with vs without hydroxyapatite cement in 82 Sanders II-III fractures.",
+          "caveats": "Small series with the predecessor Norian cement (DePuy Synthes), not HydroSet; a Dutch series linked void-filler use to wound complications (PMID 23318101)."
+        },
+        {
+          "application_id": "ankle-fracture-syndesmosis",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Augmentation of osteoporotic malleolar or pilon metaphyseal fixation; biomechanical data only (e.g., PMID 33189144 in a calcaneal model).",
+          "caveats": "No clinical ankle-fracture series found."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:15913516",
+          "title": "SRS cancellous bone cement augmentation of calcaneal fracture fixation",
+          "year": 2005,
+          "design": "case-series",
+          "n": 15,
+          "finding": "No loss of reduction with early weight-bearing; one major wound complication requiring cement removal and free flap.",
+          "sponsor_funded": false,
+          "applications": [
+            "calcaneus-fracture"
+          ]
+        },
+        {
+          "ref": "PMID:16210159",
+          "title": "Augmentation of intraarticular calcaneal fractures with injectable calcium phosphate cement: densitometry, histology, and functional outcome of 18 patients",
+          "year": 2005,
+          "design": "prospective-cohort",
+          "n": 18,
+          "finding": "Full weight-bearing at mean 4 weeks; cement not fully resorbed at 3 years; outcomes no better than conventional grafting.",
+          "sponsor_funded": false,
+          "applications": [
+            "calcaneus-fracture"
+          ]
+        },
+        {
+          "ref": "PMID:31941568",
+          "title": "Outcomes of treatment of calcaneal fractures using locking compression plate with or without augmentation",
+          "year": 2019,
+          "design": "retrospective",
+          "n": 82,
+          "finding": "No statistically significant difference in AOFAS outcome or complications with hydroxyapatite cement augmentation of the neutral-triangle defect.",
+          "sponsor_funded": false,
+          "applications": [
+            "calcaneus-fracture"
+          ]
+        },
+        {
+          "ref": "PMID:23318101",
+          "title": "Extended lateral approach for intra-articular calcaneal fractures: an inverse relationship between surgeon experience and wound complications",
+          "year": 2013,
+          "design": "retrospective",
+          "n": 53,
+          "finding": "Bone-void-filler use was significantly associated with wound complications (p<0.001).",
+          "sponsor_funded": false,
+          "applications": [
+            "calcaneus-fracture"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Stryker's cement competes with DePuy Synthes' calcium-phosphate cements and Bone Solutions' Mg OsteoCrete in plateau and calcaneus void fill."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "https://www.stryker.com/us/en/trauma-and-extremities/products/hydroset.html",
+        "PMID:15913516",
+        "PMID:16210159",
+        "PMID:31941568",
+        "PMID:23318101",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22HYDROSET%22&sort=decision_date:desc&limit=30",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22STRYKER%22+AND+device_name:%22INJECTABLE+CEMENT%22&sort=decision_date:desc&limit=30",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "challenge": "Stryker's catalog page lists the product as 'HydroSet XT' (2026-10-22); use that name.",
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "prodense",
+      "name": "Pro-Dense Injectable Regenerative Graft",
+      "company": "Stryker",
+      "ownership_history": "Wright Medical product; to Stryker with the 2020 Wright acquisition.",
+      "category": "synthetic-ceramic",
+      "composition": "Injectable composite of calcium sulfate and calcium phosphate (brushite and granular beta-TCP) with a triphasic resorption profile",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K070437 (2007-05-09); K072597 (Core Decompression Procedure Kit, 2007-10-15); K113871 (2013-03-25); K200507 (LoVisc, 2020-10-21); K213342 (LoVisc, 2022-01-05); applicant Wright Medical Technology",
+        "us_market_year": 2007,
+        "on_label_indications": [
+          "Bone voids resulting from resection of benign bone cysts in patients 6 years and older (Stryker product page); broader non-structural bone-void-filler indication for extremities and pelvis (class-typical; exact text not retrieved)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "calcaneus-fracture",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Used for calcaneal cyst and post-reduction void fill; Stryker's efficacy claims come from a canine proximal-humerus defect model.",
+          "caveats": "No clinical foot/ankle series found."
+        }
+      ],
+      "evidence": [],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Niche injectable in the Stryker bag; unicameral calcaneal cysts are the natural foot indication."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.stryker.com/us/en/trauma-and-extremities/products/prodense.html",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22PRO-DENSE%22&sort=decision_date:desc&limit=30"
+      ]
+    },
+    {
+      "id": "osteoset",
+      "name": "OsteoSet calcium sulfate pellets (OsteoSet T outside the US)",
+      "company": "Stryker",
+      "ownership_history": "Wright Medical product; to Stryker with the 2020 Wright acquisition.",
+      "category": "calcium-sulfate",
+      "composition": "Medical-grade calcium sulfate hemihydrate pellets; OsteoSet T (4% tobramycin) is CE-marked and not US-cleared",
+      "regulatory": {
+        "path": "510k",
+        "reference": "OSTEOSET DBM Pellets K022828 (2004-04-02) and K053642 (2006-01-26); OSTEOSET BVF Kit K010532 (2001-10-26); applicant Wright Medical Technology. The original 1990s calcium sulfate pellet clearance does not appear under the OSTEOSET name in openFDA (K number not retrieved).",
+        "us_market_year": 1996,
+        "on_label_indications": [
+          "Bone void filler for non-structural voids of the extremities, pelvis and spine (class-typical)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "diabetic-foot-osteomyelitis-dead-space",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "III",
+          "evidence_summary": "Ferguson 2023 (PMID 37400090): preformed tobramycin calcium-sulfate pellets (n=179) vs gentamicin calcium-sulfate/hydroxyapatite (Cerament G, n=180) in single-stage long-bone osteomyelitis; recurrence 11.2% vs 4.4%, wound leakage 18.4% vs 10.0%, subsequent fracture 6.1% vs 1.7%, all favoring the biphasic carrier.",
+          "caveats": "UK study with OsteoSet T (not US-available); antibiotic-loaded use of plain OsteoSet in the US is off-label; long-bone, not diabetic foot."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:37400090",
+          "title": "A comparison of clinical and radiological outcomes between two different biodegradable local antibiotic carriers used in the single-stage surgical management of long bone osteomyelitis",
+          "year": 2023,
+          "design": "retrospective",
+          "n": 359,
+          "finding": "Preformed calcium-sulfate pellets had 2.9-fold higher odds of recurrence, leakage or fracture than the biphasic gentamicin carrier.",
+          "sponsor_funded": false,
+          "applications": [
+            "diabetic-foot-osteomyelitis-dead-space"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Legacy, low-cost product; in the US the antibiotic-carrier role has shifted to Stimulan (Biocomposites) and Cerament G."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "PMID:37400090",
+        "PMID:28529863",
+        "https://www.stryker.com/us/en/foot-and-ankle/products/osteoset.html",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22OSTEOSET%22&sort=decision_date:desc&limit=10",
+        "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+      ],
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    {
+      "id": "cerament-bvf",
+      "name": "CERAMENT Bone Void Filler",
+      "company": "BONESUPPORT AB",
+      "ownership_history": "BONESUPPORT (Lund, Sweden; Nasdaq Stockholm) throughout; US commercial organization built since 2016.",
+      "category": "calcium-sulfate",
+      "composition": "Injectable biphasic ceramic: 60% calcium sulfate hemihydrate, 40% nanocrystalline hydroxyapatite, with iohexol contrast",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K051951 (2005-09-28); K073316 (2008-06-20); K090871 (2009-09-04, CERAMENT 'i' high contrast); K201535 (2020-10-16); K240459 (2024-03-05, Cerament Bone Void Filler; BONESUPPORT reports the interbody fusion indication). CERAMENT G: De Novo DEN210044 (2022-05-17) and 510(k) K234008 (2024-03-13).",
+        "us_market_year": 2010,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure, in the extremities and pelvis (class-typical wording)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "calcaneus-fracture",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Positioned for plateau and calcaneal void fill and for benign cysts; no calcaneus-specific clinical series found in this sweep.",
+          "caveats": "Evidence gap for the plain BVF in the foot."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:31011512",
+          "title": "Radiographic and histological analysis of a synthetic bone graft substitute eluting gentamicin in the treatment of chronic osteomyelitis",
+          "year": 2019,
+          "design": "retrospective",
+          "n": 163,
+          "finding": "Mean void filling 73.8% with the biphasic carrier (gentamicin version) at a mean 1.7 years; histology shows osteoconduction and remodeling.",
+          "sponsor_funded": false,
+          "applications": [
+            "calcaneus-fracture",
+            "diabetic-foot-osteomyelitis-dead-space"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "BONESUPPORT's US growth is driven by CERAMENT G, with the plain BVF as the entry product; the company sells through a direct US sales force plus distributors."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "PMID:31011512",
+        "https://www.orthoworld.com/fda-market-authorization-for-bonesupports-cerament-g/",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22BONESUPPORT%22&sort=decision_date:desc&limit=30"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "cerament-g",
+      "name": "CERAMENT G (gentamicin-eluting)",
+      "company": "BONESUPPORT AB",
+      "ownership_history": "BONESUPPORT throughout; CE-marked since 2012, US De Novo authorization 2022.",
+      "category": "calcium-sulfate",
+      "composition": "CERAMENT biphasic calcium sulfate/hydroxyapatite carrier with 17.5 mg gentamicin per mL",
+      "regulatory": {
+        "path": "De-Novo",
+        "reference": "De Novo granted June 2022 creating 21 CFR 888.3046 (product code QRR; DEN number not retrieved); expanded by 510(k) K234008, decision 2024-03-13",
+        "us_market_year": 2022,
+        "on_label_indications": [
+          "Resorbable, gentamicin-eluting ceramic bone void filler intended for use in defects in the extremities of skeletally mature patients as an adjunct to systemic antibiotic therapy and surgical debridement as part of the standard treatment approach to bone infection and open fractures; by eluting gentamicin it can reduce the occurrence and reoccurrence of bone infection from gentamicin-sensitive microorganisms in order to protect bone healing; can augment provisional hardware to help support bone fragments during the surgical procedure; the cured paste is a temporary support and not intended to provide structural support (K234008 indications for use)"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "diabetic-foot-osteomyelitis-dead-space",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "II",
+          "evidence_summary": "McNally 2016 (PMID 27587534): prospective series of 100 patients with Cierny-Mader III/IV chronic osteomyelitis treated single-stage; infection eradicated in 96 with one procedure. McNally 2022 (PMID 36047024): same cohort at mean 6 years, 94% infection-free. Ferguson 2023 (PMID 37400090): 180 CERAMENT G vs 179 tobramycin calcium-sulfate pellets, recurrence 4.4% vs 11.2%.",
+          "caveats": "Oxford Bone Infection Unit series, predominantly long-bone and not diabetic-foot cohorts; no RCT in diabetic foot yet (ACHILLS RCT NCT07057817 in calcaneal osteomyelitis started 2026; Groningen DFU-osteomyelitis cohort NCT05316298). The label covers extremity bone infection generally, so diabetic-foot use is on-label but its specific evidence base is thin."
+        },
+        {
+          "application_id": "charcot-midfoot-reconstruction",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Infected Charcot reconstruction is a natural use under the bone-infection label; no Charcot-specific series found.",
+          "caveats": "Evidence gap."
+        },
+        {
+          "application_id": "ankle-fracture-syndesmosis",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "I",
+          "evidence_summary": "NCT02820363: 201-patient multicenter RCT of CERAMENT G as part of surgical repair of open diaphyseal tibial fractures, completed 2021; supported the 2024 open-fracture label expansion (results not retrieved with a PMID in this sweep).",
+          "caveats": "Tibial shaft, not ankle; applies to open ankle/pilon fractures only by label extension."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:27587534",
+          "title": "Single-stage treatment of chronic osteomyelitis with a new absorbable, gentamicin-loaded, calcium sulphate/hydroxyapatite biocomposite: a prospective series of 100 cases",
+          "year": 2016,
+          "design": "prospective-cohort",
+          "n": 100,
+          "finding": "96% infection eradication with one procedure at mean 19.5 months; 6 wound leaks, 3 fractures.",
+          "sponsor_funded": false,
+          "applications": [
+            "diabetic-foot-osteomyelitis-dead-space"
+          ]
+        },
+        {
+          "ref": "PMID:36047024",
+          "title": "Mid- to long-term results of single-stage surgery for patients with chronic osteomyelitis using a bioabsorbable gentamicin-loaded ceramic carrier",
+          "year": 2022,
+          "design": "prospective-cohort",
+          "n": 100,
+          "finding": "94% infection-free at mean 6.05 years; recurrence unrelated to host class or gentamicin resistance.",
+          "sponsor_funded": false,
+          "applications": [
+            "diabetic-foot-osteomyelitis-dead-space"
+          ]
+        },
+        {
+          "ref": "PMID:37400090",
+          "title": "A comparison of clinical and radiological outcomes between two different biodegradable local antibiotic carriers used in the single-stage surgical management of long bone osteomyelitis",
+          "year": 2023,
+          "design": "retrospective",
+          "n": 359,
+          "finding": "Lower recurrence, leakage and fracture, and better void filling (73.9% vs 40.0%) than calcium-sulfate pellets.",
+          "sponsor_funded": false,
+          "applications": [
+            "diabetic-foot-osteomyelitis-dead-space"
+          ]
+        },
+        {
+          "ref": "NCT02820363",
+          "title": "Prospective randomized multicenter controlled trial of CERAMENT G as part of surgical repair of open diaphyseal tibial fractures",
+          "year": 2021,
+          "design": "RCT",
+          "n": 201,
+          "finding": "Completed July 2021 at 31 sites; basis for the 2024 open-fracture indication.",
+          "sponsor_funded": true,
+          "applications": [
+            "ankle-fracture-syndesmosis"
+          ]
+        },
+        {
+          "ref": "NCT04805164",
+          "title": "CONVICTION: CERAMENT G in chronic osteomyelitis of long bones, randomized multicentre study in the CRIOAc network",
+          "year": 2027,
+          "design": "RCT",
+          "n": 220,
+          "finding": "Recruiting; French investigator-led RCT, primary completion November 2027.",
+          "sponsor_funded": false,
+          "applications": [
+            "diabetic-foot-osteomyelitis-dead-space"
+          ]
+        },
+        {
+          "ref": "NCT07057817",
+          "title": "ACHILLS: partial calcanectomy plus antibiotic-impregnated bone graft substitute vs partial calcanectomy alone for calcaneal osteomyelitis",
+          "year": 2029,
+          "design": "RCT",
+          "n": 30,
+          "finding": "Recruiting (Royal College of Surgeons in Ireland), start January 2026; first RCT in a diabetic calcaneal-osteomyelitis population.",
+          "sponsor_funded": false,
+          "applications": [
+            "diabetic-foot-osteomyelitis-dead-space"
+          ]
+        },
+        {
+          "ref": "NCT06555848",
+          "title": "Post-market prospective cohort of CERAMENT G in single-stage surgical treatment of osteomyelitis",
+          "year": 2031,
+          "design": "prospective-cohort",
+          "n": 128,
+          "finding": "BONESUPPORT post-market study started June 2025.",
+          "sponsor_funded": true,
+          "applications": [
+            "diabetic-foot-osteomyelitis-dead-space"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Inpatient: BONESUPPORT reported (release dated 2026-08-03) that the FY2027 IPPS final rule reassigns qualifying gentamicin-eluting bone-void-filler cases to the highest-paying MS-DRGs in their clinical categories, effective 2026-10-01, following earlier new-technology coding; CERAMENT G is currently the only product in that category. Outpatient: packaged; no pass-through found in this sweep. Most diabetic-foot osteomyelitis surgery is inpatient, so the DRG change is the relevant one.",
+        "notes": "The first and only FDA-authorized antibiotic-eluting bone graft; sold by a direct US force into trauma and limb-salvage centers; the commercial argument is single-stage surgery (no bead removal) and the Oxford outcome data. CERAMENT V (vancomycin) is pending De Novo per the company."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://fda.innolitics.com/device/K234008",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpcd/classification.cfm?id=QRR",
+        "https://fdanews.com/articles/208056-bonesupport-gets-de-novo-clearance-for-its-cerament-g-bone-void-filler",
+        "https://www.mcra.com/news-publications/press-releases/mcra-assists-bonesupport-ab-first-ever-combination-product-denovo",
+        "https://www.inderes.dk/en/releases/cms-finalizes-higher-payment-for-ceramentr-g-in-the-us",
+        "PMID:27587534",
+        "PMID:36047024",
+        "PMID:37400090"
+      ]
+    },
+    {
+      "id": "stimulan",
+      "name": "Stimulan (Stimulan Kit / Stimulan Rapid Cure)",
+      "company": "Biocomposites Ltd",
+      "ownership_history": "Biocomposites (Keele, UK), privately held, throughout.",
+      "category": "calcium-sulfate",
+      "composition": "Pharmaceutical-grade calcium sulfate powder and mixing solution forming a paste that is injected, applied, or molded into beads",
+      "regulatory": {
+        "path": "510k",
+        "reference": "K141830 (submitted December 2014, cleared 2015; predicates K021551 and K003954 back to 2001)",
+        "us_market_year": 2001,
+        "on_label_indications": [
+          "Bone void filler for voids or gaps that are not intrinsic to the stability of the bony structure, surgically created or from traumatic injury, in the extremities, pelvis and posterolateral spine; biocompatible and may be used at an infected site; resorbs and is replaced by bone (K141830 510(k) summary wording). The cleared labeling does not include mixing with or delivery of antibiotics."
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "diabetic-foot-osteomyelitis-dead-space",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Alkayali 2024 (PMID 38371037): 45 US diabetic-foot-osteomyelitis cases with surgeon-mixed calcium-sulfate antibiotic beads; only 20% ulcer-free at 3 months, 29% at 6 months, 42% osteomyelitis recurrence at 12 months, 62% wound drainage, 9% acute kidney injury. Chatzipapas 2020 (PMID 33295248): 25 patients, no benefit of local carriers over debridement plus systemic antibiotics.",
+          "caveats": "Antibiotic loading is off-label (surgeon-compounded); 'may be used at an infected site' is the only infection language on the label. Diabetic-foot evidence is small and unfavorable; the favorable long-bone data use other carriers."
+        },
+        {
+          "application_id": "charcot-midfoot-reconstruction",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "Widely used in infected Charcot reconstruction and after partial calcanectomy; no Charcot series found.",
+          "caveats": "Expert practice; wound drainage from calcium sulfate is the recurring complaint."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:38371037",
+          "title": "Are biodegradable calcium sulfate antibiotic beads effective and safe adjuvants for diabetic foot osteomyelitis?",
+          "year": 2024,
+          "design": "retrospective",
+          "n": 45,
+          "finding": "42% osteomyelitis recurrence at 12 months and 62% wound drainage; authors advise caution pending an RCT.",
+          "sponsor_funded": false,
+          "applications": [
+            "diabetic-foot-osteomyelitis-dead-space"
+          ]
+        },
+        {
+          "ref": "PMID:33295248",
+          "title": "Local antibiotic delivery systems in the surgical treatment of diabetic foot osteomyelitis: again, no benefit?",
+          "year": 2020,
+          "design": "retrospective",
+          "n": 25,
+          "finding": "Healing 87.5% systemic only vs 100% PMMA beads vs 87.5% calcium sulfate/hydroxyapatite beads; no difference.",
+          "sponsor_funded": false,
+          "applications": [
+            "diabetic-foot-osteomyelitis-dead-space"
+          ]
+        },
+        {
+          "ref": "PMID:31736431",
+          "title": "A scoping review on the use of antibiotic-impregnated beads and applications to vascular surgery",
+          "year": 2019,
+          "design": "meta-analysis",
+          "n": 0,
+          "finding": "275 publications on antibiotic beads; only 11 RCTs, all but one at high risk of bias; 94% of papers positive, suggesting publication bias.",
+          "sponsor_funded": false,
+          "applications": [
+            "diabetic-foot-osteomyelitis-dead-space"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "No separate payment; bundled inpatient, packaged outpatient. The surgeon-compounded antibiotic is a pharmacy cost, not a device charge.",
+        "notes": "Biocomposites sells direct and through distributors into podiatry, limb-salvage and arthroplasty-infection accounts; the pitch is flexibility (any antibiotic, any bead size) against CERAMENT G's fixed gentamicin, and the counter-pitch is that CERAMENT G is the only on-label antibiotic carrier."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.accessdata.fda.gov/cdrh_docs/pdf14/k141830.pdf",
+        "https://fda.innolitics.com/device/K141830",
+        "PMID:38371037",
+        "PMID:33295248",
+        "PMID:31736431",
+        "https://clinicaltrials.gov/study/NCT06283979",
+        "https://clinicaltrials.gov/study/NCT06808568",
+        "https://clinicaltrials.gov/study/NCT05539963"
+      ]
+    },
+    {
+      "id": "bmac-foot-ankle",
+      "name": "Bone marrow aspirate concentrate (point-of-care; Harvest/Terumo SmartPrep, Arthrex Angel, Isto Magellan and others)",
+      "company": "Multiple (Terumo BCT, Arthrex, Isto Biologics, Zimmer Biomet, Stryker)",
+      "ownership_history": "Harvest Technologies (SmartPrep) acquired by Terumo BCT in 2014; Magellan passed from Arteriocyte to Isto Biologics; Arthrex Angel is Arthrex's own system.",
+      "category": "BMAC",
+      "composition": "Autologous iliac-crest, calcaneal or proximal-tibial marrow aspirate centrifuged at point of care to concentrate nucleated cells (including a small MSC fraction) and platelets; applied alone or mixed with DBM, allograft or ceramic",
+      "regulatory": {
+        "path": "510k",
+        "reference": "Centrifuge systems hold 510(k) clearances as blood/marrow processing devices; the autologous concentrate is used within the same surgical procedure (21 CFR 1271.15(b) exception) and the systems are not cleared with a bone-healing indication; Device clearances: Harvest SmartPReP2 BMAC K103340 (CDRH, product code JQC, 2010-12-06); CBER 510(k)s under product code ORG 'platelet and plasma separator for bone graft handling' (21 CFR 864.9245): Arthrex/Cytomedix Angel BK110046 (decision 2012-11-07) and Arthrex Angel System Kits BK180180 (2018-07-05), Arthrex ACP Max BK210655 (2022-09-22), Isto/Arteriocyte Precise Cell Concentration System BK200540 (2022-03-17). The ORG labeling is PRP from blood (or a blood and bone-marrow-aspirate mixture) mixed with autograft/allograft to improve handling; no device carries a cell-therapy, fracture-healing or nonunion claim",
+        "us_market_year": 2000,
+        "on_label_indications": [
+          "Device labeling covers preparation of autologous marrow concentrate; no FDA-cleared claim of fracture or fusion healing"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "fifth-metatarsal-jones",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "III",
+          "evidence_summary": "Attia 2022 meta-analysis (PMID 35612823) of 718 athlete Jones fractures: union 98.5% with orthobiologic augmentation (mostly BMAC or BMA plus DBM) vs 93.8% with fixation alone; Murawski and Kennedy 2011 (PMID 21212308) 26 athletes with percutaneous screw plus BMAC, mean radiographic healing 5 weeks, one delayed union.",
+          "caveats": "No comparative trial; selection of high-risk athletes for augmentation; return-to-play unchanged."
+        },
+        {
+          "application_id": "charcot-midfoot-reconstruction",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Pinzur 2009 (PMID 19254506): 44 high-risk diabetic Charcot patients (46 feet, 28 with open wounds) corrected with ring fixation plus platelet-rich concentrate and bone marrow aspirate; 42 of 46 feet showed radiographic union, two amputations.",
+          "caveats": "Single surgeon, no control, PRP and BMA combined."
+        },
+        {
+          "application_id": "foot-ankle-nonunion",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "III",
+          "evidence_summary": "Hernigou 2005 (PMID 15995108): percutaneous concentrated marrow injection into 60 atrophic tibial nonunions, union in 53, with union correlating with progenitor count. Tricot 2017 (PMID 28416462): 115 ankle/hindfoot fusions, allograft plus DBM plus BMA vs autograft plus DBM, nonunion 13% vs 18%, infection 4% vs 11%. Anastasio 2025 review (PMID 40680688): moderate-to-high evidence for nonoperative delayed union/nonunion, questionable benefit in arthrodesis.",
+          "caveats": "Tibial, not foot, data for the strongest series; progenitor yield varies 10-fold between patients and harvest sites; cost and harvest morbidity unjustified by RCT data."
+        },
+        {
+          "application_id": "ttc-arthrodesis",
+          "tier": "emerging",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Routinely layered into bone-block TTC fusions (PMID 34677103: 14 patients, femoral-head allograft plus BMAC plus DBM fibers).",
+          "caveats": "Never isolated."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:15995108",
+          "title": "Percutaneous autologous bone-marrow grafting for nonunions: influence of the number and concentration of progenitor cells",
+          "year": 2005,
+          "design": "prospective-cohort",
+          "n": 60,
+          "finding": "53 of 60 atrophic tibial nonunions united after percutaneous concentrated marrow; failures had fewer progenitors.",
+          "sponsor_funded": false,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:35612823",
+          "title": "Surgical management of Jones fractures in athletes: orthobiologic augmentation, a systematic review and meta-analysis of 718 fractures",
+          "year": 2022,
+          "design": "meta-analysis",
+          "n": 718,
+          "finding": "Union 98.5% augmented vs 93.8% fixation alone; no difference in return to play.",
+          "sponsor_funded": false,
+          "applications": [
+            "fifth-metatarsal-jones"
+          ]
+        },
+        {
+          "ref": "PMID:21212308",
+          "title": "Percutaneous internal fixation of proximal fifth metatarsal Jones fractures with Charlotte Carolina screw and bone marrow aspirate concentrate",
+          "year": 2011,
+          "design": "case-series",
+          "n": 26,
+          "finding": "Mean healing 5 weeks; one delayed union, one refracture.",
+          "sponsor_funded": false,
+          "applications": [
+            "fifth-metatarsal-jones"
+          ]
+        },
+        {
+          "ref": "PMID:19254506",
+          "title": "Use of platelet-rich concentrate and bone marrow aspirate in high-risk patients with Charcot arthropathy of the foot",
+          "year": 2009,
+          "design": "prospective-cohort",
+          "n": 44,
+          "finding": "42 of 46 feet united at mean 26 months.",
+          "sponsor_funded": false,
+          "applications": [
+            "charcot-midfoot-reconstruction"
+          ]
+        },
+        {
+          "ref": "PMID:28416462",
+          "title": "Clinical assessment of 115 cases of hindfoot fusion with two different types of graft: allograft+DBM+bone marrow aspirate versus autograft+DBM",
+          "year": 2017,
+          "design": "retrospective",
+          "n": 115,
+          "finding": "Nonunion 13% vs 18%, not significant; allograft group had fewer infections.",
+          "sponsor_funded": false,
+          "applications": [
+            "foot-ankle-nonunion",
+            "subtalar-hindfoot-arthrodesis"
+          ]
+        },
+        {
+          "ref": "PMID:40680688",
+          "title": "Concentrated bone marrow aspirate applications in bony fusion for foot and ankle orthopaedic surgery: a review",
+          "year": 2025,
+          "design": "case-series",
+          "n": 0,
+          "finding": "Narrative review: supportive for percutaneous nonunion treatment, uncertain for arthrodesis; RCTs needed to justify cost.",
+          "sponsor_funded": false,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:26002679",
+          "title": "Effect of osteogenic progenitor cell concentration on the incidence of foot and ankle fusion",
+          "year": 2015,
+          "design": "retrospective",
+          "n": 33,
+          "finding": "97% fusion; no association between colony-forming-unit count and fusion, suggesting a threshold effect.",
+          "sponsor_funded": false,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Facility: the disposable kit is packaged into the procedure; CPT 38220/38222 (marrow aspiration) and 20939 (bone marrow aspiration for bone grafting, add-on) exist for the surgeon but many payers deny 20939 or bundle it. Office/injection use of BMAC for musculoskeletal conditions is generally non-covered by Medicare.",
+        "notes": "Arthrex (Angel), Zimmer Biomet, Stryker and Terumo all sell concentration disposables through their foot/ankle or sports-medicine reps; the kit is cheap relative to a cellular allograft, which is the main commercial argument in ASCs."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "PMID:15995108",
+        "PMID:35612823",
+        "PMID:21212308",
+        "PMID:19254506",
+        "PMID:28416462",
+        "PMID:40680688",
+        "PMID:26002679",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK180180",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK110046",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK200540",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK210655",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22SMARTPREP%22&sort=decision_date:desc&limit=30"
+      ]
+    },
+    {
+      "id": "prp-foot-ankle",
+      "name": "Platelet-rich plasma / platelet concentrate (point-of-care)",
+      "company": "Multiple (Arthrex ACP, Zimmer Biomet GPS, Harvest/Terumo, EmCyte and others)",
+      "ownership_history": "Not applicable; many 510(k)-cleared concentration systems.",
+      "category": "PRP",
+      "composition": "Autologous platelet concentrate (with or without leukocytes) prepared by centrifugation; applied to the fusion bed or injected",
+      "regulatory": {
+        "path": "510k",
+        "reference": "Systems cleared for preparing platelet-rich plasma from autologous blood, typically to be mixed with autograft or allograft bone; no cleared bone-healing claim; Cleared by CBER under product code ORG 'platelet and plasma separator for bone graft handling' (21 CFR 864.9245), e.g., Arthrex ACP Max BK210655 (2022-09-22), Arthrex Angel BK180180 (2018-07-05), Isto Precise BK200540 (2022-03-17), RegenLab RegenKit-THT BK090048 (2010-05-18, product code FMF), and older CDRH centrifuges (JQC); labeling is PRP for mixing with bone graft to improve handling, no fracture-healing indication",
+        "us_market_year": 1999,
+        "on_label_indications": [
+          "Preparation of autologous PRP for mixing with bone graft materials (typical 510(k) wording); no fusion or fracture-healing indication"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "ankle-arthrodesis",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Weak evidence. Bibbo 2010 (PMID 21056862) reviewed 'only a handful' of basic-science and clinical foot/ankle PRP papers; a prospective Arthrex ACP ankle-arthrodesis study (NCT01131455) was terminated after 10 patients; Bolia 2024 (PMID 38704857) rated the arthrodesis PRP evidence as low quality.",
+          "caveats": "No RCT shows PRP improves foot/ankle fusion; the only positive high-risk series combined PRP with marrow aspirate (Pinzur 2009)."
+        },
+        {
+          "application_id": "charcot-midfoot-reconstruction",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Pinzur 2009 (PMID 19254506) used platelet-rich concentrate plus marrow aspirate in 46 Charcot feet with 42 unions; PRP's independent contribution is unknown.",
+          "caveats": "Confounded single-arm series."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:21056862",
+          "title": "Platelet-rich plasma concentrate to augment bone fusion",
+          "year": 2010,
+          "design": "case-series",
+          "n": 0,
+          "finding": "Review: only a handful of foot/ankle PRP papers; proposes a risk classification for when to augment.",
+          "sponsor_funded": false,
+          "applications": [
+            "ankle-arthrodesis"
+          ]
+        },
+        {
+          "ref": "NCT01131455",
+          "title": "Autologous concentrated platelet-rich plasma (Arthrex ACP) for local application in ankle arthrodesis",
+          "year": 2010,
+          "design": "prospective-cohort",
+          "n": 10,
+          "finding": "Terminated after 10 patients; no results posted.",
+          "sponsor_funded": false,
+          "applications": [
+            "ankle-arthrodesis"
+          ]
+        },
+        {
+          "ref": "PMID:38704857",
+          "title": "Comparative studies of bone graft and orthobiologics for foot ankle arthrodesis: a critical review",
+          "year": 2024,
+          "design": "case-series",
+          "n": 0,
+          "finding": "Critical review of autograft, allograft, DBM, calcium sulfate/phosphate, rhBMP-2, rhPDGF-BB, PRP and BMAC in ankle/hindfoot arthrodesis emphasizing low quality of evidence for most.",
+          "sponsor_funded": false,
+          "applications": [
+            "ankle-arthrodesis",
+            "foot-ankle-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "Facility kit packaged; Medicare covers PRP (CPT 0232T) only for chronic non-healing diabetic wounds under coverage-with-evidence-development, not for fusion or fracture; cash-pay in clinics.",
+        "notes": "Sold by sports-medicine reps; in fusion surgery it is an inexpensive add-on with no evidence lever, so it rarely features in biologics contracting."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "PMID:21056862",
+        "PMID:38704857",
+        "PMID:19254506",
+        "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK210655",
+        "https://www.fda.gov/media/190993/download"
+      ]
+    },
+    {
+      "id": "amniotic-foot-ankle",
+      "name": "Amniotic and placental tissue products (dHACM injectables, amnion sheets and tendon wraps; e.g., MiMedx AmnioFix/EpiFix, Organogenesis, Integra and others)",
+      "company": "Multiple (MiMedx, Organogenesis, Integra, Smith+Nephew, BioTissue and many tissue banks)",
+      "ownership_history": "Fragmented; MiMedx is the largest US amnion processor.",
+      "category": "amniotic",
+      "composition": "Dehydrated or cryopreserved human amnion/chorion membrane, as sheets (wraps/barriers) or micronized powder reconstituted for injection; some products are flowable amniotic fluid or umbilical-cord derived",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "Sheet forms used as a covering or barrier are regulated as 361 HCT/Ps when minimally manipulated and homologous. Micronized or injectable forms used to treat tendinopathy, fasciitis or arthritis do not meet the 361 criteria and require a BLA; FDA's enforcement-discretion period for such products ended 2021-05-31, and MiMedx stated that AmnioFix Injectable, EpiFix Micronized and AmnioFill were affected while its sheet products were not.",
+        "us_market_year": 2010,
+        "on_label_indications": [
+          "Sheet products: homologous use as a wound covering or barrier (no FDA-reviewed therapeutic indication)",
+          "Injectable/micronized products for plantar fasciitis or tendinopathy: no FDA approval; investigational (IND/BLA) only after 2021"
+        ]
+      },
+      "status": "investigational",
+      "applications": [
+        {
+          "application_id": "foot-ankle-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "I",
+          "evidence_summary": "Plantar fasciitis injection, not bone healing: Cazzell 2018 (PMID 30058377) 14-site RCT, 145 patients, single micronized dHACM injection vs saline; VAS fell 76% vs 45% at 3 months (p<0.0001). Zelen 2013 (PMID 23945520) 45-patient RCT positive at 8 weeks; Hanselman 2014 (PMID 25249320) cryopreserved amnion vs corticosteroid, 23 patients, mostly no difference. Network meta-analysis of 22 injection RCTs (PMID 27143138) found dHACM superior to corticosteroid only in the short term with no data beyond 2 months.",
+          "caveats": "MiMedx-funded trials with company authors; the injectable products studied are no longer lawfully marketed without a BLA; no evidence for bone healing in the foot. Tendon-wrap use (Achilles, peroneal) rests on case series. Tiered investigational per FDA position."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:30058377",
+          "title": "Randomized controlled trial of micronized dehydrated human amnion/chorion membrane (dHACM) injection compared to placebo for the treatment of plantar fasciitis",
+          "year": 2018,
+          "design": "RCT",
+          "n": 145,
+          "finding": "76% VAS reduction vs 45% placebo at 3 months; FFI-R improved 60% vs 40%.",
+          "sponsor_funded": true,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:23945520",
+          "title": "Prospective, randomized, blinded, comparative study of injectable micronized dehydrated amniotic/chorionic membrane allograft for plantar fasciitis",
+          "year": 2013,
+          "design": "RCT",
+          "n": 45,
+          "finding": "AOFAS hindfoot score improved 51-53 points with mDHACM vs 13 points with saline at 8 weeks.",
+          "sponsor_funded": true,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:25249320",
+          "title": "Cryopreserved human amniotic membrane injection for plantar fasciitis: a randomized, controlled, double-blind pilot study",
+          "year": 2014,
+          "design": "RCT",
+          "n": 23,
+          "finding": "Mostly no difference vs corticosteroid; pilot.",
+          "sponsor_funded": false,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        },
+        {
+          "ref": "PMID:27143138",
+          "title": "Injection therapies for plantar fasciopathy: a systematic review and network meta-analysis of 22 randomised controlled trials",
+          "year": 2016,
+          "design": "meta-analysis",
+          "n": 1216,
+          "finding": "Dehydrated amniotic membrane superior to corticosteroid at 0-2 months; no data beyond 2 months.",
+          "sponsor_funded": false,
+          "applications": [
+            "foot-ankle-nonunion"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "Facility use (wraps in surgery) is packaged with no separate payment. Office injections billed under product-specific Q-codes have been targeted by Medicare contractors with overpayment demands since 2022; Medicare treats non-wound orthopedic amniotic injections as not reasonable and necessary, and CMS's CY2026 physician fee schedule overhauled skin-substitute payment (details not verified in this sweep). Commercial payers largely exclude amniotic injections as experimental.",
+        "notes": "Sold by wound-care and podiatry reps; the post-2021 market is sheet products for wounds and surgical wraps. Any BD plan treating injectable amnion as an orthopedic product must assume BLA-level development; MiMedx has pursued IND-based trials for its injectable."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.healio.com/news/orthopedics/20220110/june-fda-memo-reaffirms-guidelines-from-2017-in-regard-to-human-cell-tissue-product-use",
+        "https://www.frierlevitt.com/?p=38755",
+        "https://mimedx.gcs-web.com/static-files/31e24ec1-4bcc-4a5a-af9a-bc9699bbcb87",
+        "https://bonezonepub.com/2021/06/22/new-warning-from-fda-sales-of-unapproved-orthobiologic-products/",
+        "https://www.hhs.gov/guidance/sites/default/files/hhs-guidance-documents/FDA/Minimal-Manipulation-Homologous-Use-Guidance_Sept_2020.pdf",
+        "PMID:30058377",
+        "PMID:23945520",
+        "PMID:25249320",
+        "PMID:27143138"
+      ]
+    },
+    {
+      "id": "femoral-head-structural-allograft",
+      "name": "Structural allograft (femoral head, bulk tricortical and shaped allograft wedges)",
+      "company": "Tissue banks (MTF Biologics, AlloSource, LifeNet Health, RTI/Surgalign successors) and hardware companies that private-label allograft wedges",
+      "ownership_history": "Not applicable.",
+      "category": "structural-allograft",
+      "composition": "Fresh-frozen or freeze-dried human femoral head or cortical-cancellous block, shaped intraoperatively or supplied as preformed wedges (Cotton, Evans, interposition)",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "none",
+        "us_market_year": 1990,
+        "on_label_indications": [
+          "Homologous use as structural bone graft; no FDA-reviewed indication"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "ttc-arthrodesis",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "III",
+          "evidence_summary": "Cifaldi 2022 (PMID 35585002): systematic review of 11 studies, 175 patients with TTC arthrodesis and structural allograft (mostly femoral head with a retrograde nail); union 67.4%, limb salvage 92.5%, complications 26.6%, allograft collapse 1.2%. Jeng 2013 (PMID 23650649): 32 patients, 50% radiographic fusion, every diabetic patient a nonunion, 19% below-knee amputation, 71% functional limb salvage counting asymptomatic nonunions.",
+          "caveats": "High nonunion despite high limb salvage; 3D-printed titanium cages now report 88-89% pooled union (PMID 41724588, PMID 42600975) and one comparative study favored the cage over femoral head for fusion and subsidence."
+        },
+        {
+          "application_id": "charcot-midfoot-reconstruction",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Femoral-head and bulk allograft used to restore medial-column length after wedge resection; PMID 34677103 reported high fusion in 14 bone-block TTC fusions with allograft plus BMAC plus DBM and prolonged protected weight-bearing.",
+          "caveats": "Small series; Charcot subgroup outcomes worse."
+        },
+        {
+          "application_id": "first-mtp-arthrodesis",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "IV",
+          "evidence_summary": "Interposition allograft block for salvage of failed first MTP implant arthroplasty; pooled nonunion 16.5% across 76 patients (PMID 37165627).",
+          "caveats": "Six level-IV studies."
+        },
+        {
+          "application_id": "bunion-osteotomy-lapidus",
+          "tier": "established",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "Preformed allograft wedges are the most common Cotton and Evans osteotomy spacer; no comparative outcome data found.",
+          "caveats": "Expert practice."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:35585002",
+          "title": "Tibiotalocalcaneal arthrodesis with structural allograft for management of large osseous defects of the hindfoot and ankle: a systematic review and meta-analysis",
+          "year": 2022,
+          "design": "meta-analysis",
+          "n": 175,
+          "finding": "Union 67.4%, limb salvage 92.5%; no difference nail vs plate.",
+          "sponsor_funded": false,
+          "applications": [
+            "ttc-arthrodesis"
+          ]
+        },
+        {
+          "ref": "PMID:23650649",
+          "title": "Tibiotalocalcaneal arthrodesis with bulk femoral head allograft for salvage of large defects in the ankle",
+          "year": 2013,
+          "design": "case-series",
+          "n": 32,
+          "finding": "50% fusion; diabetes the only predictor of nonunion; 19% amputation.",
+          "sponsor_funded": false,
+          "applications": [
+            "ttc-arthrodesis"
+          ]
+        },
+        {
+          "ref": "PMID:31640417",
+          "title": "Tibiotalocalcaneal arthrodesis using a novel retrograde intramedullary nail",
+          "year": 2019,
+          "design": "retrospective",
+          "n": 20,
+          "finding": "70% fusion overall; 76.5% in the 17 patients needing femoral-head allograft.",
+          "sponsor_funded": false,
+          "applications": [
+            "ttc-arthrodesis"
+          ]
+        },
+        {
+          "ref": "PMID:42600975",
+          "title": "Patient-specific 3D-printed porous titanium implants for complex foot and ankle reconstruction: a current concepts review",
+          "year": 2026,
+          "design": "meta-analysis",
+          "n": 289,
+          "finding": "Pooled union 89%, limb salvage 92%, reoperation 26%; the single comparative study favored the cage over femoral-head allograft.",
+          "sponsor_funded": false,
+          "applications": [
+            "ttc-arthrodesis"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "distributor",
+        "reimbursement": "No separate payment; bundled or packaged. Allograft is usually procured under the hospital's tissue-bank agreement.",
+        "notes": "Commodity-priced; the competitive threat is custom 3D-printed titanium (restor3d, 4WEB, Paragon 28/Zimmer Biomet) which carries a much higher ASP and is displacing femoral head in TTC salvage at academic centers."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "PMID:35585002",
+        "PMID:23650649",
+        "PMID:31640417",
+        "PMID:42600975",
+        "PMID:41724588",
+        "PMID:37165627"
+      ]
+    },
+    {
+      "id": "bioactive-glass-foot-ankle",
+      "name": "Bioactive glass bone void fillers and wedges (NovaBone 45S5, Bio2 Vitrium, Treace VitaFuse, BonAlive S53P4 and others)",
+      "company": "Multiple (NovaBone/Isto Biologics, Bio2 Technologies, Treace Medical, BonAlive Biomaterials, Stryker Vitoss BA)",
+      "ownership_history": "Treace Medical introduced VitaFuse Bioactive Glass Graft in its 2026 AOFAS portfolio update as the newest addition to its biologics line (beside the tissue-based CortiFuse graft). BonAlive S53P4 is CE-marked for osteomyelitis in Europe; its US status for that use was not verified.",
+      "category": "bioactive-glass",
+      "composition": "Silicate (45S5, S53P4) or borate bioactive glass granules, putties, fiber scaffolds and machined wedges that form a hydroxycarbonate apatite layer and release ions; S53P4 has intrinsic antibacterial activity",
+      "regulatory": {
+        "path": "510k",
+        "reference": "Per brand: NovaBone putty K240404 (2024-03-05) and K242299 (2024-09-25); Bio2 CLM BG Bioactive Scaffold K142463 (2014-12-18) and K152589 (2016-01-12); Bonalive K231528 (2023-07-11); Vitoss BA K103173/K163621. Treace VitaFuse: no 510(k) found in openFDA under that name or under applicant Treace (searched 2026-10-22) - may be marketed under another clearance or as a different sponsor's device",
+        "us_market_year": 1990,
+        "on_label_indications": [
+          "Bone void filler for non-structural voids of the extremities, pelvis and posterolateral spine (class-typical); machined wedges for opening-wedge osteotomies"
+        ]
+      },
+      "status": "established",
+      "applications": [
+        {
+          "application_id": "subtalar-hindfoot-arthrodesis",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Shi 2018 (PMID 30316643): 29 high-risk patients, 48 hindfoot joints fused with bioactive glass plus bone marrow aspirate; 25% nonunion overall (16.7% subtalar).",
+          "caveats": "Retrospective, no comparator, a nonunion rate at the high end for hindfoot fusion."
+        },
+        {
+          "application_id": "bunion-osteotomy-lapidus",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "IV",
+          "evidence_summary": "Borenstein 2023 republication (PMID 37669405): 17 Cotton osteotomies with bioactive-glass wedges (Bio2), all united, one delayed union; a Bio2 employee is a co-author.",
+          "caveats": "Industry co-authored, 17 patients, 6.5-month follow-up."
+        },
+        {
+          "application_id": "diabetic-foot-osteomyelitis-dead-space",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "III",
+          "evidence_summary": "De Giglio 2020 (PMID 33358382): 44 diabetic foot osteomyelitis patients, 22 with S53P4 bioactive glass after debridement vs 22 debridement alone; osteomyelitis resolution 90% vs 61.9% (p=0.03).",
+          "caveats": "Italian single-center retrospective; S53P4's antibacterial-use labeling is European; US use for infection is off-label."
+        },
+        {
+          "application_id": "calcaneus-fracture",
+          "tier": "emerging",
+          "on_label": true,
+          "evidence_grade": "III",
+          "evidence_summary": "Ma 2021 (PMID 33781640): 31 calcaneal tumor/cyst curettages, 45S5 Bioglass (16) vs allograft (15); faster ingrowth (3.7 vs 4.5 months) and healing with similar AOFAS scores.",
+          "caveats": "Cysts, not fractures."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "PMID:30316643",
+          "title": "Outcomes of hindfoot arthrodesis supplemented with bioactive glass and bone marrow aspirate: a retrospective radiographic study",
+          "year": 2018,
+          "design": "case-series",
+          "n": 29,
+          "finding": "25% nonunion across 48 high-risk joints.",
+          "sponsor_funded": false,
+          "applications": [
+            "subtalar-hindfoot-arthrodesis"
+          ]
+        },
+        {
+          "ref": "PMID:37669405",
+          "title": "Republication of 'Preliminary experience using bioactive glass wedges for Cotton osteotomy'",
+          "year": 2023,
+          "design": "case-series",
+          "n": 17,
+          "finding": "All 17 Cotton osteotomies united with maintained correction.",
+          "sponsor_funded": true,
+          "applications": [
+            "bunion-osteotomy-lapidus"
+          ]
+        },
+        {
+          "ref": "PMID:33358382",
+          "title": "Efficacy and safety of bioactive glass S53P4 as a treatment for diabetic foot osteomyelitis",
+          "year": 2020,
+          "design": "retrospective",
+          "n": 44,
+          "finding": "Osteomyelitis resolution 90% with S53P4 vs 61.9% with debridement alone.",
+          "sponsor_funded": false,
+          "applications": [
+            "diabetic-foot-osteomyelitis-dead-space"
+          ]
+        },
+        {
+          "ref": "PMID:33781640",
+          "title": "Open curettage with bone augmentation for symptomatic tumors and tumor-like lesions of calcaneus: a comparison of bioactive glass versus allogeneic bone",
+          "year": 2021,
+          "design": "retrospective",
+          "n": 31,
+          "finding": "Faster bone ingrowth and wound drying with 45S5 Bioglass than allograft.",
+          "sponsor_funded": false,
+          "applications": [
+            "calcaneus-fracture"
+          ]
+        }
+      ],
+      "bd": {
+        "sales_channel": "hybrid",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Treace's entry (VitaFuse, 2026) matters because Treace's Lapiplasty rep force is the densest foot-specific sales organization in the US and now carries both a tissue graft and a synthetic; this is the clearest example of a hardware company adding biologics for ASC pull-through."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.rttnews.com/3691340/treace-highlights-foot-ankle-portfolio-updates-at-2026-aofas-annual-meeting.aspx",
+        "PMID:30316643",
+        "PMID:37669405",
+        "PMID:33358382",
+        "PMID:33781640",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22BIO2%22&sort=decision_date:desc&limit=30",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22NOVABONE%22&sort=decision_date:desc&limit=30"
+      ],
+      "challenge": "VitaFuse clearance number not found; other brands verified."
+    },
+    {
+      "id": "ossigraft-prime",
+      "name": "OssiGraft Prime viable bone matrix",
+      "company": "Ossium Health (processor); Enovis (distribution)",
+      "ownership_history": "Ossium Health (San Francisco, deceased-donor bone marrow bank) product; Enovis featured OssiGraft Prime among its foot-and-ankle solutions at ACFAS 2025 (release 2025-03-25) under a distribution partnership; terms not public in the sources found.",
+      "category": "cellular-allograft",
+      "composition": "Viable bone matrix allograft described by Enovis as meeting strict organ-donation guidelines; cell counts and composition not retrieved",
+      "regulatory": {
+        "path": "361-HCTP",
+        "reference": "OssiGraft IFU (OHC-IFU-0002 Rev 05, hosted by Enovis): OssiGraft is an HCT/P that meets the 21 CFR 1271.10 criteria for regulation solely under section 361; no 510(k)/PMA/De Novo found",
+        "us_market_year": 2024,
+        "on_label_indications": [
+          "No FDA-reviewed indication; homologous bone-graft use (presumed)"
+        ]
+      },
+      "status": "emerging",
+      "applications": [
+        {
+          "application_id": "foot-ankle-nonunion",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "No clinical publications found.",
+          "caveats": "New entrant; evidence gap."
+        }
+      ],
+      "evidence": [],
+      "pipeline": {
+        "stage": "launched-2025",
+        "trials": [],
+        "expected_milestone": "No registered trials found; watch for Enovis foot/ankle case series."
+      },
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Gives Enovis (DJO/Novastep hardware, Regeneration OL1000 bone stimulator, STAR ankle) a cellular allograft in the bag; Enovis is otherwise biologics-light in foot/ankle."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "https://www.santelog.com/actualites-sante-nasdaq/enovistm-exhibit-extensive-range-foot-ankle-solutions-acfas-2025",
+        "https://enovis.com/foot-and-ankle",
+        "https://enovis.com/sites/default/files/IFU/OHC-IFU-0002%20REV.%2005%20OssiGraft%20Viable%20Bone%20Matrix%20%281%29.pdf",
+        "https://www.businesswire.com/news/home/20240131369656/en/Ossium-Health-and-Extremity-Medical-Create-Strategic-Partnership-for-Nationwide-Distribution-of-OssiGraft-Viable-Bone-Matrix"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "magnetos",
+      "name": "MagnetOs (granules, putty, Easypack putty)",
+      "company": "Kuros Biosurgery AG",
+      "ownership_history": "Kuros (Schlieren, Switzerland; SIX-listed) throughout; US spine launch 2019-2020. On 2025-01-07 Kuros Biosciences USA, Inc. announced a five-year exclusive sales agency agreement under which Medtronic's spinal division acts as exclusive sales agent for MagnetOs in mutually agreed US spine territories, converting an earlier trial arrangement into a strategic alliance. Per the Kuros investor release as summarized by search (the IR page returned HTTP 403 to direct fetch; the structure and term are mirrored by BoneZone and Medical Design & Development), Kuros keeps contracts, hospital partnerships and revenue recognition and may sell directly in non-contracted territories and non-spine markets. No financial terms were disclosed.",
+      "category": "synthetic-ceramic",
+      "composition": "Biphasic calcium phosphate (beta-TCP/hydroxyapatite) with a submicron needle-shaped surface topography claimed to drive M2 macrophage polarization and osteoinduction without added cells or growth factors",
+      "regulatory": {
+        "path": "510k",
+        "reference": "openFDA (FDA 510(k) database) MagnetOs entries: K161859 (MagnetOs, Xpand Biotechnology BV, 2017-02-24); K171563 (Putty, 2017-08-24); K181958 (Putty, 2018-12-06); K211201 (Easypack Putty, 2021-09-02); K213111 (Granules, 2022-01-10); K213959 (Flex Matrix, 2022-04-14); K230736 (Putty, 2023-12-20); K233245 (Flex Matrix, 2023-11-21); K233607 (Easypack Putty, 2023-12-15); K232347 (Granules, 2024-01-19); K240442 (Putty, 2024-04-01); K241212 (Easypack Putty, 2024-06-27); K243474 (MagnetOs MIS, 2025-05-23); applicant Kuros Biosciences B.V. (Xpand earlier). All product code MQV bone void fillers.",
+        "us_market_year": 2019,
+        "on_label_indications": [
+          "Bone void filler for non-structural voids in the extremities, pelvis and posterolateral spine (class-typical; stand-alone PLF claim for Easypack putty per company)"
+        ]
+      },
+      "status": "emerging",
+      "applications": [
+        {
+          "application_id": "subtalar-hindfoot-arthrodesis",
+          "tier": "investigational",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "NCT07225751: prospective, randomized, single-blind, multicenter study of MagnetOs vs autogenous bone graft in hindfoot or ankle fusion, 126 patients, 7 sites, started 2025-11-25, primary completion October 2028. The first randomized autograft-controlled synthetic trial in the foot since Augment.",
+          "caveats": "No foot/ankle results yet; spine evidence is the basis for the claim."
+        },
+        {
+          "application_id": "ankle-arthrodesis",
+          "tier": "investigational",
+          "on_label": true,
+          "evidence_grade": "V",
+          "evidence_summary": "Covered by the same trial (NCT07225751).",
+          "caveats": "As above."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT07225751",
+          "title": "MagnetOs compared to autogenous bone graft in patients undergoing hindfoot or ankle fusions",
+          "year": 2028,
+          "design": "RCT",
+          "n": 126,
+          "finding": "Recruiting; Kuros-sponsored.",
+          "sponsor_funded": true,
+          "applications": [
+            "subtalar-hindfoot-arthrodesis",
+            "ankle-arthrodesis"
+          ]
+        },
+        {
+          "ref": "NCT03625544",
+          "title": "Randomized intra-patient controlled trial of MagnetOs granules vs autograft in instrumented posterolateral spinal fusion",
+          "year": 2023,
+          "design": "RCT",
+          "n": 100,
+          "finding": "Completed October 2023; spine.",
+          "sponsor_funded": false,
+          "applications": [
+            "subtalar-hindfoot-arthrodesis"
+          ]
+        }
+      ],
+      "pipeline": {
+        "stage": "pivotal",
+        "trials": [
+          "NCT07225751"
+        ],
+        "expected_milestone": "Hindfoot/ankle RCT primary completion October 2028 (ClinicalTrials.gov); product is already marketable under 510(k), so the trial is for claims and adoption rather than approval."
+      },
+      "bd": {
+        "sales_channel": "direct",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Kuros IR (Jan 7, 2025 release): five-year exclusive sales agency agreement under which Medtronic's spine division sells MagnetOs in mutually agreed US spine territories; Kuros supports Medtronic's sales force but keeps responsibility for contracts, hospital partnerships and revenue recognition, and continues to sell directly in non-contracted territories and outside spine; the deal converted an initial trial agreement. FY2025 (Mar 10, 2026 release): group revenue USD 146.1M (+72%), direct MagnetOs sales USD 143.9M (+71%), first net profit USD 2.6M, 2026 guidance at least 35% growth, 2028 target USD 300-330M; a 510(k) for the MagnetOs MIS Delivery System is cited without a date; the release states MagnetOs is not FDA cleared as an osteoinductive bone graft."
+      },
+      "last_reviewed": "2026-10-22",
+      "sources": [
+        "NCT07225751",
+        "NCT03625544",
+        "NCT04679844",
+        "https://api.fda.gov/device/510k.json?search=device_name:%22MAGNETOS%22&sort=decision_date:desc&limit=30",
+        "https://bonezonepub.com/?p=51829",
+        "https://ir.kurosbio.com/news-releases/news-release-details/kuros-biosciences-usa-inc-announces-exclusive-strategic",
+        "https://www.biospace.com/press-releases/kuros-biosciences-delivers-72-year-over-year-sales-growth-reaching-usd-146-1-million-for-2025"
+      ],
+      "challenge": "Medtronic agreement terms and FY2025 revenue (USD 146.1M; MagnetOs 143.9M) read from Kuros IR pages 2026-10-22. 510(k) numbers confirmed in openFDA (K230736, K233607, K232347, K240442, K241212, K243474). The 'osteoinductive' language is marketing; FDA cleared MagnetOs as an osteoconductive bone void filler."
+    },
+    {
+      "id": "amplex-b2a",
+      "name": "AMPLEX (B2A peptide-coated ceramic granules; formerly Prefix)",
+      "company": "Ferring Pharmaceuticals (licensed from BioSurface Engineering Technologies)",
+      "ownership_history": "Developed by BioSurface Engineering Technologies (BioSET); Ferring sponsored the pivotal foot/ankle trial from 2017.",
+      "category": "peptide",
+      "composition": "Synthetic B2A peptide (a BMP-2 receptor-modulating peptide) coated on hydroxyapatite/beta-TCP granules",
+      "regulatory": {
+        "path": "IND-only",
+        "reference": "Pivotal IDE study NCT03028415 (Ferring; ankle fusion and hindfoot; n=56; completed, primary completion 2020-01-09); no PMA exists: openFDA PMA search for trade name AMPLEX returns nothing and Ferring's only PMAs are Euflexxa (P010029) and Nuxflexxa",
+        "us_market_year": 0,
+        "on_label_indications": []
+      },
+      "status": "investigational",
+      "applications": [
+        {
+          "application_id": "subtalar-hindfoot-arthrodesis",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "NCT03028415: multicenter randomized pivotal study of AMPLEX vs autogenous bone graft in hindfoot or ankle arthrodesis, 36 sites, listed enrollment 56, completed January 2020; no results posted and no FDA decision or publication found. Pilot NCT01224119 (24 patients, 2011-2012).",
+          "caveats": "A 56-patient enrollment at 36 sites suggests the pivotal trial was stopped or under-enrolled; program status unknown."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT03028415",
+          "title": "Multi-center randomized pivotal study evaluating AMPLEX compared to autogenous bone graft in arthrodesis surgery involving the hindfoot or ankle",
+          "year": 2020,
+          "design": "RCT",
+          "n": 56,
+          "finding": "Completed; no results posted.",
+          "sponsor_funded": true,
+          "applications": [
+            "subtalar-hindfoot-arthrodesis"
+          ]
+        },
+        {
+          "ref": "NCT01224119",
+          "title": "Multi-center randomized pilot study evaluating Amplex compared to autograft bone in foot and ankle fusion surgery",
+          "year": 2012,
+          "design": "RCT",
+          "n": 24,
+          "finding": "Pilot; status unknown.",
+          "sponsor_funded": true,
+          "applications": [
+            "subtalar-hindfoot-arthrodesis"
+          ]
+        }
+      ],
+      "pipeline": {
+        "stage": "pivotal",
+        "trials": [
+          "NCT03028415",
+          "NCT01224119"
+        ],
+        "expected_milestone": "None announced; treat as dormant unless Ferring or BioSET discloses otherwise."
+      },
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "Not applicable (unapproved).",
+        "notes": "Included because it was the only other peptide-on-ceramic product to reach a pivotal foot/ankle trial against autograft; a hiring manager will know its history."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "NCT03028415",
+        "NCT01224119",
+        "NCT00798239",
+        "https://clinicaltrials.gov/study/NCT03028415",
+        "https://api.fda.gov/device/pma.json?search=trade_name:%22AMPLEX%22&limit=3"
+      ],
+      "challenge": null
+    },
+    {
+      "id": "induce-xt",
+      "name": "Induce XT (Natural Matrix Protein allograft)",
+      "company": "Red Rock Regeneration Inc.",
+      "ownership_history": "Red Rock Regeneration (private); NMP technology also described in a 2026 preclinical paper (PMID 42774656) from an affiliated group.",
+      "category": "DBM",
+      "composition": "Human cortical bone fibers and microparticulates processed into Natural Matrix Protein (NMP, a growth-factor-bioavailability-enhanced demineralized allograft) with added cancellous microparticulates",
+      "regulatory": {
+        "path": "none-unapproved",
+        "reference": "No FDA clearance or approval record found: openFDA 510(k) search for applicant 'Red Rock' returns nothing, and no HCT/P determination is public. Product is a human cortical fiber/microparticulate allograft processed into Natural Matrix Protein (NMP); the prospective foot-and-ankle fusion study NCT06662266 (n=60, started May 2025, est. completion 2027-11) is registered as not an FDA-regulated device study.",
+        "us_market_year": 2024,
+        "on_label_indications": [
+          "No FDA-reviewed indication; homologous bone-graft use (presumed)"
+        ]
+      },
+      "status": "investigational",
+      "applications": [
+        {
+          "application_id": "ankle-arthrodesis",
+          "tier": "investigational",
+          "on_label": false,
+          "evidence_grade": "V",
+          "evidence_summary": "NCT06662266: prospective single-site evaluation of Induce XT in 60 foot and ankle fusions, enrolling by invitation since May 2025, primary completion November 2026.",
+          "caveats": "Single-arm, single-site; preclinical claim that NMP releases more BMP-7 than conventional DBM comes from the developer."
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "NCT06662266",
+          "title": "Prospective evaluation of Induce XT bone graft in foot and ankle fusion",
+          "year": 2026,
+          "design": "prospective-cohort",
+          "n": 60,
+          "finding": "Enrolling by invitation.",
+          "sponsor_funded": true,
+          "applications": [
+            "ankle-arthrodesis"
+          ]
+        },
+        {
+          "ref": "PMID:42774656",
+          "title": "A novel growth factor bioavailability-enhanced allograft for use in craniomaxillofacial bone regeneration",
+          "year": 2026,
+          "design": "preclinical",
+          "n": 0,
+          "finding": "NMP released more BMP-7 than DBM and was osteoinductive in the rat muscle pouch; competitors OsteoAMP, OsteoFactor and i-FACTOR did not form bone.",
+          "sponsor_funded": true,
+          "applications": [
+            "ankle-arthrodesis"
+          ]
+        }
+      ],
+      "pipeline": {
+        "stage": "phase-2",
+        "trials": [
+          "NCT06662266"
+        ],
+        "expected_milestone": "Foot/ankle series readout after November 2026 (ClinicalTrials.gov)."
+      },
+      "bd": {
+        "sales_channel": "unknown",
+        "reimbursement": "No separate payment; bundled or packaged.",
+        "notes": "Small-company entrant; relevance is as a signal that 'enhanced DBM' claims are being tested in the foot first because the fusion model is small and outpatient."
+      },
+      "last_reviewed": "2026-10-21",
+      "sources": [
+        "NCT06662266",
+        "PMID:42774656",
+        "https://clinicaltrials.gov/study/NCT06662266",
+        "https://api.fda.gov/device/510k.json?search=applicant:%22RED+ROCK%22&sort=decision_date:desc&limit=30"
+      ],
+      "challenge": "Regulatory pathway (510(k) vs 361) is unstated by the sponsor; no FDA record exists, so the atlas should show it as unclassified/investigational rather than as a 361 product."
+    }
+  ]
+}

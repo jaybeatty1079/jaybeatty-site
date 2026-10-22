@@ -1,0 +1,2008 @@
+[
+  {
+    "id": "ankle-fracture-syndesmosis",
+    "region": "ankle-foot",
+    "subregion": "ankle",
+    "name": "Ankle fracture (malleolar) and syndesmosis injury",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Danis-Weber",
+        "summary": "Level of the fibular fracture relative to the syndesmosis: A below (syndesmosis intact), B at the level (syndesmosis variably injured), C above (syndesmosis disrupted)"
+      },
+      {
+        "name": "Lauge-Hansen",
+        "summary": "Mechanism-based: foot position (supination or pronation) plus deforming force (adduction, abduction, external rotation); supination-external rotation is the most common pattern and is staged I-IV by the sequence of structures that fail"
+      },
+      {
+        "name": "AO/OTA 44",
+        "summary": "Malleolar segment; 44A infrasyndesmotic, 44B transsyndesmotic, 44C suprasyndesmotic, each subdivided by medial-side and posterior-malleolar involvement"
+      }
+    ],
+    "why_biologic": "Mostly a hardware procedure (plates, screws, fibular nails, syndesmotic screws or suture-button devices); biologics enter only at the margins: injectable calcium-phosphate cement to augment screw purchase in osteoporotic metaphyseal bone or to fill an impaction void in posterior-malleolar or pilon-type extension, DBM or BMAC at a medial malleolar or fibular nonunion, and antibiotic-eluting carriers in open fractures. The syndesmosis itself is a ligament repair with no accepted bone-biologic role.",
+    "autograft_standard": "Acute fixation rarely uses graft. For malleolar nonunion the standard is revision fixation with local or iliac-crest cancellous autograft; iliac harvest carries donor-site pain and a second incision in a largely outpatient population.",
+    "volume_note": "NEISS (US emergency departments) estimated 673,214 ankle fractures over 2012-2016, about 135,000 per year, incidence 4.22 per 10,000 person-years, 16.0% admitted (Scheer 2020, PMID 32354504). In adults 65+ NEISS estimated 241,449 ankle fractures over 2016-2023 with incidence rising from 49.1 to 63.0 per 100,000 (PMID 41616724). These are ED-presenting counts, not operative counts; no US ORIF volume was found.",
+    "unverified": true,
+    "challenge": "Volume is now sourced to NEISS (ED-presenting, not operative). Nonunion remains unpooled: no meta-analysis reports an overall ankle-fracture nonunion rate; only diabetic and nicotine-stratified cohorts were found (searched 2026-10-22). Biologics are not routine in malleolar fixation and the record should not imply otherwise.",
+    "sources": [
+      "PMID:29413771",
+      "https://www.aofoundation.org/",
+      "PMID:32354504",
+      "PMID:41616724",
+      "PMID:32600558",
+      "PMID:36251594",
+      "PMID:41441890"
+    ],
+    "nonunion_note": "No pooled ankle-fracture nonunion figure exists in a meta-analysis: PubMed '(ankle fracture OR malleolar) AND nonunion AND (systematic review OR meta-analysis)' returned 19 records, none pooling nonunion after ORIF. Cohort data: Lavery 2020 (n=439, nonunion defined as not healed at 6 months) found diabetes OR 6.5 for nonunion (PMID 32600558) and a diabetic-only cohort (n=139) had 24.5% nonunion (PMID 36251594); a TriNetX bimalleolar-ORIF cohort (8,882 matched pairs) reported nonunion RR 1.65 at 2 years with smoked nicotine (PMID 41441890). Rates in non-diabetic, non-smoking patients are low single digits in these series.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "ankle-arthrodesis",
+    "region": "ankle-foot",
+    "subregion": "ankle",
+    "name": "Tibiotalar (ankle) arthrodesis, open or arthroscopic",
+    "type": "fusion",
+    "classifications": [],
+    "why_biologic": "Autograft or a substitute is packed into the prepared joint to bridge gaps and, in high-risk hosts (smokers, diabetics, prior triple fusion, osteonecrosis, revision), to add osteoinductive or osteogenic signal. Augment (rhPDGF-BB/beta-TCP) is the only product with an FDA label for this use. A 2026 series of 227 CT-verified fusions found no difference with or without graft (92.4% vs 92.8%), supporting selective rather than routine use.",
+    "autograft_standard": "Local bone from joint preparation, with iliac-crest, proximal-tibial, or calcaneal cancellous autograft for defects; iliac harvest adds donor-site pain, which the Augment pivotal trial used as its principal clinical argument.",
+    "volume_note": "Nationwide Inpatient Sample 2016-2019 identified 12,325 inpatient ankle arthrodeses, about 3,100 per year, inpatient only (PMID 39931642). Medicare FFS: 19,120 ankle arthrodeses vs 9,059 total ankle replacements in the study window, with annual AA falling from 2,080 (2005) to 1,823 (2014) (PMID 32830583). All foot-and-ankle arthrodeses rose from 8.2 to 20.2 per 100,000 between 1994 and 2006 in NSAS/NHDS data (PMID 26213159). No all-payer, all-setting US count exists; outpatient/ASC cases are not in NIS.",
+    "challenge": "Pooled nonunion for screw-fixed ankle arthrodesis is about 4% (Izzo 2023), well below the historical 10-15%; quoting the higher figure invites challenge. Volume figures are inpatient (NIS) or Medicare-only; there is no all-payer count that includes ASC cases.",
+    "sources": [
+      "PMID:17768184",
+      "PMID:37212175",
+      "PMID:35705455",
+      "PMID:42297664",
+      "PMID:35807177",
+      "PMID:37165889",
+      "PMID:37903965",
+      "PMID:36795152",
+      "PMID:39931642",
+      "PMID:32830583",
+      "PMID:26213159"
+    ],
+    "nonunion_note": "Proportional meta-analysis of 38 studies/1,990 ankles fixed with screws: pooled fusion 96% (95% CI 95-98), i.e. about 4% nonunion; complications 15%, reoperation excluding hardware removal 3% (Izzo 2023, PMID 36795152). Older figures: 9% revision with nonunion 65% of revisions (PMID 17768184), 7.7% nonunion in 284 arthroscopic cases (PMID 37212175), 6.1% for single-joint foot/ankle fusions in an umbrella meta-analysis (PMID 35705455).",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "diabetic-foot-osteomyelitis-dead-space",
+    "region": "ankle-foot",
+    "subregion": "foot",
+    "name": "Diabetic foot osteomyelitis and calcaneal osteomyelitis: dead-space management after debridement",
+    "type": "bone-void",
+    "classifications": [
+      {
+        "name": "Cierny-Mader",
+        "summary": "Anatomic type I medullary, II superficial, III localized, IV diffuse; host class A healthy, B compromised (local, systemic or both), C treatment worse than disease"
+      },
+      {
+        "name": "IWGDF/IDSA infection severity",
+        "summary": "Grade 1 uninfected, 2 mild (skin only), 3 moderate (deeper or larger), 4 severe (systemic signs); osteomyelitis flagged with an O suffix in the 2023 IWGDF/IDSA classification"
+      }
+    ],
+    "why_biologic": "After resection of infected bone the cavity must be filled to avoid hematoma and recurrence; resorbable calcium-sulfate or calcium-sulfate/hydroxyapatite carriers deliver local antibiotic at concentrations systemic therapy cannot reach and resorb without a second procedure. Cerament G is the only US-authorized antibiotic-eluting void filler; surgeon-mixed Stimulan beads are widespread but off-label for the antibiotic. The strongest data are from long-bone osteomyelitis (96% eradication at one procedure in 100 patients; 94% infection-free at 6 years), while diabetic-foot-specific series are small and mixed (42% recurrence in one 45-case US calcium-sulfate series; no benefit in a 25-patient Greek comparison).",
+    "autograft_standard": "No autograft standard; the comparator is debridement plus systemic antibiotics with the cavity left open, packed, or managed with PMMA beads that need removal.",
+    "volume_note": "No verified US count for diabetic foot osteomyelitis admissions found in this sweep.",
+    "unverified": true,
+    "sources": [
+      "PMID:27587534",
+      "PMID:36047024",
+      "PMID:37400090",
+      "PMID:38371037",
+      "PMID:33295248",
+      "PMID:33358382",
+      "PMID:39615516",
+      "PMID:40732148",
+      "NCT07057817",
+      "NCT05316298"
+    ],
+    "challenge": "No US annual count for diabetic foot osteomyelitis admissions or resections was found. Searched PubMed 2026-10-22: '(diabetic foot osteomyelitis[Title]) AND (United States OR national OR nationwide) AND (incidence OR epidemiology OR trends OR burden OR hospitalizations)' returned no US national count; HCUP/NIS diabetic-foot amputation counts exist but do not isolate osteomyelitis dead-space management. Flag retained.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "foot-ankle-nonunion",
+    "region": "ankle-foot",
+    "subregion": "foot-ankle",
+    "name": "Foot and ankle nonunion and high-risk revision fusion (general)",
+    "type": "nonunion",
+    "classifications": [
+      {
+        "name": "Weber-Cech",
+        "summary": "Hypertrophic (viable, mechanically unstable), oligotrophic, atrophic (biologically inert); infected nonunion is managed as a separate category"
+      }
+    ],
+    "why_biologic": "Across foot and ankle fusions the pooled nonunion prevalence is 8.1% (6.1% for single joints, 27.1% for TTC). Revision for atrophic nonunion needs osteoinduction and osteogenic cells beyond what the bed provides, so BMAC, DBM, cellular allograft, rhPDGF-BB (on-label only for primary hindfoot/ankle fusion), and off-label rhBMP-2 are stacked onto revised fixation. A 2025 review concludes BMAC has moderate-to-high evidence for percutaneous treatment of delayed union and nonunion but that systematic reviews question its benefit in arthrodesis.",
+    "autograft_standard": "Iliac-crest cancellous autograft remains the reference for atrophic nonunion; it is limited by volume and donor-site pain, and many foot/ankle patients are smokers or diabetics in whom harvest morbidity is higher.",
+    "volume_note": "Derived rather than counted: 8.1% of all foot/ankle fusions (PMID 35705455); no US nonunion count found.",
+    "unverified": true,
+    "sources": [
+      "PMID:35705455",
+      "PMID:40680688",
+      "PMID:15995108",
+      "PMID:28416462",
+      "PMID:19589304",
+      "PMID:38704857",
+      "PMID:27797787"
+    ],
+    "challenge": "Volume is derived (8.1% of foot/ankle fusions, PMID 35705455), not counted. Searched PubMed 2026-10-22 for US nonunion counts (foot/ankle nonunion AND United States/national AND incidence/trends): none found. Flag retained; the derived figure is the best available.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "first-mtp-arthrodesis",
+    "region": "ankle-foot",
+    "subregion": "forefoot",
+    "name": "First metatarsophalangeal joint arthrodesis (hallux rigidus, severe hallux valgus, failed implant salvage)",
+    "type": "fusion",
+    "classifications": [
+      {
+        "name": "Coughlin-Shurnas (hallux rigidus)",
+        "summary": "Grade 0 stiffness only; 1 mild osteophytes; 2 moderate joint narrowing; 3 severe narrowing with cysts, pain at end range; 4 grade 3 plus mid-range pain"
+      }
+    ],
+    "why_biologic": "Primary fusion needs little or no graft and nonunion is 5-9%; salvage after a failed silicone or metallic implant leaves a shortening defect that requires a structural interposition graft (iliac autograft or allograft block) and carries a 16.5% pooled nonunion. Biologic use is therefore concentrated in revision and salvage, not primary cases.",
+    "autograft_standard": "Local bone for primary; iliac-crest tricortical autograft for interposition in salvage, with donor-site morbidity driving use of allograft blocks.",
+    "volume_note": "No US annual count found. NSAS/NHDS data put all foot-and-ankle arthrodeses at 20.2 per 100,000 in 2006 (PMID 26213159) without a first-MTP breakout. A 2026 PearlDiver national claims study of primary vs revision first-MTP arthrodesis (2,099 matched pairs) reports 2-year nonunion diagnoses of 4.1% after primary and 9.9% after revision/salvage fusion, repeat fusion 4.4% vs 7.2% (PMID 42602317); the study does not report a national annual volume.",
+    "unverified": true,
+    "sources": [
+      "PMID:41534781",
+      "PMID:30201557",
+      "PMID:31582288",
+      "PMID:37165627",
+      "PMID:26213159",
+      "PMID:42602317"
+    ],
+    "nonunion_note": "Claims-coded nonunion diagnosis at 2 years: 4.1% primary vs 9.9% revision/salvage first-MTP arthrodesis (PearlDiver, PMID 42602317).",
+    "challenge": "No national annual count for first-MTP arthrodesis was found (searched PubMed 2026-10-22 for first metatarsophalangeal/hallux AND United States/national AND incidence/volume/utilization; the only national database study, PMID 42602317, reports matched cohorts, not totals). Flag retained for volume.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "bunion-osteotomy-lapidus",
+    "region": "ankle-foot",
+    "subregion": "forefoot",
+    "name": "Hallux valgus correction: distal/shaft osteotomy and Lapidus (first TMT) arthrodesis",
+    "type": "osteotomy",
+    "classifications": [],
+    "why_biologic": "A minor biologic use. Chevron and scarf osteotomies heal reliably without graft. Lapidus arthrodesis nonunion ranges from 0.7% (plantar plating) to 5.3% (screws only) in a 1,176-patient meta-analysis, so some surgeons add DBM, BMAC, or a small cellular allograft, and opening-wedge medial-cuneiform (Cotton) osteotomies use a structural wedge (allograft, bioactive glass, titanium, or porous PEEK). Treace Medical's Lapiplasty system is the volume driver in this segment.",
+    "autograft_standard": "Local bone from joint preparation; a Cotton wedge historically used iliac-crest tricortical autograft, now largely replaced by allograft or synthetic wedges.",
+    "volume_note": "No verified all-payer US count. CMS Medicare Part B data 2013-2022 show a substantial decline in bunionectomies in Medicare beneficiaries with a rising share of Lapidus procedures (PMID 40154771; counts are in the paper, not the abstract). Hallux valgus surgery is overwhelmingly outpatient/ASC and so is invisible to NIS.",
+    "unverified": true,
+    "sources": [
+      "PMID:38483102",
+      "PMID:37669405",
+      "PMID:40154771"
+    ],
+    "challenge": "Searched PubMed 2026-10-22 (hallux valgus/bunion/Lapidus AND United States/national AND incidence/trends/volume): only the Medicare-only trend paper (PMID 40154771) is US; the annual counts are in its tables, not retrieved here. Flag retained.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "fifth-metatarsal-jones",
+    "region": "ankle-foot",
+    "subregion": "forefoot",
+    "name": "Proximal fifth metatarsal (Jones, zone II-III) fracture and nonunion",
+    "type": "nonunion",
+    "classifications": [
+      {
+        "name": "Lawrence-Botte zones",
+        "summary": "Zone 1 tuberosity avulsion; zone 2 metaphyseal-diaphyseal junction (the true Jones fracture, watershed blood supply); zone 3 proximal diaphyseal stress fracture"
+      },
+      {
+        "name": "Torg",
+        "summary": "Diaphyseal stress fractures: I acute (sharp margins, no intramedullary sclerosis), II delayed union (widened line, intramedullary sclerosis), III nonunion (sclerotic obliteration of the canal)"
+      }
+    ],
+    "why_biologic": "Intramedullary screw fixation is the standard in athletes; the watershed blood supply drives delayed union, nonunion and refracture, so surgeons add BMAC, DBM, or calcaneal autograft at the fracture site. A 2022 meta-analysis of 718 athlete fractures found union of 98.5% with orthobiologic augmentation versus 93.8% with fixation alone, with no comparative trials. Revision for nonunion or refracture uses a larger screw plus autograft or BMA plus DBM.",
+    "autograft_standard": "Calcaneal or iliac cancellous autograft at open bone grafting; most primary cases are percutaneous and use BMAC drawn from the iliac crest or calcaneus instead.",
+    "volume_note": "No US annual count found. Forefoot fractures dominate foot-fracture incidence (123.9 per 100,000 per year in PMID 32499146) but the Jones subset is not broken out.",
+    "unverified": true,
+    "sources": [
+      "PMID:33740393",
+      "PMID:22956165",
+      "PMID:35612823",
+      "PMID:21212308",
+      "PMID:21632977",
+      "PMID:26353796",
+      "PMID:26781131",
+      "PMID:32499146",
+      "PMID:42319275"
+    ],
+    "nonunion_note": "Systematic review of 10 studies/998 patients comparing surgical and conservative treatment of zone-2 (Jones) fractures: nonunion 7/211 (3.3%) with surgical fixation vs 91/787 (11.6%) nonoperatively, total complications 8.5% vs 15.6% (Encinas 2026, JAAOS, PMID 42319275).",
+    "challenge": "Nonunion is now sourced to a 2026 systematic review (surgical 3.3% vs conservative 11.6%). No US annual Jones-fracture count exists: the only nationwide fifth-metatarsal surgery epidemiology found is Japanese (PMID 40011147). Flag retained for volume.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "calcaneus-fracture",
+    "region": "ankle-foot",
+    "subregion": "hindfoot",
+    "name": "Calcaneal fracture (intra-articular) with void fill after reduction",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Sanders",
+        "summary": "CT-based count of posterior-facet articular fragments on the coronal cut: I nondisplaced, II two-part, III three-part, IV four or more (comminuted); subtypes A-C by fracture-line position"
+      },
+      {
+        "name": "Essex-Lopresti",
+        "summary": "Plain-film pattern: tongue-type (fracture exits posteriorly through the tuberosity) versus joint-depression (posterior facet driven into the body)"
+      }
+    ],
+    "why_biologic": "Reduction of a depressed posterior facet leaves a cancellous void in the neutral triangle; a resorbable void filler or injectable calcium-phosphate cement is used to support the reduced facet and allow earlier weight-bearing. This is the clearest 'void fill' use in the foot. Cement augmentation has been studied in small series for 25 years; a Czech series found no outcome difference with or without filling, and a Dutch series associated void-filler use with wound complications through the extensile lateral approach.",
+    "autograft_standard": "Historically iliac-crest or local cancellous autograft packed under the facet; many surgeons now leave the void empty or use a synthetic because the extensile approach already carries a high wound-complication rate and a second harvest site adds morbidity.",
+    "volume_note": "No verified US count. Danish population data (PMID 32499146, 5,912 foot fractures) put all hindfoot fractures at 13.7 per 100,000 per year; the calcaneus is the most commonly fractured tarsal bone, and roughly three-quarters of calcaneal fractures are intra-articular in the older literature (that 75% figure is not verified in this sweep).",
+    "unverified": true,
+    "sources": [
+      "PMID:15913516",
+      "PMID:16210159",
+      "PMID:23318101",
+      "PMID:31941568",
+      "PMID:30415676",
+      "PMID:32499146"
+    ],
+    "challenge": "No US annual count found. Searched PubMed 2026-10-22 '(calcaneal fracture OR calcaneus fracture)[Title] AND (United States OR national OR nationwide) AND (incidence OR epidemiology OR trends)': no US national result; Danish population data (PMID 32499146) remain the only incidence source. The 75% intra-articular share is still unverified. Flag retained.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "subtalar-hindfoot-arthrodesis",
+    "region": "ankle-foot",
+    "subregion": "hindfoot",
+    "name": "Subtalar, double and triple (hindfoot) arthrodesis",
+    "type": "fusion",
+    "classifications": [],
+    "why_biologic": "Posterior-facet preparation leaves a cancellous bed that surgeons fill with local autograft or a substitute; distraction or bone-block subtalar fusion after calcaneal malunion needs structural graft. Subtalar nonunion pooled at 6-10% (open 10.9%, arthroscopic 5.9%); revision subtalar fusion fails in about 20%; subtalar fusion after a prior tibiotalar fusion united in 80%. Augment's label covers hindfoot fusion, and the Augment pivotal cohort was largely subtalar, talonavicular and calcaneocuboid joints.",
+    "autograft_standard": "Local cancellous bone, calcaneal or proximal-tibial autograft, iliac-crest tricortical block for distraction arthrodesis; iliac harvest morbidity is the usual argument for substitutes.",
+    "volume_note": "No subtalar-specific US count. All foot-and-ankle arthrodeses rose from 8.2 to 20.2 per 100,000 between 1994 and 2006 in NSAS/NHDS data, with outpatient volume up 415% (PMID 26213159); hindfoot joints are not broken out.",
+    "unverified": true,
+    "sources": [
+      "PMID:39433174",
+      "PMID:33940969",
+      "PMID:37434387",
+      "PMID:35705455",
+      "PMID:23824386",
+      "PMID:26213159"
+    ],
+    "challenge": "Searched PubMed 2026-10-22 (subtalar[Title] AND United States/national AND incidence/volume/utilization): no subtalar-specific national count. Flag retained.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "talus-fracture-avn",
+    "region": "ankle-foot",
+    "subregion": "hindfoot",
+    "name": "Talar neck and body fracture; post-traumatic talar osteonecrosis",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Hawkins (with Canale-Kelly modification)",
+        "summary": "Talar neck: I nondisplaced; II displaced with subtalar subluxation or dislocation (IIA subluxed, IIB dislocated); III displaced with subtalar and tibiotalar dislocation; IV adds talonavicular dislocation. Osteonecrosis risk rises with grade."
+      }
+    ],
+    "why_biologic": "Acute fixation uses no biologic. The biologic use case is the downstream salvage: talar osteonecrosis or collapse leading to tibiotalocalcaneal or pantalar arthrodesis with a structural bone block (femoral-head allograft), bulk autograft, or a custom 3D-printed titanium cage, often with BMAC or rhBMP-2 used off-label by the surgeon. Core decompression with BMAC for early AVN is reported only in small series.",
+    "autograft_standard": "For salvage fusion the standard is iliac-crest structural autograft or fibular strut; volume is limited for the large defects seen after talar collapse, which is why bulk allograft and metal cages dominate.",
+    "volume_note": "Rare injury; no US volume source found. Talus fractures are a small fraction of hindfoot fractures (hindfoot incidence 13.7 per 100,000 per year in PMID 32499146).",
+    "unverified": true,
+    "sources": [
+      "PMID:34088463",
+      "PMID:34972563",
+      "PMID:35585002",
+      "PMID:41724588",
+      "PMID:32499146"
+    ],
+    "challenge": "No US volume source. Searched PubMed 2026-10-22 (talus[Title] AND United States/national AND incidence/epidemiology): only a Finnish register study (PMID 39702100) and a US-military osteochondral-lesion study (PMID 22224323) were returned; neither gives a US talus-fracture count. Flag retained.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "ttc-arthrodesis",
+    "region": "ankle-foot",
+    "subregion": "hindfoot",
+    "name": "Tibiotalocalcaneal (TTC) and tibiocalcaneal arthrodesis, including bulk-defect salvage",
+    "type": "fusion",
+    "classifications": [],
+    "why_biologic": "The highest-nonunion fusion in the foot and ankle: 27.1% pooled in an umbrella meta-analysis, with much of the indication mix being failed total ankle replacement, talar osteonecrosis, Charcot, and infection. Large defects are filled with femoral-head structural allograft (union 67.4% pooled; 50% in a 32-patient series where every diabetic failed) or a 3D-printed titanium cage (union 88-89% pooled), and surgeons layer BMAC, DBM, and off-label rhBMP-2 onto the construct. Revision TTC with a retrograde nail achieved a stable limb in about 70% with or without BMP-2 in a 23-patient series.",
+    "autograft_standard": "Fibular strut (resected distal fibula) or iliac-crest autograft; volume is insufficient for the multi-centimeter defects that define the salvage subgroup, which is why structural allograft and cages dominate.",
+    "volume_note": "No US annual count found; a niche, high-acuity procedure concentrated in tertiary foot-and-ankle and limb-salvage centers.",
+    "unverified": true,
+    "sources": [
+      "PMID:35705455",
+      "PMID:35585002",
+      "PMID:23650649",
+      "PMID:41724588",
+      "PMID:42600975",
+      "PMID:22575061",
+      "PMID:38274151",
+      "PMID:38726323",
+      "PMID:31640417"
+    ],
+    "challenge": "No US annual count. Searched PubMed 2026-10-22 (tibiotalocalcaneal/ankle arthrodesis AND United States/national): NIS ankle-arthrodesis counts (PMID 39931642) do not separate TTC from tibiotalar fusion. Union for 3D-titanium TTC in critical defects pooled 88.2% in 15 studies/142 patients (PMID 41724588). Flag retained.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "charcot-midfoot-reconstruction",
+    "region": "ankle-foot",
+    "subregion": "midfoot",
+    "name": "Charcot neuroarthropathy midfoot and hindfoot reconstruction",
+    "type": "fusion",
+    "classifications": [
+      {
+        "name": "Eichenholtz",
+        "summary": "Stage 0 prodromal (warm, swollen, normal films); I development/fragmentation; II coalescence; III consolidation/remodeling"
+      },
+      {
+        "name": "Brodsky anatomic",
+        "summary": "Type 1 midfoot (tarsometatarsal and naviculocuneiform, about 60%); 2 hindfoot (subtalar, talonavicular, calcaneocuboid); 3A ankle; 3B calcaneal tuberosity"
+      }
+    ],
+    "why_biologic": "Neuropathic, osteopenic, often ulcerated and infected bone with very high nonunion and hardware-failure rates; surgeons use extended internal fixation (beams, bolts, plates) or external fixation and routinely add BMAC, DBM, PRP, structural allograft, and off-label rhBMP-2 because autograft volume is inadequate and the host is compromised. A systematic review of intramedullary beaming found high nonunion and complication rates with poor-quality evidence; external fixation was 8 times more likely to show radiographic nonunion than internal fixation in a 2016 review. Infected Charcot is where antibiotic-eluting carriers enter.",
+    "autograft_standard": "Iliac-crest or proximal-tibial autograft; the volume needed after wedge resection usually exceeds what can be harvested, and diabetic hosts tolerate a second site poorly.",
+    "volume_note": "No US procedure count found. Texas hospital-discharge data show rising age-standardized Charcot rates in diabetic patients from 2006 to 2016 with increasing amputations (PMID 38944563). Charcot midfoot-fusion TTC nails pooled a 3.3% nonunion rate in a 2025 meta-analysis of 147 patients, a figure most foot-and-ankle surgeons would treat as optimistic.",
+    "challenge": "Any single Charcot nonunion percentage will be challenged because series count stable fibrous nonunion with a plantigrade, ulcer-free foot as success (PMID 34587806, PMID 25862129); the 11.9% pooled figure (PMID 38548584) is the best-sourced number, and the 3.3% TTC-nail figure is optimistic.",
+    "sources": [
+      "PMID:35701302",
+      "PMID:27280625",
+      "PMID:19254506",
+      "PMID:40702500",
+      "PMID:38944563",
+      "PMID:25586504",
+      "PMID:38548584",
+      "PMID:34587806",
+      "PMID:25862129"
+    ],
+    "nonunion_note": "Proportional meta-analysis of 30 studies/492 internal-fixation Charcot reconstructions: nonunion 11.9% (95% CI 6.6-18.1), deep infection 6.7%, amputation after infection 36.6% (Tsikopoulos 2024, PMID 38548584). Union definitions differ: Kavarthapu 2021 counted 9/15 midfoot fusions (60%) with the other six as 'stable and painless fibrous nonunion' and all limbs salvaged (PMID 34587806); Mittlmeier 2015 states the outcome 'does not depend on definite osseous healing of the arthrodesis' (PMID 25862129).",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "lisfranc-injury",
+    "region": "ankle-foot",
+    "subregion": "midfoot",
+    "name": "Lisfranc (tarsometatarsal) fracture-dislocation: ORIF versus primary arthrodesis",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Myerson (modified Hardcastle)",
+        "summary": "A total incongruity of the tarsometatarsal joint; B partial incongruity (B1 medial column, B2 lateral columns); C divergent (C1 partial, C2 total)"
+      },
+      {
+        "name": "Nunley-Vertullo",
+        "summary": "Subtle (ligamentous, athletic) injuries: stage I no diastasis on weight-bearing films, II 2-5 mm diastasis without arch collapse, III diastasis with loss of arch height"
+      }
+    ],
+    "why_biologic": "Primary arthrodesis of the medial two or three tarsometatarsal joints has become common for purely ligamentous injuries because it halves reoperation versus ORIF in randomized data; the fusion bed is small and surgeons pack it with local autograft, DBM, or a cellular allograft. In ORIF there is no biologic role. Nonunion after primary arthrodesis is uncommon but not pooled in the studies found.",
+    "autograft_standard": "Local bone from joint preparation or calcaneal/proximal-tibial cancellous autograft; small volumes needed, so donor-site morbidity is modest.",
+    "volume_note": "US TriNetX Collaborative Network 2014-2024: 21,964 primary Lisfranc injuries presenting to EDs or ambulatory settings, overall incidence 22.4 per 100,000 person-years, peaking at 33.6 per 100,000 at ages 40-44 (PMID 40839129). Lisfranc injuries are about 0.2% of all fractures (PMID 26022112); midfoot fracture incidence is 6.5 per 100,000 per year in Danish data (PMID 32499146). No US operative count.",
+    "sources": [
+      "PMID:19796583",
+      "PMID:26022112",
+      "PMID:30850102",
+      "PMID:31036779",
+      "PMID:34384419",
+      "PMID:42406178",
+      "PMID:32499146",
+      "PMID:40839129"
+    ],
+    "challenge": "TriNetX incidence is a network-based estimate (participating health systems), not a census; surgical-intervention rates are in the paper, not extracted here.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "distal-femur-fracture",
+    "region": "femur-knee",
+    "subregion": "distal femur",
+    "name": "Distal femur fracture (supracondylar / intercondylar, including periprosthetic above a TKA)",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "AO/OTA 33",
+        "summary": "Distal femur: 33-A extra-articular (A1 simple, A2 metaphyseal wedge, A3 metaphyseal complex), 33-B partial articular (B1 lateral sagittal, B2 medial sagittal, B3 coronal/Hoffa), 33-C complete articular (C1 simple articular and metaphyseal, C2 simple articular with multifragmentary metaphysis, C3 multifragmentary articular)."
+      },
+      {
+        "name": "Periprosthetic (Lewis-Rorabeck / Su)",
+        "summary": "Rorabeck I undisplaced with stable prosthesis, II displaced with stable prosthesis, III loose or failing prosthesis; Su types by fracture level relative to the femoral component."
+      }
+    ],
+    "why_biologic": "This is the one distal-femur situation where a bone void filler is routinely considered: metaphyseal comminution or impaction in osteoporotic bone leaves a void behind a lateral locking plate or retrograde nail, and surgeons fill it with calcium phosphate cement, calcium sulfate/hydroxyapatite composites, allograft chips or DBM to resist collapse and support the construct. Evidence is biomechanical and retrospective (for example a cadaver study of CPC-augmented condylar screws, B\u00e4umlein 2020). No RCT shows that any filler improves union or reoperation in distal femur fractures; void fillers are labeled as 'not intrinsic to the stability of the bony structure' which is at odds with how they are used here. Medial comminution with bone loss in young patients is a nonunion risk where autograft at index or revision is used.",
+    "autograft_standard": "Autogenous cancellous graft (iliac crest or RIA) for medial defects or at nonunion revision; morbidity and added OR time are the trade-off.",
+    "volume_note": "No authoritative US annual count found; distal femur fractures are roughly 4-7% of femoral fractures in secondary sources and periprosthetic distal femur fractures are rising with TKA volume.",
+    "unverified": true,
+    "sources": [
+      "PMID:32278344",
+      "PMID:31316256",
+      "https://fda.innolitics.com/device/K060061"
+    ],
+    "challenge": "No US annual count found. Searched PubMed 2026-10-22 '(distal femur OR distal femoral)[Title] AND (United States OR nationwide OR national) AND (incidence OR epidemiology OR trends)': only a Danish nationwide cohort of 60,823 knee fractures (PMID 31795876) was returned. Flag retained; the 4-7% share of femoral fractures remains a secondary-source figure.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "femoral-shaft-fracture",
+    "region": "femur-knee",
+    "subregion": "femoral diaphysis",
+    "name": "Femoral shaft fracture",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "AO/OTA 32",
+        "summary": "Femoral diaphysis: 32-A simple (spiral, oblique, transverse), 32-B wedge (intact or fragmentary), 32-C multifragmentary (segmental or complex)."
+      },
+      {
+        "name": "Winquist-Hansen",
+        "summary": "Comminution grades 0-IV by the amount of cortical contact remaining; historically used to decide on nail locking."
+      },
+      {
+        "name": "Gustilo-Anderson (if open)",
+        "summary": "Open-fracture grades I-IIIC by wound size, contamination, periosteal stripping and vascular injury."
+      }
+    ],
+    "why_biologic": "None for the closed fracture: reamed, statically locked intramedullary nailing unites well over 90% of femoral shaft fractures without any graft, and reaming itself deposits autologous marrow at the fracture. Biologics are relevant only for open fractures with bone loss (segmental defects, see femoral-segmental-defect) and for nonunion. Infuse (rhBMP-2) is labeled only for acute open TIBIAL shaft fractures with IM nailing within 14 days; any femoral use is off-label.",
+    "autograft_standard": "Not used in primary nailing. For defects and nonunions the benchmark is autograft (iliac crest, or RIA harvest from the contralateral or ipsilateral femoral canal).",
+    "volume_note": "No single authoritative US annual count found in public sources; femoral shaft fractures are far less common than hip fractures and skew to high-energy trauma in younger adults.",
+    "unverified": true,
+    "sources": [
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P000054",
+      "PMID:12473698",
+      "PMID:24625833"
+    ],
+    "challenge": "No US annual count found. Searched PubMed 2026-10-22 (femoral shaft[Title] AND United States/nationwide/national AND incidence/epidemiology/trends): only Swedish national data (6,409 inpatients 1998-2004, 10 per 100,000 person-years, PMID 19171340) and pediatric US practice-pattern papers. Flag retained.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "femoral-shaft-nonunion",
+    "region": "femur-knee",
+    "subregion": "femoral diaphysis",
+    "name": "Femoral shaft nonunion (aseptic, after nailing or plating)",
+    "type": "nonunion",
+    "classifications": [
+      {
+        "name": "Weber-Cech",
+        "summary": "Hypertrophic (biologically active, mechanically unstable) versus atrophic/oligotrophic (biologically inert) nonunion; dictates whether a biologic is needed at all."
+      },
+      {
+        "name": "Non-Union Scoring System (NUSS)",
+        "summary": "Points for bone quality, prior surgeries, infection, soft tissue and host factors; higher scores push toward biologic augmentation or specialist referral."
+      }
+    ],
+    "why_biologic": "Hypertrophic nonunions are fixed with exchange nailing (reaming re-seeds the site with marrow) and need no graft. Atrophic nonunions and those with bone loss get open debridement, compression plating or nail-plate constructs, and a biologic: iliac crest or RIA autograft first, with DBM or a ceramic as an extender, BMAC (Hernigou's percutaneous technique, validated in tibial nonunion with union in 53 of 60, PMID 15995108), and historically rhBMP-7 (OP-1, HDE-approved for recalcitrant long-bone nonunion, no longer available in the US). rhBMP-2 (Infuse) is used off-label by some surgeons; its label covers only acute open tibial fractures.",
+    "autograft_standard": "Iliac crest bone graft is the historical gold standard; RIA autograft from the femoral canal matched its union rate (82% versus 86%) with less donor-site pain in a 133-patient RCT (Dawson 2014, Synthes-supported RIA kits).",
+    "volume_note": "Femoral shaft nonunion after reamed nailing is usually quoted below 5-10% (secondary sources); no US annual count.",
+    "unverified": true,
+    "sources": [
+      "PMID:24625833",
+      "PMID:15995108",
+      "PMID:11314793",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfhde/hde.cfm?id=H010002"
+    ],
+    "challenge": "Nonunion after reamed nailing remains a secondary-source range (<5-10%); no US count. Searched PubMed 2026-10-22 for femoral shaft nonunion incidence in US databases: none found. Flag retained.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "femoral-segmental-defect",
+    "region": "femur-knee",
+    "subregion": "femoral diaphysis and metaphysis",
+    "name": "Critical-size femoral bone defect (open fracture with bone loss, infected nonunion, tumor resection)",
+    "type": "bone-void",
+    "classifications": [
+      {
+        "name": "Defect size",
+        "summary": "Defects longer than roughly 2-3 cm or more than 50% of cortical circumference are unlikely to bridge without reconstruction; above 5-6 cm distraction osteogenesis or vascularized bone is usually considered."
+      },
+      {
+        "name": "Gustilo-Anderson IIIB/IIIC",
+        "summary": "Open fractures with periosteal stripping or vascular injury where bone loss is common."
+      }
+    ],
+    "why_biologic": "This is the highest-biologic-intensity trauma scenario in the femur. The Masquelet induced-membrane technique stages a PMMA spacer (sometimes antibiotic-loaded), then fills the membrane-lined cavity with autograft, typically RIA-harvested, with DBM, allograft chips or a ceramic as a volume extender and, in some centers, rhBMP or BMAC; pooled union is roughly 85-90% with reinterventions common (Morelli 2016 meta-analysis of 17 papers, 427 patients). Antibiotic-eluting fillers (Cerament G, Stimulan with surgeon-added antibiotic) are used in the infected subset, and Cerament G's 2024 510(k) now covers open fractures in the extremities.",
+    "autograft_standard": "RIA autograft is the practical benchmark for large volumes (mean 37.7 cc in Dawson 2014), supplemented by iliac crest when more is needed; donor-site morbidity, finite supply and a second surgical site are the downsides.",
+    "volume_note": "No public US count; these are rare, concentrated in Level 1 trauma centers.",
+    "sources": [
+      "PMID:28040090",
+      "PMID:24625833",
+      "NCT03970941",
+      "https://fda.innolitics.com/device/K234008"
+    ]
+  },
+  {
+    "id": "periprosthetic-femur-fracture",
+    "region": "femur-knee",
+    "subregion": "femur around a hip stem",
+    "name": "Periprosthetic femoral fracture around a hip arthroplasty stem",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Vancouver (Duncan-Masri)",
+        "summary": "A trochanteric (AG greater, AL lesser); B around or just below the stem: B1 stem well fixed, B2 stem loose with good bone stock, B3 stem loose with poor bone stock; C well below the stem. Unified Classification System extends the same logic to all joints."
+      }
+    ],
+    "why_biologic": "B1 and C fractures are plated; B2/B3 get a revision stem. The classic biologic here is the cortical onlay strut allograft used as a 'biological plate' with cerclage, alone or with a plate: 39 of 40 fractures united in the multicenter series by Haddad and Duncan (2002). Modern locking plates (91% union in a pooled review) have reduced strut use, and one series reported 18 of 19 B1 fractures healing with plates and no struts. For B3 bone loss, impaction allograft or allograft-prosthesis composites are revision-arthroplasty territory.",
+    "autograft_standard": "Autograft is rarely used; the structural need is met by allograft struts, which carry disease-transmission (low) and stress-shielding/resorption concerns.",
+    "volume_note": "Periprosthetic femoral fractures occur after roughly 0.1-6% of THAs (Graham 2013 review); absolute US counts rise with the installed base of arthroplasties.",
+    "sources": [
+      "PMID:12063328",
+      "PMID:23420340",
+      "PMID:17075084",
+      "PMID:12468872"
+    ]
+  },
+  {
+    "id": "atypical-femoral-fracture",
+    "region": "femur-knee",
+    "subregion": "subtrochanteric and diaphyseal femur",
+    "name": "Atypical femoral fracture (bisphosphonate- or denosumab-associated)",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "ASBMR Task Force 2013 case definition",
+        "summary": "Major features: fracture distal to the lesser trochanter and proximal to the supracondylar flare, minimal or no trauma, transverse or short-oblique origin at the lateral cortex, complete or incomplete (lateral cortex only), non- or minimally comminuted, periosteal or endosteal thickening ('beaking') at the fracture site. Minor features include generalized cortical thickening, prodromal thigh pain and bilaterality."
+      },
+      {
+        "name": "Complete versus incomplete",
+        "summary": "Complete fractures are nailed; incomplete fractures with pain are usually prophylactically nailed, without pain may be observed with drug holiday."
+      }
+    ],
+    "why_biologic": "Treatment is cephalomedullary nailing plus stopping the antiresorptive; the biologic question is whether an anabolic (teriparatide, abaloparatide, romosozumab) speeds a fracture that heals slowly because remodeling is suppressed. The ASBMR task force called the teriparatide evidence 'inconsistent'; the best prospective data (Watts 2017, open-label, n=14, Lilly-supported) found no consistent healing effect and said teriparatide 'should not be relied on to aid in healing'. Everything else is case reports. All anabolic use for healing is off-label.",
+    "autograft_standard": "Not used at index; delayed union or nonunion is treated by exchange nailing with or without autograft.",
+    "volume_note": "Absolute risk on bisphosphonates is low, 3.2-50 per 100,000 person-years, rising toward roughly 100 per 100,000 with long-term use (ASBMR 2013); no US annual count.",
+    "sources": [
+      "PMID:23712442",
+      "PMID:28071822",
+      "PMID:24936568",
+      "PMID:26101679"
+    ]
+  },
+  {
+    "id": "scaphoid-fracture-nonunion",
+    "region": "forearm-wrist-hand",
+    "subregion": "carpus",
+    "name": "Scaphoid fracture and nonunion",
+    "type": "nonunion",
+    "classifications": [
+      {
+        "name": "Herbert (in words)",
+        "summary": "Type A stable acute (A1 tubercle, A2 incomplete waist), Type B unstable acute (B1 distal oblique, B2 complete waist, B3 proximal pole, B4 trans-scaphoid perilunate), Type C delayed union, Type D established nonunion (D1 fibrous, D2 pseudarthrosis)."
+      },
+      {
+        "name": "Mayo / Russe (in words)",
+        "summary": "Location-based: distal third, waist, proximal pole; and fracture-line orientation (horizontal oblique, transverse, vertical oblique)."
+      }
+    ],
+    "why_biologic": "The nonunion site is debrided and grafted because the proximal pole has a retrograde blood supply and sclerotic ends; graft restores length (humpback correction) and supplies osteogenic bone. Vascularized grafts (1,2-ICSRA distal radius, medial femoral condyle free flap) are used for avascular proximal poles. Off-the-shelf biologics (DBM, BMAC, rhBMP-7 historically) have only small series or a 17-patient RCT behind them.",
+    "autograft_standard": "Nonvascularized iliac crest (Matti-Russe or Fisk-Fernandez wedge) or distal radius cancellous/corticocancellous graft with a headless compression screw. Union 79-96% for ICBG and 87-100% for distal radius graft with no significant difference, but ICBG carries 20% donor-site pain or hematoma vs 0% (Ghaderi 2026 meta, n=166, PMID:42537801). Vascularized vs nonvascularized: pooled OR 1.57 for union, not significant, with shorter time to union for vascularized graft (Guria 2025 meta of 5 RCTs, PMID:39974267).",
+    "volume_note": "Scaphoid fractures are the most common carpal fracture (70%) and the second most common wrist fracture. Adjusted true incidence 22 per 100,000 person-years in Sweden (Sward 2019, PMID:31106681); around 14% progressed to nonunion in a 16,691-fracture Swiss insurance cohort (Rothenfluh 2025, PMID:41258412). US-specific incidence not found.",
+    "sources": [
+      "PMID:31106681",
+      "PMID:41258412",
+      "PMID:42537801",
+      "PMID:39974267",
+      "PMID:18977834",
+      "PMID:16506027",
+      "PMID:42098735",
+      "PMID:39090587",
+      "NCT05574582"
+    ]
+  },
+  {
+    "id": "distal-radius-malunion-osteotomy",
+    "region": "forearm-wrist-hand",
+    "subregion": "distal radius",
+    "name": "Distal radius corrective osteotomy (opening-wedge void)",
+    "type": "osteotomy",
+    "classifications": [
+      {
+        "name": "Not classified by fracture scheme",
+        "summary": "Dorsal or volar opening-wedge osteotomy for symptomatic malunion; the gap was traditionally filled with iliac crest tricortical autograft."
+      }
+    ],
+    "why_biologic": "This is the one wrist indication where a void filler had a defensible role, because the osteotomy gap is surgeon-created. Two double-blind RCTs now show that with a volar plate and maintained cortical contact, filling the gap with HydroSet calcium phosphate cement (Andreasson 2020, PMID:32472263) or an injectable bone substitute (Angelomenos 2025, n=42, PMID:40063246) does not change function or micromotion vs leaving the gap empty.",
+    "autograft_standard": "Tricortical iliac crest wedge; prolongs surgery and adds donor-site morbidity, and is increasingly omitted.",
+    "volume_note": "Small elective volume; no US figure found.",
+    "sources": [
+      "PMID:32472263",
+      "PMID:40063246",
+      "NCT06093763",
+      "NCT05690477"
+    ]
+  },
+  {
+    "id": "distal-radius-fracture",
+    "region": "forearm-wrist-hand",
+    "subregion": "distal radius",
+    "name": "Distal radius fracture (void fill in osteoporotic bone)",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "AO/OTA 23 (now 2R3)",
+        "summary": "A extra-articular, B partial articular, C complete articular; metaphyseal comminution subtypes drive void size."
+      },
+      {
+        "name": "Frykman (in words)",
+        "summary": "Types I-VIII by radiocarpal and radioulnar joint involvement and presence of an ulnar styloid fracture."
+      },
+      {
+        "name": "Fernandez (in words)",
+        "summary": "Mechanism-based: I bending (Colles/Smith), II shearing (Barton), III compression (die-punch), IV avulsion/fracture-dislocation, V high-energy combined."
+      }
+    ],
+    "why_biologic": "Historically a calcium phosphate cement (Norian SRS) was injected to hold the reduction of an osteoporotic metaphyseal void after closed reduction or pinning. Volar locking plates made the void mechanically irrelevant: the only RCT of cement plus volar plate (Kim 2011, n=50 fractures, PMID:21471414) found no benefit, beta-TCP granules added nothing to plating (Jakubietz 2011, PMID:21600042), and injectable DBM added nothing to K-wire fixation (D'Agostino 2013, PMID:24151272). Today biologic use in distal radius fractures is rare and hard to justify on evidence.",
+    "autograft_standard": "Autogenous cancellous graft was the historical comparator in the Cochrane review (Handoll 2008, 10 trials, 874 adults, PMID:18425972); it did not change outcomes with external fixation and carried one serious donor-site complication.",
+    "volume_note": "Distal radius and ulna fractures are the most common US upper-extremity fracture at 16.2 per 10,000 persons per year (Karl 2015, PMID:25714441; extrapolated ~500,000/yr), with bimodal pediatric and elderly peaks (Nellans 2012, PMID:22554654). Nonunion is rare; there were no nonunions in either arm of Kim 2011.",
+    "sources": [
+      "PMID:25714441",
+      "PMID:22554654",
+      "PMID:18425972",
+      "PMID:14630841",
+      "PMID:12582792",
+      "PMID:21471414",
+      "PMID:21600042",
+      "PMID:24151272",
+      "NCT01091415",
+      "NCT00274378"
+    ]
+  },
+  {
+    "id": "metacarpal-phalangeal-fracture",
+    "region": "forearm-wrist-hand",
+    "subregion": "hand",
+    "name": "Metacarpal and phalangeal fractures",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Descriptive (in words)",
+        "summary": "By bone (metacarpal, proximal/middle/distal phalanx), location (head, neck, shaft, base), pattern (transverse, oblique, spiral, comminuted) and named injuries (boxer's, Bennett, Rolando, mallet)."
+      }
+    ],
+    "why_biologic": "Rarely biologic. These fractures unite reliably with splinting, K-wires, intramedullary screws or plates; nonunion is uncommon and when it occurs is treated with debridement, local or distal radius cancellous autograft and rigid fixation (Czerniecki 2024, PMID:37979984). Cancellous allograft chips or DBM are occasionally used for comminuted defects. This is the highest-volume, lowest-biologic segment in the upper extremity.",
+    "autograft_standard": "Distal radius or iliac crest cancellous autograft for nonunion or bone loss; rarely needed.",
+    "volume_note": "Phalangeal (12.5 per 10,000) and metacarpal (8.4 per 10,000) fractures are the second and third most common US upper-extremity fractures (Karl 2015, PMID:25714441; extrapolated ~386,000 and ~259,000/yr). A claims database identified 80,787 metacarpal fixations over 2010-2022 (Kishan 2025, PMID:40583362). Nonunion rate not quantified in the sources found (unverified).",
+    "sources": [
+      "PMID:25714441",
+      "PMID:37979984",
+      "PMID:40583362",
+      "PMID:30894028"
+    ]
+  },
+  {
+    "id": "radial-head-fracture",
+    "region": "forearm-wrist-hand",
+    "subregion": "proximal radius / elbow",
+    "name": "Radial head fracture",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Mason / Hotchkiss-modified (in words)",
+        "summary": "Type I minimally displaced, Type II displaced partial articular (>2 mm) amenable to fixation, Type III comminuted whole-head, Type IV with elbow dislocation."
+      }
+    ],
+    "why_biologic": "None in practice. Fixation of fragmented heads is prone to failure and nonunion, and the answer is radial head arthroplasty, not a graft (Duckworth 2013, PMID:23365021). Listed to close the loop on elbow trauma.",
+    "autograft_standard": "Not applicable.",
+    "volume_note": "No reliable US volume source found; radial head fractures are commonly cited as the most frequent elbow fracture in adults (unverified).",
+    "unverified": true,
+    "sources": [
+      "PMID:23365021"
+    ],
+    "challenge": "No US volume source found. Searched PubMed 2026-10-22 '(radial head[Title]) AND (United States OR national OR nationwide) AND (incidence OR epidemiology OR trends)': the only hit is pediatric radial head subluxation in NEISS (PMID 34363491), not adult fractures. 'Most frequent adult elbow fracture' remains unverified. Flag retained.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "olecranon-fracture",
+    "region": "forearm-wrist-hand",
+    "subregion": "proximal ulna / elbow",
+    "name": "Olecranon fracture and olecranon osteotomy",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Mayo (in words)",
+        "summary": "Type I undisplaced, Type II displaced-stable, Type III displaced-unstable; A noncomminuted, B comminuted."
+      },
+      {
+        "name": "AO/OTA 2U1",
+        "summary": "Proximal ulna segment; A extra-articular, B partial articular, C complete articular (2018 revision)."
+      }
+    ],
+    "why_biologic": "Almost never. Tension band, plate or suture fixation without graft; the olecranon's cancellous bed heals reliably. Delayed union after olecranon osteotomy (used to approach distal humerus fractures) was 4.2% pooled (Feinstein 2023, PMID:37790831). Included to document a no-biologic segment the same reps call on.",
+    "autograft_standard": "Not applicable; comminuted defects occasionally receive local cancellous graft.",
+    "volume_note": "Olecranon fractures are ~1% of upper-extremity fractures (Matar 2014 Cochrane, PMID:25426876). No US biologic volume.",
+    "sources": [
+      "PMID:25426876",
+      "PMID:37790831",
+      "PMID:41179418"
+    ]
+  },
+  {
+    "id": "forearm-shaft-fracture-nonunion",
+    "region": "forearm-wrist-hand",
+    "subregion": "radius and ulna diaphysis",
+    "name": "Both-bone forearm fracture and forearm nonunion",
+    "type": "nonunion",
+    "classifications": [
+      {
+        "name": "AO/OTA 2R2 / 2U2",
+        "summary": "Radial and ulnar diaphysis; A simple, B wedge, C multifragmentary. Monteggia (ulna fracture with radial head dislocation, Bado I-IV) and Galeazzi variants named separately."
+      }
+    ],
+    "why_biologic": "Acute both-bone fractures are plated without graft; even 1970s compression plating gave 97.9% (radius) and 96.3% (ulna) union with iliac graft used only in 26% severely comminuted cases (Anderson 1975, PMID:1091653). Biologics enter for atrophic nonunion, segmental defects and Monteggia ulna nonunion, where cancellous autograft, structural allograft or vascularized fibula are used.",
+    "autograft_standard": "Iliac crest cancellous autograft with compression plating for atrophic nonunion; free vascularized fibula for large defects (case-level evidence only).",
+    "volume_note": "No US volume found for adult forearm nonunion. Ulna nonunion was the leading reason for revision (28%) after Monteggia injuries in a pooled review of 651 cases (Weber 2023, PMID:36056930).",
+    "sources": [
+      "PMID:1091653",
+      "PMID:36056930",
+      "PMID:37805573"
+    ]
+  },
+  {
+    "id": "osteomyelitis-dead-space",
+    "region": "general",
+    "subregion": "long bone",
+    "name": "Chronic long-bone osteomyelitis: single-stage debridement with antibiotic-eluting dead-space filler",
+    "type": "bone-void",
+    "classifications": [
+      {
+        "name": "Cierny-Mader",
+        "summary": "Anatomic type I-IV and host class A-C; single-stage antibiotic-biocomposite series were mostly type III-IV, class B hosts, and most defects were in the tibia."
+      }
+    ],
+    "why_biologic": "Dead-space management is the step that determines recurrence; a resorbable carrier that elutes gentamicin, vancomycin or tobramycin fills the cavity, sterilizes it locally and is replaced by bone, removing the second operation needed to retrieve PMMA beads. This is the only trauma-adjacent application where an FDA-authorized antibiotic-device combination exists (CERAMENT G, De Novo 2022) and where CMS has created product-specific inpatient payment (NTAP FY2026, DRG reassignment FY2027).",
+    "autograft_standard": "Debridement plus PMMA antibiotic beads and staged autograft; or antibiotic-loaded calcium sulfate beads mixed off-label in the US. Pooled eradication with antibiotic calcium sulfate 92% (917 patients, no RCTs) and 96% with gentamicin CS/HA in a 100-patient prospective series.",
+    "volume_note": "Inpatient osteomyelitis is paid under MS-DRGs 539-541; counts not retrieved. Bonesupport reports CERAMENT G US sales of USD 18.3 million in Q2 2025 (+84%), the best public proxy for adoption.",
+    "sources": [
+      "PMID:27587534",
+      "PMID:35183215",
+      "PMID:42100185",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/denovo.cfm?id=DEN210044",
+      "https://www.cms.gov/icd10m/FY2027-nprm-v44-fullcode-cms/fullcode_cms/P0230.html"
+    ]
+  },
+  {
+    "id": "general-long-bone-nonunion",
+    "region": "general",
+    "subregion": "long bone",
+    "name": "General long-bone nonunion (femur, tibia, humerus, forearm): biologic augmentation under the diamond concept",
+    "type": "nonunion",
+    "classifications": [
+      {
+        "name": "Diamond concept (Giannoudis 2007)",
+        "summary": "Successful healing needs osteogenic cells, osteoinductive growth factor, osteoconductive scaffold and mechanical stability, plus host optimization (vascularity, infection control, metabolic work-up). Hypertrophic nonunions need stability; atrophic need biology."
+      }
+    ],
+    "why_biologic": "Reference application for other regions: a biologic is chosen by which diamond element is missing. BMAC or marrow injection adds cells, rhBMP (OP-1 historically, rhBMP-2 off-label) adds growth factor, DBM/ceramic/allograft add scaffold; PRP evidence is weak and cellular allografts have no trauma evidence.",
+    "autograft_standard": "Autogenous cancellous graft (ICBG or RIA) with revision fixation remains the comparator in every RCT; donor-site complications 19.4% for ICBG. A 2025 network meta-analysis of 15 RCTs (1,286 patients) ranked PRP+autograft and PRP+BMAC highest for healing time, but the trials are small and heterogeneous.",
+    "volume_note": "US claims data: 4.9% of 309,330 fractures progressed to nonunion within 12 months (2011 cohort); 5-10% is the commonly cited range. No annual nonunion procedure count found.",
+    "sources": [
+      "PMID:27603155",
+      "PMID:30976944",
+      "PMID:26747919",
+      "PMID:41316346",
+      "PMID:39060552",
+      "PMID:21704997"
+    ]
+  },
+  {
+    "id": "femoral-head-osteonecrosis-core-decompression",
+    "region": "pelvis-hip",
+    "subregion": "femoral head",
+    "name": "Femoral head osteonecrosis (AVN), core decompression with biologic augmentation",
+    "type": "bone-void",
+    "classifications": [
+      {
+        "name": "ARCO (2019 revision)",
+        "summary": "Stage I MRI-only, II radiographic changes without collapse, IIIA subchondral fracture or collapse under 2 mm, IIIB collapse 2 mm or more, IV osteoarthritis. Biologic augmentation is a pre-collapse (I-II) procedure."
+      },
+      {
+        "name": "Ficat-Arlet / Steinberg",
+        "summary": "Older staging by radiographic change, crescent sign, collapse and joint-space loss; Steinberg adds lesion size."
+      }
+    ],
+    "why_biologic": "Core decompression alone has mediocre results; adding a biologic to the decompression track is where most hip 'orthobiologic' activity sits. Options: autologous bone marrow concentrate injected into the track (Hernigou's technique; 125-patient bilateral-hip RCT with 25-year follow-up, 24% versus 76% conversion to THA, PMID 29744647; meta-analysis OR 0.2 for collapse, PMID 26220203), backfill with a calcium sulfate/calcium phosphate composite (Pro-Dense core decompression kit, K072597; Civinini 2012 series) or a ceramic such as Cerament, non-vascularized or vascularized fibular graft, and, as negative evidence, cultured osteoblastic cells (Preob, phase 3 negative, PMID 36961220) and BMAC in post-collapse stage III (negative double-blind RCT, PMID 28988340). Most positive data come from a single French center.",
+    "autograft_standard": "Free vascularized fibular graft (Urbaniak) is the structural autograft benchmark for larger pre-collapse lesions; long operation and donor-site morbidity restrict it to specialized centers.",
+    "volume_note": "A 2010-2020 nationwide US claims study identified 64,739 patients with osteonecrosis of the femoral head who underwent hip surgery, about 5,900 surgical cases per year, and cites an estimated incidence of more than 20,000 new ONFH patients annually in the US (PMID 37001624). The 20,000 figure is an estimate quoted by that paper, not a measured count; the proportion treated with core decompression vs arthroplasty is in the paper's tables.",
+    "sources": [
+      "PMID:29744647",
+      "PMID:26220203",
+      "PMID:12461352",
+      "PMID:36961220",
+      "PMID:28988340",
+      "PMID:22426934",
+      "PMID:38098128",
+      "NCT06123481",
+      "PMID:37001624"
+    ],
+    "challenge": "The surgical count comes from a commercial claims database (not all-payer) and the '>20,000 per year' incidence is a literature estimate the paper repeats; both should be presented as such.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "acetabular-pelvic-ring-fracture",
+    "region": "pelvis-hip",
+    "subregion": "pelvis and acetabulum",
+    "name": "Acetabular and pelvic ring fractures",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Letournel-Judet (acetabulum)",
+        "summary": "Five elementary patterns (posterior wall, posterior column, anterior wall, anterior column, transverse) and five associated patterns (posterior column plus posterior wall, transverse plus posterior wall, T-shaped, anterior column plus posterior hemitransverse, both-column)."
+      },
+      {
+        "name": "Tile (pelvic ring)",
+        "summary": "A stable (ring intact), B rotationally unstable but vertically stable (open-book or lateral compression), C rotationally and vertically unstable."
+      },
+      {
+        "name": "Young-Burgess (pelvic ring)",
+        "summary": "By force vector: lateral compression I-III, anteroposterior compression I-III, vertical shear, combined mechanism."
+      },
+      {
+        "name": "Fragility fractures of the pelvis (Rommens)",
+        "summary": "FFP I-IV by anterior and posterior ring involvement and displacement in osteoporotic patients."
+      }
+    ],
+    "why_biologic": "Essentially none. Acetabular and pelvic ring fractures are fixed with plates, screws and percutaneous sacroiliac screws; the pelvis is richly vascularized and nonunion is rare. The only biologic-adjacent uses are (a) bone void fillers packed behind marginal-impaction or posterior-wall defects of the acetabulum (case series only), (b) cement augmentation of sacroiliac screws or sacroplasty in fragility fractures (PMMA; handled by the spine/VCF agent), and (c) off-label teriparatide to speed healing of osteoporotic pelvic fractures, which rests on one small open-label RCT (Peichl 2011, n=65, not retrieved here) and is under re-study (NCT06303284, Calgary, not yet recruiting).",
+    "autograft_standard": "Not applicable to primary fixation. Acetabular bone loss at later arthroplasty uses structural or morselized allograft, which belongs to arthroplasty rather than trauma.",
+    "volume_note": "NIS 2000-2009: 24,059 inpatients with unstable pelvic fracture, about 2,400 per year, in-hospital mortality 8.3% (PMID 24398776). NIS 2011-2018: 123,936 nonoperatively managed low-energy pelvic fractures, about 15,500 per year, mean age 68.7, 70% female (PMID 37564706). NIS 2016-2022: 20,169 weighted internal fixations of pelvic ring fractures, about 2,900 per year (PMID 42690542). Pelvic fractures are about 3% of all fractures in secondary sources.",
+    "sources": [
+      "NCT06303284",
+      "PMID:23712442",
+      "PMID:24398776",
+      "PMID:37564706",
+      "PMID:42690542"
+    ],
+    "challenge": "The three NIS figures use different case definitions (unstable fracture, low-energy nonoperative, operatively fixed ring) and cannot be summed; acetabular ORIF volume is not separately counted here.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "femoral-neck-fracture",
+    "region": "pelvis-hip",
+    "subregion": "proximal femur",
+    "name": "Femoral neck fracture (intracapsular hip fracture)",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Garden I-IV",
+        "summary": "I incomplete/valgus-impacted; II complete, undisplaced; III complete, partially displaced; IV complete, fully displaced. Clinically collapsed to undisplaced (I-II) versus displaced (III-IV)."
+      },
+      {
+        "name": "Pauwels I-III",
+        "summary": "Fracture-line angle from horizontal: I under 30 degrees, II 30-50 degrees, III over 50 degrees (vertical, high shear, highest nonunion and osteonecrosis risk)."
+      },
+      {
+        "name": "AO/OTA 31-B",
+        "summary": "Femoral neck: B1 subcapital with slight displacement, B2 transcervical, B3 subcapital displaced (2007 scheme; the 2018 revision regroups by displacement)."
+      }
+    ],
+    "why_biologic": "Almost none. Displaced fractures in older patients get hemi- or total hip arthroplasty; undisplaced and young-patient fractures get cannulated screws, a sliding hip screw, or the Femoral Neck System. No biologic is routinely implanted. Biologics enter only (a) as off-label pharmacologic adjuncts (teriparatide tested in an industry RCT with no healing benefit; romosozumab likewise), (b) in salvage of nonunion or osteonecrosis (see femoral-neck-nonunion and femoral-head-osteonecrosis records), and (c) historically, calcium phosphate cement augmentation of screws (Norian SRS, studied in small Scandinavian trials in the 2000s and not adopted).",
+    "autograft_standard": "Not applicable to primary fixation. For salvage in young patients the benchmark is valgus intertrochanteric osteotomy (Pauwels/Marti) with or without free vascularized fibular autograft; donor-site morbidity and a long operation limit the latter.",
+    "volume_note": "CDC analysis of 2019 HCUP and NVSS data: 318,797 ED visits, 290,130 hospitalizations and 7,731 deaths for hip fracture among US adults 65+, with falls causing about 88% of hospitalizations (Moreland 2022, PMID 36210739). This is the primary source behind the commonly quoted 'roughly 300,000 per year'. Medicare claims show age-adjusted rates in women 65+ fell 2002-2012 then plateaued 2013-2015 (Lewiecki 2018, PMID 29282482). Neck vs trochanteric split is not reported in these sources.",
+    "sources": [
+      "PMID:29282482",
+      "PMID:26932738",
+      "PMID:31977817",
+      "PMID:15544079",
+      "PMID:36210739"
+    ],
+    "challenge": "The 290,130 count is hospitalizations in adults 65+ (all hip fracture types), not femoral-neck fractures specifically and not under-65 patients.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "femoral-neck-nonunion",
+    "region": "pelvis-hip",
+    "subregion": "proximal femur",
+    "name": "Femoral neck nonunion (and neglected femoral neck fracture)",
+    "type": "nonunion",
+    "classifications": [
+      {
+        "name": "Pauwels (applied to nonunion)",
+        "summary": "Vertical (Pauwels III) fracture lines are the main predictor of nonunion after fixation; valgus osteotomy converts shear to compression."
+      },
+      {
+        "name": "Viability of the femoral head",
+        "summary": "Nonunion with a viable head is salvageable (osteotomy or grafting); nonunion with osteonecrosis or collapse usually means arthroplasty."
+      }
+    ],
+    "why_biologic": "In older patients the answer is arthroplasty, no biologic. In young patients with a viable head the biology is supplied mechanically (valgus intertrochanteric osteotomy) or by a vascularized or non-vascularized fibular graft placed across the neck (free vascularized fibula series report union in all 13 and 29 patients in two small series). Percutaneous BMAC injection is reported by Hernigou for long-bone nonunions generally but not specifically validated for the femoral neck. No commercial bone graft substitute has evidence here.",
+    "autograft_standard": "Free vascularized fibular autograft or non-vascularized fibular strut (autograft or allograft) plus revision fixation; the vascularized graft carries donor-site morbidity and microsurgical complexity.",
+    "volume_note": "Nonunion follows roughly 10-30% of displaced femoral neck fractures treated with fixation in young adults (secondary sources); no US annual count.",
+    "unverified": true,
+    "sources": [
+      "PMID:22740274",
+      "PMID:18510001",
+      "PMID:15995108"
+    ],
+    "challenge": "Nonunion after fixation of displaced femoral neck fractures in young adults (10-30%) remains a secondary-source range; no US annual count was found (searched PubMed 2026-10-22 for femoral neck nonunion incidence in US databases). Flag retained.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "intertrochanteric-fracture",
+    "region": "pelvis-hip",
+    "subregion": "proximal femur",
+    "name": "Intertrochanteric / pertrochanteric fracture (extracapsular hip fracture)",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "AO/OTA 31-A",
+        "summary": "Trochanteric region: A1 simple two-part pertrochanteric (stable), A2 multifragmentary pertrochanteric with lesser-trochanter/posteromedial comminution (unstable), A3 intertrochanteric including reverse-oblique and transverse patterns (unstable, lateral wall involved)."
+      },
+      {
+        "name": "Evans / Jensen",
+        "summary": "Stable versus unstable by integrity of the posteromedial cortex and reducibility; largely superseded by AO/OTA 31-A in US trauma practice."
+      }
+    ],
+    "why_biologic": "Standard care is a cephalomedullary nail (or sliding hip screw for stable A1 patterns) with no biologic. The one place a 'biologic-adjacent' material enters routinely is augmentation of the lag screw or helical blade in osteoporotic bone: PMMA (Traumacem V+, cleared 2017 specifically for the TFN-Advanced nail) and, historically, resorbable calcium phosphate cement (Norian SRS, Mattsson RCTs 2004-2005). The PFNA augmentation RCT (Kammerlander 2018, n=223) showed no difference in the primary mobility endpoint and a trend toward fewer implant-related revisions. Pharmacologic adjuncts after fixation (zoledronate for secondary fracture prevention; teriparatide versus risedronate in a Lilly-funded RCT) are about the next fracture and function, not union of this one.",
+    "autograft_standard": "Not applicable; these fractures unite reliably with hardware alone. Failure mode is mechanical (cut-out, varus collapse), not biological.",
+    "volume_note": "US hip-fracture hospitalizations in adults 65+ numbered 290,130 in 2019 (CDC analysis of HCUP, PMID 36210739). Trochanteric fractures are usually described as roughly half of hip fractures in secondary sources; no primary US source splitting neck from trochanteric fractures was found.",
+    "sources": [
+      "PMID:29724590",
+      "PMID:36053020",
+      "PMID:16129742",
+      "PMID:15544079",
+      "PMID:27852903",
+      "PMID:17878149",
+      "https://fda.innolitics.com/device/K170802",
+      "PMID:36210739"
+    ],
+    "challenge": "The total is primary (CDC/HCUP 2019); the 'roughly half' trochanteric share is still a secondary-source proportion.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "subtrochanteric-fracture",
+    "region": "pelvis-hip",
+    "subregion": "proximal femur",
+    "name": "Subtrochanteric femur fracture",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "AO/OTA 32 (subtrochanteric qualifier)",
+        "summary": "In the 2018 AO/OTA revision subtrochanteric fractures are coded as femoral diaphyseal (32) with a proximal-third/subtrochanteric qualifier; older practice grouped reverse-oblique patterns under 31-A3. Russell-Taylor (I/II by piriformis-fossa and lesser-trochanter involvement) is still used in words to pick a nail entry point."
+      }
+    ],
+    "why_biologic": "None in primary treatment. Cephalomedullary nailing with careful reduction is the standard; delayed union is usually attributed to varus malreduction or an atypical (bisphosphonate-related) fracture rather than a biological deficit. Biologics (autograft, BMAC, off-label teriparatide) are considered only at nonunion revision. See atypical-femoral-fracture for the bisphosphonate-related subset.",
+    "autograft_standard": "At nonunion revision: exchange nailing with or without autograft (iliac crest or RIA-harvested femoral canal autograft).",
+    "volume_note": "No reliable public US count separate from hip fractures; subtrochanteric fractures are usually quoted as 10-30% of proximal femur fractures in secondary sources.",
+    "unverified": true,
+    "sources": [
+      "PMID:23712442",
+      "PMID:24625833"
+    ],
+    "challenge": "No US count separate from hip fractures. Searched PubMed 2026-10-22 (subtrochanteric[Title] AND United States/nationwide/national AND incidence/trends): only a Korean claims study (PMID 22618268). The 10-30% share remains secondary. Flag retained.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "upper-extremity-osteomyelitis-fri",
+    "region": "shoulder-humerus",
+    "subregion": "any upper-extremity long bone or hand",
+    "name": "Upper-extremity osteomyelitis and fracture-related infection (dead-space management)",
+    "type": "bone-void",
+    "classifications": [
+      {
+        "name": "Cierny-Mader (in words)",
+        "summary": "Anatomic type I medullary, II superficial, III localized, IV diffuse; host class A normal, B compromised (local/systemic), C treatment worse than disease."
+      },
+      {
+        "name": "Fracture-related infection consensus (in words)",
+        "summary": "Confirmatory criteria (fistula, purulence, two positive cultures, histology) vs suggestive criteria; early, delayed and late by time from fixation."
+      }
+    ],
+    "why_biologic": "After debridement the dead space is filled with an absorbable carrier that elutes antibiotic locally and is replaced by bone, avoiding a second surgery to remove PMMA beads. Antibiotic-loaded calcium sulfate (Stimulan, mixed by the surgeon, off-label in the US) and the gentamicin-eluting calcium sulfate/hydroxyapatite composite (Cerament G, FDA De Novo 2022) are the two main products; S53P4 bioactive glass is a non-antibiotic antibacterial alternative with European evidence. Upper-extremity cases are a minority of the published series, which are dominated by tibia, femur and calcaneus.",
+    "autograft_standard": "Staged: antibiotic PMMA beads or spacer, then autogenous cancellous graft (Masquelet induced membrane for segmental defects) once infection is controlled. The single-stage biocomposite protocol (McNally 2016, PMID:27587534) is the challenger.",
+    "volume_note": "No upper-extremity-specific US volume. In the single-stage Cerament G series the 105 infected bones were predominantly lower limb (McNally 2016); the S53P4 multinational registry was mainly tibia, femur and calcaneus (Lindfors 2017, PMID:28050878). Hand and forearm osteomyelitis is uncommon and usually post-traumatic or diabetic.",
+    "sources": [
+      "PMID:27587534",
+      "PMID:28050878",
+      "PMID:41800468",
+      "NCT04805164",
+      "NCT06555848",
+      "NCT06283979",
+      "DEN210044",
+      "K234008"
+    ]
+  },
+  {
+    "id": "clavicle-fracture-nonunion",
+    "region": "shoulder-humerus",
+    "subregion": "clavicle",
+    "name": "Clavicle fracture and nonunion",
+    "type": "nonunion",
+    "classifications": [
+      {
+        "name": "Allman (in words)",
+        "summary": "Group I middle third, Group II lateral third, Group III medial third."
+      },
+      {
+        "name": "Robinson / Edinburgh (in words)",
+        "summary": "Type 1 medial fifth, Type 2 diaphyseal (2A undisplaced, 2B displaced; B1 simple/wedge, B2 comminuted/segmental), Type 3 lateral fifth; displacement and comminution drive nonunion risk."
+      }
+    ],
+    "why_biologic": "Acute fractures use no biologic. Nonunion revision (plate with or without graft) is where cancellous autograft, DBM or a cellular allograft is used; bone graft lowered delayed union (0.6% vs 3.6%) but was associated with higher complication and reoperation rates in pooled nonunion series (Yetter 2023, PMID:36722838).",
+    "autograft_standard": "Compression plating with local or iliac crest cancellous autograft for atrophic nonunion; 95% union after primary nonunion surgery across 53 studies, 1,258 nonunions.",
+    "volume_note": "Karl 2015 (PMID:25714441): 5.8 clavicle fractures per 10,000 persons per year (extrapolated ~179,000/yr). Nonoperative nonunion prevalence 6.2% overall and 4.5% for diaphyseal fractures (Robinson 2004, n=868, PMID:15252081); 13.3% for displaced midshaft fractures in adults, with smoking the strongest risk factor (Murray 2013, n=941, PMID:23824382).",
+    "sources": [
+      "PMID:25714441",
+      "PMID:15252081",
+      "PMID:23824382",
+      "PMID:36722838",
+      "PMID:36313007"
+    ]
+  },
+  {
+    "id": "distal-humerus-fracture-nonunion",
+    "region": "shoulder-humerus",
+    "subregion": "distal humerus / elbow",
+    "name": "Distal humerus fracture and supracondylar nonunion",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "AO/OTA 13",
+        "summary": "13-A extra-articular, 13-B partial articular (lateral/medial condyle, coronal shear capitellum/trochlea), 13-C complete articular with metaphyseal and articular comminution subtypes."
+      }
+    ],
+    "why_biologic": "Rarely used acutely; dual-plate fixation without graft is standard. Supracondylar nonunion revision uses autogenous cancellous graft with rigid fixation; DBM or BMP is occasionally added off-label. Total elbow arthroplasty is the fallback in poor bone.",
+    "autograft_standard": "Iliac crest cancellous autograft with revision ORIF; pooled ORIF success 90% vs 74% for TEA in nonunion series (Vicenti 2025, PMID:40690057).",
+    "volume_note": "Distal humeral fractures are ~1% of all fractures (Vicenti 2025, PMID:40690057); Karl 2015 lists distal humerus among the less common adult upper-extremity fractures. No US biologic-use volume exists.",
+    "sources": [
+      "PMID:40690057",
+      "PMID:25714441",
+      "PMID:22162357"
+    ]
+  },
+  {
+    "id": "glenoid-bone-loss-instability",
+    "region": "shoulder-humerus",
+    "subregion": "glenoid",
+    "name": "Anterior glenoid bone loss in recurrent instability (bone block)",
+    "type": "other",
+    "classifications": [
+      {
+        "name": "Glenoid bone loss threshold (in words)",
+        "summary": "Percent loss of the inferior glenoid circle on en-face CT; 'critical' loss commonly cited at 20-25% and 'subcritical' at 13.5-20%, with bipolar (Hill-Sachs on-track/off-track) assessment."
+      }
+    ],
+    "why_biologic": "Adjacent to trauma but a real allograft market: when glenoid bone loss exceeds the subcritical threshold, soft-tissue Bankart repair fails and the surgeon restores the arc with a bone block. Latarjet (coracoid autograft transfer) is the dominant procedure; fresh distal tibia allograft (DTA) is the main allograft alternative because its curvature and dense cartilage match the glenoid, with iliac crest autograft (Eden-Hybbinette) and femoral head allograft as other options.",
+    "autograft_standard": "Latarjet coracoid transfer: no donor-site harvest beyond the coracoid, but graft resorption, screw problems and nonanatomic reconstruction; iliac crest autograft carries donor-site morbidity.",
+    "volume_note": "No national US Latarjet count found. New York State Latarjet volume rose 950% from 2003 to 2014 (12 to 126 procedures/yr) while open Bankart fell 77% (Paoli 2018, PMID:29570763). DTA remains a small share; the first RCT vs Latarjet (NCT05658289, n=68, Nova Scotia) is due to complete primary follow-up in 2026.",
+    "sources": [
+      "PMID:29570763",
+      "PMID:28017469",
+      "PMID:29389219",
+      "PMID:32524228",
+      "PMID:30095986",
+      "PMID:38825225",
+      "NCT05658289"
+    ]
+  },
+  {
+    "id": "humeral-shaft-fracture",
+    "region": "shoulder-humerus",
+    "subregion": "humeral diaphysis",
+    "name": "Humeral shaft fracture (acute)",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "AO/OTA 12",
+        "summary": "12-A simple (spiral, oblique, transverse), 12-B wedge, 12-C multifragmentary; sub-coded by level (proximal, middle, distal third)."
+      }
+    ],
+    "why_biologic": "Essentially none in the acute setting. Functional bracing or plate/nail fixation without graft is standard; the biologic question only arises if the fracture fails to unite. Included so the atlas is honest that this is a no-biologic segment.",
+    "autograft_standard": "Not applicable acutely. Anderson-style compression plating with autograft reserved for segmental bone loss.",
+    "volume_note": "Humeral shaft fractures are a minority of the ~370,000 annual US humerus-fracture ED visits (Kim 2012, PMID:22162357). Nonoperative treatment carries a pooled nonunion rate of 17.6% vs 6.3% with fixation (Sargeant 2020, PMID:32788928); a single-center series found 17% nonunion with bracing, worst in proximal-third fractures (Ali 2015, PMID:25088479). Operative treatment reduced nonunion (OR 0.30) across 4 RCTs and 13 cohorts (Li 2024, PMID:39165869).",
+    "sources": [
+      "PMID:22162357",
+      "PMID:32788928",
+      "PMID:25088479",
+      "PMID:39165869",
+      "PMID:38578605"
+    ]
+  },
+  {
+    "id": "humeral-shaft-nonunion",
+    "region": "shoulder-humerus",
+    "subregion": "humeral diaphysis",
+    "name": "Humeral shaft nonunion",
+    "type": "nonunion",
+    "classifications": [
+      {
+        "name": "Weber-Cech (in words)",
+        "summary": "Hypertrophic (viable, needs stability) vs atrophic/oligotrophic (biologically inert, needs stability plus graft); infected nonunion handled separately."
+      }
+    ],
+    "why_biologic": "The classic upper-extremity biologics case: atrophic nonunion after bracing or failed nailing is revised with compression plating plus autogenous cancellous or structural graft. DBM, rhBMP-2 (Infuse, off-label), rhBMP-7 (historically), cellular allograft and BMAC have all been used as extenders or substitutes, mostly without comparative evidence. Oliver 2021 (PMID:34267148) showed 93% union with plate alone and only 13% grafted, which is the strongest argument that biologics are not routinely needed.",
+    "autograft_standard": "Compression plate plus iliac crest cancellous autograft: 98% union in pooled series (Peters 2015 systematic review, n=672 plated with autograft, PMID:26499226). Downsides are donor-site pain, hematoma and added operative time; Oliver 2021 argues grafting is not routinely required.",
+    "volume_note": "No US volume figure found. France records fewer than 700 aseptic humeral shaft nonunions per year (Begue 2023, PMID:36942794); scaling by population suggests low thousands per year in the US (atlas extrapolation, unverified). Medicare 5% sample: 2.5% of all fractures coded as nonunion (Zura 2017, PMID:27836732).",
+    "sources": [
+      "PMID:26499226",
+      "PMID:34267148",
+      "PMID:36942794",
+      "PMID:27836732",
+      "PMID:39429996",
+      "PMID:28784168",
+      "PMID:35815488",
+      "PMID:39253680"
+    ]
+  },
+  {
+    "id": "proximal-humerus-fracture-orif",
+    "region": "shoulder-humerus",
+    "subregion": "proximal humerus",
+    "name": "Proximal humerus fracture, locked plating with augmentation",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Neer (in words)",
+        "summary": "Counts displaced parts (head, shaft, greater tuberosity, lesser tuberosity); 2-, 3- and 4-part fractures, with fracture-dislocation and head-split variants. Displacement threshold 1 cm or 45 degrees. Interobserver reliability is poor (Pandey 2023, PMID:37636006)."
+      },
+      {
+        "name": "AO/OTA 11",
+        "summary": "11-A extra-articular unifocal, 11-B extra-articular bifocal, 11-C articular/anatomic neck. Medial hinge integrity and metaphyseal comminution drive the decision to augment."
+      }
+    ],
+    "why_biologic": "Locked plates fail by varus collapse and screw cut-out, especially in osteoporotic bone with medial comminution; the biologic (an endosteal fibular strut allograft, a calcium phosphate or calcium sulfate/HA void filler, or cancellous chips) is used to restore medial column support and fill the metaphyseal void so screws do not settle. Most proximal humerus fractures are treated nonoperatively and most ORIFs still use no augmentation.",
+    "autograft_standard": "No true autograft standard here; tricortical iliac crest or vascularized pectoralis-pedicle graft is used by some for 4-part fractures (Karslioglu 2024 RCT, PMID:37625692) but the practical comparator is plate alone, with hemiarthroplasty or reverse arthroplasty as the alternative for unreconstructable fractures.",
+    "volume_note": "US ED visits for humerus fractures were ~370,000 in 2008, half of them proximal (Kim 2012, PMID:22162357). Karl 2015 (PMID:25714441) found 6.0 proximal humerus fractures per 10,000 persons per year in an 8-state all-payer sample (extrapolated ~185,000/yr). Surgically treated volume rose 13% from 2010-2019; ORIF remained the most common surgery while reverse arthroplasty volume rose >300% (Cooke 2024, PMID:38706683). Nonunion after ORIF is uncommon; mechanical failure (settling, screw penetration, varus collapse) is the dominant complication (Gardner 2007, PMID:17473755).",
+    "sources": [
+      "PMID:22162357",
+      "PMID:25714441",
+      "PMID:38706683",
+      "PMID:17473755",
+      "PMID:18317054",
+      "PMID:22192764",
+      "PMID:34906682",
+      "PMID:42750779",
+      "PMID:38589503",
+      "PMID:30805708",
+      "PMID:40885162",
+      "NCT01847508",
+      "NCT07538700"
+    ]
+  },
+  {
+    "id": "rotator-cuff-augmentation",
+    "region": "shoulder-humerus",
+    "subregion": "rotator cuff",
+    "name": "Rotator cuff repair augmentation (adjacent soft-tissue biologics)",
+    "type": "other",
+    "classifications": [
+      {
+        "name": "Tear size (in words)",
+        "summary": "Partial-thickness (articular, bursal, intrasubstance; grade by percent thickness), full-thickness small <1 cm, medium 1-3 cm, large 3-5 cm, massive >5 cm or two or more tendons; retear graded on MRI by Sugaya type IV-V."
+      }
+    ],
+    "why_biologic": "One-paragraph adjacent note, not a bone biologic: the same sports-medicine and extremities reps who carry bone void fillers also sell onlay patches that are placed over the repaired tendon to thicken it and lower retear. Options are a bioinductive bovine collagen implant (Regeneten, Smith+Nephew, 510(k) K222501/K242631), acellular human dermal allograft (GraftJacket, ArthroFlex, 361 HCT/Ps) and an interpositional nanofiber wick (Rotium, Atreon/Nanofiber Solutions, K250021). Evidence is mostly industry-sponsored single-arm cohorts; the one sponsor-run RCT in large/massive tears (NCT04450342, n=119) was terminated early and its posted 6-month retear rates were 57.1% augmented vs 50.0% control, which cuts against the marketing. A small investigator RCT of dermal allograft in 2-tendon tears >3 cm (Barber 2012, n=42, PMID:21978432) favored augmentation.",
+    "autograft_standard": "Not applicable; primary double-row repair without augmentation is the comparator. Autologous options (biceps tendon autograft, fascia lata) exist but are not commercial products.",
+    "volume_note": "US rotator cuff repair volume rose 141% from 1996 to 2006 with the shift to ambulatory surgery (Colvin 2012, PMID:22298054); New York State volume rose from 6,656 to 10,128 per year between 1997 and 2002 with ambulatory share reaching 82% (Sherman 2008, PMID:18264848). This is a far larger procedure base than any upper-extremity bone-biologic indication.",
+    "sources": [
+      "PMID:22298054",
+      "PMID:18264848",
+      "PMID:35788057",
+      "PMID:33220413",
+      "PMID:21978432",
+      "PMID:40939824",
+      "NCT04450342",
+      "NCT06857084",
+      "NCT05981833"
+    ]
+  },
+  {
+    "id": "cmf-burr-hole",
+    "region": "skull-cmf",
+    "subregion": "cranium",
+    "name": "Burr hole and craniotomy gap fill",
+    "type": "bone-void",
+    "classifications": [
+      {
+        "name": "Defect type",
+        "summary": "Burr holes (about 14 mm) from trephination, chronic subdural hematoma drainage or craniotomy, and the contiguous kerf gap left after a craniotomy bone flap is replaced. All US cements are labeled for burr holes, contiguous craniotomy cuts and other cranial defects not intrinsic to the stability of the bony structure, usually with a 25 cm2 ceiling (4 cm2 for Stryker DirectInject)."
+      }
+    ],
+    "why_biologic": "Cosmetic and protective fill of the hole or gap so the scalp does not dimple; the material is a resorbable or non-resorbable osteoconductive plug or paste. Autologous bone dust packed into burr holes resorbs: one comparative series found partial or complete resorption at one year in every bone-dust hole and a visible contour defect in 60 percent, against stable hydroxyapatite plugs.",
+    "autograft_standard": "Autologous bone dust from the craniotomy, or leaving the hole open under a titanium burr-hole cover (hardware). Many centers use nothing. Burr hole covers and plates are hardware.",
+    "volume_note": "No public count of US burr holes or craniotomies with gap fill exists. Craniotomy volume is the denominator; the NIS cranioplasty counts above are a lower bound for cranial closure procedures.",
+    "hardware_note": "Titanium burr-hole covers and craniotomy fixation plates (Stryker Universal Neuro, DePuy Synthes MatrixNEURO, KLS Martin, Zimmer Biomet) are the hardware alternative. RevBio TETRANITE bone adhesive for cranial flap fixation is in a 20-patient FDA-approved first-in-human study (IDE 2023, NIH SBIR 2024); Abyrx has registered NCT07103330 (n=100, start 2026) for cranial flap fixation with Montage Flowable paste, an unlabeled use.",
+    "sources": [
+      "PMID:36253335",
+      "PMID:19710975",
+      "https://www.stryker.com/us/en/craniomaxillofacial/products/hydroset-injectable-bone-substitute.html",
+      "https://clinicaltrials.gov/study/NCT07103330",
+      "https://www.businesswire.com/news/home/20240916810983/en"
+    ]
+  },
+  {
+    "id": "cmf-cranioplasty",
+    "region": "skull-cmf",
+    "subregion": "cranium",
+    "name": "Cranioplasty: cranial defect reconstruction after decompressive craniectomy or tumor resection",
+    "type": "bone-void",
+    "classifications": [
+      {
+        "name": "Cranial defect size (labeling and literature convention)",
+        "summary": "Small defects up to 25 cm2 are the labeled ceiling for every US calcium phosphate and HA cranial cement and for PCL scaffolds; defects larger than 25 cm2 (a typical hemicraniectomy flap is 80 to 150 cm2) are reconstructed with the banked autologous flap or a custom alloplastic implant. CPT splits cranioplasty at 5 cm diameter (62140 up to 5 cm, 62141 over 5 cm)."
+      },
+      {
+        "name": "Defect etiology",
+        "summary": "Post-decompressive craniectomy (trauma, malignant stroke, hemorrhage), post-tumor resection, infected or resorbed prior flap, congenital or post-craniofacial surgery contour defect. Trauma etiology and younger age raise resorption risk of autologous flaps."
+      },
+      {
+        "name": "Timing of cranioplasty",
+        "summary": "Ultra-early (30 to 45 days), intermediate (45 to 70 days), early (80 to 100 days) and delayed (120 to 180 days) after craniectomy; a 2026 meta-analysis of 55 studies found better functional recovery with cranioplasty within 100 days and no increase in complications."
+      }
+    ],
+    "why_biologic": "Biologics here are the self-setting calcium phosphate and hydroxyapatite cements, beta-TCP, bioactive glass and DBM used to fill small defects or restore contour; they are osteoconductive void fillers, not structural. They do not compete with the autologous flap for large defects; the competition for large defects is custom PEEK, titanium or PMMA implants (hardware, see adjacent note).",
+    "autograft_standard": "Reimplantation of the patient's own bone flap, banked by cryopreservation or in a subcutaneous abdominal pocket, is the benchmark. Its failure modes are aseptic bone flap resorption (pooled 15 to 20 percent in adults, around 40 percent for banked flaps in children) and infection (around 7 percent), which together drive reoperation odds about 1.9 times those of synthetic implants. Cryopreservation and subcutaneous storage give similar infection and resorption rates. Split calvarial graft is the autograft for smaller defects and for children.",
+    "volume_note": "No single US annual cranioplasty count is published. National Inpatient Sample series report 49,305 weighted adult cranioplasty encounters for 2012 to 2014 (about 16,000 per year; PMID 33055559) and 105,714 adult cranioplasty admissions for 2002 to 2017 (about 6,600 per year; PMID 35526812); the two code definitions differ, so the app should show the range and the sources. Upstream, decompressive craniectomy for stroke was performed in 124,718 NIS patients over 2006 to 2016 (PMID 32173551) and 6.8 percent (23,743 of 349,164) of severe TBI admissions had a craniectomy over 2004 to 2014 (PMID 36202343).",
+    "hardware_note": "Custom patient-specific cranial implants are hardware, cleared under product codes GXN and GWO (21 CFR 882.5330 and 882.5320): Stryker PEEK Customized Cranial Implant (K203055, 2021) and Cranial iD, DePuy Synthes Patient Specific Implants (K243715, 2025) and TRUMATCH CMF, KLS Martin IPS-Ti and IPS-PEEK (consolidated MR-conditional clearance K252573, 2025), Oxford Performance Materials OsteoFab PEKK (K180064, 2018), Longeviti ClearFit sonolucent PMMA (K203349, K231920, K260709), Kelyniam, 3D Systems VSP PEEK (K231834), Fin-Ceramica CustomizedBone porous HA (K240567), OssDsign Cranial PSI (K161090). A 2025 systematic review of 3,260 custom heterologous cranioplasties reported infection and explantation of 8.2 and 3.7 percent for titanium, 6.7 and 5.3 percent for porous hydroxyapatite, 14.9 and 6.1 percent for PMMA and 11.1 and 3.8 percent for PEEK (PMID 40971008).",
+    "sources": [
+      "PMID:29753896",
+      "PMID:35593924",
+      "PMID:27647038",
+      "PMID:41719704",
+      "PMID:41823425",
+      "PMID:39495337",
+      "PMID:40971008",
+      "PMID:41464559",
+      "PMID:33055559",
+      "PMID:35526812",
+      "PMID:32173551",
+      "PMID:36202343",
+      "PMID:31461029",
+      "https://www.ZimmerBiomet.com/content/dam/zb-corporate/en/support/coding-guides/4111.1-US-en%20Cranioplasty%20Procedures%20Coding%20Reference%20Guide.pdf"
+    ]
+  },
+  {
+    "id": "cmf-craniosynostosis",
+    "region": "skull-cmf",
+    "subregion": "cranium",
+    "name": "Craniosynostosis and pediatric cranial vault reconstruction (primary remodeling and secondary contour cranioplasty)",
+    "type": "other",
+    "classifications": [
+      {
+        "name": "Suture involved",
+        "summary": "Sagittal (scaphocephaly), metopic (trigonocephaly), unicoronal (anterior plagiocephaly), bicoronal (brachycephaly), lambdoid (posterior plagiocephaly); single-suture nonsyndromic versus multisuture syndromic (Apert, Crouzon, Pfeiffer, Saethre-Chotzen, Muenke)."
+      },
+      {
+        "name": "Procedure",
+        "summary": "Endoscopic strip craniectomy with helmet (under about 6 months), open cranial vault remodeling or fronto-orbital advancement (6 to 12 months), posterior vault distraction; secondary contour cranioplasty in adolescence for residual temporal or supraorbital hollowing after fronto-orbital advancement (reported in up to 55 to 75 percent, with up to 20 percent needing correction)."
+      }
+    ],
+    "why_biologic": "In primary surgery the vault is reshaped with the child's own bone; bone gaps left after remodeling are usually left to the osteogenic dura in infants, with DBM or particulate bone used to bridge gaps in older children or large defects. In secondary contour cranioplasty, hydroxyapatite and carbonated calcium phosphate cements are onlayed over intact cranium; this is an off-label-adjacent use (cements are labeled for contour restoration up to 25 cm2) with infection and removal rates of 5 to 10 percent and higher when large volumes are used.",
+    "autograft_standard": "Autologous calvarial bone (split or particulate) is the standard; children under about 2 years lack a diploic space for split grafts, which is why DBM and resorbable mesh bilaminate was developed for large defects. Resorbable fixation (DePuy Synthes RapidSorb, KLS Martin Resorb-x, Stryker Delta, Zimmer Biomet LactoSorb) is hardware with a 7.9 percent wound complication rate in a 325-patient series.",
+    "volume_note": "Kids' Inpatient Database: 3,426 craniosynostosis repairs in the four sampled years 1997, 2000, 2003 and 2006 (PMID 23030675); 2012 KID counts about 1,600 to 1,800 repairs in infants under 12 months; NSQIP-Pediatric captured 11,279 repairs over 2012 to 2021 (PMID 38940557). Birth prevalence is about 1 in 2,000 to 2,500 live births (literature convention; no single CDC national estimate located).",
+    "sources": [
+      "PMID:19319063",
+      "PMID:31592945",
+      "PMID:36947197",
+      "PMID:32969929",
+      "PMID:20613591",
+      "PMID:34398868",
+      "PMID:23030675",
+      "PMID:38940557",
+      "PMID:31461029"
+    ]
+  },
+  {
+    "id": "cmf-skull-base-sinus",
+    "region": "skull-cmf",
+    "subregion": "cranium",
+    "name": "Lateral skull base defect repair (translabyrinthine, retrosigmoid, temporal bone) and frontal sinus obliteration",
+    "type": "bone-void",
+    "classifications": [
+      {
+        "name": "Approach-defined defects",
+        "summary": "Translabyrinthine and retrosigmoid craniectomy defects after vestibular schwannoma or other cerebellopontine angle surgery; mastoid and temporal bone defects; frontal sinus obliteration after osteoplastic flap for chronic frontal sinusitis or fracture."
+      }
+    ],
+    "why_biologic": "Hydroxyapatite cement is used to seal air-cell tracts and reconstruct the craniectomy so cerebrospinal fluid cannot leak and the postauricular contour is restored; this is the one cranial application where cement has comparative data showing lower CSF leak and pseudomeningocele odds than fat graft or no reconstruction. Bioactive glass S53P4 granules (Bonalive) are used to obliterate the frontal sinus because they are osteoconductive and bacteriostatic.",
+    "autograft_standard": "Abdominal fat graft for translabyrinthine closure and autologous bone or fat for frontal sinus obliteration; fat alone has historically carried about 12 percent CSF leak after translabyrinthine resection. HA cement should not touch sinus mucosa or be used to obliterate an infected mastoid cavity (three of three mastoid obliterations failed in one pediatric series).",
+    "volume_note": "No US volume count found for translabyrinthine or retrosigmoid craniectomy reconstruction or frontal sinus obliteration (PubMed searched 2026-10-22).",
+    "sources": [
+      "PMID:41254416",
+      "PMID:28059442",
+      "PMID:12075225",
+      "PMID:30843619",
+      "PMID:34642820",
+      "PMID:18984257",
+      "PMID:16823870",
+      "PMID:10925438",
+      "PMID:14709991"
+    ]
+  },
+  {
+    "id": "cmf-alveolar-cleft",
+    "region": "skull-cmf",
+    "subregion": "dental-alveolar",
+    "name": "Alveolar cleft bone grafting (secondary alveolar bone graft)",
+    "type": "bone-void",
+    "classifications": [
+      {
+        "name": "Veau classification of cleft palate",
+        "summary": "Veau I: cleft of the soft palate only. Veau II: cleft of the soft and hard palate up to the incisive foramen. Veau III: complete unilateral cleft of the soft and hard palate and the alveolus and lip. Veau IV: complete bilateral cleft of lip, alveolus and palate. The alveolar cleft is present in Veau III and IV and in isolated cleft lip and alveolus."
+      },
+      {
+        "name": "Timing of alveolar grafting",
+        "summary": "Primary (under 2 years, with lip repair; largely abandoned), secondary (mixed dentition, 6 to 11 years, before canine eruption; the standard), late secondary or tertiary (after canine eruption, worse outcomes)."
+      },
+      {
+        "name": "Outcome scales",
+        "summary": "Bergland or Kindelan scale on occlusal radiograph (type I bone to normal height to type IV no bony bridge), and CBCT volumetric fill percentage; a 2024 series defined a critical-size cleft volume of about 810 mm3 for iliac crest and 885 mm3 for rhBMP-2 plus DBM beyond which both fail more often."
+      }
+    ],
+    "why_biologic": "To avoid the iliac crest donor site in a child; rhBMP-2 on collagen sponge (off-label, patients under 18 are excluded from the Infuse label), DBM alone or as a carrier, and bone marrow aspirate concentrate are used. Pooled RCT and cohort data show bone fill roughly equal to iliac crest with shorter operations and stays, more facial swelling, and low-certainty evidence; graft failure rises sharply above the critical-size cleft volume for both materials.",
+    "autograft_standard": "Iliac crest cancellous bone graft in the mixed dentition is the standard of care; donor site pain in up to 87.5 percent in one RCT, gait disturbance, longer stay. Mandibular symphysis, calvarium and rib are alternatives with less bone (symphysis performs at least as well, calvarium and rib worse in the 2017 best-evidence synthesis).",
+    "volume_note": "CDC National Birth Defects Prevention Network 2010 to 2014: cleft lip with or without cleft palate 10.00 per 10,000 live births (about 1 in 1,000, often quoted as 1 in 1,050 by NIDCR) and cleft palate alone about 1 in 1,600; the 2016 to 2020 update reports a decreasing prevalence of cleft lip with or without palate (PMID 38277408). ACPA quotes 6,000 to 8,000 US children born each year with a cleft; roughly 60 to 75 percent of complete clefts involve the alveolus and reach secondary grafting age.",
+    "sources": [
+      "PMID:20163243",
+      "PMID:23147291",
+      "PMID:24909628",
+      "PMID:31698953",
+      "PMID:40003593",
+      "PMID:35184916",
+      "PMID:32151557",
+      "PMID:41944755",
+      "PMID:28863859",
+      "PMID:38684030",
+      "PMID:37794139",
+      "PMID:38277408",
+      "https://www.nidcr.nih.gov/research/data-statistics/craniofacial-birth-defects/prevalence",
+      "https://clinicaltrials.gov/study/NCT04234971"
+    ]
+  },
+  {
+    "id": "cmf-sinus-ridge-augmentation",
+    "region": "skull-cmf",
+    "subregion": "dental-alveolar",
+    "name": "Maxillary sinus floor augmentation and localized alveolar ridge augmentation (extraction socket defects) for dental implants",
+    "type": "bone-void",
+    "classifications": [
+      {
+        "name": "Residual bone height",
+        "summary": "Lateral-window (two-stage) sinus lift when residual posterior maxillary bone is under about 5 to 6 mm; transcrestal (osteotome) lift when 5 to 8 mm remains; the Infuse pivotal trial enrolled patients with under 6 mm."
+      },
+      {
+        "name": "Extraction socket defect (buccal wall)",
+        "summary": "Intact four-wall socket versus buccal wall dehiscence of 50 percent or more; the Infuse ridge indication covers localized augmentation of defects associated with extraction sockets, not vertical or lateral ridge augmentation of the edentulous ridge."
+      },
+      {
+        "name": "Cawood and Howell ridge atrophy classes I to VI",
+        "summary": "From dentate (I) through immediate post-extraction (II), rounded well-formed (III), knife-edge (IV), flat (V) and depressed basal bone (VI); vertical and lateral augmentation of class IV to VI ridges with rhBMP-2 is off-label and usually needs a titanium mesh containment."
+      }
+    ],
+    "why_biologic": "This is the one craniomaxillofacial application where a growth factor is on-label: Infuse (rhBMP-2 on absorbable collagen sponge) was approved by PMA P050053 on 2007-03-09 as an alternative to autogenous bone for sinus augmentation and for localized alveolar ridge augmentation for defects associated with extraction sockets, on a 160-patient pivotal RCT. Most sinus lifts are nevertheless done with xenograft (Bio-Oss), allograft (including cellular allografts such as Osteocel Plus) or synthetic particulate because they are cheaper and the Infuse height gain was lower than autograft; adding rhBMP-2 to Bio-Oss reduced new bone in one RCT.",
+    "autograft_standard": "Intraoral autograft (ramus, symphysis, tuberosity) or iliac crest for large sinus and ridge augmentations; the pivotal trial recorded 17 percent long-term paresthesia, pain or gait disturbance at the autograft donor site.",
+    "volume_note": "No public US annual count of sinus lifts; dental procedures are not captured by NIS or NEDS. CDT D7951 (lateral sinus augmentation), D7952 (vertical), D7953 (bone replacement graft) are dental codes and the procedure is often excluded or partially covered by dental plans, so volume is private-pay driven.",
+    "sources": [
+      "PMID:19686934",
+      "PMID:16297689",
+      "PMID:22254226",
+      "PMID:31147568",
+      "PMID:32596764",
+      "PMID:22776413",
+      "PMID:30318113",
+      "https://api.fda.gov/device/pma.json?search=pma_number:P050053"
+    ]
+  },
+  {
+    "id": "cmf-periodontal-intrabony",
+    "region": "skull-cmf",
+    "subregion": "dental-alveolar",
+    "name": "Periodontal intrabony and furcation defect regeneration (adjacent dental application)",
+    "type": "other",
+    "classifications": [
+      {
+        "name": "Intrabony defect walls",
+        "summary": "One-, two- and three-wall intrabony defects of 4 mm or more; Glickman furcation grades I to IV; gingival recession associated with periodontal defects. These are the labeled GEM 21S indications."
+      }
+    ],
+    "why_biologic": "Included because GEM 21S (rhPDGF-BB with beta-TCP) is the second CMF growth-factor PMA (P040013, 2005) and the only rhPDGF product in the mouth; the 180-patient pivotal RCT showed faster attachment gain and more bone fill at six months. Enamel matrix derivative (Emdogain), bone allograft and barrier membranes are the competing regenerative approaches.",
+    "autograft_standard": "Open flap debridement with or without autogenous intraoral bone; the comparison in the pivotal trial was beta-TCP alone.",
+    "volume_note": "No public US annual count; periodontal regenerative surgery is coded under CDT D4263 and D4265 and is not in hospital datasets.",
+    "sources": [
+      "PMID:16332231",
+      "PMID:31147568",
+      "https://api.fda.gov/device/pma.json?search=pma_number:P040013"
+    ]
+  },
+  {
+    "id": "cmf-mandible-fracture",
+    "region": "skull-cmf",
+    "subregion": "mandible",
+    "name": "Mandible fracture",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Anatomic site",
+        "summary": "Symphysis and parasymphysis, body, angle, ramus, condyle and subcondylar, coronoid, dentoalveolar; body, condyle, angle and symphysis make up about two thirds of fractures in the US NTDB."
+      },
+      {
+        "name": "Favorable versus unfavorable, and load-sharing versus load-bearing",
+        "summary": "Fracture line orientation relative to muscle pull; simple fractures are treated with load-sharing miniplates (Champy) or closed reduction with maxillomandibular fixation, while comminuted, atrophic-edentulous, defect and infected fractures need load-bearing reconstruction plates."
+      },
+      {
+        "name": "Mechanism (US NTDB)",
+        "summary": "Assault 37 to 42 percent, motor vehicle crash 22 to 31 percent, falls 15 to 20 percent and rising in elderly women; 78 to 80 percent male."
+      }
+    ],
+    "why_biologic": "Standard mandible fractures need no graft. Bone graft is used for comminuted gunshot fractures, atrophic edentulous fractures, infected nonunion and segmental loss, and the graft is autologous (iliac crest, tibia) under a load-bearing plate. rhBMP-2 has been used off-label in defect fractures and nonunion with mixed results (2 of 4 continuity-defect cases failed in the only US series) and no controlled data. Stem cell adjuncts to ORIF are investigational outside the US (NCT02755922, NCT07671183).",
+    "autograft_standard": "Iliac crest cancellous or corticocancellous block, or proximal tibia, under a reconstruction plate; for large or irradiated defects, the fibula free flap.",
+    "volume_note": "Nationwide Emergency Department Sample 2018: 28,357 ED encounters with mandibular fracture as the primary diagnosis, 10.2 percent transferred (PMID 36055371); 27,238 weighted isolated mandible fracture encounters, 20 percent admitted (PMID 38403271). NTDB captured 13,142 patients in 2001 to 2005 and 20,391 in 2017 (PMID 26006752, PMID 37291803). Nonunion accounts for 3.6 percent of NIS mandible fracture admissions (PMID 31261344).",
+    "hardware_note": "Mandible plating systems: Stryker, DePuy Synthes MatrixMANDIBLE (preformed reconstruction plates, 71-patient series PMID 22868032), KLS Martin, Zimmer Biomet, OsteoMed/Acumed; patient-specific selective-laser-melted plates (PMID 40550483).",
+    "sources": [
+      "PMID:36055371",
+      "PMID:38403271",
+      "PMID:26006752",
+      "PMID:37291803",
+      "PMID:31261344",
+      "PMID:18571026",
+      "PMID:22868032",
+      "PMID:40550483"
+    ]
+  },
+  {
+    "id": "cmf-mandible-continuity",
+    "region": "skull-cmf",
+    "subregion": "mandible",
+    "name": "Mandibular continuity (segmental) defect reconstruction",
+    "type": "bone-void",
+    "classifications": [
+      {
+        "name": "Jewer / HCL (Boyd) classification",
+        "summary": "Defects described by segment: C (central, canine to canine), L (lateral, excluding the condyle), H (hemimandible including the condyle), with combinations such as LC, LCL, HC, HCL; modifiers for soft tissue (s, m, o) in the Boyd extension."
+      },
+      {
+        "name": "Brown classification (2016)",
+        "summary": "Class I lateral not crossing the midline, class II hemimandibulectomy including the condyle, class III anterior crossing the midline, class IV extensive anterior and bilateral; with c for condyle."
+      },
+      {
+        "name": "Etiology",
+        "summary": "Oral cancer and benign tumors (ameloblastoma), osteoradionecrosis, medication-related osteonecrosis, osteomyelitis, gunshot and other trauma."
+      }
+    ],
+    "why_biologic": "The fibula free flap is the standard and biologics cannot replace a vascularized flap in irradiated or soft-tissue-deficient beds. rhBMP-2 on collagen sponge under a reconstruction plate, with or without a compression-resistant matrix, is used off-label for benign and non-irradiated defects (Herford and Boyne 14-patient series with regeneration in all; Carter 5-patient series with 2 of 4 continuity defects failing); a 2019 safety review graded the evidence as failing to support rhBMP-2 for mandibular reconstruction. Tissue-engineered constructs (EpiBone EB-CMF, axially vascularized ceramics, 3D-printed scaffolds) are first-in-human or preclinical.",
+    "autograft_standard": "Fibula osteocutaneous free flap with virtual surgical planning; iliac crest free flap and scapula are alternatives with similar failure and complication rates (meta-analysis of 942 patients). Nonvascularized iliac crest block is used for defects under about 6 cm in non-irradiated beds. Donor morbidity is the leg or hip.",
+    "volume_note": "No public US annual count found for segmental mandibulectomy or mandibular reconstruction (PubMed searched 2026-10-22). Free flap series for osteoradionecrosis pooled 424 flaps across 19 studies (PMID 39580338).",
+    "hardware_note": "Load-bearing reconstruction plates and patient-specific plates and cutting guides (DePuy Synthes TRUMATCH, Stryker, KLS Martin, Zimmer Biomet); porous polyethylene or titanium mesh containment for rhBMP-2 (30 percent exposure in one 10-defect series, PMID 22209107).",
+    "sources": [
+      "PMID:18355584",
+      "PMID:18571026",
+      "PMID:31592029",
+      "PMID:35125268",
+      "PMID:31633539",
+      "PMID:39580338",
+      "PMID:21549480",
+      "PMID:40283548",
+      "PMID:41136443",
+      "https://clinicaltrials.gov/study/NCT03678467",
+      "https://clinicaltrials.gov/study/NCT04001842"
+    ]
+  },
+  {
+    "id": "cmf-orbital-fracture",
+    "region": "skull-cmf",
+    "subregion": "midface-orbit",
+    "name": "Orbital floor and wall fracture reconstruction",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Orbital fracture pattern",
+        "summary": "Pure blowout (floor, medial wall, combined floor and medial wall), impure blowout with rim involvement, trapdoor fracture in children with muscle entrapment, orbital roof fracture, and orbital fractures as part of zygomaticomaxillary complex or naso-orbito-ethmoid fractures. Surgical indications are enophthalmos over 2 mm, persistent diplopia, entrapment, or a defect larger than about 50 percent of the floor or 2 cm2."
+      }
+    ],
+    "why_biologic": "Almost none. Orbital floor reconstruction is an implant market: titanium mesh and preformed orbital plates, porous polyethylene (Medpor) and polyethylene-titanium composites, resorbable PDS and PLLA/PGA sheets, patient-specific titanium. Biologics enter only as autologous bone (calvarial, iliac, maxillary wall) or as cartilage; no bone graft substitute or growth factor has a labeled or evidence-based role on the orbital floor. A 2026 meta-analysis found no functional advantage of autologous bone over alloplastic implants and more donor morbidity.",
+    "autograft_standard": "Autologous calvarial bone was the historical gold standard and still used in children and in contaminated or large defects; it resorbs unpredictably and adds a donor site, which is why alloplasts dominate.",
+    "volume_note": "Nationwide Emergency Department Sample: an estimated 350,379 US ED visits with a primary diagnosis of orbital floor fracture over 2006 to 2017, incidence rising from 7.7 to 11.3 per 100,000 (about 37,000 per year by 2017), 14 percent admitted, assault 43 percent and falls 26 percent (PMID 32659309). Sports-related orbital fractures: national estimate 49,765 over 2014 to 2023 in NEISS (PMID 40550362).",
+    "hardware_note": "Preformed and patient-specific orbital plates and meshes (Stryker, DePuy Synthes MatrixORBITAL, KLS Martin, Zimmer Biomet, OsteoMed/Acumed), porous polyethylene (Stryker Medpor), resorbable sheets (Synthes PDS, KLS Martin Resorb-x, Stryker Delta, Biomet LactoSorb).",
+    "sources": [
+      "PMID:32659309",
+      "PMID:40550362",
+      "PMID:42690464",
+      "PMID:23154365",
+      "PMID:23422151",
+      "PMID:29863555"
+    ]
+  },
+  {
+    "id": "cmf-midface-fracture",
+    "region": "skull-cmf",
+    "subregion": "midface-orbit",
+    "name": "Zygomaticomaxillary complex and Le Fort midface fractures",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Le Fort I to III",
+        "summary": "Le Fort I: horizontal maxillary fracture above the tooth roots separating the palate from the midface. Le Fort II: pyramidal fracture through the nasal bones, medial orbital walls and zygomaticomaxillary buttresses. Le Fort III: craniofacial disjunction through the zygomatic arches, lateral and medial orbital walls and nasofrontal junction. Real injuries are usually mixed and asymmetric."
+      },
+      {
+        "name": "Zygomaticomaxillary complex (ZMC, tetrapod)",
+        "summary": "Fracture through the zygomaticofrontal suture, infraorbital rim and orbital floor, zygomaticomaxillary buttress and zygomatic arch; classified as non-displaced, displaced without comminution, or comminuted; fixation at one to four points."
+      },
+      {
+        "name": "Midface buttresses",
+        "summary": "Vertical nasomaxillary, zygomaticomaxillary and pterygomaxillary buttresses and horizontal frontal bar, infraorbital rims and palate; comminution or loss of a buttress is the indication for a bone graft."
+      }
+    ],
+    "why_biologic": "Rarely. These are plate-and-screw fractures. Bone graft is used only to bridge a comminuted or missing buttress or to restore orbital volume, and the graft is almost always autologous calvarial bone. No bone graft substitute carries a midface fracture indication, and no comparative evidence exists for substitutes in acute midface trauma. Calcium phosphate cements and bioactive glass are used off the shelf for secondary contour of the malar and frontal region (Norian CRS, Mimix and HydroSet are labeled for augmentation or restoration of bony contour of the craniofacial skeleton).",
+    "autograft_standard": "Split calvarial bone for buttress and orbital reconstruction; rib and iliac crest less often. Morbidity is a second scalp incision and rare dural exposure.",
+    "volume_note": "No US annual count specific to ZMC or Le Fort fractures found. NTDB 2010 to 2019: 155,136 pediatric craniofacial fracture admissions, of which midface 21 percent and orbital floor 13.7 percent (PMID 39042070); NTDB 2016 included 14,447 adult patients with facial fractures in one comparison (PMID 31559862).",
+    "hardware_note": "Midface plating systems (Stryker, DePuy Synthes MatrixMIDFACE, KLS Martin, Zimmer Biomet, OsteoMed/Acumed) and resorbable fixation for children.",
+    "sources": [
+      "PMID:39042070",
+      "PMID:31559862",
+      "PMID:18642322",
+      "PMID:40956362"
+    ]
+  },
+  {
+    "id": "cervical-acdf",
+    "region": "spine",
+    "subregion": "cervical",
+    "name": "Anterior cervical discectomy and fusion (ACDF), single and multilevel",
+    "type": "fusion",
+    "classifications": [],
+    "why_biologic": "The interbody space is filled with a structural spacer (cortical ring allograft, PEEK or titanium cage; PEEK and titanium are not biologics) plus a graft material whose job is to bridge the endplates. Biologics here are osteoconductive fillers packed inside the ring or cage, cellular allografts, or the one PMA-approved osteoconductive/peptide composite (i-FACTOR). rhBMP-2 is not approved in the cervical spine and carries an FDA warning.",
+    "autograft_standard": "Local autograft (vertebral osteophyte and endplate shavings) packed into the spacer, or historically tricortical iliac crest; iliac crest harvest adds donor-site pain, a second incision and limited volume, so most US ACDFs now use allograft ring plus a filler rather than iliac crest.",
+    "volume_note": "Primary NIS analysis (Saifi 2018, Spine J, PMID 29128581): 1,059,403 ACDFs and 13,099 CDAs in the US 2006-2013; annual ACDF rose 5.7% from 120,617 (2006) to 127,500 (2013), mean 132,425 per year (range 120,617-147,966); ACDF revision burden 2.3%. NIS 2003-2016 Poisson model projects 153,288 to 173,699 ACDFs per year across 2020-2040 (Neifert 2020, PMID 32416237). Single-level ACDF in hospital-owned ASCs rose from 33,687 (2016) to 73,024 (2021). NIS counts inpatient discharges only, so ASC migration since 2013 is not captured.",
+    "nonunion_note": "Meta-analysis of 21 studies/2,682 patients: fusion 97.1% for single-level plated ACDF, 94.6% for two-level, 82.5% for three-level (Fraser & Hartl 2007). Pooled pseudarthrosis in prospective plated ACDF series 2.6% overall, 0.9% with autograft vs 4.8% with allograft (Shriver 2015).",
+    "sources": [
+      "PMID:17436916",
+      "PMID:25982430",
+      "PMID:38319436",
+      "https://www.beckersspine.com/spine/cervical-disc-replacement-increases-190-in-7-years-fusion-up-5-7-5-key-trends/",
+      "PMID:32416237",
+      "PMID:29128581"
+    ],
+    "challenge": "NIS is inpatient-only and weighted; the 2006-2013 counts predate the ASC shift, and the 2020-2040 figures are model projections, not observed volumes.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "cervical-pcf",
+    "region": "spine",
+    "subregion": "cervical",
+    "name": "Posterior cervical fusion (lateral mass / pedicle screw constructs, including cervicothoracic)",
+    "type": "fusion",
+    "classifications": [],
+    "why_biologic": "Posterolateral onlay fusion over decorticated lateral masses and facets; the graft bed is small and the host bone is thin, so surgeons extend local autograft with DBM, cellular allograft or synthetic putty. Off-label rhBMP-2 is used in long posterior cervical constructs and revisions but the FDA cervical warning applies to anterior use; posterior use has its own seroma/ectopic bone concerns.",
+    "autograft_standard": "Local autograft from laminectomy/facetectomy, often supplemented with iliac crest in long or revision constructs; iliac crest adds donor-site morbidity and operative time.",
+    "volume_note": "NIS 2003-2016 Poisson model projects 29,620 to 35,335 posterior cervical decompression and fusions per year across 2020-2040, with the largest growth in the 75-84 age group (Neifert 2020, World Neurosurg, PMID 32416237; abstract retrieved 2026-10-22).",
+    "nonunion_note": "Meta-analysis of 10 studies/1,120 multilevel posterior cervical fusions: pooled fusion 86% (constructs ending at C7) and 90% (crossing the cervicothoracic junction); revision 17% vs 7%, not statistically different (Coban 2022).",
+    "sources": [
+      "PMID:35120314",
+      "PMID:32416237"
+    ],
+    "challenge": "No biologic has a posterior-cervical-specific pivotal trial; evidence for any product here is extrapolated from lumbar posterolateral data. The volume figure is a projection from inpatient NIS data.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "lumbar-alif",
+    "region": "spine",
+    "subregion": "lumbar",
+    "name": "Anterior lumbar interbody fusion (ALIF), stand-alone or with posterior fixation",
+    "type": "fusion",
+    "classifications": [],
+    "why_biologic": "Large interbody cage packed with graft under compressive load; this is the original on-label Infuse indication (LT-Cage, 2002) and the approach with the best fusion biology, so biologics are used as full autograft replacements inside the cage. rhBMP-2 in ALIF carries a signal for retrograde ejaculation and urogenital events (Fu 2013; Carragee 2011).",
+    "autograft_standard": "Iliac crest (the Burkus 2002 control) or local bone; in that trial 32% of ICBG patients reported graft-site discomfort at 24 months.",
+    "volume_note": "Included in NIS elective lumbar fusion totals; no public ALIF-specific annual count found.",
+    "nonunion_note": "Pooled pseudarthrosis 8.17% across 14 studies/917 patients (2013-2024): 8.95% stand-alone vs 6.76% with posterior fixation, not significant, but stand-alone had RR 6.8 for reoperation for symptomatic pseudarthrosis (Riechelmann 2026). Burkus 2002 pivotal: 94.5% (rhBMP-2) vs 88.7% (ICBG) fusion at 24 months.",
+    "sources": [
+      "PMID:42234274",
+      "PMID:12394656",
+      "PMID:37071155",
+      "PMID:23778906"
+    ]
+  },
+  {
+    "id": "ddd-intradiscal",
+    "region": "spine",
+    "subregion": "lumbar",
+    "name": "Intradiscal injection for chronic low back pain due to degenerative disc disease (non-surgical)",
+    "type": "other",
+    "classifications": [
+      {
+        "name": "Modified Pfirrmann grade",
+        "summary": "MRI grading of disc degeneration 1-8; trials of intradiscal biologics typically enroll grades 3-6 (moderate) at a single lumbar level"
+      }
+    ],
+    "why_biologic": "Allogeneic cells, disc-tissue allograft or autologous concentrates are injected into the nucleus pulposus to reduce discogenic pain and, in theory, slow degeneration; the goal is a non-opioid, non-surgical option between conservative care and fusion.",
+    "autograft_standard": "No autograft standard exists; comparators are saline/sham injection, conservative care, or fusion/disc replacement surgery. No intradiscal biologic is FDA-licensed.",
+    "volume_note": "No public procedure-volume source; trials cite chronic low back pain as affecting hundreds of millions worldwide (Spine J 2025, PMID 40174800).",
+    "sources": [
+      "https://clinicaltrials.gov/study/NCT06325566",
+      "https://clinicaltrials.gov/study/NCT07254806",
+      "PMID:40174800"
+    ]
+  },
+  {
+    "id": "lumbar-lateral",
+    "region": "spine",
+    "subregion": "lumbar",
+    "name": "Lateral lumbar interbody fusion (LLIF / XLIF / OLIF)",
+    "type": "fusion",
+    "classifications": [],
+    "why_biologic": "Wide-footprint cage packed with graft; no local bone is generated by the approach, so nearly every lateral fusion uses an allograft, DBM, cellular allograft, synthetic or rhBMP-2 in the cage. Infuse is on-label for OLIF25 (Clydesdale, Pivox; L2-L5) and OLIF51 (Perimeter, Divergence-L; L5-S1) at a single level, and PearlMatrix added single-level OLIF and LLIF in January 2026.",
+    "autograft_standard": "No local autograft is available from a lateral approach; iliac crest or a separate posterior harvest would be needed, which defeats the minimally invasive intent, so biologics are the de facto standard here.",
+    "volume_note": "Included in NIS elective lumbar fusion totals; no public lateral-specific annual count found.",
+    "nonunion_note": "Meta-analysis of 19 XLIF studies/1,409 patients: 12-month fusion rates ranged 85.0% to 93.3% (reported as a range, not a single pooled estimate), transient neurologic events 2.2%, nerve root injury 1.0% (Palacios 2024, PMID 38398273). Stand-alone vs instrumented LLIF meta-analysis (13 studies/1,090 patients): stand-alone fusion RR 0.92 (95% CI 0.87-0.98) with higher subsidence (RR 1.68) and reoperation (RR 2.12) (Yang 2021, PMID 34509241); a 2025 meta-analysis of 12 cohorts/781 patients reached the same direction (Kou 2025, PMID 39948572). Systematic review of MIS lateral surgery (237 articles) did not pool a fusion rate (Lehmen 2015). Product-specific sources: NuVasive-sponsored Osteocel Plus XLIF cohort (n=104, NCT00948532) and PearlMatrix/Infuse labels.",
+    "sources": [
+      "PMID:25850387",
+      "NCT00948532",
+      "https://global.medtronic.com/xg-en/e/response/infuse-bone-graft.html",
+      "PMID:38398273",
+      "PMID:34509241",
+      "PMID:39948572"
+    ],
+    "challenge": "Lateral fusion evidence is a range (85-93% at 12 months) from single-arm series pooled in a 2024 meta-analysis; there is no independent pooled nonunion estimate for lateral fusion with any specific graft.",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "lumbar-plf",
+    "region": "spine",
+    "subregion": "lumbar",
+    "name": "Posterolateral lumbar fusion (PLF), instrumented",
+    "type": "fusion",
+    "classifications": [],
+    "why_biologic": "The intertransverse gutter is a large, poorly vascularized onlay bed with no compressive loading, so graft volume and osteoinductive signal both matter. Biologics are used as extenders of local bone (DBM, ceramics, bioactive glass, cellular allograft) or as full substitutes (rhBMP-2 off-label; MagnetOs and some ceramics are 510(k)-cleared as standalone posterolateral fillers). This is the application where most 510(k) bone void filler labels say 'autograft extender in the posterolateral spine'.",
+    "autograft_standard": "Iliac crest bone graft (ICBG) plus local decompression bone; in the Dimar 2009 pivotal control arm 60% of ICBG patients still reported donor-site pain at 24 months, and ICBG fused only 89% at 24 months.",
+    "volume_note": "Elective lumbar fusion volume (all approaches) rose 62.3% from 122,679 (2004) to 199,140 (2015) in the NIS; spondylolisthesis and scoliosis were the fastest-growing indications (Martin 2019).",
+    "nonunion_note": "ICBG control arms in RCTs: 89% fusion at 24 months (Dimar 2009, n=463); side-by-side Grafton vs ICBG 52% vs 54% per-side fusion at 24 months by blinded plain radiograph (Cammisa 2004, n=120); autograft side fused only 47% by CT at 1 year in the MagnetOs intra-patient RCT (Stempels 2024). Nonunion rates therefore range from about 10% to over 40% depending on imaging and definition.",
+    "sources": [
+      "PMID:19487515",
+      "PMID:15014276",
+      "PMID:38881258",
+      "PMID:30074971"
+    ]
+  },
+  {
+    "id": "lumbar-tlif-plif",
+    "region": "spine",
+    "subregion": "lumbar",
+    "name": "Transforaminal / posterior lumbar interbody fusion (TLIF, PLIF, MIS-TLIF)",
+    "type": "fusion",
+    "classifications": [],
+    "why_biologic": "The cage is packed with graft to bridge the endplates under compression; local bone from the decompression is often insufficient for cage plus posterolateral gutters, so extenders and substitutes are used inside the cage. Until 2025 no biologic carried a TLIF indication; PearlMatrix (June 2025) and Infuse (February 2026) now do, which changes the on-label conversation for the single largest lumbar fusion category.",
+    "autograft_standard": "Local autograft from the facetectomy and laminectomy; iliac crest is rarely harvested for TLIF today. Local bone alone had the lowest pooled fusion rate (91.8%) in a MIS-TLIF meta-analysis, and only 58.5% fused by strict CT criteria at 24 months in the ASPIRE control arm.",
+    "volume_note": "Included in the 199,140 elective lumbar fusions (2015, NIS; Martin 2019); interbody approaches are the majority of these but the NIS does not separate TLIF from PLIF.",
+    "nonunion_note": "MIS-TLIF meta-analysis of 40 series/1,533 patients: fusion 91.8% (local bone alone) to 99.1% (local bone + extender + rhBMP-2); 96.6% all rhBMP-2 series vs 92.5% non-rhBMP-2 (Parajon 2017). ASPIRE RCT control arm (local autograft, PEEK cage, pedicle screws): fusion 58.5% at 24 months by CT with about 60% high-risk patients (Harrop 2025).",
+    "sources": [
+      "PMID:28419312",
+      "PMID:41307132",
+      "PMID:30074971",
+      "NCT04073563"
+    ]
+  },
+  {
+    "id": "si-joint-fusion",
+    "region": "spine",
+    "subregion": "sacroiliac",
+    "name": "Minimally invasive sacroiliac joint fusion",
+    "type": "fusion",
+    "classifications": [],
+    "why_biologic": "Two segments. (1) Lateral/posterolateral transfixing implants (SI-BONE iFuse, iFuse-3D, iFuse TORQ, iFuse Bedrock Granite; Globus SI-LOK/SI-LOK SELECT; Orthofix FIREBIRD SI; Medtronic Rialto, K251395 2025; Camber Siconus; Spinal Simplicity Liberty-SI; Aurora SiLO TFX, K221047; CornerLoc TransLoc 3D, K232878; Tenon Catamaran; Tenon SImmetry+) are 510(k) titanium devices whose fusion claim rests on porous/coated surfaces and, in the fenestrated screws, bone that the implant self-harvests through its flutes (iFuse-3D 'fenestrated design to self-harvest bone'; FIREBIRD 'radial fenestrations allow self-harvesting of autograft'; SI-LOK 'optional graft slot'; Rialto IFU 'autograft and/or allograft may be placed in conjunction'). The INSITE, iMIA and SALLY trials of iFuse used no added graft. None of these vendors' product pages names a cellular allograft or DBM for the SI joint, so biologic use with transfixing screws is surgeon-discretionary and unbranded. (2) Posterior intra-articular 'fusion' implants ARE the biologic: machined structural cortical allograft dowels or spacers placed into the decorticated joint, regulated as 361 HCT/Ps (homologous use) rather than cleared devices. Products: PainTEQ LinQ (and the cortical-piercing TRAQ), SI-BONE iFuse INTRA V/INTRA X (supplied by an undisclosed third-party tissue bank), Aurora Spine SiLO, CornerLoc grafts (cortical graft plus a DBM sponge), Omnia Medical PsiF allograft, Vyrsa Pro (Vyrsa -> Nevro 2023 -> Globus 2025). Several are packed with DBM in a graft window at the surgeon's discretion. Titanium posterior 'in-line' implants (Camber SI, Spinal Simplicity Patriot-SI, CornerLoc TransLoc 3D posterior, Omnia PsiF DNA K-cleared May 2025, SI-BONE iFuse INTRA Ti) are moving the posterior approach back to 510(k) metal that must be paired with, or itself pierces, cortical bone.",
+    "autograft_standard": "No iliac crest is harvested in MIS SI fusion. For transfixing screws the 'autograft' is local bone self-harvested by the fenestrated implant; for posterior allograft systems the graft is the implant itself (structural cortical allograft, optionally with DBM in the window). Open SI arthrodesis historically used iliac crest from the adjacent ilium.",
+    "volume_note": "Medicare fee-for-service: 33,963 SI joint fusions 2010-2020, rising from 318 (2010) to 7,794 (2020); 68.5% MIS (CPT 27279) since 2015 (Federico 2023). SI-BONE reports supporting 'a total of over 140,000 procedures' since 2009 and about 1,640 US physicians performing a procedure in Q4 2025; FY2025 worldwide revenue $200.9M (+20.2%), US $191.1M, 2026 guidance $228.5-232.5M (8-K exhibit 99.1, Feb 23 2026).",
+    "nonunion_note": "INSITE RCT (n=148, SI-BONE sponsored): 6-month success 81.4% surgical vs 26.1% nonsurgical; 3 revisions in 102 fusions at 24 months. Pooled figures: meta-analysis of 48 studies found pooled fusion rates numerically similar across lateral, posterior and posterolateral approaches, with pooled revision 2.4% lateral vs 0.6% posterior and complications 9.2% vs 1% (Xu 2025, PMID 39917851); meta-analysis of 2 RCTs and 9 prospective cohorts (1,181 fusions, mean 27.8 months) found implant-related reoperation 3% (95% CI 2-4%) (Baur 2026, PMID 42023816); a 57-cohort review (2,851 patients) notes independent radiographic fusion evidence exists only for lateral transiliac devices (Whang 2023, SI-BONE-authored, PMID 37798076). No independent nonunion rate for graft-packed posterior SI systems was found.",
+    "sources": [
+      "PMID:37192412",
+      "PMID:26291338",
+      "PMID:27652199",
+      "https://investor.si-bone.com/news-releases/news-release-details/si-bone-inc-reports-record-financial-results-fourth-quarter-2025",
+      "https://www.sec.gov/Archives/edgar/data/1459839/000145983926000036/sibn-20251231.htm",
+      "https://assets.si-bone.com/doc/PM-12022-US-E-SI-Joint-Dysfunction-Facility-Coding-Guide-February-2026.pdf",
+      "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=39797",
+      "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=39802",
+      "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=39812",
+      "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=36406",
+      "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=36000",
+      "https://www.acr.org/News-and-Publications/ACR-Others-Challenge-MAC-Position-on-Minimally-Invasive-Arthrodesis-of-the-Sacroiliac-Joint",
+      "https://spinelinemag.spine.org/marapr24/coding",
+      "https://www.painteq.com/clinician",
+      "https://www.painteq.com/clinician/news/ama-announces-category-1-billing-code-for-posterior-si-joint-fusion",
+      "PMID:32607011",
+      "PMID:39344079",
+      "PMID:30845034",
+      "PMID:38524688",
+      "PMID:40832586",
+      "PMID:39087970",
+      "PMID:40539775",
+      "PMID:36420375",
+      "PMID:42237893",
+      "NCT04423120",
+      "NCT07558278",
+      "NCT07547215",
+      "NCT03122899",
+      "NCT01741025",
+      "https://fda.innolitics.com/device/K251395",
+      "https://fda.innolitics.com/device/K221047",
+      "https://fda.innolitics.com/device/K232878",
+      "https://fda.innolitics.com/device/K203503",
+      "https://510k.innolitics.com/device/K210667",
+      "https://www.biospace.com/nevro-announces-acquisition-of-vyrsa-technologies",
+      "https://s28.q4cdn.com/260621474/files/doc_news/2025/03/Globus-Medical-completes-acquisition-of-Nevro-Corp.pdf",
+      "https://www.orthoworld.com/omnia-medical-launches-psif-dna-system/",
+      "https://www.orthoworld.com/aurora-spine-launches-silo-posterior-si-joint-fusion-system",
+      "https://aurora-spine.com/silo/",
+      "https://cornerloc.com/",
+      "https://www.globusmedical.com/products/si-lok-select/",
+      "https://orthofix.com/?p=799",
+      "PMID:39917851",
+      "PMID:42023816",
+      "PMID:37798076",
+      "https://www.sec.gov/Archives/edgar/data/1459839/000145983926000022/exhibit991_sibn12312025ear.htm"
+    ],
+    "challenge": "The cumulative SI-BONE count (over 140,000 since 2009, replacing the earlier 'nearly 150,000' wording) is a company figure from its 8-K. Which graft products are packed in posterior SI systems, and by whom, was still not verified; pooled 'fusion' for posterior interpositional systems rests on company-affiliated reviews.",
+    "coverage_note": "CPT: 27279 (lateral/transfixing, since 2015; device-intensive in ASC, 2026 CMS unadjusted ASC $14,518, HOPD APC 5116 $17,914) and 27278 (posterior intra-articular, no transfixation; Category I since 1 Jan 2024 replacing Category III 0775T, which existed 2022-2023; 2026 ASC $15,048, same APC 5116). For 2026 the AMA revised both descriptors: 27279 = transarticular and/or intra-articular device(s) piercing the ilium/sacrum cortices, 27278 = intra-articular device(s) without cortical piercing, so cortical-piercing posterior products (PainTEQ TRAQ, SI-BONE INTRA Ti) bill 27279 and hybrids (posterior in-line plus transfixing screw) bill 27279. Medicare physician fee 2026: 27279 $762; 27278 $441 facility / $13,834 office-based lab (SI-BONE 10-K). Inpatient (rare): ICD-10-PCS 0SG734Z/0SG834Z group to FY2026 MS-DRG 450/451 Single Level Spinal Fusion Except Cervical with/without MCC ($38,782 / $23,507 unadjusted; SI-BONE facility guide Feb 2026). Device C-codes C1889/C1776 are packaged (no separate payment). Medicare coverage: CGS (L39802, KY/OH), Noridian (L39810/L39812, JE/JF; JF retired 23 Oct 2025 into the JE policy) and Palmetto (L39797, JJ/JM) finalized LCDs effective 17 Apr 2025 (Noridian 16 Feb 2025) stating that MI arthrodesis of the SIJ 'WITHOUT placement of a transfixation device is NOT considered medically reasonable and necessary', i.e. 27278/posterior allograft is non-covered in those jurisdictions; the Noridian evidence review quotes ISASS that posterior MI SIJF is 'unproven and not recommended'. SI-BONE's 10-K says these LCDs 'precluding coverage for CPT 27278' reduced demand for INTRA X. NGS/Wellpoint (L36406, revised 1 Apr 2026) and WPS (L36000, rev. 27 Jun 2024) still describe the covered procedure as 'percutaneous insertion of a metallic device across the SIJ' without naming 27278; Novitas and First Coast have no SI fusion LCD that this pass could find. ACR, ASPN and NANS objected to the three 2025 LCDs; the LCDs stand as of Oct 2026. iFuse Bedrock Granite received hospital-outpatient/ASC transitional pass-through from 1 Jan 2025 and iFuse TORQ TNT an NTAP (hardware, not biologics).",
+    "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "adult-deformity",
+    "region": "spine",
+    "subregion": "thoracolumbar",
+    "name": "Adult spinal deformity / long-segment fusion to the sacrum or pelvis",
+    "type": "fusion",
+    "classifications": [],
+    "why_biologic": "Long constructs (often 8-12 levels) with osteotomies, older patients and fusion to S1/pelvis have the highest pseudarthrosis rates in spine surgery and need more graft than any patient can donate. rhBMP-2 is used off-label in roughly three quarters of ISSG deformity cases at a mean 23.6 mg per patient, usually with allograft or ceramic extenders, and revision for pseudarthrosis was 8.6% with BMP vs 17% without (Jain 2020).",
+    "autograft_standard": "Local bone from osteotomies plus iliac crest; iliac crest is often inadequate in volume for 10+ levels, is compromised by pelvic fixation, and in the Maeda 2009 series the ICBG group had a 28.1% pseudarthrosis rate vs 4.3% with rhBMP-2.",
+    "volume_note": "NIS elective lumbar fusions coded for degenerative scoliosis grew 186.6% (+16,129 operations) from 2004 to 2015, implying roughly 24,800 such fusions in 2015 (derived from Martin 2019).",
+    "nonunion_note": "Pseudarthrosis 24% in 144 long fusions to the sacrum (Kim 2006, Spine) and 17% in 232 long adult deformity fusions (Kim 2006, JBJS); 11% revision for symptomatic pseudarthrosis in 367 ISSG patients with 5+ levels (Jain 2020).",
+    "sources": [
+      "PMID:16985461",
+      "PMID:16595461",
+      "PMID:32097274",
+      "PMID:34062501",
+      "PMID:19752707",
+      "PMID:30074971"
+    ]
+  },
+  {
+    "id": "vcf-augmentation",
+    "region": "spine",
+    "subregion": "thoracolumbar",
+    "name": "Vertebral compression fracture: vertebral augmentation with resorbable or bioactive fill (biologic/resorbable materials only)",
+    "type": "vcf",
+    "classifications": [
+      {
+        "name": "Genant semiquantitative grading (1993)",
+        "summary": "Visual grading of vertebral height loss on lateral radiographs: grade 0 normal; grade 1 mild (about 20-25% height reduction); grade 2 moderate (about 25-40%); grade 3 severe (more than 40%); each with wedge, biconcave or crush morphology. Thresholds are the commonly cited values; the original paper is PMID 8237484."
+      },
+      {
+        "name": "AO Spine-DGOU osteoporotic fracture (OF) classification (Schnake 2018)",
+        "summary": "OF1 no deformation, edema on MRI only; OF2 deformation of one endplate with no or minor (<1/5) posterior wall involvement; OF3 deformation with distinct (>1/5) posterior wall involvement; OF4 loss of vertebral frame integrity, body collapse or pincer fracture; OF5 injuries with distraction or rotation. Interobserver kappa 0.63."
+      }
+    ],
+    "why_biologic": "Standard augmentation uses PMMA, which is not a biologic and does not remodel; resorbable calcium phosphate cements (e.g., KyphOs FS) and the bioactive glass-ceramic composite Cortoss were developed to osseointegrate or better match bone stiffness. The RCT evidence shows CPC can fail mechanically in burst-type fractures, so resorbable fill is a niche, not the standard.",
+    "autograft_standard": "No autograft role; the comparator is PMMA vertebroplasty/kyphoplasty, or non-operative bracing.",
+    "volume_note": "Medicare: 77,276 augmentation claims at the 2008 peak; 2015 counts were 13,478 vertebroplasties and 57,646 kyphoplasties (Rabei 2019). A separate 2012-2017 physician-claims analysis found kyphoplasty fell to 21,681 and vertebroplasty to 2,987 by 2017 (Lopez 2020); the two papers use different Medicare files so they are not comparable.",
+    "nonunion_note": "Not a fusion; failure modes are cement failure/loss of correction and adjacent fracture. CPC kyphoplasty RCT (n=56): 9 radiographic losses of correction in the CPC arm vs 0 with PMMA (Blattert 2009). Cortoss vs PMMA RCT (n=256): noninferior, 4.3% serious device-related events in both arms, subsequent fractures 27.8% vs 31.9% (Bae 2012; Gilula 2012).",
+    "sources": [
+      "PMID:8237484",
+      "PMID:30210960",
+      "PMID:19139662",
+      "PMID:21738093",
+      "PMID:22743641",
+      "PMID:30562331",
+      "PMID:32925685"
+    ]
+  },
+  {
+    "id": "cpt-tibia",
+    "region": "tibia",
+    "subregion": "diaphysis, pediatric",
+    "name": "Congenital pseudarthrosis of the tibia (CPT), surgical reconstruction",
+    "type": "nonunion",
+    "classifications": [
+      {
+        "name": "Paley classification of CPT",
+        "summary": "Types 1-4 by whether the tibia is intact or fractured and whether the fracture is mobile; Novadip's Phase 3 enrolls non-healing Paley type 3 or 4 diaphyseal fractures"
+      }
+    ],
+    "why_biologic": "CPT (often with NF1) is a rare pediatric nonunion in which iliac crest bone graft plus intramedullary rodding frequently fails, leading to repeated surgery and sometimes amputation; an osteogenic autologous graft is intended to achieve union where ICBG does not.",
+    "autograft_standard": "Iliac crest bone graft with intramedullary rod fixation is the comparator in NCT07112443; limited volume in small children and high refracture/nonunion rates are the downside.",
+    "volume_note": "Rare disease; FDA granted orphan and rare pediatric disease designations (Novadip press release, Dec 23, 2020). No US volume figure located.",
+    "sources": [
+      "https://clinicaltrials.gov/study/NCT07112443",
+      "https://novadip.com/category/press-releases/"
+    ]
+  },
+  {
+    "id": "pilon",
+    "region": "tibia",
+    "subregion": "distal tibia / ankle",
+    "name": "Pilon (tibial plafond) fracture: staged ORIF with metaphyseal void fill",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "R\u00fcedi-Allg\u00f6wer",
+        "summary": "Type I articular fracture without significant displacement; type II displaced articular surface without comminution; type III comminuted, impacted articular surface with metaphyseal defect."
+      },
+      {
+        "name": "AO/OTA 43",
+        "summary": "43-A extra-articular, 43-B partial articular, 43-C complete articular (C3 comminuted). Metaphyseal impaction in 43-C leaves a void after articular reduction."
+      }
+    ],
+    "why_biologic": "Impacted metaphyseal bone leaves a cavity after reduction of the plafond; a void filler supports the articular segment. Because the soft-tissue envelope is fragile and infection risk high (pooled SSI 17%), surgeons favor fillers that do not need a second incision, and an antibiotic-eluting filler is being studied for open pilons.",
+    "autograft_standard": "Autograft (ICBG or local) for metaphyseal defects when needed; staged protocol (spanning external fixation, then ORIF when soft tissue allows) is the main driver of outcomes. No RCT of void fillers specific to pilon was found.",
+    "volume_note": "No public US volume found; pilon fractures are a small fraction of tibial fractures. Systematic reviews report nonunion 0.6% (MIPO series) to about 10% malunion/nonunion in staged treatment of C3 fractures.",
+    "sources": [
+      "PMID:40834913",
+      "PMID:34663412",
+      "PMID:37532663",
+      "PMID:42622215",
+      "https://clinicaltrials.gov/study/NCT07227493"
+    ]
+  },
+  {
+    "id": "patella",
+    "region": "tibia",
+    "subregion": "knee",
+    "name": "Patella fracture: fixation with occasional graft of comminuted or periprosthetic defects",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "AO/OTA 34",
+        "summary": "34-A extra-articular (avulsion), 34-B partial articular (vertical), 34-C complete articular (C1 transverse, C2 transverse with second fragment, C3 comminuted); 34-C3 is the most common pattern (25%)."
+      }
+    ],
+    "why_biologic": "Biologics have almost no role in primary patella fixation; the only niche is bone loss in comminuted or periprosthetic patellar fractures and patellar nonunion, where small-volume void fillers or DBM are used ad hoc. Included so the knee section is complete and to document that no product carries patella-specific evidence.",
+    "autograft_standard": "Tension-band or suture-anchor fixation without graft; partial patellectomy for an unreconstructable pole. Periprosthetic patellar fracture ORIF with wiring has nonunion/failure rates reported as high as 90%.",
+    "volume_note": "Danish incidence 13.1 per 100,000 per year (756 fractures over 10 years). No US count found.",
+    "sources": [
+      "PMID:27536953",
+      "PMID:17477924",
+      "PMID:42152092"
+    ]
+  },
+  {
+    "id": "hto-wedge",
+    "region": "tibia",
+    "subregion": "proximal tibia / knee",
+    "name": "Medial opening-wedge high tibial osteotomy: gap fill",
+    "type": "osteotomy",
+    "classifications": [
+      {
+        "name": "Osteotomy gap size",
+        "summary": "Gaps under 10 mm are usually left unfilled with a locking plate; gaps over 10 mm (large corrections) are where wedges or fillers are used. Lateral hinge fracture (Takeuchi I-III) raises nonunion risk."
+      }
+    ],
+    "why_biologic": "The opening wedge creates a defect that must consolidate under a locking plate; fillers (beta-TCP or HA/TCP wedges, allograft wedges, calcium phosphate cement) are structural extenders meant to reduce loss of correction and nonunion for large gaps. Evidence says filler choice does not change outcomes for gaps under 10 mm.",
+    "autograft_standard": "Iliac crest autograft was the historical gap filler; an RCT (n=46) found iliac allograft equivalent with no nonunions in either arm, and 52% of autograft patients had worse donor-site pain than osteotomy pain.",
+    "volume_note": "No US count found; HTO volume in the US is small relative to arthroplasty. A 2026 systematic review of 1,640 knees found 36% allograft, 30% no filler, 22% synthetic, 12% autograft.",
+    "sources": [
+      "PMID:35166617",
+      "PMID:42500162",
+      "PMID:32839849",
+      "PMID:41685086",
+      "https://fda.innolitics.com/device/K040381"
+    ]
+  },
+  {
+    "id": "tibial-plateau",
+    "region": "tibia",
+    "subregion": "proximal tibia / knee",
+    "name": "Tibial plateau fracture: ORIF with subchondral void fill",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Schatzker I-VI",
+        "summary": "I lateral split; II lateral split-depression; III pure lateral depression; IV medial plateau; V bicondylar; VI bicondylar with metaphyseal-diaphyseal dissociation. Depression patterns (II, III, and many V/VI) leave a subchondral metaphyseal void after elevation."
+      },
+      {
+        "name": "AO/OTA 41-B/41-C",
+        "summary": "41-B partial articular (B2 pure depression, B3 split-depression); 41-C complete articular (bicondylar). CERTiFy and most void-filler RCTs enrolled 41-B2/B3."
+      }
+    ],
+    "why_biologic": "After the depressed articular segment is elevated, the metaphyseal cavity must be filled so the joint surface does not re-subside; the filler is a structural, osteoconductive void fill (calcium phosphate cement, calcium sulfate/HA composite, beta-TCP) rather than an osteoinductive agent. This is the single largest trauma use of synthetic bone void fillers.",
+    "autograft_standard": "Autologous iliac crest cancellous graft is the historical standard but is weak in compression, adds donor-site pain (reported in all 38 autograft patients in one RCT) and blood loss; RCTs show calcium phosphate cement reduces subsidence versus autograft and CERAMENT BVF is noninferior.",
+    "volume_note": "No US-specific annual count found in public sources. Danish population data give tibial plateau fractures about 10 per 100,000 per year; US tibial fracture volumes are reported only in aggregate. Cochrane 2024 pooled 15 RCTs (948 patients), six of them void-filler trials.",
+    "sources": [
+      "PMID:18829901",
+      "PMID:31809394",
+      "PMID:39171616",
+      "PMID:35285251",
+      "PMID:40979149",
+      "PMID:26370268"
+    ]
+  },
+  {
+    "id": "tibial-nonunion-aseptic",
+    "region": "tibia",
+    "subregion": "tibial diaphysis",
+    "name": "Aseptic tibial nonunion: revision fixation with biologic augmentation",
+    "type": "nonunion",
+    "classifications": [
+      {
+        "name": "Weber-Cech / FDA nonunion definition",
+        "summary": "Hypertrophic (vascular, needs stability), oligotrophic, and atrophic (avascular, needs biology). FDA-style definition used in trials: fracture at least 9 months old with no radiographic progression for 3 months."
+      }
+    ],
+    "why_biologic": "Atrophic and oligotrophic nonunions need biological stimulus as well as mechanical stability; the biologic supplies osteoinduction (rhBMP-7 historically, rhBMP-2 off-label), osteogenic cells (BMAC, percutaneous marrow injection) or an osteoconductive scaffold (DBM, ceramics) in the diamond-concept framework.",
+    "autograft_standard": "Exchange reamed nailing for hypertrophic shaft nonunion; autogenous cancellous graft (ICBG or RIA) plus revision fixation for atrophic nonunion. ICBG complication rate 19.4% versus 6% for RIA in a 6,682-patient systematic review.",
+    "volume_note": "US claims analysis of 309,330 fractures: overall nonunion 4.9%, with tibia plus fibula among the three highest-risk sites; open fracture OR 1.66 and operative treatment OR 1.78 for nonunion.",
+    "sources": [
+      "PMID:27603155",
+      "PMID:11314793",
+      "PMID:15995108",
+      "PMID:21704997",
+      "PMID:30976944",
+      "PMID:41316346"
+    ]
+  },
+  {
+    "id": "tibial-shaft-closed",
+    "region": "tibia",
+    "subregion": "tibial diaphysis",
+    "name": "Closed tibial shaft fracture: reamed IM nail (biologics not indicated)",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "AO/OTA 42",
+        "summary": "42-A simple, 42-B wedge, 42-C multifragmentary; closed soft-tissue injury graded by Tscherne (C0-C3)."
+      }
+    ],
+    "why_biologic": "Included as a negative control application: two sponsored RCTs (rhBMP-2/calcium phosphate matrix in closed fractures, n=369; rhBMP-2/ACS with reamed nails in open fractures, n=277) showed no acceleration of healing, and the LIPUS TRUST trial (n=501) was negative. No biologic has an on-label indication here and routine use is not supported.",
+    "autograft_standard": "Reamed, locked IM nailing alone; SPRINT showed a possible benefit of reaming for closed fractures. Grafting is reserved for established delayed union or nonunion.",
+    "volume_note": "Tibial shaft fractures are the most common long-bone fracture; Danish incidence 16.9 per 100,000 per year. No US count found.",
+    "sources": [
+      "PMID:24306695",
+      "PMID:21454742",
+      "PMID:27797787",
+      "PMID:20399363"
+    ]
+  },
+  {
+    "id": "tibial-nonunion-infected",
+    "region": "tibia",
+    "subregion": "tibial diaphysis",
+    "name": "Infected tibial nonunion / fracture-related infection: debridement, dead-space fill, staged reconstruction",
+    "type": "nonunion",
+    "classifications": [
+      {
+        "name": "Cierny-Mader",
+        "summary": "Anatomic type I medullary, II superficial, III localized, IV diffuse; host class A healthy, B compromised (local or systemic), C treatment worse than disease. Most tibial FRI series are type III-IV in B hosts."
+      }
+    ],
+    "why_biologic": "After radical debridement the dead space must be filled to prevent hematoma and reinfection; antibiotic-eluting calcium sulfate or calcium sulfate/hydroxyapatite composites deliver local antibiotic at concentrations far above MIC while resorbing, allowing single-stage treatment instead of PMMA beads plus a second surgery.",
+    "autograft_standard": "Historical standard is two-stage: debridement with PMMA antibiotic beads or an antibiotic spacer, systemic antibiotics, then autograft (ICBG, RIA) or bone transport once infection is controlled; union rates 73-100% across series.",
+    "volume_note": "No US count found. Tibia is the most common osteomyelitis site in multinational series (116-patient S53P4 registry). METRC is running a 250-patient RCT of oral versus IV antibiotics for infected nonunion after fixation (NCT05699174).",
+    "sources": [
+      "PMID:27587534",
+      "PMID:35183215",
+      "PMID:32487197",
+      "PMID:28050878",
+      "PMID:33269583",
+      "https://clinicaltrials.gov/study/NCT05699174"
+    ]
+  },
+  {
+    "id": "tibial-shaft-open",
+    "region": "tibia",
+    "subregion": "tibial diaphysis",
+    "name": "Open tibial shaft fracture: IM nail with adjunct biologic",
+    "type": "fracture",
+    "classifications": [
+      {
+        "name": "Gustilo-Anderson",
+        "summary": "I wound under 1 cm, clean; II wound 1-10 cm without extensive soft-tissue damage; IIIA extensive soft-tissue damage but adequate coverage; IIIB periosteal stripping requiring flap coverage; IIIC arterial injury requiring repair. BESTT and FORTIFY enrolled Gustilo II-IIIB."
+      },
+      {
+        "name": "AO/OTA 42",
+        "summary": "42-A simple, 42-B wedge, 42-C multifragmentary diaphyseal tibia."
+      }
+    ],
+    "why_biologic": "Open tibial shaft fractures have the highest infection and nonunion rates of any common long-bone injury; the biologic is used at definitive closure either as an osteoinductive adjunct to reduce secondary intervention (rhBMP-2, the only on-label BMP trauma indication) or, since 2024, as an antibiotic-eluting void filler to fill bone loss and lower infection (CERAMENT G).",
+    "autograft_standard": "Standard of care is reamed or unreamed IM nailing with staged autograft (ICBG or RIA) only if a defect or delayed union declares itself; acute bone grafting of an open wound is avoided because of infection risk, which is the gap biologics try to fill.",
+    "volume_note": "US-specific incidence not found. Swedish registry: 12% of tibial shaft fractures are open, about 2.3 per 100,000 person-years; Dutch 2018-2019 hospital data: 34% of admitted tibial fractures coded open. Overall tibial shaft incidence about 16.9 per 100,000 per year (Danish data).",
+    "sources": [
+      "PMID:12473698",
+      "PMID:16757759",
+      "PMID:21454742",
+      "PMID:38490848",
+      "PMID:37491610",
+      "https://clinicaltrials.gov/study/NCT02820363"
+    ]
+  },
+  {
+    "id": "tibia-segmental-defect",
+    "region": "tibia",
+    "subregion": "tibial diaphysis",
+    "name": "Segmental tibial bone defect: induced membrane (Masquelet) versus bone transport",
+    "type": "bone-void",
+    "classifications": [
+      {
+        "name": "Defect size / Paley",
+        "summary": "Critical-size diaphyseal loss is commonly taken as more than 2-2.5 cm or more than 50% circumference; outcomes stratified under and over 7 cm (infection risk rises above 7 cm after induced membrane). Paley classifies nonunion-defect by mobility and bone loss."
+      }
+    ],
+    "why_biologic": "In the two-stage induced membrane technique the PMMA spacer creates a vascularized membrane and the second stage is filled with autograft, which is the biologic step; graft volume limits drive the use of RIA, allograft chips, DBM, ceramics and, off-label, rhBMP-2 as extenders. Bone transport (Ilizarov or magnetic intramedullary) is the non-biologic alternative that avoids graft altogether.",
+    "autograft_standard": "Stage-two autograft: RIA from the femur (large volume) or ICBG, often mixed with allograft or synthetic extender. Pooled tibial union after Masquelet 84% (643 tibiae) versus 94.6% for distraction osteogenesis in infected tibial defects (not significant).",
+    "volume_note": "No public US volume. Masquelet series pool a few hundred tibiae worldwide; US military trauma drove much of the literature.",
+    "sources": [
+      "PMID:36026545",
+      "PMID:32596336",
+      "PMID:28040090",
+      "PMID:37921889",
+      "PMID:41964783",
+      "PMID:42800611"
+    ]
+  }
+]

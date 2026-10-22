@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biologics Atlas</title>
+<meta name="description" content="An interactive map of US orthobiologics by surgical application: what is established, what is emerging, what is investigational, with the clinical evidence, FDA pathway and reimbursement for each product, across spine and trauma.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#0b0a10; --surface:#14111e; --panel:#1c1730; --line:#2b2542; --line-soft:#231d3a;
+  --fg:#ece9f5; --muted:#a79fc0;
+  --purple:#8366ea; --purple-soft:#b7a6ff;
+  --green:#22a85e; --green-soft:#6fe3a3;
+  --magenta:#d65db1; --teal:#10a197; --red:#e0607a; --amber:#e5b35a;
+  --bone:#d9d3ee; --bone-dim:#8f87ad;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--purple-soft);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--green-soft);outline-offset:3px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.2rem,4.8vw,3.6rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,3vw,2.3rem)}
+h3{font-size:1.2rem;font-weight:600}
+h4{font-size:1rem;font-weight:600;font-family:var(--body)}
+p{margin:0}
+button{font:inherit;color:inherit}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green-soft)}
+.eyebrow::before{content:"";display:inline-block;width:22px;height:1px;background:var(--green);vertical-align:middle;margin-right:10px}
+.lede{color:var(--muted);max-width:64ch;font-size:1.05rem}
+section{padding-block:clamp(44px,6vw,80px);border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:32px;align-items:end;margin-bottom:30px}
+@media(max-width:760px){.sec-head{grid-template-columns:1fr}}
+.mono{font-family:var(--mono)}
+.muted{color:var(--muted)}
+.small{font-size:.85rem}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
+.brand b{color:var(--green-soft);font-weight:400}
+.links{display:flex;gap:22px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+.links a{color:var(--muted)}
+.links a:hover{color:var(--fg);text-decoration:none}
+@media(max-width:860px){.links{display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:6px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--purple);color:var(--fg);background:transparent;cursor:pointer}
+.btn.primary{background:var(--purple);border-color:var(--purple)}
+.btn.small{padding:6px 10px;font-size:.64rem}
+.btn.ghost{border-color:var(--line);color:var(--muted)}
+.btn:hover{text-decoration:none;filter:brightness(1.12)}
+.btn[disabled]{opacity:.45;cursor:not-allowed;filter:none}
+
+/* hero */
+.hero{padding-block:clamp(40px,6vw,72px);border-top:0;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:center}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.hero h1 em{font-style:italic;color:var(--green-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.chip b{color:var(--fg);font-weight:500}
+.layers{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.layer{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:9px 13px;border:1px solid var(--line);border-radius:6px;color:var(--muted);background:var(--surface)}
+.layer.on{border-color:var(--green);color:var(--green-soft)}
+.layer .soon{display:inline-block;margin-left:8px;color:var(--amber);font-size:.6rem}
+.board{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:14px}
+.board-head{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.board-head .live{color:var(--green-soft)}
+.board-head .live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:7px;vertical-align:1px}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tile{background:var(--panel);border-radius:8px;padding:14px 16px;display:grid;gap:4px;min-width:0}
+.tile .lab{font-size:.78rem;color:var(--muted)}
+.tile .val{font-size:1.7rem;font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.tile .val small{font-size:.85rem;font-weight:500;color:var(--muted)}
+.board-foot{font-size:.78rem;color:var(--muted)}
+
+/* atlas */
+.atlas-grid{display:grid;grid-template-columns:minmax(300px,.8fr) minmax(0,1.2fr);gap:28px;align-items:start}
+@media(max-width:900px){.atlas-grid{grid-template-columns:1fr}}
+.stage{position:sticky;top:76px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:12px}
+@media(max-width:900px){.stage{position:static}}
+.stage-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.stage-head .eyebrow::before{display:none}
+.stage-tools{display:flex;gap:6px}
+.skel-wrap{position:relative;aspect-ratio:440/950;max-height:min(74vh,820px);margin-inline:auto;width:100%;overflow:hidden;border-radius:10px;background:radial-gradient(ellipse at 50% 35%,#171229 0%,var(--surface) 70%);cursor:grab;touch-action:none}
+.skel-wrap.dragging{cursor:grabbing}
+.skel-wrap svg{width:100%;height:100%;display:block}
+.bone{fill:none;stroke:var(--bone);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;opacity:.92}
+.bone.fill{fill:var(--bone);stroke:none}
+.bone.fill-soft{fill:var(--bone);stroke:none;opacity:.55}
+.bone.shaft{stroke-width:10}
+.bone.shaft2{stroke-width:6}
+.bone.thin{stroke-width:3}
+.bone.rib{stroke-width:3.5;opacity:.7}
+.bone.knob{fill:var(--bone);stroke:none}
+.bone.knob.small{opacity:.8}
+.socket{fill:var(--surface);opacity:.9}
+.socket-line{fill:none;stroke:var(--surface);stroke-width:3;stroke-linecap:round}
+.sacral{stroke:var(--surface);stroke-width:2;opacity:.6}
+.hit{fill:var(--purple);fill-opacity:0;stroke:var(--purple-soft);stroke-opacity:0;stroke-width:1.5;cursor:pointer;transition:fill-opacity .18s,stroke-opacity .18s}
+.hit:hover,.hit.hover{fill-opacity:.16;stroke-opacity:.5}
+.hit.active{fill:var(--green);fill-opacity:.2;stroke:var(--green-soft);stroke-opacity:.85;filter:url(#glow)}
+.hit.none{cursor:help}
+.hit.none:hover{fill:var(--muted);fill-opacity:.12;stroke:var(--muted);stroke-opacity:.5}
+.skel-tip{position:absolute;left:12px;bottom:12px;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:color-mix(in oklab,var(--bg) 80%,transparent);padding:6px 9px;border-radius:6px;pointer-events:none;max-width:70%}
+.skel-tip b{color:var(--green-soft);font-weight:500}
+.region-chips{display:flex;flex-wrap:wrap;gap:6px}
+.rchip{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 9px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:transparent;cursor:pointer}
+.rchip:hover{color:var(--fg);border-color:var(--purple)}
+.rchip.on{color:var(--green-soft);border-color:var(--green)}
+.rchip small{color:var(--muted);margin-left:4px}
+
+.panel{min-width:0;display:grid;gap:16px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.crumbs button{background:none;border:0;padding:0;color:var(--purple-soft);cursor:pointer;font:inherit;letter-spacing:inherit;text-transform:inherit}
+.crumbs button:hover{text-decoration:underline}
+.crumbs span.sep{opacity:.5}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:grid;gap:10px;min-width:0}
+.card.sub{background:var(--panel)}
+.card h3 .k{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green-soft);margin-bottom:6px;font-weight:400}
+.kv{display:grid;grid-template-columns:140px minmax(0,1fr);gap:6px 14px;font-size:.9rem}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0}
+@media(max-width:560px){.kv{grid-template-columns:1fr}.kv dt{margin-top:6px}.app-row{grid-template-columns:1fr}.app-row .counts{justify-content:flex-start}}
+.applist{display:grid;gap:8px}
+.app-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line-soft);border-radius:10px;padding:12px 14px;cursor:pointer;text-align:left;width:100%}
+.app-row:hover{border-color:var(--purple)}
+.app-row .t{font-weight:500}
+.app-row .d{font-size:.8rem;color:var(--muted);margin-top:2px}
+.app-row .counts{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.pill{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.pill.est{border-color:var(--green);color:var(--green-soft)}
+.pill.emg{border-color:var(--purple);color:var(--purple-soft)}
+.pill.inv{border-color:var(--amber);color:var(--amber)}
+.pill.type{border-color:var(--line);color:var(--muted)}
+.subhead{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.tier-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:8px}
+.tier-head h3{font-size:1.05rem}
+.tier-head .n{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.tier-head.est h3{color:var(--green-soft)}
+.tier-head.emg h3{color:var(--purple-soft)}
+.tier-head.inv h3{color:var(--amber)}
+.prod{background:var(--panel);border:1px solid var(--line-soft);border-radius:10px;padding:14px 16px;display:grid;gap:8px;min-width:0}
+.prod-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.prod-top .name{font-weight:600;line-height:1.3}
+.prod-top .name button{background:none;border:0;padding:0;color:var(--fg);font:inherit;font-weight:600;cursor:pointer;text-align:left}
+.prod-top .name button:hover{color:var(--purple-soft)}
+.prod-top .co{font-size:.82rem;color:var(--muted)}
+.badges{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.grade{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;padding:3px 7px;border-radius:5px;font-weight:500;color:#0b0a10}
+.grade.gI{background:var(--green-soft)}
+.grade.gII{background:var(--purple-soft)}
+.grade.gIII{background:var(--magenta);color:#fff}
+.grade.gIV{background:#6d6690;color:#fff}
+.grade.gV{background:#3b3553;color:var(--muted)}
+.badge{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:5px;border:1px solid var(--line);color:var(--muted)}
+.badge.on{border-color:var(--green);color:var(--green-soft)}
+.badge.off{border-color:var(--amber);color:var(--amber)}
+.badge.unv{border-color:var(--red);color:var(--red)}
+.badge.cat{border-color:var(--line);color:var(--purple-soft)}
+.prod .ev{font-size:.9rem}
+.prod .cav{font-size:.82rem;color:var(--muted)}
+.prod .cav::before{content:"Caveat · ";color:var(--amber);font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase}
+.prod .bd{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px;font-size:.8rem;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:8px}
+.prod .bd b{display:block;color:var(--fg);font-weight:500;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+@media(max-width:560px){.prod .bd{grid-template-columns:1fr}}
+.refs{display:flex;flex-wrap:wrap;gap:6px}
+.ref{font-family:var(--mono);font-size:.64rem;letter-spacing:.04em;padding:3px 8px;border-radius:5px;background:var(--surface);border:1px solid var(--line);color:var(--purple-soft)}
+.ref:hover{border-color:var(--purple);text-decoration:none}
+.empty{color:var(--muted);font-size:.9rem;padding:10px 0}
+.note{font-size:.85rem;color:var(--muted);border-left:2px solid var(--line);padding-left:12px}
+.note.warn{border-color:var(--amber)}
+.howto{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media(max-width:700px){.howto{grid-template-columns:1fr}}
+.howto .card{padding:14px 16px;gap:6px}
+.howto h4{font-size:.95rem}
+.howto p{font-size:.85rem;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.8rem;color:var(--muted);align-items:center}
+
+/* dialog */
+dialog{background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:14px;padding:0;max-width:min(860px,94vw);width:100%;max-height:90vh;overflow:auto}
+dialog::backdrop{background:rgba(5,4,10,.7);backdrop-filter:blur(4px)}
+.dlg{padding:22px 24px;display:grid;gap:14px}
+.dlg-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.dlg-head h3{font-size:1.4rem;font-family:var(--display);font-weight:400}
+.dlg .close{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.evtable{width:100%;border-collapse:collapse;font-size:.85rem}
+.evtable th,.evtable td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+.evtable th{color:var(--muted);font-weight:500;font-size:.72rem;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.evtable td.n{white-space:nowrap;font-variant-numeric:tabular-nums}
+.tbl-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px}
+.tbl-wrap.tall{max-height:540px}
+.payer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media(max-width:760px){.payer-grid{grid-template-columns:1fr}}
+.tbl{width:100%;border-collapse:collapse;font-size:.85rem;min-width:560px;table-layout:fixed}
+.tbl th,.tbl td{overflow-wrap:anywhere;word-break:break-word}
+.tbl.reimb th:nth-child(1){width:11%}.tbl.reimb th:nth-child(2){width:17%}.tbl.reimb th:nth-child(3){width:30%}
+.tbl.cos th:nth-child(1){width:24%}.tbl.cos th:nth-child(2){width:46%}
+.tbl th,.tbl td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+.tbl th{position:sticky;top:0;background:var(--surface);color:var(--muted);font-weight:500;font-size:.7rem;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td.code{font-family:var(--mono);color:var(--green-soft)}
+.srcs{font-size:.78rem;color:var(--muted);display:grid;gap:3px;word-break:break-all}
+.srcs a{color:var(--muted)}
+.srcs a:hover{color:var(--purple-soft)}
+.app-link{background:none;border:0;padding:0;color:var(--purple-soft);cursor:pointer;font:inherit;text-align:left}
+.app-link:hover{text-decoration:underline}
+
+/* glance chart */
+.glance{display:grid;gap:10px}
+.gl-row{display:grid;grid-template-columns:180px minmax(0,1fr) 60px;gap:12px;align-items:center;font-size:.85rem}
+@media(max-width:560px){.gl-row{grid-template-columns:1fr;gap:4px}}
+.gl-row .lab{color:var(--muted)}
+.gl-row .lab button{background:none;border:0;padding:0;color:var(--fg);cursor:pointer;font:inherit;text-align:left}
+.gl-row .lab button:hover{color:var(--purple-soft)}
+.gl-bar{display:flex;height:16px;border-radius:4px;overflow:hidden;background:var(--panel)}
+.gl-bar span{display:block;height:100%}
+.gl-bar .gI{background:var(--green-soft)} .gl-bar .gII{background:var(--purple-soft)} .gl-bar .gIII{background:var(--magenta)} .gl-bar .gIV{background:#6d6690} .gl-bar .gV{background:#3b3553}
+.gl-row .n{font-family:var(--mono);font-size:.7rem;color:var(--muted);text-align:right}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+
+/* timeline */
+.tl{display:grid;gap:0;border-left:1px solid var(--line);margin-left:6px}
+.tl-item{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:8px 0 8px 16px;position:relative;font-size:.88rem}
+.tl-item::before{content:"";position:absolute;left:-4px;top:16px;width:7px;height:7px;border-radius:50%;background:var(--purple)}
+.tl-item .d{font-family:var(--mono);font-size:.7rem;color:var(--green-soft);padding-top:3px}
+.tl-item .s{display:block;font-size:.74rem;color:var(--muted)}
+@media(max-width:560px){.tl-item{grid-template-columns:1fr;gap:2px}}
+details.more summary{cursor:pointer;color:var(--purple-soft);font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-top:6px}
+.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+@media(max-width:760px){.cols2{grid-template-columns:1fr}}
+.prose{display:grid;gap:10px;max-width:72ch}
+.prose p{color:var(--muted);font-size:.95rem}
+.prose p strong{color:var(--fg);font-weight:500}
+.prose li{color:var(--muted);font-size:.92rem}
+ul.tight{margin:0;padding-left:18px;display:grid;gap:4px}
+footer{border-top:1px solid var(--line);padding-block:30px;font-size:.8rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* reveal motion */
+html.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+html.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}.hit{transition:none}}
+</style>
+</head>
+<body>
+<header><nav class="wrap">
+  <a class="brand" href="/">Jay <b>Beatty</b></a>
+  <div class="links">
+    <a href="/#programs">Programs</a>
+    <a href="/#projects">Projects</a>
+    <a href="/team-calculator/">TEAM calculator</a>
+    <a href="#method">Methodology</a>
+    <a href="https://github.com/jaybeatty1079/jaybeatty-site" rel="noopener">GitHub</a>
+  </div>
+  <a class="btn small" href="/#contact">Contact</a>
+</nav></header>
+
+<main>
+<section class="hero wrap">
+  <div>
+    <div class="eyebrow">Biologics Atlas · orthobiologics by surgical application</div>
+    <h1 style="margin-top:14px">Pick a bone. See what the market <em>actually</em> has for it.</h1>
+    <p class="lede" style="margin-top:16px">Every bone graft substitute, growth factor, cellular allograft and investigational cell therapy sold or studied in US spine and trauma surgery, organized by the operation it is used in. Each product carries its FDA pathway, its strongest study, an honest evidence grade and how it gets paid. Built from public sources only.</p>
+    <div class="chips" id="hero-chips"></div>
+    <div class="layers" aria-label="Layers">
+      <span class="layer on">Biologics</span>
+      <span class="layer" title="Planned">Hardware<span class="soon">soon</span></span>
+      <span class="layer" title="Planned">Post-op DME<span class="soon">soon</span></span>
+    </div>
+  </div>
+  <div class="board rv">
+    <div class="board-head"><span>At a glance</span><span class="live">Reviewed <span id="reviewed-date"></span></span></div>
+    <div class="tiles" id="hero-tiles"></div>
+    <div class="board-foot">Evidence grades: I randomized or meta-analysis of RCTs · II prospective comparative · III retrospective comparative · IV case series · V expert opinion or no published data. Tiers describe market maturity, not quality.</div>
+  </div>
+</section>
+
+<section class="wrap" id="atlas" style="padding-top:28px">
+  <div class="atlas-grid">
+    <div class="stage">
+      <div class="stage-head">
+        <span class="eyebrow" id="stage-label">Choose a region</span>
+        <div class="stage-tools">
+          <button class="btn small ghost" id="zoom-out" type="button">Zoom out</button>
+        </div>
+      </div>
+      <div class="skel-wrap" id="skel-wrap">
+        __SKELETON__
+        <div class="skel-tip" id="skel-tip">Hover a region · click to focus · scroll to zoom · drag to pan</div>
+      </div>
+      <div class="region-chips" id="region-chips"></div>
+    </div>
+    <div class="panel" id="panel" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="wrap" id="glance">
+  <div class="sec-head">
+    <div><div class="eyebrow">Evidence at a glance</div><h2 style="margin-top:12px">Where the data is, and where it is not</h2></div>
+    <p class="lede">Each bar counts product-to-application pairings in that region by the grade of their best evidence. The quiet message: most of what is sold in trauma rests on case series or nothing, and the few Level I results are concentrated in spine fusion, tibial plateau void fill and hindfoot fusion.</p>
+  </div>
+  <div class="glance" id="glance-chart"></div>
+  <div class="legend" style="margin-top:14px"><span><i class="sw" style="background:var(--green-soft)"></i>I</span><span><i class="sw" style="background:var(--purple-soft)"></i>II</span><span><i class="sw" style="background:var(--magenta)"></i>III</span><span><i class="sw" style="background:#6d6690"></i>IV</span><span><i class="sw" style="background:#3b3553"></i>V</span></div>
+</section>
+
+<section class="wrap" id="paid">
+  <div class="sec-head">
+    <div><div class="eyebrow">The BD lens</div><h2 style="margin-top:12px">How a biologic gets paid</h2></div>
+    <p class="lede">Inpatient, the graft is bundled into the MS-DRG and nobody pays for it separately, so the hospital's value analysis committee is the real customer. Outpatient it is packaged into the procedure. The exceptions are the levers: two new-technology add-on payments, one live pass-through code, and payer policies that decide what counts as experimental.</p>
+  </div>
+  <div class="card"><h3><span class="k">Codes that matter</span>Medicare payment rows</h3><div class="tbl-wrap tall" id="reimb-table"></div></div>
+  <div class="card" style="margin-top:18px"><h3><span class="k">Commercial and Medicare policy</span>What payers call experimental</h3><div id="payer-cards" class="payer-grid"></div></div>
+</section>
+
+<section class="wrap" id="market">
+  <div class="sec-head">
+    <div><div class="eyebrow">Market map</div><h2 style="margin-top:12px">Who sells what, and how</h2></div>
+    <p class="lede">Many brands are the same tissue bank's product under a different label, and the largest spine company sells another company's ceramic. Channel structure matters as much as the product.</p>
+  </div>
+  <div class="tbl-wrap" id="company-table"></div>
+</section>
+
+<section class="wrap" id="reg">
+  <div class="sec-head">
+    <div><div class="eyebrow">Regulatory lanes</div><h2 style="margin-top:12px">Device, 361 tissue, or 351 biologic</h2></div>
+    <div class="prose" id="reg-summary"></div>
+  </div>
+  <div class="cols2">
+    <div class="card">
+      <h3><span class="k">The three lanes</span>What each one can and cannot claim</h3>
+      <div class="prose">
+        <p><strong>Device (510(k), PMA, De Novo, HDE).</strong> Synthetics, DBM putties with a carrier, rhBMP-2, P-15, rhPDGF, and the kits that make PRP or marrow concentrate. Surgeons may use a device off-label; the company may not promote it off-label. Bone void fillers are cleared for voids "not intrinsic to the stability of the bony structure," which is why most fusion use is off-label.</p>
+        <p><strong>361 human tissue (HCT/P).</strong> Structural allograft, DBM without a carrier, and the cellular bone allografts. No premarket review, only registration, provided the tissue is minimally manipulated and used homologously. An osteoinductive or healing claim can tip a product into the next lane.</p>
+        <p><strong>351 biologic (BLA).</strong> A licensed biologic with clinical trials behind it. As of September 2026 the FDA's approved cellular and gene therapy list has no product for bone, fracture or fusion. Every stem cell or exosome product marketed to orthopedic clinics is unapproved.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3><span class="k">FDA actions 2017 to 2026</span>Timeline</h3>
+      <div class="tl" id="timeline"></div>
+      <details class="more" id="timeline-more"><summary>Show the full timeline</summary><div class="tl" id="timeline-rest" style="margin-top:10px"></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="method">
+  <div class="sec-head">
+    <div><div class="eyebrow">Methodology</div><h2 style="margin-top:12px">How this was built, and what it will not claim</h2></div>
+    <p class="lede">A reference built to be challenged. Every product line names its source, every tier is explained, and anything that could not be confirmed is marked rather than smoothed over.</p>
+  </div>
+  <div class="cols2">
+    <div class="card">
+      <h3><span class="k">Sources</span>Public only</h3>
+      <ul class="tight prose">
+        <li>FDA 510(k), PMA, De Novo and HDE databases (every CDRH number on this page was checked against openFDA), FDA warning and untitled letters, the tissue establishment registry.</li>
+        <li>PubMed and ClinicalTrials.gov for every evidence row. Links go to the primary record.</li>
+        <li>CMS FY2027 IPPS final rule and tables, CY2026 OPPS and physician fee schedule, Medicare contractor LCDs, and the public medical policies of Aetna, Cigna, UnitedHealthcare and Blue plans.</li>
+        <li>SEC filings and company press releases for ownership, distribution agreements and revenue. Market-size figures are third-party estimates quoted in public releases and labeled as such.</li>
+        <li>No paywalled market-share data, no sales rep hearsay, no marketing claims copied as findings.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="k">Rules</span>What the tiers and badges mean</h3>
+      <ul class="tight prose">
+        <li><strong>Established</strong> means long on the US market in that application. <strong>Emerging</strong> means cleared, approved or launched in roughly the last three years, or in a pivotal trial. <strong>Investigational</strong> means not authorized for that use. Within a tier, products are ordered by evidence grade, never by sales.</li>
+        <li><strong>On label</strong> is read from the FDA indication text, not the brochure. Most bone void fillers are off-label in fusion.</li>
+        <li><strong>Unverified</strong> marks a field that could not be confirmed from a primary source. It is left visible on purpose.</li>
+        <li>Where no US annual procedure count exists, the page says so and shows incidence with its source instead of inventing a number.</li>
+        <li>Fracture classifications are described in words. AO/OTA figures are copyrighted.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cols2" style="margin-top:18px">
+    <div class="card">
+      <h3><span class="k">Disclaimer</span>Read before quoting</h3>
+      <p class="muted small">This is a reference and portfolio project, not medical advice and not a recommendation to use any product. It is not affiliated with, sponsored by or endorsed by any company, the FDA or CMS. Product names belong to their owners. Regulatory status, ownership and reimbursement change; check the primary source and the review date before relying on a line here.</p>
+    </div>
+    <div class="card">
+      <h3><span class="k">Changelog</span>Data versions</h3>
+      <ul class="tight prose" id="changelog"></ul>
+      <p class="muted small" style="margin-top:6px">The data behind this page is JSON in the <a href="https://github.com/jaybeatty1079/jaybeatty-site/tree/main/biologics-atlas" rel="noopener">GitHub repository</a>, with the schema, the research notes per region and the merge and verification scripts.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>Biologics Atlas · Jay Beatty · <a href="/">jaybeatty.com</a></span><span>Estimates and summaries from public sources. Not medical advice.</span></div></footer>
+
+<dialog id="pdlg"><div class="dlg" id="pdlg-body"></div></dialog>
+
+<script>document.documentElement.classList.add('js')</script>
+<script id="atlas-data" type="application/json">__DATA__</script>
+<script>
+__APP__
+</script>
+</body>
+</html>

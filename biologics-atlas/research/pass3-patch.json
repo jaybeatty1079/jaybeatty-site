@@ -1,0 +1,963 @@
+[
+  {
+    "file": "foot-ankle.json",
+    "kind": "application",
+    "id": "ankle-fracture-syndesmosis",
+    "set": {
+      "volume_note": "NEISS (US emergency departments) estimated 673,214 ankle fractures over 2012-2016, about 135,000 per year, incidence 4.22 per 10,000 person-years, 16.0% admitted (Scheer 2020, PMID 32354504). In adults 65+ NEISS estimated 241,449 ankle fractures over 2016-2023 with incidence rising from 49.1 to 63.0 per 100,000 (PMID 41616724). These are ED-presenting counts, not operative counts; no US ORIF volume was found.",
+      "nonunion_note": "No pooled ankle-fracture nonunion figure exists in a meta-analysis: PubMed '(ankle fracture OR malleolar) AND nonunion AND (systematic review OR meta-analysis)' returned 19 records, none pooling nonunion after ORIF. Cohort data: Lavery 2020 (n=439, nonunion defined as not healed at 6 months) found diabetes OR 6.5 for nonunion (PMID 32600558) and a diabetic-only cohort (n=139) had 24.5% nonunion (PMID 36251594); a TriNetX bimalleolar-ORIF cohort (8,882 matched pairs) reported nonunion RR 1.65 at 2 years with smoked nicotine (PMID 41441890). Rates in non-diabetic, non-smoking patients are low single digits in these series."
+    },
+    "append_sources": [
+      "PMID:32354504",
+      "PMID:41616724",
+      "PMID:32600558",
+      "PMID:36251594",
+      "PMID:41441890"
+    ],
+    "clear_unverified": false,
+    "challenge": "Volume is now sourced to NEISS (ED-presenting, not operative). Nonunion remains unpooled: no meta-analysis reports an overall ankle-fracture nonunion rate; only diabetic and nicotine-stratified cohorts were found (searched 2026-10-22). Biologics are not routine in malleolar fixation and the record should not imply otherwise."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "application",
+    "id": "ankle-arthrodesis",
+    "set": {
+      "volume_note": "Nationwide Inpatient Sample 2016-2019 identified 12,325 inpatient ankle arthrodeses, about 3,100 per year, inpatient only (PMID 39931642). Medicare FFS: 19,120 ankle arthrodeses vs 9,059 total ankle replacements in the study window, with annual AA falling from 2,080 (2005) to 1,823 (2014) (PMID 32830583). All foot-and-ankle arthrodeses rose from 8.2 to 20.2 per 100,000 between 1994 and 2006 in NSAS/NHDS data (PMID 26213159). No all-payer, all-setting US count exists; outpatient/ASC cases are not in NIS.",
+      "nonunion_note": "Proportional meta-analysis of 38 studies/1,990 ankles fixed with screws: pooled fusion 96% (95% CI 95-98), i.e. about 4% nonunion; complications 15%, reoperation excluding hardware removal 3% (Izzo 2023, PMID 36795152). Older figures: 9% revision with nonunion 65% of revisions (PMID 17768184), 7.7% nonunion in 284 arthroscopic cases (PMID 37212175), 6.1% for single-joint foot/ankle fusions in an umbrella meta-analysis (PMID 35705455)."
+    },
+    "append_sources": [
+      "PMID:36795152",
+      "PMID:39931642",
+      "PMID:32830583",
+      "PMID:26213159"
+    ],
+    "clear_unverified": true,
+    "challenge": "Pooled nonunion for screw-fixed ankle arthrodesis is about 4% (Izzo 2023), well below the historical 10-15%; quoting the higher figure invites challenge. Volume figures are inpatient (NIS) or Medicare-only; there is no all-payer count that includes ASC cases."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "application",
+    "id": "diabetic-foot-osteomyelitis-dead-space",
+    "set": {},
+    "append_sources": [],
+    "clear_unverified": false,
+    "challenge": "No US annual count for diabetic foot osteomyelitis admissions or resections was found. Searched PubMed 2026-10-22: '(diabetic foot osteomyelitis[Title]) AND (United States OR national OR nationwide) AND (incidence OR epidemiology OR trends OR burden OR hospitalizations)' returned no US national count; HCUP/NIS diabetic-foot amputation counts exist but do not isolate osteomyelitis dead-space management. Flag retained."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "application",
+    "id": "foot-ankle-nonunion",
+    "set": {},
+    "append_sources": [],
+    "clear_unverified": false,
+    "challenge": "Volume is derived (8.1% of foot/ankle fusions, PMID 35705455), not counted. Searched PubMed 2026-10-22 for US nonunion counts (foot/ankle nonunion AND United States/national AND incidence/trends): none found. Flag retained; the derived figure is the best available."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "application",
+    "id": "first-mtp-arthrodesis",
+    "set": {
+      "volume_note": "No US annual count found. NSAS/NHDS data put all foot-and-ankle arthrodeses at 20.2 per 100,000 in 2006 (PMID 26213159) without a first-MTP breakout. A 2026 PearlDiver national claims study of primary vs revision first-MTP arthrodesis (2,099 matched pairs) reports 2-year nonunion diagnoses of 4.1% after primary and 9.9% after revision/salvage fusion, repeat fusion 4.4% vs 7.2% (PMID 42602317); the study does not report a national annual volume.",
+      "nonunion_note": "Claims-coded nonunion diagnosis at 2 years: 4.1% primary vs 9.9% revision/salvage first-MTP arthrodesis (PearlDiver, PMID 42602317)."
+    },
+    "append_sources": [
+      "PMID:26213159",
+      "PMID:42602317"
+    ],
+    "clear_unverified": false,
+    "challenge": "No national annual count for first-MTP arthrodesis was found (searched PubMed 2026-10-22 for first metatarsophalangeal/hallux AND United States/national AND incidence/volume/utilization; the only national database study, PMID 42602317, reports matched cohorts, not totals). Flag retained for volume."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "application",
+    "id": "bunion-osteotomy-lapidus",
+    "set": {
+      "volume_note": "No verified all-payer US count. CMS Medicare Part B data 2013-2022 show a substantial decline in bunionectomies in Medicare beneficiaries with a rising share of Lapidus procedures (PMID 40154771; counts are in the paper, not the abstract). Hallux valgus surgery is overwhelmingly outpatient/ASC and so is invisible to NIS."
+    },
+    "append_sources": [
+      "PMID:40154771"
+    ],
+    "clear_unverified": false,
+    "challenge": "Searched PubMed 2026-10-22 (hallux valgus/bunion/Lapidus AND United States/national AND incidence/trends/volume): only the Medicare-only trend paper (PMID 40154771) is US; the annual counts are in its tables, not retrieved here. Flag retained."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "application",
+    "id": "fifth-metatarsal-jones",
+    "set": {
+      "nonunion_note": "Systematic review of 10 studies/998 patients comparing surgical and conservative treatment of zone-2 (Jones) fractures: nonunion 7/211 (3.3%) with surgical fixation vs 91/787 (11.6%) nonoperatively, total complications 8.5% vs 15.6% (Encinas 2026, JAAOS, PMID 42319275)."
+    },
+    "append_sources": [
+      "PMID:42319275"
+    ],
+    "clear_unverified": false,
+    "challenge": "Nonunion is now sourced to a 2026 systematic review (surgical 3.3% vs conservative 11.6%). No US annual Jones-fracture count exists: the only nationwide fifth-metatarsal surgery epidemiology found is Japanese (PMID 40011147). Flag retained for volume."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "application",
+    "id": "calcaneus-fracture",
+    "set": {},
+    "append_sources": [],
+    "clear_unverified": false,
+    "challenge": "No US annual count found. Searched PubMed 2026-10-22 '(calcaneal fracture OR calcaneus fracture)[Title] AND (United States OR national OR nationwide) AND (incidence OR epidemiology OR trends)': no US national result; Danish population data (PMID 32499146) remain the only incidence source. The 75% intra-articular share is still unverified. Flag retained."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "application",
+    "id": "subtalar-hindfoot-arthrodesis",
+    "set": {
+      "volume_note": "No subtalar-specific US count. All foot-and-ankle arthrodeses rose from 8.2 to 20.2 per 100,000 between 1994 and 2006 in NSAS/NHDS data, with outpatient volume up 415% (PMID 26213159); hindfoot joints are not broken out."
+    },
+    "append_sources": [
+      "PMID:26213159"
+    ],
+    "clear_unverified": false,
+    "challenge": "Searched PubMed 2026-10-22 (subtalar[Title] AND United States/national AND incidence/volume/utilization): no subtalar-specific national count. Flag retained."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "application",
+    "id": "talus-fracture-avn",
+    "set": {},
+    "append_sources": [],
+    "clear_unverified": false,
+    "challenge": "No US volume source. Searched PubMed 2026-10-22 (talus[Title] AND United States/national AND incidence/epidemiology): only a Finnish register study (PMID 39702100) and a US-military osteochondral-lesion study (PMID 22224323) were returned; neither gives a US talus-fracture count. Flag retained."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "application",
+    "id": "ttc-arthrodesis",
+    "set": {},
+    "append_sources": [],
+    "clear_unverified": false,
+    "challenge": "No US annual count. Searched PubMed 2026-10-22 (tibiotalocalcaneal/ankle arthrodesis AND United States/national): NIS ankle-arthrodesis counts (PMID 39931642) do not separate TTC from tibiotalar fusion. Union for 3D-titanium TTC in critical defects pooled 88.2% in 15 studies/142 patients (PMID 41724588). Flag retained."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "application",
+    "id": "charcot-midfoot-reconstruction",
+    "set": {
+      "nonunion_note": "Proportional meta-analysis of 30 studies/492 internal-fixation Charcot reconstructions: nonunion 11.9% (95% CI 6.6-18.1), deep infection 6.7%, amputation after infection 36.6% (Tsikopoulos 2024, PMID 38548584). Union definitions differ: Kavarthapu 2021 counted 9/15 midfoot fusions (60%) with the other six as 'stable and painless fibrous nonunion' and all limbs salvaged (PMID 34587806); Mittlmeier 2015 states the outcome 'does not depend on definite osseous healing of the arthrodesis' (PMID 25862129)."
+    },
+    "append_sources": [
+      "PMID:38548584",
+      "PMID:34587806",
+      "PMID:25862129"
+    ],
+    "clear_unverified": true,
+    "challenge": "Any single Charcot nonunion percentage will be challenged because series count stable fibrous nonunion with a plantigrade, ulcer-free foot as success (PMID 34587806, PMID 25862129); the 11.9% pooled figure (PMID 38548584) is the best-sourced number, and the 3.3% TTC-nail figure is optimistic."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "application",
+    "id": "lisfranc-injury",
+    "set": {
+      "volume_note": "US TriNetX Collaborative Network 2014-2024: 21,964 primary Lisfranc injuries presenting to EDs or ambulatory settings, overall incidence 22.4 per 100,000 person-years, peaking at 33.6 per 100,000 at ages 40-44 (PMID 40839129). Lisfranc injuries are about 0.2% of all fractures (PMID 26022112); midfoot fracture incidence is 6.5 per 100,000 per year in Danish data (PMID 32499146). No US operative count."
+    },
+    "append_sources": [
+      "PMID:40839129"
+    ],
+    "clear_unverified": true,
+    "challenge": "TriNetX incidence is a network-based estimate (participating health systems), not a census; surgical-intervention rates are in the paper, not extracted here."
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "application",
+    "id": "distal-femur-fracture",
+    "set": {},
+    "append_sources": [],
+    "clear_unverified": false,
+    "challenge": "No US annual count found. Searched PubMed 2026-10-22 '(distal femur OR distal femoral)[Title] AND (United States OR nationwide OR national) AND (incidence OR epidemiology OR trends)': only a Danish nationwide cohort of 60,823 knee fractures (PMID 31795876) was returned. Flag retained; the 4-7% share of femoral fractures remains a secondary-source figure."
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "application",
+    "id": "femoral-shaft-fracture",
+    "set": {},
+    "append_sources": [],
+    "clear_unverified": false,
+    "challenge": "No US annual count found. Searched PubMed 2026-10-22 (femoral shaft[Title] AND United States/nationwide/national AND incidence/epidemiology/trends): only Swedish national data (6,409 inpatients 1998-2004, 10 per 100,000 person-years, PMID 19171340) and pediatric US practice-pattern papers. Flag retained."
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "application",
+    "id": "femoral-shaft-nonunion",
+    "set": {},
+    "append_sources": [],
+    "clear_unverified": false,
+    "challenge": "Nonunion after reamed nailing remains a secondary-source range (<5-10%); no US count. Searched PubMed 2026-10-22 for femoral shaft nonunion incidence in US databases: none found. Flag retained."
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "application",
+    "id": "femoral-head-osteonecrosis-core-decompression",
+    "set": {
+      "volume_note": "A 2010-2020 nationwide US claims study identified 64,739 patients with osteonecrosis of the femoral head who underwent hip surgery, about 5,900 surgical cases per year, and cites an estimated incidence of more than 20,000 new ONFH patients annually in the US (PMID 37001624). The 20,000 figure is an estimate quoted by that paper, not a measured count; the proportion treated with core decompression vs arthroplasty is in the paper's tables."
+    },
+    "append_sources": [
+      "PMID:37001624"
+    ],
+    "clear_unverified": true,
+    "challenge": "The surgical count comes from a commercial claims database (not all-payer) and the '>20,000 per year' incidence is a literature estimate the paper repeats; both should be presented as such."
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "application",
+    "id": "acetabular-pelvic-ring-fracture",
+    "set": {
+      "volume_note": "NIS 2000-2009: 24,059 inpatients with unstable pelvic fracture, about 2,400 per year, in-hospital mortality 8.3% (PMID 24398776). NIS 2011-2018: 123,936 nonoperatively managed low-energy pelvic fractures, about 15,500 per year, mean age 68.7, 70% female (PMID 37564706). NIS 2016-2022: 20,169 weighted internal fixations of pelvic ring fractures, about 2,900 per year (PMID 42690542). Pelvic fractures are about 3% of all fractures in secondary sources."
+    },
+    "append_sources": [
+      "PMID:24398776",
+      "PMID:37564706",
+      "PMID:42690542"
+    ],
+    "clear_unverified": true,
+    "challenge": "The three NIS figures use different case definitions (unstable fracture, low-energy nonoperative, operatively fixed ring) and cannot be summed; acetabular ORIF volume is not separately counted here."
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "application",
+    "id": "femoral-neck-fracture",
+    "set": {
+      "volume_note": "CDC analysis of 2019 HCUP and NVSS data: 318,797 ED visits, 290,130 hospitalizations and 7,731 deaths for hip fracture among US adults 65+, with falls causing about 88% of hospitalizations (Moreland 2022, PMID 36210739). This is the primary source behind the commonly quoted 'roughly 300,000 per year'. Medicare claims show age-adjusted rates in women 65+ fell 2002-2012 then plateaued 2013-2015 (Lewiecki 2018, PMID 29282482). Neck vs trochanteric split is not reported in these sources."
+    },
+    "append_sources": [
+      "PMID:36210739"
+    ],
+    "clear_unverified": true,
+    "challenge": "The 290,130 count is hospitalizations in adults 65+ (all hip fracture types), not femoral-neck fractures specifically and not under-65 patients."
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "application",
+    "id": "femoral-neck-nonunion",
+    "set": {},
+    "append_sources": [],
+    "clear_unverified": false,
+    "challenge": "Nonunion after fixation of displaced femoral neck fractures in young adults (10-30%) remains a secondary-source range; no US annual count was found (searched PubMed 2026-10-22 for femoral neck nonunion incidence in US databases). Flag retained."
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "application",
+    "id": "intertrochanteric-fracture",
+    "set": {
+      "volume_note": "US hip-fracture hospitalizations in adults 65+ numbered 290,130 in 2019 (CDC analysis of HCUP, PMID 36210739). Trochanteric fractures are usually described as roughly half of hip fractures in secondary sources; no primary US source splitting neck from trochanteric fractures was found."
+    },
+    "append_sources": [
+      "PMID:36210739"
+    ],
+    "clear_unverified": true,
+    "challenge": "The total is primary (CDC/HCUP 2019); the 'roughly half' trochanteric share is still a secondary-source proportion."
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "application",
+    "id": "subtrochanteric-fracture",
+    "set": {},
+    "append_sources": [],
+    "clear_unverified": false,
+    "challenge": "No US count separate from hip fractures. Searched PubMed 2026-10-22 (subtrochanteric[Title] AND United States/nationwide/national AND incidence/trends): only a Korean claims study (PMID 22618268). The 10-30% share remains secondary. Flag retained."
+  },
+  {
+    "file": "upper-extremity.json",
+    "kind": "application",
+    "id": "radial-head-fracture",
+    "set": {},
+    "append_sources": [],
+    "clear_unverified": false,
+    "challenge": "No US volume source found. Searched PubMed 2026-10-22 '(radial head[Title]) AND (United States OR national OR nationwide) AND (incidence OR epidemiology OR trends)': the only hit is pediatric radial head subluxation in NEISS (PMID 34363491), not adult fractures. 'Most frequent adult elbow fracture' remains unverified. Flag retained."
+  },
+  {
+    "file": "spine.json",
+    "kind": "application",
+    "id": "cervical-acdf",
+    "set": {
+      "volume_note": "Primary NIS analysis (Saifi 2018, Spine J, PMID 29128581): 1,059,403 ACDFs and 13,099 CDAs in the US 2006-2013; annual ACDF rose 5.7% from 120,617 (2006) to 127,500 (2013), mean 132,425 per year (range 120,617-147,966); ACDF revision burden 2.3%. NIS 2003-2016 Poisson model projects 153,288 to 173,699 ACDFs per year across 2020-2040 (Neifert 2020, PMID 32416237). Single-level ACDF in hospital-owned ASCs rose from 33,687 (2016) to 73,024 (2021). NIS counts inpatient discharges only, so ASC migration since 2013 is not captured."
+    },
+    "append_sources": [
+      "PMID:29128581"
+    ],
+    "clear_unverified": true,
+    "challenge": "NIS is inpatient-only and weighted; the 2006-2013 counts predate the ASC shift, and the 2020-2040 figures are model projections, not observed volumes."
+  },
+  {
+    "file": "spine.json",
+    "kind": "application",
+    "id": "cervical-pcf",
+    "set": {
+      "volume_note": "NIS 2003-2016 Poisson model projects 29,620 to 35,335 posterior cervical decompression and fusions per year across 2020-2040, with the largest growth in the 75-84 age group (Neifert 2020, World Neurosurg, PMID 32416237; abstract retrieved 2026-10-22)."
+    },
+    "append_sources": [
+      "PMID:32416237"
+    ],
+    "clear_unverified": true,
+    "challenge": "No biologic has a posterior-cervical-specific pivotal trial; evidence for any product here is extrapolated from lumbar posterolateral data. The volume figure is a projection from inpatient NIS data."
+  },
+  {
+    "file": "spine.json",
+    "kind": "application",
+    "id": "lumbar-lateral",
+    "set": {
+      "nonunion_note": "Meta-analysis of 19 XLIF studies/1,409 patients: 12-month fusion rates ranged 85.0% to 93.3% (reported as a range, not a single pooled estimate), transient neurologic events 2.2%, nerve root injury 1.0% (Palacios 2024, PMID 38398273). Stand-alone vs instrumented LLIF meta-analysis (13 studies/1,090 patients): stand-alone fusion RR 0.92 (95% CI 0.87-0.98) with higher subsidence (RR 1.68) and reoperation (RR 2.12) (Yang 2021, PMID 34509241); a 2025 meta-analysis of 12 cohorts/781 patients reached the same direction (Kou 2025, PMID 39948572). Systematic review of MIS lateral surgery (237 articles) did not pool a fusion rate (Lehmen 2015). Product-specific sources: NuVasive-sponsored Osteocel Plus XLIF cohort (n=104, NCT00948532) and PearlMatrix/Infuse labels."
+    },
+    "append_sources": [
+      "PMID:38398273",
+      "PMID:34509241",
+      "PMID:39948572"
+    ],
+    "clear_unverified": true,
+    "challenge": "Lateral fusion evidence is a range (85-93% at 12 months) from single-arm series pooled in a 2024 meta-analysis; there is no independent pooled nonunion estimate for lateral fusion with any specific graft."
+  },
+  {
+    "file": "spine.json",
+    "kind": "application",
+    "id": "si-joint-fusion",
+    "set": {
+      "volume_note": "Medicare fee-for-service: 33,963 SI joint fusions 2010-2020, rising from 318 (2010) to 7,794 (2020); 68.5% MIS (CPT 27279) since 2015 (Federico 2023). SI-BONE reports supporting 'a total of over 140,000 procedures' since 2009 and about 1,640 US physicians performing a procedure in Q4 2025; FY2025 worldwide revenue $200.9M (+20.2%), US $191.1M, 2026 guidance $228.5-232.5M (8-K exhibit 99.1, Feb 23 2026).",
+      "nonunion_note": "INSITE RCT (n=148, SI-BONE sponsored): 6-month success 81.4% surgical vs 26.1% nonsurgical; 3 revisions in 102 fusions at 24 months. Pooled figures: meta-analysis of 48 studies found pooled fusion rates numerically similar across lateral, posterior and posterolateral approaches, with pooled revision 2.4% lateral vs 0.6% posterior and complications 9.2% vs 1% (Xu 2025, PMID 39917851); meta-analysis of 2 RCTs and 9 prospective cohorts (1,181 fusions, mean 27.8 months) found implant-related reoperation 3% (95% CI 2-4%) (Baur 2026, PMID 42023816); a 57-cohort review (2,851 patients) notes independent radiographic fusion evidence exists only for lateral transiliac devices (Whang 2023, SI-BONE-authored, PMID 37798076). No independent nonunion rate for graft-packed posterior SI systems was found."
+    },
+    "append_sources": [
+      "PMID:39917851",
+      "PMID:42023816",
+      "PMID:37798076",
+      "https://www.sec.gov/Archives/edgar/data/1459839/000145983926000022/exhibit991_sibn12312025ear.htm"
+    ],
+    "clear_unverified": false,
+    "challenge": "The cumulative SI-BONE count (over 140,000 since 2009, replacing the earlier 'nearly 150,000' wording) is a company figure from its 8-K. Which graft products are packed in posterior SI systems, and by whom, was still not verified; pooled 'fusion' for posterior interpositional systems rests on company-affiliated reviews."
+  },
+  {
+    "file": "spine.json",
+    "kind": "product",
+    "id": "infuse",
+    "append_sources": [
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P000058S096",
+      "https://web.archive.org/web/20101230063033/http://www.fda.gov/MedicalDevices/Safety/AlertsandNotices/PublicHealthNotifications/ucm062000.htm",
+      "https://news.medtronic.com/2026-02-17-Medtronic-Announces-FDA-approval-of-Infuse-TM-bone-graft-for-one-and-two-level-Transforaminal-Lumbar-Interbody-Fusion-TLIF-spine-procedures",
+      "https://www.beckersspine.com/biologics/medtronic-spinal-bone-graft-earns-expanded-fda-approval/"
+    ],
+    "clear_unverified": false,
+    "challenge": "FDA's July 1, 2008 Public Health Notification (CDRH, signed Daniel G. Schultz) was retrieved via the Wayback Machine: at least 38 reports over four years of neck/throat swelling with airway compression after cervical rhBMP use, most at 2-14 days; FDA states safety and effectiveness in the cervical spine 'have not been demonstrated' and recommends approved alternatives or enrollment in approved studies. The TLIF supplement is P000058/S096 (panel track, decision 02/13/2026). Remaining gap: Medtronic's release gives only 'fusion rates exceeding 90 percent in single-level TLIF' for Infuse (493 randomized 1:1:1 to 2.1 mg/level, 4.2 mg/level, local autograft; stopped for success at the first interim analysis of 480 treated patients); the autograft-arm and two-level percentages are unpublished.",
+    "append_evidence": [
+      {
+        "ref": "FDA-PHN-2008-07-01",
+        "title": "FDA Public Health Notification: Life-threatening Complications Associated with Recombinant Human Bone Morphogenetic Protein in Cervical Spine Fusion",
+        "year": 2008,
+        "design": "registry",
+        "n": 38,
+        "finding": "At least 38 MDR reports in four years of neck/throat swelling with airway or neurological compression after cervical rhBMP use, most 2-14 days post-op; FDA states safety and effectiveness in the cervical spine have not been demonstrated and recommends approved alternatives or enrollment in approved studies.",
+        "sponsor_funded": false,
+        "applications": [
+          "cervical-acdf",
+          "cervical-pcf"
+        ],
+        "source": "https://web.archive.org/web/20101230063033/http://www.fda.gov/MedicalDevices/Safety/AlertsandNotices/PublicHealthNotifications/ucm062000.htm"
+      }
+    ]
+  },
+  {
+    "file": "spine.json",
+    "kind": "product",
+    "id": "pearlmatrix",
+    "append_sources": [
+      "https://www.cerapedics.com/news/cerapedics-pearlmatrix-p-15-peptide-enhanced-bone-graft-first-and-only-proven-bone-growth",
+      "https://www.beckersspine.com/spine/cerapedics-spinal-bone-graft-earns-additional-indications/"
+    ],
+    "clear_unverified": false,
+    "challenge": "PMA P240001 approved 2025-06-18 (openFDA, pass 2); supplement S001 label expansion approved 2025-12-11 and announced 2026-01-13. Pass 3 could not reach the FDA PMA search page (bot challenge)."
+  },
+  {
+    "file": "investigational.json",
+    "kind": "product",
+    "id": "pearlmatrix-p15l",
+    "set": {},
+    "append_sources": [
+      "https://www.cerapedics.com/news/cerapedics-pearlmatrix-p-15-peptide-enhanced-bone-graft-first-and-only-proven-bone-growth",
+      "https://www.beckersspine.com/spine/cerapedics-spinal-bone-graft-earns-additional-indications/"
+    ],
+    "clear_unverified": false,
+    "challenge": "No longer investigational (PMA June 23, 2025; label expansion Jan 13, 2026 to one-level ALIF/PLIF/OLIF-ATP/LLIF/TLIF with Ti-alloy and PEEK/Ti cages, per Cerapedics release and Becker's). PMA number still unretrieved: the FDA PMA database search returned a bot challenge page on 2026-10-22."
+  },
+  {
+    "file": "spine.json",
+    "kind": "product",
+    "id": "magnetos",
+    "set": {
+      "bd.notes": "Kuros IR (Jan 7, 2025 release): five-year exclusive sales agency agreement under which Medtronic's spine division sells MagnetOs in mutually agreed US spine territories; Kuros supports Medtronic's sales force but keeps responsibility for contracts, hospital partnerships and revenue recognition, and continues to sell directly in non-contracted territories and outside spine; the deal converted an initial trial agreement. FY2025 (Mar 10, 2026 release): group revenue USD 146.1M (+72%), direct MagnetOs sales USD 143.9M (+71%), first net profit USD 2.6M, 2026 guidance at least 35% growth, 2028 target USD 300-330M; a 510(k) for the MagnetOs MIS Delivery System is cited without a date; the release states MagnetOs is not FDA cleared as an osteoinductive bone graft."
+    },
+    "append_sources": [
+      "https://ir.kurosbio.com/news-releases/news-release-details/kuros-biosciences-usa-inc-announces-exclusive-strategic",
+      "https://www.biospace.com/press-releases/kuros-biosciences-delivers-72-year-over-year-sales-growth-reaching-usd-146-1-million-for-2025"
+    ],
+    "clear_unverified": true,
+    "challenge": "Medtronic agreement terms and FY2025 revenue (USD 146.1M; MagnetOs 143.9M) read from Kuros IR pages 2026-10-22. 510(k) numbers confirmed in openFDA (K230736, K233607, K232347, K240442, K241212, K243474). The 'osteoinductive' language is marketing; FDA cleared MagnetOs as an osteoconductive bone void filler."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "product",
+    "id": "magnetos",
+    "set": {
+      "bd.notes": "Kuros IR (Jan 7, 2025 release): five-year exclusive sales agency agreement under which Medtronic's spine division sells MagnetOs in mutually agreed US spine territories; Kuros supports Medtronic's sales force but keeps responsibility for contracts, hospital partnerships and revenue recognition, and continues to sell directly in non-contracted territories and outside spine; the deal converted an initial trial agreement. FY2025 (Mar 10, 2026 release): group revenue USD 146.1M (+72%), direct MagnetOs sales USD 143.9M (+71%), first net profit USD 2.6M, 2026 guidance at least 35% growth, 2028 target USD 300-330M; a 510(k) for the MagnetOs MIS Delivery System is cited without a date; the release states MagnetOs is not FDA cleared as an osteoinductive bone graft."
+    },
+    "append_sources": [
+      "https://ir.kurosbio.com/news-releases/news-release-details/kuros-biosciences-usa-inc-announces-exclusive-strategic",
+      "https://www.biospace.com/press-releases/kuros-biosciences-delivers-72-year-over-year-sales-growth-reaching-usd-146-1-million-for-2025"
+    ],
+    "clear_unverified": true,
+    "challenge": "Medtronic agreement terms and FY2025 revenue (USD 146.1M; MagnetOs 143.9M) read from Kuros IR pages 2026-10-22. 510(k) numbers confirmed in openFDA (K230736, K233607, K232347, K240442, K241212, K243474). The 'osteoinductive' language is marketing; FDA cleared MagnetOs as an osteoconductive bone void filler."
+  },
+  {
+    "file": "spine.json",
+    "kind": "product",
+    "id": "osteogrow",
+    "set": {
+      "regulatory.reference": "EU clinical trials only: EudraCT 2017-000860-14 (Osteogrow-A, PLIF, 143 randomized in Austria, ended 13 Mar 2023, results posted 11 Feb 2026) and a TLIF trial; no US IDE/IND found"
+    },
+    "append_sources": [
+      "https://www.clinicaltrialsregister.eu/ctr-search/trial/2017-000860-14/results"
+    ],
+    "clear_unverified": false,
+    "challenge": "EU CTR results page read directly on 2026-10-22. As posted: arms Standard of Care n=62 (55 mITT), HD Osteogrow n=61 (56 mITT), LD Osteogrow n=20 (19 mITT); primary 'overall clinical success' at 20 months 1.9% SoC vs 0.2% HD (LD none), difference -1.7 points, one-sided 95% lower limit -5.2 against a -10 margin, reported as non-inferior; radiographic fusion 3.8/5.6% at 6 months, 4.4/6.0% at 12 months, 6.2% SoC vs 4.2% HD at 20 months (difference -2, lower limit -9.5); serious TEAEs 54.1% SoC, 31.1% HD, 25.0% LD; 3 deaths in SoC. These success and fusion proportions are implausibly low for PLIF and almost certainly reflect a unit or data-entry error in the register posting (e.g. fractions mislabeled as percent); the extraction is verified but the numbers should not be quoted as fusion rates without the sponsor's publication."
+  },
+  {
+    "file": "tibia-knee.json",
+    "kind": "product",
+    "id": "osteogrow",
+    "set": {},
+    "append_sources": [
+      "https://www.clinicaltrialsregister.eu/ctr-search/trial/2017-000860-14/results"
+    ],
+    "clear_unverified": false,
+    "challenge": "EU register results for the PLIF trial (2017-000860-14, posted 11 Feb 2026) were read on 2026-10-22; see the spine.json osteogrow record for the posted proportions and the unit-error caveat."
+  },
+  {
+    "file": "investigational.json",
+    "kind": "product",
+    "id": "osteogrow-c",
+    "set": {},
+    "append_sources": [
+      "https://www.clinicaltrialsregister.eu/ctr-search/trial/2017-000860-14/results"
+    ],
+    "clear_unverified": false,
+    "challenge": "The parent Osteogrow PLIF trial results (EudraCT 2017-000860-14) were posted 11 Feb 2026 and read on 2026-10-22 (see spine.json osteogrow); no registry entry for Osteogrow-C in humans was found."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "product",
+    "id": "bio4",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "spine.json",
+    "kind": "product",
+    "id": "bio4",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": "BIO4 is listed as a current Stryker bone grafting product on stryker.com (2026-10-22), which supports the Stryker-Osiris arrangement continuing; the contract itself was not seen."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "product",
+    "id": "allomatrix",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "tibia-knee.json",
+    "kind": "product",
+    "id": "allomatrix",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "product",
+    "id": "allomatrix",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "upper-extremity.json",
+    "kind": "product",
+    "id": "allomatrix",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "product",
+    "id": "osteoset",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "product",
+    "id": "osteoset",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": "OsteoSet is still listed on Stryker's bone grafting catalog page (2026-10-22) alongside Pro-Dense; the catalog-status concern is resolved."
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "product",
+    "id": "vitoss",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "spine.json",
+    "kind": "product",
+    "id": "vitoss",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": "Vitoss, Vitoss BA and BA2X are current on Stryker's catalog page (2026-10-22); K numbers still not retrieved (FDA 510(k) search is bot-gated)."
+  },
+  {
+    "file": "tibia-knee.json",
+    "kind": "product",
+    "id": "vitoss",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "upper-extremity.json",
+    "kind": "product",
+    "id": "vitoss-tcp",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "product",
+    "id": "hydroset",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": "Stryker's catalog page lists the product as 'HydroSet XT' (2026-10-22); use that name."
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "product",
+    "id": "hydroset",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": "Stryker's catalog page lists the product as 'HydroSet XT' (2026-10-22); use that name."
+  },
+  {
+    "file": "tibia-knee.json",
+    "kind": "product",
+    "id": "hydroset",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": "Stryker's catalog page lists the product as 'HydroSet XT' (2026-10-22); use that name."
+  },
+  {
+    "file": "upper-extremity.json",
+    "kind": "product",
+    "id": "hydroset",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": "Stryker's catalog page lists the product as 'HydroSet XT' (2026-10-22); use that name."
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "product",
+    "id": "pro-dense",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "tibia-knee.json",
+    "kind": "product",
+    "id": "pro-dense",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "product",
+    "id": "augment-bone-graft",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "foot-ankle.json",
+    "kind": "product",
+    "id": "augment-injectable",
+    "set": {
+      "catalog_status_2026": "Stryker's US trauma-and-extremities bone grafting catalog page (read 2026-10-22) lists AlloFiber, AlloMatrix, Augment, BIO4, DBM, FusionFlex, HydroSet XT, Ignite, OsteoSet, Pro-Dense, Pro-Dense LoVisc, Pro-Stim, Tensix, Vitoss, Vitoss BA, Vitoss BA2X and Vitoss BBTrauma as current products."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "spine.json",
+    "kind": "product",
+    "id": "cortoss",
+    "set": {
+      "catalog_status_2026": "Not on Stryker's bone grafting catalog page; a stryker.com site search for 'Cortoss' (2026-10-22) returns only a 'VCF Solutions Brochure', a '2019 IVS Portfolio Notebook', a VCF competitive comparison guide and an orthobiologics patents page, with no product page (the guessed /spine/products/cortoss.html URL is a 404)."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/search.html?q=Cortoss"
+    ],
+    "clear_unverified": false,
+    "challenge": "Cortoss has no dedicated stryker.com product page as of 2026-10-22 and appears only in VCF brochures; treat current US availability as unconfirmed. K number and IFU still not retrieved."
+  },
+  {
+    "file": "tibia-knee.json",
+    "kind": "product",
+    "id": "osteoset-t",
+    "set": {
+      "catalog_status_2026": "Plain OsteoSet is listed on Stryker's US bone grafting catalog page (2026-10-22); no tobramycin (OsteoSet T) listing appears, consistent with ex-US-only status."
+    },
+    "append_sources": [
+      "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting.html"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "bd-lens.json",
+    "kind": "payer_policy",
+    "id": null,
+    "match": {
+      "payer": "Anthem / Elevance Health"
+    },
+    "set": {},
+    "append_sources": [],
+    "clear_unverified": false,
+    "challenge": "Anthem Ohio's provider policy library (state-gated; Ohio selected 2026-10-22) returns no bone graft substitute or BMP document: searches for 'bone graft', 'bone graft substitute', 'morphogenetic' and 'CG-SURG-45' return only wound/soft-tissue grafting (SURG.00011, CG-SURG-127), fat grafting and stem-cell policies, and 'spinal fusion' returns hardware/discography policies. The enterprise guideline CG-SURG-45 'Bone Graft Substitutes' exists by title in Anthem Medicaid adopted-guideline lists (NV 2017; CA/NV/IN Aug 2024) and is cross-referenced by TRANS.00035 for bone graft products with endogenous MSCs, but it is absent from the Ohio commercial adopted list (update 10/1/2026, 63 guidelines, no CG-SURG-45) and its document URL was not located. Treat Anthem commercial as having no standalone bone-graft/BMP coverage criteria in Ohio (MCG and spinal-fusion criteria apply) until the CG-SURG-45 text is pulled.",
+    "new_record": {
+      "payer": "Anthem / Elevance Health (Anthem Blue Cross and Blue Shield, Ohio)",
+      "policy_number": "CG-SURG-45 (enterprise clinical UM guideline, title 'Bone Graft Substitutes'; not adopted/listed in Ohio commercial)",
+      "title": "Bone Graft Substitutes (CG-SURG-45); no separate BMP policy found",
+      "date": "Ohio commercial adopted-guideline list update 10/1/2026 (CG-SURG-45 absent); TRANS.00035 cross-reference publish 10/01/2026, last review 05/14/2026",
+      "covered": [],
+      "not_covered_or_experimental": [],
+      "notes": "Ohio library search 2026-10-22 found no bone graft substitute, BMP, or cellular bone matrix policy; bone graft products with exogenous MSCs fall under TRANS.00035 (investigational), endogenous-MSC bone grafts are cross-referenced to CG-SURG-45. The Ohio commercial adopted list (pw_ad083614.pdf) contains 63 CG guidelines and no CG-SURG-45, so a standalone graft-substitute criteria set does not appear to be applied to Ohio commercial members.",
+      "url": "https://www.anthem.com/provider/policies/clinical-guidelines/search/?q=bone%20graft&cnslocale=en_US_oh",
+      "sources": [
+        "https://www.anthem.com/provider/policies/clinical-guidelines/search/?q=bone%20graft&cnslocale=en_US_oh",
+        "https://www.anthem.com/docs/public/inline/pw_ad083614.pdf",
+        "https://www.anthem.com/medpolicies/abcbs/active/mp_pw_b094276.html",
+        "https://www.anthem.com/provider/policies/clinical-guidelines/search/?q=CG-SURG-45&cnslocale=en_US_oh",
+        "https://providers.anthem.com/docs/gpp/NV_CAID_Q42017CUMG.pdf"
+      ],
+      "unverified": true
+    }
+  },
+  {
+    "file": "bd-lens.json",
+    "kind": "reimbursement",
+    "id": "drg-453-455-459-460-retired",
+    "set": {
+      "payment_note": "Not present in the FY2027 Table 5 and not in the FY2027 deletion list. The FY2027 final rule text (CMS-1849-F, 91 FR, Aug 4 2026) states that the level-based MS-DRGs 426, 427, 428, 447 and 448 'had recently become effective October 1, 2024' (i.e. created in the FY2025 rule) and cites the FY2026 final rule (90 FR 36552) for continuing GROUPER-logic requests on them; it names MS-DRG 402 (Single Level Combined Anterior and Posterior Spinal Fusion Except Cervical), 426-428 (Multiple Level Combined A/P, 426 title also carries 'or Custom-Made Anatomically Designed Interbody Fusion Device'), 447-448 (Multiple Level Spinal Fusion Except Cervical; 447 also carries the custom-device title) and 450-451 (Single Level Spinal Fusion Except Cervical; 450 title also carries the custom-device clause). Any reimbursement guide still quoting 453-460 is at least two fiscal years stale.",
+      "source": "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and; https://www.hfma.org/wp-content/uploads/2026/08/FY-2027-Final-IPPS-MS-DRG-Rate-Comparison-to-FY-2026-Rates-1.xlsx"
+    },
+    "append_sources": [
+      "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+    ],
+    "clear_unverified": true,
+    "challenge": null
+  },
+  {
+    "file": "bd-lens.json",
+    "kind": "reimbursement",
+    "id": "pcs-antibiotic-bvf",
+    "set": {
+      "code": "XW0V0P7 (gentamicin-eluting, CERAMENT G); XW0V0BC (vancomycin-eluting, CERAMENT V, new FY2027)",
+      "description": "XW0V0P7: Introduction of gentamicin-eluting bone void filler into bones, open approach, new technology group 7 (title revised for FY2027 from 'antibiotic-eluting'; code created Oct 1, 2021 for CERAMENT G). XW0V0BC: Introduction of vancomycin-eluting bone void filler into bones, open approach, new technology group 12 (new FY2027, CERAMENT V, tied to an FY2027 NTAP application).",
+      "payment_note": "FY2027 final rule (CMS-1849-F, Federal Register Aug 4 2026): XW0V0P7 redesignated from non-O.R. to 'non-O.R. affecting specified MS-DRGs', and cases reporting it reassigned from the lower severity levels (without CC/MCC or with CC) to the highest (with MCC) level in MS-DRGs 463, 474, 477, 480, 492, 616 and 628, plus new MS-DRG 403 (Hip or Knee Procedures with Principal Diagnosis of Periprosthetic Joint Infection with MCC or Insertion of Antibiotic-eluting Bone Void Filler) paired with 404 (without MCC); affected DRG titles gain 'or Insertion of Antibiotic-eluting Bone Void Filler'. XW0V0BC inherits the same O.R. status and MS-DRG assignments. CERAMENT G's infection NTAP ran Oct 1 2022 to Sep 30 2025; an open-fracture NTAP was approved for FY2026. Effective Oct 1, 2026.",
+      "source": "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+    },
+    "append_sources": [
+      "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+    ],
+    "clear_unverified": true,
+    "challenge": null
+  },
+  {
+    "file": "bd-lens.json",
+    "kind": "reimbursement",
+    "id": "drg-480-482",
+    "set": {},
+    "append_sources": [
+      "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "bd-lens.json",
+    "kind": "reimbursement",
+    "id": "drg-492-494",
+    "set": {},
+    "append_sources": [
+      "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "bd-lens.json",
+    "kind": "reimbursement",
+    "id": "drg-523-525",
+    "set": {},
+    "append_sources": [
+      "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "bd-lens.json",
+    "kind": "reimbursement",
+    "id": "drg-402",
+    "set": {},
+    "append_sources": [
+      "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "bd-lens.json",
+    "kind": "reimbursement",
+    "id": "drg-426-428",
+    "set": {},
+    "append_sources": [
+      "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "bd-lens.json",
+    "kind": "reimbursement",
+    "id": "drg-447-448",
+    "set": {},
+    "append_sources": [
+      "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "bd-lens.json",
+    "kind": "reimbursement",
+    "id": "drg-450-451",
+    "set": {},
+    "append_sources": [
+      "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "bd-lens.json",
+    "kind": "reimbursement",
+    "id": "drg-456-458",
+    "set": {},
+    "append_sources": [
+      "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "bd-lens.json",
+    "kind": "reimbursement",
+    "id": "drg-523-525",
+    "set": {
+      "payment_note": "New for FY2027 (effective Oct 1 2026): weights 13.7383 / 9.8322 / 7.2950; base payments $101,512 / $72,650 / $53,903. Final rule text: cases reporting an extensive spinal fusion are reassigned from MS-DRGs 426-428 and 456-458, and cases reporting a custom-made anatomically designed interbody fusion device or SI-joint fusion with an internal fixation device with tulip connector are reassigned from MS-DRGs 402, 426-428, 447-448, 450-451 and 456-458, to new 523-525 (Extensive or Complex Spinal Fusion Procedures Except Cervical with MCC / with CC / without CC/MCC). Created from SI-Bone (iFuse Bedrock Granite) and Carlsmed (aprevo) requests."
+    },
+    "append_sources": [
+      "https://www.federalregister.gov/documents/2026/08/04/2026-15833/medicare-program-hospital-inpatient-prospective-payment-systems-for-acute-care-hospitals-ipps-and"
+    ],
+    "clear_unverified": false,
+    "challenge": null
+  },
+  {
+    "file": "hip-femur.json",
+    "kind": "product",
+    "id": "teriparatide",
+    "set": {},
+    "append_sources": [
+      "PMID:21915572",
+      "https://doi.org/10.2106/JBJS.J.01379"
+    ],
+    "clear_unverified": false,
+    "challenge": null,
+    "append_evidence": [
+      {
+        "ref": "PMID:21915572",
+        "title": "Parathyroid hormone 1-84 accelerates fracture-healing in pubic bones of elderly osteoporotic women (J Bone Joint Surg Am 2011;93(17):1583-7)",
+        "year": 2011,
+        "design": "RCT",
+        "n": 65,
+        "finding": "Prospective randomized open-label trial: 21 women received PTH 1-84 100 ug daily from within 2 days of admission vs 44 controls, all on calcium/vitamin D; CT-confirmed cortical bridging at 7.8 vs 12.6 weeks (p<0.001); at 8 weeks 100% vs 9.1% healed; VAS pain and Timed Up and Go improved.",
+        "sponsor_funded": false,
+        "applications": [
+          "acetabular-pelvic-ring-fracture"
+        ]
+      }
+    ],
+    "application_updates": [
+      {
+        "application_id": "acetabular-pelvic-ring-fracture",
+        "evidence_summary": "One small open-label RCT in osteoporotic pubic-ramus fractures (Peichl 2011, PMID 21915572, n=65: 21 PTH 1-84 vs 44 control; healing 7.8 vs 12.6 weeks, 100% vs 9.1% healed at 8 weeks) and a planned Calgary phase 1/2 RCT (NCT06303284, n=54).",
+        "caveats": "PTH 1-84 (not teriparatide/PTH 1-34), unequal 1:2 allocation, open-label, single center, pubic rami only; PTH 1-84 is not marketed in the US."
+      }
+    ]
+  },
+  {
+    "file": "upper-extremity.json",
+    "kind": "product",
+    "id": "bmac",
+    "set": {
+      "evidence.0.ref": "PMID:15995108",
+      "evidence.0.title": "Percutaneous autologous bone-marrow grafting for nonunions. Influence of the number and concentration of progenitor cells (J Bone Joint Surg Am 2005;87(7):1430-7); the 2006 technique paper is PMID 16951103",
+      "evidence.0.year": 2005
+    },
+    "append_sources": [
+      "PMID:15995108"
+    ],
+    "clear_unverified": false,
+    "challenge": null,
+    "application_updates": [
+      {
+        "application_id": "humeral-shaft-nonunion",
+        "evidence_summary": "The foundational percutaneous BMAC data are tibial (Hernigou 2005, PMID 15995108: 60 atrophic tibial nonunions, 53 united, failures received fewer progenitors; technique paper PMID 16951103). Humeral nonunions were included in the ORTHO-1 expanded-MSC feasibility trial (28 femur/tibia/humerus nonunions; PMID 29598897)."
+      }
+    ]
+  },
+  {
+    "file": "investigational.json",
+    "kind": "product",
+    "id": "bmac-point-of-care",
+    "set": {},
+    "append_sources": [
+      "https://doi.org/10.2106/JBJS.D.02215"
+    ],
+    "clear_unverified": false,
+    "challenge": null,
+    "application_updates": [
+      {
+        "application_id": "general-nonunion",
+        "note": "Union count verified against the PubMed abstract on 2026-10-22: bone union in 53 of 60; the 7 failures received 634 +/- 187 progenitors/cm3 vs >1,500 in united cases (PMID 15995108). Note that PMID 16085610, sometimes cited for this paper, is an unrelated TKA outcomes review."
+      }
+    ]
+  }
+]

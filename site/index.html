@@ -395,9 +395,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 <section id="projects">
   <div class="sec-head">
     <div><div class="eyebrow">Projects</div><h2 style="margin-top:12px">Tools I built so buyers can see the math.</h2></div>
-    <p class="lede">Value-based care only sells when the CFO can see the number. So I built the number: a public, checkable model of the CMS TEAM bundled-payment program that 711 hospitals were mandated into in 2026, with every rule traced to the CMS document it came from, and a record of how it was reasoned.</p>
+    <p class="lede">Buyers trust what they can check. So I build things that can be checked: an atlas of the orthobiologics market organized by the surgery each product is used in, and a public model of the CMS TEAM bundled-payment program that 711 hospitals were mandated into in 2026, with every rule traced to the CMS document it came from.</p>
   </div>
-  <div class="grid2" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px">
+  <div class="grid2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px">
+    <div class="board">
+      <div class="board-head"><span>Biologics Atlas</span><span class="live">Live</span></div>
+      <p style="color:var(--muted)">Click a bone and see every orthobiologic sold or studied for the operations done there: bone graft substitutes, growth factors, cellular allografts and investigational cell therapies across spine, trauma and the skull. Each product carries its FDA pathway, its strongest study, an honest evidence grade for that specific use, and how it gets paid.</p>
+      <div class="tiles"><div class="tile"><div class="lab">Products tiered</div><div class="val">90+</div><div class="delta">established, emerging, investigational</div></div><div class="tile"><div class="lab">Citations</div><div class="val">300+</div><div class="delta">PubMed, ClinicalTrials.gov, FDA</div></div></div>
+      <div class="board-foot">Public sources only. Every FDA number checked against openFDA. Not medical advice, no affiliation with any company.</div>
+      <div class="actions"><a class="btn primary small" href="/biologics-atlas/">Open the atlas</a></div>
+    </div>
     <div class="board">
       <div class="board-head"><span>CMS TEAM Episode Calculator</span><span class="live">Live</span></div>
       <p style="color:var(--muted)">Pick any of the 721 participant hospitals and the tool prefills its 2024 Medicare volumes, Care Compare quality, post-discharge spending and county market from thirteen public CMS datasets, then shows the estimated payment or repayment under Tracks 1, 2 and 3 with the quality adjustment, stop-loss rules and sequestration applied. Post-acute levers, a five-year view, and net to the hospital after program cost.</p>

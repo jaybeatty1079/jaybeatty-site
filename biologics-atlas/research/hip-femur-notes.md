@@ -1,0 +1,66 @@
+# Hip, pelvis, femur and distal femur: research notes
+
+Companion to `hip-femur.json`. Reviewed 2026-10-21. Sources: PubMed (via the bio-research PubMed tool), ClinicalTrials.gov, openFDA 510(k) API, FDA PMA/HDE/recall database pages, company sites, SEC filings and press coverage reached through WebSearch. The WebSearch budget for this session ran out partway through; the gaps below are the direct result and are marked where a follow-up search would close them.
+
+## 1. What I could not verify (fix before publishing)
+
+| Item | What the JSON says | What is missing |
+|---|---|---|
+| Norian current US status | `status: off-market`, `unverified: true` | The 2010 plea required Synthes to divest Norian; I recall the buyer was Kensey Nash (2011, later DSM) but could not retrieve a source. Synthes still received a Norian Drillable 510(k) in January 2011 (K102722). Whether any Norian-branded CPC is sold in the US today is unknown. |
+| chronOS Inject US clearance | `unverified: true`; K numbers given are for chronOS beta-TCP granules | No FDA 510(k) under "chronOS Inject" exists in openFDA. It is probably CE-marked only. The record should either be renamed to the chronOS granule family or flagged ex-US. |
+| HydroSet K number | K060763 (from the FDA recall record) with K060061 and K161447 as related | The recall record names K060763 but openFDA's device-name search did not return it (device name may be filed as "Stryker Injectable Cement"). Confirm on the FDA 510(k) page for K060763. |
+| Cerament V | `none-unapproved`, `status: investigational` | Not on Bonesupport's US product page and no FDA record found; I did not confirm a company statement that it is ex-US only. |
+| Arthrex Angel bone-marrow 510(k) | K number not located | Cytomedix SEC filings describe a November 2012 clearance for blood-plus-marrow processing; the K number and current applicant (Nuo Therapeutics? Arthrex?) were not found. |
+| Magellan BMAC clearance under Arteriocyte/Isto | Only the 2002 Medtronic Vascular K021902 found | openFDA returned 27 "Magellan" records but only 9 rendered; an Arteriocyte-era clearance may exist. |
+| Harvest / Terumo BCT today | Listed as Terumo BCT, `unverified: true` | harvesttech.com returned an empty page. I could not confirm whether Terumo still sells SmartPReP BMAC in the US in 2026. |
+| DBX distribution | "distributed by DePuy Synthes", `unverified: true` | Confirmed from 2005 Osteotech 10-K (Synthes Trauma/Spine). J&J MedTech page returned 404; MTF's page lists DBX as a brand but not the distributor. Current contract not confirmed. |
+| OSTEOSET in the Stryker catalog | `unverified: true` on regulatory block | Stryker's Pro-Dense product URL returned 404; could not confirm whether Osteoset remains an active SKU after the Wright integration. |
+| Peichl 2011 teriparatide pelvic-fracture RCT | Cited in prose, not in `evidence[]` | PubMed searches did not return it (PTH 1-84, n=65, JBJS 2011 from memory). Needs a PMID before it is used. |
+| Hip fracture volume | "~300,000 per year" with `unverified: true` | The figure is everywhere but traces to 1990s HCUP data. Lewiecki 2018 (PMID 29282482) gives Medicare rates, not a national count. A current CDC/HCUP number should replace it. |
+| OP-1 later ownership | Olympus Biotech closed US operations 2014; Ember Therapeutics / Viscogliosi Brothers 2018 | Payer-policy documents and press; the FDA HDE page still lists Olympus Biotech as applicant. The 2012 Stryker Biotech misdemeanor plea over OP-1/Calstrux promotion is from memory and flagged as not re-verified. |
+| Bohner sentence | "sentenced later" | Three executives sentenced November 21, 2011 (DOJ release confirmed by title/date; body not extractable). Wikipedia says all four got 5-9 months; Bohner's hearing was postponed after his lawyer collapsed. His final sentence date was not retrieved. |
+| Synthes/Norian plea amounts | "~$23 million" | Sources give $23 million and $23.2 million; the DOJ PDF was not text-extractable here. |
+| Infuse trauma kit price | "$3,000-5,000, not verified" | No public list price retrieved. |
+| MS-DRG numbers | 480-482 hip and femur procedures except major joint | From memory of the CMS MS-DRG definitions manual (v42); the CMS page I tried returned 404. Confirm titles before publication. |
+| Bonesupport US channel history | "direct after ending Zimmer Biomet distribution 2017-2018" | From memory; not re-verified. |
+| Biocomposites Stimulan VG | US Phase II trials noted | Approval status after the trials not checked. |
+
+## 2. Evidence that is thin, negative or commonly overstated
+
+- Hip fracture biologics are mostly a story of negative industry RCTs: teriparatide femoral neck (Bhandari 2016, pooled n=159, stopped for slow accrual, no effect), romosozumab hip fracture (Schemitsch 2020, n=332, no effect), PFNA cement augmentation (Kammerlander 2018, n=223, primary endpoint negative, revision trend only), Cerament G FORTIFY (open tibia, n=201, 64% vs 66%, "inconclusive"), BMAC in post-collapse osteonecrosis (Hauzeur 2018, negative), cultured osteoblasts in pre-collapse ONFH (Jayankura 2023, Bone Therapeutics phase 3, negative).
+- The positive osteonecrosis evidence is dominated by one surgeon (Hernigou, Creteil). The 125-patient bilateral-hip RCT with 25-year follow-up is remarkable but has never been independently replicated at that scale; the Johns Hopkins RCT (NCT06123481, n=192, recruiting from April 2025) is the first serious US attempt.
+- BMAC device 510(k)s clear a centrifuge, not a clinical claim. None of the Hernigou data used a commercial point-of-care system. Cell dose is rarely measured in practice; Hernigou's own threshold (>1,500 CFU-F/mL) is seldom achieved by single-pass devices.
+- Every bone void filler is labeled "not intrinsic to the stability of the bony structure" while being sold for load-adjacent metaphyseal voids in the distal femur. There is no RCT in distal femur fractures for any filler. The best "evidence" is a cadaver study (Bäumlein 2020) and a 13-patient series with no femurs in it.
+- Infuse: tibia-only label; the 450-patient BESTT trial is the evidence everyone cites, and it is not about the femur. FDA-required subgroup analyses (reamed nails) were less favorable than the headline.
+- OP-1: the pivotal trial showed OP-1 "statistically indistinguishable" from autograft (81% vs 85%), which is why it got an HDE and never a PMA.
+- PRP in long-bone fracture: Cochrane found one eligible trial (n=21). The 2024 umbrella review's positive healing-rate result disappears when individual studies rather than meta-analyses are pooled.
+- Teriparatide in atypical femoral fracture: the best prospective study (Watts 2017, n=14, open-label) concluded it "should not be relied on to aid in healing." Everything else is case reports.
+- Traumacem V+ is PMMA, not a biologic. It is in the file because it is the only augmentation material with a specific proximal-femur indication and an RCT, and because it displaced calcium phosphate cements (Norian SRS) for that job.
+- Masquelet is a technique, not a product; RIA is a harvesting instrument. Both are in the products array at the requester's instruction and flagged with `challenge`.
+
+## 3. Ownership and corporate changes to track
+
+- Johnson & Johnson announced on October 14, 2025 that it will separate DePuy Synthes (about $9.2 billion 2024 sales) into a standalone company within 18-24 months, primary route a tax-free spin. Traumacem V+, chronOS, RIA 2, Norian heritage and DBX distribution all move with it.
+- Stryker acquired Wright Medical on November 11, 2020 (~$4.1 billion); Pro-Dense, Osteoset and Allomatrix are now Stryker, with "Wright Medical Technology, Inc. (Stryker Corporation)" still the 510(k) applicant (K252085, September 30, 2025).
+- Medtronic acquired Osteotech (Grafton) in November 2010 for about $123 million; a Grafton/Magnifuse 510(k) refresh was cleared June 12, 2025 (K251193).
+- Bonesupport: De Novo DEN210044 for Cerament G granted May 17, 2022; 510(k) K234008 (March 13, 2024) added open fractures to the indication despite the negative FORTIFY trial; Cerament BVF refreshed under K240459 (March 5, 2024).
+- Biocomposites: TA Associates majority since 2017; March 2025 recap with Novo Holdings as co-controlling investor; acquired Artoss (NanoBone) June 2023.
+- Isto Biologics: formed October 2016 when ISTO Holdings (Thompson Street Capital Partners) bought Arteriocyte (Magellan); Progenicare added 2017; an aggregator profile says Keensight Capital took a majority in September 2025 (unverified).
+- Terumo bought Harvest Technologies in 2011 ($70 million plus milestones). Current status unknown (see section 1).
+- OP-1: Stryker Biotech to Olympus Biotech (2010-2011), US operations closed 2014, later Ember Therapeutics, then a 2018 letter of intent with Viscogliosi Brothers.
+- Norian: acquired by Synthes 1999; 52-count felony indictment 2009; Synthes and Norian pleaded guilty October 2010 (Norian felony conspiracy, ~$23 million, divestiture required); three executives sentenced to 5-9 months November 21, 2011 under the responsible-corporate-officer doctrine; J&J bought Synthes June 2012 (~$19.7 billion).
+
+## 4. What a trauma-biologics hiring manager would challenge
+
+1. "Where does a biologic actually get used in a hip fracture?" Expected answer: almost nowhere at index surgery. Nail augmentation (PMMA), secondary-prevention drugs (zoledronate with mortality data), and salvage (nonunion, osteonecrosis). Anyone who says "BMP for hip fractures" is wrong on label and on evidence.
+2. "Why did Traumacem V+ get a label when Norian did not survive?" Because Synthes tied the cement to its own nail (TFN-Advanced) through a bone-cement 510(k), ran an RCT, and did not promote outside the label.
+3. "Is Cerament G's open-fracture claim supported?" The pivotal trauma RCT missed its composite endpoint; the 2024 510(k) rests on substantial equivalence to the De Novo device. Expect pushback from value-analysis committees.
+4. "What is the autograft benchmark and its cost?" RIA at roughly $740 per disposable (2014) with union equal to iliac crest and less donor pain; any femoral biologic must beat that.
+5. "How is any of this paid for?" Inpatient trauma biologics are bundled into MS-DRGs (hip and femur procedures 480-482; nonunion and defect revisions in the same family). No pass-through, no separate HCPCS for void fillers, DBM, BMAC or BMP in trauma. Drugs sit on the pharmacy or Part B benefit. Anyone pitching "reimbursement upside" for a trauma void filler should be asked which code.
+6. "Which hip-osteonecrosis evidence would you put in front of a skeptical surgeon?" The Hernigou bilateral RCT and the Papakostidis meta-analysis, with the honest caveat that it is one center, the negative post-collapse RCT, and the pending Johns Hopkins trial.
+7. "What did the Norian case change?" Clinical "test markets" without an IDE, promotion into a labeled contraindication, and adverse-event under-reporting became personal criminal exposure for executives. This is why trauma biologics marketing is label-literal today.
+8. "Is PMMA a biologic?" No. Being able to say so cleanly, and explain why it is still the most-used augmentation material in the osteoporotic hip, is the tell of someone who knows the trauma OR.
+
+## 5. State of the market today (October 2026)
+
+Hip and femur trauma remains a hardware market in which biologics are a rounding error at index surgery: the roughly 300,000 US hip fractures a year are treated with nails, screws and arthroplasty, and the only adjuncts with level I evidence are a drug for the next fracture (zoledronic acid, HORIZON-RFT, PMID 17878149) and PMMA augmentation of a nail (Kammerlander 2018, PMID 29724590), neither of which is a biologic. Biologic volume is concentrated in salvage: femoral nonunion and segmental defects, where RIA autograft (Dawson 2014, PMID 24625833) is the benchmark and DBMs (Grafton, DBX, Allomatrix), ceramics (Cerament, Pro-Dense, chronOS, Vitoss) and off-label Infuse are extenders; and pre-collapse femoral head osteonecrosis, where BMAC-augmented core decompression (Hernigou 2018, PMID 29744647; meta-analysis PMID 26220203) is the main growth pocket and a 192-patient US RCT (NCT06123481) is the next evidence event. The products with regulatory momentum are antibiotic-eluting fillers for infected trauma (Cerament G, DEN210044 2022 and K234008 2024; Stimulan with surgeon-mixed antibiotics), not osteoinductive agents; rhBMP-7 is gone (OP-1 HDE H010002, US sales ended 2014) and rhBMP-2 is tibia-only and shrinking under DRG bundling. The pharmacologic anabolics have failed as healing accelerators in industry RCTs (teriparatide PMID 26932738, romosozumab PMID 31977817) and now compete only in secondary prevention, where generic teriparatide and zoledronate set the price. Structurally, the hip and femur biologics shelf is being re-sorted by corporate events rather than by evidence: J&J's planned 2026-2027 spin of DePuy Synthes (announced October 14, 2025), Stryker's absorption of Wright's biologics, and private-equity roll-ups in point-of-care cell concentration (Isto, Biocomposites' recap) will decide who holds the trauma-tray contracts that pull these products through.
