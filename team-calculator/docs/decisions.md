@@ -258,6 +258,6 @@ Reproduced on the page: the CMS quality-weighting example (51.4 vs 51.5 from unr
 3. Peer benchmarking across the 721 participants from the dataset already loaded.
 4. HCC-based risk multiplier from the hospital's own claims.
 5. System roll-up across many CCNs.
-6. Command-line tests, a data manifest with pull dates, a commit history that shows the iteration.
+6. Command-line tests (done October 22: `tests/engine.test.js`, 22 checks against the CMS rules), a data manifest with pull dates, a commit history that shows the iteration. The [architecture note](ARCHITECTURE.md) draws version two.
 
 Estimates only. Independent educational work from public CMS documents; not affiliated with or endorsed by CMS; no patient data.

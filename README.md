@@ -17,7 +17,9 @@ TEAM is a mandatory Medicare bundled-payment model that started January 1, 2026 
 - Pick any of the 721 participant hospitals and the page prefills its 2024 Medicare volumes, Care Compare quality measures, price-standardized post-discharge spending, county post-acute market and Medicare Advantage share, and FY2027 cost-report facts, each with its source shown.
 - Six case hospitals, named by type and city, are derived from the same public data.
 - `TEAM_Calculator_Model_Spec.md` is the plain-English rulebook: every formula, every source, and what is deliberately left out.
-- `build/` holds the scripts: `build_metrics.py` joins 13 public CMS datasets by hospital, `derive.py` compacts them for the page, and `assemble.py` writes `index.html` from `template.html`, `app.js` and the JSON in `data/`.
+- `build/` holds the scripts: `build_metrics.py` joins 13 public CMS datasets by hospital, `derive.py` compacts them for the page, and `assemble.py` writes `index.html` from `template.html`, `engine.js`, `app.js` and the JSON in `data/`.
+- `build/engine.js` is the reconciliation engine on its own: no DOM, no page state. `tests/engine.test.js` runs 22 checks against it (`node --test tests/` from `team-calculator/`, Node 18+, no dependencies): the CMS quality tables, track rules, stop limits, low-volume floor, sequestration and lever math.
+- `docs/decisions.md` is the decision record (22 decisions with the alternatives that lost, the 16-point CFO review, validation, roadmap). `docs/ARCHITECTURE.md` maps the build and draws version two. `docs/WRITEUP.md` is the short essay on why it was built and what it taught.
 
 Raw CMS downloads (about 500 MB of Care Compare, cost report and claims files) are not in the repo; the scripts re-download them from data.cms.gov.
 
