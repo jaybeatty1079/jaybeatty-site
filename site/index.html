@@ -49,8 +49,8 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:co
 nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
 .brand{font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
 .brand b{color:var(--green-soft);font-weight:400}
-.links{display:flex;gap:22px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
-.links a{color:var(--muted)}
+.links{display:flex;gap:22px;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}
+.links a{color:var(--fg);font-weight:600}
 .links a:hover{color:var(--fg);text-decoration:none}
 @media(max-width:860px){.links{display:none}}
 
@@ -61,7 +61,7 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:16px;heigh
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .chip{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:6px;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--purple);color:var(--fg)}
+.btn{font-weight:700;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:6px;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--purple);color:var(--fg)}
 .btn.primary{background:var(--purple);border-color:var(--purple)}
 .btn:hover{text-decoration:none;filter:brightness(1.1)}
 
@@ -253,6 +253,20 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 .board.project{gap:16px;padding:24px}
 .board.project .tag{font-family:var(--display);font-style:italic;font-size:1.15rem;color:var(--green-soft)}
 .board.project .actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ATCG mark: Jay's logo with a light pulse travelling the helix */
+.atcg-logo{position:relative;width:148px;height:148px;flex:0 0 auto;animation:atcg-float 7s ease-in-out infinite;filter:drop-shadow(0 10px 28px rgba(16,161,151,.28))}
+.atcg-logo img{width:100%;height:100%;display:block;border-radius:50%}
+.atcg-logo .helix{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:screen}
+.atcg-logo .helix path{fill:none;stroke:#6fe3a3;stroke-width:2.4;stroke-linecap:round;stroke-dasharray:16 320;stroke-dashoffset:0;opacity:.95;filter:url(#hx-glow);animation:atcg-pulse 5.5s linear infinite}
+.atcg-logo .helix .s2{animation-delay:-2.75s;stroke:#b7a6ff}
+@keyframes atcg-pulse{to{stroke-dashoffset:-336}}
+@keyframes atcg-float{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-6px) rotate(1.5deg)}}
+@media(prefers-reduced-motion:reduce){.atcg-logo,.atcg-logo .helix path{animation:none}}
+.board.atcg{padding:24px}
+.atcg-row{display:flex;gap:26px;align-items:center}
+@media(max-width:700px){.atcg-row{flex-direction:column;align-items:flex-start}}
+.atcg-row .board-head{margin-bottom:10px}
 </style>
 
 </head>
@@ -432,11 +446,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
       <div class="actions"><a class="btn primary small" href="/team-calculator/">Open the calculator</a><a class="btn small" href="/team-calculator/docs/decisions.html">How it was built</a></div>
     </article>
   </div>
-  <div class="board" style="margin-top:18px">
-    <div class="board-head"><span>ATCG sales collateral</span><span>Writing and art direction</span></div>
-    <p style="color:var(--muted)">The physician and patient brochures our field team carried into primary care and specialty offices to sell pharmacogenomic, hereditary cancer and cardiac genetic testing. I wrote every word and art-directed each piece. They were built around the first objection in every office, "is this more work for my staff?", by sending patients' questions to the lab, not the provider.</p>
-    <div class="tiles"><div class="tile"><div class="lab">Pieces</div><div class="val">6</div><div class="delta">2 physician, 4 patient</div></div><div class="tile"><div class="lab">Tests sold</div><div class="val">3 lines</div><div class="delta">PGx, hereditary cancer, cardiac</div></div></div>
-    <div class="actions"><a class="btn primary small" href="atcg-collateral.html">See the collateral</a></div>
+  <div class="board atcg" style="margin-top:18px">
+    <div class="atcg-row">
+      <div class="atcg-logo " aria-hidden="true"><img src="portfolio/atcg/atcg-logo.png" alt="" width="360" height="360" loading="lazy"><svg class="helix" viewBox="0 0 100 100" aria-hidden="true"><defs><filter id="hx-glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path class="s1" d="M3,50 C10,29 22,29 29,50 C36,77 64,77 71,50 C78,29 90,29 97,50"/><path class="s2" d="M3,50 C10,71 22,71 29,50 C36,23 64,23 71,50 C78,71 90,71 97,50"/></svg></div>
+      <div>
+        <div class="board-head"><span>ATCG · clinical genetics laboratory</span><span>COO · identity, copy and art direction</span></div>
+        <p style="color:var(--muted)">Starting in 2019 I ran ATCG as COO, a CLIA high-complexity clinical genetics lab in Irvine, California, selling pharmacogenomic, hereditary cancer, cardiac and carrier screening tests into physician offices and, later, government programs. I designed the lab's identity, including this mark, and wrote and art-directed every piece the field team carried into an office. The collateral portfolio shows the physician and patient brochures, built around the first objection in every practice: "is this more work for my staff?"</p>
+        <div class="actions"><a class="btn primary small" href="atcg-collateral.html">See the collateral portfolio</a></div>
+      </div>
+    </div>
   </div>
 </section>
 
