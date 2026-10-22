@@ -78,6 +78,13 @@ if out.startswith(SITE):
 body = re.search(r"<body>(.*)</body>", html, re.S).group(1)
 style = re.search(r"<style>.*?</style>", html, re.S).group(0)
 fonts = re.search(r'<link rel="stylesheet" href="https://fonts.googleapis.com[^>]*>', html).group(0)
+# the artifact viewer refuses pages over ~768 KB, so the preview drops per-record source lists (the site page keeps them)
+def drop_sources(o):
+    if isinstance(o, dict): return {k: drop_sources(v) for k, v in o.items() if k != "sources"}
+    if isinstance(o, list): return [drop_sources(x) for x in o]
+    return o
+data_art = json.dumps(drop_sources(data), separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
+body = body.replace(data_js, data_art)
 art = "<title>Biologics Atlas</title>\n" + fonts + "\n" + style + "\n" + body
 art = art.replace('href="/', 'href="https://jaybeatty.com/')
 open(os.path.join(ROOT, "app/dist/artifact.html"), "w").write(art)
