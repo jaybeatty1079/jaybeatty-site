@@ -113,6 +113,22 @@ td small{display:block;color:var(--muted);font-size:.8rem}
 .disc{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:10px;padding:14px 16px;font-size:.9rem;color:var(--muted)}
 footer{border-top:1px solid var(--line);padding-block:22px;font-size:.78rem;color:var(--muted)}
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* wordmarks */
+.wordmark{display:flex;align-items:center;gap:14px;min-width:0}
+.wordmark .mark{width:52px;height:52px;flex:0 0 auto;filter:drop-shadow(0 6px 18px rgba(131,102,234,.25))}
+.wordmark.lg .mark{width:64px;height:64px}
+.wordmark .wm{display:grid;gap:2px;min-width:0}
+.wordmark .wm-k{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green-soft)}
+.wordmark .wm-t{font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.05;letter-spacing:-.01em;color:var(--fg)}
+.wordmark.lg .wm-t{font-size:clamp(1.9rem,3.4vw,2.6rem)}
+.wordmark .wm-t em{font-style:italic;color:var(--purple-soft)}
+
+.d h3{font-size:1.15rem;font-weight:600}
+.d p b{color:var(--green-soft);font-weight:600}
+.col h3{font-size:1.1rem}
+.col p strong,.lede strong{color:var(--fg);font-weight:600}
+table.fixes td:first-child,.fixes td:first-child{font-weight:600;color:var(--fg)}
 </style>
 </head>
 <body>
@@ -126,34 +142,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <div class="wrap">
 <section class="hero">
   <div>
-    <div class="eyebrow">Decision record · CMS TEAM Episode Calculator</div>
-    <h1 style="margin-top:16px">How this tool was <em>reasoned</em> into existence.</h1>
-    <p class="lede" style="margin-top:18px">A calculator is only as good as the choices behind it. This page keeps every one: the eight days of work, the thirteen public datasets and what each supplies, each modeling decision with the alternatives that lost, the CFO-style review that reshaped the engine, and the roadmap from a portfolio piece to a product. Written by Jay Beatty with Claude as the engineering partner; Jay set direction, challenged numbers, and made the calls marked as his.</p>
+    <div class="wordmark lg"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="11" fill="#1c1730" stroke="#2b2542"/><path d="M12 30 A14 14 0 1 1 36 30" fill="none" stroke="#8366ea" stroke-width="3.5" stroke-linecap="round"/><circle cx="12" cy="30" r="3.6" fill="#6fe3a3"/><path d="M29 33.5 l4.2 4.2 l7.4 -8.6" fill="none" stroke="#6fe3a3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="wm"><span class="wm-k">CMS TEAM Episode Calculator · decision record</span><span class="wm-t">How it was <em>built</em></span></div></div>
+    <h1 style="margin-top:22px;font-size:clamp(1.6rem,3vw,2.4rem)">Every choice behind the number, with the alternative that lost.</h1>
+    <p class="lede" style="margin-top:18px">A calculator is only as good as the choices behind it. This page keeps every one: <strong>the public datasets</strong> and what each supplies, <strong>each modeling decision</strong> with the alternatives that lost, <strong>the CFO review</strong> that reshaped the engine, <strong>the tests</strong> that pin the math to the CMS rules, and the road from a portfolio piece to a product. It is updated as the tool changes.</p>
   </div>
   <div class="board" aria-label="Record at a glance">
-    <div class="board-head"><span>The record at a glance</span><span>Oct 12 to Oct 19, 2026</span></div>
+    <div class="board-head"><span>The record at a glance</span><span class="live">Started Oct 12, 2026 · still iterating</span></div>
     <div class="tiles">
-      <div class="tile"><div class="lab">Working sessions</div><div class="val">6</div><div class="delta">over eight days</div></div>
+      <div class="tile"><div class="lab">Build passes</div><div class="val" id="nPass">7</div><div class="delta">each one answered a question</div></div>
       <div class="tile"><div class="lab">Public datasets joined</div><div class="val">13</div><div class="delta">all CMS or MedPAC</div></div>
       <div class="tile"><div class="lab">Hospitals prefilled</div><div class="val">721</div><div class="delta">every TEAM participant</div></div>
-      <div class="tile"><div class="lab">Decisions logged</div><div class="val">22</div><div class="delta">16 from the CFO review</div></div>
+      <div class="tile"><div class="lab">Decisions logged</div><div class="val" id="nDec">22</div><div class="delta"><span id="nFix">16</span> CFO objections fixed</div></div>
     </div>
   </div>
 </section>
 
 <section id="timeline">
   <div class="sec-head">
-    <div><div class="eyebrow">Timeline</div><h2 style="margin-top:12px">Eight days, six passes, one direction.</h2></div>
+    <div><div class="eyebrow">Timeline</div><h2 style="margin-top:12px">One pass at a time, one direction.</h2></div>
     <p class="lede">Each pass answered a question the previous one raised. The first version proved the reconciliation math; the last one answered a CFO's objections. Hover a marker for what shipped.</p>
   </div>
   <figure>
     <figcaption><span class="t">Build timeline</span><span class="s">Markers are sessions; the band under them is what the tool could do at that point. Dates are 2026.</span></figcaption>
-    <svg class="chart" id="chTimeline" viewBox="0 0 1080 300" role="img" aria-label="Timeline of the six build sessions from October 12 to October 19, 2026"></svg>
+    <svg class="chart" id="chTimeline" viewBox="0 0 1080 300" role="img" aria-label="Timeline of the build sessions since October 12, 2026"></svg>
   </figure>
   <div class="cols" style="margin-top:24px">
-    <div class="col"><div class="n">OCT 12 TO 13 · GROUNDWORK</div><h3>The site that would host it</h3><p>Three redesign concepts for jaybeatty.com in black, purple and green. Jay chose Scoreboard. That palette, type and layout became the calculator's identity, which is why the tool reads as part of the site rather than a widget bolted on.</p></div>
-    <div class="col"><div class="n">OCT 15 TO 16 · THE MODEL</div><h3>From rules to a working engine</h3><p>Jay said GO. Version one implemented the published reconciliation order from the CMS PY1 target price workbook and fact sheets. The next day added the levers module, because Jay asked whether post-discharge care and complications belonged, and the evening added service-line tabs and five case hospitals on real 2024 volumes.</p></div>
-    <div class="col"><div class="n">OCT 18 TO 19 · THE DATA AND THE CRITIQUE</div><h3>Real data, then hard questions</h3><p>Jay asked what public data had not been used. Thirteen datasets later, every participant prefills. Then he asked for a CFO's objections, sixteen of them, and had all sixteen fixed in priority order, followed by a margin-context line prompted by a Kaufman Hall report he shared.</p></div>
+    <div class="col"><div class="n">OCT 12 TO 13 · GROUNDWORK</div><h3>The site that would host it</h3><p><strong>Three redesign concepts for jaybeatty.com in black, purple and green.</strong> Scoreboard won. That palette, type and layout became the calculator's identity, which is why the tool reads as part of the site rather than a widget bolted on.</p></div>
+    <div class="col"><div class="n">OCT 15 TO 16 · THE MODEL</div><h3>From rules to a working engine</h3><p><strong>Version one implemented the published reconciliation order from the CMS PY1 target price workbook and fact sheets.</strong> The next day added the levers module, after the question of whether post-discharge care and complications belonged, and the evening added service-line tabs and five case hospitals on real 2024 volumes.</p></div>
+    <div class="col"><div class="n">OCT 18 TO 19 · THE DATA AND THE CRITIQUE</div><h3>Real data, then hard questions</h3><p><strong>Thirteen public datasets joined by CCN, so every participant prefills.</strong> Then a CFO's objections, sixteen of them, all fixed in priority order, followed by a margin-context line prompted by that month's Kaufman Hall flash report.</p></div>
   </div>
 </section>
 
@@ -219,8 +235,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <section id="decisions">
   <div class="sec-head">
-    <div><div class="eyebrow">Decision log</div><h2 style="margin-top:12px">Twenty-two choices, with what lost.</h2></div>
-    <p class="lede">In the order they were made. "Jay" marks a call he made against or beyond the suggestion on the table; the rest were proposed by Claude and accepted. Each entry names the alternative considered and why it was not taken.</p>
+    <div><div class="eyebrow">Decision log</div><h2 style="margin-top:12px">The choices, with what lost.</h2></div>
+    <p class="lede">In the order they were made. Each entry names the alternative considered and why it lost.</p>
   </div>
   <div class="dec" id="declog"></div>
 </section>
@@ -228,7 +244,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <section id="review">
   <div class="sec-head">
     <div><div class="eyebrow">The CFO review</div><h2 style="margin-top:12px">Sixteen objections, sixteen fixes, and what they did to the numbers.</h2></div>
-    <p class="lede">On October 19 Jay asked for the critique a hospital CFO would give, point by point, then had every point fixed in the order a CFO would raise them: net to the hospital first, risk adjustment second, the moving target third. The chart shows the six case hospitals before and after.</p>
+    <p class="lede">On October 19 the tool got the critique a hospital CFO would give, point by point, and every point was fixed in the order a CFO would raise them: net to the hospital first, risk adjustment second, the moving target third. The chart shows the six case hospitals before and after.</p>
   </div>
   <figure>
     <figcaption><span class="t">Case results before and after the review</span><span class="s">Estimated PY1 net payment on each case's chosen track, with the typical program off. The after bars include sequestration, the risk-multiplier seed, census-division comparators and the outpatient joint row, which is why the target books grew. Hover for the target book.</span></figcaption>
@@ -308,10 +324,11 @@ const fmt=n=>{const s=n<0?'−':'';n=Math.abs(n);if(n>=1e6)return s+'$'+(n/1e6).
 const EVENTS=[
  {d:12,t:'Site redesign',s:'Three concepts for jaybeatty.com; Scoreboard chosen the next day. Its palette and type became the calculator\'s.'},
  {d:15,t:'Version one',s:'Reconciliation engine from the CMS PY1 workbook and fact sheets: 29 MS-DRGs × 9 divisions, three tracks, quality adjustment, stop limits, five-year view, 721-hospital picker.'},
- {d:16,t:'Levers',s:'Post-discharge mix and complication levers with editable unit costs, spend-by-setting chart, waterfall. Prompted by Jay asking whether SNF, home health and infections belonged.'},
+ {d:16,t:'Levers',s:'Post-discharge mix and complication levers with editable unit costs, spend-by-setting chart, waterfall. Prompted by the question of whether SNF, home health and infections belonged.'},
  {d:16.6,t:'Lines and cases',s:'Service-line tabs and five case hospitals on real 2024 CMS volumes, named by archetype and city.'},
  {d:18,t:'Public data layer',s:'Thirteen datasets joined by CCN; every participant prefills. FY2027 rule read from the Federal Register text. Sixth case added.'},
- {d:19,t:'CFO review',s:'Sixteen objections fixed in priority order, then a margin-context line from a Kaufman Hall report Jay shared.'}];
+ {d:19,t:'CFO review',s:'Sixteen objections fixed in priority order, then a margin-context line from a Kaufman Hall report.'},
+ {d:22,t:'Engine and tests',s:'The reconciliation math moved into a pure engine file with 22 runnable tests, plus an architecture note and a write-up. Outputs unchanged.'}];
 const BANDS=[{a:12,b:15,l:'design system'},{a:15,b:18,l:'engine, levers, cases'},{a:18,b:19.9,l:'data layer, review'}];
 (function(){const svg=$('chTimeline');const W=1080,H=300,L=40,R=40,top=70,axisY=170;const x=d=>L+(d-11.5)/(20.2-11.5)*(W-L-R);
   BANDS.forEach((b,i)=>{svg.appendChild(el('rect',{x:x(b.a),y:axisY+40,width:x(b.b)-x(b.a),height:28,rx:4,fill:[C.purple,C.magenta,C.green][i],opacity:.22}));svg.appendChild(el('text',{x:(x(b.a)+x(b.b))/2,y:axisY+59,'text-anchor':'middle',class:'mono'},b.l));});
@@ -365,14 +382,14 @@ const DECISIONS=[
  {d:'Oct 15',who:'claude',t:'One HTML file, no backend, no tracking',alt:'A React app with an API and a database.',why:'Deployable anywhere, including as a private preview, with nothing to maintain. The cost is known and documented under What comes next: no persistence, no ingestion, no multi-user.'},
  {d:'Oct 15',who:'claude',t:'Hold PY1 regional prices flat for the five-year view',alt:'Project prices forward with the trend factor.',why:'CMS has published PY1 prices only. Inventing PY2 to PY5 prices would present a guess as a table. Later, the review added a regional ratchet assumption the user controls instead.'},
  {d:'Oct 15',who:'claude',t:'Risk multiplier and quality score as sliders',alt:'Hard-code 1.00 and 50.',why:'CMS has not published either for any hospital, and both move the answer. Making them visible controls says so. The data layer later seeded both from public proxies, labeled.'},
- {d:'Oct 16',who:'jay',t:'Model post-discharge care and complications as levers',alt:'Leave spend as a single number per category.',why:'Jay asked whether SNF, home health, physical therapy and infections belonged. They are where TEAM money moves, so the levers module was built with editable unit costs from MedPAC, HCUP and peer-reviewed sources.'},
+ {d:'Oct 16',who:'jay',t:'Model post-discharge care and complications as levers',alt:'Leave spend as a single number per category.',why:'The question was whether SNF, home health, physical therapy and infections belonged. They are where TEAM money moves, so the levers module was built with editable unit costs from MedPAC, HCUP and peer-reviewed sources.'},
  {d:'Oct 16',who:'claude',t:'Keep the net payment at the hospital level under service-line tabs',alt:'Reconcile each line separately.',why:'CMS reconciles one book per hospital. A line tab shows its contribution and its effect on the hospital result, never its own NPRA, so the page cannot be read as implying line-level settlements.'},
  {d:'Oct 16',who:'jay',t:'Case hospitals named by archetype and city, never by hospital',alt:'Name the real hospitals; the volumes are public.',why:'Volumes were public but performance was modeled, and later derived from all-condition patterns. A real name beside an estimated result reads as a claim about that hospital. Source CCNs live in the spec only.'},
  {d:'Oct 18',who:'claude',t:'Join thirteen public datasets by CCN and prefill every participant',alt:'Prefill only the six cases by hand.',why:'The same work that fills six cases fills 721 hospitals if it runs as a pipeline, and a pipeline is checkable. It also produced the dataset that makes peer benchmarking possible later.'},
  {d:'Oct 18',who:'claude',t:'Derive spend from the hospital\'s post-discharge pattern, holding the anchor at target',alt:'Scale the whole episode by the hospital\'s inpatient payment ratio.',why:'TEAM pays the anchor stay at a standardized MS-DRG price, so hospital-level anchor cost differences are mostly wage index and teaching add-ons that standardization removes. The variance that counts is after discharge.'},
  {d:'Oct 18',who:'claude',t:'Proxy the hybrid hospital-wide readmission measure with hip/knee and CABG readmissions',alt:'Set the quality score to 50 for everyone.',why:'The hybrid measure has no public scores yet. Surgical readmission measures are the closest public signal and are weighted by their denominators. The page says which component is a proxy.'},
  {d:'Oct 18',who:'claude',t:'Safety-net flag from the Medicare SSI share, not the full DSH percentage',alt:'Use DSH patient percentage, which is more familiar.',why:'DSH includes Medicaid days from non-Medicare patients and flagged academic centers that are not safety-net by CMS\'s dual-eligible test. The SSI share is the Medicare-only component and tracks dual eligibility.'},
- {d:'Oct 18',who:'jay',t:'Keep the derived estimate on the named-hospital prefill, labeled',alt:'Prefill only facts and volumes for a searched hospital; keep estimates for anonymized cases.',why:'Jay decided the labeled estimate was more useful than a blank slider, provided the page says it is an estimate from public patterns and not the hospital\'s TEAM result. It does, in the facts panel and the badges.'},
+ {d:'Oct 18',who:'jay',t:'Keep the derived estimate on the named-hospital prefill, labeled',alt:'Prefill only facts and volumes for a searched hospital; keep estimates for anonymized cases.',why:'The labeled estimate was judged more useful than a blank slider, provided the page says it is an estimate from public patterns and not the hospital\'s TEAM result. It does, in the facts panel and the badges.'},
  {d:'Oct 19',who:'jay',t:'Fix all sixteen CFO objections, in the order a CFO would raise them',alt:'Fix the top five and note the rest.',why:'The critique was asked for in order to act on it. Net to the hospital went first because it is the number a CFO signs; the moving target and unit costs next because they are what a CFO would use to dismiss the tool.'},
  {d:'Oct 19',who:'claude',t:'Price outpatient joint and fusion episodes at the matching MS-DRG',alt:'Invent outpatient target prices from OPPS payments.',why:'The CMS workbook states that HCPCS episode types are mapped and reported under the corresponding MS-DRG. Using that mapping keeps the tool on CMS\'s own method; the APC-based prefill is labeled an upper bound.'},
  {d:'Oct 19',who:'claude',t:'Rank quality percentiles among IPPS hospitals eligible for TEAM',alt:'Rank among all 4,700 Care Compare hospitals.',why:'The quality scoring fact sheet says the national set is hospitals eligible for TEAM. Critical access hospitals are not. The impact file is the public list of IPPS hospitals; Maryland is excluded as CMS does.'},
@@ -382,7 +399,8 @@ const DECISIONS=[
  {d:'Oct 19',who:'claude',t:'Clamp the state SNF per diem to $450 to $900',alt:'Use the computed value as is.',why:'Montana and Alaska compute above $1,000 a day because swing-bed stays in critical access hospitals dominate their SNF days. That is not what a freestanding SNF costs, which is what the lever moves.'},
  {d:'Oct 19',who:'claude',t:'Default the margin line to Kaufman Hall\'s 2.5%, not the cost-report margin',alt:'Use each hospital\'s patient-service margin from its cost report.',why:'The cost-report figure excludes investment and other income and depends on allocation choices; across participants its median is −1.6% with a bottom quartile at −13%. Revenue from the cost report is solid, so it prefills; the margin defaults to the industry figure and is editable.'},
  {d:'Oct 19',who:'jay',t:'Keep this record beside the tool, in the repository and on the site',alt:'A private notes file.',why:'A hiring manager or a CFO who reads the calculator should be able to see how it was reasoned, with the alternatives that lost. That is the difference between a weekend project and strategic work, and it only counts if it is visible.'}];
-$('declog').innerHTML=DECISIONS.map((x,i)=>`<div class="d"><div class="no">${String(i+1).padStart(2,'0')}</div><div><h3>${x.t}</h3><div class="meta"><span class="chip">${x.d}</span><span class="chip ${x.who==='jay'?'k':''}">${x.who==='jay'?'Jay\'s call':'Proposed by Claude'}</span></div><p><b>Instead of:</b> ${x.alt}</p><p class="alt"><b>Why:</b> ${x.why}</p></div></div>`).join('');
+if($('nDec'))$('nDec').textContent=DECISIONS.length;
+$('declog').innerHTML=DECISIONS.map((x,i)=>`<div class="d"><div class="no">${String(i+1).padStart(2,'0')}</div><div><h3>${x.t}</h3><div class="meta"><span class="chip">${x.d}</span></div><p><b>Instead of:</b> ${x.alt}</p><p class="alt"><b>Why:</b> ${x.why}</p></div></div>`).join('');
 
 /* ---------- CFO fixes ---------- */
 const FIXES=[
@@ -402,6 +420,7 @@ const FIXES=[
  ['One shift for all five lines','Category-specific adjustments from HRRP excess readmissions and the colon infection ratio; lines without a signal say so.'],
  ['State is not my region','Census-division comparator for post-discharge spend.'],
  ['What happens to my scenario when I click send?','Payload holds only the inputs and the hospital name typed in the form; 30-day retention stated.']];
+if($('nFix'))$('nFix').textContent=FIXES.length;
 $('fixes').innerHTML=FIXES.map((f,i)=>`<tr><td class="n">${i+1}</td><td>${f[0]}</td><td>${f[1]}</td></tr>`).join('');
 
 /* ---------- before / after ---------- */

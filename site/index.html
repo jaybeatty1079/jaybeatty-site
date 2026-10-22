@@ -238,6 +238,21 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 .lb .x{position:absolute;top:max(16px,env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px));font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer}
 .js .strip-src{display:none}
 @media(prefers-reduced-motion:reduce){.js .hero h1 .w,.js .hero .after{animation:none;opacity:1;transform:none}.js .hero h1 em{animation:none;background-size:100% 2px}.strip{mask-image:none;-webkit-mask-image:none;overflow-x:auto}.strip .track{animation:none;width:auto}.strip .fr:hover{transform:none}}
+
+/* wordmarks */
+.wordmark{display:flex;align-items:center;gap:14px;min-width:0}
+.wordmark .mark{width:52px;height:52px;flex:0 0 auto;filter:drop-shadow(0 6px 18px rgba(131,102,234,.25))}
+.wordmark.lg .mark{width:64px;height:64px}
+.wordmark .wm{display:grid;gap:2px;min-width:0}
+.wordmark .wm-k{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green-soft)}
+.wordmark .wm-t{font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.05;letter-spacing:-.01em;color:var(--fg)}
+.wordmark.lg .wm-t{font-size:clamp(1.9rem,3.4vw,2.6rem)}
+.wordmark .wm-t em{font-style:italic;color:var(--purple-soft)}
+
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+.board.project{gap:16px;padding:24px}
+.board.project .tag{font-family:var(--display);font-style:italic;font-size:1.15rem;color:var(--green-soft)}
+.board.project .actions{display:flex;gap:10px;flex-wrap:wrap}
 </style>
 
 </head>
@@ -395,30 +410,27 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 <section id="projects">
   <div class="sec-head">
     <div><div class="eyebrow">Projects</div><h2 style="margin-top:12px">Tools I built so buyers can see the math.</h2></div>
-    <p class="lede">Buyers trust what they can check. So I build things that can be checked: an atlas of the orthobiologics market organized by the surgery each product is used in, and a public model of the CMS TEAM bundled-payment program that 711 hospitals were mandated into in 2026, with every rule traced to the CMS document it came from.</p>
+    <p class="lede">Buyers trust what they can check. So I build things that can be checked, from public sources, with the method published next to the tool.</p>
   </div>
-  <div class="grid2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px">
-    <div class="board">
-      <div class="board-head"><span>Biologics Atlas</span><span class="live">Live</span></div>
-      <p style="color:var(--muted)">Click a bone and see every orthobiologic sold or studied for the operations done there: bone graft substitutes, growth factors, cellular allografts and investigational cell therapies across spine, trauma and the skull. Each product carries its FDA pathway, its strongest study, an honest evidence grade for that specific use, and how it gets paid.</p>
-      <div class="tiles"><div class="tile"><div class="lab">Products tiered</div><div class="val">90+</div><div class="delta">established, emerging, investigational</div></div><div class="tile"><div class="lab">Citations</div><div class="val">300+</div><div class="delta">PubMed, ClinicalTrials.gov, FDA</div></div></div>
+  <div class="projects-grid">
+    <article class="board project">
+      <div class="board-head"><span>Project</span><span class="live">Live</span></div>
+      <div class="wordmark"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="11" fill="#1c1730" stroke="#2b2542"/><circle cx="24" cy="12.5" r="5.2" fill="#d65db1"/><rect x="18.5" y="20.5" width="11" height="4.6" rx="2" fill="#b7a6ff"/><rect x="17" y="27.2" width="14" height="4.6" rx="2" fill="#8366ea"/><rect x="15.5" y="33.9" width="17" height="4.6" rx="2" fill="#6fe3a3"/></svg><div class="wm"><span class="wm-k">Orthobiologics by surgical application</span><span class="wm-t">Biologics <em>Atlas</em></span></div></div>
+      <p class="tag">Click a bone. See what the market actually has for it.</p>
+      <p style="color:var(--muted)">A rotatable skeleton that opens every orthobiologic sold or studied for the operations done at each bone: bone graft substitutes, growth factors, cellular allografts and the investigational cell therapies. Each product carries its FDA pathway, its strongest study, an honest evidence grade for that specific use and how it gets paid.</p>
+      <div class="tiles"><div class="tile"><div class="lab">Regions, spine to skull</div><div class="val">9</div><div class="delta">73 surgical applications</div></div><div class="tile"><div class="lab">Evidence</div><div class="val">350+</div><div class="delta">citations to PubMed, trials and FDA</div></div></div>
       <div class="board-foot">Public sources only. Every FDA number checked against openFDA. Not medical advice, no affiliation with any company.</div>
-      <div class="actions"><a class="btn primary small" href="/biologics-atlas/">Open the atlas</a></div>
-    </div>
-    <div class="board">
-      <div class="board-head"><span>CMS TEAM Episode Calculator</span><span class="live">Live</span></div>
-      <p style="color:var(--muted)">Pick any of the 721 participant hospitals and the tool prefills its 2024 Medicare volumes, Care Compare quality, post-discharge spending and county market from thirteen public CMS datasets, then shows the estimated payment or repayment under Tracks 1, 2 and 3 with the quality adjustment, stop-loss rules and sequestration applied. Post-acute levers, a five-year view, and net to the hospital after program cost.</p>
-      <div class="tiles"><div class="tile"><div class="lab">Hospitals prefilled</div><div class="val">721</div><div class="delta">every TEAM participant</div></div><div class="tile"><div class="lab">Public datasets joined</div><div class="val">13</div><div class="delta">all CMS or MedPAC</div></div></div>
-      <div class="board-foot">Estimates only, from public data. Not affiliated with CMS. No patient data. Validated against the CMS worked examples on the page.</div>
-      <div class="actions"><a class="btn primary small" href="/team-calculator/">Open the calculator</a></div>
-    </div>
-    <div class="board">
-      <div class="board-head"><span>Decision record</span><span>How it was built</span></div>
-      <p style="color:var(--muted)">Eight days of work, kept honest: the timeline, the thirteen datasets and what each supplies, twenty-two modeling decisions with the alternatives that lost, a CFO-style review that reshaped the engine, and the roadmap from a portfolio piece to a product. Built with Claude as the engineering partner, with the calls that were mine marked as mine.</p>
-      <div class="tiles"><div class="tile"><div class="lab">Decisions logged</div><div class="val">22</div><div class="delta">with what lost</div></div><div class="tile"><div class="lab">CFO objections fixed</div><div class="val">16</div><div class="delta">in priority order</div></div></div>
-      <div class="board-foot">Charts for the data vintage, the build timeline, and the case results before and after the review.</div>
-      <div class="actions"><a class="btn small" href="/team-calculator/docs/decisions.html">Read the decision record</a></div>
-    </div>
+      <div class="actions"><a class="btn primary small" href="/biologics-atlas/">Open the atlas</a><a class="btn small" href="/biologics-atlas/#method">How it was built</a></div>
+    </article>
+    <article class="board project">
+      <div class="board-head"><span>Project</span><span class="live">Live</span></div>
+      <div class="wordmark"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="11" fill="#1c1730" stroke="#2b2542"/><path d="M12 30 A14 14 0 1 1 36 30" fill="none" stroke="#8366ea" stroke-width="3.5" stroke-linecap="round"/><circle cx="12" cy="30" r="3.6" fill="#6fe3a3"/><path d="M29 33.5 l4.2 4.2 l7.4 -8.6" fill="none" stroke="#6fe3a3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="wm"><span class="wm-k">CMS TEAM · mandatory bundled payment</span><span class="wm-t">Episode <em>Calculator</em></span></div></div>
+      <p class="tag">What will TEAM pay your hospital, or cost it?</p>
+      <p style="color:var(--muted)">Pick any of the 721 participant hospitals and the tool prefills its Medicare volumes, Care Compare quality, post-discharge spending and county market from thirteen public CMS datasets, then runs the published reconciliation rules: regional target prices, risk and quality adjustment, stop limits by track, sequestration. Service-line views, post-acute levers, a five-year look and a net-to-hospital panel a CFO would argue with.</p>
+      <div class="tiles"><div class="tile"><div class="lab">Hospitals prefilled</div><div class="val">721</div><div class="delta">every TEAM participant</div></div><div class="tile"><div class="lab">Public datasets joined</div><div class="val">13</div><div class="delta">all CMS, with release dates</div></div></div>
+      <div class="board-foot">Estimates only, from public data. Not affiliated with CMS. No patient data. Validated against the CMS worked examples on the page and in a runnable test file.</div>
+      <div class="actions"><a class="btn primary small" href="/team-calculator/">Open the calculator</a><a class="btn small" href="/team-calculator/docs/decisions.html">How it was built</a></div>
+    </article>
   </div>
   <div class="board" style="margin-top:18px">
     <div class="board-head"><span>ATCG sales collateral</span><span>Writing and art direction</span></div>

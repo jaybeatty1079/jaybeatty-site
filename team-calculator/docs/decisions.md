@@ -2,7 +2,7 @@
 
 How the CMS TEAM Episode Calculator was reasoned into existence: the timeline, the public datasets, every modeling decision with the alternative that lost, the CFO review, and the roadmap. The HTML version of this page (`decisions.html`) carries the charts.
 
-Written by Jay Beatty with Claude as the engineering partner. Jay set direction, challenged numbers, and made the calls marked as his. Oct 12 to 19, 2026.
+Jay Beatty. Started October 12, 2026 and updated as the tool changes.
 
 ## Timeline
 
@@ -10,10 +10,11 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 |---|---|---|
 | Oct 12 | Site redesign | Three concepts for jaybeatty.com; Scoreboard chosen the next day. Its palette and type became the calculator's. |
 | Oct 15 | Version one | Reconciliation engine from the CMS PY1 workbook and fact sheets: 29 MS-DRGs × 9 divisions, three tracks, quality adjustment, stop limits, five-year view, 721-hospital picker. |
-| Oct 16 | Levers | Post-discharge mix and complication levers with editable unit costs, spend-by-setting chart, waterfall. Prompted by Jay asking whether SNF, home health and infections belonged. |
+| Oct 16 | Levers | Post-discharge mix and complication levers with editable unit costs, spend-by-setting chart, waterfall. Prompted by the question of whether SNF, home health and infections belonged. |
 | Oct 16 | Lines and cases | Service-line tabs and five case hospitals on real 2024 CMS volumes, named by archetype and city. |
 | Oct 18 | Public data layer | Thirteen datasets joined by CCN; every participant prefills. FY2027 rule read from the Federal Register text. Sixth case added. |
-| Oct 19 | CFO review | Sixteen objections fixed in priority order, then a margin-context line from a Kaufman Hall report Jay shared. |
+| Oct 19 | CFO review | Sixteen objections fixed in priority order, then a margin-context line from a Kaufman Hall report. |
+| Oct 22 | Engine and tests | The reconciliation math moved into a pure engine file with 22 runnable tests, plus an architecture note and a write-up. Outputs unchanged. |
 
 ## Data sources
 
@@ -41,7 +42,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 1. Black, deep purple and green, with charts and photos
 
-*Oct 12 · Jay's call*
+*Oct 12*
 
 **Instead of:** Keep the live text-only site and add a page.
 
@@ -49,7 +50,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 2. Build a TEAM calculator at all, on public CMS sources only
 
-*Oct 15 · Jay's call*
+*Oct 15*
 
 **Instead of:** A slide deck about TEAM; or a tool fed by licensed hospital data from past roles.
 
@@ -57,7 +58,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 3. One HTML file, no backend, no tracking
 
-*Oct 15 · Proposed by Claude*
+*Oct 15*
 
 **Instead of:** A React app with an API and a database.
 
@@ -65,7 +66,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 4. Hold PY1 regional prices flat for the five-year view
 
-*Oct 15 · Proposed by Claude*
+*Oct 15*
 
 **Instead of:** Project prices forward with the trend factor.
 
@@ -73,7 +74,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 5. Risk multiplier and quality score as sliders
 
-*Oct 15 · Proposed by Claude*
+*Oct 15*
 
 **Instead of:** Hard-code 1.00 and 50.
 
@@ -81,15 +82,15 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 6. Model post-discharge care and complications as levers
 
-*Oct 16 · Jay's call*
+*Oct 16*
 
 **Instead of:** Leave spend as a single number per category.
 
-**Why:** Jay asked whether SNF, home health, physical therapy and infections belonged. They are where TEAM money moves, so the levers module was built with editable unit costs from MedPAC, HCUP and peer-reviewed sources.
+**Why:** The question was whether SNF, home health, physical therapy and infections belonged. They are where TEAM money moves, so the levers module was built with editable unit costs from MedPAC, HCUP and peer-reviewed sources.
 
 ### 7. Keep the net payment at the hospital level under service-line tabs
 
-*Oct 16 · Proposed by Claude*
+*Oct 16*
 
 **Instead of:** Reconcile each line separately.
 
@@ -97,7 +98,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 8. Case hospitals named by archetype and city, never by hospital
 
-*Oct 16 · Jay's call*
+*Oct 16*
 
 **Instead of:** Name the real hospitals; the volumes are public.
 
@@ -105,7 +106,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 9. Join thirteen public datasets by CCN and prefill every participant
 
-*Oct 18 · Proposed by Claude*
+*Oct 18*
 
 **Instead of:** Prefill only the six cases by hand.
 
@@ -113,7 +114,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 10. Derive spend from the hospital's post-discharge pattern, holding the anchor at target
 
-*Oct 18 · Proposed by Claude*
+*Oct 18*
 
 **Instead of:** Scale the whole episode by the hospital's inpatient payment ratio.
 
@@ -121,7 +122,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 11. Proxy the hybrid hospital-wide readmission measure with hip/knee and CABG readmissions
 
-*Oct 18 · Proposed by Claude*
+*Oct 18*
 
 **Instead of:** Set the quality score to 50 for everyone.
 
@@ -129,7 +130,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 12. Safety-net flag from the Medicare SSI share, not the full DSH percentage
 
-*Oct 18 · Proposed by Claude*
+*Oct 18*
 
 **Instead of:** Use DSH patient percentage, which is more familiar.
 
@@ -137,15 +138,15 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 13. Keep the derived estimate on the named-hospital prefill, labeled
 
-*Oct 18 · Jay's call*
+*Oct 18*
 
 **Instead of:** Prefill only facts and volumes for a searched hospital; keep estimates for anonymized cases.
 
-**Why:** Jay decided the labeled estimate was more useful than a blank slider, provided the page says it is an estimate from public patterns and not the hospital's TEAM result. It does, in the facts panel and the badges.
+**Why:** The labeled estimate was judged more useful than a blank slider, provided the page says it is an estimate from public patterns and not the hospital's TEAM result. It does, in the facts panel and the badges.
 
 ### 14. Fix all sixteen CFO objections, in the order a CFO would raise them
 
-*Oct 19 · Jay's call*
+*Oct 19*
 
 **Instead of:** Fix the top five and note the rest.
 
@@ -153,7 +154,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 15. Price outpatient joint and fusion episodes at the matching MS-DRG
 
-*Oct 19 · Proposed by Claude*
+*Oct 19*
 
 **Instead of:** Invent outpatient target prices from OPPS payments.
 
@@ -161,7 +162,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 16. Rank quality percentiles among IPPS hospitals eligible for TEAM
 
-*Oct 19 · Proposed by Claude*
+*Oct 19*
 
 **Instead of:** Rank among all 4,700 Care Compare hospitals.
 
@@ -169,7 +170,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 17. Compare post-discharge spend against the census division, not the state
 
-*Oct 19 · Proposed by Claude*
+*Oct 19*
 
 **Instead of:** Keep the state, which the Care Compare file provides directly.
 
@@ -177,7 +178,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 18. Cap the typical-program preset at $1,200 per episode and add a 60% realization slider
 
-*Oct 19 · Proposed by Claude*
+*Oct 19*
 
 **Instead of:** Let the arithmetic run: three fewer SNF days at a full per diem.
 
@@ -185,7 +186,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 19. Seed the risk multiplier from bed size, safety-net flag and county dual share
 
-*Oct 19 · Proposed by Claude*
+*Oct 19*
 
 **Instead of:** Leave it at 1.00 for everyone.
 
@@ -193,7 +194,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 20. Clamp the state SNF per diem to $450 to $900
 
-*Oct 19 · Proposed by Claude*
+*Oct 19*
 
 **Instead of:** Use the computed value as is.
 
@@ -201,7 +202,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 21. Default the margin line to Kaufman Hall's 2.5%, not the cost-report margin
 
-*Oct 19 · Proposed by Claude*
+*Oct 19*
 
 **Instead of:** Use each hospital's patient-service margin from its cost report.
 
@@ -209,7 +210,7 @@ Written by Jay Beatty with Claude as the engineering partner. Jay set direction,
 
 ### 22. Keep this record beside the tool, in the repository and on the site
 
-*Oct 19 · Jay's call*
+*Oct 19*
 
 **Instead of:** A private notes file.
 
