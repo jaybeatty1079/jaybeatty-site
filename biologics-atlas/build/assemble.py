@@ -94,6 +94,10 @@ def drop_sources(o):
 data_art = json.dumps(drop_sources(data), separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
 body = body.replace(data_js, data_art)
 art = "<title>Biologics Atlas</title>\n" + fonts + "\n" + style + "\n" + body
-art = art.replace('href="/', 'href="https://jaybeatty.com/')
+art = art.replace('href="/', 'href="https://jaybeatty.com/').replace('"model": "skeleton.glb"', '"model": "skeleton.glb.wasm"')  # the artifact host serves .wasm but not .glb; the loader reads raw bytes either way
 open(os.path.join(ROOT, "app/dist/artifact.html"), "w").write(art)
+# the artifact host serves .wasm but not .glb, and the Artifact tool needs the file inside the scratchpad
+sp = "/private/tmp/claude-501/-Users-jaybeatty-Claude/f6f6375c-4290-4a2e-92fc-8e941fd3cf01/scratchpad/artifact-files"
+if os.path.exists(os.path.join(ROOT, "app/skeleton.glb")):
+    os.makedirs(sp, exist_ok=True); shutil.copy(os.path.join(ROOT, "app/skeleton.glb"), os.path.join(sp, "skeleton.glb.wasm"))
 print(f"wrote {out}: {len(html)//1024} KB (data {len(data_js)//1024} KB, {len(apps)} applications, {len(prods)} products, {len(timeline)} timeline rows, {len(summary)} summary paragraphs)")
