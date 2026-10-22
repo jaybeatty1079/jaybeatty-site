@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ATCG sales collateral · Jay Beatty</title>
+<meta name="description" content="Physician and patient brochures Jay Beatty wrote and art-directed for ATCG, a CLIA high-complexity clinical genetics lab: pharmacogenomics, hereditary cancer and cardiac genetic testing, built to win referrals from primary care and specialty practices without adding work for their staff.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a weekly scoreboard. Headline left, numbers right; every section pairs a short claim with a figure that proves it. Single committed dark look. */
+:root{
+  --bg:#0b0a10;        /* black, purple-biased */
+  --surface:#14111e;   /* deep purple-black panel */
+  --panel:#1c1730;     /* raised panel */
+  --line:#2b2542;      /* hairline */
+  --fg:#ece9f5;
+  --muted:#a79fc0;
+  --purple:#8366ea;    /* brand accent + series 2 */
+  --purple-soft:#b7a6ff;
+  --green:#22a85e;     /* series 1, proof color */
+  --green-soft:#6fe3a3;
+  --teal:#10a197;      /* series 3 */
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--purple-soft);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--green-soft);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.4rem,5.2vw,4.2rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.8rem,3.2vw,2.6rem)}
+h3{font-size:1.25rem;font-weight:600}
+p{margin:0}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green-soft)}
+.eyebrow::before{content:"";display:inline-block;width:22px;height:1px;background:var(--green);vertical-align:middle;margin-right:10px}
+.lede{color:var(--muted);max-width:62ch;font-size:1.05rem}
+section{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:32px;align-items:end;margin-bottom:40px}
+@media(max-width:760px){.sec-head{grid-template-columns:1fr}}
+
+/* nav */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
+.brand b{color:var(--green-soft);font-weight:400}
+.links{display:flex;gap:22px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+.links a{color:var(--muted)}
+.links a:hover{color:var(--fg);text-decoration:none}
+@media(max-width:860px){.links{display:none}}
+
+/* hero */
+.hero{padding-block:clamp(48px,7vw,96px);border-top:0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.hero h1 em{font-style:italic;color:var(--green-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:6px;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--purple);color:var(--fg)}
+.btn.primary{background:var(--purple);border-color:var(--purple)}
+.btn:hover{text-decoration:none;filter:brightness(1.1)}
+
+/* scoreboard */
+.board{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:14px}
+.board-head{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.board-head .live{color:var(--green-soft)}
+.board-head .live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:7px;vertical-align:1px}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tile{background:var(--panel);border-radius:8px;padding:14px 16px;display:grid;gap:4px;min-width:0}
+.tile .lab{font-size:.78rem;color:var(--muted)}
+.tile .val{font-size:1.9rem;font-weight:600;line-height:1.1}
+.tile .val small{font-size:.9rem;font-weight:500;color:var(--muted)}
+.tile .delta{font-family:var(--mono);font-size:.7rem;color:var(--green-soft)}
+.tile svg{width:100%;height:28px;display:block;margin-top:6px;overflow:visible}
+.board-foot{font-size:.78rem;color:var(--muted)}
+
+/* grids */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+@media(max-width:900px){.grid3,.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.grid2,.grid3,.grid4{grid-template-columns:1fr}}
+.svc{display:grid;gap:12px;padding-top:18px;border-top:1px solid var(--line);min-width:0}
+.svc svg{width:40px;height:40px;display:block}
+.svc p{color:var(--muted);font-size:.95rem}
+
+/* figure */
+figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;min-width:0}
+figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;margin-bottom:14px}
+figcaption .t{font-weight:600}
+figcaption .s{font-size:.85rem;color:var(--muted);width:100%}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.8rem;color:var(--muted);margin-top:12px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.chart{width:100%;height:auto;display:block;overflow:visible;font-family:var(--body)}
+.chart text{fill:var(--muted);font-size:12px}
+.chart text.strong{fill:var(--fg);font-weight:500}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .hit{fill:transparent;cursor:default}
+details.tbl{margin-top:12px;font-size:.85rem}
+details.tbl summary{cursor:pointer;color:var(--purple-soft);font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+details.tbl table{width:100%;border-collapse:collapse;margin-top:10px;font-variant-numeric:tabular-nums}
+details.tbl th,details.tbl td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+details.tbl th{color:var(--muted);font-weight:500}
+.tip{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--line);color:var(--fg);padding:8px 10px;border-radius:6px;font-size:.8rem;line-height:1.35;opacity:0;transform:translate(-50%,calc(-100% - 10px));transition:opacity .12s;z-index:50;white-space:nowrap}
+.tip b{display:block;font-weight:600}
+
+/* phases */
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;position:relative;margin-top:8px}
+@media(max-width:760px){.phases{grid-template-columns:1fr}}
+.phase{padding:22px 22px 22px 0;border-top:2px solid var(--line);position:relative;min-width:0}
+.phase:nth-child(1){border-top-color:var(--purple)}
+.phase:nth-child(2){border-top-color:var(--teal)}
+.phase:nth-child(3){border-top-color:var(--green)}
+.phase .n{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.phase h3{margin-top:6px}
+.phase .dur{font-family:var(--mono);font-size:.72rem;color:var(--green-soft);margin-top:4px}
+.phase p{color:var(--muted);margin-top:10px;font-size:.95rem}
+.phase ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:.9rem}
+.phase ul li{margin:3px 0}
+.keep{margin-top:22px;padding:14px 16px;border:1px solid var(--line);border-left:3px solid var(--green);border-radius:6px;font-size:.9rem;color:var(--muted);background:var(--surface)}
+
+/* programs */
+.prog{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;display:grid;gap:14px;min-width:0}
+.prog .who{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--purple-soft)}
+.prog p{color:var(--muted);font-size:.95rem}
+.prog .note{font-size:.85rem;border-top:1px solid var(--line);padding-top:12px}
+.prog svg{width:100%;height:auto;display:block}
+.prog .more{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+
+/* track record */
+.roles{display:grid;gap:0;margin-top:30px}
+.role{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:20px 0;border-top:1px solid var(--line)}
+@media(max-width:600px){.role{grid-template-columns:1fr;gap:6px}}
+.role .yr{font-family:var(--mono);font-size:.78rem;color:var(--green-soft);padding-top:4px}
+.role h3{font-size:1.05rem}
+.role p{color:var(--muted);font-size:.95rem;margin-top:6px}
+.role .tag{display:inline-block;margin-left:8px;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:999px;vertical-align:middle}
+.tag.dev{background:color-mix(in oklab,var(--purple) 25%,transparent);color:var(--purple-soft)}
+.tag.dx{background:color-mix(in oklab,var(--green) 25%,transparent);color:var(--green-soft)}
+.tag.ben{background:color-mix(in oklab,var(--teal) 25%,transparent);color:#7fe0d8}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;align-items:start}
+@media(max-width:800px){.about{grid-template-columns:1fr}}
+.portrait{aspect-ratio:4/5;max-width:100%;border-radius:12px;border:1px solid var(--line);background:linear-gradient(160deg,var(--panel),var(--surface));display:grid;place-items:center;position:relative;overflow:hidden}
+.portrait canvas{position:absolute;inset:0;width:100%;height:100%}
+.portrait span{position:relative;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center;padding:12px;background:color-mix(in oklab,var(--bg) 70%,transparent);border-radius:6px}
+.fit{margin-top:22px;padding:0;list-style:none;display:grid;gap:8px}
+.fit li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;color:var(--muted);font-size:.95rem}
+.fit li::before{content:"";width:14px;height:14px;margin-top:5px;border-radius:50%;background:conic-gradient(var(--green) 0 75%,var(--line) 0)}
+.about p{color:var(--muted)}
+.about p+p{margin-top:14px}
+
+/* contact */
+.contact{background:var(--surface);border-top:1px solid var(--line)}
+.contact .grid3{margin-top:28px}
+.ct{display:grid;gap:4px}
+.ct .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.ct .v{font-size:1.05rem;user-select:all}
+.ct button{justify-self:start;margin-top:4px;background:none;border:1px solid var(--line);color:var(--muted);border-radius:4px;padding:3px 8px;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+footer{padding-block:28px;font-size:.8rem;color:var(--muted);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* video card */
+.vid{display:block;position:relative;aspect-ratio:16/9;max-width:100%;overflow:hidden;border-radius:12px;border:1px solid var(--line);text-decoration:none;background:#000}
+.vid img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85)}
+.vid .play{position:absolute;left:50%;top:50%;width:64px;height:64px;transform:translate(-50%,-50%);border-radius:50%;background:var(--green);display:grid;place-items:center;transition:transform .15s}
+.vid .play::after{content:"";width:0;height:0;border-left:20px solid #041509;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.vid .vcap{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.88));color:#fff;font-size:.8rem;line-height:1.35}
+.vid .vcap b{display:block;font-weight:600;font-size:.9rem}
+.vid:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+
+.proof{margin-top:14px;font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--green-soft)}
+.fluent{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:28px}
+.fluent span{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.fluent .fl-label{border:0;padding-left:0;color:var(--green-soft)}
+.tiles30{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media(max-width:900px){.tiles30{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.tiles30{grid-template-columns:1fr}}
+.tiles30>div{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start;background:var(--panel);border-radius:8px;padding:14px}
+.tiles30 i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:3px solid var(--green);font-family:var(--mono);font-size:.56rem;font-style:normal;color:var(--fg);letter-spacing:.04em}
+.tiles30 i::before{content:"30 d"}
+.tiles30 b{display:block;font-weight:600;font-size:.95rem}
+.tiles30 span{display:block;font-size:.82rem;color:var(--muted);margin-top:3px}
+
+/* pool photos + video cards (added 2026-10-13) */
+.portrait.lead{aspect-ratio:4/5;display:block;background:var(--panel)}.portrait.lead img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%}
+.cap{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.vid+.vid,.cap+.vid{margin-top:18px}
+.vid .lab{position:absolute;left:12px;bottom:10px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fg);background:rgba(11,10,16,.7);padding:4px 8px;border-radius:5px}
+.off{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:24px;align-items:start;margin-top:10px}
+.poolpic{border-radius:12px;border:1px solid var(--line);overflow:hidden;background:var(--panel);aspect-ratio:3/4}.poolpic img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+.fbembed{position:relative;aspect-ratio:16/9;margin-top:16px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000}.fbembed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.fbcard{display:flex;gap:14px;align-items:center;margin-top:14px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);text-decoration:none;color:var(--fg)}
+.fbcard .thumb{width:96px;aspect-ratio:16/9;border-radius:8px;overflow:hidden;position:relative;flex:none;background:#000}.fbcard .thumb img{width:100%;height:100%;object-fit:cover;object-position:50% 85%;opacity:.8;display:block}
+.fbcard strong{display:block;font-weight:600}.fbcard span.t{color:var(--muted);font-size:.9rem}
+.fbcard .thumb .play{width:28px;height:28px}.fbcard .thumb .play::after{transform:scale(.45)}
+@media(max-width:820px){.off{grid-template-columns:1fr}}
+
+/* program sub-pages */
+.sub-hero{padding-block:clamp(48px,7vw,88px);border-top:0;max-width:62rem}
+.crumb{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.crumb a{color:var(--green-soft)}
+.sub-hero .rule{width:48px;height:2px;background:var(--green);margin:18px 0 22px}
+.sub-hero h1{font-size:clamp(2rem,4.4vw,3.4rem)}.sub-hero h1 em{font-style:italic;color:var(--green-soft)}
+.sub-hero .lede{margin-top:20px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.tags span{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.fitgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media(max-width:760px){.fitgrid{grid-template-columns:1fr}}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;border-top:3px solid var(--line)}
+.box.yes{border-top-color:var(--green)}.box.no{border-top-color:var(--purple)}
+.box ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:.95rem}.box li{margin:8px 0}
+.prose p{color:var(--muted)}.prose p+p{margin-top:14px}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:8px}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.steps{grid-template-columns:1fr}}
+.step{padding:22px 22px 22px 0;border-top:2px solid var(--line);min-width:0}
+.step:nth-child(1){border-top-color:var(--purple)}.step:nth-child(2){border-top-color:var(--teal)}.step:nth-child(3){border-top-color:var(--green)}.step:nth-child(4){border-top-color:var(--green-soft)}
+.step .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.step h3{margin-top:6px}.step p{color:var(--muted);margin-top:10px;font-size:.95rem}
+.cost{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:28px;align-items:start}
+@media(max-width:760px){.cost{grid-template-columns:1fr}}
+.big{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.2}.cost p{color:var(--muted);margin-top:16px}
+.aside{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}.aside ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:.95rem}.aside li{margin:8px 0}
+.faq{display:grid;gap:0;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:4px 0}.faq summary{cursor:pointer;padding:14px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";color:var(--green-soft);font-family:var(--mono)}.faq details[open] summary::after{content:"\2013"}
+.faq p{color:var(--muted);padding:0 0 16px;max-width:70ch}
+.note{margin-top:28px;padding:14px 16px;border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:6px;font-size:.85rem;color:var(--muted);background:var(--surface)}
+.contact .wrap>div:first-child{max-width:62ch}.contact h2{font-size:clamp(1.6rem,3vw,2.3rem)}.contact p{color:var(--muted);margin-top:14px}
+.lines{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}
+@media(max-width:700px){.lines{grid-template-columns:1fr}}
+.lines div{display:grid;gap:4px}.lines span{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.lines a{font-size:1.05rem;color:var(--fg)}
+
+/* ATCG collateral portfolio (added 2026-10-22) */
+.sub-hero{max-width:none}.sub-hero .lede{max-width:62ch}.sub-hero h1{max-width:22ch}
+.jobs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:8px}
+@media(max-width:760px){.jobs{grid-template-columns:1fr}}
+.job{padding:20px 22px 20px 0;border-top:2px solid var(--line);min-width:0}
+.job:nth-child(1){border-top-color:var(--purple)}.job:nth-child(2){border-top-color:var(--teal)}.job:nth-child(3){border-top-color:var(--green)}
+.job .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.job h3{margin-top:6px}.job p{color:var(--muted);margin-top:8px;font-size:.95rem}
+.quote{margin-top:28px;padding:18px 20px;border:1px solid var(--line);border-left:3px solid var(--green);border-radius:8px;background:var(--surface)}
+.quote p{font-family:var(--display);font-size:clamp(1.15rem,2.2vw,1.45rem);line-height:1.35}
+.quote span{display:block;margin-top:10px;font-size:.88rem;color:var(--muted)}
+.toc{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-top:8px}
+@media(max-width:900px){.toc{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.toc a{display:grid;gap:8px;color:var(--fg);font-size:.82rem;line-height:1.3}
+.toc a:hover{text-decoration:none}.toc a:hover img{border-color:var(--purple)}
+.toc img{width:100%;height:auto;aspect-ratio:auto;border-radius:6px;border:1px solid var(--line);display:block}
+.toc .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.piece-head{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;align-items:end;margin-bottom:22px}
+.piece-head .cover{width:120px;height:auto;border-radius:6px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.piece-head h2{margin-top:10px}.piece-head .lede{margin-top:12px}
+@media(max-width:600px){.piece-head{grid-template-columns:76px minmax(0,1fr);gap:16px;align-items:start}.piece-head .cover{width:76px}}
+.hint{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.spread{display:grid;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px}
+.spread.n2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:780px}
+.spread.n3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.spread.n4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.panel{all:unset;cursor:zoom-in;display:block;min-width:0;border-radius:3px;overflow:hidden;position:relative}
+.panel img{width:100%;height:auto;display:block}
+.panel:focus-visible{outline:2px solid var(--green-soft);outline-offset:2px}
+.panel::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+/* phone: one panel per screen, swipe sideways */
+@media(max-width:700px){
+  .spread,.spread.n2,.spread.n3,.spread.n4{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding:10px;max-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  .panel{flex:0 0 86%;scroll-snap-align:center}
+  .hint::after{content:" Swipe for the next panel."}
+}
+.copy{margin-top:18px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.copy summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px;padding:16px 18px}
+.copy summary::-webkit-details-marker{display:none}
+.copy summary span:first-child{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-soft)}
+.copy summary span:first-child::after{content:"  +";color:var(--green-soft)}
+.copy[open] summary span:first-child::after{content:"  \2013"}
+.copy summary .sm{font-size:.82rem;color:var(--muted)}
+.copy-body{padding:4px 18px 22px;max-width:70ch;font-size:1.02rem;line-height:1.65}
+.copy-body h4{font-family:var(--display);font-weight:600;font-size:1.2rem;line-height:1.25;margin:26px 0 8px;color:var(--fg)}
+.copy-body h4:first-child{margin-top:6px}
+.copy-body p{color:var(--fg);opacity:.88}.copy-body p+p{margin-top:12px}
+.copy-body ul{margin:10px 0 0;padding-left:20px;color:var(--fg);opacity:.88}.copy-body li{margin:6px 0}
+.copy-body ul.sub{margin-top:0}
+.copy-body .pull{font-family:var(--display);font-size:1.12rem;line-height:1.45;opacity:1;border-left:2px solid var(--green);padding-left:14px;margin:14px 0}
+.copy-body .cta-line{margin-top:14px;font-weight:600;color:var(--green-soft);opacity:1}
+.steps-c{list-style:none;counter-reset:s;margin:10px 0 0;padding:0;display:grid;gap:12px}
+.steps-c li{counter-increment:s;display:grid;grid-template-columns:34px minmax(0,1fr);gap:2px 12px}
+.steps-c li::before{content:counter(s);grid-row:span 2;width:30px;height:30px;border-radius:50%;border:2px solid var(--teal);display:grid;place-items:center;font-family:var(--mono);font-size:.8rem;color:var(--fg)}
+.steps-c b{font-weight:600}.steps-c span{color:var(--muted);font-size:.96rem}
+.why{display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px 14px;margin:10px 0 0}
+.why dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--green-soft);padding-top:4px}
+.why dd{margin:0;color:var(--muted)}
+@media(max-width:480px){.why{grid-template-columns:1fr;gap:2px}.why dd{margin-bottom:8px}}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+@media(max-width:560px){.stats{grid-template-columns:1fr}}
+.stats div{background:var(--panel);border-radius:8px;padding:12px 14px}
+.stats b{display:block;font-size:1.3rem;font-weight:600}.stats span{display:block;color:var(--muted);font-size:.88rem;margin-top:2px}
+.src{font-size:.8rem;color:var(--muted);margin-top:8px}
+.tblwrap{overflow-x:auto;margin-top:12px}
+.copy-body table{width:100%;border-collapse:collapse;font-size:.92rem}
+.copy-body th,.copy-body td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+.copy-body th{color:var(--muted);font-weight:500}
+/* zoom viewer */
+dialog.viewer{padding:0;border:0;max-width:none;max-height:none;width:100vw;height:100dvh;margin:0;background:rgba(6,5,10,.96);color:var(--fg)}
+dialog.viewer::backdrop{background:rgba(6,5,10,.9)}
+.vbar{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;padding-top:max(10px,env(safe-area-inset-top));background:rgba(11,10,16,.92);border-bottom:1px solid var(--line);z-index:2}
+.vbar .lab{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:560px){.vbar button{padding:7px 9px;font-size:.64rem}.vbar .grp{gap:4px}.vbar .lab .t{display:none}}
+.vbar button{background:none;border:1px solid var(--line);color:var(--fg);border-radius:6px;padding:8px 12px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.vbar .grp{display:flex;gap:6px}
+.vstage{height:calc(100dvh - 58px);overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom;display:block;text-align:center}
+.vstage img{display:block;margin:0 auto;width:min(100%,760px);height:auto;cursor:zoom-in}
+.vstage.z img{width:auto;max-width:none;cursor:zoom-out}
+@media(max-width:700px){.vstage.z img{width:230%}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="brand" href="./">Jay <b>Beatty</b></a>
+  <div class="links">
+    <a href="./#work">What I do</a><a href="./#programs">Programs</a><a href="./#projects">Projects</a><a href="./#record">Track record</a><a href="./#about">About</a><a href="./#contact">Contact</a>
+  </div>
+  <a class="btn primary" href="#contact" style="padding:8px 12px">Get in touch</a>
+</nav></div></header>
+<main>
+<section class="sub-hero" id="top">
+  <div class="wrap">
+    <div class="crumb"><a href="./">Jay Beatty</a> &nbsp;/&nbsp; <a href="./#projects">Projects</a> &nbsp;/&nbsp; ATCG sales collateral</div>
+    <div class="rule"></div>
+    <h1>The brochures our reps carried into physician offices. <em>I wrote every word.</em></h1>
+    <p class="lede">As COO of ATCG, a CLIA high-complexity clinical genetics lab in Irvine, California, I built the field team's in-office collateral from a blank page: the copy, the structure and the art direction, working alongside a production designer. Reps used these pieces in primary care and specialty offices to sell pharmacogenomic, hereditary cancer and cardiac genetic testing. The goal was to win the patient samples a practice was sending nowhere, or sending to a national lab.</p>
+    <div class="tags"><span>Physician and patient collateral</span><span>Copywriting</span><span>Art direction</span><span>Clinical genetics</span><span>2020</span></div>
+    <div class="cta">
+      <a class="btn primary" href="#pgx">See the work</a>
+      <a class="btn" href="portfolio/atcg/Jay-Beatty-ATCG-Collateral-Portfolio.pdf" download>Download the PDF</a>
+    </div>
+  </div>
+</section>
+
+<section id="hurdle">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">The hurdle</div><h2 style="margin-top:12px">"Is this going to mean more work for me and my staff?"</h2></div>
+      <div class="prose"><p>That was the first question in almost every office. Physicians don't have time to become genetics experts, and they already answer for plenty. So the collateral was split by reader. The physician pieces explain the science and keep ordering to four steps. The patient pieces tell patients to bring every question about the test to the lab and its genetic counselors, not to their provider. The provider's only job is to discuss results, and the reports were designed so those conversations stay simple.</p></div>
+    </div>
+    <div class="jobs">
+      <div class="job"><div class="k">Job 1</div><h3>Inform</h3><p>Give physicians and patients a clear picture of what each test finds and who it's for.</p></div>
+      <div class="job"><div class="k">Job 2</div><h3>Sell</h3><p>Show the practice how testing fits its patients and its workflow, and make the first order easy.</p></div>
+      <div class="job"><div class="k">Job 3</div><h3>Support after onboarding</h3><p>Stay in the waiting room and the exam room so patients arrive informed and the staff isn't fielding questions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pieces" style="padding-bottom:clamp(28px,4vw,48px)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">The set</div><h2 style="margin-top:12px">Six pieces, one system</h2></div>
+      <p class="lede">Two physician brochures and four patient brochures, sharing the same type, layout and circular hero image so whatever a rep left at the front desk looked like it came from one lab. Every piece below has a "Read the copy" panel with the full text at a size you can read on a phone.</p>
+    </div>
+    <div class="toc"><a href="#pgx"><img src="portfolio/atcg/cover-pgx.jpg" width="640" height="986" loading="lazy" alt=""><span class="k">Physician</span><span>Pharmacogenomics</span></a><a href="#hcp"><img src="portfolio/atcg/cover-hcp.jpg" width="640" height="986" loading="lazy" alt=""><span class="k">Physician</span><span>Hereditary cancer</span></a><a href="#hered"><img src="portfolio/atcg/cover-hered.jpg" width="640" height="1488" loading="lazy" alt=""><span class="k">Patient</span><span>Hereditary cancers</span></a><a href="#cardio"><img src="portfolio/atcg/cover-cardio.jpg" width="640" height="1488" loading="lazy" alt=""><span class="k">Patient</span><span>Genetic testing for cardiovascular disease</span></a><a href="#screen"><img src="portfolio/atcg/cover-screen.jpg" width="640" height="1556" loading="lazy" alt=""><span class="k">Patient</span><span>Understanding your hereditary cancer screening options</span></a><a href="#hboc"><img src="portfolio/atcg/cover-hboc.jpg" width="640" height="1556" loading="lazy" alt=""><span class="k">Patient</span><span>Hereditary breast and ovarian cancer (HBOC)</span></a></div>
+  </div>
+</section>
+
+<section class="piece" id="pgx">
+  <div class="wrap">
+    <div class="piece-head">
+      <img class="cover" src="portfolio/atcg/cover-pgx.jpg" width="640" height="986" loading="lazy" alt="Front cover, Pharmacogenomics">
+      <div>
+        <div class="eyebrow">Physician brochure &nbsp;·&nbsp; 01 of 06</div>
+        <h2>Pharmacogenomics</h2>
+        <p class="lede">For prescribers. Less trial, more precision: who the test is for, what it changes in prescribing, a four-step ordering process and which panel to order. The back half covers malignant hyperthermia, a second test sold off the same requisition.</p>
+      </div>
+    </div>
+    <div class="hint">Inside spread, 4 panels. Tap any panel to zoom.</div>
+    <div class="spread n4"><button class="panel" type="button" data-full="portfolio/atcg/pgx-1.jpg" aria-label="Open panel 1 of 4, Pharmacogenomics, full size"><img src="portfolio/atcg/pgx-1.jpg" width="1100" height="1700" loading="lazy" decoding="async" alt="Pharmacogenomics brochure, inside panel 1 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/pgx-2.jpg" aria-label="Open panel 2 of 4, Pharmacogenomics, full size"><img src="portfolio/atcg/pgx-2.jpg" width="1100" height="1700" loading="lazy" decoding="async" alt="Pharmacogenomics brochure, inside panel 2 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/pgx-3.jpg" aria-label="Open panel 3 of 4, Pharmacogenomics, full size"><img src="portfolio/atcg/pgx-3.jpg" width="1100" height="1700" loading="lazy" decoding="async" alt="Pharmacogenomics brochure, inside panel 3 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/pgx-4.jpg" aria-label="Open panel 4 of 4, Pharmacogenomics, full size"><img src="portfolio/atcg/pgx-4.jpg" width="1100" height="1700" loading="lazy" decoding="async" alt="Pharmacogenomics brochure, inside panel 4 of 4"></button></div>
+    <details class="copy">
+      <summary><span>Read the copy</span><span class="sm">Full text, sized for a phone</span></summary>
+      <div class="copy-body">
+<h4>Less trial, more precision</h4>
+<h4>Who is this test for?</h4>
+<p>Indications for PGX testing include: use of medications with known polymorphisms (examples include: cardiology, anti-thrombotic, pain, and psychiatric medications), patients on multiple medications (one of which is a medication with known polymorphisms), and patients who have experienced treatment failure, side effects, or toxicity during use of a medication with known polymorphisms.</p>
+<h4>What are the potential benefits for my patient?</h4>
+<p>Moving beyond trial and error, PGX testing may allow for a more precise and customized treatment plan for your patients. The results provide details about how your patient metabolizes medications and suggests alternative prescriptions when increased sensitivity or reduced response is likely.</p>
+<p>By examining the role genetics play in drug metabolism, you can help treat your patients more effectively by identifying genetic variants and prescribing medications accordingly. Treatment plans may be customized and you can offer truly personalized medicine that is unique to each one of your patients.</p>
+<p class="cta-line">Make testing a standard in your practice today.</p>
+<h4>Test selection</h4>
+<ul><li>Comprehensive Panel</li><li>Pain Management Panel</li><li>Cardiology and Thrombophilia Panel</li><li>Mental Health Panel</li></ul>
+<p class="pull">Drug response is not the same for all people. ATCG’s Pharmacogenetic test can identify people in all areas of the traditional bell curve, including non-responders and those at risk for adverse drug reactions.</p>
+<h4>Our process</h4>
+<ol class="steps-c"><li><b>Complete test requisition forms</b><span>Request printed or digital forms from Client Services.</span></li><li><b>Saliva sample collection</b><span>Buccal swab or oral collection kits. Request swabs and kits from Client Services.</span></li><li><b>Get results quickly</b><span>Our CLIA accredited laboratory will deliver results in less than a week to a HIPAA electronic portal.</span></li><li><b>Plan and prevent</b><span>The finished report will be interpreted so the data can be clearly utilized by the clinician. A sample report is available on request.</span></li></ol>
+<h4>Why ATCG?</h4><dl class="why"><dt>Spectrum</dt><dd>Customized testing for your patients allowing truly personalized medicine</dd><dt>Advanced</dt><dd>Helping you and your patients stay progressive in the universe of cancer</dd><dt>Workflow</dt><dd>Electronic ordering and reporting portals streamline workflow for seamless adoption</dd><dt>Engage</dt><dd>We are committed to tests that produce actionable information that truly makes a difference</dd></dl>
+<h4>Malignant hyperthermia susceptibility (MHS) testing</h4>
+<p class="pull">Malignant Hyperthermia is identified as an autosomal dominant pharmacogenetic trait. This is an inherited condition which, when exposed to drugs primarily used for general anesthesia, causes a severe and sometimes fatal reaction.</p>
+<h4>Who is this test for?</h4>
+<p>This condition mostly occurs during or after surgery. However, it can occur wherever anesthetic medications are used, which include: emergency rooms, dental offices, surgeons’ offices, and intensive care units. The majority of patients who carry the genetic variant for MH will never develop symptoms. Identifying patients should include: family history of MH, unknown family history or gaps in family tree, a history of heat stroke or hyperthermia after exercise, muscle abnormalities that are linked to MHS (example: Duchenne and Becker Muscular Dystrophy). Other common conditions associated are respiratory acidosis, metabolic acidosis, and excessive heat production.</p>
+<h4>What are the potential benefits for my patient?</h4>
+<p>Prevention of Malignant Hyperthermia can be achieved by performing genetic testing. Healthcare professionals who familiarize themselves with genomic information can help identify patients and family members who are high risk. This disorder and its severe complications can be mitigated with the MHS panel diagnostic test.</p>
+<p>The advantage of using this genetic test as opposed to a contracture test are reduced invasiveness, lower cost and lack of morbidity from a muscle biopsy. The innovations in genetics yield tests that are inexpensive, noninvasive, and quick, which could pave the way to eliminate malignant hyperthermia altogether.</p>
+<p class="cta-line">Make testing a standard in your practice today.</p>
+<h4>Our process</h4>
+<ol class="steps-c"><li><b>Complete test requisition forms</b><span>The MHS panel can be ordered from the Pharmacogenomic Test Requisition form, available from Client Services.</span></li><li><b>Saliva sample collection</b><span>If a PGX test is ordered, please use an additional oral collection swab for the MHS panel. Sample requirements, PDF instructions and a video are on the lab’s website.</span></li><li><b>Get results quickly</b><span>Our CLIA accredited laboratory will deliver results in less than 3 weeks to a HIPAA electronic portal.</span></li><li><b>Plan and prevent</b><span>Genetic Counselors will help you and your patient interpret results and choose the best prevention options.</span></li></ol>
+<h4>Test selection</h4><ul><li>Malignant Hyperthermia Susceptibility Panel</li></ul>
+<h4>References and resources</h4>
+<ul><li>Malignant Hyperthermia Association of the United States</li><li>National Institute of Arthritis and Musculoskeletal and Skin Diseases</li><li>National Organization for Rare Disorders</li></ul>
+</div>
+    </details>
+  </div>
+</section>
+<section class="piece" id="hcp">
+  <div class="wrap">
+    <div class="piece-head">
+      <img class="cover" src="portfolio/atcg/cover-hcp.jpg" width="640" height="986" loading="lazy" alt="Front cover, Hereditary cancer">
+      <div>
+        <div class="eyebrow">Physician brochure &nbsp;·&nbsp; 02 of 06</div>
+        <h2>Hereditary cancer</h2>
+        <p class="lede">For physicians. Which patients with a family history should be screened, what a result changes in their care, and an ordering process short enough that it doesn&#x27;t add to the staff&#x27;s day.</p>
+      </div>
+    </div>
+    <div class="hint">Inside spread, 2 panels. Tap any panel to zoom.</div>
+    <div class="spread n2"><button class="panel" type="button" data-full="portfolio/atcg/hcp-1.jpg" aria-label="Open panel 1 of 2, Hereditary cancer, full size"><img src="portfolio/atcg/hcp-1.jpg" width="1100" height="1700" loading="lazy" decoding="async" alt="Hereditary cancer brochure, inside panel 1 of 2"></button><button class="panel" type="button" data-full="portfolio/atcg/hcp-2.jpg" aria-label="Open panel 2 of 2, Hereditary cancer, full size"><img src="portfolio/atcg/hcp-2.jpg" width="1100" height="1700" loading="lazy" decoding="async" alt="Hereditary cancer brochure, inside panel 2 of 2"></button></div>
+    <details class="copy">
+      <summary><span>Read the copy</span><span class="sm">Full text, sized for a phone</span></summary>
+      <div class="copy-body">
+<h4>Early detection is the best defense</h4>
+<p class="pull">Some of the most prevalent hereditary cancers have much higher survival rates when diagnosed early. ATCG’s Hereditary Cancer Solution provides knowledge that can assist with prevention and early detection.</p>
+<h4>Who is this test for?</h4>
+<p>Patients with a personal or family history suggestive of a hereditary cancer syndrome. Red flags for hereditary cancers can include onset of cancer before age 50, more than one primary cancer in a single person, or multiple affected people within a family. This test is designed to detect germline pathogenic variants and is not validated to detect somatic mutations.</p>
+<p><b>Characteristics of hereditary cancer:</b> early onset, multiple family members affected, rare cancers, multiple body parts affected.</p>
+<h4>What are the potential benefits for my patient?</h4>
+<p>Hereditary cancer testing can establish or confirm a diagnosis, identify risks for other cancers and health conditions, help define the best management plan for patients with a positive test result (including increased surveillance, pharmacological treatments, and prophylactic surgeries), and determine whether close family members (children, siblings, and parents) may also be at risk. If a pathogenic variant is identified in your patient, their close relatives can have as high as a 50 percent risk of carrying the same variant and therefore also be at risk for cancer.</p>
+<p>By examining the role genetics play in the development of cancer, you can steer your patients’ futures towards the long lives you imagine for them. Implement proactive measures and establish new treatment protocols for your patients.</p>
+<p class="cta-line">Make testing a standard in your practice today.</p>
+<h4>Test selection</h4>
+<ul><li>Focus Panel</li><li>Breast and Ovarian Panel</li><li>Prostate Panel</li><li>Gastroenterology Panel</li><li>Lynch Panel</li></ul>
+<h4>Our process</h4>
+<ol class="steps-c"><li><b>Complete test requisition forms</b><span>Request printed or digital forms from Client Services.</span></li><li><b>Saliva sample collection</b><span>Sample requirements, PDF instructions and a video are on the lab’s website.</span></li><li><b>Get results quickly</b><span>Our CLIA accredited laboratory will deliver results in less than 3 weeks to a HIPAA electronic portal.</span></li><li><b>Plan and prevent</b><span>Genetic Counselors will help you and your patient interpret results and choose the best prevention options.</span></li></ol>
+<h4>Why ATCG?</h4><dl class="why"><dt>Spectrum</dt><dd>Customized testing for your patients allowing truly personalized medicine</dd><dt>Advanced</dt><dd>Helping you and your patients stay progressive in the universe of cancer</dd><dt>Workflow</dt><dd>Electronic ordering and reporting portals streamline workflow for seamless adoption</dd><dt>Engage</dt><dd>We are committed to tests that produce actionable information that truly makes a difference</dd></dl>
+</div>
+    </details>
+  </div>
+</section>
+<section class="piece" id="hered">
+  <div class="wrap">
+    <div class="piece-head">
+      <img class="cover" src="portfolio/atcg/cover-hered.jpg" width="640" height="1488" loading="lazy" alt="Front cover, Hereditary cancers">
+      <div>
+        <div class="eyebrow">Patient brochure &nbsp;·&nbsp; 03 of 06</div>
+        <h2>Hereditary cancers</h2>
+        <p class="lede">For the waiting room. Why knowing an inherited cancer risk early matters, what the test involves, and that the lab and its genetic counselors carry the follow-up, not the front desk.</p>
+      </div>
+    </div>
+    <div class="hint">Inside spread, 3 panels. Tap any panel to zoom.</div>
+    <div class="spread n3"><button class="panel" type="button" data-full="portfolio/atcg/hered-1.jpg" aria-label="Open panel 1 of 3, Hereditary cancers, full size"><img src="portfolio/atcg/hered-1.jpg" width="1100" height="2550" loading="lazy" decoding="async" alt="Hereditary cancers brochure, inside panel 1 of 3"></button><button class="panel" type="button" data-full="portfolio/atcg/hered-2.jpg" aria-label="Open panel 2 of 3, Hereditary cancers, full size"><img src="portfolio/atcg/hered-2.jpg" width="1100" height="2550" loading="lazy" decoding="async" alt="Hereditary cancers brochure, inside panel 2 of 3"></button><button class="panel" type="button" data-full="portfolio/atcg/hered-3.jpg" aria-label="Open panel 3 of 3, Hereditary cancers, full size"><img src="portfolio/atcg/hered-3.jpg" width="1100" height="2550" loading="lazy" decoding="async" alt="Hereditary cancers brochure, inside panel 3 of 3"></button></div>
+    <details class="copy">
+      <summary><span>Read the copy</span><span class="sm">Full text, sized for a phone</span></summary>
+      <div class="copy-body">
+<h4>Early detection is the best defense</h4>
+<p class="pull">Some of the most prevalent hereditary cancers have much higher survival rates when diagnosed early. ATCG’s Hereditary Cancer Solution provides knowledge that can assist with prevention and early detection.</p>
+<h4>Our process</h4>
+<ol class="steps-c"><li><b>Qualification</b><span>Your physician will help determine which test is medically necessary. A genetic counselor can also be utilized by your doctor to aid in this assessment.</span></li><li><b>Collect DNA</b><span>Simple, painless saliva sample is collected and then sent to the lab for testing.</span></li><li><b>Analyze results</b><span>Our CLIA Certified laboratory analyzes the DNA and reports results to your physician in 2-3 weeks.</span></li><li><b>Plan</b><span>A clear report and genetic counseling services are provided by the lab to help your doctor and YOU discuss all options.</span></li></ol>
+<h4>Statistics</h4>
+<p class="src" style="margin-top:0">Five-year survival</p>
+<div class="stats"><div><b>90% vs 15%</b><span>breast and ovarian: diagnosed early vs advanced stage</span></div><div><b>91% vs 11%</b><span>colon: diagnosed early vs advanced stage</span></div><div><b>100%</b><span>prostate: diagnosed early</span></div></div>
+<p class="src">Source: American Cancer Society</p>
+<h4>The hereditary cancer test</h4>
+<p>The Hereditary Cancer Test can empower you to change the course of cancer. Testing can help evaluate a genetic predisposition for cancer. This means you and your doctor can take proactive steps to decrease your risk and inform other family members about their risks. If cancer runs in your family, it’s better to find out sooner rather than later.</p>
+<h4>Knowledge is power</h4>
+<p>To change your future you must know what the future holds and steer your life in another direction. If you have a family history of cancer, or already had cancer, taking the test to establish if you carry an inherited cancer mutation can determine how closely you should be monitored with screenings and exams as well as help shape future treatment. It can also aid in determining your risk for other cancers and any pertinent medical management options.</p>
+</div>
+    </details>
+  </div>
+</section>
+<section class="piece" id="cardio">
+  <div class="wrap">
+    <div class="piece-head">
+      <img class="cover" src="portfolio/atcg/cover-cardio.jpg" width="640" height="1488" loading="lazy" alt="Front cover, Genetic testing for cardiovascular disease">
+      <div>
+        <div class="eyebrow">Patient brochure &nbsp;·&nbsp; 04 of 06</div>
+        <h2>Genetic testing for cardiovascular disease</h2>
+        <p class="lede">For patients. Inherited heart conditions, the four steps from saliva sample to plan, and the wallet-size QR patient card that keeps results with the patient.</p>
+      </div>
+    </div>
+    <div class="hint">Inside spread, 3 panels. Tap any panel to zoom.</div>
+    <div class="spread n3"><button class="panel" type="button" data-full="portfolio/atcg/cardio-1.jpg" aria-label="Open panel 1 of 3, Genetic testing for cardiovascular disease, full size"><img src="portfolio/atcg/cardio-1.jpg" width="1100" height="2550" loading="lazy" decoding="async" alt="Genetic testing for cardiovascular disease brochure, inside panel 1 of 3"></button><button class="panel" type="button" data-full="portfolio/atcg/cardio-2.jpg" aria-label="Open panel 2 of 3, Genetic testing for cardiovascular disease, full size"><img src="portfolio/atcg/cardio-2.jpg" width="1100" height="2550" loading="lazy" decoding="async" alt="Genetic testing for cardiovascular disease brochure, inside panel 2 of 3"></button><button class="panel" type="button" data-full="portfolio/atcg/cardio-3.jpg" aria-label="Open panel 3 of 3, Genetic testing for cardiovascular disease, full size"><img src="portfolio/atcg/cardio-3.jpg" width="1100" height="2550" loading="lazy" decoding="async" alt="Genetic testing for cardiovascular disease brochure, inside panel 3 of 3"></button></div>
+    <details class="copy">
+      <summary><span>Read the copy</span><span class="sm">Full text, sized for a phone</span></summary>
+      <div class="copy-body">
+<h4>Early detection is the best defense</h4>
+<p class="pull">According to the American Heart Association, an estimated 80% of cardiovascular disease, including heart disease and stroke, is preventable. ATCG’s Hereditary Cardio Solution provides knowledge that can assist with early detection and prevention.</p>
+<h4>Our process</h4>
+<ol class="steps-c"><li><b>Qualification</b><span>Your physician will help determine which test is medically necessary. A genetic counselor can also be utilized by your doctor to aid in this assessment.</span></li><li><b>Collect DNA</b><span>Simple, painless saliva sample is collected and then sent to the lab for testing.</span></li><li><b>Analyze results</b><span>Our CLIA Certified laboratory analyzes the DNA and reports results to your physician in 2-3 weeks.</span></li><li><b>Plan</b><span>A clear report and genetic counseling services are provided by the lab to help your doctor and YOU discuss all options.</span></li></ol>
+<p>If your test results are “Pathogenic” or “Likely Pathogenic”, ATCG gives you the option to have your report sent to you directly.</p>
+<p>ATCG’s Patient Card is our way of helping you take action by sending you a QR code that’s the size of a credit card, so that your information is available to you and any doctor you see with no delays. The QR code is for your privacy and is HIPAA compliant.</p>
+<h4>Statistics</h4>
+<div class="stats"><div><b>610,000</b><span>people die in the US of heart disease each year</span></div><div><b>735,000</b><span>people have heart attacks in the US each year</span></div><div><b>Every 80 seconds</b><span>cardiovascular disease claims the life of a woman</span></div></div>
+<p class="src">Source: CDC</p>
+<h4>The hereditary cardio test</h4>
+<p>The Hereditary Cardio Test can empower you to change the course of cardiovascular disease. Testing can help evaluate a genetic predisposition for cardiovascular disease. This means you and your doctor can take proactive steps to decrease your risk and inform other family members about their risks. If cardiovascular and other heart related diseases run in your family, it’s better to find out sooner rather than later.</p>
+<h4>Knowledge is power</h4>
+<p>To change your future you must know what the future holds and steer your life in another direction. If you have a family history of cardiovascular diseases, or already have a cardiovascular disease or heart condition, taking the test to establish if you carry an inherited mutation can determine how closely you should be monitored with screenings, intervention prescription drugs, and exams, as well as help shape future treatment. It can also aid in determining your risk for other cardio related diseases and any pertinent medical management options.</p>
+</div>
+    </details>
+  </div>
+</section>
+<section class="piece" id="screen">
+  <div class="wrap">
+    <div class="piece-head">
+      <img class="cover" src="portfolio/atcg/cover-screen.jpg" width="640" height="1556" loading="lazy" alt="Front cover, Understanding your hereditary cancer screening options">
+      <div>
+        <div class="eyebrow">Patient brochure &nbsp;·&nbsp; 05 of 06</div>
+        <h2>Understanding your hereditary cancer screening options</h2>
+        <p class="lede">The long-form patient piece. Starts from what cancer is, walks through inherited risk and the warning signs in a family history, and explains what a positive or negative result does and doesn&#x27;t mean.</p>
+      </div>
+    </div>
+    <div class="hint">Inside spread, 4 panels. Tap any panel to zoom.</div>
+    <div class="spread n4"><button class="panel" type="button" data-full="portfolio/atcg/screen-1.jpg" aria-label="Open panel 1 of 4, Understanding your hereditary cancer screening options, full size"><img src="portfolio/atcg/screen-1.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Understanding your hereditary cancer screening options brochure, inside panel 1 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/screen-2.jpg" aria-label="Open panel 2 of 4, Understanding your hereditary cancer screening options, full size"><img src="portfolio/atcg/screen-2.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Understanding your hereditary cancer screening options brochure, inside panel 2 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/screen-3.jpg" aria-label="Open panel 3 of 4, Understanding your hereditary cancer screening options, full size"><img src="portfolio/atcg/screen-3.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Understanding your hereditary cancer screening options brochure, inside panel 3 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/screen-4.jpg" aria-label="Open panel 4 of 4, Understanding your hereditary cancer screening options, full size"><img src="portfolio/atcg/screen-4.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Understanding your hereditary cancer screening options brochure, inside panel 4 of 4"></button></div>
+    <details class="copy">
+      <summary><span>Read the copy</span><span class="sm">Full text, sized for a phone</span></summary>
+      <div class="copy-body"><h4>What is cancer?</h4>
+<p>Cancer is a class of disease where there is uncontrolled growth of abnormal cells in the body. Cancer develops when the body’s normal process of cell growth goes wrong and new cells form when the body doesn’t need them and old or damaged cells do not die as they should. Buildups of these abnormal cells often invade healthy cells and may form a mass of tissue, called a lump, growth or tumor.</p>
+<p>There are some cancers, like leukemia, cancer of the blood that does not form tumors. They grow in the blood cells or other cells of the body.</p>
+<h4>Cancer is not just one disease</h4>
+<p>There are many types of cancer. It’s not just one disease. Cancer can start in the lungs, breast, colon, or even in blood. Cancer cells can also spread to other parts of the body. For instance, cancer cells in the lung can travel to the bones and grow there. When cancer cells spread, it’s called metastasis. When lung cancer spreads to the bones, it’s still called lung cancer. It’s not called bone cancer unless it started in the bones.</p>
+<h4>Cancer and genetics</h4>
+<p>Cancers that run in families can be caused by an abnormal gene that is passed from generation to generation. Although this is often referred to as inherited cancer, what is inherited is the abnormal gene that can lead to cancer, not the cancer itself. Only about 5 to 10% of all cancers are thought to result directly from gene defects or mutations inherited from a parent.</p>
+<h4>Gene mutations can be inherited or acquired</h4>
+<p>An inherited gene mutation is present in the egg or sperm cell that formed the child and is passed down through generations. An acquired gene mutation does not come from a parent, but is acquired some time later. It starts in one cell, and then is passed on to any new cells that are created from that cell. This kind of mutation is not present in egg or sperm cells, so it is not passed on to the next generation. Acquired mutations are much more common than inherited mutations. Most cancers are caused by acquired mutations.</p>
+<h4>Risk factors</h4>
+<p>Certain things make it more likely that cancers in a family are caused by a family cancer syndrome, such as:</p>
+<ul><li>Many cases of the same type of cancer, especially if it is an uncommon or rare type of cancer.</li><li>Cancers occurring at younger ages than usual such as colon cancer in a 20-year-old.</li><li>More than one type of cancer in a single person such as a woman with both breast and ovarian cancer.</li><li>Cancers occurring in both of a pair of organs like both eyes, both kidneys, or both breasts.</li><li>More than one childhood cancer in siblings for example sarcoma in both a brother and a sister.</li><li>Cancer occurring in the gender not usually affected such as breast cancer in a man.</li><li>Cancer occurring in many generations, like in a grandfather, father, and son.</li></ul>
+<h4>When trying to determine if cancer might run in your family, first gather some information. Look at:</h4>
+<ul><li>Who has the cancer? How are you related? Which side of the family are they on (mother’s or father’s)?</li><li>What type of cancer is it? Is it rare?</li><li>How old was this relative when they were diagnosed?</li><li>Did this person get more than one type of cancer?</li><li>Did they have any known risk factors for their type of cancer (such as smoking for lung cancer)?</li></ul>
+<h4>ATCG laboratories inherited cancer screening panels</h4>
+<ul><li>Breast and Ovarian Cancer – 8 genes ATM, CDH1, PALB2, STK11, TP53, PTEN, BRCA1, BRCA2</li><li>Gastroenterology Cancer - 14 genes APC, BRCA1, BRCA2, CDH1, EPCAM, MLH1, MSH2, MSH6, MUTYH, PALB2, PMS2, PTEN, STK11, TP53</li><li>Lynch Syndrome - 5 genes EPCAM, MLH1, MSH2, MSH6, PMS2</li><li>Prostate Cancer – 10 genes ATM, BRCA1, BRCA2, CHEK2, EPCAM, MLH1, MSH2, NBN, PMS2, TP53</li><li>Cancer Focus Panel – 27 genes linked to Breast, Ovarian, Endometrial, Colorectal, Lynch Syndrome, Gastric, Melanoma, Pancreatic, Polyposis, Prostate, Renal, Thyroid/Parathyroid, Uterine and other major cancers ABRAXAS1, ATM, APC, BARD1, BRIP1, CDH1, CHEK2, EPCAM, MLH1, MRE11A, MSH2, MSH6, MUTYH, NBN, PALB2, PIK3CA, PMS2, PTEN, RAD50, RAD51C, RAD51D, STK11, TP53, XRCC2, PMS2CL</li></ul>
+<p>Mutations in each gene may be rare when evaluated individually, however they collectively account for a significant amount of hereditary cancer susceptibility. This panel may be appropriate in a number of scenarios, particularly if the family history shares features of several different hereditary cancer syndromes with multiple cancer types.</p>
+<h4>Examples of hereditary cancer syndromes</h4>
+<p><b>Breast Cancer</b> is the most common cancer in women in developed countries, affecting about 1 in 8 (12.5%) women in their lifetime. The National Cancer Institute (NCI) estimates that approximately 231,840 new cases of female breast cancer and 2,350 new cases of male breast cancer will be diagnosed in the U.S. in 2017.</p>
+<p>The majority of breast cancers are sporadic, but 5-10% are due to inherited causes. Hereditary breast cancer tends to occur earlier in life than non-familial cases and is more likely to occur in both breasts. The BRCA1 and BRCA2 genes appear to be responsible for ~half of hereditary breast cancer. However, additional genes are associated with increased breast cancer risk as well. Mutations in the genes included in the Comprehensive Panel can confer an estimated 20–87% lifetime risk for breast cancer. Some of these genes are associated with increased risks for other cancers, such as pancreatic cancer with PALB2, ovarian cancer with BRCA1, BRCA2, RAD51C, and sarcoma with TP53.</p>
+<p><b>Ovarian Cancer</b> is the fifth most common cancer among women in developed countries, affecting approximately 1 in 71 (1.4%) women in their lifetime. The NCI estimates that approximately 21,290 new cases of ovarian cancer will be diagnosed and 14,180 ovarian cancer deaths will occur in the U.S. in 2017. BRCA1 and BRCA2 are the most common causes of hereditary ovarian cancer, but several other genes are associated with increased ovarian cancer risk as well.</p><p><b>Colorectal Cancer (CRC)</b> affects about 1 in 20 (5%) men and women in their lifetime. The NCI estimates that ~132,700 new cases will be diagnosed and ~49,700 CRC deaths will occur in the U.S. in 2017. Lynch syndrome is the most common form of hereditary CRC, but other genes on the Panel are also associated with increased CRC risk.</p><p><b>Uterine Cancer</b> affects about 1 in 38 (2.6%) women in their lifetime. The NCI estimates that approximately 54,870 new cases of uterine cancer will be diagnosed and ~10,170 uterine cancer deaths will occur in the U.S. in 2017. Increased risk for uterine cancer has been identified in a number of hereditary cancer syndromes, including Lynch syndrome and Cowden syndrome.</p><p><b>Prostate Cancer</b> is the second most common cancer in men in the United States, after skin cancer. The NCI estimates that approximately 180,890 new cases of prostate cancer will be diagnosed in the U.S. in 2017. Hereditary prostate cancer may be diagnosed at younger ages and may also be more aggressive. For example, BRCA1 and BRCA2 gene mutations have been shown to be associated with more aggressive prostate cancer.</p>
+<h4>What do my test results mean?</h4>
+<p>Testing does not tell you if you currently have cancer. Your test results tell you about your inherited risk of having breast and ovarian cancer, or other cancers.</p>
+<p>A negative test result means that you do not have a gene mutation in what were evaluated in the Gene Panel Testing. Although the gene test can detect the majority of mutations:</p>
+<ul><li>You could have a gene mutation or type of mutations that the test wasn’t targeted to detect.</li><li>Or if your family carries a high-risk gene mutation that researchers haven’t yet identified then the test would not be able to detect this gene mutation and you could be a carrier.</li></ul>
+<p>A negative test result does not eliminate the chance of developing non-hereditary cancer. You may have the same cancer risk as that of the general population.</p>
+<p>A positive test result means that you have a gene mutation that is associated with cancer. A positive test result does not mean that you have cancer or that you will certainly have cancer. A positive test result tells you that you have a higher risk of developing cancer compared with someone who does not have the mutation.</p>
+<h4>Hereditary cancer mutations can be passed on in a family</h4>
+<ul><li>If you have a mutation in one of these genes, your parents, your children, and your brothers and sisters have a chance that they have the same mutation.</li><li>Other relatives may be at risk to carry the same mutation. Testing is the only way to accurately identify mutation carriers.</li><li>It is important to share test results with family members.</li><li>Individuals may differ in their viewpoints and reactions to genetic testing.</li></ul>
+<h4>Cancer risk management</h4>
+<p>Options for reducing cancer risk are available whether or not you have already had a diagnosis of cancer and/or polyps (adenomas). Your healthcare providers will discuss your testing options and medical management options for reducing risk such as Increased Surveillance, Surgical Management, and Chemoprevention.</p></div>
+    </details>
+  </div>
+</section>
+<section class="piece" id="hboc">
+  <div class="wrap">
+    <div class="piece-head">
+      <img class="cover" src="portfolio/atcg/cover-hboc.jpg" width="640" height="1556" loading="lazy" alt="Front cover, Hereditary breast and ovarian cancer (HBOC)">
+      <div>
+        <div class="eyebrow">Patient brochure &nbsp;·&nbsp; 06 of 06</div>
+        <h2>Hereditary breast and ovarian cancer (HBOC)</h2>
+        <p class="lede">For patients. How HBOC passes through families, what BRCA1 and BRCA2 mean for women and men, and how to talk with relatives about a result.</p>
+      </div>
+    </div>
+    <div class="hint">Inside spread, 4 panels. Tap any panel to zoom.</div>
+    <div class="spread n4"><button class="panel" type="button" data-full="portfolio/atcg/hboc-1.jpg" aria-label="Open panel 1 of 4, Hereditary breast and ovarian cancer (HBOC), full size"><img src="portfolio/atcg/hboc-1.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Hereditary breast and ovarian cancer (HBOC) brochure, inside panel 1 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/hboc-2.jpg" aria-label="Open panel 2 of 4, Hereditary breast and ovarian cancer (HBOC), full size"><img src="portfolio/atcg/hboc-2.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Hereditary breast and ovarian cancer (HBOC) brochure, inside panel 2 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/hboc-3.jpg" aria-label="Open panel 3 of 4, Hereditary breast and ovarian cancer (HBOC), full size"><img src="portfolio/atcg/hboc-3.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Hereditary breast and ovarian cancer (HBOC) brochure, inside panel 3 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/hboc-4.jpg" aria-label="Open panel 4 of 4, Hereditary breast and ovarian cancer (HBOC), full size"><img src="portfolio/atcg/hboc-4.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Hereditary breast and ovarian cancer (HBOC) brochure, inside panel 4 of 4"></button></div>
+    <details class="copy">
+      <summary><span>Read the copy</span><span class="sm">Full text, sized for a phone</span></summary>
+      <div class="copy-body"><h4>What is hereditary breast and ovarian cancer (HBOC) syndrome?</h4>
+<p>HBOC syndrome is an inherited genetic condition. This means that the cancer risk is passed from generation to generation in a family. If you have HBOC syndrome, you carry a gene mutation you inherited from your father or your mother, or sometimes from both parents, that significantly increases your risk for certain cancers. Hereditary Breast and Ovarian Cancer (HBOC) syndrome can be inherited from either the father’s side or the mother’s side of the family.</p>
+<h4>What causes HBOC?</h4>
+<p>BRCA1 and BRCA2 (BReast CAncer genes 1 and 2) are the most well-known genes linked to breast cancer risk and are associated with the majority of HBOC families. BRCA1/2 mutations can be passed to you from either parent and can affect the risk of cancers in both women and men. Inherited mutations of either the BRCA1 or the BRCA2 gene causes about 10% of breast and ovarian cancers. A mutation or alteration in either BRCA1 or BRCA2 increases a woman’s lifetime risk of developing breast and ovarian cancers. A person with BRCA1/2 mutations not only has a higher risk of developing these cancers, but also may pass that gene mutation on to his or her children. Men with these gene mutations also have an increased risk of breast cancer and prostate cancer. Not all families with multiple cases of breast and ovarian cancer have mutations in BRCA1 or BRCA2.</p>
+<h4>How common is hereditary breast and ovarian cancer?</h4>
+<p>Like other gene mutations, BRCA1/2 mutations are rare in the general population. Women in the general population have about an 8% chance of getting breast cancer by age 70 and about a 12% chance by age 85. Current estimates are less than 1% of the general population has a BRCA1/2 mutation.</p>
+<h4>BRCA1 and BRCA2 gene mutations and ethnicity</h4>
+<p>Among Ashkenazi Jewish men and women, about one in 40 have a BRCA1/2 mutation. Approximately 1 in 10 women with breast cancer and 1 in 3 women with ovarian cancer in Ashkenazi families have BRCA1/2 mutations. The table below shows how the prevalence of BRCA1/2 mutations varies among breast cancer survivors from different ethnic groups in alphabetical order.</p>
+<div class="tblwrap"><table><thead><tr><th>Ethnicity</th><th>BRCA1</th><th>BRCA2</th></tr></thead><tbody><tr><td>African-American</td><td>1%</td><td>3%</td></tr><tr><td>Ashkenazi Jewish</td><td>8-10%</td><td>1%</td></tr><tr><td>Asian-American</td><td>Less than 1%</td><td>Data not available</td></tr><tr><td>Caucasian (non-Ashkenazi Jewish)</td><td>2-3%</td><td>2%</td></tr><tr><td>Hispanic</td><td>4%</td><td>Data not available</td></tr></tbody></table></div>
+<h4>Factors that increase inherited risk for cancer</h4>
+<p>Many people are unaware of their inherited risk, though they may be aware of a cancer history in their family. You should consider talking with a doctor about genetic testing for hereditary breast and ovarian cancer (HBOC) syndrome if at least one of the following applies to you or your family:</p>
+<ul><li>Breast cancer before age 50</li><li>One or more relatives diagnosed at age 45 or younger</li><li>Two or more relatives who’ve had breast cancer</li><li>A male relative who’s had breast cancer</li><li>Breast cancer in both breasts or twice in the same breast</li><li>Being in a family of Ashkenazi or Eastern European Jewish ancestry</li><li>Ovarian cancer at any age</li><li>A family member with a BRCA1/2 mutation or mutations in other related breast cancer risk genes</li><li>A history of breast cancer, ovarian cancer, prostate and/or pancreatic cancer on the same side of the family</li></ul>
+<h4>Cancer risks for women with BRCA1/2 mutation</h4>
+<ul><li>Lifetime risk of breast cancer: 50% to 85%</li><li>Risk of breast cancer before age 50: 30% to 50%</li><li>Lifetime risk of ovarian cancer:<ul><li>BRCA1 gene mutation: 25% to 50%</li><li>BRCA2 gene mutation: 15% to 30%</li></ul></li><li>Developing a second breast cancer: 40% to 60%. The risk of breast cancer occurring in the other breast rises approximately 2% to 3% per year.</li></ul>
+<h4>BRCA1/2 mutations and cancer in men</h4>
+<p>Men can also have BRCA1/2 mutations and may pass them on to their children.</p>
+<ul><li>Lifetime risk of breast cancer<ul><li>BRCA1 gene mutation: 1% to 2%. This is a 10-fold increase over the general population.</li><li>BRCA2 gene mutation: 6%</li></ul></li><li>Risk of prostate cancer<ul><li>BRCA1 gene mutation: some increased risk.</li><li>BRCA2 gene mutation: 20%</li></ul></li><li>Men with a BRCA2 gene mutation have a significantly increased risk of developing more aggressive prostate cancer before age 65 and therefore screening should begin at age 40.</li></ul>
+<h4>Screening for BRCA1/2 gene mutations</h4>
+<p>The BRCA gene test is most often a saliva or blood test. Your test sample is collected in your doctor’s office and sent to a laboratory for DNA analysis. It takes 2-4 weeks before test results are available. Your doctor or genetic counselor will contact you with your test results, discuss their implications and go over your options. Federal and state laws help ensure the privacy of your genetic information and protect against discrimination in health insurance and employment.</p>
+<h4>What do the test results mean?</h4>
+<p>Testing does not tell you if you currently have cancer. Your test results tell you about your inherited risk of having breast and ovarian cancer.</p>
+<p>A negative test result means that you do not have a BRCA1 or BRCA2 gene mutation. Although the BRCA gene test can detect the majority of mutations in the BRCA1 and BRCA2 genes:</p>
+<ul><li>You could have a gene mutation that the test wasn’t able to detect.</li><li>Or if your family carries a high-risk gene mutation that researchers haven’t yet identified then the test would not be able to detect this gene mutation and you could be a carrier.</li></ul>
+<p>A negative test result does not eliminate the chance of developing a non-hereditary breast cancer. You still have the same cancer risk as that of the general population.</p>
+<p>A positive test result means that you have a BRCA1 or BRCA2 gene mutation. A positive test result does not mean that you have cancer or that you will have cancer. Having the BRCA1/2 mutations does not mean that you will get breast cancer. Many women with a BRCA1/2 mutation will never have breast cancer.</p>
+<p>A positive test result tells you that you have a much higher risk of developing breast cancer or ovarian cancer compared with someone who does not have the mutation. A positive test result helps you to better understand your personal risk of developing breast and ovarian cancers. You can then make choices on what to do to reduce your risk and about what follow up care is right for you.</p>
+<h4>Should I talk with my relatives about my result?</h4>
+<p>You are encouraged to share these results with your relatives. It is normal to feel some anxiety about this. But knowing this information may help your relatives understand their own future risk of developing cancer, which may help them prevent a cancer or detect it early.</p>
+<h4>Follow-up care after a positive test result</h4>
+<p>You might choose to take specific measures to reduce your cancer risk. What you choose to do depends on many factors, including your age, medical history, prior treatments, past surgeries and personal preferences. You and your healthcare provider will discuss your options for medical management.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Need someone who can build the field playbook and write what goes in the bag?</h2>
+      <p>I've done it for orthopedic devices, a clinical lab and benefits programs. Happy to walk through how any of these pieces were used in the field.</p>
+    </div>
+    <div class="lines">
+      <div><span>Email</span><a href="mailto:jay@jaybeatty.com">jay@jaybeatty.com</a></div>
+      <div><span>Phone</span><a href="tel:+18052184663">805.218.4663</a></div>
+      <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/jaybeatty" target="_blank" rel="noopener">linkedin.com/in/jaybeatty</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Jay Beatty. ATCG brochures shown as samples of my work; ATCG's name and marks belong to the lab. Clinical figures are as printed in 2020.</span><span>Central Pennsylvania</span></div></footer>
+
+<dialog class="viewer" id="viewer" aria-label="Brochure panel viewer">
+  <div class="vbar">
+    <span class="lab" id="vlab"></span>
+    <div class="grp"><button type="button" id="vprev" aria-label="Previous panel">Prev</button><button type="button" id="vnext" aria-label="Next panel">Next</button><button type="button" id="vzoom">Zoom</button><button type="button" id="vclose">Close</button></div>
+  </div>
+  <div class="vstage" id="vstage"><img id="vimg" alt=""></div>
+</dialog>
+<script>
+(function(){
+  const dlg=document.getElementById('viewer'),img=document.getElementById('vimg'),stage=document.getElementById('vstage'),lab=document.getElementById('vlab');
+  const all=[...document.querySelectorAll('.panel')];let cur=0;
+  function show(i){cur=(i+all.length)%all.length;const b=all[cur];img.src=b.dataset.full;img.alt=b.querySelector('img').alt;lab.innerHTML='<span class="t">'+b.closest('.piece').querySelector('h2').textContent+' · </span>Panel '+([...b.parentNode.children].indexOf(b)+1)+' of '+b.parentNode.children.length;stage.classList.remove('z');stage.scrollTo(0,0);document.getElementById('vzoom').textContent='Zoom';}
+  function zoom(){const z=stage.classList.toggle('z');document.getElementById('vzoom').textContent=z?'Fit':'Zoom';}
+  all.forEach((b,i)=>b.addEventListener('click',()=>{show(i);if(dlg.showModal)dlg.showModal();else window.open(b.dataset.full,'_blank');}));
+  img.addEventListener('click',zoom);
+  document.getElementById('vzoom').addEventListener('click',zoom);
+  document.getElementById('vclose').addEventListener('click',()=>dlg.close());
+  document.getElementById('vprev').addEventListener('click',()=>show(cur-1));
+  document.getElementById('vnext').addEventListener('click',()=>show(cur+1));
+  dlg.addEventListener('keydown',e=>{if(e.key==='ArrowRight')show(cur+1);if(e.key==='ArrowLeft')show(cur-1);});
+  dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});
+})();
+</script>
+</body>
+</html>
