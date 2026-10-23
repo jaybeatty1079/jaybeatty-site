@@ -61,10 +61,10 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:co
 nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
 .brand{font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
 .brand b{color:var(--green-soft);font-weight:400}
-.links{display:flex;gap:22px;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}
-.links a{color:var(--fg);font-weight:600}
-.links a:hover{color:var(--fg);text-decoration:none}
-@media(max-width:860px){.links{display:none}}
+.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color .15s,background-color .15s,color .15s}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none;outline:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
+
+
+@media(max-width:860px){nav{height:auto;flex-wrap:wrap;padding-block:10px;row-gap:8px}.links{width:100%;padding-bottom:2px;-webkit-overflow-scrolling:touch}}
 .btn{font-weight:700;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:6px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--purple);color:var(--fg);background:transparent;cursor:pointer}
 .btn.primary{background:var(--purple);border-color:var(--purple)}
 .btn.small{padding:6px 10px;font-size:.64rem}
