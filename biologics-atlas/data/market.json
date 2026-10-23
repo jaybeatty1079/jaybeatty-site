@@ -1,0 +1,450 @@
+{
+ "generated": "2026-10-22",
+ "companies": [],
+ "product_company": {
+  "montage-xt-cranial": {
+   "company_id": "abyrx",
+   "tier": "unknown"
+  },
+  "ossigraft": {
+   "company_id": "ossium",
+   "tier": "unknown"
+  },
+  "rotium": {
+   "company_id": "atreon",
+   "tier": "unknown"
+  },
+  "pearlmatrix": {
+   "company_id": "cerapedics",
+   "tier": "unknown"
+  },
+  "new-bvf-clearances-2024-2026": {
+   "company_id": null,
+   "tier": "multiple"
+  },
+  "tnr-cranial-implant": {
+   "company_id": "tr-biofab",
+   "tier": "unknown"
+  },
+  "arthrex-angel": {
+   "company_id": "arthrex",
+   "tier": "unknown"
+  },
+  "bmac": {
+   "company_id": null,
+   "tier": "multiple"
+  },
+  "harvest-smartprep-bmac": {
+   "company_id": "terumo",
+   "tier": "unknown"
+  },
+  "magellan": {
+   "company_id": "isto-biologics",
+   "tier": "unknown"
+  },
+  "allomatrix": {
+   "company_id": "stryker",
+   "tier": "unknown"
+  },
+  "accell-evo3": {
+   "company_id": "orthofix",
+   "tier": "unknown"
+  },
+  "allofuse": {
+   "company_id": "allosource",
+   "tier": "unknown"
+  },
+  "dbx": {
+   "company_id": "jnj-depuy-synthes",
+   "tier": "unknown"
+  },
+  "grafton": {
+   "company_id": "medtronic",
+   "tier": "unknown"
+  },
+  "magnifuse": {
+   "company_id": "medtronic",
+   "tier": "unknown"
+  },
+  "optium-dbm": {
+   "company_id": "lifenet-health",
+   "tier": "unknown"
+  },
+  "prp": {
+   "company_id": null,
+   "tier": "multiple"
+  },
+  "bioactive-glass-foot-ankle": {
+   "company_id": null,
+   "tier": "multiple"
+  },
+  "bonalive": {
+   "company_id": "bonalive",
+   "tier": "unknown"
+  },
+  "cortoss": {
+   "company_id": "stryker",
+   "tier": "unknown"
+  },
+  "fibergraft": {
+   "company_id": "prosidyan",
+   "tier": "unknown"
+  },
+  "novabone": {
+   "company_id": "isto-biologics",
+   "tier": "unknown"
+  },
+  "signafuse": {
+   "company_id": "bioventus",
+   "tier": "unknown"
+  },
+  "directinject": {
+   "company_id": "stryker",
+   "tier": "unknown"
+  },
+  "hydroset": {
+   "company_id": "stryker",
+   "tier": "unknown"
+  },
+  "kyphos-fs": {
+   "company_id": "medtronic",
+   "tier": "unknown"
+  },
+  "mimix": {
+   "company_id": "zimmer-biomet",
+   "tier": "unknown"
+  },
+  "norian": {
+   "company_id": "jnj-depuy-synthes",
+   "tier": "unknown"
+  },
+  "osteovation-cmf": {
+   "company_id": "skeletal-kinetics",
+   "tier": "unknown"
+  },
+  "chronos-inject": {
+   "company_id": "jnj-depuy-synthes",
+   "tier": "unknown"
+  },
+  "osteoset": {
+   "company_id": "stryker",
+   "tier": "unknown"
+  },
+  "osteoset-t": {
+   "company_id": "stryker",
+   "tier": "unknown"
+  },
+  "perossal": {
+   "company_id": "osartis",
+   "tier": "unknown"
+  },
+  "stimulan": {
+   "company_id": "biocomposites",
+   "tier": "unknown"
+  },
+  "bio4": {
+   "company_id": "smith-nephew",
+   "tier": "unknown"
+  },
+  "osteoamp": {
+   "company_id": "bioventus",
+   "tier": "unknown"
+  },
+  "osteovive-plus": {
+   "company_id": "xtant-medical",
+   "tier": "unknown"
+  },
+  "osteocel": {
+   "company_id": "globus-medical",
+   "tier": "unknown"
+  },
+  "trinity-elite": {
+   "company_id": "orthofix",
+   "tier": "unknown"
+  },
+  "vivigen": {
+   "company_id": "jnj-depuy-synthes",
+   "tier": "unknown"
+  },
+  "autologous-bone-flap": {
+   "company_id": null,
+   "tier": "multiple"
+  },
+  "lipus-pemf-stimulators": {
+   "company_id": "bioventus",
+   "tier": "unknown"
+  },
+  "masquelet-induced-membrane": {
+   "company_id": null,
+   "tier": "multiple"
+  },
+  "regeneten": {
+   "company_id": "smith-nephew",
+   "tier": "unknown"
+  },
+  "ria": {
+   "company_id": "jnj-depuy-synthes",
+   "tier": "unknown"
+  },
+  "traumacem-v-plus": {
+   "company_id": "jnj-depuy-synthes",
+   "tier": "unknown"
+  },
+  "i-factor": {
+   "company_id": "cerapedics",
+   "tier": "unknown"
+  },
+  "abaloparatide": {
+   "company_id": "radius",
+   "tier": "unknown"
+  },
+  "romosozumab": {
+   "company_id": "amgen",
+   "tier": "unknown"
+  },
+  "teriparatide": {
+   "company_id": "lilly",
+   "tier": "unknown"
+  },
+  "zoledronic-acid": {
+   "company_id": "novartis",
+   "tier": "unknown"
+  },
+  "infuse": {
+   "company_id": "medtronic",
+   "tier": "unknown"
+  },
+  "augment-bone-graft": {
+   "company_id": "stryker",
+   "tier": "unknown"
+  },
+  "augment-injectable": {
+   "company_id": "stryker",
+   "tier": "unknown"
+  },
+  "gem-21s": {
+   "company_id": "lynch",
+   "tier": "unknown"
+  },
+  "dermal-allograft-rotator-cuff": {
+   "company_id": "stryker",
+   "tier": "unknown"
+  },
+  "cornerloc-grafts": {
+   "company_id": "cornerloc",
+   "tier": "unknown"
+  },
+  "fibular-strut-allograft": {
+   "company_id": null,
+   "tier": "multiple"
+  },
+  "distal-tibia-allograft-glenoid": {
+   "company_id": null,
+   "tier": "multiple"
+  },
+  "linq": {
+   "company_id": "painteq",
+   "tier": "unknown"
+  },
+  "psif-allograft": {
+   "company_id": "omnia",
+   "tier": "unknown"
+  },
+  "silo": {
+   "company_id": "aurora-spine",
+   "tier": "unknown"
+  },
+  "femoral-head-structural-allograft": {
+   "company_id": null,
+   "tier": "multiple"
+  },
+  "structural-allograft-acdf": {
+   "company_id": null,
+   "tier": "multiple"
+  },
+  "vyrsa-pro": {
+   "company_id": "globus-medical",
+   "tier": "unknown"
+  },
+  "ifuse-intra-allograft": {
+   "company_id": "si-bone",
+   "tier": "unknown"
+  },
+  "actifuse": {
+   "company_id": "baxter",
+   "tier": "unknown"
+  },
+  "cerament-bvf": {
+   "company_id": "bonesupport",
+   "tier": "unknown"
+  },
+  "cerament-g": {
+   "company_id": "bonesupport",
+   "tier": "unknown"
+  },
+  "magnetos": {
+   "company_id": "kuros",
+   "tier": "unknown"
+  },
+  "mastergraft": {
+   "company_id": "medtronic",
+   "tier": "unknown"
+  },
+  "hto-ceramic-wedges": {
+   "company_id": "arthrex",
+   "tier": "unknown"
+  },
+  "osteopore-pcl": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "pro-dense": {
+   "company_id": "stryker",
+   "tier": "unknown"
+  },
+  "vitoss": {
+   "company_id": "stryker",
+   "tier": "unknown"
+  },
+  "chronos": {
+   "company_id": "jnj-depuy-synthes",
+   "tier": "unknown"
+  },
+  "induce-xt": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "brtx-100": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "epibone-cmf": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "idct-rebonuputemcel": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "intradiscal-biologics-note": {
+   "company_id": "vivex",
+   "tier": "unknown"
+  },
+  "nvd-003": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "nvdx3": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "rexlemestrocel-l": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "umbilical-cord-wharton-jelly-injectables": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "amniotic-orthopedic-products": {
+   "company_id": null,
+   "tier": "multiple"
+  },
+  "exosome-products-class": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "gene-therapy-bone-preclinical": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "nb1": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "osteogrow": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "tetranite-cranial": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "tg-c-tissuegene": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "via-disc-np": {
+   "company_id": "vivex",
+   "tier": "unknown"
+  },
+  "amplex": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "kur-113-fibrin-pth": {
+   "company_id": "kuros",
+   "tier": "unknown"
+  },
+  "ldgraft": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "novosis-rhbmp2-korea": {
+   "company_id": "cgbio",
+   "tier": "unknown"
+  },
+  "cerament-v": {
+   "company_id": "bonesupport",
+   "tier": "unknown"
+  },
+  "allob": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "bonesource": {
+   "company_id": "stryker",
+   "tier": "unknown"
+  },
+  "map3": {
+   "company_id": "surgalign-rti-evergen",
+   "tier": "unknown"
+  },
+  "kryptonite": {
+   "company_id": null,
+   "tier": "unknown"
+  },
+  "op-1": {
+   "company_id": null,
+   "tier": "unknown"
+  }
+ },
+ "shares": [],
+ "leaders": {},
+ "deals": [],
+ "size": {
+  "procedure_volumes": [],
+  "biologic_penetration": [],
+  "market_size": [],
+  "reimbursement": []
+ },
+ "category_split": [],
+ "analysis": {
+  "leaders_by_tier": {},
+  "leader_rows": [],
+  "claim2": {
+   "small_mid_top3_n": 0,
+   "small_mid_mean_grade": null,
+   "small_mid_level_I_pct": null,
+   "large_top3_n": 0,
+   "large_mean_grade": null,
+   "large_level_I_pct": null
+  },
+  "deals_by_acquirer_tier": {},
+  "deals_by_evidence_at_deal": {},
+  "n_shares": 0,
+  "n_deals": 0
+ },
+ "verdict_md": "",
+ "gaps": []
+}

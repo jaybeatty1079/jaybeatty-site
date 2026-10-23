@@ -4,6 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Biologics Atlas</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jay Beatty">
+<meta property="og:title" content="Biologics Atlas · Jay Beatty">
+<meta property="og:description" content="Pick a bone, see what the market actually has for it: 104 orthobiologic products across 73 surgical applications with FDA pathway, strongest study, evidence grade and reimbursement.">
+<meta property="og:url" content="https://jaybeatty.com/biologics-atlas/">
+<meta property="og:image" content="https://jaybeatty.com/og/atlas.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Biologics Atlas · Jay Beatty">
+<meta name="twitter:description" content="Pick a bone, see what the market actually has for it: 104 orthobiologic products across 73 surgical applications with FDA pathway, strongest study, evidence grade and reimbursement.">
+<meta name="twitter:image" content="https://jaybeatty.com/og/atlas.png">
 <meta name="description" content="An interactive map of US orthobiologics by surgical application: what is established, what is emerging, what is investigational, with the clinical evidence, FDA pathway and reimbursement for each product, across spine and trauma.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,6 +80,15 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:16px;heigh
 .chip{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
 .chip b{color:var(--fg);font-weight:500}
 .layers{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.card.fig{padding:16px 18px 14px}.card.fig svg.sf{width:100%;height:auto;display:block;margin-top:10px;background:var(--surface);border-radius:8px}.card.fig .cap{color:var(--muted);font-size:.92rem;margin-top:10px;max-width:72ch}
+.badge.tier{border-color:var(--teal);color:#7fe0d8}.badge.tier.large{border-color:var(--purple);color:var(--purple-soft)}.badge.tier.small,.badge.tier.mid,.badge.tier.private{border-color:var(--amber);color:var(--amber)}.badge.share{border-color:var(--green);color:var(--green-soft)}
+.mkt{margin-top:12px;border-top:1px solid var(--line-soft);padding-top:10px}.mkt .h{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}.mkt .row{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;font-size:.92rem}.mkt .row+.row{margin-top:4px}.mkt .pct{font-family:var(--mono);color:var(--green-soft)}.mkt .conf{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.hyp{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:18px;margin-top:8px}@media(max-width:860px){.hyp{grid-template-columns:1fr}}
+.hyp .card h3{margin-bottom:8px}.hyp .verdict p{color:var(--muted);margin-top:10px}.hyp .verdict p:first-child{margin-top:0}.hyp .verdict strong{color:var(--fg)}
+.scatter{width:100%;height:auto;display:block;margin-top:8px}.scatter text{fill:var(--muted);font-size:11px;font-family:var(--mono)}.scatter .ax{stroke:var(--line);stroke-width:1}.scatter .pt{stroke:#0b0a10;stroke-width:1}.scatter .pt.large{fill:var(--purple-soft)}.scatter .pt.mid,.scatter .pt.small,.scatter .pt.private{fill:var(--amber)}.scatter .pt.unknown,.scatter .pt.multiple,.scatter .pt.nonprofit,.scatter .pt.subsidiary{fill:var(--muted)}
+.linklike{all:unset;cursor:pointer;color:var(--purple-soft)}.linklike:hover{text-decoration:underline}
+.ltab{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:10px}.ltab th{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}.ltab td{padding:7px 8px;border-bottom:1px solid var(--line-soft);vertical-align:top}.ltab td.n{font-family:var(--mono);white-space:nowrap}
+.deals{display:grid;gap:8px;margin-top:10px}.deal{display:grid;grid-template-columns:92px minmax(0,1fr);gap:12px;font-size:.9rem;padding:8px 0;border-top:1px solid var(--line-soft)}.deal .d{font-family:var(--mono);font-size:.74rem;color:var(--green-soft)}.deal .m{color:var(--muted);font-size:.86rem;margin-top:3px}
 .layer{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:9px 13px;border:1px solid var(--line);border-radius:6px;color:var(--muted);background:var(--surface)}
 .layer.on{border-color:var(--green);color:var(--green-soft)}
 .layer .soon{display:inline-block;margin-left:8px;color:var(--amber);font-size:.6rem}
@@ -337,7 +358,8 @@ html.js .rv.in{opacity:1;transform:none}
     <div><div class="eyebrow">Market map</div><h2 style="margin-top:12px">Who sells what, and how</h2></div>
     <p class="lede">Many brands are the same tissue bank's product under a different label, and the largest spine company sells another company's ceramic. Channel structure matters as much as the product.</p>
   </div>
-  <div class="tbl-wrap" id="company-table"></div>
+  <div id="market-analysis"></div>
+  <div class="tbl-wrap" id="company-table" style="margin-top:22px"></div>
 </section>
 
 <section class="wrap" id="reg">

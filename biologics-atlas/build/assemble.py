@@ -49,11 +49,13 @@ meta = {
         f"{reviewed}: data version embedded in this page." if reviewed > "2026-10-22" else "2026-10-22: skull and craniomaxillofacial region added.",
     ],
 }
-data = {"applications": apps, "products": prods, "bd": bd, "meta": meta}
+market_path = os.path.join(ROOT, "data/market.json")
+market = json.load(open(market_path)) if os.path.exists(market_path) else {}
+data = {"applications": apps, "products": prods, "bd": bd, "meta": meta, "market": market}
 data_js = json.dumps(data, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
 
 tpl = open(os.path.join(ROOT, "app/template.html")).read()
-app = open(os.path.join(ROOT, "app/app.js")).read()
+app = open(os.path.join(ROOT, "app/spinefig.js")).read() + "\n" + open(os.path.join(ROOT, "app/app.js")).read()
 svg = open(os.path.join(ROOT, "app/skeleton.svg")).read()
 viewer = open(os.path.join(ROOT, "app/viewer3d.js")).read()
 vcfg_path = os.path.join(ROOT, "app/viewer-config.json")
@@ -78,7 +80,7 @@ if out.startswith(SITE):
     for f in ("skeleton.glb",):
         src = os.path.join(ROOT, "app", f)
         if os.path.exists(src): shutil.copy(src, os.path.join(SITE, f))
-    for f in ("template.html", "app.js", "skeleton.svg", "viewer3d.js", "viewer-config.json"):
+    for f in ("template.html", "app.js", "spinefig.js", "skeleton.svg", "viewer3d.js", "viewer-config.json"):
         if not os.path.exists(os.path.join(ROOT, "app", f)): continue
         os.makedirs(os.path.join(SITE, "app"), exist_ok=True); shutil.copy(os.path.join(ROOT, "app", f), os.path.join(SITE, "app", f))
 

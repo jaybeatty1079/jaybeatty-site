@@ -138,7 +138,9 @@ api.focus = (region, sub) => {
   if (!api.ready) { pending = { region, sub }; return; }
   active = region || null; activeSub = sub || null; controls.autoRotate = false; restyle();
   if (!region) { frameBox(fullBox, 750, new THREE.Vector3(0.35, 0.15, 1)); return; }
-  const b = boxOf(region, sub) || boxOf(region); if (b) frameBox(b, 750, null); else frameBox(fullBox, 750, null);
+  /* the spine is best read from behind: orbit round to a posterior three-quarter view (a touch higher for the sacrum) */
+  const hint = region === 'spine' ? new THREE.Vector3(-0.55, sub === 'sacroiliac' ? 0.45 : 0.18, -1) : null;
+  const b = boxOf(region, sub) || boxOf(region); if (b) frameBox(b, region === 'spine' ? 1100 : 750, hint); else frameBox(fullBox, 750, hint);
 };
 api.reset = () => { active = null; activeSub = null; restyle(); if (fullBox) frameBox(fullBox, 750, new THREE.Vector3(0.35, 0.15, 1)); };
 
