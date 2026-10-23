@@ -147,7 +147,8 @@ json.dump(data, open(os.path.join(ROOT, "data_map_2027.json"), "w"), separators=
 print("designated tracks:", summary["designated"]); print("all track 3:", summary["all_track3"])
 
 tpl = open(os.path.join(ROOT, "build/map-template.html")).read()
-html = tpl.replace("__MAPDATA__", json.dumps(data, separators=(",", ":")).replace("</", "<\\/"))
+states = open(os.path.join(ROOT, "cms-sources/pulls/geo/states-10m.json")).read()  # us-atlas 3.0.1 states-10m (TopoJSON, US Census cartographic boundaries), inlined so the page has no runtime fetch
+html = tpl.replace("__MAPDATA__", json.dumps(data, separators=(",", ":")).replace("</", "<\\/")).replace("__STATES__", states.replace("</", "<\\/"))
 os.makedirs(os.path.dirname(out_path), exist_ok=True)
 open(out_path, "w").write(html)
 os.makedirs(os.path.join(SITE, "data"), exist_ok=True)

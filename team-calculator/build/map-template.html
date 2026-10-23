@@ -85,6 +85,7 @@ input[type=search]{font:inherit;font-size:.9rem;padding:8px 12px;border-radius:6
 <footer><div class="wrap">Estimates from public data only. Not affiliated with CMS. No patient data. Built as a companion to the <a href="/team-calculator/">TEAM Episode Calculator</a>.</div></footer>
 <div class="tip" id="tip"></div>
 <script id="map-data" type="application/json">__MAPDATA__</script>
+<script id="us-states" type="application/json">__STATES__</script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
 <script>
@@ -119,7 +120,7 @@ function find(q){q=(q||'').toLowerCase();const rows=H.filter(h=>!q||(h.name+' '+
 document.getElementById('scen').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;scen=b.dataset.s;[...e.currentTarget.children].forEach(x=>x.classList.toggle('on',x===b));tiles();if(dots)restyle(window._r);top();states();find(document.getElementById('q').value);});
 document.getElementById('q').addEventListener('input',e=>find(e.target.value));
 tiles();top();states();find('');
-fetch('https://cdn.jsdelivr.net/npm/us-atlas@3.0.1/states-10m.json').then(r=>r.json()).then(draw).catch(()=>{document.getElementById('mapnote').textContent='The state outlines could not be loaded (the atlas file comes from a CDN). The tables below carry the same results.';});
+try{draw(JSON.parse(document.getElementById('us-states').textContent));}catch(e){document.getElementById('mapnote').textContent='The state outlines could not be drawn. The tables below carry the same results.';}
 })();
 </script>
 </body>
