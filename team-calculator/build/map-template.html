@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TEAM 2027 Map · Jay Beatty</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Every CMS TEAM participant hospital on one map, projected to its 2027 reconciliation from public readmission, quality and spending data. Red hospitals would owe CMS money.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Jay Beatty"><meta property="og:title" content="Where TEAM bites in 2027 · Jay Beatty"><meta property="og:description" content="721 TEAM hospitals projected to their 2027 reconciliation from public data. Red would repay CMS."><meta property="og:url" content="https://jaybeatty.com/team-calculator/map.html"><meta property="og:image" content="https://jaybeatty.com/og/calculator.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#0b0a10;--surface:#14111e;--panel:#1c1730;--line:#2b2542;--fg:#ece9f5;--muted:#a79fc0;--purple:#8366ea;--purple-soft:#b7a6ff;--green:#22a85e;--green-soft:#6fe3a3;--teal:#10a197;--red:#e0607a;--amber:#e5b35a;--display:"Fraunces",Georgia,serif;--body:"IBM Plex Sans",-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--purple-soft);text-decoration:none}a:hover{text-decoration:underline}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}h1{font-size:clamp(2rem,4.4vw,3.4rem)}h1 em{font-style:italic;color:var(--green-soft)}h2{font-size:clamp(1.6rem,3vw,2.3rem)}h3{font-size:1.15rem;font-weight:600}p{margin:0}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green-soft)}.eyebrow::before{content:"";display:inline-block;width:22px;height:1px;background:var(--green);vertical-align:middle;margin-right:10px}
+header{position:sticky;top:0;z-index:10;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}.brand{font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}.brand b{color:var(--green-soft);font-weight:400}.links{display:flex;gap:22px;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}.links a{color:var(--fg);font-weight:600}@media(max-width:700px){.links{display:none}}
+section{padding-block:clamp(36px,5vw,64px);border-top:1px solid var(--line)}section.hero{border-top:0;padding-top:clamp(36px,5vw,56px)}
+.lede{color:var(--muted);max-width:66ch;font-size:1.05rem;margin-top:16px}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:24px}@media(max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}.tile .lab{font-size:.78rem;color:var(--muted)}.tile .val{font-size:1.9rem;font-weight:600;line-height:1.1;margin-top:4px}.tile .val.red{color:var(--red)}.tile .val.green{color:var(--green-soft)}.tile .sub{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:4px}
+.mapcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:22px}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;margin-bottom:8px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}.seg button{all:unset;cursor:pointer;padding:8px 12px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.seg button.on{background:var(--purple);color:var(--fg)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.8rem;color:var(--muted)}.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+#map{width:100%;height:auto;display:block}#map .state{fill:#1a1628;stroke:#2f2847;stroke-width:.8}#map .dot{stroke:#0b0a10;stroke-width:.6;cursor:pointer;opacity:.92}#map .dot.repay{fill:var(--red)}#map .dot.paid{fill:var(--green)}#map .dot.shield{fill:var(--amber)}#map .dot.none{fill:#5b5577}#map .dot:hover{stroke:#fff;stroke-width:1.5}
+.tip{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--line);color:var(--fg);padding:10px 12px;border-radius:8px;font-size:.82rem;line-height:1.4;opacity:0;transform:translate(-50%,calc(-100% - 12px));transition:opacity .12s;z-index:50;max-width:320px}.tip b{display:block;font-weight:600}.tip .m{color:var(--muted)}.tip .r{color:var(--red)}.tip .g{color:var(--green-soft)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:22px}@media(max-width:860px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}.card h3{margin-bottom:10px}.card h3 .k{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green-soft);margin-bottom:6px}
+table{width:100%;border-collapse:collapse;font-size:.86rem}th{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}td{padding:7px 8px;border-bottom:1px solid #231d3a;vertical-align:top}td.n{font-family:var(--mono);white-space:nowrap;text-align:right}td.r{color:var(--red)}td.g{color:var(--green-soft)}.tblwrap{overflow:auto;max-height:520px}
+.prose p{color:var(--muted);margin-top:12px;max-width:70ch}.prose p:first-child{margin-top:0}.prose strong{color:var(--fg)}
+.note{margin-top:18px;padding:12px 14px;border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:6px;font-size:.86rem;color:var(--muted);background:var(--surface)}
+.bar{height:8px;background:#2a2540;border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;background:var(--red)}
+footer{padding-block:28px;font-size:.8rem;color:var(--muted);border-top:1px solid var(--line)}
+input[type=search]{font:inherit;font-size:.9rem;padding:8px 12px;border-radius:6px;border:1px solid var(--line);background:#0d0b14;color:var(--fg);width:min(100%,320px)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav><a class="brand" href="/">Jay <b>Beatty</b></a><div class="links"><a href="/team-calculator/">Calculator</a><a href="#method">Method</a><a href="#states">By state</a><a href="/team-calculator/docs/decisions.html">How it was built</a><a href="/">jaybeatty.com</a></div></nav></div></header>
+<main>
+<section class="hero wrap">
+  <div class="eyebrow">CMS TEAM · performance year 2 · 2027 projection</div>
+  <h1 style="margin-top:12px">Where TEAM <em>bites</em> in 2027.</h1>
+  <p class="lede">Every one of the 721 hospitals in the Transforming Episode Accountability Model, run through the same reconciliation rules as the calculator, with its spending, readmission and quality inputs taken from public CMS files and held constant into 2027. Red hospitals would owe CMS money at the 2027 reconciliation. Hover any dot.</p>
+  <div class="tiles" id="tiles"></div>
+  <div class="mapcard">
+    <div class="toolbar">
+      <div class="seg" id="scen"><button data-s="designated" class="on" type="button">Tracks as designated</button><button data-s="all3" type="button">Everyone in Track 3</button></div>
+      <div class="legend"><span><i style="background:var(--red)"></i>would repay CMS</span><span><i style="background:var(--green)"></i>would be paid</span><span><i style="background:var(--amber)"></i>over target but shielded by Track 1</span><span><i style="background:#5b5577"></i>no 2024 TEAM volume in the public file</span><span class="m">dot size = dollars at stake</span></div>
+    </div>
+    <svg id="map" viewBox="0 0 975 610" role="img" aria-label="Map of the United States with one dot per TEAM participant hospital, red where the hospital would owe CMS money in 2027"></svg>
+    <div class="note" id="mapnote"></div>
+  </div>
+</section>
+
+<section class="wrap" id="list">
+  <div class="grid2">
+    <div class="card"><h3><span class="k">Largest projected repayments</span>Who owes the most under the chosen scenario</h3><div class="tblwrap"><table><thead><tr><th>Hospital</th><th>Track</th><th style="text-align:right">Episodes</th><th style="text-align:right">2027</th><th style="text-align:right">Of which readmissions</th></tr></thead><tbody id="top"></tbody></table></div></div>
+    <div class="card" id="states"><h3><span class="k">By state</span>Share of participants that would repay</h3><div class="tblwrap"><table><thead><tr><th>State</th><th style="text-align:right">Hospitals</th><th style="text-align:right">Repay</th><th style="width:30%">Share</th><th style="text-align:right">Net</th></tr></thead><tbody id="statebody"></tbody></table></div></div>
+  </div>
+  <div class="card" style="margin-top:20px"><h3><span class="k">Find a hospital</span>Any participant, with its inputs</h3><input type="search" id="q" placeholder="Hospital name, city or state"><div class="tblwrap" style="margin-top:10px"><table><thead><tr><th>Hospital</th><th>State</th><th>Track</th><th style="text-align:right">Episodes</th><th style="text-align:right">Quality</th><th style="text-align:right">Hip/knee readm.</th><th style="text-align:right">Excess ratio</th><th style="text-align:right">2027</th></tr></thead><tbody id="find"></tbody></table></div></div>
+</section>
+
+<section class="wrap" id="method">
+  <div class="grid2">
+    <div class="card prose"><h3><span class="k">Method</span>How a dot gets its colour</h3>
+      <p><strong>Volumes.</strong> Each hospital's 2024 traditional-Medicare discharges in the 29 TEAM MS-DRGs, from the CMS inpatient-by-provider file, plus its outpatient joint services (APC 5115) as an upper bound.</p>
+      <p><strong>Spend versus target.</strong> The hospital's 30-day post-discharge spending pattern from the Medicare Spending by Claim file, compared with its census division, moves each category's spend above or below the regional target price. On top of that, where CMS publishes a surgical signal for the hospital, it is added as dollars per episode: excess readmissions after hip and knee replacement and after bypass surgery (the HRRP predicted-minus-expected rate times the cost of a readmission), and excess colon infections for bowel surgery.</p>
+      <p><strong>Quality.</strong> The composite quality score is a proxy built the way CMS weights it: the hospital's readmission ranks, its PSI-90 percentile, and 50 for the patient-reported outcome measure that has no public scores yet.</p>
+      <p><strong>Track in 2027.</strong> Performance year 2 is the first year with mandatory downside. Safety-net hospitals can stay in Track 1 with no repayment through 2028, so they are shown amber if they run over target. Rural, sole community, Medicare-dependent and essential-access hospitals go to Track 2 with a 5 percent stop-loss. Everyone else is in Track 3 with a 20 percent stop-loss. The second scenario puts every hospital in Track 3.</p>
+      <p><strong>What is held constant.</strong> The 2024 volumes, the 2024 spending pattern, the readmission ratios from the FY2026 HRRP cycle, and the PY1 target prices. CMS has not published PY2 prices or the 2027 risk coefficients. This is the answer to one question: if the data CMS has already published described 2027, who would be writing a cheque.</p>
+    </div>
+    <div class="card prose"><h3><span class="k">What to make of it</span>Reading the map honestly</h3>
+      <p><strong>It is a pattern, not a bill.</strong> The hospital-level numbers are estimates from proxies, and the calculator's own notes say the risk adjustment CMS applies can move a result by more than the margin on most dots. The map is reliable about direction and about clusters, not about the dollar on any one hospital.</p>
+      <p><strong>Readmissions are the visible lever.</strong> The "of which readmissions" column is the share of a hospital's gap that its own excess-readmission ratio explains. For most repayers it is a minority of the gap; post-acute spending, chiefly skilled nursing days, is the larger driver. Where readmissions are the larger piece, the fix is inside the hospital's own discharge process.</p>
+      <p><strong>Safety-net shielding matters.</strong> The amber dots are hospitals that would repay if they were two-sided. They are not penalised in 2027 under the designated-track scenario, but the shield ends after 2028, and the second scenario shows what the map looks like without it.</p>
+      <p><strong>Sources.</strong> CMS TEAM participant list (August 2026); CMS PY1 preliminary target prices; Medicare Inpatient and Outpatient Hospitals by Provider and Service CY2024; Medicare Spending by Claim FY2026; Hospital Readmissions Reduction Program FY2026; Care Compare Unplanned Visits, Complications and HAI files (2026 releases); FY2027 IPPS impact file; Census ZCTA gazetteer for hospital coordinates. The build script and data file are in the calculator's repository.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">Estimates from public data only. Not affiliated with CMS. No patient data. Built as a companion to the <a href="/team-calculator/">TEAM Episode Calculator</a>.</div></footer>
+<div class="tip" id="tip"></div>
+<script id="map-data" type="application/json">__MAPDATA__</script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script>
+(function(){
+const D=JSON.parse(document.getElementById('map-data').textContent);const H=D.hospitals;
+const fmt=n=>{const s=n<0?'−':'';n=Math.abs(n);if(n>=1e9)return s+'$'+(n/1e9).toFixed(2)+'B';if(n>=1e6)return s+'$'+(n/1e6).toFixed(n>=1e7?1:2)+'M';if(n>=1e3)return s+'$'+(n/1e3).toFixed(n>=1e5?0:1)+'K';return s+'$'+Math.round(n);};
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+let scen='designated';
+const val=h=>scen==='designated'?h.npra27:h.t3;
+const trk=h=>scen==='designated'?h.track27:3;
+const cls=h=>{if(h.nodata||!h.eps)return 'none';const v=val(h);if(v<0)return 'repay';if(v>0)return 'paid';return (trk(h)===1&&h.recon<0)?'shield':'none';};
+const TRK={1:'Track 1',2:'Track 2',3:'Track 3'};
+function tiles(){const s=scen==='designated'?D.summary.designated:D.summary.all_track3;const shield=scen==='designated'?s.shielded:0;
+  document.getElementById('tiles').innerHTML=`<div class="tile"><div class="lab">Would repay CMS in 2027</div><div class="val red">${s.repay}</div><div class="sub">of ${s.with_volume} hospitals with TEAM volume${shield?` · ${shield} more shielded by Track 1`:''}</div></div><div class="tile"><div class="lab">Projected repayments, combined</div><div class="val red">${fmt(s.repay_total)}</div><div class="sub">median hospital ${fmt(s.repay_median)}</div></div><div class="tile"><div class="lab">Would be paid</div><div class="val green">${s.paid}</div><div class="sub">${fmt(s.paid_total)} combined</div></div><div class="tile"><div class="lab">Net to hospitals</div><div class="val ${s.paid_total+s.repay_total<0?'red':'green'}">${fmt(s.paid_total+s.repay_total)}</div><div class="sub">before CMS's own risk adjustment</div></div>`;
+  document.getElementById('mapnote').textContent=scen==='designated'?`Tracks as CMS designates them for 2027: safety-net hospitals in Track 1 (no downside), rural and similar hospitals in Track 2, the rest in Track 3. ${D.summary.nodata} participants have no public volume row and ${D.summary.hospitals-D.summary.geocoded} could not be placed. Target prices are the PY1 preliminary workbook; CMS has not published 2027 prices.`:`Every participant placed in Track 3 (20 percent stop-gain and stop-loss), which is where most hospitals land once the Track 1 shield ends after 2028.`;}
+const tip=document.getElementById('tip');
+function tipHTML(h){const v=val(h);const c=cls(h);return `<b>${esc(h.name)}</b><span class="m">${esc(h.city||'')}${h.city?', ':''}${esc(h.st)} · ${TRK[trk(h)]}${h.sn?' · safety-net':''}${h.rural?' · rural':''}</span>`+(h.nodata||!h.eps?`<div class="m">No 2024 TEAM volume in the public file.</div>`:`<div>${h.eps.toLocaleString()} episodes · target book ${fmt(h.aggT)}</div><div class="${v<0?'r':v>0?'g':'m'}">2027: ${v<0?'repay ':v>0?'paid ':''}${fmt(Math.abs(v))}${c==='shield'?' (over target by '+fmt(Math.abs(h.recon))+', shielded by Track 1)':''}${h.cap3&&scen!=='designated'?' · at the stop-'+h.cap3:''}</div><div class="m">quality proxy ${h.cqs} · hip/knee readmission ${h.rhk!=null?h.rhk+'%':'n/a'} · excess ratio ${h.ehk!=null?h.ehk.toFixed(2):'n/a'}${h.readm?` · readmissions explain ${fmt(Math.abs(h.readm))} of the gap`:''}</div>`);}
+let dots;
+function draw(us){const svg=d3.select('#map');const proj=d3.geoAlbersUsa().scale(1280).translate([487,305]);const path=d3.geoPath(proj);
+  svg.append('g').selectAll('path').data(topojson.feature(us,us.objects.states).features).join('path').attr('class','state').attr('d',path);
+  svg.append('path').datum(topojson.mesh(us,us.objects.states,(a,b)=>a!==b)).attr('fill','none').attr('stroke','#3a3358').attr('stroke-width',.6).attr('d',path);
+  const pts=H.filter(h=>h.lat!=null).map(h=>{const p=proj([h.lon,h.lat]);return p?Object.assign({x:p[0],y:p[1]},h):null;}).filter(Boolean);
+  const r=d3.scaleSqrt().domain([0,d3.max(pts,h=>Math.max(Math.abs(h.t3),Math.abs(h.npra27)))||1]).range([2.2,13]);
+  dots=svg.append('g').selectAll('circle').data(pts.sort((a,b)=>Math.abs(val(b))-Math.abs(val(a)))).join('circle').attr('cx',h=>h.x).attr('cy',h=>h.y);
+  dots.on('mousemove',(e,h)=>{tip.innerHTML=tipHTML(h);tip.style.left=e.clientX+'px';tip.style.top=e.clientY+'px';tip.style.opacity=1;}).on('mouseleave',()=>tip.style.opacity=0).on('click',(e,h)=>{location.href='/team-calculator/#h='+h.ccn;});
+  restyle(r);window._r=r;}
+function restyle(r){dots.attr('class',h=>'dot '+cls(h)).attr('r',h=>{const v=Math.abs(val(h));const c=cls(h);return c==='none'?2.2:c==='shield'?r(Math.abs(h.recon))*.8:r(v);}).sort((a,b)=>Math.abs(val(b))-Math.abs(val(a)));}
+function top(){const rows=H.filter(h=>!h.nodata&&h.eps&&val(h)<0).sort((a,b)=>val(a)-val(b)).slice(0,25);document.getElementById('top').innerHTML=rows.map(h=>`<tr><td><a href="/team-calculator/#h=${h.ccn}">${esc(h.name)}</a><div class="m" style="color:var(--muted);font-size:.78rem">${esc(h.city||'')}${h.city?', ':''}${esc(h.st)}</div></td><td>${TRK[trk(h)]}</td><td class="n">${h.eps.toLocaleString()}</td><td class="n r">${fmt(val(h))}</td><td class="n">${h.readm?fmt(Math.abs(h.readm)):'—'}</td></tr>`).join('')||'<tr><td colspan="5">No hospital repays under this scenario.</td></tr>';}
+function states(){const S={};H.forEach(h=>{if(h.nodata||!h.eps)return;const s=S[h.st]=S[h.st]||{n:0,repay:0,net:0};s.n++;const v=val(h);if(v<0)s.repay++;s.net+=v;});
+  const rows=Object.entries(S).sort((a,b)=>(b[1].repay/b[1].n)-(a[1].repay/a[1].n)||b[1].n-a[1].n);document.getElementById('statebody').innerHTML=rows.map(([st,s])=>`<tr><td>${st}</td><td class="n">${s.n}</td><td class="n r">${s.repay}</td><td><div class="bar"><i style="width:${Math.round(100*s.repay/s.n)}%"></i></div></td><td class="n ${s.net<0?'r':'g'}">${fmt(s.net)}</td></tr>`).join('');}
+function find(q){q=(q||'').toLowerCase();const rows=H.filter(h=>!q||(h.name+' '+(h.city||'')+' '+h.st).toLowerCase().includes(q)).slice(0,60);document.getElementById('find').innerHTML=rows.map(h=>`<tr><td><a href="/team-calculator/#h=${h.ccn}">${esc(h.name)}</a><div style="color:var(--muted);font-size:.78rem">${esc(h.city||'')}</div></td><td>${h.st}</td><td>${h.nodata?'—':TRK[trk(h)]}</td><td class="n">${h.nodata?'—':h.eps.toLocaleString()}</td><td class="n">${h.nodata?'—':h.cqs}</td><td class="n">${h.rhk!=null?h.rhk+'%':'—'}</td><td class="n">${h.ehk!=null?h.ehk.toFixed(2):'—'}</td><td class="n ${h.nodata||!h.eps?'':val(h)<0?'r':'g'}">${h.nodata||!h.eps?'—':fmt(val(h))}</td></tr>`).join('');}
+document.getElementById('scen').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;scen=b.dataset.s;[...e.currentTarget.children].forEach(x=>x.classList.toggle('on',x===b));tiles();if(dots)restyle(window._r);top();states();find(document.getElementById('q').value);});
+document.getElementById('q').addEventListener('input',e=>find(e.target.value));
+tiles();top();states();find('');
+fetch('https://cdn.jsdelivr.net/npm/us-atlas@3.0.1/states-10m.json').then(r=>r.json()).then(draw).catch(()=>{document.getElementById('mapnote').textContent='The state outlines could not be loaded (the atlas file comes from a CDN). The tables below carry the same results.';});
+})();
+</script>
+</body>
+</html>

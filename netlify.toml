@@ -1,5 +1,5 @@
 # Netlify builds jaybeatty.com from this repo on every push to main.
 # It assembles the live site into dist/: the site folder, the TEAM calculator pages and the Biologics Atlas.
 [build]
-  command = "rm -rf dist && mkdir -p dist/team-calculator/docs && cp -R site/. dist/ && cp team-calculator/index.html dist/team-calculator/ && cp team-calculator/docs/decisions.html dist/team-calculator/docs/ && mkdir -p dist/biologics-atlas && cp biologics-atlas/index.html dist/biologics-atlas/ && (cp biologics-atlas/skeleton.glb dist/biologics-atlas/ 2>/dev/null || true) && cp netlify/_headers netlify/_redirects dist/"
+  command = "rm -rf dist && mkdir -p dist/team-calculator/docs && cp -R site/. dist/ && cp team-calculator/index.html team-calculator/map.html dist/team-calculator/ && cp team-calculator/docs/decisions.html dist/team-calculator/docs/ && mkdir -p dist/biologics-atlas && cp biologics-atlas/index.html dist/biologics-atlas/ && (cp biologics-atlas/skeleton.glb dist/biologics-atlas/ 2>/dev/null || true) && cp netlify/_headers netlify/_redirects dist/"
   publish = "dist"

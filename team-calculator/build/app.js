@@ -424,4 +424,6 @@ document.querySelectorAll('[data-net]').forEach(i=>i.addEventListener('input',e=
 (function(){const f=$('figFlow');if(!f)return;const io=new IntersectionObserver(es=>{es.forEach(x=>{if(x.isIntersecting&&!flowPlayed){flowPlayed=true;if(!RM)drawFlow(true);io.disconnect();}});},{threshold:.35});io.observe(f);$('flowReplay').addEventListener('click',()=>{if(RM)return drawFlow(false);drawFlow(true);});let rt=null;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>drawFlow(false),200);});})();
 renderChecks();syncOpInputs();buildTracks();buildCats();buildLevers();renderTabs();renderCases();drawCases();loadCase('community');
 window.TEAMCALC={S,CATS,run,catCalc,applyCaseState,derivePublic,leverSavings,applyPreset,eligible,HM,CASES,loadCase,pick,PARTS};
+/* deep link from the 2027 map: #h=<CCN> opens that hospital */
+(function(){const m=/^#h=(\d{6})$/.exec(location.hash||'');if(!m)return;const p=PARTS.find(x=>x.ccn===m[1]);if(!p)return;setTimeout(()=>{pick(p);const c=document.getElementById('calc');if(c)c.scrollIntoView({block:'start'});},50);})();
 })();
