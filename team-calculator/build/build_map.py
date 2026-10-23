@@ -25,6 +25,7 @@ CATS = [("lejr", ["469", "470", "521", "522", "470-OP"]), ("shfft", ["480", "481
         ("spine", ["402", "426", "427", "428", "429", "430", "447", "448", "450", "451", "471", "472", "473", "473-OP"]), ("bowel", ["329", "330", "331"])]
 TRACKS = {1: dict(gain=.10, loss=0, negAdj=0), 2: dict(gain=.05, loss=.05, negAdj=.15), 3: dict(gain=.20, loss=.20, negAdj=.10)}
 UNIT = dict(readmit=19400, ssi=12800)
+LEVER_RA = dict(lejr=4, shfft=12, cabg=12, spine=8, bowel=12)  # typical readmission rate per category, from engine.js LEVER_DEF
 SETTING = {"lejr": [13000, 2000, 4000], "shfft": [14500, 3500, 20500], "cabg": [41000, 6000, 10000], "spine": [25000, 5000, 7500], "bowel": [17000, 3000, 6000]}
 PRICE = {(r["drg"], r["region"]): r["target"] for r in TP}
 def price(drg, region): return PRICE.get((str(drg).split("-")[0], region), 0)
@@ -36,7 +37,7 @@ def derive(h):
     rt, cx, q = h.get("rt") or {}, h.get("cx") or {}, h.get("q") or {}
     counts = dict(h.get("ip") or {})
     reg = STATE2DIV.get(h.get("st"), 2)
-    shift, sig = {}, {}
+    shift, sig, sigsrc, rsig = {}, {}, {}, {}
     E = El = 0
     for key, drgs in CATS:
         n = tsum = 0
@@ -47,12 +48,18 @@ def derive(h):
         avgT = tsum / n if n else price(drgs[min(1, len(drgs) - 1)], reg)
         sh = SETTING[key]; p = sh[2] / (sh[0] + sh[1] + sh[2])
         pac = 100 * p * (rt["pac"] - 1) if rt.get("pac") else 0
-        extra = None
-        if key == "lejr" and q.get("ehkp") is not None and q.get("ehke") is not None: extra = (q["ehkp"] - q["ehke"]) / 100 * UNIT["readmit"]
-        elif key == "cabg" and q.get("ecbp") is not None and q.get("ecbe") is not None: extra = (q["ecbp"] - q["ecbe"]) / 100 * UNIT["readmit"]
-        elif key == "bowel" and rt.get("ssi") is not None: extra = (rt["ssi"] - 1) * 0.10 * UNIT["ssi"]
+        extra = None; src = None
+        if key == "lejr" and q.get("ehkp") is not None and q.get("ehke") is not None: extra = (q["ehkp"] - q["ehke"]) / 100 * UNIT["readmit"]; src = "hrrp-hk"
+        elif key == "cabg" and q.get("ecbp") is not None and q.get("ecbe") is not None: extra = (q["ecbp"] - q["ecbe"]) / 100 * UNIT["readmit"]; src = "hrrp-cabg"
+        elif q.get("e6") is not None: extra = (q["e6"] - 1) * (LEVER_RA[key] / 100) * UNIT["readmit"]; src = "hrrp6"  # six-condition HRRP ratio on the category's typical readmission rate
+        rextra = extra  # readmission dollars alone, before the infection add-on, for the "of which readmissions" attribution
+        if key == "bowel" and rt.get("ssi") is not None: extra = (extra or 0) + (rt["ssi"] - 1) * 0.10 * UNIT["ssi"]; src = (src + "+ssi") if src else "ssi"
         if extra is not None and avgT: sig[key] = round(extra / avgT * 100, 1)
-        shift[key] = round(clamp(pac + (sig.get(key) or 0), -20, 20), 1)
+        if rextra is not None and avgT: rsig[key] = round(rextra / avgT * 100, 1)
+        sigsrc[key] = src
+        # joint replacement: CMS's own 90-day hip/knee payment measure replaces the inferred pattern when the hospital has one
+        if key == "lejr" and q.get("phk") is not None and (NAT.get("phkdiv") or {}).get(str(reg)): shift[key] = round(clamp((q["phk"] / NAT["phkdiv"][str(reg)] - 1) * 100, -20, 20), 1); sigsrc[key] = "paym"
+        else: shift[key] = round(clamp(pac + (sig.get(key) or 0), -20, 20), 1)
     if h.get("op"): counts["470-OP"] = h["op"]
     rd = cx.get("readm", 50) if cx.get("readm") is not None else 50
     ps = cx.get("psi90", 50) if cx.get("psi90") is not None else 50
@@ -64,7 +71,7 @@ def derive(h):
     if h.get("sn"): rp += .01
     if h.get("dual") is not None and NAT.get("dual") is not None: rp += (h["dual"] - NAT["dual"]) * .25
     rp = round(clamp(rp, .94, 1.06), 2)
-    return dict(counts=counts, shift=shift, sig=sig, cqs=cqs, E=E, El=El, sn=bool(h.get("sn")), rural=bool(h.get("rural")), risk=rp, reg=reg)
+    return dict(counts=counts, shift=shift, sig=sig, sigsrc=sigsrc, rsig=rsig, cqs=cqs, E=E, El=El, sn=bool(h.get("sn")), rural=bool(h.get("rural")), risk=rp, reg=reg)
 
 def cat_calc(drgs, counts, spend, lowvol, region, risk):
     n = tsum = 0
@@ -101,8 +108,8 @@ def reconcile(h, dv, track):
     npra -= seq
     return dict(rows=rows, recon=recon, npra=npra, cap=cap, aggT=aggT, aggS=aggS, eps=eps, adj=adj)
 
-# ---- validation against the in-browser engine (TEAMCALC.run({track:3}) on 2026-10-22) ----
-EXPECT_T3 = {"010039": -258515, "010052": 0, "010065": 11959, "010079": -56318, "010131": 491112, "030006": 75543, "030010": 29917, "030011": -506181, "030064": -397129, "030085": 205770, "030111": 0, "030114": -172145, "030148": 66722, "040014": -82032}
+# ---- validation against the in-browser engine (TEAMCALC.run({track:3}) on 2026-10-23, after the HRRP six-condition and hip/knee payment signals) ----
+EXPECT_T3 = {"010039": 2617062, "010052": 0, "010065": 28174, "010079": 318740, "010131": 1145268, "030006": 1008702, "030010": 30204, "030011": -409864, "030064": -374283, "030085": 223372, "030111": 0, "030114": -284011, "030148": 66862, "040014": 382363}
 
 rows = []; bad = []
 for p in PARTS:
@@ -116,12 +123,13 @@ for p in PARTS:
     # 2027 = PY2. Track 1 (no downside) stays open to safety-net hospitals through PY3; Track 2 (±5%) to rural, SCH, MDH and EACH; everyone else is in Track 3 (±20%).
     track27 = 1 if dv["sn"] else (2 if dv["rural"] else 3)
     r3 = r[3]
-    readm_dollars = sum(w["aggTarget"] * (w["sig"] or 0) / 100 for w in r3["rows"] if w["key"] in ("lejr", "cabg"))  # spend attributed to excess readmissions (HRRP predicted minus expected)
+    readm_dollars = sum(w["aggTarget"] * (dv["rsig"].get(w["key"]) or 0) / 100 for w in r3["rows"])  # spend attributed to excess readmissions: HRRP predicted minus expected for joints and CABG, the six-condition ratio elsewhere
     q = h.get("q") or {}; cx = h.get("cx") or {}
     rows.append(dict(base, sn=dv["sn"], rural=dv["rural"], cqs=dv["cqs"], risk=dv["risk"], reg=dv["reg"], E=dv["E"], eps=r3["eps"], aggT=round(r3["aggT"]), aggS=round(r3["aggS"]),
         recon=round(r3["recon"]), t1=round(r[1]["npra"]), t2=round(r[2]["npra"]), t3=round(r[3]["npra"]), cap3=r3["cap"], track27=track27, npra27=round(r[track27]["npra"]),
         readm=round(readm_dollars), beds=h.get("beds"), urb=h.get("urb"), pac=(h.get("rt") or {}).get("pac"),
-        rhk=q.get("rhk"), rcb=q.get("rcb"), ehk=q.get("ehk"), ecb=q.get("ecb"), readmPct=cx.get("readm"), psi90=cx.get("psi90"),
+        rhk=q.get("rhk"), rcb=q.get("rcb"), ehk=q.get("ehk"), ecb=q.get("ecb"), e6=q.get("e6"), e6k=q.get("e6k"), phk=q.get("phk"), phkc=q.get("phkc"), readmPct=cx.get("readm"), readmSrc=cx.get("readm_src"), psi90=cx.get("psi90"),
+        src={k: v for k, v in dv["sigsrc"].items() if v},
         cats=[[w["key"], w["n"], round(w["aggTarget"]), round(w["recon"]), w["shift"], w["sig"]] for w in r3["rows"]]))
 if bad: print("VALIDATION FAILED", bad); sys.exit(1)
 print(f"validated {len(EXPECT_T3)} hospitals against the in-browser engine")

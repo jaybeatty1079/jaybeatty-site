@@ -59,3 +59,10 @@ Talking points the cases give you: (1) the metro academic center earns about $0.
 
 - Sixteen fixes from a CFO-style critique are in (spec section "CFO review fixes"). Page is now about 760 KB.
 - The resume line can add: "validated against the CMS worked examples and the CJR and BPCI Advanced evaluations; shows net-to-hospital after program cost and lost revenue."
+
+## 2026-10-23: readmission and payment signals
+
+- Data layer now carries all six HRRP conditions (one discharge-weighted ratio per hospital, 617 participants), a readmission adjustment for every category, and CMS's retired 90-day hip/knee payment measure for 388 participants, read from the April 2025 Care Compare archive snapshot (`cms-sources/carecompare/payment_2025-04-30.csv` and `payment_national_2025-04-30.csv`). Spec section "Readmission and payment signals".
+- Rebuild order is unchanged: `build_metrics.py`, `derive.py`, `assemble.py`, then `build/build_map.py`. If the derivation in app.js changes, regenerate `EXPECT_T3` in build_map.py from the page (`TEAMCALC.pick(p)` then `TEAMCALC.run({track:3})` for the first 14 participants) or the map build refuses to run.
+- Map totals moved: 188 repay $66.9M, 312 paid $126.0M under designated tracks. Resume line can say "20 public CMS datasets".
+

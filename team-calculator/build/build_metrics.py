@@ -41,10 +41,36 @@ for r in rd(CC+'hai.csv'):
     if r['Measure ID']=='HAI_3_ELIGCASES': M[c]['ssin']=num(r['Score'])
     if r['Measure ID']=='HAI_3_DOPC': M[c]['ssid']=num(r['Score'])
 H={'READM-30-HIP-KNEE-HRRP':'ehk','READM-30-CABG-HRRP':'ecb'}
+# all six HRRP conditions, discharge-weighted, for every hospital in the file: the broadest public readmission footprint a hospital has
+# (Care Compare's hospital-wide measure moved to the hybrid HWR in 2026 and carries no scores yet, so this stands in for it)
+E6=collections.defaultdict(list)
 for r in rd(CC+'hrrp.csv'):
-    k=H.get(r['Measure Name']); c=r['Facility ID']
+    c=r['Facility ID']; err=num(r['Excess Readmission Ratio']); n=num(r['Number of Discharges'])
+    if err is not None and n: E6[c].append((err,n))
+    k=H.get(r['Measure Name'])
     if not k or c not in M: continue
-    M[c][k]=num(r['Excess Readmission Ratio']); M[c][k+'p']=num(r['Predicted Readmission Rate']); M[c][k+'e']=num(r['Expected Readmission Rate'])
+    M[c][k]=err; M[c][k+'p']=num(r['Predicted Readmission Rate']); M[c][k+'e']=num(r['Expected Readmission Rate'])
+for c,L in E6.items():
+    tot=sum(n for _,n in L); v=round(sum(e*n for e,n in L)/tot,4)
+    ALL['e6'][c]=v
+    if c in M: M[c]['e6']=v; M[c]['e6k']=len(L); M[c]['e6hi']=sum(1 for e,_ in L if e>1); M[c]['e6n']=int(tot)
+# CMS 90-day hip/knee payment measure (PAYM_90_HIP_KNEE): the closest public cousin of a TEAM joint episode. Retired from the live Care Compare files in 2025,
+# so it comes from the 30 April 2025 archive snapshot (performance period July 2020 to March 2023). Dollars risk-standardized against the national average.
+PAYNAT={}; PAYDIV={}
+DIVSTATES={1:'CT ME MA NH RI VT',2:'NJ NY PA',3:'IL IN MI OH WI',4:'IA KS MN MO NE ND SD',5:'DE DC FL GA MD NC SC VA WV',6:'AL KY MS TN',7:'AR LA OK TX',8:'AZ CO ID MT NV NM UT WY',9:'AK CA HI OR WA AS GU MP PR VI'}
+S2D={st:d for d,ss in DIVSTATES.items() for st in ss.split()}
+for r in rd(CC+'payment_national_2025-04-30.csv'):
+    if r['Measure ID']=='PAYM_90_HIP_KNEE': PAYNAT['phk']=num(r['National Payment'])
+for r in rd(CC+'payment_2025-04-30.csv'):
+    if r['Payment Measure ID']!='PAYM_90_HIP_KNEE': continue
+    c=r['Facility ID']; v=num(r['Payment'])
+    if v is not None: ALL['phk'][c]=v
+    if c in M and v is not None:
+        M[c]['phk']=v; M[c]['phkn']=num(r['Denominator']); M[c]['phkc']={'Less Than the National Average Payment':'lo','Greater Than the National Average Payment':'hi'}.get(r['Payment Category'],'avg')
+        M[c].setdefault('per',{})['phk']=r['Start Date'][-4:]+'-'+r['End Date'][-4:]
+    PAYDIV.setdefault(S2D.get(r['State']),[]).append(v) if v is not None else None
+# TEAM prices against the census division, so the benchmark for a hospital's payment measure is its division's simple mean of hospital values (the published national figure is CMS's patient-level number)
+PAYNAT['phkdiv']={d:round(statistics.mean(L)) for d,L in PAYDIV.items() if d}
 # spending by claim: 30 days after discharge + complete episode
 CT={'Skilled Nursing Facility':'snf','Home Health Agency':'hh','Inpatient':'ip','Outpatient':'op','Hospice':'hsp','Carrier':'car','Durable Medical Equipment':'dme'}
 for r in rd(CC+'mspb_claim.csv'):
@@ -155,19 +181,20 @@ ELIG=set(c for c in imp if not c.startswith('21'))
 ALLE={k:{c:v for c,v in d.items() if c in ELIG} for k,d in ALL.items()}
 for c in M:
     m=M[c]; sc={}
-    for k in ['rhk','rcb','chk','p90','p12']:
-        if m.get(k) is not None: sc[k]=pct_rank(ALLE[k].values(),m[k],True)
+    for k in ['rhk','rcb','chk','p90','p12','e6','phk']:
+        if m.get(k) is not None and k in ALLE: sc[k]=pct_rank(ALLE[k].values(),m[k],True)
     if c in ALL['mspbr']: sc['mspbr']=pct_rank(ALLE['mspbr'].values(),ALL['mspbr'][c],True); m['mspbr']=round(ALL['mspbr'][c],3)
     m['pct']=sc
     # proxy CQS: readmission proxy (rhk, rcb weighted by denominators) 50% ; PSI-90 50%; PRO-PM not public -> 50 for LEJR share handled on page
     rd_parts=[(sc[k],m.get(k+'n') or 1) for k in ('rhk','rcb') if k in sc]
     rdp=sum(p*w for p,w in rd_parts)/sum(w for p,w in rd_parts) if rd_parts else None
-    m['cqsx']={'readm':round(rdp,1) if rdp is not None else None,'psi90':sc.get('p90')}
-NAT={'rhk':round(statistics.median(ALLE['rhk'].values()),1),'rcb':round(statistics.median(ALLE['rcb'].values()),1),'chk':round(statistics.median(ALLE['chk'].values()),1),'p90':round(statistics.median(ALLE['p90'].values()),2),'p12':round(statistics.median(ALLE['p12'].values()),2),'elig_n':len(ELIG),
+    # readmission component: the six-condition HRRP percentile when the hospital has one (closest public stand-in for hospital-wide readmission), else the hip/knee and CABG proxy
+    m['cqsx']={'readm':sc['e6'] if 'e6' in sc else (round(rdp,1) if rdp is not None else None),'readm_hk':round(rdp,1) if rdp is not None else None,'readm_src':'hrrp6' if 'e6' in sc else ('hk' if rdp is not None else None),'psi90':sc.get('p90')}
+NAT={'rhk':round(statistics.median(ALLE['rhk'].values()),1),'rcb':round(statistics.median(ALLE['rcb'].values()),1),'chk':round(statistics.median(ALLE['chk'].values()),1),'p90':round(statistics.median(ALLE['p90'].values()),2),'p12':round(statistics.median(ALLE['p12'].values()),2),'phk':PAYNAT.get('phk'),'phkdiv':PAYNAT.get('phkdiv'),'elig_n':len(ELIG),
      'cty':gpick(geoN),'ma25':mashare(enN),'drg':NATDRG,'states':{k:gpick(v) for k,v in geoS.items()},'ma25_state':{k:mashare(v) for k,v in enS.items()}}
 NAT['cty']['name']='National'
-json.dump({'meta':{'built':'2026-10-18','sources':{'carecompare':'Care Compare hospital files downloaded 2026-10-18 (Unplanned Hospital Visits and Complications released 2026-09-10; HAI and MSPB 2026-07-22; HRRP and Spending by Claim FY2026 2026-01-26)','impact':'FY2027 IPPS final rule impact file (Aug 2026)','hcris':'Hospital Provider Cost Report 2024 (data.cms.gov)','inpatient':'Medicare Inpatient Hospitals by Provider and Service CY2024','outpatient':'Medicare Outpatient Hospitals by Provider and Service CY2024, APC 5114-5116','geovar':'Medicare Geographic Variation by National, State & County 2024','enrollment':'Medicare Monthly Enrollment 2025 (year)','marketsat':'Market Saturation & Utilization State-County, 2025','nh':'Nursing Home Provider Information and Medicare Claims Quality Measures, Sep 2026','waiver':'TEAM Qualified SNF List Q4 2026'}},'nat':NAT,'h':M},open('data_hospital_metrics.json','w'))
+json.dump({'meta':{'built':'2026-10-18','sources':{'carecompare':'Care Compare hospital files downloaded 2026-10-18 (Unplanned Hospital Visits and Complications released 2026-09-10; HAI and MSPB 2026-07-22; HRRP and Spending by Claim FY2026 2026-01-26); hip/knee 90-day payment measure from the 2025-04-30 archive snapshot (period July 2020 to March 2023)','impact':'FY2027 IPPS final rule impact file (Aug 2026)','hcris':'Hospital Provider Cost Report 2024 (data.cms.gov)','inpatient':'Medicare Inpatient Hospitals by Provider and Service CY2024','outpatient':'Medicare Outpatient Hospitals by Provider and Service CY2024, APC 5114-5116','geovar':'Medicare Geographic Variation by National, State & County 2024','enrollment':'Medicare Monthly Enrollment 2025 (year)','marketsat':'Market Saturation & Utilization State-County, 2025','nh':'Nursing Home Provider Information and Medicare Claims Quality Measures, Sep 2026','waiver':'TEAM Qualified SNF List Q4 2026'}},'nat':NAT,'h':M},open('data_hospital_metrics.json','w'))
 print('hospitals',len(M),'size KB',os.path.getsize('data_hospital_metrics.json')//1024)
 have=lambda k: sum(1 for c in M if M[c].get(k) not in (None,{},[]))
-for k in ['n','beds','dsh','rhk','rcb','chk','p90','p12','ssi','ehk','sp30','mspb','ip24','op24','cty','nh']: print(' ',k,have(k))
-print('NAT',{k:NAT[k] for k in ['rhk','rcb','chk','p90','p12','ma25']}, {k:NAT['cty'][k] for k in ['snfpc','snfdays','irfpc','hhpc','readm','ma']})
+for k in ['n','beds','dsh','rhk','rcb','chk','p90','p12','ssi','ehk','e6','phk','sp30','mspb','ip24','op24','cty','nh']: print(' ',k,have(k))
+print('NAT',{k:NAT[k] for k in ['rhk','rcb','chk','p90','p12','phk','ma25']}, {k:NAT['cty'][k] for k in ['snfpc','snfdays','irfpc','hhpc','readm','ma']})

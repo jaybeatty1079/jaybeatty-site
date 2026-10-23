@@ -47,7 +47,7 @@ for c,m in M.items():
     ssi_share=(m['dsh']-m['mcdpct']) if m.get('dsh') is not None and m.get('mcdpct') is not None else None
     nh=m.get('nh') or {}
     out[c]={'n':m.get('n'),'ci':m.get('ci'),'st':m.get('st'),'co':m.get('co'),'beds':int(m['beds']) if m.get('beds') else None,'rbr':r(m.get('rbr'),2),'sr':m.get('sr'),'urb':m.get('urb'),'ssi':r(ssi_share,3),'dual':r(cty.get('dual'),3),
-        'q':{k:m.get(k) for k in ['rhk','rcb','chk','p90','p12','ssi','ehk','ecb','ehkp','ehke','ecbp','ecbe'] if m.get(k) is not None},
+        'q':{k:m.get(k) for k in ['rhk','rcb','chk','p90','p12','ssi','ehk','ecb','ehkp','ehke','ecbp','ecbe','e6','e6k','e6hi','e6n','phk','phkn','phkc'] if m.get(k) is not None},
         'cx':{k:v for k,v in (m.get('cqsx') or {}).items() if v is not None},
         'sp':{k:[round(v[0]),dv_.get(k)] for k,v in sp.items() if k in ('snf','hh','ip','op','hsp') and v[0] is not None and k in dv_},
         'tot':[round(m['mspb'][0]),dv_.get('tot')] if m.get('mspb') and m['mspb'][0] and dv_.get('tot') else None,
@@ -62,7 +62,7 @@ for c,m in M.items():
     for k in list(out[c]):
         if out[c][k] in (None,{},[]): del out[c][k]
 per=next(m['per'] for m in M.values() if m.get('per') and 'sp' in m['per'] and 'rhk' in m['per'] and 'p90' in m['per'])
-nat={'q':{k:NAT[k] for k in ['rhk','rcb','chk','p90','p12']},'elig_n':NAT.get('elig_n'),'ma':NAT['ma25'],'dual':NAT['cty'].get('dual'),'snfday':SNFDAY,'div':DIV,'cty':{'snfd':r(NAT['cty']['snfdays'],0),'irfpc':r(NAT['cty']['irfpc'],0),'hhpc':r(NAT['cty']['hhpc'],0),'readm':r(NAT['cty']['readm']*100,1)},'sp':natsp,'ssip75':SSI_P75,'per':per,'drg':{d:v[0] for d,v in NAT['drg'].items()}}
+nat={'q':{k:NAT[k] for k in ['rhk','rcb','chk','p90','p12','phk'] if NAT.get(k) is not None},'phkdiv':NAT.get('phkdiv'),'elig_n':NAT.get('elig_n'),'ma':NAT['ma25'],'dual':NAT['cty'].get('dual'),'snfday':SNFDAY,'div':DIV,'cty':{'snfd':r(NAT['cty']['snfdays'],0),'irfpc':r(NAT['cty']['irfpc'],0),'hhpc':r(NAT['cty']['hhpc'],0),'readm':r(NAT['cty']['readm']*100,1)},'sp':natsp,'ssip75':SSI_P75,'per':per,'drg':{d:v[0] for d,v in NAT['drg'].items()}}
 json.dump({'nat':nat,'h':out},open('data_hospital_slim.json','w'),separators=(',',':'))
 print('slim KB',os.path.getsize('data_hospital_slim.json')//1024,'hospitals',len(out),'sn',sum(1 for v in out.values() if v['sn']),'rural',sum(1 for v in out.values() if v['rural']))
 print('per',per); print('natsp',natsp)
