@@ -51,6 +51,7 @@ meta = {
 }
 market_path = os.path.join(ROOT, "data/market.json")
 market = json.load(open(market_path)) if os.path.exists(market_path) else {}
+market = {k: v for k, v in market.items() if k not in ("leaders", "size", "gaps")}  # leaders are rebuilt in the page from shares; volumes and gaps stay in the repo file
 data = {"applications": apps, "products": prods, "bd": bd, "meta": meta, "market": market}
 data_js = json.dumps(data, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
 
@@ -89,11 +90,19 @@ body = re.search(r"<body>(.*)</body>", html, re.S).group(1)
 style = re.search(r"<style>.*?</style>", html, re.S).group(0)
 fonts = re.search(r'<link rel="stylesheet" href="https://fonts.googleapis.com[^>]*>', html).group(0)
 # the artifact viewer refuses pages over ~768 KB, so the preview drops per-record source lists (the site page keeps them)
+ART_DROP = ("sources", "source", "quote", "orthobiologics_revenue_note", "owner", "ownership_history", "slice", "grade_basis", "share_basis", "target_cap_tier_at_deal")
 def drop_sources(o):
-    if isinstance(o, dict): return {k: drop_sources(v) for k, v in o.items() if k != "sources"}
+    """The private preview (claude.ai artifact) has a 768 KB page limit: strip citations, quotes and long free-text fields that the live site keeps."""
+    if isinstance(o, dict): return {k: drop_sources(v) for k, v in o.items() if k not in ART_DROP}
     if isinstance(o, list): return [drop_sources(x) for x in o]
     return o
-data_art = json.dumps(drop_sources(data), separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
+data_small = json.loads(json.dumps(data)); data_small["market"] = {k: v for k, v in data_small["market"].items() if k != "companies"}
+for p in data_small["products"]:
+    for e in p.get("evidence", []): e.pop("title", None)
+for d in data_small["market"].get("deals", []):
+    d.pop("products", None); d.pop("product_ids", None); d.pop("confidence", None)
+for sh in data_small["market"].get("shares", []): sh.pop("note", None)
+data_art = json.dumps(drop_sources(data_small), separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
 body = body.replace(data_js, data_art)
 art = "<title>Biologics Atlas</title>\n" + fonts + "\n" + style + "\n" + body
 art = art.replace('href="/', 'href="https://jaybeatty.com/').replace('"model": "skeleton.glb"', '"model": "skeleton.glb.wasm"')  # the artifact host serves .wasm but not .glb; the loader reads raw bytes either way

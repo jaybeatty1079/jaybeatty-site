@@ -24,6 +24,8 @@ apps = json.load(open(os.path.join(ROOT, "data/applications.json")))
 app_by = {a["id"]: a for a in apps}
 prod_by = {p["id"]: p for p in prods}
 GRADE = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5}
+CONF = {"high": 0, "medium": 1, "low": 2}
+GRADE_OVERRIDE = {("ifuse-intra-allograft", "si-joint-fusion"): ("I", "titanium iFuse implant family: INSITE and iMIA randomised trials (PMID 27652199, 28303395); the atlas's INTRA allograft itself has no comparative data")}
 
 comp_file = load("companies.json", {"companies": []})
 companies = comp_file.get("companies", [])
@@ -46,12 +48,15 @@ for c in companies:
     ALIAS.setdefault(c["id"], []); ALIAS[c["id"]].append(norm(c.get("name", "")).split(" ")[0] if c.get("name") else c["id"])
 comp_by = {c["id"]: c for c in companies}
 def company_id_for(text):
+    """The company named FIRST in the string owns the product; agents and processors come in parentheses after it."""
     t = norm(text)
     best = None
     for cid, words in ALIAS.items():
         for w in words:
-            if w and norm(w) in t:
-                if best is None or len(norm(w)) > len(norm(best[1])): best = (cid, w)
+            w2 = norm(w)
+            if not w2: continue
+            i = t.find(w2)
+            if i >= 0 and (best is None or i < best[1] or (i == best[1] and len(w2) > best[2])): best = (cid, i, len(w2))
     return best[0] if best else None
 def tier_of(cid):
     c = comp_by.get(cid)
@@ -89,12 +94,15 @@ for f in ("market-spine.json", "market-trauma-extremities.json"):
             gs = [GRADE.get(x.get("evidence_grade"), 5) for x in prod_by[pid].get("applications", [])]
             g = {v: k for k, v in GRADE.items()}.get(min(gs)) if gs else None
             s["grade_basis"] = "best grade across applications" if g else None
+        # franchise rows: a share figure for a titanium implant family mapped onto the atlas's allograft entry must not inherit that entry's grade
+        if (pid, aid) in GRADE_OVERRIDE and re.search(r"franchise|TORQ|3D|titanium", s.get("product_name", ""), re.I):
+            g, s["grade_basis"] = GRADE_OVERRIDE[(pid, aid)]
         s["evidence_grade"] = g
         shares.append(s)
 
 leaders = collections.defaultdict(list)
 for s in shares: leaders[s.get("application_id") or "unknown"].append(s)
-for k in leaders: leaders[k].sort(key=lambda s: (s.get("rank") or 99, -(s.get("share_pct") or 0)))
+for k in leaders: leaders[k].sort(key=lambda s: (s.get("rank") or 99, CONF.get(s.get("confidence"), 3), -(s.get("share_pct") or 0)))
 
 deals = load("deals.json", {"deals": []}).get("deals", [])
 for d in deals:
@@ -121,13 +129,23 @@ claim2 = {"small_mid_top3_n": len(smallmid), "small_mid_mean_grade": avg([gnum(s
           "large_top3_n": len(large), "large_mean_grade": avg([gnum(s["evidence_grade"]) for s in large]), "large_level_I_pct": round(100 * sum(1 for s in large if s["evidence_grade"] == "I") / len(large)) if large else None}
 # claim 3: deals by acquirer tier and target evidence
 acq_tier = collections.Counter((d.get("acquirer_cap_tier_at_deal") or "unknown").split(" ")[0] for d in deals if d.get("deal_type") in ("acquisition", "merger", "asset purchase"))
+def evidence_class(text):
+    """Did the key biologic carry a PMA or a randomised trial when the deal closed? Negated mentions ('no RCT', 'not a biologic') do not count."""
+    e = (text or "").lower()
+    e = re.sub(r"\b(no|without an?|not an?|never had an?)\s+(rct|randomi[sz]ed[^;,.]*|pma|level i\b)[^;,.]*", " ", e)
+    e = re.sub(r"\([^)]*not a biologic[^)]*\)", " ", e)
+    if re.search(r"\bpma\b|\brct\b|randomi[sz]ed|level i\b", e): return "RCT or PMA"
+    if re.search(r"510|361|hct|case series|retrospective|registry|preclinical|bench|none", e): return "510(k) or allograft, no comparative data"
+    return "other or unstated"
 ev_at_deal = collections.Counter()
+acq_matrix = collections.Counter()
 for d in deals:
-    e = (d.get("evidence_at_deal") or "").lower()
-    k = "RCT or PMA" if ("rct" in e or "pma" in e or "level i" in e or "randomi" in e) else ("510(k) or allograft, no comparative data" if ("510" in e or "361" in e or "no " in e or "none" in e) else "other or unstated")
-    ev_at_deal[k] += 1
+    d["evidence_class"] = evidence_class(d.get("evidence_at_deal"))
+    ev_at_deal[d["evidence_class"]] += 1
+    if d.get("deal_type") in ("acquisition", "merger", "asset purchase"):
+        acq_matrix[((d.get("acquirer_cap_tier_at_deal") or "unknown").split(" ")[0]) + " | " + d["evidence_class"]] += 1
 
-analysis = {"leaders_by_tier": dict(by_tier), "leader_rows": lead_rows, "claim2": claim2, "deals_by_acquirer_tier": dict(acq_tier), "deals_by_evidence_at_deal": dict(ev_at_deal), "n_shares": len(shares), "n_deals": len(deals)}
+analysis = {"leaders_by_tier": dict(by_tier), "acquisitions_by_tier_and_evidence": dict(acq_matrix), "leader_rows": lead_rows, "claim2": claim2, "deals_by_acquirer_tier": dict(acq_tier), "deals_by_evidence_at_deal": dict(ev_at_deal), "n_shares": len(shares), "n_deals": len(deals)}
 verdict_path = os.path.join(M, "verdict.md")
 verdict = open(verdict_path).read() if os.path.exists(verdict_path) else ""
 
@@ -141,6 +159,6 @@ json.dump(out, open(os.path.join(ROOT, "data/market.json"), "w"), indent=1, ensu
 print(f"market.json: {len(companies)} companies, {len(shares)} share rows over {len(app_ids_with_leader)} applications, {len(deals)} deals")
 print("leaders by cap tier:", dict(by_tier))
 print("claim 2:", claim2)
-print("deals by acquirer tier:", dict(acq_tier), "| evidence at deal:", dict(ev_at_deal))
+print("deals by acquirer tier:", dict(acq_tier), "| evidence at deal:", dict(ev_at_deal)); print("acquisitions by tier x evidence:", dict(acq_matrix))
 for r in sorted(lead_rows, key=lambda r: (r["region"], r["application_id"])):
     print(f"  {r['region']:16} {r['application_id']:22} {str(r['cap_tier']):8} {str(r['share_pct']):>5} grade {str(r['evidence_grade']):3} {r['leader_product']} ({r['leader_company']}) [{r['confidence']}]")
