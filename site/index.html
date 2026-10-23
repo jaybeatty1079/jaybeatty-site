@@ -506,7 +506,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
     <p class="lede">Three things grew at once over twenty years: what I was trusted to sell, how much ground I was responsible for, and how many people I hired and led. One timeline, so the trajectory shows without reading a résumé.</p>
   </div>
   <figure>
-    <figcaption><span class="t">What I sold, where I was responsible, who I managed</span><span class="s">A product line stays on the chart from the year I first carried it, because the knowledge stays. Hover a bar or a point for the detail. Territory is drawn as reach, not revenue. Team sizes are people I hired and ran, not company headcount. ≈ marks a year placed inside the role rather than dated on the résumé.</span></figcaption>
+    <figcaption><span class="t">What I sold, where I was responsible, who I managed</span><span class="s">A product line stays on the chart from the year I first carried it, because the knowledge stays. Hover a bar or a point for the detail. Territory is drawn as reach, not revenue. Team sizes are people I hired and ran, not company headcount.</span></figcaption>
     <div class="roadwrap"><svg id="road" class="chart" role="img" aria-label="Career roadmap 2005 to 2026: product categories added by year, territory responsibility by role, and team size built in each role"></svg></div>
     <div class="legend"><span><i style="background:#8366ea"></i>Product lines carried</span><span><i style="background:#22a85e"></i>Territory responsibility</span><span><i style="background:#d65db1"></i>Team built and led</span></div>
     <details class="tbl"><summary>View as table</summary><div id="road-table"></div></details>
@@ -613,7 +613,7 @@ const roles=[
  {t:'Regional Sales Manager, West, Olympus Biotech',s:2010,e:2013,k:'dev'},
  {t:'National Director of Sales, Specialized Orthopedic Solutions',s:2013,e:2019,k:'dx'},
  {t:'COO, Advanced Testing in Clinical Genetics',s:2019,e:2026,k:'dx'},
- {t:'Director of BD, employer benefits program',s:2026,e:2026.8,k:'ben'},
+ {t:'Director of BD, employer benefits program',s:2024,e:2026.8,k:'ben'},
  {t:'West Coast GTM, AI surgical diagnostics (contract)',s:2026,e:2026.8,k:'dx'}
 ];
 (function(){const svg=document.getElementById('gantt');const W=520,rowH=30,top=26,left=10,H=top+rowH*roles.length+30;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);const x=yr=>left+(W-left-10)*(yr-2005)/(2027-2005);const col={dev:C.purple,dx:C.green,ben:C.teal};
@@ -638,9 +638,10 @@ const ROAD={
   {l:'Class III bone growth factor',y:2010,d:'OP-1 (BMP-7) under a Humanitarian Device Exemption: IRB, value analysis, IDN and GPO approvals; Cedars-Sinai, Loma Linda, UCSD'},
   {l:'Trauma, recon and spine lines',y:2013,d:'Surgical lines carried nationwide through independent distributors'},
   {l:'Orthotics, prosthetics, PT, billing',y:2013,d:'Custom fabrication, physical therapy and third-party billing; the VA contract for Southern California'},
-  {l:'Toxicology and PGx testing',y:2016,est:true,d:'Urine drug testing and pharmacogenomics sold to pain and addiction clinics in AZ and CA; onboarded the first accounts inside partner laboratories. Launched during the SOS years; the start year is approximate.'},
+  {l:'Toxicology and PGx testing',y:2013,d:'Started from injection kits in 2013. Set up a large toxicology account at a multi-location pain clinic in Arizona with on-site collectors, then onboarded an inpatient and outpatient drug rehab facility for toxicology, pharmacogenomics and blood work, placing a phlebotomist on site.'},
+  {l:'Cancer genomic testing (CGx)',y:2016,d:'First exposure in 2016, as the Myriad gene-patent ruling opened BRCA and other hereditary cancer tests to independent laboratories making their first attempt at running and billing them.'},
   {l:'Clinical laboratory testing',y:2019,d:'Molecular, genetics, toxicology and COVID-19 testing; a CRO unit and employer drug testing; municipal and statewide government contracts'},
-  {l:'Employer benefits (Section 125)',y:2026,d:'Sold to owners, CFOs and HR leaders through CPAs, payroll firms, PEOs and brokers'},
+  {l:'Employer benefits (Section 125)',y:2024,d:'California Life, Accident and Health license earned in 2024 and renewed once since. Sold to owners, CFOs and HR leaders through CPAs, payroll firms, PEOs and brokers.'},
   {l:'AI surgical diagnostics',y:2026,d:'A POD1 blood test that predicts complications; sold on episode economics under CMS TEAM and ACO models'}
  ],
  territory:[
