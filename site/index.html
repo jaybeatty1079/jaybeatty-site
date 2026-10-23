@@ -59,7 +59,7 @@ section{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--line)}
 /* nav */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
-.brand{font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
+.brand{white-space:nowrap;flex-shrink:0;font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
 .brand b{color:var(--green-soft);font-weight:400}
 .links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color .15s,background-color .15s,color .15s}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none;outline:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
 
@@ -113,6 +113,7 @@ figcaption .s{font-size:.85rem;color:var(--muted);width:100%}
 .chart text.strong{fill:var(--fg);font-weight:500}
 .chart .grid{stroke:var(--line);stroke-width:1}
 .chart .hit{fill:transparent;cursor:default}
+.roadwrap{overflow-x:auto;scrollbar-width:thin;margin-inline:-4px;padding-inline:4px}.roadwrap svg{min-width:760px}#career figure{padding:24px}
 details.tbl{margin-top:12px;font-size:.85rem}
 details.tbl summary{cursor:pointer;color:var(--purple-soft);font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
 details.tbl table{width:100%;border-collapse:collapse;margin-top:10px;font-variant-numeric:tabular-nums}
@@ -286,7 +287,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 <header><div class="wrap"><nav>
   <a class="brand" href="#top">Jay <b>Beatty</b></a>
   <div class="links">
-    <a href="#work">What I do</a><a href="#how">How it works</a><a href="#programs">Programs</a><a href="#projects">Projects</a><a href="#record">Track record</a><a href="#about">About</a><a href="#contact">Contact</a>
+    <a href="#work">What I do</a><a href="#how">How it works</a><a href="#programs">Programs</a><a href="#projects">Projects</a><a href="#record">Track record</a><a href="#career">Career</a><a href="#about">About</a><a href="#contact">Contact</a>
   </div>
 </nav></div></header>
 
@@ -499,6 +500,19 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
   </div>
 </section>
 
+<section id="career">
+  <div class="sec-head">
+    <div><div class="eyebrow">Career path</div><h2 style="margin-top:12px">Scope, year by year</h2></div>
+    <p class="lede">Three things grew at once over twenty years: what I was trusted to sell, how much ground I was responsible for, and how many people I hired and led. One timeline, so the trajectory shows without reading a résumé.</p>
+  </div>
+  <figure>
+    <figcaption><span class="t">What I sold, where I was responsible, who I managed</span><span class="s">A product line stays on the chart from the year I first carried it, because the knowledge stays. Hover a bar or a point for the detail. Territory is drawn as reach, not revenue. Team sizes are people I hired and ran, not company headcount. ≈ marks a year placed inside the role rather than dated on the résumé.</span></figcaption>
+    <div class="roadwrap"><svg id="road" class="chart" role="img" aria-label="Career roadmap 2005 to 2026: product categories added by year, territory responsibility by role, and team size built in each role"></svg></div>
+    <div class="legend"><span><i style="background:#8366ea"></i>Product lines carried</span><span><i style="background:#22a85e"></i>Territory responsibility</span><span><i style="background:#d65db1"></i>Team built and led</span></div>
+    <details class="tbl"><summary>View as table</summary><div id="road-table"></div></details>
+  </figure>
+</section>
+
 <section id="about">
   <div class="strip" id="strip" aria-label="Photos: pool, snakeboarding and interviews" hidden><div class="track" id="striptrack"></div></div>
   <div class="about">
@@ -606,6 +620,81 @@ const roles=[
 for(let yr=2005;yr<=2026;yr+=3){svg.appendChild(el('line',{x1:x(yr),x2:x(yr),y1:top-6,y2:H-24,class:'grid'}));svg.appendChild(el('text',{x:x(yr),y:H-8,'text-anchor':'middle','font-size':'11'},yr));}
 roles.forEach((r,i)=>{const y=top+rowH*i+6;const g=el('g');g.appendChild(el('rect',{x:x(r.s)+1,y,width:Math.max(6,x(r.e)-x(r.s)-2),height:18,rx:3,fill:col[r.k]}));const lab=r.t.split(',')[0];g.appendChild(el('text',{x:x(r.s)+8,y:y+13,'font-size':'11',fill:C.bg,'font-weight':'600'},x(r.e)-x(r.s)>110?lab:''));g.appendChild(el('rect',{x:left,y:y-4,width:W-left-10,height:26,class:'hit'}));bindTip(g,`<b>${r.t}</b>${r.s} – ${r.e>2026.5?'present':r.e}`);svg.appendChild(g);});
 table('gantt-table',['Role','From','To','Sector'],roles.map(r=>[r.t,r.s,r.e>2026.5?'present':r.e,{dev:'Devices & biologics',dx:'Diagnostics & lab',ben:'Employer benefits'}[r.k]]));
+})();
+
+/* career roadmap: one data object, three lanes on a shared year axis. Edit the facts here; the drawing follows. */
+const ROAD={
+ roles:[
+  {n:'Team Surgical',s:2005,e:2010},
+  {n:'Olympus Biotech',s:2010,e:2013},
+  {n:'Specialized Orthopedic Solutions',s:2013,e:2019},
+  {n:'ATCG Laboratory',s:2019,e:2026},
+  {n:'2026',s:2026,e:2027}
+ ],
+ products:[
+  {l:'Sports medicine implants',y:2005,d:'Arthrex, Biomet Sports Medicine, Exactech and Arthrosurface, sold in the operating room'},
+  {l:'Allograft and biologics',y:2005,d:'RTI, LifeNet, AlloSource, CryoLife and Biomet Biologics; Biomet Biologics Rep of the Year'},
+  {l:'Bracing and DME',y:2005,d:'DonJoy bracing alongside the surgical lines'},
+  {l:'Class III bone growth factor',y:2010,d:'OP-1 (BMP-7) under a Humanitarian Device Exemption: IRB, value analysis, IDN and GPO approvals; Cedars-Sinai, Loma Linda, UCSD'},
+  {l:'Trauma, recon and spine lines',y:2013,d:'Surgical lines carried nationwide through independent distributors'},
+  {l:'Orthotics, prosthetics, PT, billing',y:2013,d:'Custom fabrication, physical therapy and third-party billing; the VA contract for Southern California'},
+  {l:'Toxicology and PGx testing',y:2016,est:true,d:'Urine drug testing and pharmacogenomics sold to pain and addiction clinics in AZ and CA; onboarded the first accounts inside partner laboratories. Launched during the SOS years; the start year is approximate.'},
+  {l:'Clinical laboratory testing',y:2019,d:'Molecular, genetics, toxicology and COVID-19 testing; a CRO unit and employer drug testing; municipal and statewide government contracts'},
+  {l:'Employer benefits (Section 125)',y:2026,d:'Sold to owners, CFOs and HR leaders through CPAs, payroll firms, PEOs and brokers'},
+  {l:'AI surgical diagnostics',y:2026,d:'A POD1 blood test that predicts complications; sold on episode economics under CMS TEAM and ACO models'}
+ ],
+ territory:[
+  {s:2005,e:2010,lv:1,l:'One territory',d:'Ventura, Valencia, Lancaster and Santa Barbara'},
+  {s:2010,e:2013,lv:2,l:'West region',d:'A territory first, then promoted to Regional Sales Manager, West'},
+  {s:2013,e:2019,lv:3,l:'SoCal direct, national through distributors',d:'Direct force in Southern California; opened TX, IL, PA and AZ; every VA facility in Southern California'},
+  {s:2019,e:2026,lv:4,l:'11 states',d:'CA and CO, then TX, KY, GA, FL, IL, PA, NY, MO and NV; statewide Colorado testing programs'},
+  {s:2026,e:2027,lv:4,l:'West Coast + national channel',d:'A nine-state surgeon pipeline for the diagnostics startup; a nationwide partner channel for the benefits program'}
+ ],
+ people:[
+  {s:2005,e:2010,a:1,b:10,l:'10 reps',d:'Managed junior reps while carrying a territory; the surgical team grew to 10'},
+  {s:2010,e:2013,net:true,l:'distributors',d:'Ran the West through independent distributors rather than direct reports; hired the #1 distributor in the company'},
+  {s:2013,e:2019,a:6,b:22,l:'22 reps',d:'6 reps in Southern California to 22 nationwide, direct and independent, through four area managers'},
+  {s:2019,e:2026,a:4,b:34,l:'34 people',d:'Sales from 4 to 23 reps; a 34-person team at peak across sales, customer service and the laboratory bench'},
+  {s:2026,e:2027,a:1,b:1,l:'founding hire',d:'First commercial hire, twice over; writing the playbook the next hire runs'}
+ ]
+};
+(function(){const svg=document.getElementById('road');if(!svg)return;const MAG='#d65db1';
+const W=960,left=176,right=18,Y0=2005,Y1=2027,x=yr=>left+(W-left-right)*(yr-Y0)/(Y1-Y0);
+const hdr=24,rowH=15,A={top:hdr+14,h:rowH*ROAD.products.length},B={top:0,h:84},Cc={top:0,h:104};
+B.top=A.top+A.h+34;Cc.top=B.top+B.h+40;const H=Cc.top+Cc.h+34;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+const tip=(g,t)=>{const e=el('title');e.textContent=t;g.appendChild(e);};
+/* role bands and header */
+ROAD.roles.forEach((r,i)=>{const g=el('g');g.appendChild(el('rect',{x:x(r.s),y:hdr-6,width:x(r.e)-x(r.s),height:H-hdr-14,fill:C.fg,opacity:i%2?.035:0}));
+ const last=i===ROAD.roles.length-1;g.appendChild(el('text',{x:last?x(r.e)-2:(x(r.s)+x(r.e))/2,y:hdr+2,'text-anchor':last?'end':'middle','font-size':'11',class:'strong'},r.n));svg.appendChild(g);});
+for(let yr=Y0;yr<=2023;yr+=3){svg.appendChild(el('line',{x1:x(yr),x2:x(yr),y1:hdr+8,y2:H-24,class:'grid'}));svg.appendChild(el('text',{x:x(yr),y:H-8,'text-anchor':'middle','font-size':'11'},yr));}
+svg.appendChild(el('text',{x:x(2027)-2,y:H-8,'text-anchor':'end','font-size':'11'},'now'));
+const lane=(top,h,t,sub)=>{svg.appendChild(el('line',{x1:0,x2:W,y1:top-10,y2:top-10,class:'grid'}));svg.appendChild(el('text',{x:0,y:top+6,'font-size':'12',class:'strong'},t));svg.appendChild(el('text',{x:0,y:top+22,'font-size':'10.5'},sub));};
+/* lane A: product lines, each from its first year to now */
+lane(A.top,A.h,'What I sold','first year carried, to now');
+ROAD.products.forEach((p,i)=>{const y=A.top+rowH*i+1,x0=x(p.y),g=el('g');
+ g.appendChild(el('rect',{x:x0,y,width:x(Y1)-x0,height:rowH-4,rx:2,fill:C.purple,opacity:p.est?.55:.9}));
+ const label=(p.est?'≈ ':'')+p.l;
+ if(x0-left>150)g.appendChild(el('text',{x:x0-6,y:y+9,'text-anchor':'end','font-size':'10.5',class:'strong'},label));
+ else g.appendChild(el('text',{x:x0+6,y:y+9,'font-size':'10.5',fill:'#fff',style:'fill:#fff;font-weight:500'},label));
+ tip(g,`${p.l}, from ${p.est?'about ':''}${p.y}. ${p.d}`);svg.appendChild(g);});
+/* lane B: territory as reach, four ordinal levels */
+lane(B.top,B.h,'Territory','reach, not revenue');
+const by=lv=>B.top+B.h-(B.h-14)*lv/4;let d='';ROAD.territory.forEach((t,i)=>{d+=(i?`H${x(t.s)} V${by(t.lv)}`:`M${x(t.s)} ${by(t.lv)}`);});d+=` H${x(Y1)}`;
+svg.appendChild(el('path',{d:d+` V${B.top+B.h} H${x(Y0)} Z`,fill:C.green,opacity:.16}));svg.appendChild(el('path',{d,fill:'none',stroke:C.green,'stroke-width':2,'stroke-linejoin':'round'}));
+ROAD.territory.forEach((t,i)=>{const g=el('g');const last=i===ROAD.territory.length-1;const xx=last?x(t.e)-2:x(t.s)+6,yy=by(t.lv)-6;
+ g.appendChild(el('text',{x:xx,y:yy,'text-anchor':last?'end':'start','font-size':'10.5',class:'strong'},t.l));
+ g.appendChild(el('rect',{x:x(t.s),y:B.top-8,width:x(t.e)-x(t.s),height:B.h+8,class:'hit'}));tip(g,`${t.l} (${t.s} to ${t.e>2026?'now':t.e}). ${t.d}`);svg.appendChild(g);});
+/* lane C: team built in each role, a fresh start each time */
+lane(Cc.top,Cc.h,'Team I led','people hired and run, by role');
+const cy=v=>Cc.top+Cc.h-(Cc.h-16)*v/36;[10,20,30].forEach(v=>{svg.appendChild(el('line',{x1:left,x2:x(Y1),y1:cy(v),y2:cy(v),class:'grid',opacity:.6}));svg.appendChild(el('text',{x:left-6,y:cy(v)+4,'text-anchor':'end','font-size':'10'},v));});
+ROAD.people.forEach(p=>{const g=el('g');const x0=x(p.s)+3,x1=x(p.e)-3;
+ if(p.net){const yy=cy(3);g.appendChild(el('line',{x1:x0,x2:x1,y1:yy,y2:yy,stroke:MAG,'stroke-width':2,'stroke-dasharray':'3 4'}));g.appendChild(el('text',{x:(x0+x1)/2,y:yy-7,'text-anchor':'middle','font-size':'10.5',class:'strong'},p.l));}
+ else{g.appendChild(el('path',{d:`M${x0} ${cy(p.a)} L${x1} ${cy(p.b)}`,fill:'none',stroke:MAG,'stroke-width':2.5,'stroke-linecap':'round'}));g.appendChild(el('circle',{cx:x1,cy:cy(p.b),r:4,fill:MAG,stroke:C.surface,'stroke-width':2}));
+  const flat=p.a===p.b;g.appendChild(el('text',{x:flat?(x0+x1)/2:x1-8,y:cy(p.b)-(flat?8:6),'text-anchor':flat?'middle':'end','font-size':'10.5',class:'strong'},p.l));}
+ g.appendChild(el('rect',{x:x(p.s),y:Cc.top-8,width:x(p.e)-x(p.s),height:Cc.h+8,class:'hit'}));tip(g,`${p.l} (${p.s} to ${p.e>2026?'now':p.e}). ${p.d}`);svg.appendChild(g);});
+/* table twin */
+table('road-table',['Role','Years','Added to the bag','Territory','Team'],ROAD.roles.map((r,i)=>{const t=ROAD.territory[i],p=ROAD.people[i];
+ return [r.n,`${r.s} to ${r.e>2026?'now':r.e}`,ROAD.products.filter(q=>q.y>=r.s&&q.y<r.e).map(q=>(q.est?'≈ ':'')+q.l).join('; ')||'(same lines)',t.l+': '+t.d,p.l+': '+p.d];}));
 })();
 
 /* multiples */

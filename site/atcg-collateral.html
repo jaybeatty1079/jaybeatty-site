@@ -60,7 +60,7 @@ section{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--line)}
 /* nav */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
-.brand{font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
+.brand{white-space:nowrap;flex-shrink:0;font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
 .brand b{color:var(--green-soft);font-weight:400}
 .links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color .15s,background-color .15s,color .15s}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none;outline:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
 
@@ -362,7 +362,7 @@ dialog.viewer::backdrop{background:rgba(6,5,10,.9)}
 <header><div class="wrap"><nav>
   <a class="brand" href="./">Jay <b>Beatty</b></a>
   <div class="links">
-    <a href="./#work">What I do</a><a href="./#programs">Programs</a><a href="./#projects">Projects</a><a href="./#record">Track record</a><a href="./#about">About</a><a href="./#contact">Contact</a>
+    <a href="./#work">What I do</a><a href="./#programs">Programs</a><a href="./#projects">Projects</a><a href="./#record">Track record</a><a href="./#career">Career</a><a href="./#about">About</a><a href="./#contact">Contact</a>
   </div>
 </nav></div></header>
 <main>
