@@ -7,18 +7,31 @@
 - upper-extremity: 15 applications, 26 products
 - skull-cmf: 11 applications, 22 products
 - investigational: 2 applications, 23 products
+- repository/_base: 5 applications, 0 products
+- repository/amniotic-placental: 0 applications, 40 products
+- repository/cartilage-soft-tissue: 2 applications, 43 products
+- repository/cellular-allograft: 0 applications, 21 products
+- repository/dbm-allograft: 0 applications, 39 products
+- repository/growth-factors-cells: 0 applications, 18 products
+- repository/prp-bmac-adipose: 1 applications, 39 products
+- repository/synthetics: 4 applications, 45 products
+- repository/viscosupplements-oa: 0 applications, 28 products
 
-**Merged:** 73 applications, 104 products
+**Merged:** 85 applications, 369 products
 
 ## Products appearing in more than one slice (merged)
 - abaloparatide: hip-femur, investigational
 - allob: tibia-knee, investigational
+- allojoin: repository/cartilage-soft-tissue, repository/viscosupplements-oa
 - allomatrix: hip-femur, tibia-knee, foot-ankle, upper-extremity
 - amniotic-orthopedic-products: foot-ankle, investigational
 - amplex: tibia-knee, foot-ankle
 - bio4: spine, foot-ankle
 - bmac: tibia-knee, foot-ankle, upper-extremity, investigational
 - bonalive: tibia-knee, upper-extremity, skull-cmf
+- carmell-bha: repository/cellular-allograft, repository/growth-factors-cells
+- cartistem: repository/cartilage-soft-tissue, repository/growth-factors-cells
+- celularity-interfyl: repository/amniotic-placental, repository/cellular-allograft
 - cerament-bvf: hip-femur, tibia-knee, foot-ankle, upper-extremity
 - cerament-g: hip-femur, tibia-knee, foot-ankle, upper-extremity
 - cerament-v: hip-femur, tibia-knee
@@ -28,6 +41,7 @@
 - grafton: spine, hip-femur, tibia-knee, foot-ankle, upper-extremity, skull-cmf
 - hydroset: hip-femur, tibia-knee, foot-ankle, upper-extremity, skull-cmf
 - infuse: spine, hip-femur, tibia-knee, foot-ankle, upper-extremity, skull-cmf
+- jointstem: repository/growth-factors-cells, repository/viscosupplements-oa
 - ldgraft: spine, tibia-knee, investigational
 - magnetos: spine, foot-ankle
 - nb1: spine, investigational
@@ -36,6 +50,8 @@
 - nvd-003: tibia-knee, investigational
 - op-1: hip-femur, tibia-knee, upper-extremity
 - optium-dbm: tibia-knee, upper-extremity
+- organogenesis-nucel: repository/amniotic-placental, repository/cellular-allograft
+- organogenesis-renu: repository/amniotic-placental, repository/viscosupplements-oa
 - ossigraft: spine, tibia-knee, foot-ankle
 - osteoamp: spine, foot-ankle
 - osteocel: spine, tibia-knee, foot-ankle, upper-extremity, skull-cmf
@@ -48,6 +64,7 @@
 - romosozumab: hip-femur, investigational
 - stimulan: hip-femur, tibia-knee, foot-ankle, upper-extremity
 - teriparatide: hip-femur, tibia-knee, upper-extremity, investigational
+- tg-c-tissuegene: investigational, repository/cartilage-soft-tissue
 - traumacem-v-plus: hip-femur, upper-extremity
 - trinity-elite: spine, tibia-knee, foot-ankle, upper-extremity, skull-cmf
 - vitoss: spine, tibia-knee, foot-ankle, upper-extremity
@@ -58,12 +75,12 @@
 ## Product references to applications that do not exist
 
 ## Distributions
-- status: {'established': 71, 'emerging': 6, 'withdrawn': 3, 'investigational': 22, 'off-market': 2}
-- category: {'rhBMP': 4, 'peptide': 4, 'DBM': 8, 'synthetic-ceramic': 13, 'bioactive-glass': 6, 'cellular-allograft': 8, 'structural-allograft': 11, 'calcium-phosphate-cement': 9, 'other': 14, 'MSC': 9, 'calcium-sulfate': 4, 'BMAC': 4, 'PRP': 1, 'pharmacologic': 4, 'rhPDGF': 3, 'amniotic': 1, 'exosome': 1}
-- tier (per product-application): {'established': 149, 'investigational': 88, 'emerging': 93}
-- evidence grade (per product-application): {'I': 62, 'II': 41, 'III': 34, 'IV': 87, 'V': 106}
+- status: {'established': 224, 'emerging': 47, 'withdrawn': 22, 'investigational': 57, 'off-market': 19}
+- category: {'rhBMP': 9, 'peptide': 6, 'DBM': 47, 'synthetic-ceramic': 35, 'bioactive-glass': 11, 'cellular-allograft': 25, 'structural-allograft': 11, 'calcium-phosphate-cement': 17, 'other': 29, 'MSC': 18, 'calcium-sulfate': 9, 'BMAC': 12, 'PRP': 26, 'pharmacologic': 10, 'rhPDGF': 4, 'amniotic': 41, 'exosome': 1, 'cartilage': 21, 'soft-tissue': 21, 'viscosupplement': 16}
+- tier (per product-application): {'established': 376, 'investigational': 193, 'emerging': 283}
+- evidence grade (per product-application): {'I': 127, 'II': 44, 'III': 49, 'IV': 131, 'V': 501}
 
-## Warnings (18)
+## Warnings (92)
 - product infuse: evidence ref 'FDA-PHN-2008-07-01' is not PMID/NCT/DOI
 - product magnifuse: no evidence entries
 - product allofuse: no evidence entries
@@ -82,3 +99,77 @@
 - product osteovation-cmf: no evidence entries
 - product nvdx3: no evidence entries
 - product novosis-rhbmp2-korea: no evidence entries
+- product mimedx-axiofill: no evidence entries
+- product integra-amnioexcel: no evidence entries
+- product integra-biodfence: no evidence entries
+- product vivex-cygnus: no evidence entries
+- product surgenex-surgraft: no evidence entries
+- product fidia-nudyn: no evidence entries
+- product axolotl-biologix: no evidence entries
+- product xiros-poly-tape: no evidence entries
+- product integra-tenoglide: no evidence entries
+- product tenomend: no evidence entries
+- product kerecis-tendon-protect: no evidence entries
+- product arthrex-speedflex: no evidence entries
+- product rejuvaknee: no evidence entries
+- product magnus: no evidence entries
+- product scylla: no evidence entries
+- product v92: no evidence entries
+- product viable-matrix-plus: no evidence entries
+- product viacell: no evidence entries
+- product allofuse-select-cm: no evidence entries
+- product arthrocell: no evidence entries
+- product orios: no evidence entries
+- product puregen: no evidence entries
+- product regenavate-dental-dbm: no evidence entries
+- product rafugen-dbm: no evidence entries
+- product vivorte-trabexus: no evidence entries
+- product 3d-profuse: no evidence entries
+- product aurora-biologics-dbm: no evidence entries
+- product medline-unite-dbm: no evidence entries
+- product bioventus-pfizer-bmp-portfolio: no evidence entries
+- product arthrex-thrombinator: no evidence entries
+- product zimmer-biomet-biocue: no evidence entries
+- product zimmer-biomet-nstride-prp: no evidence entries
+- product zimmer-biomet-fat-concentration: no evidence entries
+- product emcyte-genesiscs: no evidence entries
+- product exactech-accelerate: no evidence entries
+- product terumo-harvest-adiprep: no evidence entries
+- product celling-art-prp: no evidence entries
+- product ranfac-cervos-aps: no evidence entries
+- product regenlab-regenkit: no evidence entries
+- product apex-xcell-prp: no evidence entries
+- product eclipse-prp: no evidence entries
+- product dr-prp: no evidence entries
+- product thermogenesis-resq-60: no evidence entries
+- product fidia-prp-kit: no evidence entries
+- product healeon-prp: no evidence entries
+- product surgentec-alara-bma: no evidence entries
+- product jointechlabs-minitc: no evidence entries
+- product cap-spheres-pellet-pack: no evidence entries
+- product copios: no evidence entries
+- product globus-bioactive-glass-line: no evidence entries
+- product microfuse: no evidence entries
+- product cove-osteocove: no evidence entries
+- product mozaik-osteostrux: no evidence entries
+- product cem-ostetic: no evidence entries
+- product ossimend: no evidence entries
+- product mbcp: no evidence entries
+- product osteo-p: no evidence entries
+- product mg-osteocrete-line: no evidence entries
+- product cerasorb-ortho: no evidence entries
+- product nanobone-sbx: no evidence entries
+- product genex: no evidence entries
+- product allogran: no evidence entries
+- product teknimed-cementek: no evidence entries
+- product citrepore: no evidence entries
+- product bonvie-plus: no evidence entries
+- product jazbi: no evidence entries
+- product dimensional-bioceramics: no evidence entries
+- product ossdsign-catalyst: no evidence entries
+- product ventris-synthetic-putty: no evidence entries
+- product biogennix-agilon: no evidence entries
+- product skeletal-kinetics-callos: no evidence entries
+- product synthecure: no evidence entries
+- product adaptos-fuse: no evidence entries
+- product sn-polygraft-jax: no evidence entries

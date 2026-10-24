@@ -1262,7 +1262,7 @@
     {
       "id": "bmac-point-of-care",
       "name": "Bone marrow aspirate concentrate (BMAC), autologous, point-of-care",
-      "company": "Device makers (e.g., Terumo/Harvest SmartPrep, Arthrex Angel, Zimmer Biomet BioCUE, EmCyte, Celling Biosciences); the biologic is the patient's own marrow",
+      "company": "Device makers (e.g., Terumo/Harvest SmartPrep, Arthrex Angel, Zimmer Biomet BioCUE (cleared as a platelet concentration kit, not a BMAC device; see the brand record), EmCyte, Celling Biosciences); the biologic is the patient's own marrow",
       "ownership_history": "Not applicable (class record).",
       "category": "BMAC",
       "composition": "Iliac crest (or tibial/vertebral) marrow aspirate concentrated by density centrifugation in the operating room or clinic; contains a small fraction of CFU-F mesenchymal progenitors plus hematopoietic cells, platelets and plasma",

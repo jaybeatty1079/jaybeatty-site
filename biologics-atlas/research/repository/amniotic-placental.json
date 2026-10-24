@@ -1,0 +1,2587 @@
+{
+ "applications": [],
+ "products": [
+  {
+   "id": "mimedx-micronized-dhacm-injectable",
+   "name": "AmnioFix Injectable / EpiFix Injectable (micronized dHACM, mdHACM)",
+   "company": "MiMedx Group",
+   "ownership_history": "Developed by MiMedx (Surgical Biologics subsidiary, Marietta GA). FDA Untitled Letter of 5 Sept 2013 to Surgical Biologics concluded micronized AmnioFix Injectable was more than minimally manipulated and needed a biologics license. MiMedx ran it as an IND/BLA program (RMAT designation for knee OA, 2018), then disbanded the Regenerative Medicine segment and suspended the knee OA program in Q2 2023, abandoning the BLA.",
+   "category": "amniotic",
+   "composition": "Dehydrated human amnion/chorion membrane (PURION-processed) milled to a micronized powder and reconstituted in saline for injection (40-100 mg doses in trials).",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "No BLA. Studied under IND (number not public); FDA Untitled Letter 2013 (Surgical Biologics, AmnioFix Injectable); BLA effort abandoned Q2 2023 per MiMedx FY2025 10-K",
+    "us_market_year": 2011,
+    "on_label_indications": [
+     "None. FDA treats micronized amniotic membrane injected for pain, inflammation or tendon/joint conditions as a 351 biologic requiring a BLA (2013 Untitled Letter; 2017/2020 HCT/P guidance; enforcement discretion ended 31 May 2021). MiMedx states it does not sell Section 351 products in the US."
+    ]
+   },
+   "status": "withdrawn",
+   "challenge": "The Level I plantar fasciitis RCT (Cazzell 2018) is still quoted in sales decks for other brands; MiMedx's own confirmatory Phase 3 in plantar fasciitis and its Phase 2b in knee OA both missed their primary endpoints, and MiMedx walked away from the BLA.",
+   "applications": [
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Cazzell 2018 single-blind RCT (n=145, 14 US sites): one mdHACM injection cut 3-month VAS pain 76% vs 45% for saline (p<0.0001). The confirmatory double-blind Phase 3 (NCT03414268) did not separate from saline on 90-day VAS (topline 13 Sept 2021) and MiMedx dropped the plantar fasciitis BLA. A 2026 meta-analysis of placental injectables in plantar fasciitis (6 studies, 324 patients) rated certainty low to very low.",
+     "caveats": "Sponsor-funded; the positive trial was single-blind with a 3-month primary endpoint; the larger double-blind trial was negative and is unpublished as a paper. Achilles Phase 3 (NCT03414255, n=146) completed 2021 with no results posted. Only a 32-patient retrospective Achilles series is published."
+    },
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Phase 2b RCT (NCT03485157, 446 randomized, KL 1-3) missed both primary endpoints (VAS and WOMAC at 90 days); only a pre-interim subgroup separated. A second Phase 2b (NCT05796765) was stopped by the sponsor at n=43 and the program was suspended in 2023. The only published knee data are a 100-knee retrospective series written with MiMedx employees.",
+     "caveats": "Negative primary endpoints; subgroup signal is post hoc; no BLA."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:30058377",
+     "title": "Randomized Controlled Trial of Micronized Dehydrated Human Amnion/Chorion Membrane (dHACM) Injection Compared to Placebo for the Treatment of Plantar Fasciitis",
+     "year": 2018,
+     "design": "RCT",
+     "n": 145,
+     "finding": "Single-blind, 14 sites: 3-month VAS fell 76% with mdHACM vs 45% with saline (p<0.0001); FFI-R 60% vs 40%; no related serious adverse events.",
+     "sponsor_funded": true,
+     "applications": [
+      "tendinopathy-injection"
+     ]
+    },
+    {
+     "ref": "PMID:23945520",
+     "title": "Prospective, randomized, blinded, comparative study of injectable micronized dehydrated amniotic/chorionic membrane allograft for plantar fasciitis--a feasibility study",
+     "year": 2013,
+     "design": "RCT",
+     "n": 45,
+     "finding": "Single-centre, 3 arms (saline, 0.5 cc, 1.25 cc): AOFAS hindfoot scores improved more with mdHACM at 1 and 8 weeks; 8-week follow-up only.",
+     "sponsor_funded": null,
+     "applications": [
+      "tendinopathy-injection"
+     ]
+    },
+    {
+     "ref": "NCT03414268",
+     "title": "Micronized dHACM Injectable for the Treatment of Plantar Fasciitis (Phase 3)",
+     "year": 2021,
+     "design": "RCT",
+     "n": 208,
+     "finding": "Double-blind, saline-controlled; MiMedx reported 13 Sept 2021 that it did not meet the 90-day VAS primary endpoint and that it would not file a BLA for plantar fasciitis (company release said 277 enrolled; registry lists 208).",
+     "sponsor_funded": true,
+     "applications": [
+      "tendinopathy-injection"
+     ]
+    },
+    {
+     "ref": "NCT03414255",
+     "title": "Micronized dHACM Injectable for the Treatment of Achilles Tendonitis (Phase 3)",
+     "year": 2021,
+     "design": "RCT",
+     "n": 146,
+     "finding": "Completed March 2021; no results posted on ClinicalTrials.gov and no publication located.",
+     "sponsor_funded": true,
+     "applications": [
+      "tendinopathy-injection"
+     ]
+    },
+    {
+     "ref": "PMID:34137854",
+     "title": "Micronized Dehydrated Human Amnion/Chorion Membrane Injection in the Treatment of Chronic Achilles Tendinitis",
+     "year": 2021,
+     "design": "case-series",
+     "n": 32,
+     "finding": "Single-physician retrospective series; 66% reported symptom resolution within 45 days; no control group; MiMedx-affiliated authors.",
+     "sponsor_funded": true,
+     "applications": [
+      "tendinopathy-injection"
+     ]
+    },
+    {
+     "ref": "NCT03485157",
+     "title": "Micronized dHACM vs. Saline in the Treatment of Osteoarthritis of the Knee (Phase 2b)",
+     "year": 2021,
+     "design": "RCT",
+     "n": 446,
+     "finding": "Did not meet either primary endpoint (VAS, WOMAC at 90 days); results posted on ClinicalTrials.gov; pre-interim cohort showed WOMAC separation.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT05796765",
+     "title": "Phase 2B Micronized DHACM vs. Saline in the Treatment of Knee Osteoarthritis",
+     "year": 2023,
+     "design": "RCT",
+     "n": 43,
+     "finding": "Terminated: 'Study discontinued early by Sponsor' after MiMedx suspended the program in 2023.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:31779034",
+     "title": "Micronized Dehydrated Human Amnion Chorion Membrane Injection in the Treatment of Knee Osteoarthritis-A Large Retrospective Case Series",
+     "year": 2021,
+     "design": "case-series",
+     "n": 100,
+     "finding": "100 knees (82 patients) given 100 mg mdHACM, KOOS followed 6 months; uncontrolled; MiMedx employees among authors.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:42705475",
+     "title": "Placental-derived injectable products for chronic plantar fasciitis: A systematic review and meta-analysis",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": 324,
+     "finding": "Six studies: placebo-controlled RCTs favored placental injections (MD 3.37 points on 0-10 pain, I2=92%); GRADE certainty low to very low.",
+     "sponsor_funded": false,
+     "applications": [
+      "tendinopathy-injection"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT03485157",
+     "NCT05796765",
+     "NCT03414268",
+     "NCT03414255"
+    ],
+    "expected_milestone": "None: program disbanded Q2 2023; MiMedx FY2025 10-K records abandonment of the BLA."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Q4145 ('Epifix, inj, 1mg') still exists in HCPCS, but the product cannot be lawfully promoted for joint or tendon injection without a BLA; any current billing of an amniotic injectable for musculoskeletal pain is a compliance red flag (see Celularity's 2022 False Claims Act civil investigative demand on injectable birth-tissue billing).",
+    "notes": "Useful as the cautionary tale: the best-funded amniotic injectable program in the US ended without a BLA."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1376339/000137633926000011/mdxg-20251231.htm",
+    "https://www.biospace.com/mimedx-reports-top-line-data-from-two-late-stage-musculoskeletal-trials-with-proprietary-amniotic-tissue-technology",
+    "https://www.raps.org/resource/untitled-letters-say-amniotic-product-manufacturer.html",
+    "https://clinicaltrials.gov/study/NCT03485157",
+    "https://clinicaltrials.gov/study/NCT05796765",
+    "https://clinicaltrials.gov/study/NCT03414268",
+    "https://clinicaltrials.gov/study/NCT03414255",
+    "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/regulatory-considerations-human-cells-tissues-and-cellular-and-tissue-based-products-minimal",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=epifix"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "mimedx-amniofix-sheet",
+   "name": "AmnioFix (dHACM sheet) and AmnioCord (dehydrated umbilical cord)",
+   "company": "MiMedx Group",
+   "ownership_history": "MiMedx Group (Marietta, GA); AmnioFix sold since about 2011 (sheet). AmnioCord is the surgical umbilical-cord sheet sold alongside it.",
+   "category": "amniotic",
+   "composition": "Dehydrated, PURION-processed human amnion/chorion membrane sheet (AmnioFix); dehydrated umbilical cord sheet (AmnioCord). Room-temperature storage, five-year shelf life per MiMedx.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2011,
+    "on_label_indications": [
+     "Homologous use as a barrier, covering or wrap at a surgical site (FDA's 2017/2020 guidance: sheet amniotic membrane used as a barrier or covering is generally a 361 HCT/P). MiMedx positions its Surgical line for 'lower extremity repair, plastic and reconstructive surgery, vascular procedures, and multiple orthopedic repairs'."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Used as a tendon wrap or adhesion barrier in Achilles, peroneal and flexor repairs; no comparative study of AmnioFix in tendon repair located (PubMed search 2026-10-23).",
+     "caveats": "On-label only as a barrier/wrap; any claim that it speeds tendon healing is a non-homologous claim FDA has cited in other firms' warning letters (BioXtek 2025, Celularity 2025)."
+    },
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "MiMedx ran a 25-patient randomized trial of its dehydrated umbilical cord patch in open supraspinatus repair (NCT03084068, completed 2019); no results posted or published.",
+     "caveats": "Barrier use only; not a structural augmentation patch."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Adjacent use as an epidural/dural barrier, not a fusion biologic: Subach 2015 (n=5 TLIF re-explorations) reported easily detachable epidural tissue; a 143-patient randomized lumbar decompression/microdiscectomy trial (NCT02300909) completed 2018 with no results posted.",
+     "caveats": "Tiny case series; the randomized trial is unpublished; does not contribute to fusion.",
+     "challenge": "Pair to fusion only as an anti-adhesion barrier; it has no osteogenic role."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:25653880",
+     "title": "The use of a dehydrated amnion/chorion membrane allograft in patients who subsequently undergo reexploration after posterior lumbar instrumentation",
+     "year": 2015,
+     "design": "case-series",
+     "n": 5,
+     "finding": "In 5 TLIF patients re-explored later, epidural tissue was easily detached where dHACM had been placed; no complications.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "NCT02300909",
+     "title": "Randomized, single blind, controlled trial of dHACM in lumbar decompression and microdiscectomy surgery",
+     "year": 2018,
+     "design": "RCT",
+     "n": 143,
+     "finding": "Completed June 2018 (primary outcome ODI); no results posted or published.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "NCT03084068",
+     "title": "Prospective RCT for rotator cuff repair using a human dehydrated umbilical cord patch",
+     "year": 2019,
+     "design": "RCT",
+     "n": 25,
+     "finding": "Completed January 2019 (ASES at 12 months); no results posted or published.",
+     "sponsor_funded": true,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:37830838",
+     "title": "Dehydrated human amnion/chorion membrane use in emergent craniectomies shows minimal dural adhesions",
+     "year": 2023,
+     "design": "retrospective",
+     "n": null,
+     "finding": "Reported minimal dural adhesions at cranioplasty after dHACM placement; MiMedx-affiliated authors.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "No Q-code located for AmnioFix (HCPCS lookup 2026-10-23); in the OR it is bundled into the DRG/APC and facilities may report C1762.",
+    "notes": "MiMedx Surgical category net sales $142.3M in 2025 (+20.7%), driven by AmnioFix, AMNIOEFFECT and HELIOGEN (a 510(k) bovine collagen product) per the FY2025 10-K."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1376339/000137633926000011/mdxg-20251231.htm",
+    "https://clinicaltrials.gov/study/NCT02300909",
+    "https://clinicaltrials.gov/study/NCT03084068",
+    "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/regulatory-considerations-human-cells-tissues-and-cellular-and-tissue-based-products-minimal",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=amniofix"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "mimedx-epifix-epicord",
+   "name": "EpiFix (dHACM) and EpiCord (dehydrated umbilical cord) wound allografts",
+   "company": "MiMedx Group",
+   "ownership_history": "MiMedx Group; EpiFix is MiMedx's lead wound product (also approved in Japan).",
+   "category": "amniotic",
+   "composition": "Dehydrated PURION-processed amnion/chorion membrane (EpiFix) and dehydrated umbilical cord (EpiCord, EpiCord Expandable) sheets for external wound cover.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2011,
+    "on_label_indications": [
+     "Homologous use as a protective barrier/wound covering for chronic and acute wounds (DFU, VLU); marketed for external use"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Used as a wound cover over the soft-tissue defect after debridement in podiatry; the DFU RCTs (e.g., Tettelbach 2019, n=110, more 12-week closures with weekly dHACM) studied chronic ulcers, not post-osteomyelitis bone cavities, and no study of EpiFix as a dead-space adjunct after bone resection was located (PubMed 2026-10-23).",
+     "caveats": "A sheet cover does not manage bone dead space or deliver antibiotic; the one RCT in DFUs with controlled osteomyelitis (a different product, BioTissue TTAX01/Neox 1K) found no benefit over standard care.",
+     "challenge": "Do not present a skin substitute as an osteomyelitis therapy."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:30136445",
+     "title": "A confirmatory study on the efficacy of dehydrated human amnion/chorion membrane dHACM allograft in the management of diabetic foot ulcers: A prospective, multicentre, randomised, controlled study of 110 patients from 14 wound clinics",
+     "year": 2019,
+     "design": "RCT",
+     "n": 110,
+     "finding": "Weekly dHACM plus standard care healed significantly more DFUs at 12 weeks than standard care alone (ITT and per-protocol).",
+     "sponsor_funded": true,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Medicare: HCPCS Q-code 'Q4186 EpiFix per sq cm; Q4187 EpiCord per sq cm (Q4131 retired)'. From 1 Jan 2026 the CY2026 PFS (CMS-1832-F, 31 Oct 2025) and OPPS rules pay non-BLA skin substitutes as incident-to supplies at one flat rate (CMS fact sheet: approximately $127.28 per cm2; MiMedx and Organogenesis 10-Ks state $127.14 per cm2), before geographic adjustment, grouped by FDA pathway (361 HCT/P, PMA, 510(k)). The MAC skin-substitute LCDs that would have cut covered products were withdrawn 24 Dec 2025; L35041 (Novitas), L36377 (First Coast) and L36690 (CGS) remain. In inpatient or OR use the graft is bundled into the DRG/APC (facilities often report C1762 connective tissue).",
+    "notes": "Skin-substitute spending under Medicare Part B rose to over $10B in 2024 (CMS); OIG's Sept 2025 data snapshot (OEI-BL-24-00420) flagged the surge and billing red flags. EpiFix and EpiCord were among the 18 products the withdrawn 2026 LCDs would have kept covered."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1376339/000137633926000011/mdxg-20251231.htm",
+    "https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f",
+    "https://api.coverage.cms.gov/v1/reports/local-coverage-final-lcds",
+    "https://www.apma.org/about-apma/news/news-releases/2025/cms-withdraws-skin-substitute-lcds-scheduled-for-2026/",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=epifix",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=epicord"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "mimedx-axiofill",
+   "name": "AXIOFILL (placental particulate)",
+   "company": "MiMedx Group",
+   "ownership_history": "MiMedx; launched about 2021 as a particulate successor to its earlier placental particulate (AmnioFill). FDA issued a Warning Letter on 21 Dec 2023 after inspections; RFD determination March 2024 that it is not a 361 HCT/P; MiMedx sued in N.D. Georgia and keeps selling it while the case runs.",
+   "category": "amniotic",
+   "composition": "Human placental-derived particulate (MiMedx calls it a particulate wound dressing) for deep wound defects.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "Contested. MiMedx markets it as a 361 HCT/P; FDA Warning Letter 21 Dec 2023 and a March 2024 Request-for-Designation decision that it does not meet Section 361 criteria (FDA treats it as Section 351). Litigation pending (N.D. Ga.).",
+    "us_market_year": 2021,
+    "unverified": true,
+    "on_label_indications": [
+     "MiMedx positioning: 'replacement or supplementation of damaged or inadequate integumental tissue'. FDA has determined it is not a 361 product, so no lawful 361 indication is settled."
+    ]
+   },
+   "status": "emerging",
+   "challenge": "A hiring manager will ask which particulate placental products FDA has already called 351: AXIOFILL (MiMedx), Interfyl (Celularity) and PalinGen Flow (Amnio Technology) are the named examples; StimLabs and BioTissue moved their particulates to 510(k).",
+   "applications": [
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Marketed for deep integumental defects; no published study of AXIOFILL in post-debridement diabetic-foot or osteomyelitis cavities located (PubMed 2026-10-23).",
+     "caveats": "FDA classification dispute; not a bone void filler; no antibiotic delivery."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "No Q-code located for AXIOFILL (HCPCS lookup 2026-10-23); surgical use bundled.",
+    "notes": "The litigation outcome will set precedent for particulate placental products."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1376339/000137633926000011/mdxg-20251231.htm",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=axiofill"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "mimedx-amnioeffect",
+   "name": "AMNIOEFFECT (surgical placental allograft)",
+   "company": "MiMedx Group",
+   "ownership_history": "MiMedx Surgical portfolio; launched 2023 (launch year from company materials, not independently confirmed).",
+   "category": "amniotic",
+   "composition": "Placental membrane allograft for surgical use; layer composition not confirmed from a primary source.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2023,
+    "unverified": true,
+    "on_label_indications": [
+     "Homologous use as a surgical barrier/covering; MiMedx positions it for 'lower extremity repair, plastic surgery, vascular surgery and multiple orthopedic repairs and reconstruction'."
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published orthopedic study of AMNIOEFFECT located (PubMed 2026-10-23); the only registered trial is in thyroid/parathyroid surgery scars (NCT07173621, n=334, enrolling).",
+     "caveats": "Barrier/wrap use only."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT07173621",
+     "title": "AMNIOEFFECT vs standard of care on post-operative healing after transcutaneous thyroid and parathyroid surgery",
+     "year": 2025,
+     "design": "RCT",
+     "n": 334,
+     "finding": "Enrolling by invitation; completion 2027; not orthopedic.",
+     "sponsor_funded": true,
+     "applications": []
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Surgical use; bundled in DRG/APC; no Q-code located.",
+    "notes": "Named by MiMedx as a driver of 2025 Surgical growth."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1376339/000137633926000011/mdxg-20251231.htm",
+    "https://clinicaltrials.gov/study/NCT07173621"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "mimedx-orthoflo",
+   "name": "OrthoFlo (amniotic fluid allograft)",
+   "company": "MiMedx Group",
+   "ownership_history": "Introduced by MiMedx about 2016 as an amniotic-fluid allograft for orthopedic and sports-medicine use (a lyophilized version was planned). Not in MiMedx's 2025 portfolio; MiMedx states it sells no Section 351 products in the US.",
+   "category": "amniotic",
+   "composition": "Amniotic fluid from consenting full-term C-section donors (liquid; lyophilized version planned).",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "None. Amniotic fluid is not an HCT/P (secreted fluid excluded under 21 CFR 1271.3(d)); FDA regulates injectable amniotic fluid as a drug/biologic needing a BLA (Kimera 2023, BioLab Sciences 2022, Frontier Biologics 2024 letters).",
+    "us_market_year": 2016,
+    "unverified": true,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "withdrawn",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "MiMedx sponsored two saline-controlled amniotic-fluid knee OA trials (NCT02768155, n=60, completed 2017; NCT03074526, lyophilized, n=156, completed 2018); neither has posted results or a publication located (2026-10-23).",
+     "caveats": "Unpublished; whether the tested product was branded OrthoFlo is not stated in the registry."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT02768155",
+     "title": "Clinical evaluation of an amniotic fluid product in knee osteoarthritis",
+     "year": 2017,
+     "design": "RCT",
+     "n": 60,
+     "finding": "Completed; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT03074526",
+     "title": "Two doses of lyophilized amniotic fluid vs saline placebo in knee osteoarthritis",
+     "year": 2018,
+     "design": "RCT",
+     "n": 156,
+     "finding": "Completed April 2018; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "None current.",
+    "notes": "Status 'withdrawn' is inferred from MiMedx's FY2025 10-K product list, which does not include OrthoFlo."
+   },
+   "sources": [
+    "https://www.biospace.com/mimedx-to-present-at-the-15th-annual-b-needham-b-healthcare-conference",
+    "https://www.sec.gov/Archives/edgar/data/1376339/000137633926000011/mdxg-20251231.htm",
+    "https://clinicaltrials.gov/study/NCT03074526",
+    "https://clinicaltrials.gov/study/NCT02768155"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "integra-amnioexcel",
+   "name": "AmnioExcel and AmnioExcel Plus placental allograft membrane",
+   "company": "Integra LifeSciences",
+   "ownership_history": "Developed by BioD LLC (Memphis); Derma Sciences acquired BioD in 2016 and Integra acquired Derma Sciences in 2017. Integra still owns BioD LLC and lists AmnioExcel in its FY2025 10-K.",
+   "category": "amniotic",
+   "composition": "Dehydrated human amniotic (AmnioExcel) and amnion-chorion (Plus) membrane allograft.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2014,
+    "unverified": true,
+    "on_label_indications": [
+     "Integra: 'Human tissue-based allografts in various surgical and chronic wound applications' (homologous barrier/cover)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Wound cover in diabetic-foot care; no study after osteomyelitis debridement located (PubMed 2026-10-23).",
+     "caveats": "Wound cover only."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Medicare: HCPCS Q-code 'Q4137 AmnioExcel/BioDExcel per sq cm'. From 1 Jan 2026 the CY2026 PFS (CMS-1832-F, 31 Oct 2025) and OPPS rules pay non-BLA skin substitutes as incident-to supplies at one flat rate (CMS fact sheet: approximately $127.28 per cm2; MiMedx and Organogenesis 10-Ks state $127.14 per cm2), before geographic adjustment, grouped by FDA pathway (361 HCT/P, PMA, 510(k)). The MAC skin-substitute LCDs that would have cut covered products were withdrawn 24 Dec 2025; L35041 (Novitas), L36377 (First Coast) and L36690 (CGS) remain. In inpatient or OR use the graft is bundled into the DRG/APC (facilities often report C1762 connective tissue).",
+    "notes": "Sold by Integra's Tissue Technologies wound franchise alongside Integra dermal templates, MicroMatrix/Cytal (porcine UBM) and MediHoney."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/917520/000091752026000011/iart-20251231.htm",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=amnioexcel"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "integra-biodfence",
+   "name": "BioDFence and BioDDryFlex (amniotic membrane surgical barrier)",
+   "company": "Integra LifeSciences",
+   "ownership_history": "BioD LLC product line; Integra (via Derma Sciences, 2017). BioDFence remains an Integra trademark in the FY2025 10-K.",
+   "category": "amniotic",
+   "composition": "Amniotic membrane allograft (hydrated BioDFence; dehydrated BioDDryFlex) used as a surgical barrier.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2014,
+    "unverified": true,
+    "on_label_indications": [
+     "Homologous use as a protective surgical barrier/covering (company positioning includes tendon protection)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Integra lists human amniotic tissue for surgical tissue repair including 'tendon protection'; no published study of BioDFence in tendon repair located (PubMed 2026-10-23).",
+     "caveats": "Barrier only."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Q4140 BioDFence 1 cm; Q4138 BioDFence DryFlex 1 cm (outpatient wound use); surgical use bundled.",
+    "notes": ""
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/917520/000091752026000011/iart-20251231.htm",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=biodfence"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "integra-biodrestore",
+   "name": "BioDRestore (amniotic tissue particulate)",
+   "company": "Integra LifeSciences",
+   "ownership_history": "BioD LLC / Integra. Not named in Integra's FY2025 10-K, so current availability is unconfirmed.",
+   "category": "amniotic",
+   "composition": "Particulate (injectable) amniotic tissue allograft.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "None. Particulate amniotic tissue injected into a joint for osteoarthritis pain is outside 361 homologous use per FDA's 2017/2020 HCT/P guidance and letters; no BLA.",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "None for intra-articular use"
+    ]
+   },
+   "status": "off-market",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Double-blind RCT (n=81, severe knee OA): single BioDRestore injection vs triamcinolone; no difference at 6 weeks, but more amnion patients kept pain relief and function to 1 year (MCID met for Lysholm, KOOS ADL and pain).",
+     "caveats": "Small; corticosteroid comparator, not saline; non-homologous use without a BLA."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:39813395",
+     "title": "Amniotic Tissue Injections Are an Effective Alternative to Corticosteroid Injections for Pain Relief and Function in Patients With Severe Knee Osteoarthritis: A Double-Blind, Randomized, Prospective Study",
+     "year": 2025,
+     "design": "RCT",
+     "n": 81,
+     "finding": "BioDRestore (n=39) vs triamcinolone (n=42): equal at 6 weeks; amnion group kept improvement to 1 year on SANE, Lysholm and KOOS subscales.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not separately payable for joint injection; no Q-code located for BioDRestore.",
+    "notes": "Status 'off-market' inferred from absence in the FY2025 10-K; confirm with Integra."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/917520/000091752026000011/iart-20251231.htm",
+    "PMID:39813395"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "biostem-clarix",
+   "name": "CLARIX family (Clarix 100, Clarix Cord 1K; cryopreserved amnion and umbilical cord)",
+   "company": "BioStem Technologies",
+   "ownership_history": "Developed by TissueTech / Amniox Medical (later BioTissue Holdings, Miami) with CryoTek processing. BioStem Technologies bought the Neox and Clarix trademarks, two orthopedic-therapy patents and BioTissue's surgical/wound sales force on 21 Jan 2026 (cash $15.0M plus contingent consideration); BioTissue continues to manufacture under a supply agreement.",
+   "category": "amniotic",
+   "composition": "Cryopreserved human amniotic membrane (Clarix 100) and ultra-thick umbilical cord amnion (Clarix Cord 1K), devitalized, CryoTek-processed.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2013,
+    "unverified": true,
+    "on_label_indications": [
+     "Homologous use as a surgical covering/barrier; BioStem describes Clarix use 'across a range of surgical applications, including orthopedic, podiatric, plastic, and general surgical procedures'"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Amniox ran an open-label economic study of Clarix Cord 1K as an add-on in peroneal and Achilles tendon repair (NCT02719288, n=64, completed 2020); no results posted or paper located (2026-10-23).",
+     "caveats": "Sponsor-run; unpublished; barrier use only."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Adjacent use as an epidural barrier: 32-patient Phase 4 study of Clarix 100 and Clarix Cord 1K in discectomy (NCT03113786, completed 2020) has no posted results.",
+     "caveats": "Not a fusion biologic; unpublished.",
+     "challenge": "Barrier over neural elements, not fusion."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT02719288",
+     "title": "Open-label economic outcome study of CLARIX CORD 1K as add-on in surgical tendon repair",
+     "year": 2020,
+     "design": "prospective-cohort",
+     "n": 64,
+     "finding": "Completed; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    },
+    {
+     "ref": "NCT03113786",
+     "title": "CLARIX 100 and CLARIX CORD 1K for Discectomy Patients",
+     "year": 2020,
+     "design": "prospective-cohort",
+     "n": 32,
+     "finding": "Completed April 2020; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Q4148 (Neox/Neox RT/Clarix Cord) and Q4156 (Neox 100/Clarix 100) per sq cm for outpatient wound use; OR use bundled.",
+    "notes": "BioStem gained GPO/IDN contracts and hospital access with the deal; BioStem disclosed going-concern doubt in 2026 filings."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1658678/000121390026088766/ea0301957-424b3_biostem.htm",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=clarix",
+    "https://clinicaltrials.gov/study/NCT02719288",
+    "https://clinicaltrials.gov/study/NCT03113786"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "biostem-neox",
+   "name": "NEOX family (Neox Cord 1K, Neox 100, Neox RT; cryopreserved amnion / umbilical cord wound grafts)",
+   "company": "BioStem Technologies",
+   "ownership_history": "TissueTech/BioTissue brand; trademarks sold to BioStem Technologies 21 Jan 2026. BioTissue's investigational biologic version of the same cryopreserved umbilical cord, TTAX01, was run under IND (Phase 3 AMBULATE DFU trials).",
+   "category": "amniotic",
+   "composition": "Cryopreserved devitalized umbilical cord amnion (Neox Cord 1K, 'ultra-thick') and amniotic membrane (Neox 100).",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2013,
+    "unverified": true,
+    "on_label_indications": [
+     "Homologous use as a wound covering for chronic and complex wounds"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "The only RCT in this setting: TTAX01/Neox 1K plus standard care (debridement, bone resection, offloading, 6 weeks of antibiotics) vs standard care alone in DFUs with exposed bone/tendon and controlled osteomyelitis (n=220): healing 66.1% vs 59.8% at 26 weeks (p=0.40) and 77.1% vs 71.6% at 50 weeks (p=0.29), no difference. An earlier single-surgeon retrospective series (n=31 patients, 33 ulcers with biopsy-proven osteomyelitis) reported 78.8% closure.",
+     "caveats": "The negative RCT outweighs the uncontrolled series; product acts as a cover after bone resection, not as dead-space fill.",
+     "challenge": "Good example of a positive case series not holding up in a randomized trial."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:41346156",
+     "title": "A Multi-Centre, Randomised, Controlled Clinical Trial Assessing Cryopreserved Ultra-Thick Human Amniotic Membrane in the Treatment of Complex Diabetic Foot Ulcers",
+     "year": 2025,
+     "design": "RCT",
+     "n": 220,
+     "finding": "No significant difference in complete healing at 26 weeks (66.1% vs 59.8%) or 50 weeks (77.1% vs 71.6%); similar adverse events.",
+     "sponsor_funded": true,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ]
+    },
+    {
+     "ref": "PMID:27312890",
+     "title": "A retrospective study of cryopreserved umbilical cord as an adjunctive therapy to promote the healing of chronic, complex foot ulcers with underlying osteomyelitis",
+     "year": 2016,
+     "design": "retrospective",
+     "n": 31,
+     "finding": "26 of 33 osteomyelitis-associated foot ulcers closed (78.8%) after debridement, bone resection, antibiotics and cUC; single surgeon, no control.",
+     "sponsor_funded": null,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ]
+    },
+    {
+     "ref": "NCT04450693",
+     "title": "Cryopreserved Human Umbilical Cord (TTAX01) for Late Stage, Complex Non-healing Diabetic Foot Ulcers (AMBULATE DFU II)",
+     "year": 2025,
+     "design": "RCT",
+     "n": 106,
+     "finding": "Phase 3, completed March 2025; results not located.",
+     "sponsor_funded": true,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Medicare: HCPCS Q-code 'Q4148 Neox/Neox RT/Clarix Cord; Q4156 Neox 100/Clarix 100'. From 1 Jan 2026 the CY2026 PFS (CMS-1832-F, 31 Oct 2025) and OPPS rules pay non-BLA skin substitutes as incident-to supplies at one flat rate (CMS fact sheet: approximately $127.28 per cm2; MiMedx and Organogenesis 10-Ks state $127.14 per cm2), before geographic adjustment, grouped by FDA pathway (361 HCT/P, PMA, 510(k)). The MAC skin-substitute LCDs that would have cut covered products were withdrawn 24 Dec 2025; L35041 (Novitas), L36377 (First Coast) and L36690 (CGS) remain. In inpatient or OR use the graft is bundled into the DRG/APC (facilities often report C1762 connective tissue).",
+    "notes": "BioStem now outsources Neox/Clarix manufacture to BioTissue (higher cost of goods per its Q1 2026 MD&A). Note that the sponsor (TissueTech/BioTissue) declared 'no conflicts' in the 2025 RCT; sponsor_funded is inferred from the TTAX01 IND program."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1658678/000121390026088766/ea0301957-424b3_biostem.htm",
+    "PMID:41346156",
+    "https://clinicaltrials.gov/study/NCT04450693",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=neox"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "biostem-vendaje",
+   "name": "VENDAJE and VendajeAC (dehydrated amnion / amnion-chorion, BioRetain)",
+   "company": "BioStem Technologies",
+   "ownership_history": "BioStem Technologies (Pompano Beach, FL), OTC-listed, now SEC-registered. Also sold AmnioWrap2 under a Hesed license that Hesed terminated effective 29 June 2026, citing the 2026 CMS rate change.",
+   "category": "amniotic",
+   "composition": "Dehydrated amniotic membrane (Vendaje) and amniochorion (VendajeAC) processed with BioRetain dehydration.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2021,
+    "unverified": true,
+    "on_label_indications": [
+     "Homologous use as a protective barrier/covering for chronic wounds"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Two BioStem-sponsored DFU trials completed late 2025 (NCT06565156 BR-AM, n=72; NCT06511596 BR-AC, n=71); no peer-reviewed results or post-osteomyelitis data located (2026-10-23).",
+     "caveats": "Unpublished; wound cover only."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT06565156",
+     "title": "Non-healing DFUs treated with standard care with or without BR-AM",
+     "year": 2025,
+     "design": "RCT",
+     "n": 72,
+     "finding": "Completed November 2025; results not located.",
+     "sponsor_funded": true,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ]
+    },
+    {
+     "ref": "NCT06511596",
+     "title": "Prospective trial of non-healing DFUs treated with standard care with or without BR-AC",
+     "year": 2025,
+     "design": "RCT",
+     "n": 71,
+     "finding": "Completed December 2025; results not located.",
+     "sponsor_funded": true,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Medicare: HCPCS Q-code 'Q4252 Vendaje; Q4279 VendajeAC per sq cm'. From 1 Jan 2026 the CY2026 PFS (CMS-1832-F, 31 Oct 2025) and OPPS rules pay non-BLA skin substitutes as incident-to supplies at one flat rate (CMS fact sheet: approximately $127.28 per cm2; MiMedx and Organogenesis 10-Ks state $127.14 per cm2), before geographic adjustment, grouped by FDA pathway (361 HCT/P, PMA, 510(k)). The MAC skin-substitute LCDs that would have cut covered products were withdrawn 24 Dec 2025; L35041 (Novitas), L36377 (First Coast) and L36690 (CGS) remain. In inpatient or OR use the graft is bundled into the DRG/APC (facilities often report C1762 connective tissue).",
+    "notes": "BioStem gross profit fell from $15.1M (Q1 2025) to $3.8M (Q1 2026) as the flat CMS rate hit mobile wound-care channels; Venture Medical is a key distributor."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1658678/000121390026088766/ea0301957-424b3_biostem.htm",
+    "https://www.sec.gov/Archives/edgar/data/1658678/000121390026076888/ea029496901ex10-15.htm",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=vendaje"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "biotissue-catalyze-clarix-flo",
+   "name": "Catalyze (formerly Clarix Flo / Neox Flo; amniotic membrane and umbilical cord particulate)",
+   "company": "BioTissue",
+   "ownership_history": "TissueTech/BioTissue particulate sold as Clarix Flo (surgical) and Neox Flo (wound). BioTissue Holdings obtained 510(k) K253204 for 'Catalyze' on 5 June 2026; BioStem holds rights to commercialize it and owes BioTissue a clearance payment of up to $10M.",
+   "category": "amniotic",
+   "composition": "Lyophilized, micronized human amniotic membrane and umbilical cord extracellular matrix particles (AM/UC particulate).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K253204 (Catalyze, cleared 2026-06-05, product code KGN; predicate K231325 StimLabs Corplex P)",
+    "us_market_year": 2026,
+    "on_label_indications": [
+     "Management of partial- and full-thickness wounds, pressure, venous, diabetic and chronic vascular ulcers, tunneled/undermined wounds, surgical wounds (donor sites/grafts, post-Mohs, post-laser, podiatric, dehiscence), trauma wounds and draining wounds (K253204 indications for use)"
+    ]
+   },
+   "status": "emerging",
+   "challenge": "The 510(k) is a wound-dressing clearance. Injecting the particulate into a knee, tendon or ligament (as in the published Clarix Flo case series) is off-label for the device and, for the old 361 version, non-homologous.",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "Uncontrolled AM/UC particulate series: Castellanos 2019 prospective pilot (50 mg, pain 74 to 37 on WOMAC-A at 24 weeks) and Mead 2020 (n=42, KL 3-4, 74% PGIC improvement at 12 months). BioTissue then took the same tissue into a saline-controlled Phase 2 (TTAX03).",
+     "caveats": "No control arm; author ties to TissueTech; off-label for the 510(k) device."
+    },
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "10 collegiate football players injected for MCL, hamstring and abdominal tears returned to play at about 30 days (retrospective, author is a BioTissue speaker).",
+     "caveats": "n=10, no comparator; muscle/ligament rather than chronic tendinopathy."
+    },
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Cleared for tunneled/undermined and diabetic wounds, so it can fill a soft-tissue cavity after debridement; no study after osteomyelitis resection located.",
+     "caveats": "Wound dressing, not a bone void filler or antibiotic carrier."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:31418794",
+     "title": "Injectable Amniotic Membrane/Umbilical Cord Particulate for Knee Osteoarthritis: A Prospective, Single-Center Pilot Study",
+     "year": 2019,
+     "design": "case-series",
+     "n": null,
+     "finding": "WOMAC-A pain fell from 74.3 to 37.4 at 24 weeks; some patients needed a second injection; uncontrolled.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:33116955",
+     "title": "Intra-Articular Injection of Amniotic Membrane and Umbilical Cord Particulate for the Management of Moderate to Severe Knee Osteoarthritis",
+     "year": 2020,
+     "design": "case-series",
+     "n": 42,
+     "finding": "KL 3-4 knees: 74% reported significant improvement (PGIC) at 12 months; OMERACT-OARSI response 81%; author fees from TissueTech.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:39629020",
+     "title": "Injection of Amniotic Membrane and Umbilical Cord Particulate for Muscle and Ligament Tears in Collegiate Football Athletes: A Single-Center, Retrospective Study",
+     "year": 2024,
+     "design": "retrospective",
+     "n": 10,
+     "finding": "Return to play at 29.6 days on average; no complications; no control.",
+     "sponsor_funded": null,
+     "applications": [
+      "tendinopathy-injection"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Q4155 (NeoxFlo or ClarixFlo, 1 mg) exists for the legacy product; as a 510(k) wound dressing it falls in the 510(k) skin-substitute category under the 2026 flat-rate rule.",
+    "notes": "Second human-tissue particulate to reach 510(k) after StimLabs Corplex P."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K253204.pdf",
+    "https://api.fda.gov/device/510k.json?search=k_number:K253204",
+    "https://www.sec.gov/Archives/edgar/data/1658678/000121390026088766/ea0301957-424b3_biostem.htm",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=clarixflo"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "biotissue-ttax03",
+   "name": "TTAX03 (lyophilized micronized amniotic membrane and umbilical cord, investigational injectable)",
+   "company": "BioTissue",
+   "ownership_history": "BioTissue Holdings (formerly TissueTech), Miami; retained pipeline after the January 2026 sale of surgical/wound brands to BioStem.",
+   "category": "amniotic",
+   "composition": "Lyophilized and micronized particulate human amniotic membrane and umbilical cord, reconstituted for intra-articular injection.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "IND (number not public); Phase 2 NCT05079035",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Phase 2, 52-week, single injection TTAX03 vs saline in KL 3-4 knee OA (NCT05079035, n=90) completed March 2025; no results posted or published as of 2026-10-23. A facet-joint Phase 1 (NCT06236308) was withdrawn.",
+     "caveats": "Results unknown."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT05079035",
+     "title": "A Phase 2, 52-Week Trial of TTAX03 vs. Saline as a Single Intra-articular Injection in Kellgren-Lawrence Grade 3-4 Knee OA",
+     "year": 2025,
+     "design": "RCT",
+     "n": 90,
+     "finding": "Completed 2025-03-07; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT06236308",
+     "title": "TTAX03 for the Treatment of Lumbosacral Facet Joint Pain",
+     "year": 2025,
+     "design": "RCT",
+     "n": 0,
+     "finding": "Withdrawn before enrollment.",
+     "sponsor_funded": true,
+     "applications": []
+    }
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT05079035",
+     "NCT06236308"
+    ],
+    "expected_milestone": "Phase 2 readout not public as of 2026-10-23."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "None (investigational).",
+    "notes": "The proper 351 path for the same tissue BioTissue also sold as Clarix Flo."
+   },
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT05079035",
+    "https://clinicaltrials.gov/study/NCT06236308"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "applied-biologics-xwrap",
+   "name": "XWRAP family (XWRAP, Plus, Dual, Hydro, Fenestra, Tribus, 2.0)",
+   "company": "Applied Biologics",
+   "ownership_history": "Applied Biologics, LLC (Scottsdale, AZ), private.",
+   "category": "amniotic",
+   "composition": "Dehydrated, chorion-free single-layer amniotic membrane allograft (variants add layers or fenestration).",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2019,
+    "unverified": true,
+    "on_label_indications": [
+     "'Homologous use' as a protective barrier or cover for partial- and full-thickness acute and chronic wounds, surgical sites and Mohs sites (company site); marketed as a tissue-plane barrier in surgery"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Third-party product listings describe protection of tendons and nerves at the surgical site; no published tendon study located (2026-10-23).",
+     "caveats": "Barrier only."
+    },
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Company-reported CAMPX DFU RCT (n=222, Wagner 1-2): 30.9% vs 17.5% closure at 12 weeks (abstract submission, not peer reviewed); Wagner 1-2 excludes bone involvement, so no osteomyelitis evidence.",
+     "caveats": "Press-release data only."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT06564831",
+     "title": "Single layer placental-based allograft plus SOC vs SOC (DFU)",
+     "year": 2025,
+     "design": "RCT",
+     "n": 124,
+     "finding": "Registered; company abstract reports a 222-subject CAMPX analysis with 30.9% vs 17.5% 12-week closure (not peer reviewed).",
+     "sponsor_funded": true,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ],
+     "unverified": true
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Medicare: HCPCS Q-code 'Q4204 XWRAP; Q4357 Plus; Q4358 Dual; Q4402 2.0; Q4403-Q4408 Dual Plus/Hydro/Fenestra/Tribus'. From 1 Jan 2026 the CY2026 PFS (CMS-1832-F, 31 Oct 2025) and OPPS rules pay non-BLA skin substitutes as incident-to supplies at one flat rate (CMS fact sheet: approximately $127.28 per cm2; MiMedx and Organogenesis 10-Ks state $127.14 per cm2), before geographic adjustment, grouped by FDA pathway (361 HCT/P, PMA, 510(k)). The MAC skin-substitute LCDs that would have cut covered products were withdrawn 24 Dec 2025; L35041 (Novitas), L36377 (First Coast) and L36690 (CGS) remain. In inpatient or OR use the graft is bundled into the DRG/APC (facilities often report C1762 connective tissue).",
+    "notes": "Ten separate Q-codes for one brand family illustrate the code proliferation CMS cited when it moved to a flat rate. On the Federal Supply Schedule."
+   },
+   "sources": [
+    "https://www.appliedbiologics.com/",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=xwrap",
+    "https://www.santelog.com/actualites-sante-nasdaq/applied-biologics-announces-submission-abstract-single-layer-amniotic",
+    "https://clinicaltrials.gov/study/NCT06564831"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "applied-biologics-flograft",
+   "name": "FlōGraft (cryopreserved amniotic fluid / micronized amnion allograft)",
+   "company": "Applied Biologics",
+   "ownership_history": "Applied Biologics, LLC; not listed on the company's current website.",
+   "category": "amniotic",
+   "composition": "Cryopreserved injectable allograft of chorion-free amnion and amniotic fluid (also described as micronized human amnion chorion membrane in its knee OA IND trial).",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "Phase 2 IND trial NCT03441607 (IND number not public). Amniotic-fluid injectables need a BLA per FDA.",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "off-market",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Phase 2 placebo-controlled trial (NCT03441607, target n=320) has unknown status since 2018 and no results.",
+     "caveats": "Abandoned or unreported."
+    },
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Randomized rotator cuff repair study with and without FlōGraft (NCT03379324, target n=260) has unknown status and no results.",
+     "caveats": "Unreported."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT03441607",
+     "title": "Safety & Efficacy of FloGraft (mHACMb) in Adults With Pain Due to OA of the Knee",
+     "year": 2019,
+     "design": "RCT",
+     "n": 320,
+     "finding": "Phase 2; status unknown; no results.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT03379324",
+     "title": "Arthroscopic double-row rotator cuff repair with and without a cryopreserved, liquid, injectable amnion allograft",
+     "year": 2019,
+     "design": "RCT",
+     "n": 260,
+     "finding": "Status unknown; no results.",
+     "sponsor_funded": true,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "None.",
+    "notes": "Off-market status inferred from its absence on appliedbiologics.com (2026-10-23)."
+   },
+   "sources": [
+    "https://www.appliedbiologics.com/",
+    "https://clinicaltrials.gov/study/NCT03441607",
+    "https://clinicaltrials.gov/study/NCT03379324",
+    "https://woundreference.com/app/topic?id=298"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "vivex-cygnus",
+   "name": "CYGNUS family (Matrix, Dual, Solo, Disk; dehydrated amnion/placental allografts)",
+   "company": "VIVEX Biologics",
+   "ownership_history": "VIVEX Biologics, Inc. (Miami / Atlanta), private. Since a November 2023 trademark-license and manufacturing agreement, Organogenesis sells CYGNUS Dual and CYGNUS Matrix (term to 31 Dec 2026, renewable). Ownership/investors of VIVEX not confirmed.",
+   "category": "amniotic",
+   "composition": "Dehydrated amniotic membrane (Dual: dual-layer amnion) and placental allograft (Matrix); room-temperature, five-year shelf life (Organogenesis 10-K).",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2017,
+    "unverified": true,
+    "on_label_indications": [
+     "Homologous use as a protective barrier/wound covering; Organogenesis markets CYGNUS Matrix as a surgical barrier in Sports Medicine"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Sold as a surgical barrier in soft-tissue repair; only a single finger-injury case report located (PubMed 2026-10-23).",
+     "caveats": "No comparative data."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Medicare: HCPCS Q-code 'Q4170 Cygnus; Q4199 Cygnus Matrix; Q4282 Cygnus Dual; Q4362 Cygnus Disk; Q4413 Cygnus Solo'. From 1 Jan 2026 the CY2026 PFS (CMS-1832-F, 31 Oct 2025) and OPPS rules pay non-BLA skin substitutes as incident-to supplies at one flat rate (CMS fact sheet: approximately $127.28 per cm2; MiMedx and Organogenesis 10-Ks state $127.14 per cm2), before geographic adjustment, grouped by FDA pathway (361 HCT/P, PMA, 510(k)). The MAC skin-substitute LCDs that would have cut covered products were withdrawn 24 Dec 2025; L35041 (Novitas), L36377 (First Coast) and L36690 (CGS) remain. In inpatient or OR use the graft is bundled into the DRG/APC (facilities often report C1762 connective tissue).",
+    "notes": "VIVEX also tested an amniotic-fluid injectable (AlloGen Liquid) in a knee OA Phase 1 that was withdrawn (NCT04835389) and a trigger-finger amniotic-fluid study (NCT03583151); not separate records."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1661181/000119312526076730/orgo-20251231.htm",
+    "https://vivex.com/",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=cygnus",
+    "https://clinicaltrials.gov/study/NCT04835389"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "stimlabs-revita",
+   "name": "Revita (full-thickness placental membrane, shelf-stable)",
+   "company": "StimLabs",
+   "ownership_history": "StimLabs, LLC (Roswell, GA), private; founded by John Daniel.",
+   "category": "amniotic",
+   "composition": "Dehydrated full-thickness placental membrane retaining amnion, intermediate (hyaluronan-rich) layer and chorion.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2018,
+    "unverified": true,
+    "on_label_indications": [
+     "Homologous use as a barrier/covering; company lists orthopedics and spine among surgical fields"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Adjacent barrier use: a randomized Revita trial after lumbar microdiscectomy (NCT03536013) was terminated at n=27 with no results.",
+     "caveats": "Terminated; not a fusion biologic.",
+     "challenge": "Microdiscectomy barrier, not fusion."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT03536013",
+     "title": "Efficacy of a Full-Thickness Placental Allograft in Lumbar Microdiscectomy",
+     "year": 2019,
+     "design": "RCT",
+     "n": 27,
+     "finding": "Terminated August 2019; no results.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Medicare: HCPCS Q-code 'Q4180 Revita per sq cm'. From 1 Jan 2026 the CY2026 PFS (CMS-1832-F, 31 Oct 2025) and OPPS rules pay non-BLA skin substitutes as incident-to supplies at one flat rate (CMS fact sheet: approximately $127.28 per cm2; MiMedx and Organogenesis 10-Ks state $127.14 per cm2), before geographic adjustment, grouped by FDA pathway (361 HCT/P, PMA, 510(k)). The MAC skin-substitute LCDs that would have cut covered products were withdrawn 24 Dec 2025; L35041 (Novitas), L36377 (First Coast) and L36690 (CGS) remain. In inpatient or OR use the graft is bundled into the DRG/APC (facilities often report C1762 connective tissue).",
+    "notes": "StimLabs moved its particulates to 510(k) (Corplex P, Theracor); sheets remain 361."
+   },
+   "sources": [
+    "https://stimlabs.com/",
+    "https://www.medestheticsmag.com/products/collagen-builders/news/21578746/stimlabs-revita-revolutionizes-patient-care",
+    "https://clinicaltrials.gov/study/NCT03536013",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=revita"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "stimlabs-corplex-p",
+   "name": "Corplex P / Theracor P / Allacor P (umbilical cord and amnion particulate, 510(k))",
+   "company": "StimLabs",
+   "ownership_history": "StimLabs, LLC. First clearance K231325 (2 Feb 2024), updated K242828 (18 Oct 2024); Theracor K253339 (22 Dec 2025).",
+   "category": "amniotic",
+   "composition": "Dehydrated human perinatal-tissue extracellular-matrix particles (umbilical cord based) applied as a wound dressing.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K231325 (2024-02-02), K242828 (2024-10-18), Theracor K253339 (2025-12-22); product code KGN",
+    "us_market_year": 2024,
+    "on_label_indications": [
+     "Wound management indications per the 510(k) (same indication list Catalyze copied: partial/full-thickness wounds, ulcers, surgical and trauma wounds, tunneled wounds)"
+    ],
+    "unverified": true
+   },
+   "status": "emerging",
+   "challenge": "The first human birth-tissue particulate to use the 510(k) door rather than claim 361 status; it is the predicate for BioTissue's Catalyze. Wound labeling only.",
+   "applications": [
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Cleared wound dressing that can fill tunneled defects after debridement; StimLabs real-world wound series (NCT07215741, n=23) completed 2025; no osteomyelitis study located.",
+     "caveats": "Wound dressing only."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT07414368",
+     "title": "Case series of StimLabs dehydrated human umbilical cord particulate for acute and chronic wounds",
+     "year": 2026,
+     "design": "case-series",
+     "n": 10,
+     "finding": "Enrolling by invitation.",
+     "sponsor_funded": true,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Q4231 (Corplex P per cc) is retired; HCPCS A2035 ('Corplex P/Theracor P/Allacor P, mg') now applies; as a 510(k) product it sits in the 510(k) skin-substitute category under the 2026 flat-rate rule.",
+    "notes": ""
+   },
+   "sources": [
+    "https://api.fda.gov/device/510k.json?search=applicant:%22stimlabs%22",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K253204.pdf",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=corplex",
+    "https://stimlabs.com/"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "organogenesis-renu",
+   "name": "ReNu (cryopreserved amniotic suspension allograft, ASA)",
+   "company": "Organogenesis",
+   "ownership_history": "Developed by NuTech Medical (Birmingham, AL), acquired by Organogenesis in 2017. Sold commercially as a 361 product until FDA's enforcement-discretion window closed; Organogenesis ceased commercial distribution of ReNu on 31 May 2021 and ran it as an IND/BLA program (RMAT designation for knee OA, 2021).",
+   "category": "amniotic",
+   "composition": "Cryopreserved suspension of micronized amniotic membrane plus cells derived from amniotic fluid, injected intra-articularly.",
+   "regulatory": {
+    "path": "BLA",
+    "reference": "BLA accepted for review 6 July 2026 (BLA number not disclosed); PDUFA target date 24 April 2027; RMAT designation 2021",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None yet. Proposed indication: management of symptoms (pain) of knee osteoarthritis. Not approved as of 2026-10-23."
+    ]
+   },
+   "status": "investigational",
+   "challenge": "Organogenesis is filing on one positive Phase 3 (one-sided p=0.0177 vs a 0.023 threshold, WOMAC pain -0.7 vs saline) and one that missed (p=0.0393, -0.5), plus a pooled analysis. Expect an FDA advisory-committee-style debate over whether a sub-1-point WOMAC difference is clinically meaningful.",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Phase 3 #1 (NCT04636229, n=516): WOMAC pain -0.72 vs saline at 6 months, one-sided p=0.0177 (met). Phase 3 #2 (NCT06000410, n=594, topline 25 Sept 2025): -0.51, one-sided p=0.0393, missed the 0.023 threshold. Earlier Phase 2 single-blind RCT (n=200, ASA vs HA vs saline; Farr 2019, Gomoll 2021) favored ASA on KOOS/VAS to 12 months. 2025-2026 systematic reviews pool mostly these sponsor trials.",
+     "caveats": "All trials sponsor-funded with Organogenesis-paid investigators; effect sizes are small on a 0-20 or 0-10 WOMAC pain scale (scale not stated in releases); Phase 3 results are press releases and 10-K text, not peer-reviewed papers yet.",
+     "challenge": "Under BLA review, not approved; cannot be offered as a 'choice' today."
+    },
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "A 150-patient ReNu vs corticosteroid plantar fasciitis trial (NCT02982226) is listed with unknown status and no results; no published tendinopathy data located (2026-10-23).",
+     "caveats": "Not studied to completion."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:31533151",
+     "title": "A Randomized Controlled Single-Blind Study Demonstrating Superiority of Amniotic Suspension Allograft Injection Over Hyaluronic Acid and Saline Control for Modification of Knee Osteoarthritis Symptoms",
+     "year": 2019,
+     "design": "RCT",
+     "n": 200,
+     "finding": "1:1:1 ASA vs HA vs saline; at 3 months 13.2% of ASA patients reported unacceptable pain vs 68.8% HA and 75% saline; KOOS and VAS favored ASA.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:33716121",
+     "title": "Safety and Efficacy of an Amniotic Suspension Allograft Injection Over 12 Months in a Single-Blinded, Randomized Controlled Trial for Symptomatic Osteoarthritis of the Knee",
+     "year": 2021,
+     "design": "RCT",
+     "n": 200,
+     "finding": "12-month follow-up of the same trial: ASA kept significant KOOS and VAS improvements over HA and saline.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT04636229",
+     "title": "Efficacy of Amniotic Suspension Allograft in Patients With Osteoarthritis of the Knee (Phase 3 #1)",
+     "year": 2023,
+     "design": "RCT",
+     "n": 516,
+     "finding": "Company-reported: WOMAC pain -0.72 vs saline at 6 months, one-sided p=0.0177 against a 0.023 threshold.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT06000410",
+     "title": "A Study to Evaluate the Efficacy of Amniotic Suspension Allograft in Patients With Osteoarthritis of the Knee (Phase 3 #2)",
+     "year": 2025,
+     "design": "RCT",
+     "n": 594,
+     "finding": "Company-reported 25 Sept 2025: WOMAC pain -0.51 vs saline, one-sided p=0.0393; missed the primary endpoint.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:41760441",
+     "title": "Evaluating the efficacy of intra-articular human amniotic suspension allografts for knee osteoarthritis management: A systematic review and meta-analysis",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": 262,
+     "finding": "5 studies (3 RCTs): pooled KOOS MD +10.9 and large VAS reductions; authors call for larger independent RCTs.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:39793609",
+     "title": "Efficacy of Amniotic Suspension Allografts in the Treatment of Knee Osteoarthritis: A Systematic Review",
+     "year": 2025,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "9 studies, narrative synthesis: ASA generally outperformed HA and saline on pain; mild transient adverse events.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "under-review",
+    "trials": [
+     "NCT04636229",
+     "NCT06000410"
+    ],
+    "expected_milestone": "PDUFA target action date 24 April 2027 (Organogenesis release, 6 July 2026). Hip OA studies in planning."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "None until approved. If licensed under Section 351 it would be a biologic (J-code/ASP pathway), outside the flat skin-substitute rate.",
+    "notes": "Would be the first licensed amniotic injectable for any orthopedic indication in the US."
+   },
+   "sources": [
+    "https://www.biospace.com/press-releases/organogenesis-announces-fda-acceptance-of-biologics-license-application-for-renu-for-the-management-of-symptomatic-knee-osteoarthritis",
+    "https://www.biospace.com/press-releases/organogenesis-provides-update-on-second-phase-3-renu-study",
+    "https://www.sec.gov/Archives/edgar/data/1661181/000119312526076730/orgo-20251231.htm",
+    "https://clinicaltrials.gov/study/NCT04636229",
+    "https://clinicaltrials.gov/study/NCT06000410",
+    "PMID:31533151",
+    "PMID:33716121"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "organogenesis-nucel",
+   "name": "NuCel (amniotic suspension for spinal fusion)",
+   "company": "Organogenesis",
+   "ownership_history": "NuTech Medical product, acquired by Organogenesis 2017; commercial distribution ceased 31 May 2021; Organogenesis has discontinued clinical development.",
+   "category": "amniotic",
+   "composition": "Amniotic suspension allograft (amniotic membrane and amniotic-fluid-derived cells) applied to the fusion bed.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "None. Organogenesis states NuCel would need a BLA because it may be more than minimally manipulated and non-homologous; development discontinued.",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "withdrawn",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Two Organogenesis-sponsored lumbar fusion studies (NCT02023372, n=57, completed 2019; NCT02808234, n=200, status unknown) have no posted results or publication located (2026-10-23).",
+     "caveats": "Withdrawn; unpublished."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT02023372",
+     "title": "Efficacy Study of NuCel in Patients Undergoing Fusion of the Lumbar Spine",
+     "year": 2019,
+     "design": "prospective-cohort",
+     "n": 57,
+     "finding": "Completed August 2019; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "NCT02808234",
+     "title": "Study of Nucel for One and Two Level Lumbar Interbody Fusion",
+     "year": 2022,
+     "design": "prospective-cohort",
+     "n": 200,
+     "finding": "Status unknown; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "None current.",
+    "notes": "Example of an amniotic spine 'biologic' that left the market at the 2021 deadline."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1661181/000119312526076730/orgo-20251231.htm",
+    "https://clinicaltrials.gov/study/NCT02023372",
+    "https://clinicaltrials.gov/study/NCT02808234"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "organogenesis-nushield",
+   "name": "NuShield (dehydrated amnion-chorion, LayerLoc)",
+   "company": "Organogenesis",
+   "ownership_history": "Launched 2010 by NuTech Medical; acquired by Organogenesis 2017.",
+   "category": "amniotic",
+   "composition": "Dehydrated placental allograft preserving amnion, intermediate (spongy) layer and chorion (LayerLoc process); room temperature, five-year shelf life.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2010,
+    "on_label_indications": [
+     "Regulated as a 361 HCT/P; topically or surgically applied 'to provide a protective barrier' (Organogenesis 10-K). Sold in Sports Medicine as a surgical barrier and in wound care as a wound covering."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Organogenesis lists NuShield as a surgical barrier in targeted soft-tissue repairs; its 30-patient peroneal tendon repair study (NCT03828916) has unknown status and no results; no published comparative study located (2026-10-23).",
+     "caveats": "Barrier claim only."
+    },
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Used as a wound cover; an Organogenesis NuShield-plus-SOC wound RCT (NCT07510412, n=200) is recruiting; no study in post-osteomyelitis debridement wounds located. A 2026 case series used it over exposed orthopedic plates.",
+     "caveats": "Wound cover, not a dead-space therapy."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT03828916",
+     "title": "NuShield in Surgical Peroneal Tendon Repair",
+     "year": 2021,
+     "design": "prospective-cohort",
+     "n": 30,
+     "finding": "Status unknown; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    },
+    {
+     "ref": "NCT07510412",
+     "title": "NuShield plus standard of care vs standard of care alone in wound management",
+     "year": 2026,
+     "design": "RCT",
+     "n": 200,
+     "finding": "Recruiting; completion 2029.",
+     "sponsor_funded": true,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ]
+    },
+    {
+     "ref": "PMID:41774203",
+     "title": "Management of orthopedic plate exposure: a case series evaluating advanced wound care and delayed hardware removal",
+     "year": 2026,
+     "design": "case-series",
+     "n": null,
+     "finding": "Lower-extremity ORIF plate exposures managed with advanced dressings (Apligraf, NuShield), NPWT, antibiotics and delayed hardware removal; uncontrolled.",
+     "sponsor_funded": null,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Medicare: HCPCS Q-code 'Q4160 NuShield per sq cm'. From 1 Jan 2026 the CY2026 PFS (CMS-1832-F, 31 Oct 2025) and OPPS rules pay non-BLA skin substitutes as incident-to supplies at one flat rate (CMS fact sheet: approximately $127.28 per cm2; MiMedx and Organogenesis 10-Ks state $127.14 per cm2), before geographic adjustment, grouped by FDA pathway (361 HCT/P, PMA, 510(k)). The MAC skin-substitute LCDs that would have cut covered products were withdrawn 24 Dec 2025; L35041 (Novitas), L36377 (First Coast) and L36690 (CGS) remain. In inpatient or OR use the graft is bundled into the DRG/APC (facilities often report C1762 connective tissue).",
+    "notes": "Organogenesis sells direct plus independent agents; Sports Medicine line pairs NuShield and CYGNUS Matrix (licensed from VIVEX) as surgical barriers with PuraForce."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1661181/000119312526076730/orgo-20251231.htm",
+    "https://clinicaltrials.gov/study/NCT03828916",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=nushield",
+    "https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "organogenesis-affinity-novachor",
+   "name": "Affinity (hypothermically stored amniotic membrane) and Novachor",
+   "company": "Organogenesis",
+   "ownership_history": "Affinity launched 2014 by NuTech Medical, acquired by Organogenesis 2017; Novachor launched December 2021.",
+   "category": "amniotic",
+   "composition": "Fresh (never dried or frozen), hypothermically stored amniotic membrane (Affinity); Novachor is a fresh placental (chorion-containing) membrane.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2014,
+    "on_label_indications": [
+     "361 HCT/P used as a protective barrier and wound covering; Organogenesis positions it for open wounds in the surgical setting"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Serena 2020 RCT (76 DFUs): hypothermically stored amniotic membrane closed more DFUs than standard care at 12 weeks (60% vs 38%); not a post-osteomyelitis population, so no evidence for this application specifically.",
+     "caveats": "Organogenesis employee among authors; small trial."
+    },
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "A 10-patient NuTech 'Affinity for chondral defects' study (NCT02837484) has unknown status and no results.",
+     "caveats": "Non-homologous use; unpublished."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:31691579",
+     "title": "A randomized controlled clinical trial of a hypothermically stored amniotic membrane for use in diabetic foot ulcers",
+     "year": 2020,
+     "design": "RCT",
+     "n": 76,
+     "finding": "Closure 60% vs 38% at 12 weeks (Cox p=0.04); HR 1.75.",
+     "sponsor_funded": true,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ]
+    },
+    {
+     "ref": "NCT02837484",
+     "title": "NuTech Affinity for the Treatment of Chondral Defects",
+     "year": 2020,
+     "design": "case-series",
+     "n": 10,
+     "finding": "Status unknown; no results.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Medicare: HCPCS Q-code 'Q4159 Affinity per sq cm'. From 1 Jan 2026 the CY2026 PFS (CMS-1832-F, 31 Oct 2025) and OPPS rules pay non-BLA skin substitutes as incident-to supplies at one flat rate (CMS fact sheet: approximately $127.28 per cm2; MiMedx and Organogenesis 10-Ks state $127.14 per cm2), before geographic adjustment, grouped by FDA pathway (361 HCT/P, PMA, 510(k)). The MAC skin-substitute LCDs that would have cut covered products were withdrawn 24 Dec 2025; L35041 (Novitas), L36377 (First Coast) and L36690 (CGS) remain. In inpatient or OR use the graft is bundled into the DRG/APC (facilities often report C1762 connective tissue).",
+    "notes": "Organogenesis 10-K risk factor names Affinity, Novachor and NuShield as products FDA could decide are not 361."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1661181/000119312526076730/orgo-20251231.htm",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=affinity",
+    "https://clinicaltrials.gov/study/NCT02837484"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "smith-nephew-grafix",
+   "name": "Grafix (Grafix Core, Grafix PL, Grafix Prime, Grafix Plus, Grafix Duo)",
+   "company": "Smith+Nephew",
+   "ownership_history": "Developed by Osiris Therapeutics (Columbia, MD); Smith+Nephew acquired Osiris in April 2019.",
+   "category": "amniotic",
+   "composition": "Cryopreserved (and PL: lyopreserved) viable placental membrane retaining native cells, growth factors and ECM.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2011,
+    "unverified": true,
+    "on_label_indications": [
+     "Homologous use as a wound covering for acute and chronic wounds (Grafix is applied directly to wounds)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Lavery 2014 blinded RCT (n=97): 62% vs 21% DFU closure at 12 weeks and fewer wound infections (18% vs 36%); the trial was in chronic DFUs, and no study as an adjunct after osteomyelitis resection was located.",
+     "caveats": "Sponsor-funded; not an osteomyelitis population."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:25048468",
+     "title": "The efficacy and safety of Grafix for the treatment of chronic diabetic foot ulcers: results of a multi-centre, controlled, randomised, blinded, clinical trial",
+     "year": 2014,
+     "design": "RCT",
+     "n": 97,
+     "finding": "Complete closure 62% vs 21% at 12 weeks (p=0.0001); median time to heal 42 vs 69.5 days; fewer wound infections.",
+     "sponsor_funded": true,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Medicare: HCPCS Q-code 'Q4132 Grafix Core/GrafixPL Core; Q4133 Grafix/Stravix Prime/PL; Q4304 Grafix Plus; Q4392 Grafix Duo'. From 1 Jan 2026 the CY2026 PFS (CMS-1832-F, 31 Oct 2025) and OPPS rules pay non-BLA skin substitutes as incident-to supplies at one flat rate (CMS fact sheet: approximately $127.28 per cm2; MiMedx and Organogenesis 10-Ks state $127.14 per cm2), before geographic adjustment, grouped by FDA pathway (361 HCT/P, PMA, 510(k)). The MAC skin-substitute LCDs that would have cut covered products were withdrawn 24 Dec 2025; L35041 (Novitas), L36377 (First Coast) and L36690 (CGS) remain. In inpatient or OR use the graft is bundled into the DRG/APC (facilities often report C1762 connective tissue).",
+    "notes": "Sold by S+N Advanced Wound Management."
+   },
+   "sources": [
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=grafix",
+    "PMID:25048468",
+    "https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f",
+    "https://www.thebusinessdesk.com/yorkshire/?p=2034956"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "smith-nephew-stravix",
+   "name": "Stravix / StravixPL (cryopreserved umbilical tissue)",
+   "company": "Smith+Nephew",
+   "ownership_history": "Osiris Therapeutics product; Smith+Nephew since April 2019.",
+   "category": "amniotic",
+   "composition": "Cryopreserved (StravixPL lyopreserved) viable umbilical cord tissue (amnion plus Wharton's jelly) used as a surgical cover or wrap.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2015,
+    "unverified": true,
+    "on_label_indications": [
+     "Homologous use as a surgical cover or wrap to support soft-tissue repair"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Sundblad 2018 quality-improvement pilot used viable cryopreserved umbilical tissue as a wrap in peroneus brevis repair and compared against historical controls (less pain, faster return to shoes); co-author employed by Osiris.",
+     "caveats": "Historical controls; sponsor-affiliated; small n."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:30572484",
+     "title": "A quality improvement pilot assessment of the safety and associated outcomes of a viable cryopreserved umbilical tissue allograft as an adjunct surgical wrap in peroneus brevis tendon repair",
+     "year": 2018,
+     "design": "case-series",
+     "n": null,
+     "finding": "Wrap was safe; pain and time to unassisted ambulation compared favorably with historical controls.",
+     "sponsor_funded": true,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Q4133 (shared with Grafix Prime) for outpatient wound use; surgical use bundled into DRG/APC.",
+    "notes": "S+N's surgical placental product; competes with Clarix Cord and AmnioFix in tendon wraps."
+   },
+   "sources": [
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=stravix",
+    "PMID:30572484"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "celularity-interfyl",
+   "name": "Interfyl (decellularized placental connective tissue matrix, particulate and flowable)",
+   "company": "Celularity",
+   "ownership_history": "Developed by Celgene Cellular Therapeutics (FDA's 2004 designation covered integumentary use only); Celularity (Florham Park, NJ) since 2017 via HLI Cellular Therapeutics/Anthrogenesis. Arthrex holds the exclusive US orthopedic distribution license. Dental/oral rights sublicensed to BioCellgraft (Dec 2025).",
+   "category": "amniotic",
+   "composition": "Decellularized human placental connective tissue matrix from the chorionic plate, supplied as particulate/flowable.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "FDA Warning Letter CBER 25-681480 (1 Dec 2025): an unapproved new drug and unlicensed biological product; fails 'homologous use only' (21 CFR 1271.10(a)(2)) for musculoskeletal soft-tissue, tendon and anti-inflammatory uses; no BLA or IND. Inspection 14-22 Aug 2023.",
+    "us_market_year": 2008,
+    "unverified": true,
+    "on_label_indications": [
+     "Only the original integumentary designation ('replace or supplement damaged or inadequate integumental tissue'). FDA said orthopedic and anti-inflammatory uses are not homologous."
+    ]
+   },
+   "status": "established",
+   "challenge": "FDA's December 2025 letter quoted Arthrex's own patient guide and videos (peroneal tendinopathy, Achilles tears and tendinosis, hallux/MTP, calcific tendinosis) as evidence of intended use, and noted Celularity's contract lets it approve Arthrex's promotion. A distributor's marketing can sink the manufacturer's 361 status.",
+   "applications": [
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Only an in vitro tenocyte study (2022) located; no clinical tendinopathy study of Interfyl found (PubMed 2026-10-23). FDA has called the tendon use non-homologous.",
+     "caveats": "No clinical data; FDA warning letter."
+    },
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Marketed by Arthrex for Achilles and peroneal soft-tissue applications; no clinical study located.",
+     "caveats": "Non-homologous per FDA."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:35849201",
+     "title": "A decellularized flowable placental connective tissue matrix supports cellular functions of human tenocytes in vitro",
+     "year": 2022,
+     "design": "preclinical",
+     "n": null,
+     "finding": "In vitro tenocyte attachment/proliferation data only.",
+     "sponsor_funded": true,
+     "applications": [
+      "tendinopathy-injection"
+     ]
+    },
+    {
+     "ref": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/celularity-inc-681480-12012025",
+     "title": "FDA Warning Letter to Celularity Inc. (CBER 25-681480) on Interfyl",
+     "year": 2025,
+     "design": "registry",
+     "n": null,
+     "finding": "FDA found Interfyl an unlicensed biologic because its orthopedic and anti-inflammatory uses are not homologous; cited Arthrex promotional materials.",
+     "sponsor_funded": false,
+     "applications": [
+      "tendinopathy-injection",
+      "tendon-ligament-repair-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Q4171 ('Interfyl, 1 mg'). Celularity disclosed a False Claims Act civil investigative demand (EDPA, 14 Aug 2022) seeking documents on Medicare/Medicaid claims for 'injectable human tissue therapy products derived from amniotic fluid or birth tissue', including Interfyl.",
+    "notes": "Celularity is cash-constrained (2026 default notices, licensing out biomaterials); continued supply to Arthrex is a diligence question."
+   },
+   "sources": [
+    "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/celularity-inc-681480-12012025",
+    "https://www.sec.gov/Archives/edgar/data/1752828/000149315226020424/form10-k.htm",
+    "https://www.sec.gov/Archives/edgar/data/1752828/000149315226047787/form10-q.htm",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=interfyl"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "celularity-biovance",
+   "name": "Biovance and Biovance 3L (decellularized dehydrated amniotic membrane)",
+   "company": "Celularity",
+   "ownership_history": "Celgene Cellular Therapeutics product (2009 pilot), now Celularity; distributed via partners.",
+   "category": "amniotic",
+   "composition": "Decellularized, dehydrated human amniotic membrane (single layer; 3L tri-layer).",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": 2008,
+    "unverified": true,
+    "on_label_indications": [
+     "Wound covering; Biovance 3L 'designed for use as a covering, barrier, or wrap to surgical sites' (Celularity 10-K)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Biovance 3L positioned as a surgical wrap; published clinical work is ophthalmic and a 14-patient 2009 DFU pilot; no orthopedic study located.",
+     "caveats": "No ortho data."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:19325275",
+     "title": "Pilot trial of biovance collagen-based wound covering for diabetic ulcers",
+     "year": 2009,
+     "design": "case-series",
+     "n": 14,
+     "finding": "Open-label pilot; partial benefit in some groups; no adverse tissue reactions.",
+     "sponsor_funded": true,
+     "applications": []
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Medicare: HCPCS Q-code 'Q4154 Biovance; Q4283 Biovance Tri/3L'. From 1 Jan 2026 the CY2026 PFS (CMS-1832-F, 31 Oct 2025) and OPPS rules pay non-BLA skin substitutes as incident-to supplies at one flat rate (CMS fact sheet: approximately $127.28 per cm2; MiMedx and Organogenesis 10-Ks state $127.14 per cm2), before geographic adjustment, grouped by FDA pathway (361 HCT/P, PMA, 510(k)). The MAC skin-substitute LCDs that would have cut covered products were withdrawn 24 Dec 2025; L35041 (Novitas), L36377 (First Coast) and L36690 (CGS) remain. In inpatient or OR use the graft is bundled into the DRG/APC (facilities often report C1762 connective tissue).",
+    "notes": ""
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1752828/000149315226020424/form10-k.htm",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=biovance",
+    "PMID:19325275"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "arthrex-amnion-matrix",
+   "name": "Arthrex Amnion Matrix (Thin and Thick) and Amnion Flowable",
+   "company": "Arthrex",
+   "ownership_history": "Arthrex (Naples, FL) brand. The tissue processor is not named on Arthrex's US pages or its 2026 coding guide (unverified). Arthrex separately distributes Celularity's Interfyl under an exclusive orthopedic license.",
+   "category": "amniotic",
+   "composition": "Human amniotic membrane sheets (Thin ABS-4100 series, Thick ABS-4200 series) and a flowable amnion product delivered with the AmnionXpress device.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "'Used as an anatomical barrier or wrap in a variety of orthopedic applications' (Arthrex); Arthrex's coding guide states amniotic tissues are 361 HCT/Ps, minimally manipulated, for homologous use"
+    ]
+   },
+   "status": "established",
+   "challenge": "Arthrex's own coding guide describes the matrix as 'rich in growth factors' with 'regenerative qualities'; regenerative claims are what FDA cited (through Arthrex materials) in the 2025 Celularity letter.",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "II",
+     "evidence_summary": "Arthrex-funded pilot RCT (n=40) wrapping ACL autografts (BTB and hamstring) with Arthrex Amnion Matrix Thick plus BMAC: no difference vs standard ACLR in MRI T2*, graft volume or any patient-reported outcome at 2 years; safe.",
+     "caveats": "Pilot, underpowered, surrogate MRI endpoints; combined with BMAC so the wrap's effect cannot be isolated."
+    },
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Marketed as a barrier/wrap in sports procedures; no rotator cuff study of this product located (2026-10-23).",
+     "caveats": "Barrier only."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:38021297",
+     "title": "Augmentation of ACL Autograft Reconstruction With an Amnion Collagen Matrix Wrap and Bone Marrow Aspirate Concentrate: A Pilot Randomized Controlled Trial With 2-Year Follow-up",
+     "year": 2023,
+     "design": "RCT",
+     "n": 40,
+     "finding": "No significant differences in MRI T2*, graft volume or PROs at any time point; no adverse events; funded by Arthrex grant.",
+     "sponsor_funded": true,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Arthrex's 2026 coding guide suggests facilities report C1762 (connective tissue, human), L8699 or A4649 in surgical settings; Medicare bundles it into the DRG/APC.",
+    "notes": "Lets an Arthrex rep bundle an amnion wrap into a repair kit; no Q-code."
+   },
+   "sources": [
+    "https://www.arthrex.com/de/foot-ankle/arthrex-amnion-matrix",
+    "https://www.arthrex.com/resources/DOC1-002085-en-US/arthrex-amnion-matrix-2026-coding-and-reimbursement-guidelines",
+    "PMID:38021297",
+    "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/celularity-inc-681480-12012025"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "allosource-allowrap",
+   "name": "AlloWrap DS and AlloWrap Dry (amniotic membrane)",
+   "company": "AlloSource",
+   "ownership_history": "AlloSource (Centennial, CO), non-profit tissue bank. A 2023 hand-surgery paper credits AlloWrap to Stryker, suggesting Stryker distributes it in some channels (not confirmed).",
+   "category": "amniotic",
+   "composition": "Two layers of amniotic membrane with epithelial layers facing out (orientation-free); DS is moist, Dry is dehydrated; room temperature.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "'Biologic barrier following surgical repair' for open and minimally invasive procedures (AlloSource product page)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "cervical-acdf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Adjacent barrier use: AlloSource-sponsored RCT of AlloWrap to reduce prevertebral soft-tissue inflammation in two-level ACDF (NCT04684901, n=50) is enrolling; no results.",
+     "caveats": "Barrier/anti-inflammatory endpoint, not fusion; the anti-inflammatory framing is the kind of claim FDA calls non-homologous.",
+     "challenge": "Not a fusion biologic; dysphagia/swelling endpoint only."
+    },
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Used as a barrier around repairs; one ulnar-nerve transposition technique paper mentions it; no comparative tendon study located.",
+     "caveats": "Barrier only."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT04684901",
+     "title": "A Randomized, Controlled Study to Evaluate Effectiveness of AlloWrap Amniotic Membrane for the Reduction of Post-Operative Soft Tissue Inflammation in Two-Level ACDF",
+     "year": 2027,
+     "design": "RCT",
+     "n": 50,
+     "finding": "Enrolling by invitation; completion 2027.",
+     "sponsor_funded": true,
+     "applications": [
+      "cervical-acdf"
+     ]
+    },
+    {
+     "ref": "PMID:37588485",
+     "title": "The modified fascial sling technique for ulnar nerve anterior transposition: surgical techniques and results",
+     "year": 2023,
+     "design": "case-series",
+     "n": null,
+     "finding": "Technique paper: AlloWrap (credited to Stryker as supplier) wrapped around the transposed ulnar nerve before a fascial sling; no comparator.",
+     "sponsor_funded": null,
+     "applications": []
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Q4150 ('AlloWrap DS or Dry, 1 sq cm') for outpatient wound use; surgical use bundled.",
+    "notes": ""
+   },
+   "sources": [
+    "https://www.allosource.org/products/allowrap/",
+    "https://clinicaltrials.gov/study/NCT04684901",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=allowrap"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "mtf-amnioband",
+   "name": "AmnioBand (Membrane, Guardian, Particulate)",
+   "company": "MTF Biologics",
+   "ownership_history": "MTF Biologics (Edison, NJ), non-profit tissue bank.",
+   "category": "amniotic",
+   "composition": "Aseptically processed dehydrated human amnion-chorion membrane (dHACA); particulate form billed per mg.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "Homologous use as a wound covering/barrier (sheet). The particulate form's status was not confirmed from a primary source."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "DiDomenico 2016 RCT (n=40) of an aseptically processed placental membrane (dHACA, the AmnioBand process) vs standard care: 85% vs 25% DFU closure at 12 weeks; chronic DFUs, not post-osteomyelitis wounds.",
+     "caveats": "Brand attribution of the 2016 trial to AmnioBand is from the dHACA description, not the abstract; small open-label trial."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:27826487",
+     "title": "Aseptically Processed Placental Membrane Improves Healing of Diabetic Foot Ulcerations: Prospective, Randomized Clinical Trial",
+     "year": 2016,
+     "design": "RCT",
+     "n": 40,
+     "finding": "85% vs 25% healed at 12 weeks; mean 3.8 grafts per healed wound; tissue cost about $1,400 per healed DFU.",
+     "sponsor_funded": null,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ],
+     "unverified": true
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Q4151 ('AmnioBand, Guardian, 1 sq cm'); Q4168 ('AmnioBand, 1 mg', particulate). Sheet falls under the 2026 flat skin-substitute rate.",
+    "notes": "MTF's product page did not load product details on 2026-10-23."
+   },
+   "sources": [
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=amnioband",
+    "PMID:27826487",
+    "https://www.mtfbiologics.org/our-products/detail/amnioband"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "tides-artacent",
+   "name": "Artacent family (Artacent Wound, AC, Cord, Flex, Connect, Vericlen, Velos, Trident)",
+   "company": "Tides Medical",
+   "ownership_history": "Tides Medical (Lafayette, LA), private. One of four recipients of FDA's 5 Sept 2013 Untitled Letters on micronized amniotic products (the letter's product is not named in the RAPS summary).",
+   "category": "amniotic",
+   "composition": "Terminally sterilized (radiation) dehydrated human amniotic membrane grafts (dual-layer and other configurations); Artacent AC also exists as a per-mg flowable code.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "Chronic wounds and 'various surgical procedures' (company site) as a covering/barrier"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Observational DFU study of a dual-layer amniotic membrane (Artacent, 2020) and a 2025 Medicare cohort; no post-osteomyelitis data.",
+     "caveats": "Observational; wound cover only."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32924804",
+     "title": "Use of a dual-layer amniotic membrane in the treatment of diabetic foot ulcers: an observational study",
+     "year": 2020,
+     "design": "case-series",
+     "n": null,
+     "finding": "Uncontrolled DFU healing data with a dual-layer amniotic membrane.",
+     "sponsor_funded": null,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ]
+    },
+    {
+     "ref": "NCT06681428",
+     "title": "Rising Tide - amniotic tissue treatments for chronic diabetic foot ulcers",
+     "year": 2026,
+     "design": "RCT",
+     "n": 240,
+     "finding": "Recruiting; completion November 2026.",
+     "sponsor_funded": true,
+     "applications": [
+      "diabetic-foot-osteomyelitis-dead-space"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Medicare: HCPCS Q-code 'Q4169 Artacent Wound; Q4189 Artacent AC 1 mg; Q4190 Artacent AC per sq cm; Q4216 Artacent Cord; Q4336-Q4339 newer variants'. From 1 Jan 2026 the CY2026 PFS (CMS-1832-F, 31 Oct 2025) and OPPS rules pay non-BLA skin substitutes as incident-to supplies at one flat rate (CMS fact sheet: approximately $127.28 per cm2; MiMedx and Organogenesis 10-Ks state $127.14 per cm2), before geographic adjustment, grouped by FDA pathway (361 HCT/P, PMA, 510(k)). The MAC skin-substitute LCDs that would have cut covered products were withdrawn 24 Dec 2025; L35041 (Novitas), L36377 (First Coast) and L36690 (CGS) remain. In inpatient or OR use the graft is bundled into the DRG/APC (facilities often report C1762 connective tissue).",
+    "notes": ""
+   },
+   "sources": [
+    "https://tidesmedical.com/",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=artacent",
+    "https://www.raps.org/resource/untitled-letters-say-amniotic-product-manufacturer.html"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "surgenex-surgraft",
+   "name": "SurGraft family (SurGraft, TL, FT, XT, AC, ACA)",
+   "company": "Surgenex",
+   "ownership_history": "Surgenex LLC (Scottsdale, AZ), private.",
+   "category": "amniotic",
+   "composition": "Dehydrated placental membrane sheet allografts.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "Homologous wound covering/barrier (sheets were not cited in FDA's 2021 warning letter)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "diabetic-foot-osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study located (PubMed 2026-10-23).",
+     "caveats": "Wound cover only."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Medicare: HCPCS Q-code 'Q4209 SurGraft; Q4263 TL; Q4268 FT; Q4269 XT; Q4393 AC; Q4394 ACA'. From 1 Jan 2026 the CY2026 PFS (CMS-1832-F, 31 Oct 2025) and OPPS rules pay non-BLA skin substitutes as incident-to supplies at one flat rate (CMS fact sheet: approximately $127.28 per cm2; MiMedx and Organogenesis 10-Ks state $127.14 per cm2), before geographic adjustment, grouped by FDA pathway (361 HCT/P, PMA, 510(k)). The MAC skin-substitute LCDs that would have cut covered products were withdrawn 24 Dec 2025; L35041 (Novitas), L36377 (First Coast) and L36690 (CGS) remain. In inpatient or OR use the graft is bundled into the DRG/APC (facilities often report C1762 connective tissue).",
+    "notes": ""
+   },
+   "sources": [
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=surgraft",
+    "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/surgenex-llc-615254-11152021"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "surgenex-surfactor-surforce-surcord",
+   "name": "SurFactor, SurForce (amniotic membrane) and SurCord (umbilical cord) injectables",
+   "company": "Surgenex",
+   "ownership_history": "Surgenex LLC. Manufacturing stopped 16 April 2021 and distribution 28 May 2021 per the company's response to FDA. Fidia Pharma USA marketed an amniotic-membrane injectable as NuDYN (HCPCS Q4233 pairs 'SurFactor/NuDYN').",
+   "category": "amniotic",
+   "composition": "Injectable processed amniotic membrane (SurFactor, SurForce) and umbilical cord (SurCord) products, purported sterile.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "FDA Warning Letter OBPO 21-615254 (15 Nov 2021): drugs/biologics; fail homologous use (orthopedic conditions) and minimal manipulation; no BLA or IND; CGMP failures including 8 uninvestigated sterility failures (2017-2021).",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "withdrawn",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Promoted 'for a variety of orthopedic diseases or conditions' by injection per FDA; no published study located.",
+     "caveats": "FDA warning letter; withdrawn."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/surgenex-llc-615254-11152021",
+     "title": "FDA Warning Letter to Surgenex LLC (OBPO 21-615254)",
+     "year": 2021,
+     "design": "registry",
+     "n": null,
+     "finding": "Injectable cord and amniotic products are unlicensed biologics; orthopedic use is non-homologous; processing is more than minimal manipulation.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Q4233 ('SurFactor/NuDYN, per 0.5 cc') still listed in HCPCS; billing it for joint injection would be billing an unapproved biologic.",
+    "notes": ""
+   },
+   "sources": [
+    "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/surgenex-llc-615254-11152021",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=surfactor"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "fidia-nudyn",
+   "name": "NuDYN (amniotic-membrane-derived injectable)",
+   "company": "Fidia Pharma USA",
+   "ownership_history": "US arm of Fidia Farmaceutici (Italy). HCPCS Q4233 groups NuDYN with Surgenex's SurFactor, suggesting a shared source product (not confirmed).",
+   "category": "amniotic",
+   "composition": "Injectable product derived from amniotic membrane.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "FDA CBER Untitled Letter, 3 April 2023: intended for injection, marketed for orthopedics, sports medicine, pain management and podiatry; non-homologous; regulated as a drug and 351 biologic needing a BLA.",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "withdrawn",
+   "unverified": true,
+   "applications": [
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study located; FDA letter cites orthopedic, sports-medicine and podiatry promotion.",
+     "caveats": "Status after the 2023 letter not confirmed."
+    },
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study located.",
+     "caveats": "Unlicensed biologic per FDA."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Q4233 listed.",
+    "notes": "Notable because Fidia also sells hyaluronic-acid viscosupplements (Hymovis, Triluron) to the same orthopedic offices."
+   },
+   "sources": [
+    "https://www.fda.gov/media/166875/download",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=surfactor"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "amnio-technology-palingen",
+   "name": "PalinGen Flow, PalinGen InovoFlo, PalinGen membrane and ProMatrX ACF",
+   "company": "Amnio Technology",
+   "ownership_history": "Amnio Technology, LLC (Phoenix, AZ). Warning letters August 2022 and 1 Oct 2024; private-label versions include ASGFluid, Cell-ECT, Gryphon Amnio Flow and SXFluid (per FDA footnote).",
+   "category": "amniotic",
+   "composition": "PalinGen Flow: amniotic membrane plus amniotic fluid, flowable; InovoFlo and ProMatrX ACF: amniotic-fluid-derived; PalinGen/PalinGen Xplus sheets.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "FDA Warning Letter CBER 24-646460 (1 Oct 2024): InovoFlo is not an HCT/P (secreted fluid); PalinGen Flow fails minimal manipulation (flowable processing destroyed membrane integrity, tensile strength, elasticity) and homologous use; unapproved new drugs; CGMP failures. Earlier warning letter August 2022.",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None for the flowables; sheets marketed as 361 wound covers"
+    ]
+   },
+   "status": "withdrawn",
+   "unverified": true,
+   "applications": [
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Flowables were 'intended for injection'; no published study located.",
+     "caveats": "Warning letters 2022 and 2024; current sale status unknown."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/amnio-technology-llc-646460-10012024",
+     "title": "FDA Warning Letter to Amnio Technology, LLC (CBER 24-646460)",
+     "year": 2024,
+     "design": "registry",
+     "n": null,
+     "finding": "Flowable amnion/amniotic-fluid injectables are unapproved drugs and unlicensed biologics; cites failed validation, stability and complaint reporting.",
+     "sponsor_funded": false,
+     "applications": [
+      "tendinopathy-injection"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Q4173 (PalinGen or PalinGen XPlus), Q4174 (PalinGen or ProMatrX), Q4354 (PalinGen DL) remain in HCPCS.",
+    "notes": ""
+   },
+   "sources": [
+    "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/amnio-technology-llc-646460-10012024",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=palingen"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "biolab-fluid-flow-gf",
+   "name": "Fluid Flow, Fluid GF, Restore GF, Amnio Restore (amniotic fluid) and Membrane Wrap",
+   "company": "BioLab Sciences",
+   "ownership_history": "BioLab Sciences, Inc. (Scottsdale, AZ). Distributed through third parties, some private label. The brief links Fluid Flow / Fluid GF to 'Human Regenerative Technologies'; FDA's letter names BioLab Sciences as manufacturer and does not mention that company.",
+   "category": "amniotic",
+   "composition": "Injectable amniotic fluid products (Fluid Flow, Fluid GF, Restore GF, Amnio Restore, Stimuleyes) and amniotic membrane sheets (Membrane Wrap family).",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "FDA Warning Letter OBPO 621465 (23 Aug 2022): amniotic fluid is not an HCT/P; the fluid products are unapproved drugs/unlicensed biologics intended for injection; unvalidated aseptic processing; Membrane Wrap marketed for pain and scarring fails homologous use (footnote).",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None for fluid products; Membrane Wrap sheets only as a barrier"
+    ]
+   },
+   "status": "off-market",
+   "unverified": true,
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study located; FDA did not cite orthopedic uses specifically.",
+     "caveats": "Unlicensed biologic."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/biolab-sciences-inc-621465-08232022",
+     "title": "FDA Warning Letter to BioLab Sciences, Inc. (OBPO 621465)",
+     "year": 2022,
+     "design": "registry",
+     "n": null,
+     "finding": "Amniotic fluid injectables are drugs/biologics, not HCT/Ps; ~90% of cleanroom excursions uninvestigated.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Q4206 ('Fluid Flow or Fluid GF, 1 cc') still in HCPCS; Membrane Wrap sheets Q4205, Q4290, Q4344, Q4373; newer 'BioLab Wrap' codes Q4418-Q4423.",
+    "notes": "A live Q-code for an injectable FDA has called an unlicensed biologic is the billing-risk pattern OIG and DOJ have pursued."
+   },
+   "sources": [
+    "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/biolab-sciences-inc-621465-08232022",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=fluid%20flow",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=membrane%20wrap"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "predictive-amniocyte",
+   "name": "AmnioCyte and AmnioCyte Plus (amniotic fluid)",
+   "company": "Predictive Biotech",
+   "ownership_history": "Predictive Biotech, subsidiary of Predictive Technology Group (Salt Lake City). Sister Wharton's-jelly product CoreCyte drew FDA Warning Letter CBER-20-04 (17 Aug 2020) for COVID-19 and intra-articular 'cushioning' promotion; the company later stopped selling CoreCyte.",
+   "category": "amniotic",
+   "composition": "Amniotic-fluid-derived allografts (company 10-K); CoreCyte and PolyCyte are Wharton's jelly products.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "None. Amniotic fluid is not an HCT/P, so injectable AmnioCyte would need a BLA. No FDA letter naming AmnioCyte located.",
+    "us_market_year": 2017,
+    "unverified": true,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "off-market",
+   "unverified": true,
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study located (PubMed 2026-10-23).",
+     "caveats": "Company status uncertain after 2020."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/predictive-biotech-608322-08172020",
+     "title": "FDA Warning Letter to Predictive Biotech (CBER-20-04) on CoreCyte",
+     "year": 2020,
+     "design": "registry",
+     "n": null,
+     "finding": "Wharton's jelly product failed homologous use and appeared to fail minimal manipulation; intra-articular 'cushioning and protection' use cited.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Q4242 ('AmnioCyte Plus, per 0.5 cc') remains in HCPCS.",
+    "notes": "Note the warning letter names CoreCyte, not AmnioCyte; the brief's 'AmnioCyte warning letter' could not be confirmed."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1382943/000109181820000224/pred10082020form10Kjune2020.htm",
+    "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/predictive-biotech-608322-08172020",
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=amniocyte"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "skye-bioecm",
+   "name": "BioECM (umbilical-cord placental connective tissue matrix) and BioRenew",
+   "company": "Skye Biologics",
+   "ownership_history": "Skye Biologics Holdings LLC (El Segundo, CA). FDA Warning Letter CBER-24-654466 (16 Dec 2024) after a Nov-Dec 2022 inspection; the letter also questioned BioRenew and 'HRT' BioPower-A, BioPower-C and NX amnion/chorion/cord products.",
+   "category": "amniotic",
+   "composition": "Flowable umbilical-cord-derived matrix (BioECM variants ActiveMatrix, BurnMatrix, CryoMatrix, MX, NX, RX, WoundEx).",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "FDA Warning Letter CBER-24-654466 (16 Dec 2024): unapproved new drugs/unlicensed biologics; fails minimal manipulation (flowable processing altered cord integrity) and homologous use (anti-inflammatory, void-filling claims); 7 CGMP findings.",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "off-market",
+   "unverified": true,
+   "applications": [
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study located; FDA cited anti-inflammatory and void-filling claims rather than named orthopedic uses.",
+     "caveats": "Warning letter; status unknown."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/skye-biologics-holdings-llc-654466-12162024",
+     "title": "FDA Warning Letter to Skye Biologics Holdings LLC (CBER-24-654466)",
+     "year": 2024,
+     "design": "registry",
+     "n": null,
+     "finding": "Flowable umbilical cord products are more than minimally manipulated and non-homologous; no endotoxin testing or stability data.",
+     "sponsor_funded": false,
+     "applications": [
+      "tendinopathy-injection"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "No Q-code located for BioECM.",
+    "notes": "'OrthoFlo' (named in the brief under Skye) is a MiMedx amniotic-fluid product; no Skye OrthoFlo or OrthoFlo FDA letter was found."
+   },
+   "sources": [
+    "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/skye-biologics-holdings-llc-654466-12162024",
+    "https://ipscell.com/2025/05/reading-the-stem-cell-tea-leaves-as-trump-fda-warns-2-perinatal-biologics-firms-including-supreme-rejuvenation/"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "axolotl-biologix",
+   "name": "Axolotl Graft, DualGraft (amniotic sheets) and Axolotl Ambient (cryopreserved amniotic)",
+   "company": "Axolotl Biologix",
+   "ownership_history": "Axolotl Biologix, Inc. (Flagstaff, AZ), private.",
+   "category": "amniotic",
+   "composition": "Dehydrated amniotic membrane sheets (Graft, DualGraft, Ultra versions) and a cryopreserved product billed per 0.1 mg (Ambient); Ambient's tissue composition not confirmed.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "Sheets: homologous wound covering. Ambient: not confirmed."
+    ]
+   },
+   "status": "established",
+   "unverified": true,
+   "applications": [
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of Axolotl Ambient located; if injected for musculoskeletal pain it would fall in FDA's 351 category.",
+     "caveats": "No FDA letter to Axolotl located on fda.gov; a third-party database lists a 2022 CBER inspection classified No Action Indicated (not verified on fda.gov)."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Q4331 Axolotl Graft; Q4332 DualGraft; Q4383/Q4384 Ultra; Q4215 Axolotl Ambient (cryo, 0.1 mg); Q4211 Amnion Bio or AxoBio; Q4210 retired.",
+    "notes": "The brief referred to 'FDA letters' for Axolotl; none was found."
+   },
+   "sources": [
+    "https://clinicaltables.nlm.nih.gov/api/hcpcs/v3/search?terms=axolotl",
+    "https://www.globalkeysolutions.net/records/fda_inspections/axolotl-biologix-inc/ff019993-cbc8-4e03-8141-d9fdb8364f78"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "frontier-purified-fluid-allograft",
+   "name": "Purified Fluid Allograft (amniotic fluid) and Allograft Matrix",
+   "company": "Frontier Biologics",
+   "ownership_history": "Frontier Biologics, LLC (Waco, TX). FDA Warning Letter CBER 25-686059 (1 Nov 2024) after a Feb-Mar 2024 inspection.",
+   "category": "amniotic",
+   "composition": "Amniotic-fluid injectable (also sold as Purified Amniotic Fluid Allograft, Evexcell Purified Nanoparticle Fluid) and an amniotic membrane matrix/patch.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "FDA Warning Letter CBER 25-686059 (1 Nov 2024): amniotic fluid not an HCT/P; Allograft Matrix fails 1271.10(a) (wound-healing, anti-inflammatory claims); no BLA or IND; 6 CGMP findings including uninvestigated sterility failures.",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "off-market",
+   "unverified": true,
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Promoted for osteoarthritis and joint injuries/pain by injection per FDA; no published study located.",
+     "caveats": "Unlicensed biologic."
+    },
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Promoted for muscle tears and soft-tissue injuries per FDA; no study located.",
+     "caveats": "Unlicensed biologic."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/frontier-biologics-llc-686059-11012024",
+     "title": "FDA Warning Letter to Frontier Biologics, LLC (CBER 25-686059)",
+     "year": 2024,
+     "design": "registry",
+     "n": null,
+     "finding": "Injectable amniotic fluid marketed for osteoarthritis and joint pain is an unapproved drug/unlicensed biologic.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular",
+      "tendinopathy-injection"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "None located.",
+    "notes": "Clearest FDA statement that orthopedic amniotic-fluid injections are 351 products."
+   },
+   "sources": [
+    "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/frontier-biologics-llc-686059-11012024"
+   ],
+   "last_reviewed": "2026-10-23"
+  }
+ ]
+}

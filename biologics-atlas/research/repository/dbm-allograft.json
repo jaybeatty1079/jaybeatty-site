@@ -1,0 +1,3076 @@
+{
+ "applications": [],
+ "products": [
+  {
+   "id": "propel-dbm",
+   "name": "Propel DBM (Gel, Putty, Gel Plus, Putty Plus, Fibers)",
+   "company": "Globus Medical",
+   "ownership_history": "Brand launched by NuVasive (expanded to Gel Plus/Putty Plus in September 2018); Globus Medical acquired NuVasive on September 1, 2023 (Globus FY2025 10-K). Gel and putty appear to be AlloSource-processed AlloFuse-type DBM sold under the NuVasive label (inferred from the shared 510(k) numbers in GUDID; not stated by either company).",
+   "category": "DBM",
+   "composition": "Human DBM in a poloxamer reverse-phase carrier (gel, putty); Plus versions add cancellous chips; Propel DBM Fibers are a separate fiber format.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K071849 (AlloFuse Gel and Putty, AlloSource, Dec 2008) and K103036 (AlloFuse Plus, AlloSource, Jan 2011) are the 510(k)s listed against Propel in FDA GUDID; no 510(k) in the name 'Propel' exists. Propel DBM Fibers: no 510(k) located (probably 361 HCT/P).",
+    "us_market_year": 2008,
+    "on_label_indications": [
+     "Per the AlloFuse 510(k)s: orthopedic filler for gaps or voids not intrinsic to bony stability, packed into bony gaps as a bone graft extender (extremities, spine and pelvis) and as a bone void filler of the extremities and pelvis; AlloFuse Plus: autograft extender (extremities, posterolateral spine, pelvis) and void filler (extremities, pelvis).",
+     "Propel's own IFU was not retrieved; indications above are the predicate-label wording and are unverified for the Propel label."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Label allows use as an autograft extender in the spine; the DBM is not a stand-alone graft claim."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Label says 'spine' without naming interbody cage packing; whether interbody use is inside the cleared indication is a regulatory judgment the company, not the atlas, should confirm.",
+     "challenge": "Label says 'bone graft extender (extremities, spine and pelvis)'. A hiring manager may ask whether that wording covers interbody cage packing or only posterolateral use."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review of 12 DBM-in-ACDF studies (3 randomized) found patient-reported outcomes non-inferior to autograft and fusion 88.8-100% after 18 months (PMID 27832365).",
+     "caveats": "Same 'spine' extender wording; cervical interbody use is not named on the label."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Void-filler indication covers extremities and pelvis, not structural stability."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Void-filler labeling covers extremities; foot and ankle fusion use is surgeon practice inside that wording."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32266283",
+     "title": "In-vivo Performance of Seven Commercially Available Demineralized Bone Matrix Fiber and Putty Products in a Rat Posterolateral Fusion Model",
+     "year": 2020,
+     "design": "preclinical",
+     "n": 69,
+     "finding": "Athymic rat PLF: Strand family 100% fusion (18/18), significantly higher than Propel Fibers, Vesuvius Fibers, Optium Putty and DBX Putty; authors conclude composition alone does not guarantee in vivo performance.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Sold through NuVasive's spine biologics bag; now Globus. NuVasive's own value-of-biologics brochure positions Propel against other DBMs. Private-label relationship to AlloSource is inferred, not confirmed."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22propel%22",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K071849.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf10/K103036.pdf",
+    "https://www.beckersspine.com/biologics/nuvasive-expands-biologics-portfolio-with-3-new-offerings/",
+    "https://www.sec.gov/Archives/edgar/data/1237831/000162828026011209/gmed-20251231.htm",
+    "PMID:32266283"
+   ],
+   "unverified": true,
+   "unverified_reason": "Propel-specific IFU and tissue-processor not retrieved; regulatory references inferred from GUDID listing and AlloFuse 510(k)s; fibers' pathway unconfirmed.",
+   "challenge": "Propel gel/putty rides on AlloSource's AlloFuse 510(k)s while Propel Fibers have no 510(k); be ready to explain which Propel formats are devices and which are 361 tissue."
+  },
+  {
+   "id": "xemplifi-dbm",
+   "name": "XEMPLIFI DBM (Gel, Putty, Plus)",
+   "company": "Globus Medical",
+   "ownership_history": "Globus Medical private-label DBM; donor eligibility on the label is determined by an AlloSource Medical Director, indicating AlloSource processing. Label revision M1S1003.01 dated 01/2012.",
+   "category": "DBM",
+   "composition": "Human demineralized bone mixed with poloxamer reverse-phase medium, formulated as gel or putty (Plus adds cancellous chips per GUDID listing).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K071849 (AlloFuse Gel and Putty, AlloSource, 2008) and K103036 (AlloFuse Plus, AlloSource, 2011), both as listed in FDA GUDID against XEMPLIFI",
+    "us_market_year": 2012,
+    "on_label_indications": [
+     "Label: 'orthopedic applications as filler for gaps or voids that are not intrinsic to the stability of the bony structure'; packed gently into bony gaps as a bone graft extender (extremities, spine and pelvis) and as a bone void filler of the extremities and pelvis."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Label allows use as an autograft extender in the spine; the DBM is not a stand-alone graft claim."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Label says 'spine' without naming interbody cage packing; whether interbody use is inside the cleared indication is a regulatory judgment the company, not the atlas, should confirm.",
+     "challenge": "Label says 'bone graft extender (extremities, spine and pelvis)'. A hiring manager may ask whether that wording covers interbody cage packing or only posterolateral use."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review of 12 DBM-in-ACDF studies (3 randomized) found patient-reported outcomes non-inferior to autograft and fusion 88.8-100% after 18 months (PMID 27832365).",
+     "caveats": "Same 'spine' extender wording; cervical interbody use is not named on the label."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Void-filler indication covers extremities and pelvis, not structural stability."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Void-filler labeling covers extremities; foot and ankle fusion use is surgeon practice inside that wording."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Globus value-tier DBM beside Osteocel (cellular, separate slice). Same cleared formulation as AlloFuse, so AlloSource's AlloFuse evidence does not transfer automatically to a Globus-labeled lot."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.globusmedical.com/wp-content/uploads/2023/08/M1S1003_rev.01.pdf",
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22xemplifi%22",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K071849.pdf"
+   ],
+   "challenge": "Same cleared formulation as AlloFuse under a different label; evidence is AlloFuse's, not XEMPLIFI's."
+  },
+  {
+   "id": "puros-dbm",
+   "name": "Puros DBM (Putty, Putty with Chips, Gel, Paste; Block and Strip) with reverse phase medium",
+   "company": "Highridge Medical (spine) / ZimVie (dental) - formerly Zimmer Biomet",
+   "ownership_history": "Puros allograft line came from Tutogen/RTI heritage (Puros DBM putty originally made by RTI Biologics for Zimmer Dental per trade press); a 2014 Zimmer reverse-phase-medium DBM family was launched with AlloSource. ZimVie was spun out of Zimmer Biomet in March 2022; ZimVie's spine business was sold to H.I.G. Capital and renamed Highridge Medical (closed April 1, 2024, $375M). Zimmer Biomet no longer sells it; which entity now owns the spine Puros DBM labeler 'Zimmer Spine, Inc.' was not confirmed.",
+   "category": "DBM",
+   "composition": "100% human DBM in poloxamer-type reverse phase medium (RPM); putty with cancellous chips 850 microns-4 mm; gel/paste; DBM block and strip formats launched in 2014.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none located (FDA GUDID record for Puros lists product codes MBP/MQV, HCT/P flag true, and no premarket submission; no 510(k) found under the brand name)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "HCT/P flag true in GUDID; indications not retrieved (ZimVie product page returned 404 on fetch); trade summary says used in spine and dental bone grafting. Treated as homologous-use allograft DBM."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Pathway ambiguity: GUDID codes the product as MBP/MQV (device codes) while flagging it as an HCT/P; confirm whether any 510(k) exists."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review of 12 DBM-in-ACDF studies (3 randomized) found patient-reported outcomes non-inferior to autograft and fusion 88.8-100% after 18 months (PMID 27832365).",
+     "caveats": "No label retrieved."
+    },
+    {
+     "application_id": "cmf-sinus-ridge-augmentation",
+     "tier": "established",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Puros DBM putty is marketed by the dental business for ridge and socket grafting; the only published product work found is an ectopic-pouch preclinical study (PMID 20566657).",
+     "caveats": "Preclinical-only; the dental indication is under the ZimVie dental line, not the spine labeler."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:20566657",
+     "title": "Osteoconductivity and osteoinductivity of Puros DBM putty",
+     "year": 2011,
+     "design": "preclinical",
+     "n": null,
+     "finding": "100% human DBM putty induced bone in a rat ectopic-pouch model and kept activity over its shelf life; authors are RTI Biologics employees.",
+     "sponsor_funded": true,
+     "applications": [
+      "cmf-sinus-ridge-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Brief assumed Zimmer Biomet; public records show the spine DBM moved with ZimVie to Highridge. Verify current labeler before any outreach."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22puros%22",
+    "https://accessgudid.nlm.nih.gov/devices/00889024406384",
+    "https://businesswire.com/news/home/20240401181472/en/H.I.G.-Capital-Acquires-the-Spine-Business-of-ZimVie-Rebranded-as-Highridge-Medical",
+    "https://www.drbicuspid.com/home/article/15357256/zimmer-dental-debuts-allograft-putty",
+    "PMID:20566657"
+   ],
+   "unverified": true,
+   "unverified_reason": "Current owner of the spine Puros DBM, regulatory path (361 vs 510(k)), and indications not confirmed from a primary source.",
+   "challenge": "GUDID gives Puros device product codes (MBP/MQV) yet an HCT/P flag and no 510(k) number; expect a regulatory-savvy interviewer to ask which it is."
+  },
+  {
+   "id": "intergro-dbm",
+   "name": "InterGro DBM (Putty, Paste, Plus) and StaGraft DBM",
+   "company": "Zimmer Biomet",
+   "ownership_history": "InterGro cleared for Interpore Cross (K031399, 2005), then Biomet Spine (K082793, 2009); Biomet merged with Zimmer in 2015. A rat lot-variability study was run on InterGro Putty.",
+   "category": "DBM",
+   "composition": "Human DBM in lecithin carrier (paste/putty; 40% DBM per a 2017 product table); Plus adds cortical-cancellous chips.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K082793 (InterGro DBM, Biomet Spine, April 2009); predecessor K031399 (Interpore Cross, 2005)",
+    "us_market_year": 2005,
+    "on_label_indications": [
+     "InterGro DBM Putty/Paste/Plus: filling bony voids or gaps in the extremities and pelvis not intrinsic to stability, and as an autograft extender in the spine; InterGro Plus may also be used as a bone void filler in the posterolateral spine; craniofacial defects and craniotomies no larger than 25 cm2."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). One lot-variability study exists (rat PLF, see evidence) but no human fusion study of InterGro was found.",
+     "caveats": "Label: autograft extender in spine; Plus also void filler in posterolateral spine."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities and pelvis void filler."
+    },
+    {
+     "application_id": "cmf-burr-hole",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Label states craniofacial defects and craniotomies up to 25 cm2.",
+     "caveats": "Only DBM in this batch with an explicit craniotomy/craniofacial line; no published neurosurgical study located."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:20124070",
+     "title": "Variability across ten production lots of a single demineralized bone matrix product",
+     "year": 2010,
+     "design": "preclinical",
+     "n": 40,
+     "finding": "Ten production lots of InterGro DBM Putty varied from 22 to 110 pg BMP-2/mg and from 0% to 75% fusion in athymic-rat PLF; BMP levels predicted lot performance.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Legacy Biomet DBM overshadowed by Puros; Biomet trauma also sold Reficio. StaGraft DBM labels share K082793 in GUDID."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K082793.pdf",
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22intergro%22",
+    "PMID:20124070"
+   ],
+   "unverified": true,
+   "unverified_reason": "Current commercial status under Zimmer Biomet not confirmed (GUDID lists Biomet Orthopedics labeler in commercial distribution)."
+  },
+  {
+   "id": "osteoselect-dbm",
+   "name": "OsteoSelect DBM Putty and OsteoSelect PLUS",
+   "company": "Xtant Medical",
+   "ownership_history": "Bacterin International (Belgrade, MT) cleared OsteoSelect in 2009 (K091321), 2013 (K130498) and PLUS in 2015 (K150621); Bacterin acquired X-spine Systems on July 31, 2015 and the combined company operates as Xtant Medical (Xtant FY2025 10-K). Xtant (formerly Bacterin) makes DBM for others: GUDID lists Xtant as labeler of the same K130498/K150621 putties under many brand names (Axograft, CuriGraft, GTR, Hero, Influx Plus/Isto Plus, KBM, MAXX-Fuse, OsteoIN, ProSpace, Reficio, Union, VIA, BEAST, BiomaX), so the evidence base is shared and thin.",
+   "category": "DBM",
+   "composition": "Human DBM in an absorbable carrier (putty, syringe); PLUS adds demineralized cortical chunks; low-dose gamma terminal sterilization per Xtant 10-K.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K130498 (OsteoSelect DBM Putty, May 2013); K150621 (OsteoSelect PLUS, Aug 2015); earlier K091321 (Sept 2009)",
+    "us_market_year": 2009,
+    "on_label_indications": [
+     "OsteoSelect DBM Putty (K130498): bone void filler and bone graft substitute for voids or gaps not intrinsic to bony stability; surgically created or traumatic osseous defects; use in extremities, posterolateral spine and pelvis.",
+     "OsteoSelect PLUS (K150621): same indications and sites; adds demineralized cortical chunks."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Label names the posterolateral spine explicitly; no autograft-extender-only restriction appears in the K130498 text."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Interbody cage packing is not a labeled site (label: extremities, posterolateral spine, pelvis). Widely done in practice, off-label for a device cleared as a bone void filler.",
+     "challenge": "Label lists 'posterolateral spine' only; interbody use is off-label for this device."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review of 12 DBM-in-ACDF studies (3 randomized) found patient-reported outcomes non-inferior to autograft and fusion 88.8-100% after 18 months (PMID 27832365).",
+     "caveats": "Cervical interbody is not a labeled site."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities and pelvis void filler."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Extremities void filler covers the anatomy; fusion is surgeon practice."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:24577306",
+     "title": "Comparison of the osteogenic potential of OsteoSelect demineralized bone matrix putty to NovaBone calcium-phosphosilicate synthetic putty in a cranial defect model",
+     "year": 2014,
+     "design": "preclinical",
+     "n": 12,
+     "finding": "Rabbit cranial defects: more new bone with OsteoSelect DBM than synthetic putty at day 43 (70.7% vs 40.7%) and day 91 (70.4% vs 39.9%).",
+     "sponsor_funded": true,
+     "applications": []
+    },
+    {
+     "ref": "PMID:27562800",
+     "title": "The effect of temperature exposure during shipment on a commercially available demineralized bone matrix putty",
+     "year": 2016,
+     "design": "preclinical",
+     "n": null,
+     "finding": "Five weeks at 50 C and 12 simulated worst-case shipments did not change handling or in vivo osteoinductivity of OsteoSelect putty; Bacterin-authored.",
+     "sponsor_funded": true,
+     "applications": []
+    },
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Xtant 10-K FY2025: independent-agent channel plus a growing private-label/OEM channel at lower margin; OsteoSelect is the platform for many third-party DBM labels."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf13/K130498.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf15/K150621.pdf",
+    "https://www.sec.gov/Archives/edgar/data/1453593/000149315226013792/form10-k.htm",
+    "https://api.fda.gov/device/udi.json?search=company_name:%22xtant%22",
+    "PMID:24577306",
+    "PMID:27562800"
+   ],
+   "challenge": "Same cleared putty is sold under a dozen other names; a rep at a competitor may be selling the identical lot."
+  },
+  {
+   "id": "beast-dbm",
+   "name": "BEAST Injectable Putty and BEAST PLUS (BiologicsBEAST)",
+   "company": "Zimmer Biomet (Paragon 28 brand)",
+   "ownership_history": "Paragon 28 launched BiologicsBEAST; Zimmer Biomet acquired Paragon 28 on April 21, 2025 (Zimmer Biomet FY2025 10-K). GUDID lists Xtant Medical as the labeler/manufacturer of BEAST Injectable Putty (K130498) and BEAST PLUS (K150621).",
+   "category": "DBM",
+   "composition": "Human DBM putty/injectable made by Xtant under the OsteoSelect 510(k)s (GUDID lists Xtant as labeler; carrier and DBM content per OsteoSelect 510(k)s).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K130498 (BEAST Injectable Putty) and K150621 (BEAST PLUS) as listed in FDA GUDID; both are Xtant OsteoSelect clearances",
+    "us_market_year": null,
+    "on_label_indications": [
+     "OsteoSelect DBM Putty (K130498): bone void filler and bone graft substitute for voids or gaps not intrinsic to bony stability; surgically created or traumatic osseous defects; use in extremities, posterolateral spine and pelvis.",
+     "Brand-specific IFU not retrieved; indications are the OsteoSelect 510(k) wording."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Foot and ankle company brand; labeled extremities void filler (OsteoSelect wording)."
+    },
+    {
+     "application_id": "ankle-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Same label wording."
+    },
+    {
+     "application_id": "foot-ankle-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities void filler."
+    },
+    {
+     "application_id": "first-mtp-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Extremities void filler."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Spine is on the OsteoSelect label but BEAST is sold into foot and ankle."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Private-label product; Xtant is the manufacturer of record per GUDID. See osteoselect-dbm for the shared evidence base."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://paragon28.com/?p=11122",
+    "https://www.sec.gov/Archives/edgar/data/1136869/000119312526059853/zbh-20251231.htm",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf13/K130498.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf15/K150621.pdf"
+   ],
+   "unverified": true,
+   "unverified_reason": "Brand-to-510(k) link rests on GUDID labeler data; Paragon 28's page names no regulatory status or tissue processor.",
+   "challenge": "Paragon 28's page cites a preclinical fusion model 'equivalent to iliac crest autograft'; that is not an indication and not a human study."
+  },
+  {
+   "id": "hero-dbm",
+   "name": "Hero DBM Putty (and DBM+ Paste)",
+   "company": "Spinal Elements",
+   "ownership_history": "Spinal Elements brand; GUDID lists Xtant Medical as labeler of Hero DBM Putty (K130498) and Spinal Elements as labeler of Hero DBM+ paste/putty without a premarket number.",
+   "category": "DBM",
+   "composition": "Human DBM putty/injectable made by Xtant under the OsteoSelect 510(k)s (GUDID lists Xtant as labeler; carrier and DBM content per OsteoSelect 510(k)s).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K130498 (Hero DBM Putty, as listed against the Xtant-labeled GUDID record); Spinal Elements-labeled Hero DBM+ records list no premarket submission",
+    "us_market_year": null,
+    "on_label_indications": [
+     "OsteoSelect DBM Putty (K130498): bone void filler and bone graft substitute for voids or gaps not intrinsic to bony stability; surgically created or traumatic osseous defects; use in extremities, posterolateral spine and pelvis.",
+     "Brand-specific IFU not retrieved; indications are the OsteoSelect 510(k) wording."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Label names the posterolateral spine explicitly; no autograft-extender-only restriction appears in the K130498 text."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Interbody cage packing is not a labeled site (label: extremities, posterolateral spine, pelvis). Widely done in practice, off-label for a device cleared as a bone void filler.",
+     "challenge": "Label lists 'posterolateral spine' only; interbody use is off-label for this device."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review of 12 DBM-in-ACDF studies (3 randomized) found patient-reported outcomes non-inferior to autograft and fusion 88.8-100% after 18 months (PMID 27832365).",
+     "caveats": "Cervical interbody is not a labeled site."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities and pelvis void filler."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Extremities void filler covers the anatomy; fusion is surgeon practice."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Private-label product; Xtant is the manufacturer of record per GUDID. See osteoselect-dbm for the shared evidence base."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://accessgudid.nlm.nih.gov/devices/00849777012942",
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22hero%22+AND+company_name:%22spinal%22",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf13/K130498.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf15/K150621.pdf"
+   ],
+   "unverified": true,
+   "unverified_reason": "Spinal Elements-labeled records show no premarket number and a non-HCT/P flag; regulatory path for the paste is unconfirmed."
+  },
+  {
+   "id": "via-dbm",
+   "name": "VIA DBM Putty and VIA DBM Plus",
+   "company": "VIVEX Biologics",
+   "ownership_history": "VIVEX Biologics brand; GUDID lists Xtant Medical as labeler for VIA DBM Putty (K130498) and VIA DBM Plus (K150621); a separate 'Vivex DBM Plus' record carries Hans Biomed as labeler.",
+   "category": "DBM",
+   "composition": "Human DBM putty/injectable made by Xtant under the OsteoSelect 510(k)s (GUDID lists Xtant as labeler; carrier and DBM content per OsteoSelect 510(k)s).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K130498 (VIA DBM Putty) and K150621 (VIA DBM Plus), as listed in FDA GUDID",
+    "us_market_year": null,
+    "on_label_indications": [
+     "OsteoSelect DBM Putty (K130498): bone void filler and bone graft substitute for voids or gaps not intrinsic to bony stability; surgically created or traumatic osseous defects; use in extremities, posterolateral spine and pelvis.",
+     "Brand-specific IFU not retrieved; indications are the OsteoSelect 510(k) wording."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Label names the posterolateral spine explicitly; no autograft-extender-only restriction appears in the K130498 text."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Interbody cage packing is not a labeled site (label: extremities, posterolateral spine, pelvis). Widely done in practice, off-label for a device cleared as a bone void filler.",
+     "challenge": "Label lists 'posterolateral spine' only; interbody use is off-label for this device."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review of 12 DBM-in-ACDF studies (3 randomized) found patient-reported outcomes non-inferior to autograft and fusion 88.8-100% after 18 months (PMID 27832365).",
+     "caveats": "Cervical interbody is not a labeled site."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities and pelvis void filler."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Extremities void filler covers the anatomy; fusion is surgeon practice."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Private-label product; Xtant is the manufacturer of record per GUDID. See osteoselect-dbm for the shared evidence base."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://accessgudid.nlm.nih.gov/devices/00849777011693",
+    "https://accessgudid.nlm.nih.gov/devices/08809204339228",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf13/K130498.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf15/K150621.pdf"
+   ],
+   "unverified": true,
+   "unverified_reason": "Relationship between VIVEX, Xtant and Hans Biomed manufacturing is inferred from GUDID labeler fields only."
+  },
+  {
+   "id": "maxx-fuse-dbm",
+   "name": "MAXX-Fuse DBM (Putty, Putty Crunch, Sponge cubes and strips)",
+   "company": "Royal Biologics",
+   "ownership_history": "Royal Biologics launched MAXX-Fuse on February 20, 2018; GUDID lists Xtant Medical as labeler of MAXX Fuse DBM Putty with Chips (K150621).",
+   "category": "DBM",
+   "composition": "Human DBM putty/injectable made by Xtant under the OsteoSelect 510(k)s (GUDID lists Xtant as labeler; carrier and DBM content per OsteoSelect 510(k)s).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K150621 (MAXX Fuse DBM Putty with Chips, as listed in FDA GUDID); sponge cubes/strips have no number located",
+    "us_market_year": null,
+    "on_label_indications": [
+     "OsteoSelect DBM Putty (K130498): bone void filler and bone graft substitute for voids or gaps not intrinsic to bony stability; surgically created or traumatic osseous defects; use in extremities, posterolateral spine and pelvis.",
+     "Brand-specific IFU not retrieved; indications are the OsteoSelect 510(k) wording."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Label names the posterolateral spine explicitly; no autograft-extender-only restriction appears in the K130498 text."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Interbody cage packing is not a labeled site (label: extremities, posterolateral spine, pelvis). Widely done in practice, off-label for a device cleared as a bone void filler.",
+     "challenge": "Label lists 'posterolateral spine' only; interbody use is off-label for this device."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review of 12 DBM-in-ACDF studies (3 randomized) found patient-reported outcomes non-inferior to autograft and fusion 88.8-100% after 18 months (PMID 27832365).",
+     "caveats": "Cervical interbody is not a labeled site."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities and pelvis void filler."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Extremities void filler covers the anatomy; fusion is surgeon practice."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Private-label product; Xtant is the manufacturer of record per GUDID. See osteoselect-dbm for the shared evidence base."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.newswire.com/news/royal-biologics-launches-maxx-fuse-20345994",
+    "https://accessgudid.nlm.nih.gov/devices/00849777011662",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf13/K130498.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf15/K150621.pdf"
+   ],
+   "unverified": true,
+   "unverified_reason": "Royal's release states no regulatory status; sponge and strip formats (demineralized, no carrier) are probably 361 tissue but unconfirmed."
+  },
+  {
+   "id": "optecure-dbm",
+   "name": "Optecure DBM and Optecure+CCC (Entice)",
+   "company": "Exactech",
+   "ownership_history": "Exactech (Gainesville, FL) cleared Optecure in 2006 (K050806), Optecure+CCC (K061668, K063685) and an expanded bone-marrow indication in 2012 (K121989); GUDID also lists Entice and Entice+CCC under K050806/K061668. Exactech entered Chapter 11 in 2024; current ownership was not verified here.",
+   "category": "DBM",
+   "composition": "Human DBM in a gelatin-type carrier (Optecure); +CCC adds cortical-cancellous chips; each lot is formulated and tested for osteoinductivity in an athymic-mouse assay.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K050806 (Optecure, Feb 2006); K061668 (Optecure+CCC, Sept 2006); K063685 (June 2007); K121989 (Nov 2012, adds use with autogenous bone marrow); dental versions K103699 (Optecure Dental, 2011)",
+    "us_market_year": 2006,
+    "on_label_indications": [
+     "Optecure/Optecure+CCC: autograft extender (extremities, spine and pelvis) and bone void filler (extremities and pelvis) for bony voids or gaps not intrinsic to bony stability; may be used with rigid fixation (K050806); K121989 adds use with autogenous bone marrow."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Extender wording says 'spine'; PLF is within it."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "'Spine' extender wording without a named interbody use.",
+     "challenge": "Same 'spine' extender wording issue as other broad-label DBMs."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Void filler for extremities and pelvis."
+    },
+    {
+     "application_id": "cmf-sinus-ridge-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "One 14-patient randomized trial (Optecure-CCC as the DBM arm) found horizontal ridge-width gain of 3.8 mm with DBM versus 3.5 mm with allograft plus autogenous chips (not significant), vital bone 39% vs 35%.",
+     "caveats": "n=14 (7 per arm); Optecure was the comparator, not the test product; dental clearance K103699 exists but its indication text was not retrieved."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:31246662",
+     "title": "Ridge Augmentation Comparing an Allograft Plus Autogenous Bone Chips to an Osteoinductive Demineralized Bone Matrix: A Clinical and Histologic Study in Humans",
+     "year": 2019,
+     "design": "RCT",
+     "n": 14,
+     "finding": "Horizontal ridge augmentation: DBM (Optecure-CCC) gained 3.8 mm versus 3.5 mm for allograft plus autogenous chips (P>0.05); vital bone 39% vs 35%.",
+     "sponsor_funded": null,
+     "applications": [
+      "cmf-sinus-ridge-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Mid-tier DBM from an extremity/joint company; Exactech's ownership after its 2024 restructuring should be checked before any pitch."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf5/K050806.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf12/K121989.pdf",
+    "https://api.fda.gov/device/udi.json?search=company_name:%22exactech%22",
+    "PMID:31246662"
+   ],
+   "unverified": true,
+   "unverified_reason": "Exactech's current ownership and whether Optecure remains actively sold were not confirmed; GUDID shows the records in distribution."
+  },
+  {
+   "id": "osteofil-optefil-opteform",
+   "name": "Osteofil, Optefil, Opteform, Synergent DBM and RTI Allograft Paste",
+   "company": "RTI Surgical heritage (now Surgalign/Xtant lineage - unconfirmed); Exactech and Medtronic distributed some brands",
+   "ownership_history": "Regeneration Technologies cleared the gelatin-DBM pastes in 2005 (K043420 paste; K043421 paste with cortical-cancellous chips and moldable discs). RTI Surgical renamed Surgalign Holdings in 2020; Surgalign's hardware and biologics business sold to Xtant on August 10, 2023 in bankruptcy ($5M plus liabilities per trade press). A 2017 review lists Osteofil with Medtronic and Optefil/Opteform with Exactech as distributors. The Xtant FY2025 10-K does not name Osteofil, Optefil or Opteform.",
+   "category": "DBM",
+   "composition": "Human DBM (about 24% per a 2017 product table) in a gelatin carrier (paste); Opteform/Osteofil IC add cortical-cancellous chips in a collagen-gelatin matrix.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K043420 (Osteofil, Optefil, Regenafil, RTI Allograft Paste, Feb 2005); K043421 (Opteform, Osteofil IC, RTI Allograft Paste/Strip IC, Feb 2005); GUDID also lists Synergent DBM against these",
+    "us_market_year": 2005,
+    "on_label_indications": [
+     "Indicated for bony voids or gaps not intrinsic to bony stability; placed into bony voids or gaps of the skeletal system (e.g., extremities, spine and pelvis); bone graft substitute that remodels into the recipient's skeleton (K043420/K043421)."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Osteofil/ICM mixed 50:50 with lamina autograft: fusion 92.6% (1-level, n=95) and 91.2% (2-level, n=45) by CT; no autograft-only comparator. Athymic-rat studies show Osteofil among the better-performing DBMs in PLF but less osteoinductive than Grafton in ectopic bone formation.",
+     "caveats": "Single-surgeon series; product likely Medtronic's Osteofil ICM (RTI-made); preclinical results conflict across models."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "'Spine' wording on the label; interbody use not named."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities and pelvis void filler."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Extremity void filler."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:17414983",
+     "title": "SF-36 outcomes and fusion rates after multilevel laminectomies and 1 and 2-level instrumented posterolateral fusions using lamina autograft and demineralized bone matrix",
+     "year": 2007,
+     "design": "case-series",
+     "n": 140,
+     "finding": "Osteofil/ICM mixed 50:50 with lamina autograft: 1-level fusion 92.6% (88/95) and 2-level 91.2% (41/45) by 2D-CT; no autograft-only control.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:17205237",
+     "title": "A comparison of commercially available demineralized bone matrix for spinal fusion",
+     "year": 2007,
+     "design": "preclinical",
+     "n": 72,
+     "finding": "Athymic-rat PLF: Osteofil fusion 14/18 versus Grafton 11/17 and Dynagraft; autograft comparator included.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:12635152",
+     "title": "Comparative evaluation of the osteoinductivity of two formulations of human demineralized bone matrix",
+     "year": 2003,
+     "design": "preclinical",
+     "n": 16,
+     "finding": "Athymic rats: rat DBM produced more bone than Grafton, which produced more than Osteofil; processing methods may matter more than donor.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Legacy gelatin-DBM paste; the commercial owner today is unclear, so confirm before treating as a live competitor."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf4/K043420.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf4/K043421.pdf",
+    "https://www.odtmag.com/contents/view_breaking-news/2023-08-11/xtant-completes-deal-for-surgaligns-hardware-biologics-biz/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5539308/",
+    "PMID:17414983"
+   ],
+   "unverified": true,
+   "unverified_reason": "Current owner, active-sale status and exact brand lineup (Osteofil vs Synergent vs RegenaVate) not confirmed; GUDID still names RTI Surgical as labeler."
+  },
+  {
+   "id": "bioset-xc",
+   "name": "BioSet XC and BioSet XCH (bovine bone chips with human DBM)",
+   "company": "RTI Surgical heritage (current owner unconfirmed)",
+   "ownership_history": "Cleared by Regeneration Technologies as BioSet XC (K060180, 2006) and XCH (K072238, 2008). A 2017 review attributes 'BioSet' to Penta Biomedical (Verona, Italy), suggesting a licensing or ownership change; GUDID shows RTI Surgical labeling BioSet.",
+   "category": "DBM",
+   "composition": "Bovine bone chips plus human DBM and porcine gelatin (XC); XCH substitutes a human-derived carrier. A mixed human/xenograft device.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K060180 (BioSet XC, Sept 2006); K072238 (BioSet XCH, Jan 2008)",
+    "us_market_year": 2006,
+    "on_label_indications": [
+     "Bone void filler for bony voids or gaps not intrinsic to bony stability, packed into the skeletal system (e.g., extremities, spine, ilium and/or pelvis); resorbs and is replaced with bone."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Contains bovine bone, which some institutions and patients decline."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities void filler."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Unusual composite of xenograft chips and human DBM; confirm current availability."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf6/K060180.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf7/K072238.pdf",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5539308/"
+   ],
+   "unverified": true,
+   "unverified_reason": "Owner and active-sale status not confirmed (conflicting attribution between RTI and Penta Biomedical)."
+  },
+  {
+   "id": "regenavate-dental-dbm",
+   "name": "RegenaVate / Regenafil / Alriva DBM pastes and Allo-3D Plus (dental and maxillofacial DBM)",
+   "company": "RTI Surgical heritage; sold by Salvin Dental Specialties (private label)",
+   "ownership_history": "Regeneration Technologies cleared Regenafil, Regenaform, Alriva DBM Paste and Sltiva DM with cortical-cancellous chips in 2008 (K080418, product code NUN, dental). GUDID lists RegenaVate DBM Fill/Formable under RTI Surgical and Allo-3D Plus under Salvin Dental.",
+   "category": "DBM",
+   "composition": "Human DBM in a gelatin carrier, with or without cortical-cancellous chips.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K080418 (Apr 2008, product code NUN)",
+    "us_market_year": 2008,
+    "on_label_indications": [
+     "Packed into bony voids or gaps to fill or augment dental intraosseous, oral and cranio-/maxillofacial defects: periodontal defects, alveolar ridge augmentation, extraction sockets, maxillary sinus floor elevation, craniofacial augmentation, root resection/apicoectomy/cystectomy, tumor resection."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "cmf-sinus-ridge-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Dental DBM class evidence is thin; the one randomized ridge-augmentation trial found used Optecure-CCC, a different product.",
+     "caveats": "Dental DBM evidence in the atlas is product-specific only where located."
+    },
+    {
+     "application_id": "cmf-periodontal-intrabony",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Periodontal intrabony use is the oldest dental DBM application.",
+     "caveats": "No product study located."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Dental bone grafts are generally patient-paid or covered under dental benefits, not hospital DRGs (not product-verified).",
+    "notes": "Dental channel via Salvin; spine brands from the same tissue family are in osteofil-optefil-opteform."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K080418.pdf",
+    "https://api.fda.gov/device/udi.json?search=company_name:%22salvin%22"
+   ],
+   "unverified": true,
+   "unverified_reason": "Current labeler and availability not confirmed."
+  },
+  {
+   "id": "progenix-dbm",
+   "name": "Progenix DBM Putty / Putty Plus / Paste",
+   "company": "Medtronic",
+   "ownership_history": "Osteotech-lineage; Medtronic acquired Osteotech in November 2010 (Grafton, Plexur, Progenix; acquisition date from background knowledge). Cleared by Medtronic Sofamor Danek: K060794 (Dec 2006), K072265 (Jan 2008, spine/pelvis/extremities), K080462 (May 2008, oral-maxillofacial).",
+   "category": "DBM",
+   "composition": "Human DBM putty; Plus adds cortical-cancellous chips; no mechanical strength.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K060794 (Progenix DBM Putty and Paste, Dec 2006); K072265 (Jan 2008); K080462 (oral-maxillofacial, May 2008)",
+    "us_market_year": 2006,
+    "on_label_indications": [
+     "K072265: bone graft substitute, extender and void filler in bony voids or gaps of the spine, pelvis and extremities not intrinsic to stability; K060794: bone graft substitute and void filler in the pelvis, ilium and extremities; K080462: augmentation of deficient maxillary and mandibular alveolar ridges and oral/maxillofacial and dental intraosseous defects."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Rabbit PLF: Progenix+autograft extender fused 88% at 8 weeks versus 67% for 3 cc autograft and 25% for 1.5 cc autograft; Progenix alone 38%. An independent athymic-rat PLF study found 0% fusion for Progenix Plus. No human fusion study of Progenix was located.",
+     "caveats": "Animal data conflict; no human series found (PubMed 'Progenix DBM' 2026-10-23)."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities, pelvis void filler."
+    },
+    {
+     "application_id": "cmf-sinus-ridge-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Oral-maxillofacial clearance K080462.",
+     "caveats": "No product study located."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:23576922",
+     "title": "Assessment of Progenix DBM putty bone substitute in a rabbit posterolateral fusion model",
+     "year": 2012,
+     "design": "preclinical",
+     "n": 37,
+     "finding": "Rabbit PLF: autograft-extender group (Progenix 1.5 cc + autograft 1.5 cc) 88% radiographic fusion at 8 weeks versus 67% for 3.0 cc autograft; Progenix alone 38%.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:31745449",
+     "title": "Comparative Efficacy of Commonly Available Human Bone Graft Substitutes as Tested for Posterolateral Fusion in an Athymic Rat Model",
+     "year": 2019,
+     "design": "preclinical",
+     "n": null,
+     "finding": "Athymic rat PLF: eight DBM products (Accell Evo3, DBX Mix and Strip, four Grafton formats, Magnifuse) >90% fusion by manual palpation; Progenix Plus 0%; plain allograft (OsteoSponge) 0%.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Overshadowed by Grafton in Medtronic's catalog; confirm it is still listed."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf6/K060794.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf7/K072265.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K080462.pdf",
+    "PMID:23576922",
+    "PMID:31745449"
+   ],
+   "unverified": true,
+   "unverified_reason": "Medtronic's current catalog status for Progenix not checked; funding of the rabbit study not retrieved."
+  },
+  {
+   "id": "plexur-p",
+   "name": "Plexur P (allograft bone with resorbable polymer)",
+   "company": "Medtronic",
+   "ownership_history": "Osteotech product (K061982, Feb 2007; K080511, Apr 2008); Medtronic acquired Osteotech in 2010 (background knowledge). GUDID lists Medtronic Sofamor Danek as labeler.",
+   "category": "DBM",
+   "composition": "Processed human allograft bone and a resorbable polymer shaped as a porous implant (not a gel or putty).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K061982 (Feb 2007); K080511 (Plexur-P, Apr 2008)",
+    "us_market_year": 2007,
+    "on_label_indications": [
+     "K080511: bone void filler in bony voids or gaps of the skeletal system (spine, pelvis, extremities) not intrinsic to bony stability; may also be used as a bone graft extender in the spine."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Extender use in the spine is on the label."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities, pelvis."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Legacy Osteotech composite; likely a small tail product."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf6/K061982.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K080511.pdf",
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22plexur%22"
+   ],
+   "unverified": true,
+   "unverified_reason": "Current commercial status not confirmed; whether the allograft is demineralized is not stated in the retrieved 510(k) text."
+  },
+  {
+   "id": "sygnal-dbm",
+   "name": "Sygnal DBM",
+   "company": "MTF Biologics",
+   "ownership_history": "Musculoskeletal Transplant Foundation (Edison, NJ; non-profit) cleared Sygnal DBM in 2008 (K073329, Feb; K080405, Aug). MTF also supplies DBX to DePuy Synthes (see existing dbx record) and tissue forms to Orthofix.",
+   "category": "DBM",
+   "composition": "Cortical bone granules mixed with sodium hyaluronate and carboxymethylcellulose; every lot assayed for osteoinduction in an athymic-mouse model.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K073329 (Sygnal DBM, Feb 2008); K080405 (Aug 2008)",
+    "us_market_year": 2008,
+    "on_label_indications": [
+     "K073329: bone void filler for voids or gaps not intrinsic to bony stability in the extremities and pelvis; K080405: also alone or as an extender in the posterolateral spine with bone marrow."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Label allows use alone or as extender in the posterolateral spine with bone marrow."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities and pelvis."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "MTF's branded DBM beyond DBX; absent from GUDID, so current sale unknown."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf7/K073329.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K080405.pdf"
+   ],
+   "unverified": true,
+   "unverified_reason": "No GUDID record and no current MTF catalog page retrieved; commercial status unknown (tiers marked emerging only to avoid overstating market maturity)."
+  },
+  {
+   "id": "exfuse-surfuse-maxigen",
+   "name": "ExFuse, SurFuse and MaxiGen DBM family (Hans Biomed)",
+   "company": "Hans Biomed Corp. (Seoul, Korea)",
+   "ownership_history": "Korean company (formerly Hans Medical); cleared SurFuse/ExFuse gel and putty in 2012 (K113728), dental II putties in 2014 (K130235) and MaxiGen (DBM plus calcium sulfate and CMC) in 2016 (K152077). Hans-made DBM also appears under other labels in GUDID (e.g., Vivex DBM Plus, TruForm, Exponent, BellaFuse).",
+   "category": "DBM",
+   "composition": "Human DBM (SurFuse: cortical) with carboxymethylcellulose carrier; ExFuse adds cancellous bone powder; MaxiGen combines DBM, calcium sulfate and CMC.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K113728 (SurFuse/ExFuse gel and putty, Nov 2012); K130235 (II putty, dental, Jan 2014); K152077 (MaxiGen, Apr 2016)",
+    "us_market_year": 2012,
+    "on_label_indications": [
+     "K113728: bony voids or gaps not intrinsic to bony stability, gently packed into the skeletal system (posterolateral spine); K152077 MaxiGen: implant to fill bony voids or gaps, i.e., posterolateral spine; K130235: dental intraosseous and oral/maxillofacial defects (periodontal, ridge, extraction sites, sinus lifts, cystic defects)."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Label names the posterolateral spine."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "III",
+     "evidence_summary": "Retrospective 236-patient PLIF series comparing three putty DBMs: fusion 88.3% for ExFuse, 94.3% Bongener, 87.7% Bonfuse (Bridwell grade 1-2), no significant differences or non-DBM control.",
+     "caveats": "Interbody cage use is off-label (label: posterolateral spine); no autograft control; Korean single-center data.",
+     "challenge": "Label is posterolateral spine only; the best published data are in interbody use."
+    },
+    {
+     "application_id": "cmf-sinus-ridge-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Dental II putties cleared under K130235.",
+     "caveats": "No product study located."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:38399552",
+     "title": "Comparison of Fusion Rates among Various Demineralized Bone Matrices in Posterior Lumbar Interbody Fusion",
+     "year": 2024,
+     "design": "retrospective",
+     "n": 236,
+     "finding": "Fusion at 12 months 88.3% (ExFuse), 94.3% (Bongener), 87.7% (Bonfuse); no significant difference in fusion or ODI/VAS/EQ-5D.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Value-priced Korean DBM sold in US dental channels (Hiossen listings) and as OEM to other labels; US spine distribution is not documented."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf11/K113728.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf13/K130235.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf15/K152077.pdf",
+    "PMID:38399552",
+    "https://eshop.hiossen.com/exfuse-allograft-bone-putty/"
+   ],
+   "unverified": true,
+   "unverified_reason": "US spine commercial presence and current availability not confirmed; ExFuse retailer listings show out-of-stock."
+  },
+  {
+   "id": "rafugen-dbm",
+   "name": "Rafugen DBM (Gel, Gel Pro)",
+   "company": "Cellumed Co., Ltd. (Seoul, Korea)",
+   "ownership_history": "Cellumed (formerly Korea Bone Bank Co.) cleared Rafugen DBM in April 2018 (K180121). The brief names CGBio for Rafugen; the 510(k) applicant is Cellumed, a separate Korean company. CGBio's own DBM putties (Bongener, Bonfuse) appear in the Hans Biomed comparison study and have no FDA clearance found.",
+   "category": "DBM",
+   "composition": "Human DBM with carboxymethylcellulose, starch and glycerol (per third-party record); a high-DBM gel.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K180121 (Rafugen DBM, April 2018)",
+    "us_market_year": 2018,
+    "on_label_indications": [
+     "Bone void filler in bony voids or gaps of the skeletal system (i.e., pelvis and extremities) not intrinsic to bony stability; resorbed/remodeled and replaced by host bone."
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Pelvis and extremities only; no spine claim."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Extremity void filler."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "US distribution partner not identified; Korean tissue-bank origin."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf18/K180121.pdf",
+    "https://fda.innolitics.com/device/K180121",
+    "https://mtec-sc.org/life-sciences/cellumed"
+   ],
+   "unverified": true,
+   "unverified_reason": "US commercial availability and distributor not found; brief's CGBio attribution corrected to Cellumed."
+  },
+  {
+   "id": "nanofuse-dbm",
+   "name": "NanoFUSE DBM (and Bioactive Matrix)",
+   "company": "Amend Surgical / NanoFuse Biologics",
+   "ownership_history": "Developed by Nanotherapeutics (Origen DBM with bioactive glass, K062459, 2007); Nanotherapeutics granted Amend Surgical an exclusive worldwide license and became a minority shareholder; KICVentures later acquired Amend Surgical per Becker's Spine (date not verified). NanoFUSE DBM cleared K110976 (2011), K120279 (2012), K142104 (Jan 2015).",
+   "category": "DBM",
+   "composition": "Human DBM combined with 45S5 bioactive glass particles, both coated with porcine-skin gelatin; supplied dry.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K142104 (NanoFUSE DBM, Jan 2015); K120279 (Apr 2012); K110976 (May 2011); K062459 (Origen DBM with Bioactive Glass, Feb 2007)",
+    "us_market_year": 2007,
+    "on_label_indications": [
+     "K142104: gently placed into bony voids or gaps not intrinsic to stability (extremities, pelvis and posterolateral spine); must be used with autograft as a bone graft extender in the posterolateral spine; K110976/K062459: extremities and pelvis."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No human fusion study located; preclinical characterization (company authors) shows osteoinduction in a mouse thigh-muscle model and cell attachment in vitro. Must be used with autograft in PLF per label.",
+     "caveats": "Preclinical only; company-authored; label restricts spinal use to extender with autograft."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities and pelvis."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:22323112",
+     "title": "Osteoconductivity and osteoinductivity of NanoFUSE DBM",
+     "year": 2013,
+     "design": "preclinical",
+     "n": null,
+     "finding": "DBM plus bioactive glass supported cell attachment and was osteoinductive in the mouse thigh-muscle model; authors are Nanotherapeutics employees.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "GUDID lists Amend Surgical as labeler, flagging HCT/P true even though the product is a 510(k) device (DBM plus bioactive glass)."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf14/K142104.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf11/K110976.pdf",
+    "https://www.biospace.com/b-nanotherapeutics-b-grants-worldwide-rights-to-b-amend-surgical-b-for-nanofuse-dbm",
+    "https://www.beckersspine.com/?p=35797",
+    "PMID:22323112"
+   ],
+   "unverified": true,
+   "unverified_reason": "KICVentures acquisition date and current commercial owner not confirmed."
+  },
+  {
+   "id": "osteoballast",
+   "name": "OsteoBallast and Ballast (DBM in resorbable PLGA mesh pouch)",
+   "company": "Orthofix",
+   "ownership_history": "SeaSpine Orthopedics (IsoTis OrthoBiologics, Irvine/Carlsbad) cleared the resorbable mesh device in Nov 2017 (K172130), Nov 2019 (K193040) and a Ballast MT/OsteoBallast MT pouch in May 2020 (K200290). Orthofix completed the SeaSpine merger in January 2023 (background knowledge, not re-verified); Orthofix's FY2025 10-K biologics table does not name OsteoBallast.",
+   "category": "DBM",
+   "composition": "Demineralized human cortical bone particulate (no added carrier) held in a knitted PLGA resorbable mesh pouch that resorbs; the tissue is supplied by a CBER-registered, AATB-accredited tissue bank.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K172130 (Resorbable Mesh Device, Nov 2017); K193040 (Nov 2019); K200290 (Resorbable Mesh Pouch / Ballast MT, OsteoBallast MT, May 2020)",
+    "us_market_year": 2017,
+    "on_label_indications": [
+     "Bone graft extender for use with autograft in the posterolateral spine and pelvis (K172130, K193040); K200290: bone void filler and bone graft extender in the posterolateral spine and pelvis, for voids not intrinsic to bony stability."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Mesh-contained DBM is meant to resist migration; label requires autograft."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Interbody use is not a labeled site (posterolateral spine and pelvis only).",
+     "challenge": "Pouch is shaped for posterolateral gutters; interbody use is off-label."
+    },
+    {
+     "application_id": "adult-deformity",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Long-segment posterolateral fusion is a posterolateral-spine use.",
+     "caveats": "No published study of this product located."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "PMID:41985112",
+     "title": "Understanding Spine Biologics: A Systematic Review of Demineralized Bone Matrix in Spinal Fusion From 2014-2024",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 21 studies (3 randomized); 17 of 18 comparative studies found no significant fusion difference between DBM and comparators; evidence predominantly non-randomized.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "cervical-acdf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Orthofix FY2025 10-K: biologics sold through distributors and sales representatives; portfolio mixes internally manufactured tissue and MTF Biologics-provided forms."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf17/K172130.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K193040.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf20/K200290.pdf",
+    "https://www.sec.gov/Archives/edgar/data/884624/000119312526065189/ofix-20251231.htm"
+   ],
+   "unverified": true,
+   "unverified_reason": "Whether OsteoBallast is still marketed under Orthofix was not confirmed (GUDID lists Ballast under IsoTis/SeaSpine labelers in distribution)."
+  },
+  {
+   "id": "torrent-dbm",
+   "name": "Torrent / Torrent C / OsteoTorrent (Dry DBM-A Putty, freeze-dried)",
+   "company": "Orthofix",
+   "ownership_history": "SeaSpine cleared Dry DBM-A Putty in October 2021 (K212135); GUDID lists OsteoTorrent, Torrent and Torrent C. Orthofix's FY2025 10-K lists Torrent/Torrent C among its DBM putties.",
+   "category": "DBM",
+   "composition": "Human DBM plus Accell Bone Matrix (dispersed DBM) mixed with poloxamer reverse-phase medium, freeze-dried; cancellous chips optional in the C version.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K212135 (Dry DBM-A Putty, Oct 2021)",
+    "us_market_year": 2021,
+    "on_label_indications": [
+     "Fills voids and gaps in the skeletal system not intrinsic to bony stability; indicated for use with autograft as a bone graft extender in the posterolateral spine and pelvis."
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Extender with autograft in the posterolateral spine."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Label names the posterolateral spine and pelvis only; extremity use is off-label for this device.",
+     "challenge": "Unlike most DBM putties, this label omits the extremities."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Orthofix FY2025 10-K: biologics sold through distributors and sales representatives; portfolio mixes internally manufactured tissue and MTF Biologics-provided forms."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf21/K212135.pdf",
+    "https://www.sec.gov/Archives/edgar/data/884624/000119312526065189/ofix-20251231.htm",
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22torrent%22"
+   ]
+  },
+  {
+   "id": "orthoblast-dynagraft",
+   "name": "OrthoBlast II and DynaGraft II (DBM in poloxamer carrier; Trel-X, OsteoSparx labels)",
+   "company": "Orthofix",
+   "ownership_history": "IsoTis OrthoBiologics (Irvine, CA) cleared DynaGraft II (K040419, Mar 2005) and OrthoBlast II (K050642, Dec 2005; K070751, Oct 2007); IsoTis was acquired by Integra (2007) then SeaSpine (2015) then Orthofix (2023) per background knowledge. Orthofix's FY2025 10-K still lists DynaGraft II and OrthoBlast II. OrthoBlast was long sold by Citagenix in Canada.",
+   "category": "DBM",
+   "composition": "Human DBM in a reverse-thermal poloxamer carrier (gel and putty); OrthoBlast II is described as DBM with crushed cancellous allograft in one 510(k).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K040419 (DynaGraft II, Mar 2005); K050642 (OrthoBlast II putty and paste, Dec 2005); K070751 (OrthoBlast II, Oct 2007)",
+    "us_market_year": 2005,
+    "on_label_indications": [
+     "DynaGraft II (K040419): packed gently into bony gaps as a bone graft extender (extremities, spine and pelvis) and bone void filler (extremities and pelvis); OrthoBlast II (K070751): autograft extender (extremities, spine and pelvis) and void filler (extremities and pelvis)."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "III",
+     "evidence_summary": "Retrospective comparison of 63 ankle/hindfoot fusions: nonunion 8% (2/26) with OrthoBlast versus 14% (5/37) with Grafton putty, not significant and not better than historical controls.",
+     "caveats": "Studies used first-generation OrthoBlast (Citagenix/IsoTis), not necessarily OrthoBlast II; no autograft or no-graft control."
+    },
+    {
+     "application_id": "ankle-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "III",
+     "evidence_summary": "Same 63-patient ankle/hindfoot DBM series (OrthoBlast vs Grafton) covers ankle fusions; no difference in union.",
+     "caveats": "See hindfoot entry; combined ankle and hindfoot cohort."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "III",
+     "evidence_summary": "Heavy-smoker long-bone nonunions: graft success 85% with OrthoBlast (n=13) versus 52% with Grafton (n=25), P=.077 (not significant). Periarticular fractures: 15/15 versus 9/13.",
+     "caveats": "Small, non-randomized comparisons from one trauma group; first-generation product."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Rat PLF data exist (DynaGraft in PMID 17205237) but no human PLF study of OrthoBlast II was located."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:12921362",
+     "title": "Use of demineralized bone matrix in ankle/hindfoot fusion",
+     "year": 2003,
+     "design": "retrospective",
+     "n": 63,
+     "finding": "Ankle/hindfoot fusion: nonunion 8% (2/26) with OrthoBlast versus 14% (5/37) with Grafton putty; not significant and not better than historical controls.",
+     "sponsor_funded": null,
+     "applications": [
+      "subtalar-hindfoot-arthrodesis",
+      "ankle-arthrodesis"
+     ]
+    },
+    {
+     "ref": "PMID:16130350",
+     "title": "Comparative efficacy of 2 different demineralized bone matrix allografts in treating long-bone nonunions in heavy tobacco smokers",
+     "year": 2005,
+     "design": "retrospective",
+     "n": 38,
+     "finding": "Heavy-smoker long-bone nonunions: graft success 85% with OrthoBlast (n=13) versus 52% with Grafton (n=25), P=.077 (not significant).",
+     "sponsor_funded": null,
+     "applications": [
+      "general-long-bone-nonunion"
+     ]
+    },
+    {
+     "ref": "PMID:12582811",
+     "title": "Efficacy of contained metaphyseal and periarticular defects treated with two different demineralized bone matrix allografts",
+     "year": 2003,
+     "design": "retrospective",
+     "n": 28,
+     "finding": "Periarticular fractures: first-graft success 15/15 with OrthoBlast versus 9/13 with Grafton.",
+     "sponsor_funded": null,
+     "applications": []
+    },
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Orthofix FY2025 10-K: biologics sold through distributors and sales representatives; portfolio mixes internally manufactured tissue and MTF Biologics-provided forms."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf4/K040419.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf5/K050642.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf7/K070751.pdf",
+    "https://www.sec.gov/Archives/edgar/data/884624/000119312526065189/ofix-20251231.htm",
+    "PMID:12921362",
+    "PMID:16130350",
+    "PMID:12582811"
+   ],
+   "challenge": "This is the one DBM family in the batch with several head-to-head clinical comparisons against Grafton, but all are small, non-randomized and used the first-generation OrthoBlast; none reached significance for nonunion."
+  },
+  {
+   "id": "strand-dbf",
+   "name": "OsteoStrand, Strand, Strand Plus and Fiberfuse (demineralized bone fibers)",
+   "company": "Orthofix",
+   "ownership_history": "SeaSpine (IsoTis) launched OsteoStrand in late 2017 and Plus (with Accell Bone Matrix) in 2019; Orthofix's FY2025 10-K lists 'Strand, Strand Plus, Fiberfuse' as demineralized bone fibers in putty and strip forms, with compositions of 100% fibers, fibers with ABM, or fibers mixed with cancellous bone. Orthofix's international site states fiberFUSE DBM is processed exclusively by MTF Biologics.",
+   "category": "DBM",
+   "composition": "100% demineralized human cortical bone fibers (no carrier); Plus adds Accell Bone Matrix (dispersed DBM); versions with cancellous bone; putty and strip formats; delivered with the RAPID hydration/graft-delivery system.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none located (no 510(k) found under Strand/OsteoStrand/Fiberfuse in openFDA; sold as carrier-free demineralized bone fibers, the usual 361 pattern)",
+    "us_market_year": 2017,
+    "on_label_indications": [
+     "Homologous-use demineralized allograft bone fibers to fill bony defects and aid fusion; sold with 'refer to Instructions for Use for indications'. Label text not retrieved."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No human fusion study of Strand fibers located. In an athymic-rat PLF model by SeaSpine authors, the Strand family fused 18/18 (100%), significantly above Propel Fibers, Vesuvius Fibers, Optium and DBX putty.",
+     "caveats": "Preclinical, manufacturer-run; rat PLF is a surrogate; clinical evidence for DBM fibers is not product-specific (2023 IJSS fiber review PMID 38135444)."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "361 allograft used for interbody packing is homologous-use on the company's position."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review of 12 DBM-in-ACDF studies (3 randomized) found patient-reported outcomes non-inferior to autograft and fusion 88.8-100% after 18 months (PMID 27832365).",
+     "caveats": "Same position as above."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32266283",
+     "title": "In-vivo Performance of Seven Commercially Available Demineralized Bone Matrix Fiber and Putty Products in a Rat Posterolateral Fusion Model",
+     "year": 2020,
+     "design": "preclinical",
+     "n": 69,
+     "finding": "Athymic rat PLF: Strand family 100% fusion (18/18), significantly higher than Propel Fibers, Vesuvius Fibers, Optium Putty and DBX Putty; authors conclude composition alone does not guarantee in vivo performance.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:38135444",
+     "title": "Demineralized Bone Matrix and Fibers in Spinal Fusion",
+     "year": 2023,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Narrative review of DBM and DBM fibers in spinal fusion; class-level.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:41985112",
+     "title": "Understanding Spine Biologics: A Systematic Review of Demineralized Bone Matrix in Spinal Fusion From 2014-2024",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 21 studies (3 randomized); 17 of 18 comparative studies found no significant fusion difference between DBM and comparators; evidence predominantly non-randomized.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "cervical-acdf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Orthofix FY2025 10-K: biologics sold through distributors and sales representatives; portfolio mixes internally manufactured tissue and MTF Biologics-provided forms."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://orthofix.com/wp-content/uploads/2023/10/OsteoStrand-Sales-Brochure.pdf",
+    "https://orthofix.com/wp-content/uploads/2024/01/OsteoStrand-Plus-Sales-Brochure.pdf",
+    "https://www.sec.gov/Archives/edgar/data/884624/000119312526065189/ofix-20251231.htm",
+    "https://www.odtmag.com/contents/view_breaking-news/2019-07-19/seaspine-expands-portfolio-of-osteostrand-and-osteostrand-plus-demineralized-bone-fibers/48587",
+    "PMID:32266283"
+   ],
+   "unverified": true,
+   "unverified_reason": "Regulatory pathway (361) inferred; the strongest evidence is a manufacturer-authored rat study.",
+   "challenge": "The head-to-head rat data comparing Strand with Propel, Vesuvius, Optium and DBX were run by SeaSpine authors; expect scepticism about competitive claims built on it."
+  },
+  {
+   "id": "legacy-dbm",
+   "name": "Legacy DBM (MTF Biologics)",
+   "company": "MTF Biologics / Orthofix",
+   "ownership_history": "Musculoskeletal Transplant Foundation lists Legacy DBM in GUDID (0.5 cc to 5 cc, product codes MQV and GXP); Orthofix's FY2025 10-K lists 'Legacy' among flowable DBM putties it markets.",
+   "category": "DBM",
+   "composition": "Human DBM putty/flowable form; carrier not retrieved.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "unverified (GUDID product codes MQV/GXP suggest a 510(k) device but no premarket number is shown)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Not retrieved."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Indications not retrieved; application mapping assumes the usual DBM putty label (spine extender, extremity void filler)."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "As above."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Orthofix FY2025 10-K: biologics sold through distributors and sales representatives; portfolio mixes internally manufactured tissue and MTF Biologics-provided forms."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22Legacy+DBM%22",
+    "https://www.sec.gov/Archives/edgar/data/884624/000119312526065189/ofix-20251231.htm"
+   ],
+   "unverified": true,
+   "unverified_reason": "No 510(k) number, indication text or IFU found; on-label mapping assumed."
+  },
+  {
+   "id": "pliafx-flo",
+   "name": "PliaFX Flo (flowable demineralized fibers)",
+   "company": "LifeNet Health",
+   "ownership_history": "LifeNet Health (Virginia Beach, VA; non-profit) cleared PliaFX Flo in November 2024 (K242799), changing the container from a PETG jar to a pre-filled syringe versus its predicate. LifeNet's older DBM Optium is in the existing optium-dbm record.",
+   "category": "DBM",
+   "composition": "Flowable demineralized bone fibers (GUDID: 'flowable demineralized fibers', 0.5 cc-2.5 cc).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K242799 (PliaFX Flo, Nov 2024)",
+    "us_market_year": 2024,
+    "on_label_indications": [
+     "Bony voids or gaps not intrinsic to bony stability; placed into the bony voids or gaps of the skeletal system (e.g., the extremities, spine and pelvis); bone void filler that remodels into the recipient's skeleton."
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Label cites the spine without an extender-only restriction."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "'Spine' wording without a named interbody use.",
+     "challenge": "Label says 'e.g., the extremities, spine and pelvis'; interbody cage packing is not named."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review of 12 DBM-in-ACDF studies (3 randomized) found patient-reported outcomes non-inferior to autograft and fusion 88.8-100% after 18 months (PMID 27832365).",
+     "caveats": "Same wording."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Extremity void filler."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:41985112",
+     "title": "Understanding Spine Biologics: A Systematic Review of Demineralized Bone Matrix in Spinal Fusion From 2014-2024",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 21 studies (3 randomized); 17 of 18 comparative studies found no significant fusion difference between DBM and comparators; evidence predominantly non-randomized.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "cervical-acdf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "LifeNet sells through direct reps and partners; a new syringe format targets MIS spine and foot-and-ankle ASC use (inference from the 510(k) change, not a company statement)."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K242799.pdf",
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22PliaFX%22"
+   ],
+   "unverified": true,
+   "unverified_reason": "Only the 2024 line-extension 510(k) was reviewed; the original PliaFX clearances were not found by name in openFDA."
+  },
+  {
+   "id": "vesuvius-dbm",
+   "name": "Vesuvius (demineralized fibers and DBM putty)",
+   "company": "LifeNet Health",
+   "ownership_history": "LifeNet Health brand listed in GUDID (DBM putty; product codes MQV/MBP, HCT/P flag true, no premarket number). A Vesuvius Demineralized Fibers product was tested in the 2020 rat PLF study.",
+   "category": "DBM",
+   "composition": "Demineralized bone fibers and DBM putty; details not retrieved.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "unverified (GUDID device product codes MQV/MBP, HCT/P flag true, no premarket submission; no 510(k) found under the name)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Not retrieved."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Only preclinical data: in a manufacturer-run athymic-rat PLF study, Vesuvius Fibers fused significantly less often than the Strand family; no human fusion study located.",
+     "caveats": "Competitor-authored rat study (SeaSpine); no clinical data."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Assumed homologous-use position for a 361 fiber."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32266283",
+     "title": "In-vivo Performance of Seven Commercially Available Demineralized Bone Matrix Fiber and Putty Products in a Rat Posterolateral Fusion Model",
+     "year": 2020,
+     "design": "preclinical",
+     "n": 69,
+     "finding": "Athymic rat PLF: Strand family 100% fusion (18/18), significantly higher than Propel Fibers, Vesuvius Fibers, Optium Putty and DBX Putty; authors conclude composition alone does not guarantee in vivo performance.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:41985112",
+     "title": "Understanding Spine Biologics: A Systematic Review of Demineralized Bone Matrix in Spinal Fusion From 2014-2024",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 21 studies (3 randomized); 17 of 18 comparative studies found no significant fusion difference between DBM and comparators; evidence predominantly non-randomized.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "cervical-acdf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "LifeNet's fiber alternative to Optium DBM."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22vesuvius%22",
+    "PMID:32266283"
+   ],
+   "unverified": true,
+   "unverified_reason": "Regulatory path, indications and current catalog status not retrieved."
+  },
+  {
+   "id": "stimublast",
+   "name": "STIMUBLAST DBM Gel / CB Putty",
+   "company": "AlloSource (also sold by Arthrex under the same part numbers)",
+   "ownership_history": "AlloSource (Centennial, CO; non-profit) brand; GUDID shows identical part numbers (ABS-2002-05 'Stimublast Gel 5cc') under both AlloSource and Arthrex labels, so Arthrex distributes it. Not the same product as AlloFuse (existing allofuse record) though GUDID lists the same product codes.",
+   "category": "DBM",
+   "composition": "Human DBM gel and putty (CB version with cancellous bone); carrier not retrieved.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "unverified (GUDID product codes MQV/MBP, HCT/P flag true, no premarket number)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Not retrieved."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Indications not retrieved."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Sold by Arthrex into foot and ankle (inference from distribution)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:42421266",
+     "title": "Demineralized Bone Matrix in Foot and Ankle Surgery: Products, Mechanisms, and Clinical Outcomes",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level review: DBM union rates in arthrodesis comparable to autograft without superiority; evidence dominated by level III-IV, no high-quality comparative studies.",
+     "sponsor_funded": false,
+     "applications": [
+      "subtalar-hindfoot-arthrodesis",
+      "ankle-arthrodesis"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Arthrex distributes AlloSource-made DBM; compare with AlloSync Pure."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22stimublast%22",
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22Arthrex%22+AND+is_hct_p:true"
+   ],
+   "unverified": true,
+   "unverified_reason": "Regulatory pathway, composition and indications not retrieved; AlloSource-Arthrex relationship inferred from matching GUDID part numbers."
+  },
+  {
+   "id": "allosync-pure",
+   "name": "AlloSync Pure Demineralized Bone Matrix",
+   "company": "Arthrex",
+   "ownership_history": "Arthrex-branded allograft (part numbers ABS-2010-01/-02 follow the AlloSource ABS- convention seen on Stimublast); processor not stated on Arthrex's page.",
+   "category": "DBM",
+   "composition": "100% human allograft DBM with no extrinsic carrier; hydrated with PRP or cPRP from bone marrow aspirate (Arthrex Angel); 1.0 cc and 2.5 cc.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P pattern: 100% DBM, no carrier; Arthrex's page makes no regulatory statement)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Page states no indications; marketed for foot and ankle bone grafting (case videos: medial malleolus stress fracture, distal tibia fracture)."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "ankle-fracture-syndesmosis",
+     "tier": "established",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Arthrex case videos show use in a medial malleolus stress fracture; no study."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Foot and ankle arthrodesis is the core marketed use."
+    },
+    {
+     "application_id": "foot-ankle-nonunion",
+     "tier": "established",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "No published AlloSync Pure series located."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:42421266",
+     "title": "Demineralized Bone Matrix in Foot and Ankle Surgery: Products, Mechanisms, and Clinical Outcomes",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level review: DBM union rates in arthrodesis comparable to autograft without superiority; evidence dominated by level III-IV, no high-quality comparative studies.",
+     "sponsor_funded": false,
+     "applications": [
+      "subtalar-hindfoot-arthrodesis",
+      "ankle-arthrodesis"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Pairs with Arthrex Angel cPRP and BMA kits (existing arthrex-angel record) to sell a biologic bundle in foot and ankle."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.arthrex.com/foot-ankle/allosync-pure-demineralized-bone-matrix",
+    "PMID:42421266"
+   ],
+   "unverified": true,
+   "unverified_reason": "Regulatory statement, processor and indications not published on the page."
+  },
+  {
+   "id": "stryker-dbm",
+   "name": "Stryker DBM (Gel, Putty, Putty Plus; BIO DBM Putty)",
+   "company": "Stryker",
+   "ownership_history": "Stryker (trauma and extremities) sells an AlloFuse-type DBM: product page cites K103036 (AlloSource, AlloFuse Plus) and IFU M1S1144.02, and AlloSource white-paper data; GUDID lists 'BIO DBM Putty'. Not the Allomatrix line (existing allomatrix record, from Wright Medical).",
+   "category": "DBM",
+   "composition": "Human DBM in a reverse-phase poloxamer carrier (gel, putty); Putty Plus adds cancellous chips; every final lot tested in the Urist mouse model.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K103036 (AlloFuse Plus, AlloSource, Jan 2011; cited on Stryker's DBM page); gel and putty likely rely on K071849",
+    "us_market_year": 2011,
+    "on_label_indications": [
+     "Stryker page: 'designed to act as bone void fillers'; the AlloFuse 510(k)s allow extender use (extremities, spine and pelvis) and void filling (extremities, pelvis). Stryker IFU M1S1144.02 not retrieved."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities, pelvis void filler."
+    },
+    {
+     "application_id": "tibial-nonunion-aseptic",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities void filler."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Extremities void filler."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Stryker covers DBM with Allomatrix (calcium sulfate carrier) and this reverse-phase product; the cited efficacy data is an AlloSource white paper in rabbits (Walsh 2012), not a Stryker study."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.stryker.com/us/en/trauma-and-extremities/products/dbm.html",
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22BIO+DBM%22",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf10/K103036.pdf"
+   ],
+   "unverified": true,
+   "unverified_reason": "Stryker IFU not retrieved; 510(k) relationship taken from Stryker's page citation."
+  },
+  {
+   "id": "equivabone",
+   "name": "EquivaBone / CaP Plus (calcium phosphate with human DBM)",
+   "company": "Etex Corporation",
+   "ownership_history": "Etex (Cambridge/Braintree, MA) cleared CaP Plus/EquivaBone/CAP-DBM in April 2008 (K080329, MBP) and EquivaBone Osteoinductive Bone Graft Substitute in December 2024 (K243609, MQV/MBP). Historically distributed by Biomet; current distributor unverified.",
+   "category": "DBM",
+   "composition": "Synthetic calcium phosphate and carboxymethylcellulose combined with human DBM; hardens at body temperature, then resorbs; each DBM lot assayed in athymic mouse.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K080329 (CaP Plus, EquivaBone, CAP/DBM, Apr 2008); K243609 (EquivaBone, Dec 2024)",
+    "us_market_year": 2008,
+    "on_label_indications": [
+     "K080329: filling bone voids or defects of the skeletal system (such as the extremities, spine and pelvis) not intrinsic to bony stability; bone graft substitute that resorbs and is replaced with new bone. K243609 indication text not retrieved."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Hardening composite; spine is on the K080329 label."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremity void filler."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "A 2024 clearance indicates Etex is actively refreshing the product."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K080329.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K243609.pdf"
+   ],
+   "unverified": true,
+   "unverified_reason": "K243609 indication text and the Biomet/other distribution link not retrieved."
+  },
+  {
+   "id": "vivorte-trabexus",
+   "name": "Vivorte BVF / Trabexus EB (calcium phosphate with DBM particles)",
+   "company": "Vivorte, Inc.",
+   "ownership_history": "Vivorte cleared BVF in Sept 2013 (K130703) and Trabexus EB in Jan 2015 (K143547); GUDID says the 3 cc DBM version was 'previously sold under the Trabexus EB brand name' and a non-DBM Trabexus (MQV) is listed as not in distribution.",
+   "category": "DBM",
+   "composition": "Self-setting resorbable calcium phosphate (carbonated apatite) bone void filler with shaped particles of human bone containing osteoinductive DBM; can be applied by cannula.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K130703 (Vivorte BVF, Sept 2013); K143547 (Trabexus EB, Jan 2015)",
+    "us_market_year": 2013,
+    "on_label_indications": [
+     "Moldable, self-setting, resorbable calcium phosphate bone void filler with shaped particles of human bone that contain DBM, to fill bony voids or defects of the extremities and pelvis not intrinsic to bony stability."
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Extremities and pelvis only."
+    },
+    {
+     "application_id": "calcaneus-fracture",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Setting calcium phosphate composites are used for metaphyseal voids.",
+     "caveats": "No published study of this product located."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Tiny company; Vivorte's later ownership not established."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf13/K130703.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf14/K143547.pdf",
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22trabexus%22"
+   ],
+   "unverified": true,
+   "unverified_reason": "Company status, ownership and current sale not confirmed beyond GUDID."
+  },
+  {
+   "id": "alphagraft-dbm",
+   "name": "AlphaGRAFT DBM (Gel, Putty, Fiber, Fiber Strip)",
+   "company": "Alphatec",
+   "ownership_history": "Alphatec Holdings (Carlsbad, CA) allograft line; AlphaGRAFT DBM Fibers launched in May 2019 alongside PLIF IdentiTi-PS. The marketing text matches DCI Donor Services Tissue Bank's Reficio Link fiber sheet word for word and the Alphatec page footnotes DCI, suggesting DCI processes the fibers (inference). The cellular AlphaGRAFT CBM is outside this slice.",
+   "category": "DBM",
+   "composition": "Demineralized human tissue in gel, putty and fiber forms; fibers are 100% demineralized cortical fibers, freeze-dried, rehydrated with blood or marrow; a 2017 review listed an 80% DBM 'acellular matrix' paste.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none located (GUDID lists AlphaGRAFT bone matrix putty, product code MBP, HCT/P flag true, no premarket number; a 2017 review labeled it '510(k)' but no 510(k) was found under the name in openFDA)",
+    "us_market_year": 2019,
+    "on_label_indications": [
+     "Alphatec's 10-K and web page give no indications; the products are marketed for spinal fusion as homologous-use demineralized allograft. Treated as 361."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "No indication statement published."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Launched with Alphatec's PLIF interbody; used as cage fill."
+    },
+    {
+     "application_id": "lumbar-lateral",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Alphatec's lateral platform is the growth driver; no lateral-specific data."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review of 12 DBM-in-ACDF studies (3 randomized) found patient-reported outcomes non-inferior to autograft and fusion 88.8-100% after 18 months (PMID 27832365).",
+     "caveats": "No data."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:32455520",
+     "title": "Comparison of Fusion Rate between Demineralized Bone Matrix versus Autograft in Lumbar Fusion: Meta-Analysis",
+     "year": 2020,
+     "design": "meta-analysis",
+     "n": 581,
+     "finding": "Class-level, not product-specific: across 8 non-randomized comparative studies, fusion rate did not differ significantly between DBM and autograft in posterolateral (RR 1.03) or interbody (RR 1.13) fusion.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Alphatec (10-K FY2025) bundles allograft with its fusion hardware; AlphaGRAFT is a 'biologics offering' alongside 3D ProFuse."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://atecspine.com/alphagraft",
+    "https://www.sec.gov/Archives/edgar/data/1350653/000119312526067393/atec-20251231.htm",
+    "https://api.fda.gov/device/udi.json?search=brand_name:%22AlphaGRAFT%22",
+    "https://tissuebank.dcids.org/wp-content/uploads/sites/10/2019/12/MK-116-Rev-001-Reficio-Link-Cortical-Fiber-Fact-Sheet.pdf",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5539308/"
+   ],
+   "unverified": true,
+   "unverified_reason": "Regulatory path (361 vs 510(k)) and processor not confirmed from a primary source; 2017 review and GUDID disagree.",
+   "challenge": "A 2017 systematic review tabulates AlphaGRAFT as 510(k) cleared yet found zero clinical studies of it; GUDID shows an HCT/P with a device product code."
+  },
+  {
+   "id": "3d-profuse",
+   "name": "3D ProFuse Osteoconductive Bioscaffold (ProFuse)",
+   "company": "Alphatec",
+   "ownership_history": "ProFuse was introduced by Alphatec Spine in 2008 as a compressible, vacuum-infusion graft; Alphatec's FY2025 10-K still lists '3D ProFuse Osteoconductive Bioscaffold' as an allograft option.",
+   "category": "DBM",
+   "composition": "Porous, malleable allograft scaffold of human bone chips (cortical and cancellous particles) described as demineralized in 2008 trade press; compressible when hydrated to maximize endplate-to-endplate contact.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none located (inferred 361: tissue-only scaffold)",
+    "us_market_year": 2008,
+    "on_label_indications": [
+     "Placed within or on a vertebral spacer to maximize endplate contact; no formal indications published."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Built for cage-adjacent interbody use."
+    },
+    {
+     "application_id": "lumbar-alif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Same use."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review of 12 DBM-in-ACDF studies (3 randomized) found patient-reported outcomes non-inferior to autograft and fusion 88.8-100% after 18 months (PMID 27832365).",
+     "caveats": "Same use."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Sold with Alphatec interbody systems."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1350653/000119312526067393/atec-20251231.htm",
+    "https://mobile.hospimedica.com/surgical-techniques/articles/294721131/sponge-like-allograft-fills-bone-voids.amp.html"
+   ],
+   "unverified": true,
+   "unverified_reason": "Demineralization status today, regulatory path and indications not confirmed; sources are a 2008 article and a 10-K one-liner."
+  },
+  {
+   "id": "osteosponge",
+   "name": "OsteoSponge and OsteoSponge SC (demineralized cancellous bone sponge)",
+   "company": "Xtant Medical",
+   "ownership_history": "Bacterin International product (Belgrade, MT) now sold by Xtant; Xtant's FY2025 10-K calls it a '100% human demineralized bone matrix derived from trabecular bone' for spine, neurological, cranio/maxillofacial, trauma and plastic/reconstructive use. A KLS Martin (Xtant distributor) page says all KBM products except OsteoSelect Putty are regulated as 361 tissue.",
+   "category": "DBM",
+   "composition": "Single-donor demineralized trabecular (cancellous) bone sponge, malleable; no carrier. SC version targets subchondral defects.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; Xtant 10-K: products 'regulated as HCT/Ps and/or 510(k)-cleared')",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Homologous-use scaffold for bone grafting; Xtant 10-K lists spine, neurological, cranio/maxillofacial, trauma, plastic/reconstructive applications. No formal indication statement retrieved."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No human study located. In an athymic-rat PLF model, plain allograft OsteoSponge produced 0% fusion by manual palpation, consistent with its role as a scaffold to mix with other graft rather than a stand-alone osteoinductive graft.",
+     "caveats": "Preclinical, one model; authors advise caution using plain allograft alone."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review of 12 DBM-in-ACDF studies (3 randomized) found patient-reported outcomes non-inferior to autograft and fusion 88.8-100% after 18 months (PMID 27832365).",
+     "caveats": "Spine is the primary marketed use."
+    },
+    {
+     "application_id": "cmf-cranioplasty",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Cranio/maxillofacial use is stated in Xtant's 10-K.",
+     "caveats": "No published study located."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: 2017 systematic review (64 clinical papers; 4 RCTs, 8 cohorts, 49 case series) found no clinical studies for 10 of the 15 other DBM products searched and mostly level IV data in trauma (PMID 28733366).",
+     "caveats": "Trauma use stated in the 10-K."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:31745449",
+     "title": "Comparative Efficacy of Commonly Available Human Bone Graft Substitutes as Tested for Posterolateral Fusion in an Athymic Rat Model",
+     "year": 2019,
+     "design": "preclinical",
+     "n": null,
+     "finding": "Athymic rat PLF: eight DBM products (Accell Evo3, DBX Mix and Strip, four Grafton formats, Magnifuse) >90% fusion by manual palpation; Progenix Plus 0%; plain allograft (OsteoSponge) 0%.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:28733366",
+     "title": "The available evidence on demineralised bone matrix in trauma and orthopaedic surgery: A systematic review",
+     "year": 2017,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 17 DBM products searched through Jan 2017; 64 clinical papers (4 RCTs, 8 cohorts, 49 case series); no clinical studies for ten products; limited level I evidence only for Grafton as a lumbar extender.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Xtant: independent agents plus OEM/private label; OsteoSponge sold as a spine scaffold with OsteoSelect/OsteoVive."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1453593/000149315226013792/form10-k.htm",
+    "https://www.klsmartin.com/en-na/products/implants-allograft/",
+    "PMID:31745449"
+   ],
+   "unverified": true,
+   "unverified_reason": "Year of first sale taken as approximate (Bacterin-era product); label text not retrieved."
+  },
+  {
+   "id": "3demin-osteowrap",
+   "name": "3Demin and OsteoWrap (100% demineralized cortical bone allografts)",
+   "company": "Xtant Medical",
+   "ownership_history": "3Demin and OsteoWrap are Xtant registered trademarks; Xtant FY2025 10-K calls 3Demin a family of 100% demineralized cortical bone allografts 'most commonly utilized in spinal fusion procedures'; a KLS Martin page describes OsteoWrap as 100% human cortical bone demineralized to be flexible.",
+   "category": "DBM",
+   "composition": "100% demineralized cortical bone, malleable; strips, sheets (OsteoWrap) and other shapes; provided sterile and hydrated with biologic fluid.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; per Xtant 10-K and KLS Martin page)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Homologous-use demineralized allograft for bone grafting; no formal indications retrieved."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Most commonly used in spinal fusion per Xtant."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Interbody packing within 361 homologous-use position."
+    },
+    {
+     "application_id": "cervical-pcf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Posterior cervical fusion is a flexible-wrap use.",
+     "caveats": "No published study located."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:41985112",
+     "title": "Understanding Spine Biologics: A Systematic Review of Demineralized Bone Matrix in Spinal Fusion From 2014-2024",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 21 studies (3 randomized); 17 of 18 comparative studies found no significant fusion difference between DBM and comparators; evidence predominantly non-randomized.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "cervical-acdf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Part of Xtant's in-house tissue family; private-label capable."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1453593/000149315226013792/form10-k.htm",
+    "https://www.klsmartin.com/en-na/products/implants-allograft/"
+   ],
+   "unverified": true,
+   "unverified_reason": "No label or indication text retrieved; 361 status taken from Xtant 10-K generalities and a third-party page."
+  },
+  {
+   "id": "fibrex-trivium",
+   "name": "FibreX and Trivium (demineralized cortical fiber allografts)",
+   "company": "Xtant Medical",
+   "ownership_history": "Both described in Xtant's FY2025 10-K: FibreX is a demineralized cortical fiber allograft using PureLoc technology; Trivium (a 2025-2026 introduction) combines elongated demineralized cortical fibers, trabecular cancellous chips and DBM.",
+   "category": "DBM",
+   "composition": "FibreX: demineralized cortical fibers. Trivium: elongated demineralized cortical fibers + trabecular cancellous chips + DBM, PureLoc fiber technology; moldable, no synthetic carrier named.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none located (Xtant 10-K states products are HCT/Ps and/or 510(k)-cleared without specifying; fibers with no carrier are normally 361)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Xtant: 'may be used by clinicians in orthopedic procedures requiring a moldable allograft scaffold.' No formal indications."
+    ],
+    "unverified": true
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "New product; no clinical data."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Same."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:41985112",
+     "title": "Understanding Spine Biologics: A Systematic Review of Demineralized Bone Matrix in Spinal Fusion From 2014-2024",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 21 studies (3 randomized); 17 of 18 comparative studies found no significant fusion difference between DBM and comparators; evidence predominantly non-randomized.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "cervical-acdf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Xtant FY2025 10-K lists Trivium among recent introductions to upgrade its DBM line beyond OsteoSelect putty."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1453593/000149315226013792/form10-k.htm"
+   ],
+   "unverified": true,
+   "unverified_reason": "Launch date, regulatory path and indications not confirmed; sourced only from the 10-K product paragraph."
+  },
+  {
+   "id": "reficio-link-dci",
+   "name": "Reficio Link DBM Cortical Fibers, Fiber Strips and Reficio 100 DBM Putty",
+   "company": "DCI Donor Services Tissue Bank",
+   "ownership_history": "DCI Donor Services Tissue Bank (Nashville, TN; non-profit) markets Reficio Link DBM fibers (fact sheet MK 116, Feb 2018), Fiber Strips (posterolateral spinal fusion) and Reficio 100 DBM Putty ('100% demineralized human bone with no added carriers, fillers or binders'). The Reficio brand also appears on Biomet-lineage 'Reficio DBM Paste/Plus' (EBI, LLC) and Xtant-made 'Reficio DBM Putty/Crunch' labels in GUDID; relationship to DCI is unconfirmed.",
+   "category": "DBM",
+   "composition": "100% demineralized cortical fibers (1-10 cc) and strips (50x10x5 to 100x20x5 mm), freeze-dried; 100% DBM putty with no added carrier, low-dose gamma sterilized.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (DCI states it is FDA-registered, AATB-certified; products described as carrier-free 100% DBM)",
+    "us_market_year": 2018,
+    "on_label_indications": [
+     "Homologous-use demineralized allograft; the strips are positioned for posterolateral spinal fusion. DCI fact sheet claims 'proven regenerative capacity' from data on file."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Fiber strips are aimed at posterolateral fusion; the fact sheet cites a 1999 animal study (Martin) and data on file only."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Fiber format used for cage packing."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:41985112",
+     "title": "Understanding Spine Biologics: A Systematic Review of Demineralized Bone Matrix in Spinal Fusion From 2014-2024",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Class-level: 21 studies (3 randomized); 17 of 18 comparative studies found no significant fusion difference between DBM and comparators; evidence predominantly non-randomized.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf",
+      "cervical-acdf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "DCI is the processor behind other labels (Alphatec's fiber copy mirrors this sheet)."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://tissuebank.dcids.org/wp-content/uploads/sites/10/2019/12/MK-116-Rev-001-Reficio-Link-Cortical-Fiber-Fact-Sheet.pdf",
+    "https://tissuebank.dcids.org/wp-content/uploads/sites/10/2019/03/Reficio-Link-Fiber-Strips.pdf"
+   ],
+   "unverified": true,
+   "unverified_reason": "Reficio brand ownership across DCI/EBI/Xtant not resolved; only DCI's own fact sheets were read."
+  },
+  {
+   "id": "aurora-biologics-dbm",
+   "name": "Aurora Biologics: TURBO FUSE Fiber Putty, OSTEO GRAFT DBM Putty, OSTEO BRIDGE Sponge Strips",
+   "company": "Aurora Spine",
+   "ownership_history": "Aurora Spine Corporation launched Aurora Biologics on October 27, 2025 with three allograft products 'formulated from 100 percent allograft bone, free of synthetic carriers'; tissue processor not named; products intended to pair with ZIP, Hydra A.E.R.O., DEXA and SiLO (SiLO allograft is in the existing silo record).",
+   "category": "DBM",
+   "composition": "TURBO FUSE: demineralized bone fibers; OSTEO GRAFT: demineralized cortical bone putty; OSTEO BRIDGE: sponge-like bone graft substitute strips; all described as carrier-free allograft.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none stated (press release names no regulatory pathway; carrier-free allograft implies 361)",
+    "us_market_year": 2025,
+    "on_label_indications": [
+     "Press release: fill bony defects and augment fusion sites. No indication statement published."
+    ],
+    "unverified": true
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Launched Oct 2025; no data."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Intended to pair with Aurora's interbody systems."
+    },
+    {
+     "application_id": "si-joint-fusion",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Paired with SiLO posterior SI fusion allograft.",
+     "caveats": "No data."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "CEO projected a >30% increase over prior biologic offerings; forward-looking commercial claim, not evidence."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.biospace.com/press-releases/aurora-spine-launches-new-biologics-portfolio",
+    "https://www.beckersspine.com/spine/aurora-spine-launches-biologics-portfolio/"
+   ],
+   "unverified": true,
+   "unverified_reason": "Regulatory pathway, processor and indications not stated by the company."
+  },
+  {
+   "id": "medline-unite-dbm",
+   "name": "MedlineUNITE Demineralized Bone Matrix (Fiber Putty, Crunch, Gel Paste, Putty)",
+   "company": "Medline Industries",
+   "ownership_history": "Medline (Northfield, IL; privately held) brochure dated 2018 for MedlineUNITE DBM, 'intelligently designed with 100% human allograft bone'; tissue processor not named; Medline's orthopedic implants are sold under the MedlineUNITE name.",
+   "category": "DBM",
+   "composition": "Four formats: DBM fiber putty (demineralized cortical fibers), Crunch (putty with corticocancellous chips), Gel Paste (extrudable) and Putty; pre-loaded syringes, no thaw or mixing.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "unverified (brochure states no regulatory pathway; no GUDID DBM record found under Medline; if a carrier is used the putty might instead be a 510(k) device)",
+    "us_market_year": 2018,
+    "on_label_indications": [
+     "Brochure positions Crunch for hindfoot, ankle and spine fusions and Gel Paste for distal extremities; no formal indications."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "Brochure names hindfoot and ankle fusions for the Crunch format."
+    },
+    {
+     "application_id": "ankle-arthrodesis",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only: a 2026 foot and ankle DBM review reports union comparable to autograft without evidence of superiority, with the literature dominated by level III-IV studies (PMID 42421266).",
+     "caveats": "As above."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23 on the brand name). Class context only (not this product): 2020 meta-analysis of 8 comparative studies (n=581) found no significant fusion-rate difference between DBM with autograft and autograft (PMID 32455520).",
+     "caveats": "Brochure names spine fusions."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in inpatient MS-DRG; packaged into the procedure payment in OPPS/ASC (general rule for allograft bone graft materials; not verified product by product). No separate HCPCS code identified.",
+    "notes": "Medline sells through its own distribution network and GPO relationships; DBM is a bundling play beside its UNITE trauma implants (inference)."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://medlineunite.com/wp-content/uploads/2018/03/Medline-Unite-DBM-Brochure.pdf"
+   ],
+   "unverified": true,
+   "unverified_reason": "Regulatory path, processor and current availability not confirmed; brochure is 2018 and claims BMP-2 content without data.",
+   "challenge": "Brochure claims DBM is 'powered by BMP-2' with no cited data; native BMP-2 content in DBM is picogram-level and lot-variable."
+  }
+ ]
+}

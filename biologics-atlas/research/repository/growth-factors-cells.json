@@ -1,0 +1,1517 @@
+{
+ "applications": [],
+ "products": [
+  {
+   "id": "amplify-rhbmp2-crm",
+   "name": "AMPLIFY rhBMP-2 Matrix (rhBMP-2 on compression-resistant matrix) - never approved",
+   "company": "Medtronic",
+   "ownership_history": "rhBMP-2 originated at Genetics Institute (later part of Wyeth, which Pfizer acquired in 2009). Medtronic Sofamor Danek held the spinal rights and sponsored the AMPLIFY trials; Wyeth/Pfizer kept other fields and ran the injectable rhBMP-2/CPM fracture program (record rhbmp2-cpm-wyeth-pfizer). In July 2013 Pfizer out-licensed its BMP portfolio, including rhBMP-2 fields previously reserved to Pfizer, to Bioventus (record bioventus-pfizer-bmp-portfolio). The exact field split between Medtronic and Wyeth/Pfizer is not public in the sources read.",
+   "category": "rhBMP",
+   "composition": "High-dose rhBMP-2 (2.0 mg/mL; 40 mg per patient in the pivotal trial, per Carragee 2013) on a compression-resistant matrix of collagen with hydroxyapatite/tricalcium phosphate granules, placed posterolaterally without autograft.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "PMA P050036 (number from secondary sources; openFDA PMA database lists no AMPLIFY record because it was never approved). FDA Orthopaedic and Rehabilitation Devices Panel met 2010-07-27 (Federal Register notice 2010-15350): 9-4 safety, 10-3 effectiveness, 6-5 (3 abstaining) benefit-risk, per Medtronic. Medtronic disclosed in a March 2011 SEC filing that FDA said it could not approve AMPLIFY without additional information (reported as a non-approvable letter). No later approval.",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None. Proposed indication: single-level instrumented posterolateral lumbar fusion for degenerative disc disease as an autograft replacement (never approved)."
+    ],
+    "unverified": true
+   },
+   "status": "withdrawn",
+   "challenge": "AMPLIFY is the rhBMP-2 product that a panel narrowly backed and FDA still did not approve; the cancer signal (15 new cancer events in 11 patients vs 2 in 2 controls at 2 years) is why posterolateral rhBMP-2 remains off-label for Infuse today.",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Dimar 2009 pivotal RCT (n=463, NCT00707265): 2-year fusion 96% rhBMP-2/CRM vs 89% iliac crest (p=0.014), fewer nonunion failures (6 vs 18) and second surgeries, similar ODI/SF-36 gains; Carragee 2013 reanalysis of the same trial found a higher new-cancer incidence (3.37 vs 0.50 per 100 person-years at 2 years, IRR 6.75).",
+     "caveats": "Sponsor-funded pivotal trial; cancer events were few and FDA judged the overall risk unacceptable at this dose. Never approved: any use of this formulation is unavailable, and posterolateral use of marketed Infuse is off-label."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:19487515",
+     "title": "Clinical and radiographic analysis of an optimized rhBMP-2 formulation as an autograft replacement in posterolateral lumbar spine arthrodesis",
+     "year": 2009,
+     "design": "RCT",
+     "n": 463,
+     "finding": "Fusion 96% vs 89% at 24 months (p=0.014); nonunion failures 6 vs 18; less operative time and blood loss; clinical outcomes similar.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:24005193",
+     "title": "Cancer risk after use of recombinant bone morphogenetic protein-2 for spinal arthrodesis",
+     "year": 2013,
+     "design": "retrospective",
+     "n": 463,
+     "finding": "Reanalysis of the AMPLIFY pivotal trial: 15 new cancer events in 11 rhBMP-2/CRM patients vs 2 in 2 controls at 2 years; IRR 6.75 (95% CI 1.57-60.83).",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:17047540",
+     "title": "Clinical outcomes and fusion success at 2 years of single-level instrumented posterolateral fusions with rhBMP-2/compression resistant matrix versus iliac crest bone graft",
+     "year": 2006,
+     "design": "RCT",
+     "n": 98,
+     "finding": "Fusion 88% rhBMP-2/CRM vs 73% ICBG (p=0.051); no significant differences in clinical outcomes; less operative time and blood loss.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:16094268",
+     "title": "Initial fusion rates with rhBMP-2/compression resistant matrix and a hydroxyapatite and tricalcium phosphate/collagen carrier in posterolateral spinal fusion",
+     "year": 2005,
+     "design": "RCT",
+     "n": 74,
+     "finding": "Single-center subset: higher CT fusion grade with rhBMP-2/CRM at 6 and 12 months than ICBG.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "NCT00707265",
+     "title": "rhBMP-2/CRM/CD HORIZON Spinal System Pivotal Study",
+     "year": 2002,
+     "design": "RCT",
+     "n": 463,
+     "finding": "Completed 2005; registry posts no results; published as Dimar 2009.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "NCT01491568",
+     "title": "rhBMP-2/CRM/CD HORIZON Spinal System Pilot Study (2-level)",
+     "year": 2005,
+     "design": "case-series",
+     "n": 29,
+     "finding": "Completed 2009; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable; never marketed.",
+    "notes": "Never sold. Matters to BD because it explains the Infuse label boundary and why Medtronic's later rhBMP-2 work moved to the interbody space."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://news.medtronic.com/2010-07-27-Medtronics-AMPLIFY-TM-rhBMP-2-Matrix-Receives-Positive-Votes-from-FDA-Advisory-Panel-on-All-Three-Key-Questions-Safety-Effectiveness-and-Benefit-Risk",
+    "https://www.govinfo.gov/content/pkg/FR-2010-06-28/pdf/2010-15350.pdf",
+    "https://www.fiercebiotech.com/medical-devices/fda-says-no-to-medtronic-s-amplify",
+    "https://www.massdevice.com/fda-scotches-medtronics-amplify-spine-device-application/",
+    "https://clinicaltrials.gov/study/NCT00707265",
+    "https://clinicaltrials.gov/study/NCT01491568",
+    "https://api.fda.gov/device/pma.json?search=trade_name:%22amplify%22",
+    "PMID:19487515",
+    "PMID:24005193"
+   ]
+  },
+  {
+   "id": "rhbmp2-cpm-wyeth-pfizer",
+   "name": "rhBMP-2/CPM (injectable rhBMP-2 in calcium phosphate matrix) for closed fractures - discontinued",
+   "company": "Pfizer",
+   "ownership_history": "Developed by Wyeth (Genetics Institute heritage); Pfizer acquired Wyeth in 2009 and is the registry sponsor of record. Wyeth senior management terminated the tibial Phase 2/3 early (2009). Pfizer out-licensed its BMP portfolio, including rhBMP-2 fields previously reserved to Pfizer, to Bioventus in July 2013.",
+   "category": "rhBMP",
+   "composition": "rhBMP-2 (1.0 or 2.0 mg/mL) in an injectable calcium phosphate matrix, injected percutaneously into a closed fracture at the time of fixation.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "US IND (number not public). Trials: NCT00387686 (tibia, Phase 2/3, terminated), NCT00384852 (humerus, Phase 2), NCT00161629 (distal radius, Phase 1), NCT00243295 (open-wedge osteotomy, Phase 1), NCT00752557 (low bone density, Phase 2).",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None; never approved anywhere."
+    ]
+   },
+   "status": "withdrawn",
+   "applications": [
+    {
+     "application_id": "tibial-shaft-closed",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Lyon 2013 double-blind RCT (n=369, NCT00387686): terminated after interim analysis; median time to radiographic union 13.1 weeks standard of care vs 13.0 (1.0 mg/mL) and 15.9 (2.0 mg/mL) weeks, no faster return to pain-free weight-bearing.",
+     "caveats": "Sponsor-funded; a negative trial, consistent with the closed-tibia application note that biologics are not indicated after reamed nailing."
+    },
+    {
+     "application_id": "humeral-shaft-fracture",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Phase 2 trial in closed humerus fractures (NCT00384852, n=139) completed 2010; no results posted or published (PubMed search 2026-10-23).",
+     "caveats": "Unpublished sponsor trial."
+    },
+    {
+     "application_id": "distal-radius-fracture",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Phase 1 in closed distal radius fractures (NCT00161629, n=40); no results posted or published (PubMed search 2026-10-23).",
+     "caveats": "Unpublished sponsor trial."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:24306695",
+     "title": "Efficacy and safety of rhBMP-2/calcium phosphate matrix for closed tibial diaphyseal fracture: a double-blind, randomized, controlled phase-II/III trial",
+     "year": 2013,
+     "design": "RCT",
+     "n": 369,
+     "finding": "No shortening of time to union or to pain-free full weight-bearing vs standard of care; terminated for futility at interim.",
+     "sponsor_funded": true,
+     "applications": [
+      "tibial-shaft-closed"
+     ]
+    },
+    {
+     "ref": "NCT00387686",
+     "title": "A Phase 2/3 Multicenter, Controlled Trial of rhBMP-2/CPM in Tibial Fractures",
+     "year": 2006,
+     "design": "RCT",
+     "n": 367,
+     "finding": "Terminated 2009 by Wyeth senior management after interim analysis.",
+     "sponsor_funded": true,
+     "applications": [
+      "tibial-shaft-closed"
+     ]
+    },
+    {
+     "ref": "NCT00384852",
+     "title": "A Study of rhBMP-2/CPM in Closed Fractures of the Humerus",
+     "year": 2007,
+     "design": "RCT",
+     "n": 139,
+     "finding": "Completed 2010; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "humeral-shaft-fracture"
+     ]
+    },
+    {
+     "ref": "NCT00161629",
+     "title": "Study Evaluating rhBMP-2/CPM in Closed Distal Radius Fractures",
+     "year": 2005,
+     "design": "case-series",
+     "n": 40,
+     "finding": "Phase 1; completed; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "distal-radius-fracture"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable; never marketed.",
+    "notes": "The best-powered test of an injectable BMP for acute closed fractures, and it was negative; useful context when anyone pitches an injectable osteoinductive for routine fractures."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT00387686",
+    "https://clinicaltrials.gov/study/NCT00384852",
+    "https://clinicaltrials.gov/study/NCT00161629",
+    "https://clinicaltrials.gov/study/NCT00243295",
+    "https://clinicaltrials.gov/study/NCT00752557",
+    "PMID:24306695",
+    "https://www.biospace.com/b-bioventus-b-buys-exclusive-rights-to-pfizer-inc-s-bmp-portfolio"
+   ]
+  },
+  {
+   "id": "bioventus-pfizer-bmp-portfolio",
+   "name": "Bioventus BMP portfolio (next-generation BMP licensed from Pfizer, 2013) - status not disclosed",
+   "company": "Bioventus",
+   "ownership_history": "On 2013-07-01 Bioventus took an exclusive worldwide license to Pfizer's BMP development portfolio: an unnamed next-generation BMP, rights to rhBMP-2 in fields previously reserved to Pfizer, and an option on a soft-tissue BMP program; Pfizer to manufacture and supply rhBMP-2. Bioventus retained former Wyeth BMP scientists and planned a Boston lab.",
+   "category": "rhBMP",
+   "composition": "Not disclosed (next-generation BMP; rhBMP-2).",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "No IND, IDE or ClinicalTrials.gov registration located for a Bioventus BMP product (ClinicalTrials.gov search 2026-10-23).",
+    "us_market_year": null,
+    "on_label_indications": [],
+    "unverified": true
+   },
+   "status": "investigational",
+   "applications": [],
+   "evidence": [],
+   "pipeline": {
+    "stage": "preclinical",
+    "trials": [],
+    "expected_milestone": "None public; whether the program continues was not confirmed from Bioventus filings (EDGAR full-text search was blocked)."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable.",
+    "notes": "Bioventus's marketed biologics (OSTEOAMP, SIGNAFUSE, EXOGEN) are separate records; this entry only documents where Pfizer's rhBMP-2 rights went."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.biospace.com/b-bioventus-b-buys-exclusive-rights-to-pfizer-inc-s-bmp-portfolio",
+    "https://www.biocentury.com/article/154656"
+   ]
+  },
+  {
+   "id": "osteoadapt",
+   "name": "OsteoAdapt SP (spine) and OsteoAdapt DE (dental) - AMP2 ceramic-binding rhBMP-2 variant",
+   "company": "Theradaptive",
+   "ownership_history": "Theradaptive, Inc. (Frederick, MD), privately held; work supported by a Department of Defense Peer Reviewed Medical Research Program award and technology licensed from the DHA Office of Medical Technology Transfer (per the April 2026 release).",
+   "category": "rhBMP",
+   "composition": "AMP2, a modified rhBMP-2 engineered to bind a tricalcium phosphate-containing carrier, so the protein stays tethered to the graft rather than diffusing (the stated rationale against rhBMP-2 off-target effects).",
+   "regulatory": {
+    "path": "IDE-only",
+    "reference": "FDA IDE (number not public): feasibility OASIS trial in TLIF approved early 2024; expanded to ALIF and LLIF December 2024; FDA authorized the pivotal phase on 2026-04-30, with PMA named as the route to market. Company reports three FDA Breakthrough Device designations (count from secondary coverage, not the FDA list). No ClinicalTrials.gov record for the spine trial located; enrollment includes Australia and Israel. Dental: OsteoAdapt DE Phase 1/2 NCT07078331 (n=45, alveolar ridge).",
+    "us_market_year": null,
+    "on_label_indications": [],
+    "unverified": true
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No human results published; sheep lateral interbody study (43 OsteoAdapt vs 21 ICBG animals) showed fusion at 26 weeks with no systemic toxicity. About 100 patients treated in feasibility per the company; results not released.",
+     "caveats": "Preclinical and sponsor statements only; FDA IDE device, not authorized."
+    },
+    {
+     "application_id": "lumbar-alif",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Added to the IDE in December 2024; no human data published (PubMed search 2026-10-23).",
+     "caveats": "Investigational."
+    },
+    {
+     "application_id": "lumbar-lateral",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Added to the IDE in December 2024; supporting data are the ovine lateral fusion study only.",
+     "caveats": "Investigational."
+    },
+    {
+     "application_id": "cmf-sinus-ridge-augmentation",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "OsteoAdapt DE Phase 1/2 dose study in localized alveolar ridge augmentation (NCT07078331, n=45, active not recruiting, primary completion 2026-04); no results posted.",
+     "caveats": "Investigational."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:38988089",
+     "title": "In vivo assessment of AMP2, a novel ceramic-binding BMP-2, in ovine lumbar interbody fusion",
+     "year": 2024,
+     "design": "preclinical",
+     "n": 64,
+     "finding": "Both doses fused all levels by palpation at 26 weeks in sheep, comparable to ICBG; no systemic toxicity.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-lateral",
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "NCT07078331",
+     "title": "Safety and Performance, and Dose, of OsteoAdapt DE in Localized Alveolar Ridge Augmentations",
+     "year": 2025,
+     "design": "prospective-cohort",
+     "n": 45,
+     "finding": "Phase 1/2; active, not recruiting; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "cmf-sinus-ridge-augmentation"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT07078331"
+    ],
+    "expected_milestone": "Pivotal OASIS (single-level TLIF, ALIF, LLIF) authorized 2026-04-30; PMA would follow; no timeline given."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable until approved; as a PMA bone graft it would be bundled in fusion MS-DRGs unless it wins NTAP.",
+    "notes": "The most advanced US rhBMP-2 challenger besides CGBio/DePuy Synthes Novosis; watch for a partner announcement."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.biospace.com/press-releases/theradaptive-secures-fda-approval-to-advance-oasis-trial-to-pivotal-study-evaluating-osteoadapt-sp-in-spinal-fusion",
+    "https://www.biospace.com/press-releases/theradaptive-obtains-fda-ide-approval-to-study-osteoadapt-sp-in-additional-spinal-fusion-indications",
+    "https://www.biospace.com/u-s-fda-grants-theradaptive-ide-approval-for-phase-i-ii-clinical-trials",
+    "https://clinicaltrials.gov/study/NCT07078331",
+    "PMID:38988089"
+   ]
+  },
+  {
+   "id": "carmell-bha",
+   "name": "Bone Healing Accelerant (BHA; plasma-based bioactive material with beta-TCP) - development ceased",
+   "company": "Carmell Corporation",
+   "ownership_history": "Carmell Therapeutics (Pittsburgh), built on Carnegie Mellon University technology, merged with Alpha Healthcare Acquisition Corp III in 2023 (Nasdaq: CTCX), acquired Axolotl Biologix (AxoBio) and then planned its sale, and refocused on aesthetics. The FY2023 10-K says the company 'ceased clinical studies' of longer-horizon candidates, which covers BHA.",
+   "category": "other",
+   "composition": "Plasma-based bioactive material combined with beta-TCP; FDA designated BHA a combination product regulated as a biologic.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "US IND for severe open tibia fractures (number not public); FDA Fast Track designation; a BLA would be required. CMU license milestone: first BLA submission by 2026-12-31. All three registered trials were withdrawn with 0 enrolled: NCT03826784 (Phase 3), NCT04056429 (Phase 2), NCT06258499 (hindfoot/ankle arthrodesis).",
+    "us_market_year": null,
+    "on_label_indications": []
+   },
+   "status": "withdrawn",
+   "applications": [
+    {
+     "application_id": "tibial-shaft-open",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No human results located (PubMed search 2026-10-23); the 10-K refers to a Phase 2 but reports no n or outcomes, and the registered Phase 2 and Phase 3 open-tibia trials were withdrawn before enrollment.",
+     "caveats": "Efficacy claims in filings rest on preclinical work only."
+    },
+    {
+     "application_id": "ankle-arthrodesis",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Planned Phase 2 vs autograft (NCT06258499) withdrawn, never started.",
+     "caveats": "No data."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT03826784",
+     "title": "Bone Healing Accelerant Versus Standard of Care for Open Tibia Fractures",
+     "year": 2019,
+     "design": "RCT",
+     "n": 0,
+     "finding": "Withdrawn; combined into an international study that also never started.",
+     "sponsor_funded": true,
+     "applications": [
+      "tibial-shaft-open"
+     ]
+    },
+    {
+     "ref": "NCT04056429",
+     "title": "Multiregion BHA in Open Tibia Fractures",
+     "year": 2026,
+     "design": "RCT",
+     "n": 0,
+     "finding": "Withdrawn; never started, delayed until further notice.",
+     "sponsor_funded": true,
+     "applications": [
+      "tibial-shaft-open"
+     ]
+    },
+    {
+     "ref": "NCT06258499",
+     "title": "Bone Healing Accelerant vs Autologous Bone Grafting for Hindfoot or Ankle Arthrodesis",
+     "year": 2024,
+     "design": "RCT",
+     "n": 0,
+     "finding": "Withdrawn; never started.",
+     "sponsor_funded": true,
+     "applications": [
+      "ankle-arthrodesis"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable.",
+    "notes": "A SPAC-era bone-healing biologic that never enrolled a pivotal patient; a cautionary example for diligence on small-cap orthobiologics."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1842939/000095017024038992/ctcx-20231231.htm",
+    "https://clinicaltrials.gov/study/NCT03826784",
+    "https://clinicaltrials.gov/study/NCT04056429",
+    "https://clinicaltrials.gov/study/NCT06258499",
+    "https://www.orthoworld.com/fda-grants-carmell-therapeutics-expedited-review-for-bone-healing-accelerant"
+   ]
+  },
+  {
+   "id": "kur-111-fibrin-pth",
+   "name": "KUR-111 (PTH-based fibrin bone graft substitute for tibial plateau fracture) - discontinued",
+   "company": "Kuros Biosciences",
+   "ownership_history": "Kuros Biosurgery (Zurich) fibrin-PTH family (KUR-111 tibial plateau, KUR-113 open tibia and TLIF). Rights to the fibrin-PTH candidates were held by Baxter for a period and returned to Kuros (per Kuros statements in trade coverage). Kuros decided in December 2023 not to take fibrin-PTH into Phase 3 and now sells MagnetOs. The sibling KUR-113 is an existing record (kur-113-fibrin-pth). A 'KUR-112' could not be found in any source.",
+   "category": "peptide",
+   "composition": "TGplPTH1-34 (PTH 1-34 engineered with a transglutaminase substrate and plasmin-cleavable link) bound in a fibrin matrix, used as a bone graft substitute in the metaphyseal void; low and high peptide doses tested.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "Not authorized anywhere. The tibial plateau trial ran in Europe (Leeds, Munster and other centers); registry number not given in the abstract and no US IND located.",
+    "us_market_year": null,
+    "on_label_indications": [],
+    "unverified": true
+   },
+   "status": "withdrawn",
+   "applications": [
+    {
+     "application_id": "tibial-plateau",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Kanakaris 2026 randomized, open-label, dose-blinded multicenter trial (n=183 closed tibial plateau fractures; iliac crest autograft vs KUR-111 low vs high dose): KUR-111 high was non-inferior to autograft for CT union at 16 weeks and better than low dose (83.6% vs 66.1%, p=0.03); loss of reduction 0.4-0.9 mm in all arms; donor-site pain 61.8% at discharge in the autograft arm.",
+     "caveats": "Sponsor-authored (Kuros employee co-author), open-label, surrogate CT endpoint; published years after the program was shelved, so no product will follow."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:41533170",
+     "title": "Novel parathyroid hormone-based bone graft substitute, KUR-111, in treatment of tibial plateau fractures: a prospective, randomised, open-label, multicenter study",
+     "year": 2026,
+     "design": "RCT",
+     "n": 183,
+     "finding": "High-dose KUR-111 non-inferior to autograft for 16-week CT union and superior to low dose (83.6% vs 66.1%).",
+     "sponsor_funded": true,
+     "applications": [
+      "tibial-plateau"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable.",
+    "notes": "Historical; shows a local PTH approach that matched autograft in plateau voids but was dropped for commercial reasons."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "PMID:41533170",
+    "https://www.biospace.com/kuros-biosciences-announces-results-from-two-prospective-randomized-clinical-trials-structure-and-maxa",
+    "https://ryortho.com/?p=32599"
+   ]
+  },
+  {
+   "id": "rhfgf2-trafermin-fracture",
+   "name": "rhFGF-2 (trafermin) gelatin hydrogel for fracture healing - Japanese program, not approved for fracture",
+   "company": "Kaken Pharmaceutical",
+   "ownership_history": "Trafermin (recombinant human basic FGF) is Kaken Pharmaceutical's molecule (marketed in Japan for other uses: Fiblast skin-ulcer spray; Regroth for periodontal regeneration, per general knowledge, unverified here). The tibial fracture RCT was run by the TESK Group led by the University of Tokyo; Kaken sponsorship of the fracture trials was not confirmed.",
+   "category": "other",
+   "composition": "rhFGF-2 (0.8 or 2.4 mg) in a gelatin hydrogel injected into the fracture gap after IM nailing; a separate Japanese series mixed rhFGF-2 with beta-TCP granules and hyaluronate as an injectable paste.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "Not approved for fracture in Japan or the US; no US IND or ClinicalTrials.gov fracture trial located (search 2026-10-23).",
+    "us_market_year": null,
+    "on_label_indications": [],
+    "unverified": true
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "tibial-shaft-closed",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Kawaguchi 2010 double-blind placebo-controlled RCT (70 completers; 24 placebo, 23 low, 23 high dose): faster cumulative radiographic union with rhFGF-2 (p=.031 low, p=.009 high vs placebo); delayed union at 24 weeks in 4, 1 and 0 patients.",
+     "caveats": "Small trial (85 eligible of 194 screened), radiographic surrogate endpoint, no secondary interventions in any arm; not replicated and no approval followed."
+    },
+    {
+     "application_id": "intertrochanteric-fracture",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "Tanaka 2012 case series (n=25, AO 31.A2, ages 76-91): rhFGF-2/beta-TCP/hyaluronate paste with IM nail; all fractures united and the lesser trochanter united in 24 of 25 by 12 weeks.",
+     "caveats": "No control group; single center."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:20533373",
+     "title": "A local application of recombinant human fibroblast growth factor 2 for tibial shaft fractures: a randomized, placebo-controlled trial",
+     "year": 2010,
+     "design": "RCT",
+     "n": 70,
+     "finding": "rhFGF-2 groups reached radiographic union sooner than placebo; no dose response between 0.8 and 2.4 mg.",
+     "sponsor_funded": null,
+     "applications": [
+      "tibial-shaft-closed"
+     ]
+    },
+    {
+     "ref": "PMID:17205557",
+     "title": "Local application of rhFGF-2 on bone repair: a dose-escalation prospective trial on patients with osteotomy",
+     "year": 2007,
+     "design": "case-series",
+     "n": null,
+     "finding": "Dose-escalation safety study preceding the tibial RCT.",
+     "sponsor_funded": null,
+     "applications": []
+    },
+    {
+     "ref": "PMID:23115598",
+     "title": "Use of an injectable complex of beta-TCP granules, hyaluronate, and FGF-2 on repair of unstable intertrochanteric fractures",
+     "year": 2012,
+     "design": "case-series",
+     "n": 25,
+     "finding": "All 25 unions; marked new bone around the lesser trochanter; uncontrolled.",
+     "sponsor_funded": null,
+     "applications": [
+      "intertrochanteric-fracture"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable.",
+    "notes": "Ex-US historical program; the only growth factor besides BMP and PDGF with a positive fracture RCT."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "PMID:20533373",
+    "PMID:23115598",
+    "PMID:17205557",
+    "https://go.drugbank.com/drugs/DB06244"
+   ]
+  },
+  {
+   "id": "chrysalin-tp508",
+   "name": "Chrysalin (TP508, rusalatide acetate) for fracture healing - failed",
+   "company": "Capstone Therapeutics",
+   "ownership_history": "Developed by OrthoLogic Corp., which later renamed itself Capstone Therapeutics (the current ClinicalTrials.gov sponsor name). OrthoLogic obtained TP508 by acquiring Chrysalis BioTechnology (year not confirmed).",
+   "category": "peptide",
+   "composition": "TP508, a 23-amino-acid synthetic peptide from the receptor-binding region of human thrombin, injected once into the fracture site.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "US IND (number not public). Distal radius Phase 2 NCT00131482 (n=274) terminated 2007: 'Treatment with Chrysalin did not demonstrate benefit compared to placebo.'",
+    "us_market_year": null,
+    "on_label_indications": []
+   },
+   "status": "withdrawn",
+   "applications": [
+    {
+     "application_id": "distal-radius-fracture",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Placebo-controlled dose-ranging trial in unstable distal radius fractures (NCT00131482, n=274) stopped in 2007 for lack of benefit; full results were not published in a journal (PubMed search 2026-10-23), so the registry statement is the only outcome.",
+     "caveats": "Grade I by design only; the result exists as a one-line registry statement, and earlier positive Phase 1/2 signals were never peer-reviewed.",
+     "challenge": "Do not cite TP508 as a fracture-healing option; it failed its only adequately sized trial."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT00131482",
+     "title": "A Study to Evaluate the Safety and Effectiveness of Different Doses of Chrysalin in Adults Who Have a Broken Wrist",
+     "year": 2004,
+     "design": "RCT",
+     "n": 274,
+     "finding": "Terminated: no benefit vs placebo.",
+     "sponsor_funded": true,
+     "applications": [
+      "distal-radius-fracture"
+     ]
+    },
+    {
+     "ref": "PMID:17079379",
+     "title": "Thrombin peptide TP508 stimulates cellular events leading to angiogenesis, revascularization, and repair of dermal and musculoskeletal tissues",
+     "year": 2006,
+     "design": "preclinical",
+     "n": null,
+     "finding": "Mechanism review of animal and cell data.",
+     "sponsor_funded": null,
+     "applications": []
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable.",
+    "notes": "Historical failure; TP508 was later studied as a radiation countermeasure, outside orthopedics."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT00131482",
+    "PMID:17079379",
+    "PMID:18803458"
+   ]
+  },
+  {
+   "id": "rhgdf5-intradiscal",
+   "name": "Intradiscal rhGDF-5 for early lumbar disc degeneration - not advanced past Phase 2",
+   "company": "DePuy Synthes (Johnson & Johnson)",
+   "ownership_history": "Sponsor of record DePuy Spine (now DePuy Synthes). rhGDF-5 (also called BMP-14 / MP52) is a BMP-family growth factor; its origin at Biopharm GmbH (Heidelberg) is from general knowledge and was not confirmed in a source read.",
+   "category": "other",
+   "composition": "Recombinant human growth and differentiation factor-5 (a BMP-family protein) given as a single intradiscal injection; two doses tested.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "US IND (number not public). Four DePuy Spine trials, all completed with results posted on ClinicalTrials.gov: NCT00813813 (Phase 1/2, n=32), NCT01124006 (Phase 2 randomized placebo-controlled, n=24), NCT01182337 (Phase 1/2, n=31), NCT01158924 (Phase 1/2, n=40). No Phase 3 registered.",
+    "us_market_year": null,
+    "on_label_indications": []
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "ddd-intradiscal",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Largest controlled study is NCT01124006 (randomized, double-blind, placebo-controlled, n=24, two doses); the primary outcome was neurological safety at 12 months with ODI and VAS as secondary measures. Results are posted only on ClinicalTrials.gov; no peer-reviewed publication located (PubMed search 2026-10-23).",
+     "caveats": "Grade I by design only: n=24, safety-primary, sponsor-only registry results. No later-phase trial was registered, which suggests the program was dropped (not confirmed by J&J)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT01124006",
+     "title": "Randomized, double-blind, placebo-controlled trial of 2 doses of intradiscal rhGDF-5 for early-stage lumbar disc degeneration",
+     "year": 2010,
+     "design": "RCT",
+     "n": 24,
+     "finding": "Completed 2014; results posted on ClinicalTrials.gov (safety primary); no publication.",
+     "sponsor_funded": true,
+     "applications": [
+      "ddd-intradiscal"
+     ]
+    },
+    {
+     "ref": "NCT00813813",
+     "title": "Intradiscal rhGDF-5 Phase I/II Clinical Trial",
+     "year": 2008,
+     "design": "case-series",
+     "n": 32,
+     "finding": "Completed 2013; results posted; no publication.",
+     "sponsor_funded": true,
+     "applications": [
+      "ddd-intradiscal"
+     ]
+    },
+    {
+     "ref": "NCT01158924",
+     "title": "Single administration intradiscal rhGDF-5 for early-stage lumbar disc degeneration",
+     "year": 2010,
+     "design": "case-series",
+     "n": 40,
+     "finding": "Completed 2014; results posted; no publication.",
+     "sponsor_funded": true,
+     "applications": [
+      "ddd-intradiscal"
+     ]
+    },
+    {
+     "ref": "NCT01182337",
+     "title": "Single administration intradiscal rhGDF-5 for early-stage lumbar disc degeneration",
+     "year": 2010,
+     "design": "case-series",
+     "n": 31,
+     "finding": "Completed 2014; results posted; no publication.",
+     "sponsor_funded": true,
+     "applications": [
+      "ddd-intradiscal"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT01124006",
+     "NCT00813813",
+     "NCT01158924",
+     "NCT01182337"
+    ],
+    "expected_milestone": "None; no activity registered since 2014."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable.",
+    "notes": "A big-strategic intradiscal biologic that went quiet after Phase 2; relevant precedent for Mesoblast and DiscGenics."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT01124006",
+    "https://clinicaltrials.gov/study/NCT00813813",
+    "https://clinicaltrials.gov/study/NCT01158924",
+    "https://clinicaltrials.gov/study/NCT01182337"
+   ]
+  },
+  {
+   "id": "neofuse-mpc",
+   "name": "NeoFuse (allogeneic mesenchymal precursor cells) for spinal fusion - no Phase 3",
+   "company": "Mesoblast",
+   "ownership_history": "Mesoblast Ltd (Melbourne; Nasdaq/ASX: MESO). Same STRO-3+ MPC platform as rexlemestrocel-L (existing disc record).",
+   "category": "MSC",
+   "composition": "Allogeneic STRO-3-selected mesenchymal precursor cells (25 or 75 million per level), loaded on MasterGraft granules in the posterolateral study; carrier for the interbody and cervical studies not stated in the registry titles.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "US IND (number not public). NCT00996073 (lumbar interbody, Phase 2, n=24), NCT00549913 (PLF with MasterGraft, Phase 1/2, n=6), NCT00810212 (PLF, withdrawn), NCT01097486 (multilevel ACDF, Phase 2, n=24), NCT01106417 (multilevel ACDF, Phase 1/2, n=12). In January 2013 Mesoblast said the interbody data supported a Phase 3; none is registered.",
+    "us_market_year": null,
+    "on_label_indications": []
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Phase 2 randomized trial (NCT00996073, n=24, 8 per arm, posterior interbody approach): 12-month fusion 85.7% with 25M MPC vs 62.5% with 75M and 75% with autograft, no cell-related serious adverse events, per the company's January 2013 release; never published (PubMed search 2026-10-23).",
+     "caveats": "Grade I by design only: 8 patients per arm, sponsor press release, no dose response (higher dose did worse), no publication."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Two multilevel ACDF studies (NCT01097486 n=24; NCT01106417 n=12) completed 2012-2013 with no results posted or published; supporting data are ovine cervical fusion studies.",
+     "caveats": "No human data available."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Six-patient dose study with MasterGraft (NCT00549913) completed 2013; no results posted.",
+     "caveats": "No human data available."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT00996073",
+     "title": "Safety and Preliminary Efficacy Study of NeoFuse in Subjects Requiring Lumbar Interbody Fusion",
+     "year": 2009,
+     "design": "RCT",
+     "n": 24,
+     "finding": "Completed; sponsor-reported 12-month fusion 85.7% (25M) vs 62.5% (75M) vs 75% (autograft); no registry results.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "NCT01097486",
+     "title": "Safety and Preliminary Efficacy Study of NeoFuse in Multi-Level ACDF",
+     "year": 2010,
+     "design": "RCT",
+     "n": 24,
+     "finding": "Completed 2013; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "cervical-acdf"
+     ]
+    },
+    {
+     "ref": "PMID:21192297",
+     "title": "Cervical interbody fusion is enhanced by allogeneic mesenchymal precursor cells in an ovine model",
+     "year": 2011,
+     "design": "preclinical",
+     "n": null,
+     "finding": "Ovine model supporting the ACDF program.",
+     "sponsor_funded": true,
+     "applications": [
+      "cervical-acdf"
+     ]
+    },
+    {
+     "ref": "PMID:24438940",
+     "title": "Allogeneic mesenchymal progenitor cells for posterolateral lumbar spine fusion in sheep",
+     "year": 2014,
+     "design": "preclinical",
+     "n": null,
+     "finding": "Ovine PLF model.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT00996073",
+     "NCT01097486",
+     "NCT01106417",
+     "NCT00549913"
+    ],
+    "expected_milestone": "No Phase 3 registered on ClinicalTrials.gov (search 2026-10-23); the program appears inactive but Mesoblast has not been confirmed to have discontinued it.",
+    "unverified": true
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable.",
+    "notes": "Allogeneic cells as a fusion graft remain unlicensed; this is the most-cited industry attempt and it never reached a pivotal trial."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT00996073",
+    "https://clinicaltrials.gov/study/NCT01097486",
+    "https://clinicaltrials.gov/study/NCT01106417",
+    "https://clinicaltrials.gov/study/NCT00549913",
+    "https://clinicaltrials.gov/study/NCT00810212",
+    "https://www.beckersspine.com/?p=10235",
+    "https://ryortho.com/2013/01/mesoblast-tees-up-phase-3-stem-cell-spine-test/"
+   ]
+  },
+  {
+   "id": "preob",
+   "name": "PREOB (autologous osteoblastic cells) for osteonecrosis and nonunion - failed",
+   "company": "BioSenic (formerly Bone Therapeutics)",
+   "ownership_history": "Bone Therapeutics (Gosselies, Belgium) developed PREOB from Erasme University Hospital (Brussels) work; the DSMB stopped the Phase 3 for futility on 2018-11-06 and the company moved to its allogeneic ALLOB platform (existing record allob); Bone Therapeutics became BioSenic in 2022.",
+   "category": "MSC",
+   "composition": "Autologous bone-marrow-derived, culture-expanded osteoblastic cells (about 20 million in the Phase 3) implanted into the core-decompression track or nonunion site.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "Never authorized; developed as an EU advanced-therapy product (Belgium). No US IND located. Phase 3 NCT01529008 terminated for futility; nonunion Phase 2/3 NCT01756326 terminated 2017 (n=5) to focus on the allogeneic platform.",
+    "us_market_year": null,
+    "on_label_indications": []
+   },
+   "status": "withdrawn",
+   "applications": [
+    {
+     "application_id": "femoral-head-osteonecrosis-core-decompression",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Jayankura 2023 Phase 3 double-blind RCT (NCT01529008): composite response at 24 months 61% (14/23) with PREOB plus core decompression vs 69% (18/26) with core decompression plus placebo (p=0.54); THA 24% vs 14%. The earlier single-center RCT vs BMAC (Hauzeur 2020, n=56 hips) also found no benefit.",
+     "caveats": "Sponsor-run and sponsor-authored Phase 3, stopped early for futility so the final analysis is small; negative on its primary endpoint.",
+     "challenge": "Negative Level I evidence: cultured osteoblasts added nothing to core decompression; do not cite PREOB as support for cell augmentation of AVN."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Nonunion Phase 2/3 (NCT01756326) terminated after 5 patients; an academic Phase 1/2 in atrophic nonunion (NCT00916981, n=30) has no results posted. Only a 2010 review of the group's early series located (PubMed search 2026-10-23).",
+     "caveats": "No comparative data published."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:36961220",
+     "title": "Does adjunction of autologous osteoblastic cells improve the results of core decompression in early-stage femoral head osteonecrosis? A double-blind, randomized trial",
+     "year": 2023,
+     "design": "RCT",
+     "n": 68,
+     "finding": "No difference in 24-month composite response (61% vs 69%, p=0.54) or THA rate; no treatment-related serious adverse events. n is registry enrollment.",
+     "sponsor_funded": true,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    },
+    {
+     "ref": "PMID:31899739",
+     "title": "Did osteoblastic cell therapy improve the prognosis of pre-fracture osteonecrosis of the femoral head? A randomized, controlled trial",
+     "year": 2020,
+     "design": "RCT",
+     "n": 56,
+     "finding": "Osteoblastic cells vs BMAC with core decompression: progression to collapse 22% vs 46% (HR 0.47, p=0.15), THA 15% vs 35% (p=0.09); no significant differences at 36 months.",
+     "sponsor_funded": false,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    },
+    {
+     "ref": "NCT01529008",
+     "title": "Autologous Osteoblastic Cells Implantation to Early Stage Osteonecrosis of the Femoral Head (Phase 3)",
+     "year": 2011,
+     "design": "RCT",
+     "n": 68,
+     "finding": "Terminated: interim analysis unlikely to meet the primary objective; results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    },
+    {
+     "ref": "NCT01756326",
+     "title": "Autologous Osteoblastic Cells Implantation in Hypotrophic Non-Union Fractures (Phase 2/3)",
+     "year": 2012,
+     "design": "RCT",
+     "n": 5,
+     "finding": "Terminated 2018 to focus on the allogeneic platform.",
+     "sponsor_funded": true,
+     "applications": [
+      "general-long-bone-nonunion"
+     ]
+    },
+    {
+     "ref": "PMID:21048847",
+     "title": "Phases 1-3 clinical trials using adult stem cells in osteonecrosis and nonunion fractures",
+     "year": 2010,
+     "design": "case-series",
+     "n": null,
+     "finding": "Review of the Erasme group's early osteonecrosis and nonunion cell studies.",
+     "sponsor_funded": false,
+     "applications": [
+      "general-long-bone-nonunion",
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable.",
+    "notes": "Historical; the clearest negative RCT for cultured cells in AVN, useful against clinic claims."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT01529008",
+    "https://clinicaltrials.gov/study/NCT01756326",
+    "https://clinicaltrials.gov/study/NCT00916981",
+    "https://vfb.be/Media/Default/archief_pers/Bone%20Therapeutics/Bone%20Therapeutics%20announces%20conclusions%20from%20interim%20analysis%20of%20Phase%20III%20PREOB%20study%20in%20hip%20osteonecrosis%20(6.11.2018).pdf",
+    "https://www.fiercebiotech.com/biotech/bone-therapeutics-halts-phase-3-for-futility-sinking-stock",
+    "PMID:36961220",
+    "PMID:31899739"
+   ]
+  },
+  {
+   "id": "plx-pad-hip-fracture",
+   "name": "PLX-PAD (placental expanded stromal cells) for recovery after hip fracture arthroplasty - Phase 3 missed primary endpoint",
+   "company": "Pluri",
+   "ownership_history": "Pluristem Therapeutics (Haifa, Israel; Nasdaq: PLUR) renamed itself Pluri Inc. in 2022. HIPGEN was funded in part by the EU Horizon 2020 program (CORDIS project 779293) with Charite Berlin as a lead academic partner.",
+   "category": "MSC",
+   "composition": "Allogeneic placenta-derived mesenchymal-like adherent stromal cells (PLX-PAD) injected into the gluteal muscles during arthroplasty for hip fracture; targets muscle recovery, not bone healing.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "US IND (number not public; the trial enrolled in the US, Europe and Israel); EU CT 2017-005165-49; NCT03451916. Not licensed for any indication.",
+    "us_market_year": null,
+    "on_label_indications": []
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "femoral-neck-fracture",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "HIPGEN Phase 3 double-blind RCT (n=240, NCT03451916): primary endpoint SPPB at week 26 not met (6.873 PLX-PAD vs 7.039 placebo, per the EU/UK registry summary); sponsor reported a secondary-endpoint gain in hip abduction strength (p=0.047 at week 26, p=0.0022 at week 52, injured leg). No peer-reviewed results paper located (PubMed search 2026-10-23).",
+     "caveats": "Failed primary endpoint; the positive result is a sponsor-highlighted secondary endpoint; results only in registries and a press release. Muscle-recovery adjunct, not a bone biologic.",
+     "challenge": "Pluri still features the strength result; the trial was negative on its prespecified primary endpoint."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT03451916",
+     "title": "Treatment of Muscle Injury Following Arthroplasty for Hip Fracture (HIPGEN)",
+     "year": 2018,
+     "design": "RCT",
+     "n": 240,
+     "finding": "Completed 2022; primary SPPB endpoint not met; secondary hip abduction strength better with PLX-PAD per sponsor.",
+     "sponsor_funded": true,
+     "applications": [
+      "femoral-neck-fracture"
+     ]
+    },
+    {
+     "ref": "PMID:35451865",
+     "title": "HIPGEN: a randomized, multicentre phase III study using intramuscular placenta-expanded stromal cells therapy for recovery following hip fracture arthroplasty: a study design",
+     "year": 2022,
+     "design": "RCT",
+     "n": 240,
+     "finding": "Design paper: SPPB at week 26 primary; 240 patients for 88% power to detect a 1-point SPPB difference.",
+     "sponsor_funded": true,
+     "applications": [
+      "femoral-neck-fracture"
+     ]
+    },
+    {
+     "ref": "PMID:30230266",
+     "title": "Immunomodulatory placental-expanded, mesenchymal stromal cells improve muscle function following hip arthroplasty",
+     "year": 2018,
+     "design": "RCT",
+     "n": 20,
+     "finding": "Phase 1/2a in elective THA: low dose improved gluteus medius strength vs placebo at week 26 (p=0.007); no relevant cell-related adverse events.",
+     "sponsor_funded": true,
+     "applications": []
+    }
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT03451916"
+    ],
+    "expected_milestone": "No follow-on orthopedic trial registered (ClinicalTrials.gov search 2026-10-23); stage set to phase-2 because the schema has no 'failed phase 3' value.",
+    "unverified": true
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable.",
+    "notes": "Example of a large, well-run cell trial in hip fracture that missed; relevant when a cell company pitches 'regeneration' in geriatric trauma."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT03451916",
+    "https://www.hra.nhs.uk/planning-and-improving-research/application-summaries/research-summaries/plx-hf-01_ph3-imp-plx-pad-in-patients-with-hip-fracture/",
+    "https://www.clinicaltrialsregister.eu/ctr-search/trial/2017-005165-49/results",
+    "https://www.biopharmawatch.com/news/PLUR/pluristem-reports-topline-results-from-its-phase-iii-study-of-muscle-regeneration-followin-plur-20220713",
+    "https://cordis.europa.eu/project/id/779293/reporting/it",
+    "PMID:35451865",
+    "PMID:30230266"
+   ]
+  },
+  {
+   "id": "cartistem",
+   "name": "CARTISTEM (allogeneic umbilical cord blood-derived MSCs with hyaluronate hydrogel)",
+   "company": "Medipost",
+   "ownership_history": "Medipost Co., Ltd. (Korea); US trials run by Medipost, Inc. Approved in Korea (MFDS) for cartilage defects (approval year 2012 is from general knowledge, unverified); Phase 3 completed in Japan per the company. Cartilage is primarily another slice's scope; recorded here because the brief asked and it was not in existing-products.txt.",
+   "category": "MSC",
+   "composition": "Allogeneic human umbilical cord blood-derived mesenchymal stem cells mixed with 4% sodium hyaluronate hydrogel, implanted into drilled holes in the cartilage defect through a mini-arthrotomy.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "US IND (number not public). FDA agreed in June 2026 (per Medipost release) that a single US pivotal Phase 3 plus Korean and Japanese Phase 3 data and Korean real-world evidence could support a BLA. US Phase 3 NCT07339111 (n=300, recruiting since 2026-03-11, primary completion 2029-06-30); first US patient treated July 2026. Earlier US Phase 1/2 NCT01733186 (n=12, results posted). Korean MFDS approval not verified from an MFDS record.",
+    "us_market_year": null,
+    "on_label_indications": [],
+    "unverified": true
+   },
+   "status": "investigational",
+   "challenge": "Licensed in Korea but not in the US; in the US it is an investigational 351 biologic and cannot be offered outside the IND.",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Lim 2021 Korean Phase 3 RCT vs microfracture (n=114 randomized, 89 completed; mean age 55.9): at least 1-grade ICRS improvement at 48-week second-look arthroscopy 97.7% vs 71.7% (p=.001), better histology; VAS, WOMAC and IKDC not different at 48 weeks, better at 3-5 years in the 73-patient extension.",
+     "caveats": "Sponsor-run; blinded arthroscopic grading is a structural surrogate; clinical scores did not differ at the primary time point; extension lost 35% of the cohort."
+    },
+    {
+     "application_id": "osteochondral-lesion-talus",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Korean Phase 3 in osteochondral lesion of the talus (NCT04310215, n=102, sponsor Hyundai Bioland, completed 2022) has no results posted or published (PubMed search 2026-10-23).",
+     "caveats": "Unpublished."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:33490296",
+     "title": "Allogeneic umbilical cord blood-derived MSC implantation versus microfracture for large, full-thickness cartilage defects in older patients: a multicenter RCT and extended 5-year follow-up",
+     "year": 2021,
+     "design": "RCT",
+     "n": 114,
+     "finding": "ICRS improvement 97.7% vs 71.7% at 48 weeks; clinical scores similar at 48 weeks and better at 3-5 years.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:28191757",
+     "title": "Cartilage regeneration in osteoarthritic patients by a composite of allogeneic UCB-MSCs and hyaluronate hydrogel: results from a clinical trial for safety and proof-of-concept with 7 years of extended follow-up",
+     "year": 2017,
+     "design": "case-series",
+     "n": 7,
+     "finding": "Seven patients; hyaline-like repair at 1 year, stable scores over 7 years, no tumorigenesis.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT07339111",
+     "title": "Phase 3 Pivotal Trial Comparing CARTISTEM and Surgical Comparator for Knee Cartilage Lesions and Osteoarthritis",
+     "year": 2026,
+     "design": "RCT",
+     "n": 300,
+     "finding": "Recruiting; US pivotal for a BLA.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT01733186",
+     "title": "Evaluation of Safety and Exploratory Efficacy of CARTISTEM for Articular Cartilage Defects (US Phase 1/2)",
+     "year": 2013,
+     "design": "case-series",
+     "n": 12,
+     "finding": "Completed 2017; results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT04310215",
+     "title": "Efficacy and Safety of CARTISTEM for Osteochondral Lesion of Talus (Phase 3)",
+     "year": 2020,
+     "design": "RCT",
+     "n": 102,
+     "finding": "Completed 2022; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "osteochondral-lesion-talus"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT07339111"
+    ],
+    "expected_milestone": "US primary completion estimated 2029-06-30, then BLA (company)."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable in the US.",
+    "notes": "Would compete with MACI and osteochondral allograft if licensed; first allogeneic off-the-shelf cell product to reach a US cartilage pivotal."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT07339111",
+    "https://clinicaltrials.gov/study/NCT01733186",
+    "https://clinicaltrials.gov/study/NCT04310215",
+    "https://www.aap.com.au/aapreleases/cision20260603ae75898/",
+    "https://www.biospectrumasia.com/news/96/28018/medipost-treats-first-us-participant-in-phase-iii-stem-cell-therapy-trial.html",
+    "PMID:33490296",
+    "PMID:28191757"
+   ]
+  },
+  {
+   "id": "jointstem",
+   "name": "JointStem (autologous adipose-derived MSCs, intra-articular, knee OA)",
+   "company": "Nature Cell",
+   "ownership_history": "Nature Cell Co., Ltd. (Korea) with affiliate R-Bio (sponsor of the Korean trials). Korea's MFDS rejected the product license in April 2023 and again after the Korean Phase 3 (reported in Korean press); FDA granted RMAT (October 2024) and Breakthrough Therapy designation (March 2025), per company releases. Out of the bone scope; knee OA injection, recorded because the brief asked and flagged for the cartilage/injection slice.",
+   "category": "MSC",
+   "composition": "Autologous adipose-derived mesenchymal stem cells, culture-expanded, single intra-articular injection.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "US IND (number not public). US Phase 2b/3a NCT04368806 (Nature Cell, n=173, active not recruiting, primary completion 2027-08-06). Company says it sought a pre-BLA meeting in 2026 on the strength of the Korean Phase 3; FDA position on that request not public. RMAT and Breakthrough designations are from company releases, not an FDA list.",
+    "us_market_year": null,
+    "on_label_indications": [],
+    "unverified": true
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Kim 2023 Korean Phase 3 double-blind placebo-controlled RCT (261 K-L grade 3 patients; 125 vs 127 analyzed; matches NCT03990805): 6-month VAS improvement 25.2 vs 15.5 mm (p=.004) and WOMAC 21.7 vs 14.3 (p=.002) favored ADMSC.",
+     "caveats": "Six-month primary endpoint; the paper does not name the product (attribution via the R-Bio registry record); Korea's regulator judged the effect not clinically meaningful and refused approval.",
+     "challenge": "Positive p-values but a regulator rejection on clinical meaningfulness; cite both."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:37345256",
+     "title": "Clinical efficacy and safety of the intra-articular injection of autologous adipose-derived MSCs for knee osteoarthritis: a Phase III, randomized, double-blind, placebo-controlled trial",
+     "year": 2023,
+     "design": "RCT",
+     "n": 261,
+     "finding": "VAS and WOMAC improved more than placebo at 6 months.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT03990805",
+     "title": "A Phase 3 Study to Evaluate the Efficacy and Safety of JointStem in Treatment of Osteoarthritis (Korea)",
+     "year": 2019,
+     "design": "RCT",
+     "n": 260,
+     "finding": "Completed 2020.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT04368806",
+     "title": "A Phase 2b/3a Study to Evaluate the Efficacy and Safety of JointStem in Patients Diagnosed as Knee Osteoarthritis (US)",
+     "year": 2021,
+     "design": "RCT",
+     "n": 173,
+     "finding": "Active, not recruiting; primary completion 2027-08.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT02674399",
+     "title": "A Phase 2 Study to Evaluate the Efficacy and Safety of JointStem in Treatment of Osteoarthritis",
+     "year": 2016,
+     "design": "RCT",
+     "n": 28,
+     "finding": "Completed 2018; results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT04368806"
+    ],
+    "expected_milestone": "US Phase 2b/3a primary completion 2027-08; company is pressing for a BLA path."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable in the US.",
+    "notes": "Autologous culture-expanded MSCs are exactly what US clinics sell without an IND; JointStem is the regulated version of that product."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT04368806",
+    "https://clinicaltrials.gov/study/NCT03990805",
+    "https://clinicaltrials.gov/study/NCT02674399",
+    "https://en.edaily.co.kr/news/eda202608115049",
+    "https://www.accessnewswire.com/newsroom/en/biotechnology/nature-cell%E2%80%99s-jointstem-becomes-the-first-korean-company-to-acquire-breakthrough-ther-1003919",
+    "PMID:37345256"
+   ]
+  },
+  {
+   "id": "autologous-msc-clinics-class",
+   "name": "Autologous 'stem cell' clinic treatments (culture-expanded MSCs and adipose SVF) for orthopedic conditions - class record",
+   "company": "Numerous clinics and clinic networks (FDA actions name Regenerative Sciences, US Stem Cell Clinic, California Stem Cell Treatment Center / Cell Surgical Network, Celltex Therapeutics)",
+   "ownership_history": "Not a product family; a class of practice. Point-of-care BMAC concentrated in the same procedure is a separate record (bmac); umbilical-cord, exosome and amniotic products are separate class records.",
+   "category": "MSC",
+   "composition": "The patient's own adipose stromal vascular fraction or bone-marrow/adipose MSCs, often culture-expanded off-site, injected into joints, discs, tendons or nonunions.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "351 HCT/Ps (more than minimally manipulated and/or non-homologous) that need an IND to study and a BLA to sell; none is licensed for any orthopedic indication. Courts have sided with FDA: US v. Regenerative Sciences (D.C. Cir. 2014; cultured autologous MSCs for orthopedic use are drugs/biologics), US v. US Stem Cell Clinic (11th Cir. 2021; SVF), and US v. California Stem Cell Treatment Center / Cell Surgical Network (9th Cir. 2024-09-27, reversing the district court; rehearing denied 2024-12-20; cert petition 24-1189 filed 2025-05-19, disposition not confirmed). FDA warning letter to Celltex dated 2012-09-24 (unlicensed biologic, more than minimally manipulated, CGMP failures). Celltex now registers trials under IND, e.g., knee OA Phase 2 NCT04448106 (status unknown). The 2014 and 2021 appellate citations were not read from primary court documents in this sweep.",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None. Not a choice outside an FDA-cleared IND."
+    ],
+    "unverified": true
+   },
+   "status": "investigational",
+   "challenge": "A rep or distributor who supplies, labels or promotes these services can be treated as a manufacturer; the appellate record is uniformly in FDA's favor.",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No controlled trial of any clinic's own product located; the regulated analog (JointStem, separate record) has a Korean Phase 3. Celltex's IND trial NCT04448106 (n=300 planned) has posted no results.",
+     "caveats": "Clinic marketing claims are not evidence; outcomes are self-reported and unaudited."
+    },
+    {
+     "application_id": "ddd-intradiscal",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No product-specific controlled study located for clinic-prepared cells (PubMed search 2026-10-23); the regulated disc programs are rexlemestrocel-L and IDCT (existing records).",
+     "caveats": "Unlicensed."
+    },
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No product-specific controlled study located for clinic-prepared cells.",
+     "caveats": "Unlicensed."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No product-specific controlled study located; FDA's position is that culture-expanded cells for nonunion require an IND.",
+     "caveats": "Unlicensed."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT04448106",
+     "title": "Autologous Adipose Tissue-Derived Mesenchymal Stem Cells (AdMSCs) for Osteoarthritis (Celltex, Phase 2)",
+     "year": 2023,
+     "design": "RCT",
+     "n": 300,
+     "finding": "Registry status unknown; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not covered; cash-pay.",
+    "notes": "Compliance red flag. Hiring managers will ask how a rep separates legitimate same-day BMAC (device-processed, 361 exception debates aside) from culture-expanded cells and SVF."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.fiercepharma.com/regulatory/updated-fda-warns-stem-cell-outfit-celltex-about-gmp-no-nos",
+    "https://ipscell.com/2012/10/fda-to-celltex-in-new-letter-your-product-is-a-drug-was-this-a-warning-letter/",
+    "https://www.cooley.com/news/insight/2024/2024-10-31-ninth-circuit-confirms-certain-stem-cell-products-require-fda-premarket-approval",
+    "https://www.ropesgray.com/en/insights/alerts/2024/12/stem-cell-litigation-update-fda-won-the-latest-battle-but-the-future-of-hct-p-enforcement",
+    "https://www.supremecourt.gov/docket/docketfiles/html/public/24-1189.html",
+    "https://clinicaltrials.gov/study/NCT04448106"
+   ]
+  },
+  {
+   "id": "guyoudao-rhbmp2-china",
+   "name": "Gu You Dao rhBMP-2 bone repair material (China; plus other NMPA-registered Chinese rhBMP-2 products) - not US-marketed",
+   "company": "Hangzhou Jiuyuan Gene Engineering",
+   "ownership_history": "Hangzhou Jiuyuan Gene Engineering Co. listed on the Hong Kong Stock Exchange main board on 2024-11-28 (2566.HK); listing coverage describes Gu You Dao as China's first rhBMP-2 bone repair material and the top-selling bone repair material in China by 2023 revenue (a company/prospectus claim, not independently verified). Shanghai Rebone Biomaterials holds a US patent on E. coli rhBMP-2 production (US7947821), but no Rebone-branded finished product or NMPA registration was confirmed.",
+   "category": "rhBMP",
+   "composition": "rhBMP-2 on a bone repair carrier; carrier, dose and expression system not confirmed from a primary source.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "No FDA submission. NMPA (China) registration claimed in company materials; registration number, year and labeled indications not verified (NMPA database not accessed).",
+    "us_market_year": null,
+    "on_label_indications": [],
+    "unverified": true
+   },
+   "status": "investigational",
+   "challenge": "Established in China by company account, but has no US status; cannot be imported for clinical use outside an IDE. Novosis (Korea) is the separate record for CGBio/Daewoong.",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No study naming Gu You Dao located (PubMed search 2026-10-23). Chinese rhBMP-2 interbody data exist without product attribution, e.g., Chen 2024 randomized PE-PLIF study (n=102): 12-month fusion 86.3% rhBMP-2 vs 54.9% autograft, product not named.",
+     "caveats": "Product attribution missing; single-center Chinese data; 54.9% autograft fusion at 12 months is unusually low."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:39593144",
+     "title": "Application of rhBMP-2 in percutaneous endoscopic posterior lumbar interbody fusion",
+     "year": 2024,
+     "design": "RCT",
+     "n": 102,
+     "finding": "Fusion 86.27% vs 54.90% at 12 months and less cage displacement with rhBMP-2; product not identified.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable in the US.",
+    "notes": "Context for the global rhBMP-2 market: Korea (Novosis) and China have domestic rhBMP-2 grafts; the US has only Infuse."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://m.gelonghui.com/p/1400646",
+    "https://patents.google.com/patent/US7947821",
+    "PMID:39593144"
+   ]
+  },
+  {
+   "id": "augment-rotator-cuff",
+   "name": "Augment Rotator Cuff (rhPDGF-BB on type I collagen matrix) - development not continued",
+   "company": "Stryker",
+   "ownership_history": "BioMimetic Therapeutics (Franklin, TN) ran the pilot; Wright Medical acquired BioMimetic in 2013 and Stryker acquired Wright in 2020 (same chain as Augment Bone Graft, P100006). GEM 21S dental rights sit with Lynch Biologics (existing record).",
+   "category": "rhPDGF",
+   "composition": "Recombinant human PDGF-BB delivered on a type I bovine collagen matrix placed at the tendon-bone interface during rotator cuff repair.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "Canadian pilot study NCT01256242 (n=31; London, Ottawa and Toronto sites; completed 2012-11). No US IDE or PMA located (openFDA PMA search for BioMimetic returns only P100006 Augment Bone Graft/Injectable).",
+    "us_market_year": null,
+    "on_label_indications": [],
+    "unverified": true
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Pilot results never posted or published (PubMed search 2026-10-23); support is an ovine rotator cuff study (rhPDGF-BB on collagen matrix improved early repair biomechanics).",
+     "caveats": "Preclinical only; no activity registered since 2012."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT01256242",
+     "title": "Pilot Study of Augment Rotator Cuff for Surgical Treatment of Full Thickness Rotator Cuff Tears",
+     "year": 2010,
+     "design": "case-series",
+     "n": 31,
+     "finding": "Completed 2012; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:21555508",
+     "title": "Augmentation of a rotator cuff suture repair using rhPDGF-BB and a type I bovine collagen matrix in an ovine model",
+     "year": 2011,
+     "design": "preclinical",
+     "n": null,
+     "finding": "Ovine model of the product concept.",
+     "sponsor_funded": true,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable.",
+    "notes": "Historical; Stryker's only rhPDGF products on the market are Augment Bone Graft and Augment Injectable (foot and ankle fusion)."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT01256242",
+    "https://api.fda.gov/device/pma.json?search=applicant:%22biomimetic%22",
+    "PMID:21555508"
+   ]
+  },
+  {
+   "id": "ossgrow-ossron",
+   "name": "OSSGROW / OSSRON (autologous adult live cultured osteoblasts, India) - not US-marketed",
+   "company": "Regrow Biosciences",
+   "ownership_history": "Regrow Biosciences Pvt. Ltd. (Mumbai; also styled RMS Regrow), private; hospital partnership with Apollo Hospitals to offer Ossron and the cartilage product Chondron (press release).",
+   "category": "MSC",
+   "composition": "Autologous osteoblasts cultured from the patient's bone marrow and implanted into the necrotic femoral head after core decompression.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "No FDA status. Conditional marketing approval in India in March 2017 (per Palekar 2021; the CDSCO/DCGI approval document was not seen). Indian Phase 3 CTRI/2015/04/005662 (n=12, completed; results not located).",
+    "us_market_year": null,
+    "on_label_indications": [],
+    "unverified": true
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "femoral-head-osteonecrosis-core-decompression",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "Palekar 2021 retrospective multicenter series (64 patients, 101 hips, mean 6.3-year follow-up): VAS 58.8 to 32.2, Harris hip score 47.1 to 63.7; 28.7% of hips went to THA; 37.6% progressed.",
+     "caveats": "Uncontrolled retrospective series by users of the product; no comparison with core decompression alone, and the double-blind European RCT of a similar product (PREOB) was negative."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:33568953",
+     "title": "Retrospective study on implantation of autologous-cultured osteoblasts for the treatment of patients with avascular necrosis of the femoral head",
+     "year": 2021,
+     "design": "case-series",
+     "n": 64,
+     "finding": "Pain and function improved; 28.7% of hips required THA at mean 6.3 years; no control group.",
+     "sponsor_funded": null,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable in the US.",
+    "notes": "Ex-US cultured-cell product; any US use would require an IND."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.dovepress.com/retrospective-study-on-implantation-of-autologous-cultured-osteoblasts-peer-reviewed-fulltext-article-ORR",
+    "https://trial.medpath.com/zh/clinical-trial/3abf1f6d9ef98e32/ctri/2015/04/005662-autologous-osteoblasts-avascular-necrosis",
+    "https://www.apollohospitals.com/apollo-hospitals-and-rms-regrow-have-partnered-to-launch-the-first-of-its/",
+    "PMID:33568953"
+   ]
+  }
+ ]
+}

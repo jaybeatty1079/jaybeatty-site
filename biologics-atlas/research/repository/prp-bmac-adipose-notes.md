@@ -1,0 +1,57 @@
+# Slice notes: prp-bmac-adipose (2026-10-23)
+
+39 product records, 27 companies, 1 new application. File: `prp-bmac-adipose.json`. 19 records carry an `unverified` flag (product-level, regulatory-level, or both); reasons below.
+
+## How the regulatory data was found (matters for anyone extending this)
+- **openFDA's 510(k) endpoint does not contain the CBER "BK" clearances.** PRP and many marrow-concentrate kits are CBER BK-series 510(k)s (product code ORG, 21 CFR 864.9245, "Platelet and plasma separator for bone graft handling"), and a search of `product_code:ORG` on openFDA returns nothing; the full openFDA bulk file (176,415 records, export 2026-10-21) has zero BK records. K-series devices (JQC, MUU, KNW, QBV) were verified against openFDA.
+- BK numbers, applicants and dates were taken from the Innolitics FDA Device Explorer index (a mirror of FDA data; `fda.innolitics.com/device/BK...`) and cross-checked on FDA's own 510(k) page (`accessdata.fda.gov/.../pmn.cfm?ID=BK...`) for about 30 of them. The FDA site returned errors or timeouts for the rest in this session; those rely on the Innolitics record alone (name, applicant, decision date).
+- FDA classification database (openFDA) gives the ORG definition: "Preparation of autologous platelet rich plasma from a small sample of peripheral blood for mixing with bone graft to improve handling characteristics." Where a brand's own 510(k) summary was not retrievable, `on_label_indications` quotes this definition and says so.
+- Finding worth knowing: older clearances were filed under unrelated codes. Arthrex ACP (2008) and Regen Lab THT (2010) as a piston syringe (FMF 880.5860); GPS II/III (2004-2007) and Cascade Fibrinet (2002, 2006) as blood bank supplies (KSS 864.9050); BioCUE, MarrowStim, PureBMC, GenesisCS, AutoloGel, SmartPReP2 as clinical centrifuges (JQC 862.2050). The ORG code (a PRP-for-bone-graft indication) is only in use for kits from 2012 onward. Miracell SMART M-CELL (2026) sits in a new Class I code QBV whose definition says in vivo safety and effectiveness are not established.
+- Web search budget ran out mid-sweep (about the 200-call cap), so Exactech, Juventix, Eclipse, Greyledge, Cascade ownership, Celling ownership, and Cytori/Plus Therapeutics claims rest on one search each plus GUDID and FDA pages.
+
+## Rule applied to every PRP/BMAC record
+Regulatory statement in `regulatory.on_label_indications` and in each application's `caveats`: the 510(k)s clear the device to prepare PRP "to be mixed with bone graft" at the point of care (ORG), or a centrifuge/cell-concentrate preparation with no in vivo indication (JQC, QBV); injection into joints or tendons is off-label for the device; FDA treats the autologous product as outside premarket review (361-exempt, same-surgical-procedure) only while it stays minimally manipulated. Adipose: MUU clearances are for tissue transfer only, no OA claim; enzymatic SVF/ADRC isolation is a 351 drug per FDA's 2017 and 2020 guidance (US v. US Stem Cell Clinic, 11th Cir. 2021; US v. California Stem Cell Treatment Center, 9th Cir. 2024, both as summarised in `regulatory-primer.md`; the court opinions themselves were not re-read).
+
+## Tier and on_label conventions used
+- `on_label` is true only for "mixing PRP with bone graft for handling" (ORG kits) in bone applications (nonunion, PLF, TLIF) and for aspiration with KNW needles in spine; false for every knee, tendon, rotator cuff and osteonecrosis injection use. Even the true cases carry no healing or fusion claim.
+- `tier`: "established" = widely used in US clinics for that use for ~a decade (Arthrex ACP, Zimmer GPS, EmCyte, Terumo Harvest PRP knee/tendon), "emerging" = newer or low-evidence brand, "investigational" = no authorization and trial-only (nSTRIDE APS, Ingeneron, Cytori) or tissue-transfer-only adipose devices for OA.
+- Evidence grade is brand-specific. Where a trial did not name the product it is shown as "Class-level (product not named)" in `evidence[]` and the brand is graded V. Only these trials were confirmed to name the product: Tschopp 2023 (Arthrex ACP-System, PMC full text), Anz 2022 (EmCyte Pure PRP II and PureBMC, ClinicalTrials.gov NCT03289416 interventions), Baria 2024 (Arthrex Angel vs Lipogems, abstract), Ulivi 2023 (Lipogems, PMC full text), Sanchez 2012 and Vaquerizo 2013 (BTI PRGF-Endoret, abstracts), Rodeo 2012 (Cascade Autologous Platelet System, via a Cochrane table seen in a search result, not the paper), Ross 2024 and van Drumpt 2016 (nSTRIDE APS), Hurd 2020 (InGeneron UA-ADRC).
+
+## New application added
+`diabetic-foot-ulcer-chronic-wound` (region ankle-foot, type other). No existing id fits Aurix/AutoloGel's wound-gel use; it is adjacent to musculoskeletal work and is the only PRP use with a Medicare NCD (270.3, effective 2021-04-13 for chronic non-healing diabetic wounds, 20 weeks, under 1862(a)(1)(A)). Drop it if the atlas is orthopedics only.
+
+## Unverified flags, explained (19 records)
+- **zimmer-biomet-gps** (regulatory): GPS III Mini/Clotalyst BK080004 shows decision date 2017-09-14 with received date 2008-02-04 on FDA's page, likely a data-entry anomaly; BK110040 not opened on the FDA site; GPS III's own indication text not retrieved (graft-handling scope inferred from the 2023 nSTRIDE PRP summary that cites GPS III as predicate).
+- **zimmer-biomet-biocue**: only the Innolitics/FDA page for BK100027 (JQC centrifuge kit) was read; no indication text; commercial status unknown.
+- **zimmer-biomet-nstride-aps**: IDE number not confirmed from a primary source; no marketing authorization found (checked openFDA and the 510(k) mirror, not the PMA/BLA lists).
+- **emcyte-genesiscs**: Perfusion Partners & Associates to EmCyte ownership transfer not confirmed.
+- **exactech-accelerate**: distribution and "EmCyte-made" facts come from Exactech product sheets and GUDID seen in a search result, not read in full; BK050055 is FDA's GenesisCS clearance and is the number GUDID lists; Accelerate BMC clearance not located; Exactech's 2024-25 restructuring not checked.
+- **royal-maxx**: BK210632 indication text not retrieved; ownership not checked.
+- **celling-art-prp**: ART BMC clearance and current ownership not located; the Seton TLIF registry entry's relation to Celling not confirmed.
+- **ranfac-cervos-aps**: the "Cervos" brand tie to BK200543 rests on one GUDID record.
+- **apex-xcell-prp**, **fidia-prp-kit**, **cyclone-prp-bbmc**: FDA page unreachable; product code and indication wording not retrieved; US availability unknown (Fidia).
+- **eclipse-prp**: no Eclipse-named 510(k) found; BK110035 is the TropoCells kit (Estar Technologies) and GUDID labels it Eclipse PRP/TropoCells/Healeon PRP; company relationships unconfirmed.
+- **fibrinet-cascade**: MTF ownership inferred from a Cochrane table; Rodeo 2012's product from the same table.
+- **thermogenesis-resq-60** and **thermogenesis-axp-marrowxpress**: BK100066 and K081345 are real, but current commercial status of the ThermoGenesis ortho lines not confirmed; Cesca name history from memory.
+- **aurix-autologel**: BK060007 wound indication not retrieved; Nuo history from SEC snippets (S-1 2017, 10-Q 2024) and a CMS page that displayed an "older version" banner; the 2012 CED detail and 2021 "replaced CED" statement come from a search summary of the CMS tracking sheet.
+- **healeon-prp**: Healeon Medical to Bimini Health Tech link not confirmed.
+- **ingeneron-transpose-rt**: InGeneron's long-term (3.4-year) result is company press only and was not read; Houston location from a search snippet.
+- **cytori-celution**: "Plus Therapeutics" renaming and Celution exit taken from the brief; commercial status unverified; `off-market` is a judgment, not a sourced fact.
+Other records with weaker facts but no flag: **terumo-harvest-prp** (Terumo-Harvest 2012 acquisition from the existing record), **lipogems** (second IDE reported only in a headline; founding and financing details from search snippets).
+
+## Left out, and why
+- **Not located / no FDA record found**: Juventix (marketing claims "FDA cleared" but no 510(k) found), Greyledge (no clearance found; a clinic announcement only), Tulip Medical (no BK/K record found), Carmell (no clearance located; not pursued), Avita (RECELL burns/wound, not ortho), Smith+Nephew, Stryker and DePuy Synthes PRP kits (no PRP 510(k) or BK record found under those applicants; DePuy Spine's Symphony is a graft delivery system, not a PRP separator).
+- **PRP-adjacent ORG/CBER clearances skipped as aesthetic or wound-focused**: Sunphoria AHC (BK231018), Aeon ACKit (BK231016), Bahia PRiSM PRP (BK251248), Gale Force Illuminate PRP (BK241042), Forever Labs PlateletQuick (BK251299), StemC Exocube (BK251196), Cellmedix Centrepid (BK130079), DSM Biomedical PRP (BK130053), LUVO World PRP (BK210558), Holding Technologies Maximus (BK200519), Suneva HD PRP/Amplifine (BK200477), Reapplix 3C OrthoPatch (BK230968), OrthoAscent FG-001 (BK241083), Royal Wound-X PRF-Matrix (BK251232), Innoveren (BK241079). Each could be added as a short record if the atlas wants a complete ORG roster.
+- **Adipose devices skipped**: LifeCell Revolve, Stemics KTA, Millennium IntelliFat, Syntr Health SyntrFuge (K203800, lists orthopedic surgery), Ranfac FATS/cannulas, Medi-Khan, Sound Surgical, Alma VorFat, Synova Wave, MTF LipoGrafter (aesthetic fat grafting; SyntrFuge could be added as a Lipogems-style record).
+- **Marrow needles skipped**: Ranfac Lateral Access (K223612), Celling Aspiration Needle (K180807), Imbibe/Aspirex (Isotis/Orthovita, 2004-2005), Forcyte autograft harvest kit (K243407), Medimetrix Marrow Marxman (K260572): harvest accessories with no brand-specific orthobiologic story.
+- Magellan, Angel, SmartPReP2 BMAC already exist and were not recreated. Arthrex Angel has two further clearances (BK180180, BK190383) that the existing record may want.
+
+## Problems seen in existing records (not edited)
+- `prp` record lists "DePuy Synthes Peak PlasmaBlade heritage" among PRP systems. Peak is an electrosurgical device (Medtronic PEAK PlasmaBlade) and no DePuy PRP 510(k) was found; the item looks wrong.
+- `prp` record lists "Stryker/Emcyte"; no Stryker PRP clearance was found (EmCyte is independent and supplies Exactech).
+- `bmac` record lists "Zimmer Biomet BioCUE" as a BMAC device; the BioCUE clearance (BK100027) is titled a platelet concentration kit. MarrowStim is Zimmer Biomet's BMAC device.
+
+## Three biggest gaps
+1. **Brand-specific indication text for the CBER BK clearances.** FDA's 510(k) pages gave only device name, code and dates; summaries were retrievable for about a dozen BK records (via Innolitics). Most older BK clearances (Arthrex ACP/ACP Max, GPS III, Harvest PRP, EmCyte PurePRP, Royal MAXX, Celling, Apex) have indication wording that is the ORG definition, not the brand's actual label. The IFUs would settle it.
+2. **Which commercial PRP/BMAC system each cited PRP RCT used.** The pivotal knee OA, epicondylitis and rotator cuff PRP trials (Cole 2017, Bennell 2021, Mishra 2014, Peerbooms 2010, Castricini 2011) do not name the device in their abstracts and full text was paywalled, so those are class-level only. A methods-section read could move several brands from V to II/I.
+3. **Current ownership and commercial status** for Celling, ThermoGenesis (Res-Q), Royal Biologics, Cascade/Fibrinet, Exactech Accelerate, and the Cytori/Plus Therapeutics Celution exit, plus Juventix, Greyledge, Tulip and Carmell (no clearance or product found). Web search quota ended before these could be checked.

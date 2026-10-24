@@ -1,4 +1,4 @@
-# Biologics Atlas — research sweep summary (2026-10-21; gap passes and skull region 2026-10-22)
+# Biologics Atlas — research sweep summary (2026-10-21; gap passes and skull region 2026-10-22; repository sweep 2026-10-23)
 
 Seven parallel research passes (spine, hip and femur, tibia and knee, foot and ankle, upper extremity, investigational and regulatory, business layer) wrote schema-shaped JSON plus notes into `research/`. `build/merge.py` merged them into `data/applications.json` and `data/products.json`; `build/fda_check.py` checked every cited FDA number against openFDA.
 
@@ -6,8 +6,8 @@ Seven parallel research passes (spine, hip and femur, tibia and knee, foot and a
 
 | Item | Count |
 |---|---|
-| Surgical applications (spine 10, hip/femur 12, tibia 11, foot/ankle 13, upper extremity 15, skull and CMF 11, general 2) | 73 |
-| Products (established 71, emerging 6, investigational 22, off-market 2, withdrawn 3) | 104 |
+| Surgical applications (spine 10, hip/femur 12, tibia 11, foot/ankle 13, upper extremity 15, skull and CMF 11, general 2) | 73 (85 after the 2026-10-23 sweep, see below) |
+| Products (established 71, emerging 6, investigational 22, off-market 2, withdrawn 3) | 104 (369 after the 2026-10-23 sweep) |
 | Product-to-application pairings, each with tier and evidence grade | 330 |
 | Evidence rows with PMID, NCT, DOI or FDA document | 358 |
 | FDA 510(k), PMA and De Novo numbers cited and confirmed in openFDA | all CDRH numbers (CBER BK-series not checkable) |
@@ -30,6 +30,24 @@ Evidence grades across the 330 pairings: Level I 62, II 41, III 34, IV 87, V 106
 **Foot and ankle has the only labeled growth factor outside spine.** Augment (rhPDGF, PMA 2015, now Stryker) is the only osteoinductive product labeled for hindfoot and ankle fusion, but both arms of its pivotal trial fused only 61 to 66% on CT at six months. Charcot and tibiotalocalcaneal fusion (27% nonunion) are where biologics are used heavily on thin data. A 2026 series of 227 cases found no union difference with or without graft.
 
 **Investigational tier.** The FDA's list of approved cellular and gene therapy products (54 as of September 2026) contains no bone, fracture or fusion product. Mesoblast rexlemestrocel-L for degenerative disc pain is one confirmatory trial from a BLA (topline mid-2027). DiscGenics started Phase 3 in January 2026. Novadip NVD-003 has RMAT status for congenital pseudarthrosis of the tibia. ALLOB and Kuros Fibrin-PTH are dead. No exosome product is approved for any indication, and the FDA's 2025 to 2026 letters say the marketed "exosome" products are not even made by a process that isolates exosomes. PRP kits are cleared only to mix with bone graft, so PRP injections are off-label for the device.
+
+## Repository sweep (2026-10-23)
+Jay asked for a full catalogue of orthobiologics companies and products, categorized, with indications, evidence and a tier, before any hardware layer. Eight category passes wrote `research/repository/<category>.json` plus a notes file each (dbm-allograft, cellular-allograft, synthetics, growth-factors-cells, prp-bmac-adipose, amniotic-placental, cartilage-soft-tissue, viscosupplements-oa); `_base.json` holds the non-bone applications added so those products have a home. Every PMID and NCT in the new files was re-checked by script against PubMed and ClinicalTrials.gov (358 refs, 0 mismatches); K and P numbers were checked by each pass against openFDA. The page gained a Repository section (every product once, by category, with company, pathway, status, uses and best grade with its one-line reason).
+
+| Item | Before | After |
+|---|---|---|
+| Products | 104 | 369 (265 added: 122 on a 510(k), 60 as 361 HCT/P, 17 PMA, 2 BLA, 2 NDA, 27 IND or IDE only, 35 unapproved or ex-US) |
+| Companies named as current owner | 63 | 180 |
+| Surgical applications | 73 | 85 (added: knee OA injection, knee cartilage defect, talar osteochondral lesion, tendinopathy injection, tendon and ligament augmentation, meniscus deficiency, hip cartilage defect, AIS posterior fusion, knee subchondral bone marrow lesion, benign bone cyst curettage, proximal femur augmentation, diabetic foot ulcer) |
+| Product-to-application pairings | 330 | 852 (grade I 127, II 44, III 49, IV 131, V 501) |
+| Evidence rows | 358 | 794 |
+| Categories | 17 | 20 (cartilage, soft-tissue, viscosupplement added) |
+
+Status mix now: established 224, emerging 47, investigational 57, off-market 19, withdrawn 22 (failed and withdrawn programs are kept on purpose). 187 of the 265 new records carry an unverified flag, almost all for the same two reasons: whether a legacy brand is still sold after an ownership change, and 361 products whose label text came from a company page rather than the package insert. The notes files list every flag.
+
+What the sweep established, in brief: DBM is mostly private label (Propel, Xemplifi and Stryker's DBM are AlloSource AlloFuse under other names; BEAST, Hero, VIA DBM and MAXX-Fuse are Xtant OsteoSelect); almost no DBM, cellular allograft, PRP kit or amniotic sheet has a product-specific comparative study (grade V with the search recorded); the cellular allograft category now carries both tuberculosis outbreaks (FiberCel 2021, ViBone 2023) from CDC records, the Elutia-to-Berkeley Biologics sale from filings, and the FDA letters (PureGen 2011, NuCel suspension 2021, Interfyl warning letter December 2025); the only Level I bone-synthetic win is AttraX Putty in posterolateral fusion; PRP and BMAC device clearances are CBER BK-series for mixing with bone graft, so every joint and tendon injection is off-label for the device; amniotic injectables are 351 biologics (MiMedx dropped its BLA in 2023, Organogenesis ReNu has a BLA under review with an April 2027 date); cartilage has one BLA (MACI) and one PMA (Agili-C), with Hyalofast's US pivotal missing both endpoints; in knee OA the HA class effect is about 2 mm on a 100 mm pain scale (Pereira 2022) and UnitedHealthcare's October 2026 policy covers only Durolane, Euflexxa and Gelsyn-3; nSTRIDE APS, lorecivivint, LNA043, Ampion and sprifermin are negative.
+
+Known gaps after this sweep: tissue-bank house brands (MTF, AlloSource, LifeNet beyond their lead lines), pure cancellous and cortical allograft lines from the smaller banks, processor identity behind most private-label cellular allografts, brand-level IFU text for older PRP kits, final status of NUsurface, and whether several legacy synthetic lines (CopiOs, Healos, MicroFuse, Cerasorb US) are still sold. Every pass hit the WebSearch budget partway; openFDA, PubMed, ClinicalTrials.gov and EDGAR did the rest. Page weight is now 1.85 MB (0.5 MB gzipped).
 
 ## Corrections to assumptions I made in the briefs
 - Globus did not acquire Kuros. Globus bought Nevro. Kuros is independent with a Medtronic sales agency.

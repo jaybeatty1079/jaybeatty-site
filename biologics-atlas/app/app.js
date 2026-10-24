@@ -254,9 +254,9 @@ dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 (function hero() {
   const pairs = PRODS.reduce((n, p) => n + (p.applications || []).length, 0), ev = PRODS.reduce((n, p) => n + (p.evidence || []).length, 0);
   const g1 = PRODS.reduce((n, p) => n + (p.applications || []).filter(x => x.evidence_grade === 'I').length, 0);
-  const companies = (BD.companies || []).length;
+  const companies = new Set(PRODS.map(p => companyKey(p.company)).filter(Boolean)).size;
   document.getElementById('hero-chips').innerHTML = [[PRODS.length, 'products'], [APPS.length, 'applications'], [ev, 'citations'], [ORDER.length - 1, 'regions']].map(([n, l]) => `<span class="chip"><b>${n}</b> ${l}</span>`).join('');
-  document.getElementById('hero-tiles').innerHTML = [[PRODS.length, 'Products', 'tiered by application'], [pairs, 'Product uses', 'each graded I to V'], [g1, 'Level I pairings', `${Math.round(100 * g1 / pairs)}% of uses have RCT evidence`], [companies, 'Companies', 'with portfolio and channel']].map(([v, l, d]) => `<div class="tile"><div class="lab">${l}</div><div class="val">${v}</div><div class="delta">${esc(d)}</div></div>`).join('');
+  document.getElementById('hero-tiles').innerHTML = [[PRODS.length, 'Products', 'tiered by application'], [pairs, 'Product uses', 'each graded I to V'], [g1, 'Level I pairings', `${Math.round(100 * g1 / pairs)}% of uses have RCT evidence`], [companies, 'Companies', 'named as current owner']].map(([v, l, d]) => `<div class="tile"><div class="lab">${l}</div><div class="val">${v}</div><div class="delta">${esc(d)}</div></div>`).join('');
   document.getElementById('reviewed-date').textContent = META.reviewed || '';
 })();
 (function glance() {
@@ -293,6 +293,27 @@ document.addEventListener('click', e => { const b = e.target.closest('#market-an
   const keep = tl.filter(t => /2025|2026/.test(t.date)).slice(-8); const rest = tl.filter(t => !keep.includes(t));
   document.getElementById('timeline').innerHTML = keep.map(item).join(''); document.getElementById('timeline-rest').innerHTML = rest.map(item).join('');
   document.getElementById('changelog').innerHTML = (META.changelog || []).map(s => `<li>${esc(s)}</li>`).join('');
+})();
+
+/* ---------- repository: every product once, by category ---------- */
+const CAT_LABEL = { rhBMP: 'Bone morphogenetic proteins', rhPDGF: 'Platelet-derived growth factor', peptide: 'Synthetic peptides', DBM: 'Demineralized bone matrix and allograft', 'cellular-allograft': 'Cellular bone allografts', 'structural-allograft': 'Structural allografts', 'synthetic-ceramic': 'Synthetic ceramics and composites', 'bioactive-glass': 'Bioactive glass', 'calcium-phosphate-cement': 'Calcium phosphate cements', 'calcium-sulfate': 'Calcium sulfate', PRP: 'Platelet-rich plasma systems', BMAC: 'Bone marrow concentrate systems', MSC: 'Cell therapies', exosome: 'Exosome products', amniotic: 'Amniotic and placental tissue', cartilage: 'Cartilage restoration', 'soft-tissue': 'Soft-tissue scaffolds and patches', viscosupplement: 'Viscosupplements', pharmacologic: 'Pharmacologic agents', other: 'Other and adjacent' };
+const CAT_ORDER = Object.keys(CAT_LABEL);
+function companyKey(c) { return String(c || '').split(/\s*[;(\/]|\s+via\s+|\s+and\s+|,\s/)[0].replace(/^(Multiple|Various|Numerous|Technique|n\/a).*$/i, '').trim(); }
+function oneLine(s) { s = String(s || '').split(/(?<=[a-z\)])[.;]\s/)[0]; return s.length > 150 ? s.slice(0, 150).replace(/\s\S*$/, '') + '…' : s; }
+function bestPair(p) { return (p.applications || []).filter(x => appById[x.application_id]).sort((u, v) => gradeOf(u) - gradeOf(v))[0] || null; }
+(function repository() {
+  const list = document.getElementById('repo-list'); if (!list) return;
+  const q = document.getElementById('repo-q'), sel = document.getElementById('repo-cat'), nEl = document.getElementById('repo-n');
+  const cats = CAT_ORDER.filter(c => PRODS.some(p => p.category === c)).concat([...new Set(PRODS.map(p => p.category))].filter(c => !CAT_LABEL[c]));
+  sel.innerHTML += cats.map(c => `<option value="${esc(c)}">${esc(CAT_LABEL[c] || c)}</option>`).join('');
+  const row = p => { const b = bestPair(p), napp = (p.applications || []).filter(x => appById[x.application_id]).length; return `<tr><td><button class="linklike" type="button" data-prod="${esc(p.id)}"><strong>${esc(p.name)}</strong></button>${p.unverified || (p.regulatory || {}).unverified ? ' <span class="badge unv">Unverified</span>' : ''}</td><td class="small">${esc(p.company)}</td><td class="code small">${esc(regLabel(p))}</td><td><span class="pill ${p.status === 'established' ? 'est' : p.status === 'emerging' ? 'emg' : 'inv'}">${esc(p.status)}</span></td><td class="small">${b ? `<span class="grade g${esc(b.evidence_grade || 'V')}" title="Best evidence grade across its applications">${esc(b.evidence_grade || 'V')}</span> <span class="muted">${napp} use${napp === 1 ? '' : 's'} · </span>${esc(oneLine(b.evidence_summary))}` : '<span class="muted">No application paired</span>'}</td></tr>`; };
+  function draw() {
+    const t = (q.value || '').trim().toLowerCase(), c = sel.value; let n = 0;
+    list.innerHTML = cats.filter(k => !c || k === c).map(k => { const ps = PRODS.filter(p => p.category === k && (!t || (p.name + ' ' + p.company).toLowerCase().includes(t))).sort((u, v) => gradeOf(bestPair(u) || {}) - gradeOf(bestPair(v) || {}) || u.name.localeCompare(v.name)); if (!ps.length) return ''; n += ps.length; const cos = new Set(ps.map(p => companyKey(p.company)).filter(Boolean)).size; return `<div class="repo-cat"><div class="subhead"><span>${esc(CAT_LABEL[k] || k)}</span><span class="muted small">${ps.length} product${ps.length === 1 ? '' : 's'} · ${cos} compan${cos === 1 ? 'y' : 'ies'} · ordered by best evidence</span></div><div class="tbl-wrap"><table class="tbl repo"><thead><tr><th>Product</th><th>Company</th><th>Pathway</th><th>Status</th><th>Best evidence and why</th></tr></thead><tbody>${ps.map(row).join('')}</tbody></table></div></div>`; }).join('') || '<div class="card"><p class="muted small">Nothing matches.</p></div>';
+    nEl.textContent = `${n} of ${PRODS.length} products · ${new Set(PRODS.map(p => companyKey(p.company)).filter(Boolean)).size} companies`;
+    list.querySelectorAll('[data-prod]').forEach(b => b.addEventListener('click', () => openProduct(b.dataset.prod)));
+  }
+  q.addEventListener('input', draw); sel.addEventListener('change', draw); draw();
 })();
 
 /* reveal */

@@ -1,0 +1,2841 @@
+{
+ "applications": [
+  {
+   "id": "ais-posterior-fusion",
+   "region": "spine",
+   "subregion": "thoracolumbar",
+   "name": "Adolescent idiopathic scoliosis: posterior spinal fusion",
+   "type": "fusion",
+   "classifications": [],
+   "why_biologic": "Synthetic ceramic extends or partly replaces iliac crest and local bone in long instrumented fusions, where autograft volume is the limit.",
+   "autograft_standard": "Local spinous-process and rib bone plus iliac crest autograft or allograft; the downside is limited volume and donor-site pain.",
+   "volume_note": "Not sourced: no public US procedure-volume figure with a citable source was located in this sweep.",
+   "sources": [
+    "PMID:12401014"
+   ]
+  },
+  {
+   "id": "knee-subchondral-bml",
+   "region": "femur-knee",
+   "subregion": "knee",
+   "name": "Knee subchondral bone marrow lesion (BML) with osteoarthritis: percutaneous subchondral calcium phosphate injection (Subchondroplasty)",
+   "type": "other",
+   "classifications": [],
+   "why_biologic": "Injectable calcium phosphate is placed into the painful BML to fill microtrabecular defects and restore subchondral support; it is a joint-preserving, not a fusion or fracture, use.",
+   "autograft_standard": "No bone-graft standard; the alternatives are NSAIDs, injections, bisphosphonates, activity change and eventually arthroplasty.",
+   "volume_note": "Not sourced: no public US procedure-volume figure with a citable source was located in this sweep.",
+   "sources": [
+    "PMID:41950892",
+    "NCT03112200"
+   ]
+  },
+  {
+   "id": "benign-bone-cyst-curettage",
+   "region": "general",
+   "subregion": "extremities and pelvis",
+   "name": "Benign bone cyst or tumor (for example unicameral bone cyst, enchondroma): curettage and void filling",
+   "type": "bone-void",
+   "classifications": [],
+   "why_biologic": "After curettage the cavity is filled with a resorbable osteoconductive material in place of autograft or allograft.",
+   "autograft_standard": "Autologous iliac crest or local cancellous graft, or allograft chips; the downside is donor-site pain in children and limited volume.",
+   "volume_note": "Not sourced: no public US procedure-volume figure with a citable source was located in this sweep.",
+   "sources": [
+    "NCT06720142",
+    "PMID:25767429"
+   ]
+  },
+  {
+   "id": "proximal-femur-augmentation",
+   "region": "pelvis-hip",
+   "subregion": "proximal femur",
+   "name": "Prophylactic local augmentation of the osteoporotic proximal femur (fragility-fracture prevention)",
+   "type": "other",
+   "classifications": [],
+   "why_biologic": "A resorbable triphasic implant is injected into the femoral neck and trochanter to form new bone locally, aiming to cut the risk of a second hip fracture faster than drug therapy.",
+   "autograft_standard": "No graft standard; systemic osteoporosis drugs take months to lower hip-fracture risk.",
+   "volume_note": "Not sourced: no public US procedure-volume figure with a citable source was located in this sweep.",
+   "sources": [
+    "PMID:31802158",
+    "PMID:41488884",
+    "NCT04796350"
+   ]
+  }
+ ],
+ "products": [
+  {
+   "id": "pro-osteon",
+   "name": "Pro Osteon (200 / 200R / 500 / 500R coralline hydroxyapatite)",
+   "company": "Zimmer Biomet",
+   "ownership_history": "Developed by Interpore International (Irvine, CA); the Pro Osteon 500R 2007 summary names Biomet Osteobiologics; Zimmer Biomet since the 2015 Zimmer-Biomet merger. Acquisition dates not re-sourced.",
+   "category": "synthetic-ceramic",
+   "composition": "Coral-derived porous hydroxyapatite blocks and granules (the Interpore coralline line): Pro Osteon 200 is coral converted to hydroxyapatite; Pro Osteon 500/500R is a coral-carbonate skeleton with a thin calcium phosphate surface layer that resorbs faster (composition per a 2019 marine-materials review; not re-checked against the IFU).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K063346 (Pro Osteon 500R, expanded indications, April 2007); earlier K980817 and K990131 (500R), K000515 (200R), K004003 (200R with calcium sulfate)",
+    "us_market_year": 1998,
+    "on_label_indications": [
+     "Bone void filler for bony voids or gaps not intrinsic to the stability of the bony structure, gently packed into the skeletal system 'extremities, spine and pelvis' (K063346)",
+     "Surgically created or traumatic osseous defects; may be combined with autogenous bone marrow aspirate, autogenous blood or sterile fluids",
+     "A secondary IFU listing reports contraindications for growth-plate fractures, segmental defects and infected sites (IFU not read in full)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "III",
+     "evidence_summary": "Bucholz 1989 (PMID 2537166): metaphyseal defects in 40 displaced tibial plateau fractures were filled with cancellous autograft or interporous hydroxyapatite (the Interpore 200 material that became Pro Osteon); no significant radiographic or clinical difference at 15 to 34 months. A 2013 review of tibial plateau graft substitutes (PMID 23351879) found hydroxyapatite step-off at follow-up of 2 mm or more in 5.4%.",
+     "caveats": "Allocation method is not stated and follow-up differed (15.4 vs 34.5 months); 1989 fixation and imaging standards; the product tested is the older Interpore 200, not the 2007 500R label."
+    },
+    {
+     "application_id": "ais-posterior-fusion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Interpore coralline hydroxyapatite mixed about 70/30 with iliac autograft in 27 consecutive adolescent idiopathic scoliosis posterior fusions: all achieved solid fusion at 27 months average (PMID 12401014).",
+     "caveats": "Single-center case series without a control; 2002; coral material from the Interpore era."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Pro Osteon lumbar posterolateral fusion; coralline hydroxyapatite spine fusion).",
+     "caveats": "Label covers spine; Zimmer Biomet registered an observational Pro Osteon study (NCT00858598) that was withdrawn with zero enrollment."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:2537166",
+     "title": "Interporous hydroxyapatite as a bone graft substitute in tibial plateau fractures",
+     "year": 1989,
+     "design": "retrospective",
+     "n": 40,
+     "finding": "Metaphyseal defects filled with interporous hydroxyapatite or cancellous autograft showed no significant difference in radiographic or clinical results.",
+     "sponsor_funded": null,
+     "applications": [
+      "tibial-plateau"
+     ]
+    },
+    {
+     "ref": "PMID:12401014",
+     "title": "Supplementation of autogenous bone graft with coralline hydroxyapatite in posterior spine fusion for idiopathic adolescent scoliosis",
+     "year": 2002,
+     "design": "case-series",
+     "n": 27,
+     "finding": "All 27 patients had solid fusion at an average 27 months using coralline hydroxyapatite mixed with limited iliac autograft.",
+     "sponsor_funded": false,
+     "applications": [
+      "ais-posterior-fusion"
+     ]
+    },
+    {
+     "ref": "PMID:23351879",
+     "title": "Use of bone graft substitutes in the management of tibial plateau fractures",
+     "year": 2013,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Systematic review reports hydroxyapatite and calcium phosphate cement substitutes with low rates of secondary articular depression and no good-quality RCTs for graft substitutes.",
+     "sponsor_funded": false,
+     "applications": [
+      "tibial-plateau"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Mature, low-visibility line in the Zimmer Biomet biologics catalog; presence in the current catalog was not confirmed on a company page (GUDID lists device identifiers). Coral-derived raw material is a supply and diligence topic."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K063346",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K980817",
+    "https://clinicaltrials.gov/study/NCT00858598",
+    "https://accessgudid.nlm.nih.gov/devices/00888480584742",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6723791/table/marinedrugs-17-00471-t003"
+   ]
+  },
+  {
+   "id": "accufill",
+   "name": "AccuFill Bone Substitute Material (Subchondroplasty procedure)",
+   "company": "Zimmer Biomet",
+   "ownership_history": "Knee Creations (Subchondroplasty originator) became part of Zimmer Biomet; the 510(k) applicant is named Zimmer Knee Creations. Acquisition year not re-sourced.",
+   "category": "calcium-phosphate-cement",
+   "composition": "Injectable, self-setting, macroporous, osteoconductive calcium phosphate bone graft substitute (per 510(k) indications text); delivered through the Subchondroplasty instrument set.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K190814 (June 2019, applicant Zimmer Knee Creations)",
+    "us_market_year": 2019,
+    "on_label_indications": [
+     "Injectable, self-setting, macroporous, osteoconductive calcium phosphate bone graft substitute to fill bony voids or gaps of the skeletal system of the extremities, spine (posterolateral spine) and pelvis that are not intrinsic to the stability of the bony structure",
+     "Surgically created osseous defects or defects from traumatic injury; resorbs and is replaced by bone"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-subchondral-bml",
+     "tier": "established",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "Zimmer-sponsored prospective single-arm cohort of 70 knees treated with AccuFill showed significant pain and KOOS gains through 24 months, with 76.2% arthroplasty-free survival at 2 years (PMID 39667406); a 92-knee European multicenter study reports 91.5% surgery-free at 24 months (PMID 42673584); a 2026 meta-analysis of 12 mostly non-randomized studies (829 patients) found clinically important pain and function gains (PMID 41950892).",
+     "caveats": "All sponsor-linked or uncontrolled; the Zimmer Biomet Subchondroplasty randomized trial (NCT03112200, n=131, completed 2023, results posted) has no peer-reviewed publication located in PubMed on 2026-10-23.",
+     "challenge": "The cleared indication reads as bone void or gap filling in extremities, spine and pelvis; bone marrow lesion treatment is not named in the indications text read. A hiring manager will ask where the on-label line sits for Subchondroplasty in osteoarthritic knees."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: AccuFill tibial plateau; Subchondroplasty tibial plateau fracture).",
+     "caveats": "Used for subchondral support in some centers; no AccuFill-specific fracture series located."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:39667406",
+     "title": "Prospective Evaluation of Clinical Outcomes of the Subchondroplasty Procedure for Treatment of Symptomatic Bone Marrow Lesions of the Knee",
+     "year": 2025,
+     "design": "prospective-cohort",
+     "n": 70,
+     "finding": "Pain and KOOS improved significantly through 24 months; 76.2% avoided arthroplasty at 2 years.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-subchondral-bml"
+     ]
+    },
+    {
+     "ref": "PMID:42673584",
+     "title": "Calcium-Phosphate Subchondroplasty Provides Durable 24-Month Pain Relief and >90% Surgery-free Survivorship for Tibiofemoral Bone Marrow Lesions in Mild-To-Moderate Knee Osteoarthritis: A Prospective Multicenter Study",
+     "year": 2026,
+     "design": "prospective-cohort",
+     "n": 92,
+     "finding": "Large, durable pain and function gains with 91.5% surgery-free survivorship at 24 months and 7.6% reoperation.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-subchondral-bml"
+     ]
+    },
+    {
+     "ref": "PMID:41950892",
+     "title": "Subchondroplasty for bone-marrow lesions in the osteoarthritic knee improves pain and function: a systematic review and meta-analysis",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": 829,
+     "finding": "Twelve studies showed clinically important pain and function improvement from one month to two years, with 3.5% reoperation.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-subchondral-bml"
+     ]
+    },
+    {
+     "ref": "NCT03112200",
+     "title": "Subchondroplasty Knee RCT (Zimmer Biomet)",
+     "year": 2023,
+     "design": "RCT",
+     "n": 131,
+     "finding": "Randomized trial of Subchondroplasty plus arthroscopy versus arthroscopy alone, completed August 2023 with registry results posted; peer-reviewed publication not located.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-subchondral-bml"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Procedure-driven franchise (Subchondroplasty) sold through Zimmer Biomet's knee preservation sales force; payer coverage of the procedure itself varies."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K190814.pdf",
+    "https://clinicaltrials.gov/study/NCT03112200",
+    "https://pubmed.ncbi.nlm.nih.gov/39667406/"
+   ]
+  },
+  {
+   "id": "cap-spheres-pellet-pack",
+   "name": "CaP Spheres Pellet Pack",
+   "company": "Zimmer Biomet",
+   "ownership_history": "Zimmer Biomet's spine business was spun into ZimVie (2022) and sold to H.I.G. Capital as Highridge Medical (April 2024); whether this clearance moved with it, or is still sold, is unverified. Company field shortened; original: Zimmer Biomet Spine, Inc. (510(k) holder; current owner unverified)",
+   "category": "synthetic-ceramic",
+   "composition": "Calcium phosphate spheres supplied as a pre-packed pellet pack for graft-extender use (composition detail beyond 'calcium phosphate' not read).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K203218 (May 2021)",
+    "us_market_year": 2021,
+    "on_label_indications": [
+     "Bone void filler for bony voids or gaps not intrinsic to the stability of the bony structure, surgically created or from traumatic injury",
+     "Used with autograft as a bone graft extender gently packed into voids or gaps in the posterolateral spine; predicates AttraX Putty (K151584) and Magnifuse (K123691)"
+    ]
+   },
+   "status": "emerging",
+   "challenge": "Marketing status and owner unverified after the ZimVie and Highridge transactions; do not present as an active Zimmer Biomet product without checking.",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: CaP Spheres Pellet Pack; Zimmer Biomet calcium phosphate spheres posterolateral fusion).",
+     "caveats": "Extender-only label (must be used with autograft)."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Thin record: only the 510(k) was found; no company product page located."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf20/K203218.pdf"
+   ]
+  },
+  {
+   "id": "copios",
+   "name": "CopiOs Bone Void Filler (sponge and paste)",
+   "company": "Zimmer Biomet",
+   "ownership_history": "Originated at Centerpulse Spine-Tech (2004 clearance); Kensey Nash Corp. (2007 clearances), then DSM Biomedical after DSM bought Kensey Nash (2012); a ZimVie-domain CopiOs product page surfaced in search results but returned 404 when fetched on 2026-10-23. Zimmer Biomet to ZimVie to Highridge Medical chain is not sourced.",
+   "category": "synthetic-ceramic",
+   "composition": "Collagen-ceramic composite: resorbable sponges or compressed-powder discs of calcium phosphate and Type I bovine dermal collagen; the paste is made by mixing with autologous blood products.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K071237 (June 2007) and K072384 (modification, September 2007); the product-code listing also shows K033679 (2004, Centerpulse Spine-Tech, 'Copsios')",
+    "us_market_year": 2004,
+    "on_label_indications": [
+     "Used in combination with autologous blood products such as bone marrow, for filling bone voids or gaps of the skeletal system (extremities, pelvis, spine) not intrinsic to the stability of the bone structure",
+     "Voids may be from trauma or surgeon-created; packed gently into the void and resorbs during healing"
+    ]
+   },
+   "status": "established",
+   "challenge": "Current owner and whether the product is still sold are unverified; ownership chain is inferred from search snippets.",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: CopiOs posterolateral fusion; CopiOs bone void filler spine).",
+     "caveats": "Label lists spine; a PubMed hit for 'CopiOs' returned only an unrelated cell-based combination paper."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: CopiOs tibial plateau; CopiOs bone void filler extremities).",
+     "caveats": "Label lists extremities."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "The ZimVie CopiOs page returned 404 on 2026-10-23 and Highridge's site lists no CopiOs; current seller unknown."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf7/K071237.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K072384",
+    "https://fda.innolitics.com/device/K033679"
+   ]
+  },
+  {
+   "id": "attrax",
+   "name": "AttraX Putty and AttraX Scaffold",
+   "company": "Globus Medical",
+   "ownership_history": "Progentix Orthobiology (Bilthoven, NL) originated AttraX/Curios; NuVasive held the AttraX clearances from 2017 (K172497); Globus Medical completed its NuVasive merger in September 2023 (merger date from public record, not re-sourced).",
+   "category": "synthetic-ceramic",
+   "composition": "Synthetic biphasic calcium phosphate ceramic granules with a needle-like surface topography (Progentix/Curios technology): the Putty is ceramic granules premixed with a polymeric binder; the Scaffold is a moldable strip form.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K191974 (AttraX Putty, Nov 2019); K240507 (AttraX Scaffold, March 2024); K172497 (Scaffold, 2017); original K151584 (AttraX Putty, Progentix Orthobiology, Oct 2015)",
+    "us_market_year": 2015,
+    "on_label_indications": [
+     "AttraX Putty (K191974): implant to fill bony voids or gaps of the skeletal system 'posterolateral spine and pelvis', may be used in combination with autogenous bone; resorbs and is replaced with bone",
+     "AttraX Scaffold (K240507): posterolateral spine, intervertebral disc space and pelvis; in the posterolateral spine must be used with autogenous bone or bone marrow aspirate; in intervertebral body fusion must be used with a cage cleared for use with a bone void filler",
+     "Globus's website also states a Putty interbody indication; the 510(k) supporting it was not located (unverified)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Dutch multicenter, intrapatient-controlled noninferiority RCT (n=100 enrolled, 87 analysed, 146 instrumented segments): 1-year PLF rate 55% AttraX Putty vs 52% autograft side, difference 2.3% (90% CI -9.1 to 13.7), noninferior (PMID 32080013); at 2 years 70% vs 68%, no difference (PMID 32459724).",
+     "caveats": "Fusion rates of 52 to 55% at one year are low in absolute terms (CT-based); intrapatient design with local bone in all segments; a published erratum exists (PMID 34183620); conflicts disclosed in the paper were not individually reviewed."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: AttraX Putty interbody OR TLIF OR PLIF).",
+     "caveats": "On-label only for AttraX Scaffold with an FDA-cleared cage for use with a bone void filler; in the Dutch RCT 62% of patients also had an interbody procedure but the graft under test was posterolateral."
+    },
+    {
+     "application_id": "lumbar-lateral",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "NuVasive registered a randomized AttraX Putty versus autograft XLIF trial (NCT02250248, n=45, completed May 2021); no peer-reviewed results were located.",
+     "caveats": "Registry-only evidence; sponsor-run. Putty label (K191974) does not name interbody; the Scaffold label does."
+    },
+    {
+     "application_id": "acetabular-pelvic-ring-fracture",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: AttraX pelvis; AttraX acetabular).",
+     "caveats": "Pelvis is named in both labels; no product-specific pelvic series located."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32080013",
+     "title": "Efficacy of a Standalone Microporous Ceramic Versus Autograft in Instrumented Posterolateral Spinal Fusion: A Multicenter, Randomized, Intrapatient Controlled, Noninferiority Trial",
+     "year": 2020,
+     "design": "RCT",
+     "n": 100,
+     "finding": "AttraX Putty fusion 55% vs autograft 52% at 1 year, noninferior within a 15% margin.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:32459724",
+     "title": "Increasing Fusion Rate Between 1 and 2 Years After Instrumented Posterolateral Spinal Fusion and the Role of Bone Grafting",
+     "year": 2020,
+     "design": "RCT",
+     "n": 66,
+     "finding": "Fusion rose to 70% (AttraX Putty) and 68% (autograft) at 2 years with no difference between grafts.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "NCT02250248",
+     "title": "AttraX Putty vs. Autograft in XLIF (NuVasive)",
+     "year": 2021,
+     "design": "RCT",
+     "n": 45,
+     "finding": "Registered randomized comparison of AttraX Putty and autograft in lateral interbody fusion; completed, no published results located.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-lateral"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Strongest-evidenced synthetic in this slice: only one with a published Level I PLF noninferiority RCT. Globus markets it with its own spine implant franchise."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K191974.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K240507.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K151584",
+    "https://clinicaltrials.gov/study/NCT01982045",
+    "https://clinicaltrials.gov/study/NCT02250248",
+    "https://www.globusmedical.com/products/biologics/"
+   ]
+  },
+  {
+   "id": "globus-bioactive-glass-line",
+   "name": "KINEX Bioactive, SIGNIFY Bioactive and CONFIRM Bioactive (Bioglass putty, gel, strip, crunch)",
+   "company": "Globus Medical",
+   "category": "bioactive-glass",
+   "composition": "Bioglass (45S5-type, ASTM F1538) in a carrier: KINEX adds collagen and hyaluronic acid (putty, gel, strip); SIGNIFY uses polyethylene glycol and glycerol; CONFIRM uses hyaluronic acid and glycerol.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K130392 (KINEX, Aug 2013); K130977 (SIGNIFY, Dec 2013); K133678 (CONFIRM, Aug 2014)",
+    "us_market_year": 2013,
+    "on_label_indications": [
+     "KINEX: bone void filler and autograft extender; Plus Putty and Plus Gel in the extremities, pelvis and spine combined with bone marrow aspirate; Strip, Plus Strip, Putty and Gel in the extremities and pelvis only",
+     "SIGNIFY: Crunch in the extremities, pelvis and posterolateral spine; Putty and Gel in the extremities and pelvis",
+     "CONFIRM: Crunch in the extremities, pelvis and posterolateral spine, must be combined with bone marrow aspirate and autograft; Putty, Plus Putty, Gel, Plus Gel and Plus Crunch in the extremities and pelvis only"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: KINEX OR SIGNIFY OR CONFIRM Globus bioactive posterolateral fusion).",
+     "caveats": "On-label only for specific forms (Crunch, Plus forms) and with bone marrow aspirate; Strip and Putty/Gel forms are not for the spine. Cleared on animal tibia-defect and rabbit posterolateral fusion models, not human data."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: KINEX OR SIGNIFY OR CONFIRM bioactive tibial plateau).",
+     "caveats": "Extremities are named for all forms."
+    },
+    {
+     "application_id": "calcaneus-fracture",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: KINEX OR SIGNIFY OR CONFIRM bioactive calcaneus).",
+     "caveats": "Extremities are named for all forms."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Globus SEC 10-Ks describe KINEX and SIGNIFY as bioactive-glass fillers for pelvic, extremity and posterolateral spine use. CONFIRM did not appear on the Globus pages checked; whether it is still sold is unverified."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf13/K130392.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf13/K130977.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf13/K133678.pdf",
+    "https://www.globusmedical.com/products/biologics/"
+   ]
+  },
+  {
+   "id": "microfuse",
+   "name": "MicroFuse Bone Void Filler (granules, sheets, putty, ST MIS)",
+   "company": "Globus Medical",
+   "category": "other",
+   "composition": "Porous scaffold of bonded poly(lactide-co-glycolide) or poly(lactic acid) microspheres, with and without barium sulfate and calcium sulfate: a polymer scaffold, not a ceramic.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K071187 (Dec 2007); K082442, K083232 (modifications 2008); K102392 (Putty and ST MIS, Dec 2010)",
+    "us_market_year": 2007,
+    "on_label_indications": [
+     "Bone void filler for bony voids or gaps not intrinsic to the stability of the bony structure, packed into the skeletal system (spine, pelvis, extremities); may be combined with bone marrow aspirate or autograft",
+     "MicroFuse Putty is a bone graft extender to be used with bone marrow aspirate and autograft (K102392)"
+    ]
+   },
+   "status": "established",
+   "challenge": "Current availability unverified; include as a historical Globus polymer-scaffold line.",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: MicroFuse polylactide microsphere; Globus MicroFuse posterolateral fusion).",
+     "caveats": "Polymer scaffold with ceramic variants; no clinical series located."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: MicroFuse extremities bone void filler).",
+     "caveats": "Extremities named."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Older Globus line; the Globus pages checked did not mention MicroFuse, so current availability is unverified."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf10/K102392.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K071187"
+   ]
+  },
+  {
+   "id": "formagraft",
+   "name": "FormaGraft Collagen Bone Graft Matrix",
+   "company": "Globus Medical",
+   "ownership_history": "NuVasive marketed FormaGraft (per the brief); NuVasive merged into Globus Medical in September 2023. Link between R&D Medical's 510(k) and NuVasive's sales not sourced. Company field shortened; original: NuVasive (now Globus Medical); 510(k) holder R&D Medical, LLC",
+   "category": "synthetic-ceramic",
+   "composition": "Collagen-ceramic sponge: bovine Type I collagen with hydroxyapatite and tricalcium phosphate (per a 2017 rabbit study describing FormaGraft as a collagen-HA/TCP void filler).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K050789 (May 2005, applicant R and D Medical, LLC)",
+    "us_market_year": 2005,
+    "on_label_indications": [
+     "Cleared as a collagen bone graft matrix bone void filler (510(k) summary PDF not retrievable from FDA; indications text not read)"
+    ]
+   },
+   "status": "off-market",
+   "challenge": "Status 'off-market' is inferred from absence on current company pages, not confirmed.",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: FormaGraft posterolateral fusion).",
+     "caveats": "Indications text not read; the only identified study is a 2017 rabbit posterolateral fusion model (PMID 28852357) comparing FormaGraft and Bi-Ostetic against iliac crest graft."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28852357",
+     "title": "Influence of 45S5 Bioactive Glass in A Standard Calcium Phosphate Collagen Bone Graft Substitute on the Posterolateral Fusion of Rabbit Spine",
+     "year": 2017,
+     "design": "preclinical",
+     "n": 69,
+     "finding": "In rabbits, both a mineralized collagen filler with 45S5 glass (Bi-Ostetic) and FormaGraft showed normal healing with fusion comparable to iliac crest graft.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Likely legacy; no current Globus product page found. Status and ownership are unverified."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K050789",
+    "https://pubmed.ncbi.nlm.nih.gov/28852357/"
+   ]
+  },
+  {
+   "id": "cove-osteocove",
+   "name": "Cove Putty / Cove Strip (sold as OsteoCove in the Orthofix line)",
+   "company": "Orthofix",
+   "ownership_history": "SeaSpine Orthopedics Corporation held the clearances; Orthofix and SeaSpine merged in January 2023 (Orthofix press materials).",
+   "category": "synthetic-ceramic",
+   "composition": "Collagen-ceramic composite: biphasic ceramic granules (about 70% beta-TCP / 30% hydroxyapatite per Orthofix brochures) with Type I bovine collagen, hydrated with saline at point of use; granule surface topography is the claimed osteoinductive feature.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K231030 (Cove Putty, Sept 2023); K242273 (Cove Putty / OsteoCove Putty, Sept 2024); K230486 and K232668 (Cove Strip / OsteoCove Strip, 2023)",
+    "us_market_year": 2023,
+    "on_label_indications": [
+     "Cove Putty: fill voids and gaps not intrinsic to the stability of the bony structure; 'indicated for use with autograft as a bone graft extender in the posterolateral spine and pelvis'; for intervertebral body fusion it must be used as an extender with a cage cleared for use with a bone void filler (K242273)",
+     "Cove Strip / OsteoCove Strip (K232668): posterolateral spine and pelvis only, must be used with autograft as an extender",
+     "Extremities are not named in these indications"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Cove OR OsteoCove OR SeaSpine synthetic graft posterolateral fusion).",
+     "caveats": "Extender-only label (must be used with autograft). Orthofix launched OsteoCove after 510(k) clearance in October 2023; its brochures cite bench and animal data, not human outcomes."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: OsteoCove OR Cove Putty interbody).",
+     "caveats": "Putty (K242273) is on-label in interbody fusion only as an autograft extender with a cage cleared for bone void filler use; the Strip is not."
+    },
+    {
+     "application_id": "acetabular-pelvic-ring-fracture",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: OsteoCove OR Cove pelvis).",
+     "caveats": "Pelvis is named in the label."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Orthofix sells it through its spine biologics reps next to Trinity ELITE and Accell Evo3. The Cove and OsteoCove names appear to be the same product under two names (same brochure text); the 510(k) lists both names together."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K242273.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K232668.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K230486.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231030.pdf",
+    "https://orthofix.com/blog/behind-the-scenes-with-rd-developing-osteocove/",
+    "https://orthofix.com/wp-content/uploads/2024/01/Cove-Putty-and-Strip-Sales-Brochure.pdf"
+   ]
+  },
+  {
+   "id": "mozaik-osteostrux",
+   "name": "IsoTis Mozaik / OsteoStrux / Collage osteoconductive scaffold (putty and strip)",
+   "company": "Orthofix",
+   "ownership_history": "IsoTis Orthobiologics originated the Mozaik line; Integra LifeSciences held the 2006 to 2014 clearances; SeaSpine acquired Integra's US spine business (2015) and merged with Orthofix in January 2023. Dates beyond the Orthofix merger not re-sourced.",
+   "category": "synthetic-ceramic",
+   "composition": "Collagen-ceramic matrix: about 80% beta-TCP and 20% Type I collagen, 60 to 80% porosity (per Orthofix product pages).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K141841 (Integra Mozaik Strip, Aug 2014); K062353 (Mozaik putty, Dec 2006); K063124 (strips, 2007); K091302 (moldable morsels, 2009). No 510(k) under the names OsteoStrux or Collage was found in openFDA.",
+    "us_market_year": 2006,
+    "on_label_indications": [
+     "Integra MOZAIK Strip (K141841): bone void filler for voids or gaps of the skeletal system 'in the extremities, spine, and pelvis' not intrinsic to the stability of the bony structure; also surgically treated osseous or traumatic defects; resorbed and replaced with bone",
+     "The mapping of OsteoStrux and Collage names to these clearances is not sourced"
+    ]
+   },
+   "status": "established",
+   "challenge": "OsteoStrux and Collage are listed with the same composition as Mozaik but no 510(k) under those names was found; do not state they share a clearance.",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Mozaik OR OsteoStrux collagen beta-TCP posterolateral fusion).",
+     "caveats": "A SeaSpine brochure cites a retrospective posterolateral fusion study with 90% fusion; it is not in PubMed and was not found, so it is not graded."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Mozaik OR OsteoStrux tibial plateau).",
+     "caveats": "Extremities named in the label."
+    },
+    {
+     "application_id": "acetabular-pelvic-ring-fracture",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Mozaik OR OsteoStrux pelvis).",
+     "caveats": "Pelvis named in the label."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Older Orthofix collagen-ceramic family sold under several names; same composition shown for Mozaik, OsteoStrux and Collage."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf14/K141841.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K062353",
+    "https://orthofix.com/products/biologics/osteostrux-putty",
+    "https://orthofix.com/wp-content/uploads/2023/10/IsoTis-Mozaik-Brochure.pdf"
+   ]
+  },
+  {
+   "id": "altapore",
+   "name": "Altapore, Altapore Shape and Altapore MIS (SiCaP EP)",
+   "company": "Baxter",
+   "ownership_history": "ApaTech (UK) originated the silicate-substituted calcium phosphate line; Baxter owns it (Baxter's acquisition of ApaTech not re-sourced). Baxter's current catalog lists Actifuse and Altapore; no divestiture found.",
+   "category": "synthetic-ceramic",
+   "composition": "Silicate-substituted calcium phosphate ceramic with enhanced strut porosity (31 to 47%), sold as granules, a shaped strip and a minimally invasive delivery form; sister to Actifuse (which has its own atlas record).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K181225 (Altapore, Aug 2018); K192363 (Altapore, Jan 2020, adds posterolateral spine); K191513 and K200640 (Altapore Shape); K201464 (Altapore MIS); K241564 (Actifuse and Altapore combined, Aug 2024)",
+    "us_market_year": 2018,
+    "on_label_indications": [
+     "Altapore (K192363): implant to fill bony voids or gaps of the skeletal system 'extremities, posterolateral spine and pelvis'; can be used by itself, with autograft as an extender or with bone marrow aspirate; resorbs and is replaced with bone",
+     "K241564 adds the intervertebral disc space: must be used with a cage cleared for use with a bone void filler"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "SiCaP EP (Altapore) single-arm, open-label multicenter study in instrumented PLF: 102 per-protocol patients, fusion success 86.3% at 12 months and 90.6% at 24 months by CT (PMID 30834972; NCT01452022).",
+     "caveats": "No autograft control; Baxter authors; fusion success defined by the sponsor protocol."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Altapore OR SiCaP EP interbody).",
+     "caveats": "On-label with an interbody device cleared for bone void filler use (K241564); the PLF study did not test interbody use."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Altapore OR SiCaP tibial plateau).",
+     "caveats": "Extremities named in the label."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:30834972",
+     "title": "Evaluation of an increased strut porosity silicate-substituted calcium phosphate, SiCaP EP, as a synthetic bone graft substitute in spinal fusion surgery: a prospective, open-label study",
+     "year": 2019,
+     "design": "prospective-cohort",
+     "n": 129,
+     "finding": "Fusion success was 86.3% (88/102) at month 12 and 90.6% at month 24 with improved pain and function.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Baxter sells through its surgical (biosurgery) bone repair catalog."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K192363.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K241564.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K181225",
+    "https://clinicaltrials.gov/study/NCT01452022",
+    "https://pro.baxter.com/products/surgical-equipment-technologies/bone-repair-technology"
+   ]
+  },
+  {
+   "id": "bi-ostetic",
+   "name": "Bi-Ostetic Foam / Putty and Bi-Ostetic Bioactive Glass Foam",
+   "company": "Berkeley Advanced Biomaterials",
+   "ownership_history": "Berkeley Advanced Biomaterials (San Leandro, CA) is the 510(k) holder and trademark owner in FDA records; a SeaSpine-branded Bi-Ostetic block appears in a device catalog, distribution relationship not confirmed.",
+   "category": "synthetic-ceramic",
+   "composition": "Collagen-ceramic composite: hydroxyapatite and beta-TCP (about 60/40 per catalog listings) with bovine collagen; the Bioactive Glass Foam adds 45S5 bioactive glass particles.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K170917 (Bioactive Glass Foam, Oct 2017); K092046 (Foam and Putty, March 2010); K053213 (Foam, 2006); K023703 (Bi-Ostetic, Jan 2003)",
+    "us_market_year": 2003,
+    "on_label_indications": [
+     "Bi-Ostetic Bioactive Glass Foam (K170917): bony voids or gaps of the skeletal system 'extremities, pelvis and posterolateral spine'; surgically created or traumatic; in the posterolateral spine must be used with autogenous bone marrow aspirate and autograft",
+     "Bi-Ostetic Foam/Putty (K092046): extremities, posterolateral spine and pelvis; in weight-bearing situations use with internal or external fixation; treated fracture defect should not exceed 30 mL"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Only an animal study: a 69-rabbit posterolateral fusion model comparing the bioactive glass foam and FormaGraft with iliac crest graft showed comparable healing (PMID 28852357). No published study of this product in this application located (PubMed search 2026-10-23: Bi-Ostetic posterolateral fusion; mineralized collagen bioactive glass spine).",
+     "caveats": "Preclinical only; label requires bone marrow aspirate plus autograft in the spine."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Bi-Ostetic tibial plateau; Bi-Ostetic extremities).",
+     "caveats": "Label caps the treated fracture defect at 30 mL and requires fixation in weight-bearing sites."
+    },
+    {
+     "application_id": "calcaneus-fracture",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Bi-Ostetic calcaneus).",
+     "caveats": "Extremities named in the label."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28852357",
+     "title": "Influence of 45S5 Bioactive Glass in A Standard Calcium Phosphate Collagen Bone Graft Substitute on the Posterolateral Fusion of Rabbit Spine",
+     "year": 2017,
+     "design": "preclinical",
+     "n": 69,
+     "finding": "Both mineralized collagen fillers (with and without 45S5 glass) showed normal healing and spine fusion comparable to iliac crest graft in rabbits.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Small private company; no company page was read, and current commercial status rests on GUDID 'in commercial distribution' listings."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf17/K170917.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf9/K092046.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K053213",
+    "https://accessgudid.nlm.nih.gov/devices/00858418003386"
+   ]
+  },
+  {
+   "id": "cem-ostetic",
+   "name": "Cem-Ostetic, Tri-Ostetic and Generos (Berkeley calcium phosphate cement and ceramic family)",
+   "company": "Berkeley Advanced Biomaterials",
+   "category": "calcium-phosphate-cement",
+   "composition": "Osteoconductive calcium phosphate bone substitutes supplied as granules, blocks and injectable putty; Cem-Ostetic and Tri-Ostetic putty set in situ or ex situ (composition detail not read from the 510(k)).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K030266 (Cem-Ostetic, Feb 2003); K040405 (Cem-Ostetic Putty Injection Kit, March 2004); K041889 (Tri-Ostetic, Aug 2004); K022622 (Cem-Ostetic models, Jan 2003); Generos K050666, K051914",
+    "us_market_year": 2003,
+    "on_label_indications": [
+     "Cem-Ostetic (K030266): osteoconductive bone substitute (granules, blocks, injectable putty) to fill voids and gaps not intrinsic to the stability of the bone structure, located in the 'extremities, spine, pelvis, or cranium'; can augment hardware to support bone fragments during the procedure and acts as a temporary support medium; not intended to provide structural support",
+     "Tri-Ostetic (K041889) carries the same indication text"
+    ]
+   },
+   "status": "established",
+   "challenge": "Composition of Cem-Ostetic was not read from a primary document; treat the CPC classification as provisional.",
+   "applications": [
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Cem-Ostetic OR Tri-Ostetic tibial plateau).",
+     "caveats": "Label covers extremities and temporary support of fragments."
+    },
+    {
+     "application_id": "calcaneus-fracture",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Cem-Ostetic calcaneus).",
+     "caveats": "Label covers extremities."
+    },
+    {
+     "application_id": "cmf-burr-hole",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Cem-Ostetic cranium OR burr hole).",
+     "caveats": "Label names the cranium; no craniofacial series located."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Two-decade-old clearances with GUDID listings; no recent company activity located."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf4/K040405.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf4/K041889.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K030266",
+    "https://accessgudid.nlm.nih.gov/devices/00858418003409"
+   ]
+  },
+  {
+   "id": "ossimend",
+   "name": "OssiMend and OssiMend Bioactive Moldable (Mineral Collagen Composite Bioactive Moldable)",
+   "company": "Collagen Matrix",
+   "ownership_history": "Collagen Matrix (Oakland, NJ) was acquired by private-equity firm Linden Capital Partners (trade press; transaction date not retrieved).",
+   "category": "other",
+   "composition": "Collagen-mineral composites. Original OssiMend (K052812): about 55% anorganic bovine bone mineral and 45% bovine Type I collagen (a xenograft-mineral composite, not a synthetic ceramic). Bioactive Moldable versions add 45S5 bioactive glass (per trade-press descriptions).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K052812 (OssiMend, Jan 2006); K062200 (anorganic bone mineral materials, 2007); K092608 (synthetic mineral-collagen matrix, 2010); K182074 (Mineral Collagen Composite Bioactive Moldable, March 2019); K221735, K231942, K240424 (March 2024)",
+    "us_market_year": 2006,
+    "on_label_indications": [
+     "OssiMend (K052812): combined with autogenous bone marrow, filling bony voids or gaps of the skeletal system 'extremities, spine, and pelvis' not intrinsic to the stability of the bony structure",
+     "Mineral Collagen Composite Bioactive Moldable (K240424): packed into voids of the extremities, pelvis, intervertebral disc space and posterolateral spine; in the spine combined with autogenous bone marrow or autograft, can be used as an autograft extender; in intervertebral body fusion must be used with a cage cleared for a bone void filler"
+    ]
+   },
+   "status": "established",
+   "challenge": "Original OssiMend contains bovine bone mineral, so it is xenograft-derived rather than synthetic; classified 'other' for that reason.",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: OssiMend OR Mineral Collagen Composite Bioactive Moldable posterolateral fusion). The company registered OssiMend BA in instrumented PLF (NCT04775537, n=120 planned, recruiting, observational, completion estimated Dec 2026).",
+     "caveats": "Company-sponsored registry only; no results."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: OssiMend OR Mineral Collagen Composite interbody).",
+     "caveats": "On-label (2024) only with a cage cleared for bone void filler."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: OssiMend tibial plateau).",
+     "caveats": "Extremities named in both labels."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Collagen Matrix is a collagen and bone-mineral manufacturer that supplies OEM partners; no source for a named private-label or OEM arrangement for these grafts was found, so private-label supply is unverified (a 2019 510(k) summary lists Vitoss and Mastergraft as comparators)."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K240424.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf18/K182074.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K052812",
+    "https://clinicaltrials.gov/study/NCT04775537",
+    "https://www.orthoworld.com/collagen-matrix-acquired-by-private-equity-firm/"
+   ]
+  },
+  {
+   "id": "mbcp",
+   "name": "MBCP / MBCP+ (biphasic calcium phosphate)",
+   "company": "Advanced Medical Solutions (Biomatlante)",
+   "ownership_history": "Biomatlante SA (Vigneux-de-Bretagne, France) was bought by Advanced Medical Solutions Group plc in December 2019 for about 8 million euros plus up to 0.3 million euros in milestones (AMS announcement). The 510(k) holder remains Biomatlante.",
+   "category": "synthetic-ceramic",
+   "composition": "Macroporous biphasic calcium phosphate (hydroxyapatite plus beta-TCP) granules, blocks and shaped pieces; MBCP+ and a putty form exist.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K032268 (MBCP, Dec 2003); K043005 (modification, 2005); K051774 (MBCP, 2006); K063527 (MBCP+, July 2007); K071121 (Tribone 80)",
+    "us_market_year": 2003,
+    "on_label_indications": [
+     "MBCP (K032268): bone void filler for bony voids or gaps of the skeletal system 'extremities, spine and pelvis' not intrinsic to the stability of the bony structure; a filler without initial mechanical properties, so rigid fixation is often recommended",
+     "Contraindications in the 2003 form include osteomyelitis, implantation in necrotic sites, degenerative bone disease and intra-articular implantation",
+     "MBCP+ (K063527): same void-filler indication, extremities, spine and pelvis"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: MBCP biphasic calcium phosphate tibial plateau OR fracture OR osteotomy). Biomatlante registered two small pilot trials (NCT00206791, n=3; NCT00289575 in femoral head osteonecrosis, n=12, status unknown) without published results.",
+     "caveats": "Label requires rigid fixation; sales are mainly European."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: MBCP posterolateral fusion; MBCP spine).",
+     "caveats": "Label names spine; European spine use in cages and putty is reported by the company, not located in PubMed."
+    },
+    {
+     "application_id": "femoral-head-osteonecrosis-core-decompression",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Registered pilot (NCT00289575, n=12) but no published results; the 2003 label lists implantation in necrotic sites as a contraindication.",
+     "caveats": "Label conflict.",
+     "challenge": "The cleared label's contraindication for necrotic sites sits awkwardly with an osteonecrosis use."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "AMS said sales were mainly European (about 4 million euros of biosurgical sales in 2018). US commercial presence is unverified; no US distributor was identified."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf3/K032268.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf6/K063527.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K051774",
+    "https://admedsol.com/regulatory-news-announcements/acquisition-of-biomatlante-sa/"
+   ]
+  },
+  {
+   "id": "graftys",
+   "name": "Graftys Quickset, Graftys HBS and Graftys BCP",
+   "company": "Graftys",
+   "ownership_history": "Independent French company; no acquirer found. The CPC registry text says Graftys HBS/Quickset are also sold under private labels (customers not identified).",
+   "category": "calcium-phosphate-cement",
+   "composition": "Injectable apatitic calcium phosphate cements (HBS hydraulic bone substitute; Quickset fast-setting variant) and biphasic calcium phosphate granules (BCP).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K231714 (Graftys Quickset, July 2023); K093343 (Quickset, April 2010); K082498 (Graftys HBS, Feb 2009); K073064 (Graftys BCP, March 2008)",
+    "us_market_year": 2008,
+    "on_label_indications": [
+     "Graftys Quickset (K231714): bony voids or defects not intrinsic to the stability of the bony structure; placed or injected into voids or gaps of the skeletal system 'extremities and pelvis'; surgically created or traumatic; resorbs and is replaced with bone"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "III",
+     "evidence_summary": "Ollivier 2018 (PMID 29627848): 23 Schatzker VI tibial plateau fractures augmented with Quickset-CP versus 23 matched patients with bone graft; articular step-off 1.4 vs 3.6 mm (p<0.01), step-off over 2 mm in 26% vs 56%, and better KOOS pain at 29 months (85.3 vs 74.2).",
+     "caveats": "Retrospective matched cohort from one French center (Marseille), n=46 total; no sponsor stated in the abstract."
+    },
+    {
+     "application_id": "calcaneus-fracture",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Graftys calcaneus fracture). A cadaver study compared two injectable bone substitutes for cement-augmented calcaneal screw fixation (PMID 33189144).",
+     "caveats": "Bench data only."
+    },
+    {
+     "application_id": "distal-radius-fracture",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Graftys distal radius).",
+     "caveats": "Extremities named; no Graftys-specific distal radius series located."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:29627848",
+     "title": "Fixation augmentation using calcium-phosphate bone substitute improves outcomes of complex tibial plateau fractures. A matched, cohort study",
+     "year": 2018,
+     "design": "retrospective",
+     "n": 46,
+     "finding": "Quickset-CP augmentation gave lower articular step-off and better KOOS pain than bone grafting at 29 months in Schatzker VI fractures.",
+     "sponsor_funded": null,
+     "applications": [
+      "tibial-plateau"
+     ]
+    },
+    {
+     "ref": "NCT02575352",
+     "title": "Calcium Phosphate Cement Registry (CPC Registry), Graftys SA",
+     "year": 2021,
+     "design": "registry",
+     "n": 500,
+     "finding": "Planned prospective observational registry of Graftys HBS/Quickset and their private labels; status unknown, no results located.",
+     "sponsor_funded": true,
+     "applications": [
+      "tibial-plateau"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Private-label supply is a manufacturing angle worth probing; US route to market not identified."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231714.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K093343",
+    "https://clinicaltrials.gov/study/NCT02575352",
+    "https://www.beckersspine.com/spinal-tech/graftys-sa-receives-fda-clearance-for-injectable-bone-filler/",
+    "https://pubmed.ncbi.nlm.nih.gov/29627848/"
+   ]
+  },
+  {
+   "id": "biosphere-putty",
+   "name": "BioSphere Putty, BioSphere MIS and BioSphere Flex (spherical bioactive glass)",
+   "company": "Synergy Biomedical",
+   "ownership_history": "Privately held, Wayne, PA; founded 2011; no acquirer found.",
+   "category": "bioactive-glass",
+   "composition": "Spherical 45S5 bioactive glass particles in a moldable synthetic carrier; MIS is delivered by syringe; Flex is a strip.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K241167 (BioSphere Putty and MIS, Dec 2024); K173301 (MIS, 2018); K173424 (Flex, Sept 2018); K140844 (July 2014); K122868 (April 2013)",
+    "us_market_year": 2013,
+    "on_label_indications": [
+     "BioSphere MIS Putty (K241167): bony voids or gaps not intrinsic to stability, packed as a bone void filler 'in the extremities and pelvis', and as a bone graft extender in the posterolateral spine and intervertebral disc space; in the disc space it is an autograft extender used with a cage cleared for bone void filler use"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: BioSphere bioactive glass posterolateral fusion).",
+     "caveats": "Extender-only label in the spine."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Retrospective single-surgeon series (Hughston Clinic) of 248 cases at 1 to 2 years: 103 TLIF, 30 ALIF and 115 ACDF with BioSphere Putty plus autograft or allograft; 100% radiographic fusion and large VAS reductions (PMID 32309645).",
+     "caveats": "Retrospective, no control group, a company author, all fusions reported as 100%; label requires autograft extender use with a cleared cage."
+    },
+    {
+     "application_id": "lumbar-alif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Same 248-case series included 30 ALIF cases with BioSphere plus cancellous allograft, all radiographically fused (PMID 32309645).",
+     "caveats": "As above; subgroup of 30.",
+     "challenge": "The label says 'intervertebral disc space' with a cleared cage and does not distinguish approach; the series used BioSphere with allograft in ALIF."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "115 ACDF cases in the same series had 100% radiographic fusion and 78% VAS reduction at 1 year (PMID 32309645).",
+     "caveats": "The label does not name the cervical spine; on-label status depends on the cage's own clearance.",
+     "challenge": "Cervical use is not named in the cleared indication; treat as arguably on-label via 'intervertebral disc space'."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32309645",
+     "title": "Clinical experience with the use of a spherical bioactive glass putty for cervical and lumbar interbody fusion",
+     "year": 2020,
+     "design": "retrospective",
+     "n": 248,
+     "finding": "All 248 interbody cases were reported fused with significant pain reductions at 1 and 2 years and no graft-related complications.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-tlif-plif",
+      "lumbar-alif",
+      "cervical-acdf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Small independent; CE Mark 2017."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K241167.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K140844",
+    "https://www.orthoworld.com/synergy-biomedical-launches-biosphere-mis-putty/"
+   ]
+  },
+  {
+   "id": "osteo-p",
+   "name": "Osteo-P Bone Graft Substitute",
+   "company": "Molecular Matrix",
+   "ownership_history": "Molecular Matrix, Inc.; location not checked.",
+   "category": "other",
+   "composition": "Porous, radiolucent osteoconductive polymeric carbohydrate scaffold with a trabecular structure (a polysaccharide scaffold, not a ceramic); the defect opening is sealed with bone wax after packing.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K170165 (Dec 2017)",
+    "us_market_year": 2017,
+    "on_label_indications": [
+     "Bony voids or gaps not intrinsic to the stability of the bony structure, gently packed into the skeletal system 'extremities and pelvis'; surgically created or from traumatic or degenerative injury; opening to the defect sealed with bone wax; resorbed and replaced with bone"
+    ]
+   },
+   "status": "established",
+   "challenge": "Commercial status and company details unverified.",
+   "applications": [
+    {
+     "application_id": "benign-bone-cyst-curettage",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Osteo-P Molecular Matrix; polymeric carbohydrate bone graft substitute).",
+     "caveats": "Label covers extremities and pelvis defects; no clinical series located."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Osteo-P tibial plateau).",
+     "caveats": "Radiolucent scaffold; no fracture series located."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Thin record: only the 510(k) was found; no company or trial pages read."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf17/K170165.pdf"
+   ]
+  },
+  {
+   "id": "mg-osteocrete-line",
+   "name": "Mg OsteoCrete, Mg OsteoRevive and Mg OsteoInject (magnesium-based resorbable cement and putty)",
+   "company": "Bone Solutions",
+   "ownership_history": "Privately held; no acquirer found. OsteoCrete was first cleared as a bone void filler in 2009.",
+   "category": "calcium-phosphate-cement",
+   "composition": "Magnesium oxide-based formulations that react with phosphate compounds to set into a crystalline magnesium phosphate bone void filler (Osteoinject low-viscosity; Osteorevive moldable; Osteocrete cement).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K262230 (Mg OsteoRevive / Mg OsteoCrete, Sept 2026); K251522 (Mg OsteoInject / OsteoRevive / OsteoCrete, Oct 2025); K242372 (Oct 2024); K234013 (Feb 2024, intervertebral body fusion); K221256 (Mg OsteoInject, June 2022); K212991 (Osteorevive, Jan 2022); K071004 (OsteoCrete, 2009)",
+    "us_market_year": 2009,
+    "on_label_indications": [
+     "Mg OsteoInject (K251522): bony voids or defects of the extremities and pelvis not intrinsic to stability, including those from benign bone cysts and tumors in adults and pediatric patients over 6; adjunct to rigid fixation by supporting bone fragments during surgery in the extremities and pelvis; not for large defects that would not heal spontaneously",
+     "Mg OsteoRevive and Mg OsteoCrete (K262230): extremities, posterolateral spine, intervertebral disc space and pelvis; extremities and pelvis alone or with autograft/allograft, but must be used with morselized autograft and/or allograft in the posterolateral spine and with a cleared cage in intervertebral body fusion"
+    ]
+   },
+   "status": "established",
+   "challenge": "Calling the chemistry 'magnesium phosphate' follows company descriptions of a Mg-oxide plus phosphate setting reaction; no primary composition document was read.",
+   "applications": [
+    {
+     "application_id": "benign-bone-cyst-curettage",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Mg OsteoCrete OR Mg OsteoInject OR OsteoRevive). Registered: OsteoCrete bone-void pilot at UCLA (NCT04069923, n=5, completed) and Mg OsteoCrete outcomes registry (NCT06720142, n=10 planned, recruiting).",
+     "caveats": "Company-announced pediatric clearance (age 6 and up) in October 2025 ties to a unicameral bone cyst technique; peer-reviewed series not located."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Mg OsteoCrete OR OsteoRevive posterolateral fusion).",
+     "caveats": "Spine use requires morselized autograft and/or allograft."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Mg OsteoCrete interbody fusion).",
+     "caveats": "February 2024 intervertebral body fusion clearance (company press release: first magnesium-based substitute cleared for that use); needs a cleared cage plus autograft/allograft."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Mg OsteoCrete OR OsteoInject tibial plateau OR fracture).",
+     "caveats": "A 2018 report used the cement to augment anchor fixation (PMID 29494715), and bench studies exist, but no fracture series was located."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Company issues frequent label-expansion releases (spine 2022, interbody 2024, pediatric 2025, 2026 clearance). No Stryker or distributor relationship was found."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf26/K262230.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K251522.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K071004",
+    "https://businesswire.com/news/home/20251021591910/en/Bone-Solutions-Mg-OSTEOCRETE-and-Mg-OSTEOINJECT-Receive-FDA-Clearance-for-Pediatric-Use-in-Patients-Aged-Six-and-Older",
+    "https://businesswire.com/news/home/20240213202729/en/Bone-Solutions-Receives-510k-Clearance-for-Expanded-Indications-of-Use-for-Mg-OSTEOCRETE-in-Intervertebral-Body-Fusion-Procedures"
+   ]
+  },
+  {
+   "id": "cerasorb-ortho",
+   "name": "Cerasorb Ortho, Cerasorb M Ortho, Cerasorb Ortho Foam and Ceracell Ortho Foam",
+   "company": "Curasan",
+   "ownership_history": "Curasan AG; the 2016 510(k) summary lists Orthovita, Inc. (Malvern, PA; now part of Stryker) as manufacturer or US partner, relationship detail not read.",
+   "category": "synthetic-ceramic",
+   "composition": "Pure-phase beta-tricalcium phosphate (ASTM F1088) granules; the Foam forms combine the beta-TCP with porcine collagen.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K160566 (Cerasorb Ortho Foam, Dec 2016); K181721 (Ceracell Ortho Foam, Sept 2018); K014156 (Cerasorb Ortho, March 2002); K040216 (Cerasorb M Ortho, 2004); K100841 (BoneOptimizer, 2010)",
+    "us_market_year": 2002,
+    "on_label_indications": [
+     "Cerasorb Ortho Foam (K160566): implant intended to fill bony voids or gaps of the skeletal system 'extremities and pelvis' not intrinsic to the stability of the bony structure; surgically created or traumatic; resorbs and is replaced with bone",
+     "Spine is not named in the Foam indication"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Cerasorb Ortho OR Ceracell Ortho tibial plateau OR fracture).",
+     "caveats": "Extremities named; dental Cerasorb literature is plentiful but not relevant to this label."
+    },
+    {
+     "application_id": "distal-radius-fracture",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Cerasorb distal radius).",
+     "caveats": "Extremities named."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Cerasorb Ortho posterolateral fusion).",
+     "caveats": "Foam label does not name the spine."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "US route appears to be through Orthovita/Stryker; Cerasorb Ortho is not listed on current Stryker pages checked, so US availability is unverified."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf16/K160566.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K181721",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K014156"
+   ]
+  },
+  {
+   "id": "nanobone-sbx",
+   "name": "NanoBone SBX Putty and NanoBone QD",
+   "company": "Biocomposites",
+   "ownership_history": "Artoss GmbH (Rostock, Germany) developed NanoBone; Biocomposites Ltd acquired Artoss in June 2023 (company press release); Biocomposites is TA Associates-backed with Novo Holdings co-investing (see the Stimulan record).",
+   "category": "synthetic-ceramic",
+   "composition": "Phase-pure, non-sintered nanocrystalline hydroxyapatite embedded in a highly porous silica gel matrix, delivered as granulate in an aqueous gel (putty) in a syringe or cartridge applicator.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K250521 (NanoBone SBX Putty and QD, April 2025); K190110 (April 2019); K161351 (Oct 2016); K141189 (NanoBone granulate, Jan 2015)",
+    "us_market_year": 2015,
+    "on_label_indications": [
+     "NanoBone SBX Putty and NanoBone QD (K250521): implant to fill bony voids or gaps of the skeletal system 'extremities, posterolateral spine, intervertebral disc space, and pelvis' not intrinsic to stability; surgically created or traumatic; in intervertebral body fusion must be used with a cage cleared for a bone void filler"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: NanoBone SBX OR NanoBone lumbar posterolateral). Artoss registered a NanoBone vs local autograft study in 1 to 2 level PLF (NCT04615260, n=40 planned, active, no results) and a 330-patient spine registry (NCT04439032, completed primary Oct 2024, no results located).",
+     "caveats": "Dental NanoBone literature is extensive but not relevant to this label."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: NanoBone SBX interbody).",
+     "caveats": "On-label only with a cleared cage."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: NanoBone tibial plateau OR fracture).",
+     "caveats": "Extremities named."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Artoss Inc. ran the US spine registry; Biocomposites' US reach is via direct and distributor channels."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K250521.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K190110.pdf",
+    "https://clinicaltrials.gov/study/NCT04615260",
+    "https://clinicaltrials.gov/study/NCT04439032",
+    "https://prnewswire.co.uk/news-releases/biocomposites-adds-proprietary-nanobone-technology-to-its-portfolio-through-the-acquisition-of-artoss-gmbh-301842526.html"
+   ]
+  },
+  {
+   "id": "genex",
+   "name": "Genex Bone Graft Substitute (injectable paste)",
+   "company": "Biocomposites",
+   "ownership_history": "Biocomposites Ltd; a trade report states that in March 2022 Biocomposites signed a multiyear agreement for Zimmer Biomet to distribute Genex exclusively in the US (report not retrieved in full).",
+   "category": "calcium-sulfate",
+   "composition": "Synthetic resorbable injectable bone graft substitute supplied as powder plus mixing solution that sets in situ (components not stated in the 510(k) text read; Biocomposites literature describes a calcium sulfate-based composite, unverified).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K212721 (Genex, Feb 2022); K082381 (Genex, Nov 2008); K073341 (Genex Putty, 2008); K040600 (Genex, 2004)",
+    "us_market_year": 2004,
+    "on_label_indications": [
+     "Genex Bone Graft Substitute (K212721): indicated only for bony voids or defects/gaps not intrinsic to stability, packed into voids of the skeletal system 'long bones, extremities, posterolateral spine and pelvis'; paste can be injected, digitally packed or molded"
+    ]
+   },
+   "status": "established",
+   "challenge": "Composition and the exclusive Zimmer Biomet distribution rest on trade snippets, not primary documents.",
+   "applications": [
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Genex Biocomposites bone graft substitute).",
+     "caveats": ""
+    },
+    {
+     "application_id": "calcaneus-fracture",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Genex calcaneus).",
+     "caveats": "Long bones and extremities named."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Genex posterolateral fusion).",
+     "caveats": "Posterolateral spine named."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Genex gives Zimmer Biomet a current synthetic through a distribution deal rather than ownership."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf21/K212721.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K082381"
+   ]
+  },
+  {
+   "id": "allogran",
+   "name": "Allogran-N and Allogran-R Bone Void Filler",
+   "company": "Biocomposites",
+   "category": "synthetic-ceramic",
+   "composition": "Allogran-N: hydroxyapatite bone graft substitute granules; Allogran-R: resorbable calcium salt implant in granules or preformed shapes.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K043514 (Allogran-N, Jan 2005); K061311 (Allogran-R, Sept 2006)",
+    "us_market_year": 2005,
+    "on_label_indications": [
+     "Allogran-R (K061311): resorbable implant to fill bony voids or gaps not intrinsic to the stability of the bony structure (extremities, spine or pelvis), may be combined with saline or blood; Allogran-N (K043514): hydroxyapatite granules for bony voids or gaps"
+    ]
+   },
+   "status": "off-market",
+   "challenge": "Current status unverified; 'off-market' inferred from absence of current listings.",
+   "applications": [
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Allogran Biocomposites).",
+     "caveats": "Historical product; no clinical literature."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Not on any current Biocomposites page checked; included for completeness of the company's 510(k) history."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K043514",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K061311"
+   ]
+  },
+  {
+   "id": "bongros-ha",
+   "name": "Bongros-HA / Bongros-GS (Korea)",
+   "company": "CGBio",
+   "ownership_history": "CGBio (formerly Novomedics, Korea) also owns the Novosis rhBMP-2 record already in the atlas; Bioalpha as CGBio's subsidiary or partner is not confirmed.",
+   "category": "synthetic-ceramic",
+   "composition": "Synthetic hydroxyapatite bone chips (Bongros-HA) and related graft forms (Bongros-GS); Korean-market products.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "No orthopedic 510(k) found. openFDA lists K090793 'BONGROS HA' (Bioalpha, Inc., May 2009) under dental product code LYC (not orthopedic MQV).",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Orthopedic spine and long-bone use is a Korean-market labeling; the only US record is a 2009 dental bone grafting clearance"
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "II",
+     "evidence_summary": "Prospective, single-institution, case-matched intrapatient study of 32 instrumented PLF patients (Seoul): hydroxyapatite plus autograft on one side versus iliac autograft on the other, complete 3D-CT fusion 86.7% vs 88.9% at 12 months (not significant) (PMID 18615472).",
+     "caveats": "Korean institution, small n, side-by-side design; no US orthopedic clearance, so US use would be off-label or unauthorized.",
+     "challenge": "Do not present as US-available for orthopedics; the K090793 clearance is dental."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:18615472",
+     "title": "A prospective consecutive study of instrumented posterolateral lumbar fusion using synthetic hydroxyapatite (Bongros-HA) as a bone graft extender",
+     "year": 2009,
+     "design": "prospective-cohort",
+     "n": 32,
+     "finding": "Fusion was 86.7% with hydroxyapatite plus autograft versus 88.9% with autograft alone at 12 months, with larger fusion mass volume on the hydroxyapatite side.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Ex-US (Korea, Asia); useful for diligence on CGBio's synthetic portfolio, not for a US sales plan."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K090793",
+    "https://pubmed.ncbi.nlm.nih.gov/18615472/"
+   ]
+  },
+  {
+   "id": "herafill",
+   "name": "Herafill (gentamicin calcium sulfate / calcium carbonate beads and granules)",
+   "company": "Heraeus Medical",
+   "ownership_history": "Heraeus Medical (part of the Heraeus group, Hanau/Wehrheim, Germany).",
+   "category": "calcium-sulfate",
+   "composition": "Biconvex 6 mm beads or granules of calcium sulfate and calcium carbonate with about 1% gentamicin sulfate and glycerol tripalmitate as binder: a resorbable synthetic antibiotic carrier.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "CE-marked (market entry 2010 per a clinical paper); no FDA 510(k) or PMA found in openFDA (searched device name 'herafill')",
+    "us_market_year": null,
+    "on_label_indications": [
+     "CE-marked ex-US as a gentamicin-loaded resorbable bone void filler; no FDA indication exists"
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "osteomyelitis-dead-space",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published controlled study of Herafill in osteomyelitis dead space located (PubMed search 2026-10-23: Herafill osteomyelitis). Preclinical data: three-way sheep comparison of gentamicin-loaded Stimulan-G, Cerament-G and Herafill-G (PMID 32840717) and a rat Masquelet granule-size study (PMID 31721435); Herafill was one of the carriers used in a periprosthetic joint infection DAIR cohort of mixed carriers (PMID 31321457).",
+     "caveats": "Not authorized in the US; in the 12-sheep comparison Herafill-G showed the lowest bone gain of the three carriers; elution and bone data are animal-only.",
+     "challenge": "The sheep-model finding should not be quoted as human comparative efficacy."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32840717",
+     "title": "Comparative osteoconductivity of bone void fillers with antibiotics in a critical size bone defect model",
+     "year": 2020,
+     "design": "preclinical",
+     "n": 12,
+     "finding": "In sheep, Stimulan-G and Cerament-G produced similar bone gains while Herafill-G showed the lowest increases in bone volume and surface area, similar to negative-control sites.",
+     "sponsor_funded": null,
+     "applications": [
+      "osteomyelitis-dead-space"
+     ]
+    },
+    {
+     "ref": "PMID:31721435",
+     "title": "Size matters: Effect of granule size of the bone graft substitute (Herafill) on bone healing using Masquelet's induced membrane in a critical size defect model in the rat's femur",
+     "year": 2020,
+     "design": "preclinical",
+     "n": 126,
+     "finding": "Three Herafill granule sizes, with or without bone marrow cells, were compared in a 10 mm rat femoral defect with an induced membrane.",
+     "sponsor_funded": null,
+     "applications": [
+      "osteomyelitis-dead-space"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Not applicable in the US (not marketed).",
+    "notes": "Ex-US only; Heraeus Medical's US presence is bone cement, not Herafill. Useful context against STIMULAN VG and CERAMENT G/V (both in the atlas)."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://eprints.soton.ac.uk/426140/2/materials_11_02265.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/32840717/",
+    "https://pubmed.ncbi.nlm.nih.gov/31721435/"
+   ]
+  },
+  {
+   "id": "teknimed-cementek",
+   "name": "Cementek, Cementek LV, TriHA+ and Ceraform (Teknimed calcium phosphate)",
+   "company": "Teknimed",
+   "category": "calcium-phosphate-cement",
+   "composition": "Cementek: apatitic calcium phosphate cement putty (solid plus liquid phase, athermic setting); TriHA+ and Ceraform: calcium phosphate (hydroxyapatite/TCP) scaffolds.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K041493 (Cementek, Aug 2004); K042911 (Cementek LV, Dec 2004); K031826 (TriHA+, Nov 2003); K040669 (Ceraform, May 2004)",
+    "us_market_year": 2003,
+    "on_label_indications": [
+     "Cementek (K041493): bone void filler only, for voids or gaps not intrinsic to stability; putty molded into the 'extremities, spine, and pelvis'; calcium phosphate scaffold resorbs and is replaced with bone",
+     "TriHA+ and Ceraform: gently packed into voids in the extremities, spine and pelvis; not for large defects that would not heal spontaneously"
+    ]
+   },
+   "status": "off-market",
+   "challenge": "Status 'off-market' inferred from age of clearances and absence of US catalogs; not confirmed.",
+   "applications": [
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Cementek Teknimed). A minipig study compared Bone Source and Cementek with Endobon (PMID 21337309).",
+     "caveats": "Preclinical only."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Teknimed is better known for vertebroplasty cements; US marketing of these 2003 to 2004 clearances was not confirmed."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf4/K041493.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K031826",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K040669"
+   ]
+  },
+  {
+   "id": "tactoset",
+   "name": "Tactoset Injectable Bone Substitute",
+   "company": "Anika Therapeutics",
+   "ownership_history": "Anika's own product (Bedford, MA); Anika also owns Arthrosurface and Parcus Medical (acquired 2020).",
+   "category": "calcium-phosphate-cement",
+   "composition": "Injectable, settable osteoconductive calcium phosphate (two components mixed intra-operatively) that hardens and converts to poorly crystalline hydroxyapatite; Anika describes it as incorporating its hyaluronic acid technology.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K231968 (Dec 2023); K223915 (March 2023); K212083 (Aug 2021, adds hardware augmentation)",
+    "us_market_year": 2019,
+    "on_label_indications": [
+     "Filling bone voids or defects of the skeletal system 'extremities and pelvis' not intrinsic to stability; surgically created or traumatic defects; can augment hardware and support bone fragments during the procedure; the cured paste is a temporary support medium and is not for structural support (K231968)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-subchondral-bml",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "A 2020 technique paper describes percutaneous skeletal fixation of painful subchondral bone marrow edema with Tactoset (PMID 33294321); no outcome series located.",
+     "caveats": "Technique description only; bone marrow lesion treatment is not named in the cleared indication.",
+     "challenge": "Anika launched Tactoset for insufficiency fractures in 2019; the label covers voids and hardware augmentation, not subchondral edema."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Tactoset tibial plateau OR hardware augmentation).",
+     "caveats": "2021 clearance added hardware augmentation."
+    },
+    {
+     "application_id": "distal-radius-fracture",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Tactoset distal radius).",
+     "caveats": "Extremities named."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:33294321",
+     "title": "Percutaneous Skeletal Fixation of Painful Subchondral Bone Marrow Edema Utilizing an Injectable, Synthetic, Biocompatible Hyaluronic Acid-Based Bone Graft Substitute",
+     "year": 2020,
+     "design": "case-series",
+     "n": null,
+     "finding": "Technique description of percutaneous Tactoset injection for painful subchondral bone marrow edema; no outcomes reported.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-subchondral-bml"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Sold into Anika's joint-preservation call point (sports medicine/trauma)."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231968.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf21/K212083.pdf",
+    "https://ir.anika.com/Tactoset-R-Injectable-Bone-Substitute-Now-FDA-Cleared-for-Hardware-Augmentation?asPDF=1"
+   ]
+  },
+  {
+   "id": "citrepore",
+   "name": "Citrepore Bone Void Filler",
+   "company": "Acuitive Technologies",
+   "ownership_history": "Acuitive Technologies, Inc. (Allendale, NJ), maker of the Citregen citrate-polymer tendon screws.",
+   "category": "bioactive-glass",
+   "composition": "Highly porous, pliable, sponge-like polymer-bioceramic composite: 60 wt% citrate-based elastomeric polymer and 40 wt% 45S5 bioactive glass (ASTM F1538).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K240450 (Nov 2024)",
+    "us_market_year": 2024,
+    "on_label_indications": [
+     "Bone void filler for voids or gaps not intrinsic to the stability of the bony structure, surgically created or from traumatic injury; filling bony voids or gaps of the skeletal system 'extremities and pelvis'; may be combined with saline, autogenous blood and/or bone marrow; resorbs and is replaced with bone"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "tibial-plateau",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Citrepore OR citrate-based bioactive glass bone void filler).",
+     "caveats": "Cleared 2024 on bench and animal data; no human series."
+    },
+    {
+     "application_id": "calcaneus-fracture",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Citrepore calcaneus).",
+     "caveats": "Extremities named."
+    }
+   ],
+   "evidence": [],
+   "pipeline": {
+    "stage": "launched-2024",
+    "trials": [],
+    "expected_milestone": "No trial registered; company launch details not read."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Sponge-style handling is the differentiator versus putties."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K240450.pdf"
+   ]
+  },
+  {
+   "id": "bonvie-plus",
+   "name": "BonVie+ and EP Granules BVF",
+   "company": "Elute",
+   "category": "synthetic-ceramic",
+   "composition": "Resorbable bone void filler of hydroxyapatite, calcium carbonate and calcium chloride particles with degradable polymers (PCL, PEG, PLGA); BonVie+ is a kit that molds granules in a silicone mat, EP Granules BVF is the preformed-granule predicate.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K250346 (BonVie+, Feb 2025); K180853 (EP Granules BVF, Aug 2018)",
+    "us_market_year": 2018,
+    "on_label_indications": [
+     "Implant to fill bony voids or gaps of the skeletal system 'extremities and pelvis' that are not intrinsic to stability; surgically created or traumatic; resorbs and is replaced with bone (K250346, K180853)"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "tibial-plateau",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: BonVie OR Elute EP Granules).",
+     "caveats": "Clearance rests on bench data and predicate equivalence."
+    },
+    {
+     "application_id": "osteomyelitis-dead-space",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "The cleared BonVie+ carries no antibiotic. Elute's antibiotic-loaded version, EP Granules + tobramycin, is under an FDA IDE (see the separate record); no published human data on either.",
+     "caveats": "BonVie+ has no infection claim."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Platform company: the cleared granules are the base for the antibiotic combination pivotal trial."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K250346.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf18/K180853.pdf",
+    "https://510k.innolitics.com/device/K250346"
+   ]
+  },
+  {
+   "id": "ep-granules-tobramycin",
+   "name": "EP Granules + Tobramycin (Elute antibiotic-eluting graft)",
+   "company": "Elute",
+   "category": "synthetic-ceramic",
+   "composition": "Investigational combination of Elute's resorbable calcium-salt/polymer granules with tobramycin for roughly eight weeks of local release (per company and trial descriptions).",
+   "regulatory": {
+    "path": "IDE-only",
+    "reference": "NCT05361941 (FDA-authorized pivotal IDE trial)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Investigational; no marketing authorization. Study treats periprosthetic joint infection in the first stage of staged revision"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "osteomyelitis-dead-space",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published efficacy data located (PubMed search 2026-10-23: Elute antibiotic EP Granules tobramycin); the pivotal trial is randomized, blinded, 204 planned.",
+     "caveats": "Investigational combination device; the trial is in periprosthetic joint infection, a population close to but not identical to long-bone osteomyelitis."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT05361941",
+     "title": "Multicenter Trial of Antibiotic Eluting Graft for Promoting New Bone Growth in/Near Infected Bone Cavities",
+     "year": 2029,
+     "design": "RCT",
+     "n": 204,
+     "finding": "Pivotal prospective, multicenter, randomized, blinded trial of EP Granules + tobramycin versus standard-of-care revision in staged PJI; recruiting, estimated primary completion December 2029.",
+     "sponsor_funded": true,
+     "applications": [
+      "osteomyelitis-dead-space"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT05361941"
+    ],
+    "expected_milestone": "Primary completion estimated 2029-12 (ClinicalTrials.gov)"
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable (investigational).",
+    "notes": "Direct competitors for antibiotic carriers: CERAMENT G/V, STIMULAN VG (all in the atlas)."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT05361941",
+    "https://www.orthoworld.com/elute-authorized-for-clinical-trial-of-antibiotic-eluting-bone-void-filler/"
+   ]
+  },
+  {
+   "id": "jazbi",
+   "name": "JAZBI Resorbable Bone Void Filler",
+   "company": "SDIP Innovations",
+   "ownership_history": "SDIP Innovations (Australia); no acquirer found.",
+   "category": "synthetic-ceramic",
+   "composition": "Porous biphasic calcium phosphate (beta-TCP plus hydroxyapatite) granules in a polymeric matrix (poly(propylene carbonate) and GPTMS); MR Safe labeling claimed.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K252797 (May 2026)",
+    "us_market_year": 2026,
+    "on_label_indications": [
+     "Bone void filler for bony voids or defects not intrinsic to stability, from benign bone cysts and tumors, surgical creation or trauma; gently packed or placed into voids of the 'extremities and pelvis'; resorbs and is replaced with bone"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "benign-bone-cyst-curettage",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: JAZBI SDIP resorbable bone void filler).",
+     "caveats": "Cleared in 2026; no clinical data yet."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: JAZBI tibial plateau).",
+     "caveats": "Extremities named."
+    }
+   ],
+   "evidence": [],
+   "pipeline": {
+    "stage": "launched-2026",
+    "trials": [],
+    "expected_milestone": "Cleared May 2026; no trial registered."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Very new; no company page read."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K252797.pdf"
+   ]
+  },
+  {
+   "id": "osteoflo",
+   "name": "OsteoFlo NanoPutty, HydroPutty and HydroFiber",
+   "company": "SurGenTec",
+   "ownership_history": "SurGenTec, LLC (Boca Raton, FL); privately held, no acquirer found.",
+   "category": "synthetic-ceramic",
+   "composition": "Fully synthetic hydrophilic grafts: NanoPutty is quadphasic particles (hydroxyapatite, alpha-TCP, beta-TCP, bioactive glass) in a bioresorbable polymer binder; HydroPutty is carbonated apatite granules and bioglass in a synthetic polymer binder; HydroFiber is the fibrous form. Delivered with SurGenTec's GraftGun.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K251720 (OsteoFlo HydroFiber, July 2025, summary not retrievable); K243949 (HydroFiber, May 2025); K242797 (HydroFiber, Dec 2024); K231716 (HydroPutty, Oct 2023); K200064 (NanoPutty, Aug 2020)",
+    "us_market_year": 2020,
+    "on_label_indications": [
+     "HydroFiber (K243949): bone void filler for osseous defects not intrinsic to stability, packed into the 'extremities, pelvis, intervertebral disc space, and posterolateral spine'; standalone or with autograft as an extender; in intervertebral body fusion must be used with a cage cleared for a bone void filler",
+     "NanoPutty (K200064) and HydroPutty (K231716): extremities and pelvis only; the earlier HydroFiber clearance (K242797) lacked the extremities"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Retrospective chart review of 129 patients (211 lateral mass and 199 interbody fusions) using OsteoFlo mixed with a cellular allograft (Vimax): Bridwell grade I fusion 77.8% of lateral-mass and 92.0% of interbody levels at 1 year (PMID 40242813).",
+     "caveats": "No control group; the product used (2021 to 2022) was the NanoPutty/HydroPutty generation whose labels named extremities and pelvis only, so the spine use then was off-label; mixed with a cellular allograft, so the effect of the synthetic alone is not isolated."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Same series: 92.0% Bridwell I fusion at 1 year across 199 interbody levels (PMID 40242813). A 2026 case report used stand-alone HydroFiber-type graft in a postoperative osteomyelitis/discitis salvage (PMID 42724889); a rabbit PLF study showed noninferiority to iliac autograft (PMID 42003666).",
+     "caveats": "Interbody label requires a cage cleared for bone void filler use; case report and animal study are not clinical evidence of equivalence."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: OsteoFlo tibial plateau OR extremity).",
+     "caveats": "Extremities now named for HydroFiber (May 2025)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:40242813",
+     "title": "Rate of fusion using novel synthetic bone graft mixed with cellular allograft product in lumbar fusions",
+     "year": 2025,
+     "design": "retrospective",
+     "n": 129,
+     "finding": "Bridwell grade I fusion at 1 year was 77.8% (lateral mass) and 92.0% (interbody) with OsteoFlo plus a cellular allograft.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "PMID:42003666",
+     "title": "A Novel Nano-Synthetic Hydrophilic Bone Graft (OsteoFlo HydroFiber) Is a Non-inferior Alternative to Iliac Crest Autograft in a Rabbit Posterolateral Fusion Model",
+     "year": 2026,
+     "design": "preclinical",
+     "n": null,
+     "finding": "In rabbits, HydroFiber was noninferior to iliac crest autograft for posterolateral fusion.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Named in the existing new-clearances tracker; the 2023 to 2025 clearances expanded the label from extremities/pelvis to spine, which is the commercial story."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K243949.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K242797.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231716.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf20/K200064.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/40242813/"
+   ]
+  },
+  {
+   "id": "nanofuse",
+   "name": "NanoFUSE Bioactive Bone Graft (bioactive glass in gelatin)",
+   "company": "Amend Surgical",
+   "ownership_history": "Amend Surgical, Inc. (Alachua, FL); ownership changes not checked.",
+   "category": "bioactive-glass",
+   "composition": "Synthetic calcium phosphor-silicate particles (45S5 bioactive glass) coated with porcine gelatin, reconstituted with saline, water or blood into a moldable paste; a DBM-containing sibling (NanoFUSE DBM, K142104) is a separate DBM-category product.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K161996 (Feb 2017); predicate K142104 (NanoFUSE DBM)",
+    "us_market_year": 2017,
+    "on_label_indications": [
+     "NanoFUSE: gently placed into bony voids or gaps of the skeletal system not intrinsic to stability, 'the posterolateral spine and pelvis'; surgically created or traumatic; must be used with autograft as a bone graft extender in the posterolateral spine and pelvis; remodels into the recipient skeleton"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: NanoFUSE bioactive glass posterolateral fusion). A 2013 paper tested the DBM-containing sibling in animals (PMID 22323112).",
+     "caveats": "Extender-only label (with autograft)."
+    },
+    {
+     "application_id": "acetabular-pelvic-ring-fracture",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: NanoFUSE pelvis).",
+     "caveats": "Pelvis named."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:22323112",
+     "title": "Osteoconductivity and osteoinductivity of NanoFUSE DBM",
+     "year": 2013,
+     "design": "preclinical",
+     "n": null,
+     "finding": "Animal study of the DBM-containing NanoFUSE sibling, not the synthetic-only product cleared in K161996.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Small spine biologics maker."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf16/K161996.pdf"
+   ]
+  },
+  {
+   "id": "healos",
+   "name": "HEALOS and HEALOS Fx (collagen-hydroxyapatite sponge)",
+   "company": "DePuy Synthes",
+   "ownership_history": "Orquest, Inc. originated HEALOS; acquired by DePuy Spine (J&J) and now under DePuy Synthes. Acquisition date not sourced.",
+   "category": "other",
+   "composition": "Collagen-ceramic composite: bovine Type I collagen fibers coated with hydroxyapatite (about 30% mineral by weight); soaked in the patient's bone marrow aspirate; Fx is an injectable form with a mixing and delivery system.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K081758 (HEALOS Fx, Sept 2008); K062495 (Fx, 2006); K043308 (modification, 2005); K012751 (HEALOS, Nov 2001, Orquest)",
+    "us_market_year": 2001,
+    "on_label_indications": [
+     "HEALOS Fx combined with autogenous bone marrow: filling bony voids or gaps of the skeletal system 'extremities, spine, and pelvis' not intrinsic to stability; surgically created or traumatic defects; resorbed and remodeled into new bone (K081758)",
+     "Separate dental and Healos II clearances exist (K081432, K093390; product code LYC)"
+    ]
+   },
+   "status": "off-market",
+   "challenge": "Off-market status is inferred, not confirmed; the interbody RCT NCT00316121 is unpublished.",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "III",
+     "evidence_summary": "Neen 2006 (PMID 16915079): Healos plus bone marrow aspirate in 50 matched lumbar fusions versus historical iliac autograft controls: equivalent radiographic and clinical results in posterolateral fusion, no persisting donor-site complications versus 14% in autograft. Counterpoints: Ploumis 2010 (PMID 20672956; n=28 degenerative scoliosis) found equal clinical outcome but slower fusion than allograft, and a Thai intrapatient series (PMID 23991599; n=27) found 2-year radiographic fusion 29.6% with Healos/BMA versus 63.0% with local graft.",
+     "caveats": "Mixed evidence; historical controls in Neen; older 2000s imaging standards; outcomes depend on bone marrow aspirate quality."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "III",
+     "evidence_summary": "Neen 2006: radiographic fusion rate was significantly lower with Healos in interbody fusions despite similar clinical outcomes. Case series of 20 TLIF/PLF patients: 95% fusion at 27 months (PMID 19111510). DePuy-linked randomized TLIF trial of Healos versus autograft (NCT00316121, n=138, completed, results posted) has no peer-reviewed report located.",
+     "caveats": "The registered randomized trial would be the strongest dataset but was not found in PubMed on 2026-10-23.",
+     "challenge": "Interbody data are mixed and the RCT is unpublished; a hiring manager would ask why."
+    },
+    {
+     "application_id": "adult-deformity",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "III",
+     "evidence_summary": "Ploumis 2010 (PMID 20672956): Healos graft carrier with bone marrow aspirate plus local autograft (n=12) versus cancellous allograft plus local autograft (n=16) in degenerative lumbar scoliosis PLF: similar 2-year clinical results, Healos fusion slower.",
+     "caveats": "Small retrospective grouping."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:16915079",
+     "title": "Healos and bone marrow aspirate used for lumbar spine fusion: a case controlled study comparing healos with autograft",
+     "year": 2006,
+     "design": "prospective-cohort",
+     "n": null,
+     "finding": "Equivalent fusion in posterolateral lumbar fusion versus matched historical autograft, but significantly lower radiographic fusion in lumbar interbody fusions.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf",
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "PMID:20672956",
+     "title": "Healos graft carrier with bone marrow aspirate instead of allograft as adjunct to local autograft for posterolateral fusion in degenerative lumbar scoliosis: a minimum 2-year follow-up study",
+     "year": 2010,
+     "design": "retrospective",
+     "n": 28,
+     "finding": "Equal pain, function, curve and fusion rates at 2 years, but earlier fusion with allograft than with Healos.",
+     "sponsor_funded": null,
+     "applications": [
+      "adult-deformity",
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:23991599",
+     "title": "A comparative study of radiographic results using HEALOS collagen-hydroxyapatite sponge with bone marrow aspiration versus local bone graft in the same patients undergoing posterolateral lumbar fusion",
+     "year": 2013,
+     "design": "retrospective",
+     "n": 27,
+     "finding": "Radiographic fusion at 2 years was 29.6% on the Healos side versus 63.0% on the local-bone side.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:19111510",
+     "title": "Clinical and radiographic assessment of transforaminal lumbar interbody fusion using HEALOS collagen-hydroxyapatite sponge with autologous bone marrow aspirate",
+     "year": 2009,
+     "design": "case-series",
+     "n": 20,
+     "finding": "Overall fusion 95% (21 of 22 levels) at an average 27 months.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "No current DePuy Synthes catalog listing was found by web search on 2026-10-23, so 'off-market' is inferred. It remains a cautionary example for bone-marrow-aspirate-dependent collagen-ceramic sponges in interbody use."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K081758.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K012751",
+    "https://clinicaltrials.gov/study/NCT00316121",
+    "https://fda.innolitics.com/device/K081758"
+   ]
+  },
+  {
+   "id": "miig",
+   "name": "MIIG injectable calcium sulfate (MIIG, MIIG X3, MIIG SR)",
+   "company": "Stryker",
+   "ownership_history": "Wright Medical Technology (Arlington, TN); acquired by Stryker in November 2020 (as for OSTEOSET in the atlas).",
+   "category": "calcium-sulfate",
+   "composition": "Injectable calcium sulfate paste that cures in situ (MIIG SR adds calcium phosphate and can be molded into pellets).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K024336 (MIIG II, March 2003); K060011 (MIIG SR, Feb 2006)",
+    "us_market_year": 2003,
+    "on_label_indications": [
+     "MIIG paste: injected into open bone voids/gaps not intrinsic to stability of the skeletal system (extremities, spine and pelvis), cures in situ, can augment provisional hardware such as K-wires (K024336)",
+     "MIIG SR: injected or molded pellets for the same regions (K060011)"
+    ]
+   },
+   "status": "off-market",
+   "challenge": "Off-market inferred; included so the Wright calcium sulfate history is complete.",
+   "applications": [
+    {
+     "application_id": "benign-bone-cyst-curettage",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Fifteen patients with benign bone lesions were curetted and grafted with injectable calcium sulfate (MIIG): 14 of 15 showed complete graft incorporation at an average 8 weeks, one deep infection, mean MSTS function 83% at 6 months (PMID 14763545).",
+     "caveats": "Single-center case series with 6-month average follow-up; 2004."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: MIIG tibial plateau).",
+     "caveats": "Extremities named."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:14763545",
+     "title": "Treatment of benign bone lesions with an injectable calcium sulfate-based bone graft substitute",
+     "year": 2004,
+     "design": "case-series",
+     "n": 15,
+     "finding": "Fourteen of 15 benign-lesion defects incorporated the injectable calcium sulfate graft by about 8 weeks; one deep infection.",
+     "sponsor_funded": null,
+     "applications": [
+      "benign-bone-cyst-curettage"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Older Wright calcium sulfate line; current Stryker catalog status not checked. Also unreviewed from Wright: IGNITE Bone Void Filler (K190482, 'extremities and pelvis'; composition not stated in the text read)."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K024336",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K060011"
+   ]
+  },
+  {
+   "id": "agn1-loep",
+   "name": "AGN1 (JGH1) injectable triphasic calcium-based bone graft substitute, Local Osteo-Enhancement Procedure (LOEP)",
+   "company": "AgNovos Healthcare",
+   "category": "calcium-phosphate-cement",
+   "composition": "Resorbable triphasic calcium-based implant material, injected as a paste that cures in situ; used for LOEP in the osteoporotic proximal femur.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K181342 (JGH1 Bone Graft Substitute, July 2018); K181585 (JGH1 Core Decompression Procedure Kit, July 2018). Link between the 'JGH1' 510(k) name and the 'AGN1' name used in publications is assumed, not sourced.",
+    "us_market_year": 2018,
+    "on_label_indications": [
+     "JGH1 paste: bone graft substitute injected or digitally packed into open bone voids/gaps not intrinsic to stability 'extremities and pelvis' to cure in situ; voids may be from benign bone cysts and tumors (adults and pediatric patients 6 and older), surgical or traumatic; can augment provisional hardware such as K-wires; temporary support only",
+     "Prophylactic augmentation of the osteoporotic proximal femur (LOEP) is not a cleared indication"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "proximal-femur-augmentation",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "First-in-human prospective cohort of 12 postmenopausal osteoporotic women: injected femurs gained about 58 to 68% femoral-neck areal BMD over untreated controls at 12 weeks to 5-7 years, FEA strength up 22 to 41%, AGN1 resorbed and replaced with bone (PMID 31802158; QCT follow-up PMID 40297188).",
+     "caveats": "n=12, uncontrolled except contralateral femur, company-supported; surrogate endpoints (BMD, finite element strength), not fracture. The pivotal RESTORE RCT (NCT04796350, n=2,400 planned, recruiting, primary completion est. April 2027) is the fracture-prevention test.",
+     "challenge": "Any claim of hip-fracture prevention is investigational until RESTORE reads out."
+    },
+    {
+     "application_id": "benign-bone-cyst-curettage",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: AGN1 OR JGH1 bone cyst curettage).",
+     "caveats": "The cleared void-filler indication names benign cysts and tumors; no case series located."
+    },
+    {
+     "application_id": "femoral-head-osteonecrosis-core-decompression",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: AGN1 OR JGH1 core decompression osteonecrosis). A JGH1 core decompression procedure kit (K181585) was cleared in 2018.",
+     "caveats": "Kit clearance is for the instruments; no outcomes located."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:31802158",
+     "title": "Treatment of bone loss in proximal femurs of postmenopausal osteoporotic women with AGN1 local osteo-enhancement procedure (LOEP) increases hip bone mineral density and hip strength: a long-term prospective cohort study",
+     "year": 2020,
+     "design": "prospective-cohort",
+     "n": 12,
+     "finding": "Treated femoral-neck aBMD rose 58 to 68% over controls and estimated femoral strength by 22 to 41% through 5-7 years.",
+     "sponsor_funded": true,
+     "applications": [
+      "proximal-femur-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:40297188",
+     "title": "AGN1 local osteo-enhancement procedure increases proximal femur volumetric bone mineral density of women with post-menopausal osteoporosis as assessed by quantitative computed tomography analysis",
+     "year": 2025,
+     "design": "prospective-cohort",
+     "n": 12,
+     "finding": "QCT showed AGN1 resorption with new bone formation and increased volumetric BMD at 5-7 years.",
+     "sponsor_funded": true,
+     "applications": [
+      "proximal-femur-augmentation"
+     ]
+    },
+    {
+     "ref": "NCT04796350",
+     "title": "RESTORE - Study of AGN1 LOEP to Prevent Secondary Hip Fractures",
+     "year": 2027,
+     "design": "RCT",
+     "n": 2400,
+     "finding": "Pivotal randomized trial of AGN1 LOEP versus control at index hip fracture surgery to prevent secondary hip fractures; recruiting.",
+     "sponsor_funded": true,
+     "applications": [
+      "proximal-femur-augmentation"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT04796350",
+     "NCT05202678"
+    ],
+    "expected_milestone": "RESTORE primary completion estimated April 2027 (ClinicalTrials.gov)"
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "A novel, procedure-defining use (prophylactic augmentation) that would need coding and coverage work; RESTORE results drive any payer story. Additional AgNovos trials: STRONG (NCT03268356, n=13), RECONFIRM (NCT05202678, EU, n=150), GRACE (NCT05966974, n=44)."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf18/K181342.pdf",
+    "https://clinicaltrials.gov/study/NCT04796350",
+    "https://pubmed.ncbi.nlm.nih.gov/31802158/"
+   ]
+  },
+  {
+   "id": "dimensional-bioceramics",
+   "name": "DB-CSD, DB-Orthopedics, DB-Composite and DB-EZ Bone Void Filler family",
+   "company": "Dimensional Bioceramics",
+   "category": "calcium-sulfate",
+   "composition": "Family of synthetic calcium-based fillers: DB-CSD calcium sulfate; DB-Composite calcium sulfate/calcium phosphate powder mixed with solution; DB-EZ premixed calcium phosphate powder in a PEG-based polymer putty; DB-Orthopedics (details not read).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K212353 (DB-EZ, Sept 2021); K210193 (DB-Composite, March 2021); K200752 (DB-Orthopedics, April 2020); K171161 (DB-CSD, Sept 2017)",
+    "us_market_year": 2017,
+    "on_label_indications": [
+     "DB-CSD: bone void filler for voids and gaps in the 'extremities and pelvis'; 'biodegradable and biocompatible and may be used in an infected site' (K171161)",
+     "DB-Composite: extremities, posterolateral spine, pelvis (K210193); DB-Orthopedics: extremities, spine, pelvis (K200752); DB-EZ: extremities and pelvis (K212353)"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: DB-CSD OR Dimensional Bioceramics calcium sulfate osteomyelitis).",
+     "caveats": "'May be used in an infected site' is not an antibiotic-delivery claim; same limitation as the STIMULAN record."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: DB-EZ OR DB-Composite OR Dimensional Bioceramics tibial plateau).",
+     "caveats": "Extremities named for all four labels."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Small private maker of calcium sulfate and calcium phosphate fillers; no company page was read. Predicate chain leans on Skeletal Kinetics' Skaffold NMX."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf21/K212353.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf17/K171161.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf21/K210193.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf20/K200752.pdf"
+   ]
+  },
+  {
+   "id": "ossdsign-catalyst",
+   "name": "OssDsign Catalyst Bone Void Filler (formerly Osteo3 ZP Putty)",
+   "company": "OssDsign",
+   "ownership_history": "Sirakoss Ltd (Aberdeen) developed Osteo3 ZP Putty; OssDsign AB markets it as Catalyst (acquisition details not sourced; the same 510(k) text describes both).",
+   "category": "synthetic-ceramic",
+   "composition": "Nanosynthetic silicon-substituted calcium phosphate granules (5.8 wt%) suspended in a resorbable polymer gel (30 wt% granules / 70 wt% gel); putty.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K232315 (Sept 2023); K193075 (Osteo3 ZP Putty, Sirakoss Ltd, June 2020)",
+    "us_market_year": 2020,
+    "on_label_indications": [
+     "Bone void filler for bone voids or defects of the skeletal system 'posterolateral spine, intervertebral disc space, extremities, and pelvis' not intrinsic to stability; must be used with morselized autograft 1:1 by volume in the posterolateral spine; in intervertebral body fusion with autograft 1:1 and a cage cleared for a bone void filler (K232315)"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: OssDsign Catalyst OR Osteo3 ZP Putty posterolateral). Registered: first-in-human TLIF + instrumented PLF study (NCT05114135, n=17, completed April 2023, no results posted) and an OssDsign spine registry (NCT05329129, n=450 planned, recruiting to 2030).",
+     "caveats": "Autograft 1:1 extender label; evidence is registry-only."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: OssDsign Catalyst OR Osteo3 interbody).",
+     "caveats": "On-label with a cleared cage and 1:1 autograft."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: OssDsign Catalyst extremities).",
+     "caveats": "Extremities named; a rabbit femoral defect study compared two silicate-containing CaP grafts (PMID 42231723)."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "OssDsign is better known for cranial implants (Cranioplug, Cranial PSI per openFDA); Catalyst is its spine entry."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K232315.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K193075.pdf",
+    "https://clinicaltrials.gov/study/NCT05114135",
+    "https://clinicaltrials.gov/study/NCT05329129"
+   ]
+  },
+  {
+   "id": "rebossis",
+   "name": "ReBOSSIS (cotton-like beta-TCP/vaterite/PLGA graft)",
+   "company": "Orthorebirth",
+   "category": "synthetic-ceramic",
+   "composition": "Electrospun composite in a glass-wool-like (cotton-ball) form: beta-tricalcium phosphate, siloxane-containing vaterite (calcium carbonate) and a resorbable PLGA scaffold.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K240453 (March 2024); K172573 and K170620 (ReBOSSIS85, 2017); K142090 (2014)",
+    "us_market_year": 2014,
+    "on_label_indications": [
+     "ReBOSSIS (K240453): bony voids or gaps not intrinsic to stability, packed into 'extremities, pelvis, posterolateral spine, and intervertebral disc space'; extremities and pelvis alone or hydrated with blood; in the posterolateral spine and disc space hydrated with bone marrow aspirate and mixed with autograft; with a cleared cage in interbody fusion"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: ReBOSSIS posterolateral fusion). A rabbit PLF study tested the electrospun PLGA/beta-TCP material (PMID 32577102).",
+     "caveats": "Preclinical only; US commercial partner not identified."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: ReBOSSIS interbody).",
+     "caveats": "Cleared 2024 with an interbody cage; no human data located."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32577102",
+     "title": "Electrospun PLGA and β-TCP (Rebossis-85) in a Lapine Posterolateral Fusion Model",
+     "year": 2019,
+     "design": "preclinical",
+     "n": null,
+     "finding": "Animal posterolateral fusion model of the electrospun PLGA/beta-TCP material.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Japan-made; US route to market not identified."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K240453.pdf"
+   ]
+  },
+  {
+   "id": "ventris-synthetic-putty",
+   "name": "Ventris Synthetic Bone Putty and Porous Biologic Scaffold",
+   "company": "Ventris Medical",
+   "category": "synthetic-ceramic",
+   "composition": "Synthetic Bone Putty: biphasic ceramic granules in an alkylene oxide polymer carrier. Porous Biologic Scaffold: collagen mesh pouch prefilled with either demineralized bone matrix (version 1) or activated biphasic ceramic granules (version 2).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K240458 (Synthetic Bone Putty, March 2024; K221644 original Sept 2022); K240765 and K250556 (Porous Biologic Scaffold, 2024 to 2025)",
+    "us_market_year": 2022,
+    "on_label_indications": [
+     "Synthetic Bone Putty (K240458): osseous defects not intrinsic to stability, packed into the 'pelvis, posterolateral spine, or intervertebral disc space', standalone or with autograft as an extender; with a cleared cage in intervertebral fusion",
+     "Porous Biologic Scaffold (K240765): pelvis and posterolateral spine, combined with autograft as an extender"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Ventris Medical synthetic bone putty OR porous biologic scaffold).",
+     "caveats": "No literature found for either product."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Ventris Medical synthetic bone putty interbody).",
+     "caveats": "Interbody indication added March 2024 (with a cleared cage)."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Spine-only labels (no extremities)."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K240458.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K240765.pdf"
+   ]
+  },
+  {
+   "id": "biogennix-agilon",
+   "name": "Agilon Moldable / Agilon Strip and Morpheus (osteoSPAN granule bone grafts)",
+   "company": "Biogennix",
+   "category": "synthetic-ceramic",
+   "composition": "osteoSPAN granules (about 65% porous biphasic calcium salts, primarily calcium carbonate with a thin calcium phosphate layer; origin not stated in the text read, a coral-type structure is implied by the description) suspended in an organic binder; Agilon Strip adds collagen.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K240621 (Morpheus Moldable / Agilon Moldable, April 2024, summary not retrievable); K193487 (Agilon Strip, March 2020); K193168 (Agilon Moldable, Feb 2020); K190371 (Morpheus-C, 2019)",
+    "us_market_year": 2014,
+    "on_label_indications": [
+     "Agilon Moldable and Strip (K193168, K193487): voids or gaps of the skeletal system 'extremities, pelvis, and posterolateral spine' not intrinsic to stability; alone in the extremities and pelvis, but must be mixed with autograft in the posterolateral spine"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Agilon OR osteoSPAN OR Biogennix posterolateral fusion). A 2024 materials paper characterized an osteoSPAN-type nanocrystalline hydroxycarbonapatite graft (PMID 38747324).",
+     "caveats": "Materials characterization only."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Agilon OR osteoSPAN tibial plateau).",
+     "caveats": "Alone-use is allowed in the extremities and pelvis."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Biogennix (Irvine, CA) also has Morpheus."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K193168.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K193487.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K240621"
+   ]
+  },
+  {
+   "id": "skeletal-kinetics-callos",
+   "name": "Callos Bone Void Filler and Skaffold (injectable calcium phosphate cement and putty)",
+   "company": "Skeletal Kinetics",
+   "ownership_history": "Skeletal Kinetics, LLC (Cupertino, CA), also the maker of OsteoVation CMF (already in the atlas).",
+   "category": "calcium-phosphate-cement",
+   "composition": "Calcium phosphate cement (Callos, ProModel) and premixed calcium phosphate putty in a PEG-based polymer (Skaffold NMX); cranial and CMF versions are in the OsteoVation record.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K132211 (Skaffold NMX, Aug 2014); K112383 (Callos ProModel / Skaffold MP, Feb 2012); K100986 (Callos / Skaffold, July 2010); K030554 (Callos, May 2003)",
+    "us_market_year": 2003,
+    "on_label_indications": [
+     "Callos (K100986): fill bony voids or gaps of the skeletal system 'extremities, spine, pelvis' not intrinsic to stability; extender with autograft in the extremities and pelvis only",
+     "Callos ProModel (K112383): extremities, posterolateral spine, pelvis"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Callos OR Skaffold Skeletal Kinetics tibial plateau).",
+     "caveats": "Extremities named; no product-specific series."
+    },
+    {
+     "application_id": "distal-radius-fracture",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Callos OR Skaffold distal radius).",
+     "caveats": "Extremities named."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Its Skaffold NMX is the predicate for Dimensional Bioceramics' DB-EZ."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf11/K112383.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf10/K100986.pdf",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K132211",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K030554"
+   ]
+  },
+  {
+   "id": "synthecure",
+   "name": "Synthecure Synthetic Calcium Sulfate",
+   "company": "Austin Medical Ventures",
+   "category": "calcium-sulfate",
+   "composition": "Synthetic calcium sulfate bone void filler, biodegradable, provided sterile single-use.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K250141 (May 2025)",
+    "us_market_year": 2025,
+    "on_label_indications": [
+     "Implant to fill bony voids or gaps of the skeletal system 'extremities and pelvis' not intrinsic to stability; resorbs and is replaced with bone; 'may be used at an infected site'"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "osteomyelitis-dead-space",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Synthecure calcium sulfate).",
+     "caveats": "No antibiotic-delivery claim; an unrelated 2025 paper on antimicrobial calcium sulfate mixing formulas is not about this product (PMID 41079838)."
+    },
+    {
+     "application_id": "tibial-plateau",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Synthecure tibial plateau).",
+     "caveats": "Extremities named."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Another entrant against STIMULAN and OSTEOSET; company details not read."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K250141.pdf"
+   ]
+  },
+  {
+   "id": "adaptos-fuse",
+   "name": "Adaptos Fuse Bone Graft (PLCL/TCP/bioactive glass granules)",
+   "company": "Biomendex",
+   "category": "bioactive-glass",
+   "composition": "Granules of poly(L-lactide-co-epsilon-caprolactone) (PLCL), tricalcium phosphate and bioactive glass, supplied in open-bore syringes.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K253524 (Feb 2026)",
+    "us_market_year": 2026,
+    "on_label_indications": [
+     "Bony voids or gaps not intrinsic to stability, 'posterolateral spine, intervertebral disc space, and pelvis'; granules must be mixed with autograft prior to use; in interbody fusion must be used with a cleared cage"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Adaptos Fuse OR Biomendex).",
+     "caveats": "Cleared February 2026; no clinical data yet; autograft extender label."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: Adaptos Fuse interbody).",
+     "caveats": "With a cleared cage."
+    }
+   ],
+   "evidence": [],
+   "pipeline": {
+    "stage": "launched-2026",
+    "trials": [],
+    "expected_milestone": "Cleared Feb 2026; US launch not confirmed."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Finnish polymer-ceramic maker; US partner not identified."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K253524.pdf"
+   ]
+  },
+  {
+   "id": "sn-polygraft-jax",
+   "name": "TRUREPAIR (PolyGraft BGS) and JAX-TCP (Smith+Nephew legacy synthetics)",
+   "company": "Smith+Nephew",
+   "ownership_history": "PolyGraft came from Osteobiologics, Inc. (San Antonio, TX, per the 510(k) trademark note), later part of Smith+Nephew (acquisition year not sourced).",
+   "category": "other",
+   "composition": "TRUREPAIR/PolyGraft BGS: porous resorbable scaffolds of polylactide-co-glycolide copolymer and calcium sulfate with PGA fibers. JAX-TCP: beta-TCP granules used alone or with a gel in a 1:1 ratio.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K062607 (TruRepair / PolyGraft BGS, Nov 2007); K033552 (JAX-TCP, June 2004); K010557 (Jax granules, 2001)",
+    "us_market_year": 2001,
+    "on_label_indications": [
+     "TRUREPAIR (K062607): bony voids or gaps caused by trauma or surgery not intrinsic to stability, extremities, spine and pelvis",
+     "JAX-TCP (K033552): extremities, spine and pelvis; granules used alone or 1:1 with gel"
+    ]
+   },
+   "status": "off-market",
+   "challenge": "Off-market status inferred from the age of clearances.",
+   "applications": [
+    {
+     "application_id": "tibial-plateau",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23: TruRepair OR PolyGraft BGS OR JAX-TCP).",
+     "caveats": "Historical products; no clinical literature located."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; packaged in OPPS and ASC payment; no separate HCPCS code or pass-through for bone void fillers.",
+    "notes": "Smith+Nephew has no current synthetic ceramic graft in this sweep (its biologics are REGENETEN and BIO4/Osiris, both elsewhere); no current listing for these legacy lines was found."
+   },
+   "unverified": true,
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K062607",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K033552"
+   ]
+  }
+ ]
+}

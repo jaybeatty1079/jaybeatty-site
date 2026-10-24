@@ -46,7 +46,8 @@ meta = {
     "changelog": [
         "2026-10-21: first sweep. Seven research passes across spine, hip and femur, tibia and knee, foot and ankle, upper extremity, the investigational and regulatory landscape, and the business layer. 62 applications, 86 products, 290 citations; every CDRH number checked against openFDA.",
         "2026-10-22: gap passes. SI-joint fusion products added, ownership and distribution fields confirmed from openFDA, SEC filings and company pages, blocked pages read directly. Corrections: map3 withdrawn 2018, Norian still sold, Optium DBM is LifeNet's, PearlMatrix PMA P240001, Infuse TLIF supplement S096, level-based fusion DRGs date from FY2025.",
-        f"{reviewed}: data version embedded in this page." if reviewed > "2026-10-22" else "2026-10-22: skull and craniomaxillofacial region added.",
+        "2026-10-22: skull and craniomaxillofacial region added; market layer (company size, share where public, deal record).",
+        f"2026-10-23: repository sweep. Eight category passes (DBM and allograft, cellular allografts, synthetics, growth factors and cell therapies, PRP, BMAC and adipose systems, amniotic and placental, cartilage and soft tissue, viscosupplements) added products with labeled indications, pathway, applications and graded evidence; non-bone applications (knee OA injection, cartilage defects, tendinopathy, tendon and ligament augmentation) added so those products have a home. {len(prods)} products, {len(apps)} applications in this version.",
     ],
 }
 market_path = os.path.join(ROOT, "data/market.json")
@@ -62,7 +63,7 @@ viewer = open(os.path.join(ROOT, "app/viewer3d.js")).read()
 vcfg_path = os.path.join(ROOT, "app/viewer-config.json")
 vcfg = open(vcfg_path).read().strip() if os.path.exists(vcfg_path) else "{}"
 credit = json.load(open(vcfg_path)).get("credit_html", "") if os.path.exists(vcfg_path) else ""
-html = tpl.replace("__SKELETON__", svg).replace("__DATA__", data_js).replace("__APP__", app).replace("__VIEWER__", viewer).replace("__VIEWER_CONFIG__", vcfg).replace("__CREDIT__", credit)
+html = tpl.replace("__NPROD__", str(len(prods))).replace("__NAPP__", str(len(apps))).replace("__SKELETON__", svg).replace("__DATA__", data_js).replace("__APP__", app).replace("__VIEWER__", viewer).replace("__VIEWER_CONFIG__", vcfg).replace("__CREDIT__", credit)
 
 os.makedirs(os.path.dirname(out), exist_ok=True)
 open(out, "w").write(html)
@@ -73,7 +74,7 @@ open(os.path.join(ROOT, "app/dist/index.html"), "w").write(html)
 if out.startswith(SITE):
     for name in ("SCHEMA.md", "RESEARCH_SUMMARY.md"):
         shutil.copy(os.path.join(ROOT, name), os.path.join(SITE, name))
-    for sub in ("data", "research", "build"):
+    for sub in ("data", "research", "research/repository", "build"):
         dst = os.path.join(SITE, sub); os.makedirs(dst, exist_ok=True)
         for f in os.listdir(os.path.join(ROOT, sub)):
             if f.endswith((".json", ".md", ".py")) and not f.startswith("."):

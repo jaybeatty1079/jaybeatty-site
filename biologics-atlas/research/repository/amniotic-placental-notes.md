@@ -1,0 +1,59 @@
+# amniotic-placental slice: notes (2026-10-23)
+
+40 brand-level product records from 22 companies, in `amniotic-placental.json`. No new applications were added. All application ids come from application-ids.txt. Every PMID was checked against PubMed esummary, every NCT against the ClinicalTrials.gov v2 API, and both K numbers (K231325, K253204, plus K242828 and K253339) against openFDA. The WebSearch budget ran out partway through the sweep. After that I used only WebFetch on known URLs, SEC EDGAR, openFDA, PubMed, ClinicalTrials.gov and the NLM HCPCS table, which is why several company facts below are flagged.
+
+## The regulatory split, as recorded
+
+- **Sheets used as a barrier, cover or wrap = 361 HCT/P.** FDA's guidance "Regulatory Considerations for HCT/Ps: Minimal Manipulation and Homologous Use" (Nov 2017, corrected Dec 2017, reissued July 2020, docket FDA-2017-D-6146, which extended enforcement discretion to 31 May 2021) treats sheet amniotic membrane used as a covering or barrier as homologous. MiMedx's FY2025 10-K paraphrases it that way. Claims of wound healing, anti-inflammatory effect or tendon healing move a sheet out of 361. Letters that say so: BioXtek (CBER 26-715478, 1 Dec 2025), Celularity/Interfyl (CBER 25-681480, 1 Dec 2025), Frontier's Allograft Matrix (2024), and the Membrane Wrap footnote in the BioLab Sciences letter (2022).
+- **Micronized, particulate or flowable amnion or cord injected for orthopedic pain = 351 biologic needing a BLA.** The cited letters are: the MiMedx/Surgical Biologics untitled letter (5 Sept 2013, AmnioFix Injectable; the same day's letters to Tides Medical, Castle Surgical and Accel Spine), Surgenex (OBPO 21-615254, 2021), Amnio Technology (CBER 24-646460, 2024; flowable processing "eliminated" membrane integrity), Skye Biologics (CBER-24-654466, 2024), the Fidia NuDYN untitled letter (3 Apr 2023; "orthopedics, sports medicine, pain management, and podiatry"), Celularity Interfyl (2025) and MiMedx AXIOFILL (warning letter 21 Dec 2023, then an RFD decision in Mar 2024; MiMedx is suing in N.D. Ga.).
+- **Amniotic fluid is not an HCT/P at all.** 21 CFR 1271.3(d) excludes secreted fluids, so any amniotic-fluid injectable is a drug/biologic. Letters: BioLab Sciences (OBPO 621465, 2022), Frontier Biologics (CBER 25-686059, 2024; marketed for OA and joint pain), XO Biologix MaviX (CBER 25-697717, 2024; no record because no orthopedic use was cited), and Kimera Amnio2X (2023, already in the primer).
+- **New since 2024: a 510(k) path for birth-tissue particulates.** StimLabs Corplex P (K231325, 2 Feb 2024, product code KGN wound dressing) was the first. BioTissue's Catalyze (the old Clarix Flo/Neox Flo, K253204, 5 Jun 2026) used it as predicate. Both are cleared only as wound dressings. Injecting either into a joint or tendon is off-label device use.
+- **Interfyl "as reclassified by FDA December 2025"**: what actually happened is a Warning Letter (1 Dec 2025) finding non-homologous use. It was not a formal reclassification or RFD. I recorded it as a warning letter.
+
+## Reimbursement facts used in every sheet record
+
+- **CY2026 PFS final rule CMS-1832-F** (issued 31 Oct 2025): from 1 Jan 2026, skin substitutes are paid as incident-to supplies at one rate, grouped by FDA pathway (361, PMA, 510(k)). Products licensed under section 351 are excluded, per secondary reporting. The CMS fact sheet says "approximately $127.28" and gives Part B spend as $252M (2019) to over $10B (2024). **Discrepancy:** the MiMedx and Organogenesis FY2025 10-Ks and coding vendors give $127.14 per cm². I kept both and did not resolve which is the implemented figure. My guess is a correction notice or the January ASP file, but that is unconfirmed.
+- **LCDs:** the MACs' new DFU/VLU skin-substitute LCDs were finalized 14 Nov 2024, delayed twice, and then withdrawn on 24 Dec 2025 (APMA; Organogenesis 10-K). The legacy LCDs still active in the CMS coverage API are L35041 (Novitas), L36377 (First Coast) and L36690 (CGS).
+- **Q-codes** were read from the NLM Clinical Tables HCPCS API, which mirrors the CMS HCPCS file. Particulate products also have per-mg or per-cc Q-codes (Q4145 EpiFix inj, Q4155 NeoxFlo/ClarixFlo, Q4171 Interfyl, Q4168 AmnioBand, Q4189 Artacent AC, Q4206 Fluid Flow/GF, Q4233 SurFactor/NuDYN, Q4242 AmnioCyte Plus, Q4215 Axolotl Ambient). **A live Q-code is not FDA authorization.** Several of these products have FDA letters calling them unlicensed biologics.
+- **Surgical (OR) use carries no Q-code.** It is bundled into the DRG/APC. Arthrex's 2026 coding guide tells facilities to report C1762, L8699 or A4649 for Arthrex Amnion Matrix.
+- **Scrutiny:** OIG data snapshot OEI-BL-24-00420 (Sept 2025) found more than $10B in 2024 non-institutional Part B skin-substitute spending and flagged new NPIs, claim stacking and home-setting concentration. I read it through Medical Economics and law-firm summaries, not the OIG PDF. The DOJ 2025 national takedown included about $1B+ in Arizona amniotic wound-allograft charges (justice.gov case summaries, as reported). On injections specifically: Celularity discloses a False Claims Act civil investigative demand (EDPA, 14 Aug 2022) on Medicare/Medicaid claims for "injectable human tissue therapy products derived from amniotic fluid or birth tissue", Interfyl included. That is the clearest public sign of federal scrutiny of amniotic injection billing. I did not find a dedicated OIG report on amniotic injection billing.
+
+## Flags in the brief that the sources contradicted
+
+- **Skye Biologics / OrthoFlo:** OrthoFlo is a MiMedx amniotic-fluid product (MiMedx releases). Skye's warning letter (16 Dec 2024) covers BioECM and BioRenew and asks about "HRT" BioPower products. It never mentions OrthoFlo.
+- **Predictive Biotech / AmnioCyte warning letter:** the 17 Aug 2020 letter names CoreCyte (Wharton's jelly), not AmnioCyte. No letter naming AmnioCyte was found.
+- **Human Regenerative Technologies (Fluid Flow / Fluid GF):** FDA's 2022 letter names BioLab Sciences as manufacturer of Fluid Flow and Fluid GF and does not mention HRT. The only "HRT" in FDA text is in the Skye letter. I could not confirm which entity HRT is. The record is filed under BioLab Sciences.
+- **Axolotl Biologix "FDA letters":** none was found on fda.gov. A third-party database lists a 2022 CBER inspection classified No Action Indicated, which I have not verified.
+- **Integra heritage:** Integra still owns BioD LLC, and AmnioExcel and BioDFence are in its FY2025 10-K. BioDRestore is not, so I marked it off-market (unverified).
+- **BioTissue / Amniox:** the Neox and Clarix brands were sold to **BioStem Technologies** on 21 Jan 2026, so the company field says BioStem. BioTissue keeps manufacturing, plus Catalyze (510(k)) and the TTAX01/TTAX03 IND pipeline.
+- **"Arthrex amnion product, processor named":** Arthrex sells its own Arthrex Amnion Matrix (Thin/Thick) and Amnion Flowable. Its US pages and coding guide name no processor (unverified). Arthrex is also Celularity's exclusive orthopedic distributor for Interfyl.
+
+## Why records carry "unverified" (30 of 40)
+
+- **361 sheet records** (AmnioExcel, BioDFence, Clarix, Neox, Vendaje, XWRAP, Cygnus, Revita, Grafix, Stravix, Biovance, Arthrex Amnion, AlloWrap, AmnioBand, Artacent, SurGraft, AMNIOEFFECT): `regulatory.unverified` is set because I took the homologous-use wording and `us_market_year` from company pages, 10-Ks or product listings, not from an IFU or package insert. The years are approximate or null, and none of these products has an FDA number to check.
+- **mimedx-axiofill:** the regulatory path is in active litigation, MiMedx and FDA disagree, and I recorded FDA's position.
+- **mimedx-orthoflo / applied-biologics-flograft / integra-biodrestore:** off-market or withdrawn status is inferred from the product's absence in 10-K lists or on company websites.
+- **stimlabs-corplex-p:** K231325 and K242828 are verified in openFDA, but I did not read Corplex P's own indication text. I inferred it from Catalyze's substantial-equivalence summary.
+- **xwrap evidence[0]:** the CAMPX results (n=222, 30.9% vs 17.5%) come from a company abstract press release, not a paper.
+- **amnioband evidence[0]:** the 2016 dHACA RCT abstract does not name AmnioBand. I attributed it from the "aseptically processed" dHACA description.
+- **Letter-recipient records** (Fidia NuDYN, Amnio Technology PalinGen, BioLab Fluid Flow, Predictive AmnioCyte, Skye BioECM, Axolotl, Frontier): the FDA letter text is verified, but whether each product is still sold after its letter is not, and Axolotl Ambient's tissue composition is not known.
+
+## Evidence-grading choices to note
+
+- **MiMedx micronized dHACM:** plantar fasciitis and tendinopathy got grade I, because a published positive RCT exists (Cazzell 2018, n=145) and the double-blind confirmatory Phase 3 failed (Sept 2021 topline). Knee OA got grade I on a negative RCT (Phase 2b, n=446, missed both primary endpoints). Grade I here records that RCT evidence exists. It does not mean the product works.
+- **ReNu:** grade I on one Phase 3 that met its endpoint (one-sided p=0.0177), one that missed (p=0.0393 vs a 0.023 threshold), and the earlier Phase 2 (n=200). The BLA was accepted 6 Jul 2026 with a PDUFA date of 24 Apr 2027. Tier is investigational.
+- **Diabetic-foot-osteomyelitis-dead-space pairings** are wound-cover uses: on_label false, grade V, because the DFU RCTs studied chronic ulcers and not post-osteomyelitis cavities. The one exception is Neox/TTAX01. Its RCT (n=220) enrolled DFUs with controlled osteomyelitis and found no difference from standard care (66.1% vs 59.8% at 26 weeks). That RCT is grade I, and the result is negative.
+- **Spine pairings** (AmnioFix, Clarix, Revita, AlloWrap, NuCel) are flagged as barrier or adjacent uses with `challenge` text. None of them is a fusion biologic.
+- No CMF pairings were made, because no product evidence was found.
+
+## Left out, and why
+
+- **Clinic and seller untitled letters** (Amnion Florida 2024, Vitacell 2024, Riverside Biologics 2021, Thomas Advanced Medical 2023, Chara Biologics 2019 and others on the CBER untitled-letter page) are clinics or resellers rather than brands, so they have no records. Kimera Amnio2X is already in the primer.
+- **Not researched before the search budget ran out:** Regenative Labs (Wharton's jelly; the existing class record covers cord injectables), Legacy Medical Consultants, Russell Health, Signature Biologics (HCPCS Q4260 "Signature APatch" exists), Bone Bank Allografts (HCPCS has AmnioText Q4245/Q4247, owner unconfirmed), LifeNet Health (no amniotic product found), and Carmell (not an amniotic company as far as I found).
+- **Smaller products:** VIVEX AlloGen Liquid (withdrawn knee OA Phase 1) is only mentioned inside the Cygnus record. Celularity CentaFlex and Rebound and MiMedx AmnioFill are mentioned inside other records. Enclose TL (Q4351) is left out because its owner could not be confirmed.
+
+## Three biggest gaps
+
+1. **Results of completed industry trials that were never published:** MiMedx Achilles Phase 3 (NCT03414255) and the published or full results of the PF Phase 3, BioTissue TTAX03 Phase 2 (NCT05079035), MiMedx amniotic-fluid knee trials, NuCel fusion studies, and the Clarix tendon and discectomy studies. Every one has a registry entry and no results.
+2. **Package-insert and IFU text for the 361 sheets.** Homologous-use wording, launch years and processor identity (Arthrex Amnion, AlloWrap/Stryker, AmnioBand particulate) are taken from marketing pages and 10-Ks, not IFUs.
+3. **OIG/CMS scrutiny specific to amniotic injections, and the exact 2026 rate.** I found no OIG report on injection billing, only Celularity's disclosed CID. I could not resolve whether the 2026 per-cm² rate is $127.28 or $127.14 without the Federal Register text.

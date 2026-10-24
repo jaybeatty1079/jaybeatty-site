@@ -7,14 +7,14 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jay Beatty">
 <meta property="og:title" content="Biologics Atlas · Jay Beatty">
-<meta property="og:description" content="Pick a bone, see what the market actually has for it: 104 orthobiologic products across 73 surgical applications with FDA pathway, strongest study, evidence grade and reimbursement.">
+<meta property="og:description" content="Pick a bone, see what the market actually has for it: __NPROD__ orthobiologic products across __NAPP__ surgical applications with FDA pathway, strongest study, evidence grade and reimbursement.">
 <meta property="og:url" content="https://jaybeatty.com/biologics-atlas/">
 <meta property="og:image" content="https://jaybeatty.com/og/atlas.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Biologics Atlas · Jay Beatty">
-<meta name="twitter:description" content="Pick a bone, see what the market actually has for it: 104 orthobiologic products across 73 surgical applications with FDA pathway, strongest study, evidence grade and reimbursement.">
+<meta name="twitter:description" content="Pick a bone, see what the market actually has for it: __NPROD__ orthobiologic products across __NAPP__ surgical applications with FDA pathway, strongest study, evidence grade and reimbursement.">
 <meta name="twitter:image" content="https://jaybeatty.com/og/atlas.png">
 <meta name="description" content="An interactive map of US orthobiologics by surgical application: what is established, what is emerging, what is investigational, with the clinical evidence, FDA pathway and reimbursement for each product, across spine and trauma.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -226,6 +226,12 @@ dialog::backdrop{background:rgba(5,4,10,.7);backdrop-filter:blur(4px)}
 .evtable th,.evtable td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line-soft);vertical-align:top}
 .evtable th{color:var(--muted);font-weight:500;font-size:.72rem;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase}
 .evtable td.n{white-space:nowrap;font-variant-numeric:tabular-nums}
+.repo-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.repo-tools input,.repo-tools select{background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;font-size:.85rem}
+.repo-tools input{min-width:240px;flex:1 1 240px}
+.repo-cat{margin-top:18px}.repo-cat .subhead{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.tbl.repo th:nth-child(1){width:30%}.tbl.repo th:nth-child(2){width:18%}.tbl.repo th:nth-child(3){width:14%}.tbl.repo th:nth-child(4){width:10%}
+.tbl.repo button.linklike{text-align:left;font:inherit;color:var(--fg);background:none;border:0;padding:0;cursor:pointer}.tbl.repo button.linklike:hover{color:var(--green-soft)}
 .tbl-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px}
 .tbl-wrap.tall{max-height:540px}
 .payer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -288,6 +294,7 @@ html.js .rv.in{opacity:1;transform:none}
     <a href="/#programs">Programs</a>
     <a href="/#projects">Projects</a>
     <a href="/team-calculator/">TEAM calculator</a>
+    <a href="#repository">Repository</a>
     <a href="#method">Methodology</a>
     <a href="https://github.com/jaybeatty1079/jaybeatty-site" rel="noopener">GitHub</a>
   </div>
@@ -298,7 +305,7 @@ html.js .rv.in{opacity:1;transform:none}
   <div>
     <div class="eyebrow">Biologics Atlas · orthobiologics by surgical application</div>
     <h1 style="margin-top:14px">Pick a bone. See what the market <em>actually</em> has for it.</h1>
-    <p class="lede" style="margin-top:16px">Every bone graft substitute, growth factor, cellular allograft and investigational cell therapy sold or studied in US spine and trauma surgery, organized by the operation it is used in. Each product carries its FDA pathway, its strongest study, an honest evidence grade and how it gets paid. Built from public sources only.</p>
+    <p class="lede" style="margin-top:16px">Every bone graft substitute, growth factor, cellular allograft, PRP and marrow system, amniotic product, cartilage and soft-tissue scaffold, viscosupplement and investigational cell therapy sold or studied in US orthopedics, organized by the operation it is used in, with the whole catalogue by category in the Repository. Each product carries its FDA pathway, its strongest study, an honest evidence grade and how it gets paid. Built from public sources only.</p>
     <div class="chips" id="hero-chips"></div>
     <div class="layers" aria-label="Layers">
       <span class="layer on">Biologics</span>
@@ -342,6 +349,15 @@ html.js .rv.in{opacity:1;transform:none}
   </div>
   <div class="glance" id="glance-chart"></div>
   <div class="legend" style="margin-top:14px"><span><i class="sw" style="background:var(--green-soft)"></i>I</span><span><i class="sw" style="background:var(--purple-soft)"></i>II</span><span><i class="sw" style="background:var(--magenta)"></i>III</span><span><i class="sw" style="background:#6d6690"></i>IV</span><span><i class="sw" style="background:#3b3553"></i>V</span></div>
+</section>
+
+<section class="wrap" id="repository">
+  <div class="sec-head">
+    <div><div class="eyebrow">Repository</div><h2 style="margin-top:12px">Every product, by category</h2></div>
+    <p class="lede">The whole catalogue behind the skeleton: each product with its company, FDA pathway, status, the applications it is used in and the best evidence grade it has earned anywhere, with the one-line reason. One product can sit under several bones; here it appears once. Click a row for the full record.</p>
+  </div>
+  <div class="repo-tools"><input id="repo-q" type="search" placeholder="Search product or company" aria-label="Search product or company"><select id="repo-cat" aria-label="Category"><option value="">All categories</option></select><span class="muted small" id="repo-n"></span></div>
+  <div id="repo-list"></div>
 </section>
 
 <section class="wrap" id="paid">
@@ -406,6 +422,7 @@ html.js .rv.in{opacity:1;transform:none}
       <ul class="tight prose">
         <li><strong>Established</strong> means long on the US market in that application. <strong>Emerging</strong> means cleared, approved or launched in roughly the last three years, or in a pivotal trial. <strong>Investigational</strong> means not authorized for that use. Within a tier, products are ordered by evidence grade, never by sales.</li>
         <li><strong>On label</strong> is read from the FDA indication text, not the brochure. Most bone void fillers are off-label in fusion.</li>
+        <li><strong>361 tissues</strong> have no FDA indication. For them the on-label badge means the processor's stated intended use covers that application; where that could not be read, the badge is left off rather than guessed.</li>
         <li><strong>Unverified</strong> marks a field that could not be confirmed from a primary source. It is left visible on purpose.</li>
         <li>Where no US annual procedure count exists, the page says so and shows incidence with its source instead of inventing a number.</li>
         <li>Fracture classifications are described in words. AO/OTA figures are copyrighted.</li>

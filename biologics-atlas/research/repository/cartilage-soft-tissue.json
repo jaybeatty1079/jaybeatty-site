@@ -1,0 +1,3339 @@
+{
+ "applications": [
+  {
+   "id": "meniscus-deficiency-knee",
+   "region": "femur-knee",
+   "subregion": "meniscus",
+   "name": "Meniscus deficiency of the knee: scaffold or implant after partial or total meniscectomy (and irreparable meniscal tears)",
+   "type": "other",
+   "classifications": [
+    {
+     "name": "Medial vs lateral, acute vs chronic",
+     "summary": "Implants are used after partial meniscectomy for irreparable tears or in chronic post-meniscectomy pain; intact meniscal rim and horns are required for scaffold fixation; lateral implants are less studied than medial"
+    }
+   ],
+   "why_biologic": "Replace or regenerate lost meniscal tissue to restore load distribution and delay arthritis after meniscectomy; the options are collagen or polyurethane scaffolds that are colonized by host tissue, a synthetic polymer disc (NUsurface), or allograft meniscus transplantation.",
+   "autograft_standard": "No autograft exists; partial meniscectomy is the default for irreparable tears and meniscus allograft transplant is the main alternative (tissue availability, sizing and fixation issues).",
+   "volume_note": "No public US annual volume located for meniscal scaffolds; arthroscopic partial meniscectomy is among the most common orthopedic procedures (volume not sourced here).",
+   "sources": [
+    "PMID:33864114",
+    "PMID:18594088",
+    "PMID:24947329"
+   ]
+  },
+  {
+   "id": "cartilage-defect-hip",
+   "region": "pelvis-hip",
+   "subregion": "femoral head / acetabulum",
+   "name": "Focal chondral defect of the hip (femoral head or acetabulum, often with femoroacetabular impingement): cartilage restoration",
+   "type": "other",
+   "classifications": [
+    {
+     "name": "ICRS / Outerbridge grade",
+     "summary": "Full-thickness chondral lesions of the femoral head or acetabulum associated with FAI or structural deformity; options are marrow stimulation, particulated or osteochondral allograft, or investigational implants"
+    }
+   ],
+   "why_biologic": "Fill or resurface focal hip cartilage loss to delay arthroplasty in younger patients; no FDA-approved cell or scaffold product is labeled for the hip.",
+   "autograft_standard": "Microfracture or chondroplasty during hip arthroscopy is the common first-line option; durability is limited.",
+   "volume_note": "No public US volume located.",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT06823089"
+   ]
+  }
+ ],
+ "products": [
+  {
+   "id": "maci",
+   "name": "MACI (autologous cultured chondrocytes on porcine collagen membrane); MACI Arthro",
+   "company": "Vericel",
+   "ownership_history": "Carticel (first-generation ACI) BLA 1997; MACI developed at Genzyme Biosurgery (EU/Australia sales from 2001-2002); Vericel (then Aastrom Biosciences) acquired the Genzyme cell-therapy business in 2014. MACI EU authorization June 2013, marketing suspended September 2014, manufacturing authorization expired June 2018 (Vericel FY2025 10-K).",
+   "category": "cartilage",
+   "composition": "Autologous chondrocytes expanded from the patient's own cartilage biopsy and seeded onto a resorbable Type I/III porcine-derived collagen membrane; two-stage procedure (arthroscopic biopsy, then implantation). MACI Arthro is the same implant delivered arthroscopically with custom instruments (a secondary summary of Vericel materials says accessible defects up to 4 cm2; not confirmed in label text read).",
+   "regulatory": {
+    "path": "BLA",
+    "reference": "BL 125603 (STN 125603); original approval 2016-12-13; sBLA approved August 2024 adding arthroscopic delivery instructions",
+    "us_market_year": 2017,
+    "on_label_indications": [
+     "MACI is an autologous cellularized scaffold product indicated for the repair of symptomatic, single or multiple full-thickness cartilage defects of the knee with or without bone involvement in adults",
+     "Label: effectiveness in joints other than the knee has not been established; safety and effectiveness in patients over 55 not established (per FDA label summary on Drugs.com, 7/2022 version)",
+     "August 2024 sBLA adds instructions for arthroscopic delivery (Vericel FY2025 10-K)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "SUMMIT (NCT00719576, n=144, 14 European sites) randomized MACI vs microfracture in defects >=3 cm2: co-primary KOOS pain/function improved more with MACI at 2 years (pain 37.0 to 82.5 vs 35.5 to 70.9; function 14.9 to 60.9 vs 12.6 to 48.7; P=.001), and the advantage held on the co-primary at 5 years (P=.022) in the 128-patient extension.",
+     "caveats": "Sponsor (Genzyme/Sanofi) funded; open-label; MRI and histology showed no between-arm difference in repair-tissue quality; the label is broader (single or multiple defects, with or without bone) than the SUMMIT population (Outerbridge III-IV, >=3 cm2, KOOS pain <55). MACI Arthro approval rested on a delivery-method sBLA, not a new randomized efficacy trial."
+    },
+    {
+     "application_id": "osteochondral-lesion-talus",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "Ankle use is off-label (label limited to the knee). Two Foot Ankle Int series from one center: 20 patients at 21 months (AOFAS 60 to 87) and 15 of those at 12.9 years (AOFAS 60 to 84, MOCART 65). Vericel's randomized MASCOT Phase 3 (NCT06915233, planned n=309, MACI vs arthroscopic marrow stimulation in the talus) began under an IND.",
+     "caveats": "Small single-center case series; authors note results do not appear superior to established methods at higher cost and two operations; most ankle MACI cases need malleolar osteotomy."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:24714783",
+     "title": "Matrix-Applied Characterized Autologous Cultured Chondrocytes Versus Microfracture: Two-Year Follow-up of a Prospective Randomized Trial (SUMMIT)",
+     "year": 2014,
+     "design": "RCT",
+     "n": 144,
+     "finding": "MACI improved KOOS pain and function more than microfracture at 2 years (P=.001); structural repair on histology/MRI was similar.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:29565642",
+     "title": "Matrix-Applied Characterized Autologous Cultured Chondrocytes Versus Microfracture: Five-Year Follow-up of a Prospective Randomized Trial",
+     "year": 2018,
+     "design": "RCT",
+     "n": 128,
+     "finding": "The 2-year KOOS advantage for MACI was maintained at 5 years on the co-primary endpoint (P=.022); no new safety signals.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT00719576",
+     "title": "Superiority of MACI versus microfracture in symptomatic articular cartilage defects of the knee (SUMMIT registration)",
+     "year": 2008,
+     "design": "RCT",
+     "n": 144,
+     "finding": "Registry record of the pivotal trial; completed March 2012 with posted results.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:32639169",
+     "title": "Matrix-Induced Autologous Chondrocyte Implantation (MACI) Grafting for Osteochondral Lesions of the Talus (12.9-year follow-up)",
+     "year": 2020,
+     "design": "case-series",
+     "n": 15,
+     "finding": "AOFAS improved from 60 to 84 at about 13 years; MOCART 65 did not correlate with function.",
+     "sponsor_funded": false,
+     "applications": [
+      "osteochondral-lesion-talus"
+     ]
+    },
+    {
+     "ref": "PMID:19755063",
+     "title": "Matrix-Induced Autologous Chondrocyte Implantation (MACI) grafting for osteochondral lesions of the talus (21-month follow-up)",
+     "year": 2009,
+     "design": "case-series",
+     "n": 20,
+     "finding": "AOFAS improved from 60 to 87 at a mean 21 months; two failures and four hardware removals.",
+     "sponsor_funded": false,
+     "applications": [
+      "osteochondral-lesion-talus"
+     ]
+    },
+    {
+     "ref": "NCT06915233",
+     "title": "MASCOT: MACI vs arthroscopic bone marrow stimulation in the talus, ages 17-65 (Phase 3)",
+     "year": 2026,
+     "design": "RCT",
+     "n": 309,
+     "finding": "Recruiting; primary completion estimated July 2030. Vericel's 10-K states the trial was initiated in Q4 2025; the registry lists a 2026-05 start date.",
+     "sponsor_funded": true,
+     "applications": [
+      "osteochondral-lesion-talus"
+     ]
+    },
+    {
+     "ref": "NCT03588975",
+     "title": "MACI in patients aged 10 to 17 with symptomatic chondral or osteochondral defects of the knee (Phase 3)",
+     "year": 2018,
+     "design": "RCT",
+     "n": 45,
+     "finding": "Recruiting; primary completion estimated February 2030. Pediatric extension of the knee label.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "launched-2017",
+    "trials": [
+     "NCT06915233",
+     "NCT03588975"
+    ],
+    "expected_milestone": "MACI Ankle (MASCOT) primary completion est. July 2030; pediatric knee study est. February 2030 (ClinicalTrials.gov). UK authorization sought (Vericel FY2025 10-K)."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Biopsy plus implant is a two-stage outpatient procedure; the cell product is supplied by Vericel per patient. Per Vericel's 10-K, a vast majority of the largest US commercial payers have a medical policy covering MACI and others approve case by case; specific HCPCS/billing codes not verified here.",
+    "notes": "Q2 2025 MACI net revenue $53.5M (+21% YoY; Q2 2025 press release). 10-K: company estimates ~750,000 US knee cartilage repair procedures a year, ~315,000 consistent with the label, ~60,000 likely to secure authorization for MACI (company estimates). Target surgeons expanded from 5,000 to 7,000; >900 surgeons trained in MACI Arthro; new Burlington, MA facility approved in 2026 for commercial manufacturing. Company-sourced figures."
+   },
+   "sources": [
+    "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/maci-autologous-cultured-chondrocytes-porcine-collagen-membrane",
+    "https://www.sec.gov/Archives/edgar/data/887359/000162828026012013/vcel-20251231.htm",
+    "https://www.biospace.com/press-releases/vericel-reports-second-quarter-2025-financial-results",
+    "https://clinicaltrials.gov/study/NCT00719576",
+    "https://clinicaltrials.gov/study/NCT06915233",
+    "https://clinicaltrials.gov/study/NCT03588975",
+    "https://www.drugs.com/pro/maci-implant.html",
+    "PMID:24714783",
+    "PMID:29565642"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "agili-c",
+   "name": "Agili-C implant",
+   "company": "Smith+Nephew",
+   "ownership_history": "Developed by CartiHeal (Kfar Saba, Israel); Smith+Nephew, Inc. is the PMA applicant of record at the 2022-03-29 approval. Acquisition date and price not independently verified in this sweep (S+N announcement not read).",
+   "category": "cartilage",
+   "composition": "Cell-free, biphasic resorbable scaffold: calcium carbonate (aragonite, from coral) osseous phase with a hyaluronic acid-reinforced chondral phase; press-fit into the prepared defect.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P210034 (approved 2022-03-29); supplement S001 approved 2026-06-04 (labeling updated with post-approval study results)",
+    "us_market_year": 2022,
+    "on_label_indications": [
+     "Agili-C scaffold is indicated for the treatment of an International Cartilage Repair Society (ICRS) grade III or above knee-joint surface lesion(s), with a total treatable area of 1-7 cm2, without severe osteoarthritis (Kellgren-Lawrence grade 0-3) (FDA PMA record)",
+     "Contraindication in the IFU: severe osteoarthritis of the index knee (Kellgren-Lawrence grade 4)"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Pivotal open-label RCT NCT03299959 (n=251, 26 centers, US and Europe/Israel, 2:1 Agili-C vs debridement/microfracture): overall KOOS superior at every visit to 24 months, responder rate (>=30-point KOOS gain) 77.8% vs 33.6% (P<.0001), >=75% MRI defect fill 88.5% vs 30.9%, failures 7.2% vs 21.4%. Registry shows a 60-month primary endpoint; results posted December 2025.",
+     "caveats": "Sponsor-funded, open-label; control arm was microfracture or debridement only (not ACI/OCA); 24-month publication is the basis of the PMA; 60-month results posted on ClinicalTrials.gov but not yet located in PubMed; comparator performance (microfracture) is a known weak control.",
+     "challenge": "A hiring manager will ask whether the label's K-L 0-3 permission (mild-moderate OA) rests on the RCT subgroup or on the single-arm OA cohort; the RCT enrolled K-L 0-3."
+    },
+    {
+     "application_id": "osteochondral-lesion-talus",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "Talar use is off-label. A 2021 J Foot Ankle Surg case series reports Agili-C in complex talar OCL (n not recoverable from the indexed record); a 2023 systematic review pools multilayer biomimetic scaffolds in the talus. No randomized study of Agili-C in the talus located (PubMed search 2026-10-23).",
+     "caveats": "Off-label; tiny case series; abstract not indexed so n was not confirmed."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:36779614",
+     "title": "Aragonite-Based Scaffold Versus Microfracture and Debridement for the Treatment of Knee Chondral and Osteochondral Lesions: Results of a Multicenter Randomized Controlled Trial",
+     "year": 2023,
+     "design": "RCT",
+     "n": 251,
+     "finding": "Implant group had superior overall KOOS at all follow-ups to 24 months; responder rate 77.8% vs 33.6%; failure 7.2% vs 21.4%.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:33481631",
+     "title": "Aragonite-Based Scaffold for the Treatment of Joint Surface Lesions in Mild to Moderate Osteoarthritic Knees: Results of a 2-Year Multicenter Prospective Study",
+     "year": 2021,
+     "design": "case-series",
+     "n": 86,
+     "finding": "KOOS pain rose from 49.6 to 79.5 and IKDC from 37.8 to 65.8 at 24 months in knees with K-L 2-3 OA; MRI defect fill 78.7%.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:38899593",
+     "title": "Acellular Aragonite-Based Scaffold for the Treatment of Joint Surface Lesions of the Knee: A Minimum 5-Year Follow-Up Study",
+     "year": 2024,
+     "design": "case-series",
+     "n": null,
+     "finding": "Overall KOOS 45 to 86 at minimum 5 years with one failure revised to a metal implant; MOCART 64.",
+     "sponsor_funded": false,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT03299959",
+     "title": "Agili-C vs surgical standard of care for joint surface lesions of the knee (pivotal RCT, 60-month primary endpoint)",
+     "year": 2017,
+     "design": "RCT",
+     "n": 251,
+     "finding": "Completed 2024-11-14; results posted 2025-12-05 (not read in detail).",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:33246791",
+     "title": "Complex Osteochondral Lesions of the Talus Treated With a Novel Bi-Phasic Aragonite-based Implant",
+     "year": 2021,
+     "design": "case-series",
+     "n": null,
+     "finding": "Case series of Agili-C in talar osteochondral lesions (abstract not indexed; findings not read).",
+     "sponsor_funded": false,
+     "applications": [
+      "osteochondral-lesion-talus"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "launched-2022",
+    "trials": [
+     "NCT03299959",
+     "NCT02423629"
+    ],
+    "expected_milestone": "First US commercial case reported in 2023 (company release); PMA labeling updated June 2026 with post-approval study results."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Outpatient/ASC implant; no separate pass-through or HCPCS code located; coverage varies by payer.",
+    "notes": "Smith+Nephew sells through its Sports Medicine direct force, alongside REGENETEN (existing atlas record), BST-CarGel ex-US and Cartiform heritage via Osiris. A hiring manager will probe single-arm OA data, the 5-year label update, and whether payers treat the device as investigational."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P210034",
+    "https://api.fda.gov/device/pma.json?search=pma_number:P210034",
+    "https://clinicaltrials.gov/study/NCT03299959",
+    "PMID:36779614",
+    "PMID:33481631",
+    "PMID:38899593"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "denovo-nt",
+   "name": "DeNovo NT Natural Tissue Graft (particulated juvenile articular cartilage allograft)",
+   "company": "Zimmer Biomet",
+   "ownership_history": "Marketed by Zimmer Orthobiologics (Zimmer Biomet) since 2007 per Zimmer; a Zimmer-listed study identifier references ISTO (ISTO Technologies developed the technology) but the licence/acquisition terms were not verified.",
+   "category": "cartilage",
+   "composition": "Minced (particulated) hyaline cartilage from juvenile (<13 years) human donors, implanted into a prepared defect and held with fibrin glue; single-stage, no harvest.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER) - 361 status is Zimmer's and the literature's characterization; not stated on the pages read",
+    "us_market_year": 2007,
+    "unverified": true,
+    "on_label_indications": [
+     "Homologous use as an allograft for repair of articular cartilage in focal defects (knee, ankle, hip, shoulder per Zimmer materials)",
+     "Zimmer describes it as a 'juvenile cartilaginous allograft tissue intended to provide surgeons with an early-intervention option for the repair of articular cartilage' (brochure)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Farr 2014: 25 patients, 2-year prospective case series (Zimmer-employed co-author): significant gains in IKDC, KOOS and VAS and MRI fill; Zimmer-sponsored post-market registries (NCT00791245 n=25; NCT01329445 n=160; NCT01670617 n=90) have no peer-reviewed full report located. No randomized trial.",
+     "caveats": "Case series; manufacturer-sponsored; no comparator; 5-year survival figures (85% knee, 89% ankle) appear only in Zimmer materials.",
+     "challenge": "Because it is a 361 HCT/P with no premarket efficacy review, expect payers and surgeons to ask for comparative data that does not exist."
+    },
+    {
+     "application_id": "osteochondral-lesion-talus",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Systematic review (2024, 12 studies, 241 patients, 29 months): AOFAS 58.5 to 83.9 but MOCART poor (48.2), complication rate 25.2% (mostly graft hypertrophy), failure 12.4%; authors state PJCA cannot currently be recommended for large OLTs. Zimmer ankle LDC study NCT01347892 (n=205) unreported.",
+     "caveats": "Review of low-level studies; large lesions fare worse."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:24718790",
+     "title": "Clinical, Radiographic, and Histological Outcomes After Cartilage Repair With Particulated Juvenile Articular Cartilage: A 2-Year Prospective Study",
+     "year": 2014,
+     "design": "case-series",
+     "n": 25,
+     "finding": "Significant 2-year improvement in IKDC, KOOS and VAS with progressive MRI defect fill; a co-author is a Zimmer Orthobiologics employee.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:38318931",
+     "title": "Particulated juvenile cartilage allograft for the treatment of osteochondral lesions of the talus is associated with a high complication rate and a high failure rate at short-term follow-up: a systematic review",
+     "year": 2024,
+     "design": "meta-analysis",
+     "n": 241,
+     "finding": "AOFAS 58.5 to 83.9, MOCART 48.2, complications 25.2%, failures 12.4%; not recommended for large OLTs.",
+     "sponsor_funded": false,
+     "applications": [
+      "osteochondral-lesion-talus"
+     ]
+    },
+    {
+     "ref": "NCT00791245",
+     "title": "Post Market Study of Articular Cartilage Defects of the Knee Treated With DeNovo NT, Natural Tissue Graft",
+     "year": 2006,
+     "design": "case-series",
+     "n": 25,
+     "finding": "Registry record of the study behind the 2014 report; completed 2012-08.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT01347892",
+     "title": "DeNovo NT Ankle Longitudinal Data Collection Study",
+     "year": 2011,
+     "design": "registry",
+     "n": 205,
+     "finding": "Post-market ankle data collection (status unknown); no publication located.",
+     "sponsor_funded": true,
+     "applications": [
+      "osteochondral-lesion-talus"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "No pass-through; allograft supply cost sits with the facility; billed in the outpatient cartilage-repair procedure (specific coding per Zimmer coding guide not read).",
+    "notes": "Zimmer Biomet competes on single-stage convenience against MACI; no independent comparative data exist. Site for ongoing sports-med portfolio (cartilage line also includes Cartiform rivals BioCartilage and ProChondrix)."
+   },
+   "sources": [
+    "https://www.zimmerbiomet.com/medical-professionals/biologics/product/denovo-nt-natural-tissue.html",
+    "https://www.zimmerbiomet.com/content/dam/zb-corporate/en/products/specialties/biologics/denovo/97560800100DeNovoNTNaturalTissueGraftBrochure.pdf",
+    "https://clinicaltrials.gov/study/NCT00791245",
+    "PMID:24718790",
+    "PMID:38318931"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "biocartilage",
+   "name": "BioCartilage extracellular cartilage matrix",
+   "company": "Arthrex",
+   "ownership_history": "Arthrex product; development and licensing history not verified.",
+   "category": "cartilage",
+   "composition": "Dehydrated, micronized allogeneic cartilage extracellular matrix (type II collagen, proteoglycans) reconstituted at the table with autologous PRP/ACP and placed over a microfractured defect.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER) - classification inferred; Arthrex pages read did not state it",
+    "us_market_year": 2013,
+    "unverified": true,
+    "on_label_indications": [
+     "Allograft cartilage matrix used as an adjunct to marrow stimulation (microfracture) for focal chondral defects; Arthrex materials describe use in knee and other joints. Exact regulatory statement not read."
+    ]
+   },
+   "status": "established",
+   "challenge": "A 361 HCT/P is meant for homologous use without combination with other articles; BioCartilage is routinely combined with PRP, which a regulatory reviewer would question. The FDA classification is not stated on the sources read.",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Brusalis 2020 (Knee): 10 patients, microfracture plus BioCartilage plus PRP, 2-year PROs improved (P<.01); MRI at 1 year showed 2 lesions <50% filled, 4 >50%, 2 complete, 2 hypertrophied. An equine model (Fortier 2016) was positive; two small randomized comparisons are registered (NCT02203071 n=25; NCT03696394 n=15) without located results.",
+     "caveats": "Tiny uncontrolled series; surgeon-investigators with Arthrex ties; microfracture control not randomized in the published human data."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:33010756",
+     "title": "BioCartilage augmentation of marrow stimulation procedures for cartilage defects of the knee: Two-year clinical outcomes",
+     "year": 2020,
+     "design": "case-series",
+     "n": 10,
+     "finding": "Significant PRO gains at 2 years; MRI fill variable (2 of 10 <50%, 2 hypertrophied).",
+     "sponsor_funded": null,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:27298478",
+     "title": "BioCartilage Improves Cartilage Repair Compared With Microfracture Alone in an Equine Model of Full-Thickness Cartilage Loss",
+     "year": 2016,
+     "design": "preclinical",
+     "n": null,
+     "finding": "Equine study favoring BioCartilage over microfracture alone.",
+     "sponsor_funded": null,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT02203071",
+     "title": "Comparison of BioCartilage Versus Marrow Stimulating Procedure for Cartilage Defects of the Knee",
+     "year": 2014,
+     "design": "RCT",
+     "n": 25,
+     "finding": "Completed 2018; no results located.",
+     "sponsor_funded": null,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Facility-supplied allograft; no separate code; commonly bundled with marrow-stimulation procedure.",
+    "notes": "Positioned as a low-cost, off-the-shelf microfracture upgrade; competing with DeNovo NT, ProChondrix and Cartiform."
+   },
+   "sources": [
+    "https://power.arthrex.com/es/biologicos/matriz-de-cartilago-micronizado-biocartilage",
+    "https://clinicaltrials.gov/study/NCT02203071",
+    "PMID:33010756",
+    "PMID:27298478"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "cartiform",
+   "name": "Cartiform viable chondral allograft",
+   "company": "Smith+Nephew",
+   "ownership_history": "Made by Osiris Therapeutics; exclusive US commercial distribution and sales partnership with Arthrex announced October 2014 (distribution from 2015; initial 8-year term, Osiris FY2014 10-K; the FY2017 10-K calls it an exclusive marketing and sales-representative agreement). Smith+Nephew acquired Osiris in 2019. Current distribution arrangement and market status not verified.",
+   "category": "cartilage",
+   "composition": "Cryopreserved (-80 C) human hyaline cartilage disc perforated to expose cartilage with intact chondrocytes (viability preserved), growth factors and matrix; may include a subchondral bone layer in the osteochondral version; implanted with fibrin glue or suture.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER) (Osiris FY2014 10-K states it believes Cartiform is regulated as an HCT/P under 21 CFR 1271 and section 361 of the PHS Act, and that it is registered as a tissue establishment)",
+    "us_market_year": 2015,
+    "unverified": true,
+    "on_label_indications": [
+     "Allograft for repair of focal chondral defects; Osiris describes it as 'a viable chondral allograft' promoting articular cartilage repair, implanted in a single step"
+    ]
+   },
+   "status": "established",
+   "challenge": "Viable-cell cartilage allografts marketed as 361 HCT/Ps depend on a minimally manipulated, homologous-use argument that FDA could contest; Osiris's 10-K says so openly.",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Bennett 2021 (Arthrex-consultant authors): retrospective, 12 patients, mean 2.1 years, IKDC 72.6, KOOS pain 83.8, MOCART reported; a 2025 retrospective patellar cohort (n=65 knees, 50 months) found Cartiform/PJAC without subchondral drilling outperformed drilling plus scaffolds (IKDC 81 vs 74).",
+     "caveats": "Small retrospective series, no randomized trial found, company-affiliated authors."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:33716418",
+     "title": "Cartiform Implantation for focal cartilage defects in the knee: A 2-year clinical and magnetic resonance imaging follow-up study",
+     "year": 2021,
+     "design": "retrospective",
+     "n": 12,
+     "finding": "2-year PROs moderate-good (IKDC 72.6, KOOS pain 83.8) with MOCART assessment.",
+     "sponsor_funded": null,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:41541537",
+     "title": "Cartilage Scaffolds Implanted Without Subchondral Drilling Are Associated With Improved Outcomes and Fewer Complications Compared to Scaffolds Implanted With Subchondral Drilling",
+     "year": 2025,
+     "design": "retrospective",
+     "n": 65,
+     "finding": "Patellar lesions: no-drilling group (Cartiform 70.6% or PJAC) had higher median IKDC (81 vs 74, P<.001) and fewer complications.",
+     "sponsor_funded": null,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Facility-supplied allograft; no separate payment.",
+    "notes": "S+N holds Osiris legacy products; Arthrex distribution agreement status after the 2019 acquisition not confirmed."
+   },
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/0001360886/000104746915002532/a2223659z10-k.htm",
+    "https://www.odtmag.com/breaking-news/osiris-and-athrex-sign-product-development-de/",
+    "PMID:33716418",
+    "PMID:41541537"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "prochondrix-cr",
+   "name": "ProChondrix CR (cryopreserved viable cartilage allograft)",
+   "company": "AlloSource",
+   "ownership_history": "AlloSource (Centennial, CO; non-profit tissue processor). AlloSource and Stryker launched a cryopreserved osteochondral allograft in April 2018; Stryker lists AlloSource ProChondrix in its sports-medicine catalog (distribution terms not read).",
+   "category": "cartilage",
+   "composition": "Cryopreserved human osteochondral allograft with viable chondrocytes (AlloSource reports mean post-thaw viability about 95% vs 98.8% fresh), supplied as a thin, laser-etched cartilage-on-bone graft and stored frozen.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER) - AlloSource's 2025 ICRS poster says ProChondrix CR is regulated under 21 CFR Part 1271; the 361 designation itself was not stated on pages read",
+    "us_market_year": 2017,
+    "unverified": true,
+    "on_label_indications": [
+     "Allograft for repair of articular cartilage defects of the knee (homologous use); company clinical studies cover femoral condyle and patella lesions"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Mehta 2022: 18 patients with ProChondrix thin laser-etched graft plus marrow stimulation, mean 2.5 years: VAS 6.55 to 2.55, IKDC 37.6 to 59.7; 2 reoperations. AlloSource-sponsored prospective study NCT03873545 (n=34) and PACE registry NCT04301258 (n=48, terminated) have no peer-reviewed full report located; AlloSource's 2025 ICRS poster reports through 60 months (company).",
+     "caveats": "Small single-center series, no control; sponsor data are posters; cryopreserved-viability claims are company research."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:36527357",
+     "title": "Short term clinical outcomes of a Prochondrix thin laser-etched osteochondral allograft for the treatment of articular cartilage defects in the knee",
+     "year": 2022,
+     "design": "case-series",
+     "n": 18,
+     "finding": "Pain and IKDC improved significantly at a mean 2.5 years; two failures needed reoperation.",
+     "sponsor_funded": null,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT03873545",
+     "title": "Prospective Evaluation of ProChondrix CR for Repair of Articular Cartilage Defects on Femoral Condyle and Patella",
+     "year": 2019,
+     "design": "prospective-cohort",
+     "n": 34,
+     "finding": "Active, not recruiting; primary completion estimated 2028-11.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT04301258",
+     "title": "ProChondrix CR Articular Cartilage Restoration Evaluation (PACE) Registry",
+     "year": 2020,
+     "design": "registry",
+     "n": 48,
+     "finding": "Terminated 2023-09.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Facility-supplied allograft; no separate payment.",
+    "notes": "Stryker sports-medicine reps distribute AlloSource cartilage products under a 2018 partnership; AlloSource also supplies Stryker GraftJacket (see graftjacket record, processor claim unverified)."
+   },
+   "sources": [
+    "https://allosource.org/wp-content/uploads/securepdfs/2026/01/ICRS-Poster-2025.pdf",
+    "https://www.odtmag.com/contents/view_breaking-news/2018-04-05/allosource-and-stryker-launch-cryopreserved-osteochondral-allograft/",
+    "https://clinicaltrials.gov/study/NCT03873545",
+    "PMID:36527357"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "jrf-ortho-fresh-oca",
+   "name": "Fresh osteochondral allograft (JRF Ortho)",
+   "company": "JRF Ortho",
+   "ownership_history": "JRF Ortho is the orthopedic arm of the Joint Restoration Foundation (non-profit tissue bank, Centennial, CO); it states it offers fresh grafts through a member relationship with AlloSource and Community Tissue Services. Arthrex says it partners with JRF Ortho and LifeNet Health to source fresh cartilage allografts.",
+   "category": "cartilage",
+   "composition": "Fresh (never frozen) human osteochondral dowel or shell grafts with viable chondrocytes, typically transplanted 14-35 days after donor recovery.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER) - classification is the standard one for fresh minimally manipulated OCA but was not stated on the JRF pages read",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "Allograft osteochondral transplant for focal cartilage and osteochondral defects (homologous use); no label text read"
+    ]
+   },
+   "status": "established",
+   "challenge": "JRF's sponsored Becker's piece calls fresh OCA 'FDA-approved', which is a promotional misstatement: fresh OCA is a 361 HCT/P with no premarket approval.",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Bulk fresh OCA (JBJS 2021, n=244 knees, mean 9.0 years): survivorship 86.6% at 5 y, 73.3% at 10 y, 58.1% at 15 y, 38% failed; femoral condyle FOCA with realignment osteotomy (BJJ 2019, n=60): 87% at 5 y, 75% at 15 y. Long-term single-center series with no randomized comparison.",
+     "caveats": "Retrospective single-center registries from tertiary centers; applies to fresh grafts generally, not specifically to JRF-sourced tissue; outcomes worse for medial or multiple grafts and older patients."
+    },
+    {
+     "application_id": "osteochondral-lesion-talus",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Systematic review (12 studies, 191 patients, mean 57 months): significant AOFAS and VAS gains, 21.6% needed minor secondary procedures; midterm series (Foot Ankle Int 2019) supports use in large cystic talar lesions.",
+     "caveats": "Case series; graft collapse and fragmentation in large lesions; fresh-graft logistics limit use."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:34449445",
+     "title": "Outcomes of Bulk Fresh Osteochondral Allografts for Cartilage Restoration in the Knee",
+     "year": 2021,
+     "design": "retrospective",
+     "n": 244,
+     "finding": "Survivorship 86.6% at 5 y, 73.3% at 10 y, 58.1% at 15 y; 38.1% of grafts failed at mean 11 years.",
+     "sponsor_funded": false,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:30648496",
+     "title": "Long-term results of fresh osteochondral allografts and realignment osteotomy for cartilage repair in the knee",
+     "year": 2019,
+     "design": "retrospective",
+     "n": 60,
+     "finding": "Survivorship 87.3% at 5 y, 74.8% at 15 y, 59.8% at 25 y; malalignment predicted failure.",
+     "sponsor_funded": false,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:33642164",
+     "title": "Fresh Osteochondral Allograft Transplantation for Osteochondral Lesions of the Talus: A Systematic Review",
+     "year": 2021,
+     "design": "meta-analysis",
+     "n": 191,
+     "finding": "AOFAS and VAS improved significantly across 12 studies; 21.6% minor reoperations.",
+     "sponsor_funded": false,
+     "applications": [
+      "osteochondral-lesion-talus"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Tissue fee billed by tissue bank to facility; procedure paid under the facility's outpatient/inpatient arrangement; no separate code.",
+    "notes": "Hospital-supplied fresh graft with a short shelf life and scheduling constraints; frozen/cryopreserved products (ProChondrix, Cartiform) trade viability for convenience."
+   },
+   "sources": [
+    "https://sportsmedicineweekly.com/science/about-jrf-ortho/",
+    "https://www.beckersasc.com/asc-news/how-innovative-fresh-osteochondral-allografts-in-orthopedics-affect-patient-care/",
+    "https://www.arthrex.com/resources/LB1-000354-en-US/osteochondral-graft-fixation",
+    "PMID:34449445",
+    "PMID:30648496",
+    "PMID:33642164"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "mtf-fresh-oca",
+   "name": "Fresh osteochondral allograft program (MTF Biologics)",
+   "company": "MTF Biologics",
+   "ownership_history": "MTF Biologics (formerly Musculoskeletal Transplant Foundation, Edison, NJ; non-profit).",
+   "category": "cartilage",
+   "composition": "Fresh human osteochondral allografts. The program, grafts offered and handling details were not confirmed from an MTF source in this sweep.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER) (assumed, as for other fresh OCA programs; not confirmed)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "Homologous-use osteochondral allograft; no MTF label or brochure was read"
+    ]
+   },
+   "status": "established",
+   "unverified": true,
+   "challenge": "Existence and scope of MTF's fresh OCA offering could not be confirmed from an MTF primary source; a LifeNet FAQ only lists MTF among competitors. Treat as a placeholder pending verification.",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Same class evidence as JRF fresh OCA (see jrf-ortho-fresh-oca record): bulk FOCA of the knee 5-year survivorship 86.6% (n=244). No MTF-specific outcome study located.",
+     "caveats": "Class evidence only; product-specific data absent."
+    },
+    {
+     "application_id": "osteochondral-lesion-talus",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Class evidence from fresh OCA of the talus (systematic review of 191 patients); no MTF-specific study located.",
+     "caveats": "Class evidence only."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:34449445",
+     "title": "Outcomes of Bulk Fresh Osteochondral Allografts for Cartilage Restoration in the Knee",
+     "year": 2021,
+     "design": "retrospective",
+     "n": 244,
+     "finding": "Class evidence cited for fresh OCA; graft survivorship 86.6% at 5 y.",
+     "sponsor_funded": false,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:33642164",
+     "title": "Fresh Osteochondral Allograft Transplantation for Osteochondral Lesions of the Talus: A Systematic Review",
+     "year": 2021,
+     "design": "meta-analysis",
+     "n": 191,
+     "finding": "Class evidence cited for fresh OCA of the talus.",
+     "sponsor_funded": false,
+     "applications": [
+      "osteochondral-lesion-talus"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not verified.",
+    "notes": "Placeholder record: sizing and tissue-bank competition (JRF Ortho, LifeNet Health, AlloSource) not sourced."
+   },
+   "sources": [
+    "https://www.lifenethealth.org/sites/default/files/files/Frequently%20Asked%20Questions%2068-30-098.pdf",
+    "PMID:34449445"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "hyalofast",
+   "name": "Hyalofast cartilage repair scaffold",
+   "company": "Anika Therapeutics",
+   "ownership_history": "Hyaluronic acid-ester (HYAFF-11) scaffold from Fidia Advanced Biopolymers (Italy); Anika Therapeutics owns the product (the 2009 Fidia Advanced Biopolymers acquisition is general knowledge, not read in this sweep). FDA Breakthrough Device Designation.",
+   "category": "cartilage",
+   "composition": "Non-woven scaffold of HYAFF-11 (esterified hyaluronic acid fibers), implanted over microfracture or soaked with autologous bone marrow aspirate concentrate (BMAC) in a one-step procedure.",
+   "regulatory": {
+    "path": "IDE-only",
+    "reference": "US: PMA under review - third and final PMA module filed 2025-10-31 (Anika release 2025-11-05); no approval or panel found. Ex-US: marketed in over 35 countries (company); CE marking not independently verified",
+    "us_market_year": null,
+    "on_label_indications": [
+     "No US indication (investigational in the US). Ex-US labeling for knee cartilage lesions per company; not read."
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "FastTRACK (NCT02659215, n=200, US randomized, evaluator-blinded, Hyalofast plus BMAC vs microfracture, 24 months) missed both co-primary endpoints: KOOS Pain 8.11% difference favoring microfracture (p=0.81) and IKDC function 4.84% favoring Hyalofast (p=0.34). Secondary KOOS sports (+12.19, p=0.01), QoL and total KOOS favored Hyalofast; responder and observed-data analyses were post-hoc.",
+     "caveats": "The primary endpoints were not met under the pre-specified analysis; Anika's explanation (COVID disruptions, microfracture dropouts, shift in standard of care) is the sponsor's. Results in press release, not peer-reviewed; n is not given in the release (200 from the registry).",
+     "challenge": "A hiring manager will ask how a PMA can succeed after missed co-primaries; Anika's argument leans on Breakthrough designation, secondary endpoints and 35,000 ex-US patients."
+    },
+    {
+     "application_id": "osteochondral-lesion-talus",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Ex-US case reports use Hyalofast in the talus (e.g., Cureus 2021); no published study of this product in this application beyond case reports located (PubMed search 2026-10-23).",
+     "caveats": "Case-report level only."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT02659215",
+     "title": "HyaloFAST Trial for Repair of Articular Cartilage in the Knee (FastTRACK)",
+     "year": 2015,
+     "design": "RCT",
+     "n": 200,
+     "finding": "Co-primary endpoints missed at 24 months (KOOS Pain -8.11% vs microfracture, p=0.81; IKDC +4.84%, p=0.34); secondary KOOS sports/QoL/total favored Hyalofast. Source: sponsor press release 2025-11-05.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:34660120",
+     "title": "Osteochondral Injury of the Talus Treated With Cell-Free Hyaluronic Acid-Based Scaffold (Hyalofast) - A Reliable Solution",
+     "year": 2021,
+     "design": "case-series",
+     "n": null,
+     "finding": "Case report-level data on talar use ex-US.",
+     "sponsor_funded": false,
+     "applications": [
+      "osteochondral-lesion-talus"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "under-review",
+    "trials": [
+     "NCT02659215"
+    ],
+    "expected_milestone": "PMA complete 2025-10-31 (final module); FDA decision date not disclosed. Anika's investor release lists review timing as uncertain."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "US not yet marketed; ex-US hospital procurement.",
+    "notes": "Anika's key cartilage asset; Anika also sells Integrity Implant (rotator cuff). Over 35,000 patients treated globally since 2009 (company)."
+   },
+   "sources": [
+    "https://ir.anika.com/2025-11-05-Anika-Therapeutics-Reports-Filing-of-Final-PMA-Module-for-Hyalofast-R-Cartilage-Repair-Scaffold-and-Data-from-U-S-Pivotal-FastTRACK-Phase-III-Study",
+    "https://clinicaltrials.gov/study/NCT02659215",
+    "https://www.sec.gov/Archives/edgar/data/898437/000117184325004809/exh_991.htm",
+    "PMID:34660120"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "novocart-3d",
+   "name": "NOVOCART 3D (and NOVOCART 3D Plus)",
+   "company": "Aesculap Biologics (B. Braun)",
+   "ownership_history": "Developed by TETEC AG (Reutlingen, Germany); US sponsor Aesculap Biologics, LLC (B. Braun group). Corporate linkage between TETEC and B. Braun not verified in this sweep.",
+   "category": "cartilage",
+   "composition": "Autologous chondrocytes cultured in a three-dimensional collagen-based biphasic matrix (per publication titles; detailed composition not verified); implanted by mini-arthrotomy with a cartilage biopsy first.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "US BLA-track under IND; Phase 3 NCT01957722 active. EU: used in Germany (non-interventional studies); EMA authorization not located",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None in the US (investigational). Aesculap's US trial page describes it as investigational and not available outside the trial (via secondary search summary)."
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Two randomized Phase 3 programs vs microfracture: US NCT01957722 (n=233, primary completion est. Dec 2025, active-not-recruiting) and EU NCT01656902 (n=263, completed March 2020, results not published in PubMed). Non-interventional NISANIK registry (n=80, 36 months) reported IKDC improvement (Level IV).",
+     "caveats": "No published randomized results located; BLA filing status unknown; sponsor-funded; microfracture control."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT01957722",
+     "title": "NOVOCART 3D vs microfracture in articular cartilage defects of the knee (US Phase 3)",
+     "year": 2013,
+     "design": "RCT",
+     "n": 233,
+     "finding": "Active, not recruiting; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT01656902",
+     "title": "NOVOCART 3D Plus vs microfracture in knee cartilage defects (EU Phase III)",
+     "year": 2013,
+     "design": "RCT",
+     "n": 263,
+     "finding": "Completed March 2020; no results posted or located in PubMed.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:40809995",
+     "title": "A non-interventional study to evaluate the safety and effectiveness of a biphasic, chondrocyte-containing biomaterial (NOVOCART 3D) in the treatment of localized full-thickness cartilage defects or osteochondral lesions of the knee joint (NISANIK)",
+     "year": 2025,
+     "design": "case-series",
+     "n": 80,
+     "finding": "Single-arm, 8 centers, 36 months; IKDC 2000 used for effectiveness (details not read).",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT01957722",
+     "NCT03219307"
+    ],
+    "expected_milestone": "US Phase 3 primary completion est. 2025-12 per registry; no BLA filing located."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not marketed in the US.",
+    "notes": "A US BLA for an autologous cell product would compete with MACI; Aesculap has run the trial since 2013 (>12 years)."
+   },
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT01957722",
+    "https://clinicaltrials.gov/study/NCT01656902",
+    "PMID:40809995"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "bst-cargel",
+   "name": "BST-CarGel",
+   "company": "Smith+Nephew",
+   "ownership_history": "Developed by BioSyntech (Canada), then Piramal Healthcare (Canada); Smith+Nephew's affiliate took over ownership of all BST-CarGel product and IP assets from Piramal in January 2016 (terms undisclosed; Ry Ortho/BioSpectrum reports).",
+   "category": "cartilage",
+   "composition": "Chitosan (with glycerol phosphate) solution mixed by the surgeon with the patient's own whole blood and applied over a microfractured defect, forming a clot-stabilizing scaffold.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "No US PMA located (openFDA PMA search and web summaries 2026-10-23). Approved for use in Australia, Canada and most of Europe per 2016 coverage; CE/Health Canada certificates not read",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "Not authorized in the US. Ex-US: adjunct to microfracture for focal femoral condyle cartilage lesions (per trial design and coverage; labeling not read)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "JBJS 2013 RCT (NCT00314236; n=80, 41 BST-CarGel plus microfracture vs 39 microfracture): at 12 months BST-CarGel gave greater lesion filling (92.8% vs 85.2%, p=0.011) and more hyaline-like T2 values (p=0.033); clinical benefit equivalent. 5-year MRI superiority persisted (lesion filling P=0.017) with no WOMAC difference.",
+     "caveats": "MRI surrogate endpoints, no clinical superiority, single lesion type; US PMA path unresolved; Piramal-funded."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:24048551",
+     "title": "Novel scaffold-based BST-CarGel treatment results in superior cartilage repair compared with microfracture in a randomized controlled trial",
+     "year": 2013,
+     "design": "RCT",
+     "n": 80,
+     "finding": "BST-CarGel beat microfracture on lesion filling (92.8% vs 85.2%) and T2 quality at 12 months; clinical outcomes equivalent.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:26069709",
+     "title": "BST-CarGel Treatment Maintains Cartilage Repair Superiority over Microfracture at 5 Years in a Multicenter Randomized Controlled Trial",
+     "year": 2015,
+     "design": "RCT",
+     "n": null,
+     "finding": "MRI lesion filling and T2 superiority persisted at 5 years; WOMAC improved equally in both groups.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT01246895",
+     "title": "Follow-up study evaluating the long-term safety and efficacy of BST-CarGel and microfracture repair of the knee",
+     "year": 2010,
+     "design": "RCT",
+     "n": 67,
+     "finding": "Extension study; completed 2014.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Ex-US hospital procurement; not marketed in the US.",
+    "notes": "Unclear whether S+N still actively markets BST-CarGel; US trials (NCT02981355) terminated with n=5."
+   },
+   "sources": [
+    "https://ryortho.com/2016/01/smith-nephews-bet-on-cartilage-repair/",
+    "https://biospectrumindia.com/news/95/3513/piramal-sells-its-cartilage-repair-product.html",
+    "https://clinicaltrials.gov/study/NCT00314236",
+    "PMID:24048551",
+    "PMID:26069709"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "neocart",
+   "name": "NeoCart",
+   "company": "Ocugen (OrthoCellix)",
+   "ownership_history": "Developed by Advanced Tissue Sciences/Histogenics (Waltham, MA). Histogenics' Phase 3 missed in 2018, FDA said another trial was needed, and Histogenics reverse-merged into Ocugen in 2019 (reported). Ocugen later pursued RMAT status (May 2022) and an FDA-agreed Phase 3 design (Dec 2022); NeoCart sits in OrthoCellix, an Ocugen subsidiary formed after a 2025 Carisma merger (search summary of Ocugen filings; unverified).",
+   "category": "cartilage",
+   "composition": "Autologous chondrocytes expanded and grown on a bovine type I collagen scaffold under hypoxia and hydrostatic pressure in a bioreactor to form a cartilage-like tissue implant.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "BLA-track biologic; RMAT designation (May 2022); FDA agreed Phase 3 design December 2022 (compare NeoCart with chondroplasty, 1-3 cm2 lesions)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "None (investigational)"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Phase 2 (JBJS 2012, n=30, 2:1 vs microfracture): NeoCart safe and associated with greater clinical efficacy at 2 years. Phase 3 (NCT01066702, n=245 randomized) missed its primary endpoint: pain and function improved in 74.2% vs 62% of patients at 1 year (p=0.0714) per Histogenics; FDA required a further trial before accepting a BLA.",
+     "caveats": "Phase 3 results are from company statements and trade coverage, not a peer-reviewed paper; registry lists the Phase 3 as terminated."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:22637204",
+     "title": "NeoCart, an autologous cartilage tissue implant, compared with microfracture for treatment of distal femoral cartilage lesions: an FDA phase-II prospective, randomized clinical trial after two years",
+     "year": 2012,
+     "design": "RCT",
+     "n": 30,
+     "finding": "NeoCart group (n=21) vs microfracture (n=9): similar safety and greater clinical efficacy at 2 years.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT01066702",
+     "title": "Confirmatory Study of NeoCart in Knee Cartilage Repair (Phase 3)",
+     "year": 2010,
+     "design": "RCT",
+     "n": 245,
+     "finding": "Terminated; sponsor reported 74.2% vs 62% responders (p=0.0714), missing the primary endpoint.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT01066702"
+    ],
+    "expected_milestone": "Ocugen planned a Phase 3 start by end of 2025; no new registration or 2026 update located (search summary)."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not marketed.",
+    "notes": "A cautionary tale for the category: single-pivotal cell-therapy programs can fail by a few points; Ocugen's priority is ophthalmology gene therapy."
+   },
+   "sources": [
+    "https://bonezonepub.com/2019/01/07/histogenics-to-explore-strategic-alternatives-for-neocart-based-on-fda-pathway-findings/",
+    "https://cgtlive.com/view/ocugen-announces-positive-fda-interactions-regarding-optical-gene-therapy-orthopedic-cell-therapy",
+    "https://clinicaltrials.gov/study/NCT01066702",
+    "PMID:22637204"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "cais",
+   "name": "Cartilage Autograft Implantation System (CAIS)",
+   "company": "DePuy Synthes (Johnson & Johnson)",
+   "ownership_history": "DePuy Mitek program (J&J); pivotal IDE trial NCT00881023 (DePuy Mitek, n=75) was terminated; CAIS was never approved. DePuy Mitek's sports-medicine business is now within DePuy Synthes.",
+   "category": "cartilage",
+   "composition": "Autologous minced cartilage from the patient loaded onto a biodegradable scaffold and fixed with absorbable staples in a single-stage procedure (general description; composition not verified in a primary source in this sweep).",
+   "regulatory": {
+    "path": "IDE-only",
+    "reference": "US IDE pivotal study NCT00881023 (terminated); no PMA/BLA submitted that was located",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "None (investigational; program abandoned)"
+    ]
+   },
+   "status": "withdrawn",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "AJSM 2011 RCT (n=29 randomized 1:2 vs microfracture, 2 years): IKDC 82.95 vs 59.5 at 24 months and KOOS subdomains better with CAIS. The 75-patient pivotal trial (NCT00881023) was terminated and not published.",
+     "caveats": "Tiny first trial; the pivotal trial was terminated (reason not stated in the registry data read); sponsor-funded; abandoned."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:21460066",
+     "title": "Outcomes after a single-stage procedure for cell-based cartilage repair: a prospective clinical safety trial with 2-year follow-up",
+     "year": 2011,
+     "design": "RCT",
+     "n": 29,
+     "finding": "CAIS group IKDC 82.95 vs microfracture 59.5 at 24 months; adverse events similar.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT00881023",
+     "title": "Multicenter randomized pivotal study of CAIS for surgical treatment of articular cartilage defects of the knee",
+     "year": 2010,
+     "design": "RCT",
+     "n": 75,
+     "finding": "Terminated December 2014; no results.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not marketed.",
+    "notes": "Historical record; particulated cartilage concept survives as DeNovo NT, BioCartilage and ProChondrix."
+   },
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT00881023",
+    "PMID:21460066"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "chondro-gide",
+   "name": "Chondro-Gide (AMIC) collagen membrane",
+   "company": "Geistlich Pharma",
+   "ownership_history": "Geistlich Pharma AG (Wolhusen, Switzerland), private. Two US-registered knee studies (NCT04537013 SECURE, n=82; NCT05785949, n=75) were both terminated early for a change in business strategy (registry/summary).",
+   "category": "cartilage",
+   "composition": "Bilayer resorbable porcine type I/III collagen membrane laid over a microfractured defect (AMIC, autologous matrix-induced chondrogenesis) and glued or sutured.",
+   "regulatory": {
+    "path": "IDE-only",
+    "reference": "US: FDA Breakthrough Device Designation granted February 2021 for Chondro-Gide articular cartilage cover; no clearance/approval located. Geistlich dental collagen membranes (e.g., K212463 Bio-Gide) are different products",
+    "us_market_year": null,
+    "on_label_indications": [
+     "No US cartilage indication. Used ex-US (AMIC) for knee and ankle defects; CE labeling not read."
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Int Orthop 2017 RCT ( n=47 randomized to microfracture or sutured/glued AMIC): AMIC scores stable over 5 years while microfracture scores declined; MRI fill better with AMIC. A 2021 meta-analysis (12 studies, 375 patients) found significant pain and function gains, mostly uncontrolled. A 67-patient Geistlich RCT of microfracture plus Chondro-Gide vs microfracture alone (NCT02993510) is completed, with no publication located.",
+     "caveats": "Small RCT; sponsor-linked; US trials terminated; AMIC is a surgeon technique that adds a membrane, not a new biology.",
+     "challenge": "US regulatory status is the question: BDD is a review-speed designation, not an authorization."
+    },
+    {
+     "application_id": "osteochondral-lesion-talus",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "A 5-year prospective cohort (n=19) of AMIC with cancellous graft via malleolar osteotomy showed FFI -22.5% and AOFAS +17.2% at 24 months, stable at 60 months (BMC Musculoskelet Disord 2021, Level II). Geistlich ankle RCT (NCT05741983) withdrawn.",
+     "caveats": "Small single-center cohort; osteotomy needed."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28108777",
+     "title": "A randomized controlled trial demonstrating sustained benefit of Autologous Matrix-Induced Chondrogenesis over microfracture at five years",
+     "year": 2017,
+     "design": "RCT",
+     "n": 47,
+     "finding": "AMIC groups stayed stable over 5 years while microfracture scores progressively deteriorated; MRI defect fill better with AMIC.",
+     "sponsor_funded": null,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:31508990",
+     "title": "Systematic Review and Meta-Analysis of the Clinical Evidence on the Use of Autologous Matrix-Induced Chondrogenesis in the Knee",
+     "year": 2021,
+     "design": "meta-analysis",
+     "n": 375,
+     "finding": "12 studies: pain VAS improved by 4.0 points at 1-2 years, sustained beyond 3 years; study quality suboptimal.",
+     "sponsor_funded": null,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:34303367",
+     "title": "AMIC for traumatic focal osteochondral defect of the talar shoulder: a 5 years follow-up prospective cohort study",
+     "year": 2021,
+     "design": "prospective-cohort",
+     "n": 19,
+     "finding": "FFI fell 22.5% and AOFAS rose 17.2% at 24 months with no further change at 60 months.",
+     "sponsor_funded": null,
+     "applications": [
+      "osteochondral-lesion-talus"
+     ]
+    },
+    {
+     "ref": "NCT02993510",
+     "title": "Randomised multi-center study: microfracturing with Chondro-Gide for isolated cartilage defects in the knee",
+     "year": 2003,
+     "design": "RCT",
+     "n": 67,
+     "finding": "Completed December 2015; results not located.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Not marketed for cartilage in the US.",
+    "notes": "Breakthrough designation 2021 followed by US trial terminations suggests the US plan stalled."
+   },
+   "sources": [
+    "https://www.geistlich.com/about-us/news/news-detail/chondro-gider-articular-cartilage-cover-fda-approval-as-a-breakthrough-device",
+    "https://clinicaltrials.gov/study/NCT04537013",
+    "https://clinicaltrials.gov/study/NCT05785949",
+    "https://clinicaltrials.gov/study/NCT02993510",
+    "PMID:28108777",
+    "PMID:31508990",
+    "PMID:34303367"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "cartistem",
+   "name": "CARTISTEM",
+   "company": "Medipost",
+   "ownership_history": "Medipost Co., Ltd. (Seongnam, Korea; US subsidiary Medipost, Inc.). Korean MFDS approval 2012 is widely reported but not verified here.",
+   "category": "cartilage",
+   "composition": "Allogeneic umbilical cord blood-derived mesenchymal stem cells in sodium hyaluronate hydrogel, implanted into the defect after marrow-stimulating drilling (mini-arthrotomy).",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "US IND; FDA agreed to a single pivotal Phase 3 plus confirmatory evidence BLA strategy (June 2026 company release). Korea: marketed (approval year not verified)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "US: none (investigational). Korea: repair of knee cartilage defects (labeling not read)."
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Phase 3 in Korea (n=114, large ICRS grade-4 defects, mean age 56): 97.7% vs 71.7% improved >=1 ICRS grade at 48-week second-look (P=.001) vs microfracture; VAS/WOMAC/IKDC not different at 48 weeks but better to 5 years. US pivotal NCT07339111 (n=300, ~70 US/Canadian sites, vs surgical debridement) started March 2026.",
+     "caveats": "Sponsor-funded; ICRS second-look arthroscopy endpoint is a structural surrogate; older, large-defect Korean population; US trial comparator is debridement."
+    },
+    {
+     "application_id": "osteochondral-lesion-talus",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Hyundai Bioland Phase III (NCT04310215, n=102, single-blind, adding CARTISTEM to microfracture in talar chondral lesions) completed June 2022; no publication located.",
+     "caveats": "Unpublished; different sponsor/licensee."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:33490296",
+     "title": "Allogeneic Umbilical Cord Blood-Derived Mesenchymal Stem Cell Implantation Versus Microfracture for Large, Full-Thickness Cartilage Defects in Older Patients",
+     "year": 2021,
+     "design": "RCT",
+     "n": 114,
+     "finding": "97.7% vs 71.7% improved >=1 ICRS grade at 48 weeks (P=.001); clinical scores superior over 5 years.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT07339111",
+     "title": "Phase 3 pivotal trial comparing CARTISTEM and surgical comparator for knee cartilage lesions and osteoarthritis (US/Canada)",
+     "year": 2026,
+     "design": "RCT",
+     "n": 300,
+     "finding": "Recruiting; primary completion estimated June 2029.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT04310215",
+     "title": "Phase III trial of adding CARTISTEM to microfracture in talar chondral lesions",
+     "year": 2020,
+     "design": "RCT",
+     "n": 102,
+     "finding": "Completed June 2022; no results located.",
+     "sponsor_funded": null,
+     "applications": [
+      "osteochondral-lesion-talus"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT07339111"
+    ],
+    "expected_milestone": "US Phase 3 primary completion est. 2029-06 (ClinicalTrials.gov); company release June 2026 on FDA alignment."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Korea reimbursement not verified; US not marketed.",
+    "notes": "One of the few allogeneic MSC scaffolds with an FDA-agreed pivotal design; first patient dosed July 2026 per Edaily summary."
+   },
+   "sources": [
+    "https://www.utusan.com.my/pr-newswire-en/2026/06/medipost-secures-fda-agreement-on-single-pivotal-phase-3-study-with-confirmatory-evidence-bla-filing-strategy-for-cartistem-in-the-u-s/",
+    "https://en.edaily.co.kr/news/eda202607085328/",
+    "https://clinicaltrials.gov/study/NCT07339111",
+    "PMID:33490296"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "cartilife",
+   "name": "CartiLife",
+   "company": "Biosolution",
+   "ownership_history": "Biosolution Co., Ltd. (Korea). Korean distribution partner: Mundipharma exclusive commercialization/distribution agreement (headline only; terms not read). Korean approval date conflicts across sources (a 2026 Korean report cites April 2025 MFDS approval).",
+   "category": "cartilage",
+   "composition": "Autologous chondrocytes grown as extracellular matrix-associated pellets (beads) from the patient's cartilage biopsy, implanted into the defect (registry description: 'pellet-type extracellular matrix-associated autologous chondrocytes').",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "US: IND, Phase 2 (NCT04744402, n=25, FDA IND cleared Nov 2019 per a 2020 brokerage report); company requested a Type C meeting for a US Phase 3 (2026 Korean report). Korea: MFDS product approval reported April 2025 (unverified); Hainan (China) sales approval reported",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "US: none (investigational). Korea: autologous cartilage defect repair of the knee (label not read)."
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No peer-reviewed study of this product located in PubMed (search 2026-10-23, 'CartiLife'). Registered studies: Korean Phase 3, active-controlled (NCT05051332, n=104, status unknown, primary completion estimated 2023-09), US Phase 2 single-arm (NCT04744402, n=25), earlier Korean study (NCT03545269, n=30, completed).",
+     "caveats": "No published efficacy data; status of US Phase 2 uncertain (registry not updated since 2023)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT05051332",
+     "title": "Active-controlled Phase III trial of CartiLife in Korea (comparator named in the truncated registry title as autologous chondrocyte implantation)",
+     "year": 2020,
+     "design": "RCT",
+     "n": 104,
+     "finding": "Registry only; status unknown, no results located.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "NCT04744402",
+     "title": "Phase 2 trial of CartiLife for articular cartilage defects of the knee (United States)",
+     "year": 2020,
+     "design": "prospective-cohort",
+     "n": 25,
+     "finding": "Single-arm open-label US Phase 2; listed as recruiting but registry last updated 2023; no results located.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT04744402",
+     "NCT05051332"
+    ],
+    "expected_milestone": "US Phase 3 planning after FDA Type C meeting request (2026 Korean press, unverified)."
+   },
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Korea/China only.",
+    "notes": "Mundipharma Korea distribution headline; Biosolution seeking global partners at BIO USA (2026 Korean press)."
+   },
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT04744402",
+    "https://clinicaltrials.gov/study/NCT05051332",
+    "https://www.mt.co.kr/stock/2026/09/22/2026092211089674501",
+    "https://pharmashots.com/25695/mundipharma-signs-an-exclusive-commercialization-and-distribution-agreement-with-biosolution-in-south-korea"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "chondrocelect",
+   "name": "ChondroCelect",
+   "company": "TiGenix (historical)",
+   "ownership_history": "TiGenix NV (Leuven, Belgium). EU marketing authorization 5 October 2009 (EMEA/H/C/000878) as the first ATMP; European Commission withdrew it 29 July 2016 (effective 30 November 2016) at TiGenix's request for commercial reasons (EMA EPAR). Takeda later acquired TiGenix (not verified here).",
+   "category": "cartilage",
+   "composition": "Autologous chondrocytes expanded in monolayer and characterized for a marker profile predictive of cartilage-forming capacity; implanted under a periosteal flap or membrane.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "EU: EMEA/H/C/000878, authorized 2009-10-05, withdrawn 2016. Never FDA-approved",
+    "us_market_year": null,
+    "on_label_indications": [
+     "EU label (historic): repair of single symptomatic cartilage defects of the femoral condyle of the knee (ICRS grade III or IV) in adults (EMA EPAR)"
+    ]
+   },
+   "status": "withdrawn",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Saris 2008/2009 (AJSM, n=118, 57 characterized chondrocyte implantation vs 61 microfracture): better structural repair at 1 year (histomorphometry P=.003), similar KOOS at 12-18 months; better clinical outcome at 36 months in a follow-up of the same randomized trial.",
+     "caveats": "Sponsor-funded; withdrawn commercially, not for safety; included as the cautionary reference for EU cell products."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:18202295",
+     "title": "Characterized chondrocyte implantation results in better structural repair when treating symptomatic cartilage defects of the knee in a randomized controlled trial versus microfracture",
+     "year": 2008,
+     "design": "RCT",
+     "n": 118,
+     "finding": "Better histologic structural repair than microfracture at 1 year; short-term KOOS comparable.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:19846694",
+     "title": "Treatment of symptomatic cartilage defects of the knee: characterized chondrocyte implantation results in better clinical outcome at 36 months in a randomized trial compared to microfracture",
+     "year": 2009,
+     "design": "RCT",
+     "n": null,
+     "finding": "Clinical outcome superior to microfracture at 36 months (abstract not read in full).",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Withdrawn.",
+    "notes": "Withdrawal for commercial reasons is the useful BD lesson: ATMP approval without volume/reimbursement did not sustain the product."
+   },
+   "sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/chondrocelect",
+    "PMID:18202295",
+    "PMID:19846694"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "spherox",
+   "name": "Spherox (chondrosphere)",
+   "company": "co.don",
+   "ownership_history": "co.don GmbH (Leipzig, Germany), marketing authorization holder per EMA EPAR. Authorized 10 July 2017 (CHMP opinion 18 May 2017).",
+   "category": "cartilage",
+   "composition": "Spheroids of human autologous matrix-associated chondrocytes (EMA active-substance description); applied to the defect without a membrane scaffold (technique details not verified).",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "EU centralized marketing authorization (ATMP) 2017-07-10; not FDA-approved",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Repair of symptomatic articular cartilage defects of the femoral condyle and patella of the knee (ICRS grade III or IV) with defect sizes up to 10 cm2 in adults (EMA EPAR page); the overview also allows skeletally mature adolescents"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Phase III RCT NCT01222559 (n=102: spheroid ACI n=52 vs microfracture n=50, 1-4 cm2 lesions): non-inferior overall KOOS at 24 months and superior on ADL (24 months) and QoL (12 months); 36-month superiority on activity subscores reported in follow-up.",
+     "caveats": "Sponsor-funded; open-label; modest defect size; not available or authorized in the US (US evidence status: investigational)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:31317047",
+     "title": "A Prospective, Randomized, Open-Label, Multicenter, Phase III Noninferiority Trial to Compare the Clinical Efficacy of Matrix-Associated Autologous Chondrocyte Implantation With Spheroid Technology Versus Arthroscopic Microfracture for Cartilage Defects of the Knee Joint",
+     "year": 2019,
+     "design": "RCT",
+     "n": 102,
+     "finding": "Spheroid ACI met non-inferiority to microfracture on overall KOOS at 24 months; ADL subscore superior.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    },
+    {
+     "ref": "PMID:31893951",
+     "title": "Matrix-Associated Autologous Chondrocyte Implantation with Spheroid Technology Is Superior to Arthroscopic Microfracture at 36 Months Regarding Activities of Daily Living and Sporting Activities",
+     "year": 2021,
+     "design": "RCT",
+     "n": null,
+     "finding": "36-month follow-up of the Phase III trial favoring spheroid ACI on ADL and sports (abstract not read in full).",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-knee"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "EU hospital/ATMP reimbursement; not US.",
+    "notes": "One of the few EU ACI products still authorized after ChondroCelect and EU MACI exits."
+   },
+   "sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/spherox",
+    "PMID:31317047",
+    "PMID:31893951"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "cartiva-sci",
+   "name": "Cartiva Synthetic Cartilage Implant (SCI)",
+   "company": "Stryker",
+   "ownership_history": "Cartiva, Inc. held the PMA; Wright Medical acquired Cartiva (2018, general knowledge) and Stryker acquired Wright Medical in November 2020. Class action filings name Cartiva, Stryker Canada and Wright Medical Canada.",
+   "category": "cartilage",
+   "composition": "Polyvinyl alcohol (PVA) hydrogel cylindrical plug (catalog sizes 6, 8, 10 and 12 mm per the recall record) press-fit into the first metatarsal head as a hemiarthroplasty.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P150017 (approved 2016-07-01); FDA recall Z-0598-2025 (event 95661) initiated 2024-10-31, status 'Open, Classified'",
+    "us_market_year": 2016,
+    "on_label_indications": [
+     "Treatment of patients with painful degenerative or post-traumatic arthritis (hallux limitus or hallux rigidus) in the first metatarsophalangeal joint with or without the presence of mild hallux valgus (FDA PMA record)"
+    ]
+   },
+   "status": "withdrawn",
+   "challenge": "Stryker recalled all Cartiva implants (distributed July 2016 to October 2024) on 2024-10-31 for a higher-than-expected rate of revision, removal, subsidence, displacement, pain, nerve damage or fragmentation; NICE and Singapore HSA followed. Despite the Level I RCT below, the product is effectively off-market.",
+   "applications": [
+    {
+     "application_id": "first-mtp-arthrodesis",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "MOTION RCT (Foot Ankle Int 2016; 2:1 implant vs first MTP arthrodesis, 12 sites Canada/UK; implant n=152, arthrodesis ~50): non-inferior pain and function at 24 months; 9.2% implant removals to arthrodesis at 2 years; 5.8-year follow-up (n=112 of 135 eligible): further 7.6% converted to arthrodesis in years 2-5, pain VAS improved 57.9 points. Later retrospective comparisons are mixed.",
+     "caveats": "Sponsor-funded; non-inferiority design; 17% of implant patients had secondary surgeries; the 2024 recall reflects real-world failure rates higher than trial rates."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:26922669",
+     "title": "Prospective, Randomized, Multi-centered Clinical Trial Assessing Safety and Efficacy of a Synthetic Cartilage Implant Versus First Metatarsophalangeal Arthrodesis in Advanced Hallux Rigidus",
+     "year": 2016,
+     "design": "RCT",
+     "n": 202,
+     "finding": "Equivalent pain relief and function to arthrodesis at 24 months; 9.2% removal rate. n is implant 152 plus arthrodesis ~50 (derived from reported percentages).",
+     "sponsor_funded": true,
+     "applications": [
+      "first-mtp-arthrodesis"
+     ]
+    },
+    {
+     "ref": "PMID:30501401",
+     "title": "Midterm Outcomes of a Synthetic Cartilage Implant for the First Metatarsophalangeal Joint in Advanced Hallux Rigidus",
+     "year": 2019,
+     "design": "prospective-cohort",
+     "n": 112,
+     "finding": "At mean 5.8 years pain VAS improved 57.9 points; 7.6% additional conversions to arthrodesis in years 2-5.",
+     "sponsor_funded": true,
+     "applications": [
+      "first-mtp-arthrodesis"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Facility-supplied implant in outpatient foot-and-ankle surgery; Class II recall open.",
+    "notes": "Product liability suits followed the 2024 recall; Stryker foot-and-ankle franchise impact not quantified here."
+   },
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P150017",
+    "https://api.fda.gov/device/recall.json?search=product_description:cartiva",
+    "https://www.hsa.gov.sg/announcements/recall-of-cartiva-synthetic-cartilage-implants-due-to-higher-occurrence-rate-of-hazards/",
+    "https://www.nice.org.uk/guidance/IPG727",
+    "PMID:26922669",
+    "PMID:30501401"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "allojoin",
+   "name": "AlloJoin (allogeneic adipose-derived mesenchymal progenitor cells)",
+   "company": "AbelZeta (successor to Cellular Biomedicine Group)",
+   "ownership_history": "Developed by Cellular Biomedicine Group (Shanghai/Cupertino); ClinicalTrials.gov lists Shanghai AbelZeta Ltd. as sponsor of the Phase II. Corporate chain (CBMG to AbelZeta) not verified.",
+   "category": "cartilage",
+   "composition": "Allogeneic human adipose-derived mesenchymal progenitor cells (haMPC) injected intra-articularly (two injections three weeks apart in the Phase I).",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "China NMPA IND (reported as the first stem-cell drug application approved for Phase II in China, 2019, per a BioSpace headline); no marketing authorization",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "None (investigational)"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Randomized, double-blind Phase II (NCT04208646, n=106, China, 2020-2021) is complete without published results located; the earlier randomized dose-ranging Phase I pilot (n=22, 19 completed) reported transient injection-site pain and improved WOMAC/VAS secondary endpoints with slight MRI cartilage gains in the low-dose group.",
+     "caveats": "Unpublished Phase II; tiny Phase I; knee-OA injectable MSC class likely covered in another slice."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32677876",
+     "title": "Intra-articular injections of allogeneic human adipose-derived mesenchymal progenitor cells in patients with symptomatic bilateral knee osteoarthritis: a Phase I pilot study",
+     "year": 2020,
+     "design": "RCT",
+     "n": 22,
+     "finding": "Safe; transient AEs; secondary pain/function endpoints improved at 48 weeks; MRI slight gains in low dose.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT04208646",
+     "title": "Allogenic adipose tissue-derived mesenchymal progenitor cells (AlloJoin) for knee osteoarthritis (Phase II)",
+     "year": 2020,
+     "design": "RCT",
+     "n": 106,
+     "finding": "Completed 2021-06-30 per registry; no results located.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT04208646"
+    ],
+    "expected_milestone": "No Phase III plan located."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not marketed.",
+    "notes": "Overlap risk with MSC/knee OA slice; included because named in the cartilage slice brief."
+   },
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT04208646",
+    "PMID:32677876"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "tg-c",
+   "name": "TG-C (TissueGene-C, formerly Invossa)",
+   "company": "Kolon TissueGene",
+   "ownership_history": "Kolon TissueGene. The Korean product Invossa (Kolon Life Science) had its Korean approval revoked in 2019 and US trials paused then resumed (general knowledge; not confirmed by a source read).",
+   "category": "cartilage",
+   "composition": "Allogeneic chondrocytes (3:1 non-transduced to retrovirally transduced to overexpress TGF-beta1), injected intra-articularly as a cell and gene therapy.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "US IND; two Phase 3 studies NCT03203330 (n=535) and NCT03291470 (n=531) completed/active; company said BLA expected 2027 (2025 statement); August 2026 aggregator summary reports Phase 3 TG-C 15302 missed its primary endpoint (unverified)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "None in the US (investigational)"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Korean Phase III (n=163, K-L 3, intra-articular TG-C vs placebo, 52 weeks): significant improvement in IKDC and VAS at 26, 39 and 52 weeks (published 2018). US Phase 3 (NCT03203330/NCT03291470, K-L 2-3) readout reported negative in mid-2026 by an aggregator (unverified).",
+     "caveats": "Sponsor-funded; Korean trial population and endpoint differ from US; cell/gene therapy safety scrutiny; a post-hoc structure-modification claim is unproven.",
+     "challenge": "Primary-source confirmation of the 2026 US Phase 3 topline is missing; treat the 'missed primary endpoint' line as unverified."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:29641281",
+     "title": "A Multicenter, Double-Blind, Phase III Clinical Trial to Evaluate the Efficacy and Safety of a Cell and Gene Therapy in Knee Osteoarthritis Patients",
+     "year": 2018,
+     "design": "RCT",
+     "n": 163,
+     "finding": "TG-C beat placebo on IKDC and VAS at 26, 39 and 52 weeks; WOMAC and KOOS also favored TG-C.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT03203330",
+     "title": "TG-C in subjects with Kellgren-Lawrence grade 2 or 3 OA of the knee (US Phase 3)",
+     "year": 2018,
+     "design": "RCT",
+     "n": 535,
+     "finding": "Active, not recruiting; primary completion 2024-07.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT03291470",
+     "title": "TG-C in subjects with Kellgren-Lawrence grade 2 or 3 OA of the knee (second US Phase 3)",
+     "year": 2018,
+     "design": "RCT",
+     "n": 531,
+     "finding": "Completed 2024-03.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT03203330",
+     "NCT03291470"
+    ],
+    "expected_milestone": "BLA guidance of 2027 (2025 CEO statement) now in doubt after reported primary-endpoint miss (unverified aggregator summary 2026-08)."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not marketed.",
+    "notes": "Seeking commercialization partners; may overlap with another slice (existing atlas note lists Kolon TissueGene)."
+   },
+   "sources": [
+    "https://quartr.com/events/kolon-tissuegene-inc-a950160-q1-2026_F1wee8D2",
+    "https://clinicaltrials.gov/study/NCT03203330",
+    "PMID:29641281"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "biobrace",
+   "name": "BioBrace implant (BioBrace, BioBrace Reinforced, BioBrace RC Delivery System, Extra-Articular Ligament Augmentation Kit)",
+   "company": "CONMED",
+   "ownership_history": "Developed by Biorez, Inc. (New Haven, CT). CONMED acquired Biorez on 2022-08-09 for $85.5M upfront in cash plus earn-outs up to $165.0M on revenue targets ($84.5M paid as of 2024-12-31 per CONMED FY2024 10-K).",
+   "category": "soft-tissue",
+   "composition": "Bioresorbable biocomposite scaffold: highly porous (about 80%) sponge of insoluble bovine tendon type I collagen reinforced with poly-L-lactic acid (PLLA) multifilament yarn; a 'Reinforced' variant adds more PLLA.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K203267 (2021-04-30); K241906 BioBrace Reinforced (2024-07-29); K242187 BioBrace (2024-11-27); K250395 BioBrace RC Delivery System (2025-04-07); K252946 Extra-Articular Ligament Augmentation Kit (2025-10-15). Class II surgical mesh, 21 CFR 878.3300",
+    "us_market_year": 2021,
+    "on_label_indications": [
+     "Reinforcement of soft tissue where weakness exists (general surgical procedures)",
+     "Reinforcement of soft tissues repaired by suture or suture anchors during tendon repair surgery including rotator cuff, patellar, Achilles, biceps or quadriceps tendons (K203267 summary)",
+     "K242187 adds ligament repair (e.g., medial collateral and lateral collateral ligament) to the same reinforcement language"
+    ]
+   },
+   "status": "emerging",
+   "challenge": "No peer-reviewed clinical outcome study of BioBrace was found; PubMed returns only surgical-technique papers. The 510(k) cleared it as reinforcement mesh, not as a healing-promoting or 'bioinductive' device; efficacy claims rest on CONMED's pivotal REinForce RCT (not yet complete). The predicate was STR Graft (K121216).",
+   "applications": [
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published clinical study of BioBrace in rotator cuff repair located (PubMed search 2026-10-23); CONMED's pivotal REinForce RCT (NCT05997381, n=268, single-blind, arthroscopic repair of full-thickness tears with BioBrace vs standard repair) has primary completion estimated December 2026. Technique papers only.",
+     "caveats": "Pivotal RCT incomplete; sponsor-run; class evidence for collagen patches (REGENETEN) exists but is not transferable to a different scaffold."
+    },
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Cleared for tendon and extra-articular ligament repair reinforcement (patellar, Achilles, biceps, quadriceps, MCL/LCL). No published study of this product in this application located (PubMed search 2026-10-23); CONMED is running a 500-patient real-world ACL-augmentation study (NCT06948591) and investigator trials in Brostrom repair (NCT07401095, NCT07708584) and subscapularis repair (NCT05487677).",
+     "caveats": "ACL reconstruction augmentation is not among the ligaments named in the clearance text read; the K252946 kit targets extra-articular ligaments.",
+     "challenge": "A hiring manager will probe whether ACL use is promoted on-label."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT05997381",
+     "title": "REinForce: BioBrace implant for arthroscopic repair of full-thickness rotator cuff tears (pivotal RCT)",
+     "year": 2024,
+     "design": "RCT",
+     "n": 268,
+     "finding": "Recruiting; primary completion estimated 2026-12; no results.",
+     "sponsor_funded": true,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "NCT06948591",
+     "title": "Real-world evaluation of BioBrace augmentation in ACL reconstruction",
+     "year": 2025,
+     "design": "registry",
+     "n": 500,
+     "finding": "Recruiting; primary completion estimated 2030-06.",
+     "sponsor_funded": true,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    },
+    {
+     "ref": "NCT05487677",
+     "title": "Subscapularis repair augmentation for total shoulder arthroplasty (Stanford)",
+     "year": 2022,
+     "design": "RCT",
+     "n": 100,
+     "finding": "Investigator-led; recruiting.",
+     "sponsor_funded": false,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    },
+    {
+     "ref": "NCT05959733",
+     "title": "Maximal repair versus bridging reconstruction with BioBrace (Nova Scotia Health Authority)",
+     "year": 2023,
+     "design": "RCT",
+     "n": 60,
+     "finding": "Investigator-led massive rotator cuff tear trial; recruiting.",
+     "sponsor_funded": false,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT05997381",
+     "NCT06948591"
+    ],
+    "expected_milestone": "REinForce primary completion est. 2026-12 (ClinicalTrials.gov)."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Packaged in the arthroscopic procedure (OPPS/ASC); no separate payment found.",
+    "notes": "BioBrace is CONMED's largest recent growth bet (earn-out up to $165M); five 510(k)s in four years expand sizes, reinforced variant, delivery system and ligament kit. Competes with REGENETEN (S+N), Tapestry (Zimmer Biomet), Integrity (Anika) and synthetic meshes (Xiros, Artelon)."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf20/K203267.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K242187.pdf",
+    "https://api.fda.gov/device/510k.json?search=device_name:biobrace",
+    "https://www.sec.gov/Archives/edgar/data/816956/000081695625000004/cnmd-20241231.htm",
+    "https://clinicaltrials.gov/study/NCT05997381",
+    "https://clinicaltrials.gov/study/NCT06948591"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "tapestry",
+   "name": "Tapestry Biointegrative Implant (Tapestry, Tapestry RC)",
+   "company": "Zimmer Biomet",
+   "ownership_history": "Developed by Embody, Inc. Zimmer Biomet announced the acquisition on 2023-01-05 ($155M upfront plus up to $120M over three years on regulatory/commercial milestones) and closed it in February 2023 (trade press).",
+   "category": "soft-tissue",
+   "composition": "Resorbable implant composed of collagen and poly(D,L-lactide), a non-constricting protective layer between tendon and surrounding tissue; supplied standalone, in an insertion sleeve, or on an introducer for arthroscopic delivery (K252647).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K201572 (2020-10-19); K212306 (2021-11-02); K220867 (2022-05-23); K252647 (2025-09-19). Class II surgical mesh, product code OWY",
+    "us_market_year": 2020,
+    "on_label_indications": [
+     "Tapestry Biointegrative Implant is indicated for the management and protection of tendon injuries in which there has been no substantial loss of tendon tissue (K252647)"
+    ]
+   },
+   "status": "emerging",
+   "challenge": "The indication is 'management and protection of tendon injuries' - the same language as the Rotation Medical Collagen Tendon Sheet indication (K112423, the predicate of Integrity); it does not claim to improve healing or reduce retear. Zimmer's own PMCF rotator cuff study (NCT06287853) is listed as suspended.",
+   "applications": [
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No peer-reviewed clinical outcome study of Tapestry in rotator cuff repair located (PubMed search 2026-10-23). Zimmer post-market studies: subscapularis repair after shoulder arthroplasty (NCT05735119, n=100, active), Tapestry RC PMCF (NCT06287853, n=170, suspended), Ohio State gluteus medius repair (NCT05492396, n=30).",
+     "caveats": "Post-market follow-up only; no comparator; sponsor-run."
+    },
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Insertional Achilles tendinopathy repair augmentation case series (NCT05998785) was terminated at n=8 in 2024; a 2025 Clin Podiatr Med Surg article describes technique. No published comparative data located.",
+     "caveats": "Terminated tiny study; technique/expert opinion only."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT05735119",
+     "title": "Post-market clinical follow-up: subscapularis repair augmented with Tapestry after shoulder arthroplasty",
+     "year": 2022,
+     "design": "prospective-cohort",
+     "n": 100,
+     "finding": "Active, not recruiting; primary completion estimated 2026-11.",
+     "sponsor_funded": true,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "NCT06287853",
+     "title": "Tapestry rotator cuff repair PMCF",
+     "year": 2026,
+     "design": "prospective-cohort",
+     "n": 170,
+     "finding": "Listed as suspended; start estimated 2026-12.",
+     "sponsor_funded": true,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "NCT05998785",
+     "title": "Insertional Achilles tendinopathy repair augmented with Tapestry (Embody)",
+     "year": 2022,
+     "design": "case-series",
+     "n": 8,
+     "finding": "Terminated with 8 enrolled (2024-08).",
+     "sponsor_funded": true,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    },
+    {
+     "ref": "NCT05492396",
+     "title": "Evaluation of healing following open gluteus medius repair with biointegrative implant (Ohio State)",
+     "year": 2022,
+     "design": "prospective-cohort",
+     "n": 30,
+     "finding": "Investigator-led; active, not recruiting.",
+     "sponsor_funded": false,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "launched-2020",
+    "trials": [
+     "NCT05735119",
+     "NCT06287853"
+    ],
+    "expected_milestone": "Subscapularis PMCF primary completion est. 2026-11."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Packaged in the procedure (OPPS/ASC); no separate payment.",
+    "notes": "Zimmer Biomet paid $155M upfront for Embody (2023) to enter biologic tendon augmentation, with milestone-linked contingent payments."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K252647.pdf",
+    "https://api.fda.gov/device/510k.json?search=device_name:tapestry",
+    "https://www.medtechdive.com/news/zimvie-ZBH-acquire-embody-soft-tissue-repair/639703/",
+    "https://clinicaltrials.gov/study/NCT05735119",
+    "https://clinicaltrials.gov/study/NCT06287853"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "integrity-implant",
+   "name": "Integrity Implant (hyaluronic acid-based patch system)",
+   "company": "Anika Therapeutics",
+   "ownership_history": "Anika Therapeutics (510(k) applicant). Anika's separate Parcus Medical business was divested to Medacta in 2025 (Anika milestones page, search summary); no link to this patch was found. Correction to the sweep brief: the patch is hyaluronic acid-based (HYAFF), not collagen.",
+   "category": "soft-tissue",
+   "composition": "Partially resorbable knitted mesh of resorbable HYAFF (esterified hyaluronic acid) multifilament fibers and non-resorbable polyethylene terephthalate (PET) fibers, fixed with PEEK bone staples, PLGA tendon tacks or suture.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K223538 (2023-08-17); K250997 (2025-06-17). Predicate: Collagen Tendon Sheet K112423; product code OWX; Class II surgical mesh, 21 CFR 878.3300",
+    "us_market_year": 2023,
+    "on_label_indications": [
+     "The Integrity Implant is indicated for the management and protection of tendon injuries in which there has been no substantial loss of tendon tissue (K223538 summary)"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published clinical outcome study of Integrity Implant located (PubMed search 2026-10-23). Anika's post-market confirmatory study (NCT06741527, n=150, single-arm, rotator cuff augmentation) and a 20-patient MRI study (NCT06353893, Foundation for Orthopaedic Research and Education, completed Feb 2026) are the only registered data.",
+     "caveats": "Post-market, single-arm; the label is protection of tendon injuries, not a retear-reduction claim."
+    },
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Label language is tendon-agnostic ('tendon injuries'); no non-rotator-cuff study located.",
+     "caveats": "No data."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT06741527",
+     "title": "Post-market confirmatory interventional study of the Integrity Implant System for rotator cuff tear augmentation",
+     "year": 2025,
+     "design": "prospective-cohort",
+     "n": 150,
+     "finding": "Recruiting; primary completion estimated 2027-06.",
+     "sponsor_funded": true,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "NCT06353893",
+     "title": "Postoperative MRI evaluation of the Integrity bio-inductive implant augmentation of rotator cuff tears",
+     "year": 2024,
+     "design": "prospective-cohort",
+     "n": 20,
+     "finding": "Completed 2026-02; results not located.",
+     "sponsor_funded": false,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "launched-2023",
+    "trials": [
+     "NCT06741527"
+    ],
+    "expected_milestone": "Post-market study primary completion est. 2027-06."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Packaged in the procedure (OPPS/ASC).",
+    "notes": "Anika also pursues Hyalofast PMA; Integrity is its soft-tissue growth product; the 'Retractable Implant Inserter' K261869 (2026-09-17) extends the system."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf22/K223538.pdf",
+    "https://ir.anika.com/2023-08-17-Anika-Receives-510-k-Clearance-for-Integrity-TM-Implant-System,-a-Regenerative-Hyaluronic-Acid-Based-Patch-System-for-Augmentation-of-Rotator-Cuff-Repairs",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22integrity+implant%22",
+    "https://clinicaltrials.gov/study/NCT06741527"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "arthroflex",
+   "name": "ArthroFlex Acellular Dermal Matrix (and BioWasher)",
+   "company": "Arthrex",
+   "ownership_history": "Processed by LifeNet Health with Matracell decellularization; marketed by Arthrex. Arthrex and LifeNet partnership terms not read.",
+   "category": "soft-tissue",
+   "composition": "Human acellular dermal matrix (>=97% DNA removed, Matracell process, room-temperature storage, 3-year shelf life, SAL 10-6), sizes 0.5-3.0 mm thick; BioWasher is a 10 x 14 mm 2 mm washer.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER) - classification inferred from LifeNet protocol wording ('human cellular tissue product'); the brand-level 361 vs 510(k) status was not confirmed (Arthrex's newer SpeedFLEX dermal allograft was cleared via 510(k) K251690)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "LifeNet sheet: ArthroFlex is an acellular dermal matrix used to supplement soft tissue repairs such as the Achilles tendon and rotator cuff; augment rotator cuff, Achilles, biceps, quad and patellar tendon repairs; reinforce peroneal/tibialis and hand/foot flexor/extensor tendons and capsular repairs"
+    ]
+   },
+   "status": "established",
+   "challenge": "The 361 HCT/P status of dermal-allograft patches is increasingly contested: Arthrex's SpeedFLEX (decellularized human dermis, LifeNet donor tissue) went the 510(k) route in September 2025.",
+   "applications": [
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "III",
+     "evidence_summary": "Gilot 2015 (Arthroscopy, single-center, prospective, blinded, nonrandomized, n=35: 20 ECM-augmented vs 15 controls, large to massive tears, ~25 months): retears 10% vs 26% (P=.0483), ASES 88.9 vs 72.6. The Cleveland Clinic Florida RCT (NCT03551509) terminated at n=9. Class meta-analyses of acellular patches (5 RCTs, 307 patients) show retear 11% vs 34%.",
+     "caveats": "Product-specific evidence is one small nonrandomized study; the RCT was terminated; class meta-analyses include other matrices."
+    },
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Label covers Achilles, biceps, quad, patellar and hand/foot tendon reinforcement; case reports and technique papers only (e.g., AC joint resurfacing, pectoralis major reconstruction). No comparative study located.",
+     "caveats": "Expert opinion/case reports only."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:25891222",
+     "title": "Outcome of Large to Massive Rotator Cuff Tears Repaired With and Without Extracellular Matrix Augmentation: A Prospective Comparative Study",
+     "year": 2015,
+     "design": "prospective-cohort",
+     "n": 35,
+     "finding": "Retears 10% (2/20) with ECM graft vs 26% (4/15) without (P=.0483); pain and ASES better with graft; Level III, nonrandomized.",
+     "sponsor_funded": null,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "NCT03551509",
+     "title": "LifeNet: Extracellular Matrix Graft in Rotator Cuff Repair (RCT, Cleveland Clinic Florida)",
+     "year": 2018,
+     "design": "RCT",
+     "n": 9,
+     "finding": "Terminated with 9 patients enrolled (planned 70); results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:37816398",
+     "title": "Acellular Collagen Matrix Patch Augmentation of Arthroscopic Rotator Cuff Repair Reduces Re-Tear Rates: A Meta-analysis of Randomized Control Trials",
+     "year": 2024,
+     "design": "meta-analysis",
+     "n": 307,
+     "finding": "Five RCTs: retear 11% with patch vs 34% control (P=.0006); class evidence, not ArthroFlex-specific.",
+     "sponsor_funded": false,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Packaged in the procedure (OPPS/ASC); tissue cost to facility.",
+    "notes": "Arthrex sells ArthroFlex (LifeNet-processed allograft), SpeedFLEX (K251690 510(k)) and DX Reinforcement Matrix (xenograft): three patch tiers in one catalog."
+   },
+   "sources": [
+    "https://www.lifenethealth.org/sites/default/files/product/arthroflex_.pdf",
+    "https://www.arthrex.com/resources/AN1-0822-EN/arthroflex-acellular-bioimplant-for-soft-tissue-repairs",
+    "https://cdn.clinicaltrials.gov/large-docs/09/NCT03551509/Prot_SAP_000.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K251690.pdf",
+    "PMID:25891222",
+    "PMID:37816398"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "arthrex-dx-reinforcement-matrix",
+   "name": "Arthrex DX Reinforcement Matrix",
+   "company": "Arthrex",
+   "ownership_history": "Manufactured for Arthrex by DSM Biomedical, Inc. (FDA GUDID record). The sweep brief grouped this with LifeNet allografts; it is a xenograft (not LifeNet) - corrected here.",
+   "category": "soft-tissue",
+   "composition": "Decellularized porcine dermal collagen matrix (Arthrex describes a xenograft dermal ECM processed with the OPTRIX method, without cross-linking); GUDID lists a collagen orthopaedic tendon-reinforcement mesh.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "unverified - GUDID lists product codes OWY (collagen mesh, orthopaedic, tendon reinforcement) and FTM; no K number found for 'DX Reinforcement Matrix'. Lineage candidates: Medeor Matrix K103787 (Kensey Nash, 2011-02-07, cited as predicate for Arthrex SpeedFLEX) and MESO Tendon Matrix K133169 (DSM Biomedical, 2013-12-20, OWY)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "Not read. Cleared collagen mesh in this lineage is for reinforcement of soft tissue where weakness exists / tendon repair reinforcement."
+    ]
+   },
+   "status": "established",
+   "unverified": true,
+   "applications": [
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product located (PubMed search 2026-10-23); xenograft dermal patches have a mixed class record (see restore-orthobiologic withdrawn SIS patch).",
+     "caveats": "Product-specific K number and indications unverified."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:37816398",
+     "title": "Acellular Collagen Matrix Patch Augmentation of Arthroscopic Rotator Cuff Repair Reduces Re-Tear Rates: A Meta-analysis of Randomized Control Trials",
+     "year": 2024,
+     "design": "meta-analysis",
+     "n": 307,
+     "finding": "Class evidence only (retear 11% vs 34%).",
+     "sponsor_funded": false,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Packaged in the procedure.",
+    "notes": "Private-label xenograft patch; DSM Biomedical (formerly Kensey Nash) supplier relationship."
+   },
+   "sources": [
+    "https://www.arthrex.com/resources/VPT1-00142-EN/arthrex-dx-reinforcement-matrix",
+    "https://accessgudid.nlm.nih.gov/devices/M263ABS30001",
+    "https://api.fda.gov/device/510k.json?search=k_number:K133169"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "graftjacket",
+   "name": "GraftJacket Regenerative Tissue Matrix (incl. GraftJacket Now Ultra-Thick)",
+   "company": "Stryker",
+   "ownership_history": "Originated at LifeCell (acellular human dermis); marketed for orthopaedic/sports use by Wright Medical Technology (which licensed the GRAFTJACKET brand to KCI for wound care); Stryker acquired Wright Medical in November 2020 (existing atlas record on OsteoSet). Current orthopaedic GraftJacket pages are Stryker-branded and cite AlloSource white papers; a search summary said the sheet lists AlloSource as manufacturer, but the Stryker page read did not name the processor. The brief's LifeCell/AbbVie Allergan processor claim could not be confirmed and may be outdated.",
+   "category": "soft-tissue",
+   "composition": "Pre-hydrated acellular human dermal matrix, 3-4 mm 'Ultra-Thick' sizes 4x4, 4x8, 5x7 cm; collagen-rich scaffold retaining growth factors (bFGF, PDGF-bb, TGF-beta, BMP2 per Stryker page, citing AlloSource papers).",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER) - not stated on the Stryker page read; the existing atlas dermal-allograft record carries the same open question",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "Stryker page: used for 'reinforcement, support and protection of soft tissue'; the page does not mention rotator cuff"
+    ]
+   },
+   "status": "established",
+   "challenge": "Orthopaedic dermal allografts are marketed as 361 HCT/Ps for 'supplemental support', while the evidence is about rotator cuff retear reduction; Arthrex's 2025 SpeedFLEX shows a 510(k) path exists for the same tissue.",
+   "applications": [
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Barber 2012 (Arthroscopy; multicenter prospective randomized, n=42; >3 cm two-tendon tears, single-row repair with GraftJacket vs without, mean 24 months): ASES 98.9 vs 94.8 (P=.035), Constant 91.9 vs 85.3 (P=.008), gadolinium MRI intact cuff 85% vs 40% (P<.01); no graft-related adverse events. Class meta-analyses of matrix augmentation show lower retear.",
+     "caveats": "The RCT is small and labeled 'lesser quality' (Level II); sponsor/funding not read; an Oxford biopsy series (Rashid 2020, GraftJacket n=4, Permacol n=3) found disrupted native tendon ECM and no cellular benefit at 4 weeks."
+    },
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Case-level use for Achilles, biceps and latissimus transfer augmentation (e.g., 2017 case report of latissimus transfer with GraftJacket); no comparative study located.",
+     "caveats": "Case reports."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:21978432",
+     "title": "A prospective, randomized evaluation of acellular human dermal matrix augmentation for arthroscopic rotator cuff repair",
+     "year": 2012,
+     "design": "RCT",
+     "n": 42,
+     "finding": "Augmented repairs had better ASES (98.9 vs 94.8) and Constant scores and 85% vs 40% intact cuffs on MRI at mean 24 months.",
+     "sponsor_funded": null,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:32691656",
+     "title": "Rotator cuff repair with biological graft augmentation causes adverse tissue outcomes",
+     "year": 2020,
+     "design": "prospective-cohort",
+     "n": 10,
+     "finding": "Biopsies 4 weeks after repair with GraftJacket (n=4), Permacol (n=3) or no patch (n=3) showed native tendon ECM disruption under patches and no increase in cellularity; one adverse immune response with Permacol.",
+     "sponsor_funded": false,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:29906191",
+     "title": "Rotator Cuff Matrix Augmentation and Interposition: A Systematic Review and Meta-analysis",
+     "year": 2019,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Graft augmentation lowered retear rates (P=.05) and improved ASES vs repair alone; no graft superior to another.",
+     "sponsor_funded": false,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Packaged in the procedure (OPPS/ASC); tissue cost to facility.",
+    "notes": "Stryker sells GraftJacket alongside Artelon (2024) and AlloSource-processed cartilage and other grafts; wound-care GraftJacket rights sit with KCI/3M heritage (not read)."
+   },
+   "sources": [
+    "https://www.stryker.com/us/en/sports-medicine/products/GraftJacket-Now-Ultra-Thick.html",
+    "https://mdedge.com/content/matrix-heals-stubborn-lower-extremity-wounds",
+    "PMID:21978432",
+    "PMID:32691656",
+    "PMID:29906191"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "restore-orthobiologic-implant",
+   "name": "RESTORE Orthobiologic Soft Tissue Implant (porcine SIS patch)",
+   "company": "DePuy Synthes (Johnson & Johnson)",
+   "ownership_history": "DePuy Orthopaedics, Inc. (later DePuy Mitek/DePuy Synthes). Product withdrawn from the rotator cuff market; exact discontinuation date not found.",
+   "category": "soft-tissue",
+   "composition": "Layered porcine small intestinal submucosa (SIS) sheet.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K001738 (2000-12-27); K071016 (2007-09-04); product code FTM (surgical mesh)",
+    "us_market_year": 2001,
+    "unverified": true,
+    "on_label_indications": [
+     "Not read (510(k) summaries unavailable on accessdata). Marketed as a soft tissue implant for tendon augmentation."
+    ]
+   },
+   "status": "off-market",
+   "challenge": "Included as the class cautionary tale: two papers advised against using it for rotator cuff augmentation after severe inflammatory reactions. Off-market status is inferred (no current product page found).",
+   "applications": [
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Iannotti 2006 (JBJS, RCT, n=30): rotator cuff healed in 4 of 15 augmented vs 9 of 15 controls (P=.11) with worse PENN scores; authors did not recommend it. Walton 2007 (JBJS, matched case-control, 10 xenograft vs 12 controls): 4 xenograft patients had severe postoperative reactions requiring surgery; retear 6/10 vs 7/12; more deficits at 2 years.",
+     "caveats": "Small studies; one used open repair; they led to loss of confidence in SIS patches for the cuff."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:16757756",
+     "title": "Porcine small intestine submucosa augmentation of surgical repair of chronic two-tendon rotator cuff tears. A randomized, controlled trial",
+     "year": 2006,
+     "design": "RCT",
+     "n": 30,
+     "finding": "Healing 4/15 with augmentation vs 9/15 without (P=.11); no recommendation for augmentation.",
+     "sponsor_funded": false,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:17403801",
+     "title": "Restore orthobiologic implant: not recommended for augmentation of rotator cuff repairs",
+     "year": 2007,
+     "design": "retrospective",
+     "n": 22,
+     "finding": "Four xenograft patients had severe inflammatory reactions requiring surgery; no benefit at 2 years.",
+     "sponsor_funded": false,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not marketed.",
+    "notes": "Historical; shows why 'patch' category skepticism persists."
+   },
+   "sources": [
+    "https://api.fda.gov/device/510k.json?search=device_name:%22restore%22",
+    "PMID:16757756",
+    "PMID:17403801"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "zimmer-collagen-repair-patch",
+   "name": "Zimmer Collagen Repair Patch (formerly Permacol; porcine dermal collagen)",
+   "company": "Zimmer Biomet",
+   "ownership_history": "510(k) holder was Tissue Science Laboratories plc (Aldershot, UK) in 2006; Zimmer marketed it as the Zimmer Collagen Repair Patch. Later ownership and whether it is still sold were not verified.",
+   "category": "soft-tissue",
+   "composition": "Cross-linked porcine dermal collagen (Permacol).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K053562 (2006-06-23), product code FTM (surgical mesh)",
+    "us_market_year": 2006,
+    "unverified": true,
+    "on_label_indications": [
+     "Not read (510(k) summary unavailable on accessdata); marketed for tendon repair reinforcement"
+    ]
+   },
+   "status": "off-market",
+   "unverified": true,
+   "applications": [
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "Badhe 2008 (J Shoulder Elbow Surg): 10 patients, mean age 66, porcine dermal collagen augmentation of extensive cuff tears at 4.5 years: Constant 41 to 62 (P=.0003), grafts intact in 8, detached in 2, no adverse effects. Oxford biopsy series (n=3) reported one adverse immune response with Permacol.",
+     "caveats": "Tiny uncontrolled series; no comparator; status of marketing unverified."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:18201655",
+     "title": "An assessment of porcine dermal xenograft as an augmentation graft in the treatment of extensive rotator cuff tears",
+     "year": 2008,
+     "design": "case-series",
+     "n": 10,
+     "finding": "Constant score 41 to 62 at 4.5 years; 8 of 10 grafts intact on imaging.",
+     "sponsor_funded": false,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:32691656",
+     "title": "Rotator cuff repair with biological graft augmentation causes adverse tissue outcomes",
+     "year": 2020,
+     "design": "prospective-cohort",
+     "n": 10,
+     "finding": "One of three Permacol patients had an adverse macrophage-rich immune response at 4 weeks.",
+     "sponsor_funded": false,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not verified.",
+    "notes": "Likely a legacy product; included to document the xenograft dermal patch class."
+   },
+   "sources": [
+    "https://api.fda.gov/device/510k.json?search=device_name:%22collagen+repair+patch%22",
+    "PMID:18201655",
+    "PMID:32691656"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "flexband",
+   "name": "FlexBand / FlexBand Plus / FlexPatch (Artelon)",
+   "company": "Stryker",
+   "ownership_history": "Developed by Artimplant AB (Sweden); assets acquired by International Life Sciences LLC d/b/a Artelon in January 2014 and moved to Marietta, GA; Stryker announced a definitive agreement to acquire Artelon on 2024-06-03 and completed it 2024-07-15 (Business Wire). The 510(k) applicant of record remains International Life Sciences.",
+   "category": "soft-tissue",
+   "composition": "Knitted mesh of ARTELON fibers - degradable polycaprolactone-based polyurethane urea (PUUR) - cut to size; FlexBand Plus has pre-loaded suture ends.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K192112 FlexBand/FlexBand Plus (2019-09-27); K230316 FlexBand, FlexPatch, FlexBand Plus (2023-05-26); K260317 Artelon Convenience Kits (2026-04-09). Product codes FTL/OWW; Class II surgical mesh",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Reinforcement of soft tissue where weakness exists; reinforcement of tissues repaired by suture or other fixation devices during tendon and ligament repair including rotator cuff, patellar, Achilles, biceps, quadriceps tendons, medial and lateral collateral ligament, spring ligament, deltoid ligament, ulnar collateral ligament or other tendons or extra-articular ligaments (K230316)",
+     "Not intended to replace normal body structure or provide the full mechanical strength to support the repaired tissue"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Kelly 2024 (Foot Ankle Spec, retrospective, n=105, mean >6 months, spring ligament, Achilles and Brostrom repairs): 12 complications, 4 major, 1 matrix removal; authors conclude low complication rates. Also technique reports in revision ACL (2026). No comparative study of tendon healing located.",
+     "caveats": "Retrospective safety series; Stryker/Artelon relationship of authors not read; no efficacy comparison."
+    },
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Cleared for rotator cuff reinforcement but no published study of FlexBand in rotator cuff repair located (PubMed search 2026-10-23).",
+     "caveats": "Label only."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:34967245",
+     "title": "Safety Profile of Synthetic Elastic Degradable Matrix for Soft Tissue Reconstruction in Foot & Ankle Surgery",
+     "year": 2024,
+     "design": "retrospective",
+     "n": 105,
+     "finding": "12 complications (4 major); one PUUR matrix removed; safe in foot and ankle soft tissue reconstruction.",
+     "sponsor_funded": null,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Packaged in the procedure.",
+    "notes": "Stryker bought Artelon (foot and ankle, sports medicine soft tissue fixation) in July 2024; terms undisclosed."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K230316.pdf",
+    "https://api.fda.gov/device/510k.json?search=device_name:flexband",
+    "https://businesswire.com/news/home/20240715821564/en/Stryker-Completes-Acquisition-of-Artelon-Inc./",
+    "PMID:34967245"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "xiros-poly-tape",
+   "name": "Xiros Poly-Tape / Infinity-Lock, Jewel and Pitch-Patch soft tissue reinforcement devices",
+   "company": "Xiros",
+   "ownership_history": "Xiros Ltd (UK); Xiros plc and Neoligaments Ltd both appear as earlier 510(k) applicants in openFDA. The sweep brief called this 'Xiros LARS'; Xiros and LARS are different companies (see lars-ligament).",
+   "category": "soft-tissue",
+   "composition": "Permanent woven or warp-knitted polyethylene terephthalate (PET/polyester) tape, tube (Jewel) or patch (Pitch-Patch).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K222978 Poly-Tape/Infinity-Lock Soft Tissue Reinforcement Device (2022-12-27); K242237 Jewel (2025-07-15); K211563 Pitch-Patch (2021-08-13); K230671 Pitch-Patch (2023-05-31). Product codes QUW/FTL; Class II surgical mesh, 21 CFR 878.3300",
+    "us_market_year": 2021,
+    "on_label_indications": [
+     "Poly-Tape/Infinity-Lock: reinforcement of soft tissues repaired by suture or other fixation during tendon and ligament repair including rotator cuff, patellar, Achilles, biceps, quadriceps, MCL, LCL, spring, deltoid, ulnar collateral ligaments or other tendons/extra-articular ligaments; not intended to replace normal body structure or provide full mechanical strength (K222978)",
+     "Pitch-Patch: permanent implantable device for reinforcement of rotator cuff tears (K211563)",
+     "Jewel: tubular mesh to support soft tissue repaired during ligament repair surgery, or to hold an allograft or autograft (K242237)"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published clinical study of Poly-Tape, Jewel or Pitch-Patch located (PubMed search 2026-10-23). Permanent PET tape/patch is a different risk profile from resorbable scaffolds.",
+     "caveats": "Permanent synthetic; clearance rests on mechanical equivalence."
+    },
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Pitch-Patch (K211563, K230671) is cleared for reinforcement of rotator cuff tears; no published clinical study located.",
+     "caveats": "No data."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Packaged in the procedure.",
+    "notes": "Xiros's US presence is through 510(k) clearances; US distribution partner(s) not verified."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf22/K222978.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K242237.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf21/K211563.pdf",
+    "https://api.fda.gov/device/510k.json?search=applicant:xiros"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "lars-ligament",
+   "name": "LARS synthetic ligament (Ligament Advanced Reinforcement System); LARS AC Band / ACJ",
+   "company": "LARS / Corin / Movmedix",
+   "ownership_history": "LARS device family; the 510(k) applicant was Corin USA for the LARS AC Band (K190143, 2019-11-04) and Movmedix S.A.S. for LARS ACJ (K253115, 2026-06-10). Corporate relationships among LARS SA, Corin and Movmedix not verified. The sweep brief said 'Xiros LARS'; Xiros (Poly-Tape) is a separate company.",
+   "category": "soft-tissue",
+   "composition": "Permanent polyethylene terephthalate (polyester) fiber ligament with free intra-articular fibers and woven extra-articular segments (general description); the AC Band is a polyester tissue reinforcement band.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K190143 LARS AC Band Device (acromioclavicular fixation, 21 CFR 888.3030, product codes HTN/MBI); K253115 LARS ACJ (2026-06-10). No FDA clearance for LARS as an ACL/PCL graft was found in openFDA (2026-10-23)",
+    "us_market_year": 2019,
+    "on_label_indications": [
+     "LARS ACJ / AC Band: indicated to provide fixation during the healing process following a syndesmotic trauma, such as fixation of acromioclavicular separations due to coracoclavicular ligament disruptions (K253115 comparison table)"
+    ]
+   },
+   "status": "established",
+   "unverified": true,
+   "challenge": "US clearance covers acromioclavicular fixation only; ACL/PCL reconstruction with LARS is ex-US/off-label. The literature on LARS ACL is mostly from outside the US, with one 55-patient cohort showing a 33% mechanical failure rate at about 8 years.",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "III",
+     "evidence_summary": "LARS for primary ACL reconstruction: single-surgeon cohort of 55 at median 7.8 years had 33.3% mechanical failure (17/51) and 39% secondary procedures; authors say LARS should not be a primary ACL graft option (KSSTA 2019, Level III). Contrasting 2024 retrospective series (n=53, over 35 years) reported 3.8% failure, Lysholm 90.6, but 40% did not return to pre-injury activity. PCL meta-analysis (2022) considers it effective and comparable to hamstring autograft (limited evidence).",
+     "caveats": "Heterogeneous retrospective series; non-US mostly; US label is AC joint only, so these uses are not authorized."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:30903217",
+     "title": "Primary ACL reconstruction using the LARS device is associated with a high failure rate at minimum of 6-year follow-up",
+     "year": 2019,
+     "design": "retrospective",
+     "n": 55,
+     "finding": "Mechanical failure 33.3% (17/51) at median 7.8 years; 39.2% secondary operations.",
+     "sponsor_funded": false,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:39797115",
+     "title": "Anterior Cruciate Ligament Reconstruction with LARS Synthetic Ligament: Outcomes and Failures",
+     "year": 2024,
+     "design": "retrospective",
+     "n": 53,
+     "finding": "Lysholm 90.6, IKDC 80.3, failure 3.8% in patients over 35; about 40% did not return to pre-injury activity.",
+     "sponsor_funded": false,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:35512085",
+     "title": "Ligament Advanced Reinforcement System (LARS) synthetic graft for PCL reconstruction: systematic review and meta-analysis",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "LARS for primary isolated PCL reconstruction seems effective and safe, comparable to 4-strand hamstring autograft; evidence limited.",
+     "sponsor_funded": false,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Packaged in the procedure.",
+    "notes": "US presence limited to AC joint clearances; K253115 (2026) shows ongoing US filings."
+   },
+   "sources": [
+    "https://api.fda.gov/device/510k.json?search=device_name:lars",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K190143.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K253115.pdf",
+    "PMID:30903217",
+    "PMID:39797115",
+    "PMID:35512085"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "integra-tenoglide",
+   "name": "TenoGlide Tendon Protector Sheet (cleared as Tendon Wrap Tendon Protector)",
+   "company": "Integra LifeSciences",
+   "ownership_history": "Integra LifeSciences Corporation (Plainsboro, NJ). Integra announced TenoGlide 510(k) clearance and US launch in February 2007 (trade release); whether Integra still sells it was not verified.",
+   "category": "soft-tissue",
+   "composition": "Absorbable porous matrix of cross-linked bovine type I collagen and glycosaminoglycan (GAG), a non-constricting protective sheet around injured tendons.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K053655 'Tendon Wrap Tendon Protector' (2006-02-03), product code FTM; mapping to the TenoGlide brand is inferred from the 2007 launch release and the identical composition - not stated in the summary read",
+    "us_market_year": 2007,
+    "unverified": true,
+    "on_label_indications": [
+     "Indicated for the management and protection of tendon injuries in which there has been no substantial loss of tendon tissue (K053655 summary)"
+    ]
+   },
+   "status": "established",
+   "unverified": true,
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "510(k) rested on physician experience, animal testing, biocompatibility and physical testing; the summary says clinical experience 'improves mobility of repaired tendons'. No published human comparative study of TenoGlide located (PubMed search 2026-10-23).",
+     "caveats": "Label is protect/manage tendon injury; no randomized human data."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Packaged in the procedure; low-cost sheet.",
+    "notes": "Cleared predicate for newer tendon protectors (Collagen Matrix wrap K080452 cites K053655 as predicate)."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf5/K053655.pdf",
+    "https://www.itnonline.com/content/protector-sheet-fda-cleared-management-tendon-injuries",
+    "https://api.fda.gov/device/510k.json?search=k_number:K053655"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "tenomend",
+   "name": "TenoMend Collagen Tendon Wrap",
+   "company": "Collagen Matrix (Regenity Biosciences)",
+   "ownership_history": "Collagen Matrix, Inc., now branded Regenity Biosciences. TenoMend is sold through Exactech (an Exactech page limits TenoMend sales to New Zealand); the FDA clearance is under the Collagen Matrix name. Regenity also sells private-label collagen tendon wraps. NeuroMend (nerve wrap; Stryker distribution since 2007) is a nerve product and is not recorded here.",
+   "category": "soft-tissue",
+   "composition": "Resorbable type I collagen matrix sheet (non-constricting tendon encasement); when hydrated a conformable, porous collagen sheet.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K080452 Collagen Tendon Wrap (2008-05-15); predicates K053655 (Integra Tendon Wrap) and K060952 (Collagen Nerve Wrap)",
+    "us_market_year": 2008,
+    "on_label_indications": [
+     "Collagen Tendon Wrap is indicated for the management and protection of tendon injuries in which there has been no substantial loss of tendon tissue (K080452)"
+    ]
+   },
+   "status": "established",
+   "unverified": true,
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "510(k) was cleared on equivalence to Integra's Tendon Wrap; no clinical study of TenoMend located (PubMed search 2026-10-23).",
+     "caveats": "Mapping between 'TenoMend' brand and K080452 comes from Exactech/search summary; US commercial availability not confirmed."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Packaged in the procedure.",
+    "notes": "US availability uncertain; Exactech page lists New Zealand."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K080452.pdf",
+    "https://exac.com/biologics/tenomend-collagen-tendon-wrap",
+    "https://api.fda.gov/device/510k.json?search=k_number:K080452"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "versawrap",
+   "name": "VersaWrap Tendon Protector / VersaCoat",
+   "company": "Alafair Biosciences",
+   "ownership_history": "Alafair Biosciences, Inc.; ownership not verified further.",
+   "category": "soft-tissue",
+   "composition": "Bioresorbable clear hydrogel sheet of alginate and hyaluronic acid with a wetting solution, placed under, around or over injured tissue as a non-constricting interface (K240817).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K160364 VersaWrap Tendon Protector (2016-06-10); K200311 (2020-03-06); K240817 VersaWrap (2024-06-14); K251655 VersaCoat Tendon Protector (2025-07-18). Product codes OWW/FTM",
+    "us_market_year": 2016,
+    "on_label_indications": [
+     "Indicated for the management and protection of tendon injuries in which there has been no substantial loss of tendon tissue; may also be used in the management and protection of surrounding tissues such as skeletal muscle and ligaments (K240817)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Adu 2024 (Front Surg; Texas Tech hand surgery, retrospective, n=90 tendon repairs and tenolysis, mean follow-up 4.6 months): 92.3% good or excellent function (Strickland), active ROM 88.8%; no comparator. A University of Florida randomized zone 2 flexor tendon trial (NCT04322370, n=11) completed; a 400-patient Achilles trial (NCT07025252) is enrolling by invitation.",
+     "caveats": "Uncontrolled hand-surgery series; short follow-up; Alafair provided product to a preclinical comparison study (PMID 39306773, results not read)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:39737387",
+     "title": "Evaluating the effect of VersaWrap tendon protector on functional outcomes in operative tendon repairs",
+     "year": 2024,
+     "design": "retrospective",
+     "n": 90,
+     "finding": "92.3% good or excellent function at mean 4.6 months; mean ROM 88.8% active.",
+     "sponsor_funded": null,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:39306773",
+     "title": "Evaluating the Effectiveness of Commercially Available Antiadhesion Tendon Protector Sheets in Tendon Repair Surgery Versus Tendon Repair Surgery Alone: A Preclinical Model Study",
+     "year": 2025,
+     "design": "preclinical",
+     "n": null,
+     "finding": "Preclinical comparison of antiadhesion sheets (VersaWrap supplied by Alafair); results not read.",
+     "sponsor_funded": null,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    },
+    {
+     "ref": "NCT04322370",
+     "title": "Prospective randomized blinded trial of VersaWrap Tendon Protector for zone 2 flexor tendon injuries (University of Florida)",
+     "year": 2020,
+     "design": "RCT",
+     "n": 11,
+     "finding": "Completed; no results located.",
+     "sponsor_funded": false,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Packaged in the procedure.",
+    "notes": "Hydrogel antiadhesion sheet used in hand, Achilles, spine; K251655 VersaCoat adds a new brand."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K240817.pdf",
+    "https://api.fda.gov/device/510k.json?search=device_name:versawrap",
+    "PMID:39737387"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "kerecis-tendon-protect",
+   "name": "Kerecis Tendon Protect (fish skin)",
+   "company": "Kerecis (Coloplast)",
+   "ownership_history": "Kerecis Limited (Iceland). Coloplast acquired Kerecis in 2023 (general knowledge, not verified in this sweep).",
+   "category": "soft-tissue",
+   "composition": "Solid sheets of North Atlantic cod fish skin (at least 0.4 mm thick) wrapped around the repaired tendon as a gliding barrier and scaffold for host tissue deposition.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K243843 (2025-06-04), product code OWY",
+    "us_market_year": 2025,
+    "on_label_indications": [
+     "Kerecis Tendon Protect is indicated for the management and protection of tendon injuries in which there has been no substantial loss of tendon tissue (K243843)"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published tendon-specific study located (PubMed search 2026-10-23). Kerecis's fish-skin graft has an RCT in diabetic foot ulcers (NEJM Evid 2024) that does not apply to tendon use.",
+     "caveats": "Class evidence is from wounds; the 510(k) rests on non-clinical testing."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Packaged in the procedure.",
+    "notes": "New entrant (2025) in the tendon protector sheet segment."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K243843.pdf",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22tendon+protect%22"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "arthrex-speedflex",
+   "name": "Arthrex SpeedFLEX Implant (pre-sutured decellularized human dermis)",
+   "company": "Arthrex",
+   "ownership_history": "Arthrex, Inc. (Naples, FL); allograft donor processing referenced to LifeNet Health in the 510(k).",
+   "category": "soft-tissue",
+   "composition": "Decellularized human allograft dermis pre-sutured with FiberWire passing suture and TigerLink SutureTape, four sizes, sterile single-use.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K251690 (2025-09-30), product codes OWY/GAT; primary predicate Medeor Matrix K103787 (porcine dermis), reference device MTF Fascia K120479 (allograft fascia, 510(k) 2012)",
+    "us_market_year": 2025,
+    "on_label_indications": [
+     "Intended for general surgical procedures for reinforcement of soft tissue where weakness exists, and for reinforcement of soft tissues repaired by suture or suture anchors during tendon repair surgery including (but not limited to) rotator cuff, patellar, Achilles, biceps, quadriceps tendon (K251690)"
+    ]
+   },
+   "status": "emerging",
+   "challenge": "First clear sign that a human dermal allograft patch took the 510(k) route (with a collagen xenograft predicate) rather than 361 HCT/P; it implies FDA may regard pre-sutured allograft dermis as a mesh device.",
+   "applications": [
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of SpeedFLEX located (cleared September 2025). Arthrex's ArthroFlex dermal matrix (see record) has one small nonrandomized comparative study.",
+     "caveats": "Newly cleared; no clinical data."
+    },
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Label covers patellar, Achilles, biceps and quadriceps tendons; no clinical data.",
+     "caveats": "Newly cleared."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Packaged in the procedure.",
+    "notes": "Positions Arthrex's catalog: ArthroFlex (361 allograft), SpeedFLEX (510(k) allograft), DX Matrix (xenograft)."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf25/K251690.pdf",
+    "https://api.fda.gov/device/510k.json?search=device_name:speedflex"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "ortho-r",
+   "name": "Ortho-R (chitosan-based implant for rotator cuff repair)",
+   "company": "ChitogenX (Ortho Regenerative Technologies)",
+   "ownership_history": "Ortho Regenerative Technologies Inc. ('Ortho RTi'); the ClinicalTrials.gov sponsor is ChitogenX Inc. Entity relationship not verified.",
+   "category": "soft-tissue",
+   "composition": "Lyophilized chitosan-based polymer solubilized with the patient's own PRP and applied at the rotator cuff repair site (company description; not verified).",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "US IND for a Phase I/II rotator cuff trial submitted 2021, FDA clinical hold August 2021 (CMC information), hold lifted December 2021. Registered randomized safety study NCT05333211 (n=78) status UNKNOWN",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "None (investigational)"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published human study located (PubMed search 2026-10-23, 'Ortho-R'). Registered blinded randomized safety study NCT05333211 (n=78, started 2022-07, primary completion 2023-12, status unknown).",
+     "caveats": "Early stage; status unknown; sponsor claims unverified."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT05333211",
+     "title": "A blinded randomized controlled study investigating the safety of Ortho-R for rotator cuff repair compared with standard of care",
+     "year": 2022,
+     "design": "RCT",
+     "n": 78,
+     "finding": "Registry status UNKNOWN; no results.",
+     "sponsor_funded": true,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT05333211"
+    ],
+    "expected_milestone": "None located; registry last verified date old."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not marketed.",
+    "notes": "Small-cap biologic-polymer player; no 2026 update found."
+   },
+   "sources": [
+    "https://www.americanpharmaceuticalreview.com/1315-News/576596-Ortho-Regenerative-Technologies-Receives-Clinical-Hold-Letter-From-the-U-S-FDA/",
+    "https://www.odtmag.com/contents/view_breaking-news/2021-12-13/ortho-regenerative-tech-us-ind-clinical-hold-lifted/",
+    "https://clinicaltrials.gov/study/NCT05333211"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "nusurface",
+   "name": "NUsurface Meniscus Implant",
+   "company": "Active Implants",
+   "ownership_history": "Active Implants LLC (Memphis, TN per FDA panel minutes); CE-marked in Europe (2008) and used in Israel since 2011 (search summary). US trial sponsor on CT.gov: Phoenix Kinetics.",
+   "category": "soft-tissue",
+   "composition": "Free-floating polycarbonate-urethane (Bionate) disc implanted in the medial compartment after a near-total medial meniscectomy; no fixation to bone or soft tissue.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "US De Novo request (not PMA; the brief's 'PMA' is incorrect). FDA Orthopaedic and Rehabilitation Devices Panel, 2023-04-20, voted 2 yes / 6 no / 1 abstain on benefit outweighing risk. FDA Breakthrough designation (2019). A final De Novo decision was not located (no authorization found as of 2026-10-23)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "Proposed (De Novo): improve pain and function in the medial compartment of a knee in which the medial meniscus has been resected, in patients with mild to moderate arthritis, mild or greater knee pain, and cartilage present on the load-bearing surfaces (FDA panel minutes)"
+    ]
+   },
+   "status": "investigational",
+   "challenge": "The sponsor's case rested on a post-hoc modified dataset (extrusion <5 mm and tibial spine height >=11 mm; 74 implanted vs 35 controls) after the full VENUS population; FDA reviewers noted a 34% automatic surgical failure rate falling to 17% in the subset and retrieval evidence of abrasion and fracture.",
+   "applications": [
+    {
+     "application_id": "meniscus-deficiency-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "VENUS RCT (n=127 treated; NUsurface 61 vs non-surgical care 66): at 1 year KOOS Pain (P=.013) and KOOS Overall (P=.027) improved more with the implant. The sponsor's De Novo used pooled VENUS plus single-arm SUN (n=115): FDA panel voted against benefit-risk (2 yes, 6 no, 1 abstain) citing high failure rate, subgroup selection, and 2-year follow-up with sparse 60-month data.",
+     "caveats": "Randomized against non-surgical care (not against meniscus transplant or scaffolds); sponsor-funded; open-label; failure and removal rates high; 1-year paper above (2-year primary in the De Novo)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:33884442",
+     "title": "Treatment of post-meniscectomy knee symptoms with medial meniscus replacement results in greater pain reduction and functional improvement than non-surgical management: 1-year results of the VENUS RCT",
+     "year": 2022,
+     "design": "RCT",
+     "n": 127,
+     "finding": "KOOS Pain and Overall improved more with NUsurface than non-surgical care at 1 year (P=.013, .027); treatment cessation 4.9% vs 14.5%.",
+     "sponsor_funded": true,
+     "applications": [
+      "meniscus-deficiency-knee"
+     ]
+    },
+    {
+     "ref": "PMID:33062765",
+     "title": "Preliminary Results From a US Clinical Trial of a Novel Synthetic Polymer Meniscal Implant",
+     "year": 2020,
+     "design": "prospective-cohort",
+     "n": 100,
+     "finding": "First 100 patients across VENUS and SUN at 12 months: greater KOOS gains than controls (119%-177% greater improvement), similar adverse event rates (16.9% vs 14.3%).",
+     "sponsor_funded": true,
+     "applications": [
+      "meniscus-deficiency-knee"
+     ]
+    },
+    {
+     "ref": "NCT02483988",
+     "title": "SUN: Safety utilizing NUsurface meniscus implant (single-arm)",
+     "year": 2015,
+     "design": "prospective-cohort",
+     "n": 115,
+     "finding": "Completed June 2020; pooled with VENUS in the De Novo (Mercury dataset).",
+     "sponsor_funded": true,
+     "applications": [
+      "meniscus-deficiency-knee"
+     ]
+    },
+    {
+     "ref": "NCT02136901",
+     "title": "VENUS: Verifying the Effectiveness of the NUsurface System (randomized superiority study)",
+     "year": 2014,
+     "design": "RCT",
+     "n": 34,
+     "finding": "Completed; registry n=34 differs from the 127 treated in the 1-year paper and the FDA minutes.",
+     "sponsor_funded": true,
+     "applications": [
+      "meniscus-deficiency-knee"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "under-review",
+    "trials": [
+     "NCT02136901",
+     "NCT02483988"
+    ],
+    "expected_milestone": "No FDA decision found; post-panel path unknown. NUsurface Implant Registry (NCT03953846) terminated 2023-11."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not authorized in the US.",
+    "notes": "Fifth FDA attempt per trade coverage; a US launch looks unlikely without a new study."
+   },
+   "sources": [
+    "https://fda.gov/media/168616/download",
+    "https://www.fda.gov/advisory-committees/advisory-committee-calendar/april-20-2023-orthopaedic-and-rehabilitation-devices-panel-medical-devices-advisory-committee",
+    "https://medtech.citeline.com/MT147846/Rejected-Again-Advisory-Panel-Votes-Against-De-Novo-Approval-For-Tennessee-Companys-Knee-Implant",
+    "https://clinicaltrials.gov/study/NCT02136901",
+    "PMID:33884442",
+    "PMID:33062765"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "collagen-meniscus-implant",
+   "name": "Collagen Meniscus Implant (CMI; Menaflex; CMI XL)",
+   "company": "Stryker",
+   "ownership_history": "ReGen Biologics Inc. 510(k) K082079 (ReGen Collagen Scaffold / Menaflex, 2008-12-18) was rescinded by FDA on 2010-10-14, pushing ReGen into bankruptcy; Ivy Sports Medicine (a ReGen investor) kept the product alive and later won on appeal 2-1 against FDA (dates not retrieved). Ivy obtained a new 510(k), K170364 (CMI XL, 2017-05-02). Stryker's Endoscopy division acquired Ivy Sports Medicine on 2016-09-01 (Ry Ortho). Whether Stryker actively markets CMI in the US today is not verified.",
+   "category": "soft-tissue",
+   "composition": "Resorbable scaffold of type I collagen from bovine Achilles tendon, semilunar shaped, sutured to the meniscal rim.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K170364 Ivy Sports Medicine Collagen Meniscus Implant XL (2017-05-02), product code OLC; prior K082079 (2008-12-18) rescinded 2010",
+    "us_market_year": 2017,
+    "on_label_indications": [
+     "Intended for use in surgical procedures for the reinforcement and repair of soft tissue injuries of the medial meniscus; the patient must have an intact meniscal rim and anterior and posterior horns for attachment of the mesh, and the surgically prepared site must extend at least into the red-white zone (K170364 and K242302 text)"
+    ]
+   },
+   "status": "established",
+   "unverified": true,
+   "challenge": "The 2008 clearance was rescinded in 2010 (a rare FDA reversal); the 2017 clearance restored a US pathway. The pivotal RCT showed benefit in chronic but not acute patients, and the 20-year follow-up found no chondroprotection.",
+   "applications": [
+    {
+     "application_id": "meniscus-deficiency-knee",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Rodkey 2008 (JBJS, RCT, 311 patients across two arms: acute n=157, chronic n=154; mean 59 months): implants produced new meniscus-like tissue and significantly increased meniscal tissue on second look (P=.001); clinical benefit (Lysholm, Tegner, activity) in the chronic group but none in the acute group. 20-year prospective case-control (n=36): no difference vs partial meniscectomy on Lysholm, KOOS, Tegner, IKDC or radiographic OA, so the implant was not chondroprotective. Meta-analysis of CMI vs Actifit (37 studies, 1,276 patients): both improve scores; failure risk 7% CMI vs 9% Actifit.",
+     "caveats": "ReGen-funded pivotal; most data are medial CMI in selected patients; modest effect, failure risk 7%; long-term chondroprotection not shown."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:18594088",
+     "title": "Comparison of the collagen meniscus implant with partial meniscectomy. A prospective randomized trial",
+     "year": 2008,
+     "design": "RCT",
+     "n": 311,
+     "finding": "New meniscus-like tissue formed; chronic-group patients improved clinically with the implant, acute-group patients did not.",
+     "sponsor_funded": true,
+     "applications": [
+      "meniscus-deficiency-knee"
+     ]
+    },
+    {
+     "ref": "PMID:37979692",
+     "title": "Loss of chondroprotection of medial collagen meniscus implant (CMI) at 20-year follow-up",
+     "year": 2024,
+     "design": "prospective-cohort",
+     "n": 36,
+     "finding": "At about 21 years no clinical or radiographic advantage over partial medial meniscectomy; 1 failure per group.",
+     "sponsor_funded": false,
+     "applications": [
+      "meniscus-deficiency-knee"
+     ]
+    },
+    {
+     "ref": "PMID:33864114",
+     "title": "No differences in clinical outcome between CMI and Actifit meniscal scaffolds: a systematic review and meta-analysis",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 1276,
+     "finding": "Both scaffolds improved clinical scores; failure risk 7% (CMI) vs 9% (Actifit); evidence quality low.",
+     "sponsor_funded": false,
+     "applications": [
+      "meniscus-deficiency-knee"
+     ]
+    },
+    {
+     "ref": "PMID:24947329",
+     "title": "Clinical outcomes and complications of a collagen meniscus implant: a systematic review",
+     "year": 2014,
+     "design": "meta-analysis",
+     "n": 396,
+     "finding": "11 studies: Lysholm and VAS improved from 6 months to 10 years.",
+     "sponsor_funded": false,
+     "applications": [
+      "meniscus-deficiency-knee"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Packaged in the arthroscopic procedure; coverage often limited by payer policies (not verified).",
+    "notes": "Stryker holds CMI after buying Ivy in 2016; low-volume niche."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf17/K170364.pdf",
+    "https://ryortho.com/2016/09/stryker-acquires-regen-biologics-meniscus-implant/",
+    "https://www.fiercebiotech.com/medical-devices/panel-questions-data-backing-regen-s-menaflex-device",
+    "https://cm.healio.com/news/orthopedics/20120325/fda-reverses-clearance-of-collagen-meniscal-implant",
+    "PMID:18594088",
+    "PMID:37979692",
+    "PMID:33864114"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "rejuvaknee",
+   "name": "RejuvaKnee Collagen Meniscus Implant",
+   "company": "Collagen Matrix (Regenity Biosciences)",
+   "ownership_history": "Collagen Matrix, Inc. is the 510(k) submitter; trade press attributes the announcement to Regenity Biosciences (rebranded company); Regenity said it would seek a strategic US commercialization partner (search summary).",
+   "category": "soft-tissue",
+   "composition": "Semilunar implant of bovine type I collagen (nominally 99%) derived from meniscus, resorbable scaffold replaced by the patient's own tissue.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K242302 (2024-10-02), product code OLC (same as CMI)",
+    "us_market_year": 2024,
+    "on_label_indications": [
+     "Intended for use in surgical procedures for the reinforcement and repair of soft tissue injuries of the medial meniscus; the patient must have an intact meniscal rim and anterior and posterior horns for attachment of the mesh (K242302)"
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "meniscus-deficiency-knee",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published human study located (PubMed search 2026-10-23); the company cites a 12-month animal study and cadaver work (press, unverified). Clearance relied on the CMI predicate.",
+     "caveats": "No clinical data; commercial partner unannounced."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not marketed in the US yet (as of coverage).",
+    "notes": "Second US collagen meniscus implant after Stryker's CMI."
+   },
+   "sources": [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K242302.pdf",
+    "https://www.massdevice.com/fda-clears-regenity-regenerative-meniscus-implant/",
+    "https://api.fda.gov/device/510k.json?search=k_number:K242302"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "actifit",
+   "name": "Actifit polyurethane meniscal scaffold",
+   "company": "Orteq Sports Medicine",
+   "ownership_history": "Orteq Sports Medicine; ownership/investors not verified. CE-marked and approved in Korea; FDA Breakthrough Device Designation reported; a US IDE has not been confirmed.",
+   "category": "soft-tissue",
+   "composition": "Biodegradable, porous polyurethane scaffold fixed to the meniscal rim; designed for partial meniscus defects.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "No FDA clearance/approval located; Breakthrough Device Designation reported (search summary); Orteq said it expected to present European clinical data to FDA",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "Ex-US: partial meniscus defect scaffold (labeling not read). US: none."
+    ]
+   },
+   "status": "investigational",
+   "unverified": true,
+   "applications": [
+    {
+     "application_id": "meniscus-deficiency-knee",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "Meta-analysis (37 studies, 1,276 patients incl. 804 Actifit): significant improvement and failure risk 9%; quality low, long-term Actifit data limited. French 5-year MRI/function study (n not recoverable) and a 54-patient multicenter series (VAS 5.5 to 2.9 at 24 months) are case-series level. Orteq reports >4,000 implants in 30 countries (company).",
+     "caveats": "Mostly case series; one independent RCT not found; Orteq-funded long-term follow-up planned (NCT07800923, n=120)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:33864114",
+     "title": "No differences in clinical outcome between CMI and Actifit meniscal scaffolds: a systematic review and meta-analysis",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 1276,
+     "finding": "Both scaffolds improved symptoms and function; failure risk 7% CMI vs 9% Actifit.",
+     "sponsor_funded": false,
+     "applications": [
+      "meniscus-deficiency-knee"
+     ]
+    },
+    {
+     "ref": "PMID:28373139",
+     "title": "Actifit polyurethane meniscal scaffold: MRI and functional outcomes after a minimum follow-up of 5 years",
+     "year": 2017,
+     "design": "case-series",
+     "n": null,
+     "finding": "5-year MRI and function outcomes (abstract not indexed; findings not read).",
+     "sponsor_funded": null,
+     "applications": [
+      "meniscus-deficiency-knee"
+     ]
+    },
+    {
+     "ref": "NCT07800923",
+     "title": "Long-term follow-up of Actifit meniscal scaffold patients",
+     "year": 2026,
+     "design": "registry",
+     "n": 120,
+     "finding": "Not yet recruiting; primary completion estimated 2028-09.",
+     "sponsor_funded": true,
+     "applications": [
+      "meniscus-deficiency-knee"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT07800923"
+    ],
+    "expected_milestone": "None found for FDA submission."
+   },
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Ex-US only.",
+    "notes": "Ex-US hospital procurement; US entry blocked pending FDA data."
+   },
+   "sources": [
+    "https://www.orthoworld.com/orteq-shares-5-year-study-data-for-actifit-meniscal-scaffold",
+    "https://clinicaltrials.gov/study/NCT07800923",
+    "PMID:33864114",
+    "PMID:28373139"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "cytex-renew-hip",
+   "name": "ReNew Hip Implant (cartilage defect repair, early feasibility)",
+   "company": "Cytex Therapeutics",
+   "ownership_history": "Cytex Therapeutics, Inc. is the ClinicalTrials.gov sponsor; no further corporate details found.",
+   "category": "cartilage",
+   "composition": "Registry lists only 'ReNew Hip Implant' (device); composition not read.",
+   "regulatory": {
+    "path": "IDE-only",
+    "reference": "Early feasibility study NCT06823089 (US, n=15 estimated, start 2025-11-06, active not recruiting)",
+    "us_market_year": null,
+    "unverified": true,
+    "on_label_indications": [
+     "None (investigational). Population: ages 14-64 with hip disease causing loss of articular cartilage integrity on the femoral head (e.g., FAI), failed conservative care."
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "cartilage-defect-hip",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product (PubMed search 2026-10-23). Early feasibility IDE study only.",
+     "caveats": "Pre-pivotal; details unverified."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT06823089",
+     "title": "Early Feasibility Study of Cartilage Defect Repair (ReNew Hip Implant)",
+     "year": 2025,
+     "design": "prospective-cohort",
+     "n": 15,
+     "finding": "Active, not recruiting; primary completion estimated 2031-10.",
+     "sponsor_funded": true,
+     "applications": [
+      "cartilage-defect-hip"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "phase-1",
+    "trials": [
+     "NCT06823089"
+    ],
+    "expected_milestone": "Primary completion est. 2031-10 (registry)."
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not marketed.",
+    "notes": "Included because the sweep brief named Cytex; scope limited to the registry."
+   },
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT06823089"
+   ],
+   "last_reviewed": "2026-10-23"
+  }
+ ]
+}

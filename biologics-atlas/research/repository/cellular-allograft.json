@@ -1,0 +1,1542 @@
+{
+ "applications": [],
+ "products": [
+  {
+   "id": "via-graft",
+   "name": "VIA Graft / VIA Form / VIA Form+ Viable Bone Matrix",
+   "company": "VIVEX Biologics",
+   "ownership_history": "VIVEX Biologics, Inc. (formerly VIVEX Biomedical, Marietta, GA in 2018 publications). VIVEX processes the VIA line and, on the evidence below, private-label viable bone matrices for other brands (Paragon 28 V92 cites 'data on file at Vivex Biomedical'; the Medline Unite Viable Matrix Plus IFU names Vivex as processor; Royal Biologics MAGNUS and Camber Spine SCYLLA use the same 'viable spine-derived cells', DMSO-free, 4-hour, -65 C description). VIVEX also makes VIA Disc NP (existing record via-disc-np).",
+   "category": "cellular-allograft",
+   "composition": "VIA Graft: 100-300 um demineralized cortical bone with mineralized cortical and cancellous bone; VIA Form: cortical shavings, crushed cancellous chips and 100-300 um demineralized cortical microparticulate; VIA Form+: syringe-delivered demineralized cortical fibers with cancellous chips. Cells are 'viable spine-derived cells' (vertebral body donor bone). Preserved with VIACoat, a DMSO-free extracellular cryoprotectant; company data claim >80% post-thaw viability, 4-hour use window, 3-year storage at -65 C or colder.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER); no 510(k) in openFDA for 'via graft' or 'via form' (searched 2026-10-23)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Viable bone matrices 'to support bone formation in a variety of bone graft clinical applications' (VIVEX technical update, ISASS 2021); 361 homologous use as bone graft. VIA IFU not located; the sister private-label IFU (Viable Matrix Plus) reads 'intended for use as a bone void filler'."
+    ]
+   },
+   "status": "established",
+   "challenge": "One processor, many brands: a buyer comparing MAGNUS, SCYLLA, V92 and Viable Matrix Plus may be comparing the same VIVEX tissue under different labels, and the only peer-reviewed clinical series (Tally 2018) was done with VIA Graft.",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Tally 2018: 75 consecutive MIS-TLIF patients (85 levels) with VIA Graft; 96% fusion at 12 months. A 2026 company-announced retrospective of 14 VIA Form+ interbody fusions (Journal of Spine & Neurosurgery) is not PubMed-indexed and was not read.",
+     "caveats": "Single-surgeon retrospective case series; two co-authors were VIVEX consultants; no control group."
+    },
+    {
+     "application_id": "lumbar-lateral",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "VIVEX cites 67 LLIF patients (151 levels, 94.7% fused) as 'data submitted for publication'; no published lateral-fusion study of VIA located (PubMed search 2026-10-23).",
+     "caveats": "Company data on file only."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in posterolateral fusion located (PubMed search 2026-10-23).",
+     "caveats": "Class payer position: unproven (UHC 2026) / experimental (Aetna)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:30280087",
+     "title": "Transforaminal Lumbar Interbody Fusion With Viable Allograft: 75 Consecutive Cases at 12-Month Follow-up",
+     "year": 2018,
+     "design": "case-series",
+     "n": 75,
+     "finding": "96% of 85 levels fused at 12 months after MIS-TLIF with VIA Graft; no comparison group.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in inpatient fusion MS-DRGs; packaged in OPPS when outpatient.",
+    "notes": "VIVEX sells its own VIA brand and appears to OEM the same tissue to device companies without biologics manufacturing (Royal, Camber, Paragon 28, Medline). DMSO-free storage is the commercial pitch (no rinse or decant). No FDA warning letter to VIVEX about the VIA line found in the sources read."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.isass.org/wp-content/uploads/2021/05/VIA.pdf",
+    "PMID:30280087",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22via%20graft%22"
+   ]
+  },
+  {
+   "id": "magnus",
+   "name": "MAGNUS DMSO-free Viable Cellular Bone Allograft",
+   "company": "Royal Biologics (Hackensack, NJ)",
+   "ownership_history": "Royal Biologics launched MAGNUS in early 2020 alongside Cryo-Cord (umbilical cord graft). Processor not named in the launch material read; the description matches the VIVEX VIA line (viable spine-derived cells, DMSO-free cryoprotectant), and trade coverage cites the VIA Graft TLIF series as MAGNUS's clinical support.",
+   "category": "cellular-allograft",
+   "composition": "Osteoconductive 3D scaffold with cortical and cancellous components, a demineralized bone scaffold with osteoinductive potential, and viable spine-derived cells preserved with a DMSO-free cryoprotectant (LER magazine launch item, 2020).",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; processor's CBER establishment registration not identified); no relevant 510(k) in openFDA ('magnus' returns only GE and Magnus Medical devices, searched 2026-10-23)",
+    "us_market_year": 2020,
+    "on_label_indications": [
+     "'For fusion in orthopedics' (launch description); IFU not located"
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "unverified": true,
+   "challenge": "Processor identity (likely VIVEX) is inferred from matching product language, not confirmed from an IFU. Royal's evidence claim borrows another brand's study.",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of MAGNUS located (PubMed search 'Magnus allograft cellular' 2026-10-23). The 75-patient TLIF series Royal cites (Tally 2018) was done with VIA Graft, not MAGNUS.",
+     "caveats": "Borrowed evidence; private-label status unconfirmed."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "Royal markets to podiatry (launched at a podiatry meeting); no study of this product in hindfoot fusion located (PubMed search 2026-10-23).",
+     "caveats": "Tier reflects unconfirmed uptake."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Bundled in MS-DRG (inpatient) or packaged in the APC (outpatient).",
+    "notes": "Small private orthobiologics company selling through independent distributors (channel inferred). No FDA letter about MAGNUS found in the sources read."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://lermagazine.com/?p=34217",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22magnus%22"
+   ]
+  },
+  {
+   "id": "scylla",
+   "name": "SCYLLA Cellular Bone Allograft",
+   "company": "Camber Spine",
+   "ownership_history": "Camber Spine (King of Prussia, PA) entered the cellular bone graft market in August 2019 through a private-label agreement; the manufacturer is not named in the coverage read. The description (viable spine-derived cells, 4-hour post-thaw window, 2-year shelf life at -65 C or colder, microparticulate blend and moldable pastes) matches the VIVEX VIA line.",
+   "category": "cellular-allograft",
+   "composition": "Allogeneic bone matrix with viable spine-derived cells: cortical/cancellous microparticulate scaffold, demineralized bone component, bone-derived cells; formats are a blend, a moldable paste and a fibrous moldable paste.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; processor's establishment registration not identified); no 510(k) in openFDA for 'scylla' (searched 2026-10-23)",
+    "us_market_year": 2019,
+    "on_label_indications": [
+     "No formal indication published in the material read; positioned to complement Camber's SPIRA and ENZA interbody platforms (361 homologous use as bone graft)"
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "unverified": true,
+   "challenge": "Private label with no disclosed processor and no product-specific data; current availability not confirmed.",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of SCYLLA located (PubMed search 'Scylla allograft' 2026-10-23).",
+     "caveats": "Bundled with Camber cages; graft choice may follow the hardware sale."
+    },
+    {
+     "application_id": "lumbar-alif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in ALIF located (PubMed search 2026-10-23).",
+     "caveats": "Camber's SPIRA-A is an ALIF cage; pairing is commercial, not evidence-based."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Bundled in inpatient fusion MS-DRGs.",
+    "notes": "Example of a hardware company adding a cellular graft to its bag via private label. No FDA letter found in the sources read."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.orthoworld.com/camber-spine-enters-cellular-bone-graft-market/",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22scylla%22"
+   ]
+  },
+  {
+   "id": "v92",
+   "name": "V92 / V92-FC Cellular Bone Matrix",
+   "company": "Zimmer Biomet (via Paragon 28, acquired April 21, 2025); processed by VIVEX",
+   "ownership_history": "Paragon 28 (Englewood, CO, foot and ankle) launched V92 on January 11, 2016; its cell data cite 'data on file at Vivex Biomedical, Inc.' Zimmer Biomet completed its acquisition of Paragon 28 on April 21, 2025. Whether V92 remains in the combined catalog is unconfirmed.",
+   "category": "cellular-allograft",
+   "composition": "Viable allogeneic bone scaffold with bone microparticulate of 100-300 um in two blends (V92, V92-FC); DMSO-free cryoprotectant with no rinse or decant; company claims >80% post-thaw viability and at least 150,000 viable cells per cc, 4-hour working window, 2-year shelf life at -65 C or colder.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; processor VIVEX registered with CBER); the only openFDA 'V92' 510(k) (K911533) is an unrelated dental alloy",
+    "us_market_year": 2016,
+    "on_label_indications": [
+     "'Intended for homologous use as a bone void filler' (Paragon 28 launch release, January 2016)"
+    ]
+   },
+   "status": "established",
+   "unverified": true,
+   "challenge": "A foot-and-ankle-first cellular graft now inside Zimmer Biomet; post-acquisition availability not confirmed (status marked unverified).",
+   "applications": [
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of V92 located (PubMed search 'V92 allograft' 2026-10-23 returned nothing).",
+     "caveats": "Class evidence in foot and ankle comes from Trinity Evolution and ViviGen series, not V92."
+    },
+    {
+     "application_id": "first-mtp-arthrodesis",
+     "tier": "established",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in first MTP fusion located (PubMed search 2026-10-23).",
+     "caveats": "Bone void filler labeling; most first MTP fusions heal without graft."
+    },
+    {
+     "application_id": "foot-ankle-nonunion",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in revision or nonunion surgery located (PubMed search 2026-10-23).",
+     "caveats": "None beyond class caveats."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Packaged into the procedure APC in outpatient/ASC foot and ankle cases; bundled in MS-DRG inpatient.",
+    "notes": "Paragon 28 sold through a dedicated foot-and-ankle channel; Zimmer Biomet said the deal creates a dedicated foot and ankle sales channel with ASC focus. No FDA letter found in the sources read."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://paragon28.com/v92-launches/",
+    "https://investor.zimmerbiomet.com/news-and-events/news/2025/04-21-2025-140129567",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22v92%22"
+   ]
+  },
+  {
+   "id": "viable-matrix-plus",
+   "name": "Viable Matrix Plus Bone Allograft",
+   "company": "Medline (Medline Unite foot and ankle); processed by VIVEX Biologics",
+   "ownership_history": "Sold by Medline Industries under the Unite Foot and Ankle line; the US IFU (80-671 Rev. 01, posted 2025) states the donor was cleared by the Medical Director of VIVEX Biologics, Inc.",
+   "category": "cellular-allograft",
+   "composition": "Cryopreserved viable bone allograft of cancellous chips and demineralized bone fibers in a syringe, preserved with a 100% polyampholyte-based cryoprotectant that is not rinsed before use (IFU). Medline claims an average of 1.5 million viable cells per cc and over 92% post-thaw viability.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; processor VIVEX registered with CBER); no 510(k) in openFDA for 'viable matrix' (searched 2026-10-23)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "'Intended for use as a bone void filler' (IFU 80-671 Rev. 01)"
+    ]
+   },
+   "status": "emerging",
+   "challenge": "IFU donor-testing list (CMV, HIV-1/2, HBV, HCV, HTLV-I/II, syphilis; optional EBV, Toxoplasma, T. cruzi, WNV, Zika) includes no Mycobacterium tuberculosis test.",
+   "applications": [
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of Viable Matrix Plus located (PubMed search 2026-10-23).",
+     "caveats": "Recently added to a distributor catalog (2025 documents); launch year unconfirmed."
+    },
+    {
+     "application_id": "ankle-arthrodesis",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in ankle fusion located (PubMed search 2026-10-23).",
+     "caveats": "None beyond class caveats."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Packaged into the procedure APC in outpatient/ASC cases.",
+    "notes": "Medline's entry shows cellular allograft being sold as a catalog line item by a med-surg distributor with GPO reach, a price-pressure signal for the category. No FDA letter found in the sources read."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://medlineunite.com/?p=4102",
+    "https://medlineunite.com/wp-content/uploads/2025/02/MedlineUnite-QA-RA-IFU-Allograft-Viable-MatrixPlus-Vivex.pdf",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22viable%20matrix%22"
+   ]
+  },
+  {
+   "id": "fibercel",
+   "name": "FiberCel Fiber Viable Bone Matrix",
+   "company": "Berkeley Biologics (brand assets since November 2023); made by Aziyo Biologics (now Elutia), distributed exclusively in the US by Medtronic 2019-2021",
+   "ownership_history": "Manufactured by Aziyo Biologics (Richmond, CA facility); exclusive multi-year US orthopedic distribution agreement with Medtronic announced June 2019 (Tissue Product Supply Agreement). Medtronic told Aziyo in October 2021 it would no longer distribute cellular bone products and the agreement was mutually terminated in December 2021. Aziyo renamed Elutia Inc. (2023). Elutia sold substantially all Orthobiologics assets, including the viable bone matrix products and the Richmond facility, to Berkeley Biologics, LLC (wholly owned subsidiary of GNI Group, Tokyo) on November 8, 2023 for about $14.6M plus up to $20M earn-out; Elutia retained all FiberCel and VBM recall liabilities.",
+   "category": "cellular-allograft",
+   "composition": "Cancellous bone particles with preserved living donor cells plus demineralized cortical bone fibers (Aziyo FY2020 10-K). Cryopreserved; single-donor lots.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER); no 510(k) in openFDA for device_name 'fibercel' (searched 2026-10-23)",
+    "us_market_year": 2019,
+    "on_label_indications": [
+     "Marketed 'for use in orthopedic or reconstructive bone grafting procedures in combination with autologous bone or other forms of allograft bone or alone as a bone graft' (Aziyo FY2020 10-K); bone void filler in orthopedic and spinal procedures (361 homologous use)"
+    ]
+   },
+   "status": "withdrawn",
+   "challenge": "The category's defining safety event. Lot NMDS210011 came from one donor (a man aged 80 with unrecognised TB risk factors and signs); 154 units went to 37 facilities in 20 states (March 1 to April 2, 2021); 136 units were implanted in 113 patients in 18 states; 87 of 113 (77%) had microbiological or imaging evidence of TB disease; 8 recipients died (3 deaths attributed to TB); M. tuberculosis was found in all 8 sequestered unused units tested (Schwartz, Lancet Infect Dis 2022). Aziyo recalled the lot June 2, 2021. A rep should be able to explain why a living-cell graft cannot be terminally sterilized and why there was then no FDA-licensed donor TB screening test.",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published efficacy study of FiberCel in spinal fusion located (PubMed search 'FiberCel' 2026-10-23 returned no relevant record). The only peer-reviewed literature is the CDC outbreak investigation: 113 recipients, most during spinal fusion, 87 with TB disease.",
+     "caveats": "Historical tier (marketed 2019-2021). Withdrawn; any efficacy claim from Medtronic or Aziyo marketing is unsupported by published data."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of FiberCel in posterolateral fusion located (PubMed search 2026-10-23).",
+     "caveats": "Withdrawn 2021; listed so the outbreak history attaches to the spine applications where the product was used."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:35934016",
+     "title": "Nationwide tuberculosis outbreak in the USA linked to a bone graft product: an outbreak report",
+     "year": 2022,
+     "design": "case-series",
+     "n": 113,
+     "finding": "Single-donor lot of a live-cell bone allograft implanted in 113 recipients in 18 states; 87 (77%) had TB disease, 8 died, all 105 survivors started TB treatment a median 69 days after implantation; isolates from product and patients were >99.99% genetically identical.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-tlif-plif",
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:36660866",
+     "title": "Transmission of Mycobacterium tuberculosis to Healthcare Personnel Resulting From Contaminated Bone Graft Material, United States, June 2021-August 2022",
+     "year": 2023,
+     "design": "case-series",
+     "n": null,
+     "finding": "CDC report documenting M. tuberculosis transmission to healthcare personnel exposed to the contaminated bone graft material or infected recipients during the 2021 outbreak.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "PMID:37717630",
+     "title": "Incomplete tissue product tracing during an investigation of a tissue-derived tuberculosis outbreak",
+     "year": 2024,
+     "design": "case-series",
+     "n": null,
+     "finding": "Colorado investigation showing the US has no system to track tissue products to individual recipients; a third patient with the outbreak strain was recorded as receiving a different donor lot.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Bundled in inpatient fusion MS-DRGs (no separate payment); product withdrawn.",
+    "notes": "Elutia FY2025 10-K: 110 FiberCel product-liability suits or claims since September 2021; 104 settled, 5 active at 12/31/2025; no remaining insurance for FiberCel litigation; combined FiberCel/VBM contingent liability $11.2M. In June 2024 Elutia sued Medtronic Sofamor Danek USA in Delaware Superior Court alleging Medtronic failed to defend and indemnify it under the 2019 supply agreement; Medtronic counterclaimed. Lesson for BD: the distributor's brand absorbs reputational damage, but the processor carries the liability unless the supply agreement says otherwise."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "PMID:35934016",
+    "PMID:36660866",
+    "PMID:37717630",
+    "https://www.sec.gov/Archives/edgar/data/1708527/000110465921036360/tm214229d1_10k.htm",
+    "https://www.sec.gov/Archives/edgar/data/1708527/000110465926027664/elut-20251231x10k.htm",
+    "https://www.sec.gov/Archives/edgar/data/1708527/000110465923118801/tm2330673d1_8k.htm",
+    "https://www.fda.gov/safety/medical-product-safety-information/bone-matrix-product-fda-safety-communication-important-information-human-cell-tissue-and-cellular",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22fibercel%22"
+   ]
+  },
+  {
+   "id": "vibone",
+   "name": "ViBone / ViBone Moldable Viable Bone Matrix (and OsteGro V)",
+   "company": "Berkeley Biologics (brand assets since November 2023); made by Aziyo Biologics (now Elutia); ViBone distributed exclusively by RTI Surgical / Surgalign 2018-2023",
+   "ownership_history": "Aziyo signed an exclusive US distribution agreement for ViBone with RTI Surgical (later Surgalign Holdings) in August 2018 ($2M upfront, minimums 2019-2021); co-marketing deal with SurGenTec (GraftGun cartridges) in 2018. Surgalign later distributed ViBone Moldable. Elutia announced a single-lot recall and the market withdrawal of all viable bone matrix products produced after a specified date in July 2023, then sold the Orthobiologics business to Berkeley Biologics (GNI Group) on November 8, 2023; Berkeley did not assume recall liabilities.",
+   "category": "cellular-allograft",
+   "composition": "ViBone: cancellous and demineralized cortical bone particles with preserved native cells; ViBone Moldable: moldable form; OsteGro V: cancellous particles plus demineralized cortical particles and fibers made with the same cell-preserving process (Aziyo FY2020 10-K). Company preclinical data (not peer reviewed) claimed less cell death than 'traditional' viable bone matrix processing.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER); no 510(k) in openFDA for 'vibone' or 'ostegro' (searched 2026-10-23)",
+    "us_market_year": 2018,
+    "on_label_indications": [
+     "Marketed 'for use as allograft bone' (ViBone) and 'for the repair, replacement or reconstruction of bone defects' (OsteGro V) per Aziyo FY2020 10-K; 361 homologous use as bone graft"
+    ]
+   },
+   "status": "withdrawn",
+   "unverified": true,
+   "challenge": "Second nationwide TB outbreak from the same manufacturer: ViBone Moldable and alloOss Plus (dental) lot TDS222820, shipped February 27 to June 20, 2023 to 13 facilities in 7 states; 36 surgical recipients, 5 laboratory-confirmed TB, 2 deaths. The lot had tested negative by nucleic acid amplification before release; culture of unused product was only done after the outbreak (MMWR 2024). Whether Berkeley Biologics has relaunched any viable bone matrix after the 2023 withdrawal could not be confirmed.",
+   "applications": [
+    {
+     "application_id": "cervical-acdf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Kim 2023 sponsor-registered post-market single-arm study (NCT03425682, 118 enrolled): 12-month per-patient fusion 88.1% cervical by plain films read by an independent radiologist; no product-related adverse events reported.",
+     "caveats": "Single-arm, plain-film fusion assessment, sponsor-registered (Aziyo/Elutia); product later withdrawn after a TB outbreak."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Same post-market study (Kim 2023): 12-month per-patient lumbar interbody fusion 97.6% and per-level 100% on plain films.",
+     "caveats": "No control arm; radiographs not CT; withdrawn 2023."
+    },
+    {
+     "application_id": "lumbar-lateral",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "The planned randomized ViBone vs DBM vs BMP trial in 3-level OLIF (NCT03896347) was withdrawn with zero enrollment; no lateral-fusion data located (PubMed search 2026-10-23).",
+     "caveats": "Withdrawn product."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:36964582",
+     "title": "12-Month clinical and radiographic outcomes of ViBone viable bone matrix in patients undergoing cervical and lumbar spinal fusion surgery",
+     "year": 2023,
+     "design": "prospective-cohort",
+     "n": 118,
+     "finding": "Single-arm post-market study; per-patient fusion at 12 months 88.1% cervical and 97.6% lumbar (per-level 98.5% and 100%) on plain films; VAS, NDI and ODI improved. n is the ClinicalTrials.gov actual enrollment.",
+     "sponsor_funded": true,
+     "applications": [
+      "cervical-acdf",
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "NCT03896347",
+     "title": "A Randomized Study Evaluating ViBone, Demineralized Bone Matrix, and Bone Morphogenetic Protein in 3-Level Oblique Lateral Lumbar Interbody Fusion",
+     "year": 2019,
+     "design": "RCT",
+     "n": 0,
+     "finding": "Withdrawn before enrollment; no comparative data exist.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-lateral"
+     ]
+    },
+    {
+     "ref": "PMID:38175804",
+     "title": "Second Nationwide Tuberculosis Outbreak Caused by Bone Allografts Containing Live Cells - United States, 2023",
+     "year": 2024,
+     "design": "case-series",
+     "n": 36,
+     "finding": "Five of 36 surgical recipients had laboratory-confirmed TB and two died; whole-genome sequencing linked patient isolates to unused product, which had tested NAAT-negative before distribution; the response prevented up to 53 further procedures.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-tlif-plif",
+      "cervical-acdf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Bundled in inpatient fusion MS-DRGs; withdrawn.",
+    "notes": "Elutia FY2025 10-K: 28 VBM suits or claims since August 2023 (11 active, 16 settled at 12/31/2025) in CA, LA, TX, MI, OR and NY courts. The ViBone channel collapsed twice: Surgalign's bankruptcy (2023) and the July 2023 withdrawal. Berkeley Biologics' current viable-bone offering, if any, is unconfirmed."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "PMID:36964582",
+    "PMID:38175804",
+    "https://clinicaltrials.gov/study/NCT03425682",
+    "https://clinicaltrials.gov/study/NCT03896347",
+    "https://archive.cdc.gov/www_cdc_gov/hai/outbreaks/TB-bone-allograft.html",
+    "https://www.sec.gov/Archives/edgar/data/1708527/000110465921036360/tm214229d1_10k.htm",
+    "https://www.sec.gov/Archives/edgar/data/1708527/000110465926027664/elut-20251231x10k.htm",
+    "https://www.sec.gov/Archives/edgar/data/1708527/000110465923101780/tm2326344d1_ex99-1.htm"
+   ]
+  },
+  {
+   "id": "viacell",
+   "name": "ViaCell Viable Cell Allograft",
+   "company": "Globus Medical (processed by Bone Bank Allografts, San Antonio)",
+   "ownership_history": "Supplied by Globus Medical and processed and prepared by Bone Bank Allografts (BBA) per the US package insert (LB-275 R06, 06/2021). Globus merged with NuVasive in 2023, so it now sells both ViaCell and Osteocel.",
+   "category": "cellular-allograft",
+   "composition": "Partially demineralized cortical fibers and cancellous chips with inherent stem cells and osteoprogenitor cells (Globus product page); packaged in a cryoprotectant of 10% DMSO in MEM-alpha, shipped on dry ice, stored at -40 C or colder. Trace povidone-iodine, vancomycin, meropenem and amphotericin B may remain. Globus does not publish a cell count on the pages read.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER); insert states processed under 21 CFR Part 1271 and AATB standards; no 510(k) in openFDA for 'viacell' (searched 2026-10-23)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "'This allograft may be used for the treatment of musculoskeletal defects' (ViaCell US insert LB-275 R06, 06/2021)"
+    ]
+   },
+   "status": "established",
+   "challenge": "The insert's donor-testing list (HIV, HBV, HCV, syphilis, CMV, optional HTLV) contains no Mycobacterium tuberculosis test, the gap both CDC outbreaks exposed. Launch year not confirmed; an Orthofix-consultant slide deck (Ryaby, 2021) places ViaCell on the market in the late 2010s.",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published clinical study of ViaCell located (PubMed search 'ViaCell allograft' 2026-10-23 returned only unrelated records).",
+     "caveats": "Evidence for Globus's cellular line rests on Osteocel, a different product."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23).",
+     "caveats": "Commercial payers (UnitedHealthcare 2026, Aetna CPB 0411) class cell-based allografts as unproven or experimental."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23).",
+     "caveats": "None beyond the class caveats."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in inpatient fusion MS-DRGs; no separate payment.",
+    "notes": "Second cellular brand in the Globus bag next to Osteocel Pro (Osteocel record: hybrid direct/exclusive-distributor channel). BBA cost-recovery is reimbursed 'in part' by Globus per NOTA. No FDA warning or untitled letter about ViaCell was found in the sources read; FDA's warning-letter database was not searched by company."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.globusmedical.com/wp-content/uploads/2023/08/LB-275_R06_ViaCell_ProductInsert.pdf",
+    "https://www.globusmedical.com/products/biologics/",
+    "https://foreonline.org/wp-content/uploads/2021/05/10.-Ryaby_Cellular-Bone-Allografts-Castellvi-Spine-Key-Largo-6-May-2021.pdf",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22viacell%22"
+   ]
+  },
+  {
+   "id": "allofuse-select-cm",
+   "name": "AlloFuse Select CM Cellular Allograft Matrix",
+   "company": "AlloSource",
+   "ownership_history": "AlloSource (non-profit tissue bank, Centennial, CO) processes and sells directly. Brochure M8S0130.001 dated 08/2017.",
+   "category": "cellular-allograft",
+   "composition": "Moldable, compactable granulated matrix of demineralized bone matrix with native viable bone-forming cells, frozen (1, 5, 10 cc). Company claims (white paper, data on file): on average 3 million viable cells per cc, 85% viability, 68% of cells MSCs; up to 6 hours working time.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER); the AlloFuse 510(k)s in openFDA (K071849 gel/putty, K103036 Plus) are AlloSource's non-cellular DBM devices, not this product",
+    "us_market_year": null,
+    "on_label_indications": [
+     "No indication statement in the brochure read; positioned as a bone graft for fusion sites (361 homologous use). IFU not located."
+    ]
+   },
+   "status": "established",
+   "unverified": true,
+   "challenge": "The 2017 brochure supports its cell claims with papers on another company's product (Neman 2013 lineage mapping and Baboolal 2014 MSC abundance, both on MTF/Orthofix Trinity Evolution) and cites '25 peer-reviewed clinical papers and 250,000 surgical cases' as data on file. Current availability could not be confirmed (allosource.org blocked automated access).",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of AlloFuse Select CM located (PubMed search 'AlloFuse' 2026-10-23 returned nothing).",
+     "caveats": "Marketing claims of 'similar clinical outcomes as autograft' are not supported by any product-specific study."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23).",
+     "caveats": "Class payer position: experimental/unproven (Aetna CPB 0411, UHC 2026)."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "AlloSource markets to foot and ankle; no study of this product in hindfoot fusion located (PubMed search 2026-10-23).",
+     "caveats": "Tier reflects unconfirmed foot-and-ankle uptake."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in fusion MS-DRGs (inpatient) or packaged into the procedure APC (outpatient).",
+    "notes": "AlloSource also sells non-cellular AlloFuse DBM (existing record allofuse). No FDA warning letter about this product found in the sources read."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://allosource.org/wp-content/uploads/2024/02/AlloFuse-Select-CM-Brochure.pdf",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22allofuse%22"
+   ]
+  },
+  {
+   "id": "allostem",
+   "name": "AlloStem Cellular Bone Allograft",
+   "company": "AlloSource",
+   "ownership_history": "AlloSource product (trade press reports a US patent in 4Q 2015; not read directly). Commercial status in 2026 unconfirmed.",
+   "category": "cellular-allograft",
+   "composition": "Partially demineralized allograft bone combined with allogeneic adult adipose-derived mesenchymal stem cells (Aetna CPB 0411 background section).",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (marketed as a 361 HCT/P by AlloSource; no 510(k) in openFDA for 'allostem', searched 2026-10-23)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Marketed as a bone graft alternative to autograft for fusion and nonunion (361 homologous use claimed); IFU not located"
+    ],
+    "unverified": true
+   },
+   "status": "off-market",
+   "unverified": true,
+   "challenge": "The hardest 361 case in the category: the cells come from fat, not bone, and are combined with a bone scaffold, which strains both the homologous-use criterion and the 'no combination with another article' criterion of 21 CFR 1271.10(a). No public FDA letter to AlloSource about AlloStem was found in the sources read. Status set to off-market on weak evidence (no current product page reachable; payer policies still list it by name in 2026); treat as unverified.",
+   "applications": [
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "AlloSource ran a 140-patient randomized trial against autograft in subtalar fusion (NCT01413061, completed 2017) but no results are posted or published; the only literature is a narrative review chapter (Foot Ankle Clin 2016, PMID 27871419). PubMed searches 2026-10-23.",
+     "caveats": "Unreported sponsor RCT: possible publication bias."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23). Buttermann 2026 randomized an adipose-MSC-plus-allograft arm (64% posterior fusion vs 98% iliac crest), but the paper's abstract does not name the commercial product.",
+     "caveats": "Aetna CPB 0411 names AlloStem as experimental for all orthopedic applications including spinal fusion."
+    },
+    {
+     "application_id": "foot-ankle-nonunion",
+     "tier": "investigational",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in nonunion located (PubMed search 2026-10-23).",
+     "caveats": "Nonunion marketing would sharpen the 'living cells do the work' problem under criterion 4."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT01413061",
+     "title": "Study of Subtalar Arthrodesis Using AlloStem Versus Autologous Bone Graft",
+     "year": 2010,
+     "design": "RCT",
+     "n": 140,
+     "finding": "AlloSource-sponsored open-label randomized trial of AlloStem vs autologous graft in subtalar arthrodesis (primary endpoint CT fusion at 24 weeks); completed February 2017 with 140 enrolled, but no results posted and no peer-reviewed report located.",
+     "sponsor_funded": true,
+     "applications": [
+      "subtalar-hindfoot-arthrodesis"
+     ]
+    },
+    {
+     "ref": "PMID:42285441",
+     "title": "Comparison of posterior cellular bonegraft options for single-level lumbar spinal fusion: a randomized trial",
+     "year": 2026,
+     "design": "RCT",
+     "n": 175,
+     "finding": "Single-blinded six-arm randomized study with historical allograft control in anterior/posterior fusion: posterior fusion 98% iliac crest, 94% BMP, 85% marrow aspirate, 67% bone-marrow-MSC allograft, 64% adipose-MSC allograft, 62% amnion-MSC allograft, 50% plain allograft; clinical outcomes similar when the interbody fusion was solid. Registered retrospectively as NCT07187362 (119 actual enrollment, 2015-2019) versus 175 in the paper; commercial products not named in the abstract.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG when used; named as experimental for all orthopedic applications by Aetna (CPB 0411).",
+    "notes": "If it is still sold, expect payer friction by name. Commercial status should be confirmed with AlloSource before citing."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.aetna.com/cpb/medical/data/400_499/0411.html",
+    "PMID:27871419",
+    "PMID:42285441",
+    "https://clinicaltrials.gov/study/NCT01413061"
+   ]
+  },
+  {
+   "id": "arthrocell",
+   "name": "ArthroCell / ArthroCell Plus Bone Allograft",
+   "company": "Arthrex",
+   "ownership_history": "Arthrex orthobiologics line; processor not named on the product page read.",
+   "category": "cellular-allograft",
+   "composition": "100% human-derived viable bone matrix marketed as 'osteogenic, osteoinductive, and osteoconductive', with a DMSO-free cryoprotectant that needs no rinsing or decanting (Arthrex product page). Cell counts and processor not published on the page read.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P); no 510(k) in openFDA for 'arthrocell' (searched 2026-10-23); processor and its CBER registration not identified",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Product page describes use in 'a wide array of orthopedic and spinal applications'; IFU not read"
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "unverified": true,
+   "challenge": "Arthrex is also the US distributor whose promotional videos for Celularity's Interfyl drew FDA's December 2025 warning letter (see interfyl record); the same promotional-review exposure applies to any 'osteogenic' cellular claim it makes. DMSO-free language mirrors the VIVEX family but the processor is unconfirmed.",
+   "applications": [
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of ArthroCell located (PubMed search 2026-10-23).",
+     "caveats": "Arthrex's foot-and-ankle and sports channel is the likely route; launch year not found."
+    },
+    {
+     "application_id": "foot-ankle-nonunion",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in nonunion located (PubMed search 2026-10-23).",
+     "caveats": "None beyond class caveats."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Page cites spinal applications; no published spine study of ArthroCell located (PubMed search 2026-10-23).",
+     "caveats": "Arthrex has a small spine presence."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Packaged into the procedure APC in outpatient/ASC cases; bundled in MS-DRG inpatient.",
+    "notes": "Arthrex sells through a large agency/direct hybrid network. No FDA letter about ArthroCell found in the sources read."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.arthrex.com/orthobiologics/viable-allograft-bone",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22arthrocell%22"
+   ]
+  },
+  {
+   "id": "primagen-advanced",
+   "name": "PrimaGen Advanced Allograft",
+   "company": "Highridge Medical (H.I.G. Capital; former ZimVie / Zimmer Biomet spine business)",
+   "ownership_history": "Launched by Zimmer Biomet in December 2016; moved to ZimVie at the 2022 spin-off; ZimVie sold its spine business to H.I.G. Capital on April 1, 2024 ($375M), renamed Highridge Medical. The ZimVie PrimaGen product page now returns 404; current listing by Highridge not confirmed.",
+   "category": "cellular-allograft",
+   "composition": "Fresh-frozen (cryopreserved) cancellous bone with retained viable donor cells plus demineralized cortical bone fibers with verified osteoinductivity, in a pre-filled syringe with a built-in filter. Launch materials claimed at least 750,000 cells per cc of cancellous tissue with at least 70% viability.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P regulated under 21 CFR Part 1271 per launch materials); no 510(k) in openFDA for 'primagen' (searched 2026-10-23)",
+    "us_market_year": 2016,
+    "on_label_indications": [
+     "'Intended for homologous use in the repair, replacement, reconstruction or supplementation of recipient tissue' in musculoskeletal defects that are surgically created or result from traumatic bone injury (Zimmer Biomet launch, December 2016)"
+    ]
+   },
+   "status": "established",
+   "unverified": true,
+   "challenge": "The only comparative study is negative on value: Nolte 2026 (University of Colorado, 100 matched patients) found PrimaGen plus rhBMP-2 did not improve interbody fusion over rhBMP-2 plus DBM/allograft and raised osteobiologic cost per case from $5,252 to $9,478. Status flagged unverified after the 2024 sale.",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "III",
+     "evidence_summary": "Nolte 2026 retrospective matched cohort, 1-2 level PLIF/TLIF 2017-2023: fusion 95.7% vs 89.1% at 12 months (P=0.27) and 100% vs 89.5% at 24 months (P=0.49) with PrimaGen plus rhBMP-2 vs rhBMP-2 plus DBM/allograft; higher blood loss and 6-month pain in the PrimaGen arm; cost $9,478 vs $5,252 per case.",
+     "caveats": "Retrospective, single institution, radiograph-based fusion assessment; both arms got rhBMP-2, so the cellular graft's own effect cannot be isolated."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of PrimaGen in posterolateral fusion located (PubMed search 2026-10-23).",
+     "caveats": "Class payer position: unproven/experimental."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "investigational",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "Label language covers traumatic bone injury defects; no study in fracture or nonunion located (PubMed search 2026-10-23).",
+     "caveats": "Marketed through a spine channel; trauma use unconfirmed."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:42683532",
+     "title": "Role of a Novel, Fresh-Frozen Cellular Bone Allograft in Lumbar Interbody Spinal Fusion: A Retrospective, Matched-Cohort Study",
+     "year": 2026,
+     "design": "retrospective",
+     "n": 100,
+     "finding": "PrimaGen plus rhBMP-2 vs matched rhBMP-2 plus DBM/allograft: no difference in fusion at 12 or 24 months, revision or complications; higher blood loss and 6-month pain; 80% higher osteobiologic cost per case.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in inpatient fusion MS-DRGs.",
+    "notes": "A Highridge rep would face the Colorado cost data directly. Sponsor_funded set false on the basis of an academic author list; the funding statement was not read in full. No FDA letter about PrimaGen found in the sources read."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.orthoworld.com/zimmer-biomet-launches-primagen-advanced-allograft",
+    "PMID:42683532",
+    "https://ZimVie.com/en/spine/biologic-solutions/primagen-advanced-allograft.html",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22primagen%22"
+   ]
+  },
+  {
+   "id": "cellentra",
+   "name": "Cellentra VCBM (Viable Cell Bone Matrix)",
+   "company": "Highridge Medical (heritage Biomet, then Zimmer Biomet and ZimVie spine)",
+   "ownership_history": "Biomet Spine/Biologics product by 2012 (Biomet 10-Q, October 2012: 'an allogenic stem cell offering' contributing to growth); Biomet merged with Zimmer in 2015; spine moved to ZimVie (2022) and Highridge Medical (2024). Appears superseded by PrimaGen Advanced (2016); current availability not confirmed.",
+   "category": "cellular-allograft",
+   "composition": "Cryopreserved cancellous bone with naturally occurring viable cells combined with demineralized cortical bone matrix; Biomet claimed at least 250,000 viable cells per cc including MSCs, osteoprogenitor cells and pre-osteoblasts, and growth factors (BMP-2, 4, 7, VEGF, TGF-beta, PDGF, IGF-1, FGF) in the demineralized component (Biomet FY2013 10-K).",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P); no 510(k) in openFDA for 'cellentra' (searched 2026-10-23)",
+    "us_market_year": 2012,
+    "on_label_indications": [
+     "Repair, replacement, reconstruction or supplementation of recipient tissue in surgically created or traumatic musculoskeletal defects (per trial and filing descriptions; IFU not read)"
+    ],
+    "unverified": true
+   },
+   "status": "off-market",
+   "unverified": true,
+   "challenge": "In the Orthofix/MTF-funded athymic rat PLF comparison, Cellentra fused 11 of 15 rats (best of six commercial CBMs, ahead of Trinity Elite at 8 of 15), yet its 81-patient ACDF study (NCT02182843, completed 2018) has no posted or published results located.",
+   "applications": [
+    {
+     "application_id": "cervical-acdf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Zimmer Biomet's single-arm ACDF outcomes study (NCT02182843, 81 enrolled, completed January 2018) has no results located on ClinicalTrials.gov or PubMed (search 'Cellentra' 2026-10-23).",
+     "caveats": "Unpublished sponsor study; possible publication bias."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "Only preclinical: athymic rat PLF, 11 of 15 fused by palpation and 73% bone-volume increase on micro-CT at 6 weeks (Lin 2020). No human PLF study located.",
+     "caveats": "Rat xenograft model funded by competitors Orthofix and MTF; not a clinical endpoint."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "investigational",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "A Zimmer Biomet video presents a trauma case series (branded 'Bonus Triad'); no published trauma or nonunion study located (PubMed search 2026-10-23).",
+     "caveats": "Video not reviewed; claim unverified."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT02182843",
+     "title": "Cellentra Viable Cell Bone Matrix (VCBM) Anterior Cervical Discectomy and Fusion Outcomes Study (VCBM/MaxAn)",
+     "year": 2014,
+     "design": "prospective-cohort",
+     "n": 81,
+     "finding": "Completed (primary completion January 2018); no results posted or published as of 2026-10-23.",
+     "sponsor_funded": true,
+     "applications": [
+      "cervical-acdf"
+     ]
+    },
+    {
+     "ref": "PMID:32613160",
+     "title": "Comparing cellular bone matrices for posterolateral spinal fusion in a rat model",
+     "year": 2020,
+     "design": "preclinical",
+     "n": 105,
+     "finding": "Six commercial CBMs (15 rats each) in athymic rat PLF: fusion by palpation Cellentra 11/15, Trinity Elite 8/15, ViviGen 2/15, Osteocel Pro, Bio4 and map3 0/15; syngeneic bone 5/15.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in fusion MS-DRGs.",
+    "notes": "Useful history for a hiring conversation: the best-performing CBM in the competitor-funded rat study is one its owner stopped promoting. No FDA letter about Cellentra found in the sources read."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1402366/000140236613000006/bmet-5312013.htm",
+    "https://www.sec.gov/Archives/edgar/data/351346/000119312512423217/d413561d10q.htm",
+    "https://clinicaltrials.gov/study/NCT02182843",
+    "PMID:32613160",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22cellentra%22"
+   ]
+  },
+  {
+   "id": "orios",
+   "name": "Orios Cellular Bone Allograft (Model XT)",
+   "company": "Spinal Elements",
+   "ownership_history": "Listed among Spinal Elements' featured biologics in its 2020 S-1 (IPO later withdrawn; company private, backed by Kohlberg). Spinal Elements states it does not manufacture its HCT/Ps and serves as a distributor; the processor is not named.",
+   "category": "cellular-allograft",
+   "composition": "Viable allogeneic bone matrix; a third-party catalog (not read in full) describes an average of 1.5 million viable osteogenic cells per cc preserved with a non-DMSO cryoprotectant, the same figure Medline uses for the VIVEX-processed Viable Matrix Plus.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; Spinal Elements 2020 S-1: 'we are marketing our HCT/Ps pursuant to Section 361'); no 510(k) in openFDA for 'orios' (searched 2026-10-23)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Not published in the material read; 361 homologous use as bone graft in spinal fusion"
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "unverified": true,
+   "challenge": "Processor, cell claims and launch year are unconfirmed; the Ryaby 2021 timeline places Orios on the market in the late 2010s.",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of Orios located (PubMed search 'Orios' 2026-10-23 returned only unrelated records).",
+     "caveats": "Sold alongside Spinal Elements hardware."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed search 2026-10-23).",
+     "caveats": "None beyond class caveats."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Bundled in inpatient fusion MS-DRGs.",
+    "notes": "Biologics were 22.5% of Spinal Elements revenue (about $21.6M) in 2019 per the S-1; Orios sits beside Allos (allograft), Nevos (DBM), Provenda (amniotic) and OssiMend (synthetic). No FDA letter found in the sources read."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1808945/000119312520267874/d903272ds1a.htm",
+    "https://foreonline.org/wp-content/uploads/2021/05/10.-Ryaby_Cellular-Bone-Allografts-Castellvi-Spine-Key-Largo-6-May-2021.pdf",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22orios%22"
+   ]
+  },
+  {
+   "id": "virtuos-lyograft",
+   "name": "Virtuos Lyograft (shelf-stable cellular bone allograft)",
+   "company": "Orthofix (processed by MTF Biologics)",
+   "ownership_history": "Limited market release and first implant announced July 26, 2022 (Baylor Scott and White, Fort Worth). Co-branded with MTF Biologics, which processes the tissue, holds inventory and invoices hospitals; Orthofix holds exclusive worldwide marketing rights and books marketing fees (Orthofix FY2025 10-K). Orthofix merged with SeaSpine in January 2023.",
+   "category": "cellular-allograft",
+   "composition": "Moldable cortical fibers plus cancellous granules containing endogenous cells, lyophilized with a proprietary lyopreservation solution so it can be stored at room temperature and rehydrated in about two minutes. Orthofix claims a minimum of 750,000 cells per cc, about 250,000 of them MSCs, osteoprogenitors and other bone-forming cells, and lot-release osteoinductivity testing.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; MTF Biologics establishment registered with CBER); no 510(k) in openFDA for 'virtuos' (the 'Lyograft' 510(k) K192452 is an unrelated B. Braun device)",
+    "us_market_year": 2022,
+    "on_label_indications": [
+     "Not stated on the product page; refer to IFU (not read). Positioned for 'spine and orthopedic procedures'."
+    ],
+    "unverified": true
+   },
+   "status": "emerging",
+   "challenge": "'Cellular' and 'freeze-dried' sit uneasily together: Orthofix says the process retains 'intact cells', not viable cells, and the only performance data are 'identical fusion rates to Trinity Elite' in a 2-level athymic rat PLF model on file.",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published clinical study of Virtuos Lyograft located (PubMed search 'Lyograft' 2026-10-23 returned nothing); company cites unpublished rat PLF data.",
+     "caveats": "Data on file only."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study located (PubMed search 'Lyograft' 2026-10-23). The sponsor's autograft-controlled TLIF study (NCT05614284) stopped at 6 patients; a 150-patient historically controlled study (NCT06686017) runs to 2029.",
+     "caveats": "Historical control, sponsor-run; no randomized comparison planned."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "V",
+     "evidence_summary": "Marketed for orthopedic procedures; no foot-and-ankle study located (PubMed search 2026-10-23).",
+     "caveats": "Room-temperature storage suits ASCs without -65 C freezers."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT05614284",
+     "title": "A Prospective, Post-Market, Multicenter Comparative Analysis of the Efficacy of Virtuos and Autograft Bone Graft in Lumbar Fusion Surgery",
+     "year": 2022,
+     "design": "prospective-cohort",
+     "n": 6,
+     "finding": "Terminated May 2024 after 6 enrolled ('protocol redesign'); no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "NCT06686017",
+     "title": "A Prospective Post-Market Historically Controlled Open-Label Study to Assess the Efficacy of Virtuos in Lumbar Fusion",
+     "year": 2025,
+     "design": "prospective-cohort",
+     "n": 150,
+     "finding": "Enrolling by invitation since June 2025; 1-2 level lumbar DDD; primary completion estimated January 2029. n is planned enrollment.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-tlif-plif",
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "launched-2022",
+    "trials": [
+     "NCT05614284",
+     "NCT06686017"
+    ],
+    "expected_milestone": "Orthofix post-market historically controlled lumbar fusion study NCT06686017 (150 planned, enrolling by invitation, primary completion 2029-01); an earlier Virtuos vs autograft TLIF comparison (NCT05614284) was terminated after 6 patients for 'protocol redesign'."
+   },
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Bundled in fusion MS-DRGs; packaged in OPPS outpatient.",
+    "notes": "Orthofix books marketing-service fees from MTF rather than product revenue (FY2025 10-K). Shelf stability removes dry-ice logistics, the practical barrier to cellular grafts in ASCs. No FDA letter about Lyograft found in the sources read."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://orthofix.com/products/biologics/virtuos-lyograft/",
+    "https://www.sec.gov/Archives/edgar/data/884624/000119312526065189/ofix-20251231.htm",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22lyograft%22",
+    "https://clinicaltrials.gov/study/NCT05614284",
+    "https://clinicaltrials.gov/study/NCT06686017"
+   ]
+  },
+  {
+   "id": "influx-sparc",
+   "name": "Influx SPARC Integrative Bone Matrix",
+   "company": "Isto Biologics",
+   "ownership_history": "Isto Biologics (Hopkinton, MA; Keensight Capital majority since September 2025 per the existing magellan record). SPARC reportedly grew out of Advanced Biologics' tissue-processing method (OsseoGen) under a collaboration from 2020; Advanced Biologics merged into Isto in October 2023 (trade-press summary, not read in full).",
+   "category": "cellular-allograft",
+   "composition": "Cellular bone allograft described by its authors as a 'next generation integrative bone matrix' with intrinsic osteogenic, osteoconductive and osteoinductive properties, designed to preserve endogenous growth factors and viable cells (Hofmann 2024, 2026). Catalog copy (not read in full) says processing keeps osteoprogenitor cells while removing red and white blood cells, is DMSO-free and is implantable on thawing.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (361 HCT/P; establishment registered with CBER); no 510(k) in openFDA for 'sparc' bone products or 'influx' (searched 2026-10-23)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Bone repair or reconstruction (catalog description); IFU not read"
+    ],
+    "unverified": true
+   },
+   "status": "emerging",
+   "challenge": "Every published series is Isto-linked: the 2024 foot-and-ankle chart review author consults for Isto, and the 2026 pooled analysis was Isto-funded with data collection and analysis support. The 2026 Cureus paper does not name the product; the attribution to SPARC rests on its pooling of the two earlier SPARC (IBM) studies.",
+   "applications": [
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "IV",
+     "evidence_summary": "Hofmann 2024: 20 retrospective foot and ankle fusions with INFLUX SPARC, complete radiographic fusion in all by 24 weeks (mean 8.5 weeks), no major complications or reinterventions.",
+     "caveats": "Retrospective, n=20, plain radiographs, consultant author; procedure mix (forefoot vs hindfoot) not separable from the abstract."
+    },
+    {
+     "application_id": "foot-ankle-nonunion",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "IV",
+     "evidence_summary": "Hofmann 2026 pooled 35 high-risk patients (mean 2.6 nonunion risk factors): the 17 foot-and-ankle arthrodeses all fused by 24 weeks (median 6 weeks), 0% nonunion.",
+     "caveats": "Isto-funded; no control group; high-risk cohort not the same as established nonunion."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "IV",
+     "evidence_summary": "Same pooled analysis: 18 spine patients, 95 of 95 posterolateral and 33 of 33 interbody levels fused by 12 months (median 6 months).",
+     "caveats": "Isto-funded; small; fusion method not CT-adjudicated in the abstract."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:39616319",
+     "title": "Initial clinical evaluation of a novel integrative bone matrix (IBM) in foot and ankle fusion procedures",
+     "year": 2024,
+     "design": "retrospective",
+     "n": 20,
+     "finding": "All 20 foot and ankle fusions with INFLUX SPARC fused radiographically by 24 weeks (mean 8.5 weeks); no major complications or reinterventions; PROMs improved.",
+     "sponsor_funded": null,
+     "applications": [
+      "subtalar-hindfoot-arthrodesis"
+     ]
+    },
+    {
+     "ref": "PMID:42701705",
+     "title": "Clinical Outcomes Following Use of a Next-Generation Cellular Bone Matrix in High-Risk Patients Undergoing Arthrodesis: A Retrospective Analysis",
+     "year": 2026,
+     "design": "retrospective",
+     "n": 35,
+     "finding": "Pooled two single-center series (18 spine, 17 foot and ankle) in high-risk patients: 100% fusion in both cohorts and 0% nonunion or graft-related adverse events; no control group.",
+     "sponsor_funded": true,
+     "applications": [
+      "foot-ankle-nonunion",
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Packaged in the APC (outpatient/ASC) or bundled in MS-DRG.",
+    "notes": "Isto sells through independent distributors alongside Magellan BMAC and the Influx allograft family; an Isto-funded spine series (Passias, Front Musculoskelet Disord 2025) is cited in the 2026 paper but was not located in PubMed. No FDA letter about SPARC found in the sources read."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "PMID:39616319",
+    "PMID:42701705",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13546119/",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22influx%22"
+   ]
+  },
+  {
+   "id": "nucel",
+   "name": "NuCel (bioactive amniotic suspension with allograft)",
+   "company": "Organogenesis (via NuTech Medical, acquired March 2017)",
+   "ownership_history": "Developed and sold by NuTech Medical (Birmingham, AL) for spinal fusion; Organogenesis acquired NuTech's medical division in March 2017. Organogenesis suspended NuCel commercialization on May 31, 2021 (end of FDA enforcement discretion) and has discontinued its clinical development (Organogenesis FY2024 10-K).",
+   "category": "amniotic",
+   "composition": "Amniotic tissue-derived cell suspension ('bioactive amniotic suspension') combined with allograft bone for use as a fusion graft.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "Formerly marketed as a 361 HCT/P; Organogenesis now states it believes a BLA is necessary because NuCel 'may be deemed to be more than minimally manipulated, not for homologous use, or otherwise not regulated as Section 361 HCT/Ps' (FY2024 10-K). No 510(k) in openFDA for 'nucel'.",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None currently: commercialization suspended May 31, 2021 pending a BLA that the company has stopped pursuing"
+    ]
+   },
+   "status": "withdrawn",
+   "challenge": "A case of a company withdrawing its own spine biologic because it judged the product could not meet 361 criteria once enforcement discretion ended; Cigna's bone-graft policy still names NuCel under amniotic materials considered experimental.",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "Retrospective series (Int J Spine Surg 2016, PMID 27162714): 38 one-level and 34 two-level lumbar interbody fusions, kinematic fusion 97.4% and 100% at 12 months or more. NuTech's prospective 57-patient study (NCT02023372, completed 2019) and Organogenesis's 200-patient study (NCT02808234, status unknown) have no results located.",
+     "caveats": "Retrospective, no control; now regarded by its owner as requiring a BLA."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "An investigator-initiated PLF study (NCT02070484, OhioHealth) terminated after 6 patients; no published PLF data located (PubMed search 2026-10-23).",
+     "caveats": "Withdrawn product."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:27162714",
+     "title": "Preliminary Results of Bioactive Amniotic Suspension with Allograft for Achieving One and Two-Level Lumbar Interbody Fusion",
+     "year": 2016,
+     "design": "retrospective",
+     "n": 72,
+     "finding": "Kinematic fusion in 97.4% of one-level (n=38) and 100% of two-level (n=34) interbody fusions at 12 months or more; no comparison group.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "NCT02023372",
+     "title": "NuTech NuCel: A Prospective, Efficacy Study of NuCel in Patients Undergoing Fusion for One, Two or Three Level Degenerative Disease of the Lumbar Spine",
+     "year": 2013,
+     "design": "prospective-cohort",
+     "n": 57,
+     "finding": "Completed August 2019; no results posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "NCT02808234",
+     "title": "A Single-arm, Prospective, Multi-center Study of NuCel in Patients Receiving Interbody Fusion for One and Two Level Degenerative Disease of the Lumbar Spine",
+     "year": 2015,
+     "design": "prospective-cohort",
+     "n": 200,
+     "finding": "Status unknown (estimated completion 2022); no results posted. n is planned enrollment.",
+     "sponsor_funded": true,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "NCT02070484",
+     "title": "Efficacy of a Human Amniotic Tissue-derived Allograft, NuCel, in Patients Undergoing Posterolateral Lumbar Fusions for Degenerative Disc Disease",
+     "year": 2014,
+     "design": "RCT",
+     "n": 6,
+     "finding": "Randomized, participant-blinded investigator study terminated March 2017 for poor enrollment after 6 patients; no results.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable (withdrawn); previously bundled in fusion MS-DRGs.",
+    "notes": "Organogenesis kept ReNu (knee OA) in BLA-track trials but dropped NuCel, a signal of where it saw a viable licensing case."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1661181/000095017025029137/orgo-20241231.htm",
+    "PMID:27162714",
+    "https://clinicaltrials.gov/study/NCT02023372",
+    "https://clinicaltrials.gov/study/NCT02808234",
+    "https://clinicaltrials.gov/study/NCT02070484",
+    "https://genhealth.ai/policy/cigna/458b0069-bone-graft-substitutes-0118"
+   ]
+  },
+  {
+   "id": "puregen",
+   "name": "PureGen Osteoprogenitor Cell Allograft",
+   "company": "Alphatec Spine (private label; manufactured by Parcell Laboratories)",
+   "ownership_history": "Alphatec released PureGen in October 2010 under its private label; Parcell Laboratories, LLC manufactured it. Alphatec decided in 2013 to stop marketing it, writing off $1.3M of intangibles and $3.5M of inventory (Alphatec FY2015 10-K).",
+   "category": "MSC",
+   "composition": "Concentrated adult osteoprogenitor (stem) cell allograft; Alphatec described it as 'a unique adult stem cell that supplements the body's own cells' (FY2012 10-K). Trade press said the cells came from living donors' bone marrow without culture expansion (not confirmed in filings).",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "Marketed as a 361 HCT/P; FDA untitled letter to Parcell Laboratories, June 2011, questioned that position (Alphatec FY2011 10-K); trade press reported FDA said a BLA or IND was required. Parcell responded July 2011; Parcell and Alphatec filed a joint appeal in January 2012. No 510(k) in openFDA for 'puregen'.",
+    "us_market_year": 2010,
+    "on_label_indications": [
+     "None: FDA disputed 361 status; product discontinued 2013"
+    ]
+   },
+   "status": "withdrawn",
+   "challenge": "The first public FDA challenge to a spine 'stem cell allograft' marketed as 361, a decade before the 2021 end of enforcement discretion. Outcome of the 2012 appeal not found.",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of PureGen located (PubMed searches 'PureGen' and 'osteoprogenitor cell allograft lumbar fusion', 2026-10-23); company claimed >500 implants with no adverse events.",
+     "caveats": "Company claim only; FDA questioned regulatory status."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published ACDF study located (PubMed search 2026-10-23); trials listed in a UCSF registry were not found on ClinicalTrials.gov by name.",
+     "caveats": "Withdrawn 2013."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Not applicable (withdrawn).",
+    "notes": "Illustrates the private-label risk: the distributor (Alphatec) carried the inventory write-off when the manufacturer's regulatory position failed."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1350653/000119312512094811/d270198d10k.htm",
+    "https://www.sec.gov/Archives/edgar/data/1350653/000119312513089967/d454279d10k.htm",
+    "https://www.sec.gov/Archives/edgar/data/1350653/000135065316000058/atec-20151231x10k.htm",
+    "https://api.fda.gov/device/510k.json?search=device_name:%22puregen%22"
+   ]
+  },
+  {
+   "id": "interfyl",
+   "name": "Interfyl Human Connective Tissue Matrix (flowable placental matrix)",
+   "company": "Celularity (US orthopedic distribution by Arthrex)",
+   "ownership_history": "Manufactured by Celularity Inc. (Florham Park, NJ); distributed in the US for orthopedic surgery by Arthrex under a supply agreement in which Celularity must review and approve Arthrex's promotional materials.",
+   "category": "amniotic",
+   "composition": "Decellularized human placental connective tissue matrix from the chorionic plate, allogeneic, particulate/flowable (FDA warning letter). Not a cellular bone graft; included as the category's regulatory warning.",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "361 status rests on a 2004 Request for Designation limited to replacing or supplementing damaged integumental tissue (FDA's letter describes the RFD as issued for a related placental matrix; Celularity's 8-K says it was issued for Interfyl). FDA Warning Letter CBER 25-681480 (December 1, 2025): as promoted for orthopedic, wound-healing and anti-inflammatory uses, Interfyl is an unapproved new drug (FD&C Act 505(a)) and unlicensed biological product (PHS Act 351(a)) because it is not intended for homologous use only.",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Replacement or supplementation of damaged integumental (skin-related) tissue, the scope of the 2004 RFD as described by FDA; musculoskeletal uses are outside it"
+    ]
+   },
+   "status": "investigational",
+   "challenge": "FDA held the manufacturer responsible for its distributor's marketing: Arthrex videos promoting peroneal tendon, Achilles tear and tendinosis, hallux and calcific tendinosis uses, and a patient guide saying it 'contains proteins and biochemicals that support healing', made the product non-homologous. Celularity's 8-K says the letter requires it to limit outcome-based and metabolic-activity claims but does not restrict manufacturing, shipping or 510(k) plans. The lesson for any 361 cellular bone graft: the claim, not the tissue, sets the regulatory category.",
+   "applications": [
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Only in-vitro data (decellularized flowable placental matrix supporting human tenocyte function, J Exp Orthop 2022); no clinical study located (PubMed search 'Interfyl' 2026-10-23).",
+     "caveats": "FDA warning letter specifically cites tendon uses as non-homologous."
+    },
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No clinical study of Interfyl injection for tendinopathy located (PubMed search 2026-10-23).",
+     "caveats": "Calcific tendinosis and tendinosis promotion cited in the warning letter."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:35849201",
+     "title": "A decellularized flowable placental connective tissue matrix supports cellular functions of human tenocytes in vitro",
+     "year": 2022,
+     "design": "preclinical",
+     "n": null,
+     "finding": "In-vitro study showing the flowable placental matrix supported tenocyte attachment and function; no clinical endpoint.",
+     "sponsor_funded": null,
+     "applications": [
+      "tendon-ligament-repair-augmentation"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Packaged in the procedure APC when used in surgery; no separate payment for orthopedic use.",
+    "notes": "Warning letter followed an August 2023 inspection (Form 483) whose responses FDA found inadequate. A distributor-promotion warning letter is the most transferable precedent for spine and foot-and-ankle companies selling 361 cellular grafts with 'osteogenic' claims."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/celularity-inc-681480-12012025",
+    "https://www.sec.gov/Archives/edgar/data/1752828/000149315225026383/form8-k.htm",
+    "PMID:35849201"
+   ]
+  },
+  {
+   "id": "carmell-bha",
+   "name": "Bone Healing Accelerant (BHA, CT-101) plasma-based bioactive material",
+   "company": "Longevity Health Holdings (formerly Carmell Corporation / Carmell Therapeutics)",
+   "ownership_history": "Carmell Therapeutics (Pittsburgh; Carnegie Mellon University license) went public via SPAC with Alpha Healthcare Acquisition Corp. III in July 2023 as Carmell Corporation; repositioned to bio-aesthetics from late 2023, sold the AxoBio tissue-graft subsidiary in 2024 and renamed itself Longevity Health Holdings in March 2025.",
+   "category": "other",
+   "composition": "Allogeneic platelet-enriched plasma plasticized and crosslinked with genipin, combined with beta-tricalcium phosphate as a putty; FDA designated it a biologic-led combination product (FY2025 10-K). Acellular; listed here because the brief asked for Carmell.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "IND for severe open tibia fractures with FDA agreement to a Phase 2 trial; Fast Track designation (2020); development deprioritized and clinical studies ceased (Longevity Health FY2025 10-K)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None (investigational biologic; no BLA)"
+    ]
+   },
+   "status": "investigational",
+   "challenge": "A BLA-path bone biologic abandoned for cosmetics; the company's earlier Phase II open-tibia results were company-reported and no peer-reviewed publication was located.",
+   "applications": [
+    {
+     "application_id": "tibial-shaft-open",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Company-reported Phase II in open tibia fractures (fewer infections, faster healing); no publication located (PubMed search 'plasma-based genipin bone healing tibia fracture' 2026-10-23).",
+     "caveats": "Program paused; no active trial."
+    }
+   ],
+   "evidence": [],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [],
+    "expected_milestone": "None: 'we have deprioritized further research and development of these product candidates and ceased clinical studies' (FY2025 10-K, filed March 2026)"
+   },
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable (investigational).",
+    "notes": "Candidate for out-licensing if anyone wants an IND-stage plasma biologic with Fast Track history."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1842939/000119312526134698/xage-20251231.htm"
+   ]
+  },
+  {
+   "id": "cellular-bone-allograft-class",
+   "name": "Cellular bone allografts (CBAs) as a class: comparative evidence, payer position and safety record",
+   "company": "Multiple (Orthofix/MTF, Globus, LifeNet/DePuy Synthes, Stryker/Osiris, Xtant, VIVEX and its private labels, AlloSource, Highridge, Isto and others; see individual records)",
+   "ownership_history": "Category began with Osteocel (2005) and Trinity (2009); by 2021 an Orthofix-consultant timeline listed about 20 brands (Osteocel, Trinity Matrix/Evolution/ELITE, Osteocel Plus/Pro, Cellentra, Ovation OS/Bio4, PrimaGen, OsteoVive, V92, VIA Graft, ViviGen, map3, ViaCell, Orios, AlloFuse Select CM, ViBone, SCYLLA, FiberCel). Withdrawals since: map3 (2018), FiberCel (2021), NuCel (2021), ViBone and all Aziyo VBM (2023); PureGen earlier (2013).",
+   "category": "cellular-allograft",
+   "composition": "Cryopreserved (or, for Virtuos Lyograft, lyophilized) cancellous bone with retained donor cells, usually mixed with demineralized cortical bone; claimed cell content ranges from about 150,000 to over 3,000,000 cells per cc, with processors variously emphasising MSCs (Osteocel, AlloFuse Select CM) or lineage-committed bone-forming cells (ViviGen). Cryoprotectant is DMSO-based (Trinity, ViaCell) or DMSO-free (VIVEX family, ArthroCell).",
+   "regulatory": {
+    "path": "361-HCTP",
+    "reference": "none (each processor self-determines 361 status under 21 CFR 1271.10(a); no FDA premarket review; no CBA has a 510(k), PMA or BLA)",
+    "us_market_year": 2005,
+    "on_label_indications": [
+     "Homologous use as bone graft / bone void filler for musculoskeletal defects (typical IFU wording: 'treatment of musculoskeletal defects' or 'intended for use as a bone void filler')"
+    ]
+   },
+   "status": "established",
+   "challenge": "FDA has written to this space more than the 'no warning letters to major CBA makers' line suggests: an untitled letter to Parcell Laboratories over PureGen (June 2011), a Warning Letter to RTI over map3 (November 2017; see map3 record), Organogenesis's own 2021 suspension of NuCel as needing a BLA, and the December 2025 Interfyl letter holding a manufacturer responsible for distributor marketing. The criterion-4 tension (products sold on their living cells must not depend on cell metabolic activity for their primary function) is unresolved. FDA's September 2023 safety communication noted there is no FDA-approved donor screening test for active or latent TB; the IFUs read in this sweep (ViaCell 2021, Viable Matrix Plus 2025) list no M. tuberculosis test.",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Buttermann 2026 randomized single-blinded trial (n=175 in the paper) of six posterior graft options in 1-level anterior/posterior fusion: posterior fusion 98% iliac crest, 94% BMP, 85% marrow aspirate, but only 62-67% with three allograft-MSC products (bone-marrow-, adipose- and amnion-derived) vs 50% for historical plain allograft; outcomes similar if the interbody fused.",
+     "caveats": "Single surgeon; commercial products not named in the abstract; historical (not randomized) allograft control; trial registered retrospectively (NCT07187362, 119 enrolled vs 175 reported)."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "III",
+     "evidence_summary": "Okonkwo 2026 systematic review (22 studies 2010-2025, no RCTs): lumbar fusion 82-100%, but no study showed a significant improvement over cell-free allograft or other controls; CBAs cost more than cell-free grafts and less than rhBMP-2. Nolte 2026 matched cohort found no fusion gain from PrimaGen added to rhBMP-2 at 80% higher graft cost.",
+     "caveats": "Heterogeneous fusion assessment, many single-arm sponsor series; UHC cites ECRI 2022 assessments rating lumbar CBA evidence 'inconclusive and very low quality'."
+    },
+    {
+     "application_id": "cervical-acdf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "III",
+     "evidence_summary": "Zakko 2023 matched retrospective ACDF (34 vs 34): ViviGen vs DBM, no difference in fusion at 3, 6 or 12 months. Okonkwo 2026 review: cervical fusion 90-98.5% across 9 studies, none superior to cell-free controls.",
+     "caveats": "ECRI 2022 (cited by UHC): cervical CBA evidence very low quality."
+    },
+    {
+     "application_id": "subtalar-hindfoot-arthrodesis",
+     "tier": "established",
+     "on_label": null,
+     "evidence_grade": "III",
+     "evidence_summary": "Foot Ankle Int 2022 retrospective comparison of 199 forefoot, midfoot and hindfoot arthrodeses: fusion 93% viable cellular allograft (n=81) vs 86% autograft (n=87) vs 84% combined (n=31), P=0.20, no difference in time to fusion or revision. A DePuy-funded prospective CT study (Park 2024, 14 patients, 30 joints) found 76.7% CT union, 50% at the talonavicular joint.",
+     "caveats": "Retrospective comparison; CT union rates run well below radiographic rates in the same category."
+    },
+    {
+     "application_id": "foot-ankle-nonunion",
+     "tier": "emerging",
+     "on_label": null,
+     "evidence_grade": "IV",
+     "evidence_summary": "Single-site retrospective series of Trinity ELITE in 22 patients with nonunion risk factors: 95% fused at 12 months, 100% in those with prior failed fusion, nicotine use, diabetes, neuropathy or osteoporosis.",
+     "caveats": "Small, uncontrolled; 'risk for nonunion' is not established nonunion."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:42421892",
+     "title": "Do Cellular Allografts Improve Spinal Fusion Enough to Justify Their Cost and Potential Risk? A Systematic Review of Efficacy, Safety, and Cost",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Systematic review (no pooled meta-analysis) of 22 studies: no RCTs; high reported fusion rates but no study showed superiority over cell-free allograft; two TB outbreaks noted; CBAs costlier than cell-free grafts, cheaper than rhBMP-2.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-tlif-plif",
+      "cervical-acdf",
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:42285441",
+     "title": "Comparison of posterior cellular bonegraft options for single-level lumbar spinal fusion: a randomized trial",
+     "year": 2026,
+     "design": "RCT",
+     "n": 175,
+     "finding": "Allograft-MSC grafts gave 62-67% posterior fusion vs 98% iliac crest and 94% BMP; cellular allografts had a high cost relative to fusion rate.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    },
+    {
+     "ref": "PMID:37381143",
+     "title": "Anterior Cervical Discectomy and Fusions Supplemented With Cellular or Noncellular Allografts Have Similar Radiographic Fusion and Clinical Outcomes",
+     "year": 2023,
+     "design": "retrospective",
+     "n": 68,
+     "finding": "Matched ACDF cohorts (ViviGen vs DBM in PEEK cages): no difference in motion or bridging-bone fusion at 3, 6 or 12 months; PROMs similar except EQ-5D and PROMIS-physical.",
+     "sponsor_funded": null,
+     "applications": [
+      "cervical-acdf"
+     ]
+    },
+    {
+     "ref": "PMID:36036537",
+     "title": "Comparing Rates of Fusion and Time to Fusion in Viable Cellular Allograft and Autograft",
+     "year": 2022,
+     "design": "retrospective",
+     "n": 199,
+     "finding": "Foot and ankle arthrodeses: fusion 93% viable cellular allograft vs 86% autograft vs 84% combined (P=0.20); no difference in time to fusion or nonunion revision.",
+     "sponsor_funded": null,
+     "applications": [
+      "subtalar-hindfoot-arthrodesis"
+     ]
+    },
+    {
+     "ref": "PMID:39351126",
+     "title": "Clinical and Radiographic Outcomes After Hindfoot and Ankle Arthrodesis Using Cellular Bone Allograft Augmentation: A Short Report",
+     "year": 2024,
+     "design": "prospective-cohort",
+     "n": 14,
+     "finding": "CT-verified union 76.7% of joints (23/30): ankle 2/2, talonavicular 5/10, calcaneocuboid 8/8, subtalar 8/10.",
+     "sponsor_funded": true,
+     "applications": [
+      "subtalar-hindfoot-arthrodesis"
+     ]
+    },
+    {
+     "ref": "PMID:38562146",
+     "title": "Radiographical outcomes of a cellular based allograft following foot/ankle arthrodesis in patients with risk for non-union",
+     "year": 2024,
+     "design": "retrospective",
+     "n": 22,
+     "finding": "Trinity ELITE as primary graft: 21 of 22 patients (95%) fused at 12 months, mean 6 months; no difference by number of risk factors.",
+     "sponsor_funded": false,
+     "applications": [
+      "foot-ankle-nonunion"
+     ]
+    },
+    {
+     "ref": "PMID:35934016",
+     "title": "Nationwide tuberculosis outbreak in the USA linked to a bone graft product: an outbreak report",
+     "year": 2022,
+     "design": "case-series",
+     "n": 113,
+     "finding": "FiberCel lot: 87 of 113 recipients with TB disease, 8 deaths.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    },
+    {
+     "ref": "PMID:38175804",
+     "title": "Second Nationwide Tuberculosis Outbreak Caused by Bone Allografts Containing Live Cells - United States, 2023",
+     "year": 2024,
+     "design": "case-series",
+     "n": 36,
+     "finding": "ViBone Moldable lot: 5 of 36 recipients with confirmed TB, 2 deaths; product was NAAT-negative before release.",
+     "sponsor_funded": false,
+     "applications": [
+      "lumbar-tlif-plif"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "No separate payment: bundled in inpatient fusion MS-DRGs, packaged into OPPS/ASC APCs. Commercial payers that publish policies call the category unproven or experimental: UnitedHealthcare 'Spinal Fusion and Bone Healing Enhancement Products' (2026T0410KK, effective 2026-01-01) lists cell-based allograft products such as MSC products as 'unproven and not medically necessary'; Aetna CPB 0411 lists MSC therapy (AlloStem, Osteocel, Osteocel Plus, Ovation, Trinity Evolution) as experimental for all orthopedic applications including spinal fusion; Cigna 0118 (read via a third-party copy) lists 'allograft materials that undergo enhanced processing to retain and condense inherent cells/growth factors' (Trinity Evolution, Osteocel Plus) as experimental.",
+    "notes": "Because CBAs are bundled, the payer position bites mainly when hospitals itemize implants or when value-analysis committees ask for evidence; the 2026 Colorado cost study ($9,478 vs $5,252 per case) and the 2026 Vanderbilt review are what a VAC will cite. Processor concentration matters: VIVEX alone appears to supply at least five brands; MTF processes Orthofix's Trinity and Virtuos lines."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "PMID:42421892",
+    "PMID:42285441",
+    "https://clinicaltrials.gov/study/NCT07187362",
+    "PMID:37381143",
+    "PMID:36036537",
+    "PMID:39351126",
+    "PMID:38562146",
+    "PMID:35934016",
+    "PMID:38175804",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/spinal-fusion-bone-healing-products.pdf",
+    "https://www.aetna.com/cpb/medical/data/400_499/0411.html",
+    "https://genhealth.ai/policy/cigna/458b0069-bone-graft-substitutes-0118",
+    "https://www.fda.gov/safety/medical-product-safety-information/bone-matrix-product-fda-safety-communication-important-information-human-cell-tissue-and-cellular",
+    "https://foreonline.org/wp-content/uploads/2021/05/10.-Ryaby_Cellular-Bone-Allografts-Castellvi-Spine-Key-Largo-6-May-2021.pdf",
+    "https://www.sec.gov/Archives/edgar/data/1350653/000119312512094811/d270198d10k.htm"
+   ]
+  }
+ ]
+}

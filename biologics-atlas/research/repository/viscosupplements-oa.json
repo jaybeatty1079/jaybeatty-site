@@ -1,0 +1,1984 @@
+{
+ "applications": [],
+ "products": [
+  {
+   "id": "synvisc",
+   "name": "Synvisc / Synvisc-One (hylan G-F 20)",
+   "company": "Sanofi",
+   "ownership_history": "PMA holder shown in openFDA as Sanofi Genzyme Corp. (Genzyme Biosurgery heritage); Sanofi US was still running a Synvisc-One specialty-pharmacy program page dated 01/2026. Earlier chain (Biomatrix, Genzyme, Wyeth ex-US/US rights) not re-sourced.",
+   "category": "viscosupplement",
+   "composition": "Hylan G-F 20: cross-linked hyaluronan (hylan A and B) derived from avian (chicken comb) sources; Synvisc is 2 mL per injection for 3 injections, Synvisc-One is a single 6 mL injection.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P940015 (Synvisc approved 1997-08-08; Synvisc-One added by supplement S012 on 2009-02-26)",
+    "us_market_year": 1997,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to conservative nonpharmacologic therapy and to simple analgesics (e.g., acetaminophen)"
+    ],
+    "course": "Synvisc: 3 injections one week apart; Synvisc-One: 1 injection (per FDA labeling summary in UnitedHealthcare policy 2026D0081M)",
+    "hcpcs": "J7325 (Synvisc or Synvisc-One, per 1 mg)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Chevalier 2010 (n=253): a single 6 mL hylan G-F 20 injection beat saline over 26 weeks on WOMAC A pain but the authors called the margin modest; class meta-analyses find a small, clinically irrelevant average effect.",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA). Sponsor of the Chevalier RCT not confirmed from the abstract."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:19304567",
+     "title": "Single, intra-articular treatment with 6 ml hylan G-F 20 in patients with symptomatic primary osteoarthritis of the knee: a randomised, multicentre, double-blind, placebo controlled trial (Chevalier, Ann Rheum Dis)",
+     "year": 2010,
+     "design": "RCT",
+     "n": 253,
+     "finding": "WOMAC A pain improved more with hylan G-F 20 than saline over 26 weeks; the authors describe the difference as modest.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Buy-and-bill under Medicare Part B/commercial medical benefit with HCPCS J7325 (priced per mg). UnitedHealthcare commercial and exchange policy effective 2026-10-01 lists Synvisc/Synvisc-One as typically excluded (only Durolane, Euflexxa, Gelsyn-3 are covered after criteria).",
+    "notes": "A separate UnitedHealthcare Individual Exchange policy effective 2026-01-01 (from a search summary, not read) named Synvisc among the products it addressed; the combined policy effective 2026-10-01 treats it as typically excluded, so brand-level coverage is moving fast. Sanofi runs a specialty-pharmacy distribution program for Synvisc-One."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P940015&limit=100",
+    "https://pro.campus.sanofi/us/products/synviscone/specialty-pharmacy",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ],
+   "challenge": "Synvisc is the category's original brand; a hiring manager will test whether you know the single-injection (Synvisc-One) and three-injection labels, that hip use is off-label, and that PMA supplements (not new PMAs) carried the product forward."
+  },
+  {
+   "id": "euflexxa",
+   "name": "Euflexxa (1% sodium hyaluronate)",
+   "company": "Ferring Pharmaceuticals",
+   "ownership_history": "PMA approved 2004-12-03 under the name Nuflexxa/NUXFLEXXA, renamed Euflexxa by supplement S002 (2005-10-20); sponsor Ferring Pharmaceuticals Inc. throughout in openFDA.",
+   "category": "viscosupplement",
+   "composition": "1% non-cross-linked sodium hyaluronate made by bacterial fermentation (non-avian, 'BioHA'); 3 weekly injections.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P010029 (original approval 2004-12-03; most recent supplement S040 on 2024-09-23)",
+    "us_market_year": 2005,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to conservative nonpharmacologic therapy and to simple analgesics (e.g., acetaminophen)"
+    ],
+    "course": "3 injections",
+    "hcpcs": "J7323 (Euflexxa, per dose)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Altman 2009 (n=588): 3 weekly Euflexxa injections lowered VAS pain by 25.7 mm versus a smaller fall with saline at 26 weeks, a statistically significant but modest difference; an Actavis/Teva-sponsored RCT of a generic hyaluronate (n=599) also had a Euflexxa arm that beat vehicle.",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA). Pivotal RCT sponsor (Ferring) not confirmed in the abstract; the Actavis trial was a competitor's equivalence study with Euflexxa as the active reference."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:19539353",
+     "title": "A double-blind, randomized, saline-controlled study of the efficacy and safety of EUFLEXXA for treatment of painful osteoarthritis of the knee, with an open-label safety extension (the FLEXX trial) (Altman, Semin Arthritis Rheum)",
+     "year": 2009,
+     "design": "RCT",
+     "n": 588,
+     "finding": "At 26 weeks Euflexxa produced a larger VAS pain reduction than saline (25.7 mm vs a smaller change in the saline arm) and better function and quality-of-life scores.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:21820521",
+     "title": "Safety and efficacy of retreatment with a bioengineered hyaluronate for painful osteoarthritis of the knee: results of the open-label Extension Study of the FLEXX Trial (Altman, Osteoarthritis Cartilage)",
+     "year": 2011,
+     "design": "case-series",
+     "n": null,
+     "finding": "Open-label retreatment extension of FLEXX; supports tolerability of a repeat course but has no control group.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT02495857",
+     "title": "Double-blind randomized study of a generic hyaluronate injectable viscosupplement vs Euflexxa vs vehicle (Actavis)",
+     "year": null,
+     "design": "RCT",
+     "n": 599,
+     "finding": "Registry results: WOMAC pain change at week 26 of -54.49 with Euflexxa versus -36.86 with vehicle (units as posted); the generic arm was -51.43.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Buy-and-bill, HCPCS J7323 per dose. UnitedHealthcare commercial/exchange policy effective 2026-10-01 covers Euflexxa after criteria (with Durolane and Gelsyn-3); no prior authorization required.",
+    "notes": "Euflexxa is one of three UnitedHealthcare-preferred products in the 2026 policy, which is a contracting win; Ferring is private."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P010029&limit=100",
+    "https://pubmed.ncbi.nlm.nih.gov/19539353/",
+    "https://clinicaltrials.gov/study/NCT02495857",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ]
+  },
+  {
+   "id": "durolane",
+   "name": "Durolane (stabilized hyaluronic acid, single injection)",
+   "company": "Bioventus",
+   "ownership_history": "PMA P170007 is held by Bioventus LLC (approved 2017-08-29). Durolane originated as NASHA (non-animal stabilized hyaluronic acid) developed in Sweden; the chain of owners before Bioventus was not re-sourced.",
+   "category": "viscosupplement",
+   "composition": "NASHA: non-animal, stabilized (cross-linked) hyaluronic acid made by bacterial fermentation; single intra-articular injection.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P170007 (approved 2017-08-29)",
+    "us_market_year": 2017,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to conservative nonpharmacological therapy or simple analgesics, e.g., acetaminophen"
+    ],
+    "course": "1 injection",
+    "hcpcs": "J7318 (Durolane, per 1 mg)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "The two published saline-controlled NASHA RCTs missed their primary endpoints: Altman 2004 (n=346) showed no overall difference from placebo, and Arden 2014 (n=218) found no difference at 6 weeks in the primary analysis, with only a post-hoc benefit in patients without effusion.",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA). Both pivotal-type trials failed their primary analysis; the FDA decision rested on the PMA file, which was not read here.",
+     "challenge": "Be ready to explain how a single-injection HA with two missed primary endpoints in the literature won a 2017 PMA and a UnitedHealthcare preferred slot."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:15262244",
+     "title": "Efficacy and safety of a single intra-articular injection of non-animal stabilized hyaluronic acid (NASHA) in patients with osteoarthritis of the knee (Altman, Osteoarthritis Cartilage)",
+     "year": 2004,
+     "design": "RCT",
+     "n": 346,
+     "finding": "NASHA was not superior to placebo for the primary efficacy analysis; patients whose OA was confined to the knee showed significant benefit.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:24168077",
+     "title": "A randomized saline-controlled trial of NASHA hyaluronic acid for knee osteoarthritis (Arden, Curr Med Res Opin)",
+     "year": 2014,
+     "design": "RCT",
+     "n": 218,
+     "finding": "No significant difference in 6-week responder rate (about 30.6% NASHA vs 26% saline) in the main analysis; post-hoc benefit in patients without clinical effusion.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Medicare Part B with HCPCS J7318 (per 1 mg); Bioventus FY2025 10-K says Durolane, Gelsyn-3 and Supartz FX are reimbursed under Part B and that CMS pricing changes lowered Durolane and Gelsyn-3 rates from July 2022. UnitedHealthcare commercial/exchange 2026-10-01 policy covers Durolane after criteria (preferred).",
+    "notes": "Bioventus reported HA products as 49% of 2025 revenue (46% in 2024, 43% in 2023) and flags in risk factors that FDA reclassifying HA from device to drug, or CMS policy shifts, could hit that portfolio."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P170007&limit=100",
+    "https://www.sec.gov/Archives/edgar/data/1665988/000166598826000011/bvs-20251231.htm",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ]
+  },
+  {
+   "id": "gelsyn-3",
+   "name": "Gelsyn-3 (sodium hyaluronate 0.8%; originally Sinovial / Gel-Syn)",
+   "company": "Bioventus",
+   "ownership_history": "PMA holder is IBSA Institut Biochimique SA (P110005, approved 2014-05-09 as Sinovial/Gel-Syn, renamed GELSYN-3 by 2017); Bioventus markets Gelsyn-3 in the US per its FY2025 10-K. The exact IBSA-Bioventus license terms were not located.",
+   "category": "viscosupplement",
+   "composition": "0.8% non-cross-linked sodium hyaluronate from bacterial fermentation; 3 injections.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P110005 (approved 2014-05-09)",
+    "us_market_year": 2014,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to conservative nonpharmacologic therapy and simple analgesics (e.g., acetaminophen)"
+    ],
+    "course": "3 injections",
+    "hcpcs": "J7328 (Gelsyn-3, per 0.1 mg)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "IBSA registered a 381-patient double-blind non-inferiority RCT of Sinovial versus Synvisc (NCT00556608); no published results or saline-controlled brand study were located, so the efficacy claim rests on the PMA file (not read).",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA). Active-comparator design only; no placebo arm found.",
+     "unverified": true
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT00556608",
+     "title": "Efficacy evaluation of intra-articular hyaluronic acid (Sinovial) vs Synvisc in symptomatic knee osteoarthritis: double-blind, randomised non-inferiority study (IBSA)",
+     "year": 2007,
+     "design": "RCT",
+     "n": 381,
+     "finding": "Registered active-comparator non-inferiority RCT; results not located in PubMed or the registry.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "HCPCS J7328 per 0.1 mg; Medicare Part B (Bioventus 10-K). UnitedHealthcare commercial/exchange 2026-10-01 policy covers Gelsyn-3 after criteria (preferred).",
+    "notes": "Bioventus competitors named in its 10-K: Ferring, Fidia, Johnson & Johnson, Zimmer Biomet, Arthrex, EmCyte and Channel-Markers Medical."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P110005&limit=100",
+    "https://clinicaltrials.gov/study/NCT00556608",
+    "https://www.sec.gov/Archives/edgar/data/1665988/000166598826000011/bvs-20251231.htm",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "supartz-fx-visco-3",
+   "name": "Supartz FX and Visco-3 (sodium hyaluronate)",
+   "company": "Seikagaku Corporation",
+   "ownership_history": "One PMA (P980044, Seikagaku Corp.) covers both brands: Supartz approved 2001-01-24, renamed Supartz FX by supplement S025 (2015-05-20), Visco-3 added by S027 (2015-12-21). Bioventus distributes Supartz FX (Bioventus/Seikagaku agreement reported extended through May 2028 by a trade-press snippet, not primary-sourced); Zimmer Biomet is reported to distribute Visco-3.",
+   "category": "viscosupplement",
+   "composition": "Avian-derived (chicken comb) non-cross-linked sodium hyaluronate; Supartz FX 5 weekly injections, Visco-3 3 injections.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P980044 (Supartz 2001-01-24; Visco-3 supplement S027 2015-12-21)",
+    "us_market_year": 2001,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to conservative non-pharmacologic therapy and simple analgesics, e.g., acetaminophen"
+    ],
+    "course": "Supartz FX: 5 injections (UnitedHealthcare lists 3 to 5); Visco-3: 3 injections",
+    "hcpcs": "J7321 (Hyalgan, Supartz or Visco-3, per dose) per UnitedHealthcare 2026 policy; one third-party listing shows a separate J7333 for Visco-3, which was not confirmed"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Five Supartz-vs-saline RCTs (summarized in the GenVisc 850 equivalence paper, Doros 2016) underpin the label; individual trial results were not re-extracted, so the brand claim leans on class meta-analyses that show a small effect.",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA).",
+     "unverified": true
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:27471412",
+     "title": "A method for establishing class III medical device equivalence: sodium hyaluronate (GenVisc 850) for the treatment of knee osteoarthritis (Doros, Med Devices)",
+     "year": 2016,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Bayesian network meta-analysis of five Supartz/Supartz FX vs saline RCTs plus three GenVisc 850 studies found GenVisc 850 non-inferior to Supartz and superior to saline.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Buy-and-bill; HCPCS J7321 (per dose). Bioventus 10-K lists Supartz FX as a Part B reimbursed product. UnitedHealthcare commercial/exchange 2026-10-01 policy: Supartz and Visco-3 typically excluded.",
+    "notes": "Seikagaku is the manufacturer and PMA holder; US go-to-market is split across Bioventus (Supartz FX) and Zimmer Biomet (Visco-3, Gel-One) per trade-press snippets, so confirm current agreements before quoting a rep call."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P980044&limit=100",
+    "https://pubmed.ncbi.nlm.nih.gov/27471412/",
+    "https://www.sec.gov/Archives/edgar/data/1665988/000166598826000011/bvs-20251231.htm",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "monovisc",
+   "name": "Monovisc (single-injection hyaluronan)",
+   "company": "Anika Therapeutics",
+   "ownership_history": "PMA P090031 held by Anika (approved 2014-02-25). US marketing is licensed to J&J MedTech: December 2011 license ran through December 2026, extended on 2025-10-16 to December 2031 (Anika FY2025 10-K). The 10-K also records J&J MedTech's October 2025 plan to divest its orthopaedics business, which would include these products.",
+   "category": "viscosupplement",
+   "composition": "Lightly cross-linked sodium hyaluronate; single 4 mL intra-articular injection (volume per the Petterson RCT).",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P090031 (approved 2014-02-25)",
+    "us_market_year": 2014,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to conservative non-pharmacologic therapy and to simple analgesics (e.g., acetaminophen)"
+    ],
+    "course": "1 injection",
+    "hcpcs": "J7327 (Monovisc, per dose)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Petterson 2019 (n=369): a single 4 mL Monovisc injection had a higher WOMAC pain success rate through 26 weeks than saline (p=0.043), a barely significant primary result.",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA). Authors' funding not confirmed; Anika-sponsored per its PMA program. Monovisc was also the active reference arm in the Cingal trials."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:30159738",
+     "title": "Single intra-articular injection of lightly cross-linked hyaluronic acid reduces knee pain in symptomatic knee osteoarthritis: a multicenter, double-blind, randomized, placebo-controlled trial (Petterson and Plancher, Knee Surg Sports Traumatol Arthrosc)",
+     "year": 2019,
+     "design": "RCT",
+     "n": 369,
+     "finding": "Success rate (>=50% and >=20 mm WOMAC pain improvement through week 26) was higher with Monovisc than saline, p=0.043.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Buy-and-bill, HCPCS J7327 per dose; J&J MedTech sells and prices Monovisc in the US. Anika FY2025 10-K: J&J MedTech was 50% of Anika revenue; Anika says Monovisc and Orthovisc 'remain market leaders' despite pricing pressure and reduced market access. UnitedHealthcare 2026-10-01 policy: typically excluded.",
+    "notes": "Concentration risk for Anika: one licensee, one pending divestiture of that licensee's orthopaedics unit, and payer retrenchment."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P090031&limit=100",
+    "https://www.sec.gov/Archives/edgar/data/898437/000117184326001275/anik20251231_10k.htm",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ]
+  },
+  {
+   "id": "orthovisc",
+   "name": "Orthovisc (high molecular weight hyaluronan)",
+   "company": "Anika Therapeutics",
+   "ownership_history": "PMA P030019 (approved 2004-02-04) held by Anika. Switched to bacterial-fermentation hyaluronan by supplement S009 (2007-10-26). US marketing licensed to J&J MedTech since December 2003; extended most recently from August 2022 through December 2028 and extendable at J&J MedTech's option (Anika FY2025 10-K). A 2026-08-28 supplement (S028) moved manufacturing to single-use components.",
+   "category": "viscosupplement",
+   "composition": "High molecular weight sodium hyaluronate from bacterial fermentation; 3 to 4 injections.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P030019 (approved 2004-02-04)",
+    "us_market_year": 2004,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to conservative non-pharmacologic therapy and to simple analgesics (e.g., acetaminophen)"
+    ],
+    "course": "3 to 4 injections (per UnitedHealthcare policy 2026D0081M)",
+    "hcpcs": "J7324 (Orthovisc, per dose)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Brandt 2001 (n=226): three weekly 30 mg injections beat saline on WOMAC pain over 27 weeks in the analysis population (patients with low contralateral-knee pain, a restricted subgroup).",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA). The positive result is in a post-selected subgroup; Anika-affiliated author (Lavin) on the paper."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:11302304",
+     "title": "Efficacy and safety of intraarticular sodium hyaluronate in knee osteoarthritis (ORTHOVISC Study Group; Brandt, Clin Orthop Relat Res)",
+     "year": 2001,
+     "design": "RCT",
+     "n": 226,
+     "finding": "In patients completing 15 weeks with low contralateral-knee pain at baseline, hyaluronate improved WOMAC pain, global assessments and standing pain from weeks 7 to 27; 58% vs 40% reached >=5-unit pain improvement.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Buy-and-bill, HCPCS J7324 per dose; J&J MedTech sells it. UnitedHealthcare 2026-10-01 policy: typically excluded. Anika 10-K flags a possible CMS change to the reimbursement classification of Orthovisc and Monovisc.",
+    "notes": "The Anika 10-K says labeling in the US limits both products to the knee exclusively. J&J MedTech's announced orthopaedics divestiture (October 2025) is the contract-continuity question to ask any Anika or DePuy contact."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P030019&limit=100",
+    "https://www.sec.gov/Archives/edgar/data/898437/000117184326001275/anik20251231_10k.htm",
+    "https://pubmed.ncbi.nlm.nih.gov/11302304/",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ]
+  },
+  {
+   "id": "gel-one",
+   "name": "Gel-One (cross-linked hyaluronate, Gel-200)",
+   "company": "Seikagaku Corporation",
+   "ownership_history": "PMA P080020 held by Seikagaku Corp. (approved 2011-03-22). Zimmer Biomet is reported (trade press, undated, 2012-2013 start) to be the exclusive US distributor; current term not located.",
+   "category": "viscosupplement",
+   "composition": "Cross-linked hyaluronate derived from chicken combs (Gel-200 in the pivotal trial); single injection.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P080020 (approved 2011-03-22)",
+    "us_market_year": 2011,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to non-pharmacologic therapy, NSAIDs or analgesics, e.g., acetaminophen"
+    ],
+    "course": "1 injection",
+    "hcpcs": "J7326 (Gel-One, per dose)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Strand 2012 (n=379, 2:1 vs phosphate-buffered saline): single-injection Gel-200 beat saline on WOMAC pain over 13 weeks, a short horizon; a retreatment safety analysis (Strand 2016) found no new signal.",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA). Seikagaku authors, 13-week primary window only; 2015 label revision says effectiveness of repeat cycles has not been established."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:22342928",
+     "title": "A multicenter, randomized controlled trial comparing a single intra-articular injection of Gel-200, a new cross-linked formulation of hyaluronic acid, to phosphate buffered saline for treatment of osteoarthritis of the knee (Strand, Osteoarthritis Cartilage)",
+     "year": 2012,
+     "design": "RCT",
+     "n": 379,
+     "finding": "Significant WOMAC pain advantage for Gel-200 at week 13 and favored it at each visit; no related serious adverse events.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:27250845",
+     "title": "Evidence for safety of retreatment with a single intra-articular injection of Gel-200 for treatment of osteoarthritis of the knee from the double-blind pivotal and open-label retreatment trials (Strand, BMC Musculoskelet Disord)",
+     "year": 2016,
+     "design": "case-series",
+     "n": null,
+     "finding": "Retreatment analysis from pivotal and open-label extension data; supports safety of repeat injection, not efficacy.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Buy-and-bill, HCPCS J7326 per dose. UnitedHealthcare 2026-10-01 policy: typically excluded.",
+    "notes": "Zimmer Biomet relationship carried forward in trade press; a Japanese Gel-One co-development deal (Ono) was announced August 2025 and does not affect US rights."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P080020&limit=100",
+    "https://pubmed.ncbi.nlm.nih.gov/22342928/",
+    "https://www.orthoworld.com/seikagaku-enters-u-s-distribution-agreement-with-zimmer-biomet-fo",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "hyalgan",
+   "name": "Hyalgan (sodium hyaluronate)",
+   "company": "Fidia Farmaceutici",
+   "ownership_history": "PMA P950027 held by Fidia Farmaceutici S.P.A. (approved 1997-05-28). US sales historically ran through Sanofi (TREAD-20 trial is Sanofi-sponsored); current US entity is Fidia Pharma USA (Hymovis trial listing).",
+   "category": "viscosupplement",
+   "composition": "Avian-derived (rooster comb) sodium hyaluronate initially; production switched to bacterial fermentation by supplement S009 (2008-05-01); 5 weekly injections.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P950027 (approved 1997-05-28)",
+    "us_market_year": 1997,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to conservative nonpharmacologic therapy and to simple analgesics, e.g., acetaminophen"
+    ],
+    "course": "5 injections",
+    "hcpcs": "J7321 (Hyalgan, Supartz or Visco-3, per dose)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Altman 1998 (n=495): five weekly injections beat placebo on 50-foot-walk pain at 26 weeks by 8.8 mm (p<0.005), with 56% vs 41% reaching a >=20 mm sustained reduction.",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:9818665",
+     "title": "Intraarticular sodium hyaluronate (Hyalgan) in the treatment of patients with osteoarthritis of the knee: a randomized clinical trial (Hyalgan Study Group; Altman, J Rheumatol)",
+     "year": 1998,
+     "design": "RCT",
+     "n": 495,
+     "finding": "Hyalgan improved walking pain 8.8 mm more than placebo at week 26; responders 56% vs 41%.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Buy-and-bill, HCPCS J7321 per dose. UnitedHealthcare 2026-10-01 policy: typically excluded.",
+    "notes": "Five-injection regimen is the longest-course product in the class, a convenience disadvantage versus single-injection rivals."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P950027&limit=100",
+    "https://pubmed.ncbi.nlm.nih.gov/9818665/",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "hymovis",
+   "name": "Hymovis and Hymovis One (HYADD4 hyaluronan hydrogel)",
+   "company": "Fidia Farmaceutici",
+   "ownership_history": "PMA P150010 (Fidia; approved 2015-08-28). Hymovis One (single-injection label) was approved by supplement S005 on 2025-04-09.",
+   "category": "viscosupplement",
+   "composition": "HYADD4: hexadecylamide derivative of hyaluronic acid, non-cross-linked, bacterial origin; Hymovis 2 injections one week apart, Hymovis One 1 injection.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P150010 (approved 2015-08-28; Hymovis One supplement S005 2025-04-09)",
+    "us_market_year": 2015,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to conservative non-pharmacologic therapy or simple analgesics (e.g., acetaminophen)"
+    ],
+    "course": "Hymovis: 2 injections; Hymovis One: 1 injection",
+    "hcpcs": "J7322 (Hymovis or Hymovis One, per 1 mg)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Fidia registered an 800-patient double-blind RCT of Hymovis vs phosphate-buffered saline (NCT01372475) and a 332-patient single-injection HYADD4 study (NCT02187549); neither result set was located, so no brand-level effect estimate is quoted.",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA). Registry-only; Hymovis One approval (2025) means the single-injection data post-date most reviews.",
+     "unverified": true
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT01372475",
+     "title": "Hymovis versus placebo in knee osteoarthritis: multi-centre, double-blind, randomized, placebo-controlled study with open-label extension (Fidia)",
+     "year": 2011,
+     "design": "RCT",
+     "n": 800,
+     "finding": "Completed sponsor RCT; results not located in PubMed or posted on the registry.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Buy-and-bill, HCPCS J7322 (priced per mg). UnitedHealthcare 2026-10-01 policy: Hymovis and Hymovis One typically excluded.",
+    "notes": "Hymovis One in 2025 gives Fidia a single-injection answer to Durolane, Monovisc and Synvisc-One."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P150010&limit=100&sort=decision_date:asc",
+    "https://clinicaltrials.gov/study/NCT01372475",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "triluron",
+   "name": "Triluron (sodium hyaluronate)",
+   "company": "Fidia Farmaceutici",
+   "ownership_history": "PMA P180040 (Fidia; approved 2019-03-26).",
+   "category": "viscosupplement",
+   "composition": "Sodium hyaluronate, 3 weekly injections (composition detail not read).",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P180040 (approved 2019-03-26)",
+    "us_market_year": 2019,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to conservative non-pharmacologic therapy and simple analgesics (e.g., acetaminophen)"
+    ],
+    "course": "3 injections",
+    "hcpcs": "J7332 (Triluron, per 1 mg)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of Triluron in knee OA located (PubMed [tiab] and ClinicalTrials.gov searches, 2026-10-23); approval summary not read.",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Buy-and-bill, HCPCS J7332 (per mg). A separate UnitedHealthcare Individual Exchange policy effective 2026-01-01 (search summary, not read) named Triluron among the products it addressed; the combined 2026-10-01 policy lists it as typically excluded.",
+    "notes": "Priced as a lower-cost Fidia option; no brand-level evidence located."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P180040&limit=100",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "genvisc-850",
+   "name": "GenVisc 850 (sodium hyaluronate)",
+   "company": "OrthogenRx",
+   "ownership_history": "PMA P140005 held by Channel-Markers Medical, LLC (approved 2015-09-02); marketed by OrthogenRx. Ownership relationship between the two names not located.",
+   "category": "viscosupplement",
+   "composition": "Avian-derived non-cross-linked sodium hyaluronate comparable to Supartz/Supartz FX; 3 to 5 injections.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P140005 (approved 2015-09-02)",
+    "us_market_year": 2015,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to conservative non-pharmacologic therapy and simple analgesics, e.g., acetaminophen"
+    ],
+    "course": "3 to 5 injections (UnitedHealthcare lists 3 to 5)",
+    "hcpcs": "J7320 (GenVisc 850, per 1 mg)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "FDA approved GenVisc 850 on 'indistinguishable characteristics' with Supartz/Supartz FX: physical/chemical comparability, one GenVisc-vs-Supartz RCT and a Bayesian network meta-analysis showing non-inferiority to Supartz and superiority to saline (Doros 2016).",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA). Evidence is an indirect network meta-analysis authored with industry ties; a Journal of Rheumatology commentary disputing the ACR knee recommendation disclosed OrthogenRx funding (DOI 10.3899/jrheum.220125, from a search summary).",
+     "challenge": "The first 'equivalence' PMA route for a Class III device: know that it relied on a predicate-like HA and a network meta-analysis rather than a fresh placebo-controlled pivotal."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:27471412",
+     "title": "A method for establishing class III medical device equivalence: sodium hyaluronate (GenVisc 850) for the treatment of knee osteoarthritis (Doros, Med Devices)",
+     "year": 2016,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "GenVisc 850 non-inferior to Supartz/Supartz FX and superior to saline in a Bayesian network meta-analysis; safety similar.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Buy-and-bill, HCPCS J7320 (per mg). UnitedHealthcare 2026-10-01 policy: typically excluded.",
+    "notes": "OrthogenRx competes on price against Bioventus and Fidia; Bioventus names Channel-Markers Medical as a competitor."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P140005&limit=100",
+    "https://pubmed.ncbi.nlm.nih.gov/27471412/",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ]
+  },
+  {
+   "id": "trivisc",
+   "name": "TriVisc (sodium hyaluronate)",
+   "company": "OrthogenRx",
+   "ownership_history": "PMA P160057 held by Channel-Markers Medical, LLC (approved 2017-11-13); marketed by OrthogenRx.",
+   "category": "viscosupplement",
+   "composition": "High molecular weight sodium hyaluronate; 3 injections.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P160057 (approved 2017-11-13)",
+    "us_market_year": 2017,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to conservative non-pharmacologic therapy and simple analgesics (e.g., acetaminophen)"
+    ],
+    "course": "3 injections",
+    "hcpcs": "J7329 (TriVisc, per 1 mg)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published TriVisc study located (PubMed [tiab] and registry searches, 2026-10-23); the PMA basis was not read.",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Buy-and-bill, HCPCS J7329 (per mg). UnitedHealthcare 2026-10-01 policy: typically excluded.",
+    "notes": "Sister product to GenVisc 850 in the OrthogenRx line."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P160057&limit=100",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "synojoynt",
+   "name": "SynoJoynt (1% sodium hyaluronate)",
+   "company": "Arthrex",
+   "ownership_history": "openFDA lists the PMA P170016 applicant as 'Mesoblast' (approved 2018-05-08; manufacturing supplement 2025-12-23), which looks like a data artifact; Arthrex sells it in the US. The actual PMA holder/manufacturer was not confirmed.",
+   "category": "viscosupplement",
+   "composition": "Non-cross-linked 1% sodium hyaluronate; 3 injections one week apart.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "P170016 (approved 2018-05-08)",
+    "us_market_year": 2018,
+    "on_label_indications": [
+     "Treatment of pain in osteoarthritis of the knee in patients who have failed to respond adequately to conservative non-pharmacologic therapy and simple analgesics (e.g., acetaminophen)"
+    ],
+    "course": "3 injections",
+    "hcpcs": "J7331 (SynoJoynt, per 1 mg)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published SynoJoynt study located (PubMed [tiab], registry searches, 2026-10-23); Arthrex cites the FDA summary (P170016B), not read.",
+     "caveats": "Class evidence is weak: Pereira BMJ 2022 and Rutjes 2012 found a clinically irrelevant average effect over saline; AAOS 2021 does not recommend routine use; ACR/AF 2019 conditionally recommends against in the knee. Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Buy-and-bill, HCPCS J7331 (per mg). UnitedHealthcare 2026-10-01 policy: typically excluded.",
+    "notes": "Gives Arthrex a viscosupplement to pair with its orthobiologics (ACP/Angel) portfolio."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/device/pma.json?search=pma_number:P170016&limit=10&sort=decision_date:asc",
+    "https://www.arthrex.com/orthobiologics/synojoynt-1-percent-sodium-hyaluronate",
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "cingal",
+   "name": "Cingal (cross-linked hyaluronate plus triamcinolone hexacetonide)",
+   "company": "Anika Therapeutics",
+   "ownership_history": "Anika Therapeutics (Bedford, MA) owns the product; Anika bought the Aristospan (triamcinolone hexacetonide) NDA in September 2024 and sold it in April 2025 to a manufacturer that will supply the reference drug for the bioequivalence study (FY2025 10-K).",
+   "category": "viscosupplement",
+   "composition": "Monovisc-type cross-linked sodium hyaluronate combined with triamcinolone hexacetonide (steroid dose not re-sourced); single injection; a drug-device combination in the US.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "none (not approved in the US; Anika is pursuing an NDA per its FY2025 10-K); CE marked and sold in more than 50 countries",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None in the US. Ex-US (CE mark): symptomatic relief of knee osteoarthritis; hip, shoulder and ankle studies exist (NCT04640298, NCT04640961, NCT04640974)"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Hangody 2018 (n=368): Cingal beat saline on WOMAC pain through 26 weeks (p=0.0099 at 12 weeks) and was similar to Monovisc from week 6; the 526-patient Cingal 16-02 extension (NCT03390036) found OMERACT-OARSI responder rates at 39 weeks of 91.2% Cingal, 92.4% Monovisc and 93.2% triamcinolone hexacetonide (p=0.81), i.e. no separation among arms at 39 weeks.",
+     "caveats": "Sponsor-funded; authors were Anika consultants. The steroid component, not the HA, likely drives early relief. US marketing needs an NDA; none submitted as of the FY2025 10-K."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28535076",
+     "title": "Intraarticular injection of a cross-linked sodium hyaluronate combined with triamcinolone hexacetonide (Cingal) to provide symptomatic relief of osteoarthritis of the knee: a randomized, double-blind, placebo-controlled multicenter clinical trial (Hangody, Cartilage)",
+     "year": 2018,
+     "design": "RCT",
+     "n": 368,
+     "finding": "Cingal improved on saline through 26 weeks (p=0.0099 at 12 weeks); against HA alone (Monovisc) it showed an early advantage with comparable benefit from about 6 weeks.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT03390036",
+     "title": "Cingal 16-02 trial extension: 39-week follow-up of Cingal vs Monovisc vs triamcinolone hexacetonide",
+     "year": 2017,
+     "design": "RCT",
+     "n": 526,
+     "finding": "Registry results: OMERACT-OARSI responder rate at 39 weeks 91.2% Cingal, 92.4% Monovisc, 93.2% triamcinolone hexacetonide, p=0.8106.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Not marketed in the US; no HCPCS code.",
+    "notes": "Anika FY2025 10-K cites a roughly $1 billion US addressable market, a bioequivalence study started in December 2025 and a Type C meeting in February 2025; no NDA filing or approval date is stated. Cingal is why Anika bought and sold the Aristospan NDA."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/898437/000117184326001275/anik20251231_10k.htm",
+    "https://pubmed.ncbi.nlm.nih.gov/28535076/",
+    "https://clinicaltrials.gov/study/NCT03390036"
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT01891396",
+     "NCT02381652",
+     "NCT03390036"
+    ],
+    "expected_milestone": "NDA submission pending completion of a bioequivalence study initiated December 2025 (Anika FY2025 10-K); no approval timeline stated"
+   },
+   "challenge": "FDA treats HA plus steroid as a combination product needing an NDA, not a PMA; the BE study against Aristospan is the gating item."
+  },
+  {
+   "id": "ha-viscosupplement-class",
+   "name": "Hyaluronic acid viscosupplements as a class: guidelines, Medicare and commercial coverage, OIG",
+   "company": "Multiple (see per-brand records)",
+   "ownership_history": "FDA regulates intra-articular HA as a Class III device (product code MOZ, PMA); the Bioventus FY2025 10-K lists reclassification of HA from device to drug in the US as a business risk.",
+   "category": "viscosupplement",
+   "composition": "Intra-articular hyaluronan or hylan products, cross-linked or not, avian or bacterial origin; courses of 1 to 5 injections.",
+   "regulatory": {
+    "path": "PMA",
+    "reference": "Product code MOZ; per-brand PMAs: P940015, P010029, P170007, P110005, P980044, P090031, P030019, P080020, P950027, P150010, P180040, P140005, P160057, P170016",
+    "us_market_year": 1997,
+    "on_label_indications": [
+     "Knee osteoarthritis pain in patients who failed conservative nonpharmacologic therapy and simple analgesics; no HA PMA carries a hip, shoulder or ankle indication (Anika 10-K: labeling limits use to the knee exclusively)"
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Class evidence is a small average benefit over saline. Pereira BMJ 2022 (169 trials, n=21,163): pain SMD -0.08, about 2 mm on a 100 mm scale, with higher serious adverse event risk; Rutjes 2012 (89 trials, n=12,667): -0.11 in large blinded trials; Miller 2021 (35 RCTs, n=8,078, DePuy Synthes-affiliated) found no serious-AE difference. AAOS 2013 'strong' against, downgraded in the 2021 third edition to not recommended for routine use; ACR/AF 2019 conditionally recommends against HA in the knee and strongly against in the hip.",
+     "caveats": " Label is knee-only: hip, shoulder, ankle, thumb CMC and TMJ use is off-label (no US labeling; ACR 2019 strongly recommends against HA in hip OA). Payer behavior is outrunning the guideline: coverage now depends on brand contracts, not label.",
+     "challenge": "Know that the AAOS rating changed (2013 strong, 2021 moderate and 'not recommended for routine use') and that the ACR knee recommendation is conditional, not strong.",
+     "unverified": true
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:22868835",
+     "title": "Viscosupplementation for osteoarthritis of the knee: a systematic review and meta-analysis (Rutjes, Ann Intern Med)",
+     "year": 2012,
+     "design": "meta-analysis",
+     "n": 12667,
+     "finding": "89 trials; overall effect size -0.37 for pain, but only -0.11 in 18 large blinded-assessment trials, which the authors judged clinically irrelevant; serious adverse event RR 1.41.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36333100",
+     "title": "Viscosupplementation for knee osteoarthritis: systematic review and meta-analysis (Pereira, BMJ)",
+     "year": 2022,
+     "design": "meta-analysis",
+     "n": 21163,
+     "finding": "169 trials; in 24 large placebo-controlled trials (n=8,997) viscosupplementation lowered pain by SMD -0.08 (about 2 mm on a 100 mm scale), below the 0.37 SMD minimal important difference, with higher serious adverse event risk (RR 1.49) in 15 large trials; authors concluded the findings do not support broad use.",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:16625635",
+     "title": "Viscosupplementation for the treatment of osteoarthritis of the knee (Bellamy, Cochrane)",
+     "year": 2006,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "76 RCTs of hyaluronan/hylan products of median quality score 3 of 5; Cochrane update that predates the larger-trial meta-analyses (full effect estimates not re-extracted here).",
+     "sponsor_funded": false,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:31735075",
+     "title": "Safety of intra-articular hyaluronic acid for knee osteoarthritis: systematic review and meta-analysis of randomized trials involving more than 8,000 patients (Miller, Cartilage)",
+     "year": 2021,
+     "design": "meta-analysis",
+     "n": 8078,
+     "finding": "35 RCTs vs saline: no difference in serious adverse events (1.8% vs 1.2%, RR 1.44, 95% CI 0.91-2.26) but more nonserious local reactions (14.5% vs 11.7%); the one safety analysis that argues against the BMJ serious-AE signal.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Buy-and-bill under Medicare Part B and commercial medical benefit with HCPCS J7318-J7332 (descriptors per UnitedHealthcare policy 2026D0081M: J7318 Durolane 1 mg; J7320 GenVisc 850 1 mg; J7321 Hyalgan/Supartz/Visco-3 per dose; J7322 Hymovis 1 mg; J7323 Euflexxa per dose; J7324 Orthovisc per dose; J7325 Synvisc 1 mg; J7326 Gel-One per dose; J7327 Monovisc per dose; J7328 Gelsyn-3 0.1 mg; J7329 TriVisc 1 mg; J7331 SynoJoynt 1 mg; J7332 Triluron 1 mg). A third-party list shows J7333 for Visco-3, not reconciled.",
+    "notes": "MEDICARE: LCD L39260 (Palmetto GBA, JJ/JM, effective 2022-08-21) covers HA for knee OA with radiographic OA, 3 months of failed conservative therapy, failed or contraindicated steroid injection, dose and frequency per FDA label, repeat series no sooner than 6 months and only after response. Medicare Advantage step-therapy programs exist (UnitedHealthcare lists 'Medicare Part B Step Therapy Programs'; CVS Caremark Part B 2026 criteria exist). COMMERCIAL: UnitedHealthcare commercial and exchange policy 2026D0081M effective 2026-10-01 covers only Durolane, Euflexxa and Gelsyn-3 (criteria apply, no prior authorization) and treats Gel-One, GenVisc 850, Hyalgan, Hymovis/Hymovis One, Monovisc, Orthovisc, Supartz, SynoJoynt, Synvisc/Synvisc-One, Triluron, TriVisc and Visco-3 as typically excluded; the June 2024 version required a failed trial of Durolane, Gelsyn-3 or Euflexxa first (search summary). Aetna CPB 0179 covers knee OA only after non-drug therapy plus a 3-month analgesic/steroid trial and treats other joints as not medically necessary (aggregator summary, effective 2026-01-01, unverified). Blue plans: The Rheumatologist reported Blue Cross plans dropping or considering dropping coverage after the 2013 AAOS guideline (dated, unverified); no current Cigna or Blue policy was located. MEDICAID/OTHER: Nebraska Medicaid ended HA coverage for knee OA for dates of service from 2026-01-01; Washington L&I stopped covering HA in March 2024. OIG: work plan project A-07-24-00646 (announced 2024-08-15, active, estimated FY2026 completion) audits whether Medicare paid physicians for HA knee injections properly; no final OIG report exists yet. A 2023 JAMA Internal Medicine study (secondary summary) linked industry payments to HA injection rates. A Part B payment rate of average sales price plus 4.3% appears only in a secondary source (unverified)."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-medical-drug/sodium-hyaluronate.pdf",
+    "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=39260",
+    "https://www.oig.hhs.gov/reports/work-plan/browse-work-plan-projects/joint-pain-management-therapies-hyaluronic-acid-knee-injections/",
+    "https://dhhs.ne.gov/Guidance%20Docs/Health%20Plan%20Advisory%2025-17%20-%20Discontinuation%20of%20Medicaid%20Coverage%20for%20Hyaluronan%20Intra-Articular%20Injections.pdf",
+    "https://lni.wa.gov/patient-care/treating-patients/conditions-and-treatments/hyaluronic-acid-viscosupplementation",
+    "https://d3rx.com/coverage/aetna/viscosupplementation-for-osteoarthritis-cpb-0179",
+    "https://pubmed.ncbi.nlm.nih.gov/31908149/",
+    "https://pubmed.ncbi.nlm.nih.gov/36333100/",
+    "https://pubmed.ncbi.nlm.nih.gov/22868835/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "zilretta",
+   "name": "Zilretta (triamcinolone acetonide extended-release injectable suspension)",
+   "company": "Pacira BioSciences",
+   "ownership_history": "NDA 208845 approved 2017-10-06; openFDA lists sponsor PACIRA PHARMS INC. The pivotal trial was run by Flexion Therapeutics (JBJS affiliations); Pacira's 2021 acquisition of Flexion was not re-sourced here.",
+   "category": "pharmacologic",
+   "composition": "32 mg triamcinolone acetonide in PLGA microspheres, single intra-articular injection.",
+   "regulatory": {
+    "path": "NDA",
+    "reference": "NDA208845 (ORIG approved 2017-10-06; latest supplements 2024)",
+    "us_market_year": 2017,
+    "on_label_indications": [
+     "Management of osteoarthritis pain of the knee (single-injection extended-release corticosteroid)"
+    ],
+    "hcpcs": "J3304 (extended-release triamcinolone microspheres, per 1 mg; unverified)"
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Conaghan 2018 (n=484 treated, phase 3): a single 32 mg injection beat saline on average daily pain at week 12 (primary met) and was compared against 40 mg conventional triamcinolone; 2025 sales were about $116.6 million (preliminary, unaudited), down from $118.1 million in 2024.",
+     "caveats": "Flexion-sponsored; comparator effect over conventional triamcinolone was a secondary endpoint, and conventional steroid is far cheaper. Not a viscosupplement and not interchangeable with other triamcinolone products."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:29664853",
+     "title": "Effects of a single intra-articular injection of a microsphere formulation of triamcinolone acetonide on knee osteoarthritis pain: a double-blinded, randomized, placebo-controlled, multinational study (Conaghan, J Bone Joint Surg Am)",
+     "year": 2018,
+     "design": "RCT",
+     "n": 484,
+     "finding": "FX006 32 mg met the primary endpoint (week-12 average daily pain vs saline) in a 24-week three-arm phase 3 study that also included 40 mg conventional triamcinolone.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:30203101",
+     "title": "Triamcinolone acetonide extended-release in patients with osteoarthritis and type 2 diabetes: a randomized, phase 2 study (Russell, Rheumatology)",
+     "year": 2018,
+     "design": "RCT",
+     "n": null,
+     "finding": "Phase 2 randomized study of extended-release triamcinolone in patients with knee OA and type 2 diabetes (abstract details not extracted here).",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Buy-and-bill under the drug benefit; HCPCS J3304 (unverified). Pacira prioritised EXPAREL in 2025 and split Zilretta and iovera sales teams, which management said disrupted sales.",
+    "notes": "Zilretta is the only FDA-approved (NDA, not PMA) extended-release intra-articular steroid for knee OA; sold against generic triamcinolone and HA."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://api.fda.gov/drug/drugsfda.json?search=products.brand_name:zilretta",
+    "https://pubmed.ncbi.nlm.nih.gov/29664853/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "arthrosamid",
+   "name": "Arthrosamid (2.5% polyacrylamide hydrogel, PAAG)",
+   "company": "Contura International",
+   "ownership_history": "Contura (Denmark); US trials registered under Contura.",
+   "category": "other",
+   "composition": "2.5% cross-linked polyacrylamide, 97.5% water, non-absorbable, biocompatible hydrogel injected once into the knee.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "none; not FDA authorized (a 2025 ISAKOS poster describes US use as off-label); CE mark ex-US (Contura lists 20 May 2020; a secondary source says 2021)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None in the US. Ex-US (CE mark): symptomatic knee osteoarthritis"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "II",
+     "evidence_summary": "A 238-patient randomized, double-blind Contura trial (NCT04045431) completed March 2025 but results were not located; a 2026 review (Knee) says one RCT showed no significant difference from hyaluronic acid, four case series improved WOMAC pain by 15.7 to 20.8 points, and a retrospective cohort found PAAG beat corticosteroid at 6 months but not HA at 3 months.",
+     "caveats": "Mostly open-label series and sponsor-linked authors (Snow has Contura research funding); a non-absorbable injectable with limited long-term imaging data. The reviewing authors advise caution for routine use.",
+     "unverified": true
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:42150308",
+     "title": "Efficacy of novel polyacrylamide hydrogel injection for osteoarthritis (Farhan-Alanie, Knee)",
+     "year": 2026,
+     "design": "meta-analysis",
+     "n": null,
+     "finding": "Narrative review: case series show WOMAC improvement, one RCT found no significant difference from HA, no serious complications, but study quality limits routine recommendation.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT04045431",
+     "title": "Multi-centre randomized controlled double-blind investigation of intra-articular polyacrylamide hydrogel in subjects with knee osteoarthritis followed by open-label extension (Contura)",
+     "year": 2019,
+     "design": "RCT",
+     "n": 238,
+     "finding": "Completed 2025-03-10; no results posted or found.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Not covered in the US because it is not FDA authorized; no HCPCS.",
+    "notes": "Contura runs a US observational study (NCT05057559, LUNA, n=201, active not recruiting); a randomized Arthrosamid-vs-steroid trial is recruiting in Ireland (NCT07489521)."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT04045431",
+    "https://pubmed.ncbi.nlm.nih.gov/42150308/",
+    "https://clinicaltrials.gov/study/NCT05057559"
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT04045431",
+     "NCT05057559"
+    ],
+    "expected_milestone": "No US PMA submission or IDE pivotal located; LUNA observational completion estimated 2029 (search summary)"
+   },
+   "unverified": true
+  },
+  {
+   "id": "lorecivivint",
+   "name": "Lorecivivint (SM04690, Wnt pathway modulator)",
+   "company": "Biosplice Therapeutics",
+   "ownership_history": "Developed by Samumed (now Biosplice).",
+   "category": "pharmacologic",
+   "composition": "Small-molecule CLK/DYRK inhibitor suspension for intra-articular injection once or twice a year.",
+   "regulatory": {
+    "path": "NDA",
+    "reference": "NDA submitted to FDA, announced 2026-01-06 (Biosplice release via press coverage); acceptance and PDUFA date not located",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None yet; sponsor seeks a knee osteoarthritis indication"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Three phase 3 trials missed their primary pain endpoints: STRIDES (NCT05603754, n=499) change in knee pain at week 12 was -3.64 with lorecivivint vs -3.54 with vehicle (p=0.543); OA-10 (NCT04385303, 28 weeks) -2.15 vs -2.22 (p=0.703); OA-11 (NCT03928184, 56 weeks) -2.24 vs -2.49 (p=0.185). Biosplice says the NDA rests on 11 trials including OA-07 (NCT04520607 long-term extension, terminated, n=276), where it reports gains at 6 and 12 months.",
+     "caveats": "Sponsor-funded; the sponsor's positive claims come from extension and post-hoc timepoints, not from a prespecified primary win; the NDA's clinical package is exactly what an FDA reviewer will question.",
+     "challenge": "Be able to say that three phase 3 primary endpoints failed (STRIDES, OA-10, OA-11) and that the NDA is built on a different trial and structural (joint space width) secondaries."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT05603754",
+     "title": "STRIDES: safety and efficacy of lorecivivint (SM04690) for knee osteoarthritis",
+     "year": 2022,
+     "design": "RCT",
+     "n": 499,
+     "finding": "Primary endpoint (week-12 pain NRS) not met: -3.64 lorecivivint vs -3.54 vehicle, difference -0.12 (95% CI -0.53 to 0.28), p=0.543; WOMAC function also null.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:39808288",
+     "title": "A phase 3, 28-week, multicentre, randomised, double-blind, placebo-controlled trial (OA-10) of a single lorecivivint injection (Yazici, Clin Exp Rheumatol)",
+     "year": 2025,
+     "design": "RCT",
+     "n": 496,
+     "finding": "Primary pain endpoint not met (registry: -2.15 vs -2.22, p=0.703).",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:39808286",
+     "title": "A phase 3, 56-week randomised placebo-controlled study (OA-11) with patient-reported and radiographic outcomes (Yazici, Clin Exp Rheumatol)",
+     "year": 2025,
+     "design": "RCT",
+     "n": 501,
+     "finding": "Primary pain endpoint not met (registry: -2.24 vs -2.49, p=0.185).",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not approved; no reimbursement pathway yet.",
+    "notes": "Biosplice is private; an approval would be the first DMOAD-style small molecule for knee OA, but the filing's efficacy support is contested."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT05603754",
+    "https://longevity.technology/news/biosplice-therapeutics-submits-nda-to-fda-for-lorecivivint-to-treat-knee-osteoarthritis/",
+    "https://pubmed.ncbi.nlm.nih.gov/39808288/",
+    "https://pubmed.ncbi.nlm.nih.gov/39808286/"
+   ],
+   "pipeline": {
+    "stage": "under-review",
+    "trials": [
+     "NCT05603754",
+     "NCT04385303",
+     "NCT03928184",
+     "NCT04520607"
+    ],
+    "expected_milestone": "NDA submitted January 2026; FDA filing acceptance and action date not located"
+   },
+   "unverified": true
+  },
+  {
+   "id": "ampion",
+   "name": "Ampion (low molecular weight fraction of human serum albumin, LMWF-5A)",
+   "company": "Ampio Pharmaceuticals (dissolved)",
+   "ownership_history": "Ampio reportedly adopted a wind-down, delisted and was dissolved in 2024 (Fierce Biotech and secondary analysis sites; SEC filings not read).",
+   "category": "pharmacologic",
+   "composition": "Filtered <5 kDa fraction of human serum albumin injected intra-articularly.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "IND (BLA never filed)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "withdrawn",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "The pivotal AP-013 trial (NCT03988023, n=1,043 enrolled) was terminated by the sponsor after DSMB guidance and the registry shows no significant pain difference (p=0.32); earlier phase 3 AP-003-A and phase 2 trials were mixed and the program ended.",
+     "caveats": "Sponsor-funded, company defunct; dissolution date from secondary sources."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT03988023",
+     "title": "AP-013: randomized, double-blind study of an intra-articular injection of Ampion in severe knee osteoarthritis",
+     "year": 2019,
+     "design": "RCT",
+     "n": 1043,
+     "finding": "Terminated early by the sponsor after DSMB guidance; registry primary comparison p=0.32 (no significant difference).",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:24498399",
+     "title": "A randomized clinical trial to evaluate two doses of an intra-articular injection of LMWF-5A in adults with pain due to osteoarthritis of the knee (Bar-Or, PLoS One)",
+     "year": 2014,
+     "design": "RCT",
+     "n": null,
+     "finding": "Randomized trial of two Ampion doses in knee OA pain (abstract details not extracted here).",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Never marketed.",
+    "notes": "Included as the cautionary tale in a crowded DMOAD field."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT03988023",
+    "https://www.fiercebiotech.com/biotech/ampio-prepares-wind-down-after-final-therapeutic-dream-dies"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "sprifermin",
+   "name": "Sprifermin (rhFGF-18)",
+   "company": "Merck KGaA, Darmstadt, Germany (EMD Serono in the US)",
+   "ownership_history": "Merck KGaA (EMD Serono is its US healthcare business; the FORWARD sponsor is listed as EMD Serono R&D Institute).",
+   "category": "pharmacologic",
+   "composition": "Recombinant truncated human fibroblast growth factor 18, given as three weekly intra-articular injections per cycle.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "phase 2 FORWARD (NCT01919164); no phase 3 or filing located",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "FORWARD (n=549, 2-year primary): 100 µg every 6 months increased total femorotibial cartilage thickness by about 0.05 mm over placebo, and WOMAC differences from placebo were not statistically significant; the 5-year follow-up is Eckstein 2021 (PMID 33962962; its abstract was not extracted here).",
+     "caveats": "A structural MRI surrogate with sub-millimeter effect; no phase 3 located; sponsor-funded. Whether Merck KGaA retains the asset was not confirmed."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:31593273",
+     "title": "Effect of intra-articular sprifermin vs placebo on femorotibial joint cartilage thickness in patients with osteoarthritis: the FORWARD randomized clinical trial (Hochberg, JAMA)",
+     "year": 2019,
+     "design": "RCT",
+     "n": 549,
+     "finding": "100 µg every 6 months raised 2-year cartilage thickness by 0.05 mm versus placebo; no significant WOMAC difference.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:33962962",
+     "title": "Long-term structural and symptomatic effects of intra-articular sprifermin in patients with knee osteoarthritis: 5-year results from the FORWARD study (Eckstein, Ann Rheum Dis)",
+     "year": 2021,
+     "design": "RCT",
+     "n": null,
+     "finding": "Five-year follow-up of FORWARD reporting structural and symptomatic outcomes (abstract not extracted here).",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not approved.",
+    "notes": "Frequently cited as the proof that cartilage thickness can be moved without proof that symptoms follow."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/31593273/",
+    "https://clinicaltrials.gov/study/NCT01919164"
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT01919164"
+    ],
+    "expected_milestone": "No phase 3 start located (searched 2026-10-23)"
+   },
+   "unverified": true
+  },
+  {
+   "id": "lna043",
+   "name": "LNA043 (ANGPTL3-derived cartilage-regeneration peptide)",
+   "company": "Novartis",
+   "ownership_history": "Novartis internal program.",
+   "category": "pharmacologic",
+   "composition": "Recombinant angiopoietin-like 3-derived peptide injected intra-articularly.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "phase 2b NCT04864392 terminated; phase 1 published (Gerwin 2022)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "withdrawn",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "The phase 2 knee OA study (NCT04864392, n=576) was terminated early 'due to lack of effect' on primary and secondary endpoints, not safety; a combination study with canakinumab (NCT04814368) also terminated.",
+     "caveats": "Sponsor-funded; a randomized phase 1 was published in Nature Medicine 2022."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT04864392",
+     "title": "Efficacy, safety and tolerability of LNA043 in patients with knee osteoarthritis (phase 2b)",
+     "year": null,
+     "design": "RCT",
+     "n": 576,
+     "finding": "Terminated early for lack of effect on primary and secondary endpoints, not linked to safety.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36456835",
+     "title": "Angiopoietin-like 3-derivative LNA043 for cartilage regeneration in osteoarthritis: a randomized phase 1 trial (Gerwin, Nat Med)",
+     "year": 2022,
+     "design": "RCT",
+     "n": null,
+     "finding": "Randomized phase 1 trial of LNA043 in OA cartilage (abstract details not extracted here).",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not applicable.",
+    "notes": "A negative data point for the structure-modification (DMOAD) approach alongside lorecivivint."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT04864392",
+    "https://pubmed.ncbi.nlm.nih.gov/36456835/"
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT04864392",
+     "NCT04814368"
+    ],
+    "expected_milestone": "Program stopped"
+   },
+   "unverified": true
+  },
+  {
+   "id": "allojoin",
+   "name": "AlloJoin (allogeneic adipose-derived mesenchymal progenitor cells)",
+   "company": "Wuxi Cellular Biopharmaceutical Group",
+   "ownership_history": "Developed by Cellular Biomedicine Group (CBMG); the China trials now list Wuxi Cellular Biopharmaceutical Group Ltd. and Shanghai AbelZeta as sponsors; the corporate chain was not sourced.",
+   "category": "MSC",
+   "composition": "Allogeneic adipose-derived mesenchymal progenitor cells injected intra-articularly for knee OA.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "China phase 3 NCT06570291 (recruiting); phase 2 NCT04208646 completed; no FDA authorization located",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "II",
+     "evidence_summary": "Phase 2 (NCT04208646, n=106, completed 2021) results were not located; a phase 3 (NCT06570291, n=520) began February 2025 in China.",
+     "caveats": "Allogeneic culture-expanded cells would be a 351 biologic requiring a BLA in the US; no US IND or trial was located. Corporate history and current sponsor are unverified."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT06570291",
+     "title": "Allogenic adipose-derived mesenchymal stem cells for the treatment of knee osteoarthritis (phase 3)",
+     "year": 2025,
+     "design": "RCT",
+     "n": 520,
+     "finding": "Recruiting; primary completion estimated December 2026; no results.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT04208646",
+     "title": "Allogenic adipose tissue-derived mesenchymal progenitor cells for the treatment of knee osteoarthritis (phase 2)",
+     "year": 2020,
+     "design": "RCT",
+     "n": 106,
+     "finding": "Completed June 2021; results not located.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not approved in the US.",
+    "notes": "Coordinate with the MSC/cell-therapy slice."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT06570291",
+    "https://clinicaltrials.gov/study/NCT04208646"
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT06570291",
+     "NCT04208646"
+    ],
+    "expected_milestone": "China phase 3 primary completion estimated December 2026"
+   },
+   "unverified": true
+  },
+  {
+   "id": "regenexx",
+   "name": "Regenexx (clinic-network bone marrow concentrate and PRP procedures for knee OA)",
+   "company": "Regenexx / Centeno-Schultz Clinic (Regenerative Sciences, LLC heritage)",
+   "ownership_history": "Procedure brand licensed to a clinic network; Regenerative Sciences, LLC was the defendant in the FDA case below.",
+   "category": "other",
+   "composition": "Not a product: point-of-care autologous bone marrow concentrate and PRP injections (own-clinic protocols); the historical Regenexx-C was a culture-expanded autologous cell product.",
+   "regulatory": {
+    "path": "none-unapproved",
+    "reference": "none; FDA position: Regenexx-C (cultured, expanded cells) was held a drug in United States v. Regenerative Sciences (D.D.C. 2012, aff'd D.C. Cir. 2014, No. 12-5254), requiring BLA/IND; point-of-care concentrates are treated through the BMAC and PRP device-kit pathways (see those records)",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None; cash-pay clinic procedures"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "Centeno's own dose-response series (PMID 26385099) and registry-style papers report symptomatic improvement after BMAC for knee OA; no randomized, independent trial of the Regenexx protocol was located. For PRP and BMAC comparators in knee OA see the prp-bmac-adipose slice, not this record.",
+     "caveats": "Network-authored, uncontrolled data; cash-pay. The 2014 court decision applies to culture-expanded cells, not to same-visit concentrates."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:26385099",
+     "title": "A dose response analysis of a specific bone marrow concentrate treatment protocol for knee osteoarthritis (Centeno, BMC Musculoskelet Disord)",
+     "year": 2015,
+     "design": "registry",
+     "n": null,
+     "finding": "Registry analysis relating nucleated-cell dose to patient-reported outcomes after one BMAC protocol; uncontrolled.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered; patient pays cash.",
+    "notes": "Included only as a class record with the FDA position; PRP knee-OA comparators are in the prp-bmac-adipose slice."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://media.cadc.uscourts.gov/opinions/docs/2014/02/12-5254-1478137.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/26385099/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "renu-amniotic-suspension",
+   "name": "ReNu (cryopreserved amniotic suspension allograft, ASA)",
+   "company": "Organogenesis",
+   "ownership_history": "Organogenesis Holdings; ReNu is the knee OA program.",
+   "category": "amniotic",
+   "composition": "Cryopreserved amniotic membrane and amniotic fluid cells suspension injected intra-articularly.",
+   "regulatory": {
+    "path": "BLA",
+    "reference": "Rolling BLA completed per company release dated 2026-04-28; FDA decision not located",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None yet"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Two phase 3 trials: study 1 (NCT04636229, n=516) showed a 0.7-point WOMAC pain advantage over saline at 6 months (p=0.0177); study 2 (NCT06000410, n=594, reported 2025-09-25) showed 0.5 points with one-sided p=0.0393 versus a prespecified 0.023 threshold, so it missed the primary; the BLA relies on a pooled analysis.",
+     "caveats": "Figures come from company releases via search summaries (release page returned 403), not from a registry or paper. One positive and one negative trial with subjective endpoints is a hard regulatory case.",
+     "challenge": "Know that ReNu is a 351 BLA candidate, unlike marketed 361 amniotic injectables, and that the second phase 3 narrowly missed."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT04636229",
+     "title": "Efficacy of amniotic suspension allograft in patients with osteoarthritis of the knee (phase 3 study 1)",
+     "year": 2020,
+     "design": "RCT",
+     "n": 516,
+     "finding": "Company-reported 0.7-point WOMAC pain advantage at 6 months (p=0.0177); registry has no posted results.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT06000410",
+     "title": "Efficacy of amniotic suspension allograft in patients with osteoarthritis of the knee (phase 3 study 2)",
+     "year": 2023,
+     "design": "RCT",
+     "n": 594,
+     "finding": "Company-reported 0.5-point advantage, one-sided p=0.0393 vs prespecified 0.023 (primary not met); registry has no posted results.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not approved; would be a biologic with a new product code if licensed.",
+    "notes": "Organogenesis completed its rolling BLA submission in April 2026 per press coverage; an FDA action date was not located. See the amniotic-orthopedic-products record for the marketed 361 class."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.nasdaq.com/articles/organogenesis-completed-rolling-bla-submission-renu-knee-osteoarthritis",
+    "https://clinicaltrials.gov/study/NCT04636229",
+    "https://clinicaltrials.gov/study/NCT06000410"
+   ],
+   "pipeline": {
+    "stage": "under-review",
+    "trials": [
+     "NCT04636229",
+     "NCT06000410"
+    ],
+    "expected_milestone": "Rolling BLA completed April 2026 (company release via press); action date not located"
+   },
+   "unverified": true
+  },
+  {
+   "id": "rtx-grt7039",
+   "name": "RTX-GRT7039 (resiniferatoxin, intra-articular)",
+   "company": "Grünenthal",
+   "ownership_history": "Licensed from Sorrento Therapeutics, whose own phase 3 trials were withdrawn (registry); the license chain was not sourced.",
+   "category": "pharmacologic",
+   "composition": "Ultrapotent TRPV1 agonist injected into the knee to silence pain-sensing nerve endings, a non-steroid, non-HA analgesic.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "phase 3 NCT05248386, NCT05449132, NCT05377489; Breakthrough Therapy designation reported by Grünenthal (search summary); no filing located",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None yet"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Three phase 3 trials are complete (about 466-714 patients each). Registry-posted LS-mean WOMAC pain change at week 12 was -3.25 vs -2.99 (single injection, NCT05449132) and -2.96 vs -2.85 (repeat injections, NCT05248386), and week-26 values were near-equal in the repeat study; no p-values are posted and no topline press release was located.",
+     "caveats": "Registry numbers only; effect over placebo appears small. Do not infer a pass or fail.",
+     "unverified": true
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT05449132",
+     "title": "Comparison of a single RTX-GRT7039 and placebo intra-articular injection for pain associated with osteoarthritis of the knee",
+     "year": 2022,
+     "design": "RCT",
+     "n": 466,
+     "finding": "Posted week-12 WOMAC pain LS-mean change -3.25 RTX vs -2.99 placebo; week 26 -3.27 vs -2.82; no p-values posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT05248386",
+     "title": "Efficacy and safety of repeated RTX-GRT7039 injections in knee osteoarthritis",
+     "year": 2022,
+     "design": "RCT",
+     "n": 469,
+     "finding": "Posted week-12 WOMAC pain LS-mean change -2.959 RTX vs -2.847 placebo; week 26 -2.564 vs -2.597; no p-values posted.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not approved.",
+    "notes": "Grünenthal is private; a filing decision was expected in 2025 per its 2023 annual results, outcome not located."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT05248386",
+    "https://clinicaltrials.gov/study/NCT05449132",
+    "https://clinicaltrials.gov/study/NCT05377489"
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT05248386",
+     "NCT05449132",
+     "NCT05377489"
+    ],
+    "expected_milestone": "Submission decision expected 2025 per sponsor; status not located"
+   },
+   "unverified": true
+  },
+  {
+   "id": "pcrx-201",
+   "name": "PCRX-201 (enekinragene inzadenovec, intra-articular IL-1Ra gene therapy)",
+   "company": "Pacira BioSciences",
+   "ownership_history": "Pacira program.",
+   "category": "other",
+   "composition": "Helper-dependent adenoviral vector encoding interleukin-1 receptor antagonist injected once into the knee.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "phase 2 ASCEND NCT06884865 (recruiting); RMAT designation reported by Pacira",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "Two-year phase 1 data (Ann Rheum Dis, August 2026 per Pacira release) reported exploratory improvements in pain, stiffness and function; the phase 2 ASCEND study (n=135, Part A enrollment closed June 2026) has no results, with topline expected by end of 2026.",
+     "caveats": "Open-label exploratory phase 1; gene therapy durability and safety unknown at scale.",
+     "unverified": true
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT06884865",
+     "title": "Safety and tolerability of PCRX-201 in subjects with painful osteoarthritis of the knee (phase 2)",
+     "year": 2025,
+     "design": "RCT",
+     "n": 135,
+     "finding": "Recruiting; topline expected by end of 2026; no results yet.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not approved.",
+    "notes": "Pacira's follow-on to Zilretta in knee OA; RMAT designation per company releases."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT06884865",
+    "https://www.biospace.com/press-releases/pacira-biosciences-announces-publication-of-positive-two-year-phase-1-data-for-pcrx-201-in-annals-of-the-rheumatic-diseases"
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT06884865"
+    ],
+    "expected_milestone": "ASCEND topline by end of 2026 (Pacira release via search)"
+   },
+   "unverified": true
+  },
+  {
+   "id": "jointstem",
+   "name": "JointStem (autologous adipose-derived mesenchymal stem cells)",
+   "company": "Nature Cell Co. (R-Bio)",
+   "ownership_history": "Korean developer Nature Cell; R-Bio sponsors follow-up studies; US regulatory history not sourced.",
+   "category": "MSC",
+   "composition": "Autologous culture-expanded adipose-derived MSCs injected intra-articularly for knee OA.",
+   "regulatory": {
+    "path": "IND-only",
+    "reference": "Korean phase 3 NCT03990805 (completed 2020); US phase 2b/3a NCT04368806 (active, not recruiting); no FDA authorization located",
+    "us_market_year": null,
+    "on_label_indications": [
+     "None in the US"
+    ]
+   },
+   "status": "investigational",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "II",
+     "evidence_summary": "A 260-patient Korean phase 3 (NCT03990805) completed December 2020 and a 173-patient US phase 2b/3a (NCT04368806) is active with primary completion estimated 2027; results were not located.",
+     "caveats": "Autologous culture-expanded cells would require a BLA; marketing status in Korea and any US designation were not verified.",
+     "unverified": true
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT04368806",
+     "title": "Phase 2b/3a study of JointStem in patients with knee osteoarthritis (US)",
+     "year": 2021,
+     "design": "RCT",
+     "n": 173,
+     "finding": "Active, not recruiting; primary completion estimated August 2027; no results.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT03990805",
+     "title": "Phase 3 study of JointStem in osteoarthritis (Korea)",
+     "year": 2019,
+     "design": "RCT",
+     "n": 260,
+     "finding": "Completed December 2020; results not located.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not approved in the US.",
+    "notes": "Coordinate with the MSC/cell-therapy slice; included because no existing atlas record covers it."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT04368806",
+    "https://clinicaltrials.gov/study/NCT03990805"
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT04368806",
+     "NCT03990805"
+    ],
+    "expected_milestone": "US phase 2b/3a primary completion estimated August 2027 (registry)"
+   },
+   "unverified": true
+  }
+ ]
+}

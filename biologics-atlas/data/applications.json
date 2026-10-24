@@ -37,6 +37,25 @@
     "last_reviewed": "2026-10-22"
   },
   {
+    "id": "osteochondral-lesion-talus",
+    "region": "ankle-foot",
+    "subregion": "ankle",
+    "name": "Osteochondral lesion of the talus (OLT): cartilage restoration",
+    "type": "other",
+    "classifications": [
+      {
+        "name": "Berndt and Harty",
+        "summary": "Stages I-IV from subchondral compression to a displaced fragment; Hepple's MRI classification adds cyst formation"
+      }
+    ],
+    "why_biologic": "Bone marrow stimulation is first-line for lesions under about 1 cm2 (roughly 100 mm2); larger, cystic or revision lesions use osteochondral autograft, fresh allograft, particulated juvenile cartilage, or scaffold and cell products, many of them off-label extensions of knee indications.",
+    "autograft_standard": "Osteochondral autograft from the ipsilateral knee, which carries donor-knee pain in a meaningful minority.",
+    "volume_note": "No US annual count exists.",
+    "unverified": true,
+    "sources": [],
+    "last_reviewed": "2026-10-23"
+  },
+  {
     "id": "ankle-arthrodesis",
     "region": "ankle-foot",
     "subregion": "ankle",
@@ -62,6 +81,27 @@
     ],
     "nonunion_note": "Proportional meta-analysis of 38 studies/1,990 ankles fixed with screws: pooled fusion 96% (95% CI 95-98), i.e. about 4% nonunion; complications 15%, reoperation excluding hardware removal 3% (Izzo 2023, PMID 36795152). Older figures: 9% revision with nonunion 65% of revisions (PMID 17768184), 7.7% nonunion in 284 arthroscopic cases (PMID 37212175), 6.1% for single-joint foot/ankle fusions in an umbrella meta-analysis (PMID 35705455).",
     "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "diabetic-foot-ulcer-chronic-wound",
+    "region": "ankle-foot",
+    "subregion": "foot",
+    "name": "Chronic non-healing diabetic foot ulcer: autologous platelet-rich plasma gel (adjacent wound-care application)",
+    "type": "other",
+    "classifications": [
+      {
+        "name": "Wagner / University of Texas grade",
+        "summary": "Depth-based grading of diabetic foot ulcers from superficial (grade 1) to bone involvement and gangrene; PRP gel trials enroll non-infected, non-ischemic ulcers."
+      }
+    ],
+    "why_biologic": "Platelet-derived growth factors in a gel applied to the wound bed to speed granulation and closure; the only musculoskeletal-adjacent PRP use with a national Medicare coverage determination.",
+    "autograft_standard": "No graft. Standard of care is debridement, offloading, infection and perfusion management; becaplermin (rhPDGF-BB gel) is the approved biologic comparator.",
+    "volume_note": "No reliable US count of PRP-treated wounds; Medicare coverage started 2021-04-13 for chronic non-healing diabetic wounds (CMS NCD 270.3).",
+    "sources": [
+      "https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?ncdid=217",
+      "PMID:16799184"
+    ],
+    "last_reviewed": "2026-10-23"
   },
   {
     "id": "diabetic-foot-osteomyelitis-dead-space",
@@ -516,6 +556,86 @@
     ]
   },
   {
+    "id": "cartilage-defect-knee",
+    "region": "femur-knee",
+    "subregion": "knee",
+    "name": "Focal chondral and osteochondral defect of the knee: cartilage restoration",
+    "type": "other",
+    "classifications": [
+      {
+        "name": "ICRS grade",
+        "summary": "International Cartilage Repair Society grades 0-4 by depth; grade 3 full-thickness to the calcified layer, grade 4 through subchondral bone"
+      },
+      {
+        "name": "Outerbridge",
+        "summary": "Arthroscopic grades I-IV from softening to exposed subchondral bone"
+      }
+    ],
+    "why_biologic": "Marrow stimulation (microfracture) is the cheap benchmark but produces fibrocartilage; the biologics are cultured autologous chondrocytes on a scaffold, minced or particulated juvenile cartilage allograft, fresh osteochondral allograft, dehydrated cartilage allograft extracellular matrix and acellular scaffolds that are regulated as devices, 361 tissues or BLA biologics.",
+    "autograft_standard": "Osteochondral autograft transfer (OATS, mosaicplasty) for small lesions and microfracture; limited by donor-site morbidity and lesion size (roughly 2-4 cm2).",
+    "volume_note": "No reliable US annual count; US registries estimate several hundred thousand knee arthroscopies a year find a chondral lesion, a minority of which are treated with a restoration procedure.",
+    "unverified": true,
+    "sources": [],
+    "last_reviewed": "2026-10-23"
+  },
+  {
+    "id": "knee-oa-intraarticular",
+    "region": "femur-knee",
+    "subregion": "knee",
+    "name": "Knee osteoarthritis: intra-articular injection (non-surgical, adjacent)",
+    "type": "other",
+    "classifications": [
+      {
+        "name": "Kellgren-Lawrence",
+        "summary": "Radiographic grades 0-4 by osteophytes, joint-space narrowing, sclerosis and deformity; most injection trials enroll grades 2-3"
+      }
+    ],
+    "why_biologic": "Office-based injections sit beside surgery in every orthobiologics market report: hyaluronic acid viscosupplements (PMA devices), platelet-rich plasma, bone marrow and adipose concentrates, amniotic products and investigational cell and gene therapies. The clinical question is symptom relief and delay of arthroplasty, not bone healing.",
+    "autograft_standard": "No graft. The comparators are corticosteroid injection, saline (placebo) and exercise therapy; the AAOS 2021 guideline gives hyaluronic acid a 'not recommended' rating at moderate strength and PRP a limited rating.",
+    "volume_note": "Medicare Part B paid for roughly 1.1 million hyaluronic acid knee injection claims a year in the late 2010s (OIG and MedPAC analyses); no US count of PRP or cell-based knee injections exists because they are cash-pay.",
+    "unverified": true,
+    "sources": [
+      "https://www.aaos.org/oak3cpg"
+    ],
+    "last_reviewed": "2026-10-23"
+  },
+  {
+    "id": "knee-subchondral-bml",
+    "region": "femur-knee",
+    "subregion": "knee",
+    "name": "Knee subchondral bone marrow lesion (BML) with osteoarthritis: percutaneous subchondral calcium phosphate injection (Subchondroplasty)",
+    "type": "other",
+    "classifications": [],
+    "why_biologic": "Injectable calcium phosphate is placed into the painful BML to fill microtrabecular defects and restore subchondral support; it is a joint-preserving, not a fusion or fracture, use.",
+    "autograft_standard": "No bone-graft standard; the alternatives are NSAIDs, injections, bisphosphonates, activity change and eventually arthroplasty.",
+    "volume_note": "Not sourced: no public US procedure-volume figure with a citable source was located in this sweep.",
+    "sources": [
+      "PMID:41950892",
+      "NCT03112200"
+    ]
+  },
+  {
+    "id": "meniscus-deficiency-knee",
+    "region": "femur-knee",
+    "subregion": "meniscus",
+    "name": "Meniscus deficiency of the knee: scaffold or implant after partial or total meniscectomy (and irreparable meniscal tears)",
+    "type": "other",
+    "classifications": [
+      {
+        "name": "Medial vs lateral, acute vs chronic",
+        "summary": "Implants are used after partial meniscectomy for irreparable tears or in chronic post-meniscectomy pain; intact meniscal rim and horns are required for scaffold fixation; lateral implants are less studied than medial"
+      }
+    ],
+    "why_biologic": "Replace or regenerate lost meniscal tissue to restore load distribution and delay arthritis after meniscectomy; the options are collagen or polyurethane scaffolds that are colonized by host tissue, a synthetic polymer disc (NUsurface), or allograft meniscus transplantation.",
+    "autograft_standard": "No autograft exists; partial meniscectomy is the default for irreparable tears and meniscus allograft transplant is the main alternative (tissue availability, sizing and fixation issues).",
+    "volume_note": "No public US annual volume located for meniscal scaffolds; arthroscopic partial meniscectomy is among the most common orthopedic procedures (volume not sourced here).",
+    "sources": [
+      "PMID:33864114",
+      "PMID:18594088",
+      "PMID:24947329"
+    ]
+  },
+  {
     "id": "atypical-femoral-fracture",
     "region": "femur-knee",
     "subregion": "subtrochanteric and diaphyseal femur",
@@ -721,6 +841,49 @@
     ]
   },
   {
+    "id": "tendinopathy-injection",
+    "region": "general",
+    "subregion": "",
+    "name": "Chronic tendinopathy and fasciopathy: injection therapy (lateral epicondylitis, patellar and Achilles tendinopathy, plantar fasciitis, gluteal tendinopathy)",
+    "type": "other",
+    "classifications": [],
+    "why_biologic": "Office injections of platelet-rich plasma, amniotic suspensions, bone marrow or adipose concentrates compete with corticosteroid and eccentric loading; this is where most direct-to-consumer 'regenerative' marketing sits and where the FDA's 361 versus 351 line is drawn.",
+    "autograft_standard": "No graft; the comparators are corticosteroid injection, saline, dry needling and loading programs.",
+    "volume_note": "No US count; mostly cash-pay.",
+    "unverified": true,
+    "sources": [],
+    "last_reviewed": "2026-10-23"
+  },
+  {
+    "id": "tendon-ligament-repair-augmentation",
+    "region": "general",
+    "subregion": "",
+    "name": "Tendon and ligament repair augmentation (Achilles, ACL, quadriceps and patellar tendon, lateral ankle ligament): scaffolds and patches other than rotator cuff",
+    "type": "other",
+    "classifications": [],
+    "why_biologic": "Collagen, dermal allograft, amniotic and synthetic scaffolds are laid over or into a repair to add strength or induce tissue; the rotator cuff is covered in its own application, this one gathers the rest.",
+    "autograft_standard": "Autograft tendon (hamstring, patellar, quadriceps) for reconstruction; direct repair without augmentation for most acute tears.",
+    "volume_note": "ACL reconstructions in the US are commonly estimated at 100,000-200,000 a year in the literature; no count of augmented repairs exists.",
+    "unverified": true,
+    "sources": [],
+    "last_reviewed": "2026-10-23"
+  },
+  {
+    "id": "benign-bone-cyst-curettage",
+    "region": "general",
+    "subregion": "extremities and pelvis",
+    "name": "Benign bone cyst or tumor (for example unicameral bone cyst, enchondroma): curettage and void filling",
+    "type": "bone-void",
+    "classifications": [],
+    "why_biologic": "After curettage the cavity is filled with a resorbable osteoconductive material in place of autograft or allograft.",
+    "autograft_standard": "Autologous iliac crest or local cancellous graft, or allograft chips; the downside is donor-site pain in children and limited volume.",
+    "volume_note": "Not sourced: no public US procedure-volume figure with a citable source was located in this sweep.",
+    "sources": [
+      "NCT06720142",
+      "PMID:25767429"
+    ]
+  },
+  {
     "id": "osteomyelitis-dead-space",
     "region": "general",
     "subregion": "long bone",
@@ -799,6 +962,25 @@
     ],
     "challenge": "The surgical count comes from a commercial claims database (not all-payer) and the '>20,000 per year' incidence is a literature estimate the paper repeats; both should be presented as such.",
     "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "cartilage-defect-hip",
+    "region": "pelvis-hip",
+    "subregion": "femoral head / acetabulum",
+    "name": "Focal chondral defect of the hip (femoral head or acetabulum, often with femoroacetabular impingement): cartilage restoration",
+    "type": "other",
+    "classifications": [
+      {
+        "name": "ICRS / Outerbridge grade",
+        "summary": "Full-thickness chondral lesions of the femoral head or acetabulum associated with FAI or structural deformity; options are marrow stimulation, particulated or osteochondral allograft, or investigational implants"
+      }
+    ],
+    "why_biologic": "Fill or resurface focal hip cartilage loss to delay arthroplasty in younger patients; no FDA-approved cell or scaffold product is labeled for the hip.",
+    "autograft_standard": "Microfracture or chondroplasty during hip arthroscopy is the common first-line option; durability is limited.",
+    "volume_note": "No public US volume located.",
+    "sources": [
+      "https://clinicaltrials.gov/study/NCT06823089"
+    ]
   },
   {
     "id": "acetabular-pelvic-ring-fracture",
@@ -929,6 +1111,22 @@
     ],
     "challenge": "The total is primary (CDC/HCUP 2019); the 'roughly half' trochanteric share is still a secondary-source proportion.",
     "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "proximal-femur-augmentation",
+    "region": "pelvis-hip",
+    "subregion": "proximal femur",
+    "name": "Prophylactic local augmentation of the osteoporotic proximal femur (fragility-fracture prevention)",
+    "type": "other",
+    "classifications": [],
+    "why_biologic": "A resorbable triphasic implant is injected into the femoral neck and trochanter to form new bone locally, aiming to cut the risk of a second hip fracture faster than drug therapy.",
+    "autograft_standard": "No graft standard; systemic osteoporosis drugs take months to lower hip-fracture risk.",
+    "volume_note": "Not sourced: no public US procedure-volume figure with a citable source was located in this sweep.",
+    "sources": [
+      "PMID:31802158",
+      "PMID:41488884",
+      "NCT04796350"
+    ]
   },
   {
     "id": "subtrochanteric-fracture",
@@ -1713,6 +1911,20 @@
     "challenge": "The cumulative SI-BONE count (over 140,000 since 2009, replacing the earlier 'nearly 150,000' wording) is a company figure from its 8-K. Which graft products are packed in posterior SI systems, and by whom, was still not verified; pooled 'fusion' for posterior interpositional systems rests on company-affiliated reviews.",
     "coverage_note": "CPT: 27279 (lateral/transfixing, since 2015; device-intensive in ASC, 2026 CMS unadjusted ASC $14,518, HOPD APC 5116 $17,914) and 27278 (posterior intra-articular, no transfixation; Category I since 1 Jan 2024 replacing Category III 0775T, which existed 2022-2023; 2026 ASC $15,048, same APC 5116). For 2026 the AMA revised both descriptors: 27279 = transarticular and/or intra-articular device(s) piercing the ilium/sacrum cortices, 27278 = intra-articular device(s) without cortical piercing, so cortical-piercing posterior products (PainTEQ TRAQ, SI-BONE INTRA Ti) bill 27279 and hybrids (posterior in-line plus transfixing screw) bill 27279. Medicare physician fee 2026: 27279 $762; 27278 $441 facility / $13,834 office-based lab (SI-BONE 10-K). Inpatient (rare): ICD-10-PCS 0SG734Z/0SG834Z group to FY2026 MS-DRG 450/451 Single Level Spinal Fusion Except Cervical with/without MCC ($38,782 / $23,507 unadjusted; SI-BONE facility guide Feb 2026). Device C-codes C1889/C1776 are packaged (no separate payment). Medicare coverage: CGS (L39802, KY/OH), Noridian (L39810/L39812, JE/JF; JF retired 23 Oct 2025 into the JE policy) and Palmetto (L39797, JJ/JM) finalized LCDs effective 17 Apr 2025 (Noridian 16 Feb 2025) stating that MI arthrodesis of the SIJ 'WITHOUT placement of a transfixation device is NOT considered medically reasonable and necessary', i.e. 27278/posterior allograft is non-covered in those jurisdictions; the Noridian evidence review quotes ISASS that posterior MI SIJF is 'unproven and not recommended'. SI-BONE's 10-K says these LCDs 'precluding coverage for CPT 27278' reduced demand for INTRA X. NGS/Wellpoint (L36406, revised 1 Apr 2026) and WPS (L36000, rev. 27 Jun 2024) still describe the covered procedure as 'percutaneous insertion of a metallic device across the SIJ' without naming 27278; Novitas and First Coast have no SI fusion LCD that this pass could find. ACR, ASPN and NANS objected to the three 2025 LCDs; the LCDs stand as of Oct 2026. iFuse Bedrock Granite received hospital-outpatient/ASC transitional pass-through from 1 Jan 2025 and iFuse TORQ TNT an NTAP (hardware, not biologics).",
     "last_reviewed": "2026-10-22"
+  },
+  {
+    "id": "ais-posterior-fusion",
+    "region": "spine",
+    "subregion": "thoracolumbar",
+    "name": "Adolescent idiopathic scoliosis: posterior spinal fusion",
+    "type": "fusion",
+    "classifications": [],
+    "why_biologic": "Synthetic ceramic extends or partly replaces iliac crest and local bone in long instrumented fusions, where autograft volume is the limit.",
+    "autograft_standard": "Local spinous-process and rib bone plus iliac crest autograft or allograft; the downside is limited volume and donor-site pain.",
+    "volume_note": "Not sourced: no public US procedure-volume figure with a citable source was located in this sweep.",
+    "sources": [
+      "PMID:12401014"
+    ]
   },
   {
     "id": "adult-deformity",

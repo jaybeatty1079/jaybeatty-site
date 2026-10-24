@@ -14,6 +14,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RES = os.path.join(ROOT, "research")
 OUT = os.path.join(ROOT, "data")
 SLICES = ["spine", "hip-femur", "tibia-knee", "foot-ankle", "upper-extremity", "skull-cmf", "investigational"]
+# 2026-10-23 repository sweep: one file per product category under research/repository/ (merged after the regional slices, so regional records win on conflicts)
+SLICES += sorted("repository/" + f[:-5] for f in os.listdir(os.path.join(RES, "repository")) if f.endswith(".json")) if os.path.isdir(os.path.join(RES, "repository")) else []
 
 # Same product written under different ids by different slices -> canonical id
 PRODUCT_ALIASES = {
@@ -23,6 +25,8 @@ PRODUCT_ALIASES = {
     "chronos-tcp": "chronos", "ria-reamer-irrigator-aspirator": "ria", "pearlmatrix-p15l": "pearlmatrix",
     "nb1-nell-1": "nb1", "osteogrow-c": "osteogrow", "amplex-b2a": "amplex", "norian-srs": "norian",
     "op1-implant": "op-1", "amniotic-foot-ankle": "amniotic-orthopedic-products",
+    # 2026-10-23 repository sweep: the same product written by two category passes
+    "tg-c": "tg-c-tissuegene", "renu-amniotic-suspension": "organogenesis-renu", "nucel": "organogenesis-nucel", "interfyl": "celularity-interfyl",
 }
 # Application ids referenced by products but defined under another id (or not at all -> None drops the reference)
 APP_ALIASES = {
@@ -33,7 +37,7 @@ APP_ALIASES = {
 STATUS_OVERRIDES = {"pearlmatrix": "emerging"}
 
 REGIONS = {"spine","pelvis-hip","femur-knee","tibia","ankle-foot","shoulder-humerus","forearm-wrist-hand","skull-cmf","general"}
-CATS = {"rhBMP","rhPDGF","peptide","DBM","synthetic-ceramic","bioactive-glass","calcium-phosphate-cement","calcium-sulfate","cellular-allograft","structural-allograft","amniotic","PRP","BMAC","MSC","exosome","pharmacologic","other"}
+CATS = {"rhBMP","rhPDGF","peptide","DBM","synthetic-ceramic","bioactive-glass","calcium-phosphate-cement","calcium-sulfate","cellular-allograft","structural-allograft","amniotic","PRP","BMAC","MSC","exosome","pharmacologic","cartilage","soft-tissue","viscosupplement","other"}
 STATUS = {"established","emerging","investigational","off-market","withdrawn"}
 TIERS = {"established","emerging","investigational"}
 GRADES = {"I","II","III","IV","V"}

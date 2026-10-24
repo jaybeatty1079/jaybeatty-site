@@ -31,7 +31,7 @@ One per product (not per SKU). A product can serve many applications.
   "name": "Infuse Bone Graft",
   "company": "Medtronic",
   "ownership_history": "optional: acquisitions/divestitures with years",
-  "category": "rhBMP",          // rhBMP | rhPDGF | peptide | DBM | synthetic-ceramic | bioactive-glass | calcium-phosphate-cement | calcium-sulfate | cellular-allograft | structural-allograft | amniotic | PRP | BMAC | MSC | exosome | pharmacologic | other
+  "category": "rhBMP",          // rhBMP | rhPDGF | peptide | DBM | synthetic-ceramic | bioactive-glass | calcium-phosphate-cement | calcium-sulfate | cellular-allograft | structural-allograft | amniotic | PRP | BMAC | MSC | exosome | pharmacologic | cartilage | soft-tissue | viscosupplement | other   (last three added 2026-10-23 for the repository sweep)
   "composition": "rhBMP-2 on absorbable collagen sponge",
   "regulatory": {
     "path": "PMA",              // PMA | 510k | 361-HCTP | HDE | De-Novo | BLA | NDA | IND-only | IDE-only | none-unapproved

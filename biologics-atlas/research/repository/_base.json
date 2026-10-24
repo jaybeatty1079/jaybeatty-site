@@ -1,0 +1,96 @@
+{
+ "applications": [
+  {
+   "id": "knee-oa-intraarticular",
+   "region": "femur-knee",
+   "subregion": "knee",
+   "name": "Knee osteoarthritis: intra-articular injection (non-surgical, adjacent)",
+   "type": "other",
+   "classifications": [
+    {
+     "name": "Kellgren-Lawrence",
+     "summary": "Radiographic grades 0-4 by osteophytes, joint-space narrowing, sclerosis and deformity; most injection trials enroll grades 2-3"
+    }
+   ],
+   "why_biologic": "Office-based injections sit beside surgery in every orthobiologics market report: hyaluronic acid viscosupplements (PMA devices), platelet-rich plasma, bone marrow and adipose concentrates, amniotic products and investigational cell and gene therapies. The clinical question is symptom relief and delay of arthroplasty, not bone healing.",
+   "autograft_standard": "No graft. The comparators are corticosteroid injection, saline (placebo) and exercise therapy; the AAOS 2021 guideline gives hyaluronic acid a 'not recommended' rating at moderate strength and PRP a limited rating.",
+   "volume_note": "Medicare Part B paid for roughly 1.1 million hyaluronic acid knee injection claims a year in the late 2010s (OIG and MedPAC analyses); no US count of PRP or cell-based knee injections exists because they are cash-pay.",
+   "unverified": true,
+   "sources": [
+    "https://www.aaos.org/oak3cpg"
+   ],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "cartilage-defect-knee",
+   "region": "femur-knee",
+   "subregion": "knee",
+   "name": "Focal chondral and osteochondral defect of the knee: cartilage restoration",
+   "type": "other",
+   "classifications": [
+    {
+     "name": "ICRS grade",
+     "summary": "International Cartilage Repair Society grades 0-4 by depth; grade 3 full-thickness to the calcified layer, grade 4 through subchondral bone"
+    },
+    {
+     "name": "Outerbridge",
+     "summary": "Arthroscopic grades I-IV from softening to exposed subchondral bone"
+    }
+   ],
+   "why_biologic": "Marrow stimulation (microfracture) is the cheap benchmark but produces fibrocartilage; the biologics are cultured autologous chondrocytes on a scaffold, minced or particulated juvenile cartilage allograft, fresh osteochondral allograft, dehydrated cartilage allograft extracellular matrix and acellular scaffolds that are regulated as devices, 361 tissues or BLA biologics.",
+   "autograft_standard": "Osteochondral autograft transfer (OATS, mosaicplasty) for small lesions and microfracture; limited by donor-site morbidity and lesion size (roughly 2-4 cm2).",
+   "volume_note": "No reliable US annual count; US registries estimate several hundred thousand knee arthroscopies a year find a chondral lesion, a minority of which are treated with a restoration procedure.",
+   "unverified": true,
+   "sources": [],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "osteochondral-lesion-talus",
+   "region": "ankle-foot",
+   "subregion": "ankle",
+   "name": "Osteochondral lesion of the talus (OLT): cartilage restoration",
+   "type": "other",
+   "classifications": [
+    {
+     "name": "Berndt and Harty",
+     "summary": "Stages I-IV from subchondral compression to a displaced fragment; Hepple's MRI classification adds cyst formation"
+    }
+   ],
+   "why_biologic": "Bone marrow stimulation is first-line for lesions under about 1 cm2 (roughly 100 mm2); larger, cystic or revision lesions use osteochondral autograft, fresh allograft, particulated juvenile cartilage, or scaffold and cell products, many of them off-label extensions of knee indications.",
+   "autograft_standard": "Osteochondral autograft from the ipsilateral knee, which carries donor-knee pain in a meaningful minority.",
+   "volume_note": "No US annual count exists.",
+   "unverified": true,
+   "sources": [],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "tendinopathy-injection",
+   "region": "general",
+   "subregion": "",
+   "name": "Chronic tendinopathy and fasciopathy: injection therapy (lateral epicondylitis, patellar and Achilles tendinopathy, plantar fasciitis, gluteal tendinopathy)",
+   "type": "other",
+   "classifications": [],
+   "why_biologic": "Office injections of platelet-rich plasma, amniotic suspensions, bone marrow or adipose concentrates compete with corticosteroid and eccentric loading; this is where most direct-to-consumer 'regenerative' marketing sits and where the FDA's 361 versus 351 line is drawn.",
+   "autograft_standard": "No graft; the comparators are corticosteroid injection, saline, dry needling and loading programs.",
+   "volume_note": "No US count; mostly cash-pay.",
+   "unverified": true,
+   "sources": [],
+   "last_reviewed": "2026-10-23"
+  },
+  {
+   "id": "tendon-ligament-repair-augmentation",
+   "region": "general",
+   "subregion": "",
+   "name": "Tendon and ligament repair augmentation (Achilles, ACL, quadriceps and patellar tendon, lateral ankle ligament): scaffolds and patches other than rotator cuff",
+   "type": "other",
+   "classifications": [],
+   "why_biologic": "Collagen, dermal allograft, amniotic and synthetic scaffolds are laid over or into a repair to add strength or induce tissue; the rotator cuff is covered in its own application, this one gathers the rest.",
+   "autograft_standard": "Autograft tendon (hamstring, patellar, quadriceps) for reconstruction; direct repair without augmentation for most acute tears.",
+   "volume_note": "ACL reconstructions in the US are commonly estimated at 100,000-200,000 a year in the literature; no count of augmented repairs exists.",
+   "unverified": true,
+   "sources": [],
+   "last_reviewed": "2026-10-23"
+  }
+ ],
+ "products": []
+}

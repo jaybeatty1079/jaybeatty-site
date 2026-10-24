@@ -1,0 +1,2607 @@
+{
+ "applications": [
+  {
+   "id": "diabetic-foot-ulcer-chronic-wound",
+   "region": "ankle-foot",
+   "subregion": "foot",
+   "name": "Chronic non-healing diabetic foot ulcer: autologous platelet-rich plasma gel (adjacent wound-care application)",
+   "type": "other",
+   "classifications": [
+    {
+     "name": "Wagner / University of Texas grade",
+     "summary": "Depth-based grading of diabetic foot ulcers from superficial (grade 1) to bone involvement and gangrene; PRP gel trials enroll non-infected, non-ischemic ulcers."
+    }
+   ],
+   "why_biologic": "Platelet-derived growth factors in a gel applied to the wound bed to speed granulation and closure; the only musculoskeletal-adjacent PRP use with a national Medicare coverage determination.",
+   "autograft_standard": "No graft. Standard of care is debridement, offloading, infection and perfusion management; becaplermin (rhPDGF-BB gel) is the approved biologic comparator.",
+   "volume_note": "No reliable US count of PRP-treated wounds; Medicare coverage started 2021-04-13 for chronic non-healing diabetic wounds (CMS NCD 270.3).",
+   "sources": [
+    "https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?ncdid=217",
+    "PMID:16799184"
+   ],
+   "last_reviewed": "2026-10-23"
+  }
+ ],
+ "products": [
+  {
+   "id": "arthrex-acp",
+   "name": "Arthrex ACP Double Syringe System and ACP Max PRP System",
+   "company": "Arthrex",
+   "ownership_history": "Privately held (Naples, FL). Arthrex sells its own ACP line and, separately, distributes the Angel cPRP/marrow system (see arthrex-angel). The Genesis Biologics AAPS 510(k) cites the Arthrex Double Syringe (ACP) System (BK190406) as its predicate, so ACP is the reference device for newer ORG clearances.",
+   "category": "PRP",
+   "composition": "Single-use double-syringe device: venous blood is drawn into the outer syringe, spun in a benchtop centrifuge, and the plasma fraction is drawn into the inner syringe (generally described as a leukocyte-poor, low-platelet PRP). An independent benchtop test of four kits (GPS III, SmartPReP2, Magellan, ACP) found three buffy-coat kits at 3-6x baseline platelets and one plasma-sampling kit at only 1.5x; the abstract does not name that kit, but ACP is the plasma-sampling design. ACP Max (2022) is the successor system.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK070069 (Arthrex Double Syringe (ACP, Autologous Conditioned Plasma) System, decision 2008-12-12, FDA product code FMF 'Syringe, piston', 21 CFR 880.5860); BK190406 (Arthrex Double Syringe (ACP) System, 2019-11-06); BK210655 (Arthrex ACP Max PRP System, decision 2022-09-22, product code ORG, 21 CFR 864.9245). CBER-reviewed BK numbers, not K numbers.",
+    "us_market_year": 2008,
+    "on_label_indications": [
+     "BK210655 sits in product code ORG, whose FDA definition is 'preparation of autologous platelet rich plasma from a small sample of peripheral blood for mixing with bone graft to improve handling characteristics'. Arthrex's own ACP Max summary text was not retrievable; the wording is the ORG classification definition.",
+     "The first ACP clearance (BK070069) was filed as a piston syringe (880.5860), not as a platelet separator: the 2008 clearance carries no therapeutic indication at all.",
+     "Not cleared for injection into knees, tendons or any soft tissue. Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "challenge": "A hiring manager will ask why a device cleared as a piston syringe and a bone-graft-handling kit is sold for knee and tendon injections, and and how a plasma-sampling, low-platelet preparation compares with buffy-coat PRP.",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Best brand-specific evidence is negative: a double-blind single-center RCT (n=120 knees, 30 per arm, PRP prepared with the Arthrex ACP-System) found no evidence that PRP, hyaluronic acid or glucocorticoid beat placebo for pain over 6 months (Tschopp 2023).",
+     "caveats": "Single center, low baseline pain (median NRS 32.5), early-stage OA; the ACP-System is a plasma-based, low-platelet preparation. Class-level: meta-analyses of PRP vs HA (Belk 2021, 18 RCTs) favor PRP while the largest placebo-controlled RCT (Bennell 2021, n=288) was negative. Off-label injection use."
+    },
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "established",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level, product-unspecified RCTs in lateral epicondylitis are mixed (Mishra 2014 n=230 positive at 24 weeks only; Peerbooms 2010 n=100 positive vs corticosteroid).",
+     "caveats": "Several investigator-initiated ACP trials are registered (Tampere NCT01851044 lateral epicondylitis n=120; Bispebjerg NCT02417987 Achilles n=60; McMaster NCT01668953 terminated) but no published report naming the Arthrex device was confirmed. Off-label."
+    },
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Registry shows a Schulthess Klinik ACP rotator cuff repair RCT (NCT01266226, n=129, completed) but no report confirmed by search.",
+     "caveats": "Class-level: PRFM and PRP augmentation of cuff repair has been neutral in RCTs (Rodeo 2012 n=79, Castricini 2011 n=88). Off-label."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "On-label only in the narrow sense of preparing PRP to mix with bone graft for handling; the label makes no healing or nonunion claim. Class-level: PRP was inferior to rhBMP-7 for persistent nonunion (Calori 2008, n=120, 68.3% vs 86.7% union). Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:36728848",
+     "title": "A Randomized Trial of Intra-articular Injection Therapy for Knee Osteoarthritis",
+     "year": 2023,
+     "design": "RCT",
+     "n": 120,
+     "finding": "Double-blind single-center trial of glucocorticoid, HA, PRP (prepared with the Arthrex ACP-System) or placebo, 30 knees per arm, KL 1-3: no evidence that any active injection beat placebo for pain within 6 months.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:28210651",
+     "title": "Analysis of Platelet-Rich Plasma Extraction: Variations in Platelet and Blood Components Between 4 Common Commercial Kits",
+     "year": 2017,
+     "design": "preclinical",
+     "n": 3,
+     "finding": "Class-level, includes ACP: Benchtop test of GPS III, SmartPReP2, Magellan and ACP (Device Technologies) on blood from 3 donors: three kits sampling the buffy coat gave 3-6x baseline platelets and white cells while one plasma-sampling kit gave only 1.5x (the abstract does not say which kit; ACP is the double-syringe design that draws plasma).",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:32302218",
+     "title": "Platelet-Rich Plasma Versus Hyaluronic Acid for Knee Osteoarthritis: A Systematic Review and Meta-analysis of Randomized Controlled Trials",
+     "year": 2021,
+     "design": "meta-analysis",
+     "n": 1608,
+     "finding": "Class-level (product not named): 18 level-1 studies (811 PRP, 797 HA patients): WOMAC total improvement 44.7% vs 12.6%; leukocyte-poor PRP gave better IKDC than leukocyte-rich.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:34812863",
+     "title": "Effect of Intra-articular Platelet-Rich Plasma vs Placebo Injection on Pain and Medial Tibial Cartilage Volume in Patients With Knee Osteoarthritis: The RESTORE Randomized Clinical Trial",
+     "year": 2021,
+     "design": "RCT",
+     "n": 288,
+     "finding": "Class-level (product not named): Leukocyte-poor PRP (a commercial product, not named in the abstract) vs saline: 12-month knee pain change -2.1 vs -1.8 (difference -0.4, 95% CI -0.9 to 0.2) and no cartilage-volume benefit.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:23825183",
+     "title": "Efficacy of platelet-rich plasma for chronic tennis elbow: a double-blind, prospective, multicenter, randomized controlled trial of 230 patients",
+     "year": 2014,
+     "design": "RCT",
+     "n": 230,
+     "finding": "Class-level (product not named): Leukocyte-enriched PRP needling vs active control: no difference at 12 weeks (pain improvement 55.1% vs 47.4%, p=.163); at 24 weeks 71.5% vs 56.1% (p=.019) and success 83.9% vs 68.3% (p=.037).",
+     "sponsor_funded": null,
+     "applications": [
+      "tendinopathy-injection"
+     ]
+    },
+    {
+     "ref": "PMID:20448192",
+     "title": "Positive effect of an autologous platelet concentrate in lateral epicondylitis in a double-blind randomized controlled trial: platelet-rich plasma versus corticosteroid injection with a 1-year follow-up",
+     "year": 2010,
+     "design": "RCT",
+     "n": 100,
+     "finding": "Class-level (product not named): PRP vs corticosteroid: VAS success 73% vs 49% at one year (p<.001); the platelet-concentrate system is not named in the abstract.",
+     "sponsor_funded": null,
+     "applications": [
+      "tendinopathy-injection"
+     ]
+    },
+    {
+     "ref": "PMID:19027898",
+     "title": "Application of rhBMP-7 and platelet-rich plasma in the treatment of long bone non-unions: a prospective randomised clinical study on 120 patients",
+     "year": 2008,
+     "design": "RCT",
+     "n": 120,
+     "finding": "Class-level (product not named): Persistent long-bone nonunions: union in 86.7% with rhBMP-7 vs 68.3% with PRP; PRP was the weaker arm.",
+     "sponsor_funded": null,
+     "applications": [
+      "general-long-bone-nonunion"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered for musculoskeletal use: cash-pay; kit is a consumable. Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Arthrex sells ACP direct through its large US sales force, typically paired with the Angel system and the Thrombinator; the ACP Max and 2024 Thrombinator clearances show Arthrex keeps refreshing the ORG paperwork. Gap to probe: leukocyte-poor ACP vs leukocyte-rich Angel positioning."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK070069",
+    "https://fda.innolitics.com/device/BK190406",
+    "https://fda.innolitics.com/device/BK210655",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK210655",
+    "https://api.fda.gov/device/classification.json?search=product_code:ORG",
+    "https://pubmed.ncbi.nlm.nih.gov/36728848/",
+    "https://pubmed.ncbi.nlm.nih.gov/28210651/",
+    "https://pubmed.ncbi.nlm.nih.gov/32302218/",
+    "https://pubmed.ncbi.nlm.nih.gov/34812863/",
+    "https://clinicaltrials.gov/study/NCT01851044",
+    "https://clinicaltrials.gov/study/NCT02417987",
+    "https://clinicaltrials.gov/study/NCT01266226",
+    "https://fda.innolitics.com/device/BK230807"
+   ]
+  },
+  {
+   "id": "arthrex-thrombinator",
+   "name": "Arthrex Thrombinator System (autologous thrombin/serum)",
+   "company": "Arthrex",
+   "category": "PRP",
+   "composition": "Single-use device that makes autologous serum (a thrombin source) from anticoagulated or non-anticoagulated blood, platelet-poor plasma or PRP, to activate or gel PRP prepared with Arthrex Angel, ACP or ACP Max; replaces bovine thrombin.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK170144 (Thrombinator System for use with the Arthrex Angel cPRP System, decision 2018-05-10); BK180299 (Arthrex Thrombinator System, 2019-03-07); BK241060 (Arthrex Thrombinator System, decision 2024-04-24, product code ORG).",
+    "us_market_year": 2018,
+    "on_label_indications": [
+     "BK241060: designed for the preparation of autologous serum from anticoagulated or non-anticoagulated peripheral blood, platelet-poor plasma or PRP 'that is to be mixed with PRP and autograft or allograft bone prior to application to a bony defect for improving handling characteristics'; for use with the Arthrex Angel, Double Syringe (ACP) and ACP Max PRP systems.",
+     "No clinical indication; clinical data in the summary are bench-level. Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "On-label only as an activator mixed with PRP and bone graft for handling; no union or healing claim. The ACP/Angel PRP it activates is class-level evidence only (see arthrex-acp, arthrex-angel). Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not separately reimbursed; consumable inside the PRP preparation. Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Add-on to the Arthrex PRP stack; the 2024 summary names Angel, ACP and ACP Max as the host systems, locking the accessory to Arthrex's own kits."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK241060",
+    "https://fda.innolitics.com/device/BK170144",
+    "https://fda.innolitics.com/device/BK180299",
+    "https://api.fda.gov/device/classification.json?search=product_code:ORG"
+   ]
+  },
+  {
+   "id": "arthrex-vortex-needle",
+   "name": "Arthrex Vortex Threaded Bone Marrow Recovery Needle",
+   "company": "Arthrex",
+   "category": "BMAC",
+   "composition": "Threaded bone marrow aspiration needle sold alongside the Angel system for iliac crest and other marrow harvest; a harvest accessory, not a concentrator.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K213213 (decision 2021-11-19, product code KNW; predicate Ranfac Bone Marrow Aspiration Needle K131157)",
+    "us_market_year": 2021,
+    "on_label_indications": [
+     "Intended for use in aspirating bone marrow.",
+     "No claim about the use of the aspirate (joint injection, osteonecrosis, nonunion). Regulatory frame for every BMAC system: the 510(k)s (product codes JQC, QBV, ORG) clear a point-of-care centrifuge kit to prepare a bone marrow concentrate, or PRP to be mixed with bone graft; several state 'the safety and effectiveness of this device for in vivo indications for use has not been established'. Injection of BMAC into a joint, tendon or osteonecrotic femoral head is an off-label use of the device. FDA treats the autologous marrow product as outside premarket review (not an HCT/P when minimally manipulated and used homologously, 21 CFR 1271.3(d)(4); or same-surgical-procedure exception) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level: BMAC equalled PRP at 2 years in one RCT (Anz 2022, n=90); another RCT-level signal is lacking.",
+     "caveats": "The needle clearance covers aspiration only. Off-label use of the aspirate."
+    },
+    {
+     "application_id": "femoral-head-osteonecrosis-core-decompression",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level: Hernigou's 116-patient series was positive (no control), but two RCTs of BMAC with core decompression found no benefit (Hauzeur 2018; Pepke 2016).",
+     "caveats": "The needle clearance covers aspiration only. Off-label use of the aspirate."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level: Hernigou 2005 (n=60 tibial nonunions, 53 united) is an uncontrolled series.",
+     "caveats": "The needle clearance covers aspiration only. Off-label use of the aspirate."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:35289231",
+     "title": "Bone Marrow Aspirate Concentrate Is Equivalent to Platelet-Rich Plasma for the Treatment of Knee Osteoarthritis at 2 Years: A Prospective Randomized Trial",
+     "year": 2022,
+     "design": "RCT",
+     "n": 90,
+     "finding": "Class-level (system not specified in abstract): BMAC vs leukocyte-rich PRP: no difference in IKDC or WOMAC over 24 months; both improved from baseline, BMAC not superior (NCT03289416). Enrollment count from the registry.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:28988340",
+     "title": "Inefficacy of autologous bone marrow concentrate in stage three osteonecrosis: a randomized controlled double-blind trial",
+     "year": 2018,
+     "design": "RCT",
+     "n": 38,
+     "finding": "Class-level: Core decompression with BMAC vs without in stage 3 osteonecrosis (23 hips per arm, 19 patients per arm): 15 of 23 hips in each arm needed THR; BMAC added nothing.",
+     "sponsor_funded": null,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    },
+    {
+     "ref": "PMID:15995108",
+     "title": "Percutaneous autologous bone-marrow grafting for nonunions. Influence of the number and concentration of progenitor cells",
+     "year": 2005,
+     "design": "case-series",
+     "n": 60,
+     "finding": "Class-level: 60 noninfected atrophic tibial nonunions injected with 20 cm3 concentrated marrow: 53 united; union required more than 1500 progenitors/cm3 and about 55,000 total progenitors; no control arm and no commercial kit named.",
+     "sponsor_funded": null,
+     "applications": [
+      "general-long-bone-nonunion"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered for orthopedic use: cash-pay. Bone marrow harvest codes bill separately for the surgeon when done with an operation (inpatient bundled in MS-DRG).",
+    "notes": "Arthrex bundles the needle with Angel; competes with Ranfac Marrow Cellution (side-port needle) and Jamshidi-type needles that cost a fraction of the price."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/K213213",
+    "https://api.fda.gov/device/510k.json?search=k_number:K213213&limit=1",
+    "https://pubmed.ncbi.nlm.nih.gov/35289231/",
+    "https://pubmed.ncbi.nlm.nih.gov/28988340/",
+    "https://pubmed.ncbi.nlm.nih.gov/15995108/"
+   ]
+  },
+  {
+   "id": "zimmer-biomet-gps",
+   "name": "GPS II / GPS III / GPS III Mini Platelet Concentrate Separation Kits, Plasmax and Clotalyst",
+   "company": "Zimmer Biomet (Biomet Biologics, Warsaw, IN)",
+   "ownership_history": "Biomet Biologics developed GPS (Gravitational Platelet Separation); Zimmer acquired Biomet in June 2015 to form Zimmer Biomet. Biomet Biologics remains the applicant on the 2023 nSTRIDE PRP clearance.",
+   "category": "PRP",
+   "composition": "Disposable tube-in-tube separator spun in a benchtop centrifuge: a 'buffy coat' method that returns platelet concentrate with white cells (leukocyte-rich PRP). Plasmax concentrates plasma proteins; Clotalyst makes autologous thrombin to gel the concentrate.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "Original GPS kit K030555 (2003-04-11, JQC); GPS II BK040036 (2004-06-18, Blood Bank Supplies KSS 864.9050); GPS II with Plasmax BK070003 (2007-02-22, KSS); GPS III BK070026 (2007-06-06, KSS); GPS III Mini with Clotalyst BK080004 (FDA record: received 2008-02-04, decision date shown 2017-09-14, product code FMF piston syringe); Clotalyst kit with GPS III BK110040 (2011-12-23, not opened on the FDA site).",
+    "us_market_year": 2003,
+    "on_label_indications": [
+     "The 2004-2007 GPS clearances were filed as 'Blood Bank Supplies' (21 CFR 864.9050), the Clotalyst/GPS III Mini clearance as a piston syringe: none is filed under the bone-graft-handling code. The 2023 nSTRIDE PRP summary cites GPS III (BK070026) as its predicate for 'point of care processing of autologous blood for bone graft handling applications', which indicates the GPS III label has the same graft-handling scope; the GPS III summary text itself was not retrievable.",
+     "Not cleared for injection into joints or tendons. Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level: PRP vs HA meta-analysis (Belk 2021, 18 RCTs) favors PRP; RESTORE (Bennell 2021, n=288) found no benefit over saline.",
+     "caveats": "GPS is a leukocyte-rich preparation; Belk 2021 found leukocyte-poor PRP gave better IKDC than leukocyte-rich. Off-label injection."
+    },
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "established",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). The lateral epicondylitis RCTs (Mishra 2014 n=230, Peerbooms 2010 n=100) are widely attributed to GPS-type systems, but the abstracts do not name the device and none was confirmed.",
+     "caveats": "Do not attribute the epicondylitis RCTs to GPS without the methods section. Off-label injection."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Graft handling on-label by inference from the nSTRIDE PRP predicate citation; no union claim. Class-level: Calori 2008 (n=120) PRP 68.3% union vs rhBMP-7 86.7%. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "established",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level: a retrospective matched series of an autologous growth factor gel in instrumented PLF showed no fusion benefit (Carreon 2005, 76 vs 76).",
+     "caveats": "Mixing with graft for handling is the on-label scope; no fusion-rate claim. Spine PRP evidence is weak and mostly negative. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28210651",
+     "title": "Analysis of Platelet-Rich Plasma Extraction: Variations in Platelet and Blood Components Between 4 Common Commercial Kits",
+     "year": 2017,
+     "design": "preclinical",
+     "n": 3,
+     "finding": "Class-level, includes GPS III among four kits: Benchtop test of GPS III, SmartPReP2, Magellan and ACP (Device Technologies) on blood from 3 donors: three kits sampling the buffy coat gave 3-6x baseline platelets and white cells while one plasma-sampling kit gave only 1.5x (the abstract does not say which kit; ACP is the double-syringe design that draws plasma).",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:32302218",
+     "title": "Platelet-Rich Plasma Versus Hyaluronic Acid for Knee Osteoarthritis: A Systematic Review and Meta-analysis of Randomized Controlled Trials",
+     "year": 2021,
+     "design": "meta-analysis",
+     "n": 1608,
+     "finding": "Class-level (product not named): 18 level-1 studies (811 PRP, 797 HA patients): WOMAC total improvement 44.7% vs 12.6%; leukocyte-poor PRP gave better IKDC than leukocyte-rich.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:23825183",
+     "title": "Efficacy of platelet-rich plasma for chronic tennis elbow: a double-blind, prospective, multicenter, randomized controlled trial of 230 patients",
+     "year": 2014,
+     "design": "RCT",
+     "n": 230,
+     "finding": "Class-level (product not named): Leukocyte-enriched PRP needling vs active control: no difference at 12 weeks (pain improvement 55.1% vs 47.4%, p=.163); at 24 weeks 71.5% vs 56.1% (p=.019) and success 83.9% vs 68.3% (p=.037).",
+     "sponsor_funded": null,
+     "applications": [
+      "tendinopathy-injection"
+     ]
+    },
+    {
+     "ref": "PMID:19027898",
+     "title": "Application of rhBMP-7 and platelet-rich plasma in the treatment of long bone non-unions: a prospective randomised clinical study on 120 patients",
+     "year": 2008,
+     "design": "RCT",
+     "n": 120,
+     "finding": "Class-level (product not named): Persistent long-bone nonunions: union in 86.7% with rhBMP-7 vs 68.3% with PRP; PRP was the weaker arm.",
+     "sponsor_funded": null,
+     "applications": [
+      "general-long-bone-nonunion"
+     ]
+    },
+    {
+     "ref": "PMID:15864142",
+     "title": "Platelet gel (AGF) fails to increase fusion rates in instrumented posterolateral fusions",
+     "year": 2005,
+     "design": "retrospective",
+     "n": 152,
+     "finding": "Class-level (different platelet-gel system): 76 instrumented PLFs with iliac crest graft plus autologous growth factor platelet gel vs matched controls: nonunion 25% vs 17% (p=.18), no benefit. System is a proprietary platelet-gel method, not one of the brands in this file.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Zimmer Biomet's PRP franchise is GPS III plus nSTRIDE; the clearance trail (blood-bank supply, syringe, then ORG) is a good talking point on how loosely PRP kits are classified. Several BK numbers are old and the commercial status of each GPS SKU was not confirmed."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK040036",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK070003",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK070026",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK080004",
+    "https://fda.innolitics.com/device/BK110040",
+    "https://fda.innolitics.com/device/BK230844",
+    "https://api.fda.gov/device/classification.json?search=product_code:ORG",
+    "https://pubmed.ncbi.nlm.nih.gov/28210651/",
+    "https://pubmed.ncbi.nlm.nih.gov/15864142/"
+   ]
+  },
+  {
+   "id": "zimmer-biomet-biocue",
+   "name": "BioCUE Platelet Concentration System",
+   "company": "Zimmer Biomet (Biomet Biologics)",
+   "ownership_history": "Biomet Biologics; Zimmer Biomet since 2015.",
+   "category": "PRP",
+   "composition": "Disposable platelet concentration kit for a benchtop centrifuge; positioned for PRP and, per the existing bmac record, also listed among BMAC systems.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK100027 (BioCUE Platelet Concentration Kit, decision 2010-05-26, product code JQC, 21 CFR 862.2050 'Centrifuges for clinical use')",
+    "us_market_year": 2010,
+    "on_label_indications": [
+     "Filed as a clinical centrifuge kit (JQC): the clearance covers a laboratory/point-of-care centrifuge preparation; no therapeutic or bone-graft-handling indication was retrieved. Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Cleared as a centrifuge kit; any joint injection is off-label. Brand-level evidence absent."
+    },
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Cleared as a centrifuge kit; any tendon injection is off-label."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Overlaps GPS III inside Zimmer Biomet; the BioCUE clearance is a centrifuge-kit filing rather than an ORG filing, so its stated use is narrower than the marketing. Commercial status of BioCUE was not confirmed."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK100027",
+    "https://fda.innolitics.com/device/BK100027"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "zimmer-biomet-marrowstim",
+   "name": "MarrowStim Concentration System (MarrowStim and MarrowStim Mini kits)",
+   "company": "Zimmer Biomet (Biomet Biologics)",
+   "ownership_history": "Biomet Biologics; Zimmer Biomet since 2015.",
+   "category": "BMAC",
+   "composition": "Disposable kit and benchtop centrifuge producing a bone marrow concentrate and, from a blood sample, platelet-poor plasma and platelet concentrate. Developed with the Harvest SmartPReP2 as its predicate.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K071934 (MarrowStim Concentration Kit and MarrowStim Mini Concentration Kit, decision 2007-10-11, product code JQC; predicate Harvest SmartPReP2 K052925); BK090008 (MarrowStim Concentration System, 2009-12-18)",
+    "us_market_year": 2007,
+    "on_label_indications": [
+     "Intended 'in the clinical laboratory or intraoperatively at point-of-care for the safe and rapid preparation of platelet poor plasma and platelet concentrate from a small sample of blood and for preparation of a cell concentrate from bone marrow'. No in vivo therapeutic indication. Regulatory frame for every BMAC system: the 510(k)s (product codes JQC, QBV, ORG) clear a point-of-care centrifuge kit to prepare a bone marrow concentrate, or PRP to be mixed with bone graft; several state 'the safety and effectiveness of this device for in vivo indications for use has not been established'. Injection of BMAC into a joint, tendon or osteonecrotic femoral head is an off-label use of the device. FDA treats the autologous marrow product as outside premarket review (not an HCT/P when minimally manipulated and used homologously, 21 CFR 1271.3(d)(4); or same-surgical-procedure exception) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "challenge": "MarrowStim's best-known trial was in critical limb ischemia (MOBILE, NCT01049919, terminated at 153 patients), not orthopedics; an ortho evidence pitch has to rest on class-level BMAC data.",
+   "applications": [
+    {
+     "application_id": "femoral-head-osteonecrosis-core-decompression",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level: Hernigou's 116-patient series (no control) vs two RCTs finding no benefit of BMAC (Hauzeur 2018; Pepke 2016).",
+     "caveats": "Off-label; the cleared use is preparing the concentrate."
+    },
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level: BMAC equalled PRP over 24 months (Anz 2022, n=90).",
+     "caveats": "Off-label injection."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level: uncontrolled series (Hernigou 2005, n=60, 53 united).",
+     "caveats": "Off-label; Zimmer Biomet's own pivotal-type work with MarrowStim was in limb ischemia."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:12461352",
+     "title": "Treatment of osteonecrosis with autologous bone marrow grafting",
+     "year": 2002,
+     "design": "prospective-cohort",
+     "n": 116,
+     "finding": "Class-level: 189 hips in 116 patients treated with core decompression plus concentrated autologous marrow, followed 5 to 10 years; outcomes tracked the number of progenitor cells transplanted; no control arm; marrow concentrated on a cell separator, no commercial kit named.",
+     "sponsor_funded": null,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    },
+    {
+     "ref": "PMID:28988340",
+     "title": "Inefficacy of autologous bone marrow concentrate in stage three osteonecrosis: a randomized controlled double-blind trial",
+     "year": 2018,
+     "design": "RCT",
+     "n": 38,
+     "finding": "Class-level: Core decompression with BMAC vs without in stage 3 osteonecrosis (23 hips per arm, 19 patients per arm): 15 of 23 hips in each arm needed THR; BMAC added nothing.",
+     "sponsor_funded": null,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    },
+    {
+     "ref": "PMID:27114808",
+     "title": "Core Decompression and Autologous Bone Marrow Concentrate for Treatment of Femoral Head Osteonecrosis: A Randomized Prospective Study",
+     "year": 2016,
+     "design": "RCT",
+     "n": 24,
+     "finding": "Class-level: 24 patients, core decompression with or without BMAC (Sepax device): no difference in clinical outcome or head survival over two years.",
+     "sponsor_funded": null,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    },
+    {
+     "ref": "PMID:35289231",
+     "title": "Bone Marrow Aspirate Concentrate Is Equivalent to Platelet-Rich Plasma for the Treatment of Knee Osteoarthritis at 2 Years: A Prospective Randomized Trial",
+     "year": 2022,
+     "design": "RCT",
+     "n": 90,
+     "finding": "Class-level (system not named in abstract): BMAC vs leukocyte-rich PRP: no difference in IKDC or WOMAC over 24 months; both improved from baseline, BMAC not superior (NCT03289416). Enrollment count from the registry.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:15995108",
+     "title": "Percutaneous autologous bone-marrow grafting for nonunions. Influence of the number and concentration of progenitor cells",
+     "year": 2005,
+     "design": "case-series",
+     "n": 60,
+     "finding": "Class-level: 60 noninfected atrophic tibial nonunions injected with 20 cm3 concentrated marrow: 53 united; union required more than 1500 progenitors/cm3 and about 55,000 total progenitors; no control arm and no commercial kit named.",
+     "sponsor_funded": null,
+     "applications": [
+      "general-long-bone-nonunion"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered for orthopedic use: cash-pay. Bone marrow harvest codes bill separately for the surgeon when done with an operation (inpatient bundled in MS-DRG).",
+    "notes": "A mid-2000s BMAC kit now overshadowed by Arthrex Angel and EmCyte in ortho; commercial availability in 2026 not confirmed."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/K071934",
+    "https://fda.innolitics.com/device/BK090008",
+    "https://clinicaltrials.gov/study/NCT01049919",
+    "https://clinicaltrials.gov/study/NCT02474121",
+    "https://pubmed.ncbi.nlm.nih.gov/12461352/",
+    "https://pubmed.ncbi.nlm.nih.gov/28988340/",
+    "https://pubmed.ncbi.nlm.nih.gov/27114808/"
+   ]
+  },
+  {
+   "id": "zimmer-biomet-nstride-prp",
+   "name": "nSTRIDE PRP Concentration System",
+   "company": "Zimmer Biomet (Biomet Biologics)",
+   "ownership_history": "Biomet Biologics; Zimmer Biomet since 2015.",
+   "category": "PRP",
+   "composition": "Single-use point-of-care PRP concentration kit from the nSTRIDE family (the APS kit is a different, unapproved product); cleared on GPS III as predicate.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK230844 (nSTRIDE PRP Concentration System, decision 2023-08-09, product code ORG; predicate GPS III Platelet Concentrate Separation Kit BK070026)",
+    "us_market_year": 2023,
+    "on_label_indications": [
+     "'Intended for point of care processing of autologous blood for bone graft handling applications.' Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "On-label for bone graft handling only; the kit name echoes the nSTRIDE APS knee-OA program, which has no marketing authorization (see zimmer-biomet-nstride-aps). Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    },
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Do not borrow the nSTRIDE APS trials: APS is a different preparation.",
+     "caveats": "Off-label injection; evidence for APS does not transfer to PRP."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Zimmer Biomet refreshed its PRP paperwork in 2023 while the APS knee program stalled; a hiring manager may ask whether PRP is the fallback for the APS sales story."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK230844",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK230844",
+    "https://api.fda.gov/device/classification.json?search=product_code:ORG"
+   ]
+  },
+  {
+   "id": "zimmer-biomet-nstride-aps",
+   "name": "nSTRIDE Autologous Protein Solution (APS) Kit",
+   "company": "Zimmer Biomet (Biomet Biologics)",
+   "ownership_history": "Biomet Biologics; Zimmer Biomet since 2015.",
+   "category": "PRP",
+   "composition": "Point-of-care blood processing kit (two devices, a few mL of whole blood) that concentrates white cells, platelets and anti-inflammatory proteins such as IL-1Ra into a cell-free solution for intra-articular injection. Not cleared or approved in the US for any use.",
+   "regulatory": {
+    "path": "IDE-only",
+    "reference": "Investigational device under IDE (PROGRESS IV NCT02905240 and the HA-comparator trial NCT03182374 ran as unapproved-device studies); no 510(k) or PMA located as of 2026-10-23. IDE number not confirmed from a primary source.",
+    "us_market_year": null,
+    "on_label_indications": [
+     "No US marketing authorization. Sponsor intent: single intra-articular injection for knee osteoarthritis (investigational). Unlike cleared PRP kits (ORG: PRP to be mixed with bone graft), this is a cell-free blood-derived injectate with no cleared claim; injecting any autologous blood concentrate into a joint is off-label for a cleared device."
+    ],
+    "unverified": true
+   },
+   "status": "investigational",
+   "challenge": "The saline-controlled pivotal trial and an independent saline-controlled RCT were both negative; a hiring manager will ask why APS is still discussed.",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Zimmer Biomet's saline-controlled PROGRESS IV (n=332) posted WOMAC pain change -5.6 (APS) vs -5.4 (saline) at 12 months, and an independent double-blind RCT (n=40) found no difference from saline and worse VAS pain with APS at 12 months (Ross 2024). The APS-vs-Synvisc-One trial (n=252) posted pain falling 11.5 to 6.7 vs 11.9 to 7.2.",
+     "caveats": "Sponsor-run trials; the HA-comparator posting does not state a clean between-arm contrast; independent trial is small. Early open-label data (van Drumpt 2016, n=11) was positive and is the source of much marketing. Off-label use of the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT02905240",
+     "title": "Saline-Controlled Study of nSTRIDE APS for Knee Osteoarthritis (PROGRESS IV)",
+     "year": 2020,
+     "design": "RCT",
+     "n": 332,
+     "finding": "Posted results: 12-month change in WOMAC LK3.1 pain -5.6 with APS vs -5.4 with saline, i.e. no meaningful difference on the primary endpoint.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT03182374",
+     "title": "nSTRIDE APS Versus Hyaluronic Acid (Synvisc-One) for Knee Osteoarthritis",
+     "year": 2023,
+     "design": "RCT",
+     "n": 252,
+     "finding": "Posted results: WOMAC LK3.1 pain 11.5 to 6.7 (APS) vs 11.9 to 7.2 (Synvisc-One) at 12 months; the registry lists a within/between p<0.0001 without stating the contrast, so superiority is not established from the posting.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:39216848",
+     "title": "The effect of intra-articular autologous protein solution on knee osteoarthritis symptoms",
+     "year": 2024,
+     "design": "RCT",
+     "n": 40,
+     "finding": "nSTRIDE APS vs saline, 21 and 19 analyzed, KL 2-3: no difference in WOMAC or KOOS at 12 months, and VAS pain at 12 months was worse with APS than saline.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:27668131",
+     "title": "Safety and Treatment Effectiveness of a Single Autologous Protein Solution Injection in Patients with Knee Osteoarthritis",
+     "year": 2016,
+     "design": "case-series",
+     "n": 11,
+     "finding": "11 patients with early to moderate OA: no serious adverse events and WOMAC improvement from 2 weeks to 6 months; Zimmer Biomet-linked open-label study.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT02905240",
+     "NCT03182374",
+     "NCT02262364",
+     "NCT02580643",
+     "NCT02610192"
+    ],
+    "expected_milestone": "Both large trials completed (2020-06 and 2023-01); no US submission located. Treat as stalled."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not applicable: unapproved in the US.",
+    "notes": "The APS pivotal completed in mid-2020 with no difference from saline on the posted primary outcome; no regulatory filing was found. Zimmer Biomet has not publicly reconciled this in the sources read."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT02905240",
+    "https://clinicaltrials.gov/study/NCT03182374",
+    "https://clinicaltrials.gov/study/NCT02262364",
+    "https://clinicaltrials.gov/study/NCT02580643",
+    "https://pubmed.ncbi.nlm.nih.gov/39216848/",
+    "https://pubmed.ncbi.nlm.nih.gov/27668131/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "zimmer-biomet-fat-concentration",
+   "name": "Biomet Fat Concentration System (Vortech Adipose Transfer System)",
+   "company": "Zimmer Biomet (Biomet Biologics)",
+   "ownership_history": "Biomet; Zimmer Biomet since 2015.",
+   "category": "other",
+   "composition": "Disposable concentrator spun in a benchtop centrifuge to concentrate harvested fat for re-injection (a 'fat concentration' device, not a microfragmenter).",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K100114 (Fat Concentration System / Vortech Adipose Transfer System, decision 2010-09-29, product code MUU, 21 CFR 878.5040)",
+    "us_market_year": 2010,
+    "on_label_indications": [
+     "Used in procedures involving harvesting and transferring autologous fat; concentrates fat harvested with a legally marketed lipoplasty system; surgical specialties listed include orthopedic surgery. No disease claim. Regulatory frame for every adipose device: the 510(k)s (product code MUU, 21 CFR 878.5040) clear a device to harvest, concentrate and transfer autologous fat (tissue transfer) in named surgical specialties; none carries a disease claim such as knee osteoarthritis. Microfragmented adipose tissue (mechanical, no enzymes) is marketed under the minimal-manipulation reading; enzymatic stromal vascular fraction (SVF) is a drug under FDA's 2017 and 2020 guidance (US v. US Stem Cell Clinic, 11th Cir. 2021; US v. California Stem Cell Treatment Center, 9th Cir. 2024)."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Tissue-transfer clearance only; no osteoarthritis indication. Commercial focus is aesthetic fat grafting; ortho use is off-label."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered for knee osteoarthritis: cash-pay. Fat harvest and injection are billed under general lipectomy-type or unlisted codes when billed at all.",
+    "notes": "Predicate for later concentrators (Harvest AdiPrep, Ingeneron SmartGraft cite it). Low relevance to Zimmer Biomet's current ortho story; status in the catalog not confirmed."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/K100114",
+    "https://api.fda.gov/device/510k.json?search=k_number:K100114&limit=1"
+   ]
+  },
+  {
+   "id": "emcyte-purePRP",
+   "name": "EmCyte PurePRP SupraPhysiologic Concentrating System",
+   "company": "EmCyte Corporation",
+   "ownership_history": "Privately held (Fort Myers, FL). EmCyte also manufactures the Accelerate PRP/BMC systems distributed by Exactech and sells GenesisCS, PureBMC and Progenikine under its own name.",
+   "category": "PRP",
+   "composition": "Single-use disposable (the 'Pure PRP II' / GS60 family) spun in a benchtop centrifuge to a supraphysiologic platelet concentrate from 30-60 mL of blood; offered in leukocyte-rich and leukocyte-poor protocols.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK190317 (PurePRP SupraPhysiologic Concentrating System, applicant EmCyte Corporation, received 2019-02-11, decision 2020-02-12, product code ORG, 21 CFR 864.9245). Earlier EmCyte PRP clearances not enumerated.",
+    "us_market_year": 2020,
+    "on_label_indications": [
+     "Product code ORG: 'preparation of autologous platelet rich plasma from a small sample of peripheral blood for mixing with bone graft to improve handling characteristics' (the BK190317 summary text itself was not retrievable). Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "In the Andrews Research & Education Foundation RCT (n=90, 2013-2020), Pure PRP II PRP improved IKDC/WOMAC from baseline through 24 months and matched EmCyte-made BMAC; there was no saline or HA arm, so efficacy over placebo is not shown.",
+     "caveats": "EmCyte supplied the kits as a collaborator. Comparator-only design. Class-level placebo-controlled data are mixed to negative (Bennell 2021 n=288). Off-label injection."
+    },
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "established",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Off-label. Registered EmCyte-collaborated studies cover hip OA (NCT04241354) and PRP characterization (UCSF pilot NCT07491367), not tendons."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:35289231",
+     "title": "Bone Marrow Aspirate Concentrate Is Equivalent to Platelet-Rich Plasma for the Treatment of Knee Osteoarthritis at 2 Years: A Prospective Randomized Trial",
+     "year": 2022,
+     "design": "RCT",
+     "n": 90,
+     "finding": "Andrews Research & Education Foundation RCT (NCT03289416, n=90) of knee OA: BMAC made with EmCyte PureBMC vs PRP made with EmCyte Pure PRP II (EmCyte is a listed collaborator): no difference in IKDC or WOMAC over 24 months; both groups improved from baseline and plateaued at 3 months; BMAC was not superior to PRP. No inactive control arm.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:34812863",
+     "title": "Effect of Intra-articular Platelet-Rich Plasma vs Placebo Injection on Pain and Medial Tibial Cartilage Volume in Patients With Knee Osteoarthritis: The RESTORE Randomized Clinical Trial",
+     "year": 2021,
+     "design": "RCT",
+     "n": 288,
+     "finding": "Class-level (product not named): Leukocyte-poor PRP (a commercial product, not named in the abstract) vs saline: 12-month knee pain change -2.1 vs -1.8 (difference -0.4, 95% CI -0.9 to 0.2) and no cartilage-volume benefit.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "EmCyte is the contract maker behind several resold PRP/BMC brands (Exactech Accelerate); it sells direct to sports-medicine and regenerative-ortho clinics and through distributors."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK190317",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK190317",
+    "https://clinicaltrials.gov/study/NCT03289416",
+    "https://clinicaltrials.gov/study/NCT04241354",
+    "https://clinicaltrials.gov/study/NCT07491367",
+    "https://api.fda.gov/device/classification.json?search=product_code:ORG"
+   ]
+  },
+  {
+   "id": "emcyte-purebmc",
+   "name": "EmCyte PureBMC SupraPhysiologic Concentrating System",
+   "company": "EmCyte Corporation",
+   "ownership_history": "Privately held (Fort Myers, FL).",
+   "category": "BMAC",
+   "composition": "Single-use kit (30 mL system) for a benchtop centrifuge that concentrates 50-60 mL of bone marrow aspirate to a few mL of BMAC; used in the Andrews RCT and a Cleveland Clinic hip OA trial with EmCyte's Aspire needle.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K183205 (PureBMC SupraPhysiologic Concentrating System 30 mL, decision 2019-05-30, product code JQC, 21 CFR 862.2050 clinical centrifuge)",
+    "us_market_year": 2019,
+    "on_label_indications": [
+     "Intended 'to be used in a clinical laboratory or intraoperatively at the point of care for the safe and rapid preparation of platelet concentrate from a small sample of bone marrow aspirate. The safety and effectiveness of this device for in vivo indications for use has not been established.' Regulatory frame for every BMAC system: the 510(k)s (product codes JQC, QBV, ORG) clear a point-of-care centrifuge kit to prepare a bone marrow concentrate, or PRP to be mixed with bone graft; several state 'the safety and effectiveness of this device for in vivo indications for use has not been established'. Injection of BMAC into a joint, tendon or osteonecrotic femoral head is an off-label use of the device. FDA treats the autologous marrow product as outside premarket review (not an HCT/P when minimally manipulated and used homologously, 21 CFR 1271.3(d)(4); or same-surgical-procedure exception) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "challenge": "The clearance states in its own text that in vivo effectiveness is not established; every clinical use is off-label by the clearance's own wording.",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Only RCT using the product (Anz 2022, n=90, NCT03289416): BMAC (PureBMC) equalled EmCyte PRP at 2 years, not superior. Cleveland Clinic RCT of BMAC vs triamcinolone for hip OA (NCT04990128, n=100) is recruiting.",
+     "caveats": "No placebo arm; EmCyte collaborated. Cell yield varies by patient. Off-label injection."
+    },
+    {
+     "application_id": "femoral-head-osteonecrosis-core-decompression",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level: Hernigou 116-patient series positive but uncontrolled; two RCTs negative (Hauzeur 2018, Pepke 2016).",
+     "caveats": "Off-label."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level: uncontrolled Hernigou 2005 series (53 of 60 tibial nonunions united).",
+     "caveats": "Off-label."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:35289231",
+     "title": "Bone Marrow Aspirate Concentrate Is Equivalent to Platelet-Rich Plasma for the Treatment of Knee Osteoarthritis at 2 Years: A Prospective Randomized Trial",
+     "year": 2022,
+     "design": "RCT",
+     "n": 90,
+     "finding": "Andrews Research & Education Foundation RCT (NCT03289416, n=90) of knee OA: BMAC made with EmCyte PureBMC vs PRP made with EmCyte Pure PRP II (EmCyte is a listed collaborator): no difference in IKDC or WOMAC over 24 months; both groups improved from baseline and plateaued at 3 months; BMAC was not superior to PRP. No inactive control arm.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:28988340",
+     "title": "Inefficacy of autologous bone marrow concentrate in stage three osteonecrosis: a randomized controlled double-blind trial",
+     "year": 2018,
+     "design": "RCT",
+     "n": 38,
+     "finding": "Class-level: Core decompression with BMAC vs without in stage 3 osteonecrosis (23 hips per arm, 19 patients per arm): 15 of 23 hips in each arm needed THR; BMAC added nothing.",
+     "sponsor_funded": null,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    },
+    {
+     "ref": "PMID:27114808",
+     "title": "Core Decompression and Autologous Bone Marrow Concentrate for Treatment of Femoral Head Osteonecrosis: A Randomized Prospective Study",
+     "year": 2016,
+     "design": "RCT",
+     "n": 24,
+     "finding": "Class-level: 24 patients, core decompression with or without BMAC (Sepax device): no difference in clinical outcome or head survival over two years.",
+     "sponsor_funded": null,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    },
+    {
+     "ref": "PMID:15995108",
+     "title": "Percutaneous autologous bone-marrow grafting for nonunions. Influence of the number and concentration of progenitor cells",
+     "year": 2005,
+     "design": "case-series",
+     "n": 60,
+     "finding": "Class-level: 60 noninfected atrophic tibial nonunions injected with 20 cm3 concentrated marrow: 53 united; union required more than 1500 progenitors/cm3 and about 55,000 total progenitors; no control arm and no commercial kit named.",
+     "sponsor_funded": null,
+     "applications": [
+      "general-long-bone-nonunion"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered for orthopedic use: cash-pay. Bone marrow harvest codes bill separately for the surgeon when done with an operation (inpatient bundled in MS-DRG).",
+    "notes": "PureBMC is the BMAC kit most often named in investigator-initiated US trials alongside Arthrex Angel; EmCyte's Aspire needle completes the harvest-to-concentrate stack."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/K183205",
+    "https://api.fda.gov/device/510k.json?search=k_number:K183205&limit=1",
+    "https://clinicaltrials.gov/study/NCT03289416",
+    "https://clinicaltrials.gov/study/NCT04990128"
+   ]
+  },
+  {
+   "id": "emcyte-genesiscs",
+   "name": "GenesisCS Component Concentrating System (and Secquire Cell Separator)",
+   "company": "EmCyte Corporation",
+   "ownership_history": "Original 510(k) applicant Perfusion Partners & Associates, Inc. (Secquire 2003, GenesisCS 2006-2007). EmCyte markets GenesisCS and makes the Accelerate systems sold by Exactech; the transfer of the Perfusion Partners assets to EmCyte was not confirmed from a primary source.",
+   "category": "PRP",
+   "composition": "Disposable concentrating kit for a benchtop centrifuge that prepares platelet and plasma concentrate from blood and a cell concentrate from bone marrow; the same BK number is cited for the Exactech Accelerate PRP kits.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK050055 (GenesisCS Component Concentrating System, Perfusion Partners & Associates, decision 2006-10-13); K070666 (GenesisCS, decision 2007-06-20, product code JQC); K024080 (Secquire Cell Separator, 2003-07-02, JQC)",
+    "us_market_year": 2003,
+    "on_label_indications": [
+     "K070666: intended 'in a clinical laboratory or intraoperatively at the point of care for the safe and rapid preparation of plasma and platelet concentrate from a small sample of blood and for a preparation of a cell concentrate from bone marrow. The safety and effectiveness of this device for in vivo indications for use has not been established.' Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). The Andrews RCT used EmCyte's later PurePRP and PureBMC kits, not GenesisCS.",
+     "caveats": "In vivo effectiveness not established per its own clearance text. Off-label."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Cell-concentrate preparation only; no in vivo claim. Off-label use of the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "GenesisCS is the long-lived platform underneath EmCyte and Exactech PRP branding; the Perfusion Partners to EmCyte lineage is unconfirmed here."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/K070666",
+    "https://fda.innolitics.com/device/BK050055",
+    "https://fda.innolitics.com/device/K024080"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "exactech-accelerate",
+   "name": "Exactech Accelerate Platelet Concentrating System (Accelerate PRP, Accelerate II, Accelerate BMC)",
+   "company": "Exactech",
+   "ownership_history": "Distributed by Exactech (Gainesville, FL) and, per Exactech's own product sheets quoted in a web search result, manufactured by EmCyte Corporation. Exactech's 2024-2025 restructuring was not checked.",
+   "category": "PRP",
+   "composition": "Re-branded EmCyte benchtop PRP system (30 mL and 60 mL kits) with a companion Accelerate BMC bone marrow concentrate kit.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK050055 as listed in the NLM GUDID record for the Accelerate PRP kits (the same number is FDA's GenesisCS Component Concentrating System, Perfusion Partners & Associates, 2006-10-13). The Accelerate BMC clearance was not located.",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Exactech's own sheets state the system is for point-of-care PRP preparation and has not been evaluated by FDA for specific therapeutic indications; GUDID describes PRP/PRFM for soft-tissue wounds and injured bone. Only the FDA letter would settle the indication; treat it as the GenesisCS scope. Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Distributor sheet states no specific therapeutic indication is FDA-evaluated. Off-label injection."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Exactech sells spine biologics; any fusion-adjunct use is off-label for the PRP kit."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Illustrates the private-label pattern: Exactech sells an EmCyte kit under its brand into its ortho/joint customers. Facts here come from distributor sheets surfaced in search results and GUDID, not from the FDA letter."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://exac.com/biologics/accelerate-platelet-concentrating-system",
+    "https://accessgudid.nlm.nih.gov/devices/00855306003022",
+    "https://fda.innolitics.com/device/BK050055"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "terumo-harvest-prp",
+   "name": "Harvest PRP Separation System (with ACD-A/ACDA; Harvest APC+ lineage)",
+   "company": "Terumo BCT (Terumo Blood and Cell Technologies)",
+   "ownership_history": "Harvest Technologies (Plymouth, MA) was acquired by Terumo BCT around 2012 (existing harvest-smartprep-bmac record; acquisition date not re-verified). The Harvest PRP system is a separate 510(k) family from the SmartPReP2 BMAC record.",
+   "category": "PRP",
+   "composition": "Disposable separation kit spun in the SmartPReP2 centrifuge to a PRP (earlier marketed as APC+, autologous platelet concentrate); prepared in a double-spin cycle.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK000037 (Harvest PRP Separation System, 2001-02-05); BK100059 (2010-11-18); BK120038 (with ACDA 30 mL, 2012-09-28); BK210591 (Terumo BCT, Harvest PRP Separation System with ACDA, received 2021-05-21, decision 2022-02-11, product code ORG, 21 CFR 864.9245)",
+    "us_market_year": 2001,
+    "on_label_indications": [
+     "BK210591 is in product code ORG (PRP prepared for mixing with bone graft to improve handling); brand-specific indication text not retrievable. Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). SmartPReP2 was one of four kits in an independent benchtop comparison.",
+     "caveats": "Off-label injection."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Graft handling on-label only; no fusion claim. Class-level spine PRP data are neutral to negative (Carreon 2005). Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28210651",
+     "title": "Analysis of Platelet-Rich Plasma Extraction: Variations in Platelet and Blood Components Between 4 Common Commercial Kits",
+     "year": 2017,
+     "design": "preclinical",
+     "n": 3,
+     "finding": "Class-level, includes SmartPReP2 among four kits: Benchtop test of GPS III, SmartPReP2, Magellan and ACP (Device Technologies) on blood from 3 donors: three kits sampling the buffy coat gave 3-6x baseline platelets and white cells while one plasma-sampling kit gave only 1.5x (the abstract does not say which kit; ACP is the double-syringe design that draws plasma).",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Terumo BCT's orthobiologics niche is small next to its apheresis business; the 2022 ORG clearance shows the line is maintained."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK210591",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK210591",
+    "https://fda.innolitics.com/device/BK100059",
+    "https://fda.innolitics.com/device/BK120038",
+    "https://fda.innolitics.com/device/BK000037",
+    "https://api.fda.gov/device/classification.json?search=product_code:ORG"
+   ]
+  },
+  {
+   "id": "terumo-harvest-adiprep",
+   "name": "Harvest AdiPrep Adipose Transfer System",
+   "company": "Terumo BCT (Terumo Blood and Cell Technologies)",
+   "ownership_history": "Cleared 2012 under Harvest Technologies Corp.; Terumo BCT acquired Harvest (see terumo-harvest-prp).",
+   "category": "other",
+   "composition": "Disposable bag set spun in the Harvest SmartPReP2 centrifuge to concentrate and wash harvested fat for re-injection.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K121005 (AdiPrep Adipose Transfer System, decision 2012-09-21, product code MUU; predicates Viafill K081848, Vortech/Fat Concentration System K100114)",
+    "us_market_year": 2012,
+    "on_label_indications": [
+     "Harvesting and transferring autologous adipose tissue; concentrating tissue harvested with a legally marketed lipoplasty system; listed surgical specialties include orthopedic surgery. No disease claim. Regulatory frame for every adipose device: the 510(k)s (product code MUU, 21 CFR 878.5040) clear a device to harvest, concentrate and transfer autologous fat (tissue transfer) in named surgical specialties; none carries a disease claim such as knee osteoarthritis. Microfragmented adipose tissue (mechanical, no enzymes) is marketed under the minimal-manipulation reading; enzymatic stromal vascular fraction (SVF) is a drug under FDA's 2017 and 2020 guidance (US v. US Stem Cell Clinic, 11th Cir. 2021; US v. California Stem Cell Treatment Center, 9th Cir. 2024)."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Tissue-transfer clearance only; no osteoarthritis indication."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered for knee osteoarthritis: cash-pay. Fat harvest and injection are billed under general lipectomy-type or unlisted codes when billed at all.",
+    "notes": "Cited as predicate by Ingeneron SmartGraft and SyntrFuge; marginal for Terumo BCT today."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/K121005"
+   ]
+  },
+  {
+   "id": "royal-maxx",
+   "name": "Royal MAXX PRP and MAXX BMC Concentration Systems",
+   "company": "Royal Biologics",
+   "ownership_history": "Privately held. Royal Biologics also sells Amnio-Maxx amniotic products (NCT07209475, diabetic foot ulcers).",
+   "category": "PRP",
+   "composition": "Disposable point-of-care kits for a benchtop centrifuge: MAXX PRP concentrates platelets; MAXX BMC concentrates bone marrow aspirate.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK210563 (Royal Maxx Autologous PRP Concentration System, received 2021-03-17, decision 2021-04-16, product code ORG); BK210632 (Royal MAXX BMC and MAXX PRP Concentration Systems, decision 2022-02-11)",
+    "us_market_year": 2021,
+    "on_label_indications": [
+     "BK210563 is in product code ORG: PRP prepared for mixing with bone graft to improve handling; BK210632 BMC indication text not retrievable. Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated. Regulatory frame for every BMAC system: the 510(k)s (product codes JQC, QBV, ORG) clear a point-of-care centrifuge kit to prepare a bone marrow concentrate, or PRP to be mixed with bone graft; several state 'the safety and effectiveness of this device for in vivo indications for use has not been established'. Injection of BMAC into a joint, tendon or osteonecrotic femoral head is an off-label use of the device. FDA treats the autologous marrow product as outside premarket review (not an HCT/P when minimally manipulated and used homologously, 21 CFR 1271.3(d)(4); or same-surgical-procedure exception) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Graft-handling scope only (PRP); the BMC kit cleared 2022 has no retrieved indication text. Spine PRP data are neutral to negative at class level (Carreon 2005). Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    },
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Off-label injection."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:15864142",
+     "title": "Platelet gel (AGF) fails to increase fusion rates in instrumented posterolateral fusions",
+     "year": 2005,
+     "design": "retrospective",
+     "n": 152,
+     "finding": "Class-level (different platelet-gel system): 76 instrumented PLFs with iliac crest graft plus autologous growth factor platelet gel vs matched controls: nonunion 25% vs 17% (p=.18), no benefit. System is a proprietary platelet-gel method, not one of the brands in this file.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Royal Biologics sells into spine and orthopedic accounts with a broad biologics line; the two 2021-2022 clearances are its PRP/BMC entry."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK210563",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK210563",
+    "https://fda.innolitics.com/device/BK210632",
+    "https://clinicaltrials.gov/study/NCT07209475"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "celling-art-prp",
+   "name": "Celling ART PRP System (Circle Biologics Autologous Platelet Separator) and ART BMC",
+   "company": "Celling Biosciences",
+   "ownership_history": "Celling Biosciences cleared the Circle Biologics Autologous Platelet Separator (APS) in 2015; the earlier Circle Biologics Autologous Fluid Concentrator (AFC) was cleared 2010 as BK100014. Celling Aspiration Needle (K180807) lists Spine Smith Holdings as applicant. Current ownership not confirmed.",
+   "category": "PRP",
+   "composition": "ART PRP 2-Step Processing Kit (60/120 mL) double-spin disposable; ART BMC is the companion bone marrow concentration kit.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK150221 (Circle Biologics Autologous Platelet Separator (APS) System, applicant Celling Biosciences, received 2015-02-03, decision 2015-06-09, product code ORG); BK100014 (Autologous Fluid Concentrator System, Circle Biologics, 2010-07-09). The ART BMC clearance was not located.",
+    "us_market_year": 2010,
+    "on_label_indications": [
+     "Product code ORG: PRP for mixing with bone graft to improve handling; GUDID describes the kit as preparing PRP or PRFM from an autologous blood specimen for soft-tissue wounds and injured bone. Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). A registered Seton Healthcare study of a BMC/growth-factor concentrate in TLIF (NCT03223701) was withdrawn with 0 participants and its relation to Celling products is not confirmed.",
+     "caveats": "Graft handling on-label only; no fusion claim. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    },
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Off-label injection."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Celling historically targeted spine surgeons with PRP/BMC for graft preparation; the ART BMC filing and company status could not be confirmed, so the record is incomplete."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://accessgudid.nlm.nih.gov/devices/00817771029983",
+    "https://fda.innolitics.com/device/BK150221",
+    "https://fda.innolitics.com/device/BK100014",
+    "https://fda.innolitics.com/device/K180807",
+    "https://clinicaltrials.gov/study/NCT03223701"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "ranfac-marrow-cellution",
+   "name": "Marrow Cellution Bone Marrow Aspiration System",
+   "company": "Ranfac Corp. (Avon, MA)",
+   "ownership_history": "Ranfac, a century-old maker of single-use biopsy and aspiration needles, makes Marrow Cellution; sold as its own product and as an OEM device.",
+   "category": "BMAC",
+   "composition": "Side-port aspiration needle that draws marrow in small (about 1 mL) lateral-flow draws without centrifugation, targeting cell-rich inner cortex; the aspirate is injected without a concentration step.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K150563 (Marrow Cellution Bone Marrow Aspiration Needle, decision 2015-05-22, product code KNW; predicates Ranfac Aspiration Needle with Adjustable Guide K140991, Ranfac Bone Marrow Aspiration Needle K131157)",
+    "us_market_year": 2015,
+    "on_label_indications": [
+     "'Intended for use for aspiration of bone marrow or autologous blood using a standard piston syringe.' No claim about what the aspirate is used for. Regulatory frame for every BMAC system: the 510(k)s (product codes JQC, QBV, ORG) clear a point-of-care centrifuge kit to prepare a bone marrow concentrate, or PRP to be mixed with bone graft; several state 'the safety and effectiveness of this device for in vivo indications for use has not been established'. Injection of BMAC into a joint, tendon or osteonecrotic femoral head is an off-label use of the device. FDA treats the autologous marrow product as outside premarket review (not an HCT/P when minimally manipulated and used homologously, 21 CFR 1271.3(d)(4); or same-surgical-procedure exception) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "IV",
+     "evidence_summary": "Retrospective cohort of 160 patients (262 knees) KL 2-4 injected with Marrow Cellution aspirate: VAS for daily activity 7.29 to 3.76 at six months (p<0.0001); no control group.",
+     "caveats": "Uncontrolled, short follow-up, retrospective; bench work by the method's proponents shows higher CFU-F than centrifuged BMAC (Scarpone 2019) but no randomized clinical comparison is published (OSU comparison NCT06388993, n=6, recruiting). Off-label."
+    },
+    {
+     "application_id": "femoral-head-osteonecrosis-core-decompression",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Off-label; class-level BMAC RCTs negative (Hauzeur 2018, Pepke 2016)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:36440184",
+     "title": "Short-Term Efficacy of Using a Novel Low-Volume Bone Marrow Aspiration Technique to Treat Knee Osteoarthritis: A Retrospective Cohort Study",
+     "year": 2022,
+     "design": "retrospective",
+     "n": 160,
+     "finding": "160 patients (262 knees) KL 2-4 given Marrow Cellution aspirate injections: VAS for daily activity 7.29 to 3.76 at six months (p<.0001); no control group.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:30611285",
+     "title": "Isolation of clinically relevant concentrations of bone marrow mesenchymal stem cells without centrifugation",
+     "year": 2019,
+     "design": "preclinical",
+     "n": null,
+     "finding": "Marrow Cellution small-volume lateral-flow draws gave higher CFU-F concentration than centrifuged BMAC from the same patients' contralateral crests in three direct comparisons; bench study of the Marrow Cellution system (author affiliation with the maker not checked).",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:28988340",
+     "title": "Inefficacy of autologous bone marrow concentrate in stage three osteonecrosis: a randomized controlled double-blind trial",
+     "year": 2018,
+     "design": "RCT",
+     "n": 38,
+     "finding": "Class-level: Core decompression with BMAC vs without in stage 3 osteonecrosis (23 hips per arm, 19 patients per arm): 15 of 23 hips in each arm needed THR; BMAC added nothing.",
+     "sponsor_funded": null,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Not covered for orthopedic use: cash-pay. Bone marrow harvest codes bill separately for the surgeon when done with an operation (inpatient bundled in MS-DRG).",
+    "notes": "Low-price needle positioned against centrifuge-based BMAC; competes on 'no centrifuge, more MSCs per mL' while hard clinical evidence is thin."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/K150563",
+    "https://api.fda.gov/device/510k.json?search=k_number:K150563&limit=1",
+    "https://pubmed.ncbi.nlm.nih.gov/30611285/",
+    "https://pubmed.ncbi.nlm.nih.gov/36440184/",
+    "https://clinicaltrials.gov/study/NCT06388993"
+   ]
+  },
+  {
+   "id": "ranfac-cervos-aps",
+   "name": "Ranfac Autologous Platelet Separator (Cervos Platelet system)",
+   "company": "Ranfac Corp. (Avon, MA)",
+   "ownership_history": "Ranfac; the GUDID brand name for the kit is 'Cervos Platelet Single PB' (premarket submission BK200543).",
+   "category": "PRP",
+   "composition": "Single-use disposable PRP separator (single-spin) for a benchtop centrifuge, sold by Ranfac under the Cervos name.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK200543 (Ranfac Autologous Platelet Separator, received 2020-11-13, decision 2021-02-24, product code ORG, 21 CFR 864.9245)",
+    "us_market_year": 2021,
+    "on_label_indications": [
+     "Product code ORG: PRP for mixing with bone graft to improve handling; brand-specific text not retrievable. Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Off-label injection."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Graft handling on-label only; no healing claim. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Value-tier entry from a needle maker; 'Cervos' name tie to the BK number rests on GUDID, not an FDA letter."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK200543",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK200543",
+    "https://accessgudid.nlm.nih.gov/devices/00850023741790"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "regenlab-regenkit",
+   "name": "RegenKit (THT, BCT, ATS) PRP kits and RegenBMC",
+   "company": "Regen Lab (RegenLab SA, Switzerland; Regen Lab USA, LLC, Jersey City, NJ)",
+   "ownership_history": "Swiss maker RegenLab SA holds the older RegenKit clearances; Regen Lab USA, LLC is the applicant on the 2026 RegenBMC clearance.",
+   "category": "PRP",
+   "composition": "Evacuated blood-collection tubes containing a separator gel and anticoagulant (single-spin, closed system) that give PRP; the THT variant adds a thixotropic gel separator; RegenBMC processes a mix of blood and bone marrow aspirate.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK090048 (RegenKit-THT, decision 2010-05-18, FMF piston syringe 880.5860); BK110061 (RegenKit-BCT family, 2012-05-08); BK120066 (RegenKit-ATS-3, BCT-1 Plus, BCT-2 Plus, received 2012-11-02, decision 2014-02-05, ORG); BK210661 (RegenKit Wound Gel, 2022-07-08); BK251274 (RegenBMC / RegenKit-THT-BMC, decision 2026-05-29, ORG)",
+    "us_market_year": 2010,
+    "on_label_indications": [
+     "BK251274: 'safe and rapid preparation of autologous platelet concentrate platelet-rich plasma (PRP) from a small sample of peripheral blood or a small sample of a mixture of peripheral blood and bone marrow. The PRP is mixed with autograft and/or allograft bone prior to application to a bony defect for improving handling characteristics.' Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated.",
+     "The first RegenKit clearance (2010) was filed as a piston syringe, not a PRP device."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "established",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Off-label injection. RegenKit is widely used in Europe and Asia for joint injection (CE-marked); no study naming the product was confirmed here."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Graft handling on-label (2026 RegenBMC); no healing claim. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "hybrid",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Tube-based closed system with no dedicated centrifuge or kit-lock-in; the 2026 RegenBMC clearance extends the use to blood-plus-marrow mixtures for graft handling."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK251274",
+    "https://fda.innolitics.com/device/BK120066",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK090048",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK120066",
+    "https://fda.innolitics.com/device/BK110061",
+    "https://fda.innolitics.com/device/BK210661"
+   ]
+  },
+  {
+   "id": "apex-xcell-prp",
+   "name": "APEX Biologix XCELL PRP Platelet Concentrating System (60 mL)",
+   "company": "APEX Biologix",
+   "category": "PRP",
+   "composition": "60 mL single-use disposable for a benchtop centrifuge; compared against EmCyte PurePRP in a UCSF pilot of PRP cellular composition.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK180252 (XCELL PRP Platelet Concentrating System 60 ml, decision 2019-04-05)",
+    "us_market_year": 2019,
+    "on_label_indications": [
+     "Product-code and indication text not retrievable; as a 2019 CBER PRP clearance it is expected to sit in ORG (PRP for mixing with bone graft). Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). A UCSF pilot (NCT07491367, n=20, recruiting) characterizes platelet composition from XCELL vs EmCyte PurePRP; no clinical endpoint.",
+     "caveats": "Off-label injection."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Regenerative-clinic oriented kit vendor; the clearance details are thin because the FDA page was not retrievable."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK180252",
+    "https://clinicaltrials.gov/study/NCT07491367"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "eclipse-prp",
+   "name": "Eclipse PRP (TropoCells autologous platelet preparation kit)",
+   "company": "Estar Technologies (manufacturer of record); sold as Eclipse PRP (EclipseMed) and as TropoCells",
+   "ownership_history": "The same BK number appears in GUDID under the labels TropoCells, Eclipse PRP and Healeon PRP, all listing Estar Technologies Ltd; relationships between the brands were not confirmed from a primary source.",
+   "category": "PRP",
+   "composition": "Single-use tube kit with a gel separator for a benchtop centrifuge; marketed in aesthetic, orthopedic and sports-medicine clinics.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK110035 (TropoCells Autologous Platelet Preparation Kit, applicant Estar Technologies Ltd, decision 2012-03-28)",
+    "us_market_year": 2012,
+    "on_label_indications": [
+     "Per the company's labeling quoted in a search result: preparation of autologous PRP from a small blood sample at the point of care, mixed with autograft or allograft bone before application to an orthopedic surgical site. FDA letter not retrieved. Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Off-label injection."
+    },
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Off-label injection."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Brief names Eclipse among targets; only the Estar clearance and GUDID labels were found, not an Eclipse-named 510(k)."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK110035",
+    "https://accessgudid.nlm.nih.gov/devices/07290015874014"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "dr-prp",
+   "name": "Dr.PRP (Dr. PRP / DR.PRP-30)",
+   "company": "Rmedical Co., Ltd (Korea); US applicant YTS Global Inc. (Springfield, VA)",
+   "category": "PRP",
+   "composition": "Single-use PRP preparation tube/kit for a benchtop centrifuge; Korean-made, cleared in the US through a US sponsor.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK230818 (Dr. PRP, YTS Global Inc., decision 2023-05-31, product code ORG); BK251201 (DR.PRP-30, Rmedical Co., Ltd, decision 2025-10-08, ORG)",
+    "us_market_year": 2023,
+    "on_label_indications": [
+     "BK230818: 'safe and rapid preparation of autologous platelet rich plasma (PRP) from a small sample of peripheral blood at the patient's point of care. The PRP is mixed with autograft and/or allograft bone prior to application to a bony defect to improve handling characteristics.' Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Off-label injection."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Graft handling on-label only; no healing claim. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Price-led Asian entrant; two BK numbers in two years show how crowded the ORG code is becoming."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK230818",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK230818",
+    "https://fda.innolitics.com/device/BK251201"
+   ]
+  },
+  {
+   "id": "fibrinet-cascade",
+   "name": "Cascade Fibrinet / Cascade Autologous Platelet System (PRFM)",
+   "company": "Cascade Medical Enterprises (Fibrinet); distributed for spine by Vertical Spine, LLC",
+   "ownership_history": "Cascade Medical's PRFM line; a 2018 Cochrane review table lists the 'Cascade Autologous Platelet System' under the Musculoskeletal Transplant Foundation, which suggests MTF Biologics acquired it (not confirmed from a primary source). Vertical Spine filed a parallel Fibrinet 510(k) in 2012.",
+   "category": "PRP",
+   "composition": "Disposable kit that makes a platelet-rich fibrin matrix (PRFM): platelet-rich plasma is gelled by calcium chloride in the tube to a solid fibrin membrane that can be sutured or placed at a repair site.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK020051 (Cascade Medical Fibrinet, Autologous Platelet System, decision 2002-12-20, Blood Bank Supplies KSS); BK030024 (2003-06-02); BK060006 (2006-02-16, KSS); BK120009 (Fibrinet Autologous PRP System, Cascade, received 2012-02-24, decision 2012-08-01, ORG); BK120008 (same, Vertical Spine, 2012-08-01); BK170096 (Fibrinet Platelet System, 2017-11-21)",
+    "us_market_year": 2002,
+    "on_label_indications": [
+     "BK120009 is in product code ORG: PRP for mixing with bone graft to improve handling; the 2002-2006 clearances were filed as blood-bank supplies. Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "challenge": "The one rigorous rotator-cuff trial of this product was negative, yet PRFM is still marketed for tendon repair augmentation.",
+   "applications": [
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "established",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Rodeo 2012 (n=79, PRFM at the tendon-bone interface, product per a Cochrane table the Cascade Autologous Platelet System): no improvement in ultrasound tendon healing at 6 or 12 weeks or in outcome scores. A second PRFM RCT (Castricini 2011, n=88) was also null but its product is not named in the abstract.",
+     "caveats": "Single-center RCT; Cochrane review notes the trial stopped early and PRP composition was not characterized. Off-label (cleared for bone graft handling)."
+    },
+    {
+     "application_id": "tendon-ligament-repair-augmentation",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Off-label."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Vertical Spine's version targeted spine; graft handling on-label only. Class-level evidence for spine PRP is neutral to negative. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:22495146",
+     "title": "The effect of platelet-rich fibrin matrix on rotator cuff tendon healing: a prospective, randomized clinical study",
+     "year": 2012,
+     "design": "RCT",
+     "n": 79,
+     "finding": "PRFM (a Cochrane review table lists the Cascade Autologous Platelet System) at the tendon-bone interface vs standard repair: no difference in ultrasound tendon healing at 6 or 12 weeks or in outcome scores.",
+     "sponsor_funded": null,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:21160018",
+     "title": "Platelet-rich plasma augmentation for arthroscopic rotator cuff repair: a randomized controlled trial",
+     "year": 2011,
+     "design": "RCT",
+     "n": 88,
+     "finding": "Class-level (product not named): PRFM augmentation of double-row repair of small or medium tears: no difference in Constant score (p=.44) or MRI tendon score (p=.07); the product is not named in the abstract.",
+     "sponsor_funded": null,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "PMID:15864142",
+     "title": "Platelet gel (AGF) fails to increase fusion rates in instrumented posterolateral fusions",
+     "year": 2005,
+     "design": "retrospective",
+     "n": 152,
+     "finding": "Class-level (different platelet-gel system): 76 instrumented PLFs with iliac crest graft plus autologous growth factor platelet gel vs matched controls: nonunion 25% vs 17% (p=.18), no benefit. System is a proprietary platelet-gel method, not one of the brands in this file.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "The negative RCT hurts the PRFM-for-tendon story; the spine route via Vertical Spine is the other channel."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK120009",
+    "https://fda.innolitics.com/device/BK120008",
+    "https://fda.innolitics.com/device/BK170096",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK120009",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK020051",
+    "https://pubmed.ncbi.nlm.nih.gov/22495146/",
+    "https://pubmed.ncbi.nlm.nih.gov/21160018/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6464921/table/CD010071-tblf-0014"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "thermogenesis-resq-60",
+   "name": "ThermoGenesis Res-Q 60 PRP Device",
+   "company": "ThermoGenesis Holdings (formerly ThermoGenesis Corp.; Cesca Therapeutics 2014-2019)",
+   "ownership_history": "Cesca Therapeutics was the corporate name of ThermoGenesis between 2014 and 2019 (company history from memory; not re-verified).",
+   "category": "PRP",
+   "composition": "Automated point-of-care sterile processing set spun in the ThermoGenesis Res-Q centrifuge (60 mL) for PRP; the Res-Q 60 BMC bone marrow set is the companion product.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK100066 (ThermoGenesis Res-Q60 PRP Device, decision 2011-05-27)",
+    "us_market_year": 2011,
+    "on_label_indications": [
+     "PRP preparation at the point of care; 510(k) summary text not retrievable and product code not retrieved. Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Commercial status of the Res-Q PRP line in 2026 not confirmed. Off-label."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "ThermoGenesis is primarily a cord-blood and cell-processing company; the orthobiologics line is a sideline and its active status is unverified."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK100066"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "thermogenesis-axp-marrowxpress",
+   "name": "ThermoGenesis AXP MarrowXpress System (bone marrow concentrate)",
+   "company": "ThermoGenesis Holdings",
+   "ownership_history": "Applicant ThermoGenesis Corp. in 2008.",
+   "category": "BMAC",
+   "composition": "AutoXpress (AXP) automated platform disposable set that processes marrow to a cell concentrate in about 30 minutes; predicated on SmartPReP2.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K081345 (AXP Platform MarrowXpress System, decision 2008-07-10, product code JQC; predicate Harvest SmartPReP2 K052925)",
+    "us_market_year": 2008,
+    "on_label_indications": [
+     "'Intended to be used in the clinical laboratory or intraoperatively at the point of care for preparation of a cell concentrate from bone marrow.' No in vivo indication. Regulatory frame for every BMAC system: the 510(k)s (product codes JQC, QBV, ORG) clear a point-of-care centrifuge kit to prepare a bone marrow concentrate, or PRP to be mixed with bone graft; several state 'the safety and effectiveness of this device for in vivo indications for use has not been established'. Injection of BMAC into a joint, tendon or osteonecrotic femoral head is an off-label use of the device. FDA treats the autologous marrow product as outside premarket review (not an HCT/P when minimally manipulated and used homologously, 21 CFR 1271.3(d)(4); or same-surgical-procedure exception) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "femoral-head-osteonecrosis-core-decompression",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level BMAC RCTs negative (Hauzeur 2018, Pepke 2016).",
+     "caveats": "Commercial status in 2026 not confirmed. Off-label."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28988340",
+     "title": "Inefficacy of autologous bone marrow concentrate in stage three osteonecrosis: a randomized controlled double-blind trial",
+     "year": 2018,
+     "design": "RCT",
+     "n": 38,
+     "finding": "Class-level: Core decompression with BMAC vs without in stage 3 osteonecrosis (23 hips per arm, 19 patients per arm): 15 of 23 hips in each arm needed THR; BMAC added nothing.",
+     "sponsor_funded": null,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Not covered for orthopedic use: cash-pay. Bone marrow harvest codes bill separately for the surgeon when done with an operation (inpatient bundled in MS-DRG).",
+    "notes": "Cord-blood automation repurposed for marrow; marginal in US ortho."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/K081345"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "isto-precise",
+   "name": "Precise Cell Concentration System",
+   "company": "Isto Biologics (Arteriocyte Medical Systems, Inc. DBA Isto Biologics, Hopkinton, MA)",
+   "ownership_history": "Successor to the Magellan platelet separator line (see magellan); Isto's ownership history is in that record (Keensight majority investor since September 2025 per existing notes).",
+   "category": "PRP",
+   "composition": "Point-of-care disposable that produces PRP from a mixture of peripheral blood and bone marrow aspirate, mixed with bone graft.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK251168 (Precise Cell Concentration System, received 2025-02-18, decision 2026-02-03, ORG); BK200540 (same name, Arteriocyte Medical Systems, decision 2022-03-17)",
+    "us_market_year": 2022,
+    "on_label_indications": [
+     "'Designed to be used for the safe and rapid preparation of autologous platelet rich plasma (PRP) from a mixture of peripheral blood and bone marrow aspirate (BMA) at the patient's point of care. The PRP is mixed with autograft and/or allograft bone prior to application to a bony defect to improve handling characteristics.' Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Graft handling on-label only; no fusion claim. Class-level evidence for spine PRP is neutral to negative. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Graft handling on-label only; no healing claim. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:15864142",
+     "title": "Platelet gel (AGF) fails to increase fusion rates in instrumented posterolateral fusions",
+     "year": 2005,
+     "design": "retrospective",
+     "n": 152,
+     "finding": "Class-level (different platelet-gel system): 76 instrumented PLFs with iliac crest graft plus autologous growth factor platelet gel vs matched controls: nonunion 25% vs 17% (p=.18), no benefit. System is a proprietary platelet-gel method, not one of the brands in this file.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Isto's biologics (NovaBone, Magellan/Precise) are sold to spine and trauma accounts; a hiring manager may ask how Precise supersedes Magellan."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK251168",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK251168",
+    "https://fda.innolitics.com/device/BK200540"
+   ]
+  },
+  {
+   "id": "bti-endoret-prgf",
+   "name": "BTI ENDORET Kit (PRGF-Endoret, plasma rich in growth factors)",
+   "company": "B.T.I. Biotechnology Institute, S.L. (Miñano, Álava, Spain)",
+   "category": "PRP",
+   "composition": "Closed tube-based kit and dedicated centrifuge producing a leukocyte-free, moderate-platelet (about 2-3x) plasma rich in growth factors, activated with calcium chloride; the original PRGF technique of Anitua.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK251157 (ENDORET Kit, decision 2025-10-03, ORG)",
+    "us_market_year": 2025,
+    "on_label_indications": [
+     "'Designed to be used for the safe and rapid preparation of autologous platelet-rich-plasma (PRP) from a small sample of peripheral blood at the patient's point of care. The PRP is mixed with autograft and/or allograft bone prior to application to a bony defect for improving handling characteristics.' Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "emerging",
+   "challenge": "The knee-OA RCTs were run on BTI's European-marketed system years before the 2025 US clearance, and the clearance itself covers only bone graft handling.",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Two RCTs of PRGF-Endoret vs HA: Sanchez 2012 (n=176) response rate 14.1 percentage points higher (p=.044); Vaquerizo 2013 (n=96) PRGF superior to a single Durolane injection.",
+     "caveats": "Comparator was HA, not placebo; HA itself has weak evidence (AAOS 2021 not recommended); BTI-linked authors; European system equivalence to the 2025 US kit assumed, not verified. Off-label in the US."
+    },
+    {
+     "application_id": "tendinopathy-injection",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Off-label."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:22840987",
+     "title": "A randomized clinical trial evaluating plasma rich in growth factors (PRGF-Endoret) versus hyaluronic acid in the short-term treatment of symptomatic knee osteoarthritis",
+     "year": 2012,
+     "design": "RCT",
+     "n": 176,
+     "finding": "PRGF-Endoret (BTI) vs HA, three weekly injections: response rate 14.1 percentage points higher with PRGF (95% CI 0.5 to 27.6; p=.044); secondary outcomes numerically favored PRGF without significance.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:24075613",
+     "title": "Comparison of intra-articular injections of plasma rich in growth factors (PRGF-Endoret) versus Durolane hyaluronic acid in the treatment of patients with symptomatic osteoarthritis: a randomized controlled trial",
+     "year": 2013,
+     "design": "RCT",
+     "n": 96,
+     "finding": "Three weekly PRGF-Endoret (BTI) injections vs one Durolane injection: PRGF was significantly more effective on pain and function scores.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:34812863",
+     "title": "Effect of Intra-articular Platelet-Rich Plasma vs Placebo Injection on Pain and Medial Tibial Cartilage Volume in Patients With Knee Osteoarthritis: The RESTORE Randomized Clinical Trial",
+     "year": 2021,
+     "design": "RCT",
+     "n": 288,
+     "finding": "Class-level (placebo-controlled, product not named): Leukocyte-poor PRP (a commercial product, not named in the abstract) vs saline: 12-month knee pain change -2.1 vs -1.8 (difference -0.4, 95% CI -0.9 to 0.2) and no cartilage-volume benefit.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Strongest brand-specific knee OA RCT dossier among the PRP kits, but US marketing authorization arrived only in October 2025 and for graft handling."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK251157",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK251157",
+    "https://pubmed.ncbi.nlm.nih.gov/22840987/",
+    "https://pubmed.ncbi.nlm.nih.gov/24075613/"
+   ]
+  },
+  {
+   "id": "aurix-autologel",
+   "name": "Aurix System (formerly AutoloGel System) PRP gel for chronic wounds",
+   "company": "Nuo Therapeutics, Inc.",
+   "ownership_history": "Cytomedix, Inc. (formerly Informatix Holdings 1998, Autologous Wound Therapy 1999; Cytomedix 2000) renamed Nuo Therapeutics in 2014; Chapter 11 in 2001-2002 and again January 2016; operations furloughed 1 May 2019 while seeking a Medicare coverage reconsideration; restarted October 2021 after the April 2021 NCD revision. Cytomedix bought the Angel business from Sorin in April 2010 (see arthrex-angel). SEC filings: nuot20170409_s1, aurx20240630_10q.",
+   "category": "PRP",
+   "composition": "Single-use disposable and desktop centrifuge for preparing PRP (up to 60 mL of blood) that is gelled with calcium chloride and thrombin and applied as a gel to wounds. Not an orthopedic injection product.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK060007 (Autologel System, Cytomedix, decision 2007-09-20); K030340 (AutoloGel Process Centrifuge Model B4360, decision 2003-04-11, product code JQC). Aurix is the current name for AutoloGel per CMS.",
+    "us_market_year": 2003,
+    "on_label_indications": [
+     "K030340: 'designed to be used at the patient's point of care for the safe and rapid preparation of autologous platelet-rich plasma (PRP) from a small sample of the patient's blood (up to 60 ml)'. Wound indications under BK060007 not retrieved; CMS conditions coverage on the device's FDA-cleared indications including exuding cutaneous wounds. Injection of PRP into joints or tendons is an off-label use of any PRP device and is not covered by NCD 270.3 (autologous product is 361-exempt only when minimally manipulated)."
+    ]
+   },
+   "status": "established",
+   "challenge": "Medicare's only national PRP coverage decision (NCD 270.3) was reopened at the manufacturer's request (2019, per CMS): coverage with evidence development in 2012, then from 2021 up to 20 weeks for chronic non-healing diabetic wounds when the preparing device is cleared for exuding cutaneous wounds; the company still shut down from 2019 to 2021.",
+   "applications": [
+    {
+     "application_id": "diabetic-foot-ulcer-chronic-wound",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "I",
+     "evidence_summary": "Driver 2006 blinded multicenter RCT (72 randomized) of PRP gel vs saline-gel dressing on diabetic foot ulcers: per-protocol healing 68.4% vs 42.9%; 81.3% vs 42.1% (p=.036) only after excluding wound-size outliers.",
+     "caveats": "Per-protocol analysis after an audit excluded 32 of 72 patients; significance appeared only after an outlier adjustment; PRP prepared with bovine thrombin. CMS NCD 270.3: March 2008 determination of inadequate evidence; 2012 revision CED for diabetic, venous and pressure wounds; effective 2021-04-13 coverage of autologous PRP for chronic non-healing diabetic wounds for 20 weeks under 1862(a)(1)(A), MAC discretion beyond that, PDGF and acute surgical wound uses non-covered. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:16799184",
+     "title": "A prospective, randomized, controlled trial of autologous platelet-rich plasma gel for the treatment of diabetic foot ulcers",
+     "year": 2006,
+     "design": "RCT",
+     "n": 72,
+     "finding": "72 randomized to PRP gel or saline-gel dressing; 32 excluded from the per-protocol analysis after an audit; healing 13/19 (68.4%) vs 9/21 (42.9%), and 13/16 (81.3%) vs 8/19 (42.1%, p=.036) only after excluding wound-size outliers.",
+     "sponsor_funded": null,
+     "applications": [
+      "diabetic-foot-ulcer-chronic-wound"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Medicare covers autologous PRP for chronic non-healing diabetic wounds for 20 weeks (NCD 270.3, effective 2021-04-13) when the preparing device's FDA-cleared indications include exuding cutaneous wounds; beyond 20 weeks and other wounds are MAC-determined; acute surgical wounds non-covered.",
+    "notes": "The case study in how a single NCD decides a PRP company's fate; a hiring manager could ask what Nuo's restart implies for orthopedic PRP coverage (it does not extend)."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?ncdid=217",
+    "https://fda.innolitics.com/device/BK060007",
+    "https://fda.innolitics.com/device/K030340",
+    "https://www.sec.gov/Archives/edgar/data/0001091596/000143774917006388/nuot20170409_s1.htm",
+    "https://www.sec.gov/Archives/edgar/data/1091596/000143774924025952/aurx20240630_10q.htm",
+    "https://pubmed.ncbi.nlm.nih.gov/16799184/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "fidia-prp-kit",
+   "name": "Fidia PRP Kit (20 mL and 50 mL)",
+   "company": "Fidia Farmaceutici S.p.A. (Italy)",
+   "category": "PRP",
+   "composition": "Single-use PRP preparation kit (20 and 50 mL) for a benchtop centrifuge, from a company that also sells hyaluronic acid products.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK180296 (Fidia PRP Kit, 20 mL and 50 mL, decision 2019-11-05)",
+    "us_market_year": 2019,
+    "on_label_indications": [
+     "Product-code and indication text not retrievable; expected ORG (PRP for mixing with bone graft to improve handling). Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "US commercial availability of the kit not confirmed. Off-label injection."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Interesting only as an HA maker holding a PRP clearance, a competitor-neutral hedge in the viscosupplement-vs-PRP debate."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK180296"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "healeon-prp",
+   "name": "Healeon PRP Platelet Preparation System and Healeon Float PRP",
+   "company": "Bimini Health Tech (Plano, TX); Healeon Medical, Inc.",
+   "ownership_history": "Healeon Medical, Inc. filed the 2017-2018 clearance; Bimini Health Tech (also the applicant for PUREGRAFT SYNC adipose filtration, BK251296) filed the 2024 Healeon Float clearance; GUDID ties Healeon PRP to the Eclipse/TropoCells family (see eclipse-prp). The corporate link between Healeon Medical and Bimini was not confirmed.",
+   "category": "PRP",
+   "composition": "Single-use PRP tube kits (HFPRP15, HFPRP30, HFPRP45 float devices) for a benchtop centrifuge.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK170136 (Healeon PRP Platelet Preparation System, received 2017-10-25, decision 2018-11-20, ORG); BK241095 (Healeon Float PRP devices, decision 2024-11-20, ORG)",
+    "us_market_year": 2018,
+    "on_label_indications": [
+     "BK241095: 'intended for the safe and rapid preparation of autologous platelet-rich-plasma (PRP) from a small sample of blood at the patient point of care. The PRP is mixed with autograft and/or allograft bone prior to application to a bony defect for improving handling characteristics.' Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Off-label injection."
+    },
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Graft handling on-label only. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "Regenerative/aesthetic clinic channel; corporate lineage unclear."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK241095",
+    "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=BK170136",
+    "https://fda.innolitics.com/device/BK170136",
+    "https://fda.innolitics.com/device/BK251296"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "cyclone-prp-bbmc",
+   "name": "Cyclone PRP Concentrating System and Cyclone Blood and Bone Marrow Concentration (BBMC) System",
+   "company": "Alliance Partners, LLC",
+   "ownership_history": "Alliance Partners also filed the Swann-Shidi bone marrow aspiration needle (K121181). Not to be confused with the Nakoma ACP cervical plate that shares the 'ACP' letters in the 510(k) database.",
+   "category": "BMAC",
+   "composition": "Disposable kits for a benchtop centrifuge: Cyclone PRP prepares platelet-rich plasma; Cyclone BBMC concentrates blood and bone marrow.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK160045 (Cyclone Platelet Rich Plasma Concentrating System, decision 2016-11-04); BK170108 (Cyclone Blood & Bone Marrow Concentration System, decision 2018-01-02)",
+    "us_market_year": 2016,
+    "on_label_indications": [
+     "Indication and product-code text not retrievable; expected ORG for the PRP kit. Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated. Regulatory frame for every BMAC system: the 510(k)s (product codes JQC, QBV, ORG) clear a point-of-care centrifuge kit to prepare a bone marrow concentrate, or PRP to be mixed with bone graft; several state 'the safety and effectiveness of this device for in vivo indications for use has not been established'. Injection of BMAC into a joint, tendon or osteonecrotic femoral head is an off-label use of the device. FDA treats the autologous marrow product as outside premarket review (not an HCT/P when minimally manipulated and used homologously, 21 CFR 1271.3(d)(4); or same-surgical-procedure exception) only while it stays minimally manipulated."
+    ],
+    "unverified": true
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Off-label injection."
+    },
+    {
+     "application_id": "femoral-head-osteonecrosis-core-decompression",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level BMAC RCTs negative (Hauzeur 2018, Pepke 2016).",
+     "caveats": "Off-label."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28988340",
+     "title": "Inefficacy of autologous bone marrow concentrate in stage three osteonecrosis: a randomized controlled double-blind trial",
+     "year": 2018,
+     "design": "RCT",
+     "n": 38,
+     "finding": "Class-level: Core decompression with BMAC vs without in stage 3 osteonecrosis (23 hips per arm, 19 patients per arm): 15 of 23 hips in each arm needed THR; BMAC added nothing.",
+     "sponsor_funded": null,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "distributor",
+    "reimbursement": "Not covered for orthopedic use: cash-pay. Bone marrow harvest codes bill separately for the surgeon when done with an operation (inpatient bundled in MS-DRG).",
+    "notes": "Small distributor-led brand; thin documentation."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK160045",
+    "https://fda.innolitics.com/device/BK170108",
+    "https://fda.innolitics.com/device/K121181"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "genesis-biologics-aaps",
+   "name": "Adaptive Autologous Processing System (AAPS)",
+   "company": "Genesis Biologics, Inc.",
+   "category": "PRP",
+   "composition": "Single-use syringe assembly with a hollow threaded plunger and locking collar for density separation in a desktop centrifuge; plasma and buffy coat are aspirated into a secondary chamber and red cells discarded.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "BK230807 (Adaptive Autologous Processing System, decision 2023-05-10, ORG; predicate Arthrex Double Syringe (ACP) System BK190406)",
+    "us_market_year": 2023,
+    "on_label_indications": [
+     "'Indicated to be used for the safe and rapid preparation of autologous platelet-rich plasma (PRP) from a small sample of peripheral blood at the patient point-of-care. The PRP is mixed with autograft and/or allograft bone prior to application to a bony defect for improving handling characteristics.' Clinical evidence in the summary is bench only (platelet yield, recovery, function, bone graft retention). Regulatory frame for every PRP kit: 510(k)s in product code ORG (21 CFR 864.9245) clear the device to prepare PRP 'to be mixed with bone graft' at the point of care to improve handling; older JQC, KSS and FMF clearances cover a centrifuge, a blood-bank supply or a piston syringe and carry no therapeutic indication. Injection of PRP into a joint or tendon is an off-label use of the device. FDA has not approved or cleared PRP as a treatment for those uses; the autologous preparation sits outside premarket review (361-exempt, same-surgical-procedure rule) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "general-long-bone-nonunion",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Bench testing only in the 510(k); graft handling on-label, no healing claim. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    },
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Graft handling only. Class-level evidence for spine PRP is neutral to negative. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:15864142",
+     "title": "Platelet gel (AGF) fails to increase fusion rates in instrumented posterolateral fusions",
+     "year": 2005,
+     "design": "retrospective",
+     "n": 152,
+     "finding": "Class-level (different platelet-gel system): 76 instrumented PLFs with iliac crest graft plus autologous growth factor platelet gel vs matched controls: nonunion 25% vs 17% (p=.18), no benefit. System is a proprietary platelet-gel method, not one of the brands in this file.",
+     "sponsor_funded": null,
+     "applications": [
+      "lumbar-plf"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not covered: cash-pay in the clinic; kit cost bundled into the procedure or patient fee. No HCPCS code for the product; CPT 0232T (PRP injection) is Category III and generally non-covered by Medicare and most commercial plans for musculoskeletal use. Chronic diabetic wound PRP is the one covered exception (CMS NCD 270.3, 2021).",
+    "notes": "A textbook example of a bench-only ORG clearance that chains to Arthrex ACP as predicate."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/BK230807",
+    "https://fda.innolitics.com/api/v1/devices/BK230807"
+   ]
+  },
+  {
+   "id": "miracell-smart-mcell",
+   "name": "SMART M-CELL Bone Marrow Concentration System and SMART M-CELL PRP Concentration System",
+   "company": "Miracell Co., Ltd.",
+   "category": "BMAC",
+   "composition": "Disposable kits for a centrifuge: one concentrates bone marrow aspirate, one extracts platelet concentrate from venous blood; both predicated on Harvest SmartPReP2.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K250518 (SMART M-CELL Bone Marrow Concentration System) and K250516 (SMART M-CELL PRP Concentration System), both decision 2026-04-02, product code QBV (Class I centrifuge for preparation of cell concentrate and/or plasma concentrate, 21 CFR 862.2050); predicate SmartPReP2 K052925",
+    "us_market_year": 2026,
+    "on_label_indications": [
+     "K250518: 'intended to be used in the clinical laboratory or intraoperatively at point-of-care for the safe and rapid preparation of a cell concentrate from bone marrow.' K250516: platelet concentrate from a small volume of venous whole blood after centrifugal separation. Product code QBV states 'the safety and effectiveness of this device for in vivo indications for use has not been established.' Regulatory frame for every BMAC system: the 510(k)s (product codes JQC, QBV, ORG) clear a point-of-care centrifuge kit to prepare a bone marrow concentrate, or PRP to be mixed with bone graft; several state 'the safety and effectiveness of this device for in vivo indications for use has not been established'. Injection of BMAC into a joint, tendon or osteonecrotic femoral head is an off-label use of the device. FDA treats the autologous marrow product as outside premarket review (not an HCT/P when minimally manipulated and used homologously, 21 CFR 1271.3(d)(4); or same-surgical-procedure exception) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "emerging",
+   "challenge": "QBV is a new Class I code created to move marrow and plasma concentrators out of the PRP-for-bone-graft code; the label here carries no in vivo claim at all.",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Cleared 2026-04-02; no in vivo indication. Off-label injection."
+    },
+    {
+     "application_id": "femoral-head-osteonecrosis-core-decompression",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level BMAC RCTs negative (Hauzeur 2018, Pepke 2016).",
+     "caveats": "Off-label."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:28988340",
+     "title": "Inefficacy of autologous bone marrow concentrate in stage three osteonecrosis: a randomized controlled double-blind trial",
+     "year": 2018,
+     "design": "RCT",
+     "n": 38,
+     "finding": "Class-level: Core decompression with BMAC vs without in stage 3 osteonecrosis (23 hips per arm, 19 patients per arm): 15 of 23 hips in each arm needed THR; BMAC added nothing.",
+     "sponsor_funded": null,
+     "applications": [
+      "femoral-head-osteonecrosis-core-decompression"
+     ]
+    }
+   ],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not covered for orthopedic use: cash-pay. Bone marrow harvest codes bill separately for the surgeon when done with an operation (inpatient bundled in MS-DRG).",
+    "notes": "Newest entrant; shows the FDA treating concentrators as Class I centrifuges rather than PRP devices. Whether QBV supersedes ORG for new filings is an open point to watch."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/K250518",
+    "https://fda.innolitics.com/device/K250516",
+    "https://api.fda.gov/device/classification.json?search=product_code:QBV"
+   ]
+  },
+  {
+   "id": "surgentec-alara-bma",
+   "name": "ALARA BMA Neuro Access Kit (ALARA BMAN and ALARA BMAC kits)",
+   "company": "SurGenTec, LLC",
+   "category": "BMAC",
+   "composition": "Bone marrow aspiration needle kit that combines pedicle pilot-hole preparation with proximity feedback to nerves and bone marrow aspiration during spine surgery; BMAC variant adds a needle for cancellous bone core biopsy.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K240664 (decision 2024-08-09) and K243945 (decision 2025-04-24), product code KNW; predicates Ranfac Bone Marrow Aspiration Needle K131157 and ALARA Neuro Access Kit K190163",
+    "us_market_year": 2024,
+    "on_label_indications": [
+     "'Indicated for aspiration of bone marrow or autologous blood. The ALARA BMA Neuro Access Kit is indicated for pedicle pilot hole preparation, locating, and identifying spinal roots/nerves by providing proximity feedback. The ALARA BMAC Needle is intended for use in harvesting core biopsy samples of cancellous bone and/or bone marrow.' No claim for the use of the marrow in fusion. Regulatory frame for every BMAC system: the 510(k)s (product codes JQC, QBV, ORG) clear a point-of-care centrifuge kit to prepare a bone marrow concentrate, or PRP to be mixed with bone graft; several state 'the safety and effectiveness of this device for in vivo indications for use has not been established'. Injection of BMAC into a joint, tendon or osteonecrotic femoral head is an off-label use of the device. FDA treats the autologous marrow product as outside premarket review (not an HCT/P when minimally manipulated and used homologously, 21 CFR 1271.3(d)(4); or same-surgical-procedure exception) only while it stays minimally manipulated."
+    ]
+   },
+   "status": "emerging",
+   "applications": [
+    {
+     "application_id": "lumbar-plf",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23). Class-level evidence for BMAC as an extender in fusion is mostly uncontrolled.",
+     "caveats": "Aspiration during pedicle preparation is on-label; use of the marrow as graft extender is the surgeon's choice and not claimed. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    },
+    {
+     "application_id": "lumbar-tlif-plif",
+     "tier": "emerging",
+     "on_label": true,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "As above. Injection of PRP or BMAC into joints or tendons is off-label for the device; FDA treats the autologous product as 361-exempt (same-surgical-procedure rule) only when minimally manipulated."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Bundled in MS-DRG inpatient; no separate payment for the aspiration kit.",
+    "notes": "SurGenTec pairs marrow aspiration with its spine graft delivery products; the BMA kit makes harvest a no-extra-incision step."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/K243945",
+    "https://fda.innolitics.com/device/K240664"
+   ]
+  },
+  {
+   "id": "lipogems",
+   "name": "Lipogems System (microfragmented adipose tissue)",
+   "company": "Lipogems International SpA (Milan, Italy)",
+   "ownership_history": "Founded 2012 by Carlo Tremolada and Camillo Ricordi; privately held. January 2023 growth financing (ODT headline $12.5 million; investors reported as ABC Medtech and LIFTT) to fund FDA IDE studies in knee osteoarthritis. A newer 2024-2025 financing appears in PitchBook but was not read.",
+   "category": "other",
+   "composition": "Closed, disposable, full-immersion device in which harvested lipoaspirate is washed, shaken and passed through sizing filters to produce clusters of microfragmented adipose tissue (about 0.3-0.8 mm); mechanical only, no enzymes or added agents.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K142682 (decision 2014-12-22), K161636 (2016-11-04), K171135 (2017-05-18); product code MUU, 21 CFR 878.5040 (suction lipoplasty). IDE trials: NCT05660772 and a second IDE (saline-controlled) reported by the company.",
+    "us_market_year": 2014,
+    "on_label_indications": [
+     "K142682: closed-loop processing of lipoaspirate for transfer of autologous adipose tissue for aesthetic body contouring (lipofilling) in plastic and reconstructive, neuro-, GI, urologic, orthopedic, gynecologic, thoracic and laparoscopic surgery. K161636 and K171135 extend to harvesting, concentrating and transferring adipose tissue when transfer is desired in orthopedic, arthroscopic, neurosurgery and other specialties. No indication for osteoarthritis or any disease. Regulatory frame for every adipose device: the 510(k)s (product code MUU, 21 CFR 878.5040) clear a device to harvest, concentrate and transfer autologous fat (tissue transfer) in named surgical specialties; none carries a disease claim such as knee osteoarthritis. Microfragmented adipose tissue (mechanical, no enzymes) is marketed under the minimal-manipulation reading; enzymatic stromal vascular fraction (SVF) is a drug under FDA's 2017 and 2020 guidance (US v. US Stem Cell Clinic, 11th Cir. 2021; US v. California Stem Cell Treatment Center, 9th Cir. 2024)."
+    ]
+   },
+   "status": "established",
+   "challenge": "The label is for tissue transfer, yet the company is running US IDE trials to earn a knee-OA claim; the independent RCTs so far show equivalence to PRP, not superiority to placebo.",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "Randomized trials: Lipogems MFAT vs leukocyte-rich PRP (Arthrex Angel), n=71 randomized, equivalent KOOS-Pain at 12 months (Baria 2024); Lipogems mFAT plus debridement vs debridement alone, n=78, better functional scores at 6 months (Ulivi 2023). Sponsor phase 3 IDE vs corticosteroid (NCT05660772, n=173) completed without posted results.",
+     "caveats": "No saline-controlled efficacy result yet; equivalence-to-PRP design; PRP itself has weak placebo-controlled evidence (Bennell 2021). Fat harvest adds morbidity. Off-label (tissue-transfer clearance)."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:38510323",
+     "title": "Microfragmented Adipose Tissue Is Equivalent to Platelet-Rich Plasma for Knee Osteoarthritis at 12 Months Posttreatment: A Randomized Controlled Trial",
+     "year": 2024,
+     "design": "RCT",
+     "n": 71,
+     "finding": "Lipogems MFAT vs leukocyte-rich PRP (Arthrex Angel), 71 randomized and 49 completing 12 months: KOOS-Pain 77.8 vs 78.0 (p=.69), no group differences (NCT04351087).",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:36040510",
+     "title": "Micro-fragmented adipose tissue (mFAT) associated with arthroscopic debridement provides functional improvement in knee osteoarthritis: a randomized controlled trial",
+     "year": 2023,
+     "design": "RCT",
+     "n": 78,
+     "finding": "Lipogems mFAT plus arthroscopic debridement vs debridement alone in KL 3-4 knees: functional scores (KOOS-PS) improved more with mFAT at 6 months.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "NCT05660772",
+     "title": "Microfragmented Adipose Tissue Compared to Corticosteroid Injection for the Treatment of Knee Osteoarthritis",
+     "year": 2023,
+     "design": "RCT",
+     "n": 173,
+     "finding": "Lipogems International-sponsored phase 3 (IDE) trial vs corticosteroid, primary endpoint WOMAC-A pain; completed, 173 enrolled; no results posted as of 2026-10-23.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    },
+    {
+     "ref": "PMID:34812863",
+     "title": "Effect of Intra-articular Platelet-Rich Plasma vs Placebo Injection on Pain and Medial Tibial Cartilage Volume in Patients With Knee Osteoarthritis: The RESTORE Randomized Clinical Trial",
+     "year": 2021,
+     "design": "RCT",
+     "n": 288,
+     "finding": "Class-level (PRP comparator evidence): Leukocyte-poor PRP (a commercial product, not named in the abstract) vs saline: 12-month knee pain change -2.1 vs -1.8 (difference -0.4, 95% CI -0.9 to 0.2) and no cartilage-volume benefit.",
+     "sponsor_funded": null,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT05660772",
+     "NCT04351087",
+     "NCT04427657"
+    ],
+    "expected_milestone": "NCT05660772 completed; a knee-OA claim would need a De Novo or new 510(k)/PMA decision; no submission located."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not covered for knee osteoarthritis: cash-pay. Fat harvest and injection are billed under general lipectomy-type or unlisted codes when billed at all.",
+    "notes": "Cash-pay MFAT knee injection is the revenue engine; the IDE program aims to convert it into a labeled indication. The company has not publicly posted results."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/K142682",
+    "https://fda.innolitics.com/device/K161636",
+    "https://fda.innolitics.com/device/K171135",
+    "https://clinicaltrials.gov/study/NCT05660772",
+    "https://clinicaltrials.gov/study/NCT04351087",
+    "https://pubmed.ncbi.nlm.nih.gov/38510323/",
+    "https://pubmed.ncbi.nlm.nih.gov/36040510/",
+    "https://www.odtmag.com/contents/view_breaking-news/2023-01-04/lipogems-raises-125-million-to-accelerate-expansion-in-knee-osteoarthritis/"
+   ]
+  },
+  {
+   "id": "jointechlabs-minitc",
+   "name": "MiniTC Tissue Processing Device (JTL-250-01)",
+   "company": "Jointechlabs, Inc.",
+   "category": "other",
+   "composition": "Single-use device that processes lipoaspirate into a fat concentrate/microfragmented product at the point of care; predicate is Lipogems K161636.",
+   "regulatory": {
+    "path": "510k",
+    "reference": "K182732 (JTL-250-01, decision 2019-11-18, product code MUU; predicate Lipogems System K161636)",
+    "us_market_year": 2019,
+    "on_label_indications": [
+     "'Processing of lipoaspirate tissue in medical procedures involving the harvesting, concentrating and transferring of autologous adipose tissue' in listed specialties including arthroscopic surgery. No disease claim. Regulatory frame for every adipose device: the 510(k)s (product code MUU, 21 CFR 878.5040) clear a device to harvest, concentrate and transfer autologous fat (tissue transfer) in named surgical specialties; none carries a disease claim such as knee osteoarthritis. Microfragmented adipose tissue (mechanical, no enzymes) is marketed under the minimal-manipulation reading; enzymatic stromal vascular fraction (SVF) is a drug under FDA's 2017 and 2020 guidance (US v. US Stem Cell Clinic, 11th Cir. 2021; US v. California Stem Cell Treatment Center, 9th Cir. 2024)."
+    ]
+   },
+   "status": "established",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "emerging",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "No published study of this product in this application located (PubMed and ClinicalTrials.gov search 2026-10-23).",
+     "caveats": "Tissue-transfer clearance only; no OA indication."
+    }
+   ],
+   "evidence": [],
+   "bd": {
+    "sales_channel": "unknown",
+    "reimbursement": "Not covered for knee osteoarthritis: cash-pay. Fat harvest and injection are billed under general lipectomy-type or unlisted codes when billed at all.",
+    "notes": "Value follower to Lipogems built on the Lipogems clearance; no published outcome data located."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/K182732",
+    "https://accessgudid.nlm.nih.gov/devices/search?query=jointechlabs"
+   ]
+  },
+  {
+   "id": "ingeneron-transpose-rt",
+   "name": "InGeneron Transpose RT System (point-of-care adipose-derived regenerative cell isolation) and SmartGraft",
+   "company": "InGeneron, Inc. (Houston, TX)",
+   "category": "MSC",
+   "composition": "Transpose RT is a benchtop device and enzymatic reagent kit that digests lipoaspirate to isolate fresh uncultured, unmodified adipose-derived regenerative cells (UA-ADRCs, stromal vascular fraction) in under about 90 minutes for same-day injection. SmartGraft 30 and 200 are separate fat-concentration devices cleared in 2014.",
+   "regulatory": {
+    "path": "IDE-only",
+    "reference": "Transpose RT: no marketing authorization; used in IDE trials NCT03752827 (rotator cuff, 168 enrolled), NCT03513731 (facet OA, 40), NCT03503305 (wrist OA, 40). SmartGraft 30 (K141591, 2014-09-24) and SmartGraft 200 (K141713, 2014-10-28), product code MUU, cover fat transfer only.",
+    "us_market_year": null,
+    "on_label_indications": [
+     "Transpose RT: none; investigational only. SmartGraft: concentrating adipose tissue for aesthetic body contouring and listed surgical specialties (not ADRC isolation). Enzymatic digestion makes the product a 351 drug under FDA's 2017/2020 guidance (US v. US Stem Cell Clinic, 11th Cir. 2021; US v. California Stem Cell Treatment Center, 9th Cir. 2024)."
+    ]
+   },
+   "status": "investigational",
+   "challenge": "A pivotal-scale trial exists but results are unposted; the independent rotator cuff evidence is a 16-patient company-sponsored pilot.",
+   "applications": [
+    {
+     "application_id": "rotator-cuff-augmentation",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "I",
+     "evidence_summary": "First-in-human pilot RCT (Hurd 2020, 11 UA-ADRC vs 5 corticosteroid patients, mITT): ASES total significantly higher with cells at 24 and 52 weeks (p<0.05) in partial-thickness tears. Pivotal-scale IDE trial NCT03752827 (168 enrolled, active not recruiting) has no posted results.",
+     "caveats": "Company-sponsored, tiny n, injection into tendon not repair augmentation; company press releases overstate (not independently verified); 3.4-year follow-up reported by the company, not read here. Enzymatic SVF/ADRC isolation is a 351 drug per FDA's 2017 and 2020 guidance; not a 361-exempt point-of-care product."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "PMID:32238172",
+     "title": "Safety and efficacy of treating symptomatic, partial-thickness rotator cuff tears with fresh, uncultured, unmodified, autologous adipose-derived regenerative cells (UA-ADRCs) isolated at the point of care: a prospective, randomized, controlled first-in-human pilot study",
+     "year": 2020,
+     "design": "RCT",
+     "n": 16,
+     "finding": "Pilot: 11 UA-ADRC vs 5 corticosteroid patients (mITT); ASES total higher with cells at 24 and 52 weeks (p<0.05); company-sponsored, tiny n.",
+     "sponsor_funded": true,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    },
+    {
+     "ref": "NCT03752827",
+     "title": "Autologous Adult Adipose-Derived Regenerative Cell Injection Into Chronic Partial-Thickness Rotator Cuff Tears",
+     "year": 2019,
+     "design": "RCT",
+     "n": 168,
+     "finding": "InGeneron IDE trial vs corticosteroid, primary pain VAS; 168 enrolled, active not recruiting; no results posted as of 2026-10-23.",
+     "sponsor_funded": true,
+     "applications": [
+      "rotator-cuff-augmentation"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "pivotal",
+    "trials": [
+     "NCT03752827",
+     "NCT03513731",
+     "NCT03503305",
+     "NCT02918136"
+    ],
+    "expected_milestone": "Pivotal rotator cuff trial active, not recruiting (168 enrolled); a BLA/IND pathway would be required for enzymatic SVF; no filing located."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not applicable: investigational.",
+    "notes": "Enzymatic ADRC systems sit on the wrong side of the FDA 361/351 line unless approved as a drug; Ingeneron is the cleanest ortho example because it runs IDEs rather than selling."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT03752827",
+    "https://clinicaltrials.gov/study/NCT03513731",
+    "https://clinicaltrials.gov/study/NCT03503305",
+    "https://fda.innolitics.com/device/K141591",
+    "https://fda.innolitics.com/device/K141713",
+    "https://pubmed.ncbi.nlm.nih.gov/32238172/",
+    "https://www.businesswire.com/news/home/20200407005356/en/"
+   ],
+   "unverified": true
+  },
+  {
+   "id": "cytori-celution",
+   "name": "Cytori Celution System and Puregraft (adipose-derived regenerative cells)",
+   "company": "Plus Therapeutics (successor name of Cytori Therapeutics); Puregraft later sold on",
+   "ownership_history": "Cytori Therapeutics renamed Plus Therapeutics in 2019 (per the brief; not re-verified) and moved away from the Celution cell-therapy business; Puregraft LLC and Bimini Health Tech appear as later applicants/labelers (Dermapose Refresh K193363, PUREGRAFT SYNC BK251296).",
+   "category": "MSC",
+   "composition": "Celution is an automated closed system that digests lipoaspirate with Celase enzyme to isolate adipose-derived regenerative cells (a stromal vascular fraction product). Puregraft (50, 250, 850) is a washing/filtering fat-graft device without enzymes.",
+   "regulatory": {
+    "path": "IDE-only",
+    "reference": "Celution Cell Concentration Device K060482 (2006-09-28, product code CAC, autotransfusion/cell washing) and Cytori Lipoplasty System with Celase K063235 (2007-01-24, QPB, fat emulsification; Celase reagent) cover tissue/cell handling, not therapy. Puregraft 250/850/50: K092923, K113255, K132815 (MUU) for aesthetic fat grafting. Orthopedic ADRC use only in IDE trials such as NCT02326961.",
+    "us_market_year": 2006,
+    "on_label_indications": [
+     "K060482: collection, concentration, washing and reinfusion of autologous cells collected intra- or postoperatively (general, orthopedic and other surgery); K063235: fragmentation, emulsification and aspiration of soft tissue and aesthetic body contouring. Neither authorizes ADRC injection for osteoarthritis. Enzymatic ADRC/SVF is a 351 drug under FDA's 2017 and 2020 guidance, so injection outside an IND is off-label/unapproved (US v. US Stem Cell Clinic, 11th Cir. 2021)."
+    ],
+    "unverified": true
+   },
+   "status": "off-market",
+   "applications": [
+    {
+     "application_id": "knee-oa-intraarticular",
+     "tier": "investigational",
+     "on_label": false,
+     "evidence_grade": "V",
+     "evidence_summary": "Cytori's placebo-controlled phase 2 knee OA trial of Celution-prepared ADRCs (NCT02326961, 94 enrolled, primary KOOS pain on walking) completed with no results posted and no peer-reviewed report located.",
+     "caveats": "Registry-only evidence; Cytori exited the program. Commercial status of Celution in 2026 not confirmed. Enzymatic SVF/ADRC isolation is a 351 drug per FDA's 2017 and 2020 guidance; not a 361-exempt point-of-care product."
+    }
+   ],
+   "evidence": [
+    {
+     "ref": "NCT02326961",
+     "title": "Celution Prepared Adipose Derived Regenerative Cells in the Treatment of Osteoarthritis of the Knee",
+     "year": 2016,
+     "design": "RCT",
+     "n": 94,
+     "finding": "Cytori phase 2 placebo-controlled trial, primary KOOS pain on walking; completed with 94 enrolled; no results posted and no peer-reviewed report located.",
+     "sponsor_funded": true,
+     "applications": [
+      "knee-oa-intraarticular"
+     ]
+    }
+   ],
+   "pipeline": {
+    "stage": "phase-2",
+    "trials": [
+     "NCT02326961",
+     "NCT02736110"
+    ],
+    "expected_milestone": "None: program completed/withdrawn; no sponsor activity located."
+   },
+   "bd": {
+    "sales_channel": "direct",
+    "reimbursement": "Not applicable: investigational; Puregraft fat grafting is cash-pay.",
+    "notes": "Historical cautionary tale for enzymatic ADRC devices: strong early press, a completed knee OA phase 2 with no public result, and corporate renaming."
+   },
+   "last_reviewed": "2026-10-23",
+   "sources": [
+    "https://fda.innolitics.com/device/K060482",
+    "https://fda.innolitics.com/device/K063235",
+    "https://fda.innolitics.com/device/K092923",
+    "https://fda.innolitics.com/device/K132815",
+    "https://clinicaltrials.gov/study/NCT02326961",
+    "https://clinicaltrials.gov/study/NCT02736110"
+   ],
+   "unverified": true
+  }
+ ]
+}

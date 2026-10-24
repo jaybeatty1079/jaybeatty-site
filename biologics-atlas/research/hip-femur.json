@@ -1661,7 +1661,7 @@
     {
       "id": "prp-fracture",
       "name": "Platelet-rich plasma (autologous, point-of-care systems) in fracture and nonunion",
-      "company": "Multiple (Arthrex ACP/Angel, Zimmer Biomet GPS III, Harvest SmartPReP APC, Stryker/Emcyte, DePuy Synthes Peak PlasmaBlade heritage, others)",
+      "company": "Multiple (Arthrex ACP/Angel, Zimmer Biomet GPS III, Harvest SmartPReP APC, EmCyte, others)",
       "category": "PRP",
       "composition": "Autologous platelet concentrate (2-8x baseline) with or without leukocytes, prepared by centrifugation of 15-60 mL of whole blood; applied as liquid or activated gel at the fracture or nonunion site.",
       "regulatory": {
