@@ -107,18 +107,25 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
   <div id="banner"><div class="big" id="bannerBig">Mission <span>Passed</span></div><div class="mid" id="bannerMid"></div><div class="sm" id="bannerSm"></div></div>
   <div id="start"><div class="t">Dealer <span>City</span></div><p>You're the GM. Three missions: build your lot, run the payroll, set your pay plan. Watch the net counter. Drag the city to look around.</p><button class="btn" id="startBtn" disabled style="opacity:.5">Loading the city…</button></div>
   <div id="panel">
-    <div class="m on" id="m1"><div class="t"><i>01</i>Build your lot</div><div class="why">Tap a size. Drag the slider to your real headcount. Brands are set dressing.</div>
-      <div class="tiers" id="tiers"></div>
-      <label class="l"><span>Full-time W-2 employees</span><b id="empV">64</b></label><input type="range" id="emp" min="8" max="600" value="64">
-      <div class="chips" id="brands"></div>
-      <button class="btn next" id="n1">Next: run the payroll →</button></div>
-    <div class="m" id="m2"><div class="t"><i>02</i>Run the payroll</div><div class="why">How many of your people qualify and enroll, and which plan level. 80% is the usual planning number; the $1,600 level fits most dealership pay.</div>
+    <div class="m on" id="m1"><div class="t"><i>01</i>Build your group</div><div class="why">Your store first, then every other store the owner runs. Each one becomes a building, sized by headcount and colored by brand. Up to 30.</div>
+      <div id="stores"></div>
+      <button class="btn next" id="addStore" style="background:var(--panel2);color:var(--ink);font-size:14px;box-shadow:none;border:1px solid var(--line)">+ Add a store</button>
+      <div class="fine" id="groupLine"></div>
+      <button class="btn next" id="n1">Next: your plans →</button></div>
+    <div class="m" id="m2"><div class="t"><i>02</i>Your plans</div><div class="why">The payroll side first, then your health plan. If you're self-funded or level-funded, there is a second way this pays.</div>
       <label class="l"><span>Share who qualify and enroll</span><b id="qualV">80%</b></label><input type="range" id="qual" min="40" max="100" value="80">
-      <div class="fine">Contribution tier</div><div class="toggle" id="plan"></div>
-      <div class="fine">States</div><select id="stateSel"><option value="">Add a state…</option></select><div class="chips" id="states"></div><div class="fine" id="stateNote"></div>
+      <div class="fine">Plan level</div><div class="toggle" id="plan"></div>
+      <div class="fine" style="margin-top:12px">How is your health plan funded?</div>
+      <div class="toggle" id="hp"><button data-v="insured" class="on">Fully insured</button><button data-v="level">Level-funded</button><button data-v="self">Self-funded</button></div>
+      <div id="claims" style="display:none">
+        <label class="l"><span>Your plan's cost per enrolled employee, per year</span><b id="costV">$9,000</b></label><input type="range" id="cost" min="3000" max="25000" value="9000" step="250">
+        <label class="l"><span>Share of that care the $0 plan handles first</span><b id="deflV">3%</b></label><input type="range" id="defl" min="0" max="15" value="3" step="0.5">
+        <div class="fine">Virtual primary care, urgent care, therapy and generics at $0 are the first stop, so some visits and fills never reach your plan. Dependents are included. Your TPA's 12-month claims summary sets the real number; this slider is only an illustration.</div>
+      </div>
       <button class="btn next" id="n2">Next: your pay plan →</button></div>
-    <div class="m" id="m3"><div class="t"><i>03</i>Your pay plan</div><div class="why">How your bonus is figured. Pick the one that matches your plan and set your share.</div>
-      <div class="toggle" id="mode"><button data-v="all" class="on">Share of all net</button><button data-v="above">Share of net above target</button></div>
+    <div class="m" id="m3"><div class="t"><i>03</i>Your pay plan</div><div class="why">What your bonus is figured on, and how.</div>
+      <div class="fine">I'm paid on</div><div class="toggle" id="scope"><button data-v="store" class="on">My store</button><button data-v="group">The whole group</button></div>
+      <div class="fine" style="margin-top:8px">How</div><div class="toggle" id="mode"><button data-v="all" class="on">Share of all net</button><button data-v="above">Share of net above target</button></div>
       <label class="l"><span id="shareLabel">Your share</span><b id="shareV">5%</b></label><input type="range" id="share" min="1" max="40" value="5" step="0.5">
       <div class="fine" id="modeNote"></div>
       <details><summary>Store benchmarks</summary>
@@ -131,14 +138,22 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
 </div>
 
 <div class="sheet" id="sheet">
-  <div class="hero"><div class="k">Net profit added to the store, per year</div><div class="n" id="lift">$0</div><div class="u" id="units"></div><div class="s" id="liftS"></div>
+  <div class="hero"><div class="k" id="liftK">Net profit added, per year</div><div class="n" id="lift">$0</div><div class="u" id="units"></div><div class="s" id="liftS"></div>
     <a class="cta" href="/#contact">Run my real payroll →</a></div>
   <div class="stats">
     <div class="stat me"><div class="k">Your bonus</div><div class="n" id="bonusDelta">+$0</div><div class="s" id="bonusDeltaS"></div></div>
-    <div class="stat"><div class="k">Store net, before → after</div><div class="n" id="netPair">$0</div><div class="s" id="netPairS"></div></div>
+    <div class="stat"><div class="k" id="netK">Net, before → after</div><div class="n" id="netPair">$0</div><div class="s" id="netPairS"></div></div>
     <div class="stat"><div class="k">Employees enrolled</div><div class="n" id="enrolled">0</div><div class="s" id="enrolledS"></div></div>
+    <div class="stat" id="claimsStat" style="display:none"><div class="k">Care kept off your health plan (estimate)</div><div class="n" id="claimsV">$0</div><div class="s" id="claimsS"></div></div>
     <div class="stat"><div class="k">What employees see</div><div class="n">+$50–500</div><div class="s">estimated monthly take-home gain for those who enroll; varies by pay and state; some come out behind</div></div>
   </div>
+  <div class="stat" style="grid-column:1/-1"><div class="k">Per store</div><div id="perStore" style="font-size:13px;margin-top:6px"></div></div>
+  <div class="stat" style="grid-column:1/-1"><div class="k">How it works, in five lines</div><ol style="margin:8px 0 0;padding-left:18px;font-size:13px;line-height:1.5;color:#c9c4da">
+    <li>Employees who enroll elect a pre-tax contribution under a Section 125 plan. It funds $0 virtual primary care, urgent care, therapy, dermatology, 70-plus generics and coaching, for them and their dependents.</li>
+    <li>Their taxable wages drop, so the dealership pays less FICA. After the plan's admin fee that is the per-employee saving above. It lands on the P&amp;L as net.</li>
+    <li>When an employee completes qualifying care, a wellness reward comes back on the same paycheck, so most enrolled employees take home more, not less.</li>
+    <li>It sits alongside your major medical plan and never replaces it. If your plan is self-funded or level-funded, the $0 care is the first stop, so some claims never reach it.</li>
+    <li>Nothing is signed on these numbers. A payroll analysis confirms who qualifies and what the dealership saves, store by store.</li></ol></div>
 </div>
 <p class="fine" style="margin-top:14px">Illustrative only. No specific tax outcome is guaranteed; results depend on a payroll analysis and on current federal and state law. Employer figures use the plan's published per-employee math (the monthly pre-tax contribution × 7.65% FICA, less the plan's administration fee) and leave out any workers' compensation, FUTA or SUTA effect. Revenue, margin and pay-plan figures are industry averages or your own entries, not a forecast for your store. Participation is voluntary; employees typically see higher take-home pay, though some do not. This is a fixed indemnity benefit, not health insurance; it sits alongside, not in place of, major medical. Wellness payments above an employee's unreimbursed medical expenses may be taxable to the employee. This is a marketing communication, not legal, tax, accounting or financial advice. Not affiliated with any video game or its publisher.</p>
 </div>
@@ -155,70 +170,84 @@ const NOTAX=new Set(['AK','FL','NV','NH','SD','TN','TX','WA','WY']);
 // Contribution tiers as published in the decks on file (contribution, admin fee). Edit here when the rate sheet changes.
 // ACA plan levels: five tiers, $40 admin each; $1,600 is the top plan per the Oct 26 Kind Lending proposal ($82.40 net per enrolled employee per month).
 const PLANS=[{c:1600,admin:40},{c:1500,admin:40},{c:1200,admin:40},{c:1000,admin:40},{c:675,admin:40}];
-const S={tier:1,emp:64,brands:new Set(['Toyota']),states:new Set(['PA']),qual:80,plan:1600,mode:'all',share:5,rpe:1150000,margin:2.8,unit:48000};
+const S={stores:[{brand:'Toyota',emp:64,state:'PA'}],qual:80,plan:1600,hp:'insured',cost:9000,defl:3,scope:'store',mode:'all',share:5,rpe:1150000,margin:2.8,unit:48000};
 let step=0; const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 window.S=S;
-
-$('#tiers').innerHTML=TIERS.map((t,i)=>`<div class="tier" data-id="${i}"><b>${t.name}</b>${t.s}</div>`).join('');
-document.querySelectorAll('.tier').forEach(el=>el.onclick=()=>{S.tier=+el.dataset.id;S.emp=TIERS[S.tier].emp;$('#emp').value=S.emp;update()});
-$('#brands').innerHTML=BRANDS.map(([b,c])=>`<button data-b="${b}" style="--c:${c}">${b}</button>`).join('');
-document.querySelectorAll('#brands button').forEach(el=>el.onclick=()=>{const b=el.dataset.b;S.brands.has(b)?S.brands.delete(b):S.brands.add(b);update()});
+const tierOf=e=>e<=35?0:e<=90?1:e<=200?2:3;
+function renderStores(){
+  $('#stores').innerHTML=S.stores.map((st,i)=>`<div class="store" data-i="${i}" style="display:grid;grid-template-columns:1.1fr .8fr .7fr auto;gap:5px;align-items:center;margin-top:6px">
+    <select data-k="brand">${BRANDS.map(([b])=>`<option ${b===st.brand?'selected':''}>${b}</option>`).join('')}</select>
+    <input type="number" data-k="emp" value="${st.emp}" min="1" max="2000" style="background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:5px 6px;font:12px Inter;width:100%" title="employees">
+    <select data-k="state">${STATES.map(x=>`<option ${x===st.state?'selected':''}>${x}</option>`).join('')}</select>
+    ${i?`<button data-del="${i}" style="background:none;border:0;color:var(--mute);cursor:pointer;font-size:14px" title="remove">✕</button>`:`<span style="font:600 9px Inter;color:var(--obj);letter-spacing:.1em">YOU</span>`}</div>`).join('');
+  $('#stores').querySelectorAll('select,input').forEach(el=>{el.onchange=e=>{const row=e.target.closest('.store'),i=+row.dataset.i,k=e.target.dataset.k;S.stores[i][k]=k==='emp'?Math.max(1,Math.min(2000,+e.target.value||1)):e.target.value;update()}});
+  $('#stores').querySelectorAll('[data-del]').forEach(el=>el.onclick=()=>{S.stores.splice(+el.dataset.del,1);renderStores();update()});
+  $('#addStore').style.display=S.stores.length>=30?'none':'';
+}
+$('#addStore').onclick=()=>{const last=S.stores[S.stores.length-1];S.stores.push({brand:BRANDS[S.stores.length%BRANDS.length][0],emp:40,state:last.state});renderStores();update()};
 $('#plan').innerHTML=PLANS.map(p=>`<button data-v="${p.c}" class="${p.c===S.plan?'on':''}">$${p.c.toLocaleString()}</button>`).join('');
-$('#stateSel').innerHTML+=STATES.map(s=>`<option>${s}</option>`).join('');
-$('#stateSel').onchange=e=>{if(e.target.value){S.states.add(e.target.value);e.target.value='';update()}};
 $('#plan').onclick=e=>{const b=e.target.closest('button');if(!b)return;S.plan=+b.dataset.v;document.querySelectorAll('#plan button').forEach(x=>x.classList.toggle('on',x===b));update()};
+$('#hp').onclick=e=>{const b=e.target.closest('button');if(!b)return;S.hp=b.dataset.v;document.querySelectorAll('#hp button').forEach(x=>x.classList.toggle('on',x===b));update()};
+$('#scope').onclick=e=>{const b=e.target.closest('button');if(!b)return;S.scope=b.dataset.v;document.querySelectorAll('#scope button').forEach(x=>x.classList.toggle('on',x===b));update()};
 $('#mode').onclick=e=>{const b=e.target.closest('button');if(!b)return;S.mode=b.dataset.v;document.querySelectorAll('#mode button').forEach(x=>x.classList.toggle('on',x===b));S.share=S.mode==='all'?5:25;$('#share').value=S.share;update()};
-for(const k of ['emp','qual','share','rpe','margin','unit']){$('#'+k).oninput=e=>{S[k]=+e.target.value;if(k==='emp')S.tier=S.emp<=35?0:S.emp<=90?1:S.emp<=200?2:3;update()}}
+for(const k of ['qual','cost','defl','share','rpe','margin','unit']){$('#'+k).oninput=e=>{S[k]=+e.target.value;update()}}
 
 function model(){
-  const p=PLANS.find(x=>x.c===S.plan), per=S.plan*0.0765-p.admin, enrolled=Math.round(S.emp*S.qual/100), lift=enrolled*per*12;
-  const rev=S.emp*S.rpe, net=rev*S.margin/100, units=lift/(S.margin/100)/S.unit, bonusDelta=lift*S.share/100;
-  return {per,enrolled,lift,rev,net,units,bonusDelta};
+  const p=PLANS.find(x=>x.c===S.plan), per=S.plan*0.0765-p.admin;
+  const stores=S.stores.map(st=>{const enrolled=Math.round(st.emp*S.qual/100),lift=enrolled*per*12,rev=st.emp*S.rpe,net=rev*S.margin/100;return {...st,enrolled,lift,rev,net}});
+  const sum=k=>stores.reduce((a,x)=>a+x[k],0);
+  const g={emp:sum('emp'),enrolled:sum('enrolled'),lift:sum('lift'),net:sum('net'),rev:sum('rev')};
+  const my=stores[0], base=S.scope==='group'?g:my;
+  const units=base.lift/(S.margin/100)/S.unit, bonusDelta=base.lift*S.share/100;
+  const claims=(S.hp==='insured')?0:g.enrolled*S.cost*S.defl/100;
+  return {per,stores,g,my,base,units,bonusDelta,claims};
 }
 const shown={cash:0};
 function update(){
   const m=model();
-  document.querySelectorAll('.tier').forEach(el=>el.classList.toggle('on',+el.dataset.id===S.tier));
-  document.querySelectorAll('#brands button').forEach(el=>{const on=S.brands.has(el.dataset.b);el.classList.toggle('on',on);el.style.background=on?el.style.getPropertyValue('--c'):''});
-  $('#states').innerHTML=[...S.states].map(s=>`<button class="on" style="background:var(--purple)" data-s="${s}">${s} ✕</button>`).join('');
-  document.querySelectorAll('#states button').forEach(el=>el.onclick=()=>{S.states.delete(el.dataset.s);update()});
-  const nt=[...S.states].filter(s=>NOTAX.has(s));
-  $('#stateNote').textContent=nt.length?`${nt.join(', ')}: no state income tax, so employees there see a smaller take-home gain. The store's FICA savings are federal and the same everywhere.`:'The store savings are federal payroll tax, the same in every state.';
-  $('#empV').textContent=S.emp;$('#qualV').textContent=S.qual+'%';$('#shareV').textContent=S.share+'%';$('#rpeV').textContent=fmtM(S.rpe);$('#marginV').textContent=S.margin.toFixed(1)+'%';$('#unitV').textContent=fmt(S.unit);
+  $('#groupLine').textContent=`${S.stores.length} store${S.stores.length>1?'s':''}, ${m.g.emp.toLocaleString()} on payroll`;
+  $('#qualV').textContent=S.qual+'%';$('#shareV').textContent=S.share+'%';$('#rpeV').textContent=fmtM(S.rpe);$('#marginV').textContent=S.margin.toFixed(1)+'%';$('#unitV').textContent=fmt(S.unit);$('#costV').textContent=fmt(S.cost);$('#deflV').textContent=S.defl+'%';
+  $('#claims').style.display=S.hp==='insured'?'none':'block';
   $('#shareLabel').textContent=S.mode==='all'?'Your share of all net':'Your share of net above target';
-  $('#modeNote').textContent=S.mode==='all'?'Most GM plans pay base plus a share of all store net. The plan money is net, so you get your share of it.':'Plans that pay a higher share above a baseline treat every plan dollar as incremental: it lands entirely in your upper band.';
-  const target=m.net+m.lift;
+  $('#modeNote').textContent=S.mode==='all'?'Most GM plans pay base plus a share of all net. The plan money is net, so you get your share of it.':'Plans that pay a higher share above a baseline treat every plan dollar as incremental: it lands entirely in your upper band.';
+  const target=m.base.net+m.base.lift;
   gsap.to(shown,{cash:target,duration:reduce?0:1.1,ease:'power3.out',onUpdate:()=>{$('#cashV').textContent=fmt(shown.cash)}});
-  $('#cashD').textContent='+'+fmt(m.lift)+' from the plan';
+  $('#cash .l').textContent=(S.scope==='group'?'GROUP NET':'STORE NET')+', WITH THE PLAN';
+  $('#cashD').textContent='+'+fmt(m.base.lift)+' from the plan';
   if(!reduce)gsap.fromTo('#cashD',{opacity:0,y:-6},{opacity:1,y:0,duration:.3,yoyo:true,repeat:1,repeatDelay:1.2});
-  const stars=Math.min(5,Math.max(1,Math.ceil(m.lift/50000)));$('#starsV').textContent='★'.repeat(stars)+'☆'.repeat(5-stars);
-  $('#lift').textContent=fmt(m.lift);$('#units').textContent=`${Math.round(m.units).toLocaleString()} cars you didn't have to sell`;
-  $('#liftS').textContent=`${m.enrolled} enrolled × ${fmt(m.per)} a month (7.65% FICA on the $${S.plan.toLocaleString()} contribution, less the admin fee) × 12. A ${(100*m.lift/m.net).toFixed(1)}% lift on ${fmt(m.net)} of net.`;
-  $('#bonusDelta').textContent='+'+fmt(m.bonusDelta);$('#bonusDeltaS').textContent=`${S.share}% of ${fmt(m.lift)}, ${S.mode==='all'?'your share of all net':'your share above target'}`;
-  $('#netPair').textContent=fmt(m.net)+' → '+fmt(m.net+m.lift);$('#netPairS').textContent=`${S.emp} employees × ${fmtM(S.rpe)} at ${S.margin.toFixed(1)}%`;
-  $('#enrolled').textContent=m.enrolled;$('#enrolledS').textContent=`${S.qual}% of ${S.emp}, voluntary`;
-  if(window.city)window.city.setLot(S.tier,S.emp,[...S.brands].map(b=>BRANDS.find(x=>x[0]===b)[1]),m.enrolled/Math.max(1,S.emp));
+  const stars=Math.min(5,Math.max(1,Math.ceil(m.g.lift/100000)));$('#starsV').textContent='★'.repeat(stars)+'☆'.repeat(5-stars);
+  const scopeWord=S.scope==='group'?'the group':'your store';
+  $('#liftK').textContent=`Net profit added to ${scopeWord}, per year`;
+  $('#lift').textContent=fmt(m.base.lift);$('#units').textContent=`${Math.round(m.units).toLocaleString()} cars you didn't have to sell`;
+  $('#liftS').textContent=`${m.base.enrolled.toLocaleString()} enrolled × ${fmt(m.per)} a month (7.65% FICA on the $${S.plan.toLocaleString()} contribution, less the admin fee) × 12. A ${(100*m.base.lift/m.base.net).toFixed(1)}% lift on ${fmt(m.base.net)} of net.`+(S.scope==='store'&&S.stores.length>1?` The whole group: ${fmt(m.g.lift)}.`:'');
+  $('#bonusDelta').textContent='+'+fmt(m.bonusDelta);$('#bonusDeltaS').textContent=`${S.share}% of ${fmt(m.base.lift)}, ${S.mode==='all'?'your share of all net':'your share above target'}, on ${scopeWord}`;
+  $('#netK').textContent=(S.scope==='group'?'Group':'Store')+' net, before → after';
+  $('#netPair').textContent=fmt(m.base.net)+' → '+fmt(m.base.net+m.base.lift);$('#netPairS').textContent=`${m.base.emp.toLocaleString()} employees × ${fmtM(S.rpe)} at ${S.margin.toFixed(1)}%`;
+  $('#enrolled').textContent=m.g.enrolled.toLocaleString();$('#enrolledS').textContent=`${S.qual}% of ${m.g.emp.toLocaleString()} across ${S.stores.length} store${S.stores.length>1?'s':''}, voluntary`;
+  $('#claimsStat').style.display=S.hp==='insured'?'none':'block';$('#claimsV').textContent=fmt(m.claims);$('#claimsS').textContent=`${m.g.enrolled.toLocaleString()} enrolled × ${fmt(S.cost)} × ${S.defl}% handled first by the $0 plan, on your ${S.hp==='self'?'self-funded':'level-funded'} plan. Your TPA's claims summary sets the real figure.`;
+  $('#perStore').innerHTML=m.stores.map((st,i)=>`<div style="display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-top:1px solid var(--line)"><span>${i?'':'<b style="color:var(--obj)">YOU · </b>'}${st.brand} · ${st.state} · ${st.emp} employees</span><span style="font-variant-numeric:tabular-nums;color:var(--cash)">+${fmt(st.lift)}</span></div>`).join('');
+  if(window.city)window.city.setGroup(m.stores.map(st=>({emp:st.emp,color:BRANDS.find(x=>x[0]===st.brand)[1],brand:st.brand,enrolled:st.enrolled})),m.g.enrolled/Math.max(1,m.g.emp));
 }
 const LINES={
-  0:["Rocky. Back office. Nobody sees me, everybody gets paid. Build your lot and I'll start reading the payroll."],
-  1:["{emp} on W-2. That's a payroll worth reading. Now tell me who qualifies."],
-  2:["{enrolled} enrolled. {lift} a year lands on the P&L and not one tire gets kicked. Last job: how do you get paid?"],
+  0:["Rocky. Back office. Nobody sees me, everybody gets paid. Build your store, then add the owner's other stores. Every one becomes a building."],
+  1:["{n} stores, {emp} on W-2. That's a payroll worth reading. Now tell me about your plans."],
+  2:["{enrolled} enrolled across the group. {lift} a year lands on the P&L and not one tire gets kicked. Last job: how do you get paid?"],
   3:["{bonus} to you. {units} cars' worth of net nobody had to move. Take it to ownership."]};
-function say(n,m){const t=LINES[n][0].replace('{emp}',S.emp).replace('{enrolled}',m.enrolled).replace('{lift}',fmt(m.lift)).replace('{bonus}','+'+fmt(m.bonusDelta)).replace('{units}',Math.round(m.units));
+function say(n,m){const t=LINES[n][0].replace('{n}',S.stores.length).replace('{emp}',m.g.emp.toLocaleString()).replace('{enrolled}',m.g.enrolled.toLocaleString()).replace('{lift}',fmt(m.g.lift)).replace('{bonus}','+'+fmt(m.bonusDelta)).replace('{units}',Math.round(m.units));
   const el=$('#phoneT');el.textContent='';gsap.killTweensOf('#phone');gsap.to('#phone',{x:'0%',duration:reduce?0:.4,ease:'power3.out'});
   let i=0;clearInterval(say.tm);say.tm=setInterval(()=>{el.textContent=t.slice(0,++i);if(i>=t.length)clearInterval(say.tm)},reduce?0:18);
   gsap.to('#phone',{x:'-130%',duration:.4,delay:8,ease:'power3.in'});}
 function banner(big,mid,sm){const b=$('#banner');$('#bannerBig').innerHTML=big;$('#bannerMid').textContent=mid;$('#bannerSm').textContent=sm;
   if(reduce){b.style.opacity=1;setTimeout(()=>b.style.opacity=0,2500);return}
   gsap.timeline().set(b,{opacity:1}).fromTo('#bannerBig',{scale:2.2,opacity:0},{scale:1,opacity:1,duration:.35,ease:'power4.out'}).fromTo('#bannerMid',{y:20,opacity:0},{y:0,opacity:1,duration:.3},'-=.1').fromTo('#bannerSm',{opacity:0},{opacity:1,duration:.3}).to(b,{opacity:0,duration:.5,delay:1.8});}
-const OBJ={1:'Build your lot: tap a size, set your headcount',2:'Run the payroll: who qualifies, which tier',3:'Set your pay plan',4:'Mission passed. Send this to ownership'};
+const OBJ={1:'Build your group: your store, then the owner\'s other stores',2:'Your plans: who qualifies, plan level, how your health plan is funded',3:'Set your pay plan',4:'Mission passed. Send this to ownership'};
 function go(n){step=n;$('#mstepV').textContent=Math.min(3,n);document.querySelectorAll('#panel .m').forEach((el,i)=>el.classList.toggle('on',i===n-1));$('#objT').textContent=OBJ[n];}
 $('#startBtn').onclick=()=>{if(matchMedia('(max-width:760px)').matches){document.getElementById('game').after(document.getElementById('panel'))}gsap.to('#start',{opacity:0,duration:.4,onComplete:()=>$('#start').style.display='none'});$('#panel').style.display='block';$('#panel').classList.add('on');go(1);say(0,model());if(window.city)window.city.flyIn()};
-$('#n1').onclick=()=>{const m=model();banner('Mission <span>Passed</span>',`${S.emp} on payroll`,'The lot');say(1,m);go(2);if(window.city){window.city.celebrate(1);window.city.cue(1)}};
-$('#n2').onclick=()=>{const m=model();banner('Mission <span>Passed</span>','+'+fmt(m.lift)+' net','Payroll run');say(2,m);go(3);if(window.city){window.city.celebrate(2);window.city.cue(2)}};
-$('#n3').onclick=()=>{const m=model();banner('<span>Respect</span> +',fmt(m.lift)+' net, zero units','Illustrative. Confirmed by a payroll analysis before anything is signed.');say(3,m);go(4);$('#sheet').classList.add('on');if(window.city){window.city.celebrate(3);window.city.cue(3)}setTimeout(()=>$('#sheet').scrollIntoView({behavior:'smooth',block:'start'}),2600)};
+$('#n1').onclick=()=>{const m=model();banner('Mission <span>Passed</span>',`${S.stores.length} store${S.stores.length>1?'s':''}, ${m.g.emp.toLocaleString()} on payroll`,'Your group');say(1,m);go(2);if(window.city){window.city.celebrate(1);window.city.cue(1)}};
+$('#n2').onclick=()=>{const m=model();banner('Mission <span>Passed</span>','+'+fmt(m.g.lift)+' net','Your plans');say(2,m);go(3);if(window.city){window.city.celebrate(2);window.city.cue(2)}};
+$('#n3').onclick=()=>{const m=model();banner('<span>Respect</span> +',fmt(m.base.lift)+' net, zero units','Illustrative. Confirmed by a payroll analysis before anything is signed.');say(3,m);go(4);$('#sheet').classList.add('on');if(window.city){window.city.celebrate(3);window.city.cue(3)}setTimeout(()=>$('#sheet').scrollIntoView({behavior:'smooth',block:'start'}),2600)};
 $('#rockyFace').innerHTML=`<circle cx="30" cy="30" r="28" fill="#1b1826"/><path d="M10 34 C 8 22, 14 14, 22 12 L 26 4 L 30 12 L 34 4 L 38 12 C 46 14, 52 22, 50 34 C 48 44, 40 50, 30 50 C 20 50, 12 44, 10 34Z" fill="#8a86a3"/><path d="M12 30 C 20 22, 40 22, 48 30 C 46 38, 38 42, 30 40 C 22 42, 14 38, 12 30Z" fill="#262238"/><rect x="14" y="27" width="14" height="8" rx="2" fill="#0b0a10" stroke="#d65db1" stroke-width="1.5"/><rect x="32" y="27" width="14" height="8" rx="2" fill="#0b0a10" stroke="#d65db1" stroke-width="1.5"/><ellipse cx="30" cy="44" rx="4" ry="3" fill="#0b0a10"/><path d="M24 48 Q 30 53, 36 48" stroke="#0b0a10" stroke-width="2" fill="none"/><path d="M16 52 L 30 56 L 44 52 L 46 60 L 14 60Z" fill="#22a85e"/><circle cx="22" cy="57" r="1.5" fill="#d65db1"/><circle cx="36" cy="56" r="1.5" fill="#ffd166"/>`;
-update();
+renderStores();update();
 </script>
 
 <script type="module">
@@ -257,14 +286,17 @@ function windowTex(w,h,lit){const c=document.createElement('canvas');c.width=64;
   for(let y=4;y<128;y+=10)for(let x=4;x<64;x+=12){if(Math.random()<lit*.55){g.fillStyle=['#ffd166','#8366ea','#4fd486','#d65db1','#9aa7ff'][Math.floor(Math.random()*5)];g.fillRect(x,y,7,6)}}
   const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(w/6,h/12);return t}
 const neon=[0xd65db1,0x8366ea,0x22a85e,0x4fa3e0];
-function building(x,z,w,d,h,seed){const g=new THREE.BoxGeometry(w,h,d);const em=windowTex(w,h,.35+((seed*7)%5)/10);
+const blocks={};
+function building(parent,x,z,w,d,h,seed){const g=new THREE.BoxGeometry(w,h,d);const em=windowTex(w,h,.35+((seed*7)%5)/10);
   const mat=new THREE.MeshStandardMaterial({color:0x1a1630,roughness:.6,metalness:.2,emissive:0xffffff,emissiveMap:em,emissiveIntensity:.75});
-  const m=new THREE.Mesh(g,mat);m.position.set(x,h/2,z);scene.add(m);
-  const edge=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(w+.1,.3,d+.1)),new THREE.LineBasicMaterial({color:neon[seed%4]}));edge.position.set(x,h,z);scene.add(edge);
-  if(seed%3===0){const s=new THREE.Mesh(new THREE.BoxGeometry(w*.6,2.2,.4),new THREE.MeshStandardMaterial({color:0x000,emissive:neon[(seed+1)%4],emissiveIntensity:2.5}));s.position.set(x,h+1.4,z+d/2);scene.add(s)}}
+  const m=new THREE.Mesh(g,mat);m.position.set(x,h/2,z);parent.add(m);
+  const edge=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(w+.1,.3,d+.1)),new THREE.LineBasicMaterial({color:neon[seed%4]}));edge.position.set(x,h,z);parent.add(edge);
+  if(seed%3===0){const sg=new THREE.Mesh(new THREE.BoxGeometry(w*.6,2.2,.4),new THREE.MeshStandardMaterial({color:0x000,emissive:neon[(seed+1)%4],emissiveIntensity:2.5}));sg.position.set(x,h+1.4,z+d/2);parent.add(sg)}}
 let seed=1;
-for(let i=0;i<NX;i++)for(let j=0;j<NZ;j++){if(j===2&&(i===3))continue;const cx=(i-NX/2+.5)*PITCH,cz=(j-NZ/2+.5)*PITCH;const n=1+(seed%3);
-  for(let k=0;k<n;k++){seed++;const dist=Math.hypot(i-3,j-2);const w=8+(seed*13)%9,d=8+(seed*7)%9,h=5+(seed*29)%(dist<1.5?8:dist<2.5?16:30);const ox=n===1?0:(k-(n-1)/2)*(BLOCK/n*.9),oz=((seed*3)%7)-3;building(cx+ox,cz+oz,Math.min(w,BLOCK/n-2),Math.min(d,BLOCK-4),h,seed)}}
+for(let i=0;i<NX;i++)for(let j=0;j<NZ;j++){if(j===2&&i===3)continue;const grp=new THREE.Group();scene.add(grp);blocks[i+'_'+j]=grp;const cx=(i-NX/2+.5)*PITCH,cz=(j-NZ/2+.5)*PITCH;const n=1+(seed%3);
+  for(let k=0;k<n;k++){seed++;const dist=Math.hypot(i-3,j-2);const w=8+(seed*13)%9,d=8+(seed*7)%9,h=5+(seed*29)%(dist<1.5?8:dist<2.5?16:30);const ox=n===1?0:(k-(n-1)/2)*(BLOCK/n*.9),oz=((seed*3)%7)-3;building(grp,cx+ox,cz+oz,Math.min(w,BLOCK/n-2),Math.min(d,BLOCK-4),h,seed)}}
+/* block slots for the owner's other stores: nearest to the center first */
+const SLOTS=[];for(let i=0;i<NX;i++)for(let j=0;j<NZ;j++){if(j===2&&i===3)continue;SLOTS.push({i,j,d:Math.hypot(i-3,j-2)})}SLOTS.sort((a,b)=>a.d-b.d);
 /* street lights + palms */
 const lampMat=new THREE.MeshStandardMaterial({color:0x000,emissive:0xffe6a8,emissiveIntensity:3});
 for(let i=0;i<=NX;i++)for(let j=0;j<=NZ;j++){const x=(i-NX/2)*PITCH+ROAD/2+.6,z=(j-NZ/2)*PITCH+ROAD/2+.6;const pole=new THREE.Mesh(new THREE.CylinderGeometry(.12,.12,7),new THREE.MeshStandardMaterial({color:0x2a2640}));pole.position.set(x,3.5,z);scene.add(pole);const l=new THREE.Mesh(new THREE.SphereGeometry(.45),lampMat);l.position.set(x,7,z);scene.add(l)}
@@ -310,14 +342,30 @@ function setLot(tier,emp,brandColors,enrolledFrac){
   brandColors.slice(0,8).forEach((hex,i)=>{const p=new THREE.Mesh(new THREE.PlaneGeometry(1.6,1),new THREE.MeshStandardMaterial({color:new THREE.Color(hex),emissive:new THREE.Color(hex),emissiveIntensity:1.2,side:THREE.DoubleSide}));p.position.set(-BLOCK/2+2+i*3,9,BLOCK/2+.2);lot.add(p);pennants.push(p);const st=new THREE.Mesh(new THREE.CylinderGeometry(.08,.08,10),new THREE.MeshStandardMaterial({color:0x3a3550}));st.position.set(-BLOCK/2+1.1+i*3,5,BLOCK/2+.2);lot.add(st);pennants.push(st)});
   ring.material.opacity=.15+enrolledFrac*.85;
 }
+let towers=[];
+function labelSprite(text,hex){const c=document.createElement('canvas');c.width=256;c.height=64;const g=c.getContext('2d');g.font='bold 40px Anton, Impact, sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillStyle=hex;g.shadowColor=hex;g.shadowBlur=16;g.fillText(text.toUpperCase(),128,34);const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c),transparent:true,depthTest:false}));sp.scale.set(14,3.5,1);return sp}
+function setGroup(stores,frac){
+  const me=stores[0];setLot(me.emp<=35?0:me.emp<=90?1:me.emp<=200?2:3,me.emp,[me.color],frac);
+  for(const t of towers)scene.remove(t);towers=[];for(const k in blocks)blocks[k].visible=true;
+  stores.slice(1,31).forEach((st,n)=>{const slot=SLOTS[n];if(!slot)return;blocks[slot.i+'_'+slot.j].visible=false;
+    const cx=(slot.i-NX/2+.5)*PITCH,cz=(slot.j-NZ/2+.5)*PITCH;const w=Math.min(22,10+st.emp/25),h=Math.min(44,8+st.emp/6),d=Math.min(20,9+st.emp/30);
+    const g=new THREE.Group();const col=new THREE.Color(st.color);
+    const body=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),new THREE.MeshStandardMaterial({color:0x1d1934,roughness:.5,metalness:.3,emissive:0xffffff,emissiveMap:windowTex(w,h,.6),emissiveIntensity:.8}));body.position.set(cx,h/2,cz);g.add(body);
+    const edge=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(w+.2,h+.2,d+.2)),new THREE.LineBasicMaterial({color:col}));edge.position.copy(body.position);g.add(edge);
+    const band=new THREE.Mesh(new THREE.BoxGeometry(w+.4,1.2,d+.4),new THREE.MeshStandardMaterial({color:0x000,emissive:col,emissiveIntensity:2.2}));band.position.set(cx,h-1,cz);g.add(band);
+    const pad=new THREE.Mesh(new THREE.PlaneGeometry(BLOCK-2,BLOCK-2),new THREE.MeshStandardMaterial({color:0x242036,roughness:.9}));pad.rotation.x=-Math.PI/2;pad.position.set(cx,.03,cz);g.add(pad);
+    const nc=Math.min(10,Math.max(2,Math.round(st.emp/20)));for(let i=0;i<nc;i++){const c=car(palette[(i*3+n)%8]);c.scale.setScalar(.6);c.position.set(cx-BLOCK/2+3+i*((BLOCK-6)/9),0,cz+d/2+4);c.rotation.y=Math.PI/2;g.add(c)}
+    const lab=labelSprite(st.brand,st.color);lab.position.set(cx,h+4,cz);g.add(lab);
+    scene.add(g);towers.push(g)});
+}
 const bursts=[];
 function celebrate(n){gsap.fromTo(lotLightA,{intensity:60},{intensity:220,duration:.25,yoyo:true,repeat:3});gsap.fromTo(lotLightB,{intensity:50},{intensity:200,duration:.25,yoyo:true,repeat:3});
   for(let i=0;i<6+n*3;i++){const c=car(palette[i%8]);c.scale.setScalar(.62);const a=Math.random()*Math.PI*2;c.position.set(Math.cos(a)*80,0,Math.sin(a)*80);c.lookAt(0,0,0);c.rotateY(Math.PI/2);scene.add(c);bursts.push({m:c,t:0,a})}}
 function flyIn(){cue(0)}
-const CUES=[{p:[34,24,46],t:[0,2,0]},{p:[70,52,-80],t:[0,6,0]},{p:[18,8,30],t:[2,1,8]},{p:[22,16,-20],t:[11,9,-11]}];
+const CUES=[{p:[34,24,46],t:[0,2,0]},{p:[95,80,-110],t:[0,6,0]},{p:[18,8,30],t:[2,1,8]},{p:[22,16,-20],t:[11,9,-11]}];
 function cue(n){const c=CUES[n]||CUES[0];controls.autoRotate=false;gsap.to(camera.position,{x:c.p[0],y:c.p[1],z:c.p[2],duration:2.2,ease:'power2.inOut'});gsap.to(controls.target,{x:c.t[0],y:c.t[1],z:c.t[2],duration:2.2,ease:'power2.inOut',onComplete:()=>{controls.autoRotate=true}})}
-window.city={setLot,celebrate,flyIn,cue};
-setLot(window.S.tier,window.S.emp,['#eb0a1e'],.8);
+window.city={setLot,setGroup,celebrate,flyIn,cue};
+setGroup([{emp:64,color:'#eb0a1e',brand:'Toyota'}],.8);
 
 /* post + loop */
 const composer=new EffectComposer(renderer);composer.addPass(new RenderPass(scene,camera));
