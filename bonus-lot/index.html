@@ -92,6 +92,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
 .cta{display:inline-block;margin-top:14px;background:var(--magenta);color:#fff;font-family:Anton;letter-spacing:.06em;font-size:18px;padding:12px 22px;border-radius:8px;text-decoration:none;text-transform:uppercase;box-shadow:4px 4px 0 #000}
 @media (max-width:760px){#panel{position:static;width:auto;display:none;margin-top:12px}#panel.on{display:block}#panel .m{max-height:none;background:var(--panel)}#game{aspect-ratio:4/3}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{body{background:#fff;color:#111}#game,#panel,.sheet,.btn,.cta{display:none!important}#owner{display:block!important}.stat,.hero{background:#fff!important;border-color:#ccc!important;color:#111}.stat .n,.hero .n,.hero .u{color:#111!important;text-shadow:none!important}.stat .k,.stat .s,.hero .k,.hero .s,.fine{color:#444!important}h1{color:#111;text-shadow:none}h1 span{color:#111}}
 </style>
 </head>
 <body>
@@ -144,16 +145,35 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
     <div class="stat me"><div class="k">Your bonus</div><div class="n" id="bonusDelta">+$0</div><div class="s" id="bonusDeltaS"></div></div>
     <div class="stat"><div class="k" id="netK">Net, before → after</div><div class="n" id="netPair">$0</div><div class="s" id="netPairS"></div></div>
     <div class="stat"><div class="k">Employees enrolled</div><div class="n" id="enrolled">0</div><div class="s" id="enrolledS"></div></div>
-    <div class="stat" id="claimsStat" style="display:none"><div class="k">Care kept off your health plan (estimate)</div><div class="n" id="claimsV">$0</div><div class="s" id="claimsS"></div></div>
-    <div class="stat"><div class="k">What employees see</div><div class="n">+$50–500</div><div class="s">estimated monthly take-home gain for those who enroll; varies by pay and state; some come out behind</div></div>
+    <div class="stat" id="claimsStat" style="display:none"><div class="k">Doctor visits and prescriptions that never hit the company health plan (estimate)</div><div class="n" id="claimsV">$0</div><div class="s" id="claimsS"></div></div>
+    <div class="stat"><div class="k">What your people see</div><div class="n">+$50–500</div><div class="s">more take-home a month, estimated. Only employees who come out ahead are enrolled, and their families get the $0 care too.</div></div>
   </div>
   <div class="stat" style="grid-column:1/-1"><div class="k">Per store</div><div id="perStore" style="font-size:13px;margin-top:6px"></div></div>
-  <div class="stat" style="grid-column:1/-1"><div class="k">How it works, in five lines</div><ol style="margin:8px 0 0;padding-left:18px;font-size:13px;line-height:1.5;color:#c9c4da">
-    <li>Employees who enroll elect a pre-tax contribution under a Section 125 plan. It funds $0 virtual primary care, urgent care, therapy, dermatology, 70-plus generics and coaching, for them and their dependents.</li>
-    <li>Their taxable wages drop, so the dealership pays less FICA. After the plan's admin fee that is the per-employee saving above. It lands on the P&amp;L as net.</li>
-    <li>When an employee completes qualifying care, a wellness reward comes back on the same paycheck, so most enrolled employees take home more, not less.</li>
-    <li>It sits alongside your major medical plan and never replaces it. If your plan is self-funded or level-funded, the $0 care is the first stop, so some claims never reach it.</li>
-    <li>Nothing is signed on these numbers. A payroll analysis confirms who qualifies and what the dealership saves, store by store.</li></ol></div>
+  <div class="stat" style="grid-column:1/-1"><div class="k">What the store gets</div><ul style="margin:8px 0 0;padding-left:18px;font-size:13px;line-height:1.5;color:#c9c4da">
+    <li><b style="color:#ece9f4">Net profit up without selling a car.</b> Payroll tax drops on every enrolled employee, and the difference lands on the P&amp;L.</li>
+    <li><b style="color:#ece9f4">Your people take home more.</b> Only employees who come out ahead are enrolled. More pay for the same work is a retention tool you didn't have to fund.</li>
+    <li><b style="color:#ece9f4">$0 care for employees and their families.</b> Virtual primary care, urgent care, therapy, dermatology and 70-plus generics, with no copay and no claim.</li>
+    <li id="vaClaims" style="display:none"><b style="color:#ece9f4">Fewer claims on the company health plan.</b> That $0 care is the first stop, so visits and fills that would have hit the company's self-funded or level-funded plan never do.</li>
+    <li><b style="color:#ece9f4">Nothing changes on major medical.</b> This sits alongside the health plan you have. It never replaces it.</li>
+    <li><b style="color:#ece9f4">Nothing is signed on these numbers.</b> A payroll analysis confirms who qualifies and what each store saves before anyone commits.</li></ul>
+    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn g" id="ownerBtn">Want a version to share with the owners? See it now →</button><span class="fine" style="margin:0">One page, the group's numbers, no bonus math. Comes with a link you can send.</span></div></div>
+</div>
+<div id="owner" style="display:none;margin-top:14px">
+  <div class="hero" style="border-color:var(--purple)"><div class="k">For the owner · prepared by your general manager</div><div class="n" id="oLift" style="color:#c9bdfd;text-shadow:none">$0</div><div class="u" id="oUnits" style="color:var(--obj)"></div><div class="s" id="oLiftS"></div>
+    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap"><a class="cta" href="/#contact" style="background:var(--purple)">Run the payroll analysis →</a><button class="btn" id="oCopy" style="background:var(--panel2);color:var(--ink);border:1px solid var(--line);box-shadow:none;font-size:14px">Copy link</button><button class="btn" id="oPrint" style="background:var(--panel2);color:var(--ink);border:1px solid var(--line);box-shadow:none;font-size:14px">Print / save PDF</button><button class="btn" id="oBack" style="background:transparent;color:var(--mute);box-shadow:none;font-size:14px">← Back to the city</button></div></div>
+  <div class="stats" style="margin-top:12px">
+    <div class="stat"><div class="k">Group net, before → after</div><div class="n" id="oNet">$0</div><div class="s" id="oNetS"></div></div>
+    <div class="stat"><div class="k">Employees enrolled</div><div class="n" id="oEnrolled">0</div><div class="s" id="oEnrolledS"></div></div>
+    <div class="stat" id="oClaimsStat" style="display:none"><div class="k">Visits and prescriptions kept off the company health plan (estimate)</div><div class="n" id="oClaims">$0</div><div class="s" id="oClaimsS"></div></div>
+    <div class="stat"><div class="k">What your people see</div><div class="n">+$50–500</div><div class="s">more take-home a month, estimated. Only employees who come out ahead are enrolled; their families get the $0 care too.</div></div>
+  </div>
+  <div class="stat" style="margin-top:10px"><div class="k">Store by store</div><div id="oPer" style="font-size:13px;margin-top:6px"></div></div>
+  <div class="stat" style="margin-top:10px"><div class="k">How it works</div><ul style="margin:8px 0 0;padding-left:18px;font-size:13px;line-height:1.5;color:#c9c4da">
+    <li>Employees who enroll elect a pre-tax contribution under a Section 125 plan. It funds $0 virtual primary care, urgent care, therapy, dermatology, 70-plus generics and coaching for them and their dependents.</li>
+    <li>Their taxable wages drop, so each store pays less FICA. After the plan's administration fee, that is the per-employee figure above, and it lands on the P&amp;L as net.</li>
+    <li>When an employee completes qualifying care, a wellness reward comes back on the same paycheck. Only employees who come out ahead are enrolled.</li>
+    <li id="oHowClaims" style="display:none">The $0 care is the first stop, so some visits and prescriptions never reach the company's self-funded or level-funded plan.</li>
+    <li>It sits alongside major medical and never replaces it. Nothing is signed on these numbers; a payroll analysis confirms who qualifies and what each store saves.</li></ul></div>
 </div>
 <p class="fine" style="margin-top:14px">Illustrative only. No specific tax outcome is guaranteed; results depend on a payroll analysis and on current federal and state law. Employer figures use the plan's published per-employee math (the monthly pre-tax contribution × 7.65% FICA, less the plan's administration fee) and leave out any workers' compensation, FUTA or SUTA effect. Revenue, margin and pay-plan figures are industry averages or your own entries, not a forecast for your store. Participation is voluntary; employees typically see higher take-home pay, though some do not. This is a fixed indemnity benefit, not health insurance; it sits alongside, not in place of, major medical. Wellness payments above an employee's unreimbursed medical expenses may be taxable to the employee. This is a marketing communication, not legal, tax, accounting or financial advice. Not affiliated with any video game or its publisher.</p>
 </div>
@@ -224,7 +244,7 @@ function update(){
   $('#netK').textContent=(S.scope==='group'?'Group':'Store')+' net, before → after';
   $('#netPair').textContent=fmt(m.base.net)+' → '+fmt(m.base.net+m.base.lift);$('#netPairS').textContent=`${m.base.emp.toLocaleString()} employees × ${fmtM(S.rpe)} at ${S.margin.toFixed(1)}%`;
   $('#enrolled').textContent=m.g.enrolled.toLocaleString();$('#enrolledS').textContent=`${S.qual}% of ${m.g.emp.toLocaleString()} across ${S.stores.length} store${S.stores.length>1?'s':''}, voluntary`;
-  $('#claimsStat').style.display=S.hp==='insured'?'none':'block';$('#claimsV').textContent=fmt(m.claims);$('#claimsS').textContent=`${m.g.enrolled.toLocaleString()} enrolled × ${fmt(S.cost)} × ${S.defl}% handled first by the $0 plan, on your ${S.hp==='self'?'self-funded':'level-funded'} plan. Your TPA's claims summary sets the real figure.`;
+  $('#claimsStat').style.display=S.hp==='insured'?'none':'block';$('#vaClaims').style.display=S.hp==='insured'?'none':'list-item';$('#claimsV').textContent=fmt(m.claims);$('#claimsS').textContent=`${m.g.enrolled.toLocaleString()} enrolled × ${fmt(S.cost)} × ${S.defl}% of care handled at $0 before it reaches the company's ${S.hp==='self'?'self-funded':'level-funded'} plan. The real figure comes from the plan's 12-month claims summary.`;
   $('#perStore').innerHTML=m.stores.map((st,i)=>`<div style="display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-top:1px solid var(--line)"><span>${i?'':'<b style="color:var(--obj)">YOU · </b>'}${st.brand} · ${st.state} · ${st.emp} employees</span><span style="font-variant-numeric:tabular-nums;color:var(--cash)">+${fmt(st.lift)}</span></div>`).join('');
   if(window.city)window.city.setGroup(m.stores.map(st=>({emp:st.emp,color:BRANDS.find(x=>x[0]===st.brand)[1],brand:st.brand,enrolled:st.enrolled})),m.g.enrolled/Math.max(1,m.g.emp));
 }
@@ -247,7 +267,26 @@ $('#n1').onclick=()=>{const m=model();banner('Mission <span>Passed</span>',`${S.
 $('#n2').onclick=()=>{const m=model();banner('Mission <span>Passed</span>','+'+fmt(m.g.lift)+' net','Your plans');say(2,m);go(3);if(window.city){window.city.celebrate(2);window.city.cue(2)}};
 $('#n3').onclick=()=>{const m=model();banner('<span>Respect</span> +',fmt(m.base.lift)+' net, zero units','Illustrative. Confirmed by a payroll analysis before anything is signed.');say(3,m);go(4);$('#sheet').classList.add('on');if(window.city){window.city.celebrate(3);window.city.cue(3)}setTimeout(()=>$('#sheet').scrollIntoView({behavior:'smooth',block:'start'}),2600)};
 $('#rockyFace').innerHTML=`<circle cx="30" cy="30" r="28" fill="#1b1826"/><path d="M10 34 C 8 22, 14 14, 22 12 L 26 4 L 30 12 L 34 4 L 38 12 C 46 14, 52 22, 50 34 C 48 44, 40 50, 30 50 C 20 50, 12 44, 10 34Z" fill="#8a86a3"/><path d="M12 30 C 20 22, 40 22, 48 30 C 46 38, 38 42, 30 40 C 22 42, 14 38, 12 30Z" fill="#262238"/><rect x="14" y="27" width="14" height="8" rx="2" fill="#0b0a10" stroke="#d65db1" stroke-width="1.5"/><rect x="32" y="27" width="14" height="8" rx="2" fill="#0b0a10" stroke="#d65db1" stroke-width="1.5"/><ellipse cx="30" cy="44" rx="4" ry="3" fill="#0b0a10"/><path d="M24 48 Q 30 53, 36 48" stroke="#0b0a10" stroke-width="2" fill="none"/><path d="M16 52 L 30 56 L 44 52 L 46 60 L 14 60Z" fill="#22a85e"/><circle cx="22" cy="57" r="1.5" fill="#d65db1"/><circle cx="36" cy="56" r="1.5" fill="#ffd166"/>`;
-renderStores();update();
+
+/* ---------- owner version: no bonus, shareable link ---------- */
+function stateToHash(){return '#owner='+btoa(unescape(encodeURIComponent(JSON.stringify({stores:S.stores,qual:S.qual,plan:S.plan,hp:S.hp,cost:S.cost,defl:S.defl,rpe:S.rpe,margin:S.margin,unit:S.unit}))))}
+function hashToState(){try{const h=location.hash;if(!h.startsWith('#owner='))return false;const o=JSON.parse(decodeURIComponent(escape(atob(h.slice(7)))));Object.assign(S,o);return true}catch(e){return false}}
+function renderOwner(){const m=model();
+  $('#oLift').textContent=fmt(m.g.lift);$('#oUnits').textContent=`${Math.round(m.g.lift/(S.margin/100)/S.unit).toLocaleString()} cars' worth of net, with no extra units sold`;
+  $('#oLiftS').textContent=`${S.stores.length} store${S.stores.length>1?'s':''}, ${m.g.emp.toLocaleString()} on payroll. ${m.g.enrolled.toLocaleString()} enrolled × ${fmt(m.per)} a month (7.65% FICA on the $${S.plan.toLocaleString()} contribution, less the plan's admin fee) × 12. A ${(100*m.g.lift/m.g.net).toFixed(1)}% lift on ${fmt(m.g.net)} of estimated group net.`;
+  $('#oNet').textContent=fmt(m.g.net)+' → '+fmt(m.g.net+m.g.lift);$('#oNetS').textContent=`${m.g.emp.toLocaleString()} employees × ${fmtM(S.rpe)} revenue each at a ${S.margin.toFixed(1)}% margin, industry averages unless your GM changed them`;
+  $('#oEnrolled').textContent=m.g.enrolled.toLocaleString();$('#oEnrolledS').textContent=`${S.qual}% of ${m.g.emp.toLocaleString()}, voluntary`;
+  const cl=S.hp!=='insured';$('#oClaimsStat').style.display=cl?'block':'none';$('#oHowClaims').style.display=cl?'list-item':'none';
+  if(cl){$('#oClaims').textContent=fmt(m.claims);$('#oClaimsS').textContent=`${m.g.enrolled.toLocaleString()} enrolled × ${fmt(S.cost)} × ${S.defl}% of care handled at $0 first, on the company's ${S.hp==='self'?'self-funded':'level-funded'} plan. The real figure comes from the plan's 12-month claims summary.`}
+  $('#oPer').innerHTML=m.stores.map((st,i)=>`<div style="display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-top:1px solid var(--line)"><span>${st.brand} · ${st.state} · ${st.emp} employees · ${st.enrolled} enrolled</span><span style="font-variant-numeric:tabular-nums;color:#c9bdfd">+${fmt(st.lift)} / yr</span></div>`).join('');
+}
+function showOwner(){renderOwner();history.replaceState(null,'',stateToHash());['game','sheet'].forEach(id=>$('#'+id).style.display='none');$('#panel').style.display='none';document.querySelector('header .sub').textContent='The group\'s numbers, prepared by your general manager. Illustrative until a payroll analysis confirms them.';$('#owner').style.display='block';window.scrollTo({top:0,behavior:'smooth'})}
+$('#ownerBtn').onclick=showOwner;
+$('#oBack').onclick=()=>{history.replaceState(null,'',location.pathname);$('#owner').style.display='none';$('#game').style.display='';$('#sheet').style.display='';$('#panel').style.display='block';document.querySelector('header .sub').textContent='Three short missions. The green counter is your store\'s net profit. Nobody in this city sells one extra car.'};
+$('#oCopy').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);$('#oCopy').textContent='Link copied'}catch(e){prompt('Copy this link',location.href)}};
+$('#oPrint').onclick=()=>window.print();
+
+if(hashToState()){renderStores();update();showOwner()}else{renderStores();update()}
 </script>
 
 <script type="module">
