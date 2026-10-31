@@ -8,6 +8,7 @@ Source for [jaybeatty.com](https://www.jaybeatty.com), the personal site of Jay 
 |---|---|
 | `site/` | The live site: the "Scoreboard" design (black, deep purple and green) with the home page, three program explainers (Section 125 wellness plans, deferred compensation, the No Surprises Act), favicon, robots and sitemap. Static HTML; photos are inlined so each page is one file. |
 | `site/atcg-collateral.html` | **ATCG sales collateral.** The physician and patient brochures Jay wrote and art-directed for ATCG's field team, shown panel by panel with the full text for phone readers. Images and the PDF live in `site/portfolio/atcg/`. |
+| `bonus-lot/` | **The Bonus Lot.** A gamified explainer for car dealership general managers: build the store, then see what a Section 125 wellness plan does to store net profit, the GM bonus and payroll taxes. Per-employee math from the plan's published figures, store benchmarks from NADA 2024 averages, every input adjustable, illustrative only. |
 | `team-calculator/` | **CMS TEAM Episode Calculator.** A single-page estimator of what the Transforming Episode Accountability Model pays or costs a hospital, built entirely from public CMS files. |
 
 ## The TEAM calculator
