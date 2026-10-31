@@ -105,8 +105,9 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
   <div class="hud" id="stars"><div class="l">NET RATING</div><div id="starsV">☆☆☆☆☆</div></div>
   <div class="hud" id="obj"><small>Objective</small><span id="objT">Tap START</span></div>
   <div id="phone"><svg viewBox="0 0 60 60" id="rockyFace"></svg><div><div class="who">Rocky · Back office</div><div class="txt" id="phoneT"></div></div></div>
+  <div class="hud" id="story" style="left:50%;bottom:16%;transform:translateX(-50%);width:min(86%,720px);text-align:center;opacity:0;z-index:4"><div id="storyT" style="font-family:Anton;font-size:clamp(16px,2.6vw,28px);line-height:1.15;color:#fff;text-shadow:3px 3px 0 #000,0 0 18px rgba(0,0,0,.8);text-transform:uppercase"></div><div id="storyS" style="font-family:Inter;font-weight:600;font-size:clamp(11px,1.5vw,15px);color:var(--obj);text-shadow:2px 2px 0 #000;margin-top:6px"></div></div>
   <div id="banner"><div class="big" id="bannerBig">Mission <span>Passed</span></div><div class="mid" id="bannerMid"></div><div class="sm" id="bannerSm"></div></div>
-  <div id="start"><div class="t">Dealer <span>City</span></div><p>You're the GM. Three missions: build your lot, run the payroll, set your pay plan. Watch the net counter. Drag the city to look around.</p><button class="btn" id="startBtn" disabled style="opacity:.5">Loading the city…</button></div>
+  <div id="start"><div class="t">Dealer <span>City</span></div><p>You're the GM. Three missions: build your lot, run the payroll, set your pay plan. Watch the net counter. Drag the city to look around.</p><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><button class="btn" id="startBtn" disabled style="opacity:.5">Loading the city…</button><button class="btn" id="howBtn" style="background:var(--panel2);color:var(--ink);border:1px solid var(--line)">How is it paid for? ▶</button></div></div>
   <div id="panel">
     <div class="m on" id="m1"><div class="t"><i>01</i>Build your group</div><div class="why">Your store first, then every other store the owner runs. Each one becomes a building, sized by headcount and colored by brand. Up to 30.</div>
       <div id="stores"></div>
@@ -156,7 +157,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
     <li id="vaClaims" style="display:none"><b style="color:#ece9f4">Fewer claims on the company health plan.</b> That $0 care is the first stop, so visits and fills that would have hit the company's self-funded or level-funded plan never do.</li>
     <li><b style="color:#ece9f4">Nothing changes on major medical.</b> This sits alongside the health plan you have. It never replaces it.</li>
     <li><b style="color:#ece9f4">Nothing is signed on these numbers.</b> A payroll analysis confirms who qualifies and what each store saves before anyone commits.</li></ul>
-    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn g" id="ownerBtn">Want a version to share with the owners? See it now →</button><span class="fine" style="margin:0">One page, the group's numbers, no bonus math. Comes with a link you can send.</span></div></div>
+    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn" id="howBtn2" style="background:var(--panel2);color:var(--ink);border:1px solid var(--line)">How is it paid for? ▶</button><button class="btn g" id="ownerBtn">Want a version to share with the owners? See it now →</button><span class="fine" style="margin:0">One page, the group's numbers, no bonus math. Comes with a link you can send.</span></div></div>
 </div>
 <div id="owner" style="display:none;margin-top:14px">
   <div class="hero" style="border-color:var(--purple)"><div class="k">For the owner · prepared by your general manager</div><div class="n" id="oLift" style="color:#c9bdfd;text-shadow:none">$0</div><div class="u" id="oUnits" style="color:var(--obj)"></div><div class="s" id="oLiftS"></div>
@@ -286,6 +287,22 @@ $('#oBack').onclick=()=>{history.replaceState(null,'',location.pathname);$('#own
 $('#oCopy').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);$('#oCopy').textContent='Link copied'}catch(e){prompt('Copy this link',location.href)}};
 $('#oPrint').onclick=()=>window.print();
 
+/* ---------- "How is it paid for?": the truck ---------- */
+function storyLines(){const p=PLANS.find(x=>x.c===S.plan);const fica=S.plan*0.0765;const fmt=n=>'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});return [
+  ['Payroll tax leaves the company every pay period.',`On $${S.plan.toLocaleString()} of one enrolled employee's monthly pay: ${fmt(fica)} from the store, ${fmt(fica)} from the employee, plus their income tax. The truck is that money.`],
+  ['With the plan, the truck stops here.',`The $${S.plan.toLocaleString()} goes into the Section 125 plan pre-tax, so that tax is never owed. Now the load gets redirected.`],
+  ['The owner\'s car: the store keeps its share.',`${fmt(S.plan*0.0765-p.admin)} a month per enrolled employee stays with the store. That is the net lift on the P&L.`],
+  ['The employees\' car: more take-home, $0 care.',`Their tax savings fund $0 doctor visits, urgent care, therapy and generics for the family, and the wellness reward comes back on the same check. Typically $50 to $500 more a month.`],
+  ['The administrator\'s motorcycle: the fee.',`${fmt(p.admin)} a month per enrolled employee runs the plan: enrollment, claims, compliance and audit defense.`],
+  ['Nothing else changes.','Major medical stays exactly as it is. What was never tax-free is still paid as tax. A payroll analysis confirms the numbers for your group before anything is signed.']]}
+let storyOn=false;
+function caption(i){const L=storyLines()[i];$('#storyT').textContent=L[0];$('#storyS').textContent=L[1];gsap.fromTo('#story',{opacity:0,y:10},{opacity:1,y:0,duration:.4})}
+function runStory(){if(storyOn||!window.city)return;storyOn=true;
+  if(getComputedStyle($('#start')).display!=='none'){gsap.to('#start',{opacity:0,duration:.3,onComplete:()=>$('#start').style.display='none'})}
+  $('#panel').style.visibility='hidden';gsap.to('#phone',{x:'-130%',duration:.3});gsap.to(['#cash','#stars','#mstep','#obj'],{opacity:.15,duration:.4});
+  window.city.story(caption,()=>{gsap.to('#story',{opacity:0,duration:.5});gsap.to(['#cash','#stars','#mstep','#obj'],{opacity:1,duration:.4});$('#panel').style.visibility='visible';storyOn=false;if(step===0){$('#start').style.display='';gsap.to('#start',{opacity:1,duration:.4})}})}
+$('#howBtn').onclick=runStory;$('#howBtn2').onclick=()=>{$('#game').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(runStory,500)};
+
 if(hashToState()){renderStores();update();showOwner()}else{renderStores();update()}
 </script>
 
@@ -403,7 +420,51 @@ function celebrate(n){gsap.fromTo(lotLightA,{intensity:60},{intensity:220,durati
 function flyIn(){cue(0)}
 const CUES=[{p:[34,24,46],t:[0,2,0]},{p:[95,80,-110],t:[0,6,0]},{p:[18,8,30],t:[2,1,8]},{p:[22,16,-20],t:[11,9,-11]}];
 function cue(n){const c=CUES[n]||CUES[0];controls.autoRotate=false;gsap.to(camera.position,{x:c.p[0],y:c.p[1],z:c.p[2],duration:2.2,ease:'power2.inOut'});gsap.to(controls.target,{x:c.t[0],y:c.t[1],z:c.t[2],duration:2.2,ease:'power2.inOut',onComplete:()=>{controls.autoRotate=true}})}
-window.city={setLot,setGroup,celebrate,flyIn,cue};
+
+/* ---------- the truck story ---------- */
+const gold=new THREE.MeshStandardMaterial({color:0xf2c14e,emissive:0xf2c14e,emissiveIntensity:.9,roughness:.3,metalness:.6});
+function truck(){const g=new THREE.Group();const cab=new THREE.Mesh(new THREE.BoxGeometry(3.6,3,2.6),new THREE.MeshStandardMaterial({color:0xd65db1,roughness:.4,metalness:.3}));cab.position.set(5.2,1.9,0);g.add(cab);
+  const win=new THREE.Mesh(new THREE.BoxGeometry(.3,1.2,2.3),new THREE.MeshStandardMaterial({color:0x2a3550,roughness:.1,metalness:.5}));win.position.set(7.05,2.5,0);g.add(win);
+  const tr=new THREE.Mesh(new THREE.BoxGeometry(10,3.6,2.8),new THREE.MeshPhysicalMaterial({color:0xcfe9ff,transparent:true,opacity:.25,roughness:.05}));tr.position.set(-2.2,2.3,0);g.add(tr);
+  const edge=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(10,3.6,2.8)),new THREE.LineBasicMaterial({color:0xffd166}));edge.position.copy(tr.position);g.add(edge);
+  const cargo=new THREE.Group();for(let i=0;i<36;i++){const c=new THREE.Mesh(new THREE.BoxGeometry(.9,.5,.9),gold);c.position.set(-6.3+(i%9)*1.05,1+Math.floor(i/9)*.6,-.9+((i*7)%3)*.9);cargo.add(c)}g.add(cargo);g.userData.cargo=cargo;
+  [[6,.9],[6,-.9],[1.5,.9],[1.5,-.9],[-4.5,.9],[-4.5,-.9],[-6,.9],[-6,-.9]].forEach(([x,z])=>{const w=new THREE.Mesh(new THREE.CylinderGeometry(.7,.7,.5,14).rotateZ(Math.PI/2),wheelMat);w.position.set(x,.7,z);g.add(w)});
+  [[7.3,.8],[7.3,-.8]].forEach(([x,z])=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.1,.3,.5),headMat);h.position.set(x,1.4,z);g.add(h)});
+  const lab=labelSprite('PAYROLL TAX','#ffd166');lab.position.set(-2,5.6,0);lab.scale.set(12,3,1);g.add(lab);return g}
+function bike(color){const g=new THREE.Group();const body=new THREE.Mesh(new THREE.BoxGeometry(1.8,.5,.5),new THREE.MeshStandardMaterial({color,roughness:.3,metalness:.6}));body.position.y=.8;g.add(body);
+  const rider=new THREE.Mesh(new THREE.BoxGeometry(.6,.9,.5),new THREE.MeshStandardMaterial({color:0x2a2640}));rider.position.set(-.2,1.5,0);g.add(rider);
+  [[.8],[-.8]].forEach(([x])=>{const w=new THREE.Mesh(new THREE.CylinderGeometry(.45,.45,.3,14).rotateZ(Math.PI/2),wheelMat);w.position.set(x,.45,0);g.add(w)});
+  const h=new THREE.Mesh(new THREE.BoxGeometry(.1,.25,.3),headMat);h.position.set(1,1,0);g.add(h);return g}
+function coinTo(from,to,delay,parent){const c=new THREE.Mesh(new THREE.BoxGeometry(.8,.45,.8),gold);c.position.copy(from);parent.add(c);
+  gsap.to(c.position,{x:to.x,z:to.z,duration:1.1,delay,ease:'power1.inOut'});gsap.to(c.position,{y:from.y+6,duration:.55,delay,ease:'power2.out',yoyo:true,repeat:1,onComplete:()=>{gsap.to(c.position,{y:to.y,duration:.2});gsap.to(c.scale,{x:.01,y:.01,z:.01,duration:.3,delay:.4,onComplete:()=>parent.remove(c)})}})}
+function story(caption,done){
+  const ROADX=-PITCH/2, g=new THREE.Group();scene.add(g);
+  const T=truck();T.position.set(ROADX,0,95);T.rotation.y=Math.PI/2;g.add(T);
+  const sedan=car(0xffd166);sedan.scale.setScalar(1.05);sedan.position.set(ROADX+9,0,16);sedan.rotation.y=Math.PI/2;g.add(sedan);
+  const compact=car(0x22a85e);compact.scale.setScalar(.72);compact.position.set(ROADX+9,0,22);compact.rotation.y=Math.PI/2;g.add(compact);
+  const moto=bike(0x8366ea);moto.position.set(ROADX+9,0,27);moto.rotation.y=Math.PI/2;g.add(moto);
+  const ls=[['OWNER','#ffd166',sedan,4.5],['EMPLOYEES','#4fd486',compact,4],['ADMIN','#c9bdfd',moto,3.5]].map(([t,c,o,y])=>{const l=labelSprite(t,c);l.position.set(o.position.x,y,o.position.z);l.scale.set(9,2.2,1);g.add(l);return l});
+  // the plan gate: two posts and a neon beam across the road
+  const post=(z)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(.6,9,.6),new THREE.MeshStandardMaterial({color:0x2a2640}));m.position.set(ROADX+(z?5.2:-5.2),4.5,10);g.add(m)};post(0);post(1);
+  const beam=new THREE.Mesh(new THREE.BoxGeometry(11,.5,.5),new THREE.MeshStandardMaterial({color:0x000,emissive:0x22a85e,emissiveIntensity:3}));beam.position.set(ROADX,9,10);g.add(beam);
+  const gl=labelSprite('SECTION 125 PLAN','#4fd486');gl.position.set(ROADX,11.5,10);gl.scale.set(16,3.6,1);g.add(gl);
+  controls.autoRotate=false;
+  gsap.to(camera.position,{x:ROADX+24,y:13,z:38,duration:1.6,ease:'power2.inOut'});gsap.to(controls.target,{x:ROADX+2,y:3,z:14,duration:1.6});
+  const tl=gsap.timeline({onComplete:()=>{setTimeout(()=>{scene.remove(g);controls.autoRotate=true;done()},800)}});
+  tl.call(()=>caption(0),null,.3)
+    .to(T.position,{z:14,duration:4.5,ease:'power1.inOut'},.3)
+    .call(()=>caption(1),null,5)
+    .call(()=>caption(2),null,8.5).call(()=>{for(let i=0;i<10;i++)coinTo(new THREE.Vector3(ROADX-2,3.5,14),new THREE.Vector3(sedan.position.x,1.6,sedan.position.z),i*.12,g)},null,8.6)
+    .call(()=>caption(3),null,12.5).call(()=>{for(let i=0;i<8;i++)coinTo(new THREE.Vector3(ROADX-2,3.5,14),new THREE.Vector3(compact.position.x,1.3,compact.position.z),i*.12,g)},null,12.6)
+    .call(()=>caption(4),null,16.5).call(()=>{for(let i=0;i<4;i++)coinTo(new THREE.Vector3(ROADX-2,3.5,14),new THREE.Vector3(moto.position.x,1.1,moto.position.z),i*.12,g)},null,16.6)
+    .to(T.userData.cargo.scale,{y:.3,duration:3},9)
+    .call(()=>caption(5),null,20.5)
+    .to(sedan.position,{x:-6,z:4,duration:2.5,ease:'power1.inOut'},20.6).to(compact.position,{x:-2,z:4,duration:2.5,ease:'power1.inOut'},20.8).to(moto.position,{x:ROADX,z:-90,duration:4,ease:'power1.in'},21)
+    .to(ls[0].position,{x:-6,z:4,duration:2.5},20.6).to(ls[1].position,{x:-2,z:4,duration:2.5},20.8).to(ls[2].position,{z:-90,x:ROADX,duration:4},21)
+    .to(T.position,{z:-95,duration:5,ease:'power1.in'},21.5);
+}
+
+window.city={setLot,setGroup,celebrate,flyIn,cue,story};
 setGroup([{emp:64,color:'#eb0a1e',brand:'Toyota'}],.8);
 
 /* post + loop */
