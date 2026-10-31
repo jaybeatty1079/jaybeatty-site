@@ -3,261 +3,335 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Bonus Lot</title>
-<meta name="description" content="Build your dealership, see what a Section 125 plan does to store net profit, the GM bonus and payroll taxes. Illustrative only.">
+<title>Dealer City</title>
+<meta name="description" content="Three missions. Build your lot, run the payroll, set your pay plan. See what a Section 125 plan does to store net and your bonus. Illustrative only.">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <style>
-:root{--bg:#0b0a10;--panel:#14121c;--panel2:#1b1826;--line:#272335;--ink:#ece9f4;--mute:#8f8aa3;--green:#22a85e;--green2:#4fd486;--purple:#8366ea;--magenta:#d65db1;--amber:#e0a640;--sky:#161327;--asphalt:#1f1c2b;--asphalt2:#262238}
+:root{--bg:#07060c;--panel:#14121c;--panel2:#1b1826;--line:#272335;--ink:#ece9f4;--mute:#8f8aa3;--green:#22a85e;--green2:#4fd486;--cash:#5cf08a;--purple:#8366ea;--magenta:#d65db1;--obj:#ffd166}
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif}
 body{padding:0 16px 60px}
-.wrap{max-width:1100px;margin:0 auto}
-header{padding:26px 0 8px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
-h1{font:900 clamp(30px,5vw,46px)/1 Fraunces,serif;margin:0;letter-spacing:-.02em}
-h1 span{color:var(--green)}
-.sub{color:var(--mute);max-width:560px;margin:8px 0 0}
-.step{font:600 11px/1 Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin:0 0 8px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
-.grid{display:grid;grid-template-columns:1.25fr .9fr;gap:14px;margin-top:14px}
-@media (max-width:860px){.grid{grid-template-columns:1fr}}
-/* lot */
-#lot{position:relative;border-radius:16px;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#241d3f 0%,var(--sky) 55%,#0d0b14 100%);border:1px solid var(--line);min-height:340px}
-#lot svg{display:block;width:100%;height:auto}
-#lot .sign{position:absolute;left:14px;top:12px;display:flex;gap:6px;flex-wrap:wrap;max-width:70%}
-.chip{font-size:11px;font-weight:600;padding:4px 9px;border-radius:999px;border:1px solid var(--line);background:rgba(20,18,28,.85);color:var(--ink);animation:pop .4s cubic-bezier(.2,1.5,.3,1) both}
-.chip.state{border-color:var(--purple);color:#c9bdfd}
-.chip.brand{border-color:transparent;color:#fff}
-#lot .cap{position:absolute;right:12px;bottom:10px;font-size:11px;color:var(--mute)}
-@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
-/* controls */
-.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
-.tier{border:1px solid var(--line);border-radius:12px;padding:10px 8px;cursor:pointer;text-align:center;transition:.18s;background:var(--panel2)}
-.tier:hover{border-color:var(--purple);transform:translateY(-2px)}
-.tier.on{border-color:var(--green);box-shadow:0 0 0 1px var(--green) inset}
-.tier b{display:block;font:700 14px Fraunces,serif}.tier small{color:var(--mute);font-size:11px}
-label.l{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;color:var(--mute);margin:12px 0 4px}
-label.l b{color:var(--ink);font-size:14px;font-family:Fraunces,serif;font-weight:700}
-input[type=range]{width:100%;accent-color:var(--green)}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chips button{font:600 12px Inter;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;transition:.15s}
-.chips button:hover{border-color:var(--purple)}
-.chips button.on{color:#fff;border-color:transparent;box-shadow:0 0 0 2px var(--green) inset}
-select,input[type=number]{background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 8px;font:13px Inter}
-.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-.toggle button{font:600 12px Inter;padding:6px 12px;border:0;background:transparent;color:var(--mute);cursor:pointer}
-.toggle button.on{background:var(--green);color:#06130b}
-details{margin-top:12px;color:var(--mute);font-size:13px}details summary{cursor:pointer;color:var(--ink)}
-/* results */
-.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:14px}
-.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;position:relative;overflow:hidden}
-.stat .k{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
-.stat .n{font:700 34px/1.05 Fraunces,serif;margin:8px 0 4px;font-variant-numeric:tabular-nums}
-.stat .s{font-size:12px;color:var(--mute)}
-.stat.hero{grid-column:span 2;background:linear-gradient(135deg,#0f1a14,#14121c 60%);border-color:var(--green)}
-.stat.hero .n{font-size:48px;color:var(--green2)}
-.stat.hero .delta{position:absolute;right:16px;top:14px;font:700 16px Fraunces,serif;color:var(--green2);background:rgba(34,168,94,.15);padding:6px 10px;border-radius:999px}
-@media (max-width:600px){.stat.hero{grid-column:span 1}.stat.hero .delta{position:static;display:inline-block;margin-top:8px}#lot{min-height:0}}
-.bars{margin-top:14px}
-.bar{display:grid;grid-template-columns:120px 1fr 110px;gap:10px;align-items:center;margin:8px 0;font-size:13px}
-.bar .t{height:22px;border-radius:6px;background:var(--line);overflow:hidden}
-.bar .t b{display:block;height:100%;width:0;border-radius:6px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
-.bar .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
-.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:center;margin-top:14px;font-size:13px}
-.flow .box{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;text-align:center}
-.flow .box b{display:block;font:700 18px Fraunces,serif;color:var(--green2)}
-.flow .arrow{color:var(--purple);font-size:22px}
-@media (max-width:600px){.flow{grid-template-columns:1fr}.flow .arrow{text-align:center;transform:rotate(90deg)}}
-.fine{color:var(--mute);font-size:12px;line-height:1.5;margin-top:14px}
-.cta{display:inline-block;margin-top:14px;background:var(--green);color:#06130b;font-weight:700;padding:12px 18px;border-radius:999px;text-decoration:none}
-.cta:hover{background:var(--green2)}
-.pulse{animation:flash .6s ease}
-@keyframes flash{0%{box-shadow:0 0 0 0 rgba(79,212,134,.6)}100%{box-shadow:0 0 0 18px rgba(79,212,134,0)}}
+.wrap{max-width:1180px;margin:0 auto}
+header{padding:22px 0 10px}
+h1{font:400 clamp(40px,7vw,72px)/.95 Anton,Impact,sans-serif;margin:0;letter-spacing:.01em;text-transform:uppercase;text-shadow:0 0 18px rgba(214,93,177,.55),3px 3px 0 #3a1a4a}
+h1 span{color:var(--magenta)}
+.sub{color:var(--mute);max-width:640px;margin:6px 0 0}
+#game{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#0b0914;box-shadow:0 0 0 1px #000,0 30px 60px rgba(0,0,0,.5)}
+#game canvas{position:absolute;inset:0;width:100%!important;height:100%!important;display:block}
+.hud{position:absolute;font-family:Anton,Impact,sans-serif;letter-spacing:.02em;pointer-events:none;z-index:3}
+#cash{right:3%;top:4%;text-align:right}
+#cash .l{font-family:Inter;font-weight:600;font-size:clamp(9px,1.2vw,12px);letter-spacing:.2em;color:var(--mute)}
+#cash .v{font-size:clamp(22px,4vw,44px);color:var(--cash);text-shadow:2px 2px 0 #0a2f17,0 0 14px rgba(92,240,138,.5);font-variant-numeric:tabular-nums;line-height:1}
+#cash .d{font-size:clamp(14px,2.2vw,22px);color:var(--cash);opacity:0;text-shadow:2px 2px 0 #0a2f17}
+#stars{right:3%;top:calc(4% + clamp(60px,8.8vw,96px));font-size:clamp(14px,2.4vw,24px);color:#fff;letter-spacing:.1em;text-shadow:2px 2px 0 #000;text-align:right}
+#stars .l{font-size:clamp(9px,1.3vw,12px);color:var(--mute);letter-spacing:.2em;font-family:Inter;font-weight:600}
+#mstep{left:3%;top:4%;font-size:clamp(12px,1.8vw,18px);color:#fff;text-shadow:2px 2px 0 #000;letter-spacing:.1em}
+#mstep span{color:var(--obj)}
+#obj{left:3%;bottom:5%;max-width:60%;font-size:clamp(12px,2vw,20px);color:var(--obj);text-shadow:2px 2px 0 #000;line-height:1.15;text-transform:uppercase}
+#obj small{display:block;font-family:Inter;font-weight:600;font-size:clamp(9px,1.2vw,12px);color:#fff;letter-spacing:.14em;margin-bottom:4px}
+#phone{position:absolute;left:3%;top:calc(4% + clamp(26px,3.6vw,38px));width:clamp(190px,32%,330px);background:rgba(10,8,18,.9);border:1px solid #3a3550;border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;transform:translateX(-130%);pointer-events:none;z-index:3}
+#phone .who{font-family:Anton;font-size:12px;letter-spacing:.08em;color:var(--magenta);text-transform:uppercase}
+#phone .txt{font-size:clamp(11px,1.4vw,13.5px);line-height:1.35;color:#ece9f4;min-height:3em}
+#phone svg{width:42px;height:42px;flex:none}
+#banner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;opacity:0;z-index:4}
+#banner .big{font-family:Anton;font-size:clamp(34px,9vw,110px);line-height:.95;color:#fff;text-transform:uppercase;letter-spacing:.02em;text-shadow:4px 4px 0 #000,0 0 30px rgba(214,93,177,.8)}
+#banner .big span{color:var(--obj)}
+#banner .mid{font-family:Anton;font-size:clamp(18px,3.4vw,40px);color:var(--cash);text-shadow:3px 3px 0 #000;margin-top:6px}
+#banner .sm{font-family:Inter;font-weight:600;font-size:clamp(11px,1.6vw,16px);color:#fff;text-shadow:2px 2px 0 #000;margin-top:8px;letter-spacing:.08em;text-transform:uppercase}
+/* start screen */
+#start{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(7,6,12,.55);backdrop-filter:blur(2px);text-align:center;padding:20px}
+#start .t{font-family:Anton;font-size:clamp(28px,6vw,64px);text-transform:uppercase;color:#fff;text-shadow:4px 4px 0 #000,0 0 30px rgba(214,93,177,.8);line-height:1}
+#start .t span{color:var(--magenta)}
+#start p{max-width:520px;color:#ece9f4;font-size:clamp(12px,1.6vw,15px);margin:10px 0 16px;text-shadow:1px 1px 0 #000}
+.btn{font-family:Anton;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(14px,2vw,20px);padding:12px 26px;border-radius:8px;border:0;background:var(--magenta);color:#fff;cursor:pointer;box-shadow:4px 4px 0 #000;transition:.15s}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 #000}
+.btn.g{background:var(--green)}
+/* mission panel (in-game) */
+#panel{position:absolute;right:3%;top:calc(4% + clamp(104px,15.6vw,170px));width:clamp(220px,34%,360px);bottom:5%;z-index:3;display:none}
+#panel .m{background:rgba(10,8,18,.9);border:1px solid #3a3550;border-radius:12px;padding:12px 14px;max-height:100%;overflow:auto;display:none}
+#panel .m.on{display:block}
+.m .t{font-family:Anton;font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--obj)}
+.m .t i{font-style:normal;color:var(--mute);font-size:12px;margin-right:6px}
+.m .why{font-size:12px;color:#c9c4da;margin:2px 0 8px;line-height:1.4}
+label.l{display:flex;justify-content:space-between;align-items:baseline;font-size:11.5px;color:var(--mute);margin:10px 0 3px}
+label.l b{color:var(--ink);font-size:14px;font-family:Anton;letter-spacing:.04em}
+input[type=range]{width:100%;accent-color:var(--magenta)}
+.tiers{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:6px}
+.tier{border:1px solid var(--line);border-radius:10px;padding:7px;cursor:pointer;text-align:center;background:var(--panel2);font-size:11px;transition:.15s;color:var(--mute)}
+.tier b{display:block;font-family:Anton;font-size:13px;letter-spacing:.04em;font-weight:400;color:var(--ink)}
+.tier:hover{border-color:var(--magenta)}.tier.on{border-color:var(--obj);box-shadow:0 0 0 1px var(--obj) inset}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.chips button{font:600 10.5px Inter;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer}
+.chips button.on{color:#fff;border-color:transparent;box-shadow:0 0 0 2px var(--magenta) inset}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex-wrap:wrap;margin-top:6px}
+.toggle button{font:600 11.5px Inter;padding:6px 11px;border:0;background:transparent;color:var(--mute);cursor:pointer}
+.toggle button.on{background:var(--magenta);color:#fff}
+select{background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:5px 8px;font:12px Inter;margin-top:6px}
+.fine{color:var(--mute);font-size:11.5px;line-height:1.45;margin-top:8px}
+.next{margin-top:12px;width:100%}
+details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:pointer;color:var(--ink)}
+/* sheet */
+.sheet{margin-top:14px;display:none;grid-template-columns:1.2fr 1fr;gap:12px}
+.sheet.on{display:grid}
+@media (max-width:860px){.sheet{grid-template-columns:1fr}}
+.hero{background:linear-gradient(135deg,#0f1a14,#14121c 60%);border:1px solid var(--green);border-radius:16px;padding:18px 20px}
+.hero .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.hero .n{font:400 clamp(44px,6vw,64px)/1 Anton;color:var(--cash);margin:6px 0 2px;text-shadow:2px 2px 0 #0a2f17;font-variant-numeric:tabular-nums}
+.hero .u{font:400 22px Anton;letter-spacing:.03em;margin-top:4px;text-transform:uppercase;color:var(--obj)}
+.hero .s{color:var(--mute);font-size:13px;margin-top:8px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.stat .k{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.stat .n{font:400 26px/1.1 Anton;margin:6px 0 3px;font-variant-numeric:tabular-nums}
+.stat .s{font-size:11.5px;color:var(--mute)}
+.stat.me{border-color:var(--purple)}.stat.me .n{color:#c9bdfd}
+.cta{display:inline-block;margin-top:14px;background:var(--magenta);color:#fff;font-family:Anton;letter-spacing:.06em;font-size:18px;padding:12px 22px;border-radius:8px;text-decoration:none;text-transform:uppercase;box-shadow:4px 4px 0 #000}
+@media (max-width:760px){#panel{position:static;width:auto;display:none;margin-top:12px}#panel.on{display:block}#panel .m{max-height:none;background:var(--panel)}#game{aspect-ratio:4/3}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header>
-  <div>
-    <h1>The <span>Bonus</span> Lot</h1>
-    <p class="sub">Build your dealership. Then watch what one payroll change does to store net profit, your bonus, and the tax bill. Every number is an estimate you can adjust.</p>
-  </div>
-</header>
+<header><h1>Dealer <span>City</span></h1><p class="sub">Three short missions. The green counter is your store's net profit. Nobody in this city sells one extra car.</p></header>
 
-<div class="grid">
-  <div>
-    <div id="lot">
-      <div class="sign" id="sign"></div>
-      <svg id="scene" viewBox="0 0 700 360" aria-label="Your dealership"></svg>
-      <div class="cap" id="cap"></div>
-    </div>
-
-    <div class="results" id="results">
-      <div class="stat hero" id="heroStat"><div class="k">Your projected annual bonus with the 125 plan</div><div class="n" id="bonusAfter">$0</div><div class="s" id="bonusAfterS"></div><div class="delta" id="delta">+$0</div></div>
-      <div class="stat"><div class="k">Bonus today (estimate)</div><div class="n" id="bonusBefore">$0</div><div class="s" id="bonusBeforeS"></div></div>
-      <div class="stat"><div class="k">Dealership payroll-tax savings / yr</div><div class="n" id="savings">$0</div><div class="s" id="savingsS"></div></div>
-      <div class="stat"><div class="k">Projected store revenue</div><div class="n" id="rev">$0</div><div class="s" id="revS"></div></div>
-      <div class="stat"><div class="k">Store net profit (before the plan)</div><div class="n" id="net">$0</div><div class="s" id="netS"></div></div>
-      <div class="stat"><div class="k">Car sales it would take to add that net</div><div class="n" id="cars">0</div><div class="s" id="carsS"></div></div>
-      <div class="stat"><div class="k">What employees see</div><div class="n" id="emp2">+$50–500</div><div class="s">estimated take-home gain per month for those who enroll; it varies by pay and state, and some come out behind</div></div>
-      <div class="stat"><div class="k">Employees enrolled</div><div class="n" id="enrolled">0</div><div class="s" id="enrolledS"></div></div>
-    </div>
-
-    <div class="card bars">
-      <div class="step">Before and after</div>
-      <div class="bar"><span>GM bonus today</span><div class="t"><b id="b1" style="background:var(--purple)"></b></div><span class="v" id="b1v"></span></div>
-      <div class="bar"><span>GM bonus with plan</span><div class="t"><b id="b2" style="background:var(--green)"></b></div><span class="v" id="b2v"></span></div>
-      <div class="bar"><span>Store net today</span><div class="t"><b id="b3" style="background:#5a4fb3"></b></div><span class="v" id="b3v"></span></div>
-      <div class="bar"><span>Store net with plan</span><div class="t"><b id="b4" style="background:var(--green2)"></b></div><span class="v" id="b4v"></span></div>
-      <div class="flow">
-        <div class="box">Employees enroll pre-tax<b id="f1">0</b><span>at <span id="f1b">80</span>% qualifying</span></div>
-        <div class="arrow">→</div>
-        <div class="box">Dealership FICA saved, net of admin<b id="f2">$0</b><span id="f2b">per year</span></div>
-        <div class="arrow">→</div>
-        <div class="box">Added to store net, then your share<b id="f3">$0</b><span>more bonus at <span id="f3b">5</span>%</span></div>
-      </div>
-      <a class="cta" href="https://jaybeatty.com/#contact">Get a payroll analysis for your store →</a>
-      <p class="fine">Illustrative only. No specific tax outcome is guaranteed; results depend on a payroll analysis and on current federal and state law. Employer figures use the plan's published per-employee math (a $1,200 or $1,500 monthly pre-tax contribution, 7.65% FICA, less the plan's administration fee); they leave out any workers' compensation, FUTA or SUTA effect. Revenue, margin and bonus share are industry averages or your own entries, not a forecast for your store. Participation is voluntary; employees typically see higher take-home pay, though some do not. This is a fixed indemnity benefit, not health insurance; it sits alongside, not in place of, major medical. Wellness payments above an employee's unreimbursed medical expenses may be taxable to the employee. This is a marketing communication, not legal, tax, accounting or financial advice.</p>
-    </div>
-  </div>
-
-  <div class="card" id="controls">
-    <div class="step">1 · Size up your store</div>
-    <div class="tiers" id="tiers"></div>
-
-    <label class="l"><span>Full-time W-2 employees</span><b id="empV">64</b></label>
-    <input type="range" id="emp" min="8" max="600" value="64" step="1">
-
-    <div class="step" style="margin-top:16px">2 · Brands on the lot <span style="color:var(--mute);font-weight:400;letter-spacing:0;text-transform:none">(just for fun)</span></div>
-    <div class="chips" id="brands"></div>
-
-    <div class="step" style="margin-top:16px">3 · Where you operate</div>
-    <div class="row"><select id="stateSel"><option value="">Add a state…</option></select><div class="chips" id="states"></div></div>
-    <div class="fine" id="stateNote" style="margin-top:6px"></div>
-
-    <div class="step" style="margin-top:16px">4 · Your pay plan</div>
-    <label class="l"><span>Your share of store net profit</span><b id="shareV">5%</b></label>
-    <input type="range" id="share" min="1" max="15" value="5" step="0.5">
-    <div class="fine" style="margin-top:2px">GM plans are usually base plus a share of net. Set yours; this is the number that moves the bonus.</div>
-
-    <div class="step" style="margin-top:16px">5 · The plan</div>
-    <div class="row"><span style="font-size:13px;color:var(--mute)">Monthly pre-tax contribution</span>
-      <div class="toggle" id="plan"><button data-v="1200">$1,200</button><button data-v="1500" class="on">$1,500</button></div></div>
-    <label class="l"><span>Share of employees who qualify and enroll</span><b id="qualV">80%</b></label>
-    <input type="range" id="qual" min="40" max="100" value="80" step="1">
-
-    <details><summary>Advanced: revenue and margin assumptions</summary>
-      <label class="l"><span>Revenue per employee</span><b id="rpeV">$1.15M</b></label>
-      <input type="range" id="rpe" min="500000" max="2000000" value="1150000" step="25000">
-      <label class="l"><span>Net profit margin (pre-tax)</span><b id="marginV">2.8%</b></label>
-      <input type="range" id="margin" min="1" max="5" value="2.8" step="0.1">
-      <div class="fine">Defaults come from NADA's 2024 averages: about $73 million in sales and 64 employees per franchised store (about $1.15M per employee), with net pre-tax profit in the low single digits. Drop in your own numbers. The car-sales equivalent uses a $48,000 average new-vehicle transaction price.</div>
-    </details>
+<div id="game">
+  <div class="hud" id="mstep">MISSION <span id="mstepV">1</span> / 3</div>
+  <div class="hud" id="cash"><div class="l">STORE NET, WITH THE PLAN</div><div class="v" id="cashV">$0</div><div class="d" id="cashD">+$0</div></div>
+  <div class="hud" id="stars"><div class="l">NET RATING</div><div id="starsV">☆☆☆☆☆</div></div>
+  <div class="hud" id="obj"><small>Objective</small><span id="objT">Tap START</span></div>
+  <div id="phone"><svg viewBox="0 0 60 60" id="rockyFace"></svg><div><div class="who">Rocky · Back office</div><div class="txt" id="phoneT"></div></div></div>
+  <div id="banner"><div class="big" id="bannerBig">Mission <span>Passed</span></div><div class="mid" id="bannerMid"></div><div class="sm" id="bannerSm"></div></div>
+  <div id="start"><div class="t">Dealer <span>City</span></div><p>You're the GM. Three missions: build your lot, run the payroll, set your pay plan. Watch the net counter. Drag the city to look around.</p><button class="btn" id="startBtn" disabled style="opacity:.5">Loading the city…</button></div>
+  <div id="panel">
+    <div class="m on" id="m1"><div class="t"><i>01</i>Build your lot</div><div class="why">Tap a size. Drag the slider to your real headcount. Brands are set dressing.</div>
+      <div class="tiers" id="tiers"></div>
+      <label class="l"><span>Full-time W-2 employees</span><b id="empV">64</b></label><input type="range" id="emp" min="8" max="600" value="64">
+      <div class="chips" id="brands"></div>
+      <button class="btn next" id="n1">Next: run the payroll →</button></div>
+    <div class="m" id="m2"><div class="t"><i>02</i>Run the payroll</div><div class="why">How many of your people qualify and enroll, and which plan level. 80% is the usual planning number; the $1,600 level fits most dealership pay.</div>
+      <label class="l"><span>Share who qualify and enroll</span><b id="qualV">80%</b></label><input type="range" id="qual" min="40" max="100" value="80">
+      <div class="fine">Contribution tier</div><div class="toggle" id="plan"></div>
+      <div class="fine">States</div><select id="stateSel"><option value="">Add a state…</option></select><div class="chips" id="states"></div><div class="fine" id="stateNote"></div>
+      <button class="btn next" id="n2">Next: your pay plan →</button></div>
+    <div class="m" id="m3"><div class="t"><i>03</i>Your pay plan</div><div class="why">How your bonus is figured. Pick the one that matches your plan and set your share.</div>
+      <div class="toggle" id="mode"><button data-v="all" class="on">Share of all net</button><button data-v="above">Share of net above target</button></div>
+      <label class="l"><span id="shareLabel">Your share</span><b id="shareV">5%</b></label><input type="range" id="share" min="1" max="40" value="5" step="0.5">
+      <div class="fine" id="modeNote"></div>
+      <details><summary>Store benchmarks</summary>
+        <label class="l"><span>Revenue per employee</span><b id="rpeV">$1.15M</b></label><input type="range" id="rpe" min="500000" max="2000000" value="1150000" step="25000">
+        <label class="l"><span>Net margin (pre-tax)</span><b id="marginV">2.8%</b></label><input type="range" id="margin" min="1" max="5" value="2.8" step="0.1">
+        <label class="l"><span>Average sale</span><b id="unitV">$48,000</b></label><input type="range" id="unit" min="10" max="80000" value="48000" step="500">
+        <div class="fine">NADA 2024 averages: about $73M in sales and 64 employees per franchised store, net pre-tax profit in the low single digits, $48,000 per new vehicle.</div></details>
+      <button class="btn next g" id="n3">Show me the money →</button></div>
   </div>
 </div>
+
+<div class="sheet" id="sheet">
+  <div class="hero"><div class="k">Net profit added to the store, per year</div><div class="n" id="lift">$0</div><div class="u" id="units"></div><div class="s" id="liftS"></div>
+    <a class="cta" href="/#contact">Run my real payroll →</a></div>
+  <div class="stats">
+    <div class="stat me"><div class="k">Your bonus</div><div class="n" id="bonusDelta">+$0</div><div class="s" id="bonusDeltaS"></div></div>
+    <div class="stat"><div class="k">Store net, before → after</div><div class="n" id="netPair">$0</div><div class="s" id="netPairS"></div></div>
+    <div class="stat"><div class="k">Employees enrolled</div><div class="n" id="enrolled">0</div><div class="s" id="enrolledS"></div></div>
+    <div class="stat"><div class="k">What employees see</div><div class="n">+$50–500</div><div class="s">estimated monthly take-home gain for those who enroll; varies by pay and state; some come out behind</div></div>
+  </div>
+</div>
+<p class="fine" style="margin-top:14px">Illustrative only. No specific tax outcome is guaranteed; results depend on a payroll analysis and on current federal and state law. Employer figures use the plan's published per-employee math (the monthly pre-tax contribution × 7.65% FICA, less the plan's administration fee) and leave out any workers' compensation, FUTA or SUTA effect. Revenue, margin and pay-plan figures are industry averages or your own entries, not a forecast for your store. Participation is voluntary; employees typically see higher take-home pay, though some do not. This is a fixed indemnity benefit, not health insurance; it sits alongside, not in place of, major medical. Wellness payments above an employee's unreimbursed medical expenses may be taxable to the employee. This is a marketing communication, not legal, tax, accounting or financial advice. Not affiliated with any video game or its publisher.</p>
 </div>
 
 <script>
+/* ===== model, missions, HUD (plain script) ===== */
 const $=s=>document.querySelector(s);
 const fmt=n=>'$'+Math.round(n).toLocaleString('en-US');
 const fmtM=n=>n>=1e6?'$'+(n/1e6).toFixed(n>=1e7?0:1)+'M':fmt(n);
-const TIERS=[{id:0,name:'Compact store',emp:28,s:'8 to 35 people'},{id:1,name:'Mid-size store',emp:64,s:'36 to 90'},{id:2,name:'Large store',emp:140,s:'91 to 200'},{id:3,name:'Auto group',emp:320,s:'200 and up'}];
-const BRANDS=[['Toyota','#eb0a1e'],['Ford','#2a5db0'],['Chevrolet','#c9a227'],['Honda','#d0202c'],['Hyundai','#2457a8'],['Kia','#36405a'],['Nissan','#c3002f'],['Subaru','#2f63d1'],['Jeep','#3f6b3f'],['RAM','#a6192e'],['GMC','#cf0a2c'],['BMW','#1c7ad1'],['Mercedes','#8c8f98'],['Lexus','#5c5f6b'],['Audi','#bb0a30'],['Volkswagen','#1d3f8a'],['Mazda','#910a2d'],['Cadillac','#8b2252']];
+const TIERS=[{name:'Compact',emp:28,s:'8 to 35'},{name:'Mid-size',emp:64,s:'36 to 90'},{name:'Large',emp:140,s:'91 to 200'},{name:'Group',emp:320,s:'200+'}];
+const BRANDS=[['Toyota','#eb0a1e'],['Ford','#2a5db0'],['Chevrolet','#c9a227'],['Honda','#d0202c'],['Hyundai','#2457a8'],['Kia','#36405a'],['Nissan','#c3002f'],['Subaru','#2f63d1'],['Jeep','#3f6b3f'],['RAM','#a6192e'],['GMC','#cf0a2c'],['BMW','#1c7ad1'],['Mercedes','#8c8f98'],['Lexus','#5c5f6b'],['Audi','#bb0a30'],['Volkswagen','#1d3f8a']];
 const STATES='AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY'.split(' ');
 const NOTAX=new Set(['AK','FL','NV','NH','SD','TN','TX','WA','WY']);
-const PLAN={1200:{admin:35,label:'$1,200'},1500:{admin:40,label:'$1,500'}};
-const S={tier:1,emp:64,brands:new Set(['Toyota','Ford']),states:new Set(['PA']),share:5,plan:1500,qual:80,rpe:1150000,margin:2.8};
+// Contribution tiers as published in the decks on file (contribution, admin fee). Edit here when the rate sheet changes.
+// ACA plan levels: five tiers, $40 admin each; $1,600 is the top plan per the Oct 26 Kind Lending proposal ($82.40 net per enrolled employee per month).
+const PLANS=[{c:1600,admin:40},{c:1500,admin:40},{c:1200,admin:40},{c:1000,admin:40},{c:675,admin:40}];
+const S={tier:1,emp:64,brands:new Set(['Toyota']),states:new Set(['PA']),qual:80,plan:1600,mode:'all',share:5,rpe:1150000,margin:2.8,unit:48000};
+let step=0; const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+window.S=S;
 
-/* ---------- controls ---------- */
-$('#tiers').innerHTML=TIERS.map(t=>`<div class="tier" data-id="${t.id}"><b>${t.name}</b><small>${t.s}</small></div>`).join('');
-document.querySelectorAll('.tier').forEach(el=>el.onclick=()=>{S.tier=+el.dataset.id;S.emp=TIERS[S.tier].emp;$('#emp').value=S.emp;update(true)});
+$('#tiers').innerHTML=TIERS.map((t,i)=>`<div class="tier" data-id="${i}"><b>${t.name}</b>${t.s}</div>`).join('');
+document.querySelectorAll('.tier').forEach(el=>el.onclick=()=>{S.tier=+el.dataset.id;S.emp=TIERS[S.tier].emp;$('#emp').value=S.emp;update()});
 $('#brands').innerHTML=BRANDS.map(([b,c])=>`<button data-b="${b}" style="--c:${c}">${b}</button>`).join('');
 document.querySelectorAll('#brands button').forEach(el=>el.onclick=()=>{const b=el.dataset.b;S.brands.has(b)?S.brands.delete(b):S.brands.add(b);update()});
+$('#plan').innerHTML=PLANS.map(p=>`<button data-v="${p.c}" class="${p.c===S.plan?'on':''}">$${p.c.toLocaleString()}</button>`).join('');
 $('#stateSel').innerHTML+=STATES.map(s=>`<option>${s}</option>`).join('');
 $('#stateSel').onchange=e=>{if(e.target.value){S.states.add(e.target.value);e.target.value='';update()}};
-$('#plan').onclick=e=>{const b=e.target.closest('button');if(!b)return;S.plan=+b.dataset.v;document.querySelectorAll('#plan button').forEach(x=>x.classList.toggle('on',x===b));update(true)};
-for(const k of ['emp','share','qual','rpe','margin']){$('#'+k).oninput=e=>{S[k]=+e.target.value;if(k==='emp')S.tier=S.emp<=35?0:S.emp<=90?1:S.emp<=200?2:3;update()}}
+$('#plan').onclick=e=>{const b=e.target.closest('button');if(!b)return;S.plan=+b.dataset.v;document.querySelectorAll('#plan button').forEach(x=>x.classList.toggle('on',x===b));update()};
+$('#mode').onclick=e=>{const b=e.target.closest('button');if(!b)return;S.mode=b.dataset.v;document.querySelectorAll('#mode button').forEach(x=>x.classList.toggle('on',x===b));S.share=S.mode==='all'?5:25;$('#share').value=S.share;update()};
+for(const k of ['emp','qual','share','rpe','margin','unit']){$('#'+k).oninput=e=>{S[k]=+e.target.value;if(k==='emp')S.tier=S.emp<=35?0:S.emp<=90?1:S.emp<=200?2:3;update()}}
 
-/* ---------- model ---------- */
 function model(){
-  const p=PLAN[S.plan];
-  const perEnrolledMonth=S.plan*0.0765-p.admin;          // employer FICA saved less admin fee
-  const enrolled=Math.round(S.emp*S.qual/100);
-  const savings=enrolled*perEnrolledMonth*12;
-  const rev=S.emp*S.rpe, net=rev*S.margin/100;
-  const before=net*S.share/100, after=(net+savings)*S.share/100;
-  return {perEnrolledMonth,enrolled,savings,rev,net,before,after};
+  const p=PLANS.find(x=>x.c===S.plan), per=S.plan*0.0765-p.admin, enrolled=Math.round(S.emp*S.qual/100), lift=enrolled*per*12;
+  const rev=S.emp*S.rpe, net=rev*S.margin/100, units=lift/(S.margin/100)/S.unit, bonusDelta=lift*S.share/100;
+  return {per,enrolled,lift,rev,net,units,bonusDelta};
 }
-
-/* ---------- render ---------- */
-const prev={};
-function count(id,val,f){const el=$('#'+id),from=prev[id]??0;prev[id]=val;const t0=performance.now(),d=700;
-  (function step(now){const k=Math.min(1,(now-t0)/d),e=1-Math.pow(1-k,3);el.textContent=f(from+(val-from)*e);if(k<1)requestAnimationFrame(step)})(t0)}
-function update(flash){
+const shown={cash:0};
+function update(){
   const m=model();
   document.querySelectorAll('.tier').forEach(el=>el.classList.toggle('on',+el.dataset.id===S.tier));
   document.querySelectorAll('#brands button').forEach(el=>{const on=S.brands.has(el.dataset.b);el.classList.toggle('on',on);el.style.background=on?el.style.getPropertyValue('--c'):''});
   $('#states').innerHTML=[...S.states].map(s=>`<button class="on" style="background:var(--purple)" data-s="${s}">${s} ✕</button>`).join('');
   document.querySelectorAll('#states button').forEach(el=>el.onclick=()=>{S.states.delete(el.dataset.s);update()});
   const nt=[...S.states].filter(s=>NOTAX.has(s));
-  $('#stateNote').textContent=S.states.size?(nt.length?`${nt.join(', ')} ${nt.length>1?'have':'has'} no state income tax, so employees there see a smaller take-home gain; the dealership's FICA savings are federal and the same in every state.`:'The dealership savings in this estimate are federal payroll tax, the same in every state. Employee take-home gains are larger where state income tax applies.'):'';
-  $('#empV').textContent=S.emp;$('#shareV').textContent=S.share+'%';$('#qualV').textContent=S.qual+'%';$('#rpeV').textContent=fmtM(S.rpe);$('#marginV').textContent=S.margin.toFixed(1)+'%';
-  count('bonusAfter',m.after,fmt);count('bonusBefore',m.before,fmt);count('savings',m.savings,fmt);count('rev',m.rev,fmtM);count('net',m.net,fmt);count('enrolled',m.enrolled,v=>Math.round(v).toLocaleString());count('cars',m.savings/(S.margin/100)/48000,v=>Math.round(v).toLocaleString());$('#carsS').textContent=`${fmt(m.savings)} of net at a ${S.margin.toFixed(1)}% margin equals ${fmtM(m.savings/(S.margin/100))} in sales, about ${Math.round(m.savings/(S.margin/100)/48000)} vehicles at a $48,000 average transaction`;
-  $('#delta').textContent='+'+fmt(m.after-m.before)+' / yr';
-  $('#bonusAfterS').textContent=`${S.share}% of net after ${fmt(m.savings)} in payroll-tax savings lands on the P&L`;
-  $('#bonusBeforeS').textContent=`${S.share}% of ${fmt(m.net)} net`;
-  $('#savingsS').textContent=`${m.enrolled} enrolled × ${fmt(m.perEnrolledMonth)}/mo (7.65% FICA on ${PLAN[S.plan].label}, less a ${fmt(PLAN[S.plan].admin)} admin fee)`;
-  $('#revS').textContent=`${S.emp} employees × ${fmtM(S.rpe)} per employee`;
-  $('#netS').textContent=`${S.margin.toFixed(1)}% pre-tax margin`;
-  $('#enrolledS').textContent=`${S.qual}% of ${S.emp} qualify and enroll (voluntary)`;
-  const max=Math.max(m.net+m.savings,1);
-  const bar=(id,v,den)=>{$('#'+id).style.width=(100*v/den)+'%';$('#'+id+'v').textContent=fmt(v)};
-  bar('b1',m.before,m.after);bar('b2',m.after,m.after);bar('b3',m.net,max);bar('b4',m.net+m.savings,max);
-  $('#f1').textContent=m.enrolled;$('#f1b').textContent=S.qual;$('#f2').textContent=fmt(m.savings);$('#f3').textContent='+'+fmt(m.after-m.before);$('#f3b').textContent=S.share;
-  if(flash){$('#heroStat').classList.remove('pulse');void $('#heroStat').offsetWidth;$('#heroStat').classList.add('pulse')}
-  drawLot(m);
+  $('#stateNote').textContent=nt.length?`${nt.join(', ')}: no state income tax, so employees there see a smaller take-home gain. The store's FICA savings are federal and the same everywhere.`:'The store savings are federal payroll tax, the same in every state.';
+  $('#empV').textContent=S.emp;$('#qualV').textContent=S.qual+'%';$('#shareV').textContent=S.share+'%';$('#rpeV').textContent=fmtM(S.rpe);$('#marginV').textContent=S.margin.toFixed(1)+'%';$('#unitV').textContent=fmt(S.unit);
+  $('#shareLabel').textContent=S.mode==='all'?'Your share of all net':'Your share of net above target';
+  $('#modeNote').textContent=S.mode==='all'?'Most GM plans pay base plus a share of all store net. The plan money is net, so you get your share of it.':'Plans that pay a higher share above a baseline treat every plan dollar as incremental: it lands entirely in your upper band.';
+  const target=m.net+m.lift;
+  gsap.to(shown,{cash:target,duration:reduce?0:1.1,ease:'power3.out',onUpdate:()=>{$('#cashV').textContent=fmt(shown.cash)}});
+  $('#cashD').textContent='+'+fmt(m.lift)+' from the plan';
+  if(!reduce)gsap.fromTo('#cashD',{opacity:0,y:-6},{opacity:1,y:0,duration:.3,yoyo:true,repeat:1,repeatDelay:1.2});
+  const stars=Math.min(5,Math.max(1,Math.ceil(m.lift/50000)));$('#starsV').textContent='★'.repeat(stars)+'☆'.repeat(5-stars);
+  $('#lift').textContent=fmt(m.lift);$('#units').textContent=`${Math.round(m.units).toLocaleString()} cars you didn't have to sell`;
+  $('#liftS').textContent=`${m.enrolled} enrolled × ${fmt(m.per)} a month (7.65% FICA on the $${S.plan.toLocaleString()} contribution, less the admin fee) × 12. A ${(100*m.lift/m.net).toFixed(1)}% lift on ${fmt(m.net)} of net.`;
+  $('#bonusDelta').textContent='+'+fmt(m.bonusDelta);$('#bonusDeltaS').textContent=`${S.share}% of ${fmt(m.lift)}, ${S.mode==='all'?'your share of all net':'your share above target'}`;
+  $('#netPair').textContent=fmt(m.net)+' → '+fmt(m.net+m.lift);$('#netPairS').textContent=`${S.emp} employees × ${fmtM(S.rpe)} at ${S.margin.toFixed(1)}%`;
+  $('#enrolled').textContent=m.enrolled;$('#enrolledS').textContent=`${S.qual}% of ${S.emp}, voluntary`;
+  if(window.city)window.city.setLot(S.tier,S.emp,[...S.brands].map(b=>BRANDS.find(x=>x[0]===b)[1]),m.enrolled/Math.max(1,S.emp));
 }
+const LINES={
+  0:["Rocky. Back office. Nobody sees me, everybody gets paid. Build your lot and I'll start reading the payroll."],
+  1:["{emp} on W-2. That's a payroll worth reading. Now tell me who qualifies."],
+  2:["{enrolled} enrolled. {lift} a year lands on the P&L and not one tire gets kicked. Last job: how do you get paid?"],
+  3:["{bonus} to you. {units} cars' worth of net nobody had to move. Take it to ownership."]};
+function say(n,m){const t=LINES[n][0].replace('{emp}',S.emp).replace('{enrolled}',m.enrolled).replace('{lift}',fmt(m.lift)).replace('{bonus}','+'+fmt(m.bonusDelta)).replace('{units}',Math.round(m.units));
+  const el=$('#phoneT');el.textContent='';gsap.killTweensOf('#phone');gsap.to('#phone',{x:'0%',duration:reduce?0:.4,ease:'power3.out'});
+  let i=0;clearInterval(say.tm);say.tm=setInterval(()=>{el.textContent=t.slice(0,++i);if(i>=t.length)clearInterval(say.tm)},reduce?0:18);
+  gsap.to('#phone',{x:'-130%',duration:.4,delay:8,ease:'power3.in'});}
+function banner(big,mid,sm){const b=$('#banner');$('#bannerBig').innerHTML=big;$('#bannerMid').textContent=mid;$('#bannerSm').textContent=sm;
+  if(reduce){b.style.opacity=1;setTimeout(()=>b.style.opacity=0,2500);return}
+  gsap.timeline().set(b,{opacity:1}).fromTo('#bannerBig',{scale:2.2,opacity:0},{scale:1,opacity:1,duration:.35,ease:'power4.out'}).fromTo('#bannerMid',{y:20,opacity:0},{y:0,opacity:1,duration:.3},'-=.1').fromTo('#bannerSm',{opacity:0},{opacity:1,duration:.3}).to(b,{opacity:0,duration:.5,delay:1.8});}
+const OBJ={1:'Build your lot: tap a size, set your headcount',2:'Run the payroll: who qualifies, which tier',3:'Set your pay plan',4:'Mission passed. Send this to ownership'};
+function go(n){step=n;$('#mstepV').textContent=Math.min(3,n);document.querySelectorAll('#panel .m').forEach((el,i)=>el.classList.toggle('on',i===n-1));$('#objT').textContent=OBJ[n];}
+$('#startBtn').onclick=()=>{if(matchMedia('(max-width:760px)').matches){document.getElementById('game').after(document.getElementById('panel'))}gsap.to('#start',{opacity:0,duration:.4,onComplete:()=>$('#start').style.display='none'});$('#panel').style.display='block';$('#panel').classList.add('on');go(1);say(0,model());if(window.city)window.city.flyIn()};
+$('#n1').onclick=()=>{const m=model();banner('Mission <span>Passed</span>',`${S.emp} on payroll`,'The lot');say(1,m);go(2);if(window.city){window.city.celebrate(1);window.city.cue(1)}};
+$('#n2').onclick=()=>{const m=model();banner('Mission <span>Passed</span>','+'+fmt(m.lift)+' net','Payroll run');say(2,m);go(3);if(window.city){window.city.celebrate(2);window.city.cue(2)}};
+$('#n3').onclick=()=>{const m=model();banner('<span>Respect</span> +',fmt(m.lift)+' net, zero units','Illustrative. Confirmed by a payroll analysis before anything is signed.');say(3,m);go(4);$('#sheet').classList.add('on');if(window.city){window.city.celebrate(3);window.city.cue(3)}setTimeout(()=>$('#sheet').scrollIntoView({behavior:'smooth',block:'start'}),2600)};
+$('#rockyFace').innerHTML=`<circle cx="30" cy="30" r="28" fill="#1b1826"/><path d="M10 34 C 8 22, 14 14, 22 12 L 26 4 L 30 12 L 34 4 L 38 12 C 46 14, 52 22, 50 34 C 48 44, 40 50, 30 50 C 20 50, 12 44, 10 34Z" fill="#8a86a3"/><path d="M12 30 C 20 22, 40 22, 48 30 C 46 38, 38 42, 30 40 C 22 42, 14 38, 12 30Z" fill="#262238"/><rect x="14" y="27" width="14" height="8" rx="2" fill="#0b0a10" stroke="#d65db1" stroke-width="1.5"/><rect x="32" y="27" width="14" height="8" rx="2" fill="#0b0a10" stroke="#d65db1" stroke-width="1.5"/><ellipse cx="30" cy="44" rx="4" ry="3" fill="#0b0a10"/><path d="M24 48 Q 30 53, 36 48" stroke="#0b0a10" stroke-width="2" fill="none"/><path d="M16 52 L 30 56 L 44 52 L 46 60 L 14 60Z" fill="#22a85e"/><circle cx="22" cy="57" r="1.5" fill="#d65db1"/><circle cx="36" cy="56" r="1.5" fill="#ffd166"/>`;
+update();
+</script>
 
-/* ---------- the lot (isometric SVG) ---------- */
-function drawLot(m){
-  const t=S.tier;
-  const iso=(x,y,z=0)=>[350+(x-y)*0.866, 175+(x+y)*0.5-z];
-  const P=(pts,fill,extra='')=>`<polygon points="${pts.map(p=>p.join(',')).join(' ')}" fill="${fill}" ${extra}/>`;
-  const box=(x,y,w,d,h,top,left,right,extra='')=>P([iso(x,y+d,0),iso(x+w,y+d,0),iso(x+w,y+d,h),iso(x,y+d,h)],left,extra)+P([iso(x+w,y,0),iso(x+w,y+d,0),iso(x+w,y+d,h),iso(x+w,y,h)],right,extra)+P([iso(x,y,h),iso(x+w,y,h),iso(x+w,y+d,h),iso(x,y+d,h)],top,extra);
-  const shade=(hex,k)=>{const n=parseInt(hex.slice(1),16);const r=Math.round(((n>>16)&255)*k),g=Math.round(((n>>8)&255)*k),b=Math.round((n&255)*k);return `rgb(${r},${g},${b})`};
-  let s='';
-  s+=P([iso(-190,-190),iso(190,-190),iso(190,190),iso(-190,190)],'#171424');                 // grass
-  s+=P([iso(-160,-70),iso(160,-70),iso(160,160),iso(-160,160)],'#232031');                   // asphalt
-  s+=P([iso(-160,160),iso(160,160),iso(160,175),iso(-160,175)],'#2c2840');                   // curb
-  for(let r=0;r<5;r++){const y=-50+r*42;for(let i=-150;i<=150;i+=25){s+=`<line x1="${iso(i,y)[0]}" y1="${iso(i,y)[1]}" x2="${iso(i,y+20)[0]}" y2="${iso(i,y+20)[1]}" stroke="#3b3554" stroke-width="1"/>`}}
-  // building
-  const bw=[90,130,170,220][t], bd=[46,54,62,72][t], bh=[36,46,56,70][t], x0=-bw/2, y0=-150;
-  const wall='#3b3560', side='#262140', roof='#2e2a4a';
-  s+=box(x0,y0,bw,bd,bh,roof,wall,side);
-  for(let i=0;i<Math.floor((bw-10)/16);i++){const gx=x0+6+i*16;s+=P([iso(gx,y0+bd,5),iso(gx+11,y0+bd,5),iso(gx+11,y0+bd,bh-9),iso(gx,y0+bd,bh-9)],'rgba(131,102,234,.5)')}
-  s+=P([iso(x0+bw*0.42,y0+bd,0),iso(x0+bw*0.58,y0+bd,0),iso(x0+bw*0.58,y0+bd,bh*0.55),iso(x0+bw*0.42,y0+bd,bh*0.55)],'#1a1726'); // door
-  const sg=iso(x0+bw/2,y0+bd,bh+2);
-  s+=`<rect x="${sg[0]-44}" y="${sg[1]-26}" width="88" height="20" rx="5" fill="#22a85e"/><text x="${sg[0]}" y="${sg[1]-12}" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="11" fill="#06130b">${['YOUR LOT','YOUR STORE','YOUR DEALERSHIP','YOUR GROUP'][t]}</text>`;
-  // pennant wire with brands
-  const br=[...S.brands].slice(0,10), pa=iso(-165,-75,70), pb=iso(165,-75,70);
-  s+=`<line x1="${pa[0]}" y1="${pa[1]}" x2="${pb[0]}" y2="${pb[1]}" stroke="#4a4466"/><line x1="${pa[0]}" y1="${pa[1]}" x2="${iso(-165,-75,0)[0]}" y2="${iso(-165,-75,0)[1]}" stroke="#4a4466" stroke-width="2"/><line x1="${pb[0]}" y1="${pb[1]}" x2="${iso(165,-75,0)[0]}" y2="${iso(165,-75,0)[1]}" stroke="#4a4466" stroke-width="2"/>`;
-  br.forEach((name,i)=>{const k=(i+1)/(br.length+1);const px=pa[0]+(pb[0]-pa[0])*k,py=pa[1]+(pb[1]-pa[1])*k;const c=BRANDS.find(x=>x[0]===name)[1];
-    s+=`<g><polygon points="${px-9},${py} ${px+9},${py} ${px},${py+20}" fill="${c}"><animateTransform attributeName="transform" type="rotate" values="-5 ${px} ${py};5 ${px} ${py};-5 ${px} ${py}" dur="${2.2+i*.25}s" repeatCount="indefinite"/></polygon><text x="${px}" y="${py+32}" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="9" fill="#c9c4da">${name}</text></g>`});
-  // cars: one per 4 employees, capped at 60, parked in rows
-  const n=Math.min(60,Math.max(4,Math.round(S.emp/4))), rows=Math.min(5,Math.ceil(n/12)), cols=Math.ceil(n/rows), xs=Math.min(25,300/cols), cy0=45-(rows-1)*21, pal=['#8366ea','#22a85e','#d65db1','#e0a640','#4fa3e0','#d9d6e6','#c3002f','#5ad1c8'];
-  for(let i=0;i<n;i++){const col=i%cols,row=Math.floor(i/cols);const cx=-150+(300-cols*xs)/2+col*xs,cy=cy0+row*42;const c=pal[(i*5)%pal.length];
-    s+=`<g style="animation:pop .35s ${i*10}ms both">`+box(cx,cy,16,9,6,shade(c,1),shade(c,.75),shade(c,.55))+box(cx+3,cy+1,9,7,5,shade(c,.9),'rgba(200,220,255,.55)','rgba(140,160,200,.5)',`transform="translate(0,-6)"`)+`</g>`}
-  // enrolled: a green light per 10 enrolled along the curb
-  const g=Math.min(40,Math.round(m.enrolled/10));
-  for(let i=0;i<g;i++){const p=iso(-150+i*(300/Math.max(1,g-1||1)),168,3);s+=`<circle cx="${p[0]}" cy="${p[1]}" r="2.4" fill="#4fd486"><animate attributeName="opacity" values="0.25;1;0.25" dur="${1.4+(i%5)*.25}s" repeatCount="indefinite"/></circle>`}
-  $('#scene').innerHTML=s;
-  $('#sign').innerHTML=[...S.states].map(x=>`<span class="chip state">${x}</span>`).join('');
-  $('#cap').textContent=`${TIERS[t].name} · ${S.emp} employees · ${m.enrolled} enrolled`;
+<script type="module">
+/* ===== the 3D city ===== */
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
+import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
+import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
+
+const host=document.getElementById('game');
+const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
+const mobile=matchMedia('(max-width:760px)').matches;renderer.setPixelRatio(mobile?1:Math.min(2,devicePixelRatio));renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.95;
+host.insertBefore(renderer.domElement,host.firstChild);
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x07060c);scene.fog=new THREE.FogExp2(0x0a0812,0.0075);
+const camera=new THREE.PerspectiveCamera(42,16/9,0.5,600);camera.position.set(120,95,150);
+const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,2,0);controls.enableDamping=true;controls.autoRotate=true;controls.autoRotateSpeed=.35;controls.maxPolarAngle=Math.PI*.46;controls.minDistance=28;controls.maxDistance=220;controls.enablePan=false;
+
+scene.add(new THREE.HemisphereLight(0x8f86d6,0x1a1426,1.3));
+const moon=new THREE.DirectionalLight(0xbfc8ff,1.6);moon.position.set(-60,90,40);scene.add(moon);const lotSpot=new THREE.SpotLight(0xffffff,900,90,Math.PI/5,.5,2);lotSpot.position.set(10,40,20);lotSpot.target.position.set(0,0,0);scene.add(lotSpot);scene.add(lotSpot.target);
+const lotLightA=new THREE.PointLight(0xd65db1,60,80,2);lotLightA.position.set(-8,12,8);const lotLightC=new THREE.PointLight(0xfff2cc,40,40,2);lotLightC.position.set(-6,6,-8);scene.add(lotLightC);scene.add(lotLightA);
+const lotLightB=new THREE.PointLight(0x22a85e,50,80,2);lotLightB.position.set(14,10,0);scene.add(lotLightB);
+
+/* ground + roads */
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(600,600),new THREE.MeshStandardMaterial({color:0x100e18,roughness:1}));ground.rotation.x=-Math.PI/2;ground.position.y=-0.02;scene.add(ground);
+const BLOCK=26,ROAD=9,PITCH=BLOCK+ROAD,NX=7,NZ=5;
+const roadMat=new THREE.MeshStandardMaterial({color:0x201d2c,roughness:.95});
+const dashTex=(()=>{const c=document.createElement('canvas');c.width=64;c.height=8;const g=c.getContext('2d');g.fillStyle='#17151f';g.fillRect(0,0,64,8);g.fillStyle='#8f8aa3';g.fillRect(8,3,24,2);const t=new THREE.CanvasTexture(c);t.wrapS=THREE.RepeatWrapping;t.repeat.x=40;return t})();
+const dashMat=new THREE.MeshStandardMaterial({map:dashTex,roughness:.9});
+for(let i=0;i<=NX;i++){const x=(i-NX/2)*PITCH;const r=new THREE.Mesh(new THREE.PlaneGeometry(ROAD,NZ*PITCH+ROAD),roadMat);r.rotation.x=-Math.PI/2;r.position.set(x,0,0);scene.add(r);const d=new THREE.Mesh(new THREE.PlaneGeometry(.5,NZ*PITCH),dashMat);d.rotation.x=-Math.PI/2;d.rotation.z=Math.PI/2;d.position.set(x,.01,0);scene.add(d)}
+for(let j=0;j<=NZ;j++){const z=(j-NZ/2)*PITCH;const r=new THREE.Mesh(new THREE.PlaneGeometry(NX*PITCH+ROAD,ROAD),roadMat);r.rotation.x=-Math.PI/2;r.position.set(0,0,z);scene.add(r);const d=new THREE.Mesh(new THREE.PlaneGeometry(NX*PITCH,.5),dashMat);d.rotation.x=-Math.PI/2;d.position.set(0,.01,z);scene.add(d)}
+
+/* buildings with lit windows */
+function windowTex(w,h,lit){const c=document.createElement('canvas');c.width=64;c.height=128;const g=c.getContext('2d');g.fillStyle='#000';g.fillRect(0,0,64,128);
+  for(let y=4;y<128;y+=10)for(let x=4;x<64;x+=12){if(Math.random()<lit*.55){g.fillStyle=['#ffd166','#8366ea','#4fd486','#d65db1','#9aa7ff'][Math.floor(Math.random()*5)];g.fillRect(x,y,7,6)}}
+  const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(w/6,h/12);return t}
+const neon=[0xd65db1,0x8366ea,0x22a85e,0x4fa3e0];
+function building(x,z,w,d,h,seed){const g=new THREE.BoxGeometry(w,h,d);const em=windowTex(w,h,.35+((seed*7)%5)/10);
+  const mat=new THREE.MeshStandardMaterial({color:0x1a1630,roughness:.6,metalness:.2,emissive:0xffffff,emissiveMap:em,emissiveIntensity:.75});
+  const m=new THREE.Mesh(g,mat);m.position.set(x,h/2,z);scene.add(m);
+  const edge=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(w+.1,.3,d+.1)),new THREE.LineBasicMaterial({color:neon[seed%4]}));edge.position.set(x,h,z);scene.add(edge);
+  if(seed%3===0){const s=new THREE.Mesh(new THREE.BoxGeometry(w*.6,2.2,.4),new THREE.MeshStandardMaterial({color:0x000,emissive:neon[(seed+1)%4],emissiveIntensity:2.5}));s.position.set(x,h+1.4,z+d/2);scene.add(s)}}
+let seed=1;
+for(let i=0;i<NX;i++)for(let j=0;j<NZ;j++){if(j===2&&(i===3))continue;const cx=(i-NX/2+.5)*PITCH,cz=(j-NZ/2+.5)*PITCH;const n=1+(seed%3);
+  for(let k=0;k<n;k++){seed++;const dist=Math.hypot(i-3,j-2);const w=8+(seed*13)%9,d=8+(seed*7)%9,h=5+(seed*29)%(dist<1.5?8:dist<2.5?16:30);const ox=n===1?0:(k-(n-1)/2)*(BLOCK/n*.9),oz=((seed*3)%7)-3;building(cx+ox,cz+oz,Math.min(w,BLOCK/n-2),Math.min(d,BLOCK-4),h,seed)}}
+/* street lights + palms */
+const lampMat=new THREE.MeshStandardMaterial({color:0x000,emissive:0xffe6a8,emissiveIntensity:3});
+for(let i=0;i<=NX;i++)for(let j=0;j<=NZ;j++){const x=(i-NX/2)*PITCH+ROAD/2+.6,z=(j-NZ/2)*PITCH+ROAD/2+.6;const pole=new THREE.Mesh(new THREE.CylinderGeometry(.12,.12,7),new THREE.MeshStandardMaterial({color:0x2a2640}));pole.position.set(x,3.5,z);scene.add(pole);const l=new THREE.Mesh(new THREE.SphereGeometry(.45),lampMat);l.position.set(x,7,z);scene.add(l)}
+function palm(x,z){const t=new THREE.Mesh(new THREE.CylinderGeometry(.25,.4,9,6),new THREE.MeshStandardMaterial({color:0x4a3b2a}));t.position.set(x,4.5,z);scene.add(t);for(let k=0;k<6;k++){const leaf=new THREE.Mesh(new THREE.ConeGeometry(.6,6,4),new THREE.MeshStandardMaterial({color:0x1f7a4a}));leaf.position.set(x,9,z);leaf.rotation.z=Math.PI/2.6;leaf.rotation.y=k*Math.PI/3;leaf.geometry.translate(0,3,0);scene.add(leaf)}}
+[[-24,-24],[24,-24],[-24,24],[24,24]].forEach(([x,z])=>palm(x,z));
+
+/* cars */
+const wheelGeo=new THREE.CylinderGeometry(.5,.5,.4,12);wheelGeo.rotateZ(Math.PI/2);
+const wheelMat=new THREE.MeshStandardMaterial({color:0x101014,roughness:.8});
+const headMat=new THREE.MeshStandardMaterial({color:0x000,emissive:0xfff2cc,emissiveIntensity:4});
+const tailMat=new THREE.MeshStandardMaterial({color:0x000,emissive:0xff2244,emissiveIntensity:3});
+function car(color){const g=new THREE.Group();const body=new THREE.Mesh(new THREE.BoxGeometry(4.2,1,2),new THREE.MeshStandardMaterial({color,roughness:.35,metalness:.25}));body.position.y=.9;g.add(body);
+  const cab=new THREE.Mesh(new THREE.BoxGeometry(2.2,.8,1.7),new THREE.MeshStandardMaterial({color:0x2a3550,roughness:.15,metalness:.5}));cab.position.set(-.2,1.75,0);g.add(cab);
+  [[1.4,.9],[1.4,-.9],[-1.4,.9],[-1.4,-.9]].forEach(([x,z])=>{const w=new THREE.Mesh(wheelGeo,wheelMat);w.position.set(x,.5,z);g.add(w)});
+  [[2.1,.6],[2.1,-.6]].forEach(([x,z])=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.1,.25,.4),headMat);h.position.set(x,1,z);g.add(h)});
+  [[-2.1,.6],[-2.1,-.6]].forEach(([x,z])=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.1,.25,.4),tailMat);h.position.set(x,1,z);g.add(h)});
+  return g}
+const palette=[0xd65db1,0x8366ea,0x22a85e,0xe0a640,0x4fa3e0,0xd9d6e6,0xc3002f,0xffd166];
+const traffic=[];
+for(let i=0;i<=NX;i++){for(const dir of [1,-1]){const c=car(palette[(i*3+dir+8)%8]);const x=(i-NX/2)*PITCH+dir*2.2;c.position.set(x,0,(Math.random()-.5)*NZ*PITCH);c.rotation.y=dir>0?-Math.PI/2:Math.PI/2;scene.add(c);traffic.push({m:c,axis:'z',dir,x,speed:.25+Math.random()*.25})}}
+for(let j=0;j<=NZ;j++){for(const dir of [1,-1]){const c=car(palette[(j*5+dir+8)%8]);const z=(j-NZ/2)*PITCH+dir*2.2;c.position.set((Math.random()-.5)*NX*PITCH,0,z);c.rotation.y=dir>0?0:Math.PI;scene.add(c);traffic.push({m:c,axis:'x',dir,z,speed:.25+Math.random()*.25})}}
+
+/* the dealership lot (center block) */
+const lot=new THREE.Group();scene.add(lot);
+let parked=[],pennants=[],showroom,sign,ring;
+function makeSign(text){const c=document.createElement('canvas');c.width=512;c.height=128;const g=c.getContext('2d');g.fillStyle='#000';g.fillRect(0,0,512,128);g.font='bold 92px Anton, Impact, sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillStyle='#ff6fd0';g.shadowColor='#ff6fd0';g.shadowBlur=24;g.fillText(text,256,68);return new THREE.CanvasTexture(c)}
+function setLot(tier,emp,brandColors,enrolledFrac){
+  for(const o of [...parked,...pennants]){lot.remove(o)}parked=[];pennants=[];
+  if(showroom){lot.remove(showroom);lot.remove(sign)}
+  const W=[14,18,22,26][tier],D=[10,12,14,16][tier],H=[5,6,7,8][tier];
+  if(!lot.userData.base){const base=new THREE.Mesh(new THREE.PlaneGeometry(BLOCK,BLOCK),new THREE.MeshStandardMaterial({color:0x2a2638,roughness:.9}));base.rotation.x=-Math.PI/2;base.position.y=.02;lot.add(base);
+    ring=new THREE.Mesh(new THREE.RingGeometry(BLOCK*.68,BLOCK*.7,64),new THREE.MeshStandardMaterial({color:0x000,emissive:0x22a85e,emissiveIntensity:2,side:THREE.DoubleSide,transparent:true,opacity:.0}));ring.rotation.x=-Math.PI/2;ring.position.y=.05;lot.add(ring);lot.userData.base=true}
+  showroom=new THREE.Group();
+  const glass=new THREE.Mesh(new THREE.BoxGeometry(W,H,D),new THREE.MeshPhysicalMaterial({color:0xcfe9ff,transparent:true,opacity:.22,roughness:.05,metalness:.0,transmission:0}));glass.position.set(-BLOCK/2+W/2+1,H/2,-BLOCK/2+D/2+1);showroom.add(glass);
+  const inner=new THREE.Mesh(new THREE.BoxGeometry(W-.6,H-.6,D-.6),new THREE.MeshStandardMaterial({color:0x000,emissive:0x8366ea,emissiveIntensity:.12,transparent:true,opacity:.5}));inner.position.copy(glass.position);showroom.add(inner);
+  const roof=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(W,.2,D)),new THREE.LineBasicMaterial({color:0xff6fd0}));roof.position.set(glass.position.x,H,glass.position.z);showroom.add(roof);
+  for(let k=0;k<2;k++){const sc=car(palette[(k*5+1)%8]);sc.scale.setScalar(.8);sc.position.set(glass.position.x-W/4+k*W/2,0,glass.position.z);sc.rotation.y=Math.PI/4;showroom.add(sc)}
+  lot.add(showroom);
+  sign=new THREE.Group();const pole=new THREE.Mesh(new THREE.BoxGeometry(.5,14,.5),new THREE.MeshStandardMaterial({color:0x2a2640}));pole.position.set(BLOCK/2-2,7,-BLOCK/2+2);sign.add(pole);
+  const face=new THREE.Mesh(new THREE.PlaneGeometry(10,2.5),new THREE.MeshBasicMaterial({map:makeSign(['LOT','STORE','DEALER','GROUP'][tier]),transparent:true}));face.position.set(BLOCK/2-2,13,-BLOCK/2+2.3);sign.add(face);lot.add(sign);
+  const n=Math.min(24,Math.max(4,Math.round(emp/8)));const cols=8,rows=Math.ceil(n/cols);
+  for(let i=0;i<n;i++){const c=car(palette[(i*5)%8]);c.scale.setScalar(.8);const col=i%cols,row=Math.floor(i/cols);c.position.set(-BLOCK/2+2.5+col*(BLOCK-5)/(cols-1),0,BLOCK/2-2.5-row*4.2);c.rotation.y=Math.PI/2;lot.add(c);parked.push(c)}
+  brandColors.slice(0,8).forEach((hex,i)=>{const p=new THREE.Mesh(new THREE.PlaneGeometry(1.6,1),new THREE.MeshStandardMaterial({color:new THREE.Color(hex),emissive:new THREE.Color(hex),emissiveIntensity:1.2,side:THREE.DoubleSide}));p.position.set(-BLOCK/2+2+i*3,9,BLOCK/2+.2);lot.add(p);pennants.push(p);const st=new THREE.Mesh(new THREE.CylinderGeometry(.08,.08,10),new THREE.MeshStandardMaterial({color:0x3a3550}));st.position.set(-BLOCK/2+1.1+i*3,5,BLOCK/2+.2);lot.add(st);pennants.push(st)});
+  ring.material.opacity=.15+enrolledFrac*.85;
 }
-update(true);
+const bursts=[];
+function celebrate(n){gsap.fromTo(lotLightA,{intensity:60},{intensity:220,duration:.25,yoyo:true,repeat:3});gsap.fromTo(lotLightB,{intensity:50},{intensity:200,duration:.25,yoyo:true,repeat:3});
+  for(let i=0;i<6+n*3;i++){const c=car(palette[i%8]);c.scale.setScalar(.62);const a=Math.random()*Math.PI*2;c.position.set(Math.cos(a)*80,0,Math.sin(a)*80);c.lookAt(0,0,0);c.rotateY(Math.PI/2);scene.add(c);bursts.push({m:c,t:0,a})}}
+function flyIn(){cue(0)}
+const CUES=[{p:[34,24,46],t:[0,2,0]},{p:[70,52,-80],t:[0,6,0]},{p:[18,8,30],t:[2,1,8]},{p:[22,16,-20],t:[11,9,-11]}];
+function cue(n){const c=CUES[n]||CUES[0];controls.autoRotate=false;gsap.to(camera.position,{x:c.p[0],y:c.p[1],z:c.p[2],duration:2.2,ease:'power2.inOut'});gsap.to(controls.target,{x:c.t[0],y:c.t[1],z:c.t[2],duration:2.2,ease:'power2.inOut',onComplete:()=>{controls.autoRotate=true}})}
+window.city={setLot,celebrate,flyIn,cue};
+setLot(window.S.tier,window.S.emp,['#eb0a1e'],.8);
+
+/* post + loop */
+const composer=new EffectComposer(renderer);composer.addPass(new RenderPass(scene,camera));
+const bloom=new UnrealBloomPass(new THREE.Vector2(1,1),mobile?.35:.55,.45,.82);composer.addPass(bloom);composer.addPass(new OutputPass());
+function resize(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);composer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix()}
+new ResizeObserver(resize).observe(host);resize();
+const LIM={x:NX*PITCH/2+ROAD,z:NZ*PITCH/2+ROAD};
+let last=performance.now();
+function loop(now){const dt=Math.min(.05,(now-last)/1000);last=now;
+  for(const t of traffic){if(t.axis==='z'){t.m.position.z+=t.dir*t.speed*dt*60;if(t.m.position.z>LIM.z)t.m.position.z=-LIM.z;if(t.m.position.z<-LIM.z)t.m.position.z=LIM.z}else{t.m.position.x+=t.dir*t.speed*dt*60;if(t.m.position.x>LIM.x)t.m.position.x=-LIM.x;if(t.m.position.x<-LIM.x)t.m.position.x=LIM.x}}
+  for(let i=bursts.length-1;i>=0;i--){const b=bursts[i];b.t+=dt;const r=Math.max(16,80-b.t*34);b.m.position.set(Math.cos(b.a)*r,0,Math.sin(b.a)*r);if(b.t>2.4){scene.remove(b.m);bursts.splice(i,1)}}
+  controls.update();composer.render();requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+requestAnimationFrame(()=>{const b=document.getElementById('startBtn');b.disabled=false;b.style.opacity=1;b.textContent='Start'});
 </script>
 </body>
 </html>
