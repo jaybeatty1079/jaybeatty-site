@@ -43,13 +43,13 @@ window.SECTORS = {
         ['Nothing is signed on these numbers.', 'A payroll analysis confirms who qualifies and what each store saves before anyone commits.']
       ]
     },
-    // a real group, anonymised: aggregates from its own invoices and payroll files, never employee data. `stores`, `plan` and `qual` are what the Load button sets; `beats` play on the car stage.
+    // a real group, anonymised: aggregates from its own invoices and payroll files, never employee data. Headcounts are the group's real ones; the brand labels are placeholders so the brand mix does not identify it. `stores`, `plan` and `qual` are what the Load button sets; `beats` play on the car stage.
     cases: [{
       q: 'Has a dealer group actually done this?',
-      stores: [['Ford', 78], ['Ford', 71], ['Chevrolet', 67], ['CDJR', 67], ['Ford', 61], ['Mitsubishi', 16]].map(([brand, emp]) => ({ brand, emp, state: 'CA' })),
+      stores: [['Toyota', 78], ['Ford', 71], ['Chevrolet', 67], ['Honda', 67], ['Hyundai', 61], ['Kia', 16]].map(([brand, emp]) => ({ brand, emp, state: 'CA' })),
       plan: 1200, qual: 65,
       beats: [
-        { h: 'Yes. A six-store independent group in Southern California.', s: 'Three Ford stores, a Chevrolet, a CDJR and a Mitsubishi store, about 370 people on payroll, enrolled in the fall of 2024. The payroll analysis found 81% of them came out ahead.', lit: { body: 1 } },
+        { h: 'Yes. A six-store independent group in Southern California.', s: 'Six stores, domestic and import brands, about 370 people on payroll, enrolled in the fall of 2024. The payroll analysis found 81% of them came out ahead.', lit: { body: 1 } },
         { h: '77% of the eligible employees enrolled.', s: '241 of 311, and fewer than 30 people ever opted out. Across the program\'s other groups, the people who sell it report enrollment of eligible employees closer to 90%. The reason is in the first question: $0 care and more take-home on the same check.', lit: { wheels: 1, body: 1 } },
         { h: '$14,355 in the first full month.', s: 'December 2024, from the invoice: 255 enrollee-months at the $1,200 level, after the fee. About $172,000 a year. The group spent about half of it on accident, hospital and critical illness cover for every employee.', lit: { engine: 1 }, exhaust: 1 },
         { h: "On today's plan levels, plausibly $200,000 to $230,000.", s: 'The group enrolled before the $1,500 and $1,600 levels existed. Each person\'s level is set by wages, so roughly half would wage-qualify for the top level. The payroll analysis is what settles each number.', lit: { engine: 1, windows: 1 } },
