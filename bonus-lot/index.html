@@ -67,6 +67,7 @@ h1 span{color:var(--magenta)}
 .qs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:14px}
 .qs .k{width:100%;font:600 10px Inter;letter-spacing:.2em;color:var(--mute);text-transform:uppercase;text-shadow:1px 1px 0 #000}
 .qs button{font:600 12px Inter;padding:6px 11px;border-radius:999px;border:1px solid #3a3550;background:rgba(10,8,18,.85);color:#ece9f4;cursor:pointer}
+.qs button.seen{border-color:#2f8a55;color:#9ff0b8}.qs button.seen::before{content:'✓ '} /* watched to the end */
 .qs button:hover{border-color:var(--magenta)}
 /* mission panel (in-game) */
 #panel{position:absolute;right:3%;top:calc(4% + clamp(104px,15.6vw,170px));width:clamp(220px,34%,360px);bottom:5%;z-index:3;display:none}
@@ -124,9 +125,9 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
   <div class="hud" id="stars"><div class="l">NET RATING</div><div id="starsV">☆☆☆☆☆</div></div>
   <div class="hud" id="obj"><small>Objective</small><span id="objT">Tap START</span></div>
   <div id="phone"><svg viewBox="0 0 60 60" id="rockyFace" aria-hidden="true"></svg><div><div class="who" id="who"></div><div class="txt" id="phoneT"></div></div></div>
-  <div class="hud" id="story" aria-live="polite"><div id="storyK"></div><div id="storyT"></div><div id="storyS"></div><div id="qaNav"><button id="qaPrev">← Back</button><span class="n" id="qaN"></span><button id="qaNext" class="p">Next →</button><button id="qaLoad" style="display:none">Load this group</button><button id="qaClose">Close ✕</button></div></div>
+  <div class="hud" id="story" aria-live="polite"><div id="storyK"></div><div id="storyT"></div><div id="storyS"></div><div id="qaNav"><button id="qaPrev">← Back</button><span class="n" id="qaN"></span><button id="qaNext" class="p">Next →</button><button id="qaAuto">Auto-play ▶</button><button id="qaLoad" style="display:none">Load this group</button><button id="qaClose">Close ✕</button></div></div>
   <div id="banner"><div class="big" id="bannerBig">Mission <span>Passed</span></div><div class="mid" id="bannerMid"></div><div class="sm" id="bannerSm"></div></div>
-  <div id="start"><div class="t" id="startT"></div><p id="startP"></p><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><button class="btn" id="startBtn" disabled style="opacity:.5">Loading the city…</button><button class="btn q" id="howBtn">How is it paid for? ▶</button></div><div class="qs" id="qs1"><span class="k">Common questions</span></div></div>
+  <div id="start"><div class="t" id="startT"></div><p id="startP"></p><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><button class="btn" id="tourBtn">Start here ▶</button><button class="btn q" id="startBtn" disabled style="opacity:.5">Loading the city…</button><button class="btn q" id="howBtn">How is it paid for? ▶</button></div><div class="qs" id="qs1"><span class="k">Common questions</span></div></div>
   <div id="panel">
     <div class="m on" id="m1"><div class="t"><i>01</i><span id="m1T"></span></div><div class="why" id="m1W"></div>
       <div id="stores"></div>
@@ -264,7 +265,7 @@ function update(){
   if(window.city){const gk=JSON.stringify(S.stores);if(gk!==update.gk){update.gk=gk;window.city.setGroup(m.stores.map(st=>({emp:st.emp,color:colorOf(st.brand),brand:st.brand})))}window.city.setRing(m.g.enrolled/Math.max(1,m.g.emp))} // rebuild the city only when the sites change
 }
 window.cityReady=()=>{update.gk=null;update();enableStart()};
-function enableStart(){const b=$('#startBtn');if(!b.disabled)return;b.disabled=false;b.style.opacity=1;b.textContent='Start'}
+function enableStart(){const b=$('#startBtn');if(!b.disabled)return;b.disabled=false;b.style.opacity=1;b.textContent='Skip to the missions'}
 setTimeout(enableStart,7000); // the numbers work without the city (no WebGL, blocked CDN); do not keep a GM waiting
 
 function say(n,m){const x=C.lines[n].replace('{n}',S.stores.length).replace('{emp}',m.g.emp.toLocaleString()).replace('{enrolled}',m.g.enrolled.toLocaleString()).replace('{lift}',fmt(m.g.lift)).replace('{bonus}','+'+fmt(m.bonusDelta)).replace('{units}',Math.round(m.units).toLocaleString());
@@ -368,20 +369,24 @@ const QUESTIONS=[
   {h:'Ask your broker, not this page.',s:'Some carriers have recognized the lower reportable payroll and cut the premium. Treatment varies by carrier, state and class code, so confirm it before counting on it.',lit:{engine:1}}]}];
 const LEG={wheels:['#d65db1','Complimentary benefits'],body:['#22a85e','Employee tax saving'],engine:['#ffd166','{Site} tax saving'],windows:['#8366ea','Section 125 plan']};
 const fill=(s,m)=>t(s).replace(/\{per\}/g,fmt2(m.per)).replace(/\{fica\}/g,fmt2(m.fica)).replace(/\{admin\}/g,fmt2(m.admin));
-let qa=null; // {q,i} while a question is open
+let qa=null; // {q,i,tour} while a question is open
+let auto=false,autoPref=false,autoT=null; // auto-play: the tour always, otherwise the viewer's last choice
+function schedule(){clearTimeout(autoT);if(!auto||!qa)return;const b=qa.q.beats[qa.i];autoT=setTimeout(()=>{if(!qa||!auto)return;if(qa.i<qa.q.beats.length-1){qa.i++;beat()}else closeQ()},2800+38*(b.h.length+b.s.length))} // reading time, roughly
 function beat(){const b=qa.q.beats[qa.i],m=model();caption(fill(b.h,m),fill(b.s,m));$('#storyK').innerHTML=Object.keys(b.lit||{}).filter(k=>b.lit[k]).map(k=>`<span><i style="background:${LEG[k][0]}"></i>${t(LEG[k][1])}</span>`).join('');$('#qaN').textContent=`${qa.i+1} / ${qa.q.beats.length}`;$('#qaPrev').style.visibility=qa.i?'visible':'hidden';$('#qaNext').textContent=qa.i<qa.q.beats.length-1?'Next →':'Done ✓';
-  $('#qaLoad').style.display=qa.q.load?'':'none';if(window.city)window.city.light(b.lit||{},!!b.mm,!!b.exhaust)}
-function ask(q){if(busy)return;busy=true;qa={q,i:0};dimHud(true);$('#qaNav').style.display='flex';if(window.city)window.city.stage(true);beat();$('#qaNext').focus()}
-function closeQ(){if(!qa)return;qa=null;$('#storyK').innerHTML='';$('#qaNav').style.display='none';if(window.city)window.city.stage(false);dimHud(false);busy=false}
+  $('#qaLoad').style.display=qa.q.load?'':'none';$('#qaAuto').textContent=auto?'Pause ❚❚':'Auto-play ▶';if(qa.i===qa.q.beats.length-1&&qa.q.btns)qa.q.btns.forEach(x=>x.classList.add('seen'));schedule();if(window.city)window.city.light(b.lit||{},!!b.mm,!!b.exhaust)}
+function ask(q,tour){if(busy)return;busy=true;qa={q,i:0,tour:!!tour};auto=!!tour||autoPref;dimHud(true);$('#qaNav').style.display='flex';if(window.city)window.city.stage(true);beat();$('#qaNext').focus()}
+function closeQ(){if(!qa)return;const wasTour=qa.tour;clearTimeout(autoT);qa=null;$('#storyK').innerHTML='';$('#qaNav').style.display='none';if(window.city)window.city.stage(false);dimHud(false);busy=false;
+  if(wasTour&&step===0&&!$('#startBtn').disabled)$('#startBtn').click()} // the tour hands over to the missions
 $('#qaNext').onclick=()=>{if(!qa)return;if(qa.i<qa.q.beats.length-1){qa.i++;beat()}else closeQ()};
 $('#qaPrev').onclick=()=>{if(qa&&qa.i){qa.i--;beat()}};$('#qaClose').onclick=closeQ;
+$('#qaAuto').onclick=()=>{auto=!auto;autoPref=auto;$('#qaAuto').textContent=auto?'Pause ❚❚':'Auto-play ▶';schedule()};$('#tourBtn').onclick=()=>ask(QUESTIONS[0],true);
 // a real case from the sector config: its stores, plan level and enrollment replace the GM's inputs
 function loadCase(c){Object.assign(S,BM.sanitize({...S,stores:c.stores.map(s=>({...s})),plan:c.plan,qual:c.qual},SEC));closeQ();syncControls();renderStores();update();
   const sb=$('#startBtn');if($('#start').style.display!=='none'){if(!sb.disabled)sb.click()}else{say(1,model());if(window.city)window.city.flyIn()}}
 $('#qaLoad').onclick=()=>{if(qa&&qa.q.load)loadCase(qa.q.load)};
 for(const c of SEC.cases||[])QUESTIONS.push({q:c.q,beats:c.beats,load:c});
-addEventListener('keydown',e=>{if(!qa)return;if(e.key==='Escape')closeQ();if(e.key==='ArrowRight')$('#qaNext').click();if(e.key==='ArrowLeft')$('#qaPrev').click()});
-for(const id of ['qs1','qs2'])QUESTIONS.forEach(q=>{const b=document.createElement('button');b.textContent=t(q.q);b.onclick=()=>{if(id==='qs2'){$('#game').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>ask(q),500)}else ask(q)};$('#'+id).appendChild(b)});
+addEventListener('keydown',e=>{if(!qa)return;if(e.key==='Escape')closeQ();if(e.key==='ArrowRight')$('#qaNext').click();if(e.key==='ArrowLeft')$('#qaPrev').click();if(e.key===' '){e.preventDefault();$('#qaAuto').click()}});
+for(const id of ['qs1','qs2'])QUESTIONS.forEach(q=>{const b=document.createElement('button');b.textContent=t(q.q);(q.btns=q.btns||[]).push(b);b.onclick=()=>{if(id==='qs2'){$('#game').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>ask(q),500)}else ask(q)};$('#'+id).appendChild(b)});
 
 if(hashToState()){syncControls();renderStores();update();showOwner()}else{renderStores();update()}
 </script>
