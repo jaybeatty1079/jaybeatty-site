@@ -395,6 +395,7 @@ import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
 import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
 import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
 import {CSS2DRenderer,CSS2DObject} from 'three/addons/renderers/CSS2DRenderer.js';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
 
 const SC=window.SECTORS[new URLSearchParams(location.search).get('s')]?.scene||window.SECTORS.dealership.scene, LOT=window.SECTORS[new URLSearchParams(location.search).get('s')]?.sizes.lot||window.SECTORS.dealership.sizes.lot;
@@ -462,12 +463,28 @@ const tailMat=new THREE.MeshStandardMaterial({color:0x000,emissive:0xff2244,emis
 const SHARED=new Set([wheelGeo,wheelMat,headMat,tailMat]);
 function dispose(o){o.traverse(x=>{if(x.geometry&&!SHARED.has(x.geometry))x.geometry.dispose();if(x.material&&!SHARED.has(x.material)){for(const m of [].concat(x.material)){m.map?.dispose();m.emissiveMap?.dispose();m.dispose()}}})}
 function drop(parent,o){parent.remove(o);dispose(o)}
-function car(color){const g=new THREE.Group();const body=new THREE.Mesh(new THREE.BoxGeometry(4.2,1,2),new THREE.MeshStandardMaterial({color,roughness:.35,metalness:.25}));body.position.y=.9;g.add(body);
+function boxCar(g,color){const body=new THREE.Mesh(new THREE.BoxGeometry(4.2,1,2),new THREE.MeshStandardMaterial({color,roughness:.35,metalness:.25}));body.position.y=.9;g.add(body);
   const cab=new THREE.Mesh(new THREE.BoxGeometry(2.2,.8,1.7),new THREE.MeshStandardMaterial({color:0x2a3550,roughness:.15,metalness:.5}));cab.position.set(-.2,1.75,0);g.add(cab);
   [[1.4,.9],[1.4,-.9],[-1.4,.9],[-1.4,-.9]].forEach(([x,z])=>{const w=new THREE.Mesh(wheelGeo,wheelMat);w.position.set(x,.5,z);g.add(w)});
   [[2.1,.6],[2.1,-.6]].forEach(([x,z])=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.1,.25,.4),headMat);h.position.set(x,1,z);g.add(h)});
-  [[-2.1,.6],[-2.1,-.6]].forEach(([x,z])=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.1,.25,.4),tailMat);h.position.set(x,1,z);g.add(h)});
-  return g}
+  [[-2.1,.6],[-2.1,-.6]].forEach(([x,z])=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.1,.25,.4),tailMat);h.position.set(x,1,z);g.add(h)})}
+/* real cars: Kenney Car Kit 3.1 (CC0, models/LICENSE-kenney-car-kit.txt). Each .glb is a body mesh plus wheel meshes sharing one palette texture (an 8×4 grid of shaded cells);
+   each body's paint is one cell of that grid (PAINT, by model; the grey cell shared by all is the chassis), so repainting that cell gives a car any colour. Until the models arrive (or if they never do) a car is the box above. */
+const PAINT={sedan:[6,1],'sedan-sports':[6,1],suv:[3,1],'hatchback-sports':[3,1],van:[7,1],'suv-luxury':[4,1],truck:[3,1]}; // [column, row] of the paint cell, measured by triangle area
+const KINDS=['sedan','sedan-sports','suv','hatchback-sports','van','suv-luxury'];
+const MODELS={};let modelsDone=false;
+const modelsReady=Promise.race([Promise.all([...KINDS,'truck'].map(k=>new GLTFLoader().loadAsync('models/'+k+'.glb').then(g=>{MODELS[k]=g.scene;g.scene.traverse(o=>{if(o.isMesh){SHARED.add(o.geometry);SHARED.add(o.material)}})}))),
+  new Promise((_,rej)=>setTimeout(()=>rej(new Error('timed out')),7000))]).catch(e=>console.warn('car models unavailable, using boxes:',e.message)).then(()=>{modelsDone=true});
+const paintCache={};
+function paintMat(base,color,kind){const key=kind+color;if(paintCache[key])return paintCache[key];const c=document.createElement('canvas');c.width=c.height=512;const g=c.getContext('2d');g.drawImage(base.map.image,0,0,512,512);
+  const [cx,cy]=PAINT[kind],col=new THREE.Color(color);[1.18,1,.88,.76].forEach((f,i)=>{g.fillStyle='#'+col.clone().multiplyScalar(f).getHexString();g.fillRect(cx*64+i*16,cy*128,16,128)});
+  const t=new THREE.CanvasTexture(c);t.flipY=false;t.colorSpace=THREE.SRGBColorSpace;const m=base.clone();m.map=t;m.roughness=.5;m.metalness=.2;SHARED.add(m);paintCache[key]=m;return m}
+let carN=0;
+function car(color,kind,onFill){const g=new THREE.Group();kind=kind||KINDS[carN++%KINDS.length];
+  const fill=()=>{const src=MODELS[kind];if(!src){boxCar(g,color);if(onFill)onFill(g,null);return}
+    const m=src.clone(),parts={wheels:[],body:null};m.traverse(o=>{if(o.isMesh){o.castShadow=true;if(o.name==='body'){o.material=paintMat(o.material,color,kind);parts.body=o}else parts.wheels.push(o)}});
+    const inner=new THREE.Group();inner.add(m);inner.rotation.y=Math.PI/2;inner.scale.setScalar(1.55);g.add(inner);if(onFill)onFill(g,parts)}; // the kit's cars face +z at about 2.7 long; ours face +x at about 4.2
+  if(modelsDone)fill();else modelsReady.then(fill);return g}
 const palette=[0xd65db1,0x8366ea,0x22a85e,0xe0a640,0x4fa3e0,0xd9d6e6,0xc3002f,0xffd166];
 const traffic=[];
 for(let i=0;i<=NX;i++){for(const dir of [1,-1]){const c=car(palette[(i*3+dir+8)%8]);const x=(i-NX/2)*PITCH+dir*2.2;c.position.set(x,0,(Math.random()-.5)*NZ*PITCH);c.rotation.y=dir>0?-Math.PI/2:Math.PI/2;scene.add(c);traffic.push({m:c,axis:'z',dir,x,speed:.25+Math.random()*.25})}}
@@ -538,8 +555,8 @@ function coinTo(from,to,delay,parent){const c=new THREE.Mesh(new THREE.BoxGeomet
 function story(caption,done){
   const ROADX=-PITCH/2, g=new THREE.Group();scene.add(g);
   const T=truck();T.position.set(ROADX,0,95);T.rotation.y=Math.PI/2;g.add(T);
-  const sedan=car(0xffd166);sedan.scale.setScalar(1.05);sedan.position.set(ROADX+9,0,16);sedan.rotation.y=Math.PI/2;g.add(sedan);
-  const compact=car(0x22a85e);compact.scale.setScalar(.72);compact.position.set(ROADX+9,0,22);compact.rotation.y=Math.PI/2;g.add(compact);
+  const sedan=car(0xffd166,'sedan');sedan.scale.setScalar(1.05);sedan.position.set(ROADX+9,0,16);sedan.rotation.y=Math.PI/2;g.add(sedan);
+  const compact=car(0x22a85e,'hatchback-sports');compact.scale.setScalar(.72);compact.position.set(ROADX+9,0,22);compact.rotation.y=Math.PI/2;g.add(compact);
   const moto=bike(0x8366ea);moto.position.set(ROADX+9,0,27);moto.rotation.y=Math.PI/2;g.add(moto);
   const ls=[['OWNER','#ffd166',sedan,4.5],['EMPLOYEES','#4fd486',compact,4],['ADMIN','#c9bdfd',moto,3.5]].map(([t,c,o,y])=>{const l=labelSprite(t,c,16);l.position.set(o.position.x,y,o.position.z);l.scale.set(9,2.2,1);g.add(l);return l});
   // the plan gate: two posts and a neon beam across the road
@@ -572,31 +589,16 @@ let stage=null,ours=null,mmCar=null,exhaust=false,bills=[],coins=[],spawnT=0,tai
 const coinGeo=new THREE.CylinderGeometry(1.1,1.1,.34,16),coinMat=new THREE.MeshStandardMaterial({color:0x5ee39a,metalness:.7,roughness:.3,emissive:0x1e7a46,emissiveIntensity:.5});
 const billGeo=new THREE.BoxGeometry(2.4,.06,1.2),billMat=new THREE.MeshStandardMaterial({color:0xd6454f,roughness:.6,emissive:0x5a0f16,emissiveIntensity:.5});
 [coinGeo,coinMat,billGeo,billMat].forEach(x=>SHARED.add(x));
-function sedan(paint,parts){const g=new THREE.Group();parts=parts||{};
-  const mat=(k,opt)=>new THREE.MeshPhysicalMaterial(Object.assign({envMap:ENV,envMapIntensity:1.2,emissive:PART[k]||0,emissiveIntensity:0},opt));
-  const paintOpt={color:paint,metalness:.6,roughness:.22,clearcoat:1,clearcoatRoughness:.08};
-  const M={body:mat('body',paintOpt),engine:mat('engine',paintOpt),windows:mat('windows',{color:0x0f1326,metalness:.9,roughness:.04}),tire:mat('wheels',{color:0x15131c,roughness:.85,metalness:0}),rim:mat('wheels',{color:0xcfd2dc,metalness:1,roughness:.18}),trim:mat('',{color:0x24222c,roughness:.5,metalness:.4})};
-  const mk=(geo,m,x,y,z,part)=>{const o=new THREE.Mesh(geo,m);o.position.set(x,y,z);g.add(o);if(part)(parts[part]=parts[part]||[]).push(o);return o};
-  mk(new THREE.BoxGeometry(4.6,.6,2),M.body,0,.78,0,'body');                 // sills and doors
-  mk(new THREE.BoxGeometry(1.1,.5,1.9),M.body,-1.7,1.3,0,'body');             // trunk
-  mk(new THREE.BoxGeometry(2.1,.08,1.72),M.body,-.2,2.3,0,'body');            // roof
-  mk(new THREE.BoxGeometry(1.6,.42,1.9),M.engine,1.45,1.25,0,'engine').rotation.z=-.07; // hood
-  mk(new THREE.BoxGeometry(2.1,.72,1.72),M.windows,-.2,1.92,0,'windows');     // glass
-  [[.95,1.02],[.95,-1.02]].forEach(([x,z])=>mk(new THREE.BoxGeometry(.25,.18,.14),M.body,x,1.62,z,'body')); // mirrors
-  [2.35,-2.35].forEach(x=>mk(new THREE.BoxGeometry(.18,.32,2.02),M.trim,x,.62,0));                          // bumpers
-  mk(new THREE.BoxGeometry(.06,.3,1.1),M.trim,2.3,1.1,0);                                                   // grille
-  [[1.5,1],[1.5,-1],[-1.5,1],[-1.5,-1]].forEach(([x,z])=>{mk(new THREE.CylinderGeometry(.46,.46,.36,18).rotateZ(Math.PI/2),M.tire,x,.46,z,'wheels');mk(new THREE.CylinderGeometry(.27,.27,.4,12).rotateZ(Math.PI/2),M.rim,x,.46,z,'wheels')});
-  [.65,-.65].forEach(z=>mk(new THREE.BoxGeometry(.08,.2,.42),headMat,2.32,1.08,z));
-  [.65,-.65].forEach(z=>mk(new THREE.BoxGeometry(.08,.18,.42),tailMat,-2.32,1.12,z));
-  g.userData.pipe=mk(new THREE.CylinderGeometry(.1,.1,.5,10).rotateZ(Math.PI/2),M.rim,-2.45,.42,.7);
-  return g}
 function pipeAt(c){c.updateMatrixWorld(true);const v=c.userData.pipe.position.clone();c.localToWorld(v);return stage.worldToLocal(v)}
 function buildStage(){stage=new THREE.Group();stage.position.set(0,0,SZ);
   const pad=new THREE.Mesh(new THREE.PlaneGeometry(80,40),new THREE.MeshStandardMaterial({color:0x1a1628,roughness:.9}));pad.rotation.x=-Math.PI/2;pad.position.y=.02;stage.add(pad);
   const edge=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(80,.2,40)),new THREE.LineBasicMaterial({color:0x4fd486}));edge.position.y=.1;stage.add(edge);
-  ours={parts:{}};const o=sedan(0xe9e6f2,ours.parts);ours.g=o;o.scale.setScalar(3.2);o.position.set(-13,0,0);o.rotation.y=-Math.PI/2-.5;stage.add(o); // pearl white, so every part colour reads; both cars face the camera with their tailpipes toward centre stage
+  ours={parts:{}};const o=car(0xe9e6f2,'sedan-sports',(g,p)=>{if(!p)return;const P=ours.parts,glow=(mesh,hex)=>{mesh.material=mesh.material.clone();mesh.material.emissive.set(hex);mesh.material.emissiveIntensity=0;return mesh};
+    P.wheels=p.wheels.map(w=>glow(w,PART.wheels));P.body=[glow(p.body,PART.body)];Object.assign(p.body.material,{envMap:ENV,envMapIntensity:.9,roughness:.3,metalness:.35});
+    const lamp=(hex,x,y,z,d)=>{const l=new THREE.PointLight(hex,0,d,2);l.position.set(x,y,z);g.add(l);return l};P.engine=[lamp(PART.engine,1.5,1.7,0,14)];P.windows=[lamp(PART.windows,-.4,1.6,0,12)]}); // pearl white, so every part colour reads
+  ours.g=o;o.scale.setScalar(3.2);o.position.set(-13,0,0);o.rotation.y=-Math.PI/2-.5;const op=new THREE.Object3D();op.position.set(-2.2,.5,.6);o.add(op);o.userData.pipe=op;stage.add(o); // both cars face the camera with their tailpipes toward centre stage
   const ol=labelSprite('THE 125 PLAN','#4fd486',30);ol.position.set(-13,10.5,0);ol.scale.set(16,4,1);stage.add(ol);
-  mmCar=sedan(0x6b2630);mmCar.scale.setScalar(3.6);mmCar.position.set(14,0,0);mmCar.rotation.y=-Math.PI/2+.5;stage.add(mmCar);
+  mmCar=car(0x6b2630,'suv',(g,p)=>{if(p){p.body.material=p.body.material.clone();Object.assign(p.body.material,{envMap:ENV,envMapIntensity:.6,roughness:.4})}});mmCar.scale.setScalar(3.6);mmCar.position.set(14,0,0);mmCar.rotation.y=-Math.PI/2+.5;const mp=new THREE.Object3D();mp.position.set(-2.4,.55,.65);mmCar.add(mp);mmCar.userData.pipe=mp;stage.add(mmCar);
   const ml=labelSprite('MAJOR MEDICAL','#ff6b6b',30);ml.position.set(mobile?9:14,11,0);ml.scale.set(18,4.5,1);mmCar.userData.label=ml;stage.add(ml);
   tails=[labelSprite('NET SAVINGS','#4fd486',20),labelSprite('COST','#ff6b6b',20)];tails[0].position.set(STACK.x-2,6,STACK.z);tails[1].position.set(6,6.3,pipeAt(mmCar).z);tails.forEach(t=>{t.scale.set(10,2.5,1);stage.add(t)}); // side by side between the cars, under the car names
   const spot=new THREE.SpotLight(0xffffff,1400,80,Math.PI/4,.6,2);spot.position.set(0,34,18);spot.target.position.set(0,0,0);stage.add(spot);stage.add(spot.target);
@@ -604,7 +606,7 @@ function buildStage(){stage=new THREE.Group();stage.position.set(0,0,SZ);
 function stageOn(on){if(on){if(!stage)buildStage();stage.visible=true;controls.autoRotate=false;const wide=camera.aspect>1.2;
     gsap.to(camera.position,{x:0,y:wide?17:22,z:SZ+(wide?44:76),duration:1.8,ease:'power2.inOut'});gsap.to(controls.target,{x:0,y:wide?3:-3,z:SZ,duration:1.8,ease:'power2.inOut'})} // on a phone the cars sit in the top half, above the caption panel
   else{if(stage)stage.visible=false;exhaust=false;for(const b of bills)drop(stage,b.m);bills=[];for(const c of coins){gsap.killTweensOf([c.position,c.rotation]);drop(stage,c)}coins=[];cue(lastCue)}}
-function light(lit,mm,ex){if(!stage)return;for(const k in ours.parts)for(const m of ours.parts[k])gsap.to(m.material,{emissiveIntensity:lit[k]?.8:0,duration:.5});
+function light(lit,mm,ex){if(!stage)return;for(const k in ours.parts)for(const o of ours.parts[k]){if(o.isLight)gsap.to(o,{intensity:lit[k]?(k==='engine'?130:80):0,duration:.5});else gsap.to(o.material,{emissiveIntensity:lit[k]?(k==='wheels'?1.2:.55):0,duration:.5})}
   mmCar.visible=mm;mmCar.userData.label.visible=mm;exhaust=ex;tails[0].visible=ex||coins.length>0;tails[1].visible=ex&&mm;spawnT=0}
 function coin(){const n=coins.length;if(n>=48)return;const c=new THREE.Mesh(coinGeo,coinMat);c.position.copy(pipeAt(ours.g));stage.add(c);coins.push(c);
   const col=n%6,a=col/6*Math.PI*2,r=col?2.4:0,to=new THREE.Vector3(STACK.x+Math.cos(a)*r,.19+Math.floor(n/6)*.36,STACK.z+Math.sin(a)*r);
