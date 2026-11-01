@@ -45,7 +45,8 @@ h1 span{color:var(--magenta)}
 #banner .mid{font-family:Anton;font-size:clamp(18px,3.4vw,40px);color:var(--cash);text-shadow:3px 3px 0 #000;margin-top:6px}
 #banner .sm{font-family:Inter;font-weight:600;font-size:clamp(11px,1.6vw,16px);color:#fff;text-shadow:2px 2px 0 #000;margin-top:8px;letter-spacing:.08em;text-transform:uppercase}
 /* captions shared by the truck story and the questions */
-#story{left:50%;bottom:14%;transform:translateX(-50%);width:min(88%,760px);text-align:center;opacity:0;z-index:4}
+#story{left:50%;bottom:14%;transform:translateX(-50%);width:min(88%,760px);text-align:center;opacity:0;z-index:4;background:rgba(8,6,16,.74);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px 18px}
+#storyK{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;margin-bottom:6px;font:600 10px Inter;letter-spacing:.14em;text-transform:uppercase;color:#ece9f4}#storyK:empty{display:none}#storyK i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:-1px}
 #storyT{font-family:Anton;font-size:clamp(16px,2.6vw,28px);line-height:1.15;color:#fff;text-shadow:3px 3px 0 #000,0 0 18px rgba(0,0,0,.8);text-transform:uppercase}
 #storyS{font-family:Inter;font-weight:600;font-size:clamp(11px,1.5vw,15px);color:var(--obj);text-shadow:2px 2px 0 #000;margin-top:6px}
 #qaNav{display:none;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:10px;pointer-events:auto;font-family:Inter}
@@ -106,7 +107,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
 .row{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-top:1px solid var(--line)}.row span:last-child{font-variant-numeric:tabular-nums;color:var(--cash)}
 #owner .row span:last-child{color:#c9bdfd}
 .cta{display:inline-block;margin-top:14px;background:var(--magenta);color:#fff;font-family:Anton;letter-spacing:.06em;font-size:18px;padding:12px 22px;border-radius:8px;text-decoration:none;text-transform:uppercase;box-shadow:4px 4px 0 #000}
-@media (max-width:760px){#panel{position:static;width:auto;display:none;margin-top:12px}#panel.on{display:block}#panel .m{max-height:none;background:var(--panel)}#game{aspect-ratio:4/5}#story{bottom:6%}#start{justify-content:flex-start;overflow:auto;padding:28px 14px}#start .t{font-size:30px}#start p{margin:8px 0 12px}.qs{margin-top:10px}.qs button{font-size:11px;padding:5px 9px}}
+@media (max-width:760px){#panel{position:static;width:auto;display:none;margin-top:12px}#panel.on{display:block}#panel .m{max-height:none;background:var(--panel)}#game{aspect-ratio:3/4}#story{bottom:3%;padding:8px 10px}#storyT{font-size:15px}#storyS{font-size:11px;margin-top:4px}#storyK{font-size:9px;gap:2px 10px;margin-bottom:4px}#qaNav{gap:6px;margin-top:6px}#qaNav button{padding:5px 10px;font-size:11px}#start{justify-content:flex-start;overflow:auto;padding:28px 14px}#start .t{font-size:30px}#start p{margin:8px 0 12px}.qs{margin-top:10px}.qs button{font-size:11px;padding:5px 9px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 @media print{body{background:#fff;color:#111}#game,#panel,.sheet,.btn,.cta{display:none!important}#owner{display:block!important}.stat,.hero{background:#fff!important;border-color:#ccc!important;color:#111}.stat .n,.hero .n,.hero .u{color:#111!important;text-shadow:none!important}.stat .k,.stat .s,.hero .k,.hero .s,.fine{color:#444!important}h1{color:#111;text-shadow:none}h1 span{color:#111}}
 </style>
@@ -121,7 +122,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
   <div class="hud" id="stars"><div class="l">NET RATING</div><div id="starsV">☆☆☆☆☆</div></div>
   <div class="hud" id="obj"><small>Objective</small><span id="objT">Tap START</span></div>
   <div id="phone"><svg viewBox="0 0 60 60" id="rockyFace" aria-hidden="true"></svg><div><div class="who" id="who"></div><div class="txt" id="phoneT"></div></div></div>
-  <div class="hud" id="story" aria-live="polite"><div id="storyT"></div><div id="storyS"></div><div id="qaNav"><button id="qaPrev">← Back</button><span class="n" id="qaN"></span><button id="qaNext" class="p">Next →</button><button id="qaLoad" style="display:none">Load this group</button><button id="qaClose">Close ✕</button></div></div>
+  <div class="hud" id="story" aria-live="polite"><div id="storyK"></div><div id="storyT"></div><div id="storyS"></div><div id="qaNav"><button id="qaPrev">← Back</button><span class="n" id="qaN"></span><button id="qaNext" class="p">Next →</button><button id="qaLoad" style="display:none">Load this group</button><button id="qaClose">Close ✕</button></div></div>
   <div id="banner"><div class="big" id="bannerBig">Mission <span>Passed</span></div><div class="mid" id="bannerMid"></div><div class="sm" id="bannerSm"></div></div>
   <div id="start"><div class="t" id="startT"></div><p id="startP"></p><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><button class="btn" id="startBtn" disabled style="opacity:.5">Loading the city…</button><button class="btn q" id="howBtn">How is it paid for? ▶</button></div><div class="qs" id="qs1"><span class="k">Common questions</span></div></div>
   <div id="panel">
@@ -312,7 +313,7 @@ function storyLines(){const m=model();return [
   ['The employees\' car: more take-home, $0 care.','Their tax savings fund $0 doctor visits, urgent care, therapy and generics for the family, and the wellness reward comes back on the same check. The payroll analysis shows each person\'s number before anything is signed.'],
   ['The administrator\'s motorcycle: the fee.',`${fmt2(m.admin)} a month per enrolled employee runs the plan: enrollment, claims, compliance and audit defense.`],
   ['Nothing else changes.',t('Major medical stays exactly as it is. What was never tax-free is still paid as tax. A payroll analysis confirms the numbers for your {group} before anything is signed.')]]}
-function runStory(){if(busy||!window.city)return;busy=true;$('#qaNav').style.display='none';dimHud(true);
+function runStory(){if(busy||!window.city)return;busy=true;$('#storyK').innerHTML='';$('#qaNav').style.display='none';dimHud(true);
   window.city.story(i=>caption(...storyLines()[i]),()=>{dimHud(false);busy=false})}
 $('#howBtn').onclick=runStory;$('#howBtn2').onclick=()=>{$('#game').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(runStory,500)};
 
@@ -363,12 +364,13 @@ const QUESTIONS=[
  {q:'Will it cut my workers\' comp?',beats:[
   {h:'Not in these numbers.',s:'This page counts federal payroll tax only. Workers\' comp, FUTA and SUTA are left out on purpose.',lit:{}},
   {h:'Ask your broker, not this page.',s:'Some carriers have recognized the lower reportable payroll and cut the premium. Treatment varies by carrier, state and class code, so confirm it before counting on it.',lit:{engine:1}}]}];
+const LEG={wheels:['#d65db1','Complimentary benefits'],body:['#22a85e','Employee tax saving'],engine:['#ffd166','{Site} tax saving'],windows:['#8366ea','Section 125 plan']};
 const fill=(s,m)=>t(s).replace(/\{per\}/g,fmt2(m.per)).replace(/\{fica\}/g,fmt2(m.fica)).replace(/\{admin\}/g,fmt2(m.admin));
 let qa=null; // {q,i} while a question is open
-function beat(){const b=qa.q.beats[qa.i],m=model();caption(fill(b.h,m),fill(b.s,m));$('#qaN').textContent=`${qa.i+1} / ${qa.q.beats.length}`;$('#qaPrev').style.visibility=qa.i?'visible':'hidden';$('#qaNext').textContent=qa.i<qa.q.beats.length-1?'Next →':'Done ✓';
+function beat(){const b=qa.q.beats[qa.i],m=model();caption(fill(b.h,m),fill(b.s,m));$('#storyK').innerHTML=Object.keys(b.lit||{}).filter(k=>b.lit[k]).map(k=>`<span><i style="background:${LEG[k][0]}"></i>${t(LEG[k][1])}</span>`).join('');$('#qaN').textContent=`${qa.i+1} / ${qa.q.beats.length}`;$('#qaPrev').style.visibility=qa.i?'visible':'hidden';$('#qaNext').textContent=qa.i<qa.q.beats.length-1?'Next →':'Done ✓';
   $('#qaLoad').style.display=qa.q.load?'':'none';if(window.city)window.city.light(b.lit||{},!!b.mm,!!b.exhaust)}
 function ask(q){if(busy)return;busy=true;qa={q,i:0};dimHud(true);$('#qaNav').style.display='flex';if(window.city)window.city.stage(true);beat();$('#qaNext').focus()}
-function closeQ(){if(!qa)return;qa=null;$('#qaNav').style.display='none';if(window.city)window.city.stage(false);dimHud(false);busy=false}
+function closeQ(){if(!qa)return;qa=null;$('#storyK').innerHTML='';$('#qaNav').style.display='none';if(window.city)window.city.stage(false);dimHud(false);busy=false}
 $('#qaNext').onclick=()=>{if(!qa)return;if(qa.i<qa.q.beats.length-1){qa.i++;beat()}else closeQ()};
 $('#qaPrev').onclick=()=>{if(qa&&qa.i){qa.i--;beat()}};$('#qaClose').onclick=closeQ;
 // a real case from the sector config: its stores, plan level and enrollment replace the GM's inputs
@@ -389,12 +391,14 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
 import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
 import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
 import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
 
 const SC=window.SECTORS[new URLSearchParams(location.search).get('s')]?.scene||window.SECTORS.dealership.scene, LOT=window.SECTORS[new URLSearchParams(location.search).get('s')]?.sizes.lot||window.SECTORS.dealership.sizes.lot;
 const host=document.getElementById('game');
 const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
 const mobile=matchMedia('(max-width:760px)').matches;renderer.setPixelRatio(mobile?1:Math.min(2,devicePixelRatio));renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.95;
+const ENV=(()=>{const p=new THREE.PMREMGenerator(renderer),t=p.fromScene(new RoomEnvironment(),.04).texture;p.dispose();return t})(); // reflections for the stage cars only
 host.insertBefore(renderer.domElement,host.firstChild);
 const scene=new THREE.Scene();scene.background=new THREE.Color(0x07060c);scene.fog=new THREE.FogExp2(0x0a0812,0.0075);
 const camera=new THREE.PerspectiveCamera(42,16/9,0.5,600);camera.position.set(120,95,150);
@@ -545,36 +549,56 @@ function story(caption,done){
     .to(T.position,{z:-95,duration:5,ease:'power1.in'},21.5);
 }
 
-/* ---------- the questions stage: our car in parts, and major medical beside it ----------
-   Colours match the truck story: magenta wheels (benefits), green body (the employee's saving), gold engine (the employer's saving), purple windows (the Section 125 plan). */
+/* ---------- the questions stage: our car, and major medical beside it ----------
+   One paint per car. A part glows in its colour only while a beat talks about it: magenta wheels (benefits), green body (the employee's saving), gold hood (the store's saving), purple glass (the Section 125 plan).
+   Money: green coins arc out of our tailpipe into a pile under NET SAVINGS; red bills flutter out of major medical's and fade before they land. */
 const PART={wheels:0xd65db1,body:0x22a85e,engine:0xffd166,windows:0x8366ea};
 const SZ=-(NZ*PITCH/2)-46; // a pad just beyond the north edge of the city
-let stage=null,ours=null,mmCar=null,exhaust=false,puffs=[],puffT=0,tails=[];
-function heroCar(parts){const g=new THREE.Group();const mk=(geo,color,x,y,z)=>{const m=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color,roughness:.35,metalness:.3,emissive:color,emissiveIntensity:.12}));m.position.set(x,y,z);g.add(m);return m};
-  parts.body=[mk(new THREE.BoxGeometry(2.6,1,2.1),PART.body,-.8,.95,0)];
-  parts.engine=[mk(new THREE.BoxGeometry(1.7,1,2.1),PART.engine,1.35,.95,0)];
-  parts.windows=[mk(new THREE.BoxGeometry(2.2,.85,1.8),PART.windows,-.5,1.85,0)];
-  parts.wheels=[];[[1.4,1],[1.4,-1],[-1.4,1],[-1.4,-1]].forEach(([x,z])=>{parts.wheels.push(mk(new THREE.CylinderGeometry(.55,.55,.45,16).rotateZ(Math.PI/2),PART.wheels,x,.55,z));const rim=mk(new THREE.CylinderGeometry(.28,.28,.5,10).rotateZ(Math.PI/2),0xd9d6e6,x,.55,z);rim.material.emissiveIntensity=.3;parts.wheels.push(rim)});
-  [[2.2,.6],[2.2,-.6]].forEach(([x,z])=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.1,.25,.4),headMat);h.position.set(x,1,z);g.add(h)});
-  const pipe=new THREE.Mesh(new THREE.CylinderGeometry(.12,.12,.6,8).rotateZ(Math.PI/2),wheelMat);pipe.position.set(-2.3,.45,.7);g.add(pipe);g.userData.pipe=pipe;return g}
+const STACK=new THREE.Vector3(-4,0,-3); // where our coins pile up: centre stage, where both tailpipes point
+let stage=null,ours=null,mmCar=null,exhaust=false,bills=[],coins=[],spawnT=0,tails=[];
+const coinGeo=new THREE.CylinderGeometry(1.1,1.1,.34,16),coinMat=new THREE.MeshStandardMaterial({color:0x5ee39a,metalness:.7,roughness:.3,emissive:0x1e7a46,emissiveIntensity:.5});
+const billGeo=new THREE.BoxGeometry(2.4,.06,1.2),billMat=new THREE.MeshStandardMaterial({color:0xd6454f,roughness:.6,emissive:0x5a0f16,emissiveIntensity:.5});
+[coinGeo,coinMat,billGeo,billMat].forEach(x=>SHARED.add(x));
+function sedan(paint,parts){const g=new THREE.Group();parts=parts||{};
+  const mat=(k,opt)=>new THREE.MeshPhysicalMaterial(Object.assign({envMap:ENV,envMapIntensity:1.2,emissive:PART[k]||0,emissiveIntensity:0},opt));
+  const paintOpt={color:paint,metalness:.6,roughness:.22,clearcoat:1,clearcoatRoughness:.08};
+  const M={body:mat('body',paintOpt),engine:mat('engine',paintOpt),windows:mat('windows',{color:0x0f1326,metalness:.9,roughness:.04}),tire:mat('wheels',{color:0x15131c,roughness:.85,metalness:0}),rim:mat('wheels',{color:0xcfd2dc,metalness:1,roughness:.18}),trim:mat('',{color:0x24222c,roughness:.5,metalness:.4})};
+  const mk=(geo,m,x,y,z,part)=>{const o=new THREE.Mesh(geo,m);o.position.set(x,y,z);g.add(o);if(part)(parts[part]=parts[part]||[]).push(o);return o};
+  mk(new THREE.BoxGeometry(4.6,.6,2),M.body,0,.78,0,'body');                 // sills and doors
+  mk(new THREE.BoxGeometry(1.1,.5,1.9),M.body,-1.7,1.3,0,'body');             // trunk
+  mk(new THREE.BoxGeometry(2.1,.08,1.72),M.body,-.2,2.3,0,'body');            // roof
+  mk(new THREE.BoxGeometry(1.6,.42,1.9),M.engine,1.45,1.25,0,'engine').rotation.z=-.07; // hood
+  mk(new THREE.BoxGeometry(2.1,.72,1.72),M.windows,-.2,1.92,0,'windows');     // glass
+  [[.95,1.02],[.95,-1.02]].forEach(([x,z])=>mk(new THREE.BoxGeometry(.25,.18,.14),M.body,x,1.62,z,'body')); // mirrors
+  [2.35,-2.35].forEach(x=>mk(new THREE.BoxGeometry(.18,.32,2.02),M.trim,x,.62,0));                          // bumpers
+  mk(new THREE.BoxGeometry(.06,.3,1.1),M.trim,2.3,1.1,0);                                                   // grille
+  [[1.5,1],[1.5,-1],[-1.5,1],[-1.5,-1]].forEach(([x,z])=>{mk(new THREE.CylinderGeometry(.46,.46,.36,18).rotateZ(Math.PI/2),M.tire,x,.46,z,'wheels');mk(new THREE.CylinderGeometry(.27,.27,.4,12).rotateZ(Math.PI/2),M.rim,x,.46,z,'wheels')});
+  [.65,-.65].forEach(z=>mk(new THREE.BoxGeometry(.08,.2,.42),headMat,2.32,1.08,z));
+  [.65,-.65].forEach(z=>mk(new THREE.BoxGeometry(.08,.18,.42),tailMat,-2.32,1.12,z));
+  g.userData.pipe=mk(new THREE.CylinderGeometry(.1,.1,.5,10).rotateZ(Math.PI/2),M.rim,-2.45,.42,.7);
+  return g}
+function pipeAt(c){c.updateMatrixWorld(true);const v=c.userData.pipe.position.clone();c.localToWorld(v);return stage.worldToLocal(v)}
 function buildStage(){stage=new THREE.Group();stage.position.set(0,0,SZ);
   const pad=new THREE.Mesh(new THREE.PlaneGeometry(80,40),new THREE.MeshStandardMaterial({color:0x1a1628,roughness:.9}));pad.rotation.x=-Math.PI/2;pad.position.y=.02;stage.add(pad);
   const edge=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(80,.2,40)),new THREE.LineBasicMaterial({color:0x4fd486}));edge.position.y=.1;stage.add(edge);
-  ours={parts:{}};const o=heroCar(ours.parts);ours.g=o;o.scale.setScalar(3.2);o.position.set(-13,0,0);o.rotation.y=-Math.PI/2+.5;stage.add(o);
+  ours={parts:{}};const o=sedan(0xe9e6f2,ours.parts);ours.g=o;o.scale.setScalar(3.2);o.position.set(-13,0,0);o.rotation.y=-Math.PI/2-.5;stage.add(o); // pearl white, so every part colour reads; both cars face the camera with their tailpipes toward centre stage
   const ol=labelSprite('THE 125 PLAN','#4fd486');ol.position.set(-13,10.5,0);ol.scale.set(16,4,1);stage.add(ol);
-  mmCar=car(0x6b2630);mmCar.scale.setScalar(3.6);mmCar.position.set(14,0,0);mmCar.rotation.y=-Math.PI/2-.5;stage.add(mmCar);
+  mmCar=sedan(0x6b2630);mmCar.scale.setScalar(3.6);mmCar.position.set(14,0,0);mmCar.rotation.y=-Math.PI/2+.5;stage.add(mmCar);
   const ml=labelSprite('MAJOR MEDICAL','#ff6b6b');ml.position.set(14,11,0);ml.scale.set(18,4.5,1);mmCar.userData.label=ml;stage.add(ml);
-  tails=[labelSprite('NET SAVINGS','#4fd486'),labelSprite('COST','#ff6b6b')];[o,mmCar].forEach((c,i)=>{c.updateMatrixWorld(true);const v=(c.userData.pipe?c.userData.pipe.position.clone():new THREE.Vector3(-2.1,1,.6));c.localToWorld(v);stage.worldToLocal(v);tails[i].position.set(v.x+(i?3:-1.5),v.y+(i?9:5.5),v.z);tails[i].scale.set(12,3,1);stage.add(tails[i])});
+  tails=[labelSprite('NET SAVINGS','#4fd486'),labelSprite('COST','#ff6b6b')];tails[0].position.set(STACK.x-2,6,STACK.z);tails[1].position.set(6,6.3,pipeAt(mmCar).z);tails.forEach(t=>{t.scale.set(10,2.5,1);stage.add(t)}); // side by side between the cars, under the car names
   const spot=new THREE.SpotLight(0xffffff,1400,80,Math.PI/4,.6,2);spot.position.set(0,34,18);spot.target.position.set(0,0,0);stage.add(spot);stage.add(spot.target);
   scene.add(stage)}
 function stageOn(on){if(on){if(!stage)buildStage();stage.visible=true;controls.autoRotate=false;const wide=camera.aspect>1.2;
-    gsap.to(camera.position,{x:0,y:wide?14:22,z:SZ+(wide?44:76),duration:1.8,ease:'power2.inOut'});gsap.to(controls.target,{x:0,y:4,z:SZ,duration:1.8,ease:'power2.inOut'})}
-  else{if(stage)stage.visible=false;exhaust=false;for(const p of puffs)drop(stage,p.m);puffs=[];cue(lastCue)}}
-function light(lit,mm,ex){if(!stage)return;for(const k in ours.parts)for(const m of ours.parts[k]){gsap.to(m.material,{emissiveIntensity:lit[k]?1.5:.12,duration:.5})}
-  mmCar.visible=mm;mmCar.userData.label.visible=mm;exhaust=ex;tails[0].visible=ex;tails[1].visible=ex&&mm;puffT=0}
-function puff(fromCar,text,hex){const p=labelSprite(text,hex);p.scale.set(5,2.5,1);const v=fromCar.userData.pipe?fromCar.userData.pipe.position.clone():new THREE.Vector3(-2.1,1,.6);fromCar.localToWorld(v);stage.worldToLocal(v);p.position.copy(v);stage.add(p);puffs.push({m:p,t:0,dx:(fromCar===mmCar?1:-1)*1.2})}
+    gsap.to(camera.position,{x:0,y:wide?14:20,z:SZ+(wide?44:76),duration:1.8,ease:'power2.inOut'});gsap.to(controls.target,{x:0,y:wide?4:-4,z:SZ,duration:1.8,ease:'power2.inOut'})} // on a phone the cars sit in the top half, above the caption panel
+  else{if(stage)stage.visible=false;exhaust=false;for(const b of bills)drop(stage,b.m);bills=[];for(const c of coins){gsap.killTweensOf([c.position,c.rotation]);drop(stage,c)}coins=[];cue(lastCue)}}
+function light(lit,mm,ex){if(!stage)return;for(const k in ours.parts)for(const m of ours.parts[k])gsap.to(m.material,{emissiveIntensity:lit[k]?.8:0,duration:.5});
+  mmCar.visible=mm;mmCar.userData.label.visible=mm;exhaust=ex;tails[0].visible=ex||coins.length>0;tails[1].visible=ex&&mm;spawnT=0}
+function coin(){const n=coins.length;if(n>=48)return;const c=new THREE.Mesh(coinGeo,coinMat);c.position.copy(pipeAt(ours.g));stage.add(c);coins.push(c);
+  const col=n%6,a=col/6*Math.PI*2,r=col?2.4:0,to=new THREE.Vector3(STACK.x+Math.cos(a)*r,.19+Math.floor(n/6)*.36,STACK.z+Math.sin(a)*r);
+  gsap.to(c.position,{x:to.x,z:to.z,duration:1,ease:'power1.inOut'});gsap.to(c.position,{y:c.position.y+6,duration:.5,ease:'power2.out',yoyo:true,repeat:1,onComplete:()=>gsap.to(c.position,{y:to.y,duration:.15})});gsap.to(c.rotation,{x:Math.PI*4,duration:1,ease:'power1.out'})} // two full flips, landing flat
+function bill(){const b=new THREE.Mesh(billGeo,billMat);b.position.copy(pipeAt(mmCar));b.rotation.set(Math.random()*6,Math.random()*6,0);stage.add(b);bills.push({m:b,t:0,dx:-(.7+Math.random()*.9),dz:1+Math.random()*.8,y0:b.position.y})}
 
-window.city={setGroup,setRing,celebrate,flyIn,cue,story,stage:stageOn,light,pause:v=>{paused=v}};
+window.city={setGroup,setRing,celebrate,flyIn,cue,story,stage:stageOn,light,pause:v=>{paused=v},_stage:()=>({coins:coins.length,bills:bills.length})}; // _stage is a test hook
 
 /* post + loop */
 const composer=new EffectComposer(renderer);composer.addPass(new RenderPass(scene,camera));
@@ -587,8 +611,8 @@ function loop(now){if(paused||document.hidden||!host.clientWidth){last=now;setTi
   const dt=Math.min(.05,(now-last)/1000);last=now;
   for(const t of traffic){if(t.axis==='z'){t.m.position.z+=t.dir*t.speed*dt*60;if(t.m.position.z>LIM.z)t.m.position.z=-LIM.z;if(t.m.position.z<-LIM.z)t.m.position.z=LIM.z}else{t.m.position.x+=t.dir*t.speed*dt*60;if(t.m.position.x>LIM.x)t.m.position.x=-LIM.x;if(t.m.position.x<-LIM.x)t.m.position.x=LIM.x}}
   for(let i=bursts.length-1;i>=0;i--){const b=bursts[i];b.t+=dt;const r=Math.max(16,80-b.t*34);b.m.position.set(Math.cos(b.a)*r,0,Math.sin(b.a)*r);if(b.t>2.4){drop(scene,b.m);bursts.splice(i,1)}}
-  if(stage&&stage.visible&&exhaust){puffT+=dt;if(puffT>.22){puffT=0;puff(ours.g,'+$','#4fd486');if(mmCar.visible)puff(mmCar,'−$','#ff5566')}}
-  for(let i=puffs.length-1;i>=0;i--){const p=puffs[i];p.t+=dt;p.m.position.y+=dt*4;p.m.position.x+=p.dx*dt;p.m.material.opacity=Math.max(0,1-p.t/2);if(p.t>2){drop(stage,p.m);puffs.splice(i,1)}}
+  if(stage&&stage.visible&&exhaust){spawnT+=dt;if(spawnT>.2){spawnT=0;coin();if(mmCar.visible)bill()}}
+  for(let i=bills.length-1;i>=0;i--){const b=bills[i];b.t+=dt;b.m.position.x+=b.dx*dt;b.m.position.z+=b.dz*dt;b.m.position.y=Math.max(.05,b.y0+2.6*b.t-1.6*b.t*b.t);b.m.rotation.x+=dt*2.5;b.m.rotation.z+=dt*1.7;b.m.scale.setScalar(b.t>1.4?Math.max(.01,1-(b.t-1.4)/.8):1);if(b.t>2.2){drop(stage,b.m);bills.splice(i,1)}}
   controls.update();composer.render();requestAnimationFrame(loop)}
 requestAnimationFrame(loop);
 requestAnimationFrame(()=>window.cityReady());
