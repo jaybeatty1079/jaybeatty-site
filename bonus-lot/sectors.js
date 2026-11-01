@@ -19,7 +19,7 @@ window.SECTORS = {
     // the per-site label and its colour (brand here; concept for restaurants, flag for hotels). Text only, no logos.
     labels: [['Toyota', '#eb0a1e'], ['Ford', '#2a5db0'], ['Chevrolet', '#c9a227'], ['Honda', '#d0202c'], ['Hyundai', '#2457a8'], ['Kia', '#36405a'], ['Nissan', '#c3002f'], ['Subaru', '#2f63d1'], ['Jeep', '#3f6b3f'], ['RAM', '#a6192e'], ['GMC', '#cf0a2c'], ['BMW', '#1c7ad1'], ['Mercedes', '#8c8f98'], ['Lexus', '#5c5f6b'], ['Audi', '#bb0a30'], ['Volkswagen', '#1d3f8a'], ['CDJR', '#4a4f5c'], ['Mitsubishi', '#d7141a']],
     copy: {
-      sub: "Three short missions. The green counter is your store's net profit. Nobody in this city sells one extra car.",
+      sub: "Your people come out ahead. Your store comes out ahead. That is rare, and it is not new.",
       start: "You're the GM. Three missions: build your lot, run the payroll, set your pay plan. Watch the net counter. Drag the city to look around.",
       m1: ['Build your group', "Your store first, then every other store the owner runs. Each one becomes a building, sized by headcount and colored by brand. Up to 30."],
       obj: { 1: "Build your group: your store, then the owner's other stores", 2: 'Your plans: who qualifies, plan level, how your health plan is funded', 3: 'Set your pay plan', 4: 'Mission passed. Send this to ownership' },

@@ -103,6 +103,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
 .stat .k{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.wins .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}.wins .h{font-family:Anton;font-size:16px;letter-spacing:.04em;text-transform:uppercase;color:var(--obj)}.wins ul{margin:6px 0 0;padding-left:18px;font-size:13px;line-height:1.45}.wins li{margin:4px 0}
 .stat .n{font:400 26px/1.1 Anton;margin:6px 0 3px;font-variant-numeric:tabular-nums}
 .stat .s{font-size:11.5px;color:var(--mute)}
 .stat.me{border-color:var(--purple)}.stat.me .n{color:#c9bdfd}
@@ -110,7 +111,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
 .row{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-top:1px solid var(--line)}.row span:last-child{font-variant-numeric:tabular-nums;color:var(--cash)}
 #owner .row span:last-child{color:#c9bdfd}
 .cta{display:inline-block;margin-top:14px;background:var(--magenta);color:#fff;font-family:Anton;letter-spacing:.06em;font-size:18px;padding:12px 22px;border-radius:8px;text-decoration:none;text-transform:uppercase;box-shadow:4px 4px 0 #000}
-@media (max-width:760px){#panel{position:static;width:auto;display:none;margin-top:12px}#panel.on{display:block}#panel .m{max-height:none;background:var(--panel)}#game{aspect-ratio:3/4}#story{bottom:3%;padding:8px 10px}#storyT{font-size:15px}#storyS{font-size:11px;margin-top:4px}#storyK{font-size:9px;gap:2px 10px;margin-bottom:4px}#qaNav{gap:6px;margin-top:6px}#qaNav button{padding:5px 10px;font-size:11px}#start{justify-content:flex-start;overflow:auto;padding:28px 14px}#start .t{font-size:30px}#start p{margin:8px 0 12px}.qs{margin-top:10px}.qs button{font-size:11px;padding:5px 9px}}
+@media (max-width:760px){.wins .cols{grid-template-columns:1fr}#panel{position:static;width:auto;display:none;margin-top:12px}#panel.on{display:block}#panel .m{max-height:none;background:var(--panel)}#game{aspect-ratio:3/4}#story{bottom:3%;padding:8px 10px}#storyT{font-size:15px}#storyS{font-size:11px;margin-top:4px}#storyK{font-size:9px;gap:2px 10px;margin-bottom:4px}#qaNav{gap:6px;margin-top:6px}#qaNav button{padding:5px 10px;font-size:11px}#start{justify-content:flex-start;overflow:auto;padding:28px 14px}#start .t{font-size:30px}#start p{margin:8px 0 12px}.qs{margin-top:10px}.qs button{font-size:11px;padding:5px 9px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 @media print{body{background:#fff;color:#111}#game,#panel,.sheet,.btn,.cta{display:none!important}#owner{display:block!important}.stat,.hero{background:#fff!important;border-color:#ccc!important;color:#111}.stat .n,.hero .n,.hero .u{color:#111!important;text-shadow:none!important}.stat .k,.stat .s,.hero .k,.hero .s,.fine{color:#444!important}h1{color:#111;text-shadow:none}h1 span{color:#111}}
 </style>
@@ -170,6 +171,10 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
     <div class="stat"><div class="k">What your people see</div><div class="n">More take-home</div><div class="s">confirmed per employee in the payroll analysis. Only employees who come out ahead are enrolled, and their families get the $0 care too.</div></div>
   </div>
   <div class="stat" style="grid-column:1/-1"><div class="k" data-t>Per {site}</div><div id="perStore" style="font-size:13px;margin-top:6px"></div></div>
+  <div class="stat wins" style="grid-column:1/-1"><div class="k">Everyone comes out ahead</div>
+    <div class="cols"><div><div class="h">Your people</div><ul><li><b>$0 care for the whole family.</b> Virtual primary care, urgent care, therapy, dermatology, generics. No copay, no claim.</li><li><b>More take-home on the same check,</b> confirmed per person before anything is signed.</li></ul></div>
+    <div><div class="h" data-t>Your {site}</div><ul><li><b id="winLift"></b> <span id="winLiftS"></span></li><li><b>Richer benefits with nothing added to the benefits budget.</b> The fee comes out of the saving.</li><li><b>Self-funded or level-funded:</b> everyday visits that never reach the company plan, shown as its own tile when you choose that in mission two.</li></ul></div></div>
+    <div class="fine" style="margin:10px 0 0"><b>Possible, not counted here.</b> Workers' comp: some carriers have recognized the lower reportable payroll. Ask your broker.</div></div>
   <div class="stat" style="grid-column:1/-1"><div class="k" data-t>What the {site} gets</div><ul id="gets"></ul>
     <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn q" id="howBtn2">How is it paid for? ▶</button><button class="btn g" id="ownerBtn" data-t>Want a version to share with the {owners}? See it now →</button><span class="fine" style="margin:0" data-t>One page, the {group}'s numbers, no bonus math. Comes with a link you can send.</span></div>
     <div class="qs" id="qs2" style="justify-content:flex-start"><span class="k">Common questions, answered in the city</span></div></div>
@@ -260,6 +265,7 @@ function update(){
   $('#enrolled').textContent=m.g.enrolled.toLocaleString();$('#enrolledS').textContent=`${S.qual}% of ${m.g.emp.toLocaleString()} across ${sitesN(S.stores.length)}, voluntary with a 30-day opt-out window`;
   $('#claimsStat').style.display=ins?'none':'block';$('#claimsV').textContent=fmt(m.claims);$('#claimsS').textContent=`${m.g.enrolled.toLocaleString()} enrolled × ${fmt(S.cost)} × ${S.defl}% of care handled at $0 before it reaches the company's ${S.hp==='self'?'self-funded':'level-funded'} plan. The real figure comes from the plan's 12-month claims summary.`;
   const gets=C.gets.slice();if(!ins)gets.splice(3,0,['Fewer claims on the company health plan.',"That $0 care is the first stop, so visits and fills that would have hit the company's self-funded or level-funded plan never do."]);
+  $('#winLift').textContent=`${fmt(m.base.lift)} a year in payroll tax ${S.scope==='group'?'the '+W.group:'your '+W.site} no longer sends out.`;$('#winLiftS').textContent=`${m.base.enrolled.toLocaleString()} enrolled × ${fmt2(m.per)} a month × 12.`;
   $('#gets').innerHTML=gets.map(([b,s])=>`<li><b>${esc(b)}</b> ${esc(s)}</li>`).join('');
   $('#perStore').innerHTML=m.stores.map((st,i)=>`<div class="row"><span>${i?'':'<b style="color:var(--obj)">YOU · </b>'}${esc(st.brand)} · ${esc(st.state)} · ${st.emp} employees</span><span>+${fmt(st.lift)}</span></div>`).join('');
   if(window.city){const gk=JSON.stringify(S.stores);if(gk!==update.gk){update.gk=gk;window.city.setGroup(m.stores.map(st=>({emp:st.emp,color:colorOf(st.brand),brand:st.brand})))}window.city.setRing(m.g.enrolled/Math.max(1,m.g.emp))} // rebuild the city only when the sites change
@@ -368,18 +374,25 @@ const QUESTIONS=[
   {h:'Not in these numbers.',s:'This page counts federal payroll tax only. Workers\' comp, FUTA and SUTA are left out on purpose.',lit:{}},
   {h:'Ask your broker, not this page.',s:'Some carriers have recognized the lower reportable payroll and cut the premium. Treatment varies by carrier, state and class code, so confirm it before counting on it.',lit:{engine:1}}]}];
 const LEG={wheels:['#d65db1','Complimentary benefits'],body:['#22a85e','Employee tax saving'],engine:['#ffd166','{Site} tax saving'],windows:['#8366ea','Section 125 plan']};
+// the Start-here prologue: the value statement in five short beats, then What is this?, then the missions
+const PROLOGUE={q:'Start here',beats:[
+ {h:'Everything costs more this year.',s:'Payroll, parts, floor plan, the health plan. Here is one line that goes the other way.',lit:{}},
+ {h:'Most benefits are a cost. This one is designed to be cost-neutral.',s:'The administration fee comes out of the payroll-tax saving, never out of the {site}.',mm:1,exhaust:1,lit:{engine:1}},
+ {h:'Your people win twice.',s:'$0 care for the family, and more take-home on the same check.',lit:{wheels:1,body:1}},
+ {h:'Your {site} wins twice.',s:'Lower payroll tax, and richer benefits with nothing added to the budget.',lit:{engine:1},exhaust:1},
+ {h:'Section 125 has been in the tax code since 1978.',s:'Large employers have used it for decades. Your {site} can too. Here is what it is.',lit:{windows:1}}]};
 const fill=(s,m)=>t(s).replace(/\{per\}/g,fmt2(m.per)).replace(/\{fica\}/g,fmt2(m.fica)).replace(/\{admin\}/g,fmt2(m.admin));
 let qa=null; // {q,i,tour} while a question is open
 let auto=false,autoPref=false,autoT=null; // auto-play: the tour always, otherwise the viewer's last choice
 function schedule(){clearTimeout(autoT);if(!auto||!qa)return;const b=qa.q.beats[qa.i];autoT=setTimeout(()=>{if(!qa||!auto)return;if(qa.i<qa.q.beats.length-1){qa.i++;beat()}else closeQ()},2800+38*(b.h.length+b.s.length))} // reading time, roughly
 function beat(){const b=qa.q.beats[qa.i],m=model();caption(fill(b.h,m),fill(b.s,m));$('#storyK').innerHTML=Object.keys(b.lit||{}).filter(k=>b.lit[k]).map(k=>`<span><i style="background:${LEG[k][0]}"></i>${t(LEG[k][1])}</span>`).join('');$('#qaN').textContent=`${qa.i+1} / ${qa.q.beats.length}`;$('#qaPrev').style.visibility=qa.i?'visible':'hidden';$('#qaNext').textContent=qa.i<qa.q.beats.length-1?'Next →':'Done ✓';
   $('#qaLoad').style.display=qa.q.load?'':'none';$('#qaAuto').textContent=auto?'Pause ❚❚':'Auto-play ▶';if(qa.i===qa.q.beats.length-1&&qa.q.btns)qa.q.btns.forEach(x=>x.classList.add('seen'));schedule();if(window.city)window.city.light(b.lit||{},!!b.mm,!!b.exhaust)}
-function ask(q,tour){if(busy)return;busy=true;qa={q,i:0,tour:!!tour};auto=!!tour||autoPref;dimHud(true);$('#qaNav').style.display='flex';if(window.city)window.city.stage(true);beat();$('#qaNext').focus()}
+function ask(q,tour){if(busy)return;busy=true;qa={q,i:0,tour:tour||false};auto=!!tour||autoPref;dimHud(true);$('#qaNav').style.display='flex';if(window.city)window.city.stage(true);beat();$('#qaNext').focus()}
 function closeQ(){if(!qa)return;const wasTour=qa.tour;clearTimeout(autoT);qa=null;$('#storyK').innerHTML='';$('#qaNav').style.display='none';if(window.city)window.city.stage(false);dimHud(false);busy=false;
-  if(wasTour&&step===0&&!$('#startBtn').disabled)$('#startBtn').click()} // the tour hands over to the missions
+  if(wasTour&&wasTour.then)ask(wasTour.then,true);else if(wasTour&&step===0&&!$('#startBtn').disabled)$('#startBtn').click()} // the tour runs on to the next question, then hands over to the missions
 $('#qaNext').onclick=()=>{if(!qa)return;if(qa.i<qa.q.beats.length-1){qa.i++;beat()}else closeQ()};
 $('#qaPrev').onclick=()=>{if(qa&&qa.i){qa.i--;beat()}};$('#qaClose').onclick=closeQ;
-$('#qaAuto').onclick=()=>{auto=!auto;autoPref=auto;$('#qaAuto').textContent=auto?'Pause ❚❚':'Auto-play ▶';schedule()};$('#tourBtn').onclick=()=>ask(QUESTIONS[0],true);
+$('#qaAuto').onclick=()=>{auto=!auto;autoPref=auto;$('#qaAuto').textContent=auto?'Pause ❚❚':'Auto-play ▶';schedule()};$('#tourBtn').onclick=()=>ask(PROLOGUE,{then:QUESTIONS[0]});
 // a real case from the sector config: its stores, plan level and enrollment replace the GM's inputs
 function loadCase(c){Object.assign(S,BM.sanitize({...S,stores:c.stores.map(s=>({...s})),plan:c.plan,qual:c.qual},SEC));closeQ();syncControls();renderStores();update();
   const sb=$('#startBtn');if($('#start').style.display!=='none'){if(!sb.disabled)sb.click()}else{say(1,model());if(window.city)window.city.flyIn()}}
