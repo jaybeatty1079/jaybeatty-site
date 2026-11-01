@@ -479,7 +479,7 @@ function setLot(tier,emp,brandColors){
 }
 function setRing(frac){if(ring)ring.material.opacity=.15+frac*.85}
 let towers=[];
-function labelSprite(text,hex){const c=document.createElement('canvas');c.width=256;c.height=64;const g=c.getContext('2d');g.font='bold 40px Anton, Impact, sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillStyle=hex;g.shadowColor=hex;g.shadowBlur=16;g.fillText(text.toUpperCase(),128,34);const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c),transparent:true,depthTest:false}));sp.scale.set(14,3.5,1);return sp}
+function labelSprite(text,hex){const c=document.createElement('canvas');c.width=512;c.height=128;const g=c.getContext('2d');g.font='bold 80px Anton, Impact, sans-serif';g.textAlign='center';g.textBaseline='middle';g.lineJoin='round';g.lineWidth=10;g.strokeStyle='#0a0812';g.strokeText(text.toUpperCase(),256,68);g.fillStyle=hex;g.shadowColor=hex;g.shadowBlur=6;g.fillText(text.toUpperCase(),256,68);const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c),transparent:true,depthTest:false}));sp.scale.set(14,3.5,1);return sp}
 function setGroup(stores){
   const me=stores[0];setLot(me.emp<=LOT[0]?0:me.emp<=LOT[1]?1:me.emp<=LOT[2]?2:3,me.emp,[me.color]);
   for(const t of towers)drop(scene,t);towers=[];for(const k in blocks)blocks[k].visible=true;
@@ -564,7 +564,7 @@ function buildStage(){stage=new THREE.Group();stage.position.set(0,0,SZ);
   const ol=labelSprite('THE 125 PLAN','#4fd486');ol.position.set(-13,10.5,0);ol.scale.set(16,4,1);stage.add(ol);
   mmCar=car(0x6b2630);mmCar.scale.setScalar(3.6);mmCar.position.set(14,0,0);mmCar.rotation.y=-Math.PI/2-.5;stage.add(mmCar);
   const ml=labelSprite('MAJOR MEDICAL','#ff6b6b');ml.position.set(14,11,0);ml.scale.set(18,4.5,1);mmCar.userData.label=ml;stage.add(ml);
-  tails=[labelSprite('NET SAVINGS','#4fd486'),labelSprite('COST','#ff6b6b')];[o,mmCar].forEach((c,i)=>{c.updateMatrixWorld(true);const v=(c.userData.pipe?c.userData.pipe.position.clone():new THREE.Vector3(-2.1,1,.6));c.localToWorld(v);stage.worldToLocal(v);tails[i].position.set(v.x+(i?3:-3),v.y+9,v.z);tails[i].scale.set(12,3,1);stage.add(tails[i])});
+  tails=[labelSprite('NET SAVINGS','#4fd486'),labelSprite('COST','#ff6b6b')];[o,mmCar].forEach((c,i)=>{c.updateMatrixWorld(true);const v=(c.userData.pipe?c.userData.pipe.position.clone():new THREE.Vector3(-2.1,1,.6));c.localToWorld(v);stage.worldToLocal(v);tails[i].position.set(v.x+(i?3:-1.5),v.y+(i?9:5.5),v.z);tails[i].scale.set(12,3,1);stage.add(tails[i])});
   const spot=new THREE.SpotLight(0xffffff,1400,80,Math.PI/4,.6,2);spot.position.set(0,34,18);spot.target.position.set(0,0,0);stage.add(spot);stage.add(spot.target);
   scene.add(stage)}
 function stageOn(on){if(on){if(!stage)buildStage();stage.visible=true;controls.autoRotate=false;const wide=camera.aspect>1.2;
