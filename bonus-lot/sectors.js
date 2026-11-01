@@ -17,7 +17,7 @@ window.SECTORS = {
     // emp: the GM's own site by default; add: a site added with the button; lot: headcount steps that grow the centre lot; star: net lift per star on the HUD rating
     sizes: { emp: 64, add: 40, state: 'PA', lot: [35, 90, 200], star: 100000 },
     // the per-site label and its colour (brand here; concept for restaurants, flag for hotels). Text only, no logos.
-    labels: [['Toyota', '#eb0a1e'], ['Ford', '#2a5db0'], ['Chevrolet', '#c9a227'], ['Honda', '#d0202c'], ['Hyundai', '#2457a8'], ['Kia', '#36405a'], ['Nissan', '#c3002f'], ['Subaru', '#2f63d1'], ['Jeep', '#3f6b3f'], ['RAM', '#a6192e'], ['GMC', '#cf0a2c'], ['BMW', '#1c7ad1'], ['Mercedes', '#8c8f98'], ['Lexus', '#5c5f6b'], ['Audi', '#bb0a30'], ['Volkswagen', '#1d3f8a']],
+    labels: [['Toyota', '#eb0a1e'], ['Ford', '#2a5db0'], ['Chevrolet', '#c9a227'], ['Honda', '#d0202c'], ['Hyundai', '#2457a8'], ['Kia', '#36405a'], ['Nissan', '#c3002f'], ['Subaru', '#2f63d1'], ['Jeep', '#3f6b3f'], ['RAM', '#a6192e'], ['GMC', '#cf0a2c'], ['BMW', '#1c7ad1'], ['Mercedes', '#8c8f98'], ['Lexus', '#5c5f6b'], ['Audi', '#bb0a30'], ['Volkswagen', '#1d3f8a'], ['CDJR', '#4a4f5c'], ['Mitsubishi', '#d7141a']],
     copy: {
       sub: "Three short missions. The green counter is your store's net profit. Nobody in this city sells one extra car.",
       start: "You're the GM. Three missions: build your lot, run the payroll, set your pay plan. Watch the net counter. Drag the city to look around.",
@@ -43,6 +43,19 @@ window.SECTORS = {
         ['Nothing is signed on these numbers.', 'A payroll analysis confirms who qualifies and what each store saves before anyone commits.']
       ]
     },
+    // a real group, anonymised: aggregates from its own invoices and payroll files, never employee data. `stores`, `plan` and `qual` are what the Load button sets; `beats` play on the car stage.
+    cases: [{
+      q: 'Has a dealer group actually done this?',
+      stores: [['Ford', 78], ['Ford', 71], ['Chevrolet', 67], ['CDJR', 67], ['Ford', 61], ['Mitsubishi', 16]].map(([brand, emp]) => ({ brand, emp, state: 'CA' })),
+      plan: 1200, qual: 65,
+      beats: [
+        { h: 'Yes. A six-store independent group in Southern California.', s: 'Three Ford stores, a Chevrolet, a CDJR and a Mitsubishi store, about 370 people on payroll, enrolled in the fall of 2024. The payroll analysis found 81% of them came out ahead.', lit: { body: 1 } },
+        { h: '77% of the eligible employees enrolled.', s: '241 of 311. Fewer than 30 people ever opted out. The reason is in the first question: $0 care and more take-home on the same check.', lit: { wheels: 1, body: 1 } },
+        { h: '$14,355 in the first full month.', s: 'December 2024, from the invoice: 255 enrollee-months at the $1,200 level, after the fee. About $172,000 a year. The group spent about half of it on accident, hospital and critical illness cover for every employee.', lit: { engine: 1 }, exhaust: 1 },
+        { h: "On today's plan levels, plausibly $200,000 to $230,000.", s: 'The group enrolled before the $1,500 and $1,600 levels existed. Each person\'s level is set by wages, so roughly half would wage-qualify for the top level. The payroll analysis is what settles each number.', lit: { engine: 1, windows: 1 } },
+        { h: 'A year later: 148 enrolled, about $100,000 a year.', s: 'The stores turned over about 35 people a month and new hires wait 60 days. Enrollment is a payroll routine, not a one-time event. Load this group into the city to see it at today\'s levels.', lit: { body: 1, engine: 1 } }
+      ]
+    }],
     // sign: the centre-lot sign by lot size; carsPer: one parked vehicle per this many employees; showroom and pennants can be turned off for a sector without them
     scene: { sign: ['LOT', 'STORE', 'DEALER', 'GROUP'], showroom: true, carsPer: 8, pennants: true }
   }

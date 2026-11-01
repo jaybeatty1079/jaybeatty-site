@@ -11,6 +11,11 @@ for (const [key, sector] of Object.entries(SECTORS)) {
   assert.ok(sector.title.length === 2 && sector.labels.length && sector.copy.lines.length === 4 && sector.scene.sign.length === 4, key + ': config shape');
   for (const k of ['rpe', 'margin', 'unit']) { const [d, lo, hi] = sector.bench[k]; assert.ok(lo <= d && d <= hi, key + ': ' + k + ' default inside its range'); }
   assert.equal(sector.copy.gets.length, 5, key + ': five value-add bullets');
+  for (const c of sector.cases || []) { // a real case must load through the same validator unchanged
+    const L = M.sanitize({ ...S, stores: c.stores, plan: c.plan, qual: c.qual }, sector);
+    assert.deepEqual(L.stores, c.stores, key + ': case stores pass sanitize'); assert.equal(L.plan, c.plan); assert.equal(L.qual, c.qual);
+    assert.ok(c.q && c.beats.length >= 3 && c.beats.every(b => b.h && b.s), key + ': case beats');
+  }
 }
 
 // The published figure: $1,600 × 7.65% − $40 = $82.40 a month; 64 employees at 80% → 51 enrolled → $50,428.80 a year.

@@ -48,7 +48,7 @@ h1 span{color:var(--magenta)}
 #story{left:50%;bottom:14%;transform:translateX(-50%);width:min(88%,760px);text-align:center;opacity:0;z-index:4}
 #storyT{font-family:Anton;font-size:clamp(16px,2.6vw,28px);line-height:1.15;color:#fff;text-shadow:3px 3px 0 #000,0 0 18px rgba(0,0,0,.8);text-transform:uppercase}
 #storyS{font-family:Inter;font-weight:600;font-size:clamp(11px,1.5vw,15px);color:var(--obj);text-shadow:2px 2px 0 #000;margin-top:6px}
-#qaNav{display:none;justify-content:center;gap:8px;margin-top:10px;pointer-events:auto;font-family:Inter}
+#qaNav{display:none;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:10px;pointer-events:auto;font-family:Inter}
 #qaNav button{font:600 12px Inter;padding:7px 14px;border-radius:999px;border:1px solid #3a3550;background:rgba(10,8,18,.9);color:#fff;cursor:pointer}
 #qaNav button.p{background:var(--magenta);border-color:transparent}
 #qaNav .n{font:600 11px Inter;color:var(--mute);align-self:center;letter-spacing:.1em}
@@ -121,7 +121,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
   <div class="hud" id="stars"><div class="l">NET RATING</div><div id="starsV">☆☆☆☆☆</div></div>
   <div class="hud" id="obj"><small>Objective</small><span id="objT">Tap START</span></div>
   <div id="phone"><svg viewBox="0 0 60 60" id="rockyFace" aria-hidden="true"></svg><div><div class="who" id="who"></div><div class="txt" id="phoneT"></div></div></div>
-  <div class="hud" id="story" aria-live="polite"><div id="storyT"></div><div id="storyS"></div><div id="qaNav"><button id="qaPrev">← Back</button><span class="n" id="qaN"></span><button id="qaNext" class="p">Next →</button><button id="qaClose">Close ✕</button></div></div>
+  <div class="hud" id="story" aria-live="polite"><div id="storyT"></div><div id="storyS"></div><div id="qaNav"><button id="qaPrev">← Back</button><span class="n" id="qaN"></span><button id="qaNext" class="p">Next →</button><button id="qaLoad" style="display:none">Load this group</button><button id="qaClose">Close ✕</button></div></div>
   <div id="banner"><div class="big" id="bannerBig">Mission <span>Passed</span></div><div class="mid" id="bannerMid"></div><div class="sm" id="bannerSm"></div></div>
   <div id="start"><div class="t" id="startT"></div><p id="startP"></p><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><button class="btn" id="startBtn" disabled style="opacity:.5">Loading the city…</button><button class="btn q" id="howBtn">How is it paid for? ▶</button></div><div class="qs" id="qs1"><span class="k">Common questions</span></div></div>
   <div id="panel">
@@ -366,11 +366,16 @@ const QUESTIONS=[
 const fill=(s,m)=>t(s).replace(/\{per\}/g,fmt2(m.per)).replace(/\{fica\}/g,fmt2(m.fica)).replace(/\{admin\}/g,fmt2(m.admin));
 let qa=null; // {q,i} while a question is open
 function beat(){const b=qa.q.beats[qa.i],m=model();caption(fill(b.h,m),fill(b.s,m));$('#qaN').textContent=`${qa.i+1} / ${qa.q.beats.length}`;$('#qaPrev').style.visibility=qa.i?'visible':'hidden';$('#qaNext').textContent=qa.i<qa.q.beats.length-1?'Next →':'Done ✓';
-  if(window.city)window.city.light(b.lit||{},!!b.mm,!!b.exhaust)}
+  $('#qaLoad').style.display=qa.q.load?'':'none';if(window.city)window.city.light(b.lit||{},!!b.mm,!!b.exhaust)}
 function ask(q){if(busy)return;busy=true;qa={q,i:0};dimHud(true);$('#qaNav').style.display='flex';if(window.city)window.city.stage(true);beat();$('#qaNext').focus()}
 function closeQ(){if(!qa)return;qa=null;$('#qaNav').style.display='none';if(window.city)window.city.stage(false);dimHud(false);busy=false}
 $('#qaNext').onclick=()=>{if(!qa)return;if(qa.i<qa.q.beats.length-1){qa.i++;beat()}else closeQ()};
 $('#qaPrev').onclick=()=>{if(qa&&qa.i){qa.i--;beat()}};$('#qaClose').onclick=closeQ;
+// a real case from the sector config: its stores, plan level and enrollment replace the GM's inputs
+function loadCase(c){Object.assign(S,BM.sanitize({...S,stores:c.stores.map(s=>({...s})),plan:c.plan,qual:c.qual},SEC));closeQ();syncControls();renderStores();update();
+  const sb=$('#startBtn');if($('#start').style.display!=='none'){if(!sb.disabled)sb.click()}else{say(1,model());if(window.city)window.city.flyIn()}}
+$('#qaLoad').onclick=()=>{if(qa&&qa.q.load)loadCase(qa.q.load)};
+for(const c of SEC.cases||[])QUESTIONS.push({q:c.q,beats:c.beats,load:c});
 addEventListener('keydown',e=>{if(!qa)return;if(e.key==='Escape')closeQ();if(e.key==='ArrowRight')$('#qaNext').click();if(e.key==='ArrowLeft')$('#qaPrev').click()});
 for(const id of ['qs1','qs2'])QUESTIONS.forEach(q=>{const b=document.createElement('button');b.textContent=t(q.q);b.onclick=()=>{if(id==='qs2'){$('#game').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>ask(q),500)}else ask(q)};$('#'+id).appendChild(b)});
 

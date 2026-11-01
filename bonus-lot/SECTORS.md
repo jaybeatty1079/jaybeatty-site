@@ -12,6 +12,7 @@ The page (`index.html`) is the engine. A sector is one block in `sectors.js`. Th
    - `sizes`: the GM's default headcount, the headcount of an added site, the default state, the three headcount steps that grow the center lot, and the net lift per star on the HUD rating (set it so a typical group lands on three stars).
    - `labels`: the per-site tags with a color each. Text only, approximate colors, no logos.
    - `copy`: the subtitle, start text, mission one title and why, the four objective lines, the character's name line and four phone lines, the two unit-line functions, the two pay-plan notes, the CTA, and the five "What the site gets" bullets. Keep the compliance posture: no "IRS-approved", no guarantees, "estimate" and "illustrative", never that some employees come out behind.
+   - `cases` (optional): one real group, anonymised. `q` is the chip text, `stores`/`plan`/`qual` are what the Load button sets, `beats` play on the car stage. Only aggregates from invoices and payroll files, never employee data, never the client's name without written permission. Say "plausibly" for anything not on an invoice.
    - `scene`: the four sign words by lot size, whether the glass showroom shows vehicles, how many employees per parked vehicle, and whether pennants fly.
 3. Run `node bonus-lot/test.mjs`. It checks every sector's shape and ranges and the shared math.
 4. Open `/bonus-lot/?s=<key>` and play all three missions, the truck, one question, and the owner link at desktop and phone width.
