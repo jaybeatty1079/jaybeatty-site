@@ -163,7 +163,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
     <div class="stat"><div class="k" id="netK">Net, before → after</div><div class="n" id="netPair">$0</div><div class="s" id="netPairS"></div></div>
     <div class="stat"><div class="k">Employees enrolled</div><div class="n" id="enrolled">0</div><div class="s" id="enrolledS"></div></div>
     <div class="stat" id="claimsStat" style="display:none"><div class="k">Doctor visits and prescriptions that never hit the company health plan (estimate)</div><div class="n" id="claimsV">$0</div><div class="s" id="claimsS"></div></div>
-    <div class="stat"><div class="k">What your people see</div><div class="n">+$50–500</div><div class="s">more take-home a month, estimated. Only employees who come out ahead are enrolled, and their families get the $0 care too.</div></div>
+    <div class="stat"><div class="k">What your people see</div><div class="n">More take-home</div><div class="s">confirmed per employee in the payroll analysis. Only employees who come out ahead are enrolled, and their families get the $0 care too.</div></div>
   </div>
   <div class="stat" style="grid-column:1/-1"><div class="k" data-t>Per {site}</div><div id="perStore" style="font-size:13px;margin-top:6px"></div></div>
   <div class="stat" style="grid-column:1/-1"><div class="k" data-t>What the {site} gets</div><ul id="gets"></ul>
@@ -177,7 +177,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
     <div class="stat"><div class="k" data-t>{group} net, before → after</div><div class="n" id="oNet">$0</div><div class="s" id="oNetS"></div></div>
     <div class="stat"><div class="k">Employees enrolled</div><div class="n" id="oEnrolled">0</div><div class="s" id="oEnrolledS"></div></div>
     <div class="stat" id="oClaimsStat" style="display:none"><div class="k">Visits and prescriptions kept off the company health plan (estimate)</div><div class="n" id="oClaims">$0</div><div class="s" id="oClaimsS"></div></div>
-    <div class="stat"><div class="k">What your people see</div><div class="n">+$50–500</div><div class="s">more take-home a month, estimated. Only employees who come out ahead are enrolled; their families get the $0 care too.</div></div>
+    <div class="stat"><div class="k">What your people see</div><div class="n">More take-home</div><div class="s">confirmed per employee in the payroll analysis. Only employees who come out ahead are enrolled; their families get the $0 care too.</div></div>
   </div>
   <div class="stat" style="margin-top:10px"><div class="k" data-t>{Site} by {site}</div><div id="oPer" style="font-size:13px;margin-top:6px"></div></div>
   <div class="stat" style="margin-top:10px"><div class="k">How it works</div><ul>
@@ -253,7 +253,7 @@ function update(){
   $('#bonusDelta').textContent='+'+fmt(m.bonusDelta);$('#bonusDeltaS').textContent=`${S.share}% of ${fmt(m.base.lift)}, ${S.mode==='all'?'your share of all net':'your share above target'}, on ${scopeWord}`;
   $('#netK').textContent=(S.scope==='group'?W.group:W.Site)+' net, before → after';
   $('#netPair').textContent=fmt(m.base.net)+' → '+fmt(m.base.net+m.base.lift);$('#netPairS').textContent=`${m.base.emp.toLocaleString()} employees × ${fmtM(S.rpe)} at ${S.margin.toFixed(1)}%`;
-  $('#enrolled').textContent=m.g.enrolled.toLocaleString();$('#enrolledS').textContent=`${S.qual}% of ${m.g.emp.toLocaleString()} across ${sitesN(S.stores.length)}, voluntary`;
+  $('#enrolled').textContent=m.g.enrolled.toLocaleString();$('#enrolledS').textContent=`${S.qual}% of ${m.g.emp.toLocaleString()} across ${sitesN(S.stores.length)}, voluntary with a 30-day opt-out window`;
   $('#claimsStat').style.display=ins?'none':'block';$('#claimsV').textContent=fmt(m.claims);$('#claimsS').textContent=`${m.g.enrolled.toLocaleString()} enrolled × ${fmt(S.cost)} × ${S.defl}% of care handled at $0 before it reaches the company's ${S.hp==='self'?'self-funded':'level-funded'} plan. The real figure comes from the plan's 12-month claims summary.`;
   const gets=C.gets.slice();if(!ins)gets.splice(3,0,['Fewer claims on the company health plan.',"That $0 care is the first stop, so visits and fills that would have hit the company's self-funded or level-funded plan never do."]);
   $('#gets').innerHTML=gets.map(([b,s])=>`<li><b>${esc(b)}</b> ${esc(s)}</li>`).join('');
@@ -287,7 +287,7 @@ function renderOwner(){const m=model(),ins=S.hp==='insured';
   $('#oLift').textContent=fmt(m.g.lift);$('#oUnits').textContent=C.ownerUnitLine(Math.round(m.unitsOf(m.g.lift)).toLocaleString());
   $('#oLiftS').textContent=`${sitesN(S.stores.length)}, ${m.g.emp.toLocaleString()} on payroll. ${m.g.enrolled.toLocaleString()} enrolled × ${fmt2(m.per)} a month (7.65% FICA on the $${S.plan.toLocaleString()} contribution, less the plan's admin fee) × 12. A ${m.g.net>0?(100*m.g.lift/m.g.net).toFixed(1)+'%':'—'} lift on ${fmt(m.g.net)} of estimated ${W.group} net.`;
   $('#oNet').textContent=fmt(m.g.net)+' → '+fmt(m.g.net+m.g.lift);$('#oNetS').textContent=`${m.g.emp.toLocaleString()} employees × ${fmtM(S.rpe)} revenue each at a ${S.margin.toFixed(1)}% margin, industry averages unless your ${W.role} changed them`;
-  $('#oEnrolled').textContent=m.g.enrolled.toLocaleString();$('#oEnrolledS').textContent=`${S.qual}% of ${m.g.emp.toLocaleString()}, voluntary`;
+  $('#oEnrolled').textContent=m.g.enrolled.toLocaleString();$('#oEnrolledS').textContent=`${S.qual}% of ${m.g.emp.toLocaleString()}, voluntary with a 30-day opt-out window`;
   $('#oClaimsStat').style.display=ins?'none':'block';$('#oHowClaims').style.display=ins?'none':'list-item';
   if(!ins){$('#oClaims').textContent=fmt(m.claims);$('#oClaimsS').textContent=`${m.g.enrolled.toLocaleString()} enrolled × ${fmt(S.cost)} × ${S.defl}% of care handled at $0 first, on the company's ${S.hp==='self'?'self-funded':'level-funded'} plan. The real figure comes from the plan's 12-month claims summary.`}
   $('#oPer').innerHTML=m.stores.map(st=>`<div class="row"><span>${esc(st.brand)} · ${esc(st.state)} · ${st.emp} employees · ${st.enrolled} enrolled</span><span>+${fmt(st.lift)} / yr</span></div>`).join('');
@@ -309,7 +309,7 @@ function storyLines(){const m=model();return [
   ['Payroll tax leaves the company every pay period.',t(`On $${S.plan.toLocaleString()} of one enrolled employee's monthly pay: ${fmt2(m.fica)} from the {site}, ${fmt2(m.fica)} from the employee, plus their income tax. The truck is that money.`)],
   ['With the plan, the truck stops here.',`The $${S.plan.toLocaleString()} goes into the Section 125 plan pre-tax, so that tax is never owed. Now the load gets redirected.`],
   [t('The {owner}\'s car: the {site} keeps its share.'),t(`${fmt2(m.per)} a month per enrolled employee stays with the {site}. That is the net lift on the P&L.`)],
-  ['The employees\' car: more take-home, $0 care.','Their tax savings fund $0 doctor visits, urgent care, therapy and generics for the family, and the wellness reward comes back on the same check. Typically $50 to $500 more a month.'],
+  ['The employees\' car: more take-home, $0 care.','Their tax savings fund $0 doctor visits, urgent care, therapy and generics for the family, and the wellness reward comes back on the same check. The payroll analysis shows each person\'s number before anything is signed.'],
   ['The administrator\'s motorcycle: the fee.',`${fmt2(m.admin)} a month per enrolled employee runs the plan: enrollment, claims, compliance and audit defense.`],
   ['Nothing else changes.',t('Major medical stays exactly as it is. What was never tax-free is still paid as tax. A payroll analysis confirms the numbers for your {group} before anything is signed.')]]}
 function runStory(){if(busy||!window.city)return;busy=true;$('#qaNav').style.display='none';dimHud(true);
@@ -323,7 +323,7 @@ const QUESTIONS=[
  {q:'What is this?',beats:[
   {h:'A wellness plan that comes with three things.',s:'Take a look at the car. Each part is one of them.',lit:{wheels:1,body:1,engine:1,windows:1}},
   {h:'Complimentary benefits.',s:'$0 virtual primary care, urgent care, therapy, dermatology, 70-plus generics and coaching, for the employee and their family. No copay, no claim.',lit:{wheels:1}},
-  {h:'Tax savings for the employee.',s:'The contribution is pre-tax, so the same paycheck takes home more, and the wellness reward comes back on it. Typically $50 to $500 a month.',lit:{body:1}},
+  {h:'Tax savings for the employee.',s:'The contribution is pre-tax, so the same paycheck takes home more, and the wellness reward comes back on it. The payroll analysis shows each person\'s number before anything is signed.',lit:{body:1}},
   {h:'Tax savings for the {site}.',s:'Lower taxable wages mean less FICA: {fica} a month per enrolled employee, {per} after the plan\'s fee. That is net.',lit:{engine:1}},
   {h:'All of it inside a Section 125 plan.',s:'One more plan document beside the ones you have. The pre-tax election is what makes the tax math work. Nothing is signed on these numbers.',lit:{windows:1}},
   {h:'Major medical stays exactly where it is.',s:'Some care overlaps, and that is fine. This one is easy, convenient and has no copays, so people actually use it: participation runs high.',mm:1,lit:{wheels:1}},
@@ -339,11 +339,30 @@ const QUESTIONS=[
  {q:'Why would employees sign up?',beats:[
   {h:'$0 care for the whole family.',s:'Virtual primary care, urgent care, therapy, dermatology, 70-plus generics, coaching. No copay, no claim, no deductible to meet first.',lit:{wheels:1}},
   {h:'More take-home on the same check.',s:'The pre-tax election lowers their tax, and the wellness reward comes back on the same paycheck. Only employees who come out ahead are enrolled.',lit:{body:1}},
-  {h:'Nothing to give up.',s:'Major medical stays. This is on top of it, and it is voluntary.',mm:1,lit:{wheels:1,body:1}}]},
+  {h:'Nothing to give up.',s:'Major medical stays. This is on top of it, voluntary, with a 30-day window to opt out.',mm:1,lit:{wheels:1,body:1}}]},
  {q:'We\'re self-funded. Where does it fit?',beats:[
   {h:'In front of your plan.',s:'The $0 care is the first stop for everyday visits and generics, so those claims never reach the self-funded or level-funded plan.',mm:1,lit:{wheels:1}},
   {h:'Two ways it pays.',s:'The payroll-tax saving on every enrolled employee, plus the claims that never hit the company plan. The second number comes from your TPA\'s 12-month claims summary, not from this page.',mm:1,exhaust:1,lit:{engine:1,wheels:1}},
-  {h:'Set it in mission two.',s:'Pick level-funded or self-funded and the claims estimate shows as its own tile, never folded into the tax number.',lit:{windows:1}}]}];
+  {h:'Set it in mission two.',s:'Pick level-funded or self-funded and the claims estimate shows as its own tile, never folded into the tax number.',lit:{windows:1}}]},
+ {q:'What\'s the catch?',beats:[
+  {h:'The catch is an invoice.',s:'On the $1,500 plan, $265 per enrolled employee a month: $225 is the employee\'s own pre-tax withholding, $40 is the fee. All of it is payroll tax the {site} already sends out.',lit:{engine:1,body:1}},
+  {h:'Nothing new comes out of anyone\'s pocket.',s:'The {site} keeps {per} of the {fica} it no longer owes. The employee keeps more take-home. The fee comes out of the same money. Designed to be cost-neutral.',lit:{engine:1},exhaust:1},
+  {h:'Owners said the same thing.',s:'The companies in the booklet met it with skepticism, checked it with their CPAs and counsel, then enrolled. Your check is the payroll analysis: no cost, no commitment.',lit:{windows:1}}]},
+ {q:'Is this legal? Who stands behind it?',beats:[
+  {h:'Three firms have reviewed it in writing.',s:'Outside ERISA counsel: the program complies with existing legal requirements. CBIZ: the plan document meets the Section 125 requirements. KCP, a CPA firm: the tax treatment is supported by substantial authority under current law.',lit:{windows:1}},
+  {h:'Nobody says IRS-approved, because nobody can.',s:'Opinion letters are not binding on the IRS. Each one is conditioned on the plan being run as written, which is what the administrator and the payroll analysis are for.',lit:{windows:1}},
+  {h:'If the IRS asks, KCP answers.',s:'KCP signs an audit-defense engagement directly with the {site}, under its terms. Your CPA and counsel can review the documents before anything is signed.',lit:{windows:1,engine:1}}]},
+ {q:'Who qualifies? Porters, flat-rate, part-time, me?',beats:[
+  {h:'Every department.',s:'Sales, F&I, service, parts, the office, porters and detailers. Commission, flat-rate and hourly pay plans all work, full-time and part-time W-2. The payroll analysis sets each person\'s plan level by wages.',lit:{body:1,wheels:1}},
+  {h:'One condition the one-pager skips.',s:'The employee has to be covered by an ACA-compliant group health plan, yours or a spouse\'s. Someone who declined coverage is not in. The analysis counts only the people who qualify.',mm:1,lit:{windows:1}},
+  {h:'Not the owner.',s:'Owners above 2% of an S corporation, partners and members paid on a K-1 cannot join a Section 125 plan. They get the {site}\'s saving instead.',lit:{engine:1}}]},
+ {q:'How much work is it, and how fast?',beats:[
+  {h:'About eight weeks from payroll file to first payroll.',s:'Analysis, proposal, agreements, a detailed payroll analysis, payroll setup and a dry run, then enrollment and go-live. The administrator runs it with your payroll company.',lit:{windows:1}},
+  {h:'Your team\'s time: a payroll file and a few signatures.',s:'Enrollment meetings are short, by department, on paid time. Nothing changes on major medical and nothing waits for open enrollment.',mm:1,lit:{body:1}},
+  {h:'Starting with one {site} is fine.',s:'Groups can start with one {site} and roll it to the rest. Every number is confirmed by the payroll analysis before anything is signed.',lit:{engine:1}}]},
+ {q:'Will it cut my workers\' comp?',beats:[
+  {h:'Not in these numbers.',s:'This page counts federal payroll tax only. Workers\' comp, FUTA and SUTA are left out on purpose.',lit:{}},
+  {h:'Ask your broker, not this page.',s:'Some carriers have recognized the lower reportable payroll and cut the premium. Treatment varies by carrier, state and class code, so confirm it before counting on it.',lit:{engine:1}}]}];
 const fill=(s,m)=>t(s).replace(/\{per\}/g,fmt2(m.per)).replace(/\{fica\}/g,fmt2(m.fica)).replace(/\{admin\}/g,fmt2(m.admin));
 let qa=null; // {q,i} while a question is open
 function beat(){const b=qa.q.beats[qa.i],m=model();caption(fill(b.h,m),fill(b.s,m));$('#qaN').textContent=`${qa.i+1} / ${qa.q.beats.length}`;$('#qaPrev').style.visibility=qa.i?'visible':'hidden';$('#qaNext').textContent=qa.i<qa.q.beats.length-1?'Next →':'Done ✓';
