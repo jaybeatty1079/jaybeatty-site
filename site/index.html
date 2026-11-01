@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>try{var t=localStorage.getItem('jb-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <title>Jay Beatty | Healthcare Business Development</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jay Beatty">
@@ -280,6 +281,29 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 .atcg-row{display:flex;gap:26px;align-items:center}
 @media(max-width:700px){.atcg-row{flex-direction:column;align-items:flex-start}}
 .atcg-row .board-head{margin-bottom:10px}
+
+/* light theme: set by the sun/moon switch in the header, remembered per visitor. Dark stays the default look. */
+:root[data-theme="light"]{
+  --bg:#f8f6fc;--surface:#ffffff;--panel:#efebf7;--line:#ddd6ea;
+  --fg:#1b1528;--muted:#5a5370;
+  --purple:#6d50dd;--purple-soft:#4b3bb0;
+  --green:#1f9a55;--green-soft:#15713f;--teal:#0e8f86;
+  color-scheme:light;
+}
+body{transition:background-color .25s,color .25s}
+:root[data-theme="light"] .btn.primary{color:#fff}
+:root[data-theme="light"] .tag.ben{color:#0b6e67}
+:root[data-theme="light"] .board,:root[data-theme="light"] .tile{box-shadow:0 1px 2px rgba(27,21,40,.05)}
+:root[data-theme="light"] .vid .lab,:root[data-theme="light"] dialog.viewer,:root[data-theme="light"] .vbar,:root[data-theme="light"] .lb{--bg:#0b0a10;--surface:#14111e;--panel:#1c1730;--line:#2b2542;--fg:#ece9f5;--muted:#a79fc0;--purple-soft:#b7a6ff;--green-soft:#6fe3a3;color-scheme:dark}
+:root[data-theme="light"] svg [fill="#2b2542"]{fill:var(--line)}:root[data-theme="light"] svg [stroke="#2b2542"]{stroke:var(--line)}:root[data-theme="light"] svg [fill="#ece9f5"]{fill:var(--fg)}:root[data-theme="light"] svg [stroke="#ece9f5"]{stroke:var(--fg)}:root[data-theme="light"] svg [fill="#a79fc0"]{fill:var(--muted)}:root[data-theme="light"] svg [stroke="#a79fc0"]{stroke:var(--muted)}:root[data-theme="light"] svg [fill="#0b0a10"]{fill:var(--bg)}:root[data-theme="light"] svg [stroke="#0b0a10"]{stroke:var(--bg)}:root[data-theme="light"] svg [fill="#14111e"]{fill:var(--surface)}:root[data-theme="light"] svg [stroke="#14111e"]{stroke:var(--surface)}:root[data-theme="light"] svg [fill="#1c1730"]{fill:var(--panel)}:root[data-theme="light"] svg [stroke="#1c1730"]{stroke:var(--panel)}:root[data-theme="light"] svg [fill="#8366ea"]{fill:var(--purple)}:root[data-theme="light"] svg [stroke="#8366ea"]{stroke:var(--purple)}:root[data-theme="light"] svg [fill="#b7a6ff"]{fill:var(--purple-soft)}:root[data-theme="light"] svg [stroke="#b7a6ff"]{stroke:var(--purple-soft)}:root[data-theme="light"] svg [fill="#6fe3a3"]{fill:var(--green-soft)}:root[data-theme="light"] svg [stroke="#6fe3a3"]{stroke:var(--green-soft)}
+nav .links{margin-left:auto}
+.theme-tg{flex:none;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--line);background:color-mix(in oklab,var(--fg) 6%,transparent);color:var(--fg);display:grid;place-items:center;cursor:pointer;transition:border-color .15s,background-color .15s}
+.theme-tg:hover,.theme-tg:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);outline:none}
+.theme-tg svg{width:18px;height:18px;display:block}
+.theme-tg .moon{display:none}
+:root[data-theme="light"] .theme-tg .sun{display:none}
+:root[data-theme="light"] .theme-tg .moon{display:block}
+@media(max-width:860px){.theme-tg{order:2;margin-left:auto}nav .links{order:3;margin-left:0}}
 </style>
 
 </head>
@@ -289,6 +313,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
   <div class="links">
     <a href="#work">What I do</a><a href="#how">How it works</a><a href="#programs">Programs</a><a href="#projects">Projects</a><a href="#record">Track record</a><a href="#career">Career</a><a href="#about">About</a><a href="#contact">Contact</a>
   </div>
+  <button class="theme-tg" type="button" aria-label="Switch to light mode" title="Light or dark mode"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6Z"/></svg></button>
 </nav></div></header>
 
 <main id="top">
@@ -526,7 +551,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
       <h2 style="margin-top:12px">Jay Beatty</h2>
       <p style="margin-top:18px">I started in operating rooms and ended up running a laboratory. The thread through all of it is the same: find the buyer, earn the meeting, close, then build the system so it happens again without me in every room.</p>
       <p>I've spent my career in healthcare sales and operations, first selling implants and biologics to orthopedic surgeons, then leading national sales through independent distributors, then running a clinical laboratory as COO through the largest testing program in its history. For the last two years I've worked as an independent business development consultant, usually running two engines at once for companies in an early growth phase.</p>
-      <p>I have two home markets. I spent twenty years in Ventura, California, selling across the West, and now work from Mechanicsburg, Pennsylvania, where I grew up between Harrisburg, York and Lancaster. I travel when the work calls for it.</p><p>My degree is in biomedical physics from Cal State Northridge, which mostly means I read the clinical papers before I sell the product. I hold a California Life, Accident and Health producer license, transferring to Pennsylvania, and held a DoD Secret clearance earlier in my career. I run my own prospecting, research and forecasting with AI agents every day, with HubSpot as the system of record.</p>
+      <p>I have two home markets. I'm based in Ventura, California, where I've spent twenty years selling across the West, and I grew up in Central Pennsylvania, between Harrisburg, York and Lancaster. I work with clients nationwide and travel when the work calls for it.</p><p>My degree is in biomedical physics from Cal State Northridge, which mostly means I read the clinical papers before I sell the product. I hold a California Life, Accident and Health producer license, transferring to Pennsylvania, and held a DoD Secret clearance earlier in my career. I run my own prospecting, research and forecasting with AI agents every day, with HubSpot as the system of record.</p>
       <h3 style="margin-top:28px">Good fit if you are</h3>
       <ul class="fit">
         <li>A medtech, diagnostics or healthcare AI company opening a territory or a new specialty</li>
@@ -563,7 +588,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
   </div>
 </div></section>
 </main>
-<footer><div class="wrap"><span>© 2026 Jay Beatty. JAB Industries LLC. Remote-first. Open to fractional engagements and full-time leadership roles.</span><span>Central Pennsylvania</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Jay Beatty. JAB Industries LLC. Remote-first. Open to fractional engagements and full-time leadership roles.</span><span>Southern California and Central Pennsylvania. Working with clients nationwide.</span></div></footer>
 <div class="tip" id="tip" role="status" aria-live="polite"></div>
 
 <script>
@@ -750,5 +775,6 @@ if(srcs.length&&strip&&track){const make=()=>srcs.map(img=>{const a=document.cre
   function close(){if(!lb)return;lb.classList.remove('on');const l=lb;setTimeout(()=>l.remove(),200);lb=null;document.removeEventListener('keydown',esc);}function esc(e){if(e.key==='Escape')close();}}
 })();
 </script>
+<script>(function(){var r=document.documentElement;function cur(){return r.getAttribute('data-theme')==='light'?'light':'dark'}function sync(){document.querySelectorAll('.theme-tg').forEach(function(b){b.setAttribute('aria-label',cur()==='light'?'Switch to dark mode':'Switch to light mode')})}document.querySelectorAll('.theme-tg').forEach(function(b){b.addEventListener('click',function(){var n=cur()==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('jb-theme',n)}catch(e){}sync()})});sync()})();</script>
 </body>
 </html>
