@@ -11,6 +11,9 @@ for (const [key, sector] of Object.entries(SECTORS)) {
   assert.ok(sector.title.length === 2 && sector.labels.length && sector.copy.lines.length === 4 && sector.scene.sign.length === 4, key + ': config shape');
   for (const k of ['rpe', 'margin', 'unit']) { const [d, lo, hi] = sector.bench[k]; assert.ok(lo <= d && d <= hi, key + ': ' + k + ' default inside its range'); }
   assert.equal(sector.copy.gets.length, 5, key + ': five value-add bullets');
+  const o = sector.copy.open; assert.ok(o && o.lines.length === 3 && o.lines.every(l => l.length === 2) && o.para && typeof o.live === 'function', key + ': opening panel copy');
+  assert.ok(sector.copy.orient.length >= 2 && sector.copy.orient.every(b => b.h && b.s && b.cue != null) && sector.copy.landing.length >= 1, key + ': guided path beats');
+  assert.ok(!JSON.stringify(sector).match(/IRS[- ]approved|no net cost|guarantee/i), key + ': no banned claim');
   for (const c of sector.cases || []) { // a real case must load through the same validator unchanged
     const L = M.sanitize({ ...S, stores: c.stores, plan: c.plan, qual: c.qual }, sector);
     assert.deepEqual(L.stores, c.stores, key + ': case stores pass sanitize'); assert.equal(L.plan, c.plan); assert.equal(L.qual, c.qual);

@@ -21,22 +21,46 @@ body{padding:0 16px 60px}
 header{padding:22px 0 10px}
 h1{font:400 clamp(40px,7vw,72px)/.95 Anton,Impact,sans-serif;margin:0;letter-spacing:.01em;text-transform:uppercase;text-shadow:0 0 18px rgba(214,93,177,.55),3px 3px 0 #3a1a4a}
 h1 span{color:var(--magenta)}
-.sub{color:var(--mute);max-width:640px;margin:6px 0 0}
-#game{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#0b0914 radial-gradient(ellipse at 50% 70%,#1a1430 0,#0b0914 60%);box-shadow:0 0 0 1px #000,0 30px 60px rgba(0,0,0,.5)}
+.sub{color:#c9c4da;max-width:60ch;margin:6px 0 0;font-size:18px}
+#game{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#0b0914;box-shadow:0 30px 60px rgba(0,0,0,.5)}
 #game canvas{position:absolute;inset:0;width:100%!important;height:100%!important;display:block}
-#cash,#mstep,#stars,#obj{background:rgba(8,6,16,.6);padding:6px 10px;border-radius:10px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)} /* the HUD sits on its own dark, whatever the sky does */
+#cash,#mstep,#stars,#obj{background:rgba(8,6,16,.78);padding:6px 10px;border-radius:10px;opacity:0} /* the HUD sits on its own dark and stays hidden until the missions start, so nothing reads through the opening panel */
 .l3{font:400 16px Anton,Impact,sans-serif;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;line-height:1;text-shadow:0 0 12px var(--g,#fff),0 1px 0 #000,0 0 3px rgba(0,0,0,.9);-webkit-text-stroke:.5px rgba(0,0,0,.55)}
 .hud{position:absolute;font-family:Anton,Impact,sans-serif;letter-spacing:.02em;pointer-events:none;z-index:3}
 #cash{right:3%;top:4%;text-align:right}
-#cash .l{font-family:Inter;font-weight:600;font-size:clamp(9px,1.2vw,12px);letter-spacing:.2em;color:var(--mute)}
+#cash .l{font-family:Inter;font-weight:600;font-size:clamp(10px,1.3vw,13px);letter-spacing:.08em;color:#c9c4da}
 #cash .v{font-size:clamp(22px,4vw,44px);color:var(--cash);text-shadow:2px 2px 0 #0a2f17,0 0 14px rgba(92,240,138,.5);font-variant-numeric:tabular-nums;line-height:1}
 #cash .d{font-size:clamp(14px,2.2vw,22px);color:var(--cash);opacity:0;text-shadow:2px 2px 0 #0a2f17}
 #stars{right:3%;top:calc(4% + clamp(60px,8.8vw,96px));font-size:clamp(14px,2.4vw,24px);color:#fff;letter-spacing:.1em;text-shadow:2px 2px 0 #000;text-align:right}
-#stars .l{font-size:clamp(9px,1.3vw,12px);color:var(--mute);letter-spacing:.2em;font-family:Inter;font-weight:600}
+#stars .l{font-size:clamp(10px,1.3vw,13px);color:#c9c4da;letter-spacing:.08em;font-family:Inter;font-weight:600}
 #mstep{left:3%;top:4%;font-size:clamp(12px,1.8vw,18px);color:#fff;text-shadow:2px 2px 0 #000;letter-spacing:.1em}
 #mstep span{color:var(--obj)}
 #obj{left:3%;bottom:5%;max-width:60%;font-size:clamp(12px,2vw,20px);color:var(--obj);text-shadow:2px 2px 0 #000;line-height:1.15;text-transform:uppercase}
-#obj small{display:block;font-family:Inter;font-weight:600;font-size:clamp(9px,1.2vw,12px);color:#fff;letter-spacing:.14em;margin-bottom:4px}
+#obj small{display:block;font-family:Inter;font-weight:600;font-size:clamp(10px,1.3vw,13px);color:#fff;letter-spacing:.06em;margin-bottom:4px}
+/* the Service department: a button in the HUD and an overlay listing every question with its one-line answer */
+#svcBtn{position:absolute;left:50%;top:4%;transform:translateX(-50%);z-index:3;font:400 clamp(12px,1.6vw,16px) Anton,Impact,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(8,6,16,.78);border:0;border-radius:10px;padding:7px 14px;cursor:pointer}
+#svcBtn:hover{background:var(--magenta)}
+#svc{position:absolute;inset:0;z-index:6;display:none;background:rgba(7,6,12,.975);overflow:auto;padding:clamp(14px,3vw,32px)}
+#svc.on{display:block}
+#svc .hd{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;max-width:980px;margin:0 auto}
+#svc h2,#service h2{font:400 clamp(24px,3.4vw,38px)/1 Anton,Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em;margin:0}
+#svc h2 span,#service h2 span{color:var(--obj)}
+#svc .lead,#service .lead{color:#c9c4da;margin:6px 0 0;max-width:60ch;font-size:15px}
+#svcClose{font:600 13px Inter;padding:8px 14px;border-radius:999px;border:0;background:var(--panel2);color:#fff;cursor:pointer;flex:none}
+.svcGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;max-width:980px;margin:18px auto 0}
+.svcGrp h3{font:400 15px Anton,Impact,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--obj);margin:0 0 6px}
+.svcRow{display:block;width:100%;text-align:left;background:var(--panel);border:0;border-radius:10px;padding:10px 12px;margin:0 0 6px;color:var(--ink);cursor:pointer;font-family:Inter}
+.svcRow:hover,.svcRow:focus-visible{background:var(--panel2);outline:2px solid var(--magenta);outline-offset:-2px}
+.svcRow b{display:block;font:400 16px Anton,Impact,sans-serif;letter-spacing:.03em;text-transform:uppercase;color:#fff}
+.svcRow.seen b::before{content:'✓ ';color:var(--green2)}
+.svcRow span{display:block;font-size:13.5px;line-height:1.4;color:#c9c4da;margin-top:2px}
+/* the same board under the game, always in reach */
+#service{margin-top:28px;background:var(--panel);border-radius:16px;padding:22px 24px}
+#service .svcGrid{margin:16px 0 0;max-width:none}
+#service .svcRow{background:var(--bg)}#service .svcRow:hover{background:var(--panel2)}
+/* what's what: the legend under the game */
+#whats{display:flex;flex-wrap:wrap;gap:6px 22px;margin:12px 0 0;font-size:14px;color:#c9c4da}
+#whats b{color:#fff;font-weight:600}#whats i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:-1px}
 #phone{position:absolute;left:3%;top:calc(4% + clamp(26px,3.6vw,38px));width:clamp(190px,32%,330px);background:rgba(10,8,18,.9);border:1px solid #3a3550;border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;transform:translateX(-130%);pointer-events:none;z-index:3}
 #phone .who{font-family:Anton;font-size:12px;letter-spacing:.08em;color:var(--magenta);text-transform:uppercase}
 #phone .txt{font-size:clamp(11px,1.4vw,13.5px);line-height:1.35;color:#ece9f4;min-height:3em}
@@ -47,36 +71,34 @@ h1 span{color:var(--magenta)}
 #banner .mid{font-family:Anton;font-size:clamp(18px,3.4vw,40px);color:var(--cash);text-shadow:3px 3px 0 #000;margin-top:6px}
 #banner .sm{font-family:Inter;font-weight:600;font-size:clamp(11px,1.6vw,16px);color:#fff;text-shadow:2px 2px 0 #000;margin-top:8px;letter-spacing:.08em;text-transform:uppercase}
 /* captions shared by the truck story and the questions */
-#story{left:50%;bottom:14%;transform:translateX(-50%);width:min(88%,760px);text-align:center;opacity:0;z-index:4;background:rgba(8,6,16,.74);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px 18px}
-#storyK{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;margin-bottom:6px;font:600 10px Inter;letter-spacing:.14em;text-transform:uppercase;color:#ece9f4}#storyK:empty{display:none}#storyK i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+#story{left:50%;bottom:14%;transform:translateX(-50%);width:min(88%,760px);text-align:center;opacity:0;z-index:4;background:rgba(8,6,16,.86);border-radius:14px;padding:12px 18px}
+#storyK{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;margin-bottom:6px;font:600 12px Inter;letter-spacing:.04em;color:#ece9f4}#storyK:empty{display:none}#storyK i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:-1px}
 #storyT{font-family:Anton;font-size:clamp(16px,2.6vw,28px);line-height:1.15;color:#fff;text-shadow:3px 3px 0 #000,0 0 18px rgba(0,0,0,.8);text-transform:uppercase}
 #storyS{font-family:Inter;font-weight:600;font-size:clamp(11px,1.5vw,15px);color:var(--obj);text-shadow:2px 2px 0 #000;margin-top:6px}
 #qaNav{display:none;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:10px;pointer-events:auto;font-family:Inter}
 #qaNav button{font:600 12px Inter;padding:7px 14px;border-radius:999px;border:1px solid #3a3550;background:rgba(10,8,18,.9);color:#fff;cursor:pointer}
 #qaNav button.p{background:var(--magenta);border-color:transparent}
 #qaNav .n{font:600 11px Inter;color:var(--mute);align-self:center;letter-spacing:.1em}
-/* start screen */
-#start{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(7,6,12,.55);backdrop-filter:blur(2px);text-align:center;padding:20px}
-#start .t{font-family:Anton;font-size:clamp(28px,6vw,64px);text-transform:uppercase;color:#fff;text-shadow:4px 4px 0 #000,0 0 30px rgba(214,93,177,.8);line-height:1}
-#start .t span{color:var(--magenta)}
-#start p{max-width:520px;color:#ece9f4;font-size:clamp(12px,1.6vw,15px);margin:10px 0 16px;text-shadow:1px 1px 0 #000}
+/* the opening: a billboard on the left of the city, no blur, the city clear behind it */
+#start{position:absolute;inset:0;z-index:5;display:flex;align-items:center;padding:3%;pointer-events:none} /* the city stays draggable beside the panel */
+#open{width:min(58%,600px);background:rgba(8,6,16,.88);border-radius:14px;padding:clamp(14px,2.4vw,28px) clamp(16px,2.6vw,30px);pointer-events:auto}
+#open .ln{font-family:Anton,Impact,sans-serif;font-size:clamp(20px,3.3vw,40px);line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:.01em;margin:0}
+#open .ln span{color:var(--obj)}#open .ln:nth-child(2) span{color:var(--green2)}#open .ln:nth-child(3) span{color:#c9bdfd}
+#open p{color:#ece9f4;font-size:clamp(12px,1.45vw,15.5px);line-height:1.5;margin:12px 0 0;max-width:60ch}
+#open .live{color:var(--cash);font-weight:600;margin-top:8px}
+#open .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;align-items:center}
 .btn{font-family:Anton;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(14px,2vw,20px);padding:12px 26px;border-radius:8px;border:0;background:var(--magenta);color:#fff;cursor:pointer;box-shadow:4px 4px 0 #000;transition:.15s}
 .btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 #000}
 .btn.g{background:var(--green)}
-.btn.q{background:var(--panel2);color:var(--ink);border:1px solid var(--line)}
-.qs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:14px}
-.qs .k{width:100%;font:600 10px Inter;letter-spacing:.2em;color:var(--mute);text-transform:uppercase;text-shadow:1px 1px 0 #000}
-.qs button{font:600 12px Inter;padding:6px 11px;border-radius:999px;border:1px solid #3a3550;background:rgba(10,8,18,.85);color:#ece9f4;cursor:pointer}
-.qs button.seen{border-color:#2f8a55;color:#9ff0b8}.qs button.seen::before{content:'✓ '} /* watched to the end */
-.qs button:hover{border-color:var(--magenta)}
+.btn.q{background:var(--panel2);color:var(--ink)}
+.btn.sm{font-size:clamp(12px,1.5vw,15px);padding:9px 16px;box-shadow:none}
 /* mission panel (in-game) */
 #panel{position:absolute;right:3%;top:calc(4% + clamp(104px,15.6vw,170px));width:clamp(220px,34%,360px);bottom:5%;z-index:3;display:none}
 #panel .m{background:rgba(10,8,18,.9);border:1px solid #3a3550;border-radius:12px;padding:12px 14px;max-height:100%;overflow:auto;display:none}
 #panel .m.on{display:block}
 .m .t{font-family:Anton;font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--obj)}
-.m .t i{font-style:normal;color:var(--mute);font-size:12px;margin-right:6px}
-.m .why{font-size:12px;color:#c9c4da;margin:2px 0 8px;line-height:1.4}
-label.l{display:flex;justify-content:space-between;align-items:baseline;font-size:11.5px;color:var(--mute);margin:10px 0 3px}
+.m .why{font-size:13px;color:#c9c4da;margin:2px 0 8px;line-height:1.4}
+label.l{display:flex;justify-content:space-between;align-items:baseline;font-size:12.5px;color:#c9c4da;margin:10px 0 3px}
 label.l b{color:var(--ink);font-size:14px;font-family:Anton;letter-spacing:.04em}
 input[type=range]{width:100%;accent-color:var(--magenta)}
 .chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
@@ -88,30 +110,31 @@ select,.store input{background:var(--panel2);color:var(--ink);border:1px solid v
 .store input{padding:5px 6px;width:100%;margin:0}.store select{margin:0}
 .store .x{background:none;border:0;color:var(--mute);cursor:pointer;font-size:14px}
 .store .you{font:600 9px Inter;color:var(--obj);letter-spacing:.1em}
-.fine{color:var(--mute);font-size:11.5px;line-height:1.45;margin-top:8px}
+.fine{color:#a9a3bd;font-size:13px;line-height:1.45;margin-top:8px;max-width:90ch}
+#legal{margin-top:14px;color:#a9a3bd;font-size:13px;max-width:72ch}#legal summary{cursor:pointer;color:#c9c4da}#legal p{max-width:90ch}
 .next{margin-top:12px;width:100%}
 details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:pointer;color:var(--ink)}
 /* sheet */
 .sheet{margin-top:14px;display:none;grid-template-columns:1.2fr 1fr;gap:12px}
 .sheet.on{display:grid}
 @media (max-width:860px){.sheet{grid-template-columns:1fr}}
-.hero{background:linear-gradient(135deg,#0f1a14,#14121c 60%);border:1px solid var(--green);border-radius:16px;padding:18px 20px}
-.hero .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.hero{background:#0f1a14;border:1px solid var(--green);border-radius:16px;padding:18px 20px}
+.hero .k{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#c9c4da}
 .hero .n{font:400 clamp(44px,6vw,64px)/1 Anton;color:var(--cash);margin:6px 0 2px;text-shadow:2px 2px 0 #0a2f17;font-variant-numeric:tabular-nums}
 .hero .u{font:400 22px Anton;letter-spacing:.03em;margin-top:4px;text-transform:uppercase;color:var(--obj)}
 .hero .s{color:var(--mute);font-size:13px;margin-top:8px}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
-.stat .k{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.stat .k{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#c9c4da}
 .wins .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}.wins .h{font-family:Anton;font-size:16px;letter-spacing:.04em;text-transform:uppercase;color:var(--obj)}.wins ul{margin:6px 0 0;padding-left:18px;font-size:13px;line-height:1.45}.wins li{margin:4px 0}
 .stat .n{font:400 26px/1.1 Anton;margin:6px 0 3px;font-variant-numeric:tabular-nums}
-.stat .s{font-size:11.5px;color:var(--mute)}
+.stat .s{font-size:12.5px;color:#a9a3bd}
 .stat.me{border-color:var(--purple)}.stat.me .n{color:#c9bdfd}
 .stat ul{margin:8px 0 0;padding-left:18px;font-size:13px;line-height:1.5;color:#c9c4da}.stat ul b{color:#ece9f4}
 .row{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-top:1px solid var(--line)}.row span:last-child{font-variant-numeric:tabular-nums;color:var(--cash)}
 #owner .row span:last-child{color:#c9bdfd}
 .cta{display:inline-block;margin-top:14px;background:var(--magenta);color:#fff;font-family:Anton;letter-spacing:.06em;font-size:18px;padding:12px 22px;border-radius:8px;text-decoration:none;text-transform:uppercase;box-shadow:4px 4px 0 #000}
-@media (max-width:760px){.wins .cols{grid-template-columns:1fr}#panel{position:static;width:auto;display:none;margin-top:12px}#panel.on{display:block}#panel .m{max-height:none;background:var(--panel)}#game{aspect-ratio:3/4}#story{bottom:3%;padding:8px 10px}#storyT{font-size:15px}#storyS{font-size:11px;margin-top:4px}#storyK{font-size:9px;gap:2px 10px;margin-bottom:4px}#qaNav{gap:6px;margin-top:6px}#qaNav button{padding:5px 10px;font-size:11px}#start{justify-content:flex-start;overflow:auto;padding:28px 14px}#start .t{font-size:30px}#start p{margin:8px 0 12px}.qs{margin-top:10px}.qs button{font-size:11px;padding:5px 9px}}
+@media (max-width:760px){.wins .cols{grid-template-columns:1fr}#panel{position:static;width:auto;display:none;margin-top:12px}#panel.on{display:block}#panel .m{max-height:none;background:var(--panel)}#game{aspect-ratio:3/4}#story{bottom:3%;padding:8px 10px}#storyT{font-size:15px}#storyS{font-size:11px;margin-top:4px}#storyK{font-size:9px;gap:2px 10px;margin-bottom:4px}#qaNav{gap:6px;margin-top:6px}#qaNav button{padding:5px 10px;font-size:11px}#start{align-items:flex-end;overflow:auto;padding:10px}#open{width:100%;padding:14px 14px 12px}#open .ln{font-size:22px}#open p{font-size:13px;margin-top:8px}#open .acts{margin-top:10px;gap:6px}#open .btn{font-size:14px;padding:9px 14px}.svcGrid{grid-template-columns:1fr}#svcBtn{padding:6px 10px;top:auto;bottom:5%;left:auto;right:3%;transform:none}#service{padding:16px}#whats{font-size:13px;gap:4px 14px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 @media print{body{background:#fff;color:#111}#game,#panel,.sheet,.btn,.cta{display:none!important}#owner{display:block!important}.stat,.hero{background:#fff!important;border-color:#ccc!important;color:#111}.stat .n,.hero .n,.hero .u{color:#111!important;text-shadow:none!important}.stat .k,.stat .s,.hero .k,.hero .s,.fine{color:#444!important}h1{color:#111;text-shadow:none}h1 span{color:#111}}
 </style>
@@ -128,14 +151,16 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
   <div id="phone"><svg viewBox="0 0 60 60" id="rockyFace" aria-hidden="true"></svg><div><div class="who" id="who"></div><div class="txt" id="phoneT"></div></div></div>
   <div class="hud" id="story" aria-live="polite"><div id="storyK"></div><div id="storyT"></div><div id="storyS"></div><div id="qaNav"><button id="qaPrev">← Back</button><span class="n" id="qaN"></span><button id="qaNext" class="p">Next →</button><button id="qaAuto">Auto-play ▶</button><button id="qaLoad" style="display:none">Load this group</button><button id="qaClose">Close ✕</button></div></div>
   <div id="banner"><div class="big" id="bannerBig">Mission <span>Passed</span></div><div class="mid" id="bannerMid"></div><div class="sm" id="bannerSm"></div></div>
-  <div id="start"><div class="t" id="startT"></div><p id="startP"></p><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><button class="btn" id="tourBtn">Start here ▶</button><button class="btn q" id="startBtn" disabled style="opacity:.5">Loading the city…</button><button class="btn q" id="howBtn">How is it paid for? ▶</button></div><div class="qs" id="qs1"><span class="k">Common questions</span></div></div>
+  <button id="svcBtn" type="button">Service dept ▾</button>
+  <div id="svc" role="dialog" aria-labelledby="svcH"><div class="hd"><div><h2 id="svcH">Service <span>department</span></h2><p class="lead">Pull in with a question. Each answer plays on the cars in under a minute, and you can leave whenever you like.</p></div><button id="svcClose" type="button">Close ✕</button></div><div class="svcGrid" id="svcList"></div></div>
+  <div id="start"><div id="open"><div id="openLines"></div><p id="startP"></p><p class="live" id="openLive"></p><div class="acts"><button class="btn" id="tourBtn">How it works · 90 seconds ▶</button><button class="btn g" id="startBtn" disabled style="opacity:.5">Loading the city…</button><button class="btn q sm" id="openSvc" type="button">Jump to a question ▾</button></div></div></div>
   <div id="panel">
-    <div class="m on" id="m1"><div class="t"><i>01</i><span id="m1T"></span></div><div class="why" id="m1W"></div>
+    <div class="m on" id="m1"><div class="t"><span id="m1T"></span></div><div class="why" id="m1W"></div>
       <div id="stores"></div>
       <button class="btn next q" id="addStore" style="font-size:14px;box-shadow:none" data-t>+ Add a {site}</button>
       <div class="fine" id="groupLine"></div>
       <button class="btn next" id="n1">Next: your plans →</button></div>
-    <div class="m" id="m2"><div class="t"><i>02</i>Your plans</div><div class="why">The payroll side first, then your health plan. If you're self-funded or level-funded, there is a second way this pays.</div>
+    <div class="m" id="m2"><div class="t">Your plans</div><div class="why">The payroll side first, then your health plan. If you're self-funded or level-funded, there is a second way this pays.</div>
       <label class="l" for="qual"><span>Share who qualify and enroll</span><b id="qualV">80%</b></label><input type="range" id="qual" min="40" max="100" value="80">
       <div class="fine">Plan level</div><div class="toggle" id="plan"></div>
       <div class="fine" style="margin-top:12px">How is your health plan funded?</div>
@@ -146,7 +171,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
         <div class="fine">Virtual primary care, urgent care, therapy and generics at $0 are the first stop, so some visits and fills never reach your plan. Dependents are included. Your TPA's 12-month claims summary sets the real number; this slider is only an illustration.</div>
       </div>
       <button class="btn next" id="n2">Next: your pay plan →</button></div>
-    <div class="m" id="m3"><div class="t"><i>03</i>Your pay plan</div><div class="why">What your bonus is figured on, and how.</div>
+    <div class="m" id="m3"><div class="t">Your pay plan</div><div class="why">What your bonus is figured on, and how.</div>
       <div class="fine">I'm paid on</div><div class="toggle" id="scope"><button data-v="store" class="on" data-t>My {site}</button><button data-v="group" data-t>The whole {group}</button></div>
       <div class="fine" style="margin-top:8px">How</div><div class="toggle" id="mode"><button data-v="all" class="on">Share of all net</button><button data-v="above">Share of net above target</button></div>
       <label class="l" for="share"><span id="shareLabel">Your share</span><b id="shareV">5%</b></label><input type="range" id="share" min="1" max="40" value="5" step="0.5">
@@ -159,6 +184,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
       <button class="btn next g" id="n3">Show me the money →</button></div>
   </div>
 </div>
+<p id="whats"><b>What you're looking at.</b><span><i style="background:var(--obj)"></i>The city is your group; the lot in the middle is your store</span><span><i style="background:var(--cash)"></i>The counter is store net with the plan</span><span><i style="background:var(--magenta)"></i>The two cars answer the questions, part by part</span><span><i style="background:#c9bdfd"></i>Drag to look around</span></p>
 
 <div class="sheet" id="sheet">
   <div class="hero"><div class="k" id="liftK">Net profit added, per year</div><div class="n" id="lift">$0</div><div class="u" id="units"></div><div class="s" id="liftS"></div>
@@ -176,9 +202,9 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
     <div><div class="h" data-t>Your {site}</div><ul><li><b id="winLift"></b> <span id="winLiftS"></span></li><li><b>Richer benefits with nothing added to the benefits budget.</b> The fee comes out of the saving.</li><li><b>Self-funded or level-funded:</b> everyday visits that never reach the company plan, shown as its own tile when you choose that in mission two.</li></ul></div></div>
     <div class="fine" style="margin:10px 0 0"><b>Possible, not counted here.</b> Workers' comp: some carriers have recognized the lower reportable payroll. Ask your broker.</div></div>
   <div class="stat" style="grid-column:1/-1"><div class="k" data-t>What the {site} gets</div><ul id="gets"></ul>
-    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn q" id="howBtn2">How is it paid for? ▶</button><button class="btn g" id="ownerBtn" data-t>Want a version to share with the {owners}? See it now →</button><span class="fine" style="margin:0" data-t>One page, the {group}'s numbers, no bonus math. Comes with a link you can send.</span></div>
-    <div class="qs" id="qs2" style="justify-content:flex-start"><span class="k">Common questions, answered in the city</span></div></div>
+    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn q" id="howBtn2">How is it paid for? ▶</button><button class="btn g" id="ownerBtn" data-t>Want a version to share with the {owners}? See it now →</button><span class="fine" style="margin:0" data-t>One page, the {group}'s numbers, no bonus math. Comes with a link you can send.</span></div></div>
 </div>
+<section id="service" aria-labelledby="serviceH"><h2 id="serviceH">Service <span>department</span></h2><p class="lead">Every question a GM has asked, answered on the cars in under a minute each. Pick one; it plays in the city above.</p><div class="svcGrid" id="svcList2"></div></section>
 <div id="owner" style="display:none;margin-top:14px">
   <div class="hero" style="border-color:var(--purple)"><div class="k" data-t>For the {owner} · prepared by your {roleLong}</div><div class="n" id="oLift" style="color:#c9bdfd;text-shadow:none">$0</div><div class="u" id="oUnits" style="color:var(--obj)"></div><div class="s" id="oLiftS"></div>
     <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap"><a class="cta" href="/#contact" style="background:var(--purple)">Run the payroll analysis →</a><button class="btn q" id="oCopy" style="box-shadow:none;font-size:14px">Copy link</button><button class="btn q" id="oPrint" style="box-shadow:none;font-size:14px">Print / save PDF</button><button class="btn" id="oBack" style="background:transparent;color:var(--mute);box-shadow:none;font-size:14px">← Back to the city</button></div></div>
@@ -190,14 +216,15 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
   </div>
   <div class="stat" style="margin-top:10px"><div class="k" data-t>{Site} by {site}</div><div id="oPer" style="font-size:13px;margin-top:6px"></div></div>
   <div class="stat" style="margin-top:10px"><div class="k">How it works</div><ul>
-    <li>Employees who enroll elect a pre-tax contribution under a Section 125 plan. It funds $0 virtual primary care, urgent care, therapy, dermatology, 70-plus generics and coaching for them and their dependents.</li>
+    <li>Employees who enroll elect a pre-tax contribution under a Section 125 Wellness Plan. It funds $0 virtual primary care, urgent care, therapy, dermatology, 70-plus generics and coaching for them and their dependents.</li>
     <li data-t>Their taxable wages drop, so each {site} pays less FICA. After the plan's administration fee, that is the per-employee figure above, and it lands on the P&amp;L as net.</li>
     <li>When an employee completes qualifying care, a wellness reward comes back on the same paycheck. Only employees who come out ahead are enrolled.</li>
     <li id="oHowClaims" style="display:none">The $0 care is the first stop, so some visits and prescriptions never reach the company's self-funded or level-funded plan.</li>
     <li data-t>It sits alongside major medical and never replaces it. Nothing is signed on these numbers; a payroll analysis confirms who qualifies and what each {site} saves.</li></ul></div>
 </div>
+<details id="legal"><summary>Illustrative only. Every number here is an estimate until a payroll analysis confirms it, and nothing is signed on these numbers. The fine print, benchmark sources and the full disclaimer are here.</summary>
 <p class="fine" style="margin-top:14px" id="sources"></p>
-<p class="fine" style="margin-top:8px">Illustrative only. No specific tax outcome is guaranteed; results depend on a payroll analysis and on current federal and state law. Employer figures use the plan's published per-employee math (the monthly pre-tax contribution × 7.65% FICA, less the plan's administration fee) and leave out any workers' compensation, FUTA or SUTA effect. Revenue, margin and pay-plan figures are industry averages or your own entries, not a forecast for your store. Participation is voluntary; employees typically see higher take-home pay, though some do not. This is a fixed indemnity benefit, not health insurance; it sits alongside, not in place of, major medical. Wellness payments above an employee's unreimbursed medical expenses may be taxable to the employee. This is a marketing communication, not legal, tax, accounting or financial advice. Not affiliated with any video game or its publisher.</p>
+<p class="fine" style="margin-top:8px">Illustrative only. No specific tax outcome is guaranteed; results depend on a payroll analysis and on current federal and state law. Employer figures use the plan's published per-employee math (the monthly pre-tax contribution × 7.65% FICA, less the plan's administration fee) and leave out any workers' compensation, FUTA or SUTA effect. Revenue, margin and pay-plan figures are industry averages or your own entries, not a forecast for your store. Participation is voluntary; employees typically see higher take-home pay, though some do not. This is a fixed indemnity benefit, not health insurance; it sits alongside, not in place of, major medical. Wellness payments above an employee's unreimbursed medical expenses may be taxable to the employee. This is a marketing communication, not legal, tax, accounting or financial advice. Not affiliated with any video game or its publisher.</p></details>
 </div>
 
 <script>
@@ -214,8 +241,9 @@ const t=s=>s.replace(/\{(\w+)\}/g,(_,k)=>k in W?W[k]:_);
 const colorOf=b=>(LABELS.find(x=>x[0]===b)||LABELS[0])[1];
 const sitesN=n=>`${n} ${n===1?W.site:W.sites}`;
 document.title=SEC.title.join(' ');document.querySelector('meta[name=description]').content=SEC.meta;
-$('#h1').innerHTML=$('#startT').innerHTML=`${esc(SEC.title[0])} <span>${esc(SEC.title[1])}</span>`;
-$('#sub').textContent=C.sub;$('#startP').textContent=C.start;$('#m1T').textContent=C.m1[0];$('#m1W').textContent=C.m1[1];$('#who').textContent=C.who;$('#cta').textContent=C.cta;$('#unitLabel').textContent=W.sale;
+$('#h1').innerHTML=`${esc(SEC.title[0])} <span>${esc(SEC.title[1])}</span>`;
+$('#openLines').innerHTML=C.open.lines.map(([a,b])=>`<p class="ln"><span>${esc(t(a))}</span> ${esc(t(b))}</p>`).join('');
+$('#sub').textContent=C.sub;$('#startP').textContent=t(C.open.para);$('#m1T').textContent=C.m1[0];$('#m1W').textContent=C.m1[1];$('#who').textContent=C.who;$('#cta').textContent=C.cta;$('#unitLabel').textContent=W.sale;
 $('#benchNote').textContent=SEC.bench.note;$('#sources').textContent='Benchmark sources: '+SEC.bench.sources.join('; ')+'.';
 document.querySelectorAll('[data-t]').forEach(el=>{el.innerHTML=t(el.innerHTML)});
 for(const k of ['rpe','margin','unit']){const [v,lo,hi,st]=SEC.bench[k],el=$('#'+k);el.min=lo;el.max=hi;el.step=st;el.value=v}
@@ -268,10 +296,12 @@ function update(){
   $('#winLift').textContent=`${fmt(m.base.lift)} a year in payroll tax ${S.scope==='group'?'the '+W.group:'your '+W.site} no longer sends out.`;$('#winLiftS').textContent=`${m.base.enrolled.toLocaleString()} enrolled × ${fmt2(m.per)} a month × 12.`;
   $('#gets').innerHTML=gets.map(([b,s])=>`<li><b>${esc(b)}</b> ${esc(s)}</li>`).join('');
   $('#perStore').innerHTML=m.stores.map((st,i)=>`<div class="row"><span>${i?'':'<b style="color:var(--obj)">YOU · </b>'}${esc(st.brand)} · ${esc(st.state)} · ${st.emp} employees</span><span>+${fmt(st.lift)}</span></div>`).join('');
+  $('#openLive').textContent=C.open.live(m.my.emp.toLocaleString(),'+'+fmt(m.my.lift),Math.round(m.unitsOf(m.my.lift)).toLocaleString()); // the opening's live line follows the GM's own store
   if(window.city){const gk=JSON.stringify(S.stores);if(gk!==update.gk){update.gk=gk;window.city.setGroup(m.stores.map(st=>({emp:st.emp,color:colorOf(st.brand),brand:st.brand})))}window.city.setRing(m.g.enrolled/Math.max(1,m.g.emp))} // rebuild the city only when the sites change
 }
 window.cityReady=()=>{update.gk=null;update();enableStart()};
-function enableStart(){const b=$('#startBtn');if(!b.disabled)return;b.disabled=false;b.style.opacity=1;b.textContent='Skip to the missions'}
+function enableStart(){const b=$('#startBtn');if(!b.disabled)return;b.disabled=false;b.style.opacity=1;b.textContent=t('Build my {site} →')}
+const HUD=['#cash','#stars','#mstep','#obj'];
 setTimeout(enableStart,7000); // the numbers work without the city (no WebGL, blocked CDN); do not keep a GM waiting
 
 function say(n,m){const x=C.lines[n].replace('{n}',S.stores.length).replace('{emp}',m.g.emp.toLocaleString()).replace('{enrolled}',m.g.enrolled.toLocaleString()).replace('{lift}',fmt(m.g.lift)).replace('{bonus}','+'+fmt(m.bonusDelta)).replace('{units}',Math.round(m.units).toLocaleString());
@@ -283,7 +313,7 @@ function banner(big,mid,sm){const b=$('#banner');$('#bannerBig').innerHTML=big;$
   gsap.timeline().set(b,{opacity:1}).fromTo('#bannerBig',{scale:2.2,opacity:0},{scale:1,opacity:1,duration:.35,ease:'power4.out'}).fromTo('#bannerMid',{y:20,opacity:0},{y:0,opacity:1,duration:.3},'-=.1').fromTo('#bannerSm',{opacity:0},{opacity:1,duration:.3}).to(b,{opacity:0,duration:.5,delay:1.8});}
 function go(n){step=n;$('#mstepV').textContent=Math.min(3,n);document.querySelectorAll('#panel .m').forEach((el,i)=>el.classList.toggle('on',i===n-1));$('#objT').textContent=C.obj[n];}
 const phoneLayout=()=>{if(matchMedia('(max-width:760px)').matches)$('#game').after($('#panel'))};
-$('#startBtn').onclick=()=>{phoneLayout();gsap.to('#start',{opacity:0,duration:.4,onComplete:()=>$('#start').style.display='none'});$('#panel').style.display='block';$('#panel').classList.add('on');go(1);say(0,model());if(window.city)window.city.flyIn()};
+$('#startBtn').onclick=()=>{phoneLayout();gsap.to('#start',{opacity:0,duration:.4,onComplete:()=>$('#start').style.display='none'});gsap.to(HUD,{opacity:1,duration:.5});$('#panel').style.display='block';$('#panel').classList.add('on');go(1);say(0,model());if(window.city)window.city.flyIn()};
 $('#n1').onclick=()=>{const m=model();banner('Mission <span>Passed</span>',`${sitesN(S.stores.length)}, ${m.g.emp.toLocaleString()} on payroll`,'Your '+W.group);say(1,m);go(2);if(window.city){window.city.celebrate(1);window.city.cue(1)}};
 $('#n2').onclick=()=>{const m=model();banner('Mission <span>Passed</span>','+'+fmt(m.g.lift)+' net','Your plans');say(2,m);go(3);if(window.city){window.city.celebrate(2);window.city.cue(2)}};
 $('#n3').onclick=()=>{const m=model();banner('<span>Respect</span> +',fmt(m.base.lift)+' net, '+W.zero,'Illustrative. Confirmed by a payroll analysis before anything is signed.');say(3,m);go(4);$('#sheet').classList.add('on');if(window.city){window.city.celebrate(3);window.city.cue(3)}setTimeout(()=>$('#sheet').scrollIntoView({behavior:'smooth',block:'start'}),2600)};
@@ -311,20 +341,20 @@ $('#oPrint').onclick=()=>window.print();
 /* ---------- captions over the city, shared by the truck story and the questions ---------- */
 function caption(h,s){$('#storyT').textContent=h;$('#storyS').textContent=s;gsap.fromTo('#story',{opacity:0,y:10},{opacity:1,y:0,duration:.4})}
 let busy=false; // one scene at a time: the truck story or a question
-function dimHud(on){$('#panel').style.visibility=on?'hidden':'visible';gsap.to(['#cash','#stars','#mstep','#obj'],{opacity:on?0:1,duration:.4});if(on){gsap.to('#phone',{x:'-130%',duration:.3});if(getComputedStyle($('#start')).display!=='none')gsap.to('#start',{opacity:0,duration:.3,onComplete:()=>$('#start').style.display='none'})}
-  else{gsap.to('#story',{opacity:0,duration:.5});if(step===0){$('#start').style.display='';gsap.to('#start',{opacity:1,duration:.4})}}}
+function dimHud(on){$('#panel').style.visibility=on?'hidden':'visible';gsap.to(HUD,{opacity:on||step===0?0:1,duration:.4});$('#svcBtn').style.display=on?'none':'';if(on){gsap.to('#phone',{x:'-130%',duration:.3});if(getComputedStyle($('#start')).display!=='none')gsap.to('#start',{opacity:0,duration:.3,onComplete:()=>$('#start').style.display='none'})}
+  else{gsap.to('#story',{opacity:0,duration:.5});if(step===0){$('#start').style.display='';gsap.to('#start',{opacity:1,duration:.4})}}} // before the missions the HUD stays dark: nothing reads through the opening
 
-/* "How is it paid for?": the truck */
+/* "How is it paid for?": the truck. `after` chains the guided path on without showing the opening in between. */
 function storyLines(){const m=model();return [
   ['Payroll tax leaves the company every pay period.',t(`On $${S.plan.toLocaleString()} of one enrolled employee's monthly pay: ${fmt2(m.fica)} from the {site}, ${fmt2(m.fica)} from the employee, plus their income tax. The truck is that money.`)],
-  ['With the plan, the truck stops here.',`The $${S.plan.toLocaleString()} goes into the Section 125 plan pre-tax, so that tax is never owed. Now the load gets redirected.`],
+  ['With the plan, the truck stops here.',`The $${S.plan.toLocaleString()} goes into the Section 125 Wellness Plan pre-tax, so that tax is never owed. Now the load gets redirected.`],
   [t('The {owner}\'s car: the {site} keeps its share.'),t(`${fmt2(m.per)} a month per enrolled employee stays with the {site}. That is the net lift on the P&L.`)],
   ['The employees\' car: more take-home, $0 care.','Their tax savings fund $0 doctor visits, urgent care, therapy and generics for the family, and the wellness reward comes back on the same check. The payroll analysis shows each person\'s number before anything is signed.'],
   ['The administrator\'s motorcycle: the fee.',`${fmt2(m.admin)} a month per enrolled employee runs the plan: enrollment, claims, compliance and audit defense.`],
   ['Nothing else changes.',t('Major medical stays exactly as it is. What was never tax-free is still paid as tax. A payroll analysis confirms the numbers for your {group} before anything is signed.')]]}
-function runStory(){if(busy||!window.city)return;busy=true;$('#storyK').innerHTML='';$('#qaNav').style.display='none';dimHud(true);
-  window.city.story(i=>caption(...storyLines()[i]),()=>{dimHud(false);busy=false})}
-$('#howBtn').onclick=runStory;$('#howBtn2').onclick=()=>{$('#game').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(runStory,500)};
+function runStory(after){if(busy||!window.city){if(typeof after==='function')after();return}busy=true;$('#storyK').innerHTML='';$('#qaNav').style.display='none';dimHud(true);
+  window.city.story(i=>caption(...storyLines()[i]),()=>{busy=false;if(typeof after==='function')after();else dimHud(false)})}
+$('#howBtn2').onclick=()=>{$('#game').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(runStory,500)};
 
 /* ---------- common questions, answered on two cars ----------
    lit: which parts of our car light up (wheels = the complimentary benefits, body = the employee's tax saving, engine = the employer's tax saving, windows = the Section 125 plan).
@@ -335,7 +365,7 @@ const QUESTIONS=[
   {h:'Complimentary benefits.',s:'$0 virtual primary care, urgent care, therapy, dermatology, 70-plus generics and coaching, for the employee and their family. No copay, no claim.',lit:{wheels:1}},
   {h:'Tax savings for the employee.',s:'The contribution is pre-tax, so the same paycheck takes home more, and the wellness reward comes back on it. The payroll analysis shows each person\'s number before anything is signed.',lit:{body:1}},
   {h:'Tax savings for the {site}.',s:'Lower taxable wages mean less FICA: {fica} a month per enrolled employee, {per} after the plan\'s fee. That is net.',lit:{engine:1}},
-  {h:'All of it inside a Section 125 plan.',s:'One more plan document beside the ones you have. The pre-tax election is what makes the tax math work. Nothing is signed on these numbers.',lit:{windows:1}},
+  {h:'All of it inside a Section 125 Wellness Plan.',s:'One more plan document beside the ones you have. The pre-tax election is what makes the tax math work. Nothing is signed on these numbers.',lit:{windows:1}},
   {h:'Major medical stays exactly where it is.',s:'Some care overlaps, and that is fine. This one is easy, convenient and has no copays, so people actually use it: participation runs high.',mm:1,lit:{wheels:1}},
   {h:'Out of the tailpipe.',s:'Major medical is a cost. This one is a net saving: {per} a month per enrolled employee lands on the P&L.',mm:1,exhaust:1,lit:{engine:1}},
   {h:'Self-funded or level-funded?',s:'Then this is the first stop for everyday care, and the visits and fills it handles never reach the company plan. That is the strongest case for it.',mm:1,exhaust:1,lit:{wheels:1,engine:1}}]},
@@ -361,7 +391,8 @@ const QUESTIONS=[
  {q:'Is this legal? Who stands behind it?',beats:[
   {h:'Three firms have reviewed it in writing.',s:'Outside ERISA counsel: the program complies with existing legal requirements. CBIZ: the plan document meets the Section 125 requirements. KCP, a CPA firm: the tax treatment is supported by substantial authority under current law.',lit:{windows:1}},
   {h:'Nobody says IRS-approved, because nobody can.',s:'Opinion letters are not binding on the IRS. Each one is conditioned on the plan being run as written, which is what the administrator and the payroll analysis are for.',lit:{windows:1}},
-  {h:'If the IRS asks, KCP answers.',s:'KCP signs an audit-defense engagement directly with the {site}, under its terms. Your CPA and counsel can review the documents before anything is signed.',lit:{windows:1,engine:1}}]},
+  {h:'If the IRS asks, KCP answers.',s:'KCP signs an audit-defense engagement directly with the {site}, under its terms. Your CPA and counsel can review the documents before anything is signed.',lit:{windows:1,engine:1}},
+  {h:'Section 125 itself dates from 1978.',s:'The Revenue Act of 1978 added it to the tax code, and large employers have run pre-tax benefit plans under it for decades. The wellness plan is one more plan written to that section.',lit:{windows:1}}]},
  {q:'Who qualifies? Porters, flat-rate, part-time, me?',beats:[
   {h:'Every department.',s:'Sales, F&I, service, parts, the office, porters and detailers. Commission, flat-rate and hourly pay plans all work, full-time and part-time W-2. The payroll analysis sets each person\'s plan level by wages.',lit:{body:1,wheels:1}},
   {h:'One condition the one-pager skips.',s:'The employee has to be covered by an ACA-compliant group health plan, yours or a spouse\'s. Someone who declined coverage is not in. The analysis counts only the people who qualify.',mm:1,lit:{windows:1}},
@@ -373,33 +404,44 @@ const QUESTIONS=[
  {q:'Will it cut my workers\' comp?',beats:[
   {h:'Not in these numbers.',s:'This page counts federal payroll tax only. Workers\' comp, FUTA and SUTA are left out on purpose.',lit:{}},
   {h:'Ask your broker, not this page.',s:'Some carriers have recognized the lower reportable payroll and cut the premium. Treatment varies by carrier, state and class code, so confirm it before counting on it.',lit:{engine:1}}]}];
-const LEG={wheels:['#d65db1','Complimentary benefits'],body:['#22a85e','Employee tax saving'],engine:['#ffd166','{Site} tax saving'],windows:['#8366ea','Section 125 plan']};
-// the Start-here prologue: the value statement in five short beats, then What is this?, then the missions
-const PROLOGUE={q:'Start here',beats:[
- {h:'Everything costs more this year.',s:'Payroll, parts, floor plan, the health plan. Here is one line that goes the other way.',lit:{}},
- {h:'Most benefits are a cost. This one is designed to be cost-neutral.',s:'The administration fee comes out of the payroll-tax saving, never out of the {site}.',mm:1,exhaust:1,lit:{engine:1}},
- {h:'Your people win twice.',s:'$0 care for the family, and more take-home on the same check.',lit:{wheels:1,body:1}},
- {h:'Your {site} wins twice.',s:'Lower payroll tax, and richer benefits with nothing added to the budget.',lit:{engine:1},exhaust:1},
- {h:'Section 125 has been in the tax code since 1978.',s:'Large employers have used it for decades. Your {site} can too. Here is what it is.',lit:{windows:1}}]};
+const LEG={wheels:['#d65db1','Complimentary benefits'],body:['#22a85e','Employee tax saving'],engine:['#ffd166','{Site} tax saving'],windows:['#8366ea','Section 125 Wellness Plan']};
+// the guided path: two beats over the city (scene:'city' keeps the city and moves the camera to `cue`), the truck story, two beats on the cars, then the missions
+const ORIENT={q:'How it works',beats:C.orient.map(b=>({...b,scene:'city',lit:{}}))}, LANDING={q:'How it works',beats:C.landing};
 const fill=(s,m)=>t(s).replace(/\{per\}/g,fmt2(m.per)).replace(/\{fica\}/g,fmt2(m.fica)).replace(/\{admin\}/g,fmt2(m.admin));
 let qa=null; // {q,i,tour} while a question is open
 let auto=false,autoPref=false,autoT=null; // auto-play: the tour always, otherwise the viewer's last choice
 function schedule(){clearTimeout(autoT);if(!auto||!qa)return;const b=qa.q.beats[qa.i];autoT=setTimeout(()=>{if(!qa||!auto)return;if(qa.i<qa.q.beats.length-1){qa.i++;beat()}else closeQ()},2800+38*(b.h.length+b.s.length))} // reading time, roughly
-function beat(){const b=qa.q.beats[qa.i],m=model();caption(fill(b.h,m),fill(b.s,m));$('#storyK').innerHTML=Object.keys(b.lit||{}).filter(k=>b.lit[k]).map(k=>`<span><i style="background:${LEG[k][0]}"></i>${t(LEG[k][1])}</span>`).join('');$('#qaN').textContent=`${qa.i+1} / ${qa.q.beats.length}`;$('#qaPrev').style.visibility=qa.i?'visible':'hidden';$('#qaNext').textContent=qa.i<qa.q.beats.length-1?'Next →':'Done ✓';
-  $('#qaLoad').style.display=qa.q.load?'':'none';$('#qaAuto').textContent=auto?'Pause ❚❚':'Auto-play ▶';if(qa.i===qa.q.beats.length-1&&qa.q.btns)qa.q.btns.forEach(x=>x.classList.add('seen'));schedule();if(window.city)window.city.light(b.lit||{},!!b.mm,!!b.exhaust)}
-function ask(q,tour){if(busy)return;busy=true;qa={q,i:0,tour:tour||false};auto=!!tour||autoPref;dimHud(true);$('#qaNav').style.display='flex';if(window.city)window.city.stage(true);beat();$('#qaNext').focus()}
-function closeQ(){if(!qa)return;const wasTour=qa.tour;clearTimeout(autoT);qa=null;$('#storyK').innerHTML='';$('#qaNav').style.display='none';if(window.city)window.city.stage(false);dimHud(false);busy=false;
-  if(wasTour&&wasTour.then)ask(wasTour.then,true);else if(wasTour&&step===0&&!$('#startBtn').disabled)$('#startBtn').click()} // the tour runs on to the next question, then hands over to the missions
+function setScene(b){if(!window.city)return;if(b.scene==='city'){window.city.stage(false,true);if(b.cue!=null)window.city.cue(b.cue)}else window.city.stage(true)}
+function beat(){const b=qa.q.beats[qa.i],m=model();setScene(b);caption(fill(b.h,m),fill(b.s,m));$('#storyK').innerHTML=Object.keys(b.lit||{}).filter(k=>b.lit[k]).map(k=>`<span><i style="background:${LEG[k][0]}"></i>${t(LEG[k][1])}</span>`).join('');$('#qaN').textContent=`${qa.i+1} / ${qa.q.beats.length}`;$('#qaPrev').style.visibility=qa.i?'visible':'hidden';$('#qaNext').textContent=qa.i<qa.q.beats.length-1?'Next →':'Done ✓';
+  $('#qaLoad').style.display=qa.q.load?'':'none';$('#qaAuto').textContent=auto?'Pause ❚❚':'Auto-play ▶';if(qa.i===qa.q.beats.length-1&&qa.q.btns)qa.q.btns.forEach(x=>x.classList.add('seen'));schedule();if(window.city&&b.scene!=='city')window.city.light(b.lit||{},!!b.mm,!!b.exhaust)}
+function ask(q,tour){if(busy)return;busy=true;qa={q,i:0,tour:tour||false};auto=!!tour||autoPref;dimHud(true);$('#qaNav').style.display='flex';beat();$('#qaNext').focus()}
+function closeQ(){if(!qa)return;const wasTour=qa.tour;clearTimeout(autoT);qa=null;$('#storyK').innerHTML='';$('#qaNav').style.display='none';busy=false;
+  if(wasTour&&typeof wasTour.then==='function'){wasTour.then();return} // the guided path runs straight on; the opening never flashes back in between
+  if(window.city)window.city.stage(false);
+  if(wasTour&&step===0&&!$('#startBtn').disabled){gsap.to('#story',{opacity:0,duration:.5});$('#panel').style.visibility='visible';$('#svcBtn').style.display='';$('#startBtn').click()} // the tour hands over to the missions
+  else dimHud(false)}
 $('#qaNext').onclick=()=>{if(!qa)return;if(qa.i<qa.q.beats.length-1){qa.i++;beat()}else closeQ()};
 $('#qaPrev').onclick=()=>{if(qa&&qa.i){qa.i--;beat()}};$('#qaClose').onclick=closeQ;
-$('#qaAuto').onclick=()=>{auto=!auto;autoPref=auto;$('#qaAuto').textContent=auto?'Pause ❚❚':'Auto-play ▶';schedule()};$('#tourBtn').onclick=()=>ask(PROLOGUE,{then:QUESTIONS[0]});
+$('#qaAuto').onclick=()=>{auto=!auto;autoPref=auto;$('#qaAuto').textContent=auto?'Pause ❚❚':'Auto-play ▶';schedule()};
+$('#tourBtn').onclick=()=>ask(ORIENT,{then:()=>runStory(()=>ask(LANDING,{then:true}))}); // city, truck, cars, missions
 // a real case from the sector config: its stores, plan level and enrollment replace the GM's inputs
 function loadCase(c){Object.assign(S,BM.sanitize({...S,stores:c.stores.map(s=>({...s})),plan:c.plan,qual:c.qual},SEC));closeQ();syncControls();renderStores();update();
   const sb=$('#startBtn');if($('#start').style.display!=='none'){if(!sb.disabled)sb.click()}else{say(1,model());if(window.city)window.city.flyIn()}}
 $('#qaLoad').onclick=()=>{if(qa&&qa.q.load)loadCase(qa.q.load)};
-for(const c of SEC.cases||[])QUESTIONS.push({q:c.q,beats:c.beats,load:c});
-addEventListener('keydown',e=>{if(!qa)return;if(e.key==='Escape')closeQ();if(e.key==='ArrowRight')$('#qaNext').click();if(e.key==='ArrowLeft')$('#qaPrev').click();if(e.key===' '){e.preventDefault();$('#qaAuto').click()}});
-for(const id of ['qs1','qs2'])QUESTIONS.forEach(q=>{const b=document.createElement('button');b.textContent=t(q.q);(q.btns=q.btns||[]).push(b);b.onclick=()=>{if(id==='qs2'){$('#game').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>ask(q),500)}else ask(q)};$('#'+id).appendChild(b)});
+for(const c of SEC.cases||[])QUESTIONS.push({q:c.q,beats:c.beats,load:c,g:'proof'});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#svc').classList.contains('on'))svcOpen(false);if(!qa)return;if(e.key==='Escape')closeQ();if(e.key==='ArrowRight')$('#qaNext').click();if(e.key==='ArrowLeft')$('#qaPrev').click();if(e.key===' '){e.preventDefault();$('#qaAuto').click()}});
+
+/* ---------- the Service department: every question with its one-line answer, grouped, in the game and under it ---------- */
+const GROUPS={start:'Start here',proof:'Proof',hard:'The hard questions',store:t('My {site}')}; // dealt in this order so the two columns come out level
+const GROUP_OF={'What is this?':'start',"What's the catch?":'hard','Is this legal? Who stands behind it?':'hard',"Will it cut my workers' comp?":'hard'};
+const TRUCK={q:'How is it paid for?',g:'start',answer:'Payroll tax that leaves every pay period gets redirected: the owner keeps a share, the employees keep a share, the administrator takes the fee.',run:()=>runStory()};
+function svcOpen(on){$('#svc').classList.toggle('on',on);if(on)$('#svcClose').focus()}
+$('#svcBtn').onclick=()=>svcOpen(true);$('#openSvc').onclick=()=>svcOpen(true);$('#svcClose').onclick=()=>svcOpen(false);
+function renderService(id,inGame){const items=[QUESTIONS[0],TRUCK,...QUESTIONS.slice(1)];const byG={};for(const q of items){const g=q.g||GROUP_OF[q.q]||'store';(byG[g]=byG[g]||[]).push(q)}
+  const box=$('#'+id);box.innerHTML='';for(const g of Object.keys(GROUPS)){if(!byG[g])continue;const d=document.createElement('div');d.className='svcGrp';d.innerHTML=`<h3>${esc(GROUPS[g])}</h3>`;
+    for(const q of byG[g]){const b=document.createElement('button');b.type='button';b.className='svcRow';b.innerHTML=`<b>${esc(t(q.q))}</b><span>${esc(fill(q.answer||q.beats[0].h,model()))}</span>`;(q.btns=q.btns||[]).push(b);
+      b.onclick=()=>{svcOpen(false);const play=()=>q.run?q.run():ask(q);if(inGame)play();else{$('#game').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(play,500)}};d.appendChild(b)}box.appendChild(d)}}
+renderService('svcList',true);renderService('svcList2',false);
 
 if(hashToState()){syncControls();renderStores();update();showOwner()}else{renderStores();update()}
 </script>
@@ -423,13 +465,13 @@ const mobile=matchMedia('(max-width:760px)').matches;renderer.setPixelRatio(mobi
 const ENV=(()=>{const p=new THREE.PMREMGenerator(renderer),t=p.fromScene(new RoomEnvironment(),.04).texture;p.dispose();return t})(); // reflections for the stage cars only
 host.insertBefore(renderer.domElement,host.firstChild);renderer.shadowMap.enabled=!mobile;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 const labelRenderer=new CSS2DRenderer();Object.assign(labelRenderer.domElement.style,{position:'absolute',inset:'0',pointerEvents:'none',zIndex:1});renderer.domElement.after(labelRenderer.domElement); // text as real HTML pinned to the scene, crisp at any screen density
-const scene=new THREE.Scene();scene.background=new THREE.Color(0x0b0914);scene.fog=new THREE.FogExp2(0x4a2a44,0.0045);
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x0b0914);scene.fog=new THREE.FogExp2(0x6b3a52,0.0024); // a light sunset haze; thick fog read as a blurred background
 /* sunset: a sky dome, a low sun that stays behind the city from wherever the camera looks, warm haze */
 const skyTex=(()=>{const c=document.createElement('canvas');c.width=2;c.height=512;const g=c.getContext('2d'),gr=g.createLinearGradient(0,0,0,512);
   [[0,'#0b0914'],[.3,'#2c1a44'],[.42,'#7a3a62'],[.47,'#e0734a'],[.5,'#ffc07a'],[.52,'#5a2a3e'],[.6,'#1a1022'],[1,'#0b0914']].forEach(([o,col])=>gr.addColorStop(o,col));g.fillStyle=gr;g.fillRect(0,0,2,512);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t})();
 scene.add(new THREE.Mesh(new THREE.SphereGeometry(520,32,24),new THREE.MeshBasicMaterial({map:skyTex,side:THREE.BackSide,fog:false,toneMapped:false})));
-const sunDisc=new THREE.Mesh(new THREE.CircleGeometry(15,48),new THREE.MeshBasicMaterial({color:new THREE.Color(3,1.7,1),fog:false,toneMapped:false}));scene.add(sunDisc);
-const halo=new THREE.Sprite(new THREE.SpriteMaterial({map:(()=>{const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d'),r=g.createRadialGradient(128,128,10,128,128,128);r.addColorStop(0,'rgba(255,190,120,.9)');r.addColorStop(.35,'rgba(255,130,80,.35)');r.addColorStop(1,'rgba(255,100,80,0)');g.fillStyle=r;g.fillRect(0,0,256,256);return new THREE.CanvasTexture(c)})(),blending:THREE.AdditiveBlending,depthWrite:false,fog:false,transparent:true}));halo.scale.set(120,120,1);scene.add(halo);
+const sunDisc=new THREE.Mesh(new THREE.CircleGeometry(15,48),new THREE.MeshBasicMaterial({color:new THREE.Color(1.9,1.25,.85),fog:false,toneMapped:false}));scene.add(sunDisc);
+const halo=new THREE.Sprite(new THREE.SpriteMaterial({map:(()=>{const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d'),r=g.createRadialGradient(128,128,10,128,128,128);r.addColorStop(0,'rgba(255,190,120,.9)');r.addColorStop(.35,'rgba(255,130,80,.35)');r.addColorStop(1,'rgba(255,100,80,0)');g.fillStyle=r;g.fillRect(0,0,256,256);return new THREE.CanvasTexture(c)})(),blending:THREE.AdditiveBlending,depthWrite:false,fog:false,transparent:true}));halo.scale.set(80,80,1);scene.add(halo);
 const camera=new THREE.PerspectiveCamera(42,16/9,0.5,600);camera.position.set(120,95,150);
 const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,2,0);controls.enableDamping=true;controls.autoRotate=true;controls.autoRotateSpeed=.35;controls.maxPolarAngle=Math.PI*.46;controls.minDistance=28;controls.maxDistance=220;controls.enablePan=false;
 
@@ -473,13 +515,24 @@ for(let i=0;i<=NX;i++)for(let j=0;j<=NZ;j++){const x=(i-NX/2)*PITCH+ROAD/2+.6,z=
 function palm(x,z){const t=new THREE.Mesh(new THREE.CylinderGeometry(.25,.4,9,6),new THREE.MeshStandardMaterial({color:0x4a3b2a}));t.position.set(x,4.5,z);scene.add(t);for(let k=0;k<6;k++){const leaf=new THREE.Mesh(new THREE.ConeGeometry(.6,6,4),new THREE.MeshStandardMaterial({color:0x1f7a4a}));leaf.position.set(x,9,z);leaf.rotation.z=Math.PI/2.6;leaf.rotation.y=k*Math.PI/3;leaf.geometry.translate(0,3,0);scene.add(leaf)}}
 [[-24,-24],[24,-24],[-24,24],[24,24]].forEach(([x,z])=>palm(x,z));
 
+/* the shore: beyond the city's north edge the questions stage is a beachfront lot, with sand, a foam line and the ocean out to the horizon under the sun */
+const SZ=-(NZ*PITCH/2)-46; // the stage pad sits just beyond the north edge of the city
+const SHORE=SZ-24;
+const sand=new THREE.Mesh(new THREE.PlaneGeometry(1400,60),new THREE.MeshStandardMaterial({color:0xb8906a,roughness:1}));sand.rotation.x=-Math.PI/2;sand.position.set(0,.01,SHORE+6);sand.receiveShadow=true;scene.add(sand);
+const rippleTex=(()=>{const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d');g.fillStyle='#1b4560';g.fillRect(0,0,256,256);
+  for(let i=0;i<140;i++){g.fillStyle=`rgba(${60+Math.random()*40},${120+Math.random()*50},${150+Math.random()*50},${.18+Math.random()*.22})`;g.beginPath();g.ellipse(Math.random()*256,Math.random()*256,6+Math.random()*22,1+Math.random()*2.5,0,0,Math.PI*2);g.fill()}
+  const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(36,16);t.colorSpace=THREE.SRGBColorSpace;return t})();
+const water=new THREE.Mesh(new THREE.PlaneGeometry(1400,620),new THREE.MeshStandardMaterial({map:rippleTex,color:0x8fb4c8,roughness:.6,metalness:.05,envMap:ENV,envMapIntensity:.2}));water.rotation.x=-Math.PI/2;water.position.set(0,.05,SHORE-310);scene.add(water);
+const foam=new THREE.Mesh(new THREE.PlaneGeometry(1400,1.4),new THREE.MeshBasicMaterial({color:0xfff1e0,transparent:true,opacity:.7}));foam.rotation.x=-Math.PI/2;foam.position.set(0,.08,SHORE);scene.add(foam);
+for(let x=-150;x<=150;x+=30)if(Math.abs(x)>50)palm(x+(x%60?4:-4),SHORE+10);[[-46,SZ-8],[46,SZ-8]].forEach(([x,z])=>palm(x,z));
+
 /* cars */
 const wheelGeo=new THREE.CylinderGeometry(.5,.5,.4,12);wheelGeo.rotateZ(Math.PI/2);
 const wheelMat=new THREE.MeshStandardMaterial({color:0x101014,roughness:.8});
 const headMat=new THREE.MeshStandardMaterial({color:0x000,emissive:0xfff2cc,emissiveIntensity:4});
 const tailMat=new THREE.MeshStandardMaterial({color:0x000,emissive:0xff2244,emissiveIntensity:3});
 const SHARED=new Set([wheelGeo,wheelMat,headMat,tailMat]);
-function dispose(o){o.traverse(x=>{if(x.geometry&&!SHARED.has(x.geometry))x.geometry.dispose();if(x.material&&!SHARED.has(x.material)){for(const m of [].concat(x.material)){m.map?.dispose();m.emissiveMap?.dispose();m.dispose()}}})}
+function dispose(o){o.traverse(x=>{if(x.isCSS2DObject)x.element.remove();if(x.geometry&&!SHARED.has(x.geometry))x.geometry.dispose();if(x.material&&!SHARED.has(x.material)){for(const m of [].concat(x.material)){m.map?.dispose();m.emissiveMap?.dispose();m.dispose()}}})}
 function drop(parent,o){parent.remove(o);dispose(o)}
 function boxCar(g,color){const body=new THREE.Mesh(new THREE.BoxGeometry(4.2,1,2),new THREE.MeshStandardMaterial({color,roughness:.35,metalness:.25}));body.position.y=.9;g.add(body);
   const cab=new THREE.Mesh(new THREE.BoxGeometry(2.2,.8,1.7),new THREE.MeshStandardMaterial({color:0x2a3550,roughness:.15,metalness:.5}));cab.position.set(-.2,1.75,0);g.add(cab);
@@ -552,7 +605,8 @@ function celebrate(n){gsap.fromTo(lotLightA,{intensity:60},{intensity:220,durati
 function flyIn(){cue(0)}
 const CUES=[{p:[34,24,46],t:[0,2,0]},{p:[95,80,-110],t:[0,6,0]},{p:[18,8,30],t:[2,1,8]},{p:[22,16,-20],t:[11,9,-11]}];
 let lastCue=0;
-function cue(n){lastCue=n;const c=CUES[n]||CUES[0];controls.autoRotate=false;gsap.to(camera.position,{x:c.p[0],y:c.p[1],z:c.p[2],duration:2.2,ease:'power2.inOut'});gsap.to(controls.target,{x:c.t[0],y:c.t[1],z:c.t[2],duration:2.2,ease:'power2.inOut',onComplete:()=>{controls.autoRotate=true}})}
+const camKill=()=>gsap.killTweensOf([camera.position,controls.target]); // one camera move at a time: the newest wins outright
+function cue(n){lastCue=n;const c=CUES[n]||CUES[0];controls.autoRotate=false;camKill();gsap.to(camera.position,{x:c.p[0],y:c.p[1],z:c.p[2],duration:2.2,ease:'power2.inOut'});gsap.to(controls.target,{x:c.t[0],y:c.t[1],z:c.t[2],duration:2.2,ease:'power2.inOut',onComplete:()=>{controls.autoRotate=true}})}
 
 /* ---------- the truck story ---------- */
 const gold=new THREE.MeshStandardMaterial({color:0xf2c14e,emissive:0xf2c14e,emissiveIntensity:.9,roughness:.3,metalness:.6});SHARED.add(gold);
@@ -580,8 +634,8 @@ function story(caption,done){
   // the plan gate: two posts and a neon beam across the road
   const post=(z)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(.6,9,.6),new THREE.MeshStandardMaterial({color:0x2a2640}));m.position.set(ROADX+(z?5.2:-5.2),4.5,10);g.add(m)};post(0);post(1);
   const beam=new THREE.Mesh(new THREE.BoxGeometry(11,.5,.5),new THREE.MeshStandardMaterial({color:0x000,emissive:0x22a85e,emissiveIntensity:3}));beam.position.set(ROADX,9,10);g.add(beam);
-  const gl=labelSprite('SECTION 125 PLAN','#4fd486',24);gl.position.set(ROADX,11.5,10);gl.scale.set(16,3.6,1);g.add(gl);
-  controls.autoRotate=false;
+  const gl=labelSprite('SECTION 125 WELLNESS PLAN','#4fd486',22);gl.position.set(ROADX,11.5,10);g.add(gl);
+  controls.autoRotate=false;camKill();
   gsap.to(camera.position,{x:ROADX+24,y:13,z:38,duration:1.6,ease:'power2.inOut'});gsap.to(controls.target,{x:ROADX+2,y:3,z:14,duration:1.6});
   const tl=gsap.timeline({onComplete:()=>{setTimeout(()=>{drop(scene,g);cue(lastCue);done()},800)}});
   tl.call(()=>caption(0),null,.3)
@@ -601,7 +655,6 @@ function story(caption,done){
    One paint per car. A part glows in its colour only while a beat talks about it: magenta wheels (benefits), green body (the employee's saving), gold hood (the store's saving), purple glass (the Section 125 plan).
    Money: green coins arc out of our tailpipe into a pile under NET SAVINGS; red bills flutter out of major medical's and fade before they land. */
 const PART={wheels:0xd65db1,body:0x22a85e,engine:0xffd166,windows:0x8366ea};
-const SZ=-(NZ*PITCH/2)-46; // a pad just beyond the north edge of the city
 const STACK=new THREE.Vector3(-4,0,-3); // where our coins pile up: centre stage, where both tailpipes point
 let stage=null,ours=null,mmCar=null,exhaust=false,bills=[],coins=[],spawnT=0,tails=[];
 const coinGeo=new THREE.CylinderGeometry(1.1,1.1,.34,16),coinMat=new THREE.MeshStandardMaterial({color:0x5ee39a,metalness:.7,roughness:.3,emissive:0x1e7a46,emissiveIntensity:.5});
@@ -609,39 +662,39 @@ const billGeo=new THREE.BoxGeometry(2.4,.06,1.2),billMat=new THREE.MeshStandardM
 [coinGeo,coinMat,billGeo,billMat].forEach(x=>SHARED.add(x));
 function pipeAt(c){c.updateMatrixWorld(true);const v=c.userData.pipe.position.clone();c.localToWorld(v);return stage.worldToLocal(v)}
 function buildStage(){stage=new THREE.Group();stage.position.set(0,0,SZ);
-  const pad=new THREE.Mesh(new THREE.PlaneGeometry(80,40),new THREE.MeshStandardMaterial({color:0x1a1628,roughness:.9}));pad.rotation.x=-Math.PI/2;pad.position.y=.02;stage.add(pad);
-  const edge=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(80,.2,40)),new THREE.LineBasicMaterial({color:0x4fd486}));edge.position.y=.1;stage.add(edge);
+  const pad=new THREE.Mesh(new THREE.PlaneGeometry(80,40),new THREE.MeshStandardMaterial({color:0x2a2436,roughness:.95}));pad.rotation.x=-Math.PI/2;pad.position.y=.07;pad.receiveShadow=true;stage.add(pad); // a paved beachfront lot, above the sand
   ours={parts:{}};const o=car(0xe9e6f2,'sedan-sports',(g,p)=>{if(!p)return;const P=ours.parts,glow=(mesh,hex)=>{mesh.material=mesh.material.clone();mesh.material.emissive.set(hex);mesh.material.emissiveIntensity=0;return mesh};
-    P.wheels=p.wheels.map(w=>glow(w,PART.wheels));P.body=[glow(p.body,PART.body)];Object.assign(p.body.material,{envMap:ENV,envMapIntensity:.9,roughness:.3,metalness:.35});
+    P.wheels=p.wheels.map(w=>glow(w,PART.wheels));P.body=[glow(p.body,PART.body)];Object.assign(p.body.material,{envMap:ENV,envMapIntensity:.4,roughness:.45,metalness:.15}); // satin, so the paint reads as paint and not as a glow
     const lamp=(hex,x,y,z,d)=>{const l=new THREE.PointLight(hex,0,d,2);l.position.set(x,y,z);g.add(l);return l};P.engine=[lamp(PART.engine,1.5,1.7,0,14)];P.windows=[lamp(PART.windows,-.4,1.6,0,12)]}); // pearl white, so every part colour reads
   ours.g=o;o.scale.setScalar(3.2);o.position.set(-13,0,0);o.rotation.y=-Math.PI/2-.5;const op=new THREE.Object3D();op.position.set(-2.2,.5,.6);o.add(op);o.userData.pipe=op;stage.add(o); // both cars face the camera with their tailpipes toward centre stage
-  const ol=labelSprite('THE 125 PLAN','#4fd486',30);ol.position.set(-13,10.5,0);ol.scale.set(16,4,1);stage.add(ol);
-  mmCar=car(0x6b2630,'suv',(g,p)=>{if(p){p.body.material=p.body.material.clone();Object.assign(p.body.material,{envMap:ENV,envMapIntensity:.6,roughness:.4})}});mmCar.scale.setScalar(3.6);mmCar.position.set(14,0,0);mmCar.rotation.y=-Math.PI/2+.5;const mp=new THREE.Object3D();mp.position.set(-2.4,.55,.65);mmCar.add(mp);mmCar.userData.pipe=mp;stage.add(mmCar);
-  const ml=labelSprite('MAJOR MEDICAL','#ff6b6b',30);ml.position.set(mobile?9:14,11,0);ml.scale.set(18,4.5,1);mmCar.userData.label=ml;stage.add(ml);
+  const ol=labelSprite('125 WELLNESS PLAN','#4fd486',26);ol.position.set(mobile?-10:-13,10.5,0);stage.add(ol);
+  mmCar=car(0x6b2630,'suv',(g,p)=>{if(p){p.body.material=p.body.material.clone();Object.assign(p.body.material,{envMap:ENV,envMapIntensity:.3,roughness:.5})}});mmCar.scale.setScalar(3.6);mmCar.position.set(14,0,0);mmCar.rotation.y=-Math.PI/2+.5;const mp=new THREE.Object3D();mp.position.set(-2.4,.55,.65);mmCar.add(mp);mmCar.userData.pipe=mp;stage.add(mmCar);
+  const ml=labelSprite('MAJOR MEDICAL','#ff6b6b',30);ml.position.set(mobile?13:14,mobile?13.5:11,0);ml.scale.set(18,4.5,1);mmCar.userData.label=ml;stage.add(ml);
   tails=[labelSprite('NET SAVINGS','#4fd486',20),labelSprite('COST','#ff6b6b',20)];tails[0].position.set(STACK.x-2,6,STACK.z);tails[1].position.set(6,6.3,pipeAt(mmCar).z);tails.forEach(t=>{t.scale.set(10,2.5,1);stage.add(t)}); // side by side between the cars, under the car names
-  const spot=new THREE.SpotLight(0xffffff,1400,80,Math.PI/4,.6,2);spot.position.set(0,34,18);spot.target.position.set(0,0,0);stage.add(spot);stage.add(spot.target);
+  const spot=new THREE.SpotLight(0xffffff,650,80,Math.PI/4,.6,2);spot.position.set(0,34,18);spot.target.position.set(0,0,0);stage.add(spot);stage.add(spot.target);
   scene.add(stage)}
-function stageOn(on){if(on){if(!stage)buildStage();stage.visible=true;controls.autoRotate=false;const wide=camera.aspect>1.2;
-    gsap.to(camera.position,{x:0,y:wide?17:22,z:SZ+(wide?44:76),duration:1.8,ease:'power2.inOut'});gsap.to(controls.target,{x:0,y:wide?3:-3,z:SZ,duration:1.8,ease:'power2.inOut'})} // on a phone the cars sit in the top half, above the caption panel
-  else{if(stage)stage.visible=false;exhaust=false;for(const b of bills)drop(stage,b.m);bills=[];for(const c of coins){gsap.killTweensOf([c.position,c.rotation]);drop(stage,c)}coins=[];cue(lastCue)}}
-function light(lit,mm,ex){if(!stage)return;for(const k in ours.parts)for(const o of ours.parts[k]){if(o.isLight)gsap.to(o,{intensity:lit[k]?(k==='engine'?130:80):0,duration:.5});else gsap.to(o.material,{emissiveIntensity:lit[k]?(k==='wheels'?1.2:.55):0,duration:.5})}
+function stageOn(on,noCue){if(on){if(!stage)buildStage();else if(stage.visible)return;stage.visible=true;controls.autoRotate=false;camKill();const wide=camera.aspect>1.2;
+    gsap.to(camera.position,{x:0,y:wide?15:22,z:SZ+(wide?44:76),duration:1.8,ease:'power2.inOut'});gsap.to(controls.target,{x:0,y:wide?3.5:-3,z:SZ,duration:1.8,ease:'power2.inOut'})} // on a phone the cars sit in the top half, above the caption panel
+  else{if(!stage||!stage.visible){if(!noCue)cue(lastCue);return}stage.visible=false;exhaust=false;for(const b of bills)drop(stage,b.m);bills=[];for(const c of coins){gsap.killTweensOf([c.position,c.rotation]);drop(stage,c)}coins=[];if(!noCue)cue(lastCue)}}
+function light(lit,mm,ex){if(!stage)return;for(const k in ours.parts)for(const o of ours.parts[k]){if(o.isLight)gsap.to(o,{intensity:lit[k]?(k==='engine'?80:60):0,duration:.5});else gsap.to(o.material,{emissiveIntensity:lit[k]?(k==='wheels'?.9:.32):0,duration:.5})}
   mmCar.visible=mm;mmCar.userData.label.visible=mm;exhaust=ex;tails[0].visible=ex||coins.length>0;tails[1].visible=ex&&mm;spawnT=0}
 function coin(){const n=coins.length;if(n>=48)return;const c=new THREE.Mesh(coinGeo,coinMat);c.position.copy(pipeAt(ours.g));stage.add(c);coins.push(c);
   const col=n%6,a=col/6*Math.PI*2,r=col?2.4:0,to=new THREE.Vector3(STACK.x+Math.cos(a)*r,.19+Math.floor(n/6)*.36,STACK.z+Math.sin(a)*r);
   gsap.to(c.position,{x:to.x,z:to.z,duration:1,ease:'power1.inOut'});gsap.to(c.position,{y:c.position.y+6,duration:.5,ease:'power2.out',yoyo:true,repeat:1,onComplete:()=>gsap.to(c.position,{y:to.y,duration:.15})});gsap.to(c.rotation,{x:Math.PI*4,duration:1,ease:'power1.out'})} // two full flips, landing flat
 function bill(){const b=new THREE.Mesh(billGeo,billMat);b.position.copy(pipeAt(mmCar));b.rotation.set(Math.random()*6,Math.random()*6,0);stage.add(b);bills.push({m:b,t:0,dx:-(.7+Math.random()*.9),dz:1+Math.random()*.8,y0:b.position.y})}
 
-window.city={setGroup,setRing,celebrate,flyIn,cue,story,stage:stageOn,light,pause:v=>{paused=v},_stage:()=>({coins:coins.length,bills:bills.length})}; // _stage is a test hook
+window.city={setGroup,setRing,celebrate,flyIn,cue,story,stage:stageOn,light,pause:v=>{paused=v},_stage:()=>({coins:coins.length,bills:bills.length,fps:fpsNow})}; // _stage is a test hook
 
 /* post + loop */
 const composer=new EffectComposer(renderer);composer.addPass(new RenderPass(scene,camera));
-const bloom=new UnrealBloomPass(new THREE.Vector2(1,1),mobile?.3:.45,.6,.9);composer.addPass(bloom);composer.addPass(new OutputPass());
+const bloom=new UnrealBloomPass(new THREE.Vector2(1,1),mobile?.25:.34,.5,.92);composer.addPass(bloom);composer.addPass(new OutputPass()); // only the sun, the lamps and lit windows glow
 function resize(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);composer.setSize(w,h);labelRenderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix()}
 new ResizeObserver(resize).observe(host);resize();
 const LIM={x:NX*PITCH/2+ROAD,z:NZ*PITCH/2+ROAD};
-let last=performance.now(),paused=false;
+let last=performance.now(),paused=false,fpsNow=0,fpsN=0,fpsT=0;
 function loop(now){if(paused||document.hidden||!host.clientWidth){last=now;setTimeout(()=>requestAnimationFrame(loop),300);return} // the owner page and background tabs do not burn the battery
-  const dt=Math.min(.05,(now-last)/1000);last=now;
+  const dt=Math.min(.05,(now-last)/1000);last=now;fpsN++;fpsT+=dt;if(fpsT>=1){fpsNow=Math.round(fpsN/fpsT);fpsN=0;fpsT=0}
+  rippleTex.offset.x+=dt*.012;rippleTex.offset.y+=dt*.02;foam.position.z=SHORE+Math.sin(now/1400)*1.2;foam.material.opacity=.5+.25*Math.sin(now/900); // the tide
   for(const t of traffic){if(t.axis==='z'){t.m.position.z+=t.dir*t.speed*dt*60;if(t.m.position.z>LIM.z)t.m.position.z=-LIM.z;if(t.m.position.z<-LIM.z)t.m.position.z=LIM.z}else{t.m.position.x+=t.dir*t.speed*dt*60;if(t.m.position.x>LIM.x)t.m.position.x=-LIM.x;if(t.m.position.x<-LIM.x)t.m.position.x=LIM.x}}
   for(let i=bursts.length-1;i>=0;i--){const b=bursts[i];b.t+=dt;const r=Math.max(16,80-b.t*34);b.m.position.set(Math.cos(b.a)*r,0,Math.sin(b.a)*r);if(b.t>2.4){drop(scene,b.m);bursts.splice(i,1)}}
   if(stage&&stage.visible&&exhaust){spawnT+=dt;if(spawnT>.2){spawnT=0;coin();if(mmCar.visible)bill()}}

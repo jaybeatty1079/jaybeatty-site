@@ -4,7 +4,7 @@
 window.SECTORS = {
   dealership: {
     title: ['Dealer', 'City'],
-    meta: 'Three missions. Build your lot, run the payroll, set your pay plan. See what a Section 125 plan does to store net and your bonus. Illustrative only.',
+    meta: 'A Section 125 Wellness Plan, explained to a dealership general manager. Build your store as a city, see what the plan does to store net and your bonus, and jump to any question. Illustrative only.',
     words: { site: 'store', sites: 'stores', Site: 'Store', group: 'group', owner: 'owner', owners: 'owners', role: 'GM', roleLong: 'general manager', label: 'Brand', unit: 'car', units: 'cars', sale: 'Average sale', zero: 'zero units' },
     // [default, min, max, step]. Sources listed under `sources` and shown in the benchmarks note.
     bench: {
@@ -19,10 +19,25 @@ window.SECTORS = {
     // the per-site label and its colour (brand here; concept for restaurants, flag for hotels). Text only, no logos.
     labels: [['Toyota', '#eb0a1e'], ['Ford', '#2a5db0'], ['Chevrolet', '#c9a227'], ['Honda', '#d0202c'], ['Hyundai', '#2457a8'], ['Kia', '#36405a'], ['Nissan', '#c3002f'], ['Subaru', '#2f63d1'], ['Jeep', '#3f6b3f'], ['RAM', '#a6192e'], ['GMC', '#cf0a2c'], ['BMW', '#1c7ad1'], ['Mercedes', '#8c8f98'], ['Lexus', '#5c5f6b'], ['Audi', '#bb0a30'], ['Volkswagen', '#1d3f8a'], ['CDJR', '#4a4f5c'], ['Mitsubishi', '#d7141a']],
     copy: {
-      sub: "Your people come out ahead. Your store comes out ahead. That is rare, and it is not new.",
-      start: "You're the GM. Three missions: build your lot, run the payroll, set your pay plan. Watch the net counter. Drag the city to look around.",
+      sub: "A Section 125 Wellness Plan, explained to a general manager. Your store nets more, your people take home more, and you set what that does to your bonus.",
+      // the opening panel over the city: three lines a GM reads in five seconds, one paragraph, and a live line filled from the default store
+      open: {
+        lines: [['Your store', 'nets more.'], ['Your people', 'take home more.'], ['Your bonus', 'goes up.']],
+        para: "A Section 125 Wellness Plan does all three with payroll tax the store already sends out. Designed to be cost-neutral, it can start any month of the year, and nothing is signed on these numbers.",
+        live: (emp, lift, units) => `On a ${emp}-person store: ${lift} of net a year, ${units} cars' worth, before you change a number.`
+      },
+      start: "Three short steps: your group, your plans, your pay plan. The counter at the top right is store net with the plan. Drag the city to look around.",
       m1: ['Build your group', "Your store first, then every other store the owner runs. Each one becomes a building, sized by headcount and colored by brand. Up to 30."],
-      obj: { 1: "Build your group: your store, then the owner's other stores", 2: 'Your plans: who qualifies, plan level, how your health plan is funded', 3: 'Set your pay plan', 4: 'Mission passed. Send this to ownership' },
+      obj: { 1: "Build your group: your store, then the owner's other stores", 2: 'Your plans: who enrolls, plan level, how your health plan is funded', 3: 'Set your pay plan', 4: 'Mission passed. Send this to ownership' },
+      // the guided path, in the city before the truck story and on the cars after it. {cue} is a camera position; the engine fills {per} and the sector words.
+      orient: [
+        { h: 'This city is your dealer group.', s: 'The lot in the middle is your {site}, 64 people on payroll until you change it. Every {site} the {owner} runs becomes a building around it.', cue: 0 },
+        { h: 'Every pay period, payroll tax leaves every building.', s: '7.65% of each W-2 dollar goes out from the {site} before anyone is paid. The wellness plan is a way to send less of it out. Watch the truck.', cue: 1 }
+      ],
+      landing: [
+        { h: 'Everyone comes out ahead, and the car shows how.', s: 'Wheels: $0 care for the family. Body: more take-home. Hood: the {site}\'s saving, {per} a month per enrolled employee. Glass: the Section 125 Wellness Plan it all rides in.', lit: { wheels: 1, body: 1, engine: 1, windows: 1 } },
+        { h: 'Now build your own {site}.', s: 'Three short steps: your group, your plans, your pay plan. The counter at the top right shows {site} net with the plan as you go, and the Service department answers any question on the way.', lit: { engine: 1 } }
+      ],
       who: 'Rocky · Back office',
       lines: [
         "Rocky. Back office. Nobody sees me, everybody gets paid. Build your store, then add the owner's other stores. Every one becomes a building.",
@@ -36,7 +51,7 @@ window.SECTORS = {
       cta: 'Run my real payroll →',
       // "What the store gets": [bold lead, rest]. The claims bullet is added by the engine when the health plan is self- or level-funded.
       gets: [
-        ['Net profit up without selling a car.', 'Payroll tax drops on every enrolled employee, and the difference lands on the P&L.'],
+        ['Net profit up without selling a car.', 'Payroll tax drops on every enrolled employee, and the difference lands on the P&L. It can start any month of the year.'],
         ['Your people take home more.', "Only employees who come out ahead are enrolled. More pay for the same work is a retention tool you didn't have to fund."],
         ['$0 care for employees and their families.', 'Virtual primary care, urgent care, therapy, dermatology and 70-plus generics, with no copay and no claim.'],
         ['Nothing changes on major medical.', 'This sits alongside the health plan you have. It never replaces it.'],
