@@ -14,8 +14,8 @@ window.SECTORS = {
       note: 'NADA 2024 averages: about $73M in sales and 64 employees per franchised store, net pre-tax profit in the low single digits, $48,000 per new vehicle.',
       sources: ['NADA Data 2024 (nada.org/nadadata)', 'CBT News on 2024 dealership employment', 'DealersEdge on GM pay plans, April 2024']
     },
-    // emp: the GM's own site by default; add: a site added with the button; lot: headcount steps that grow the centre lot; star: net lift per star on the HUD rating
-    sizes: { emp: 64, add: 40, state: 'PA', lot: [35, 90, 200], star: 100000 },
+    // emp: the GM's own site by default; add: a site added with the button; lot: headcount steps that grow the centre lot
+    sizes: { emp: 64, add: 40, state: 'PA', lot: [35, 90, 200] },
     // the per-site label and its colour (brand here; concept for restaurants, flag for hotels). Text only, no logos.
     labels: [['Toyota', '#eb0a1e'], ['Ford', '#2a5db0'], ['Chevrolet', '#c9a227'], ['Honda', '#d0202c'], ['Hyundai', '#2457a8'], ['Kia', '#36405a'], ['Nissan', '#c3002f'], ['Subaru', '#2f63d1'], ['Jeep', '#3f6b3f'], ['RAM', '#a6192e'], ['GMC', '#cf0a2c'], ['BMW', '#1c7ad1'], ['Mercedes', '#8c8f98'], ['Lexus', '#5c5f6b'], ['Audi', '#bb0a30'], ['Volkswagen', '#1d3f8a'], ['CDJR', '#4a4f5c'], ['Mitsubishi', '#d7141a']],
     copy: {
@@ -26,7 +26,7 @@ window.SECTORS = {
         para: "A Section 125 Wellness Plan does all three with payroll tax the store already sends out. Designed to be cost-neutral, it can start any month of the year, and nothing is signed on these numbers.",
         live: (emp, lift, units) => `On a ${emp}-person store: ${lift} of net a year, ${units} cars' worth, before you change a number.`
       },
-      start: "Three short steps: your group, your plans, your pay plan. The counter at the top right is store net with the plan. Drag the city to look around.",
+      start: "Three short steps: your group, your plans, your pay plan. The counter at the top right is what the plan adds to store net each year. Drag the city to look around.",
       m1: ['Build your group', "Your store first, then every other store the owner runs. Each one becomes a building, sized by headcount and colored by brand. Up to 30."],
       obj: { 1: "Build your group: your store, then the owner's other stores", 2: 'Your plans: who enrolls, plan level, how your health plan is funded', 3: 'Set your pay plan', 4: 'Mission passed. Send this to ownership' },
       // the guided path, in the city before the truck story and on the cars after it. {cue} is a camera position; the engine fills {per} and the sector words.
@@ -36,7 +36,7 @@ window.SECTORS = {
       ],
       landing: [
         { h: 'Everyone comes out ahead, and the car shows how.', s: 'Wheels: $0 care for the family. Body: more take-home. Hood: the {site}\'s saving, {per} a month per enrolled employee. Glass: the Section 125 Wellness Plan it all rides in.', lit: { wheels: 1, body: 1, engine: 1, windows: 1 } },
-        { h: 'Now build your own {site}.', s: 'Three short steps: your group, your plans, your pay plan. The counter at the top right shows {site} net with the plan as you go, and the Service department answers any question on the way.', lit: { engine: 1 } }
+        { h: 'Now build your own {site}.', s: 'Three short steps: your group, your plans, your pay plan. The counter at the top right shows what the plan adds to {site} net as you go, and the Service department answers any question on the way.', lit: { engine: 1 } }
       ],
       who: 'Rocky · Back office',
       lines: [
