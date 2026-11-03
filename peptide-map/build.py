@@ -215,6 +215,13 @@ QC = {'tolerated': ['cond', 'Each lot tested for identity, purity, sterility and
 for c in CARDS:
     s0, s1, s2, s3 = c['stations']
     c['stations'] = [[s0[0], 'Source', s0[2]], [QC[c['track']][0], 'Purify and test', QC[c['track']][1]], [s2[0], 'Fill and finish', s2[2] + ' ' + s1[2]], [s3[0], 'Dispense', s3[2]]]
+# weather on the ride follows the peptide's standing: 0 clear (approved product), 1 overcast (tolerated, human trials exist), 2 rain and lightning (no approval, grey market, some human study), 3 storm with wind (no approval, thin human evidence), 4 blizzard with hail (no approval, laboratory and animal evidence only). The tool's own grading, stated on the counter.
+WEATHER = {'semaglutide': (0, 'Approved products with large completed trials.'), 'tirzepatide': (0, 'Approved products with large completed trials.'), 'sermorelin': (0, 'An approved product (Geref, 1997), since discontinued; human trials exist.'),
+           'nad': (1, 'Human trials exist; no approved injectable product; Category 1 tolerance.'), 'ghk-cu': (1, 'Small human studies, mostly topical; no approved product.'),
+           'ipamorelin': (2, 'Small human studies; no approved product; sold on the grey market.'), 'kisspeptin-10': (2, 'Human research studies in reproductive medicine; no approved product.'),
+           'bpc-157': (3, 'No approved product anywhere; evidence is mostly animal studies with few small human reports; popular on the grey market.'), 'tb-500': (3, 'No approved product; mostly animal and laboratory evidence.'), 'semax': (3, 'Registered as a drug in Russia; no FDA-reviewed trials; no approved US product.'), 'cjc-1295': (3, 'Small early human studies; development stopped; no approved product.'), 'retatrutide': (3, 'Investigational, in large trials; no approved product; sold widely on the grey market with no lawful route.'),
+           'mots-c': (4, 'Described in 2015; animal and laboratory evidence, early human work only.'), 'kpv': (4, 'Laboratory and animal evidence; no published human trials.'), 'epitalon': (4, 'Small studies outside Western regulation; no approved product.')}
+for c in CARDS: c['weather'], c['evidence'] = WEATHER[c['id']]
 TRACKS = {'tolerated': 'Tolerated under a draft', 'closed': 'Closed gate', 'listed': 'Category 1', 'mixed': 'Open for topical, closed for injection', 'component': '503B line', 'brand': 'Brand line', 'none': 'No lawful route'}
 for c in CARDS: c['trackLabel'] = TRACKS[c['track']]
 ride = {'asOf': AS_OF, 'cards': CARDS, 'hhsUrl': HHS['url']}
