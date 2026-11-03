@@ -215,12 +215,14 @@ QC = {'tolerated': ['cond', 'Each lot tested for identity, purity, sterility and
 for c in CARDS:
     s0, s1, s2, s3 = c['stations']
     c['stations'] = [[s0[0], 'Source', s0[2]], [QC[c['track']][0], 'Purify and test', QC[c['track']][1]], [s2[0], 'Fill and finish', s2[2] + ' ' + s1[2]], [s3[0], 'Dispense', s3[2]]]
-# weather on the ride follows the peptide's standing: 0 clear (approved product), 1 overcast (tolerated, human trials exist), 2 rain and lightning (no approval, grey market, some human study), 3 storm with wind (no approval, thin human evidence), 4 blizzard with hail (no approval, laboratory and animal evidence only). The tool's own grading, stated on the counter.
+# weather on the ride, Jay's rule: sunny where there is oversight (an approved product, or FDA or HHS tolerance) and human evidence; overcast where there is oversight but thin human evidence; rain, storm and blizzard only where there is no oversight at all, graded by how little human evidence exists.
+# 0 sunny, 1 overcast, 2 rain and lightning (no oversight, some human study), 3 storm with wind (no oversight, thin human evidence), 4 blizzard with hail (no oversight, laboratory and animal work only)
 WEATHER = {'semaglutide': (0, 'Approved products with large completed trials.'), 'tirzepatide': (0, 'Approved products with large completed trials.'), 'sermorelin': (0, 'An approved product (Geref, 1997), since discontinued; human trials exist.'),
-           'nad': (1, 'Human trials exist; no approved injectable product; Category 1 tolerance.'), 'ghk-cu': (1, 'Small human studies, mostly topical; no approved product.'),
-           'ipamorelin': (2, 'Small human studies; no approved product; sold on the grey market.'), 'kisspeptin-10': (2, 'Human research studies in reproductive medicine; no approved product.'),
-           'bpc-157': (3, 'No approved product anywhere; evidence is mostly animal studies with few small human reports; popular on the grey market.'), 'tb-500': (3, 'No approved product; mostly animal and laboratory evidence.'), 'semax': (3, 'Registered as a drug in Russia; no FDA-reviewed trials; no approved US product.'), 'cjc-1295': (3, 'Small early human studies; development stopped; no approved product.'), 'retatrutide': (3, 'Investigational, in large trials; no approved product; sold widely on the grey market with no lawful route.'),
-           'mots-c': (4, 'Described in 2015; animal and laboratory evidence, early human work only.'), 'kpv': (4, 'Laboratory and animal evidence; no published human trials.'), 'epitalon': (4, 'Small studies outside Western regulation; no approved product.')}
+           'nad': (0, 'Human trials exist; Category 1 tolerance; no approved injectable product.'), 'ghk-cu': (1, 'Small human studies, mostly topical; Category 1 tolerance for non-injectable forms; no approved product.'),
+           'bpc-157': (1, 'HHS draft tolerance; evidence is mostly animal studies with few small human reports.'), 'tb-500': (1, 'HHS draft tolerance; mostly animal and laboratory evidence.'), 'semax': (1, 'HHS draft tolerance; registered as a drug in Russia; no FDA-reviewed trials.'),
+           'mots-c': (1, 'HHS draft tolerance; animal and laboratory evidence, early human work only.'), 'kpv': (1, 'HHS draft tolerance; laboratory and animal evidence, no published human trials.'), 'epitalon': (1, 'HHS draft tolerance; small studies outside Western regulation.'),
+           'ipamorelin': (2, 'No oversight: committee voted against listing; small human studies; sold on the grey market.'), 'kisspeptin-10': (2, 'No oversight for compounding: Category 2; human research studies exist in reproductive medicine.'), 'cjc-1295': (2, 'No oversight: committee voted against every form; small early human studies.'),
+           'retatrutide': (3, 'No lawful route outside its trials; investigational, not approved; sold widely on the grey market.')}
 for c in CARDS: c['weather'], c['evidence'] = WEATHER[c['id']]
 # what is each peptide's own: a plain line on what it is and what people take it for, and the committee vote where there was one
 ABOUT = {'bpc-157': ('Sold for tendon, gut and joint healing claims.', 'Advisory committee, July 2026: eight votes to six for listing.'),
@@ -241,7 +243,63 @@ ABOUT = {'bpc-157': ('Sold for tendon, gut and joint healing claims.', 'Advisory
 for c in CARDS: c['about'], c['own'] = ABOUT[c['id']]
 TRACKS = {'tolerated': 'Tolerated under a draft', 'closed': 'Closed gate', 'listed': 'Category 1', 'mixed': 'Open for topical, closed for injection', 'component': '503B line', 'brand': 'Brand line', 'none': 'No lawful route'}
 for c in CARDS: c['trackLabel'] = TRACKS[c['track']]
-ride = {'asOf': AS_OF, 'cards': CARDS, 'hhsUrl': HHS['url']}
+# ---------- the rest of the menu: compounds graded by tools/evidence.py from PubMed, ClinicalTrials.gov, openFDA, Europe PMC and OpenAlex ----------
+try: MORE = json.load(open(os.path.join(HERE, 'data', 'compounds.json')))
+except FileNotFoundError: MORE = []
+GRADE_TEXT = {'A': 'An approved product in the US', 'B': 'Human trials published or registered', 'C': 'Early human studies, few or no trials', 'D': 'Laboratory and animal work only'}
+# where the register already names a compound, its standing comes from the register, not from the counts
+OVERRIDE = {
+ 'll-37': dict(track='closed', stop=2, weather=3, a='Placed in 503A Category 2 in September 2023: FDA identified significant safety risks; bulk compounding not tolerated.', b='Not listed.'),
+ 'dihexa': dict(track='closed', stop=2, weather=3, a='Placed in 503A Category 2 in September 2023; bulk compounding not tolerated.', b='Not listed.'),
+ 'melanotan-2': dict(track='closed', stop=2, weather=3, a='Withdrawn from Category 2 in April 2026 with no tolerance; advisory review reported for early 2027.', b='Not listed.'),
+ 'aod-9604': dict(track='closed', stop=2, weather=3, a='The advisory committee voted 0 to 12 against listing it in December 2024.', b='Not listed.'),
+ 'thymosin-alpha-1': dict(track='closed', stop=2, weather=2, a='The advisory committee voted 4 to 17 against listing it in December 2024.', b='503B Category 3.'),
+ 'ghrp-2': dict(track='closed', stop=2, weather=3, a='503A Category 3.', b='503B Category 2 for injectable and nasal routes.'),
+ 'ghrp-6': dict(track='closed', stop=2, weather=3, a='503A Category 3.', b='503B Category 2.'),
+ 'ibutamoren': dict(track='closed', stop=2, weather=2, a='503A Category 2; the committee voted 1 to 13 against listing it.', b='503B Category 2.'),
+ 'dsip': dict(track='closed', stop=2, weather=3, a='Withdrawn from Category 2 in April 2026; the advisory committee voted 6 to 7 against it in July 2026; not in the HHS draft.', b='Not listed.'),
+ 'vip': dict(track='listed', weather=0, a='503A Category 1 on the May 2026 list: FDA does not intend to act against bulk compounding while the rule is written.', b='Not listed.', path='A 503A pharmacy may compound it from bulk for a prescription under Category 1.'),
+ 'glutathione': dict(track='listed', weather=0, a='503A Category 1 on the May 2026 list.', b='Not listed.', path='A 503A pharmacy may compound it from bulk for a prescription under Category 1.'),
+ 'gonadorelin': dict(track='component', weather=1, a='Not in a 503A category.', b='503B Category 1, marked as a component of an approved drug.', path='A 503B outsourcing facility may compound it from bulk under Category 1.'),
+ 'cagrilintide': dict(track='none', weather=3, a='Investigational; FDA says it cannot be used in compounding.', b='Same.', path='No lawful route to a patient outside a clinical trial.'),
+ 'survodutide': dict(track='none', weather=3, a='Investigational; no approved product.', b='Not listed.', path='No lawful route to a patient outside a clinical trial.'),
+ 'mazdutide': dict(track='none', weather=3, a='Investigational; no approved product.', b='Not listed.', path='No lawful route to a patient outside a clinical trial.'),
+ 'liraglutide': dict(weather=0, b='Not on the 503B list; FDA proposed in May 2026 not to add it.'),
+ 'hcg': dict(track='brand', weather=0, a='An approved product, a biologic since 2020; FDA has warned against compounded HCG for weight loss.', b='Deemed-biologic products lost the compounding exemptions in 2020.', path='The lawful line is the approved product on a prescription.'),
+ 'insulin': dict(track='brand', weather=0, a='Approved products; a biologic since 2020.', b='Deemed-biologic products lost the compounding exemptions in 2020.', path='The lawful line is the approved product on a prescription.'),
+}
+APPROVED_FALLBACK = {'tesamorelin': 'Egrifta', 'bremelanotide': 'Vyleesi', 'afamelanotide': 'Scenesse', 'elamipretide': 'Forzinity', 'teriparatide': 'Forteo', 'abaloparatide': 'Tymlos', 'octreotide': 'Sandostatin', 'leuprolide': 'Lupron', 'desmopressin': 'DDAVP', 'glucagon': 'Glucagon', 'insulin': 'Insulin', 'calcitonin': 'Miacalcin', 'ziconotide': 'Prialt', 'oxytocin': 'Pitocin', 'liraglutide': 'Victoza', 'exenatide': 'Byetta', 'hcg': 'Pregnyl'}
+STN = {'brand': [['brand', 'Source', 'Branded API from the manufacturer under cGMP.'], ['brand', 'Purify and test', 'Manufacturer release testing under cGMP.'], ['cond', 'Fill and finish', 'The approved product; compounding only with a documented patient-specific difference.'], ['ok', 'Dispense', 'A prescription for the approved product.']],
+       'closed': [['no', 'Source', 'No lawful bulk source for compounding.'], ['no', 'Purify and test', 'No lawful lot to test.'], ['no', 'Fill and finish', 'The gate is closed: no listing that permits it, no tolerance, no approved product.'], ['no', 'Dispense', 'Nothing compounded can be lawfully dispensed.']],
+       'none': [['no', 'Source', 'No lawful source outside a trial.'], ['no', 'Purify and test', 'No lawful lot to test.'], ['no', 'Fill and finish', 'No 503A or 503B path exists.'], ['no', 'Dispense', 'Nothing can be lawfully prescribed outside a trial.']],
+       'listed': [['ok', 'Source', 'Bulk substance from a registered supplier with a certificate of analysis.'], ['ok', 'Purify and test', 'The supplier\'s certificate and the pharmacy\'s own testing under USP <797>.'], ['ok', 'Fill and finish', '503A under Category 1. 503B: not listed.'], ['ok', 'Dispense', 'A prescription for one patient.']],
+       'component': [['ok', 'Source', 'Bulk substance for a 503B facility.'], ['ok', 'Purify and test', 'Release testing under cGMP.'], ['cond', 'Fill and finish', '503B: Category 1. 503A: a legal reading, not a listing.'], ['ok', 'Dispense', 'Prescribed or office-use from a 503B batch.']]}
+def more_card(r):
+    g = r['grade']; key = r['name'].split(' (')[0].lower()
+    # openFDA label search is fuzzy (homeopathic labels match single words), so a known brand wins, and a hit counts only when its generic name is the compound
+    if r['id'] in APPROVED_FALLBACK: ap = {'brand': APPROVED_FALLBACK[r['id']]}
+    else:
+        hit = r.get('approved'); ap = hit if hit and key in (hit.get('generic') or '').lower() else None
+    if ap:
+        track, weather = 'brand', 0
+        a = 'An approved drug (%s). A 503A pharmacy may compound it only when the product is not essentially a copy.' % ap['brand']; b = 'Compounding from bulk only where a list or an approved-drug component allows it.'
+        path = 'The lawful line is the approved product, %s, through a licensed pharmacy on a prescription.' % ap['brand']
+    else:
+        track, weather = 'closed', {'A': 0, 'B': 2, 'C': 3, 'D': 4}[g]
+        a = 'Not on FDA\'s 503A bulks list in any category the register shows; no approved US product.'; b = 'Not on the 503B list.'
+        path = 'No lawful bulk-compounding path today, 503A or 503B, and no approved product: what is sold online is an unapproved drug in FDA\'s letters.'
+    o = r.get('openalex') or {}
+    ev = '%s. PubMed: %s human studies, %s clinical trials. ClinicalTrials.gov: %s registered trials. Europe PMC: %s records. OpenAlex: %s works, %s not in English.' % (GRADE_TEXT[g], r['human_pubmed'], r['trials_pubmed'], r['trials_ctgov'], r['europepmc'], o.get('all'), o.get('non_english'))
+    card = {'id': 'm-' + r['id'], 'name': r['name'], 'aka': r['aka'], 'about': r['about'], 'own': 'Graded from the public indexes on %s. Counts are mentions and registrations, not a verdict on whether it works.' % r['graded_on'],
+            'track': track, 'a': a, 'hhs': 'Not in the draft policy.', 'b': b, 'path': path, 'enforce': 'Letters naming this compound were not checked for this entry.', 'dates': [], 'evidence': ev, 'weather': weather, 'papers': r.get('papers', []), 'menu': 'more', 'grade': g}
+    card.update(OVERRIDE.get(r['id'], {}))
+    card['stations'] = STN[card['track']]
+    if card['track'] == 'closed': card['stop'] = 2
+    return card
+MORE_CARDS = [more_card(r) for r in MORE if not r.get('error')]
+for c in CARDS: c['menu'] = 'named'
+for c in MORE_CARDS: c['trackLabel'] = TRACKS[c['track']]
+ride = {'asOf': AS_OF, 'cards': CARDS + MORE_CARDS, 'hhsUrl': HHS['url']}
 # ---------- the glossary page ----------
 from glossary import GROUPS as GLOSSARY
 gt = open(os.path.join(HERE, 'glossary-template.html')).read()
@@ -255,5 +313,5 @@ rout = rt.replace('/*__DATA__*/', json.dumps(ride, separators=(',', ':')).replac
 open(os.path.join(HERE, 'index.html'), 'w').write(rout)
 open(os.path.join(HERE, 'ride-artifact.html'), 'w').write(strip_wrapper(rout).replace('href="map.html"', 'href="' + MAP_ART + '"').replace('href="glossary.html"', 'href="' + GLOSS_ART + '"'))
 open(os.path.join(HERE, 'artifact.html'), 'w').write(MAP_ART_HTML.replace('href="glossary.html"', 'href="' + GLOSS_ART + '"') + '\n')
-print('index.html (ride)', len(rout) // 1024, 'KB;', len(CARDS), 'cards')
+print('index.html (ride)', len(rout) // 1024, 'KB;', len(CARDS), 'named +', len(MORE_CARDS), 'more')
 print('map.html', len(out) // 1024, 'KB;', len(fac), 'facilities,', len(timeline), 'timeline rows,', len(routes), 'routes,', len(sources), 'sources,', len(reg_rows), 'register rows')

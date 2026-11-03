@@ -1,0 +1,2546 @@
+[
+ {
+  "id": "tesamorelin",
+  "name": "Tesamorelin",
+  "aka": "a GHRH analogue approved as Egrifta for HIV-related belly fat",
+  "about": "Sold on the grey market for fat loss claims.",
+  "synonyms": [
+   "Egrifta"
+  ],
+  "human_pubmed": 76,
+  "trials_pubmed": 23,
+  "all_pubmed": 95,
+  "papers": [
+   {
+    "pmid": "41476424",
+    "title": "Injectable Peptide Therapy: A Primer for Orthopaedic and Sports Medicine Physicians",
+    "year": "2026",
+    "journal": "Am J Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41476424/"
+   },
+   {
+    "pmid": "41966639",
+    "title": "Safety and Efficacy of Approved and Unapproved Peptide Therapies for Musculoskeletal Injuries and Athletic Performance",
+    "year": "2026",
+    "journal": "Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41966639/"
+   },
+   {
+    "pmid": "41490200",
+    "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions",
+    "year": "2026",
+    "journal": "J Am Acad Orthop Surg Glob Res Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/"
+   },
+   {
+    "pmid": "21283099",
+    "title": "Tesamorelin",
+    "year": "2011",
+    "journal": "Nat Rev Drug Discov",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/21283099/"
+   }
+  ],
+  "trials_ctgov": 24,
+  "approved": {
+   "brand": "EGRIFTA SV",
+   "generic": "TESAMORELIN"
+  },
+  "europepmc": 376,
+  "openalex": {
+   "all": 465,
+   "non_english": 31
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "bremelanotide",
+  "name": "Bremelanotide (PT-141)",
+  "aka": "a melanocortin agonist approved as Vyleesi",
+  "about": "Sold on the grey market for libido claims.",
+  "synonyms": [
+   "PT-141",
+   "Vyleesi"
+  ],
+  "human_pubmed": 83,
+  "trials_pubmed": 16,
+  "all_pubmed": 113,
+  "papers": [
+   {
+    "pmid": "31429064",
+    "title": "Bremelanotide: First Approval",
+    "year": "2019",
+    "journal": "Drugs",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31429064/"
+   },
+   {
+    "pmid": "15134289",
+    "title": "PT-141 Palatin",
+    "year": "2004",
+    "journal": "Curr Opin Investig Drugs",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15134289/"
+   },
+   {
+    "pmid": "27751477",
+    "title": "Re: Bremelanotide for Female Sexual Dysfunctions in Premenopausal Women: A Randomized, Placebo-Controlled Dose-Finding Trial",
+    "year": "2016",
+    "journal": "J Urol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27751477/"
+   },
+   {
+    "pmid": "34510696",
+    "title": "Hypoactive Sexual Desire Disorder in Women: Physiology, Assessment, Diagnosis, and Treatment",
+    "year": "2021",
+    "journal": "J Midwifery Womens Health",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34510696/"
+   }
+  ],
+  "trials_ctgov": 10,
+  "approved": {
+   "brand": "Vyleesi",
+   "generic": "BREMELANOTIDE"
+  },
+  "europepmc": 327,
+  "openalex": {
+   "all": 598,
+   "non_english": 43
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "melanotan-2",
+  "name": "Melanotan II",
+  "aka": "a synthetic melanocortin peptide, never approved anywhere",
+  "about": "Sold online for tanning and libido claims; FDA withdrew it from Category 2 in April 2026 with no tolerance.",
+  "synonyms": [
+   "melanotan II",
+   "melanotan-II"
+  ],
+  "human_pubmed": 48,
+  "trials_pubmed": 4,
+  "all_pubmed": 196,
+  "papers": [
+   {
+    "pmid": "28905366",
+    "title": "The unregulated use of melanotan-II is of public health interest to Australian dermatologists",
+    "year": "2017",
+    "journal": "Australas J Dermatol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28905366/"
+   },
+   {
+    "pmid": "33434184",
+    "title": "Pharmacological chaperone action in humanized mouse models of MC4R-linked obesity",
+    "year": "2021",
+    "journal": "JCI Insight",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33434184/"
+   },
+   {
+    "pmid": "30209265",
+    "title": "Glucose-regulated protein 78 binds to and regulates the melanocortin-4 receptor",
+    "year": "2018",
+    "journal": "Exp Mol Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30209265/"
+   },
+   {
+    "pmid": "33245851",
+    "title": "LC-HRMS characterization of the skin pigmentation and sexual enhancers melanotan II and bremelanotide sold on the black market of performance and image enhancing drugs",
+    "year": "2021",
+    "journal": "Drug Test Anal",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33245851/"
+   }
+  ],
+  "trials_ctgov": 1,
+  "approved": null,
+  "europepmc": 659,
+  "openalex": null,
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "afamelanotide",
+  "name": "Afamelanotide (Melanotan I)",
+  "aka": "approved as Scenesse for a rare light-sensitivity disorder",
+  "about": "Sold on the grey market for tanning claims.",
+  "synonyms": [
+   "Scenesse",
+   "melanotan I"
+  ],
+  "human_pubmed": 85,
+  "trials_pubmed": 12,
+  "all_pubmed": 121,
+  "papers": [
+   {
+    "pmid": "38139134",
+    "title": "Vitiligo: Pathogenesis and New and Emerging Treatments",
+    "year": "2023",
+    "journal": "Int J Mol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38139134/"
+   },
+   {
+    "pmid": "38736212",
+    "title": "Vitamin D status in patients with erythropoietic protoporphyria taking the systemic photoprotective agent afamelanotide",
+    "year": "2024",
+    "journal": "Br J Dermatol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38736212/"
+   },
+   {
+    "pmid": "30859308",
+    "title": "From pathogenesis of acne vulgaris to anti-acne agents",
+    "year": "2019",
+    "journal": "Arch Dermatol Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30859308/"
+   },
+   {
+    "pmid": "19224885",
+    "title": "Use of melanotan I and II in the general population",
+    "year": "2009",
+    "journal": "BMJ",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19224885/"
+   }
+  ],
+  "trials_ctgov": 23,
+  "approved": {
+   "brand": "SCENESSE",
+   "generic": "AFAMELANOTIDE"
+  },
+  "europepmc": 419,
+  "openalex": {
+   "all": 711,
+   "non_english": 69
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "aod-9604",
+  "name": "AOD-9604",
+  "aka": "a fragment of growth hormone",
+  "about": "Sold for fat loss claims; the advisory committee voted against it in December 2024.",
+  "synonyms": [
+   "AOD9604"
+  ],
+  "human_pubmed": 18,
+  "trials_pubmed": 0,
+  "all_pubmed": 22,
+  "papers": [
+   {
+    "pmid": "41490200",
+    "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions",
+    "year": "2026",
+    "journal": "J Am Acad Orthop Surg Glob Res Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/"
+   },
+   {
+    "pmid": "41966639",
+    "title": "Safety and Efficacy of Approved and Unapproved Peptide Therapies for Musculoskeletal Injuries and Athletic Performance",
+    "year": "2026",
+    "journal": "Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41966639/"
+   },
+   {
+    "pmid": "15134286",
+    "title": "AOD-9604 Metabolic",
+    "year": "2004",
+    "journal": "Curr Opin Investig Drugs",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15134286/"
+   },
+   {
+    "pmid": "25208511",
+    "title": "Detection and in vitro metabolism of AOD9604",
+    "year": "2015",
+    "journal": "Drug Test Anal",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25208511/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 27,
+  "openalex": {
+   "all": 73,
+   "non_english": 9
+  },
+  "grade": "C",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "thymosin-alpha-1",
+  "name": "Thymosin alpha-1",
+  "aka": "an immune peptide approved in some countries as Zadaxin, not in the US",
+  "about": "Sold for immune claims; 503B Category 3; the committee voted against it in December 2024.",
+  "synonyms": [
+   "thymalfasin",
+   "Zadaxin"
+  ],
+  "human_pubmed": 377,
+  "trials_pubmed": 57,
+  "all_pubmed": 630,
+  "papers": [
+   {
+    "pmid": "11381492",
+    "title": "Thymosin alpha-1",
+    "year": "2001",
+    "journal": "Am J Health Syst Pharm",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/11381492/"
+   },
+   {
+    "pmid": "17468232",
+    "title": "beta-Thymosins",
+    "year": "2007",
+    "journal": "Ann N Y Acad Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/17468232/"
+   },
+   {
+    "pmid": "8877652",
+    "title": "A pilot study of thymosin-alpha 1 therapy for chronic hepatitis D",
+    "year": "1996",
+    "journal": "J Clin Gastroenterol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/8877652/"
+   },
+   {
+    "pmid": "15641209",
+    "title": "Combination therapy of thymalfasin (thymosin-alpha 1) and peginterferon alfa-2a in patients with chronic hepatitis C virus infection who are non-responders to standard treatment",
+    "year": "2004",
+    "journal": "J Gastroenterol Hepatol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15641209/"
+   }
+  ],
+  "trials_ctgov": 66,
+  "approved": null,
+  "europepmc": 1444,
+  "openalex": {
+   "all": 7078,
+   "non_english": 418
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "ll-37",
+  "name": "LL-37",
+  "aka": "the human cathelicidin antimicrobial peptide",
+  "about": "Sold for infection and wound claims; placed in 503A Category 2 in September 2023.",
+  "synonyms": [
+   "cathelicidin LL-37"
+  ],
+  "human_pubmed": 1839,
+  "trials_pubmed": 60,
+  "all_pubmed": 2550,
+  "papers": [
+   {
+    "pmid": "31207181",
+    "title": "Humoral Response Against LL-37 in Psoriatic Disease: Comment on the Article by Yuan et al",
+    "year": "2019",
+    "journal": "Arthritis Rheumatol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31207181/"
+   },
+   {
+    "pmid": "32019695",
+    "title": "Cathelicidin LL-37 (an antimicrobial peptide)-induced colistin dependence in Acinetobacter baumannii",
+    "year": "2020",
+    "journal": "Diagn Microbiol Infect Dis",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32019695/"
+   },
+   {
+    "pmid": "26121211",
+    "title": "Cathelicidin LL-37 Induces Semaphorin 3A Expression in Human Epidermal Keratinocytes: Implications for Possible Application to Pruritus",
+    "year": "2015",
+    "journal": "J Invest Dermatol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26121211/"
+   },
+   {
+    "pmid": "26073571",
+    "title": "Cathelicidin (LL-37) and human \u03b22-defensin levels of children with post-infectious bronchiolitis obliterans",
+    "year": "2017",
+    "journal": "Clin Respir J",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26073571/"
+   }
+  ],
+  "trials_ctgov": 20,
+  "approved": null,
+  "europepmc": 32810,
+  "openalex": {
+   "all": 1546314,
+   "non_english": 237465
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "dihexa",
+  "name": "Dihexa",
+  "aka": "an angiotensin-derived small peptide",
+  "about": "Sold for cognition claims; placed in 503A Category 2 in September 2023.",
+  "synonyms": [],
+  "human_pubmed": 8,
+  "trials_pubmed": 0,
+  "all_pubmed": 18,
+  "papers": [
+   {
+    "pmid": "41490200",
+    "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions",
+    "year": "2026",
+    "journal": "J Am Acad Orthop Surg Glob Res Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/"
+   },
+   {
+    "pmid": "29733881",
+    "title": "Cognitive benefits of angiotensin IV and angiotensin-(1-7): A systematic review of experimental studies",
+    "year": "2018",
+    "journal": "Neurosci Biobehav Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29733881/"
+   },
+   {
+    "pmid": "25187433",
+    "title": "The procognitive and synaptogenic effects of angiotensin IV-derived peptides are dependent on activation of the hepatocyte growth factor/c-met system",
+    "year": "2014",
+    "journal": "J Pharmacol Exp Ther",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25187433/"
+   },
+   {
+    "pmid": "18097939",
+    "title": "Dimeric DOTA-alpha-melanocyte-stimulating hormone analogs: synthesis and in vivo characteristics of radiopeptides with high in vitro activity",
+    "year": "2007",
+    "journal": "J Recept Signal Transduct Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18097939/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 93,
+  "openalex": {
+   "all": 130,
+   "non_english": 10
+  },
+  "grade": "C",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "selank",
+  "name": "Selank",
+  "aka": "a synthetic tuftsin analogue registered as a drug in Russia",
+  "about": "Sold for anxiety claims.",
+  "synonyms": [],
+  "human_pubmed": 15,
+  "trials_pubmed": 3,
+  "all_pubmed": 68,
+  "papers": [
+   {
+    "pmid": "41490200",
+    "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions",
+    "year": "2026",
+    "journal": "J Am Acad Orthop Surg Glob Res Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/"
+   },
+   {
+    "pmid": "32342318",
+    "title": "Functional Connectomic Approach to Studying Selank and Semax Effects",
+    "year": "2020",
+    "journal": "Dokl Biol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32342318/"
+   },
+   {
+    "pmid": "16634437",
+    "title": "[Comparison of anticoagulant effects of regulatory proline-containing oligopeptides. Specificity of glyprolines, semax, and selank and potential of their practical application]",
+    "year": "2006",
+    "journal": "Izv Akad Nauk Ser Biol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16634437/"
+   },
+   {
+    "pmid": "18454096",
+    "title": "[Efficacy and possible mechanisms of action of a new peptide anxiolytic selank in the therapy of generalized anxiety disorders and neurasthenia]",
+    "year": "2008",
+    "journal": "Zh Nevrol Psikhiatr Im S S Korsakova",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18454096/"
+   }
+  ],
+  "trials_ctgov": 2,
+  "approved": null,
+  "europepmc": 82,
+  "openalex": {
+   "all": 293,
+   "non_english": 85
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "ghrp-2",
+  "name": "GHRP-2",
+  "aka": "a growth-hormone-releasing peptide",
+  "about": "Sold for muscle and recovery claims; Category 3 for 503A, Category 2 for 503B.",
+  "synonyms": [
+   "pralmorelin"
+  ],
+  "human_pubmed": 137,
+  "trials_pubmed": 56,
+  "all_pubmed": 213,
+  "papers": [
+   {
+    "pmid": "25809000",
+    "title": "Detection of GHRP-2 and GHRP-6 in urine samples from athletes",
+    "year": "2015",
+    "journal": "Drug Test Anal",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25809000/"
+   },
+   {
+    "pmid": "9186261",
+    "title": "Growth hormone-releasing peptides",
+    "year": "1997",
+    "journal": "Eur J Endocrinol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/9186261/"
+   },
+   {
+    "pmid": "15230633",
+    "title": "Pralmorelin: GHRP 2, GPA 748, growth hormone-releasing peptide 2, KP-102 D, KP-102 LN, KP-102D, KP-102LN",
+    "year": "2004",
+    "journal": "Drugs R D",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15230633/"
+   },
+   {
+    "pmid": "20552695",
+    "title": "Determination of growth hormone secretagogue pralmorelin (GHRP-2) and its metabolite in human urine by liquid chromatography/electrospray ionization tandem mass spectrometry",
+    "year": "2010",
+    "journal": "Rapid Commun Mass Spectrom",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/20552695/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 442,
+  "openalex": {
+   "all": 3483,
+   "non_english": 512
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "ghrp-6",
+  "name": "GHRP-6",
+  "aka": "a growth-hormone-releasing peptide",
+  "about": "Sold for appetite and muscle claims; Category 3 for 503A, Category 2 for 503B.",
+  "synonyms": [],
+  "human_pubmed": 234,
+  "trials_pubmed": 42,
+  "all_pubmed": 639,
+  "papers": [
+   {
+    "pmid": "25809000",
+    "title": "Detection of GHRP-2 and GHRP-6 in urine samples from athletes",
+    "year": "2015",
+    "journal": "Drug Test Anal",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25809000/"
+   },
+   {
+    "pmid": "9186261",
+    "title": "Growth hormone-releasing peptides",
+    "year": "1997",
+    "journal": "Eur J Endocrinol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/9186261/"
+   },
+   {
+    "pmid": "25869809",
+    "title": "Determination of growth hormone releasing peptides metabolites in human urine after nasal administration of GHRP-1, GHRP-2, GHRP-6, Hexarelin, and Ipamorelin",
+    "year": "2015",
+    "journal": "Drug Test Anal",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25869809/"
+   },
+   {
+    "pmid": "34417468",
+    "title": "Molecular recognition of an acyl-peptide hormone and activation of ghrelin receptor",
+    "year": "2021",
+    "journal": "Nat Commun",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34417468/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 1108,
+  "openalex": {
+   "all": 3681,
+   "non_english": 523
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "hexarelin",
+  "name": "Hexarelin",
+  "aka": "a growth-hormone secretagogue",
+  "about": "Sold for muscle claims; no approved product.",
+  "synonyms": [],
+  "human_pubmed": 169,
+  "trials_pubmed": 58,
+  "all_pubmed": 291,
+  "papers": [
+   {
+    "pmid": "14594107",
+    "title": "Effects of cortistatin-14 and somatostatin-14 on the endocrine response to hexarelin in humans",
+    "year": "2003",
+    "journal": "J Endocrinol Invest",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14594107/"
+   },
+   {
+    "pmid": "25645463",
+    "title": "Implications of ghrelin and hexarelin in diabetes and diabetes-associated heart diseases",
+    "year": "2015",
+    "journal": "Endocrine",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25645463/"
+   },
+   {
+    "pmid": "9186261",
+    "title": "Growth hormone-releasing peptides",
+    "year": "1997",
+    "journal": "Eur J Endocrinol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/9186261/"
+   },
+   {
+    "pmid": "9920097",
+    "title": "Effects of recombinant human insulin-like growth factor I administration on growth hormone (GH) secretion, both spontaneous and stimulated by GH-releasing hormone or hexarelin, a peptidyl GH secretagogue, in humans",
+    "year": "1999",
+    "journal": "J Clin Endocrinol Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/9920097/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 569,
+  "openalex": {
+   "all": 1363,
+   "non_english": 118
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "ibutamoren",
+  "name": "Ibutamoren (MK-677)",
+  "aka": "an oral growth-hormone secretagogue, not a peptide",
+  "about": "Sold for muscle and sleep claims; Category 2; the committee voted 1 to 13 against it.",
+  "synonyms": [
+   "MK-677",
+   "MK677"
+  ],
+  "human_pubmed": 46,
+  "trials_pubmed": 16,
+  "all_pubmed": 66,
+  "papers": [
+   {
+    "pmid": "9467534",
+    "title": "MK-677, an orally active growth hormone secretagogue, reverses diet-induced catabolism",
+    "year": "1998",
+    "journal": "J Clin Endocrinol Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/9467534/"
+   },
+   {
+    "pmid": "31964466",
+    "title": "Antiviral activity of sertindole, raloxifene and ibutamoren against transcription and replication-competent Ebola virus-like particles",
+    "year": "2020",
+    "journal": "BMB Rep",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31964466/"
+   },
+   {
+    "pmid": "40675653",
+    "title": "Hepatotoxicity induced by MK-677",
+    "year": "2025",
+    "journal": "BMJ Case Rep",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40675653/"
+   },
+   {
+    "pmid": "19455266",
+    "title": "Gateways to clinical trials",
+    "year": "2009",
+    "journal": "Methods Find Exp Clin Pharmacol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19455266/"
+   }
+  ],
+  "trials_ctgov": 8,
+  "approved": null,
+  "europepmc": 220,
+  "openalex": {
+   "all": 271,
+   "non_english": 17
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "igf-1-lr3",
+  "name": "IGF-1 LR3",
+  "aka": "a long-acting insulin-like growth factor analogue",
+  "about": "Sold for muscle claims; no approved product.",
+  "synonyms": [
+   "long R3 IGF-I",
+   "IGF-I LR3"
+  ],
+  "human_pubmed": 17,
+  "trials_pubmed": 0,
+  "all_pubmed": 58,
+  "papers": [
+   {
+    "pmid": "37261455",
+    "title": "Recombinant expression of IGF-1 and LR3 IGF-1 fused with xylanase in Pichia pastoris",
+    "year": "2023",
+    "journal": "Appl Microbiol Biotechnol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37261455/"
+   },
+   {
+    "pmid": "20675162",
+    "title": "Detection of His-tagged Long-R\u00b3-IGF-I in a black market product",
+    "year": "2010",
+    "journal": "Growth Horm IGF Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/20675162/"
+   },
+   {
+    "pmid": "11735239",
+    "title": "Effect of IGFBP-3 on IGF- and IGF-analogue-induced insulin-like growth factor-I receptor (IGFIR) signalling",
+    "year": "2001",
+    "journal": "Growth Horm IGF Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/11735239/"
+   },
+   {
+    "pmid": "39610283",
+    "title": "Intranasal long R3 insulin-like growth factor-1 treatment promotes amyloid plaque remodeling in cerebral cortex but fails to preserve cognitive function in male 5XFAD mice",
+    "year": "2025",
+    "journal": "J Alzheimers Dis",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39610283/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 39,
+  "openalex": {
+   "all": 328,
+   "non_english": 18
+  },
+  "grade": "C",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "peg-mgf",
+  "name": "PEG-MGF",
+  "aka": "a pegylated mechano growth factor fragment",
+  "about": "Sold for muscle repair claims; laboratory research mostly.",
+  "synonyms": [
+   "mechano growth factor"
+  ],
+  "human_pubmed": 99,
+  "trials_pubmed": 6,
+  "all_pubmed": 194,
+  "papers": [
+   {
+    "pmid": "25818452",
+    "title": "Mechano growth factor (MGF) and transforming growth factor (TGF)-\u03b23 functionalized silk scaffolds enhance articular hyaline cartilage regeneration in rabbit model",
+    "year": "2015",
+    "journal": "Biomaterials",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25818452/"
+   },
+   {
+    "pmid": "34015701",
+    "title": "Pretreatment with mechano growth factor E peptide attenuates osteoarthritis through improving cell proliferation and extracellular matrix synthesis in chondrocytes under severe hypoxia",
+    "year": "2021",
+    "journal": "Int Immunopharmacol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34015701/"
+   },
+   {
+    "pmid": "39067248",
+    "title": "Mechano-growth factor regulates periodontal ligament stem cell proliferation and differentiation through Fyn-RhoA-YAP signaling",
+    "year": "2024",
+    "journal": "Biochem Biophys Res Commun",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39067248/"
+   },
+   {
+    "pmid": "30537441",
+    "title": "Concise Review: The Endothelial Cell Extracellular Matrix Regulates Tissue Homeostasis and Repair",
+    "year": "2019",
+    "journal": "Stem Cells Transl Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30537441/"
+   }
+  ],
+  "trials_ctgov": 1,
+  "approved": null,
+  "europepmc": 3,
+  "openalex": {
+   "all": 977,
+   "non_english": 81
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "follistatin",
+  "name": "Follistatin 344",
+  "aka": "a myostatin-binding protein",
+  "about": "Sold for muscle claims; no approved product.",
+  "synonyms": [
+   "follistatin"
+  ],
+  "human_pubmed": 1568,
+  "trials_pubmed": 90,
+  "all_pubmed": 2983,
+  "papers": [
+   {
+    "pmid": "41966639",
+    "title": "Safety and Efficacy of Approved and Unapproved Peptide Therapies for Musculoskeletal Injuries and Athletic Performance",
+    "year": "2026",
+    "journal": "Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41966639/"
+   },
+   {
+    "pmid": "39260374",
+    "title": "Safe and effective in\u00a0vivo delivery of DNA and RNA using proteolipid vehicles",
+    "year": "2024",
+    "journal": "Cell",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39260374/"
+   },
+   {
+    "pmid": "29020616",
+    "title": "The emerging role of follistatin under stresses and its implications in diseases",
+    "year": "2018",
+    "journal": "Gene",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29020616/"
+   },
+   {
+    "pmid": "28810121",
+    "title": "Comparative Proteomic and Transcriptomic Analysis of Follistatin-Induced Skeletal Muscle Hypertrophy",
+    "year": "2017",
+    "journal": "J Proteome Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28810121/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 21,
+  "openalex": {
+   "all": 2299,
+   "non_english": 232
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "dsip",
+  "name": "DSIP (emideltide)",
+  "aka": "delta sleep-inducing peptide",
+  "about": "Sold for sleep claims; the advisory committee voted against it in July 2026.",
+  "synonyms": [
+   "delta sleep-inducing peptide",
+   "emideltide"
+  ],
+  "human_pubmed": 111,
+  "trials_pubmed": 18,
+  "all_pubmed": 463,
+  "papers": [
+   {
+    "pmid": "41490200",
+    "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions",
+    "year": "2026",
+    "journal": "J Am Acad Orthop Surg Glob Res Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/"
+   },
+   {
+    "pmid": "11437870",
+    "title": "Delta sleep-inducing peptide",
+    "year": "2001",
+    "journal": "Eur J Anaesthesiol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/11437870/"
+   },
+   {
+    "pmid": "9617990",
+    "title": "Opioid detoxification with delta sleep-inducing peptide: results of an open clinical trial",
+    "year": "1998",
+    "journal": "J Clin Psychopharmacol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/9617990/"
+   },
+   {
+    "pmid": "19526126",
+    "title": "Effect of delta-sleep-inducing peptide on expression of heat shock protein 70 kDa in K562 cells",
+    "year": "2009",
+    "journal": "Bull Exp Biol Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19526126/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 509,
+  "openalex": {
+   "all": 1865,
+   "non_english": 429
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "pinealon",
+  "name": "Pinealon",
+  "aka": "a three-residue synthetic peptide from the Russian bioregulator family",
+  "about": "Sold for cognition and aging claims.",
+  "synonyms": [],
+  "human_pubmed": 8,
+  "trials_pubmed": 1,
+  "all_pubmed": 15,
+  "papers": [
+   {
+    "pmid": "41490200",
+    "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions",
+    "year": "2026",
+    "journal": "J Am Acad Orthop Surg Glob Res Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/"
+   },
+   {
+    "pmid": "22708445",
+    "title": "[Analysis of some parameters of biological age and adaptation possibilities of workers of locomotive brigades]",
+    "year": "2012",
+    "journal": "Adv Gerontol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22708445/"
+   },
+   {
+    "pmid": "24738258",
+    "title": "[Neuroprotective effects of peptides bioregulators in people of various age]",
+    "year": "2013",
+    "journal": "Adv Gerontol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/24738258/"
+   },
+   {
+    "pmid": "18546826",
+    "title": "[Biological activity of regulatory peptides in model experiments in vitro]",
+    "year": "2008",
+    "journal": "Adv Gerontol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18546826/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 29,
+  "openalex": {
+   "all": 66,
+   "non_english": 24
+  },
+  "grade": "C",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "thymalin",
+  "name": "Thymalin",
+  "aka": "a thymic peptide preparation used in Russia",
+  "about": "Sold for immune and aging claims.",
+  "synonyms": [],
+  "human_pubmed": 156,
+  "trials_pubmed": 12,
+  "all_pubmed": 234,
+  "papers": [
+   {
+    "pmid": "35408963",
+    "title": "Peptides Regulating Proliferative Activity and Inflammatory Pathways in the Monocyte/Macrophage THP-1 Cell Line",
+    "year": "2022",
+    "journal": "Int J Mol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35408963/"
+   },
+   {
+    "pmid": "26033592",
+    "title": "Chrono- and Immunocorrection of Inflammatory Disorders of Internal Reproductive Organs in Women of Reproductive Age",
+    "year": "2015",
+    "journal": "Bull Exp Biol Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26033592/"
+   },
+   {
+    "pmid": "11188814",
+    "title": "[Effects of thymalin on blood coagulation and contents of proinflammatory and anti-inflammatory cytokines in patients with burns]",
+    "year": "2000",
+    "journal": "Vestn Khir Im I I Grek",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/11188814/"
+   },
+   {
+    "pmid": "21510076",
+    "title": "[Influence of peptides from pineal gland on thymus function at aging]",
+    "year": "2010",
+    "journal": "Adv Gerontol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/21510076/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 322,
+  "openalex": {
+   "all": 530,
+   "non_english": 262
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "cerebrolysin",
+  "name": "Cerebrolysin",
+  "aka": "a porcine brain peptide mixture approved in some countries, not in the US",
+  "about": "Sold for cognition and stroke-recovery claims.",
+  "synonyms": [],
+  "human_pubmed": 328,
+  "trials_pubmed": 89,
+  "all_pubmed": 639,
+  "papers": [
+   {
+    "pmid": "40087248",
+    "title": "Update on Neuroprotection after Traumatic Brain Injury",
+    "year": "2025",
+    "journal": "CNS Drugs",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40087248/"
+   },
+   {
+    "pmid": "28747461",
+    "title": "Hope Dies Last-Evidence Again Fails to Support a Neuroprotectant: Cerebrolysin for Acute Ischemic Stroke",
+    "year": "2017",
+    "journal": "Stroke",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28747461/"
+   },
+   {
+    "pmid": "30961867",
+    "title": "Nanowired delivery of cerebrolysin with neprilysin and p-Tau antibodies induces superior neuroprotection in Alzheimer's disease",
+    "year": "2019",
+    "journal": "Prog Brain Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30961867/"
+   },
+   {
+    "pmid": "36582161",
+    "title": "[A progressive view on the treatment and rehabilitation of acute ischemic stroke]",
+    "year": "2022",
+    "journal": "Zh Nevrol Psikhiatr Im S S Korsakova",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36582161/"
+   }
+  ],
+  "trials_ctgov": 43,
+  "approved": null,
+  "europepmc": 1205,
+  "openalex": {
+   "all": 3474,
+   "non_english": 582
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "humanin",
+  "name": "Humanin",
+  "aka": "a mitochondrial-derived peptide",
+  "about": "Sold for longevity claims; laboratory research mostly.",
+  "synonyms": [],
+  "human_pubmed": 320,
+  "trials_pubmed": 8,
+  "all_pubmed": 550,
+  "papers": [
+   {
+    "pmid": "36642986",
+    "title": "Mitochondrial stress and mitokines in aging",
+    "year": "2023",
+    "journal": "Aging Cell",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36642986/"
+   },
+   {
+    "pmid": "25738459",
+    "title": "The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces obesity and insulin resistance",
+    "year": "2015",
+    "journal": "Cell Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25738459/"
+   },
+   {
+    "pmid": "37730689",
+    "title": "Neuron-derived extracellular vesicles in blood reveal effects of exercise in Alzheimer's disease",
+    "year": "2023",
+    "journal": "Alzheimers Res Ther",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37730689/"
+   },
+   {
+    "pmid": "36605935",
+    "title": "Editorial: The effects of circulating non-sex hormones in cardiovascular disease",
+    "year": "2022",
+    "journal": "Front Endocrinol (Lausanne)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36605935/"
+   }
+  ],
+  "trials_ctgov": 3,
+  "approved": null,
+  "europepmc": 1979,
+  "openalex": {
+   "all": 9763,
+   "non_english": 599
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "elamipretide",
+  "name": "Elamipretide (SS-31)",
+  "aka": "a mitochondria-targeted peptide, approved by FDA in 2025 for Barth syndrome",
+  "about": "Sold on the grey market for energy claims.",
+  "synonyms": [
+   "SS-31",
+   "Forzinity",
+   "Bendavia"
+  ],
+  "human_pubmed": 196,
+  "trials_pubmed": 20,
+  "all_pubmed": 462,
+  "papers": [
+   {
+    "pmid": "34572131",
+    "title": "Potential Therapeutic Candidates for Age-Related Macular Degeneration (AMD)",
+    "year": "2021",
+    "journal": "Cells",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34572131/"
+   },
+   {
+    "pmid": "41335372",
+    "title": "Elamipretide: First Approval",
+    "year": "2026",
+    "journal": "Drugs",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41335372/"
+   },
+   {
+    "pmid": "41966639",
+    "title": "Safety and Efficacy of Approved and Unapproved Peptide Therapies for Musculoskeletal Injuries and Athletic Performance",
+    "year": "2026",
+    "journal": "Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41966639/"
+   },
+   {
+    "pmid": "40497970",
+    "title": "Mitochondrial Dysfunction: The Silent Catalyst of Kidney Disease Progression",
+    "year": "2025",
+    "journal": "Cells",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40497970/"
+   }
+  ],
+  "trials_ctgov": 21,
+  "approved": {
+   "brand": "FORZINITY",
+   "generic": "ELAMIPRETIDE HYDROCHLORIDE"
+  },
+  "europepmc": 1179,
+  "openalex": {
+   "all": 1700,
+   "non_english": 34
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "ara-290",
+  "name": "ARA-290 (cibinetide)",
+  "aka": "an erythropoietin-derived peptide studied for neuropathy",
+  "about": "Sold for nerve pain claims; no approved product.",
+  "synonyms": [
+   "cibinetide"
+  ],
+  "human_pubmed": 21,
+  "trials_pubmed": 4,
+  "all_pubmed": 37,
+  "papers": [
+   {
+    "pmid": "33423557",
+    "title": "The time to develop treatments for diabetic neuropathy",
+    "year": "2021",
+    "journal": "Expert Opin Investig Drugs",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33423557/"
+   },
+   {
+    "pmid": "29026145",
+    "title": "Cibinetide dampens innate immune cell functions thus ameliorating the course of experimental colitis",
+    "year": "2017",
+    "journal": "Sci Rep",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29026145/"
+   },
+   {
+    "pmid": "34498509",
+    "title": "Cibinetide Protects Isolated Human Islets in a Stressful Environment and Improves Engraftment in the Perspective of Intra Portal Islet Transplantation",
+    "year": "2021",
+    "journal": "Cell Transplant",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34498509/"
+   },
+   {
+    "pmid": "28475703",
+    "title": "Cibinetide Improves Corneal Nerve Fiber Abundance in Patients With Sarcoidosis-Associated Small Nerve Fiber Loss and Neuropathic Pain",
+    "year": "2017",
+    "journal": "Invest Ophthalmol Vis Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28475703/"
+   }
+  ],
+  "trials_ctgov": 4,
+  "approved": null,
+  "europepmc": 86,
+  "openalex": {
+   "all": 82123,
+   "non_english": 36534
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "vip",
+  "name": "Vasoactive intestinal peptide",
+  "aka": "a gut and immune peptide on the 503A Category 1 list",
+  "about": "Compounded for inflammation claims.",
+  "synonyms": [
+   "vasoactive intestinal peptide",
+   "aviptadil"
+  ],
+  "human_pubmed": 2991,
+  "trials_pubmed": 112,
+  "all_pubmed": 8425,
+  "papers": [
+   {
+    "pmid": "37968060",
+    "title": "Aviptadil: A promising treatment option for acute respiratory distress syndrome",
+    "year": "2023",
+    "journal": "Indian J Tuberc",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37968060/"
+   },
+   {
+    "pmid": "37348523",
+    "title": "A negative trial for vasoactive intestinal peptide in COVID-19-associated acute hypoxaemic respiratory failure",
+    "year": "2023",
+    "journal": "Lancet Respir Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37348523/"
+   },
+   {
+    "pmid": "24522075",
+    "title": "Re: antitumoral effects of vasoactive intestinal peptide in human renal cell carcinoma xenografts in athymic nude mice",
+    "year": "2014",
+    "journal": "J Urol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/24522075/"
+   },
+   {
+    "pmid": "19689305",
+    "title": "Sleep-inducing factors",
+    "year": "2009",
+    "journal": "CNS Neurol Disord Drug Targets",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19689305/"
+   }
+  ],
+  "trials_ctgov": 20,
+  "approved": null,
+  "europepmc": 28347,
+  "openalex": {
+   "all": 58489,
+   "non_english": 4117
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "oxytocin",
+  "name": "Oxytocin",
+  "aka": "a hormone approved as Pitocin for labor",
+  "about": "Compounded for social and sexual claims; 503B Category 1 as a component of an approved drug.",
+  "synonyms": [
+   "Pitocin"
+  ],
+  "human_pubmed": 14313,
+  "trials_pubmed": 2430,
+  "all_pubmed": 29548,
+  "papers": [
+   {
+    "pmid": "38462255",
+    "title": "The physiology and pharmacology of oxytocin in labor and in the peripartum period",
+    "year": "2024",
+    "journal": "Am J Obstet Gynecol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38462255/"
+   },
+   {
+    "pmid": "32683141",
+    "title": "Oxytocin and postpartum depression: A systematic review",
+    "year": "2020",
+    "journal": "Psychoneuroendocrinology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32683141/"
+   },
+   {
+    "pmid": "32912963",
+    "title": "Is Oxytocin \"Nature's Medicine\"?",
+    "year": "2020",
+    "journal": "Pharmacol Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32912963/"
+   },
+   {
+    "pmid": "37460365",
+    "title": "Oxytocin: physiology, pharmacology, and clinical application for labor management",
+    "year": "2024",
+    "journal": "Am J Obstet Gynecol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37460365/"
+   }
+  ],
+  "trials_ctgov": 936,
+  "approved": {
+   "brand": "GUNA-GERIATRICS",
+   "generic": "1,4-BENZOQUINONE - ARNICA MONTANA - OXYTOCIN - BARIUM CARBONATE - BARIUM OXALOSUCCINATE - CORTICOTROPIN - LEAD - LEVOTHYROXINE - LUTRELIN - MALIC ACID - MELATONIN - NEUROTROPHIN-3 - NEUROTROPHIN-4 - PHENYLALANINE - PORK LIVER - PYRUVIC ACID - RINFABATE - SUS SCROFA ADRENAL GLAND - SUS SCROFA FRONTAL LOBE - SUS SCROFA HYPOTHALAMUS - THYROTROPIN ALFA - BRAIN-DERIVED NEUROTROPHIC FACTOR HUMAN -"
+  },
+  "europepmc": 73406,
+  "openalex": {
+   "all": 159473,
+   "non_english": 17793
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "gonadorelin",
+  "name": "Gonadorelin",
+  "aka": "a GnRH peptide, 503B Category 1 as a component of a formerly approved drug",
+  "about": "Compounded alongside testosterone to maintain fertility.",
+  "synonyms": [],
+  "human_pubmed": 118,
+  "trials_pubmed": 25,
+  "all_pubmed": 299,
+  "papers": [
+   {
+    "pmid": "22305976",
+    "title": "Menorrhagia",
+    "year": "2012",
+    "journal": "BMJ Clin Evid",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22305976/"
+   },
+   {
+    "pmid": "21418683",
+    "title": "Endometriosis",
+    "year": "2010",
+    "journal": "BMJ Clin Evid",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/21418683/"
+   },
+   {
+    "pmid": "19454060",
+    "title": "Endometriosis",
+    "year": "2007",
+    "journal": "BMJ Clin Evid",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19454060/"
+   },
+   {
+    "pmid": "19454068",
+    "title": "Breast pain",
+    "year": "2007",
+    "journal": "BMJ Clin Evid",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19454068/"
+   }
+  ],
+  "trials_ctgov": 1164,
+  "approved": null,
+  "europepmc": 2057,
+  "openalex": {
+   "all": 2326,
+   "non_english": 291
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "hcg",
+  "name": "Human chorionic gonadotropin",
+  "aka": "a hormone approved for fertility uses, a biologic since 2020",
+  "about": "Compounded for weight loss claims, which FDA has warned against.",
+  "synonyms": [
+   "chorionic gonadotropin"
+  ],
+  "human_pubmed": 13828,
+  "trials_pubmed": 781,
+  "all_pubmed": 19524,
+  "papers": [
+   {
+    "pmid": "29772831",
+    "title": "Human Chorionic Gonadotropin (hCG)-An Endocrine, Regulator of Gestation and Cancer",
+    "year": "2018",
+    "journal": "Int J Mol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29772831/"
+   },
+   {
+    "pmid": "36356892",
+    "title": "Effects of intrauterine human chorionic gonadotropin administration on endometrial receptivity and embryo implantation",
+    "year": "2022",
+    "journal": "Life Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36356892/"
+   },
+   {
+    "pmid": "37279527",
+    "title": "Cannabis use and serum beta-human chorionic gonadotropin: a smoky illusion",
+    "year": "2023",
+    "journal": "Clin Exp Dermatol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37279527/"
+   },
+   {
+    "pmid": "29039764",
+    "title": "Human Chorionic Gonadotropin as a Pivotal Endocrine Immune Regulator Initiating and Preserving Fetal Tolerance",
+    "year": "2017",
+    "journal": "Int J Mol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29039764/"
+   }
+  ],
+  "trials_ctgov": 370,
+  "approved": {
+   "brand": "Chorionic Gonadotropin",
+   "generic": "CHORIONIC GONADOTROPIN"
+  },
+  "europepmc": 48032,
+  "openalex": {
+   "all": 111292,
+   "non_english": 11758
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "cagrilintide",
+  "name": "Cagrilintide",
+  "aka": "an investigational amylin analogue in large trials",
+  "about": "Sold on the grey market for weight loss; FDA says it cannot be used in compounding.",
+  "synonyms": [],
+  "human_pubmed": 64,
+  "trials_pubmed": 15,
+  "all_pubmed": 105,
+  "papers": [
+   {
+    "pmid": "41054801",
+    "title": "Novel GLP-1-based Medications for Type 2 Diabetes and Obesity",
+    "year": "2026",
+    "journal": "Endocr Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41054801/"
+   },
+   {
+    "pmid": "40544433",
+    "title": "Coadministered Cagrilintide and Semaglutide in Adults with Overweight or Obesity",
+    "year": "2025",
+    "journal": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40544433/"
+   },
+   {
+    "pmid": "42251860",
+    "title": "Efficacy and safety of once-weekly cagrilintide-semaglutide (CagriSema) in adults with type 2 diabetes inadequately controlled on diet and exercise (REIMAGINE 1): a randomised, double-blind, placebo-controlled, phase 3a study",
+    "year": "2026",
+    "journal": "Lancet Diabetes Endocrinol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42251860/"
+   },
+   {
+    "pmid": "40544432",
+    "title": "Cagrilintide-Semaglutide in Adults with Overweight or Obesity and Type 2 Diabetes",
+    "year": "2025",
+    "journal": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40544432/"
+   }
+  ],
+  "trials_ctgov": 44,
+  "approved": null,
+  "europepmc": 485,
+  "openalex": {
+   "all": 867,
+   "non_english": 49
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "survodutide",
+  "name": "Survodutide",
+  "aka": "an investigational glucagon/GLP-1 dual agonist",
+  "about": "Sold on the grey market for weight loss; no approved product.",
+  "synonyms": [],
+  "human_pubmed": 56,
+  "trials_pubmed": 10,
+  "all_pubmed": 90,
+  "papers": [
+   {
+    "pmid": "38847460",
+    "title": "A Phase 2 Randomized Trial of Survodutide in MASH and Fibrosis",
+    "year": "2024",
+    "journal": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38847460/"
+   },
+   {
+    "pmid": "38843460",
+    "title": "Efficacy and Safety of GLP-1 Medicines for Type 2 Diabetes and Obesity",
+    "year": "2024",
+    "journal": "Diabetes Care",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38843460/"
+   },
+   {
+    "pmid": "39481534",
+    "title": "The impact of weight loss on fat-free mass, muscle, bone and hematopoiesis health: Implications for emerging pharmacotherapies aiming at fat reduction and lean mass preservation",
+    "year": "2024",
+    "journal": "Metabolism",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39481534/"
+   },
+   {
+    "pmid": "39952695",
+    "title": "Emerging pharmacotherapies for obesity: A systematic review",
+    "year": "2025",
+    "journal": "Pharmacol Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39952695/"
+   }
+  ],
+  "trials_ctgov": 29,
+  "approved": null,
+  "europepmc": 513,
+  "openalex": {
+   "all": 909,
+   "non_english": 35
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "mazdutide",
+  "name": "Mazdutide",
+  "aka": "an investigational GLP-1/glucagon dual agonist",
+  "about": "Sold on the grey market for weight loss; no approved product.",
+  "synonyms": [],
+  "human_pubmed": 36,
+  "trials_pubmed": 9,
+  "all_pubmed": 56,
+  "papers": [
+   {
+    "pmid": "39952695",
+    "title": "Emerging pharmacotherapies for obesity: A systematic review",
+    "year": "2025",
+    "journal": "Pharmacol Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39952695/"
+   },
+   {
+    "pmid": "40421736",
+    "title": "Once-Weekly Mazdutide in Chinese Adults with Obesity or Overweight",
+    "year": "2025",
+    "journal": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40421736/"
+   },
+   {
+    "pmid": "39305981",
+    "title": "Seven glucagon-like peptide-1 receptor agonists and polyagonists for weight loss in patients with obesity or overweight: an updated systematic review and network meta-analysis of randomized controlled trials",
+    "year": "2024",
+    "journal": "Metabolism",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39305981/"
+   },
+   {
+    "pmid": "41028652",
+    "title": "Mazdutide: First Approval",
+    "year": "2025",
+    "journal": "Drugs",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41028652/"
+   }
+  ],
+  "trials_ctgov": 44,
+  "approved": null,
+  "europepmc": 261,
+  "openalex": {
+   "all": 413,
+   "non_english": 9
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "liraglutide",
+  "name": "Liraglutide",
+  "aka": "the GLP-1 in Victoza and Saxenda, with generics since 2024",
+  "about": "FDA proposed in May 2026 not to add it to the 503B list.",
+  "synonyms": [
+   "Victoza",
+   "Saxenda"
+  ],
+  "human_pubmed": 3476,
+  "trials_pubmed": 616,
+  "all_pubmed": 5746,
+  "papers": [
+   {
+    "pmid": "27295427",
+    "title": "Liraglutide and Cardiovascular Outcomes in Type 2 Diabetes",
+    "year": "2016",
+    "journal": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27295427/"
+   },
+   {
+    "pmid": "20357801",
+    "title": "Liraglutide",
+    "year": "2010",
+    "journal": "Nat Rev Drug Discov",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/20357801/"
+   },
+   {
+    "pmid": "32233338",
+    "title": "A Randomized, Controlled Trial of Liraglutide for Adolescents with Obesity",
+    "year": "2020",
+    "journal": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32233338/"
+   },
+   {
+    "pmid": "38717042",
+    "title": "Real-world persistence and adherence to glucagon-like peptide-1 receptor agonists among obese commercially insured adults without diabetes",
+    "year": "2024",
+    "journal": "J Manag Care Spec Pharm",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38717042/"
+   }
+  ],
+  "trials_ctgov": 519,
+  "approved": {
+   "brand": "Liraglutide",
+   "generic": "LIRAGLUTIDE"
+  },
+  "europepmc": 22476,
+  "openalex": {
+   "all": 45412,
+   "non_english": 4156
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "exenatide",
+  "name": "Exenatide",
+  "aka": "the first GLP-1 drug, Byetta and Bydureon",
+  "about": "Rarely sold on the grey market.",
+  "synonyms": [
+   "Byetta",
+   "Bydureon"
+  ],
+  "human_pubmed": 1968,
+  "trials_pubmed": 442,
+  "all_pubmed": 2909,
+  "papers": [
+   {
+    "pmid": "29246950",
+    "title": "Efficacy and Safety of Once-Weekly Semaglutide Versus Exenatide ER in Subjects With Type 2 Diabetes (SUSTAIN 3): A 56-Week, Open-Label, Randomized Clinical Trial",
+    "year": "2018",
+    "journal": "Diabetes Care",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29246950/"
+   },
+   {
+    "pmid": "17852164",
+    "title": "Acute exenatide (Byetta) poisoning was not associated with significant hypoglycemia",
+    "year": "2008",
+    "journal": "Clin Toxicol (Phila)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/17852164/"
+   },
+   {
+    "pmid": "31518224",
+    "title": "A Pilot Study of Exenatide Actions in Alzheimer's Disease",
+    "year": "2019",
+    "journal": "Curr Alzheimer Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31518224/"
+   },
+   {
+    "pmid": "16484515",
+    "title": "Exenatide",
+    "year": "2006",
+    "journal": "Am J Health Syst Pharm",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16484515/"
+   }
+  ],
+  "trials_ctgov": 380,
+  "approved": {
+   "brand": "Byetta",
+   "generic": "EXENATIDE"
+  },
+  "europepmc": 13914,
+  "openalex": {
+   "all": 24611,
+   "non_english": 2075
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "5-amino-1mq",
+  "name": "5-amino-1MQ",
+  "aka": "an NNMT inhibitor, not a peptide",
+  "about": "Sold for fat loss claims; no human trials published.",
+  "synonyms": [
+   "5-amino-1-methylquinolinium"
+  ],
+  "human_pubmed": 3,
+  "trials_pubmed": 0,
+  "all_pubmed": 3,
+  "papers": [
+   {
+    "pmid": "39067875",
+    "title": "NAD(+) metabolism enzyme NNMT in cancer-associated fibroblasts drives tumor progression and resistance to immunotherapy by modulating macrophages in urothelial bladder cancer",
+    "year": "2024",
+    "journal": "J Immunother Cancer",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39067875/"
+   },
+   {
+    "pmid": "35013352",
+    "title": "Reduced calorie diet combined with NNMT inhibition establishes a distinct microbiome in DIO mice",
+    "year": "2022",
+    "journal": "Sci Rep",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35013352/"
+   },
+   {
+    "pmid": "33645410",
+    "title": "Small molecule inhibitor of nicotinamide N-methyltransferase shows anti-proliferative activity in HeLa cells",
+    "year": "2021",
+    "journal": "J Obstet Gynaecol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33645410/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 9,
+  "openalex": {
+   "all": 36,
+   "non_english": 2
+  },
+  "grade": "C",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "glutathione",
+  "name": "Glutathione",
+  "aka": "a tripeptide antioxidant on the 503A Category 1 list",
+  "about": "Compounded as injections and drips for skin and detox claims.",
+  "synonyms": [],
+  "human_pubmed": 61294,
+  "trials_pubmed": 2788,
+  "all_pubmed": 180479,
+  "papers": [
+   {
+    "pmid": "36707132",
+    "title": "The antioxidant glutathione",
+    "year": "2023",
+    "journal": "Vitam Horm",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36707132/"
+   },
+   {
+    "pmid": "39444151",
+    "title": "Glutathione as a skin-lightening agent and in melasma: a\u00a0systematic review",
+    "year": "2025",
+    "journal": "Int J Dermatol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39444151/"
+   },
+   {
+    "pmid": "28537416",
+    "title": "Glutathione Degradation",
+    "year": "2017",
+    "journal": "Antioxid Redox Signal",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28537416/"
+   },
+   {
+    "pmid": "30895708",
+    "title": "The clinical effect of glutathione on skin color and other related skin conditions: A systematic review",
+    "year": "2019",
+    "journal": "J Cosmet Dermatol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30895708/"
+   }
+  ],
+  "trials_ctgov": 274,
+  "approved": {
+   "brand": "Free Radical",
+   "generic": "ACETALDEHYDE, ALFALFA, ALPHA-KETOGLUTARICUM ACIDUM, ALPHA-LIPOICUM ACIDUM, ASCORBYL PALMITATE, COBALTUM METALLICUM, CYSTEINUM, DIMETHYL GLYCINE, FERRUM METALLICUM, FUCUS VESICULOSUS, GABA (GAMMA AMINOBUTYRIC ACID), GLUTATHIONE, HORDEUM VULGARE, L-METHIONINE, MAGNESIUM FLUORATUM, MANGANESE GLUCONATE, NASTURTIUM AQUATICUM, ORYZA SATIVA, QUERCETIN, RAPHANUS SATIVUS, SELENIUM METALLICUM, SODIUM SELENITE, TRITICUM AESTIVUM, UBIDECARENONUM, VITAMIN E, ZINC PICOLINATE, ZINCUM METALLICUM"
+  },
+  "europepmc": 557177,
+  "openalex": {
+   "all": 832988,
+   "non_english": 45745
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "thymosin-beta-4",
+  "name": "Thymosin beta-4",
+  "aka": "the full 43-residue parent of TB-500",
+  "about": "Studied in human trials for heart and eye uses; no approved product.",
+  "synonyms": [
+   "timbetasin"
+  ],
+  "human_pubmed": 330,
+  "trials_pubmed": 3,
+  "all_pubmed": 604,
+  "papers": [
+   {
+    "pmid": "34324435",
+    "title": "Intra-Articular Injection of BPC 157 for Multiple Types of Knee Pain",
+    "year": "2021",
+    "journal": "Altern Ther Health Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34324435/"
+   },
+   {
+    "pmid": "41966639",
+    "title": "Safety and Efficacy of Approved and Unapproved Peptide Therapies for Musculoskeletal Injuries and Athletic Performance",
+    "year": "2026",
+    "journal": "Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41966639/"
+   },
+   {
+    "pmid": "39837870",
+    "title": "Identification of glutamine as a potential therapeutic target in dry eye disease",
+    "year": "2025",
+    "journal": "Signal Transduct Target Ther",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39837870/"
+   },
+   {
+    "pmid": "17468232",
+    "title": "beta-Thymosins",
+    "year": "2007",
+    "journal": "Ann N Y Acad Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/17468232/"
+   }
+  ],
+  "trials_ctgov": 18,
+  "approved": null,
+  "europepmc": 2238,
+  "openalex": {
+   "all": 7481,
+   "non_english": 402
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "kisspeptin-54",
+  "name": "Kisspeptin-54",
+  "aka": "the longer kisspeptin form",
+  "about": "Studied in human reproductive research; sold as a research peptide.",
+  "synonyms": [],
+  "human_pubmed": 59,
+  "trials_pubmed": 22,
+  "all_pubmed": 95,
+  "papers": [
+   {
+    "pmid": "18193176",
+    "title": "GPR54 and kisspeptins",
+    "year": "2008",
+    "journal": "Results Probl Cell Differ",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18193176/"
+   },
+   {
+    "pmid": "32152912",
+    "title": "KISS1 in metastatic cancer research and treatment: potential and paradoxes",
+    "year": "2020",
+    "journal": "Cancer Metastasis Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32152912/"
+   },
+   {
+    "pmid": "33227799",
+    "title": "Kisspeptin-54 Accurately Identifies Hypothalamic Gonadotropin-Releasing Hormone Neuronal Dysfunction in Men with Congenital Hypogonadotropic Hypogonadism",
+    "year": "2021",
+    "journal": "Neuroendocrinology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33227799/"
+   },
+   {
+    "pmid": "29206944",
+    "title": "The direct and indirect effects of kisspeptin-54 on granulosa lutein cell function",
+    "year": "2018",
+    "journal": "Hum Reprod",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29206944/"
+   }
+  ],
+  "trials_ctgov": 19,
+  "error": "HTTP Error 500: Internal Server Error",
+  "approved": null,
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "noopept",
+  "name": "Noopept",
+  "aka": "a dipeptide-derived nootropic registered in Russia",
+  "about": "Sold for cognition claims.",
+  "synonyms": [
+   "omberacetam"
+  ],
+  "human_pubmed": 25,
+  "trials_pubmed": 3,
+  "all_pubmed": 85,
+  "papers": [
+   {
+    "pmid": "30788746",
+    "title": "Drug with Neuroprotective Properties Noopept Does Not Stimulate Cell Proliferation",
+    "year": "2019",
+    "journal": "Bull Exp Biol Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30788746/"
+   },
+   {
+    "pmid": "31990212",
+    "title": "The scoop on brain health dietary supplement products containing huperzine A",
+    "year": "2020",
+    "journal": "Clin Toxicol (Phila)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31990212/"
+   },
+   {
+    "pmid": "33119829",
+    "title": "Cognitive Enhancer Noopept Activates Transcription Factor HIF-1",
+    "year": "2020",
+    "journal": "Dokl Biochem Biophys",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33119829/"
+   },
+   {
+    "pmid": "19234797",
+    "title": "Comparative studies of Noopept and piracetam in the treatment of patients with mild cognitive disorders in organic brain diseases of vascular and traumatic origin",
+    "year": "2009",
+    "journal": "Neurosci Behav Physiol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19234797/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 127,
+  "openalex": {
+   "all": 711,
+   "non_english": 117
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "adipotide",
+  "name": "Adipotide (FTPP)",
+  "aka": "a peptide that targets the blood supply of fat tissue",
+  "about": "Sold for fat loss claims; animal data mostly.",
+  "synonyms": [
+   "FTPP"
+  ],
+  "human_pubmed": 7,
+  "trials_pubmed": 0,
+  "all_pubmed": 17,
+  "papers": [
+   {
+    "pmid": "22539771",
+    "title": "Comment on \"a peptidomimetic targeting white fat causes weight loss and improved insulin resistance in obese monkeys\"",
+    "year": "2012",
+    "journal": "Sci Transl Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22539771/"
+   },
+   {
+    "pmid": "34016139",
+    "title": "A novel \"three-dimensional-printed individual guide template-assisted percutaneous vertebroplasty\" for osteoporotic vertebral compression fracture: a prospective, controlled study",
+    "year": "2021",
+    "journal": "J Orthop Surg Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34016139/"
+   },
+   {
+    "pmid": "22323669",
+    "title": "The effects on length of stay of introducing a fast track patient pathway for myocardial infarction: a before and after evaluation",
+    "year": "2012",
+    "journal": "Health Serv Manage Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22323669/"
+   },
+   {
+    "pmid": "39017962",
+    "title": "Fluorinated High-Valent Sn(IV) Porphyrins Show Remarkable Photodynamic Activity in Cancer Cells",
+    "year": "2024",
+    "journal": "ChemMedChem",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39017962/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 23,
+  "openalex": {
+   "all": 33,
+   "non_english": 3
+  },
+  "grade": "C",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "teriparatide",
+  "name": "Teriparatide",
+  "aka": "a parathyroid hormone fragment approved as Forteo for osteoporosis",
+  "about": "An approved peptide drug; rarely on the grey market.",
+  "synonyms": [
+   "Forteo"
+  ],
+  "human_pubmed": 2155,
+  "trials_pubmed": 322,
+  "all_pubmed": 3093,
+  "papers": [
+   {
+    "pmid": "26144908",
+    "title": "Denosumab and teriparatide transitions in postmenopausal osteoporosis (the DATA-Switch study): extension of a randomised controlled trial",
+    "year": "2015",
+    "journal": "Lancet",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26144908/"
+   },
+   {
+    "pmid": "39312040",
+    "title": "Efficacy and safety of teriparatide vs. bisphosphonates and denosumab vs. bisphosphonates in osteoporosis not previously treated with bisphosphonates: a systematic review and meta-analysis of randomized controlled trials",
+    "year": "2024",
+    "journal": "Arch Osteoporos",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39312040/"
+   },
+   {
+    "pmid": "40047881",
+    "title": "PTH1 receptor agonists for fracture risk: a systematic review and network meta-analysis",
+    "year": "2025",
+    "journal": "Osteoporos Int",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40047881/"
+   },
+   {
+    "pmid": "29487102",
+    "title": "Teriparatide-induced atrial tachycardia",
+    "year": "2018",
+    "journal": "BMJ Case Rep",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29487102/"
+   }
+  ],
+  "trials_ctgov": 182,
+  "approved": {
+   "brand": "Teriparatide",
+   "generic": "TERIPARATIDE"
+  },
+  "europepmc": 11171,
+  "openalex": {
+   "all": 19066,
+   "non_english": 2164
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "abaloparatide",
+  "name": "Abaloparatide",
+  "aka": "a parathyroid-hormone-related peptide approved as Tymlos",
+  "about": "An approved peptide drug for osteoporosis.",
+  "synonyms": [
+   "Tymlos"
+  ],
+  "human_pubmed": 267,
+  "trials_pubmed": 37,
+  "all_pubmed": 409,
+  "papers": [
+   {
+    "pmid": "40587168",
+    "title": "Osteoporosis: A Review",
+    "year": "2025",
+    "journal": "JAMA",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40587168/"
+   },
+   {
+    "pmid": "41252575",
+    "title": "Recent Advances in Osteoporosis Therapeutics",
+    "year": "2026",
+    "journal": "Annu Rev Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41252575/"
+   },
+   {
+    "pmid": "35478046",
+    "title": "The clinician's guide to prevention and treatment of osteoporosis",
+    "year": "2022",
+    "journal": "Osteoporos Int",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35478046/"
+   },
+   {
+    "pmid": "30696576",
+    "title": "Osteoporosis",
+    "year": "2019",
+    "journal": "Lancet",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30696576/"
+   }
+  ],
+  "trials_ctgov": 25,
+  "error": "HTTP Error 500: Internal Server Error",
+  "approved": null,
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "octreotide",
+  "name": "Octreotide",
+  "aka": "a somatostatin analogue approved as Sandostatin",
+  "about": "An approved peptide drug for acromegaly and certain tumors.",
+  "synonyms": [
+   "Sandostatin"
+  ],
+  "human_pubmed": 7233,
+  "trials_pubmed": 1005,
+  "all_pubmed": 9721,
+  "papers": [
+   {
+    "pmid": "9545165",
+    "title": "Octreotide-induced bradycardia",
+    "year": "1998",
+    "journal": "Pharmacotherapy",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/9545165/"
+   },
+   {
+    "pmid": "39570708",
+    "title": "Casting a Wide NET: When Is the Optimal Time for 177Lu-Dotatate Treatment?",
+    "year": "2024",
+    "journal": "Oncology (Williston Park)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39570708/"
+   },
+   {
+    "pmid": "18660722",
+    "title": "Irinotecan toxicity",
+    "year": "2007",
+    "journal": "Curr Opin Support Palliat Care",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18660722/"
+   },
+   {
+    "pmid": "37211679",
+    "title": "Octreotide and Octreotide-derived delivery systems",
+    "year": "2023",
+    "journal": "J Drug Target",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37211679/"
+   }
+  ],
+  "trials_ctgov": 327,
+  "error": "HTTP Error 500: Internal Server Error",
+  "approved": null,
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "leuprolide",
+  "name": "Leuprolide",
+  "aka": "a GnRH agonist approved as Lupron",
+  "about": "An approved peptide drug for prostate cancer and endometriosis.",
+  "synonyms": [
+   "Lupron",
+   "leuprorelin"
+  ],
+  "human_pubmed": 2259,
+  "trials_pubmed": 686,
+  "all_pubmed": 3087,
+  "papers": [
+   {
+    "pmid": "32469183",
+    "title": "Oral Relugolix for Androgen-Deprivation Therapy in Advanced Prostate Cancer",
+    "year": "2020",
+    "journal": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32469183/"
+   },
+   {
+    "pmid": "37851874",
+    "title": "Improved Outcomes with Enzalutamide in Biochemically Recurrent Prostate Cancer",
+    "year": "2023",
+    "journal": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37851874/"
+   },
+   {
+    "pmid": "41124201",
+    "title": "Improved Survival with Enzalutamide in Biochemically Recurrent Prostate Cancer",
+    "year": "2026",
+    "journal": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41124201/"
+   },
+   {
+    "pmid": "16679509",
+    "title": "Editorial: does lupron dosage make a difference in outcome when treating children with precocious puberty?",
+    "year": "2006",
+    "journal": "J Clin Endocrinol Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16679509/"
+   }
+  ],
+  "trials_ctgov": 520,
+  "approved": {
+   "brand": "Vabrinty",
+   "generic": "LEUPROLIDE ACETATE"
+  },
+  "europepmc": 10264,
+  "openalex": {
+   "all": 18582,
+   "non_english": 1674
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "desmopressin",
+  "name": "Desmopressin",
+  "aka": "a vasopressin analogue approved as DDAVP",
+  "about": "An approved peptide drug for diabetes insipidus and bedwetting.",
+  "synonyms": [
+   "DDAVP"
+  ],
+  "human_pubmed": 4333,
+  "trials_pubmed": 548,
+  "all_pubmed": 5869,
+  "papers": [
+   {
+    "pmid": "3893256",
+    "title": "Desmopressin",
+    "year": "1985",
+    "journal": "Ann Intern Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/3893256/"
+   },
+   {
+    "pmid": "42896092",
+    "title": "Desmopressin (DDAVP): indications and practicalities",
+    "year": "2026",
+    "journal": "Swiss Med Wkly",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42896092/"
+   },
+   {
+    "pmid": "1609254",
+    "title": "Monosymptomatic bedwetting",
+    "year": "1992",
+    "journal": "Scand J Urol Nephrol Suppl",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/1609254/"
+   },
+   {
+    "pmid": "35327581",
+    "title": "Desmopressin Stimulates Nitric Oxide Production in Human Lung Microvascular Endothelial Cells",
+    "year": "2022",
+    "journal": "Biomolecules",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35327581/"
+   }
+  ],
+  "trials_ctgov": 127,
+  "approved": {
+   "brand": "Desmopressin Acetate",
+   "generic": "DESMOPRESSIN ACETATE"
+  },
+  "europepmc": 12518,
+  "openalex": {
+   "all": 23698,
+   "non_english": 2693
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "glucagon",
+  "name": "Glucagon",
+  "aka": "a pancreatic peptide hormone, approved for severe low blood sugar",
+  "about": "An approved peptide drug.",
+  "synonyms": [],
+  "human_pubmed": 29829,
+  "trials_pubmed": 3888,
+  "all_pubmed": 56891,
+  "papers": [
+   {
+    "pmid": "12626323",
+    "title": "Glucagon and regulation of glucose metabolism",
+    "year": "2003",
+    "journal": "Am J Physiol Endocrinol Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/12626323/"
+   },
+   {
+    "pmid": "37367959",
+    "title": "100 years of glucagon and 100 more",
+    "year": "2023",
+    "journal": "Diabetologia",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37367959/"
+   },
+   {
+    "pmid": "38300523",
+    "title": "Hepatic glucagon action: beyond glucose mobilization",
+    "year": "2024",
+    "journal": "Physiol Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38300523/"
+   },
+   {
+    "pmid": "36323234",
+    "title": "The past, present, and future physiology and pharmacology of glucagon",
+    "year": "2022",
+    "journal": "Cell Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36323234/"
+   }
+  ],
+  "trials_ctgov": 1530,
+  "approved": {
+   "brand": "Glucagon",
+   "generic": "GLUCAGON"
+  },
+  "europepmc": 165728,
+  "openalex": {
+   "all": 255681,
+   "non_english": 25653
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "insulin",
+  "name": "Insulin",
+  "aka": "the pancreatic peptide hormone, approved since 1923",
+  "about": "The original peptide drug; a biologic since 2020.",
+  "synonyms": [],
+  "human_pubmed": 281023,
+  "trials_pubmed": 29707,
+  "all_pubmed": 464237,
+  "papers": [
+   {
+    "pmid": "37664840",
+    "title": "Insulin signaling and its application",
+    "year": "2023",
+    "journal": "Front Endocrinol (Lausanne)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37664840/"
+   },
+   {
+    "pmid": "35110500",
+    "title": "New classification and diagnostic criteria for insulin resistance syndrome",
+    "year": "2022",
+    "journal": "Endocr J",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35110500/"
+   },
+   {
+    "pmid": "33606017",
+    "title": "Insulin Pulse Characteristics and Insulin Action in Non-diabetic Humans",
+    "year": "2021",
+    "journal": "J Clin Endocrinol Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33606017/"
+   },
+   {
+    "pmid": "39577414",
+    "title": "Personalized phosphoproteomics of skeletal muscle insulin resistance and exercise links MINDY1 to insulin action",
+    "year": "2024",
+    "journal": "Cell Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39577414/"
+   }
+  ],
+  "trials_ctgov": 8234,
+  "approved": {
+   "brand": "ADMELOG",
+   "generic": "INSULIN LISPRO"
+  },
+  "europepmc": 1385241,
+  "openalex": {
+   "all": 2188726,
+   "non_english": 182989
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "calcitonin",
+  "name": "Calcitonin",
+  "aka": "a thyroid peptide hormone approved as Miacalcin",
+  "about": "An approved peptide drug for osteoporosis and Paget disease.",
+  "synonyms": [
+   "Miacalcin"
+  ],
+  "human_pubmed": 15559,
+  "trials_pubmed": 1100,
+  "all_pubmed": 29986,
+  "papers": [
+   {
+    "pmid": "29661063",
+    "title": "Calcitonin Stewardship Strategies",
+    "year": "2019",
+    "journal": "J Pharm Pract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29661063/"
+   },
+   {
+    "pmid": "170550",
+    "title": "Kidney and calcitonin",
+    "year": "1975",
+    "journal": "Nephron",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/170550/"
+   },
+   {
+    "pmid": "12699303",
+    "title": "Calcitonin",
+    "year": "2003",
+    "journal": "Endocrinol Metab Clin North Am",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/12699303/"
+   },
+   {
+    "pmid": "11285994",
+    "title": "Calcitonin",
+    "year": "2001",
+    "journal": "Rheum Dis Clin North Am",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/11285994/"
+   }
+  ],
+  "trials_ctgov": 154,
+  "error": "HTTP Error 500: Internal Server Error",
+  "approved": null,
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "ziconotide",
+  "name": "Ziconotide",
+  "aka": "a cone-snail peptide approved as Prialt for severe pain",
+  "about": "An approved peptide drug given into the spine.",
+  "synonyms": [
+   "Prialt"
+  ],
+  "human_pubmed": 221,
+  "trials_pubmed": 15,
+  "all_pubmed": 356,
+  "papers": [
+   {
+    "pmid": "39475707",
+    "title": "The Diagnosis and Treatment of Neuropathic Pain",
+    "year": "2024",
+    "journal": "Dtsch Arztebl Int",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39475707/"
+   },
+   {
+    "pmid": "24397285",
+    "title": "Ziconotide",
+    "year": "2014",
+    "journal": "J Pain Palliat Care Pharmacother",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/24397285/"
+   },
+   {
+    "pmid": "16599651",
+    "title": "Ziconotide",
+    "year": "2006",
+    "journal": "CNS Drugs",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16599651/"
+   },
+   {
+    "pmid": "31435916",
+    "title": "Intrathecal Drug Delivery",
+    "year": "2020",
+    "journal": "Methods Mol Biol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31435916/"
+   }
+  ],
+  "trials_ctgov": 14,
+  "approved": {
+   "brand": "PRIALT",
+   "generic": "ZICONOTIDE ACETATE"
+  },
+  "europepmc": 1717,
+  "openalex": {
+   "all": 3145,
+   "non_english": 358
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "larazotide",
+  "name": "Larazotide",
+  "aka": "an investigational tight-junction peptide studied for celiac disease",
+  "about": "Sold on the grey market for gut claims; its phase 3 trial was stopped in 2022.",
+  "synonyms": [],
+  "human_pubmed": 34,
+  "trials_pubmed": 4,
+  "all_pubmed": 52,
+  "papers": [
+   {
+    "pmid": "33881350",
+    "title": "Larazotide acetate: a pharmacological peptide approach to tight junction regulation",
+    "year": "2021",
+    "journal": "Am J Physiol Gastrointest Liver Physiol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33881350/"
+   },
+   {
+    "pmid": "32332732",
+    "title": "Targeting zonulin and intestinal epithelial barrier function to prevent onset of arthritis",
+    "year": "2020",
+    "journal": "Nat Commun",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32332732/"
+   },
+   {
+    "pmid": "33793152",
+    "title": "Tight junction regulation in celiac disease: role of larazotide acetate",
+    "year": "2022",
+    "journal": "Minerva Gastroenterol (Torino)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33793152/"
+   },
+   {
+    "pmid": "40915363",
+    "title": "Antibacterial hyaluronic acid hydrogel with sustained release of larazotide as effective colitis treatment",
+    "year": "2025",
+    "journal": "J Control Release",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40915363/"
+   }
+  ],
+  "trials_ctgov": 29,
+  "approved": null,
+  "europepmc": 357,
+  "openalex": {
+   "all": 639,
+   "non_english": 54
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "vilon",
+  "name": "Vilon",
+  "aka": "a two-residue synthetic peptide from the Russian bioregulator family",
+  "about": "Sold for immune and aging claims.",
+  "synonyms": [],
+  "human_pubmed": 20,
+  "trials_pubmed": 3,
+  "all_pubmed": 62,
+  "papers": [
+   {
+    "pmid": "23486604",
+    "title": "Immunomodulating effects of Vilon and its analogue in the culture of human and animal thymus cells",
+    "year": "2013",
+    "journal": "Bull Exp Biol Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23486604/"
+   },
+   {
+    "pmid": "36395816",
+    "title": "ViLoN-a multi-layer network approach to data integration demonstrated for patient stratification",
+    "year": "2023",
+    "journal": "Nucleic Acids Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36395816/"
+   },
+   {
+    "pmid": "15455093",
+    "title": "Expression of argyrophilic proteins in the nucleolar organizer regions of human thymocytes and thymic epitheliocytes under conditions of coculturing with vilon and epithalon peptides",
+    "year": "2004",
+    "journal": "Bull Exp Biol Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15455093/"
+   },
+   {
+    "pmid": "15105581",
+    "title": "Bioregulator Vilon-induced reactivation of chromatin in cultured lymphocytes from old people",
+    "year": "2004",
+    "journal": "Biogerontology",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15105581/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 94,
+  "openalex": {
+   "all": 288,
+   "non_english": 106
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ },
+ {
+  "id": "cortexin",
+  "name": "Cortexin",
+  "aka": "a bovine brain peptide preparation used in Russia",
+  "about": "Sold for cognition claims.",
+  "synonyms": [],
+  "human_pubmed": 141,
+  "trials_pubmed": 30,
+  "all_pubmed": 204,
+  "papers": [
+   {
+    "pmid": "37315237",
+    "title": "[The glymphatic system in the brain - neurobiology and clinical pathology]",
+    "year": "2023",
+    "journal": "Zh Nevrol Psikhiatr Im S S Korsakova",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37315237/"
+   },
+   {
+    "pmid": "36843455",
+    "title": "[Pharmacotherapy and psychotherapy of children with attention deficit hyperactivity disorder]",
+    "year": "2023",
+    "journal": "Zh Nevrol Psikhiatr Im S S Korsakova",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36843455/"
+   },
+   {
+    "pmid": "31317899",
+    "title": "[Speech disorders in children with cerebral palsy: diagnostics and correction]",
+    "year": "2019",
+    "journal": "Zh Nevrol Psikhiatr Im S S Korsakova",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31317899/"
+   },
+   {
+    "pmid": "29560951",
+    "title": "[Mental impairment in children with cerebral palsy: diagnosis and treatment]",
+    "year": "2018",
+    "journal": "Zh Nevrol Psikhiatr Im S S Korsakova",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29560951/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 585,
+  "openalex": {
+   "all": 2618,
+   "non_english": 334
+  },
+  "grade": "B",
+  "graded_on": "2026-11-02"
+ }
+]

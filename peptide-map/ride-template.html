@@ -42,7 +42,11 @@ a{color:var(--tol)}
 #counter h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,3.2vw,2.6rem);line-height:1.05;margin:4px 0 10px;text-wrap:balance}
 #counter .lede{color:var(--cink2);max-width:46ch;margin:0 0 14px;font-size:.95rem}
 #counter .eyebrow,#counter .note{color:var(--cink2)}
-.menu{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.menu{list-style:none;padding:0;margin:0 0 14px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.menuH{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cink2);margin:0 0 6px;padding-top:6px;border-top:1px solid var(--crule)}
+.menuH small{display:block;text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:.74rem;color:var(--cink2);margin-top:2px}
+.menu .g{font-family:var(--mono);font-size:.62rem;color:var(--cink2);margin-left:6px}
+.papers{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:4px}.papers li{font-size:.8rem;border-bottom:1px solid var(--crule);padding:4px 0;color:var(--cink2)}.papers a{color:var(--cinkd)}
 .menu button{width:100%;text-align:left;background:var(--cream);border:1px solid var(--crule);color:var(--cinkd);padding:8px 10px;cursor:pointer;font:inherit;display:grid;gap:2px}
 .menu button:hover,.menu button[aria-pressed="true"]{border-color:var(--cinkd)}
 .menu button[aria-pressed="true"]{background:var(--cream2)}
@@ -135,9 +139,9 @@ a{color:var(--tol)}
     <div><div class="eyebrow">Place your order</div><h1>Which peptide, and how does it reach you?</h1>
       <p class="lede">Pick one at the counter. The doors open, the cart climbs the track that today's US rules lay down for it through the Lebanon Valley in October, four windows show the work at each step and whether the rules permit it, and at the end you get the peptide's standing: where it sits under today's rules, with dates and sources. About a minute.</p>
       <div class="acts"><button class="btn" id="board" disabled>Board the cart</button><button class="btn ghost" id="skipRide" disabled>Skip the ride, show the standing</button></div>
-      <p class="note" style="margin-top:12px">The weather on the ride follows the peptide's standing: clear skies for an approved product, overcast where compounding is tolerated and human trials exist, rain and lightning where there is no approval and only grey-market supply, a storm where the human evidence is thin, a blizzard with hail where the evidence is laboratory and animal work only. The tool's own grading, shown on each standing.</p>
+      <p class="note" style="margin-top:12px">The weather on the ride follows the peptide's standing. Sunny where there is oversight, an approved product or FDA or HHS tolerance, and human evidence behind it. Overcast where there is oversight but the human evidence is thin. Rain, a storm or a blizzard only where there is no oversight at all, graded by how little human evidence exists. The tool's own grading, shown on each standing.</p>
       <p class="note">Maps public guidance as of the date above. Not legal advice. The HHS policy of 2026-10-30 is a draft under comment until 2026-11-13.</p></div>
-    <ol class="menu" id="menu"></ol>
+    <div id="menus"></div>
   </div>
   <div id="doors"><div class="door l"><span>The ride</span></div><div class="door r"><span>Boarding</span></div></div>
   <div class="panel" id="p0"></div><div class="panel" id="p1"></div><div class="panel" id="p2"></div><div class="panel" id="p3"></div>
@@ -182,17 +186,20 @@ const PANEL=['p0','p2','p1','p3']; // window order: north-west, south-west, nort
 
 /* ---------- the counter ---------- */
 let picked=null;
-const menu=$('#menu');
-for(const c of D.cards){const li=document.createElement('li');const b=document.createElement('button');b.type='button';b.setAttribute('aria-pressed','false');
-  b.innerHTML=`<b>${esc(c.name)}</b><small>${esc(c.aka)}</small><span class="tag"><i class="i-${{tolerated:'cond',closed:'no',listed:'ok',mixed:'cond',component:'ok',brand:'brand',none:'no'}[c.track]}"></i>${esc(c.trackLabel)}</span>`;
-  b.onclick=()=>{picked=c;menu.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));$('#board').disabled=false;$('#skipRide').disabled=false;$('#board').textContent='Board the cart with '+c.name};li.appendChild(b);menu.appendChild(li)}
+const menus=$('#menus');const GRADE={A:'approved',B:'human trials',C:'early human',D:'lab and animal'};
+for(const [key,title,sub] of [['named','Named by the regulators','On FDA\'s lists, before its committee, or in the HHS draft: the standing comes from the register.'],['more','More compounds with data','Graded from PubMed, ClinicalTrials.gov, openFDA, Europe PMC and OpenAlex. Counts, not verdicts.']]){
+  const cards=D.cards.filter(c=>c.menu===key);if(!cards.length)continue;const h=document.createElement('div');h.className='menuH';h.innerHTML=`${esc(title)} · ${cards.length}<small>${esc(sub)}</small>`;menus.appendChild(h);const menu=document.createElement('ol');menu.className='menu';menus.appendChild(menu);
+  for(const c of cards){const li=document.createElement('li');const b=document.createElement('button');b.type='button';b.setAttribute('aria-pressed','false');
+    b.innerHTML=`<b>${esc(c.name)}${c.grade?`<span class="g">${GRADE[c.grade]}</span>`:''}</b><small>${esc(c.aka)}</small><span class="tag"><i class="i-${{tolerated:'cond',closed:'no',listed:'ok',mixed:'cond',component:'ok',brand:'brand',none:'no'}[c.track]}"></i>${esc(c.trackLabel)}</span>`;
+    b.onclick=()=>{picked=c;menus.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));$('#board').disabled=false;$('#skipRide').disabled=false;$('#board').textContent='Board the cart with '+c.name};li.appendChild(b);menu.appendChild(li)}}
 
 /* ---------- the plate ---------- */
 function plate(c){const lvl=['Clear skies.','Overcast.','Rain and lightning.','A storm, with wind.','A blizzard, with hail.'][c.weather];$('#plate').innerHTML=`<div class="eyebrow">Where it stands · ${esc(c.trackLabel)} · as of ${D.asOf}</div><h2>${esc(c.name)}</h2><p class="aka">${esc(c.aka)}. ${esc(c.about)}</p>
   <p class="path">${esc(c.path)}</p>
   <div class="grid3"><div><div class="k">This peptide's own record</div><div class="v">${esc(c.own)}</div></div><div><div class="k">Human evidence, and the weather it earned</div><div class="v">${esc(c.evidence)} ${lvl}</div></div><div><div class="k">Enforcement</div><div class="v">${esc(c.enforce)}</div></div></div>
   <details class="shared"><summary>The rules this track shares: 503A, the HHS draft, 503B</summary><div class="grid3"><div><div class="k">503A pharmacy</div><div class="v">${esc(c.a)}</div></div><div><div class="k">HHS draft policy, 2026-10-30</div><div class="v">${esc(c.hhs)}</div></div><div><div class="k">503B outsourcing facility</div><div class="v">${esc(c.b)}</div></div></div></details>
-  <div class="k">Dates</div><ul class="dates">${c.dates.map(x=>`<li><span class="d">${x.date}</span><span>${esc(x.what)} <a href="${esc(x.url)}" target="_blank" rel="noopener">source</a></span></li>`).join('')}</ul>
+  ${c.papers&&c.papers.length?`<div class="k">Papers in the human literature, by relevance</div><ul class="papers">${c.papers.map(p=>`<li><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a> · ${esc(p.journal)}${p.year?', '+esc(p.year):''}</li>`).join('')}</ul>`:''}
+  ${c.dates.length?`<div class="k">Dates</div>`:''}<ul class="dates">${c.dates.map(x=>`<li><span class="d">${x.date}</span><span>${esc(x.what)} <a href="${esc(x.url)}" target="_blank" rel="noopener">source</a></span></li>`).join('')}</ul>
   <div class="acts"><button class="btn" id="again">Order another</button><a class="btn ghost" href="map.html" style="text-decoration:none">Go deeper: the map</a><a class="btn ghost" href="glossary.html" style="text-decoration:none">Glossary</a></div>
   <p class="foot">Maps public guidance; not legal advice. Tolerated is never approved. The HHS policy is a draft under comment until 2026-11-13 (<a href="${esc(D.hhsUrl)}" target="_blank" rel="noopener">Federal Register notice</a>).</p>`;
   $('#fade').classList.add('on');setTimeout(()=>{$('#readout').classList.add('on');$('#again').onclick=reset},650)}

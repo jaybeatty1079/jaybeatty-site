@@ -1,0 +1,52 @@
+# id|name|what it is|what it is sold or used for|search synonyms (semicolon-separated, optional)
+# The rest of the menu: compounds people ask about that the regulators have not named on the lists, plus approved peptide drugs for contrast. One line each; the pipeline grades the evidence.
+tesamorelin|Tesamorelin|a GHRH analogue approved as Egrifta for HIV-related belly fat|Sold on the grey market for fat loss claims.|Egrifta
+bremelanotide|Bremelanotide (PT-141)|a melanocortin agonist approved as Vyleesi|Sold on the grey market for libido claims.|PT-141;Vyleesi
+melanotan-2|Melanotan II|a synthetic melanocortin peptide, never approved anywhere|Sold online for tanning and libido claims; FDA withdrew it from Category 2 in April 2026 with no tolerance.|melanotan II;melanotan-II
+afamelanotide|Afamelanotide (Melanotan I)|approved as Scenesse for a rare light-sensitivity disorder|Sold on the grey market for tanning claims.|Scenesse;melanotan I
+aod-9604|AOD-9604|a fragment of growth hormone|Sold for fat loss claims; the advisory committee voted against it in December 2024.|AOD9604
+thymosin-alpha-1|Thymosin alpha-1|an immune peptide approved in some countries as Zadaxin, not in the US|Sold for immune claims; 503B Category 3; the committee voted against it in December 2024.|thymalfasin;Zadaxin
+ll-37|LL-37|the human cathelicidin antimicrobial peptide|Sold for infection and wound claims; placed in 503A Category 2 in September 2023.|cathelicidin LL-37
+dihexa|Dihexa|an angiotensin-derived small peptide|Sold for cognition claims; placed in 503A Category 2 in September 2023.|
+selank|Selank|a synthetic tuftsin analogue registered as a drug in Russia|Sold for anxiety claims.|
+ghrp-2|GHRP-2|a growth-hormone-releasing peptide|Sold for muscle and recovery claims; Category 3 for 503A, Category 2 for 503B.|pralmorelin
+ghrp-6|GHRP-6|a growth-hormone-releasing peptide|Sold for appetite and muscle claims; Category 3 for 503A, Category 2 for 503B.|
+hexarelin|Hexarelin|a growth-hormone secretagogue|Sold for muscle claims; no approved product.|
+ibutamoren|Ibutamoren (MK-677)|an oral growth-hormone secretagogue, not a peptide|Sold for muscle and sleep claims; Category 2; the committee voted 1 to 13 against it.|MK-677;MK677
+igf-1-lr3|IGF-1 LR3|a long-acting insulin-like growth factor analogue|Sold for muscle claims; no approved product.|long R3 IGF-I;IGF-I LR3
+peg-mgf|PEG-MGF|a pegylated mechano growth factor fragment|Sold for muscle repair claims; laboratory research mostly.|mechano growth factor
+follistatin|Follistatin 344|a myostatin-binding protein|Sold for muscle claims; no approved product.|follistatin
+dsip|DSIP (emideltide)|delta sleep-inducing peptide|Sold for sleep claims; the advisory committee voted against it in July 2026.|delta sleep-inducing peptide;emideltide
+pinealon|Pinealon|a three-residue synthetic peptide from the Russian bioregulator family|Sold for cognition and aging claims.|
+thymalin|Thymalin|a thymic peptide preparation used in Russia|Sold for immune and aging claims.|
+cerebrolysin|Cerebrolysin|a porcine brain peptide mixture approved in some countries, not in the US|Sold for cognition and stroke-recovery claims.|
+humanin|Humanin|a mitochondrial-derived peptide|Sold for longevity claims; laboratory research mostly.|
+elamipretide|Elamipretide (SS-31)|a mitochondria-targeted peptide, approved by FDA in 2025 for Barth syndrome|Sold on the grey market for energy claims.|SS-31;Forzinity;Bendavia
+ara-290|ARA-290 (cibinetide)|an erythropoietin-derived peptide studied for neuropathy|Sold for nerve pain claims; no approved product.|cibinetide
+vip|Vasoactive intestinal peptide|a gut and immune peptide on the 503A Category 1 list|Compounded for inflammation claims.|vasoactive intestinal peptide;aviptadil
+oxytocin|Oxytocin|a hormone approved as Pitocin for labor|Compounded for social and sexual claims; 503B Category 1 as a component of an approved drug.|Pitocin
+gonadorelin|Gonadorelin|a GnRH peptide, 503B Category 1 as a component of a formerly approved drug|Compounded alongside testosterone to maintain fertility.|
+hcg|Human chorionic gonadotropin|a hormone approved for fertility uses, a biologic since 2020|Compounded for weight loss claims, which FDA has warned against.|chorionic gonadotropin
+cagrilintide|Cagrilintide|an investigational amylin analogue in large trials|Sold on the grey market for weight loss; FDA says it cannot be used in compounding.|
+survodutide|Survodutide|an investigational glucagon/GLP-1 dual agonist|Sold on the grey market for weight loss; no approved product.|
+mazdutide|Mazdutide|an investigational GLP-1/glucagon dual agonist|Sold on the grey market for weight loss; no approved product.|
+liraglutide|Liraglutide|the GLP-1 in Victoza and Saxenda, with generics since 2024|FDA proposed in May 2026 not to add it to the 503B list.|Victoza;Saxenda
+exenatide|Exenatide|the first GLP-1 drug, Byetta and Bydureon|Rarely sold on the grey market.|Byetta;Bydureon
+5-amino-1mq|5-amino-1MQ|an NNMT inhibitor, not a peptide|Sold for fat loss claims; no human trials published.|5-amino-1-methylquinolinium
+glutathione|Glutathione|a tripeptide antioxidant on the 503A Category 1 list|Compounded as injections and drips for skin and detox claims.|
+thymosin-beta-4|Thymosin beta-4|the full 43-residue parent of TB-500|Studied in human trials for heart and eye uses; no approved product.|timbetasin
+kisspeptin-54|Kisspeptin-54|the longer kisspeptin form|Studied in human reproductive research; sold as a research peptide.|
+noopept|Noopept|a dipeptide-derived nootropic registered in Russia|Sold for cognition claims.|omberacetam
+adipotide|Adipotide (FTPP)|a peptide that targets the blood supply of fat tissue|Sold for fat loss claims; animal data mostly.|FTPP
+teriparatide|Teriparatide|a parathyroid hormone fragment approved as Forteo for osteoporosis|An approved peptide drug; rarely on the grey market.|Forteo
+abaloparatide|Abaloparatide|a parathyroid-hormone-related peptide approved as Tymlos|An approved peptide drug for osteoporosis.|Tymlos
+octreotide|Octreotide|a somatostatin analogue approved as Sandostatin|An approved peptide drug for acromegaly and certain tumors.|Sandostatin
+leuprolide|Leuprolide|a GnRH agonist approved as Lupron|An approved peptide drug for prostate cancer and endometriosis.|Lupron;leuprorelin
+desmopressin|Desmopressin|a vasopressin analogue approved as DDAVP|An approved peptide drug for diabetes insipidus and bedwetting.|DDAVP
+glucagon|Glucagon|a pancreatic peptide hormone, approved for severe low blood sugar|An approved peptide drug.|
+insulin|Insulin|the pancreatic peptide hormone, approved since 1923|The original peptide drug; a biologic since 2020.|
+calcitonin|Calcitonin|a thyroid peptide hormone approved as Miacalcin|An approved peptide drug for osteoporosis and Paget disease.|Miacalcin
+ziconotide|Ziconotide|a cone-snail peptide approved as Prialt for severe pain|An approved peptide drug given into the spine.|Prialt
+larazotide|Larazotide|an investigational tight-junction peptide studied for celiac disease|Sold on the grey market for gut claims; its phase 3 trial was stopped in 2022.|
+vilon|Vilon|a two-residue synthetic peptide from the Russian bioregulator family|Sold for immune and aging claims.|
+cortexin|Cortexin|a bovine brain peptide preparation used in Russia|Sold for cognition claims.|
