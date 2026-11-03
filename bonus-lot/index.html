@@ -38,7 +38,9 @@ h1 span{color:var(--magenta)}
 /* the Service department: a button in the HUD and an overlay listing every question with its one-line answer */
 #svcBtn{position:absolute;left:50%;top:4%;transform:translateX(-50%);z-index:3;font:400 clamp(12px,1.6vw,16px) Anton,Impact,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(8,6,16,.78);border:0;border-radius:10px;padding:7px 14px;cursor:pointer}
 #svcBtn:hover{background:var(--magenta)}
-#svc{position:absolute;top:0;bottom:0;left:0;width:min(100%,480px);z-index:6;display:none;background:rgba(7,6,12,.94);overflow:auto;padding:clamp(14px,3vw,24px)}
+#svc{position:absolute;top:0;bottom:0;left:0;width:min(100%,330px);z-index:6;display:none;background:rgba(7,6,12,.9);overflow:auto;padding:14px}
+#svc h2{font-size:22px}#svc .lead{font-size:12.5px;margin-top:4px}#svc .svcRow{padding:7px 10px;margin-bottom:4px}#svc .svcRow b{font-size:14px}#svc .svcRow span{font-size:12px;line-height:1.35}
+#bay{position:absolute;left:50%;top:4%;transform:translateX(-50%);z-index:3;display:none;gap:8px}#bay.on{display:flex}#bay button{font:400 clamp(12px,1.6vw,16px) Anton,Impact,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(8,6,16,.78);border:0;border-radius:10px;padding:7px 14px;cursor:pointer}#bay button:hover{background:var(--magenta)}
 #svc.on{display:block}
 #svc .hd{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 #svc h2,#service h2{font:400 clamp(24px,3.4vw,38px)/1 Anton,Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em;margin:0}
@@ -46,7 +48,7 @@ h1 span{color:var(--magenta)}
 #svc .lead,#service .lead{color:#c9c4da;margin:6px 0 0;max-width:60ch;font-size:15px}
 #svcClose{font:600 13px Inter;padding:8px 14px;border-radius:999px;border:0;background:var(--panel2);color:#fff;cursor:pointer;flex:none}
 .svcGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;max-width:980px;margin:18px auto 0}
-#svc .svcGrid{grid-template-columns:1fr;gap:12px;margin-top:14px}
+#svc .svcGrid{grid-template-columns:1fr;gap:8px;margin-top:10px}
 .svcGrp h3{font:400 15px Anton,Impact,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--obj);margin:0 0 6px}
 .svcRow{display:block;width:100%;text-align:left;background:var(--panel);border:0;border-radius:10px;padding:10px 12px;margin:0 0 6px;color:var(--ink);cursor:pointer;font-family:Inter}
 .svcRow:hover,.svcRow:focus-visible{background:var(--panel2);outline:2px solid var(--magenta);outline-offset:-2px}
@@ -133,7 +135,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
 .row{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-top:1px solid var(--line)}.row span:last-child{font-variant-numeric:tabular-nums;color:var(--cash)}
 #owner .row span:last-child{color:#c9bdfd}
 .cta{display:inline-block;margin-top:14px;background:var(--magenta);color:#fff;font-family:Anton;letter-spacing:.06em;font-size:18px;padding:12px 22px;border-radius:8px;text-decoration:none;text-transform:uppercase;box-shadow:4px 4px 0 #000}
-@media (max-width:760px){.wins .cols{grid-template-columns:1fr}#panel{position:static;width:auto;display:none;margin-top:12px}#panel.on{display:block}#panel .m{max-height:none;background:var(--panel)}#game{aspect-ratio:3/4}#story{bottom:3%;padding:8px 10px}#storyT{font-size:15px}#storyS{font-size:11px;margin-top:4px}#storyK{font-size:9px;gap:2px 10px;margin-bottom:4px}#qaNav{gap:6px;margin-top:6px}#qaNav button{padding:5px 10px;font-size:11px}#start{align-items:flex-end;overflow:auto;padding:10px}#open{width:100%;padding:14px 14px 12px}#open .ln{font-size:22px}#open p{font-size:13px;margin-top:8px}#open .acts{margin-top:10px;gap:6px}#open .btn{font-size:14px;padding:9px 14px}.svcGrid{grid-template-columns:1fr}#svcBtn{padding:6px 10px;top:auto;bottom:5%;left:auto;right:3%;transform:none}#service{padding:16px}#whats{font-size:13px;gap:4px 14px}}
+@media (max-width:760px){.wins .cols{grid-template-columns:1fr}#panel{position:static;width:auto;display:none;margin-top:12px}#panel.on{display:block}#panel .m{max-height:none;background:var(--panel)}#game{aspect-ratio:3/4}#story{bottom:3%;padding:8px 10px}#storyT{font-size:15px}#storyS{font-size:11px;margin-top:4px}#storyK{font-size:9px;gap:2px 10px;margin-bottom:4px}#qaNav{gap:6px;margin-top:6px}#qaNav button{padding:5px 10px;font-size:11px}#start{align-items:flex-end;overflow:auto;padding:10px}#open{width:100%;padding:14px 14px 12px}#open .ln{font-size:22px}#open p{font-size:13px;margin-top:8px}#open .acts{margin-top:10px;gap:6px}#open .btn{font-size:14px;padding:9px 14px}.svcGrid{grid-template-columns:1fr}#svcBtn{padding:6px 10px;top:auto;bottom:5%;left:auto;right:3%;transform:none}#bay{top:auto;bottom:5%;left:auto;right:3%;transform:none;flex-direction:column;align-items:flex-end}#bay button{padding:6px 10px}#service{padding:16px}#whats{font-size:13px;gap:4px 14px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 @media print{body{background:#fff;color:#111}#game,#panel,.sheet,.btn,.cta{display:none!important}#owner{display:block!important}.stat,.hero{background:#fff!important;border-color:#ccc!important;color:#111}.stat .n,.hero .n,.hero .u{color:#111!important;text-shadow:none!important}.stat .k,.stat .s,.hero .k,.hero .s,.fine{color:#444!important}h1{color:#111;text-shadow:none}h1 span{color:#111}}
 </style>
@@ -150,6 +152,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
   <div class="hud" id="story" aria-live="polite"><div id="storyK"></div><div id="storyT"></div><div id="storyS"></div><div id="qaNav"><button id="qaPrev">← Back</button><span class="n" id="qaN"></span><button id="qaNext" class="p">Next →</button><button id="qaAuto">Auto-play ▶</button><button id="qaLoad" style="display:none">Load this group</button><button id="qaClose">Close ✕</button></div></div>
   <div id="banner"><div class="big" id="bannerBig">Mission <span>Passed</span></div><div class="mid" id="bannerMid"></div><div class="sm" id="bannerSm"></div></div>
   <button id="svcBtn" type="button">Service dept ▾</button>
+  <div id="bay"><button id="bayAsk" type="button">Questions ▾</button><button id="bayLeave" type="button">Back to the city ↩</button></div>
   <div id="svc" role="dialog" aria-labelledby="svcH"><div class="hd"><div><h2 id="svcH">Service <span>department</span></h2><p class="lead">Pull in with a question. Each answer plays on the car on the lift in under a minute, and you can leave whenever you like.</p></div><button id="svcClose" type="button">Close ✕</button></div><div class="svcGrid" id="svcList"></div></div>
   <div id="start"><div id="open"><div id="openLines"></div><p id="startP"></p><p class="live" id="openLive"></p><div class="acts"><button class="btn" id="tourBtn">How it works · 90 seconds ▶</button><button class="btn g" id="startBtn" disabled style="opacity:.5">Loading the city…</button><button class="btn q sm" id="openSvc" type="button">Jump to a question ▾</button></div></div></div>
   <div id="panel">
@@ -384,11 +387,12 @@ const QUESTIONS=[
   {h:'The catch is an invoice.',s:'On the $1,500 plan, $265 per enrolled employee a month: $225 is the employee\'s own pre-tax withholding, $40 is the fee. All of it is payroll tax the {site} already sends out.',lit:{engine:1,body:1}},
   {h:'Nothing new comes out of anyone\'s pocket.',s:'The {site} keeps {per} of the {fica} it no longer owes. The employee keeps more take-home. The fee comes out of the same money. Designed to be cost-neutral.',lit:{engine:1},exhaust:1},
   {h:'Owners said the same thing.',s:'The companies in the booklet met it with skepticism, checked it with their CPAs and counsel, then enrolled. Your check is the payroll analysis: no cost, no commitment.',lit:{windows:1}}]},
- {q:'Is this legal? Who stands behind it?',beats:[
-  {h:'Three firms have reviewed it in writing.',s:'Outside ERISA counsel: the program complies with existing legal requirements. CBIZ: the plan document meets the Section 125 requirements. KCP, a CPA firm: the tax treatment is supported by substantial authority under current law.',lit:{windows:1}},
-  {h:'Nobody says IRS-approved, because nobody can.',s:'Opinion letters are not binding on the IRS. Each one is conditioned on the plan being run as written, which is what the administrator and the payroll analysis are for.',lit:{windows:1}},
-  {h:'If the IRS asks, KCP answers.',s:'KCP signs an audit-defense engagement directly with the {site}, under its terms. Your CPA and counsel can review the documents before anything is signed.',lit:{windows:1,engine:1}},
-  {h:'Section 125 itself dates from 1978.',s:'The Revenue Act of 1978 added it to the tax code, and large employers have run pre-tax benefit plans under it for decades. The wellness plan is one more plan written to that section.',lit:{windows:1}}]},
+ {q:'Is it compliant? Who keeps it that way?',beats:[
+  {h:'Three independent firms keep it in line.',s:'Outside ERISA counsel, CBIZ and KCP, a CPA firm, each review the program and its documents in writing and keep them to the current guidelines. The administrator runs the plan to those documents, and the payroll analysis checks every number before anything is signed.',cop:1,lit:{windows:1}},
+  {h:'Counsel: the legal requirements.',s:'Outside ERISA counsel has reviewed the program against the legal requirements that apply to it and put the opinion in writing.',cop:1,lit:{windows:1}},
+  {h:'CBIZ: the plan document.',s:'CBIZ reviewed the plan document against the Section 125 requirements. Section 125 itself dates from the Revenue Act of 1978, and large employers have run pre-tax benefit plans under it for decades.',cop:1,lit:{windows:1}},
+  {h:'KCP: the tax treatment, and the audit.',s:'KCP, a CPA firm, holds that the tax treatment is supported by substantial authority under current law, and signs an audit-defense engagement directly with the {site}. If the IRS asks, KCP answers.',cop:1,lit:{windows:1,engine:1}},
+  {h:'Nobody says IRS-approved, because nobody can.',s:'Opinion letters are not binding on the IRS. Each one is conditioned on the plan being run as written, which is what the administrator and the payroll analysis are for. Your CPA and counsel can review the documents before anything is signed.',cop:1,lit:{windows:1}}]},
  {q:'Who qualifies? Porters, flat-rate, part-time, me?',beats:[
   {h:'Every department.',s:'Sales, F&I, service, parts, the office, porters and detailers. Commission, flat-rate and hourly pay plans all work, full-time and part-time W-2. The payroll analysis sets each person\'s plan level by wages.',lit:{body:1,wheels:1}},
   {h:'One condition the one-pager skips.',s:'The employee has to be covered by an ACA-compliant group health plan, yours or a spouse\'s. Someone who declined coverage is not in. The analysis counts only the people who qualify.',mm:1,lit:{windows:1}},
@@ -409,13 +413,13 @@ let auto=false,autoPref=false,autoT=null; // auto-play: the tour always, otherwi
 function schedule(){clearTimeout(autoT);if(!auto||!qa)return;const b=qa.q.beats[qa.i];autoT=setTimeout(()=>{if(!qa||!auto)return;if(qa.i<qa.q.beats.length-1){qa.i++;beat()}else closeQ()},2800+38*(b.h.length+b.s.length))} // reading time, roughly
 function setScene(b){if(!window.city)return;if(b.scene==='city'){window.city.stage(false,true);if(b.cue!=null)window.city.cue(b.cue)}else window.city.stage(true)}
 function beat(){const b=qa.q.beats[qa.i],m=model();setScene(b);caption(fill(b.h,m),fill(b.s,m));$('#storyK').innerHTML=Object.keys(b.lit||{}).filter(k=>b.lit[k]).map(k=>`<span><i style="background:${LEG[k][0]}"></i>${t(LEG[k][1])}</span>`).join('');$('#qaN').textContent=`${qa.i+1} / ${qa.q.beats.length}`;$('#qaPrev').style.visibility=qa.i?'visible':'hidden';$('#qaNext').textContent=qa.i<qa.q.beats.length-1?'Next →':'Done ✓';
-  $('#qaLoad').style.display=qa.q.load?'':'none';$('#qaAuto').textContent=auto?'Pause ❚❚':'Auto-play ▶';if(qa.i===qa.q.beats.length-1&&qa.q.btns)qa.q.btns.forEach(x=>x.classList.add('seen'));schedule();if(window.city&&b.scene!=='city')window.city.light(b.lit||{},!!b.mm,!!b.exhaust)}
+  $('#qaLoad').style.display=qa.q.load?'':'none';$('#qaAuto').textContent=auto?'Pause ❚❚':'Auto-play ▶';if(qa.i===qa.q.beats.length-1&&qa.q.btns)qa.q.btns.forEach(x=>x.classList.add('seen'));schedule();if(window.city&&b.scene!=='city')window.city.light(b.lit||{},!!b.mm,!!b.exhaust,!!b.cop)}
 function ask(q,tour){if(busy)return;busy=true;qa={q,i:0,tour:tour||false};auto=!!tour||autoPref;dimHud(true);$('#qaNav').style.display='flex';beat();$('#qaNext').focus()}
-function closeQ(){if(!qa)return;const wasTour=qa.tour;clearTimeout(autoT);qa=null;$('#storyK').innerHTML='';$('#qaNav').style.display='none';busy=false;
+function closeQ(){if(!qa)return;const wasTour=qa.tour,qaScene=qa.q.beats[qa.q.beats.length-1].scene;clearTimeout(autoT);qa=null;$('#storyK').innerHTML='';$('#qaNav').style.display='none';busy=false;
   if(wasTour&&typeof wasTour.then==='function'){wasTour.then();return} // the guided path runs straight on; the opening never flashes back in between
-  if(window.city)window.city.stage(false);
-  if(wasTour&&step===0&&!$('#startBtn').disabled){gsap.to('#story',{opacity:0,duration:.5});$('#panel').style.visibility='visible';$('#svcBtn').style.display='';$('#startBtn').click()} // the tour hands over to the missions
-  else dimHud(false)}
+  if(wasTour&&step===0&&!$('#startBtn').disabled){if(window.city)window.city.stage(false);gsap.to('#story',{opacity:0,duration:.5});$('#panel').style.visibility='visible';$('#svcBtn').style.display='';$('#startBtn').click()} // the tour hands over to the missions
+  else if(window.city&&qaScene!=='city'){gsap.to('#story',{opacity:0,duration:.5});bayBar(true)} // a question ends in the garage; the bar offers the next one or the way out
+  else{if(window.city)window.city.stage(false);dimHud(false)}}
 $('#qaNext').onclick=()=>{if(!qa)return;if(qa.i<qa.q.beats.length-1){qa.i++;beat()}else closeQ()};
 $('#qaPrev').onclick=()=>{if(qa&&qa.i){qa.i--;beat()}};$('#qaClose').onclick=closeQ;
 $('#qaAuto').onclick=()=>{auto=!auto;autoPref=auto;$('#qaAuto').textContent=auto?'Pause ❚❚':'Auto-play ▶';schedule()};
@@ -429,9 +433,12 @@ addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#svc').classList.contains
 
 /* ---------- the Service department: every question with its one-line answer, grouped, in the game and under it ---------- */
 const GROUPS={start:'Start here',proof:'Proof',hard:'The hard questions',store:t('My {site}')}; // dealt in this order so the two columns come out level
-const GROUP_OF={'What is this?':'start',"What's the catch?":'hard','Is this legal? Who stands behind it?':'hard',"Will it cut my workers' comp?":'hard'};
+const GROUP_OF={'What is this?':'start',"What's the catch?":'hard','Is it compliant? Who keeps it that way?':'hard',"Will it cut my workers' comp?":'hard'};
 const TRUCK={q:'How is it paid for?',g:'start',answer:'Payroll tax that leaves every pay period gets redirected: the owner keeps a share, the employees keep a share, the administrator takes the fee.',run:()=>runStory()};
-function svcOpen(on,keep){$('#svc').classList.toggle('on',on);if(on)$('#svcClose').focus();if(keep)return;dimHud(on);if(window.city)window.city.stage(on)} // opening the panel drives into the service bay; a picked question stays there
+function bayBar(on){$('#bay').classList.toggle('on',on)}
+function svcOpen(on,keep){$('#svc').classList.toggle('on',on);if(on)$('#svcClose').focus();if(keep)return;if(on){dimHud(true);bayBar(false);if(window.city)window.city.stage(true)}else bayBar(true)} // opening the list drives into the garage; closing it leaves you there with the bar
+function leaveBay(){bayBar(false);if(window.city)window.city.stage(false);dimHud(false)}
+$('#bayAsk').onclick=()=>svcOpen(true);$('#bayLeave').onclick=leaveBay;
 $('#svcBtn').onclick=()=>svcOpen(true);$('#openSvc').onclick=()=>svcOpen(true);$('#svcClose').onclick=()=>svcOpen(false);
 function renderService(id,inGame){const items=[QUESTIONS[0],TRUCK,...QUESTIONS.slice(1)];const byG={};for(const q of items){const g=q.g||GROUP_OF[q.q]||'store';(byG[g]=byG[g]||[]).push(q)}
   const box=$('#'+id);box.innerHTML='';for(const g of Object.keys(GROUPS)){if(!byG[g])continue;const d=document.createElement('div');d.className='svcGrp';d.innerHTML=`<h3>${esc(GROUPS[g])}</h3>`;
@@ -702,7 +709,7 @@ function story(caption,done){
    Money: green coins arc out of our tailpipe into a pile under NET SAVINGS; grey fumes puff out of major medical's and fade. */
 const PART={wheels:0xd65db1,body:0x22a85e,engine:0xffd166,windows:0x8366ea};
 const STACK=new THREE.Vector3(-4,0,-3); // where our coins pile up: centre stage, where both tailpipes point
-let stage=null,ours=null,mmCar=null,exhaust=false,fumes=[],coins=[],spawnT=0,tails=[];
+let stage=null,ours=null,mmCar=null,copCar=null,copLights=[],copFlash=[],exhaust=false,fumes=[],coins=[],spawnT=0,tails=[];
 const coinGeo=new THREE.CylinderGeometry(1.1,1.1,.34,16),coinMat=new THREE.MeshStandardMaterial({color:0x5ee39a,metalness:.7,roughness:.3,emissive:0x1e7a46,emissiveIntensity:.5});
 const puffGeo=new THREE.SphereGeometry(.6,10,8);
 [coinGeo,coinMat,puffGeo].forEach(x=>SHARED.add(x));
@@ -742,6 +749,12 @@ function buildStage(){stage=new THREE.Group();stage.position.set(0,0,SZ);
   ours.g=o;o.scale.setScalar(3.2);o.position.set(-13,2.6,0);o.rotation.y=-Math.PI/2-.5;const op=new THREE.Object3D();op.position.set(-2.2,.5,.6);o.add(op);o.userData.pipe=op;stage.add(o); // up on the lift; both cars face the camera with their tailpipes toward the bay line
   const ol=labelSprite('125 WELLNESS PLAN','#4fd486',26);ol.position.set(mobile?-14:-13,mobile?13.8:11.6,0);stage.add(ol);
   mmCar=car(0x6b2630,'suv',(g,p)=>{if(p){p.body.material=p.body.material.clone();Object.assign(p.body.material,{envMap:ENV,envMapIntensity:.3,roughness:.5})}});mmCar.scale.setScalar(3.6);mmCar.position.set(14,0,0);mmCar.rotation.y=-Math.PI/2+.5;const mp=new THREE.Object3D();mp.position.set(-2.4,.55,.65);mmCar.add(mp);mmCar.userData.pipe=mp;stage.add(mmCar);
+  // compliance: a police car with its light bar going, parked in front of the right lift, and an officer beside it
+  copCar=car(0xf4f4f8,'sedan',(g,p)=>{if(p){p.body.material=p.body.material.clone();Object.assign(p.body.material,{envMap:ENV,envMapIntensity:.3,roughness:.5})}});copCar.scale.setScalar(3.2);copCar.position.set(14,0,5);copCar.rotation.y=-Math.PI/2+.25;copCar.visible=false;
+  copLights=[new THREE.MeshStandardMaterial({color:0x000,emissive:0xff2040,emissiveIntensity:4}),new THREE.MeshStandardMaterial({color:0x000,emissive:0x2a6cff,emissiveIntensity:4})];[-.42,.42].forEach((z,k)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(.5,.16,.4),copLights[k]);m.position.set(-.15,1.5,z);copCar.add(m);const l=new THREE.PointLight(k?0x2a6cff:0xff2040,0,45,2);l.position.set(14+z*7,6,5);stage.add(l);copFlash.push(l)});
+  const bar=new THREE.Mesh(new THREE.BoxGeometry(1.1,.08,1),new THREE.MeshStandardMaterial({color:0x14121c}));bar.position.set(-.15,1.42,0);copCar.add(bar);stage.add(copCar);
+  const cl=labelSprite('COMPLIANCE','#7fb0ff',24);cl.position.set(14,11.4,5);copCar.userData.label=cl;cl.visible=false;stage.add(cl);
+  const cop=new THREE.Group();const body=new THREE.Mesh(new THREE.CapsuleGeometry(.5,1.6,3,8),new THREE.MeshStandardMaterial({color:0x1d2a5a}));body.position.y=1.4;cop.add(body);const cap=new THREE.Mesh(new THREE.CylinderGeometry(.5,.5,.25,10),body.material);cap.position.y=2.55;cop.add(cap);cop.position.set(22,0,9);cop.visible=false;copCar.userData.cop=cop;stage.add(cop);
   const ml=labelSprite('MAJOR MEDICAL','#ff6b6b',30);ml.position.set(14,mobile?9.8:11,0);ml.scale.set(18,4.5,1);mmCar.userData.label=ml;stage.add(ml);
   tails=[labelSprite('NET SAVINGS','#4fd486',20),labelSprite('COST','#ff6b6b',20)];tails[0].position.set(STACK.x-2,6,STACK.z);tails[1].position.set(6,6.3,pipeAt(mmCar).z);tails.forEach(t=>{t.scale.set(10,2.5,1);stage.add(t)}); // side by side between the cars, under the car names
   const spot=new THREE.SpotLight(0xffffff,500,80,Math.PI/4,.6,2);spot.position.set(0,13,22);spot.target.position.set(0,0,0);stage.add(spot);stage.add(spot.target);
@@ -749,8 +762,8 @@ function buildStage(){stage=new THREE.Group();stage.position.set(0,0,SZ);
 function stageOn(on,noCue){if(on){if(!stage)buildStage();else if(stage.visible)return;stage.visible=true;controls.autoRotate=false;camKill();const wide=camera.aspect>1.2;
     gsap.to(camera.position,{x:0,y:wide?11:12,z:SZ+(wide?40:30),duration:1.8,ease:'power2.inOut'});gsap.to(controls.target,{x:0,y:wide?-.5:-5,z:SZ-6,duration:1.8,ease:'power2.inOut'})} // inside the garage, under the lights // a low target keeps the cars in the top half, above the caption panel
   else{if(!stage||!stage.visible){if(!noCue)cue(lastCue);return}stage.visible=false;exhaust=false;for(const b of fumes)drop(stage,b.m);fumes=[];for(const c of coins){gsap.killTweensOf([c.position,c.rotation]);drop(stage,c)}coins=[];if(!noCue)cue(lastCue)}}
-function light(lit,mm,ex){if(!stage)return;for(const k in ours.parts)for(const o of ours.parts[k]){if(o.isLight)gsap.to(o,{intensity:lit[k]?(k==='engine'?80:60):0,duration:.5});else gsap.to(o.material,{emissiveIntensity:lit[k]?(k==='wheels'?.9:.32):0,duration:.5})}
-  mmCar.visible=mm;mmCar.userData.label.visible=mm;exhaust=ex;tails[0].visible=ex||coins.length>0;tails[1].visible=ex&&mm;spawnT=0}
+function light(lit,mm,ex,cop){if(!stage)return;for(const k in ours.parts)for(const o of ours.parts[k]){if(o.isLight)gsap.to(o,{intensity:lit[k]?(k==='engine'?80:60):0,duration:.5});else gsap.to(o.material,{emissiveIntensity:lit[k]?(k==='wheels'?.9:.32):0,duration:.5})}
+  mmCar.visible=mm;mmCar.userData.label.visible=mm;copCar.visible=copCar.userData.label.visible=copCar.userData.cop.visible=!!cop;if(!cop)copFlash.forEach(l=>l.intensity=0);exhaust=ex;tails[0].visible=ex||coins.length>0;tails[1].visible=ex&&mm;spawnT=0}
 function coin(){const n=coins.length;if(n>=48)return;const c=new THREE.Mesh(coinGeo,coinMat);c.position.copy(pipeAt(ours.g));stage.add(c);coins.push(c);
   const col=n%6,a=col/6*Math.PI*2,r=col?2.4:0,to=new THREE.Vector3(STACK.x+Math.cos(a)*r,.19+Math.floor(n/6)*.36,STACK.z+Math.sin(a)*r);
   gsap.to(c.position,{x:to.x,z:to.z,duration:1,ease:'power1.inOut'});gsap.to(c.position,{y:c.position.y+6,duration:.5,ease:'power2.out',yoyo:true,repeat:1,onComplete:()=>gsap.to(c.position,{y:to.y,duration:.15})});gsap.to(c.rotation,{x:Math.PI*4,duration:1,ease:'power1.out'})} // two full flips, landing flat
@@ -771,6 +784,7 @@ function loop(now){if(paused||document.hidden||!host.clientWidth){last=now;setTi
   for(const b of boats){b.m.position.x+=b.speed*dt;if(b.m.position.x>420)b.m.position.x=-420;if(b.m.position.x<-420)b.m.position.x=420;b.m.position.y=.15*Math.sin(now/900+b.phase);b.m.rotation.z=.04*Math.sin(now/1300+b.phase)}
   for(const g of gulls){g.a+=dt*g.w;g.m.position.x=g.cx+Math.cos(g.a)*g.r;g.m.position.z=g.cz+Math.sin(g.a)*g.r;g.m.rotation.y=-g.a;const f=Math.sin(now/110+g.a*3)*.6;g.m.children.forEach(w=>w.rotation.x=w.userData.sd*f)}
   plane.position.x+=dt*11;if(plane.position.x>420)plane.position.x=-420;
+  if(copCar&&copCar.visible){const on=Math.floor(now/220)%2;copLights[0].emissiveIntensity=on?5:.3;copLights[1].emissiveIntensity=on?.3:5;copFlash[0].intensity=on?180:0;copFlash[1].intensity=on?0:180} // red, blue, red, blue
   for(const f of fires){const k=.8+.4*Math.random();f.flame.scale.set(k,.9+.3*Math.random(),k);f.l.intensity=90+60*Math.random()}
   for(const t of traffic){if(t.turn)continue;const p=t.m.position,k=t.axis,o=k==='z'?'x':'z';p[k]+=t.dir*t.speed*dt*60;if(Math.abs(p[k])>LIM[k]){p[k]=Math.sign(p[k])*LIM[k];t.turn=true;gsap.to(t.m.rotation,{y:t.m.rotation.y+Math.PI,duration:.9});gsap.to(p,{[o]:t[o]-4.4*t.dir,duration:.9,onComplete:()=>{t[o]=p[o];t.dir=-t.dir;t.turn=false}})}} // U-turn into the other lane at the end of the road: nothing drives off the map
   for(let i=bursts.length-1;i>=0;i--){const b=bursts[i];b.t+=dt;const r=Math.max(16,80-b.t*34);b.m.position.set(Math.cos(b.a)*r,0,Math.sin(b.a)*r);if(b.t>2.4){drop(scene,b.m);bursts.splice(i,1)}}
