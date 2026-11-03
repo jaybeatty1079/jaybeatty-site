@@ -89,17 +89,18 @@ def run(only=None):
         key = name.split(' (')[0]
         t = terms(key, syn)
         row = {'id': cid, 'name': name, 'aka': aka, 'about': about, 'synonyms': syn}
-        try:
-            row['human_pubmed'] = pubmed_count(t + ' AND humans[mh]')
-            row['trials_pubmed'] = pubmed_count(t + ' AND (clinical trial[pt] OR randomized controlled trial[pt])')
-            row['all_pubmed'] = pubmed_count(t)
-            row['papers'] = pubmed_top(t + ' AND humans[mh]') or pubmed_top(t)
-            row['trials_ctgov'] = trials_count(key)
-            row['approved'] = approved(key, syn)
-            row['europepmc'] = europepmc_count(key)
-            row['openalex'] = openalex(key)
-        except Exception as e:
-            row['error'] = str(e)[:120]; row.setdefault('human_pubmed', None); row.setdefault('trials_pubmed', None); row.setdefault('all_pubmed', None); row.setdefault('papers', []); row.setdefault('trials_ctgov', None); row.setdefault('approved', None)
+        # each source on its own, so one failing index never loses the row
+        def safe(k, fn, default):
+            try: row[k] = fn()
+            except Exception as e: row[k] = default; row.setdefault('partial', []).append('%s: %s' % (k, str(e)[:60]))
+        safe('human_pubmed', lambda: pubmed_count(t + ' AND humans[mh]'), None)
+        safe('trials_pubmed', lambda: pubmed_count(t + ' AND (clinical trial[pt] OR randomized controlled trial[pt])'), None)
+        safe('all_pubmed', lambda: pubmed_count(t), None)
+        safe('papers', lambda: pubmed_top(t + ' AND humans[mh]') or pubmed_top(t), [])
+        safe('trials_ctgov', lambda: trials_count(key), None)
+        safe('approved', lambda: approved(key, syn), None)
+        safe('europepmc', lambda: europepmc_count(key), None)
+        safe('openalex', lambda: openalex(key), None)
         row['grade'] = grade(row); row['graded_on'] = str(datetime.date.today())
         rows.append(row)
         print('%-22s %s  human %5s  trials %4s/%4s  all %6s  %s' % (cid, row['grade'], row['human_pubmed'], row['trials_pubmed'], row['trials_ctgov'], row['all_pubmed'], (row['approved'] or {}).get('brand', '')))

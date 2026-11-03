@@ -1827,10 +1827,14 @@
    }
   ],
   "trials_ctgov": 19,
-  "error": "HTTP Error 500: Internal Server Error",
   "approved": null,
   "grade": "B",
-  "graded_on": "2026-11-02"
+  "graded_on": "2026-11-02",
+  "europepmc": 433,
+  "openalex": {
+   "all": 7965,
+   "non_english": 595
+  }
  },
  {
   "id": "noopept",
@@ -2030,10 +2034,17 @@
    }
   ],
   "trials_ctgov": 25,
-  "error": "HTTP Error 500: Internal Server Error",
-  "approved": null,
-  "grade": "B",
-  "graded_on": "2026-11-02"
+  "approved": {
+   "brand": "Tymlos",
+   "generic": "ABALOPARATIDE"
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02",
+  "europepmc": 1701,
+  "openalex": {
+   "all": 2542,
+   "non_english": 127
+  }
  },
  {
   "id": "octreotide",
@@ -2077,10 +2088,17 @@
    }
   ],
   "trials_ctgov": 327,
-  "error": "HTTP Error 500: Internal Server Error",
-  "approved": null,
-  "grade": "B",
-  "graded_on": "2026-11-02"
+  "approved": {
+   "brand": "Octreotide Acetate",
+   "generic": "OCTREOTIDE ACETATE"
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02",
+  "europepmc": 29414,
+  "openalex": {
+   "all": 50465,
+   "non_english": 5262
+  }
  },
  {
   "id": "leuprolide",
@@ -2337,10 +2355,17 @@
    }
   ],
   "trials_ctgov": 154,
-  "error": "HTTP Error 500: Internal Server Error",
-  "approved": null,
-  "grade": "B",
-  "graded_on": "2026-11-02"
+  "approved": {
+   "brand": "CALCITONIN SALMON",
+   "generic": "CALCITONIN SALMON"
+  },
+  "grade": "A",
+  "graded_on": "2026-11-02",
+  "europepmc": 84436,
+  "openalex": {
+   "all": 129447,
+   "non_english": 12912
+  }
  },
  {
   "id": "ziconotide",
