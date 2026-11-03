@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Peptide Ride Glossary</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="The terms and acronyms behind the Peptide Ride and the Peptide Supply Map: the law, the lists and categories, who makes a peptide, how it is made, the grey market, and the compounds.">
+<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml"><link rel="icon" href="/favicon.ico?v=2" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a reference page in the same paper-and-ink as the ride; groups as sections, terms as a two-column list with the acronym expansion under each term. */
+:root{--paper:#edeeea;--paper2:#e3e5df;--ink:#1e2226;--ink2:#4b525a;--muted:#737b84;--rule:#c9cdc6;--tol:#2f4f8f;--serif:"Source Serif 4",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#161a1e;--paper2:#1e2328;--ink:#e6e8e3;--ink2:#b9bec4;--muted:#8d949c;--rule:#333a41;--tol:#8fb0ec;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#161a1e;--paper2:#1e2328;--ink:#e6e8e3;--ink2:#b9bec4;--muted:#8d949c;--rule:#333a41;--tol:#8fb0ec;color-scheme:dark}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;padding-block:0 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--tol)}
+.wrap{max-width:1100px;margin:0 auto}
+.bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px;padding:16px 0 10px;border-bottom:1.5px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.bar nav{display:flex;gap:18px;font-size:.84rem}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,3.4vw,2.7rem);line-height:1.05;margin:22px 0 8px}
+.lede{max-width:64ch;color:var(--ink2);margin:0 0 10px}
+.jump{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;margin:14px 0 6px}
+.jump a{color:var(--ink2);text-decoration:none;border-bottom:1px solid var(--rule)}
+section{border-top:1.5px solid var(--ink);margin-top:26px;padding-top:10px}
+h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;margin:0 0 10px}
+dl{display:grid;grid-template-columns:1fr 1fr;gap:12px 36px;margin:0}
+.t{break-inside:avoid;border-bottom:1px solid var(--rule);padding:6px 0 10px}
+dt{font-weight:600;font-size:.95rem}
+dt small{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--muted);font-weight:400;margin-top:1px}
+dd{margin:4px 0 0;font-size:.86rem;color:var(--ink2);max-width:60ch}
+footer{margin-top:30px;font-size:.78rem;color:var(--muted);max-width:90ch;border-top:1px solid var(--rule);padding-top:12px}
+@media (max-width:760px){dl{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="bar"><span class="eyebrow">The Peptide Ride · Glossary · As of <span id="asof"></span></span><nav><a href="index.html">← The ride</a><a href="map.html">The map →</a></nav></div>
+<h1>The words on the ride</h1>
+<p class="lede">The terms and acronyms a reader meets at the counter, on the track, on the plate and on the map, in plain language. Where a term carries a date or a count, it matches the register behind the tool.</p>
+<div class="jump" id="jump"></div>
+<div id="groups"></div>
+<footer>Definitions are the tool's own plain-language summaries of public rules and practice, as of the date above. They are not legal advice. "Tolerated" means FDA or HHS says it does not intend to act while conditions are met; it is never approval.</footer>
+</div>
+<script id="data" type="application/json">/*__DATA__*/</script>
+<script>
+const D=JSON.parse(document.getElementById('data').textContent),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+document.getElementById('asof').textContent=D.asOf;
+const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+document.getElementById('jump').innerHTML=D.groups.map(g=>`<a href="#${slug(g.name)}">${esc(g.name)}</a>`).join('');
+document.getElementById('groups').innerHTML=D.groups.map(g=>`<section id="${slug(g.name)}"><h2>${esc(g.name)}</h2><dl>${g.terms.map(([t,x,d])=>`<div class="t"><dt>${esc(t)}${x?`<small>${esc(x)}</small>`:''}</dt><dd>${esc(d)}</dd></div>`).join('')}</dl></section>`).join('');
+</script>
+</body>
+</html>

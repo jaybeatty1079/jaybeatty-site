@@ -2,6 +2,7 @@
 """Builds peptide-map/index.html from template.html, the vault's research CSVs and the two base maps.
 Run: python3 peptide-map/build.py  (from the site repo root). The page is one file with the data inline."""
 import csv, json, re, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 HERE = os.path.dirname(os.path.abspath(__file__))
 VAULT = '/Users/jaybeatty/Desktop/Claude outputs/Pharma - peptide map'
 AS_OF = '2026-11-02'
@@ -53,7 +54,7 @@ TIMELINE = [  # (date, label, register row, kind) kind: rule | list | glp1 | enf
 ]
 timeline = [{'date': d, 'label': l, 'url': r['url'], 'detail': r['what_it_decides'], 'kind': k} for d, l, r, k in TIMELINE]
 timeline += [
-    {'date': '2026-11-13', 'label': 'About: comments close on the HHS draft policy', 'url': row('2026-10-30 (announced')['url'], 'detail': 'The Federal Register notice calls the policy a draft and sets a short comment window.', 'kind': 'next'},
+    {'date': '2026-11-13', 'label': 'Comments close on the HHS draft policy, 11:59 pm Eastern (Regulations.gov docket HHS-OASH-2026-0496)', 'url': 'https://www.regulations.gov/docket/HHS-OASH-2026-0496', 'detail': 'Comment end date read from the Regulations.gov API on 2026-11-02: 2026-11-14T04:59:59Z.', 'kind': 'next'},
     {'date': '2027-02-28', 'label': 'By end of February: next advisory committee meeting (GHK-Cu named by FDA)', 'url': row('2026-05-14')['url'], 'detail': 'FDA names GHK-Cu; other substances reported by one law firm are unconfirmed.', 'kind': 'next'},
 ]
 
@@ -124,7 +125,7 @@ for tag in ['<!doctype html>', '<html lang="en">', '<head>', '</head>', '<body>'
     art = art.replace(tag, '', 1)
 art = art.replace('<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml"><link rel="icon" href="/favicon.ico?v=2" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">', '')
 RIDE_ART = 'https://claude.ai/artifact/1y6Y6xAFm76vHBFG96ZLPg'; MAP_ART = 'https://claude.ai/artifact/Uc5sbnmU6cgKJ3XahexJbN'  # the private previews link to each other
-open(os.path.join(HERE, 'artifact.html'), 'w').write(art.strip().replace('href="index.html"', 'href="' + RIDE_ART + '"') + '\n')
+MAP_ART_HTML = art.strip().replace('href="index.html"', 'href="' + RIDE_ART + '"')
 
 def strip_wrapper(html):
     for tag in ['<!doctype html>', '<html lang="en">', '<head>', '</head>', '<body>', '</body>', '</html>', '<meta charset="utf-8">', '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">']:
@@ -217,9 +218,18 @@ for c in CARDS:
 TRACKS = {'tolerated': 'Tolerated under a draft', 'closed': 'Closed gate', 'listed': 'Category 1', 'mixed': 'Open for topical, closed for injection', 'component': '503B line', 'brand': 'Brand line', 'none': 'No lawful route'}
 for c in CARDS: c['trackLabel'] = TRACKS[c['track']]
 ride = {'asOf': AS_OF, 'cards': CARDS, 'hhsUrl': HHS['url']}
+# ---------- the glossary page ----------
+from glossary import GROUPS as GLOSSARY
+gt = open(os.path.join(HERE, 'glossary-template.html')).read()
+gout = gt.replace('/*__DATA__*/', json.dumps({'asOf': AS_OF, 'groups': GLOSSARY}, separators=(',', ':')).replace('</', '<\\/'))
+open(os.path.join(HERE, 'glossary.html'), 'w').write(gout)
+GLOSS_ART = 'https://claude.ai/artifact/Wocz7W5sAPKo6HWj2TRfLe'
+open(os.path.join(HERE, 'glossary-artifact.html'), 'w').write(strip_wrapper(gout).replace('href="index.html"', 'href="' + RIDE_ART + '"').replace('href="map.html"', 'href="' + MAP_ART + '"'))
+print('glossary.html', len(gout) // 1024, 'KB;', sum(len(g['terms']) for g in GLOSSARY), 'terms')
 rt = open(os.path.join(HERE, 'ride-template.html')).read()
 rout = rt.replace('/*__DATA__*/', json.dumps(ride, separators=(',', ':')).replace('</', '<\\/'))
 open(os.path.join(HERE, 'index.html'), 'w').write(rout)
-open(os.path.join(HERE, 'ride-artifact.html'), 'w').write(strip_wrapper(rout).replace('href="map.html"', 'href="' + MAP_ART + '"'))
+open(os.path.join(HERE, 'ride-artifact.html'), 'w').write(strip_wrapper(rout).replace('href="map.html"', 'href="' + MAP_ART + '"').replace('href="glossary.html"', 'href="' + GLOSS_ART + '"'))
+open(os.path.join(HERE, 'artifact.html'), 'w').write(MAP_ART_HTML.replace('href="glossary.html"', 'href="' + GLOSS_ART + '"') + '\n')
 print('index.html (ride)', len(rout) // 1024, 'KB;', len(CARDS), 'cards')
 print('map.html', len(out) // 1024, 'KB;', len(fac), 'facilities,', len(timeline), 'timeline rows,', len(routes), 'routes,', len(sources), 'sources,', len(reg_rows), 'register rows')
