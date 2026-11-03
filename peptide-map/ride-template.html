@@ -76,7 +76,7 @@ a{color:var(--tol)}
 .door.l .kiss{left:17%}.door.r .kiss{right:17%}
 .kiss.sm{width:8%;bottom:9%}.door.l .kiss.sm{left:37%}.door.r .kiss.sm{right:37%}
 /* the corner windows: north-west source, south-west purify and test, north-east fill and finish, south-east dispense */
-.panel{position:absolute;z-index:3;width:min(24%,300px);opacity:0;transform:translateY(6px);pointer-events:none;transition:opacity .5s,transform .5s;color:var(--cinkd)}
+.panel{position:absolute;z-index:3;width:min(27%,340px);opacity:0;transform:translateY(6px);pointer-events:none;transition:opacity .5s,transform .5s;color:var(--cinkd)}
 .panel.on{opacity:1;transform:none}
 .panel .top{background:rgba(247,241,228,.94);border:1px solid var(--cinkd);padding:8px 10px 6px;box-shadow:0 4px 14px rgba(40,25,10,.25)}
 .panel.now .top{box-shadow:0 0 0 2px var(--cinkd),0 4px 14px rgba(40,25,10,.25)}
@@ -101,12 +101,12 @@ a{color:var(--tol)}
 .panel .top .step{font-family:"Rye",Georgia,serif;font-size:.9rem;letter-spacing:0;text-transform:none;color:var(--cinkd);margin-right:6px}
 @media (prefers-reduced-motion:reduce){.scene *{animation:none!important}.door{transition:none}}
 /* the banners, hung over the track, drawn in the scene in real perspective */
-.banner{width:520px;background:var(--cream);border:1.5px solid var(--cinkd);padding:14px 18px;color:var(--cinkd);font-family:var(--sans);opacity:.5;transition:opacity .6s;box-shadow:0 6px 18px rgba(40,25,10,.35);text-align:center}
+.banner{width:560px;background:var(--cream);border:2px solid var(--cinkd);padding:16px 20px;color:var(--cinkd);font-family:var(--sans);opacity:.96;transition:opacity .6s;box-shadow:0 6px 18px rgba(40,25,10,.35);text-align:center}
 .banner.lit{opacity:1}
-.banner h3{font-family:var(--mono);font-weight:500;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--cink2);margin:0 0 6px}
-.banner .big{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.1;margin:0 0 8px}
+.banner h3{font-family:var(--mono);font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--cink2);margin:0 0 6px}
+.banner .big{font-family:"Rye",Georgia,serif;font-weight:400;font-size:34px;line-height:1.1;margin:0 0 8px}
 .chip.s-ok{color:var(--ok)}.chip.s-cond{color:var(--warn)}.chip.s-no{color:var(--enf)}.chip.s-brand{color:var(--tol)}
-.banner p{margin:0;font-size:16px;line-height:1.4;color:var(--cink2)}
+.banner p{margin:0;font-size:20px;font-weight:500;line-height:1.35;color:var(--cinkd)}
 #flash{position:absolute;inset:0;z-index:2;background:#fff;opacity:0;pointer-events:none}
 #hud{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);z-index:3;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cinkd);background:rgba(247,241,228,.92);border:1px solid var(--cinkd);padding:5px 10px;display:none;white-space:nowrap}
 #now{position:absolute;left:12px;right:12px;bottom:12px;z-index:3;display:none;background:rgba(247,241,228,.92);border:1px solid var(--cinkd);padding:8px 10px;font-size:.78rem;color:var(--cink2)}
@@ -115,6 +115,10 @@ a{color:var(--tol)}
 #fade{position:absolute;inset:0;z-index:5;background:var(--cream);opacity:0;pointer-events:none;transition:opacity .65s}
 #fade.on{opacity:1}
 #readout{position:absolute;inset:0;z-index:6;display:none;overflow:auto;padding:clamp(14px,3vw,30px);background:var(--cream);color:var(--cinkd)}
+/* the standing's colour, Jay's rule: green with solid human evidence and oversight; yellow thinner evidence but on FDA's radar; orange some human evidence and nobody looking; red no human evidence */
+#readout.c-green,#fade.c-green{background:#dcebd6}#readout.c-yellow,#fade.c-yellow{background:#f5e9bf}#readout.c-orange,#fade.c-orange{background:#f4d7b6}#readout.c-red,#fade.c-red{background:#efc9c2}
+.plate .cat{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border:1.5px solid var(--cinkd);margin:0 0 10px}
+.catkey{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:.76rem}.catkey span i{display:inline-block;width:11px;height:11px;border:1px solid var(--cinkd);margin-right:5px;vertical-align:-1px}
 #readout.on{display:block;animation:up .5s ease-out}
 @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .shared{margin:0 0 14px;border:1px solid var(--crule);padding:8px 12px}.shared summary{cursor:pointer;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cink2)}.shared .grid3{margin:10px 0 2px}
@@ -149,6 +153,7 @@ a{color:var(--tol)}
       <p class="lede">Pick one at the counter. The doors open, the cart climbs the track that today's US rules lay down for it through the Lebanon Valley in October, and twelve windows show how the compound is made, from the sequence on paper to the vial in your hand, and whether the rules permit each step. At the end you get the peptide's standing: where it sits under today's rules, with dates and sources. About two minutes.</p>
       <div class="acts"><button class="btn" id="board" disabled>Board the cart</button><button class="btn ghost" id="skipRide" disabled>Skip the ride, show the standing</button></div>
       <p class="note" style="margin-top:12px">The weather on the ride follows the peptide's standing. Sunny where there is oversight, an approved product or FDA or HHS tolerance, and human evidence behind it. Overcast where there is oversight but the human evidence is thin. Rain, a storm or a blizzard only where there is no oversight at all, graded by how little human evidence exists. The tool's own grading, shown on each standing.</p>
+      <p class="note catkey"><span><i style="background:#dcebd6"></i>Green: solid human evidence and oversight</span><span><i style="background:#f5e9bf"></i>Yellow: thinner evidence, on FDA's radar</span><span><i style="background:#f4d7b6"></i>Orange: some human evidence, nobody looking</span><span><i style="background:#efc9c2"></i>Red: no human evidence</span></p>
       <p class="note">Maps public guidance as of the date above. Not legal advice. The HHS policy of 2026-10-30 is a draft under comment until 2026-11-13.</p></div>
     <div id="menus"></div>
   </div>
@@ -206,7 +211,8 @@ for(const [key,title,sub] of [['named','Named by the regulators','On FDA\'s list
     b.onclick=()=>{picked=c;menus.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));$('#board').disabled=false;$('#skipRide').disabled=false;$('#board').textContent='Board the cart with '+c.name};li.appendChild(b);menu.appendChild(li)}}
 
 /* ---------- the plate ---------- */
-function plate(c){const lvl=['Clear skies.','Overcast.','Rain and lightning.','A storm, with wind.','A blizzard, with hail.'][c.weather];$('#plate').innerHTML=`<div class="eyebrow">Where it stands · ${esc(c.trackLabel)} · as of ${D.asOf}</div><h2>${esc(c.name)}</h2><p class="aka">${esc(c.aka)}. ${esc(c.about)}</p>
+const CAT={green:'Green · solid human evidence, with oversight',yellow:'Yellow · thinner evidence, on FDA\'s radar',orange:'Orange · some human evidence, nobody looking',red:'Red · no human evidence'};
+function plate(c){const lvl=['Clear skies.','Overcast.','Rain and lightning.','A storm, with wind.','A blizzard, with hail.'][c.weather];$('#readout').className='c-'+c.standing;$('#fade').className='c-'+c.standing;$('#plate').innerHTML=`<div class="eyebrow">Where it stands · ${esc(c.trackLabel)} · as of ${D.asOf}</div><h2>${esc(c.name)}</h2><div class="cat">${CAT[c.standing]}</div><p class="aka">${esc(c.aka)}. ${esc(c.about)}</p>
   <p class="path">${esc(c.path)}</p>
   <div class="grid3"><div><div class="k">This peptide's own record</div><div class="v">${esc(c.own)}</div></div><div><div class="k">Human evidence, and the weather it earned</div><div class="v">${esc(c.evidence)} ${lvl}</div></div><div><div class="k">Enforcement</div><div class="v">${esc(c.enforce)}</div></div></div>
   <details class="shared"><summary>The rules this track shares: 503A, the HHS draft, 503B</summary><div class="grid3"><div><div class="k">503A pharmacy</div><div class="v">${esc(c.a)}</div></div><div><div class="k">HHS draft policy, 2026-10-30</div><div class="v">${esc(c.hhs)}</div></div><div><div class="k">503B outsourcing facility</div><div class="v">${esc(c.b)}</div></div></div></details>
@@ -224,7 +230,7 @@ const css3=new CSS3DRenderer();Object.assign(css3.domElement.style,{position:'ab
 const scene=new THREE.Scene();
 const ENV=(()=>{const p=new THREE.PMREMGenerator(renderer),t=p.fromScene(new RoomEnvironment(),.04).texture;p.dispose();return t})();
 scene.fog=new THREE.Fog(0xe9c39a,140,760); // warm haze that swallows the far ridges
-const camera=new THREE.PerspectiveCamera(66,16/10,.08,1400);
+const camera=new THREE.PerspectiveCamera(66,16/10,.08,2800); // far enough to reach the sky dome from the far end of the loop
 /* sky: a gradient dome, blue overhead to warm gold at the horizon, and a low sun ahead and to the right */
 const skyTex=(()=>{const c=document.createElement('canvas');c.width=2;c.height=512;const g=c.getContext('2d'),gr=g.createLinearGradient(0,0,0,512);[[0,'#4f85c6'],[.32,'#8fb4de'],[.46,'#d9c7b0'],[.5,'#f3cf9a'],[.53,'#e9b57c'],[.6,'#d6a98a'],[1,'#c9a080']].forEach(([o,col])=>gr.addColorStop(o,col));g.fillStyle=gr;g.fillRect(0,0,2,512);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t})();
 scene.add(new THREE.Mesh(new THREE.SphereGeometry(1200,32,24),new THREE.MeshBasicMaterial({map:skyTex,side:THREE.BackSide,fog:false,toneMapped:false})));
@@ -239,7 +245,8 @@ const fillL=new THREE.DirectionalLight(0x9fb8e8,.5);fillL.position.set(-200,120,
 const C=(h)=>new THREE.Color(h);
 const noise=(x,z)=>Math.sin(x/88+.3)*Math.cos(z/104)*16+Math.sin(x/37+1.7)*Math.sin(z/43+.4)*7+Math.sin(x/13+2.1)*Math.cos(z/17+.9)*2.2+Math.cos(x/190)*Math.sin(z/230)*22;
 const RIVER=z=>(72+34*Math.sin(z/95)+10*Math.sin(z/31)); // the river's x at a given z, winding down the valley
-const MAIN=new THREE.CatmullRomCurve3([[0,1,10],[0,1.5,-12],[0,6,-50],[0,12,-90],[0,18,-130],[0,24,-170],[0,30,-210],[0,36,-250],[0,42,-290],[0,48,-330],[0,53,-366],[0,56,-396],[2,57,-410],[5,36,-436],[13,12,-460],[26,4,-480],[44,7,-498],[62,2,-514],[80,5,-530],[96,1.2,-546]].map(p=>new THREE.Vector3(...p)));
+/* three lifts of four gates each, a fast drop and a swoop between them, and the big drop home around the loop to the station you left */
+const MAIN=new THREE.CatmullRomCurve3([[0,1,10],[0,1.5,-12],[0,8,-45],[0,15,-80],[0,22,-115],[0,30,-150],[2,31,-162],[8,14,-190],[22,6,-212],[42,9,-228],[62,5,-236],[78,7,-246],[80,12,-270],[80,20,-300],[80,28,-330],[80,36,-360],[80,42,-390],[80,43,-402],[76,20,-430],[62,8,-456],[40,12,-478],[14,6,-498],[-14,10,-512],[-44,7,-520],[-68,9,-516],[-80,14,-490],[-80,24,-440],[-80,34,-390],[-80,44,-320],[-80,52,-250],[-80,53,-230],[-78,30,-200],[-72,8,-170],[-66,12,-130],[-64,5,-90],[-62,9,-50],[-56,4,-10],[-44,7,30],[-24,3,56],[-4,2,62],[10,1.5,52],[6,1.2,30],[0,1,14]].map(p=>new THREE.Vector3(...p)));
 const trackPts=[];for(let i=0;i<=300;i++)trackPts.push(MAIN.getPointAt(i/300));
 function terrainH(x,z){let h=noise(x,z)-6;const dr=Math.abs(x-RIVER(z));h-=11*Math.exp(-(dr*dr)/(2*16*16)); // the river cuts a soft valley
   let dt=1e9;for(const p of trackPts){const d=Math.hypot(p.x-x,p.z-z);if(d<dt)dt=d}const keep=Math.min(1,Math.max(0,(dt-10)/30));h=h*keep+(-1.5)*(1-keep); // the land eases down near the track so the structure stands on it
@@ -299,8 +306,10 @@ function rails(curve,n,supports){const L=[],R=[];for(let i=0;i<=n;i++){const t=i
     col.count=foot.count=q;col.castShadow=!mobile;g.add(col);g.add(foot)}
   return g}
 scene.add(rails(MAIN,640,true));
-let crestT=0;{let best=-1;for(let i=0;i<=400;i++){const y=MAIN.getPointAt(i/400).y;if(y>best){best=y;crestT=i/400}}}
-const NSTEP=12,T=[...Array(NSTEP)].map((_,k)=>crestT*(k+1)/(NSTEP+1)); // the twelve gates, spaced up the lift
+function tAt(x,y,z){const q=new THREE.Vector3(x,y,z);let best=0,bd=1e9;for(let i=0;i<=2400;i++){const d=MAIN.getPointAt(i/2400).distanceTo(q);if(d<bd){bd=d;best=i/2400}}return best}
+const LIFTS=[[tAt(0,1.5,-12),tAt(2,31,-162)],[tAt(78,7,-246),tAt(80,43,-402)],[tAt(-68,9,-516),tAt(-80,53,-230)]]; // each lift's start and crest, as curve parameters
+const NSTEP=12,T=LIFTS.flatMap(([a,b])=>[.2,.4,.6,.8].map(f=>a+(b-a)*f)); // four gates up each lift
+const crestT=LIFTS[2][1];
 const SIDING_AT=6; // the research-use-only siding leaves at the border gate
 const SIDING=(()=>{const p=MAIN.getPointAt(T[SIDING_AT]+.012);return new THREE.CatmullRomCurve3([p.clone(),new THREE.Vector3(p.x-6,p.y+1,p.z-16),new THREE.Vector3(p.x-18,p.y+1.5,p.z-34),new THREE.Vector3(p.x-30,p.y+1.2,p.z-50),new THREE.Vector3(p.x-36,p.y+1,p.z-60)])})();
 const siding=rails(SIDING,80,true);siding.visible=false;scene.add(siding);
@@ -321,8 +330,8 @@ function postSign(text,x,z,h,ry,width){const g=new THREE.Group();const gy=terrai
 const pennants=[];function pennant(parent,x,y,z,hex){const sh=new THREE.Shape();sh.moveTo(0,0);sh.lineTo(2.2,.45);sh.lineTo(0,.9);sh.closePath();const f=new THREE.Mesh(new THREE.ShapeGeometry(sh),new THREE.MeshStandardMaterial({color:hex,side:THREE.DoubleSide,roughness:.9}));f.position.set(x,y,z);parent.add(f);pennants.push(f);return f}
 function shed(p,w,d,roofMat,sign){const g=new THREE.Group();const plat=new THREE.Mesh(new THREE.BoxGeometry(w,1,d),cream);plat.position.set(p.x+w/2+1.6,p.y-.4,p.z);plat.castShadow=plat.receiveShadow=true;g.add(plat);
   const roof=new THREE.Mesh(new THREE.BoxGeometry(w+6,.35,d+4),roofMat);roof.position.set(p.x+w/2-.4,p.y+6.2,p.z);roof.castShadow=true;g.add(roof);[[-w/2-2,-d/2-1],[w/2+2,-d/2-1],[-w/2-2,d/2+1],[w/2+2,d/2+1]].forEach(([x,z])=>{const c=new THREE.Mesh(new THREE.BoxGeometry(.35,6.6,.35),dark);c.position.set(p.x+w/2-.4+x,p.y+2.9,p.z+z);g.add(c)});
-  const b=board(sign,w+5,6);b.position.set(p.x+w/2-.4,p.y+7.5,p.z+d/2+2.2);g.add(b);scene.add(g)} // the name board sits on the shed roof
-shed(MAIN.getPointAt(0),7,16,barnRed,'Hershey · Lebanon Valley');shed(MAIN.getPointAt(1),8,14,dark,'Terminal');
+  const b=board(sign,w+5,6);b.position.set(p.x+w/2-.4,p.y+7.5,p.z-d/2-2.2);g.add(b);scene.add(g)} // the name board sits on the shed roof, at the far end, so the cart does not pass under it coming home
+shed(MAIN.getPointAt(0),7,16,barnRed,'Hershey · Lebanon Valley');
 {const p=SIDING.getPointAt(1);const b=new THREE.Mesh(new THREE.BoxGeometry(2.6,1.6,.5),steelDark);b.position.copy(p).add(new THREE.Vector3(0,.8,0));scene.add(b);b.visible=false;siding.userData.buffer=b;const l=postSign('Dead end',p.x-2.5,p.z+1,5,.6,5);l.visible=false;siding.userData.label=l}
 
 /* the valley's own landmarks, set on the terrain */
@@ -331,8 +340,8 @@ const place=(g,x,z)=>{g.position.set(x,terrainH(x,z),z);scene.add(g)};
 const loader=new GLTFLoader();
 function model(file,height,cb){loader.load('models/'+file,gl=>{const o=gl.scene;o.traverse(m=>{if(m.isMesh){m.castShadow=!mobile;m.receiveShadow=true}});const b=new THREE.Box3().setFromObject(o),sz=b.getSize(new THREE.Vector3()),k=height/Math.max(1e-6,sz.y);o.scale.setScalar(k);const b2=new THREE.Box3().setFromObject(o),c=b2.getCenter(new THREE.Vector3());o.position.set(-c.x,-b2.min.y,-c.z);const g=new THREE.Group();g.add(o);cb(g)},undefined,e=>console.warn('model',file,e.message))}
 const put=(file,height,x,z,ry)=>model(file,height,g=>{g.rotation.y=ry||0;place(g,x,z)});
-put('barn.json',8.5,-70,-66,.3);put('silo.json',13,-57,-72,0);put('barn.json',8.5,130,-170,-.6);put('silo.json',12,142,-176,0);put('barn.json',8,-160,-250,1.1);put('silo.json',12,-148,-258,0);
-put('water-tower.json',22,-52,-214,0);put('factory.json',12,150,-96,.2);put('truck.json',3.2,-98,-48,1.2);
+put('barn.json',8.5,-150,-60,.3);put('silo.json',13,-137,-66,0);put('barn.json',8.5,130,-170,-.6);put('silo.json',12,142,-176,0);put('barn.json',8,-160,-250,1.1);put('silo.json',12,-148,-258,0);
+put('water-tower.json',22,-140,-214,0);put('factory.json',12,150,-96,.2);put('truck.json',3.2,-178,-44,1.2);
 model('pines.json',12,g=>{let best=null;g.traverse(m=>{if(m.isMesh&&(!best||m.geometry.attributes.position.count>best.geometry.attributes.position.count))best=m});if(!best)return;best.updateWorldMatrix(true,false);const geo=best.geometry.clone().applyMatrix4(best.matrixWorld),bb=new THREE.Box3().setFromBufferAttribute(geo.attributes.position),h0=bb.max.y-bb.min.y;geo.translate(0,-bb.min.y,0);
   const n=mobile?160:420,inst=new THREE.InstancedMesh(geo,best.material,n),o=new THREE.Object3D();let seed=29,k=0;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
   while(k<n){const x=(rnd()-.5)*1200,z=-120-rnd()*700;if(Math.abs(x)<150&&z>-620)continue;const hh=9+rnd()*7,sc=hh/h0;o.position.set(x,terrainH(x,z)-.3,z);o.scale.setScalar(sc);o.rotation.set(0,rnd()*6,0);o.updateMatrix();inst.setMatrixAt(k++,o.matrix)}
@@ -349,10 +358,10 @@ let windmill;{const g=new THREE.Group();const house=new THREE.Mesh(new THREE.Box
   windmill=new THREE.Group();[[-1.2,-1.2],[1.2,-1.2],[-1.2,1.2],[1.2,1.2]].forEach(([x,z])=>{const leg=new THREE.Mesh(new THREE.BoxGeometry(.2,14,.2),dark);leg.position.set(x*.6,7,z*.6);leg.rotation.z=-x*.07;leg.rotation.x=z*.07;windmill.add(leg)});const wheel=new THREE.Group();for(let i=0;i<14;i++){const bl=new THREE.Mesh(new THREE.BoxGeometry(.5,2.4,.05),new THREE.MeshStandardMaterial({color:0xd8d2c4}));const a=i/14*Math.PI*2;bl.position.set(Math.cos(a)*1.6,Math.sin(a)*1.6,0);bl.rotation.z=a+Math.PI/2;wheel.add(bl)}wheel.position.set(0,14.4,1);windmill.add(wheel);windmill.userData.wheel=wheel;windmill.position.set(24,0,-2);g.add(windmill);
   const buggy=new THREE.Group();const cab=new THREE.Mesh(new THREE.BoxGeometry(2.6,1.9,1.5),new THREE.MeshStandardMaterial({color:0x15151a,roughness:.7}));cab.position.y=1.9;buggy.add(cab);[-1,1].forEach(z=>{const w=new THREE.Mesh(new THREE.TorusGeometry(.75,.06,6,20),dark);w.position.set(-.8,.75,z*.85);buggy.add(w);const w2=new THREE.Mesh(new THREE.TorusGeometry(.55,.06,6,20),dark);w2.position.set(1.0,.55,z*.85);buggy.add(w2)});
   const horse=new THREE.Group();const body=new THREE.Mesh(new THREE.CapsuleGeometry(.45,1.6,4,8),new THREE.MeshStandardMaterial({color:0x4a2e1c,roughness:.9}));body.rotation.z=Math.PI/2;body.position.y=1.4;horse.add(body);const neck=new THREE.Mesh(new THREE.CapsuleGeometry(.22,.8,3,6),body.material);neck.position.set(1.2,1.9,0);neck.rotation.z=.7;horse.add(neck);const head=new THREE.Mesh(new THREE.BoxGeometry(.7,.35,.35),body.material);head.position.set(1.75,2.25,0);horse.add(head);[[.7,.3],[.7,-.3],[-.7,.3],[-.7,-.3]].forEach(([x,z])=>{const l=new THREE.Mesh(new THREE.CylinderGeometry(.09,.08,1.3,6),body.material);l.position.set(x,.65,z);horse.add(l)});horse.position.set(3.4,0,0);buggy.add(horse);
-  buggy.position.set(2,0,22);buggy.rotation.y=-.4;g.add(buggy);place(g,-118,-128);postSign('Amish farm',-96,-116,8,1.1,9)}
+  buggy.position.set(2,0,22);buggy.rotation.y=-.4;g.add(buggy);place(g,-128,-128);postSign('Amish farm',-110,-108,8,1.1,9)}
 /* cows in the pasture by the first farm */
 {const n=16,body=new THREE.InstancedMesh(new THREE.BoxGeometry(2.1,1.1,1),new THREE.MeshStandardMaterial({color:0xf1ece2,roughness:.95}),n),patch=new THREE.InstancedMesh(new THREE.BoxGeometry(.9,.8,1.06),new THREE.MeshStandardMaterial({color:0x1d1b1a,roughness:.95}),n),head=new THREE.InstancedMesh(new THREE.BoxGeometry(.7,.6,.55),new THREE.MeshStandardMaterial({color:0xf1ece2,roughness:.95}),n),legs=new THREE.InstancedMesh(new THREE.BoxGeometry(.16,.8,.16),new THREE.MeshStandardMaterial({color:0x2a2420}),n*4),o=new THREE.Object3D();let seed=5;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};let L=0;
-  for(let i=0;i<n;i++){const x=-92+rnd()*44,z=-40-rnd()*44,y=terrainH(x,z),ry=rnd()*6;o.position.set(x,y+1.15,z);o.rotation.set(0,ry,0);o.scale.set(1,1,1);o.updateMatrix();body.setMatrixAt(i,o.matrix);
+  for(let i=0;i<n;i++){const x=-212+rnd()*44,z=-40-rnd()*44,y=terrainH(x,z),ry=rnd()*6;o.position.set(x,y+1.15,z);o.rotation.set(0,ry,0);o.scale.set(1,1,1);o.updateMatrix();body.setMatrixAt(i,o.matrix);
     o.position.set(x+Math.cos(ry)*(rnd()-.5)*.9,y+1.2,z-Math.sin(ry)*(rnd()-.5)*.9);o.updateMatrix();patch.setMatrixAt(i,o.matrix);o.position.set(x+Math.cos(ry)*1.3,y+1.25,z-Math.sin(ry)*1.3);o.updateMatrix();head.setMatrixAt(i,o.matrix);
     for(const [dx,dz] of [[.8,.35],[.8,-.35],[-.8,.35],[-.8,-.35]]){o.position.set(x+Math.cos(ry)*dx+Math.sin(ry)*dz,y+.4,z-Math.sin(ry)*dx+Math.cos(ry)*dz);o.updateMatrix();legs.setMatrixAt(L++,o.matrix)}}
   [body,patch,head,legs].forEach(m=>{m.castShadow=!mobile;scene.add(m)})}
@@ -371,7 +380,7 @@ elevator(300,-310,-.5);elevator(-250,-520,.6);farm(-235,-385,.5);farm(265,-450,-
 const rowTex=(()=>{const c=document.createElement('canvas');c.width=256;c.height=256;const g=c.getContext('2d');g.fillStyle='#b98f3c';g.fillRect(0,0,256,256);g.fillStyle='#7f5e26';for(let i=0;i<256;i+=16)g.fillRect(i,0,5,256);g.fillStyle='#d6ad52';for(let i=8;i<256;i+=16)g.fillRect(i,0,3,256);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.anisotropy=4;return t})();
 function field(x,z,w,d,ry){const g=new THREE.PlaneGeometry(w,d,12,12);g.rotateX(-Math.PI/2);g.rotateY(ry);const p=g.attributes.position;for(let i=0;i<p.count;i++){const px=p.getX(i)+x,pz=p.getZ(i)+z;p.setY(i,terrainH(px,pz)+.35)}g.computeVertexNormals();const t=rowTex.clone();t.needsUpdate=true;t.repeat.set(w/9,d/9);
   const m=new THREE.Mesh(g,new THREE.MeshStandardMaterial({map:t,roughness:1}));m.position.set(x,0,z);m.receiveShadow=true;scene.add(m)}
-field(-175,-36,60,42,.1);field(112,-28,52,40,-.15);field(-225,-190,80,56,.3);field(230,-225,70,50,-.2);field(-210,-440,90,60,.15);field(165,-440,80,60,-.3);field(-70,-620,130,70,.05);field(130,-640,110,70,-.1);
+field(-250,-30,60,42,.1);field(112,-28,52,40,-.15);field(-225,-190,80,56,.3);field(230,-225,70,50,-.2);field(-210,-440,90,60,.15);field(165,-440,80,60,-.3);field(-70,-620,130,70,.05);field(130,-640,110,70,-.1);
 /* roads in the distance, with a few cars on them */
 const CARS=[];function road(pts){const o=new THREE.Object3D();const cv=new THREE.CatmullRomCurve3(pts.map(p=>new THREE.Vector3(p[0],0,p[1]))),n=140,L=[],R=[],v=[],idx=[];for(let i=0;i<=n;i++){const t=i/n,p=cv.getPointAt(t),tan=cv.getTangentAt(t),side=new THREE.Vector3(-tan.z,0,tan.x).normalize().multiplyScalar(3.2);const a=p.clone().add(side),b=p.clone().sub(side);v.push(a.x,terrainH(a.x,a.z)+.5,a.z,b.x,terrainH(b.x,b.z)+.5,b.z)}
   for(let i=0;i<n;i++){const k=i*2;idx.push(k,k+1,k+2,k+1,k+3,k+2)}const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(v,3));g.setIndex(idx);g.computeVertexNormals();scene.add(new THREE.Mesh(g,new THREE.MeshStandardMaterial({color:0x3b3b3e,roughness:.95})));
@@ -380,8 +389,13 @@ const CARS=[];function road(pts){const o=new THREE.Object3D();const cv=new THREE
 road([[-620,-660],[-300,-700],[0,-690],[320,-720],[640,-700]]);road([[-340,120],[-330,-200],[-345,-520],[-330,-840]]);road([[350,120],[340,-180],[360,-480],[345,-840]]);
 
 /* the twelve windows' scenes: small worlds rendered by the same renderer into each window's hole. Steps 1, 3, 4, 7 and 8 change with the compound (set), the rest are the trade's common craft. */
+const tileTex=(()=>{const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d');g.fillStyle='#e6ddc9';g.fillRect(0,0,256,256);g.strokeStyle='#cfc4ad';g.lineWidth=3;for(let i=0;i<=256;i+=64){g.beginPath();g.moveTo(i,0);g.lineTo(i,256);g.moveTo(0,i);g.lineTo(256,i);g.stroke()}const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(6,6);return t})();
 function mini(build){const sc=new THREE.Scene();sc.background=new THREE.Color(0xefe6d3);sc.fog=new THREE.Fog(0xefe6d3,14,30);sc.add(new THREE.HemisphereLight(0xfff4e6,0x8a7a66,1.1));const dl=new THREE.DirectionalLight(0xffe2b8,1.6);dl.position.set(3,6,4);sc.add(dl);
-  const cam=new THREE.PerspectiveCamera(36,16/9,.1,100);cam.position.set(6.5,3.4,7);cam.lookAt(0,1.1,0);const root=new THREE.Group();sc.add(root);const ground=new THREE.Mesh(new THREE.CircleGeometry(9,36),new THREE.MeshStandardMaterial({color:0xe2d8c2,roughness:1}));ground.rotation.x=-Math.PI/2;sc.add(ground);
+  const cam=new THREE.PerspectiveCamera(38,16/9,.1,100);cam.position.set(5.4,3.0,5.8);cam.lookAt(0,1.3,0);const root=new THREE.Group();sc.add(root);const ground=new THREE.Mesh(new THREE.PlaneGeometry(16,16),new THREE.MeshStandardMaterial({map:tileTex,roughness:.9}));ground.rotation.x=-Math.PI/2;sc.add(ground);
+  const wall=new THREE.Mesh(new THREE.PlaneGeometry(18,7),new THREE.MeshStandardMaterial({color:0xd8cfbe,roughness:1}));wall.position.set(0,3.5,-3.6);sc.add(wall);const side=new THREE.Mesh(new THREE.PlaneGeometry(10,7),wall.material);side.position.set(-5.2,3.5,1);side.rotation.y=Math.PI/2;sc.add(side);
+  const rack=new THREE.Group();rack.position.set(-3.6,0,-2.6);[.9,2.0,3.1].forEach(y=>{const sh=new THREE.Mesh(new THREE.BoxGeometry(2.6,.08,.9),new THREE.MeshStandardMaterial({color:0x8a8f96,roughness:.6,metalness:.4}));sh.position.y=y;rack.add(sh)});[-1.2,1.2].forEach(x=>{const p=new THREE.Mesh(new THREE.BoxGeometry(.08,3.4,.08),new THREE.MeshStandardMaterial({color:0x8a8f96}));p.position.set(x,1.7,.4);rack.add(p)});
+  for(let i=0;i<9;i++){const bx=new THREE.Mesh(new THREE.BoxGeometry(.6,.5,.5),new THREE.MeshStandardMaterial({color:[0xc9a876,0xf1ece2,0x2f4f8f,0xd9d4cb][i%4],roughness:.9}));bx.position.set(-.9+(i%3)*.8,.95+Math.floor(i/3)*1.1+.25,0);rack.add(bx)}sc.add(rack);
+  const pipe=new THREE.Mesh(new THREE.CylinderGeometry(.09,.09,18,8),new THREE.MeshStandardMaterial({color:0x9a9ea5,metalness:.6,roughness:.4}));pipe.rotation.z=Math.PI/2;pipe.position.set(0,5.6,-3.4);sc.add(pipe);
   const m={sc,cam,root,status:'ok',tick:()=>{},set:()=>{}};build(m);return m}
 const into=(file,height,parent,cb)=>model(file,height,g=>{parent.add(g);if(cb)cb(g)});
 const MAT=(c,r=.8,mt=.1,op)=>new THREE.MeshStandardMaterial(Object.assign({color:c,roughness:r,metalness:mt},op?{transparent:true,opacity:op}:{}));
@@ -480,6 +494,12 @@ function renderMinis(){const cr=renderer.domElement.getBoundingClientRect();if(!
   document.querySelectorAll('.panel.on').forEach(el=>{const k=+el.dataset.step,hole=el.querySelector('.hole');if(!(k>=0)||!hole)return;const r=hole.getBoundingClientRect(),x=r.left-cr.left,y=cr.bottom-r.bottom,w=r.width,h=r.height;if(w<10||h<10)return;const m=MINI[k];m.cam.aspect=w/h;m.cam.updateProjectionMatrix();m.sc.background.set(m.status==='no'?0xd9c9c2:0xefe6d3);renderer.setViewport(x,y,w,h);renderer.setScissor(x,y,w,h);renderer.setClearColor(m.sc.background,1);renderer.clear(true,true,false);renderer.render(m.sc,m.cam)});
   renderer.setScissorTest(false);renderer.setViewport(0,0,host.clientWidth,host.clientHeight);renderer.autoClear=true}
 
+/* the entrance sign by the station, seen as the cart comes home: the ride's name over a flask and two test tubes */
+{const g=new THREE.Group();[-6.5,6.5].forEach(dx=>{const p=new THREE.Mesh(new THREE.BoxGeometry(.5,12,.5),dark);p.position.set(dx,6,0);g.add(p)});const b=board('The Peptide Ride',15,4);b.position.set(0,10.3,.3);g.add(b);
+  const shelf=new THREE.Mesh(new THREE.BoxGeometry(7,.3,2.2),dark);shelf.position.set(0,6.4,.4);g.add(shelf);const flask=new THREE.Mesh(new THREE.CylinderGeometry(.5,1.7,2.8,20),glass);flask.position.set(-1.4,7.95,.4);g.add(flask);const neck=new THREE.Mesh(new THREE.CylinderGeometry(.5,.5,.9,16),glass);neck.position.set(-1.4,9.75,.4);g.add(neck);const brew=new THREE.Mesh(new THREE.CylinderGeometry(1.05,1.6,1.1,20),liquid);brew.position.set(-1.4,7.1,.4);g.add(brew);
+  [1.1,2.1].forEach((dx,i)=>{const t=new THREE.Mesh(new THREE.CylinderGeometry(.3,.3,2.4,12),glass);t.position.set(dx,7.75,.4);g.add(t);const l=new THREE.Mesh(new THREE.CylinderGeometry(.26,.26,1.3,12),i?amber:liquid);l.position.set(dx,7.2,.4);g.add(l)});
+  [-2,2].forEach(dx=>{const lamp=new THREE.Mesh(new THREE.SphereGeometry(.4,10,8),new THREE.MeshStandardMaterial({color:0xfff2d6,emissive:0xffd9a0,emissiveIntensity:.8}));lamp.position.set(dx*3,12.4,.3);g.add(lamp)});
+  g.position.set(-15,terrainH(-15,-8),-8);g.rotation.y=.35;scene.add(g)} // ahead and left as the cart pulls in, and beside you as it leaves
 /* the gates: a steel frame over the track with the banner hung from its lintel, two lamps, and at four of them a building beside the line */
 const BUILD={2:'Synthesis plant',5:'Testing lab',7:'Facility',11:'Pharmacy'};
 const stations=T.map((t,i)=>{const p=MAIN.getPointAt(t),tan=MAIN.getTangentAt(t),side=new THREE.Vector3().crossVectors(tan,up).normalize();const g=new THREE.Group();g.position.copy(p);scene.add(g);
@@ -487,7 +507,7 @@ const stations=T.map((t,i)=>{const p=MAIN.getPointAt(t),tan=MAIN.getTangentAt(t)
   const lintel=new THREE.Mesh(new THREE.BoxGeometry(.5,.5,15.6),steelDark);lintel.position.y=17;lintel.lookAt(tan);g.add(lintel);
   const lamps=[-1,1].map(s=>{const m=new THREE.Mesh(new THREE.SphereGeometry(.45,10,8),new THREE.MeshStandardMaterial({color:0x888888,emissive:0x000000}));m.position.copy(side.clone().multiplyScalar(s*7.6)).setY(17.7);g.add(m);return m});
   const barrier=new THREE.Mesh(new THREE.BoxGeometry(.3,.3,5),new THREE.MeshStandardMaterial({color:0xb8303c,emissive:0x5a1016,emissiveIntensity:.6}));barrier.position.y=1.6;barrier.lookAt(tan);barrier.visible=false;g.add(barrier);
-  const el=document.createElement('div');el.className='banner';const banner=new CSS3DObject(el);banner.scale.setScalar(.032);banner.position.set(0,11.6,0);g.add(banner);
+  const el=document.createElement('div');el.className='banner';const banner=new CSS3DObject(el);banner.scale.setScalar(.03);banner.position.set(0,11.4,0);g.add(banner);
   let sb=null;if(BUILD[i]){const bx=side.clone().multiplyScalar(16),gy=terrainH(p.x+bx.x,p.z+bx.z),bh=6+(i%4)*1.5,bld=new THREE.Mesh(new THREE.BoxGeometry(9,bh,8),cream);bld.position.copy(bx);bld.position.y=gy-p.y+bh/2;bld.castShadow=true;g.add(bld);const rf=new THREE.Mesh(new THREE.BoxGeometry(9.6,.4,8.6),dark);rf.position.copy(bld.position).setY(bld.position.y+bh/2+.2);g.add(rf);
     sb=board(BUILD[i],7,4.5);const foot=side.clone().multiplyScalar(8.3);sb.position.copy(foot).setY(9.5+(i%4)*1.2);g.add(sb)} // the building's name hangs on the gate's outer post
   const pen=[-1,1].map(s=>pennant(g,side.x*s*7.6,17.4,side.z*s*7.6,0xe8e2d3));
@@ -513,24 +533,26 @@ function placeCam(){const c=ride.on==='main'?MAIN:SIDING,t=Math.min(ride.t,1),p=
 function lamp(st,status){const col={ok:0x4f6b4a,cond:0xc98a22,no:0xb8303c,brand:0x2f4f8f}[status]||0x888888;st.lamps.forEach(m=>{m.material.color.set(col);m.material.emissive.set(col);m.material.emissiveIntensity=1});st.pen.forEach(f=>f.material.color.set(col))}
 function fillBanner(i,c){const [s,n,t]=c.steps[i],el=stations[i].el;el.className='banner s-'+s;el.innerHTML=`<h3>Step ${i+1} of ${NSTEP} · <span class="chip s-${s}">${STATUS[s]}</span></h3><div class="big">${esc(n)}</div><p>${esc(t)}</p>`}
 function showPanel(i,c,now){const [s,n,t]=c.steps[i],el=$('#'+PANEL[i%4]),ch=chips(i,c);el.className='panel s-'+s;void el.offsetWidth;el.className='panel on s-'+s+(now?' now':'');el.dataset.step=i;el.innerHTML=`<div class="top"><h3><span class="step">${i+1}</span>${esc(n)} · ${STATUS[s]}</h3>${ch.length?`<div class="chips">${ch.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}</div><div class="hole"></div>`;MINI[i].status=s;document.querySelectorAll('.panel').forEach(x=>{if(x.id!==PANEL[i%4])x.classList.remove('now')})}
-function light(i,c){stations[i].el.classList.add('lit');showPanel(i,c,true);stations.forEach((st,k)=>st.el.style.visibility=k<=i+2?'visible':'hidden');const [s,n,t]=c.steps[i];$('#hud').textContent=`${c.name} · step ${i+1} of ${NSTEP} · ${n}`;$('#now').innerHTML=`<b>${i+1} · ${esc(n)} · ${STATUS[s]}</b>${esc(t)}`;$('#now').classList.add('on')}
+function light(i,c){stations[i].el.classList.add('lit');showPanel(i,c,true);const [s,n,t]=c.steps[i];$('#hud').textContent=`${c.name} · step ${i+1} of ${NSTEP} · ${n}`;$('#now').innerHTML=`<b>${i+1} · ${esc(n)} · ${STATUS[s]}</b>${esc(t)}`;$('#now').classList.add('on')}
 let shown=-1;
 function start(c,skip){ride.card=c;$('#counter').classList.add('off');$('#readout').classList.remove('on');
-  stations.forEach((st,i)=>{lamp(st,c.steps[i][0]);st.barrier.visible=c.stopStep===i;fillBanner(i,c);st.el.style.visibility=i<2?'visible':'hidden'});MINI.forEach(m=>m.set(c));
+  stations.forEach((st,i)=>{lamp(st,c.steps[i][0]);st.barrier.visible=c.stopStep===i;fillBanner(i,c)});MINI.forEach(m=>m.set(c));
   setBoard(stations[2].sb,{spps:'Synthesis plant',bio:'Bioreactor hall',extract:'Extraction plant',small:'Chemistry plant'}[c.route]);setBoard(stations[7].sb,{brand:'Manufacturer, cGMP',component:'503B facility',closed:'Gate closed',none:'Gate closed'}[c.track]||'503A pharmacy');
   siding.visible=siding.userData.buffer.visible=siding.userData.label.visible=c.track==='none';setWeather(reduce?0:c.weather);
   if(skip||reduce){document.querySelectorAll('.panel').forEach(p=>p.className='panel');plate(c);return}
-  ride.t=0;ride.s=0;ride.v=0;ride.on='main';ride.phase='doors';shown=-1;stopAtT=c.stopStep!=null?T[c.stopStep]-.02:null;placeCam();$('#hud').style.display='block';$('#hud').textContent=c.name+' · the doors';$('#now').classList.remove('on');document.querySelectorAll('.panel').forEach(p=>p.className='panel');
-  const doors=$('#doors');doors.classList.remove('open');doors.classList.add('show');setTimeout(()=>doors.classList.add('open'),300);setTimeout(()=>{doors.classList.remove('show');$('#hud').textContent=c.name+' · leaving the station';ride.phase='lift'},1800)}
-function step(dt){const c=ride.card;if(!c||ride.phase==='idle'||ride.phase==='done')return;
-  if(ride.phase==='lift'){ride.v=8;ride.s+=ride.v*dt;ride.t=sToT(ride.s);
-    for(let i=0;i<NSTEP;i++)if(ride.t>=T[i]-.03&&shown<i){shown=i;light(i,c)}
-    if(c.sidingStep!=null&&ride.t>=T[c.sidingStep]+.012){ride.on='siding';ride.t=0;ride.phase='siding';ride.v=5;$('#hud').textContent=c.name+' · shunted onto the research-use-only siding';return}
-    if(stopAtT!=null&&ride.t>=stopAtT){ride.phase='stopped';ride.v=0;if(shown<c.stopStep){shown=c.stopStep;light(c.stopStep,c)}$('#hud').textContent=c.name+' · the gate is closed';setTimeout(()=>end(c),2600);return}
-    if(ride.t>=crestT){ride.phase='run';$('#hud').textContent=c.name+' · over the crest';$('#now').classList.remove('on')}}
-  else if(ride.phase==='run'){const y=MAIN.getPointAt(ride.t).y,H=MAIN.getPointAt(crestT).y+1.5;let v=Math.sqrt(Math.max(1,2*G*(H-y)))*1.1;if(ride.t>.9)v=Math.max(3,v*(1-(ride.t-.9)/.1));ride.v+=(v-ride.v)*Math.min(1,dt*4);ride.s+=ride.v*dt;ride.t=sToT(ride.s);
-    if(ride.t>=.999){ride.phase='done';ride.v=0;setTimeout(()=>end(c),600)}}
-  else if(ride.phase==='siding'){ride.t+=ride.v*dt/70;if(ride.t>=1){ride.t=1;ride.phase='done';ride.v=0;setTimeout(()=>end(c),1200)}}}
+  ride.t=0;ride.s=0;ride.v=0;ride.on='main';ride.phase='doors';shown=-1;stopAtT=c.stopStep!=null?T[c.stopStep]-.005:null;placeCam();$('#hud').style.display='block';$('#hud').textContent=c.name+' · the doors';$('#now').classList.remove('on');document.querySelectorAll('.panel').forEach(p=>p.className='panel');
+  const doors=$('#doors');doors.classList.remove('open');doors.classList.add('show');setTimeout(()=>doors.classList.add('open'),300);setTimeout(()=>{doors.classList.remove('show');ride.phase='lift'},1800)}
+function step(dt){const c=ride.card;if(!c||ride.phase==='idle'||ride.phase==='done'||ride.phase==='doors'||ride.phase==='stopped')return;
+  if(ride.phase==='siding'){ride.t+=ride.v*dt/70;if(ride.t>=1){ride.t=1;ride.phase='done';ride.v=0;setTimeout(()=>end(c),1200)}return}
+  const lift=LIFTS.find(([a,b])=>ride.t>=a&&ride.t<=b);let v;
+  if(lift){v=8;if(ride.phase!=='lift'){ride.phase='lift';$('#hud').textContent=c.name+' · '+(lift===LIFTS[0]?'leaving the station':'the next lift')}}
+  else{const y=MAIN.getPointAt(ride.t).y,H=Math.max(y,...LIFTS.filter(([a,b])=>b<=ride.t).map(([a,b])=>MAIN.getPointAt(b).y))+1.5;v=Math.max(6,Math.sqrt(Math.max(1,2*G*(H-y)))*1.1);if(ride.t>.955)v=Math.max(2.5,v*(1-(ride.t-.955)/.045));
+    if(ride.phase!=='run'){ride.phase='run';$('#hud').textContent=c.name+' · '+(ride.t>crestT?'the big drop, and home':'over the crest');$('#now').classList.remove('on')}}
+  ride.v+=(v-ride.v)*Math.min(1,dt*4);ride.s+=ride.v*dt;ride.t=sToT(ride.s);
+  for(let i=0;i<NSTEP;i++)if(ride.t>=T[i]-.011&&shown<i){shown=i;light(i,c)}
+  if(c.sidingStep!=null&&ride.t>=T[c.sidingStep]+.01){ride.on='siding';ride.t=0;ride.phase='siding';ride.v=5;$('#hud').textContent=c.name+' · shunted onto the research-use-only siding';return}
+  if(stopAtT!=null&&ride.t>=stopAtT){ride.phase='stopped';ride.v=0;if(shown<c.stopStep){shown=c.stopStep;light(c.stopStep,c)}$('#hud').textContent=c.name+' · the gate is closed';setTimeout(()=>end(c),2600);return}
+  if(ride.t>=.999){ride.phase='done';ride.v=0;setTimeout(()=>end(c),600)}}
 function end(c){ride.phase='done';$('#hud').style.display='none';$('#now').classList.remove('on');document.querySelectorAll('.panel').forEach(p=>p.className='panel');plate(c)}
 function reset(){setWeather(0);$('#fade').classList.remove('on');ride.phase='idle';ride.t=.02;ride.s=0;ride.v=0;ride.on='main';ride.roll=0;$('#doors').classList.remove('show','open');placeCam();$('#readout').classList.remove('on');$('#hud').style.display='none';$('#now').classList.remove('on');document.querySelectorAll('.panel').forEach(p=>p.className='panel');stations.forEach(st=>{st.el.className='banner';st.el.innerHTML=''});$('#counter').classList.remove('off')}
 $('#board').onclick=()=>picked&&start(picked,false);$('#skipRide').onclick=()=>picked&&start(picked,true);
@@ -551,9 +573,10 @@ function loop(now){const dt=Math.min(.05,(now-last)/1000);last=now;if(!document.
   if(!reduce){leafStep(dt);weatherStep(dt,now)}ferris.rotation.z+=dt*.12;windmill.userData.wheel.rotation.z+=dt*(.6+WX.wind*.5);pennants.forEach((f,k)=>{f.rotation.y=Math.sin(now/260+k)*.5*(1+WX.wind*.4);f.scale.x=.8+.2*Math.sin(now/140+k)});for(const p of puffs){p.t+=dt*.5;if(p.t>3.5)p.t=0;p.m.position.set(p.x+p.t*1.4,22+p.t*4,-2);p.m.scale.setScalar(.6+p.t*.5);p.m.material.opacity=.7*(1-p.t/3.5)}
   if(ride.card&&ride.card.track==='none'&&ride.on==='siding'){const on=Math.floor(now/300)%2;stations.forEach((st,i)=>{if(i>SIDING_AT)st.lamps.forEach(m=>m.material.emissiveIntensity=on?1.4:.1)})}
   for(const k of visibleSteps())MINI[k].tick(dt,now);for(const c of CARS){c.t=(c.t+c.dir*c.sp*dt+1)%1;const p=c.cv.getPointAt(c.t),q=c.cv.getPointAt((c.t+c.dir*.01+1)%1);c.m.position.set(p.x,terrainH(p.x,p.z)+1.1,p.z);c.m.lookAt(q.x,c.m.position.y,q.z)}
+  if(ride.card){stations.forEach((st,k)=>{tmp.copy(st.g.position).setY(st.g.position.y+11.4).applyMatrix4(camera.matrixWorldInverse);st.el.style.visibility=(k<=shown+2&&k>=shown-1&&tmp.z<-3&&tmp.z>-300)?'visible':'hidden'})}
   composer.render();renderMinis();labels.render(scene,camera);css3.render(scene,camera)}requestAnimationFrame(loop)}
 requestAnimationFrame(loop);
-window.ride={start:(id,skip)=>start(D.cards.find(c=>c.id===id),!!skip),state:()=>({t:ride.t,v:ride.v,on:ride.on,phase:ride.phase,card:ride.card&&ride.card.id,readout:$('#readout').classList.contains('on'),lit:stations.map(s=>s.el.classList.contains('lit'))}),jump:(t,phase)=>{ride.phase=phase||'run';ride.t=t;ride.s=tToS(t)},T,crestT}; // test hook
+window.ride={start:(id,skip)=>start(D.cards.find(c=>c.id===id),!!skip),state:()=>({t:ride.t,v:ride.v,on:ride.on,phase:ride.phase,card:ride.card&&ride.card.id,readout:$('#readout').classList.contains('on'),lit:stations.map(s=>s.el.classList.contains('lit'))}),jump:(t,phase)=>{ride.phase=phase||'run';ride.t=t;ride.s=tToS(t)},T,crestT,LIFTS,dbg:{halo,sunDisc,camera,scene,bloom}}; // test hook
 </script>
 </body>
 </html>

@@ -392,6 +392,25 @@ def steps_for(c):
     if tr == 'closed': c['stopStep'] = 7   # the facility gate
     if tr == 'none': c['sidingStep'] = 6   # shunted at the border
 for c in CARDS + MORE_CARDS: steps_for(c)
+# the standing's colour, Jay's rule of 2026-11-03: green = solid human evidence from several sources and a regulator's oversight; yellow = thinner evidence but on FDA's radar;
+# orange = some human evidence and nobody looking; red = no human evidence. Named cards read evidence from the weather grade, the rest from the pipeline grade.
+MORE_BY_ID = {r['id']: r for r in MORE}
+OVERSIGHT = ('brand', 'tolerated', 'listed', 'mixed', 'component')
+RADAR = {'melanotan-2', 'aod-9604', 'thymosin-alpha-1', 'll-37', 'dihexa', 'ghrp-2', 'ghrp-6', 'ibutamoren', 'dsip', 'cagrilintide', 'survodutide', 'mazdutide', 'bremelanotide', 'tesamorelin', 'elamipretide'}  # named in FDA lists, votes or letters
+def standing_of(c):
+    rid = c['id'][2:] if c['id'].startswith('m-') else c['id']
+    if c['menu'] == 'named': ev = {0: 'solid', 1: 'thin', 2: 'thin', 3: 'thin', 4: 'none'}[c['weather']]
+    else:
+        r = MORE_BY_ID[c['id'][2:]]; ev = {'A': 'solid', 'B': 'solid', 'C': 'thin', 'D': 'none'}[c['grade']]
+        if ev == 'thin' and not (r['trials_pubmed'] or r['trials_ctgov']) and (r['human_pubmed'] or 0) < 10: ev = 'none'  # a handful of mentions in human papers and no trial anywhere is no human evidence
+    over = c['track'] in OVERSIGHT; radar = over or c['menu'] == 'named' or rid in RADAR
+    if ev == 'none': return 'red'
+    if ev == 'solid' and over: return 'green'
+    if not radar: return 'orange'
+    return 'yellow'
+for c in CARDS + MORE_CARDS: c['standing'] = standing_of(c)
+from collections import Counter
+print('standing colours:', dict(Counter(c['standing'] for c in CARDS + MORE_CARDS)), '| orange:', [c['id'] for c in CARDS + MORE_CARDS if c['standing'] == 'orange'])
 ride = {'asOf': AS_OF, 'cards': CARDS + MORE_CARDS, 'hhsUrl': HHS['url']}
 # ---------- the glossary page ----------
 from glossary import GROUPS as GLOSSARY
