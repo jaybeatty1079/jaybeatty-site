@@ -222,6 +222,23 @@ WEATHER = {'semaglutide': (0, 'Approved products with large completed trials.'),
            'bpc-157': (3, 'No approved product anywhere; evidence is mostly animal studies with few small human reports; popular on the grey market.'), 'tb-500': (3, 'No approved product; mostly animal and laboratory evidence.'), 'semax': (3, 'Registered as a drug in Russia; no FDA-reviewed trials; no approved US product.'), 'cjc-1295': (3, 'Small early human studies; development stopped; no approved product.'), 'retatrutide': (3, 'Investigational, in large trials; no approved product; sold widely on the grey market with no lawful route.'),
            'mots-c': (4, 'Described in 2015; animal and laboratory evidence, early human work only.'), 'kpv': (4, 'Laboratory and animal evidence; no published human trials.'), 'epitalon': (4, 'Small studies outside Western regulation; no approved product.')}
 for c in CARDS: c['weather'], c['evidence'] = WEATHER[c['id']]
+# what is each peptide's own: a plain line on what it is and what people take it for, and the committee vote where there was one
+ABOUT = {'bpc-157': ('Sold for tendon, gut and joint healing claims.', 'Advisory committee, July 2026: eight votes to six for listing.'),
+         'tb-500': ('A thymosin fragment sold for recovery and injury claims.', 'Advisory committee, July 2026: eight votes to six for listing.'),
+         'mots-c': ('A mitochondrial peptide sold for metabolism and endurance claims.', 'Advisory committee, July 2026: seven votes to five for listing.'),
+         'kpv': ('A three-residue fragment sold for gut and inflammation claims.', 'Advisory committee, July 2026: eight votes to six for listing.'),
+         'epitalon': ('A four-residue synthetic peptide sold for longevity claims.', 'Advisory committee, July 2026: seven votes to four for listing.'),
+         'semax': ('A synthetic ACTH fragment sold for cognition claims; registered as a drug in Russia.', 'Advisory committee, July 2026: eight votes to five for listing; route limits reported in the policy.'),
+         'ipamorelin': ('A growth-hormone secretagogue sold for muscle and recovery claims.', 'Advisory committee, October 2024: twelve votes to none against listing.'),
+         'cjc-1295': ('A GHRH analogue, with and without DAC, sold alongside ipamorelin.', 'Advisory committee, December 2024: voted against in every form.'),
+         'kisspeptin-10': ('A reproductive-hormone peptide sold for testosterone and fertility claims.', 'Advisory committee, October 2024: eleven votes to none against listing.'),
+         'nad': ('Nicotinamide adenine dinucleotide, given by injection or drip for energy and aging claims.', 'On the 503A Category 1 list of May 2026.'),
+         'ghk-cu': ('A copper peptide used in skin products and sold injectable for healing claims.', 'Non-injectable forms restored to Category 1 in May 2026.'),
+         'sermorelin': ('A GHRH analogue once approved as Geref for growth-hormone testing.', 'On the 503B Category 1 list of March 2025 as a component of an approved drug.'),
+         'semaglutide': ('The GLP-1 in Ozempic and Wegovy.', 'Shortage declared over 2025-02-21; compounding cover ended by 2025-05-22; Fifth Circuit affirmed FDA 2026-08-27.'),
+         'tirzepatide': ('The GIP/GLP-1 in Mounjaro and Zepbound.', 'Shortage declared over 2024-10-02 and again 2024-12-19; cover ended early 2025; Fifth Circuit affirmed FDA 2026-08-27.'),
+         'retatrutide': ('An investigational triple agonist in large trials, not approved anywhere.', 'FDA letters of 2025-09-09 and 2026-08-24 name it: it cannot be used in compounding.')}
+for c in CARDS: c['about'], c['own'] = ABOUT[c['id']]
 TRACKS = {'tolerated': 'Tolerated under a draft', 'closed': 'Closed gate', 'listed': 'Category 1', 'mixed': 'Open for topical, closed for injection', 'component': '503B line', 'brand': 'Brand line', 'none': 'No lawful route'}
 for c in CARDS: c['trackLabel'] = TRACKS[c['track']]
 ride = {'asOf': AS_OF, 'cards': CARDS, 'hhsUrl': HHS['url']}
