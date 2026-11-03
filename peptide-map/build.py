@@ -42,6 +42,8 @@ TIMELINE = [  # (date, label, register row, kind) kind: rule | list | glp1 | enf
     ('2024-12-10', 'First warning letters to research-use-only peptide sellers', row('2024-12-10'), 'enforce'),
     ('2025-01-07', 'Interim policy: category system frozen for new nominations', row('2025-01-07'), 'rule'),
     ('2025-02-21', 'Semaglutide shortage declared resolved; compounding windows close by May', row('2025-02-21'), 'glp1'),
+    ('2025-03-05', 'N.D. Tex. denies the compounders an injunction on tirzepatide', row('2025-03-05'), 'court'),
+    ('2025-04-24', 'N.D. Tex. denies the injunction on semaglutide', row('2025-04-24'), 'court'),
     ('2025-09-05', 'Green List import alert 66-80 for GLP-1 APIs', row('2025-09-05'), 'enforce'),
     ('2026-02-06', 'FDA: all available tools against mass-marketed compounded GLP-1s', row('2026-02-06'), 'glp1'),
     ('2026-03-31', 'CBP Cincinnati: 300 cartons, 5,000 peptide shipments from a China shipper', row('2026-03-31', 'CBP'), 'enforce'),
@@ -49,7 +51,7 @@ TIMELINE = [  # (date, label, register row, kind) kind: rule | list | glp1 | enf
     ('2026-05-01', 'FDA proposes to keep semaglutide, tirzepatide, liraglutide off the 503B list', row('2026-05-01'), 'glp1'),
     ('2026-07-23', 'Advisory committee recommends six of seven peptides, against FDA staff', row('2026-07-23'), 'list'),
     ('2026-08-24', 'Warning letters to NuScience and Royal Peptides on GLP-1 "research" sales', row('2026-08-24'), 'enforce'),
-    ('2026-08-27', 'Fifth Circuit affirms FDA in both GLP-1 shortage cases', row('2026-08-27'), 'glp1'),
+    ('2026-08-27', 'Fifth Circuit affirms FDA in both GLP-1 shortage cases', row('2026-08-27'), 'court'),
     ('2026-10-30', 'HHS publishes draft enforcement-discretion policy for six peptides, 503A only', row('2026-10-30 (announced'), 'hhs'),
 ]
 timeline = [{'date': d, 'label': l, 'url': r['url'], 'detail': r['what_it_decides'], 'kind': k} for d, l, r, k in TIMELINE]
@@ -112,9 +114,25 @@ def cite(label, url):
 fda_list_n = cite('FDA, Registered Outsourcing Facilities, content current as of 2026-10-29', FDA_LIST_URL)
 for t in timeline: t['n'] = cite(t['date'] + ' ' + t['label'], t['url'])
 for r in routes: r['n'] = [cite(l, u) for l, u in r['src']]
+# court rulings and settlements with a lesson in them, from the register and the enforcement research (research/03, sections 4b to 4e). Allegations in pending cases are not findings.
+COURTS = [  # date, forum, case, what was decided, what it tells you, kind, url
+    ('2014', 'W.D.N.C. (guilty pleas)', 'United States v. the owners of Spectrum Peptides', 'Two men pleaded guilty to selling misbranded drugs: peptides labeled "for research purposes only", sold to bodybuilders, about $800,000 in sales.', 'The research-use-only label has been a losing defense for over a decade. Intended use is read from the whole record: the website, the dosing talk, the customers.', 'criminal', 'https://www.justice.gov/usao-wdnc/pr/two-charlotte-men-plead-guilty-selling-misbranded-drugs'),
+    ('2025-03-05', 'N.D. Tex.', 'Outsourcing Facilities Association v. FDA, 4:24-cv-00953 (tirzepatide)', 'Preliminary injunction denied. The compounders could not keep making copies while they sued; 503A discretion ended and 503B ran to 2025-03-19.', 'A shortage listing is FDA\'s call, and a court will not freeze it. Compounding that rests on a shortage ends when the shortage does.', 'civil', row('2025-03-05')['url']),
+    ('2025-04-24', 'N.D. Tex.', 'Outsourcing Facilities Association v. FDA, 4:25-cv-00174 (semaglutide)', 'Preliminary injunction denied; 503B discretion ran to 2025-05-22.', 'The same result for the second GLP-1. The pattern held.', 'civil', row('2025-04-24')['url']),
+    ('2025-12-03', 'FTC (final order)', 'FTC v. NextMed', 'Final order against a telehealth GLP-1 program for hidden costs, unsubstantiated weight-loss claims and fake testimonials; $150,000 in consumer refunds.', 'The marketing is a second front. Claims and billing draw the FTC even where the drug itself is lawful.', 'agency', 'https://www.ftc.gov/news-events/news/press-releases/2025/12/ftc-approves-final-order-against-telehealth-provider-nextmed-over-charges-it-used-deceptive'),
+    ('2026-01-12', 'Alabama Attorney General (settlement after a TRO of 2025-11-10)', 'State of Alabama v. Aurora IV and Wellness', 'A clinic that advertised "pharmaceutical-grade" tirzepatide and semaglutide but injected research-grade product settled: $17,267.50 in consumer damages, $7,000 in penalties and fees, and it closed.', 'State consumer-protection law reaches the clinic. Calling research-grade product pharmaceutical grade is the actionable act, before any federal case.', 'state', 'https://www.alabamaag.gov/attorney-general-marshall-settles-lawsuit-with-cullman-clinic-for-administering-dangerous-unapproved-weight-loss-drugs/'),
+    ('2026-03-09', 'D. Del. (dismissed without prejudice)', 'Novo Nordisk v. Hims & Hers', 'Novo sued on 2026-02-09 over a $49 compounded semaglutide pill, alleging inauthentic API and impurities. Hims dropped the pill within two days, announced a shift to the branded drugs on 2026-03-09, and Novo dismissed.', 'Manufacturers sue within days, on patent and unfair-competition law. The business change ends the case, not a judgment.', 'civil', 'https://investors.hims.com/news/news-details/2026/Hims--Hers-Announces-Strategic-Shift-for-US-Weight-Loss-Business/default.aspx'),
+    ('2026-04-01', 'D. Utah (indictment, not tried)', 'United States v. Watkins', 'An osteopathic physician was indicted for receiving misbranded peptides from China through a middleman and selling them to more than 200 patients under labels he made himself. An allegation, not a conviction.', 'A prescriber who sources from the grey market is charged as a distributor. The medical license is no shield for the supply chain.', 'criminal', 'https://www.justice.gov/usao-ut/pr/utah-licensed-osteopathic-physician-indicted-allegedly-receiving-misbranded-drugs-china'),
+    ('2026-07-01', 'D. Mass. (sentence)', 'United States v. Gong and Tang', 'A year and a day each for importing drugs from China through PO boxes and false addressees and relabeling them "For Research Purposes Only"; gross sales over $2.5 million.', 'The import side is prosecuted as misbranding and smuggling. Relabeling at the US end does not launder the product.', 'criminal', 'https://www.justice.gov/usao-ma/pr/massachusetts-couple-sentenced-prison-importing-misbranded-drugs-china-and-selling-them'),
+    ('2026-07-23', 'W.D. Mich. (sentence)', 'United States v. Piper', 'Twenty-one months for selling misbranded peptides and GLP-1s sourced from China through a web storefront.', 'A web store is a drug distributor in the law\'s eyes, whatever its disclaimer says.', 'criminal', 'https://www.justice.gov/usao-wdmi/pr/2026_0723_Piper_Sentencing_PR'),
+    ('2026-07-30', 'N.D. Ind. (sentence)', 'United States v. Kawa and Stechkober (Paradigm Peptides)', 'Five years ten months and one year four months for shipping peptides, hCG and "SARMs" that in fact contained testosterone to thousands of customers; restitution $78,317.52.', 'Sentences scale with volume and with what was actually in the vials.', 'criminal', 'https://www.justice.gov/usao-ndin/united-states-v-matthew-kawa'),
+    ('2026-08-12', 'Several courts (filed, pending)', 'Eli Lilly v. six retatrutide sellers', 'Lilly sued pharmacies, med spas and web sellers over retatrutide, mostly under state unfair-competition law, with a Lanham Act claim against one med spa. Pending; reported by press, courts not named.', 'The manufacturer polices its investigational drug itself. There is no private right to enforce the FDCA, so these suits run on state law and trademark.', 'civil', 'https://www.cnbc.com/2026/08/12/lilly-lawsuits-obesity-drug-retatrutide.html'),
+    ('2026-08-27', '5th Cir. (unpublished per curiam)', 'Outsourcing Facilities Ass\'n v. FDA, Nos. 25-10600 and 25-10758', 'Affirmed FDA in both GLP-1 shortage cases: any failure to use notice-and-comment was harmless, and taking tirzepatide and semaglutide off the shortage list was not arbitrary or capricious.', 'The appeals court confirmed the district courts. The shortage door is shut, and the way FDA shut it survives review.', 'civil', row('2026-08-27')['url']),
+]
+courts = [{'date': d, 'forum': f, 'case': c, 'decided': w, 'lesson': l, 'kind': k, 'n': cite(d + ' ' + c, u), 'url': u} for d, f, c, w, l, k, u in COURTS]
 reg_rows = [{'date': r['date_in_effect'], 'body': r['body'], 'what': r['what_it_decides'], 'compounds': r['compounds'], 'url': r['url'], 'part': r['part']} for r in reg]
 
-data = {'asOf': AS_OF, 'fdaListN': fda_list_n, 'facilities': fac, 'timeline': timeline, 'compounds': compounds, 'routes': routes, 'nodes': nodes, 'origins': origins, 'sources': sources, 'register': reg_rows,
+data = {'asOf': AS_OF, 'fdaListN': fda_list_n, 'facilities': fac, 'timeline': timeline, 'compounds': compounds, 'routes': routes, 'nodes': nodes, 'origins': origins, 'sources': sources, 'register': reg_rows, 'courts': courts,
         'us': json.load(open(os.path.join(HERE, 'data/us-states-albers-10m.json'))), 'world': json.load(open(os.path.join(HERE, 'data/world-110m.json')))}
 tpl = open(os.path.join(HERE, 'map-template.html')).read()
 out = tpl.replace('/*__DATA__*/', json.dumps(data, separators=(',', ':')).replace('</', '<\\/'))
@@ -299,6 +317,81 @@ def more_card(r):
 MORE_CARDS = [more_card(r) for r in MORE if not r.get('error')]
 for c in CARDS: c['menu'] = 'named'
 for c in MORE_CARDS: c['trackLabel'] = TRACKS[c['track']]
+# ---------- the twelve windows: how a peptide is made, from the idea to the vial ----------
+# Three cycles of the four corners. The lamp and the chip at each gate come from the card's station it belongs to
+# (0 source, 1 purify and test, 2 fill and finish, 3 dispense); steps 1, 3, 7 and 8 change with the compound.
+STEP_STATION = [0, 0, 0, 0, 1, 1, 0, 2, 2, 2, 3, 3]
+# where each compound's sequence comes from: kind, and a note for the first window. n is its length in residues where it is a single defined sequence.
+ORIGIN = {
+ 'bpc-157': ('fragment', 'a stretch of a protective protein found in human gastric juice', 15, 'GEPPPGKPADDAGLV'), 'tb-500': ('fragment', 'residues 17 to 23 of thymosin beta-4, the part that binds actin', 7, 'LKKTETQ'),
+ 'semax': ('analogue', 'a fragment of the stress hormone ACTH with a tail added so it lasts', 7, 'MEHFPGP'), 'mots-c': ('natural', 'a 16-residue peptide encoded in mitochondrial DNA', 16, 'MRWQEMGYIFYPRKLR'),
+ 'kpv': ('fragment', 'the last three residues of alpha-melanocyte-stimulating hormone', 3, 'KPV'), 'epitalon': ('designed', 'a four-residue sequence written to mimic a pineal extract', 4, 'AEDG'),
+ 'ipamorelin': ('designed', 'a five-residue chain with three residues that occur in no protein', 5, None), 'kisspeptin-10': ('fragment', 'the ten active residues at the end of kisspeptin-54', 10, 'YNWNSFGLRF'),
+ 'cjc-1295': ('analogue', 'the first 29 residues of growth-hormone-releasing hormone, with four swaps and an optional tail', 29, None), 'ghk-cu': ('fragment', 'a tripeptide released from collagen as it breaks down, carrying a copper ion', 3, 'GHK'),
+ 'nad': ('small', 'a coenzyme in every living cell, not a peptide', None, None), 'sermorelin': ('fragment', 'the first 29 residues of growth-hormone-releasing hormone', 29, 'YADAIFTNSYRKVLGQLSARKLLQDIMSR'),
+ 'semaglutide': ('analogue', 'human GLP-1 with two swaps and a fatty-acid chain so it lasts a week', 31, None), 'tirzepatide': ('analogue', 'a 39-residue chain built on the GIP sequence to hit two receptors, with a fatty-acid chain', 39, None),
+ 'retatrutide': ('analogue', 'a 39-residue chain designed to hit three receptors, with a fatty-acid chain', 39, None),
+ 'tesamorelin': ('analogue', 'growth-hormone-releasing hormone with a group added at the front so it lasts', 44, None), 'bremelanotide': ('analogue', 'a cyclic analogue of alpha-MSH', 7, None), 'melanotan-2': ('analogue', 'a cyclic analogue of alpha-MSH', 7, None),
+ 'afamelanotide': ('analogue', 'alpha-MSH with two swaps', 13, None), 'aod-9604': ('fragment', 'residues 177 to 191 of human growth hormone, with one added', 16, None), 'thymosin-alpha-1': ('natural', 'a 28-residue thymic peptide', 28, None),
+ 'll-37': ('natural', 'the 37-residue antimicrobial peptide cut from human cathelicidin', 37, None), 'dihexa': ('analogue', 'a six-residue chain derived from angiotensin IV', 6, None), 'selank': ('analogue', 'the immune peptide tuftsin with a tail added', 7, None),
+ 'ghrp-2': ('designed', 'a six-residue chain with non-natural residues, screened for growth-hormone release', 6, None), 'ghrp-6': ('designed', 'a six-residue chain with non-natural residues', 6, None), 'hexarelin': ('designed', 'a six-residue chain with non-natural residues', 6, None),
+ 'ibutamoren': ('small', 'a small molecule that mimics ghrelin, not a peptide', None, None), 'igf-1-lr3': ('protein', 'insulin-like growth factor 1 with 13 residues added at the front and one swap', 83, None), 'peg-mgf': ('fragment', 'a 24-residue tail of a growth-factor splice variant, with a polymer attached', 24, None),
+ 'follistatin': ('protein', 'a 344-residue protein that binds myostatin', 344, None), 'dsip': ('natural', 'a nine-residue peptide first isolated from rabbit brain', 9, 'WAGGDASGE'), 'pinealon': ('designed', 'a three-residue chain from the Russian bioregulator family', 3, 'EDR'),
+ 'thymalin': ('extract', 'a mixture of fragments drawn from calf thymus', None, None), 'cerebrolysin': ('extract', 'a mixture of fragments drawn from pig brain', None, None), 'humanin': ('natural', 'a 24-residue peptide encoded in mitochondrial DNA', 24, None),
+ 'elamipretide': ('designed', 'a four-residue chain built to sit in the mitochondrial membrane', 4, None), 'ara-290': ('fragment', 'eleven residues from the surface of erythropoietin', 11, None), 'vip': ('natural', 'a 28-residue gut and nerve hormone', 28, None),
+ 'oxytocin': ('natural', 'a nine-residue hormone from the pituitary', 9, 'CYIQNCPLG'), 'gonadorelin': ('natural', 'the ten-residue hormone that releases LH and FSH', 10, None), 'hcg': ('protein', 'a two-chain glycoprotein hormone of the placenta', None, None),
+ 'cagrilintide': ('analogue', 'a 37-residue analogue of amylin with a fatty-acid chain', 37, None), 'survodutide': ('analogue', 'a 29-residue chain built on glucagon to hit two receptors', 29, None), 'mazdutide': ('analogue', 'a 39-residue chain built on oxyntomodulin', 39, None),
+ 'liraglutide': ('analogue', 'human GLP-1 with one swap and a fatty-acid chain', 31, None), 'exenatide': ('natural', 'a 39-residue peptide copied from Gila monster saliva', 39, None), '5-amino-1mq': ('small', 'a small molecule that blocks an enzyme, not a peptide', None, None),
+ 'glutathione': ('natural', 'the tripeptide antioxidant every cell makes', 3, 'GCG'), 'thymosin-beta-4': ('natural', 'the full 43-residue actin-binding protein', 43, None), 'kisspeptin-54': ('natural', 'the 54-residue parent of kisspeptin-10', 54, None),
+ 'noopept': ('small', 'a dipeptide-derived small molecule, not a true peptide', None, None), 'adipotide': ('designed', 'a homing sequence joined to a cell-killing sequence', None, None), 'teriparatide': ('fragment', 'the first 34 residues of parathyroid hormone', 34, None),
+ 'abaloparatide': ('analogue', 'a 34-residue analogue of parathyroid-hormone-related protein', 34, None), 'octreotide': ('analogue', 'an eight-residue cyclic analogue of somatostatin', 8, None), 'leuprolide': ('analogue', 'gonadorelin with two swaps so it lasts', 9, None),
+ 'desmopressin': ('analogue', 'vasopressin with two changes so it lasts and does not raise blood pressure', 9, None), 'glucagon': ('natural', 'the 29-residue pancreatic hormone', 29, None), 'insulin': ('protein', 'the two-chain 51-residue pancreatic hormone', 51, None),
+ 'calcitonin': ('natural', 'the 32-residue thyroid hormone, usually the salmon sequence', 32, None), 'ziconotide': ('natural', 'a 25-residue toxin copied from a cone snail, with three disulfide bridges', 25, None), 'larazotide': ('designed', 'an eight-residue chain built to tighten the gut barrier', 8, 'GGVLVQPG'),
+ 'vilon': ('designed', 'a two-residue chain from the Russian bioregulator family', 2, 'KE'), 'cortexin': ('extract', 'a mixture of fragments drawn from calf brain', None, None),
+}
+ROUTE_OF = {'protein': 'bio', 'extract': 'extract', 'small': 'small'}  # everything else is built one residue at a time on resin
+LAWFUL = ('tolerated', 'listed', 'mixed', 'component')
+def steps_for(c):
+    rid = c['id'][2:] if c['id'].startswith('m-') else c['id']
+    kind, note, n, seq = ORIGIN.get(rid, ('designed', 'a synthetic sequence', None, None))
+    route = ROUTE_OF.get(kind, 'spps'); tr = c['track']; st = c['stations']; name = c['name'].split(' (')[0]
+    first = {'fragment': '%s is a fragment of a natural protein: %s. Researchers cut the sequence out, wrote it down and tested it. The papers and patents behind it are the start of the chain.',
+             'analogue': '%s is a natural hormone, rebuilt: %s. Chemists swapped or added residues so it lasts longer or binds harder; the sequence on paper, and its patents, come first.',
+             'designed': '%s is a sequence written from scratch: %s. Nothing in the body makes it; the first copy was made in a reactor and screened for an effect.',
+             'natural': '%s is a sequence copied letter for letter from nature: %s. It is made in a reactor, not harvested.',
+             'protein': '%s is a full-size protein: %s. Too long to build one residue at a time, so its gene is copied into cells that grow it.',
+             'extract': '%s is not one molecule but a soup: %s, standardised by weight rather than by sequence.',
+             'small': '%s is not a peptide at all: %s. It is sold alongside them and made by ordinary organic chemistry.'}[kind] % (name, note)
+    cycles = ('%d coupling cycles for %s' % (n, name)) if n and route == 'spps' else 'dozens of cycles'
+    build = {'spps': 'Solid-phase synthesis: one protected amino acid is coupled to a chain growing on resin beads, washed, deprotected, and the next one added. %s, a day or more in the reactor.' % cycles,
+             'bio': 'Recombinant: the gene for the protein is put into yeast or bacteria, the cells grow it in a bioreactor, and the protein is harvested from the broth.',
+             'extract': 'Extraction: animal tissue is minced, digested and filtered. The mix of fragments that comes through is the product.',
+             'small': 'Organic synthesis in a flask: reagents, heat and purification, the ordinary chemistry of small-molecule drugs.'}[route]
+    crude = {'spps': 'Trifluoroacetic acid cuts the finished chain off the resin and strips the protecting groups. Cold ether drops it out as a crude white powder, typically 60 to 80 percent the right molecule.',
+             'bio': 'The cells are broken open and the protein is caught on a capture column. Everything else in the broth is washed away.',
+             'extract': 'The digest is concentrated and dried. What is in it depends on what went in.', 'small': 'The crude product is crystallised or dried. What is in it depends on the chemistry.'}[route]
+    border = ('The manufacturer\'s own registered plants ship to its fill sites. For compounders, only API from makers on FDA\'s Green List clears customs under Import Alert 66-80.' if tr == 'brand' else
+              'Freeze-dried bulk powder, cold-packed, with its certificate. The maker is FDA-registered, the importer declares it as a drug substance, and customs lets it through.' if tr in LAWFUL else
+              'The grey market: powder declared as a research chemical and shipped by parcel. CBP opened 300 cartons at Cincinnati in 2026; what gets through carries no certificate anyone verified.')
+    facility = {'brand': 'A licensed manufacturer under cGMP, inspected by FDA. The drug substance is received, quarantined, retested and released before anything is made.',
+                'component': 'A 503B outsourcing facility: FDA-registered and inspected, making batches to cGMP without a prescription for each vial.',
+                'closed': 'No lawful facility. No listing permits it, no tolerance covers it, no approved product exists. The gate stays down.',
+                'none': 'No lawful facility outside a clinical trial. The cart is shunted onto the research-use-only siding.'}.get(tr, 'A 503A compounding pharmacy, licensed by its state board: one prescription, one preparation, under USP standards.')
+    S = lambda i: st[i][2]
+    steps = [[0, 'Discovery and design', first], [0, 'Raw materials', 'Protected amino acids by the kilo, resin beads, solvents and reagents, most of it made in China, India and Europe. The supplier\'s paperwork is the first quality gate; a drum with no lineage becomes a peptide with none.'],
+             [0, 'Building the chain', build], [0, 'Cleavage and crude product', crude],
+             [1, 'Purification', 'Preparative HPLC: the crude powder goes down a column under pressure and comes off in fractions. The pure fractions are pooled and the counter-ion exchanged, usually to acetate, before freeze-drying.'],
+             [1, 'Identity and the certificate', 'Mass spectrometry confirms the molecule, HPLC the purity, then water, counter-ion, endotoxin and bioburden. The certificate of analysis is the lot\'s identity card; a lawful maker also files a Drug Master File with FDA. ' + S(1)],
+             [0, 'Shipping and the border', border + ' ' + S(0)], [2, 'The facility', facility + ' ' + S(2)],
+             [2, 'Formulation', 'In a cleanroom under USP <797>: the powder dissolved in water for injection with buffers and a preservative, filtered through a 0.22-micron membrane into a sterile vessel. Gowned hands, laminar airflow, every surface wiped.'],
+             [2, 'Fill and finish', 'Vials filled by volume, freeze-dried if the peptide is unstable in water, stoppered and capped. Then the lot is tested: sterility, endotoxin, potency, and a beyond-use date is set.'],
+             [3, 'Labeling and release', 'The label: drug, strength, lot, beyond-use date, storage, and for a compounded vial the patient\'s name. The pharmacist in charge or the quality unit signs the release; adverse events are reported.'],
+             [3, 'Prescribing and dispensing', 'A prescriber, a prescription, a pharmacy. The vial ships cold with instructions for reconstituting and storing it, and the patient draws up the dose at home. ' + S(3)]]
+    c['steps'] = [[st[k][0], nm, tx] for k, nm, tx in steps]
+    c['origin'] = kind; c['route'] = route; c['seq'] = seq; c['n'] = n
+    if tr == 'closed': c['stopStep'] = 7   # the facility gate
+    if tr == 'none': c['sidingStep'] = 6   # shunted at the border
+for c in CARDS + MORE_CARDS: steps_for(c)
 ride = {'asOf': AS_OF, 'cards': CARDS + MORE_CARDS, 'hhsUrl': HHS['url']}
 # ---------- the glossary page ----------
 from glossary import GROUPS as GLOSSARY
