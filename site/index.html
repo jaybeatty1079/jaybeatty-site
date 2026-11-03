@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script>try{var t=localStorage.getItem('jb-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <title>Jay Beatty | Healthcare Business Development</title>
 <meta property="og:type" content="website">
@@ -75,7 +76,7 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:16px;heigh
 .chip{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .btn{font-weight:700;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:6px;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--purple);color:var(--fg)}
-.btn.primary{background:var(--purple);border-color:var(--purple)}
+.btn.primary{background:#6d50dd;border-color:#6d50dd;color:#fff}
 .btn:hover{text-decoration:none;filter:brightness(1.1)}
 
 /* scoreboard */
@@ -312,6 +313,22 @@ nav .links{margin-left:auto}
 :root[data-theme="light"] .theme-tg .sun{display:none}
 :root[data-theme="light"] .theme-tg .moon{display:block}
 @media(max-width:860px){.theme-tg{order:2;margin-left:auto}nav .links{order:3;margin-left:0}}
+/* phone nav: one row (brand, theme, menu); the links drop down. scroll-padding matches the header so jumps land clear of it */
+html{scroll-padding-top:62px}
+.menu-tg{display:none;flex:none;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--line);background:color-mix(in oklab,var(--fg) 6%,transparent);color:var(--fg);place-items:center;cursor:pointer}
+.menu-tg:hover,.menu-tg:focus-visible{border-color:var(--green-soft);outline:none}
+.menu-tg svg{width:18px;height:18px;display:block}.menu-tg .x,header.open .menu-tg .bars{display:none}header.open .menu-tg .x{display:block}
+@media(max-width:860px){html{scroll-padding-top:100px}}
+@media(max-width:600px){
+  html{scroll-padding-top:58px}
+  nav{flex-wrap:nowrap;row-gap:0}
+  .menu-tg{display:grid;order:3}
+  nav .links{display:none;position:absolute;top:100%;left:0;right:0;order:unset;width:auto;flex-direction:column;gap:8px;padding:12px clamp(16px,4vw,40px) 16px;overflow:visible;background:var(--bg);border-bottom:1px solid var(--line)}
+  header.open nav .links{display:flex}
+  .links a{text-align:center;padding:14px 12px}
+}
+.chart text.bar-lab{fill:#0b0a10}
+:root[data-theme="light"] .chart text.bar-lab.dev{fill:#fff}
 </style>
 
 </head>
@@ -321,6 +338,7 @@ nav .links{margin-left:auto}
   <div class="links">
     <a href="#work">What I do</a><a href="#how">How it works</a><a href="#programs">Programs</a><a href="#projects">Projects</a><a href="#record">Track record</a><a href="#career">Career</a><a href="#about">About</a><a href="#contact">Contact</a>
   </div>
+  <button class="menu-tg" type="button" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6L6 18"/></svg></button>
   <button class="theme-tg" type="button" aria-label="Switch to light mode" title="Light or dark mode"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6Z"/></svg></button>
 </nav></div></header>
 
@@ -662,14 +680,14 @@ svg.appendChild(el('text',{x:l,y:H-1,'font-size':'9',fill:C.muted},'Illustrative
 const roles=[
  {t:'Territory Manager, Team Surgical',s:2005,e:2010,k:'dev'},
  {t:'Regional Sales Manager, West, Olympus Biotech',s:2010,e:2013,k:'dev'},
- {t:'National Director of Sales, Specialized Orthopedic Solutions',s:2013,e:2019,k:'dx'},
+ {t:'National Director of Sales, Specialized Orthopedic Solutions',l:'National Director',s:2013,e:2019,k:'dx'},
  {t:'COO, Advanced Testing in Clinical Genetics',s:2019,e:2026,k:'dx'},
  {t:'Director of BD, employer benefits program',s:2024,e:2026.8,k:'ben'},
  {t:'West Coast GTM, AI surgical diagnostics (contract)',s:2026,e:2026.8,k:'dx'}
 ];
 (function(){const svg=document.getElementById('gantt');const W=520,rowH=30,top=26,left=10,H=top+rowH*roles.length+30;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);const x=yr=>left+(W-left-10)*(yr-2005)/(2027-2005);const col={dev:C.purple,dx:C.green,ben:C.teal};
 for(let yr=2005;yr<=2026;yr+=3){svg.appendChild(el('line',{x1:x(yr),x2:x(yr),y1:top-6,y2:H-24,class:'grid'}));svg.appendChild(el('text',{x:x(yr),y:H-8,'text-anchor':'middle','font-size':'11'},yr));}
-roles.forEach((r,i)=>{const y=top+rowH*i+6;const g=el('g');g.appendChild(el('rect',{x:x(r.s)+1,y,width:Math.max(6,x(r.e)-x(r.s)-2),height:18,rx:3,fill:col[r.k]}));const lab=r.t.split(',')[0];g.appendChild(el('text',{x:x(r.s)+8,y:y+13,'font-size':'11',fill:C.bg,'font-weight':'600'},x(r.e)-x(r.s)>110?lab:''));g.appendChild(el('rect',{x:left,y:y-4,width:W-left-10,height:26,class:'hit'}));bindTip(g,`<b>${r.t}</b>${r.s} – ${r.e>2026.5?'present':r.e}`);svg.appendChild(g);});
+roles.forEach((r,i)=>{const y=top+rowH*i+6;const g=el('g');g.appendChild(el('rect',{x:x(r.s)+1,y,width:Math.max(6,x(r.e)-x(r.s)-2),height:18,rx:3,fill:col[r.k]}));const lab=r.l||r.t.split(',')[0];g.appendChild(el('text',{x:x(r.s)+8,y:y+13,'font-size':'11',class:'bar-lab '+r.k,'font-weight':'600'},x(r.e)-x(r.s)>110?lab:''));g.appendChild(el('rect',{x:left,y:y-4,width:W-left-10,height:26,class:'hit'}));bindTip(g,`<b>${r.t}</b>${r.s} – ${r.e>2026.5?'present':r.e}`);svg.appendChild(g);});
 table('gantt-table',['Role','From','To','Sector'],roles.map(r=>[r.t,r.s,r.e>2026.5?'present':r.e,{dev:'Devices & biologics',dx:'Diagnostics & lab',ben:'Employer benefits'}[r.k]]));
 })();
 
@@ -807,5 +825,8 @@ if(srcs.length&&strip&&track){const make=()=>srcs.map(img=>{const a=document.cre
 })();
 </script>
 <script>(function(){var r=document.documentElement;function cur(){return r.getAttribute('data-theme')==='light'?'light':'dark'}function sync(){document.querySelectorAll('.theme-tg').forEach(function(b){b.setAttribute('aria-label',cur()==='light'?'Switch to dark mode':'Switch to light mode')})}document.querySelectorAll('.theme-tg').forEach(function(b){b.addEventListener('click',function(){var n=cur()==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('jb-theme',n)}catch(e){}sync()})});sync()})();</script>
+<script>(function(){var h=document.querySelector('header'),b=h.querySelector('.menu-tg');function set(o){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o)}
+b.addEventListener('click',function(){set(!h.classList.contains('open'))});h.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});document.addEventListener('click',function(e){if(!h.contains(e.target))set(false)})})();</script>
 </body>
 </html>
