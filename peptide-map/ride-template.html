@@ -143,7 +143,7 @@ a{color:var(--tol)}
 <div class="below">
   <div><h2>How to read the ride</h2><p>Four windows open in the corners as you climb, one per station, and show the work: the raw source, purifying and testing, fill and finish, dispensing. The banner over each station carries its words. Green means the rules permit the step, amber means with conditions, red means the gate is closed. A cart that stops at a gate, or gets shunted onto the research-use-only siding, is the answer.</p></div>
   <div><h2>Where the facts come from</h2><p>Every status and date on the plate is a row in the federal register behind this tool: FDA's lists and letters, the Federal Register, Regulations.gov, the courts. The <a href="map.html">map</a> holds the register, the 503B facilities and the documented supply routes; the <a href="glossary.html">glossary</a> holds the words.</p></div>
-  <div><h2>What it is not</h2><p>Not legal advice, and not a statement that any peptide is safe or works. "Tolerated" means FDA or HHS says it does not intend to act while conditions are met. It is never approval. The hills are the Pennsylvania countryside the ride is set in; the equipment in the windows is drawn to type, not from any named plant.</p></div>
+  <div><h2>What it is not</h2><p>Not legal advice, and not a statement that any peptide is safe or works. "Tolerated" means FDA or HHS says it does not intend to act while conditions are met. It is never approval. The hills are the Pennsylvania countryside the ride is set in; the equipment in the windows is drawn to type, not from any named plant. Barns, silos, the water tower, the factory, the truck and the pines are CC0 models by Quaternius and CreativeTrio via Poly Pizza.</p></div>
 </div>
 </div>
 <script id="data" type="application/json">/*__DATA__*/</script>
@@ -158,6 +158,9 @@ import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
 import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
 import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
 import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {ShaderPass} from 'three/addons/postprocessing/ShaderPass.js';
+import {VignetteShader} from 'three/addons/shaders/VignetteShader.js';
 const D=JSON.parse(document.getElementById('data').textContent);
 const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 $('#asof').textContent=D.asOf;
@@ -295,15 +298,23 @@ shed(MAIN.getPointAt(0),7,16,barnRed,'Hershey, Pennsylvania · Lebanon Valley');
 
 /* the valley's own landmarks, set on the terrain */
 const place=(g,x,z)=>{g.position.set(x,terrainH(x,z),z);scene.add(g)};
+/* real models (CC0, Quaternius and CreativeTrio via Poly Pizza): loaded, scaled to a height, feet on the ground */
+const loader=new GLTFLoader();
+function model(file,height,cb){loader.load('models/'+file,gl=>{const o=gl.scene;o.traverse(m=>{if(m.isMesh){m.castShadow=!mobile;m.receiveShadow=true}});const b=new THREE.Box3().setFromObject(o),sz=b.getSize(new THREE.Vector3()),k=height/Math.max(1e-6,sz.y);o.scale.setScalar(k);const b2=new THREE.Box3().setFromObject(o),c=b2.getCenter(new THREE.Vector3());o.position.set(-c.x,-b2.min.y,-c.z);const g=new THREE.Group();g.add(o);cb(g)},undefined,e=>console.warn('model',file,e.message))}
+const put=(file,height,x,z,ry)=>model(file,height,g=>{g.rotation.y=ry||0;place(g,x,z)});
+put('barn.json',8.5,-70,-66,.3);put('silo.json',13,-57,-72,0);put('barn.json',8.5,130,-170,-.6);put('silo.json',12,142,-176,0);put('barn.json',8,-160,-250,1.1);put('silo.json',12,-148,-258,0);
+put('water-tower.json',22,-52,-214,0);put('factory.json',12,150,-96,.2);put('truck.json',3.2,-98,-48,1.2);
+model('pines.json',12,g=>{let best=null;g.traverse(m=>{if(m.isMesh&&(!best||m.geometry.attributes.position.count>best.geometry.attributes.position.count))best=m});if(!best)return;best.updateWorldMatrix(true,false);const geo=best.geometry.clone().applyMatrix4(best.matrixWorld),bb=new THREE.Box3().setFromBufferAttribute(geo.attributes.position),h0=bb.max.y-bb.min.y;geo.translate(0,-bb.min.y,0);
+  const n=mobile?160:420,inst=new THREE.InstancedMesh(geo,best.material,n),o=new THREE.Object3D();let seed=29,k=0;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
+  while(k<n){const x=(rnd()-.5)*1200,z=-120-rnd()*700;if(Math.abs(x)<150&&z>-380)continue;const hh=9+rnd()*7,sc=hh/h0;o.position.set(x,terrainH(x,z)-.3,z);o.scale.setScalar(sc);o.rotation.set(0,rnd()*6,0);o.updateMatrix();inst.setMatrixAt(k++,o.matrix)}
+  inst.castShadow=!mobile;scene.add(inst)}); // evergreens on the far ridges, from the Quaternius pack
 function farm(x,z,ry){const g=new THREE.Group();g.rotation.y=ry;const barn=new THREE.Mesh(new THREE.BoxGeometry(10,6,15),barnRed);barn.position.y=3;barn.castShadow=true;g.add(barn);const sh=new THREE.Shape();sh.moveTo(-5.4,0);sh.lineTo(5.4,0);sh.lineTo(0,4.2);sh.closePath();const roof=new THREE.Mesh(new THREE.ExtrudeGeometry(sh,{depth:15.6,bevelEnabled:false}),dark);roof.position.set(0,6,-7.8);g.add(roof);
   const silo=new THREE.Mesh(new THREE.CylinderGeometry(2.2,2.2,12,14),cream);silo.position.set(8.5,6,-3);silo.castShadow=true;g.add(silo);const cap=new THREE.Mesh(new THREE.ConeGeometry(2.4,2,14),dark);cap.position.set(8.5,13,-3);g.add(cap);place(g,x,z)}
-farm(-70,-66,.3);farm(130,-170,-.6);farm(-160,-250,1.1);
-{const g=new THREE.Group();[[-3,0],[3,0],[0,3],[0,-3]].forEach(([x,z])=>{const leg=new THREE.Mesh(new THREE.BoxGeometry(.3,16,.3),dark);leg.position.set(x,8,z);g.add(leg)});const tank=new THREE.Mesh(new THREE.CylinderGeometry(3.4,3.4,5,16),cream);tank.position.y=18;g.add(tank);const cap=new THREE.Mesh(new THREE.ConeGeometry(3.6,1.8,16),dark);cap.position.y=21.4;g.add(cap);place(g,-52,-214)}
 const puffs=[];{const g=new THREE.Group();const f=new THREE.Mesh(new THREE.BoxGeometry(26,9,16),cream);f.position.y=4.5;f.castShadow=true;g.add(f);[-6,6].forEach(x=>{const st=new THREE.Mesh(new THREE.CylinderGeometry(1.1,1.3,18,10),dark);st.position.set(x,13,-2);g.add(st);for(let k=0;k<5;k++){const pf=new THREE.Mesh(new THREE.SphereGeometry(1.4,8,6),new THREE.MeshStandardMaterial({color:0xf3ede2,transparent:true,opacity:.7}));pf.position.set(x,22,-2);g.add(pf);puffs.push({m:pf,t:k*.7,x})}});const l=label('the town\'s chocolate plant','sm');l.position.set(0,24,0);g.add(l);place(g,170,-120)}
 /* an Amish farm: white farmhouse, red barn, fences, a windmill, a horse and buggy on the lane */
 let windmill;{const g=new THREE.Group();const house=new THREE.Mesh(new THREE.BoxGeometry(11,7,9),new THREE.MeshStandardMaterial({color:0xf2ede2,roughness:.9}));house.position.y=3.5;house.castShadow=true;g.add(house);const sh=new THREE.Shape();sh.moveTo(-5.9,0);sh.lineTo(5.9,0);sh.lineTo(0,4.6);sh.closePath();const roof=new THREE.Mesh(new THREE.ExtrudeGeometry(sh,{depth:9.6,bevelEnabled:false}),dark);roof.position.set(0,7,-4.8);g.add(roof);
   const porch=new THREE.Mesh(new THREE.BoxGeometry(11,.3,3),cream);porch.position.set(0,2.6,6);g.add(porch);[-4.5,0,4.5].forEach(x=>{const c=new THREE.Mesh(new THREE.BoxGeometry(.25,2.6,.25),cream);c.position.set(x,1.3,7.3);g.add(c)});
-  const barn=new THREE.Mesh(new THREE.BoxGeometry(12,7,16),barnRed);barn.position.set(-20,3.5,-6);barn.castShadow=true;g.add(barn);const s2=new THREE.Shape();s2.moveTo(-6.4,0);s2.lineTo(6.4,0);s2.lineTo(0,4.8);s2.closePath();const broof=new THREE.Mesh(new THREE.ExtrudeGeometry(s2,{depth:16.6,bevelEnabled:false}),dark);broof.position.set(-20,7,-14.3);g.add(broof);
+  put('barn.json',9,-140,-134,.4);put('silo.json',12,-130,-142,0);
   const fence=new THREE.InstancedMesh(new THREE.BoxGeometry(.18,1.4,.18),new THREE.MeshStandardMaterial({color:0xe8e2d3,roughness:.9}),60),rail=new THREE.InstancedMesh(new THREE.BoxGeometry(3,.12,.12),new THREE.MeshStandardMaterial({color:0xe8e2d3,roughness:.9}),120),o=new THREE.Object3D();let k=0,r=0;
   for(let i=0;i<30;i++){for(const [x,z] of [[-30+i*3,14],[16,14-i*3]]){o.position.set(x,.7,z);o.rotation.set(0,0,0);o.updateMatrix();fence.setMatrixAt(k++,o.matrix);for(const y of [.5,1.1]){o.position.set(x+(z===14?1.5:0),y,z-(z===14?0:1.5));o.rotation.set(0,z===14?0:Math.PI/2,0);o.updateMatrix();rail.setMatrixAt(r++,o.matrix)}}}fence.count=k;rail.count=r;g.add(fence);g.add(rail);
   windmill=new THREE.Group();[[-1.2,-1.2],[1.2,-1.2],[-1.2,1.2],[1.2,1.2]].forEach(([x,z])=>{const leg=new THREE.Mesh(new THREE.BoxGeometry(.2,14,.2),dark);leg.position.set(x*.6,7,z*.6);leg.rotation.z=-x*.07;leg.rotation.x=z*.07;windmill.add(leg)});const wheel=new THREE.Group();for(let i=0;i<14;i++){const bl=new THREE.Mesh(new THREE.BoxGeometry(.5,2.4,.05),new THREE.MeshStandardMaterial({color:0xd8d2c4}));const a=i/14*Math.PI*2;bl.position.set(Math.cos(a)*1.6,Math.sin(a)*1.6,0);bl.rotation.z=a+Math.PI/2;wheel.add(bl)}wheel.position.set(0,14.4,1);windmill.add(wheel);windmill.userData.wheel=wheel;windmill.position.set(24,0,-2);g.add(windmill);
@@ -375,7 +386,7 @@ $('#board').onclick=()=>picked&&start(picked,false);$('#skipRide').onclick=()=>p
 ride.t=.02;placeCam();
 
 /* post: a touch of bloom for the sun and the river */
-const composer=new EffectComposer(renderer);composer.addPass(new RenderPass(scene,camera));const bloom=new UnrealBloomPass(new THREE.Vector2(1,1),mobile?.18:.28,.6,.9);composer.addPass(bloom);composer.addPass(new OutputPass());
+const composer=new EffectComposer(renderer);composer.addPass(new RenderPass(scene,camera));const bloom=new UnrealBloomPass(new THREE.Vector2(1,1),mobile?.18:.28,.6,.9);composer.addPass(bloom);const vig=new ShaderPass(VignetteShader);vig.uniforms.offset.value=.95;vig.uniforms.darkness.value=1.1;composer.addPass(vig);composer.addPass(new OutputPass());
 function resize(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);composer.setSize(w,h);labels.setSize(w,h);css3.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix()}
 new ResizeObserver(resize).observe(host);resize();
 const tmp=new THREE.Vector3(),o=new THREE.Object3D();
