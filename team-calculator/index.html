@@ -245,6 +245,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .wordmark .wm-t{font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.05;letter-spacing:-.01em;color:var(--fg)}
 .wordmark.lg .wm-t{font-size:clamp(1.9rem,3.4vw,2.6rem)}
 .wordmark .wm-t em{font-style:italic;color:var(--purple-soft)}
+html{scroll-padding-top:62px}@media(max-width:860px){html{scroll-padding-top:92px}}
 </style>
 </head>
 <body>
@@ -1118,17 +1119,24 @@ function loadCase(id){const cs=CASES.find(c=>c.id===id);if(!cs)return;applyCaseS
   $('hospMeta').innerHTML=`Case hospital loaded: ${esc(cs.name)}, ${esc(cs.place)}. Census division ${cs.region}, ${DIVS[cs.region]}.${S.sn?' Flagged safety-net from its Medicare SSI share.':''}${S.rural?' Rural per the FY2027 impact file.':''} Every input below comes from the public files listed; the case is named by type and city, not by hospital.`+(dv?factsHTML(h,dv).replace(/<div class="fact"><span class="fl">Profile.*?<\/div>/,''):'');
   update();}
 function clearCase(){if(S.caseId){S.caseId=null;$('caseNotes').style.display='none';renderCases();}}
+const PH=matchMedia('(max-width:640px)');
+/* phone layout for the six-hospital chart: one group per hospital, three horizontal bars, dollars at the bar end, 12px text at about 1:1 */
+function drawCasesPhone(svg,rows,lo,hi){const W=300,PL=48,PR=48,gh=112,col=[C.green,C.purple,C.teal];svg.setAttribute('viewBox',`0 0 ${W} ${gh*rows.length}`);const X=v=>PL+(v-lo)/(hi-lo)*(W-PL-PR);
+  rows.forEach((r,i)=>{const y0=gh*i,g=el('g');g.appendChild(el('line',{x1:X(0),x2:X(0),y1:y0+38,y2:y0+108,stroke:C.muted}));g.appendChild(el('text',{x:0,y:y0+16,class:'strong'},r.cs.name));g.appendChild(el('text',{x:0,y:y0+32},`${r.cs.place} · ${num(r.cs.episodes)} ep · target ${fmt(r.aggT)}`));
+    [r.p1,r.p3,r.p3p].forEach((v,j)=>{if(v==null)return;const y=y0+42+j*22,d=[r.t1,r.t3,r.t3p][j];g.appendChild(el('rect',{x:Math.min(X(0),X(v)),y,width:Math.max(1,Math.abs(X(v)-X(0))),height:16,rx:3,fill:col[j]}));g.appendChild(el('text',{x:v>=0?X(v)+4:X(v)-4,y:y+12,'text-anchor':v>=0?'start':'end'},fmt(d)));});
+    bindTip(g,`<b>${r.cs.name}, ${r.cs.place}</b>Track 1 ${r.t1==null?'not available':fmtFull(r.t1)} · Track 3 ${fmtFull(r.t3)} (${pct(r.p3,1)} of target)<br>Track 3 with program ${fmtFull(r.t3p)} (${pct(r.p3p,1)})`);svg.appendChild(g);});}
 function drawCases(){const svg=$('chCases');svg.innerHTML='';const W=900,H=300,L=70,Rm=16,top=16,bot=50;const saved=JSON.stringify({cats:S.cats,levers:S.levers,region:S.region,sn:S.sn,rural:S.rural,py:S.py,track:S.track,cqs:S.cqs,risk:S.risk,hospital:S.hospital,caseId:S.caseId,view:S.view});
   const rows=CASES.map(cs=>{applyCaseState(cs);const t1=eligible(1,1,S.sn,S.rural).ok?run({track:1,levers:false}).npra:null;const t3=run({track:3,levers:false}).npra;applyPreset();const t3p=run({track:3,levers:true}).npra;const aggT=run({track:3,levers:false}).aggT;return {cs,t1,t3,t3p,aggT};});
   const o=JSON.parse(saved);S.cats=o.cats;S.levers=o.levers;S.region=o.region;S.sn=o.sn;S.rural=o.rural;S.py=o.py;S.track=o.track;S.cqs=o.cqs;S.risk=o.risk;S.hospital=o.hospital;S.caseId=o.caseId;S.view=o.view;
   rows.forEach(r=>{r.p1=r.t1==null?null:r.t1/r.aggT*100;r.p3=r.t3/r.aggT*100;r.p3p=r.t3p/r.aggT*100;});const all=rows.flatMap(r=>[r.p1||0,r.p3,r.p3p,0]);let lo=Math.min(...all),hi=Math.max(...all);const pad=(hi-lo)*.12;lo-=pad;hi+=pad;const slot=(W-L-Rm)/rows.length,Y=v=>top+(hi-v)/(hi-lo)*(H-top-bot);
+  if(PH.matches)drawCasesPhone(svg,rows,lo,hi);else{svg.setAttribute('viewBox','0 0 900 300');
   for(let i=0;i<=4;i++){const v=lo+(hi-lo)*i/4;svg.appendChild(el('line',{x1:L,x2:W-Rm,y1:Y(v),y2:Y(v),class:'grid'}));svg.appendChild(el('text',{x:L-6,y:Y(v)+4,'text-anchor':'end'},pct(v,1)));}
   svg.appendChild(el('text',{x:L-6,y:top-4,'text-anchor':'end',style:'font-size:10px'},'% of target book'));
   svg.appendChild(el('line',{x1:L,x2:W-Rm,y1:Y(0),y2:Y(0),stroke:C.muted}));
   rows.forEach((r,i)=>{const bw=slot*.22;const xs=[L+slot*i+slot*.14,L+slot*i+slot*.39,L+slot*i+slot*.64];const vals=[r.p1,r.p3,r.p3p];const dol=[r.t1,r.t3,r.t3p];const cols=[C.green,C.purple,C.teal];const g=el('g');
     vals.forEach((v,j)=>{if(v==null)return;g.appendChild(el('rect',{x:xs[j],y:Math.min(Y(0),Y(v)),width:bw,height:Math.max(1,Math.abs(Y(0)-Y(v))),rx:3,fill:cols[j]}));g.appendChild(el('text',{x:xs[j]+bw/2,y:(v>=0?Y(v)-4:Y(v)+12),'text-anchor':'middle',style:'font-size:9.5px'},fmt(dol[j])));});
     g.appendChild(el('text',{x:L+slot*i+slot/2,y:H-bot+16,'text-anchor':'middle',class:'strong'},r.cs.name.length>26?r.cs.name.slice(0,24)+'…':r.cs.name));g.appendChild(el('text',{x:L+slot*i+slot/2,y:H-bot+30,'text-anchor':'middle',style:'font-size:10px'},`${r.cs.place} · ${num(r.cs.episodes)} ep · target ${fmt(r.aggT)}`));
-    bindTip(g,`<b>${r.cs.name}, ${r.cs.place}</b>Track 1 ${r.t1==null?'not available':fmtFull(r.t1)} · Track 3 ${fmtFull(r.t3)} (${pct(r.p3,1)} of target)<br>Track 3 with program ${fmtFull(r.t3p)} (${pct(r.p3p,1)})`);svg.appendChild(g);});
+    bindTip(g,`<b>${r.cs.name}, ${r.cs.place}</b>Track 1 ${r.t1==null?'not available':fmtFull(r.t1)} · Track 3 ${fmtFull(r.t3)} (${pct(r.p3,1)} of target)<br>Track 3 with program ${fmtFull(r.t3p)} (${pct(r.p3p,1)})`);svg.appendChild(g);});}
   $('tblCases').innerHTML='<table><thead><tr><th>Hospital</th><th>Region</th><th class="n">Episodes</th><th class="n">Target book</th><th class="n">Track 1</th><th class="n">Track 3</th><th class="n">Track 3 + program</th></tr></thead><tbody>'+rows.map(r=>`<tr><td>${r.cs.name}<br><small style="color:var(--muted)">${r.cs.place}</small></td><td>${DIVS[r.cs.region]}</td><td class="n">${num(r.cs.episodes)}</td><td class="n">${fmtFull(r.aggT)}</td><td class="n">${r.t1==null?'n/a':fmtFull(r.t1)}</td><td class="n">${fmtFull(r.t3)}</td><td class="n">${fmtFull(r.t3p)}</td></tr>`).join('')+'</tbody></table>';}
 
 /* form: Netlify handles the POST on jaybeatty.com; elsewhere show the scenario to copy */
@@ -1191,7 +1199,7 @@ document.querySelectorAll('[data-net]').forEach(i=>i.addEventListener('input',e=
 
 /* init */
 (function(){const f=$('figFlow');if(!f)return;const io=new IntersectionObserver(es=>{es.forEach(x=>{if(x.isIntersecting&&!flowPlayed){flowPlayed=true;if(!RM)drawFlow(true);io.disconnect();}});},{threshold:.35});io.observe(f);$('flowReplay').addEventListener('click',()=>{if(RM)return drawFlow(false);drawFlow(true);});let rt=null;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>drawFlow(false),200);});})();
-renderChecks();syncOpInputs();buildTracks();buildCats();buildLevers();renderTabs();renderCases();drawCases();loadCase('community');
+renderChecks();syncOpInputs();buildTracks();buildCats();buildLevers();renderTabs();renderCases();drawCases();PH.addEventListener('change',drawCases);loadCase('community');
 window.TEAMCALC={S,CATS,run,catCalc,applyCaseState,derivePublic,leverSavings,applyPreset,eligible,HM,CASES,loadCase,pick,PARTS};
 /* deep link from the 2027 map: #h=<CCN> opens that hospital */
 (function(){const m=/^#h=(\d{6})$/.exec(location.hash||'');if(!m)return;const p=PARTS.find(x=>x.ccn===m[1]);if(!p)return;setTimeout(()=>{pick(p);const c=document.getElementById('calc');if(c)c.scrollIntoView({block:'start'});},50);})();
