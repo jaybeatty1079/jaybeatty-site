@@ -158,7 +158,7 @@ details{margin-top:8px;color:var(--mute);font-size:12px}details summary{cursor:p
       <button class="btn next q" id="addStore" style="font-size:14px;box-shadow:none" data-t>+ Add a {site}</button>
       <div class="fine" id="groupLine"></div>
       <button class="btn next" id="n1">Next: your plans →</button></div>
-    <div class="m" id="m2"><div class="t">Your plans</div><div class="why">The payroll side first, then your health plan. If you're self-funded or level-funded, there is a second way this pays.</div>
+    <div class="m" id="m2"><div class="t">Your plans</div><div class="why">The payroll side first, then how your health plan is funded.</div>
       <label class="l" for="qual"><span>Share who qualify and enroll</span><b id="qualV">80%</b></label><input type="range" id="qual" min="40" max="100" value="80">
       <div class="fine">Plan level</div><div class="toggle" id="plan"></div>
       <div class="fine" style="margin-top:12px">How is your health plan funded?</div>
@@ -364,8 +364,7 @@ const QUESTIONS=[
   {h:'Tax savings for the {site}.',s:'Lower taxable wages mean less FICA: {fica} a month per enrolled employee, {per} after the plan\'s fee. That is net.',lit:{engine:1}},
   {h:'All of it inside a Section 125 Wellness Plan.',s:'One more plan document beside the ones you have. The pre-tax election is what makes the tax math work. Nothing is signed on these numbers.',lit:{windows:1}},
   {h:'Major medical stays exactly where it is.',s:'Some care overlaps, and that is fine. This one is easy, convenient and has no copays, so people actually use it: participation runs high.',mm:1,lit:{wheels:1}},
-  {h:'Out of the tailpipe.',s:'Major medical is a cost. This one is a net saving: {per} a month per enrolled employee lands on the P&L.',mm:1,exhaust:1,lit:{engine:1}},
-  {h:'Self-funded or level-funded?',s:'Then this is the first stop for everyday care, and the visits and fills it handles never reach the company plan. That is the strongest case for it.',mm:1,exhaust:1,lit:{wheels:1,engine:1}}]},
+  {h:'Out of the tailpipe.',s:'Major medical is a cost. This one is a net saving: {per} a month per enrolled employee lands on the P&L.',mm:1,exhaust:1,lit:{engine:1}}]},
  {q:'Does it replace our health plan?',beats:[
   {h:'No. It sits beside major medical.',s:'Nothing changes on the plan you have. This is a fixed indemnity benefit, not health insurance.',mm:1,lit:{windows:1}},
   {h:'Overlap is fine.',s:'Where both cover a visit, ours is the easy, no-copay first stop. People use the one that costs them nothing.',mm:1,lit:{wheels:1}},
@@ -520,14 +519,39 @@ function palm(x,z){const t=new THREE.Mesh(new THREE.CylinderGeometry(.25,.4,9,6)
 
 /* the shore: beyond the city's north edge the questions stage is a beachfront lot, with sand, a foam line and the ocean out to the horizon under the sun */
 const SZ=-(NZ*PITCH/2)-46; // the service bay sits on the sand just beyond the north edge of the city
-const SHORE=SZ-26, SANDN=-(NZ*PITCH/2)-ROAD/2; // sand runs from the perimeter road to the water
+const SHORE=SZ-42, SANDN=-(NZ*PITCH/2)-ROAD/2; // sand runs from the perimeter road to the water
 const sand=new THREE.Mesh(new THREE.PlaneGeometry(1400,SANDN-SHORE+10),new THREE.MeshStandardMaterial({color:0xb8906a,roughness:1}));sand.rotation.x=-Math.PI/2;sand.position.set(0,.01,(SANDN+SHORE-10)/2);sand.receiveShadow=true;scene.add(sand);
 const rippleTex=(()=>{const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d');g.fillStyle='#17558a';g.fillRect(0,0,256,256);
   for(let i=0;i<140;i++){g.fillStyle=`rgba(${80+Math.random()*50},${160+Math.random()*50},${210+Math.random()*40},${.18+Math.random()*.22})`;g.beginPath();g.ellipse(Math.random()*256,Math.random()*256,6+Math.random()*22,1+Math.random()*2.5,0,0,Math.PI*2);g.fill()}
   const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(36,16);t.colorSpace=THREE.SRGBColorSpace;return t})();
 const water=new THREE.Mesh(new THREE.PlaneGeometry(1400,620),new THREE.MeshStandardMaterial({map:rippleTex,color:0x9fd0ee,roughness:.75,metalness:0,emissive:0x1a62a8,emissiveIntensity:.9,fog:false}));water.rotation.x=-Math.PI/2;water.position.set(0,.05,SHORE-310);scene.add(water);
 const foam=new THREE.Mesh(new THREE.PlaneGeometry(1400,1.4),new THREE.MeshBasicMaterial({color:0xfff1e0,transparent:true,opacity:.7}));foam.rotation.x=-Math.PI/2;foam.position.set(0,.08,SHORE);scene.add(foam);
-for(let x=-150;x<=150;x+=30)if(Math.abs(x)>50)palm(x+(x%60?4:-4),SHORE+10);[[-44,SZ+16],[44,SZ+16]].forEach(([x,z])=>palm(x,z));
+for(let x=-150;x<=150;x+=30)if(Math.abs(x)>50)palm(x+(x%60?4:-4),SHORE+10);[[-48,SZ+34],[48,SZ+34]].forEach(([x,z])=>palm(x,z));
+/* the party: festoon lights between the palms, umbrellas and towels on the sand, bonfires; boats on the water, gulls over it, a plane towing a banner; a lit boulevard on the city's south edge */
+const dummy=new THREE.Object3D(),bulbMat=new THREE.MeshStandardMaterial({color:0x000,emissive:0xffd58a,emissiveIntensity:3});
+function festoon(x0,x1,z,y){const n=Math.round((x1-x0)/2.4),m=new THREE.InstancedMesh(new THREE.SphereGeometry(.32,6,5),bulbMat,n);for(let k=0;k<n;k++){const x=x0+k*2.4,u=((x-x0)%30)/30;dummy.position.set(x,y-2.2*Math.sin(u*Math.PI),z);dummy.updateMatrix();m.setMatrixAt(k,dummy.matrix)}scene.add(m)}
+festoon(-150,-56,SHORE+10,8.6);festoon(56,150,SHORE+10,8.6);
+const ROADZ_S=NZ*PITCH/2+8;for(let x=-125;x<=125;x+=25)palm(x,ROADZ_S);festoon(-125,125,ROADZ_S,8.6); // the boulevard the truck story plays in front of
+[[-130,0xd65db1],[-108,0xfff1e0],[-86,0x22a85e],[-64,0xffd166],[64,0xd65db1],[86,0xfff1e0],[108,0x22a85e],[130,0xffd166]].forEach(([x,c],k)=>{const z=SHORE+15+(k%2)*5;
+  const top=new THREE.Mesh(new THREE.ConeGeometry(2.4,1.3,10,1,true),new THREE.MeshStandardMaterial({color:c,roughness:.8,side:THREE.DoubleSide}));top.position.set(x,2.9,z);scene.add(top);
+  const pole=new THREE.Mesh(new THREE.CylinderGeometry(.08,.08,3.4,6),new THREE.MeshStandardMaterial({color:0xfff1e0}));pole.position.set(x,1.7,z);scene.add(pole);
+  const towel=new THREE.Mesh(new THREE.PlaneGeometry(2.6,1.3),new THREE.MeshStandardMaterial({color:[0x4fa3e0,0xffd166,0xd65db1,0xfff1e0][k%4],roughness:1}));towel.rotation.x=-Math.PI/2;towel.rotation.z=.3*(k%3-1);towel.position.set(x+2.4,.02,z+1.5);scene.add(towel)});
+const fires=[];[[-60,SHORE+16],[60,SHORE+16]].forEach(([x,z])=>{for(let k=0;k<3;k++){const log=new THREE.Mesh(new THREE.CylinderGeometry(.22,.22,2.6,6),new THREE.MeshStandardMaterial({color:0x4a3b2a}));log.position.set(x,.35,z);log.rotation.set(0,k*Math.PI/3,Math.PI/2);scene.add(log)}
+  const flame=new THREE.Mesh(new THREE.ConeGeometry(.9,2.6,8),new THREE.MeshStandardMaterial({color:0x000,emissive:0xff7a2a,emissiveIntensity:3,transparent:true,opacity:.9}));flame.position.set(x,1.6,z);scene.add(flame);const l=new THREE.PointLight(0xff8a3a,120,30,2);l.position.set(x,3,z);scene.add(l);fires.push({flame,l});
+  for(let k=0;k<5;k++){const a=k/5*Math.PI*2;const p=new THREE.Mesh(new THREE.CapsuleGeometry(.35,1,3,6),new THREE.MeshStandardMaterial({color:[0xd65db1,0x22a85e,0xffd166,0x4fa3e0,0xfff1e0][k]}));p.position.set(x+Math.cos(a)*4,1,z+Math.sin(a)*4);scene.add(p)}}); // people around each fire
+const boats=[],white=new THREE.MeshStandardMaterial({color:0xfff6ee,roughness:.5}),sailMat=new THREE.MeshStandardMaterial({color:0xffffff,roughness:.9,side:THREE.DoubleSide});
+function sailboat(x,z,dir){const g=new THREE.Group();const hull=new THREE.Mesh(new THREE.BoxGeometry(5,1,1.8),white);hull.position.y=.5;g.add(hull);const mast=new THREE.Mesh(new THREE.CylinderGeometry(.08,.08,7,6),new THREE.MeshStandardMaterial({color:0x3a3550}));mast.position.set(.4,4.3,0);g.add(mast);
+  const sh=new THREE.Shape();sh.moveTo(0,0);sh.lineTo(0,6.2);sh.lineTo(-3.2,.2);sh.closePath();const sail=new THREE.Mesh(new THREE.ShapeGeometry(sh),sailMat);sail.position.set(.4,1.2,0);g.add(sail);g.position.set(x,0,z);g.rotation.y=dir>0?0:Math.PI;scene.add(g);boats.push({m:g,speed:dir*(2.2+Math.random()*1.6),phase:Math.random()*6})}
+function yacht(x,z,dir){const g=new THREE.Group();const hull=new THREE.Mesh(new THREE.BoxGeometry(14,1.8,3.6),white);hull.position.y=.9;g.add(hull);const cabin=new THREE.Mesh(new THREE.BoxGeometry(6,1.8,2.8),white);cabin.position.set(-.5,2.7,0);g.add(cabin);const win=new THREE.Mesh(new THREE.BoxGeometry(5.2,.6,2.9),new THREE.MeshStandardMaterial({color:0x000,emissive:0x9fd8ff,emissiveIntensity:.9}));win.position.set(-.5,2.9,0);g.add(win);
+  const deck=new THREE.Mesh(new THREE.BoxGeometry(3.6,1.2,2.2),white);deck.position.set(-1,4.2,0);g.add(deck);const mast=new THREE.Mesh(new THREE.CylinderGeometry(.08,.08,3,6),new THREE.MeshStandardMaterial({color:0x3a3550}));mast.position.set(-1,6.2,0);g.add(mast);g.position.set(x,0,z);g.rotation.y=dir>0?0:Math.PI;scene.add(g);boats.push({m:g,speed:dir*1.4,phase:1})}
+sailboat(-120,SHORE-45,1);sailboat(30,SHORE-70,-1);sailboat(160,SHORE-38,-1);sailboat(-40,SHORE-110,1);yacht(90,SHORE-90,1);
+const gulls=[],gullMat=new THREE.MeshStandardMaterial({color:0xf2f0f8,side:THREE.DoubleSide});
+for(let k=0;k<9;k++){const g=new THREE.Group();[-1,1].forEach(sd=>{const w=new THREE.Mesh(new THREE.PlaneGeometry(1.6,.45),gullMat);w.position.x=sd*.8;w.userData.sd=sd;g.add(w)});g.position.y=16+k*2;scene.add(g);gulls.push({m:g,cx:-60+k*18,cz:SHORE-14-(k%3)*18,r:10+k*2.2,a:k*.8,w:.4+Math.random()*.3})}
+const plane=new THREE.Group();{const fus=new THREE.Mesh(new THREE.CylinderGeometry(.5,.7,7,10),white);fus.rotation.z=Math.PI/2;plane.add(fus);const nose=new THREE.Mesh(new THREE.ConeGeometry(.5,1.4,10),white);nose.rotation.z=-Math.PI/2;nose.position.x=4.2;plane.add(nose);
+  const wing=new THREE.Mesh(new THREE.BoxGeometry(1.8,.14,10),new THREE.MeshStandardMaterial({color:0xd65db1}));wing.position.set(.4,-.2,0);plane.add(wing);const tail=new THREE.Mesh(new THREE.BoxGeometry(1,2,.14),wing.material);tail.position.set(-3.2,1,0);plane.add(tail);const tw=new THREE.Mesh(new THREE.BoxGeometry(1,.12,3.6),wing.material);tw.position.set(-3.2,.3,0);plane.add(tw);
+  const bc=document.createElement('canvas');bc.width=512;bc.height=72;const bg=bc.getContext('2d');bg.fillStyle='#fff6ee';bg.fillRect(0,0,512,72);bg.fillStyle='#14121c';bg.font='700 48px Anton, Impact, sans-serif';bg.textAlign='center';bg.fillText('DEALER CITY', 256, 54);const bt=new THREE.CanvasTexture(bc);bt.colorSpace=THREE.SRGBColorSpace;
+  const banner=new THREE.Mesh(new THREE.PlaneGeometry(18,2.5),new THREE.MeshStandardMaterial({map:bt,side:THREE.DoubleSide,roughness:1}));banner.position.set(-15,-.4,0);plane.add(banner);const line=new THREE.Mesh(new THREE.BoxGeometry(3,.05,.05),wing.material);line.position.set(-4.8,-.2,0);plane.add(line);
+  plane.scale.setScalar(2.4);plane.position.set(-380,78,SHORE-150);scene.add(plane)}
 
 /* cars */
 const wheelGeo=new THREE.CylinderGeometry(.5,.5,.4,12);wheelGeo.rotateZ(Math.PI/2);
@@ -542,6 +566,22 @@ function boxCar(g,color){const body=new THREE.Mesh(new THREE.BoxGeometry(4.2,1,2
   [[1.4,.9],[1.4,-.9],[-1.4,.9],[-1.4,-.9]].forEach(([x,z])=>{const w=new THREE.Mesh(wheelGeo,wheelMat);w.position.set(x,.5,z);g.add(w)});
   [[2.1,.6],[2.1,-.6]].forEach(([x,z])=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.1,.25,.4),headMat);h.position.set(x,1,z);g.add(h)});
   [[-2.1,.6],[-2.1,-.6]].forEach(([x,z])=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.1,.25,.4),tailMat);h.position.set(x,1,z);g.add(h)})}
+/* street-only vehicles drawn in code: a sports car from an extruded side profile, a bus, a motorcycle (bike() below) */
+const glassMat=new THREE.MeshStandardMaterial({color:0x1b2238,roughness:.1,metalness:.6}),busGlass=new THREE.MeshStandardMaterial({color:0x000,emissive:0x9fd8ff,emissiveIntensity:.9});
+const sportsProfile=(()=>{const sh=new THREE.Shape();[[-2.3,.35],[-2.25,.8],[-1.5,.9],[-.7,1.3],[.5,1.3],[1.2,.85],[2.3,.65],[2.3,.35]].forEach(([x,y],i)=>i?sh.lineTo(x,y):sh.moveTo(x,y));sh.closePath();const g=new THREE.ExtrudeGeometry(sh,{depth:1.9,bevelEnabled:true,bevelSize:.08,bevelThickness:.08,bevelSegments:2});g.translate(0,0,-.95);return g})();
+function sportsCar(g,color){const body=new THREE.Mesh(sportsProfile,new THREE.MeshStandardMaterial({color,roughness:.18,metalness:.5,envMap:ENV,envMapIntensity:.6}));body.castShadow=true;g.add(body);
+  const canopy=new THREE.Mesh(new THREE.BoxGeometry(1.1,.42,1.5),glassMat);canopy.position.set(-.1,1.08,0);g.add(canopy);
+  const wing=new THREE.Mesh(new THREE.BoxGeometry(.3,.08,1.8),new THREE.MeshStandardMaterial({color:0x14121c,roughness:.4}));wing.position.set(-2.05,1.12,0);g.add(wing);[-.6,.6].forEach(z=>{const st=new THREE.Mesh(new THREE.BoxGeometry(.1,.3,.1),wing.material);st.position.set(-2.05,.95,z);g.add(st)});
+  [[1.45,.95],[1.45,-.95],[-1.45,.95],[-1.45,-.95]].forEach(([x,z])=>{const w=new THREE.Mesh(wheelGeo,wheelMat);w.position.set(x,.5,z);w.scale.set(1,1.1,1.1);g.add(w)});
+  [[2.32,.55],[2.32,-.55]].forEach(([x,z])=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.08,.2,.4),headMat);h.position.set(x,.72,z);g.add(h)});
+  [[-2.32,.5],[-2.32,-.5]].forEach(([x,z])=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.08,.2,.4),tailMat);h.position.set(x,.6,z);g.add(h)})}
+function bus(g,color){const body=new THREE.Mesh(new THREE.BoxGeometry(9,2.3,2.4),new THREE.MeshStandardMaterial({color,roughness:.5,metalness:.2}));body.position.y=1.75;body.castShadow=true;g.add(body);
+  const win=new THREE.Mesh(new THREE.BoxGeometry(8,.9,2.45),busGlass);win.position.y=2.35;g.add(win);
+  const sign=new THREE.Mesh(new THREE.BoxGeometry(.1,.4,1.6),new THREE.MeshStandardMaterial({color:0x000,emissive:0xffb347,emissiveIntensity:1.6}));sign.position.set(4.52,2.6,0);g.add(sign);
+  [[3,1.05],[3,-1.05],[-2.6,1.05],[-2.6,-1.05]].forEach(([x,z])=>{const w=new THREE.Mesh(wheelGeo,wheelMat);w.position.set(x,.6,z);w.scale.setScalar(1.2);g.add(w)});
+  [[4.52,.8],[4.52,-.8]].forEach(([x,z])=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.1,.3,.4),headMat);h.position.set(x,1,z);g.add(h)});
+  [[-4.52,.8],[-4.52,-.8]].forEach(([x,z])=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.1,.3,.4),tailMat);h.position.set(x,1,z);g.add(h)})}
+const PROC={sports:sportsCar,bus,moto:(g,c)=>g.add(bike(c))};
 /* real cars: Kenney Car Kit 3.1 (CC0, models/LICENSE-kenney-car-kit.txt). Each .glb is a body mesh plus wheel meshes sharing one palette texture (an 8×4 grid of shaded cells);
    each body's paint is one cell of that grid (PAINT, by model; the grey cell shared by all is the chassis), so repainting that cell gives a car any colour. Until the models arrive (or if they never do) a car is the box above. */
 const PAINT={sedan:[6,1],'sedan-sports':[6,1],suv:[3,1],'hatchback-sports':[3,1],van:[7,1],'suv-luxury':[4,1],truck:[3,1]}; // [column, row] of the paint cell, measured by triangle area
@@ -555,14 +595,17 @@ function paintMat(base,color,kind){const key=kind+color;if(paintCache[key])retur
   const t=new THREE.CanvasTexture(c);t.flipY=false;t.colorSpace=THREE.SRGBColorSpace;const m=base.clone();m.map=t;m.roughness=.5;m.metalness=.2;SHARED.add(m);paintCache[key]=m;return m}
 let carN=0;
 function car(color,kind,onFill){const g=new THREE.Group();kind=kind||KINDS[carN++%KINDS.length];
+  if(PROC[kind]){PROC[kind](g,color);if(onFill)onFill(g,null);return g}
   const fill=()=>{const src=MODELS[kind];if(!src){boxCar(g,color);if(onFill)onFill(g,null);return}
     const m=src.clone(),parts={wheels:[],body:null};m.traverse(o=>{if(o.isMesh){o.castShadow=true;if(o.name==='body'){o.material=paintMat(o.material,color,kind);parts.body=o}else parts.wheels.push(o)}});
     const inner=new THREE.Group();inner.add(m);inner.rotation.y=Math.PI/2;inner.scale.setScalar(1.55);g.add(inner);if(onFill)onFill(g,parts)}; // the kit's cars face +z at about 2.7 long; ours face +x at about 4.2
   if(modelsDone)fill();else modelsReady.then(fill);return g}
 const palette=[0xd65db1,0x8366ea,0x22a85e,0xe0a640,0x4fa3e0,0xd9d6e6,0xc3002f,0xffd166];
 const traffic=[];
-for(let i=0;i<=NX;i++){for(const dir of [1,-1]){const c=car(palette[(i*3+dir+8)%8]);const x=(i-NX/2)*PITCH+dir*2.2;c.position.set(x,0,(Math.random()-.5)*NZ*PITCH);c.rotation.y=dir>0?-Math.PI/2:Math.PI/2;scene.add(c);traffic.push({m:c,axis:'z',dir,x,speed:.25+Math.random()*.25})}}
-for(let j=0;j<=NZ;j++){for(const dir of [1,-1]){const c=car(palette[(j*5+dir+8)%8]);const z=(j-NZ/2)*PITCH+dir*2.2;c.position.set((Math.random()-.5)*NX*PITCH,0,z);c.rotation.y=dir>0?0:Math.PI;scene.add(c);traffic.push({m:c,axis:'x',dir,z,speed:.25+Math.random()*.25})}}
+const STREET=['sports','sedan','bus','sports','suv-luxury','moto','sedan-sports','sports','van','moto','hatchback-sports','sports','suv','bus','sports','moto'],SPORTS=[0xd0101c,0xf7e018,0x15131a,0xd9d6e6,0x0f6b3a,0xff6a00,0x2457a8,0xd65db1];let streetN=0; // a beach city's traffic: sports cars, bikes and buses among the sedans
+const streetCar=hex=>{const k=STREET[streetN++%STREET.length];return car(k==='sports'?SPORTS[streetN%8]:hex,k)};
+for(let i=0;i<=NX;i++){for(const dir of [1,-1]){const c=streetCar(palette[(i*3+dir+8)%8]);const x=(i-NX/2)*PITCH+dir*2.2;c.position.set(x,0,(Math.random()-.5)*NZ*PITCH);c.rotation.y=dir>0?-Math.PI/2:Math.PI/2;scene.add(c);traffic.push({m:c,axis:'z',dir,x,speed:.25+Math.random()*.25})}}
+for(let j=0;j<=NZ;j++){for(const dir of [1,-1]){const c=streetCar(palette[(j*5+dir+8)%8]);const z=(j-NZ/2)*PITCH+dir*2.2;c.position.set((Math.random()-.5)*NX*PITCH,0,z);c.rotation.y=dir>0?0:Math.PI;scene.add(c);traffic.push({m:c,axis:'x',dir,z,speed:.25+Math.random()*.25})}}
 
 /* the GM's own site (center block) */
 const lot=new THREE.Group();scene.add(lot);
@@ -639,7 +682,7 @@ function story(caption,done){
   const beam=new THREE.Mesh(new THREE.BoxGeometry(.5,.5,11),new THREE.MeshStandardMaterial({color:0x000,emissive:0x22a85e,emissiveIntensity:3}));beam.position.set(GX,9,ROADZ);g.add(beam);
   const gl=labelSprite('SECTION 125 WELLNESS PLAN','#4fd486',22);gl.position.set(GX,11.5,ROADZ);g.add(gl);
   controls.autoRotate=false;camKill();
-  gsap.to(camera.position,{x:GX-4,y:22,z:ROADZ+58,duration:1.6,ease:'power2.inOut'});gsap.to(controls.target,{x:GX-4,y:-5,z:ROADZ-4,duration:1.6}); // low target: the road sits in the upper half, above the caption
+  gsap.to(camera.position,{x:GX-4,y:18,z:ROADZ+46,duration:1.6,ease:'power2.inOut'});gsap.to(controls.target,{x:GX-4,y:-3,z:ROADZ-4,duration:1.6}); // low target: the road sits in the upper half, above the caption
   const from=new THREE.Vector3(GX+5,3.5,ROADZ-1.5), at=(o,y)=>new THREE.Vector3(o.position.x,y,o.position.z);
   const tl=gsap.timeline({onComplete:()=>{setTimeout(()=>{drop(scene,g);cue(lastCue);done()},800)}});
   tl.call(()=>caption(0),null,.3)
@@ -665,22 +708,34 @@ const puffGeo=new THREE.SphereGeometry(.6,10,8);
 [coinGeo,coinMat,puffGeo].forEach(x=>SHARED.add(x));
 function pipeAt(c){c.updateMatrixWorld(true);const v=c.userData.pipe.position.clone();c.localToWorld(v);return stage.worldToLocal(v)}
 function buildStage(){stage=new THREE.Group();stage.position.set(0,0,SZ);
-  const conc=new THREE.MeshStandardMaterial({color:0x3b3845,roughness:.95}),wallM=new THREE.MeshStandardMaterial({color:0x2b2736,roughness:.9}),steel=new THREE.MeshStandardMaterial({color:0x3d3860,roughness:.5,metalness:.4}),red=new THREE.MeshStandardMaterial({color:0xb8303c,roughness:.5,metalness:.2}),chrome=new THREE.MeshStandardMaterial({color:0xd9d6e6,roughness:.25,metalness:.8});
-  const box=(geo,mat,x,y,z)=>{const m=new THREE.Mesh(geo,mat);m.position.set(x,y,z);m.castShadow=m.receiveShadow=true;stage.add(m);return m};
-  // the bay: a concrete floor, two side walls and a ceiling, open at both ends so the sea shows through the back door
-  const floor=box(new THREE.PlaneGeometry(68,40),conc,0,.07,0);floor.rotation.x=-Math.PI/2;
-  const line=box(new THREE.PlaneGeometry(.5,34),new THREE.MeshStandardMaterial({color:0xe0a640,roughness:.8}),0,.09,0);line.rotation.x=-Math.PI/2; // the painted bay line between the two cars
-  box(new THREE.BoxGeometry(.6,14,40),wallM,-34,7,0);box(new THREE.BoxGeometry(.6,14,40),wallM,34,7,0);
-  const ceil=box(new THREE.PlaneGeometry(68,40),wallM,0,14,0);ceil.rotation.x=Math.PI/2;
-  const tube=new THREE.MeshStandardMaterial({color:0x000,emissive:0xf4f0ff,emissiveIntensity:2.2});[-20,0,20].forEach(x=>{box(new THREE.BoxGeometry(10,.25,.8),tube,x,13.7,-4);const l=new THREE.PointLight(0xf4f0ff,120,50,2);l.position.set(x,12.5,-2);stage.add(l)});
-  // the two-post lift, with our car raised on its arms
-  [-6.5,6.5].forEach(dx=>{box(new THREE.BoxGeometry(1,9.5,1),steel,-13+dx,4.75,0);box(new THREE.BoxGeometry(.5,.3,1.4),new THREE.MeshStandardMaterial({color:0x000,emissive:0xd65db1,emissiveIntensity:1.5}),-13+dx,8.6,0);[-2.6,2.6].forEach(dz=>box(new THREE.BoxGeometry(6,.35,.6),steel,-13+dx*.5,2.4,dz))});
-  box(new THREE.BoxGeometry(14,.7,.7),steel,-13,9.6,0);
-  // toolboxes, a tyre stack and a bench along the left wall
-  [[-27,-9],[-27,-3]].forEach(([x,z])=>{box(new THREE.BoxGeometry(2.4,3.8,4.2),red,x,1.9,z);box(new THREE.BoxGeometry(2.6,.2,4.4),chrome,x,3.9,z);for(let k=0;k<4;k++)box(new THREE.BoxGeometry(.14,.14,2.4),chrome,x+1.25,.9+k*.85,z)});
-  for(let k=0;k<4;k++){const t=box(new THREE.TorusGeometry(1.3,.5,8,18),wheelMat,-27,.55+k*1,6);t.rotation.x=Math.PI/2}
-  box(new THREE.BoxGeometry(2.6,.3,10),new THREE.MeshStandardMaterial({color:0x6b5a44,roughness:.8}),-27,3.2,14);[10,18].forEach(z=>box(new THREE.BoxGeometry(2.4,3,.4),steel,-27,1.5,z)); // a workbench on two trestles
-  const sign=labelSprite('SERVICE DEPARTMENT','#ff6fd0',18);sign.position.set(0,12.6,10);stage.add(sign);
+  const conc=new THREE.MeshStandardMaterial({color:0x54515f,roughness:.95}),wallM=new THREE.MeshStandardMaterial({color:0x3a3548,roughness:.9}),steel=new THREE.MeshStandardMaterial({color:0x3d3860,roughness:.5,metalness:.4}),red=new THREE.MeshStandardMaterial({color:0xb8303c,roughness:.5,metalness:.2}),chrome=new THREE.MeshStandardMaterial({color:0xd9d6e6,roughness:.25,metalness:.8}),yellow=new THREE.MeshStandardMaterial({color:0xe0a640,roughness:.8}),wood=new THREE.MeshStandardMaterial({color:0x6b5a44,roughness:.8});
+  const box=(geo,mat,x,y,z,ry)=>{const m=new THREE.Mesh(geo,mat);m.position.set(x,y,z);if(ry)m.rotation.y=ry;m.castShadow=m.receiveShadow=true;stage.add(m);return m};
+  // a big enclosed garage: floor, three walls, ceiling, two closed roll-up doors in the back wall; the camera sits inside, under the lights
+  const W=70,D=62,H=14;const floor=box(new THREE.PlaneGeometry(W,D),conc,0,.07,0);floor.rotation.x=-Math.PI/2;
+  box(new THREE.BoxGeometry(.6,H,D),wallM,-W/2,H/2,0);box(new THREE.BoxGeometry(.6,H,D),wallM,W/2,H/2,0);box(new THREE.BoxGeometry(W,H,.6),wallM,0,H/2,-D/2);
+  box(new THREE.BoxGeometry(W,.6,D),wallM,0,H+.3,0); // a solid roof, seen from the city too
+  const slat=(()=>{const c=document.createElement('canvas');c.width=16;c.height=64;const g=c.getContext('2d');g.fillStyle='#8a8798';g.fillRect(0,0,16,64);g.fillStyle='#5c5970';for(let y=0;y<64;y+=8)g.fillRect(0,y,16,2);const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(1,6);return t})();
+  [-14,14].forEach(x=>{box(new THREE.PlaneGeometry(18,11.5),new THREE.MeshStandardMaterial({map:slat,roughness:.7,metalness:.3}),x,5.75,-D/2+.35);[-9.4,9.4].forEach(dx=>box(new THREE.BoxGeometry(.5,12,.5),steel,x+dx,6,-D/2+.5))}); // roll-up doors, closed
+  const sign=labelSprite('SERVICE DEPARTMENT','#ff6fd0',22);sign.position.set(0,12.6,-D/2+1);stage.add(sign);
+  box(new THREE.BoxGeometry(2.2,.9,.2),new THREE.MeshStandardMaterial({color:0x000,emissive:0x3ddc84,emissiveIntensity:2}),W/2-4,12.6,D/2-3); // exit sign
+  const tube=new THREE.MeshStandardMaterial({color:0x000,emissive:0xf4f0ff,emissiveIntensity:2.2});[-24,0,24].forEach(x=>[-16,8].forEach(z=>{box(new THREE.BoxGeometry(10,.25,.8),tube,x,H-.3,z)}));[-20,20].forEach(x=>[-14,10].forEach(z=>{const l=new THREE.PointLight(0xf4f0ff,280,70,2);l.position.set(x,H-1.5,z);stage.add(l)}));
+  // two two-post lifts: our car raised on the left one, major medical parked on the right one with the arms down
+  const lift=(x,raised)=>{[-6.5,6.5].forEach(dx=>{box(new THREE.BoxGeometry(1,9.5,1),steel,x+dx,4.75,0);box(new THREE.BoxGeometry(.5,.3,1.4),new THREE.MeshStandardMaterial({color:0x000,emissive:0xd65db1,emissiveIntensity:1.5}),x+dx,8.6,0);[-2.6,2.6].forEach(dz=>box(new THREE.BoxGeometry(6,.35,.6),steel,x+dx*.5,raised?2.4:.35,dz))});box(new THREE.BoxGeometry(14,.7,.7),steel,x,9.6,0);
+    [-8,8].forEach(dx=>box(new THREE.BoxGeometry(.3,.02,18),yellow,x+dx,.1,0));[-9,9].forEach(dz=>box(new THREE.BoxGeometry(16,.02,.3),yellow,x,.1,dz))}; // the painted bay outline
+  lift(-13,true);lift(14,false);
+  // the left wall: tool chests, a tyre rack, oil drums, an air compressor
+  [[-30,-22],[-30,-16]].forEach(([x,z])=>{box(new THREE.BoxGeometry(2.4,3.8,4.2),red,x,1.9,z);box(new THREE.BoxGeometry(2.6,.2,4.4),chrome,x,3.9,z);for(let k=0;k<4;k++)box(new THREE.BoxGeometry(.14,.14,2.4),chrome,x+1.25,.9+k*.85,z)});
+  [-9,-1].forEach(z=>box(new THREE.BoxGeometry(.3,7,.3),steel,-30,3.5,z));[1.2,3.6,6].forEach(y=>box(new THREE.BoxGeometry(2.6,.15,8.6),steel,-30,y,-5));[1.2,3.6].forEach((y,r)=>[-8,-5.3,-2.6].forEach(z=>{const t=box(new THREE.TorusGeometry(1,.42,8,16),wheelMat,-30,y+1.05,z);t.rotation.y=Math.PI/2})); // tyre rack
+  [[-30,6,0x2457a8],[-30,9,0xb8303c],[-27.5,7.5,0x2457a8]].forEach(([x,z,c])=>box(new THREE.CylinderGeometry(1.1,1.1,2.6,14),new THREE.MeshStandardMaterial({color:c,roughness:.6,metalness:.3}),x,1.3,z)); // oil drums
+  box(new THREE.CylinderGeometry(.9,.9,3.6,14),red,-30,1.6,16,0).rotation.z=Math.PI/2;box(new THREE.BoxGeometry(1.6,1,1.6),steel,-30,2.9,16);[-1.2,1.2].forEach(dz=>box(new THREE.CylinderGeometry(.35,.35,.3,10),wheelMat,-30,.35,16+dz).rotation.z=Math.PI/2); // air compressor on wheels
+  for(let k=0;k<4;k++){const t=box(new THREE.TorusGeometry(1.3,.5,8,18),wheelMat,-28,.55+k*1,24);t.rotation.x=Math.PI/2} // a loose tyre stack
+  // the right wall: workbench with a pegboard, parts shelving, a hose reel
+  box(new THREE.BoxGeometry(3,.3,14),wood,30,3.1,-16);[-22,-10].forEach(z=>box(new THREE.BoxGeometry(2.6,3,.4),steel,30,1.5,z));box(new THREE.BoxGeometry(1,.8,.8),steel,30,3.6,-20); // bench and a vice
+  const peg=(()=>{const c=document.createElement('canvas');c.width=256;c.height=96;const g=c.getContext('2d');g.fillStyle='#c9b58f';g.fillRect(0,0,256,96);g.fillStyle='#a08f6c';for(let y=6;y<96;y+=10)for(let x=6;x<256;x+=10)g.fillRect(x,y,2,2);g.fillStyle='#2a2634';[[20,12,10,60],[44,12,10,60],[70,20,34,8],[70,36,34,8],[120,10,8,70],[140,10,8,70],[170,16,50,10],[170,40,50,10],[232,14,10,50]].forEach(r=>g.fillRect(...r));return new THREE.CanvasTexture(c)})();
+  box(new THREE.PlaneGeometry(14,5.2),new THREE.MeshStandardMaterial({map:peg,roughness:.9}),W/2-.4,6.4,-16,-Math.PI/2); // pegboard of tools above the bench
+  [-2,6].forEach(z=>box(new THREE.BoxGeometry(.3,7,.3),steel,30,3.5,z));[1,3,5,7].forEach(y=>box(new THREE.BoxGeometry(2.6,.15,8),steel,30,y,2));[1,3,5].forEach(y=>[-1,1.3,3.6,5.5].forEach(z=>box(new THREE.BoxGeometry(1.8,1.1,1.6),new THREE.MeshStandardMaterial({color:[0x7a6a52,0x5a5a6a,0x8366ea,0x22a85e][Math.round(z+y)%4],roughness:.8}),30,y+.65,z))); // parts shelving
+  box(new THREE.TorusGeometry(1.4,.45,8,18),new THREE.MeshStandardMaterial({color:0x1f1d2a,roughness:.7}),W/2-.9,8,16,-Math.PI/2);box(new THREE.CylinderGeometry(.12,.12,7,8),new THREE.MeshStandardMaterial({color:0x1f1d2a}),W/2-.9,3.5,17.2); // hose reel and the hose hanging down
+  [[30,22,0xb8303c],[30,26,0x2457a8]].forEach(([x,z,c])=>box(new THREE.CylinderGeometry(1.1,1.1,2.6,14),new THREE.MeshStandardMaterial({color:c,roughness:.6,metalness:.3}),x,1.3,z));
   ours={parts:{}};const o=car(0xe9e6f2,'sedan-sports',(g,p)=>{if(!p)return;const P=ours.parts,glow=(mesh,hex)=>{mesh.material=mesh.material.clone();mesh.material.emissive.set(hex);mesh.material.emissiveIntensity=0;return mesh};
     P.wheels=p.wheels.map(w=>glow(w,PART.wheels));P.body=[glow(p.body,PART.body)];Object.assign(p.body.material,{envMap:ENV,envMapIntensity:.4,roughness:.45,metalness:.15}); // satin, so the paint reads as paint and not as a glow
     const lamp=(hex,x,y,z,d)=>{const l=new THREE.PointLight(hex,0,d,2);l.position.set(x,y,z);g.add(l);return l};P.engine=[lamp(PART.engine,1.5,1.7,0,14)];P.windows=[lamp(PART.windows,-.4,1.6,0,12)]}); // pearl white, so every part colour reads
@@ -689,10 +744,10 @@ function buildStage(){stage=new THREE.Group();stage.position.set(0,0,SZ);
   mmCar=car(0x6b2630,'suv',(g,p)=>{if(p){p.body.material=p.body.material.clone();Object.assign(p.body.material,{envMap:ENV,envMapIntensity:.3,roughness:.5})}});mmCar.scale.setScalar(3.6);mmCar.position.set(14,0,0);mmCar.rotation.y=-Math.PI/2+.5;const mp=new THREE.Object3D();mp.position.set(-2.4,.55,.65);mmCar.add(mp);mmCar.userData.pipe=mp;stage.add(mmCar);
   const ml=labelSprite('MAJOR MEDICAL','#ff6b6b',30);ml.position.set(14,mobile?9.8:11,0);ml.scale.set(18,4.5,1);mmCar.userData.label=ml;stage.add(ml);
   tails=[labelSprite('NET SAVINGS','#4fd486',20),labelSprite('COST','#ff6b6b',20)];tails[0].position.set(STACK.x-2,6,STACK.z);tails[1].position.set(6,6.3,pipeAt(mmCar).z);tails.forEach(t=>{t.scale.set(10,2.5,1);stage.add(t)}); // side by side between the cars, under the car names
-  const spot=new THREE.SpotLight(0xffffff,650,80,Math.PI/4,.6,2);spot.position.set(0,13,18);spot.target.position.set(0,0,0);stage.add(spot);stage.add(spot.target);
+  const spot=new THREE.SpotLight(0xffffff,500,80,Math.PI/4,.6,2);spot.position.set(0,13,22);spot.target.position.set(0,0,0);stage.add(spot);stage.add(spot.target);
   scene.add(stage)}
 function stageOn(on,noCue){if(on){if(!stage)buildStage();else if(stage.visible)return;stage.visible=true;controls.autoRotate=false;camKill();const wide=camera.aspect>1.2;
-    gsap.to(camera.position,{x:0,y:wide?11:15,z:SZ+(wide?46:66),duration:1.8,ease:'power2.inOut'});gsap.to(controls.target,{x:0,y:wide?-1:-6,z:SZ-2,duration:1.8,ease:'power2.inOut'})} // a low target keeps the cars in the top half, above the caption panel
+    gsap.to(camera.position,{x:0,y:wide?11:12,z:SZ+(wide?40:30),duration:1.8,ease:'power2.inOut'});gsap.to(controls.target,{x:0,y:wide?-.5:-5,z:SZ-6,duration:1.8,ease:'power2.inOut'})} // inside the garage, under the lights // a low target keeps the cars in the top half, above the caption panel
   else{if(!stage||!stage.visible){if(!noCue)cue(lastCue);return}stage.visible=false;exhaust=false;for(const b of fumes)drop(stage,b.m);fumes=[];for(const c of coins){gsap.killTweensOf([c.position,c.rotation]);drop(stage,c)}coins=[];if(!noCue)cue(lastCue)}}
 function light(lit,mm,ex){if(!stage)return;for(const k in ours.parts)for(const o of ours.parts[k]){if(o.isLight)gsap.to(o,{intensity:lit[k]?(k==='engine'?80:60):0,duration:.5});else gsap.to(o.material,{emissiveIntensity:lit[k]?(k==='wheels'?.9:.32):0,duration:.5})}
   mmCar.visible=mm;mmCar.userData.label.visible=mm;exhaust=ex;tails[0].visible=ex||coins.length>0;tails[1].visible=ex&&mm;spawnT=0}
@@ -713,6 +768,10 @@ let last=performance.now(),paused=false,fpsNow=0,fpsN=0,fpsT=0;
 function loop(now){if(paused||document.hidden||!host.clientWidth){last=now;setTimeout(()=>requestAnimationFrame(loop),300);return} // the owner page and background tabs do not burn the battery
   const dt=Math.min(.05,(now-last)/1000);last=now;fpsN++;fpsT+=dt;if(fpsT>=1){fpsNow=Math.round(fpsN/fpsT);fpsN=0;fpsT=0}
   rippleTex.offset.x+=dt*.012;rippleTex.offset.y+=dt*.02;foam.position.z=SHORE+Math.sin(now/1400)*1.2;foam.material.opacity=.5+.25*Math.sin(now/900); // the tide
+  for(const b of boats){b.m.position.x+=b.speed*dt;if(b.m.position.x>420)b.m.position.x=-420;if(b.m.position.x<-420)b.m.position.x=420;b.m.position.y=.15*Math.sin(now/900+b.phase);b.m.rotation.z=.04*Math.sin(now/1300+b.phase)}
+  for(const g of gulls){g.a+=dt*g.w;g.m.position.x=g.cx+Math.cos(g.a)*g.r;g.m.position.z=g.cz+Math.sin(g.a)*g.r;g.m.rotation.y=-g.a;const f=Math.sin(now/110+g.a*3)*.6;g.m.children.forEach(w=>w.rotation.x=w.userData.sd*f)}
+  plane.position.x+=dt*11;if(plane.position.x>420)plane.position.x=-420;
+  for(const f of fires){const k=.8+.4*Math.random();f.flame.scale.set(k,.9+.3*Math.random(),k);f.l.intensity=90+60*Math.random()}
   for(const t of traffic){if(t.turn)continue;const p=t.m.position,k=t.axis,o=k==='z'?'x':'z';p[k]+=t.dir*t.speed*dt*60;if(Math.abs(p[k])>LIM[k]){p[k]=Math.sign(p[k])*LIM[k];t.turn=true;gsap.to(t.m.rotation,{y:t.m.rotation.y+Math.PI,duration:.9});gsap.to(p,{[o]:t[o]-4.4*t.dir,duration:.9,onComplete:()=>{t[o]=p[o];t.dir=-t.dir;t.turn=false}})}} // U-turn into the other lane at the end of the road: nothing drives off the map
   for(let i=bursts.length-1;i>=0;i--){const b=bursts[i];b.t+=dt;const r=Math.max(16,80-b.t*34);b.m.position.set(Math.cos(b.a)*r,0,Math.sin(b.a)*r);if(b.t>2.4){drop(scene,b.m);bursts.splice(i,1)}}
   if(stage&&stage.visible&&exhaust){spawnT+=dt;if(spawnT>.2){spawnT=0;coin();if(mmCar.visible)puff()}}
