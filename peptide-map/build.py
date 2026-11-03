@@ -115,15 +115,15 @@ reg_rows = [{'date': r['date_in_effect'], 'body': r['body'], 'what': r['what_it_
 
 data = {'asOf': AS_OF, 'fdaListN': fda_list_n, 'facilities': fac, 'timeline': timeline, 'compounds': compounds, 'routes': routes, 'nodes': nodes, 'origins': origins, 'sources': sources, 'register': reg_rows,
         'us': json.load(open(os.path.join(HERE, 'data/us-states-albers-10m.json'))), 'world': json.load(open(os.path.join(HERE, 'data/world-110m.json')))}
-tpl = open(os.path.join(HERE, 'atlas-template.html')).read()
+tpl = open(os.path.join(HERE, 'map-template.html')).read()
 out = tpl.replace('/*__DATA__*/', json.dumps(data, separators=(',', ':')).replace('</', '<\\/'))
-open(os.path.join(HERE, 'atlas.html'), 'w').write(out)
+open(os.path.join(HERE, 'map.html'), 'w').write(out)
 # the artifact publisher wraps a page in its own document skeleton, so it gets the same page without the wrapper tags
 art = out
 for tag in ['<!doctype html>', '<html lang="en">', '<head>', '</head>', '<body>', '</body>', '</html>', '<meta charset="utf-8">', '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">']:
     art = art.replace(tag, '', 1)
 art = art.replace('<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml"><link rel="icon" href="/favicon.ico?v=2" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">', '')
-RIDE_ART = 'https://claude.ai/artifact/1y6Y6xAFm76vHBFG96ZLPg'; ATLAS_ART = 'https://claude.ai/artifact/Uc5sbnmU6cgKJ3XahexJbN'  # the private previews link to each other
+RIDE_ART = 'https://claude.ai/artifact/1y6Y6xAFm76vHBFG96ZLPg'; MAP_ART = 'https://claude.ai/artifact/Uc5sbnmU6cgKJ3XahexJbN'  # the private previews link to each other
 open(os.path.join(HERE, 'artifact.html'), 'w').write(art.strip().replace('href="index.html"', 'href="' + RIDE_ART + '"') + '\n')
 
 def strip_wrapper(html):
@@ -204,12 +204,22 @@ CARDS = [
      'enforce': 'Warning letters of 2025-09-09 (ASN-LABS, GLP-1 Solution) and 2026-08-24 (NuScience, Royal Peptides) name retatrutide.',
      'dates': [d('2025-09-09', 'Warning letters: compounded retatrutide qualifies under neither 503A nor 503B', RETA25), d('2026-08-24', 'Warning letters to NuScience and Royal Peptides', RUO26)]},
 ]
+# four windows, in Jay's order: source (NW), purify and test (SW), fill and finish (NE), dispense (SE). The old pharmacy gate folds into fill and finish, where 503A and 503B part ways.
+QC = {'tolerated': ['cond', 'Each lot tested for identity, purity, sterility and endotoxin under the draft policy\'s conditions, with the certificate of analysis kept on file.'],
+      'closed': ['no', 'Nothing lawful to test: there is no bulk-compounding path.'], 'none': ['no', 'No lawful lot exists to test. Products sold online carry no verified certificate.'],
+      'listed': ['ok', 'The supplier\'s certificate of analysis, and the pharmacy\'s own testing for sterile preparations under USP <797>.'],
+      'mixed': ['ok', 'Certificate of analysis for the non-injectable bulk substance; no sterile testing needed for a cream.'],
+      'component': ['ok', 'Release testing at the 503B facility under cGMP: identity, purity, sterility, endotoxin.'],
+      'brand': ['brand', 'Manufacturer release testing under cGMP. A compounder\'s API lot needs a certificate of analysis and Green List origin.']}
+for c in CARDS:
+    s0, s1, s2, s3 = c['stations']
+    c['stations'] = [[s0[0], 'Source', s0[2]], [QC[c['track']][0], 'Purify and test', QC[c['track']][1]], [s2[0], 'Fill and finish', s2[2] + ' ' + s1[2]], [s3[0], 'Dispense', s3[2]]]
 TRACKS = {'tolerated': 'Tolerated under a draft', 'closed': 'Closed gate', 'listed': 'Category 1', 'mixed': 'Open for topical, closed for injection', 'component': '503B line', 'brand': 'Brand line', 'none': 'No lawful route'}
 for c in CARDS: c['trackLabel'] = TRACKS[c['track']]
 ride = {'asOf': AS_OF, 'cards': CARDS, 'hhsUrl': HHS['url']}
 rt = open(os.path.join(HERE, 'ride-template.html')).read()
 rout = rt.replace('/*__DATA__*/', json.dumps(ride, separators=(',', ':')).replace('</', '<\\/'))
 open(os.path.join(HERE, 'index.html'), 'w').write(rout)
-open(os.path.join(HERE, 'ride-artifact.html'), 'w').write(strip_wrapper(rout).replace('href="atlas.html"', 'href="' + ATLAS_ART + '"'))
+open(os.path.join(HERE, 'ride-artifact.html'), 'w').write(strip_wrapper(rout).replace('href="map.html"', 'href="' + MAP_ART + '"'))
 print('index.html (ride)', len(rout) // 1024, 'KB;', len(CARDS), 'cards')
-print('atlas.html', len(out) // 1024, 'KB;', len(fac), 'facilities,', len(timeline), 'timeline rows,', len(routes), 'routes,', len(sources), 'sources,', len(reg_rows), 'register rows')
+print('map.html', len(out) // 1024, 'KB;', len(fac), 'facilities,', len(timeline), 'timeline rows,', len(routes), 'routes,', len(sources), 'sources,', len(reg_rows), 'register rows')

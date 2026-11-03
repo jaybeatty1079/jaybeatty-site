@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Peptide Supply Atlas</title>
+<title>Peptide Supply Map</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="How peptides and GLP-1s move from source to patient under current US rules: every registered 503B facility, the documented supply routes from China, Europe and Mexico, the two-layer status of each compound, and a dated chronology. Every element is footnoted to a primary source.">
 <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml"><link rel="icon" href="/favicon.ico?v=2" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: an atlas plate. One sheet, the United States in the middle, three inset panels at the edges, a rail of tables on the right, the chronology and the register below, everything footnoted into one sources list. */
+/* Layout: a plate. One sheet, the United States in the middle, three inset panels at the edges, a rail of tables on the right, the chronology and the register below, everything footnoted into one sources list. */
 :root{
   --paper:#edeeea; --paper2:#e3e5df; --ink:#1e2226; --ink2:#4b525a; --muted:#737b84; --rule:#c9cdc6;
   --water:#d6dde0; --land:#f6f6f2; --land2:#e9eae3;
@@ -118,8 +118,8 @@ footer{margin-top:34px;font-size:.78rem;color:var(--muted);max-width:90ch;border
 <body>
 <div class="plate">
 <header>
-  <div><div class="eyebrow">Atlas plate 01 · Pharmaceutical supply · United States</div>
-  <h1>Peptide Supply Atlas</h1>
+  <div><div class="eyebrow">Plate 01 · Pharmaceutical supply · United States</div>
+  <h1>Peptide Supply Map</h1>
   <p class="lede">How peptides and GLP-1s move from source to patient under current US rules: the registered 503B outsourcing facilities, the supply routes the government has documented, the standing of each compound under FDA's lists and the new HHS draft policy, and a dated chronology. Every element carries a footnote to a primary source.</p></div>
   <div class="asof"><b>As of <span id="asof"></span></b><br>FDA facility list current as of 2026-10-29<br>Maps public guidance. Not legal advice.<br><a href="index.html">← The front door: order a peptide and ride its track</a></div>
 </header>
@@ -145,7 +145,7 @@ footer{margin-top:34px;font-size:.78rem;color:var(--muted);max-width:90ch;border
 <details><summary>The federal register behind this plate, 69 rows</summary><p class="sub">Every federal rule, list placement, court decision and enforcement letter that decides what can be compounded, prescribed, sold or imported. Date, body, decision, compounds, source. Verified 2026-11-02.</p>
   <div class="regwrap"><table class="reg" id="register"><thead><tr><th>Date</th><th>Body</th><th>What it decides</th><th>Compounds</th><th>Source</th></tr></thead><tbody></tbody></table></div></details>
 <section class="sources" id="sources"><h2>Sources</h2><ol id="srclist"></ol></section>
-<footer>Compiled from four research tracks on 2026-11-02: the FDA facility registry, the federal rulebook, supply and enforcement records, and trade-press leads checked against primary sources. Claims that could not be traced to a government document, court record or company filing were left off this plate. The HHS policy of 2026-10-30 is a draft under comment and may change. Base maps: US Atlas and World Atlas (Natural Earth). Built with D3.</footer>
+<footer>Compiled from four research tracks on 2026-11-02: the FDA facility registry, the federal rulebook, supply and enforcement records, and trade-press leads checked against primary sources. Claims that could not be traced to a government document, court record or company filing were left off this plate. The HHS policy of 2026-10-30 is a draft under comment and may change. Base maps: Natural Earth, via the us-atlas and world-atlas packages. Built with D3.</footer>
 </div>
 <div class="tip" id="tip"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>

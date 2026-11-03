@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: an exhibit. One stage (the ride, first person) with a counter over it before you board, four corner panels during the climb, and a plate at the end; the atlas lives one link deeper. */
+/* Layout: an exhibit. One stage (the ride, first person) with a counter over it before you board, four corner panels during the climb, and a plate at the end; the map lives one link deeper. */
 :root{
   --paper:#edeeea; --paper2:#e3e5df; --ink:#1e2226; --ink2:#4b525a; --muted:#737b84; --rule:#c9cdc6; --sky:#e6e9e4;
   --tol:#2f4f8f; --enf:#8f2b2b; --ok:#4f6b4a; --warn:#9a6b1f; --single:#8a8f96;
@@ -51,8 +51,31 @@ a{color:var(--tol)}
 .btn[disabled]{opacity:.4;cursor:default}
 .btn.ghost{background:transparent;color:var(--ink)}
 .note{font-size:.78rem;color:var(--muted)}
+/* the doors: the counter closes, the ride doors swing open onto the track */
+#doors{position:absolute;inset:0;z-index:4;display:none;perspective:1100px}
+#doors.show{display:grid;grid-template-columns:1fr 1fr}
+.door{background:var(--paper2);border:1px solid var(--ink);display:grid;place-items:center;transition:transform 1.15s cubic-bezier(.6,.05,.3,1);font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);position:relative}
+.door::before{content:"";position:absolute;inset:12% 14%;border:1px solid var(--rule)}
+.door.l{transform-origin:left center;border-right:0}.door.r{transform-origin:right center;border-left:0}
+#doors.open .door.l{transform:rotateY(-108deg)}#doors.open .door.r{transform:rotateY(108deg)}
+/* the four windows: NW source, SW purify and test, NE fill and finish, SE dispense; each keeps animating for the whole ride */
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 6px}
+.chips span{font-family:var(--mono);font-size:.6rem;letter-spacing:.04em;border:1px solid var(--rule);padding:1px 5px;color:var(--ink2)}
+.scene{display:block;width:100%;height:auto;color:var(--ink);margin:0 0 6px;font-family:var(--mono)}
+.scene text{font-size:6.5px;fill:var(--ink2);letter-spacing:.04em}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes rise{0%{transform:translateY(0);opacity:.9}100%{transform:translateY(-28px);opacity:0}}
+@keyframes ship{0%{transform:translateX(-10px)}100%{transform:translateX(58px)}}@keyframes pulse{0%{transform:scale(.3);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+@keyframes band{0%{transform:translateY(0)}100%{transform:translateY(44px)}}@keyframes draw{to{stroke-dashoffset:0}}@keyframes tick{0%,55%{opacity:0}65%,100%{opacity:1}}
+@keyframes belt{0%{transform:translateX(0)}100%{transform:translateX(-18px)}}@keyframes dip{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}@keyframes gauge{0%,100%{transform:rotate(-50deg)}50%{transform:rotate(40deg)}}@keyframes out{0%{transform:translateY(0);opacity:0}30%{opacity:1}100%{transform:translateY(12px);opacity:0}}
+@keyframes pop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.15);opacity:1}100%{transform:scale(1)}}@keyframes carry{0%{transform:translateX(0)}100%{transform:translateX(44px)}}
+.scene .spin{animation:spin 2.2s linear infinite;transform-box:fill-box;transform-origin:center}.scene .rise{animation:rise 2.4s linear infinite}.scene .rise.d1{animation-delay:.8s}.scene .rise.d2{animation-delay:1.6s}
+.scene .ship{animation:ship 6s linear infinite}.scene .pulse{animation:pulse 2.4s ease-out infinite;transform-box:fill-box;transform-origin:center}.scene .pulse.d1{animation-delay:.8s}.scene .pulse.d2{animation-delay:1.6s}
+.scene .band{animation:band 3s linear infinite}.scene .draw{stroke-dasharray:260;stroke-dashoffset:260;animation:draw 4s linear infinite}.scene .tick{animation:tick 4s linear infinite}.scene .tick.d1{animation-delay:.6s}.scene .tick.d2{animation-delay:1.2s}
+.scene .belt{animation:belt 1.6s linear infinite}.scene .dip{animation:dip 1.6s ease-in-out infinite}.scene .gauge{animation:gauge 3s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}.scene .out{animation:out 2s linear infinite}
+.scene .pop{animation:pop 3s ease-out infinite;transform-box:fill-box;transform-origin:center}.scene .carry{animation:carry 3s ease-in-out infinite alternate}
+@media (prefers-reduced-motion:reduce){.scene *{animation:none!important}.door{transition:none}}
 /* corner panels */
-.panel{position:absolute;z-index:3;width:min(30%,300px);background:color-mix(in oklab,var(--paper) 92%,transparent);border:1px solid var(--ink);padding:10px 12px;opacity:0;transform:translateY(6px);pointer-events:none;transition:opacity .5s,transform .5s}
+.panel{position:absolute;z-index:3;width:min(31%,340px);background:color-mix(in oklab,var(--paper) 92%,transparent);border:1px solid var(--ink);padding:10px 12px;opacity:0;transform:translateY(6px);pointer-events:none;transition:opacity .5s,transform .5s}
 .panel.on{opacity:1;transform:none}
 .panel.now{box-shadow:0 0 0 2px var(--ink)}
 #p0{left:12px;top:12px}#p1{right:12px;top:12px}#p2{left:12px;bottom:12px}#p3{right:12px;bottom:12px}
@@ -91,23 +114,24 @@ a{color:var(--tol)}
 </head>
 <body>
 <div class="wrap">
-<div class="bar"><span class="eyebrow">Peptide Supply Atlas · The ride · As of <span id="asof"></span></span><a href="atlas.html">Go deeper: the atlas plate, the register and the sources →</a></div>
+<div class="bar"><span class="eyebrow">The Peptide Ride · As of <span id="asof"></span></span><a href="map.html">Go deeper: the map, the facilities, the register and the sources →</a></div>
 <div id="stage">
   <div id="counter">
     <div><div class="eyebrow">Place your order</div><h1>Which peptide, and how does it reach you?</h1>
-      <p class="lede">Pick one. The cart climbs the track that today's US rules lay down for it, each station shows what is permitted at that step, and the plate at the end gives you the facts with their dates and sources. About fifty seconds.</p>
+      <p class="lede">Pick one at the counter. The doors open, the cart climbs the track that today's US rules lay down for it, four windows show the work at each step and whether the rules permit it, and the plate at the end gives you the facts with their dates and sources. About a minute.</p>
       <div class="acts"><button class="btn" id="board" disabled>Board the cart</button><button class="btn ghost" id="skipRide" disabled>Skip the ride, show the plate</button></div>
       <p class="note" style="margin-top:12px">Maps public guidance as of the date above. Not legal advice. The HHS policy of 2026-10-30 is a draft under comment.</p></div>
     <ol class="menu" id="menu"></ol>
   </div>
+  <div id="doors"><div class="door l"><span>The ride</span></div><div class="door r"><span>Boarding</span></div></div>
   <div id="hud"></div>
   <div class="panel" id="p0"></div><div class="panel" id="p1"></div><div class="panel" id="p2"></div><div class="panel" id="p3"></div>
   <button class="btn ghost" id="skip">Skip to the plate</button>
   <div id="readout"><div class="plate" id="plate"></div></div>
 </div>
 <div class="below">
-  <div><h2>How to read the ride</h2><p>Four stations on the climb: source, fill and finish, pharmacy, prescriber. Green means the rules permit the step, amber means with conditions, red means the gate is closed. A cart that stops at a gate, or gets shunted onto the research-use-only siding, is the answer.</p></div>
-  <div><h2>Where the facts come from</h2><p>Every status and date on the plate is a row in the federal register behind this tool: FDA's lists and letters, the Federal Register, the courts. The <a href="atlas.html">atlas plate</a> holds the register, the 503B facilities and the documented supply routes.</p></div>
+  <div><h2>How to read the ride</h2><p>Four windows open on the climb, one per station: the raw source, purifying and testing, fill and finish, dispensing. Green means the rules permit the step, amber means with conditions, red means the gate is closed. A cart that stops at a gate, or gets shunted onto the research-use-only siding, is the answer.</p></div>
+  <div><h2>Where the facts come from</h2><p>Every status and date on the plate is a row in the federal register behind this tool: FDA's lists and letters, the Federal Register, the courts. The <a href="map.html">map</a> holds the register, the 503B facilities and the documented supply routes.</p></div>
   <div><h2>What it is not</h2><p>Not legal advice, and not a statement that any peptide is safe or works. "Tolerated" means FDA or HHS says it does not intend to act while conditions are met. It is never approval.</p></div>
 </div>
 </div>
@@ -122,11 +146,16 @@ const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"]/g,c=>({'&
 $('#asof').textContent=D.asOf;
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-const ICONS={ // line drawings for the four panels
-  Source:`<svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M4 52V26l12-8v8l12-8v8l12-8v34H4z"/><path d="M8 20V8h5v12"/><circle cx="78" cy="30" r="14"/><path d="M64 30h28M78 16c-6 8-6 20 0 28M78 16c6 8 6 20 0 28"/><path d="M98 46h18v10H98z"/><path d="M98 51h18M107 46v10"/><path d="M92 30l6 4-6 4"/></svg>`,
-  'Fill and finish':`<svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M6 20h26v32H6z"/><circle cx="19" cy="36" r="7"/><path d="M19 29v7l4 3"/><path d="M10 14h18v6H10z"/><g><path d="M48 24h8v26h-8zM50 18h4v6h-4zM60 24h8v26h-8zM62 18h4v6h-4zM72 24h8v26h-8zM74 18h4v6h-4z"/></g><path d="M90 30h24v18H90z"/><path d="M94 36h16M94 41h10"/></svg>`,
-  Pharmacy:`<svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M6 52V30h108v22"/><path d="M6 30l8-10h92l8 10"/><path d="M30 20V10h60v10"/><path d="M40 14h40"/><path d="M14 38h22v10H14z"/><path d="M18 42h14"/><path d="M68 44c0-6 4-9 8-9s8 3 8 9"/><path d="M62 44h28"/><path d="M80 24l6-8"/><path d="M98 38h12v10H98z"/></svg>`,
-  'Prescriber and you':`<svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><circle cx="28" cy="16" r="7"/><path d="M14 52c0-14 6-22 14-22s14 8 14 22"/><path d="M22 34l6 6 6-6"/><path d="M48 22h20v26H48z"/><path d="M53 30h10M53 36h10M53 42h6"/><circle cx="94" cy="18" r="7"/><path d="M80 52c0-14 6-22 14-22s14 8 14 22"/><path d="M72 36h8"/></svg>`};
+const SCENES=[ // one animated process scene per window: source, purify and test, fill and finish, dispense
+`<svg class="scene" viewBox="0 0 200 92" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><g><circle cx="16" cy="22" r="2.4" fill="currentColor"/><circle class="pulse" cx="16" cy="22" r="4"/><circle cx="36" cy="34" r="2.4" fill="currentColor"/><circle class="pulse d1" cx="36" cy="34" r="4"/><circle cx="24" cy="54" r="2.4" fill="currentColor"/><circle class="pulse d2" cx="24" cy="54" r="4"/><text x="22" y="20">China</text><text x="42" y="37">India</text><text x="30" y="57">EU · US</text><text x="6" y="80">API origins</text></g><rect x="60" y="58" width="9" height="18"/><rect x="71" y="58" width="9" height="18"/><text x="58" y="86">amino acids</text><rect x="86" y="24" width="38" height="52" rx="7"/><line x1="105" y1="12" x2="105" y2="52"/><g class="spin"><line x1="94" y1="52" x2="116" y2="52"/><line x1="105" y1="46" x2="105" y2="58"/></g><circle class="rise" cx="96" cy="72" r="1.6"/><circle class="rise d1" cx="106" cy="72" r="1.6"/><circle class="rise d2" cx="114" cy="72" r="1.6"/><text x="84" y="86">synthesis reactor</text><g class="ship"><path d="M132 70 h36 l-4 8 h-30 z"/><rect x="137" y="61" width="10" height="9"/><rect x="149" y="61" width="10" height="9"/><rect x="143" y="53" width="10" height="8"/></g><path d="M128 82 q6 -3 12 0 t12 0 t12 0 t12 0 t12 0 t6 0" opacity=".7"/><text x="140" y="90">to the US importer</text></svg>`,
+`<svg class="scene" viewBox="0 0 200 92" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><rect x="12" y="10" width="14" height="66" rx="3"/><rect class="band" x="14" y="12" width="10" height="8" fill="currentColor" opacity=".55"/><text x="6" y="88">HPLC column</text><rect x="42" y="12" width="92" height="60"/><path class="draw" d="M46 66 L58 64 L63 42 L67 64 L82 63 L88 18 L93 64 L108 62 L114 52 L118 64 L130 64"/><text x="44" y="82">purity by HPLC, identity by mass spec</text><rect x="146" y="10" width="48" height="66"/><line x1="152" y1="20" x2="188" y2="20"/><line x1="152" y1="26" x2="176" y2="26"/><path class="tick" d="M153 38 l4 4 l7 -8"/><line x1="168" y1="38" x2="188" y2="38" opacity=".6"/><path class="tick d1" d="M153 50 l4 4 l7 -8"/><line x1="168" y1="50" x2="188" y2="50" opacity=".6"/><path class="tick d2" d="M153 62 l4 4 l7 -8"/><line x1="168" y1="62" x2="188" y2="62" opacity=".6"/><text x="146" y="86">certificate of analysis</text></svg>`,
+`<svg class="scene" viewBox="0 0 200 92" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><line x1="4" y1="74" x2="118" y2="74"/><g class="belt">${[0,1,2,3,4,5,6].map(k=>`<rect x="${8+k*18}" y="58" width="8" height="15" rx="1"/><rect x="${9+k*18}" y="54" width="6" height="4"/>`).join('')}</g><g class="dip"><rect x="58" y="28" width="4" height="20"/><path d="M52 28 h16 v-9 h-16 z"/></g><text x="4" y="86">filling line, sterile</text><rect x="130" y="14" width="42" height="58" rx="3"/><line x1="136" y1="40" x2="166" y2="40"/><line x1="136" y1="50" x2="166" y2="50"/><line x1="136" y1="60" x2="166" y2="60"/><circle cx="151" cy="27" r="7"/><line class="gauge" x1="151" y1="27" x2="151" y2="21"/><text x="128" y="84">lyophilizer, −40 °C</text><rect x="178" y="46" width="18" height="14"/><rect class="out" x="181" y="62" width="12" height="6" fill="currentColor" opacity=".5"/><text x="176" y="84">labels</text></svg>`,
+`<svg class="scene" viewBox="0 0 200 92" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M4 78 V56 h118 v22"/><path d="M4 56 l10 -12 h98 l10 12"/><rect x="30" y="30" width="13" height="22" rx="1"/><rect x="31" y="27" width="11" height="4"/><rect x="31" y="38" width="11" height="10" fill="currentColor" opacity=".25"/><line x1="33" y1="41" x2="40" y2="41"/><line x1="33" y1="44" x2="40" y2="44"/><text x="18" y="88">labeled vial: patient, lot, date</text><g class="pop"><circle cx="76" cy="40" r="9"/><text x="76" y="43" text-anchor="middle" style="font-size:8px;fill:currentColor">Rx</text></g><g class="carry"><rect x="98" y="62" width="18" height="14"/><line x1="98" y1="69" x2="116" y2="69"/></g><circle cx="172" cy="30" r="7"/><path d="M158 76 c0 -18 6 -28 14 -28 s14 10 14 28"/><text x="150" y="88">to one patient</text></svg>`];
+const CHIPS={0:{brand:['API manufacturer, FDA-registered','Drug Master File','Green List, IA 66-80'],tolerated:['Bulk substance','Certificate of analysis','Source conditions, draft policy'],listed:['Bulk substance','FDA-registered supplier','Certificate of analysis'],mixed:['Bulk substance','Certificate of analysis'],component:['Bulk substance','503B supplier qualification'],closed:['No lawful bulk source'],none:['No lawful source']},
+ 1:{brand:['cGMP release testing'],tolerated:['Identity · purity · sterility · endotoxin'],listed:['USP <797>','Certificate of analysis'],mixed:['Certificate of analysis'],component:['cGMP','Release testing'],closed:['No lot to test'],none:['No lot to test']},
+ 2:{brand:['Manufacturer, cGMP','503A only if not a copy'],tolerated:['503A pharmacy','Physician office','Federal facility','Not 503B'],listed:['503A pharmacy, Category 1'],mixed:['503A, non-injectable'],component:['503B outsourcing facility, Category 1'],closed:['Gate closed: 503A and 503B'],none:['No 503A or 503B path']},
+ 3:{brand:['Approved product','Prescription','Licensed pharmacy'],tolerated:['Prescription, one patient','Adverse events reported'],listed:['Prescription, one patient'],mixed:['Prescription, one patient'],component:['Prescription or office use'],closed:['Nothing to dispense'],none:['Nothing to dispense']}};
+const PANEL=['p0','p2','p1','p3']; // window order: north-west, south-west, north-east, south-east
 const STATUS={ok:'Permitted',cond:'With conditions',no:'Not permitted',brand:'Approved product'};
 
 /* ---------- the counter ---------- */
@@ -143,7 +172,7 @@ function plate(c){const st=c.stations;$('#plate').innerHTML=`<div class="eyebrow
   <ul class="stations">${st.map(([s,n,t])=>`<li><b><span class="l3 sm"><i class="i-${s}"></i>${STATUS[s]}</span><br>${esc(n)}</b>${esc(t)}</li>`).join('')}</ul>
   <div class="k">Enforcement</div><p class="v" style="margin:0 0 12px">${esc(c.enforce)}</p>
   <div class="k">Dates</div><ul class="dates">${c.dates.map(x=>`<li><span class="d">${x.date}</span><span>${esc(x.what)} <a href="${esc(x.url)}" target="_blank" rel="noopener">source</a></span></li>`).join('')}</ul>
-  <div class="acts"><button class="btn" id="again">Order another</button><a class="btn ghost" href="atlas.html" style="text-decoration:none">Go deeper: the atlas plate</a></div>
+  <div class="acts"><button class="btn" id="again">Order another</button><a class="btn ghost" href="map.html" style="text-decoration:none">Go deeper: the map</a></div>
   <p class="foot">As of ${D.asOf}. Maps public guidance; not legal advice. Tolerated is never approved. The HHS policy is a draft under comment (<a href="${esc(D.hhsUrl)}" target="_blank" rel="noopener">Federal Register notice</a>).</p>`;
   $('#readout').classList.add('on');$('#again').onclick=reset}
 
@@ -193,21 +222,22 @@ const nose=new THREE.Group();const nb=new THREE.Mesh(new THREE.BoxGeometry(2.2,.
 const ride={t:0,on:'main',s:0,card:null};let anim=null;
 function place(){const c=ride.on==='main'?MAIN:SIDING,t=Math.min(ride.t,1),p=c.getPointAt(t),q=c.getPointAt(Math.min(t+.012,1));camera.position.set(p.x,p.y+2.1,p.z);camera.lookAt(q.x,q.y+1.7,q.z)}
 function lamp(st,status){const col={ok:css('--ok'),cond:css('--warn'),no:css('--enf'),brand:css('--tol')}[status]||'#888';st.lamps.forEach(m=>{m.material.color.set(col);m.material.emissive.set(col);m.material.emissiveIntensity=.8})}
-function showPanel(i,c,now){const [s,n,t]=c.stations[i],el=$('#p'+i);el.className='panel on s-'+s+(now?' now':'');el.innerHTML=`<h3>${i+1} · ${esc(n)}</h3>${ICONS[n]||''}<div class="st">${STATUS[s]}</div><p>${esc(t)}</p>`;document.querySelectorAll('.panel').forEach((x,k)=>{if(k!==i)x.classList.remove('now')});
+function showPanel(i,c,now){const [s,n,t]=c.stations[i],el=$('#'+PANEL[i]);el.className='panel on s-'+s+(now?' now':'');el.innerHTML=`<h3>${i+1} · ${esc(n)}</h3><div class="chips">${(CHIPS[i][c.track]||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div>${SCENES[i]}<div class="st">${STATUS[s]}</div><p>${esc(t)}</p>`;document.querySelectorAll('.panel').forEach(x=>{if(x.id!==PANEL[i])x.classList.remove('now')});
   $('#hud').textContent=`${c.name} · station ${i+1} of 4 · ${n}`}
 function start(c,skip){ride.card=c;$('#counter').classList.add('off');$('#readout').classList.remove('on');
   stations.forEach((st,i)=>{lamp(st,c.stations[i][0]);st.barrier.visible=c.track==='closed'&&i===c.stop;$('#sg'+i).innerHTML=`<i class="i-${c.stations[i][0]}"></i>`});
   siding.visible=siding.userData.buffer.visible=siding.userData.label.visible=c.track==='none';
   if(skip||reduce){c.stations.forEach((_,i)=>showPanel(i,c,false));plate(c);return}
-  ride.t=0;ride.on='main';place();$('#hud').style.display='block';$('#skip').style.display='block';$('#hud').textContent=c.name+' · leaving the counter';document.querySelectorAll('.panel').forEach(p=>p.className='panel');
-  const tl=gsap.timeline({onComplete:()=>end(c)});anim=tl;let shown=-1;
+  ride.t=0;ride.on='main';place();$('#hud').style.display='block';$('#skip').style.display='block';$('#hud').textContent=c.name+' · the doors';document.querySelectorAll('.panel').forEach(p=>p.className='panel');
+  const doors=$('#doors');doors.classList.remove('open');doors.classList.add('show');setTimeout(()=>doors.classList.add('open'),300);setTimeout(()=>{doors.classList.remove('show');$('#hud').textContent=c.name+' · leaving the counter'},1600); // the doors swing open onto the track, then the cart rolls
+  const tl=gsap.timeline({onComplete:()=>end(c)});anim=tl;let shown=-1;tl.to({},{duration:1.4});
   const watch=()=>{if(ride.on!=='main')return;for(let i=0;i<4;i++)if(ride.t>=T[i]-.03&&shown<i){shown=i;showPanel(i,c,true)}};
   if(c.track==='none'){tl.to(ride,{t:T[0]+.02,duration:9,ease:'power1.inOut',onUpdate:watch}).call(()=>{ride.on='siding';ride.t=0;$('#hud').textContent=c.name+' · shunted onto the research-use-only siding';for(let i=1;i<4;i++)showPanel(i,c,false)}).to(ride,{t:1,duration:11,ease:'power1.inOut'}).to({},{duration:1.2})}
   else if(c.track==='closed'){const tt=T[c.stop]-.035;tl.to(ride,{t:tt,duration:9+tt*40,ease:'power1.out',onUpdate:watch}).call(()=>{for(let i=c.stop;i<4;i++)showPanel(i,c,i===c.stop);$('#hud').textContent=c.name+' · the gate is closed'}).to({},{duration:1.6})}
   else{tl.to(ride,{t:.62,duration:30,ease:'none',onUpdate:watch}).call(()=>{$('#hud').textContent=c.name+' · over the crest'}).to(ride,{t:1,duration:10,ease:'power2.inOut'}).to({},{duration:.8})}}
 function end(c){$('#hud').style.display='none';$('#skip').style.display='none';plate(c)}
-function reset(){if(anim)anim.kill();ride.t=0;ride.on='main';place();$('#readout').classList.remove('on');$('#hud').style.display='none';$('#skip').style.display='none';document.querySelectorAll('.panel').forEach(p=>p.className='panel');$('#counter').classList.remove('off')}
-$('#board').onclick=()=>picked&&start(picked,false);$('#skipRide').onclick=()=>picked&&start(picked,true);$('#skip').onclick=()=>{if(anim)anim.kill();end(ride.card)};
+function reset(){if(anim)anim.kill();$('#doors').classList.remove('show','open');ride.t=0;ride.on='main';place();$('#readout').classList.remove('on');$('#hud').style.display='none';$('#skip').style.display='none';document.querySelectorAll('.panel').forEach(p=>p.className='panel');$('#counter').classList.remove('off')}
+$('#board').onclick=()=>picked&&start(picked,false);$('#skipRide').onclick=()=>picked&&start(picked,true);$('#skip').onclick=()=>{if(anim)anim.kill();$('#doors').classList.remove('show','open');end(ride.card)};
 /* the idle view behind the counter: a slow look along the line from the platform */
 ride.t=.02;place();
 function resize(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);labels.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix()}
