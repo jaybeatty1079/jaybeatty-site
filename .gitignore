@@ -5,3 +5,8 @@ node_modules/
 cms-sources/
 data_hospital_metrics*.json
 dist/
+
+# agent skills installed by npx skills add; local tooling, not part of the site
+.agents/
+.claude/skills/
+skills-lock.json
