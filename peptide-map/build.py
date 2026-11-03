@@ -115,13 +115,101 @@ reg_rows = [{'date': r['date_in_effect'], 'body': r['body'], 'what': r['what_it_
 
 data = {'asOf': AS_OF, 'fdaListN': fda_list_n, 'facilities': fac, 'timeline': timeline, 'compounds': compounds, 'routes': routes, 'nodes': nodes, 'origins': origins, 'sources': sources, 'register': reg_rows,
         'us': json.load(open(os.path.join(HERE, 'data/us-states-albers-10m.json'))), 'world': json.load(open(os.path.join(HERE, 'data/world-110m.json')))}
-tpl = open(os.path.join(HERE, 'template.html')).read()
+tpl = open(os.path.join(HERE, 'atlas-template.html')).read()
 out = tpl.replace('/*__DATA__*/', json.dumps(data, separators=(',', ':')).replace('</', '<\\/'))
-open(os.path.join(HERE, 'index.html'), 'w').write(out)
+open(os.path.join(HERE, 'atlas.html'), 'w').write(out)
 # the artifact publisher wraps a page in its own document skeleton, so it gets the same page without the wrapper tags
 art = out
 for tag in ['<!doctype html>', '<html lang="en">', '<head>', '</head>', '<body>', '</body>', '</html>', '<meta charset="utf-8">', '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">']:
     art = art.replace(tag, '', 1)
 art = art.replace('<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml"><link rel="icon" href="/favicon.ico?v=2" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">', '')
-open(os.path.join(HERE, 'artifact.html'), 'w').write(art.strip() + '\n')
-print('index.html', len(out) // 1024, 'KB;', len(fac), 'facilities,', len(timeline), 'timeline rows,', len(routes), 'routes,', len(sources), 'sources,', len(reg_rows), 'register rows')
+RIDE_ART = 'https://claude.ai/artifact/1y6Y6xAFm76vHBFG96ZLPg'; ATLAS_ART = 'https://claude.ai/artifact/Uc5sbnmU6cgKJ3XahexJbN'  # the private previews link to each other
+open(os.path.join(HERE, 'artifact.html'), 'w').write(art.strip().replace('href="index.html"', 'href="' + RIDE_ART + '"') + '\n')
+
+def strip_wrapper(html):
+    for tag in ['<!doctype html>', '<html lang="en">', '<head>', '</head>', '<body>', '</body>', '</html>', '<meta charset="utf-8">', '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">']:
+        html = html.replace(tag, '', 1)
+    return html.replace('<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml"><link rel="icon" href="/favicon.ico?v=2" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">', '').strip() + '\n'
+
+# ---------- the ride: one card per compound, every date a register row ----------
+HHS = row('2026-10-30 (announced'); SEP23 = row('2023-09-29'); APR26 = row('2026-04-22 (FDA'); MAY26 = row('2026-05-14'); PCAC26 = row('2026-07-23'); PCAC24A = row('2024-10-29'); PCAC24B = row('2024-12-04')
+B503 = row('2025-03-21'); SEMA = row('2025-02-21'); TIRZ = row('2024-10-02'); PROP = row('2026-05-01'); CA5 = row('2026-08-27'); FEB26 = row('2026-02-06'); RETA25 = row('2025-09-09'); RUO26 = row('2026-08-24'); EMP = row('2026-09-18'); GREEN = row('2025-09-05'); RUO24 = row('2024-12-10')
+def d(date, what, r): return {'date': date, 'what': what, 'url': r['url']}
+HHS_SIX = {'a': 'Not in any FDA category since the April 2026 withdrawals. The advisory committee recommended it for the 503A list in July 2026; FDA has not acted.', 'hhs': 'Covered by the draft policy of 2026-10-30, with conditions on source, testing, labeling and reporting. A draft, under comment.', 'b': 'Not covered. 503B outsourcing facilities are outside the policy.',
+           'path': 'Today the only tolerated path is a 503A pharmacy, a physician or a federal facility compounding it for one patient under the draft conditions. Nothing is approved, and FDA says tolerance is not approval.',
+           'stations': [['cond', 'Source', 'The draft policy sets conditions on where the bulk substance comes from and how it is tested. The appendix itself was not readable; the conditions are as law firms report them.'], ['cond', 'Fill and finish', 'Compounded per prescription, with the policy\'s testing and labeling conditions. No batch production.'], ['ok', 'Pharmacy', 'A 503A pharmacy, a physician\'s office or a federal facility. A 503B facility is not covered.'], ['ok', 'Prescriber and you', 'A prescription for one named patient. No marketing claims; adverse events reported.']],
+           'enforce': 'No warning letter naming this peptide for human-use sale was found in FDA\'s letters of 2024 to 2026; claims of 2026 letters online were not confirmed.'}
+def six(id, name, aka, vote):
+    c = dict(HHS_SIX); c.update({'id': id, 'name': name, 'aka': aka, 'track': 'tolerated', 'dates': [d('2023-09-29', 'Placed in 503A Category 2 (bulk compounding stopped)', SEP23), d('2026-04-22', 'Nomination withdrawn: out of Category 2, not added to Category 1', APR26), d('2026-07-23', 'Advisory committee recommends it for the 503A list, ' + vote, PCAC26), d('2026-10-30', 'HHS draft enforcement-discretion policy covers it, 503A only', HHS)]})
+    return c
+CARDS = [
+    six('bpc-157', 'BPC-157', 'a 15-residue fragment of a gastric protein, sold for healing claims', 'eight votes to six'),
+    six('tb-500', 'TB-500', 'a fragment of thymosin beta-4', 'eight votes to six'),
+    six('mots-c', 'MOTS-c', 'a mitochondrial-derived peptide', 'seven votes to five'),
+    six('kpv', 'KPV', 'a three-residue fragment of alpha-MSH', 'eight votes to six'),
+    six('epitalon', 'Epitalon', 'a synthetic four-residue peptide', 'seven votes to four'),
+    six('semax', 'Semax', 'a synthetic ACTH fragment, route limits reported in the policy', 'eight votes to five'),
+    {'id': 'ipamorelin', 'name': 'Ipamorelin', 'aka': 'a growth-hormone secretagogue', 'track': 'closed', 'stop': 2,
+     'a': 'Not in any category. The advisory committee voted 0 to 12 against listing it in October 2024, and FDA has published nothing since.', 'hhs': 'Not in the draft policy.', 'b': 'Category 2 since September 2023: 503B facilities may not compound it from bulk.',
+     'path': 'There is no lawful bulk-compounding path today, 503A or 503B. Products sold as "research use only" are unapproved drugs in FDA\'s letters.',
+     'stations': [['no', 'Source', 'No lawful bulk source for compounding. Research-grade powder sold online is an unapproved drug in FDA\'s letters.'], ['no', 'Fill and finish', 'Nothing to fill lawfully: no category, no tolerance.'], ['no', 'Pharmacy', 'The gate is closed for 503A (no listing, no tolerance) and for 503B (Category 2).'], ['no', 'Prescriber and you', 'Nothing compounded can be lawfully dispensed.']],
+     'enforce': 'Research-use-only sellers of peptides drew FDA warning letters in December 2024, March 2026 and August 2026; the letters cite the "research use only" label as no defense.',
+     'dates': [d('2023-09-29', 'Placed in 503B Category 2', SEP23), d('2024-10-29', 'Advisory committee votes 0 to 12 against 503A listing', PCAC24A), d('2024-12-10', 'First warning letters to research-use-only peptide sellers', RUO24)]},
+    {'id': 'cjc-1295', 'name': 'CJC-1295', 'aka': 'a GHRH analogue, with and without DAC', 'track': 'closed', 'stop': 2,
+     'a': 'The advisory committee voted against every form in December 2024. Not in any category.', 'hhs': 'Not in the draft policy.', 'b': 'Not listed.',
+     'path': 'No lawful bulk-compounding path today. Sold online as "research use only", which FDA\'s letters say is no defense.',
+     'stations': [['no', 'Source', 'No lawful bulk source for compounding.'], ['no', 'Fill and finish', 'Nothing to fill lawfully.'], ['no', 'Pharmacy', 'Closed: the committee voted against every form and FDA has listed none.'], ['no', 'Prescriber and you', 'Nothing compounded can be lawfully dispensed.']],
+     'enforce': 'Research-use-only sellers of peptides drew FDA warning letters in December 2024, March 2026 and August 2026.',
+     'dates': [d('2024-12-04', 'Advisory committee votes against CJC-1295 in every form', PCAC24B), d('2024-12-10', 'First warning letters to research-use-only peptide sellers', RUO24)]},
+    {'id': 'kisspeptin-10', 'name': 'Kisspeptin-10', 'aka': 'a reproductive-hormone peptide', 'track': 'closed', 'stop': 2,
+     'a': 'Category 2 since September 2023; the advisory committee voted 0 to 11 against listing it.', 'hhs': 'Not in the draft policy.', 'b': 'Not listed.',
+     'path': 'No lawful bulk-compounding path today.',
+     'stations': [['no', 'Source', 'No lawful bulk source for compounding.'], ['no', 'Fill and finish', 'Nothing to fill lawfully.'], ['no', 'Pharmacy', 'Closed: Category 2 for 503A, not listed for 503B.'], ['no', 'Prescriber and you', 'Nothing compounded can be lawfully dispensed.']],
+     'enforce': 'No letter naming kisspeptin-10 was found; research-use-only sellers in general drew letters in 2024 to 2026.',
+     'dates': [d('2023-09-29', 'Placed in 503A Category 2', SEP23), d('2024-10-29', 'Advisory committee votes 0 to 11 against 503A listing', PCAC24A)]},
+    {'id': 'nad', 'name': 'NAD+', 'aka': 'nicotinamide adenine dinucleotide, with NADH', 'track': 'listed',
+     'a': 'Category 1 on the 503A list of May 2026: FDA does not intend to act against bulk compounding while the rule is written. Tolerance, not approval.', 'hhs': 'Not needed; Category 1 already tolerates it.', 'b': 'Not listed for 503B.',
+     'path': 'A 503A pharmacy may compound it from bulk for a patient\'s prescription under Category 1. No 503B batch path.',
+     'stations': [['ok', 'Source', 'Bulk substance from a registered supplier with a certificate of analysis, as 503A conditions require.'], ['ok', 'Fill and finish', 'Compounded per prescription at a 503A pharmacy.'], ['ok', 'Pharmacy', '503A under Category 1. 503B: not listed.'], ['ok', 'Prescriber and you', 'A prescription for one patient.']],
+     'enforce': 'No enforcement letter naming NAD+ was found.',
+     'dates': [d('2026-05-14', 'Current 503A category list: NAD and NADH in Category 1', MAY26)]},
+    {'id': 'ghk-cu', 'name': 'GHK-Cu', 'aka': 'a copper peptide, topical and injectable', 'track': 'mixed',
+     'a': 'Non-injectable forms are Category 1 (restored in May 2026 after a nominator\'s clarification). The injectable nomination was withdrawn; no tolerance for injection.', 'hhs': 'Not in the draft policy.', 'b': 'Not listed.',
+     'path': 'Topical or other non-injectable compounding is tolerated under Category 1 at a 503A pharmacy. Injectable GHK-Cu has no lawful bulk path.',
+     'stations': [['ok', 'Source', 'Bulk substance for non-injectable use, with a certificate of analysis.'], ['cond', 'Fill and finish', 'Creams and other non-injectable forms only. The injectable siding is closed.'], ['ok', 'Pharmacy', '503A under Category 1, non-injectable.'], ['ok', 'Prescriber and you', 'A prescription for one patient.']],
+     'enforce': 'No enforcement letter naming GHK-Cu was found.',
+     'dates': [d('2026-04-22', 'GHK-Cu removed from Category 1 after nominations were withdrawn', APR26), d('2026-05-14', 'Non-injectable GHK-Cu back in Category 1; injectable stays out', MAY26)]},
+    {'id': 'sermorelin', 'name': 'Sermorelin', 'aka': 'a GHRH analogue; its approved product, Geref, is discontinued', 'track': 'component',
+     'a': 'Not in a 503A category. The component-of-an-approved-drug route is a reading of the statute, not an FDA statement.', 'hhs': 'Not in the draft policy.', 'b': 'Category 1 on the 503B list, marked as a component of an approved drug.',
+     'path': 'A 503B outsourcing facility may compound it from bulk under Category 1. The 503A side rests on a legal reading, so it is drawn with conditions.',
+     'stations': [['ok', 'Source', 'Bulk sermorelin acetate for a 503B facility.'], ['ok', 'Fill and finish', 'Batch production at a registered 503B facility.'], ['cond', 'Pharmacy', '503B: Category 1. 503A: a legal reading, not an FDA listing.'], ['ok', 'Prescriber and you', 'Prescribed or office-use from a 503B batch.']],
+     'enforce': 'No enforcement letter naming sermorelin was found.',
+     'dates': [d('2025-03-21', '503B category list: sermorelin acetate in Category 1', B503)]},
+    {'id': 'semaglutide', 'name': 'Semaglutide', 'aka': 'the GLP-1 in Ozempic and Wegovy', 'track': 'brand',
+     'a': 'An approved drug. A 503A pharmacy may compound it only when the product is not essentially a copy, with a documented patient-specific difference. The shortage-based window closed in 2025.', 'hhs': 'Not in the draft policy.', 'b': 'Not on the 503B list. FDA proposed on 2026-05-01 not to add it; no final notice found.',
+     'path': 'The lawful line is the approved product from the manufacturer through a licensed pharmacy. Compounded copies lost their shortage cover in 2025, the Fifth Circuit affirmed FDA in August 2026, and mass-marketed compounded GLP-1s are an enforcement target.',
+     'stations': [['brand', 'Source', 'Branded API from the manufacturer. For compounders, only API from the Green List under Import Alert 66-80 clears the border.'], ['brand', 'Fill and finish', 'Branded pens from the manufacturer\'s plants. Compounded vials only when not a copy.'], ['cond', 'Pharmacy', 'Dispensing the approved product. 503A compounding only with a patient-specific difference; 503B: not listed.'], ['ok', 'Prescriber and you', 'A prescription for the approved product; telehealth sellers of compounded copies drew letters in 2026.']],
+     'enforce': 'FDA\'s statement of 2026-02-06, thirty telehealth warning letters in March 2026, the Empower letter of 2026-09-18, and research-use-only letters of 2026-08-24 naming semaglutide.',
+     'dates': [d('2025-02-21', 'Shortage declared resolved; 503A cover ended 2025-04-22, 503B 2025-05-22', SEMA), d('2025-09-05', 'Green List import alert 66-80 for GLP-1 APIs', GREEN), d('2026-02-06', 'FDA: all available tools against mass-marketed compounded GLP-1s', FEB26), d('2026-05-01', 'FDA proposes not to add it to the 503B list', PROP), d('2026-08-27', 'Fifth Circuit affirms FDA on the shortage delisting', CA5), d('2026-09-18', 'Warning letter to Empower Pharmacy', EMP)]},
+    {'id': 'tirzepatide', 'name': 'Tirzepatide', 'aka': 'the GIP/GLP-1 in Mounjaro and Zepbound', 'track': 'brand',
+     'a': 'An approved drug. Compounding only when not essentially a copy. The shortage was declared resolved in October and again in December 2024; cover ended in early 2025.', 'hhs': 'Not in the draft policy.', 'b': 'Not on the 503B list. FDA proposed on 2026-05-01 not to add it.',
+     'path': 'The lawful line is the approved product. Compounded copies lost their cover in 2025; the Fifth Circuit affirmed FDA in August 2026.',
+     'stations': [['brand', 'Source', 'Branded API from the manufacturer; for compounders only Green List API clears the border.'], ['brand', 'Fill and finish', 'Branded pens. Compounded vials only when not a copy.'], ['cond', 'Pharmacy', 'Dispensing the approved product. 503A only with a patient-specific difference; 503B: not listed.'], ['ok', 'Prescriber and you', 'A prescription for the approved product.']],
+     'enforce': 'FDA\'s statement of 2026-02-06 and the 2026 telehealth letters; the Empower letter of 2026-09-18 names a tirzepatide product.',
+     'dates': [d('2024-10-02', 'Shortage declared resolved', TIRZ), d('2025-09-05', 'Green List import alert 66-80', GREEN), d('2026-05-01', 'FDA proposes not to add it to the 503B list', PROP), d('2026-08-27', 'Fifth Circuit affirms FDA', CA5), d('2026-09-18', 'Warning letter to Empower Pharmacy', EMP)]},
+    {'id': 'retatrutide', 'name': 'Retatrutide', 'aka': 'an investigational triple agonist, not approved anywhere', 'track': 'none',
+     'a': 'FDA says it cannot be used in compounding: no approved product, no listing, no tolerance.', 'hhs': 'Not in the draft policy.', 'b': 'Same: cannot be used in compounding.',
+     'path': 'There is no lawful route to a patient outside a clinical trial. Everything sold online is an unapproved drug, and the letters say the "research use only" label is no defense.',
+     'stations': [['no', 'Source', 'No lawful source. Online sellers drew warning letters in September 2025 and August 2026.'], ['no', 'Fill and finish', 'Nothing can be lawfully filled.'], ['no', 'Pharmacy', 'No 503A or 503B path exists.'], ['no', 'Prescriber and you', 'Nothing can be lawfully prescribed outside a trial.']],
+     'enforce': 'Warning letters of 2025-09-09 (ASN-LABS, GLP-1 Solution) and 2026-08-24 (NuScience, Royal Peptides) name retatrutide.',
+     'dates': [d('2025-09-09', 'Warning letters: compounded retatrutide qualifies under neither 503A nor 503B', RETA25), d('2026-08-24', 'Warning letters to NuScience and Royal Peptides', RUO26)]},
+]
+TRACKS = {'tolerated': 'Tolerated under a draft', 'closed': 'Closed gate', 'listed': 'Category 1', 'mixed': 'Open for topical, closed for injection', 'component': '503B line', 'brand': 'Brand line', 'none': 'No lawful route'}
+for c in CARDS: c['trackLabel'] = TRACKS[c['track']]
+ride = {'asOf': AS_OF, 'cards': CARDS, 'hhsUrl': HHS['url']}
+rt = open(os.path.join(HERE, 'ride-template.html')).read()
+rout = rt.replace('/*__DATA__*/', json.dumps(ride, separators=(',', ':')).replace('</', '<\\/'))
+open(os.path.join(HERE, 'index.html'), 'w').write(rout)
+open(os.path.join(HERE, 'ride-artifact.html'), 'w').write(strip_wrapper(rout).replace('href="atlas.html"', 'href="' + ATLAS_ART + '"'))
+print('index.html (ride)', len(rout) // 1024, 'KB;', len(CARDS), 'cards')
+print('atlas.html', len(out) // 1024, 'KB;', len(fac), 'facilities,', len(timeline), 'timeline rows,', len(routes), 'routes,', len(sources), 'sources,', len(reg_rows), 'register rows')
