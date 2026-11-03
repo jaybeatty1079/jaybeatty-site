@@ -176,6 +176,14 @@ details.tbl th{color:var(--muted);font-weight:500}
 .ct{display:grid;gap:4px}
 .ct .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .ct .v{font-size:1.05rem;user-select:all}
+.cform{margin-top:32px;padding-top:28px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;max-width:720px}
+.cform .f{display:grid;gap:6px;min-width:0}.cform .f.w{grid-column:1/-1}
+.cform label{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cform input,.cform textarea{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--fg);border-radius:6px;padding:11px 12px;font:inherit;font-size:.95rem}
+.cform input:focus,.cform textarea:focus{outline:none;border-color:var(--purple)}.cform textarea{min-height:120px;resize:vertical}
+.cform .act{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:14px}.cform .note{font-size:.8rem;color:var(--muted)}.cform .ok{grid-column:1/-1;display:none;color:var(--green-soft);font-size:.95rem}
+.cform .sr{position:absolute;left:-9999px}
+@media (max-width:620px){.cform{grid-template-columns:1fr}}
 .ct button{justify-self:start;margin-top:4px;background:none;border:1px solid var(--line);color:var(--muted);border-radius:4px;padding:3px 8px;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
 footer{padding-block:28px;font-size:.8rem;color:var(--muted);border-top:1px solid var(--line)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
@@ -560,7 +568,7 @@ nav .links{margin-left:auto}
       <h2 style="margin-top:12px">Jay Beatty</h2>
       <p style="margin-top:18px">I started in operating rooms and ended up running a laboratory. The thread through all of it is the same: find the buyer, earn the meeting, close, then build the system so it happens again without me in every room.</p>
       <p>I've spent my career in healthcare sales and operations, first selling implants and biologics to orthopedic surgeons, then leading national sales through independent distributors, then running a clinical laboratory as COO through the largest testing program in its history. For the last two years I've worked as an independent business development consultant, usually running two engines at once for companies in an early growth phase.</p>
-      <p>I have two home markets. I'm based in Ventura, California, where I've spent twenty years selling across the West, and I grew up in Central Pennsylvania, between Harrisburg, York and Lancaster. I work with clients nationwide and travel when the work calls for it.</p><p>My degree is in biomedical physics from Cal State Northridge, which mostly means I read the clinical papers before I sell the product. I hold a California Life, Accident and Health producer license, transferring to Pennsylvania, and held a DoD Secret clearance earlier in my career. I run my own prospecting, research and forecasting with AI agents every day, with HubSpot as the system of record.</p>
+      <p>I am bicoastal. I spent twenty years in Ventura, California, selling across the West, and I am based between Ventura and Mechanicsburg, Pennsylvania, where I grew up between Harrisburg, York and Lancaster. I travel when the work calls for it.</p><p>My degree is in biomedical physics from Cal State Northridge, which mostly means I read the clinical papers before I sell the product. I hold a California Life, Accident and Health producer license, transferring to Pennsylvania, and held a DoD Secret clearance earlier in my career. I run my own prospecting, research and forecasting with AI agents every day, with HubSpot as the system of record.</p>
       <h3 style="margin-top:28px">Good fit if you are</h3>
       <ul class="fit">
         <li>A medtech, diagnostics or healthcare AI company opening a territory or a new specialty</li>
@@ -595,9 +603,18 @@ nav .links{margin-left:auto}
     <div class="ct"><span class="k">Phone</span><a class="v" id="ph" href="tel:+18052184663">805.218.4663</a><button data-copy="ph">Copy</button></div>
     <div class="ct"><span class="k">LinkedIn</span><a class="v" href="https://linkedin.com/in/jaybeatty">linkedin.com/in/jaybeatty</a></div>
   </div>
+  <form class="cform" name="contact" method="POST" action="/?sent=1#contact" data-netlify="true" netlify-honeypot="bot-field" id="cform">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="sr"><label>Leave empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <div class="f"><label for="cfName">Name</label><input type="text" id="cfName" name="name" required autocomplete="name"></div>
+    <div class="f"><label for="cfEmail">Email</label><input type="email" id="cfEmail" name="email" required autocomplete="email"></div>
+    <div class="f w"><label for="cfMsg">Message</label><textarea id="cfMsg" name="message" required placeholder="The role, the territory or the problem, and when you'd like to talk."></textarea></div>
+    <div class="act"><button class="btn primary" type="submit">Send message</button><span class="note">Goes to my inbox only. No list, no newsletter. I reply the same day.</span></div>
+    <p class="ok" id="cfOk" role="status">Thanks. Your message is in my inbox, and you'll hear from me today.</p>
+  </form>
 </div></section>
 </main>
-<footer><div class="wrap"><span>© 2026 Jay Beatty. JAB Industries LLC. Remote-first. Open to fractional engagements and full-time leadership roles.</span><span>Southern California and Central Pennsylvania. Working with clients nationwide.</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Jay Beatty. JAB Industries LLC. Remote-first. Open to fractional engagements and full-time leadership roles.</span><span>Ventura, CA and Central Pennsylvania. Working with clients nationwide.</span></div></footer>
 <div class="tip" id="tip" role="status" aria-live="polite"></div>
 
 <script>
@@ -742,6 +759,11 @@ table('mult-table',['Measure','Start','End','Multiple'],data.map(d=>[d.l,d.a,d.b
 
 
 /* copy buttons */
+(()=>{const f=document.getElementById('cform'),ok=document.getElementById('cfOk');if(!f)return;const live=/jaybeatty\.com$|netlify\.app$/.test(location.hostname);
+  if(new URLSearchParams(location.search).get('sent')==='1'){ok.style.display='block';f.querySelectorAll('input:not([type=hidden]),textarea').forEach(i=>i.disabled=true)} // the no-script path lands back here
+  f.addEventListener('submit',e=>{e.preventDefault();const btn=f.querySelector('button[type=submit]');btn.disabled=true;const done=()=>{ok.style.display='block';f.querySelectorAll('input:not([type=hidden]),textarea').forEach(i=>i.disabled=true)};
+    if(!live){ok.textContent='Preview build: nothing was sent. Email jay@jaybeatty.com instead.';done();return} // local and artifact previews have no Netlify behind them
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).then(r=>{if(!r.ok)throw 0;done()}).catch(()=>{btn.disabled=false;f.submit()})})})(); // form.submit() skips the submit event, so the plain POST goes straight to Netlify
 document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{const t=document.getElementById(b.dataset.copy).textContent;const done=()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500);};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done).catch(()=>{const r=document.createRange();r.selectNodeContents(document.getElementById(b.dataset.copy));const s=getSelection();s.removeAllRanges();s.addRange(r);});}}));
 })();
 </script>
