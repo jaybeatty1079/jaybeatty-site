@@ -110,6 +110,10 @@ loader.load(MODEL_URL, gltf => {
   fullBox = new THREE.Box3().setFromObject(root);
   frameBox(fullBox, 0, new THREE.Vector3(0.35, 0.15, 1));
   api.ready = true; host.hidden = false; wrap.classList.add('is3d');
+  /* visible pause and play for the idle rotation; hidden (and rotation off) under reduced motion. Interaction also stops it, so the label follows. */
+  const pb = document.getElementById('skel-pause');
+  if (pb && !reduced) { pb.hidden = false; api.syncRotate = () => { const on = controls.autoRotate; pb.classList.toggle('paused', !on); pb.querySelector('span').textContent = on ? 'Pause rotation' : 'Play rotation'; };
+    pb.addEventListener('click', () => { controls.autoRotate = !controls.autoRotate; needsRender = true; api.syncRotate(); }); api.syncRotate(); }
   const stats = Object.entries(byRegion).map(([r, l]) => `${r}:${l.length}`).join(' ');
   if (CFG.debug) console.log('ATLAS3D regions', stats);
   if (tip) tip.textContent = hint('click a bone');
@@ -138,7 +142,7 @@ function boxOf(region, sub) {
 }
 api.focus = (region, sub) => {
   if (!api.ready) { pending = { region, sub }; return; }
-  active = region || null; activeSub = sub || null; controls.autoRotate = false; restyle();
+  active = region || null; activeSub = sub || null; controls.autoRotate = false; if (api.syncRotate) api.syncRotate(); restyle();
   if (!region) { frameBox(fullBox, 750, new THREE.Vector3(0.35, 0.15, 1)); return; }
   /* the spine is best read from behind: orbit round to a posterior three-quarter view (a touch higher for the sacrum) */
   const hint = region === 'spine' ? new THREE.Vector3(-0.55, sub === 'sacroiliac' ? 0.45 : 0.18, -1) : null;
@@ -159,7 +163,7 @@ renderer.domElement.addEventListener('pointermove', e => {
   if (region !== hovered) { hovered = region; restyle(); renderer.domElement.style.cursor = region && region !== 'other' ? 'pointer' : 'grab'; }
   if (tip) { if (m && region !== 'other') { const lab = (window.ATLAS && window.ATLAS.regionLabel) ? window.ATLAS.regionLabel(region) : region; tip.innerHTML = `<b>${lab}</b>${m.userData.label ? ' · ' + String(m.userData.label).replace(/[_.]/g, ' ') : ''}`; } else if (!downAt) tip.textContent = active ? hint('zoom out to reset') : hint('click a bone'); }
 });
-renderer.domElement.addEventListener('pointerdown', e => { downAt = { x: e.clientX, y: e.clientY }; moved = false; controls.autoRotate = false; });
+renderer.domElement.addEventListener('pointerdown', e => { downAt = { x: e.clientX, y: e.clientY }; moved = false; controls.autoRotate = false; if (api.syncRotate) api.syncRotate(); });
 renderer.domElement.addEventListener('pointerup', e => {
   const wasDown = downAt; downAt = null; if (!wasDown || moved) return;
   const m = pickAt(e); if (!m) return; const region = m.userData.region; if (!region || region === 'other') return;

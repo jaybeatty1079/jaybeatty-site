@@ -10,13 +10,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
+:root{--t-fast:150ms;--t-base:260ms;--t-slow:480ms;--ease-out:cubic-bezier(.2,.7,.2,1);--ease-inout:cubic-bezier(.65,0,.35,1)}
+
 :root{--bg:#0b0a10;--surface:#14111e;--panel:#1c1730;--line:#2b2542;--fg:#ece9f5;--muted:#a79fc0;--purple:#8366ea;--purple-soft:#b7a6ff;--green:#22a85e;--green-soft:#6fe3a3;--teal:#10a197;--red:#e0607a;--amber:#e5b35a;--display:"Fraunces",Georgia,serif;--body:"IBM Plex Sans",-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;color-scheme:dark}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:var(--purple-soft);text-decoration:none}a:hover{text-decoration:underline}
 h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}h1{font-size:clamp(2rem,4.4vw,3.4rem)}h1 em{font-style:italic;color:var(--green-soft)}h2{font-size:clamp(1.6rem,3vw,2.3rem)}h3{font-size:1.15rem;font-weight:600}p{margin:0}
 .wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green-soft)}.eyebrow::before{content:"";display:inline-block;width:22px;height:1px;background:var(--green);vertical-align:middle;margin-right:10px}
-header{position:sticky;top:0;z-index:10;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}.brand{white-space:nowrap;flex-shrink:0;font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}.brand b{color:var(--green-soft);font-weight:400}.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color .15s,background-color .15s,color .15s}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none;outline:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}@media(max-width:860px){nav{height:auto;flex-wrap:wrap;padding-block:10px;row-gap:8px}.links{width:100%;padding-bottom:2px;-webkit-overflow-scrolling:touch}}
+header{position:sticky;top:0;z-index:10;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}.brand{white-space:nowrap;flex-shrink:0;font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}.brand b{color:var(--green-soft);font-weight:400}.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color var(--t-fast),background-color var(--t-fast),color var(--t-fast)}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}@media(max-width:860px){nav{height:auto;flex-wrap:wrap;padding-block:10px;row-gap:8px}.links{width:100%;padding-bottom:2px;-webkit-overflow-scrolling:touch}}
 section{padding-block:clamp(36px,5vw,64px);border-top:1px solid var(--line)}section.hero{border-top:0;padding-top:clamp(36px,5vw,56px)}
 .lede{color:var(--muted);max-width:66ch;font-size:1.05rem;margin-top:16px}
 .tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:24px}@media(max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -26,7 +28,7 @@ section{padding-block:clamp(36px,5vw,64px);border-top:1px solid var(--line)}sect
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}.seg button{all:unset;cursor:pointer;padding:8px 12px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.seg button.on{background:var(--purple);color:var(--fg)}
 .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.8rem;color:var(--muted)}.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
 #map{width:100%;height:auto;display:block}#map .state{fill:#1a1628;stroke:#2f2847;stroke-width:.8}#map .dot{stroke:#0b0a10;stroke-width:.6;cursor:pointer;opacity:.92}#map .dot.repay{fill:var(--red)}#map .dot.paid{fill:var(--green)}#map .dot.shield{fill:var(--amber)}#map .dot.none{fill:#5b5577}#map .dot:hover{stroke:#fff;stroke-width:1.5}
-.tip{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--line);color:var(--fg);padding:10px 12px;border-radius:8px;font-size:.82rem;line-height:1.4;opacity:0;transform:translate(-50%,calc(-100% - 12px));transition:opacity .12s;z-index:50;max-width:320px}.tip b{display:block;font-weight:600}.tip .m{color:var(--muted)}.tip .r{color:var(--red)}.tip .g{color:var(--green-soft)}
+.tip{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--line);color:var(--fg);padding:10px 12px;border-radius:8px;font-size:.82rem;line-height:1.4;opacity:0;transform:translate(-50%,calc(-100% - 12px));transition:opacity var(--t-fast);z-index:50;max-width:320px}.tip b{display:block;font-weight:600}.tip .m{color:var(--muted)}.tip .r{color:var(--red)}.tip .g{color:var(--green-soft)}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:22px}@media(max-width:860px){.grid2{grid-template-columns:1fr}}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}.card h3{margin-bottom:10px}.card h3 .k{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green-soft);margin-bottom:6px}
 table{width:100%;border-collapse:collapse;font-size:.86rem}th{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}td{padding:7px 8px;border-bottom:1px solid #231d3a;vertical-align:top}td.n{font-family:var(--mono);white-space:nowrap;text-align:right}td.r{color:var(--red)}td.g{color:var(--green-soft)}.tblwrap{overflow:auto;max-height:520px}
@@ -39,7 +41,7 @@ input[type=search]{font:inherit;font-size:.9rem;padding:8px 12px;border-radius:6
 html{scroll-padding-top:62px}
 /* phone pass: one-row header (brand + menu button, links drop down); anchors clear it by header + 12px */
 .menu-tg{display:none;flex:none;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--line);background:color-mix(in oklab,var(--fg) 6%,transparent);color:var(--fg);place-items:center;cursor:pointer}
-.menu-tg:hover,.menu-tg:focus-visible{border-color:var(--green-soft);outline:none}
+.menu-tg:hover,.menu-tg:focus-visible{border-color:var(--green-soft)}
 .menu-tg svg{width:18px;height:18px;display:block}.menu-tg .x,header.open .menu-tg .bars{display:none}header.open .menu-tg .x{display:block}
 @media(max-width:860px){
   html{scroll-padding-top:69px}
@@ -52,10 +54,45 @@ html{scroll-padding-top:62px}
 /* the grid column must be able to shrink or the table card pushes the page to 462px; the table then scrolls inside .tblwrap */
 @media(max-width:860px){.grid2{grid-template-columns:minmax(0,1fr)}.tblwrap{-webkit-overflow-scrolling:touch;background:linear-gradient(to left,var(--surface) 40%,transparent) right/40px 100% local no-repeat,linear-gradient(to left,rgba(131,102,234,.45),transparent) right/26px 100% scroll no-repeat}}
 .h-t{display:none}@media(hover:none),(pointer:coarse){.h-m{display:none}.h-t{display:inline}}
+
+/* motion-v1: shared hover lift, focus ring, plus-to-menu morph and dropdown. Tokens are in :root at the top of this sheet.
+   shortcut: lift uses the translate property (not transform) so it composes with the reveal; browsers older than 2022 simply skip the lift */
+:focus-visible{outline:2px solid var(--green-soft);outline-offset:2px}
+.btn,.chip,.tile,.prog,.card,.links a,.theme-tg,.menu-tg,.seg button{transition:transform var(--t-base) var(--ease-out),translate var(--t-base) var(--ease-out),box-shadow var(--t-base) var(--ease-out),border-color var(--t-fast) var(--ease-out),background-color var(--t-fast) var(--ease-out),color var(--t-fast) var(--ease-out),filter var(--t-fast) var(--ease-out)}
+@media(hover:hover){
+.btn:hover,.links a:hover,.tile:hover,.prog:hover,.card:hover{translate:0 -2px;box-shadow:0 10px 24px -12px rgba(8,4,20,.6)}
+.chip:hover{border-color:var(--green-soft);color:var(--fg)}
+}
+.btn:active,.links a:active{translate:0 0;box-shadow:none}
+.menu-tg{display:none;flex:none;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--line);background:color-mix(in oklab,var(--fg) 6%,transparent);color:var(--fg);place-items:center;cursor:pointer}
+.menu-tg:hover{border-color:var(--green-soft)}
+.menu-tg svg{width:18px;height:18px;display:block}
+.menu-tg svg path{transform-box:fill-box;transform-origin:center;transition:transform var(--t-base) var(--ease-inout),opacity var(--t-fast) var(--ease-out)}
+header.open .menu-tg{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent)}
+header.open .menu-tg .l1{transform:translateY(5px) rotate(45deg)}
+header.open .menu-tg .l2{opacity:0;transform:scaleX(.2)}
+header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
+@media(max-width:860px){
+  .menu-tg{display:grid}
+  nav .links{display:flex;visibility:hidden;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity var(--t-base) var(--ease-out),transform var(--t-base) var(--ease-out),visibility 0s linear var(--t-base)}
+  header.open nav .links{visibility:visible;opacity:1;transform:none;pointer-events:auto;transition-delay:0s}
+  nav .links a{opacity:0;transform:translateY(-6px);transition:opacity var(--t-base) var(--ease-out),transform var(--t-base) var(--ease-out),translate var(--t-base) var(--ease-out),box-shadow var(--t-base) var(--ease-out),border-color var(--t-fast) var(--ease-out),background-color var(--t-fast) var(--ease-out),color var(--t-fast) var(--ease-out)}
+  header.open nav .links a{opacity:1;transform:none;transition-delay:calc(var(--k,0)*40ms + 30ms),calc(var(--k,0)*40ms + 30ms),0s,0s,0s,0s,0s}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn:hover,.links a:hover,.tile:hover,.prog:hover,.card:hover{translate:none;box-shadow:none}
+  .menu-tg svg path,nav .links,nav .links a{transition:none!important}
+}
+
+/* motion-v1: scroll reveal (staggered rise-in) */
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity var(--t-slow) var(--ease-out),transform var(--t-slow) var(--ease-out),translate var(--t-base) var(--ease-out),box-shadow var(--t-base) var(--ease-out);transition-delay:calc(var(--i,0)*70ms),calc(var(--i,0)*70ms),0s,0s}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><nav><a class="brand" href="/">Jay <b>Beatty</b></a><div class="links" id="navlinks"><a href="/team-calculator/">Calculator</a><a href="#method">Method</a><a href="#states">By state</a><a href="/team-calculator/docs/decisions.html">How it was built</a><a href="/">jaybeatty.com</a></div><button class="menu-tg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6L6 18"/></svg></button></nav></div></header>
+<header><div class="wrap"><nav><a class="brand" href="/">Jay <b>Beatty</b></a><div class="links" id="navlinks"><a href="/team-calculator/">Calculator</a><a href="#method">Method</a><a href="#states">By state</a><a href="/team-calculator/docs/decisions.html">How it was built</a><a href="/">jaybeatty.com</a></div><button class="menu-tg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="l1" d="M4 7h16"/><path class="l2" d="M4 12h16"/><path class="l3" d="M4 17h16"/></svg></button></nav></div></header>
 <main>
 <section class="hero wrap">
   <div class="eyebrow">CMS TEAM · performance year 2 · 2027 projection</div>
@@ -141,10 +178,26 @@ tiles();top();states();find('');
 try{draw(JSON.parse(document.getElementById('us-states').textContent));}catch(e){document.getElementById('mapnote').textContent='The state outlines could not be drawn. The tables below carry the same results.';}
 })();
 
-/* phone header menu: real button, aria-expanded, Escape closes and returns focus to it */
-(function(){const h=document.querySelector('header'),b=h.querySelector('.menu-tg');function set(o,f){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o);if(!o&&f)b.focus();}
-b.addEventListener('click',()=>set(!h.classList.contains('open')));h.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>set(false)));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&h.classList.contains('open'))set(false,true);});document.addEventListener('click',e=>{if(!h.contains(e.target))set(false);});})();
 </script>
+<script>
+/* motion-v1: staggered scroll reveal, same as the home page. Content is visible without JS and under reduced motion. */
+(function(){
+document.documentElement.classList.add('js');
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const SEL='.mapcard, .tiles .tile, .card, .note';
+const items=[...document.querySelectorAll(SEL)].filter(e=>!e.closest('.rv'));
+items.forEach(e=>{const sib=[...e.parentElement.children].filter(c=>c.matches(SEL));e.style.setProperty('--i',Math.min(sib.indexOf(e),6));e.classList.add('rv');});
+const io=new IntersectionObserver(es=>{es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+items.forEach(e=>io.observe(e));
+})();
+</script>
+<script>/* motion-v1: header menu. Escape closes and returns focus to the button; links get a stagger index for the dropdown. */
+(function(){var h=document.querySelector('header'),b=h&&h.querySelector('.menu-tg'),l=h&&h.querySelector('.links');if(!b||!l)return;
+l.querySelectorAll('a').forEach(function(a,i){a.style.setProperty('--k',i)});
+function set(o,f){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o);if(!o&&f)b.focus()}
+b.addEventListener('click',function(){set(!h.classList.contains('open'))});
+l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open'))set(false,true)});
+document.addEventListener('click',function(e){if(!h.contains(e.target))set(false)})})();</script>
 </body>
 </html>

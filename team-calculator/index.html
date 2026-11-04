@@ -21,6 +21,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
+:root{--t-fast:150ms;--t-base:260ms;--t-slow:480ms;--ease-out:cubic-bezier(.2,.7,.2,1);--ease-inout:cubic-bezier(.65,0,.35,1)}
+
 :root{
   --bg:#0b0a10; --surface:#14111e; --panel:#1c1730; --line:#2b2542;
   --fg:#ece9f5; --muted:#a79fc0;
@@ -55,7 +57,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:co
 nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
 .brand{white-space:nowrap;flex-shrink:0;font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
 .brand b{color:var(--green-soft);font-weight:400}
-.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color .15s,background-color .15s,color .15s}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none;outline:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
+.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color var(--t-fast),background-color var(--t-fast),color var(--t-fast)}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
 
 
 @media(max-width:860px){nav{height:auto;flex-wrap:wrap;padding-block:10px;row-gap:8px}.links{width:100%;padding-bottom:2px;-webkit-overflow-scrolling:touch}}
@@ -188,7 +190,7 @@ details.tbl table{min-width:420px;width:100%;border-collapse:collapse;margin-top
 details.tbl th,details.tbl td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
 details.tbl th{color:var(--muted);font-weight:500}
 details.tbl td.n,details.tbl th.n{text-align:right}
-.tip{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--line);color:var(--fg);padding:8px 10px;border-radius:6px;font-size:.8rem;line-height:1.35;opacity:0;transform:translate(-50%,calc(-100% - 10px));transition:opacity .12s;z-index:50;white-space:nowrap}
+.tip{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--line);color:var(--fg);padding:8px 10px;border-radius:6px;font-size:.8rem;line-height:1.35;opacity:0;transform:translate(-50%,calc(-100% - 10px));transition:opacity var(--t-fast);z-index:50;white-space:nowrap}
 .tip b{display:block;font-weight:600}
 .moves{display:grid;gap:8px;font-size:.9rem}
 .moves li{color:var(--muted)}
@@ -228,13 +230,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .print-only{display:none;font-size:.85rem;color:var(--muted)}
 
 /* phase-one motion: reveals, count-ups, eased charts. Only when JS runs; off under reduced motion. */
-.js .rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0)*70ms)}
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity var(--t-slow) var(--ease-out),transform var(--t-slow) var(--ease-out),translate var(--t-base) var(--ease-out),box-shadow var(--t-base) var(--ease-out);transition-delay:calc(var(--i,0)*70ms),calc(var(--i,0)*70ms),0s,0s}
 .js .rv.in{opacity:1;transform:none}
-.js .chart rect{transition:x .45s cubic-bezier(.2,.7,.2,1),y .45s cubic-bezier(.2,.7,.2,1),width .45s cubic-bezier(.2,.7,.2,1),height .45s cubic-bezier(.2,.7,.2,1)}
-.js .pulse{animation:pulse .6s ease-out}
+.js .chart rect{transition:x var(--t-slow) var(--ease-out),y var(--t-slow) var(--ease-out),width var(--t-slow) var(--ease-out),height var(--t-slow) var(--ease-out)}
+.js .pulse{animation:pulse var(--t-slow) var(--ease-out)}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(111,227,163,.45)}100%{box-shadow:0 0 0 14px rgba(111,227,163,0)}}
 @media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.js .chart rect{transition:none}.js .pulse{animation:none}}
-#chFlow g.stage{transition:opacity .5s ease}#chFlow .arrow{transition:opacity .4s ease}
+#chFlow g.stage{transition:opacity var(--t-slow) var(--ease-out)}#chFlow .arrow{transition:opacity var(--t-slow) var(--ease-out)}
 
 /* wordmarks */
 .wordmark{display:flex;align-items:center;gap:14px;min-width:0}
@@ -248,7 +250,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 html{scroll-padding-top:62px}
 /* phone pass: one-row header (brand + menu button, links drop down), anchors clear it by header + 12px */
 .menu-tg{display:none;flex:none;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--line);background:color-mix(in oklab,var(--fg) 6%,transparent);color:var(--fg);place-items:center;cursor:pointer}
-.menu-tg:hover,.menu-tg:focus-visible{border-color:var(--green-soft);outline:none}
+.menu-tg:hover,.menu-tg:focus-visible{border-color:var(--green-soft)}
 .menu-tg svg{width:18px;height:18px;display:block}.menu-tg .x,header.open .menu-tg .bars{display:none}header.open .menu-tg .x{display:block}
 @media(max-width:860px){
   html{scroll-padding-top:69px}
@@ -265,12 +267,42 @@ details.tbl>div{overflow-x:auto;-webkit-overflow-scrolling:touch;background:line
 @media(max-width:640px){.fade>svg.chart{min-width:560px}.fade.flow>svg.chart{min-width:1080px}.fade>svg.chart text[style]{font-size:11px!important}}
 .rstrip{display:none}
 @media(max-width:640px){
-  .rstrip{display:flex;position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:9;justify-content:center;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:var(--panel);border:1px solid var(--green-soft);color:var(--fg);font-weight:600;font-size:1rem;font-variant-numeric:tabular-nums;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.5);transform:translateY(160%);visibility:hidden;transition:transform .25s ease,visibility 0s .25s}
-  .rstrip.on{transform:none;visibility:visible;transition:transform .25s ease}
+  .rstrip{display:flex;position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:9;justify-content:center;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:var(--panel);border:1px solid var(--green-soft);color:var(--fg);font-weight:600;font-size:1rem;font-variant-numeric:tabular-nums;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.5);transform:translateY(160%);visibility:hidden;transition:transform var(--t-base) var(--ease-out),visibility 0s var(--t-base)}
+  .rstrip.on{transform:none;visibility:visible;transition:transform var(--t-base) var(--ease-out)}
   .rstrip small{font-weight:400;color:var(--muted);font-size:.8rem}
 }
 @media print{.rstrip{display:none!important}}
 @media(prefers-reduced-motion:reduce){.rstrip,.rstrip.on{transition:none}}
+
+/* motion-v1: shared hover lift, focus ring, plus-to-menu morph and dropdown. Tokens are in :root at the top of this sheet.
+   shortcut: lift uses the translate property (not transform) so it composes with the reveal; browsers older than 2022 simply skip the lift */
+:focus-visible{outline:2px solid var(--green-soft);outline-offset:2px}
+.btn,.chip,.tile,.prog,.card,.links a,.theme-tg,.menu-tg,.seg button{transition:transform var(--t-base) var(--ease-out),translate var(--t-base) var(--ease-out),box-shadow var(--t-base) var(--ease-out),border-color var(--t-fast) var(--ease-out),background-color var(--t-fast) var(--ease-out),color var(--t-fast) var(--ease-out),filter var(--t-fast) var(--ease-out)}
+@media(hover:hover){
+.btn:hover,.links a:hover,.tile:hover,.prog:hover,.card:hover{translate:0 -2px;box-shadow:0 10px 24px -12px rgba(8,4,20,.6)}
+.chip:hover{border-color:var(--green-soft);color:var(--fg)}
+}
+.btn:active,.links a:active{translate:0 0;box-shadow:none}
+.menu-tg{display:none;flex:none;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--line);background:color-mix(in oklab,var(--fg) 6%,transparent);color:var(--fg);place-items:center;cursor:pointer}
+.menu-tg:hover{border-color:var(--green-soft)}
+.menu-tg svg{width:18px;height:18px;display:block}
+.menu-tg svg path{transform-box:fill-box;transform-origin:center;transition:transform var(--t-base) var(--ease-inout),opacity var(--t-fast) var(--ease-out)}
+header.open .menu-tg{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent)}
+header.open .menu-tg .l1{transform:translateY(5px) rotate(45deg)}
+header.open .menu-tg .l2{opacity:0;transform:scaleX(.2)}
+header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
+@media(max-width:860px){
+  .menu-tg{display:grid}
+  nav .links{display:flex;visibility:hidden;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity var(--t-base) var(--ease-out),transform var(--t-base) var(--ease-out),visibility 0s linear var(--t-base)}
+  header.open nav .links{visibility:visible;opacity:1;transform:none;pointer-events:auto;transition-delay:0s}
+  nav .links a{opacity:0;transform:translateY(-6px);transition:opacity var(--t-base) var(--ease-out),transform var(--t-base) var(--ease-out),translate var(--t-base) var(--ease-out),box-shadow var(--t-base) var(--ease-out),border-color var(--t-fast) var(--ease-out),background-color var(--t-fast) var(--ease-out),color var(--t-fast) var(--ease-out)}
+  header.open nav .links a{opacity:1;transform:none;transition-delay:calc(var(--k,0)*40ms + 30ms),calc(var(--k,0)*40ms + 30ms),0s,0s,0s,0s,0s}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn:hover,.links a:hover,.tile:hover,.prog:hover,.card:hover{translate:none;box-shadow:none}
+  .menu-tg svg path,nav .links,nav .links a{transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -279,7 +311,7 @@ details.tbl>div{overflow-x:auto;-webkit-overflow-scrolling:touch;background:line
   <div class="links" id="navlinks">
     <a href="#calc">Calculator</a><a href="map.html">2027 map</a><a href="#how">How TEAM pays</a><a href="#method">Methodology</a><a href="#sources">Sources</a><a href="https://www.jaybeatty.com">jaybeatty.com</a>
   </div>
-  <button class="menu-tg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="menu-tg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="l1" d="M4 7h16"/><path class="l2" d="M4 12h16"/><path class="l3" d="M4 17h16"/></svg></button>
 </nav></div></header>
 <a class="rstrip" id="rstrip" href="#results" aria-label="Estimated result, jump to the full result"><span id="rstripVal">$0</span><small id="rstripTrack"></small></a>
 
@@ -898,7 +930,7 @@ function activeCats(){if(S.view==='all')return CATS.map(c=>c.key);const l=LINES(
 /* ---------- motion helpers: number tweens, chart easing, pulse ---------- */
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const easeOut=t=>1-Math.pow(1-t,3);
-function tweenText(el,value,fmtFn,dur=450){if(!el)return;const from=el._v;el._v=value;if(RM||from==null||!isFinite(from)||from===value){el.textContent=fmtFn(value);return;}
+function tweenText(el,value,fmtFn,dur=480){if(!el)return;const from=el._v;el._v=value;if(RM||from==null||!isFinite(from)||from===value){el.textContent=fmtFn(value);return;}
   if(el._raf)cancelAnimationFrame(el._raf);const t0=performance.now();const step=now=>{const k=easeOut(Math.min(1,(now-t0)/dur));el.textContent=fmtFn(from+(value-from)*k);if(k<1)el._raf=requestAnimationFrame(step);};el._raf=requestAnimationFrame(step);}
 function snapRects(svg){return [...svg.querySelectorAll('rect')].filter(r=>r.getAttribute('fill')!=='transparent').map(r=>({x:+r.getAttribute('x'),y:+r.getAttribute('y'),w:+r.getAttribute('width'),h:+r.getAttribute('height')}));}
 function withMorph(ids,fn){if(RM)return fn();const before={};ids.forEach(id=>{const s=$(id);if(s)before[id]=snapRects(s);});fn();
@@ -1233,10 +1265,6 @@ window.TEAMCALC={S,CATS,run,catCalc,applyCaseState,derivePublic,leverSavings,app
 (function(){const m=/^#h=(\d{6})$/.exec(location.hash||'');if(!m)return;const p=PARTS.find(x=>x.ccn===m[1]);if(!p)return;setTimeout(()=>{pick(p);const c=document.getElementById('calc');if(c)c.scrollIntoView({block:'start'});},50);})();
 })();
 
-/* phone header menu: real button, aria-expanded, Escape closes and returns focus to it */
-(function(){const h=document.querySelector('header'),b=h.querySelector('.menu-tg');function set(o,f){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o);if(!o&&f)b.focus();}
-b.addEventListener('click',()=>set(!h.classList.contains('open')));h.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>set(false)));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&h.classList.contains('open'))set(false,true);});document.addEventListener('click',e=>{if(!h.contains(e.target))set(false);});})();
 /* phone result strip: shown while the inputs are on screen and the full result card is not */
 (function(){const s=document.getElementById('rstrip'),steps=document.querySelector('#calc .steps'),card=document.querySelector('#results .board');if(!s||!steps||!card||!window.IntersectionObserver)return;let a=false,b=false;const f=()=>s.classList.toggle('on',a&&!b);
 new IntersectionObserver(e=>{a=e[e.length-1].isIntersecting;f();}).observe(steps);new IntersectionObserver(e=>{b=e[e.length-1].isIntersecting;f();}).observe(card);})();
@@ -1261,5 +1289,13 @@ const co=new IntersectionObserver(es=>{es.forEach(x=>{if(x.isIntersecting){count
 document.querySelectorAll('.tile .val').forEach(v=>co.observe(v));
 })();
 </script>
+<script>/* motion-v1: header menu. Escape closes and returns focus to the button; links get a stagger index for the dropdown. */
+(function(){var h=document.querySelector('header'),b=h&&h.querySelector('.menu-tg'),l=h&&h.querySelector('.links');if(!b||!l)return;
+l.querySelectorAll('a').forEach(function(a,i){a.style.setProperty('--k',i)});
+function set(o,f){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o);if(!o&&f)b.focus()}
+b.addEventListener('click',function(){set(!h.classList.contains('open'))});
+l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open'))set(false,true)});
+document.addEventListener('click',function(e){if(!h.contains(e.target))set(false)})})();</script>
 </body>
 </html>

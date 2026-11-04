@@ -22,6 +22,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
+:root{--t-fast:150ms;--t-base:260ms;--t-slow:480ms;--ease-out:cubic-bezier(.2,.7,.2,1);--ease-inout:cubic-bezier(.65,0,.35,1)}
+
 /* Layout: a weekly scoreboard. Headline left, numbers right; every section pairs a short claim with a figure that proves it. Single committed dark look. */
 :root{
   --bg:#0b0a10;        /* black, purple-biased */
@@ -63,7 +65,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:co
 nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
 .brand{white-space:nowrap;flex-shrink:0;font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
 .brand b{color:var(--green-soft);font-weight:400}
-.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color .15s,background-color .15s,color .15s}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none;outline:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
+.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color var(--t-fast),background-color var(--t-fast),color var(--t-fast)}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
 
 
 @media(max-width:860px){nav{height:auto;flex-wrap:wrap;padding-block:10px;row-gap:8px}.links{width:100%;padding-bottom:2px;-webkit-overflow-scrolling:touch}}
@@ -120,7 +122,7 @@ details.tbl summary{cursor:pointer;color:var(--purple-soft);font-family:var(--mo
 details.tbl table{width:100%;border-collapse:collapse;margin-top:10px;font-variant-numeric:tabular-nums}
 details.tbl th,details.tbl td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
 details.tbl th{color:var(--muted);font-weight:500}
-.tip{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--line);color:var(--fg);padding:8px 10px;border-radius:6px;font-size:.8rem;line-height:1.35;opacity:0;transform:translate(-50%,calc(-100% - 10px));transition:opacity .12s;z-index:50;white-space:nowrap}
+.tip{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--line);color:var(--fg);padding:8px 10px;border-radius:6px;font-size:.8rem;line-height:1.35;opacity:0;transform:translate(-50%,calc(-100% - 10px));transition:opacity var(--t-fast);z-index:50;white-space:nowrap}
 .tip b{display:block;font-weight:600}
 
 /* phases */
@@ -184,7 +186,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 /* video card */
 .vid{display:block;position:relative;aspect-ratio:16/9;max-width:100%;overflow:hidden;border-radius:12px;border:1px solid var(--line);text-decoration:none;background:#000}
 .vid img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85)}
-.vid .play{position:absolute;left:50%;top:50%;width:64px;height:64px;transform:translate(-50%,-50%);border-radius:50%;background:var(--green);display:grid;place-items:center;transition:transform .15s}
+.vid .play{position:absolute;left:50%;top:50%;width:64px;height:64px;transform:translate(-50%,-50%);border-radius:50%;background:var(--green);display:grid;place-items:center;transition:transform var(--t-fast)}
 .vid .play::after{content:"";width:0;height:0;border-left:20px solid #041509;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
 .vid .vcap{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.88));color:#fff;font-size:.8rem;line-height:1.35}
 .vid .vcap b{display:block;font-weight:600;font-size:.9rem}
@@ -331,7 +333,7 @@ dialog.viewer::backdrop{background:rgba(6,5,10,.9)}
 @media(max-width:700px){.vstage.z img{width:230%}}
 
 /* ATCG mark: Jay's logo with a light pulse travelling the helix */
-.atcg-logo{position:relative;width:148px;height:148px;flex:0 0 auto;animation:atcg-float 7s ease-in-out infinite;filter:drop-shadow(0 10px 28px rgba(16,161,151,.28))}
+.atcg-logo{position:relative;width:148px;height:148px;flex:0 0 auto;animation:atcg-float 7s var(--ease-inout) infinite;filter:drop-shadow(0 10px 28px rgba(16,161,151,.28))}
 .atcg-logo img{width:100%;height:100%;display:block;border-radius:50%}
 .atcg-logo .helix{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:screen}
 .atcg-logo .helix path{fill:none;stroke:#6fe3a3;stroke-width:2.4;stroke-linecap:round;stroke-dasharray:16 320;stroke-dashoffset:0;opacity:.95;filter:url(#hx-glow);animation:atcg-pulse 5.5s linear infinite}
@@ -366,28 +368,81 @@ dialog.viewer::backdrop{background:rgba(6,5,10,.9)}
   --green:#1f9a55;--green-soft:#15713f;--teal:#0e8f86;
   color-scheme:light;
 }
-body{transition:background-color .25s,color .25s}
+body{transition:background-color var(--t-base),color var(--t-base)}
 :root[data-theme="light"] .btn.primary{color:#fff}
 :root[data-theme="light"] .tag.ben{color:#0b6e67}
 :root[data-theme="light"] .board,:root[data-theme="light"] .tile{box-shadow:0 1px 2px rgba(27,21,40,.05)}
 :root[data-theme="light"] .vid .lab,:root[data-theme="light"] dialog.viewer,:root[data-theme="light"] .vbar,:root[data-theme="light"] .lb{--bg:#0b0a10;--surface:#14111e;--panel:#1c1730;--line:#2b2542;--fg:#ece9f5;--muted:#a79fc0;--purple-soft:#b7a6ff;--green-soft:#6fe3a3;color-scheme:dark}
 :root[data-theme="light"] svg [fill="#2b2542"]{fill:var(--line)}:root[data-theme="light"] svg [stroke="#2b2542"]{stroke:var(--line)}:root[data-theme="light"] svg [fill="#ece9f5"]{fill:var(--fg)}:root[data-theme="light"] svg [stroke="#ece9f5"]{stroke:var(--fg)}:root[data-theme="light"] svg [fill="#a79fc0"]{fill:var(--muted)}:root[data-theme="light"] svg [stroke="#a79fc0"]{stroke:var(--muted)}:root[data-theme="light"] svg [fill="#0b0a10"]{fill:var(--bg)}:root[data-theme="light"] svg [stroke="#0b0a10"]{stroke:var(--bg)}:root[data-theme="light"] svg [fill="#14111e"]{fill:var(--surface)}:root[data-theme="light"] svg [stroke="#14111e"]{stroke:var(--surface)}:root[data-theme="light"] svg [fill="#1c1730"]{fill:var(--panel)}:root[data-theme="light"] svg [stroke="#1c1730"]{stroke:var(--panel)}:root[data-theme="light"] svg [fill="#8366ea"]{fill:var(--purple)}:root[data-theme="light"] svg [stroke="#8366ea"]{stroke:var(--purple)}:root[data-theme="light"] svg [fill="#b7a6ff"]{fill:var(--purple-soft)}:root[data-theme="light"] svg [stroke="#b7a6ff"]{stroke:var(--purple-soft)}:root[data-theme="light"] svg [fill="#6fe3a3"]{fill:var(--green-soft)}:root[data-theme="light"] svg [stroke="#6fe3a3"]{stroke:var(--green-soft)}
 nav .links{margin-left:auto}
-.theme-tg{flex:none;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--line);background:color-mix(in oklab,var(--fg) 6%,transparent);color:var(--fg);display:grid;place-items:center;cursor:pointer;transition:border-color .15s,background-color .15s}
-.theme-tg:hover,.theme-tg:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);outline:none}
+.theme-tg{flex:none;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--line);background:color-mix(in oklab,var(--fg) 6%,transparent);color:var(--fg);display:grid;place-items:center;cursor:pointer;transition:border-color var(--t-fast),background-color var(--t-fast)}
+.theme-tg:hover,.theme-tg:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent)}
 .theme-tg svg{width:18px;height:18px;display:block}
 .theme-tg .moon{display:none}
 :root[data-theme="light"] .theme-tg .sun{display:none}
 :root[data-theme="light"] .theme-tg .moon{display:block}
 @media(max-width:860px){.theme-tg{order:2;margin-left:auto}nav .links{order:3;margin-left:0}}
+
+/* phone nav: one row (brand, theme, menu); the links drop down. scroll-padding matches the header so jumps land clear of it */
+html{scroll-padding-top:62px}
+.menu-tg{display:none;flex:none;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--line);background:color-mix(in oklab,var(--fg) 6%,transparent);color:var(--fg);place-items:center;cursor:pointer}
+
+.menu-tg svg{width:18px;height:18px;display:block}.menu-tg .x,header.open .menu-tg .bars{display:none}header.open .menu-tg .x{display:block}
+@media(max-width:860px){html{scroll-padding-top:100px}}
+/* shortcut: the 601-860px two-row strip fades its right edge with a mask at all times; the last link stays reachable by scrolling, a scroll-aware fade is the upgrade */
+@media(min-width:601px) and (max-width:860px){nav .links{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent)}}
+@media(max-width:600px){
+  html{scroll-padding-top:69px}/* header 57px + 12px */
+  nav{flex-wrap:nowrap;row-gap:0}
+  .menu-tg{display:grid;order:3}
+  nav .links{display:none;position:absolute;top:100%;left:0;right:0;order:unset;width:auto;flex-direction:column;gap:8px;padding:12px clamp(16px,4vw,40px) 16px;overflow:visible;background:var(--bg);border-bottom:1px solid var(--line)}
+  header.open nav .links{display:flex}
+  .links a{text-align:center;padding:14px 12px}
+}
+
+/* motion-v1: shared hover lift, focus ring, plus-to-menu morph and dropdown. Tokens are in :root at the top of this sheet.
+   shortcut: lift uses the translate property (not transform) so it composes with the reveal; browsers older than 2022 simply skip the lift */
+:focus-visible{outline:2px solid var(--green-soft);outline-offset:2px}
+.btn,.chip,.tile,.prog,.card,.links a,.theme-tg,.menu-tg,.seg button{transition:transform var(--t-base) var(--ease-out),translate var(--t-base) var(--ease-out),box-shadow var(--t-base) var(--ease-out),border-color var(--t-fast) var(--ease-out),background-color var(--t-fast) var(--ease-out),color var(--t-fast) var(--ease-out),filter var(--t-fast) var(--ease-out)}
+@media(hover:hover){
+.btn:hover,.links a:hover,.tile:hover,.prog:hover,.card:hover{translate:0 -2px;box-shadow:0 10px 24px -12px rgba(8,4,20,.6)}
+.chip:hover{border-color:var(--green-soft);color:var(--fg)}
+}
+.btn:active,.links a:active{translate:0 0;box-shadow:none}
+.menu-tg{display:none;flex:none;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--line);background:color-mix(in oklab,var(--fg) 6%,transparent);color:var(--fg);place-items:center;cursor:pointer}
+.menu-tg:hover{border-color:var(--green-soft)}
+.menu-tg svg{width:18px;height:18px;display:block}
+.menu-tg svg path{transform-box:fill-box;transform-origin:center;transition:transform var(--t-base) var(--ease-inout),opacity var(--t-fast) var(--ease-out)}
+header.open .menu-tg{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent)}
+header.open .menu-tg .l1{transform:translateY(5px) rotate(45deg)}
+header.open .menu-tg .l2{opacity:0;transform:scaleX(.2)}
+header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
+@media(max-width:600px){
+  .menu-tg{display:grid}
+  nav .links{display:flex;visibility:hidden;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity var(--t-base) var(--ease-out),transform var(--t-base) var(--ease-out),visibility 0s linear var(--t-base)}
+  header.open nav .links{visibility:visible;opacity:1;transform:none;pointer-events:auto;transition-delay:0s}
+  nav .links a{opacity:0;transform:translateY(-6px);transition:opacity var(--t-base) var(--ease-out),transform var(--t-base) var(--ease-out),translate var(--t-base) var(--ease-out),box-shadow var(--t-base) var(--ease-out),border-color var(--t-fast) var(--ease-out),background-color var(--t-fast) var(--ease-out),color var(--t-fast) var(--ease-out)}
+  header.open nav .links a{opacity:1;transform:none;transition-delay:calc(var(--k,0)*40ms + 30ms),calc(var(--k,0)*40ms + 30ms),0s,0s,0s,0s,0s}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn:hover,.links a:hover,.tile:hover,.prog:hover,.card:hover{translate:none;box-shadow:none}
+  .menu-tg svg path,nav .links,nav .links a{transition:none!important}
+}
+
+/* motion-v1: scroll reveal (staggered rise-in) */
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity var(--t-slow) var(--ease-out),transform var(--t-slow) var(--ease-out),translate var(--t-base) var(--ease-out),box-shadow var(--t-base) var(--ease-out);transition-delay:calc(var(--i,0)*70ms),calc(var(--i,0)*70ms),0s,0s}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
 <header><div class="wrap"><nav>
   <a class="brand" href="./">Jay <b>Beatty</b></a>
-  <div class="links">
+  <div class="links" id="navlinks">
     <a href="./#work">What I do</a><a href="./#programs">Programs</a><a href="./#projects">Projects</a><a href="./#record">Track record</a><a href="./#career">Career</a><a href="./#about">About</a><a href="./#contact">Contact</a>
   </div>
+  <button class="menu-tg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="l1" d="M4 7h16"/><path class="l2" d="M4 12h16"/><path class="l3" d="M4 17h16"/></svg></button>
   <button class="theme-tg" type="button" aria-label="Switch to light mode" title="Light or dark mode"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6Z"/></svg></button>
 </nav></div></header>
 <main>
@@ -784,5 +839,25 @@ nav .links{margin-left:auto}
 })();
 </script>
 <script>(function(){var r=document.documentElement;function cur(){return r.getAttribute('data-theme')==='light'?'light':'dark'}function sync(){document.querySelectorAll('.theme-tg').forEach(function(b){b.setAttribute('aria-label',cur()==='light'?'Switch to dark mode':'Switch to light mode')})}document.querySelectorAll('.theme-tg').forEach(function(b){b.addEventListener('click',function(){var n=cur()==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('jb-theme',n)}catch(e){}sync()})});sync()})();</script>
+<script>
+/* motion-v1: staggered scroll reveal, same as the home page. Content is visible without JS and under reduced motion. */
+(function(){
+document.documentElement.classList.add('js');
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const SEL='.sec-head, .piece-head, .stats, .why, .job, .cta-line, .mh-fig, .pull';
+const items=[...document.querySelectorAll(SEL)].filter(e=>!e.closest('.rv'));
+items.forEach(e=>{const sib=[...e.parentElement.children].filter(c=>c.matches(SEL));e.style.setProperty('--i',Math.min(sib.indexOf(e),6));e.classList.add('rv');});
+const io=new IntersectionObserver(es=>{es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+items.forEach(e=>io.observe(e));
+})();
+</script>
+<script>/* motion-v1: header menu. Escape closes and returns focus to the button; links get a stagger index for the dropdown. */
+(function(){var h=document.querySelector('header'),b=h&&h.querySelector('.menu-tg'),l=h&&h.querySelector('.links');if(!b||!l)return;
+l.querySelectorAll('a').forEach(function(a,i){a.style.setProperty('--k',i)});
+function set(o,f){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o);if(!o&&f)b.focus()}
+b.addEventListener('click',function(){set(!h.classList.contains('open'))});
+l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open'))set(false,true)});
+document.addEventListener('click',function(e){if(!h.contains(e.target))set(false)})})();</script>
 </body>
 </html>

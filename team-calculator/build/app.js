@@ -106,7 +106,7 @@ function activeCats(){if(S.view==='all')return CATS.map(c=>c.key);const l=LINES(
 /* ---------- motion helpers: number tweens, chart easing, pulse ---------- */
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const easeOut=t=>1-Math.pow(1-t,3);
-function tweenText(el,value,fmtFn,dur=450){if(!el)return;const from=el._v;el._v=value;if(RM||from==null||!isFinite(from)||from===value){el.textContent=fmtFn(value);return;}
+function tweenText(el,value,fmtFn,dur=480){if(!el)return;const from=el._v;el._v=value;if(RM||from==null||!isFinite(from)||from===value){el.textContent=fmtFn(value);return;}
   if(el._raf)cancelAnimationFrame(el._raf);const t0=performance.now();const step=now=>{const k=easeOut(Math.min(1,(now-t0)/dur));el.textContent=fmtFn(from+(value-from)*k);if(k<1)el._raf=requestAnimationFrame(step);};el._raf=requestAnimationFrame(step);}
 function snapRects(svg){return [...svg.querySelectorAll('rect')].filter(r=>r.getAttribute('fill')!=='transparent').map(r=>({x:+r.getAttribute('x'),y:+r.getAttribute('y'),w:+r.getAttribute('width'),h:+r.getAttribute('height')}));}
 function withMorph(ids,fn){if(RM)return fn();const before={};ids.forEach(id=>{const s=$(id);if(s)before[id]=snapRects(s);});fn();
@@ -441,10 +441,6 @@ window.TEAMCALC={S,CATS,run,catCalc,applyCaseState,derivePublic,leverSavings,app
 (function(){const m=/^#h=(\d{6})$/.exec(location.hash||'');if(!m)return;const p=PARTS.find(x=>x.ccn===m[1]);if(!p)return;setTimeout(()=>{pick(p);const c=document.getElementById('calc');if(c)c.scrollIntoView({block:'start'});},50);})();
 })();
 
-/* phone header menu: real button, aria-expanded, Escape closes and returns focus to it */
-(function(){const h=document.querySelector('header'),b=h.querySelector('.menu-tg');function set(o,f){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o);if(!o&&f)b.focus();}
-b.addEventListener('click',()=>set(!h.classList.contains('open')));h.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>set(false)));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&h.classList.contains('open'))set(false,true);});document.addEventListener('click',e=>{if(!h.contains(e.target))set(false);});})();
 /* phone result strip: shown while the inputs are on screen and the full result card is not */
 (function(){const s=document.getElementById('rstrip'),steps=document.querySelector('#calc .steps'),card=document.querySelector('#results .board');if(!s||!steps||!card||!window.IntersectionObserver)return;let a=false,b=false;const f=()=>s.classList.toggle('on',a&&!b);
 new IntersectionObserver(e=>{a=e[e.length-1].isIntersecting;f();}).observe(steps);new IntersectionObserver(e=>{b=e[e.length-1].isIntersecting;f();}).observe(card);})();

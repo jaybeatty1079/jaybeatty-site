@@ -62,7 +62,8 @@ h1 span{color:var(--magenta)}
 /* what's what: the legend under the game */
 #whats{display:flex;flex-wrap:wrap;gap:6px 22px;margin:12px 0 0;font-size:14px;color:#c9c4da}
 #whats b{color:#fff;font-weight:600}#whats i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:-1px}
-#phone{position:absolute;left:3%;top:calc(4% + clamp(26px,3.6vw,38px));width:clamp(190px,32%,330px);background:rgba(10,8,18,.9);border:1px solid #3a3550;border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;transform:translateX(-130%);pointer-events:none;z-index:3}
+#phone{position:absolute;left:3%;top:calc(4% + clamp(26px,3.6vw,38px));width:clamp(190px,32%,330px);background:rgba(10,8,18,.9);border:1px solid #3a3550;border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;transform:translateX(-130%);pointer-events:none;z-index:3;visibility:hidden}
+#phoneX{pointer-events:auto;margin-top:6px;background:none;border:1px solid #3a3550;border-radius:8px;color:#c9bdfd;font:600 11px Inter;padding:3px 10px;cursor:pointer}#phoneX:hover,#phoneX:focus-visible{border-color:var(--magenta);color:#fff}
 #phone .who{font-family:Anton;font-size:12px;letter-spacing:.08em;color:var(--magenta);text-transform:uppercase}
 #phone .txt{font-size:clamp(11px,1.4vw,13.5px);line-height:1.35;color:#ece9f4;min-height:3em}
 #phone svg{width:42px;height:42px;flex:none}
@@ -157,7 +158,7 @@ body{padding-bottom:calc(52px + env(safe-area-inset-bottom,0px))} /* shortcut: b
   <div class="hud" id="mstep">STEP <span id="mstepV">1</span> OF 3</div>
   <div class="hud" id="cash"><div class="l">ADDED TO STORE NET, PER YEAR</div><div class="v" id="cashV">$0</div><div class="d" id="cashD"></div></div>
   <div class="hud" id="obj"><small>Objective</small><span id="objT">Tap START</span></div>
-  <div id="phone"><svg viewBox="0 0 60 60" id="rockyFace" aria-hidden="true"></svg><div><div class="who" id="who"></div><div class="txt" id="phoneT"></div></div></div>
+  <div id="phone"><svg viewBox="0 0 60 60" id="rockyFace" aria-hidden="true"></svg><div><div class="who" id="who"></div><div class="txt" id="phoneT"></div><button type="button" id="phoneX">Got it</button></div></div>
   <div class="hud" id="story" aria-live="polite"><div id="storyK"></div><div id="storyT"></div><div id="storyS"></div><div id="qaNav"><button id="qaPrev">← Back</button><span class="n" id="qaN"></span><button id="qaNext" class="p">Next →</button><button id="qaAuto">Auto-play ▶</button><button id="qaLoad" style="display:none">Load this group</button><button id="qaClose">Close ✕</button></div></div>
   <div id="banner"><div class="big" id="bannerBig">Mission <span>Passed</span></div><div class="mid" id="bannerMid"></div><div class="sm" id="bannerSm"></div></div>
   <button id="svcBtn" type="button">Service dept ▾</button>
@@ -197,7 +198,7 @@ body{padding-bottom:calc(52px + env(safe-area-inset-bottom,0px))} /* shortcut: b
 <p id="whats"><b>What you're looking at.</b><span><i style="background:var(--obj)"></i>The city is your group; the lot in the middle is your store</span><span><i style="background:var(--cash)"></i>The counter is what the plan adds to store net each year</span><span><i style="background:var(--magenta)"></i>The Service dept is a bay with your car on the lift; each answer lights up a part of it</span><span><i style="background:#c9bdfd"></i>Drag to look around</span></p>
 
 <div class="sheet" id="sheet">
-  <div class="hero"><div class="k" id="liftK">Net profit added, per year</div><div class="n" id="lift">$0</div><div class="u" id="units"></div><div class="s" id="liftS"></div>
+  <div class="hero"><div class="k" id="liftK">Net profit added, per year</div><div class="n" id="lift">$0</div><div class="s" id="rockyCap" style="display:none"><b style="color:var(--magenta)">Rocky:</b> <span id="rockyCapT"></span></div><div class="u" id="units"></div><div class="s" id="liftS"></div>
     <a class="cta" href="/#contact" id="cta"></a></div>
   <div class="stats">
     <div class="stat me"><div class="k">Your bonus</div><div class="n" id="bonusDelta">+$0</div><div class="s" id="bonusDeltaS"></div></div>
@@ -306,6 +307,7 @@ function update(){
   $('#gets').innerHTML=gets.map(([b,s])=>`<li><b>${esc(b)}</b> ${esc(s)}</li>`).join('');
   $('#perStore').innerHTML=m.stores.map((st,i)=>`<div class="row"><span>${i?'':'<b style="color:var(--obj)">YOU · </b>'}${esc(st.brand)} · ${esc(st.state)} · ${st.emp} employees</span><span>+${fmt(st.lift)}</span></div>`).join('');
   $('#openLive').textContent=C.open.live(m.my.emp.toLocaleString(),'+'+fmt(m.my.lift),Math.round(m.unitsOf(m.my.lift)).toLocaleString()); // the opening's live line follows the GM's own store
+  if(step>=4)$('#rockyCapT').textContent=rockyLine(3,m); // slider edits after the payoff keep the caption honest
   if(window.city){const gk=JSON.stringify(S.stores);if(gk!==update.gk){update.gk=gk;window.city.setGroup(m.stores.map(st=>({emp:st.emp,color:colorOf(st.brand),brand:st.brand})))}window.city.setRing(m.g.enrolled/Math.max(1,m.g.emp))} // rebuild the city only when the sites change
 }
 window.cityReady=()=>{update.gk=null;update();enableStart()};
@@ -313,19 +315,59 @@ function enableStart(){const b=$('#startBtn');if(!b.disabled)return;b.disabled=f
 const HUD=['#cash','#mstep','#obj'];
 setTimeout(enableStart,7000); // the numbers work without the city (no WebGL, blocked CDN); do not keep a GM waiting
 
-function say(n,m){const x=C.lines[n].replace('{n}',S.stores.length).replace('{emp}',m.g.emp.toLocaleString()).replace('{enrolled}',m.g.enrolled.toLocaleString()).replace('{lift}',fmt(m.g.lift)).replace('{bonus}','+'+fmt(m.bonusDelta)).replace('{units}',Math.round(m.units).toLocaleString());
-  const el=$('#phoneT');el.textContent='';gsap.killTweensOf('#phone');gsap.to('#phone',{x:'0%',duration:reduce?0:.4,ease:'power3.out'});
-  let i=0;clearInterval(say.tm);if(reduce){el.textContent=x}else{say.tm=setInterval(()=>{el.textContent=x.slice(0,++i);if(i>=x.length)clearInterval(say.tm)},18)}
-  gsap.to('#phone',{x:'-130%',duration:.4,delay:8,ease:'power3.in'});}
-function banner(big,mid,sm){const b=$('#banner');$('#bannerBig').innerHTML=big;$('#bannerMid').textContent=mid;$('#bannerSm').textContent=sm;
-  if(reduce){b.style.opacity=1;setTimeout(()=>b.style.opacity=0,2500);return}
-  gsap.timeline().set(b,{opacity:1}).fromTo('#bannerBig',{scale:2.2,opacity:0},{scale:1,opacity:1,duration:.35,ease:'power4.out'}).fromTo('#bannerMid',{y:20,opacity:0},{y:0,opacity:1,duration:.3},'-=.1').fromTo('#bannerSm',{opacity:0},{opacity:1,duration:.3}).to(b,{opacity:0,duration:.5,delay:1.8});}
+const rockyLine=(n,m)=>C.lines[n].replace('{n}',S.stores.length).replace('{emp}',m.g.emp.toLocaleString()).replace('{enrolled}',m.g.enrolled.toLocaleString()).replace('{lift}',fmt(m.g.lift)).replace('{bonus}','+'+fmt(m.bonusDelta)).replace('{units}',Math.round(m.units).toLocaleString());
+function say(n,m){const x=rockyLine(n,m);
+  const el=$('#phoneT'),ty=document.createTextNode(''),rest=document.createElement('span');rest.style.visibility='hidden';rest.textContent=x;el.textContent='';el.append(ty,rest); // the hidden remainder holds the box at its final size while the line types
+  gsap.killTweensOf('#phone');$('#phone').style.visibility='visible';gsap.to('#phone',{x:'0%',duration:reduce?0:.4,ease:'power3.out'});
+  let i=0;clearInterval(say.tm);if(reduce){ty.data=x;rest.textContent=''}else{say.tm=setInterval(()=>{i++;ty.data=x.slice(0,i);rest.textContent=x.slice(i);if(i>=x.length)clearInterval(say.tm)},18)}}
+// shortcut: dimHud slides the dialog away without hiding it, so its button stays focusable off-screen until the next say(); hide it there too if keyboard users hit it
+const closeDialog=now=>{clearInterval(say.tm);gsap.killTweensOf('#phone');gsap.to('#phone',{x:'-130%',duration:now?0:.4,ease:'power3.in',onComplete:()=>{$('#phone').style.visibility='hidden'}})};
+$('#phoneX').onclick=()=>closeDialog(); // the button closes the dialog; no timer does
+function banner(big,mid,sm,hold=1.8){const b=$('#banner');$('#bannerBig').innerHTML=big;$('#bannerMid').textContent=mid;$('#bannerSm').textContent=sm;
+  if(reduce){b.style.opacity=1;setTimeout(()=>b.style.opacity=0,2500);return null}
+  return gsap.timeline().set(b,{opacity:1}).fromTo('#bannerBig',{scale:2.2,opacity:0},{scale:1,opacity:1,duration:.35,ease:'power4.out'}).fromTo('#bannerMid',{y:20,opacity:0},{y:0,opacity:1,duration:.25},'-=.2').fromTo('#bannerSm',{opacity:0},{opacity:1,duration:.25},'-=.15').to(b,{opacity:0,duration:.5,delay:hold});} // rises in about .5 s, holds, fades
+
+/* sheet draw: tiles rise in on a 60 ms stagger, their figures count up from zero (ease out), the headline figure last. Any click, key, wheel or touch jumps to the end state. */
+const NUM=/\d[\d,]*(?:\.\d+)?/g;
+const tok=(m,v)=>{const d=(m.split('.')[1]||'').length,x=parseFloat(m.replace(/,/g,''))*v;return m.includes(',')?x.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}):x.toFixed(d)};
+let live=null;
+function skipLive(e){if(e&&e.repeat)return;if(live)live.progress(1)}
+function runSkippable(T){live=T;const ev=['pointerdown','keydown','wheel','touchstart'];setTimeout(()=>{if(live===T)ev.forEach(n=>addEventListener(n,skipLive,{passive:true}))},0); // after the click that started it, so that click does not skip it
+  T.eventCallback('onComplete',()=>{ev.forEach(n=>removeEventListener(n,skipLive));if(live===T)live=null});return T}
+function drawSheet(stats,wide,hero,count=.8){ // returns a timeline (length about .3 + count); the end state is exactly the DOM it started from
+  stats=stats.filter(e=>e.offsetParent);const all=[...stats,...wide,hero],orig=[];
+  const nums=e=>[...e.querySelectorAll('.n')].filter(n=>/\d/.test(n.textContent));
+  const T=gsap.timeline({onComplete:()=>{orig.forEach(([n,t])=>n.textContent=t);gsap.set(all,{clearProps:'opacity,transform'})}});
+  if(reduce)return T;
+  gsap.set(all,{opacity:0,y:28});
+  const at=e=>e===hero?stats.length*.06+.06:stats.includes(e)?stats.indexOf(e)*.06:Math.max(0,stats.length-1)*.06;
+  all.forEach(e=>{const t=at(e);T.to(e,{opacity:1,y:0,duration:.5,ease:'power3.out'},t);
+    nums(e).forEach(n=>{const end=n.textContent,p={v:0};orig.push([n,end]);n.textContent=end.replace(NUM,m=>tok(m,0));
+      T.to(p,{v:1,duration:count,ease:'power3.out',onUpdate:()=>{n.textContent=end.replace(NUM,m=>tok(m,p.v))}},t)})});
+  return T}
+const sheetDraw=()=>drawSheet([...document.querySelectorAll('#sheet .stats .stat')],[...document.querySelectorAll('#sheet > .stat')],document.querySelector('#sheet .hero'));
+const scrollTo$=(el,dur)=>{const p={y:0};return gsap.fromTo(p,{y:()=>scrollY},{y:()=>el.getBoundingClientRect().top+scrollY,duration:dur,ease:'power2.inOut',onUpdate:()=>scrollTo(0,p.y)})}; // start and end are read when the tween starts, so a scroll that happened earlier does not make it jump
 function go(n){step=n;$('#mstepV').textContent=Math.min(3,n);document.querySelectorAll('#panel .m').forEach((el,i)=>el.classList.toggle('on',i===n-1));$('#objT').textContent=C.obj[n];}
 const phoneLayout=()=>{if(matchMedia('(max-width:760px)').matches)$('#game').after($('#panel'))};
 $('#startBtn').onclick=()=>{phoneLayout();gsap.to('#start',{opacity:0,duration:.4,onComplete:()=>$('#start').style.display='none'});gsap.to(HUD,{opacity:1,duration:.5});$('#panel').style.display='block';$('#panel').classList.add('on');go(1);say(0,model());if(window.city)window.city.flyIn()};
 $('#n1').onclick=()=>{const m=model();banner('Mission <span>Passed</span>',`${sitesN(S.stores.length)}, ${m.g.emp.toLocaleString()} on payroll`,'Your '+W.group);say(1,m);go(2);if(window.city){window.city.celebrate(1);window.city.cue(1)}};
 $('#n2').onclick=()=>{const m=model();banner('Mission <span>Passed</span>','+'+fmt(m.g.lift)+' net','Your plans');say(2,m);go(3);if(window.city){window.city.celebrate(2);window.city.cue(2)}};
-$('#n3').onclick=()=>{const m=model();banner('<span>Respect</span> +',fmt(m.base.lift)+' net, '+W.zero,'Illustrative. Confirmed by a payroll analysis before anything is signed.');say(3,m);go(4);$('#sheet').classList.add('on');if(window.city){window.city.celebrate(3);window.city.cue(3)}setTimeout(()=>$('#sheet').scrollIntoView({behavior:'smooth',block:'start'}),2600)};
+$('#n3').onclick=()=>{const m=model(),sh=$('#sheet');
+  // the payoff, one timeline: cash settles .6, banner rises and holds 1.2, camera glides to the clear framing 1.5, page scrolls and the sheet draws (about 1.1); total 4.9 s, 4.96 with the claims tile
+  $('#rockyCapT').textContent=rockyLine(3,m);$('#rockyCap').style.display='block'; // the punchline moves from the dialog to the sheet
+  closeDialog(reduce);go(4);sh.classList.add('on'); // Rocky leaves at time 0 and does not return, so nothing covers the payoff
+  const T=gsap.timeline();
+  if(reduce){{const gr=$('#game').getBoundingClientRect();if(gr.top<0||gr.bottom>innerHeight)scrollTo(0,gr.top+scrollY)}banner('<span>Respect</span> +',fmt(m.base.lift)+' net, '+W.zero,'Illustrative. Confirmed by a payroll analysis before anything is signed.');
+    if(window.city){window.city.celebrate(3);window.city.cue(3,0)}
+    T.call(()=>{$('#banner').style.opacity=0;scrollTo(0,sh.getBoundingClientRect().top+scrollY)},null,1.5)}
+  else{const D=sheetDraw(); // built now so the tiles are hidden before the page ever scrolls to them
+    const gr=$('#game').getBoundingClientRect();if(gr.top<0||gr.bottom>innerHeight)T.add(scrollTo$($('#game'),.5),0); // on a phone the Next button sits below the scene: bring the scene into view while the cash settles
+    T.add(banner('<span>Respect</span> +',fmt(m.base.lift)+' net, '+W.zero,'Illustrative. Confirmed by a payroll analysis before anything is signed.',1.2),.6);
+    if(window.city){T.call(()=>window.city.celebrate(3),null,.6);T.add(window.city.cue(3,1.5),2.3)}
+    gsap.set('#rockyCap',{opacity:0,y:8});
+    T.add(scrollTo$(sh,.6),3.7).add(D,3.8).fromTo('#rockyCap',{opacity:0,y:8},{opacity:1,y:0,duration:.3,ease:'power3.out',clearProps:'opacity,transform'}) // last step: after the headline finishes counting
+  }
+  runSkippable(T)};
 $('#rockyFace').innerHTML=`<circle cx="30" cy="30" r="28" fill="#1b1826"/><path d="M10 34 C 8 22, 14 14, 22 12 L 26 4 L 30 12 L 34 4 L 38 12 C 46 14, 52 22, 50 34 C 48 44, 40 50, 30 50 C 20 50, 12 44, 10 34Z" fill="#8a86a3"/><path d="M12 30 C 20 22, 40 22, 48 30 C 46 38, 38 42, 30 40 C 22 42, 14 38, 12 30Z" fill="#262238"/><rect x="14" y="27" width="14" height="8" rx="2" fill="#0b0a10" stroke="#d65db1" stroke-width="1.5"/><rect x="32" y="27" width="14" height="8" rx="2" fill="#0b0a10" stroke="#d65db1" stroke-width="1.5"/><ellipse cx="30" cy="44" rx="4" ry="3" fill="#0b0a10"/><path d="M24 48 Q 30 53, 36 48" stroke="#0b0a10" stroke-width="2" fill="none"/><path d="M16 52 L 30 56 L 44 52 L 46 60 L 14 60Z" fill="#22a85e"/><circle cx="22" cy="57" r="1.5" fill="#d65db1"/><circle cx="36" cy="56" r="1.5" fill="#ffd166"/>`;
 
 /* ---------- owner version: no bonus, shareable link ---------- */
@@ -341,7 +383,8 @@ function renderOwner(){const m=model(),ins=S.hp==='insured';
   if(!ins){$('#oClaims').textContent=fmt(m.claims);$('#oClaimsS').textContent=`${m.g.enrolled.toLocaleString()} enrolled × ${fmt(S.cost)} × ${S.defl}% of care handled at $0 first, on the company's ${S.hp==='self'?'self-funded':'level-funded'} plan. The real figure comes from the plan's 12-month claims summary.`}
   $('#oPer').innerHTML=m.stores.map(st=>`<div class="row"><span>${esc(st.brand)} · ${esc(st.state)} · ${st.emp} employees · ${st.enrolled} enrolled</span><span>+${fmt(st.lift)} / yr</span></div>`).join('');
 }
-function showOwner(){renderOwner();history.replaceState(null,'',location.pathname+location.search+stateToHash());['game','sheet'].forEach(id=>$('#'+id).style.display='none');$('#panel').style.display='none';$('#sub').textContent=t('The {group}\'s numbers, prepared by your {roleLong}. Illustrative until a payroll analysis confirms them.');$('#owner').style.display='block';window.scrollTo({top:0,behavior:'smooth'});if(window.city)window.city.pause(true)}
+function showOwner(){renderOwner();history.replaceState(null,'',location.pathname+location.search+stateToHash());['game','sheet'].forEach(id=>$('#'+id).style.display='none');$('#panel').style.display='none';$('#sub').textContent=t('The {group}\'s numbers, prepared by your {roleLong}. Illustrative until a payroll analysis confirms them.');$('#owner').style.display='block';window.scrollTo({top:0,behavior:'smooth'});if(window.city)window.city.pause(true);
+  runSkippable(gsap.timeline().add(drawSheet([...document.querySelectorAll('#owner .stats .stat')],[...document.querySelectorAll('#owner > .stat')],document.querySelector('#owner .hero'))))} // the shared link's first view draws the same way as the sheet
 $('#ownerBtn').onclick=showOwner;
 $('#oBack').onclick=()=>{history.replaceState(null,'',location.pathname+location.search);$('#owner').style.display='none';$('#game').style.display='';$('#sheet').style.display='';$('#panel').style.display='block';$('#sub').textContent=C.sub;if(window.city)window.city.pause(false)};
 $('#oCopy').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);$('#oCopy').textContent='Link copied'}catch(e){prompt('Copy this link',location.href)}};
@@ -665,10 +708,10 @@ const bursts=[];
 function celebrate(n){gsap.fromTo(lotLightA,{intensity:60},{intensity:220,duration:.25,yoyo:true,repeat:3});gsap.fromTo(lotLightB,{intensity:50},{intensity:200,duration:.25,yoyo:true,repeat:3});
   for(let i=0;i<6+n*3;i++){const c=car(palette[i%8]);c.scale.setScalar(.62);const a=Math.random()*Math.PI*2;c.position.set(Math.cos(a)*80,0,Math.sin(a)*80);c.lookAt(0,0,0);c.rotateY(Math.PI/2);scene.add(c);bursts.push({m:c,t:0,a})}}
 function flyIn(){cue(0)}
-const CUES=[{p:[44,34,62],t:[-4,0,-16]},{p:[95,80,-110],t:[0,6,0]},{p:[18,8,30],t:[2,1,8]},{p:[22,16,-20],t:[11,9,-11]}];
+const CUES=[{p:[44,34,62],t:[-4,0,-16]},{p:[95,80,-110],t:[0,6,0]},{p:[18,8,30],t:[2,1,8]},{p:[34,22,8],t:[-4,3,-5]}]; // cue 3 is the payoff framing: found by ray-testing candidates (city._cam) so no box, pole or tree stands between the camera and the store;
 let lastCue=0;
 const camKill=()=>gsap.killTweensOf([camera.position,controls.target]); // one camera move at a time: the newest wins outright
-function cue(n){lastCue=n;const c=CUES[n]||CUES[0];controls.autoRotate=false;camKill();gsap.to(camera.position,{x:c.p[0],y:c.p[1],z:c.p[2],duration:2.2,ease:'power2.inOut'});gsap.to(controls.target,{x:c.t[0],y:c.t[1],z:c.t[2],duration:2.2,ease:'power2.inOut',onComplete:()=>{controls.autoRotate=true}})}
+function cue(n,dur=2.2){lastCue=n;const c=CUES[n]||CUES[0];controls.autoRotate=false;camKill();return gsap.timeline().to(camera.position,{x:c.p[0],y:c.p[1],z:c.p[2],duration:dur,ease:'power2.inOut'},0).to(controls.target,{x:c.t[0],y:c.t[1],z:c.t[2],duration:dur,ease:'power2.inOut',onComplete:()=>{controls.autoRotate=true}},0)} // returns the tween pair so a caller can put the glide on its own timeline
 
 /* ---------- the truck story ---------- */
 const gold=new THREE.MeshStandardMaterial({color:0xf2c14e,emissive:0xf2c14e,emissiveIntensity:.9,roughness:.3,metalness:.6});SHARED.add(gold);
@@ -778,7 +821,7 @@ function coin(){const n=coins.length;if(n>=48)return;const c=new THREE.Mesh(coin
   gsap.to(c.position,{x:to.x,z:to.z,duration:1,ease:'power1.inOut'});gsap.to(c.position,{y:c.position.y+6,duration:.5,ease:'power2.out',yoyo:true,repeat:1,onComplete:()=>gsap.to(c.position,{y:to.y,duration:.15})});gsap.to(c.rotation,{x:Math.PI*4,duration:1,ease:'power1.out'})} // two full flips, landing flat
 function puff(){const b=new THREE.Mesh(puffGeo,new THREE.MeshStandardMaterial({color:0x8d8a9a,transparent:true,opacity:.5,roughness:1,depthWrite:false}));b.position.copy(pipeAt(mmCar));stage.add(b);fumes.push({m:b,t:0,dx:-(.8+Math.random()*.8),dz:.6+Math.random()*.8,y0:b.position.y})} // its own material, so each puff fades on its own
 
-window.city={setGroup,setRing,celebrate,flyIn,cue,story,stage:stageOn,light,pause:v=>{paused=v},_stage:()=>({coins:coins.length,fumes:fumes.length,fps:fpsNow})}; // _stage is a test hook
+window.city={setGroup,setRing,celebrate,flyIn,cue,story,stage:stageOn,light,pause:v=>{paused=v},_cam:()=>{const r=new THREE.Raycaster(),a=camera.position.clone(),b=controls.target.clone();r.camera=camera;r.set(a,b.clone().sub(a).normalize());const hit=r.intersectObjects(scene.children,true).filter(h=>h.object.visible&&h.object.geometry&&!h.object.isLine&&!h.object.isPoints&&!(h.object.material&&h.object.material.transparent&&h.object.material.opacity<.3)).slice(0,6).map(h=>[+h.distance.toFixed(1),h.object.geometry.type,h.object.parent&&h.object.parent.type]);return{p:a.toArray().map(v=>+v.toFixed(1)),t:b.toArray().map(v=>+v.toFixed(1)),dist:+a.distanceTo(b).toFixed(1),hit}},_set:(p,t)=>{camKill();controls.autoRotate=false;camera.position.set(...p);controls.target.set(...t);controls.update()},_stage:()=>({coins:coins.length,fumes:fumes.length,fps:fpsNow})}; // _stage is a test hook
 
 /* post + loop */
 const composer=new EffectComposer(renderer);composer.addPass(new RenderPass(scene,camera));

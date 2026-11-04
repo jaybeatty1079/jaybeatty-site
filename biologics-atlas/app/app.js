@@ -322,13 +322,6 @@ if ('IntersectionObserver' in window && !reduced) { const io = new IntersectionO
 route();
 window.ATLAS = { D, go, state, openProduct, focusRegion, regionLabel: r => (REGION[r] || {}).label || r, get pendingSub() { return pendingSub; }, set pendingSub(v) { pendingSub = v; } };
 
-// phone menu: Escape closes and returns focus; table fade clears at the scroll end
-(function () {
-  const b = document.getElementById('menu-btn'), l = document.getElementById('nav-links'); if (!b || !l) return;
-  const set = o => { l.classList.toggle('open', o); b.setAttribute('aria-expanded', o); };
-  b.addEventListener('click', () => set(!l.classList.contains('open')));
-  l.addEventListener('click', e => { if (e.target.closest('a')) set(false); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && l.classList.contains('open')) { set(false); b.focus(); } });
-  document.addEventListener('scroll', e => { const w = e.target; if (w.classList && w.classList.contains('tbl-wrap')) w.classList.toggle('at-end', w.scrollWidth - w.clientWidth - w.scrollLeft < 2); }, true);
-})();
+// table fade clears at the scroll end (the header menu lives in the shared motion-v1 script in the template)
+document.addEventListener('scroll', e => { const w = e.target; if (w.classList && w.classList.contains('tbl-wrap')) w.classList.toggle('at-end', w.scrollWidth - w.clientWidth - w.scrollLeft < 2); }, true);
 })();
