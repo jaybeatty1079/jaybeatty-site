@@ -36,15 +36,31 @@ table{width:100%;border-collapse:collapse;font-size:.86rem}th{font-family:var(--
 footer{padding-block:28px;font-size:.8rem;color:var(--muted);border-top:1px solid var(--line)}
 input[type=search]{font:inherit;font-size:.9rem;padding:8px 12px;border-radius:6px;border:1px solid var(--line);background:#0d0b14;color:var(--fg);width:min(100%,320px)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+html{scroll-padding-top:62px}
+/* phone pass: one-row header (brand + menu button, links drop down); anchors clear it by header + 12px */
+.menu-tg{display:none;flex:none;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--line);background:color-mix(in oklab,var(--fg) 6%,transparent);color:var(--fg);place-items:center;cursor:pointer}
+.menu-tg:hover,.menu-tg:focus-visible{border-color:var(--green-soft);outline:none}
+.menu-tg svg{width:18px;height:18px;display:block}.menu-tg .x,header.open .menu-tg .bars{display:none}header.open .menu-tg .x{display:block}
+@media(max-width:860px){
+  html{scroll-padding-top:69px}
+  nav{height:57px;flex-wrap:nowrap;padding-block:0;row-gap:0}
+  .menu-tg{display:grid}
+  nav .links{display:none;position:absolute;top:100%;left:0;right:0;width:auto;flex-direction:column;gap:8px;padding:12px clamp(16px,4vw,40px) 16px;overflow:visible;background:var(--bg);border-bottom:1px solid var(--line)}
+  header.open nav .links{display:flex}
+  .links a{text-align:center;padding:14px 12px}
+}
+/* the grid column must be able to shrink or the table card pushes the page to 462px; the table then scrolls inside .tblwrap */
+@media(max-width:860px){.grid2{grid-template-columns:minmax(0,1fr)}.tblwrap{-webkit-overflow-scrolling:touch;background:linear-gradient(to left,var(--surface) 40%,transparent) right/40px 100% local no-repeat,linear-gradient(to left,rgba(131,102,234,.45),transparent) right/26px 100% scroll no-repeat}}
+.h-t{display:none}@media(hover:none),(pointer:coarse){.h-m{display:none}.h-t{display:inline}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><nav><a class="brand" href="/">Jay <b>Beatty</b></a><div class="links"><a href="/team-calculator/">Calculator</a><a href="#method">Method</a><a href="#states">By state</a><a href="/team-calculator/docs/decisions.html">How it was built</a><a href="/">jaybeatty.com</a></div></nav></div></header>
+<header><div class="wrap"><nav><a class="brand" href="/">Jay <b>Beatty</b></a><div class="links" id="navlinks"><a href="/team-calculator/">Calculator</a><a href="#method">Method</a><a href="#states">By state</a><a href="/team-calculator/docs/decisions.html">How it was built</a><a href="/">jaybeatty.com</a></div><button class="menu-tg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6L6 18"/></svg></button></nav></div></header>
 <main>
 <section class="hero wrap">
   <div class="eyebrow">CMS TEAM · performance year 2 · 2027 projection</div>
   <h1 style="margin-top:12px">Where TEAM <em>bites</em> in 2027.</h1>
-  <p class="lede">Every one of the 721 hospitals in the Transforming Episode Accountability Model, run through the same reconciliation rules as the calculator, with its spending, readmission and quality inputs taken from public CMS files and held constant into 2027. Red hospitals would owe CMS money at the 2027 reconciliation. Hover any dot.</p>
+  <p class="lede">Every one of the 721 hospitals in the Transforming Episode Accountability Model, run through the same reconciliation rules as the calculator, with its spending, readmission and quality inputs taken from public CMS files and held constant into 2027. Red hospitals would owe CMS money at the 2027 reconciliation. <span class="h-m">Hover any dot.</span><span class="h-t">Tap any dot for its numbers; tap it again to open that hospital in the calculator.</span></p>
   <div class="tiles" id="tiles"></div>
   <div class="mapcard">
     <div class="toolbar">
@@ -111,7 +127,9 @@ function draw(us){const svg=d3.select('#map');const proj=d3.geoAlbersUsa().scale
   const pts=H.filter(h=>h.lat!=null).map(h=>{const p=proj([h.lon,h.lat]);return p?Object.assign({x:p[0],y:p[1]},h):null;}).filter(Boolean);
   const r=d3.scaleSqrt().domain([0,d3.max(pts,h=>Math.max(Math.abs(h.t3),Math.abs(h.npra27)))||1]).range([2.2,13]);
   dots=svg.append('g').selectAll('circle').data(pts.sort((a,b)=>Math.abs(val(b))-Math.abs(val(a)))).join('circle').attr('cx',h=>h.x).attr('cy',h=>h.y);
-  dots.on('mousemove',(e,h)=>{tip.innerHTML=tipHTML(h);tip.style.left=e.clientX+'px';tip.style.top=e.clientY+'px';tip.style.opacity=1;}).on('mouseleave',()=>tip.style.opacity=0).on('click',(e,h)=>{location.href='/team-calculator/#h='+h.ccn;});
+  const touch=matchMedia('(hover:none)');let lastTap=null;/* shortcut: touch has no hover, so the first tap shows the tip and the second tap on the same dot opens the calculator; tapping elsewhere does not clear the tip */
+  const showTip=(e,h)=>{tip.innerHTML=tipHTML(h);tip.style.left=Math.min(Math.max(e.clientX,Math.min(160,innerWidth/2)),innerWidth-Math.min(160,innerWidth/2))+'px';tip.style.top=e.clientY+'px';tip.style.opacity=1;};
+  dots.on('mousemove',showTip).on('mouseleave',()=>tip.style.opacity=0).on('click',(e,h)=>{if(touch.matches&&lastTap!==h.ccn){lastTap=h.ccn;showTip(e,h);return;}location.href='/team-calculator/#h='+h.ccn;});
   restyle(r);window._r=r;}
 function restyle(r){dots.attr('class',h=>'dot '+cls(h)).attr('r',h=>{const v=Math.abs(val(h));const c=cls(h);return c==='none'?2.2:c==='shield'?r(Math.abs(h.recon))*.8:r(v);}).sort((a,b)=>Math.abs(val(b))-Math.abs(val(a)));}
 function top(){const rows=H.filter(h=>!h.nodata&&h.eps&&val(h)<0).sort((a,b)=>val(a)-val(b)).slice(0,25);document.getElementById('top').innerHTML=rows.map(h=>`<tr><td><a href="/team-calculator/#h=${h.ccn}">${esc(h.name)}</a><div class="m" style="color:var(--muted);font-size:.78rem">${esc(h.city||'')}${h.city?', ':''}${esc(h.st)}</div></td><td>${TRK[trk(h)]}</td><td class="n">${h.eps.toLocaleString()}</td><td class="n r">${fmt(val(h))}</td><td class="n">${h.readm?fmt(Math.abs(h.readm)):'—'}</td></tr>`).join('')||'<tr><td colspan="5">No hospital repays under this scenario.</td></tr>';}
@@ -123,6 +141,11 @@ document.getElementById('q').addEventListener('input',e=>find(e.target.value));
 tiles();top();states();find('');
 try{draw(JSON.parse(document.getElementById('us-states').textContent));}catch(e){document.getElementById('mapnote').textContent='The state outlines could not be drawn. The tables below carry the same results.';}
 })();
+
+/* phone header menu: real button, aria-expanded, Escape closes and returns focus to it */
+(function(){const h=document.querySelector('header'),b=h.querySelector('.menu-tg');function set(o,f){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o);if(!o&&f)b.focus();}
+b.addEventListener('click',()=>set(!h.classList.contains('open')));h.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>set(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&h.classList.contains('open'))set(false,true);});document.addEventListener('click',e=>{if(!h.contains(e.target))set(false);});})();
 </script>
 </body>
 </html>

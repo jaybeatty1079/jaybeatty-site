@@ -245,16 +245,43 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .wordmark .wm-t{font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.05;letter-spacing:-.01em;color:var(--fg)}
 .wordmark.lg .wm-t{font-size:clamp(1.9rem,3.4vw,2.6rem)}
 .wordmark .wm-t em{font-style:italic;color:var(--purple-soft)}
-html{scroll-padding-top:62px}@media(max-width:860px){html{scroll-padding-top:92px}}
+html{scroll-padding-top:62px}
+/* phone pass: one-row header (brand + menu button, links drop down), anchors clear it by header + 12px */
+.menu-tg{display:none;flex:none;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--line);background:color-mix(in oklab,var(--fg) 6%,transparent);color:var(--fg);place-items:center;cursor:pointer}
+.menu-tg:hover,.menu-tg:focus-visible{border-color:var(--green-soft);outline:none}
+.menu-tg svg{width:18px;height:18px;display:block}.menu-tg .x,header.open .menu-tg .bars{display:none}header.open .menu-tg .x{display:block}
+@media(max-width:860px){
+  html{scroll-padding-top:69px}
+  nav{height:57px;flex-wrap:nowrap;padding-block:0;row-gap:0}
+  .menu-tg{display:grid}
+  nav .links{display:none;position:absolute;top:100%;left:0;right:0;width:auto;flex-direction:column;gap:8px;padding:12px clamp(16px,4vw,40px) 16px;overflow:visible;background:var(--bg);border-bottom:1px solid var(--line)}
+  header.open nav .links{display:flex}
+  .links a{text-align:center;padding:14px 12px}
+}
+/* scrollable boxes (chart on phones, tables): right-edge fade only while more is hidden (the local cover hides the hint once scrolled to the end) */
+.fade{overflow-x:auto;-webkit-overflow-scrolling:touch;background:linear-gradient(to left,var(--surface) 40%,transparent) right/40px 100% local no-repeat,linear-gradient(to left,rgba(131,102,234,.45),transparent) right/26px 100% scroll no-repeat}
+details.tbl>div{overflow-x:auto;-webkit-overflow-scrolling:touch;background:linear-gradient(to left,var(--surface) 40%,transparent) right/40px 100% local no-repeat,linear-gradient(to left,rgba(131,102,234,.45),transparent) right/26px 100% scroll no-repeat}
+/* shortcut: charts keep their 560-wide drawing and scroll sideways on phones so labels stay 12px; a true re-layout per chart (like the six-hospital one) is the upgrade */
+@media(max-width:640px){.fade>svg.chart{min-width:560px}.fade.flow>svg.chart{min-width:1080px}.fade>svg.chart text[style]{font-size:11px!important}}
+.rstrip{display:none}
+@media(max-width:640px){
+  .rstrip{display:flex;position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:9;justify-content:center;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:var(--panel);border:1px solid var(--green-soft);color:var(--fg);font-weight:600;font-size:1rem;font-variant-numeric:tabular-nums;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.5);transform:translateY(160%);visibility:hidden;transition:transform .25s ease,visibility 0s .25s}
+  .rstrip.on{transform:none;visibility:visible;transition:transform .25s ease}
+  .rstrip small{font-weight:400;color:var(--muted);font-size:.8rem}
+}
+@media print{.rstrip{display:none!important}}
+@media(prefers-reduced-motion:reduce){.rstrip,.rstrip.on{transition:none}}
 </style>
 </head>
 <body>
 <header><div class="wrap"><nav>
   <a class="brand" href="https://www.jaybeatty.com">Jay <b>Beatty</b></a>
-  <div class="links">
+  <div class="links" id="navlinks">
     <a href="#calc">Calculator</a><a href="map.html">2027 map</a><a href="#how">How TEAM pays</a><a href="#method">Methodology</a><a href="#sources">Sources</a><a href="https://www.jaybeatty.com">jaybeatty.com</a>
   </div>
+  <button class="menu-tg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6L6 18"/></svg></button>
 </nav></div></header>
+<a class="rstrip" id="rstrip" href="#results" aria-label="Estimated result, jump to the full result"><span id="rstripVal">$0</span><small id="rstripTrack"></small></a>
 
 <main id="top">
 <div class="wrap">
@@ -396,39 +423,39 @@ html{scroll-padding-top:62px}@media(max-width:860px){html{scroll-padding-top:92p
   <div class="charts" style="margin-top:18px">
     <figure id="figLines">
       <figcaption><span class="t">Service lines side by side</span><span class="s">Each line's dollars above or below target before quality and stop limits (bars), and the same per episode (dots). Spinal fusion sits under Orthopedics unless you move it.</span></figcaption>
-      <svg class="chart" id="chLines" viewBox="0 0 560 230" role="img" aria-label="Bars of reconciliation contribution by service line"></svg>
+      <div class="fade"><svg class="chart" id="chLines" viewBox="0 0 560 230" role="img" aria-label="Bars of reconciliation contribution by service line"></svg></div>
       <details class="tbl"><summary>View as table</summary><div id="tblLines"></div></details>
     </figure>
 
     <figure>
       <figcaption><span class="t">Where the money comes from</span><span class="s">Reconciliation amount by episode category before quality and stop limits. Green is below target, red is above.</span></figcaption>
-      <svg class="chart" id="chCats" viewBox="0 0 560 230" role="img" aria-label="Bar chart of reconciliation amount by episode category"></svg>
+      <div class="fade"><svg class="chart" id="chCats" viewBox="0 0 560 230" role="img" aria-label="Bar chart of reconciliation amount by episode category"></svg></div>
       <details class="tbl"><summary>View as table</summary><div id="tblCats"></div></details>
     </figure>
 
     <figure>
       <figcaption><span class="t">Same hospital, three tracks</span><span class="s">Estimated NPRA if every category ran this far above or below target. Dot marks your current inputs.</span></figcaption>
-      <svg class="chart" id="chSens" viewBox="0 0 560 260" role="img" aria-label="Line chart of net payment by spend versus target for each track"></svg>
+      <div class="fade"><svg class="chart" id="chSens" viewBox="0 0 560 260" role="img" aria-label="Line chart of net payment by spend versus target for each track"></svg></div>
       <div class="legend"><span><i style="background:var(--green)"></i>Track 1 (upside only)</span><span><i style="background:var(--teal)"></i>Track 2</span><span><i style="background:var(--purple)"></i>Track 3</span></div>
       <details class="tbl"><summary>View as table</summary><div id="tblSens"></div></details>
     </figure>
 
     <figure>
       <figcaption><span class="t">Episode spend by setting</span><span class="s">Your average spend split with the national TEAM pattern (IAC analysis of 2021 to 2023 claims). Lighter bar: post-acute after the levers.</span></figcaption>
-      <svg class="chart" id="chSetting" viewBox="0 0 560 250" role="img" aria-label="Stacked bars of episode spend by setting for each category"></svg>
+      <div class="fade"><svg class="chart" id="chSetting" viewBox="0 0 560 250" role="img" aria-label="Stacked bars of episode spend by setting for each category"></svg></div>
       <div class="legend"><span><i style="background:var(--purple)"></i>Anchor stay</span><span><i style="background:var(--teal)"></i>Part B during anchor</span><span><i style="background:var(--green)"></i>Post-acute 30 days</span><span><i style="background:var(--green);opacity:.45"></i>Post-acute with levers</span></div>
       <details class="tbl"><summary>View as table</summary><div id="tblSetting"></div></details>
     </figure>
 
     <figure>
       <figcaption><span class="t">What each lever is worth</span><span class="s">Estimated NPRA today, then the change from each lever, to the result with every lever applied. Stop limits and quality adjustment included.</span></figcaption>
-      <svg class="chart" id="chLevers" viewBox="0 0 560 250" role="img" aria-label="Waterfall of net payment from baseline through each lever"></svg>
+      <div class="fade"><svg class="chart" id="chLevers" viewBox="0 0 560 250" role="img" aria-label="Waterfall of net payment from baseline through each lever"></svg></div>
       <details class="tbl"><summary>View as table</summary><div id="tblLevers"></div></details>
     </figure>
 
     <figure>
       <figcaption><span class="t">Five performance years</span><span class="s" id="fiveSub"></span></figcaption>
-      <svg class="chart" id="chFive" viewBox="0 0 560 240" role="img" aria-label="Bar chart of estimated net payment by performance year with cumulative line"></svg>
+      <div class="fade"><svg class="chart" id="chFive" viewBox="0 0 560 240" role="img" aria-label="Bar chart of estimated net payment by performance year with cumulative line"></svg></div>
       <div class="legend"><span><i style="background:var(--green)"></i>Payment from CMS</span><span><i style="background:var(--red)"></i>Repayment to CMS</span><span><i style="background:var(--purple)"></i>Cumulative</span></div>
       <details class="tbl"><summary>View as table</summary><div id="tblFive"></div></details>
     </figure>
@@ -455,7 +482,7 @@ html{scroll-padding-top:62px}@media(max-width:860px){html{scroll-padding-top:92p
   </div>
   <figure id="figFlow" style="margin-bottom:24px">
     <figcaption><span class="t" id="flowTitle">Your number, step by step</span><span class="s">The hospital loaded above, run through the six steps in order. Steps 1 to 3 are drawn to the scale of the target book; steps 4 to 6 zoom in to the reconciliation dollars, which are usually a few percent of it. It plays once when it scrolls into view.</span></figcaption>
-    <svg class="chart" id="chFlow" viewBox="0 0 1080 330" role="img" aria-label="Animated sequence of the six TEAM reconciliation steps using the loaded hospital's figures"></svg>
+    <div class="fade flow"><svg class="chart" id="chFlow" viewBox="0 0 1080 330" role="img" aria-label="Animated sequence of the six TEAM reconciliation steps using the loaded hospital's figures"></svg></div>
     <div class="legend" style="justify-content:space-between;align-items:center"><span><span><i style="background:var(--purple)"></i>Target</span> <span><i style="background:var(--teal)"></i>Spend</span> <span><i style="background:var(--green)"></i>Payment</span> <span><i style="background:var(--red)"></i>Repayment</span> <span><i style="background:var(--amber)"></i>Withheld, capped or sequestered</span></span><button class="btn small" type="button" id="flowReplay">Replay</button></div>
   </figure>
   <div class="grid3">
@@ -961,6 +988,7 @@ $('loadExample').addEventListener('click',loadExample);$('resetAll').addEventLis
 /* ---------- results ---------- */
 function update(){const R=run();const T=TRACKS[S.track];
   const v=$('npra');tweenText(v,R.eps?R.npra:0,x=>R.eps?fmt(x):'$0');v.className='val '+(R.npra>0?'pos':R.npra<0?'neg':'');if(v._prev!=null&&v._prev!==R.npra)pulseResults();v._prev=R.npra;
+  {const rv=$('rstripVal');if(rv){rv.textContent=R.eps?fmt(R.npra):'$0';$('rstripTrack').textContent=T.name;}}
   $('resHead').textContent=`${S.caseId?CASES.find(c=>c.id===S.caseId).name+' · ':''}${T.name} · PY${S.py} ${2025+S.py} · division ${S.region}`;
   $('npraSub').textContent=!R.eps?'Enter episodes in Step 3 or load the example.':R.npra>0?`Estimated payment from CMS. ${fmtFull(R.npra)}, ${pct(R.npra/R.aggT*100,2)} of your aggregated target price.`:R.npra<0?`Estimated repayment to CMS. ${fmtFull(R.npra)}, ${pct(R.npra/R.aggT*100,2)} of your aggregated target price.`:(S.track===1&&R.recon<0?`Spending ran ${fmtFull(-R.recon)} over target, but Track 1 has no repayment. In Track 3 this would be ${fmtFull(run({track:3}).npra)}.`:'Breaks even at these inputs.');
   tweenText($('tEp'),R.eps,x=>num(x));$('tEpD').textContent=R.rows.length+' of 5 categories';
@@ -1204,6 +1232,14 @@ window.TEAMCALC={S,CATS,run,catCalc,applyCaseState,derivePublic,leverSavings,app
 /* deep link from the 2027 map: #h=<CCN> opens that hospital */
 (function(){const m=/^#h=(\d{6})$/.exec(location.hash||'');if(!m)return;const p=PARTS.find(x=>x.ccn===m[1]);if(!p)return;setTimeout(()=>{pick(p);const c=document.getElementById('calc');if(c)c.scrollIntoView({block:'start'});},50);})();
 })();
+
+/* phone header menu: real button, aria-expanded, Escape closes and returns focus to it */
+(function(){const h=document.querySelector('header'),b=h.querySelector('.menu-tg');function set(o,f){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o);if(!o&&f)b.focus();}
+b.addEventListener('click',()=>set(!h.classList.contains('open')));h.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>set(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&h.classList.contains('open'))set(false,true);});document.addEventListener('click',e=>{if(!h.contains(e.target))set(false);});})();
+/* phone result strip: shown while the inputs are on screen and the full result card is not */
+(function(){const s=document.getElementById('rstrip'),steps=document.querySelector('#calc .steps'),card=document.querySelector('#results .board');if(!s||!steps||!card||!window.IntersectionObserver)return;let a=false,b=false;const f=()=>s.classList.toggle('on',a&&!b);
+new IntersectionObserver(e=>{a=e[e.length-1].isIntersecting;f();}).observe(steps);new IntersectionObserver(e=>{b=e[e.length-1].isIntersecting;f();}).observe(card);})();
 
 </script>
 <script>

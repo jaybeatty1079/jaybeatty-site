@@ -285,7 +285,7 @@ document.addEventListener('click', e => { const b = e.target.closest('#market-an
   const md = (MARKET.verdict_md || '').trim(); const verdict = md ? md.split(/\n\s*\n/).map(p => p.startsWith('## ') ? `<h3>${esc(p.slice(3))}</h3>` : `<p>${esc(p).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</p>`).join('') : '<p class="muted">Verdict pending: the numbers are in, the prose is not.</p>';
   const deals = (MARKET.deals || []).slice().sort((u, v) => (v.date || '').localeCompare(u.date || '')).slice(0, 14);
   const dl = deals.length ? `<div class="deals">${deals.map(d => `<div class="deal"><div class="d">${esc((d.date || '').slice(0, 7))}</div><div><strong>${esc(d.acquirer || '')}</strong> <span class="muted">${esc(d.deal_type || '')}</span> <strong>${esc(d.target || '')}</strong>${d.value_usd_m ? ` <span class="muted">· $${Number(d.value_usd_m).toLocaleString()}M</span>` : ''}<div class="m">${esc(d.rationale || '')}${d.evidence_at_deal ? ` <em>Evidence at the deal: ${esc(d.evidence_at_deal)}</em>` : ''}${d.source && /^https?:/.test(d.source) ? ` <a href="${esc(d.source)}" target="_blank" rel="noopener">source</a>` : ''}</div></div></div>`).join('')}</div>` : '';
-  el.innerHTML = `<div class="hyp"><div class="card"><h3><span class="k">The test</span>Share against evidence, every indication with a public leader</h3>${svg}${tab}</div><div class="card verdict"><h3><span class="k">The hypothesis</span>Do the biggest companies hold the share, and must a small company win on evidence?</h3>${verdict}</div></div>${dl ? `<div class="card" style="margin-top:18px"><h3><span class="k">The deal record</span>Who bought what, and what evidence came with it</h3>${dl}</div>` : ''}`;
+  el.innerHTML = `<div class="hyp"><div class="card"><h3><span class="k">The test</span>Share against evidence, every indication with a public leader</h3>${svg}<div class="tbl-wrap">${tab}</div></div><div class="card verdict"><h3><span class="k">The hypothesis</span>Do the biggest companies hold the share, and must a small company win on evidence?</h3>${verdict}</div></div>${dl ? `<div class="card" style="margin-top:18px"><h3><span class="k">The deal record</span>Who bought what, and what evidence came with it</h3>${dl}</div>` : ''}`;
 })();
 (function reg() {
   document.getElementById('reg-summary').innerHTML = (META.reg_summary || []).map(p => `<p>${esc(p).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</p>`).join('');
@@ -321,4 +321,14 @@ if ('IntersectionObserver' in window && !reduced) { const io = new IntersectionO
 
 route();
 window.ATLAS = { D, go, state, openProduct, focusRegion, regionLabel: r => (REGION[r] || {}).label || r, get pendingSub() { return pendingSub; }, set pendingSub(v) { pendingSub = v; } };
+
+// phone menu: Escape closes and returns focus; table fade clears at the scroll end
+(function () {
+  const b = document.getElementById('menu-btn'), l = document.getElementById('nav-links'); if (!b || !l) return;
+  const set = o => { l.classList.toggle('open', o); b.setAttribute('aria-expanded', o); };
+  b.addEventListener('click', () => set(!l.classList.contains('open')));
+  l.addEventListener('click', e => { if (e.target.closest('a')) set(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && l.classList.contains('open')) { set(false); b.focus(); } });
+  document.addEventListener('scroll', e => { const w = e.target; if (w.classList && w.classList.contains('tbl-wrap')) w.classList.toggle('at-end', w.scrollWidth - w.clientWidth - w.scrollLeft < 2); }, true);
+})();
 })();

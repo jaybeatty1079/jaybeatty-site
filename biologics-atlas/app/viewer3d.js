@@ -4,6 +4,8 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+// touch wording at phone width (matches the 560px breakpoint in template.html)
+const hint = last => matchMedia('(max-width:560px)').matches ? 'Drag to rotate · pinch to zoom · ' + last.replace('click', 'tap') : 'Drag to rotate · scroll to zoom · ' + last;
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 
 const CFG = window.ATLAS3D_CONFIG || {};
@@ -110,7 +112,7 @@ loader.load(MODEL_URL, gltf => {
   api.ready = true; host.hidden = false; wrap.classList.add('is3d');
   const stats = Object.entries(byRegion).map(([r, l]) => `${r}:${l.length}`).join(' ');
   if (CFG.debug) console.log('ATLAS3D regions', stats);
-  if (tip) tip.textContent = 'Drag to rotate · scroll to zoom · click a bone';
+  if (tip) tip.textContent = hint('click a bone');
   if (pending) { api.focus(pending.region, pending.sub); pending = null; } else if (window.ATLAS && window.ATLAS.state && window.ATLAS.state.region) api.focus(window.ATLAS.state.region, null);
   needsRender = true;
 }, undefined, err => { api.failed = true; host.hidden = true; console.warn('ATLAS3D model failed', err); });
@@ -155,7 +157,7 @@ renderer.domElement.addEventListener('pointermove', e => {
   const now = performance.now(); if (now - lastPick < 50 || downAt) return; lastPick = now;
   const m = pickAt(e); const region = m ? m.userData.region : null;
   if (region !== hovered) { hovered = region; restyle(); renderer.domElement.style.cursor = region && region !== 'other' ? 'pointer' : 'grab'; }
-  if (tip) { if (m && region !== 'other') { const lab = (window.ATLAS && window.ATLAS.regionLabel) ? window.ATLAS.regionLabel(region) : region; tip.innerHTML = `<b>${lab}</b>${m.userData.label ? ' · ' + String(m.userData.label).replace(/[_.]/g, ' ') : ''}`; } else if (!downAt) tip.textContent = active ? 'Drag to rotate · scroll to zoom · Zoom out to reset' : 'Drag to rotate · scroll to zoom · click a bone'; }
+  if (tip) { if (m && region !== 'other') { const lab = (window.ATLAS && window.ATLAS.regionLabel) ? window.ATLAS.regionLabel(region) : region; tip.innerHTML = `<b>${lab}</b>${m.userData.label ? ' · ' + String(m.userData.label).replace(/[_.]/g, ' ') : ''}`; } else if (!downAt) tip.textContent = active ? hint('zoom out to reset') : hint('click a bone'); }
 });
 renderer.domElement.addEventListener('pointerdown', e => { downAt = { x: e.clientX, y: e.clientY }; moved = false; controls.autoRotate = false; });
 renderer.domElement.addEventListener('pointerup', e => {

@@ -17,11 +17,12 @@
 <meta name="twitter:description" content="Pick a bone, see what the market actually has for it: 369 orthobiologic products across 85 surgical applications with FDA pathway, strongest study, evidence grade and reimbursement.">
 <meta name="twitter:image" content="https://jaybeatty.com/og/atlas.png">
 <meta name="description" content="An interactive map of US orthobiologics by surgical application: what is established, what is emerging, what is investigational, with the clinical evidence, FDA pathway and reimbursement for each product, across spine and trauma.">
-<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml"><link rel="icon" href="/favicon.ico?v=2" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 :root{
+  --hdr:61px;
   --bg:#0b0a10; --surface:#14111e; --panel:#1c1730; --line:#2b2542; --line-soft:#231d3a;
   --fg:#ece9f5; --muted:#a79fc0;
   --purple:#8366ea; --purple-soft:#b7a6ff;
@@ -64,7 +65,18 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:16px;heigh
 .links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color .15s,background-color .15s,color .15s}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none;outline:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
 
 
-@media(max-width:860px){nav{height:auto;flex-wrap:wrap;padding-block:10px;row-gap:8px}.links{width:100%;padding-bottom:2px;-webkit-overflow-scrolling:touch}}
+.menu-btn{display:none}
+html{scroll-padding-top:var(--hdr)}
+@media(max-width:860px){
+:root{--hdr:57px}
+header{background:#0b0a10;backdrop-filter:none}
+nav{height:56px;flex-wrap:nowrap}
+.menu-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;font-family:var(--mono);font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg);background:color-mix(in oklab,var(--fg) 6%,transparent);border:1px solid var(--line);border-radius:999px;cursor:pointer}
+.menu-btn:focus-visible{outline:2px solid var(--green-soft);outline-offset:2px}
+.links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:8px;padding:12px 16px 16px;background:#0b0a10;border-bottom:1px solid var(--line);overflow:visible}
+.links.open{display:flex}
+.links a{padding:14px 16px;font-size:.8rem}
+}
 .btn{font-weight:700;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:6px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--purple);color:var(--fg);background:transparent;cursor:pointer}
 .btn.primary{background:var(--purple);border-color:var(--purple)}
 .btn.small{padding:6px 10px;font-size:.64rem}
@@ -87,7 +99,7 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:16px;heigh
 .hyp .card h3{margin-bottom:8px}.hyp .verdict p{color:var(--muted);margin-top:10px}.hyp .verdict p:first-child{margin-top:0}.hyp .verdict strong{color:var(--fg)}
 .scatter{width:100%;height:auto;display:block;margin-top:8px}.scatter text{fill:var(--muted);font-size:11px;font-family:var(--mono)}.scatter .ax{stroke:var(--line);stroke-width:1}.scatter .pt{stroke:#0b0a10;stroke-width:1}.scatter .pt.large{fill:var(--purple-soft)}.scatter .pt.mid,.scatter .pt.small,.scatter .pt.private{fill:var(--amber)}.scatter .pt.unknown,.scatter .pt.multiple,.scatter .pt.nonprofit,.scatter .pt.subsidiary{fill:var(--muted)}
 .linklike{all:unset;cursor:pointer;color:var(--purple-soft)}.linklike:hover{text-decoration:underline}
-.ltab{width:100%;min-width:480px;border-collapse:collapse;font-size:.88rem;margin-top:10px}.ltab th{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}.ltab td{padding:7px 8px;border-bottom:1px solid var(--line-soft);vertical-align:top}.ltab td.n{font-family:var(--mono);white-space:nowrap}
+.ltab{width:100%;min-width:520px;border-collapse:collapse;font-size:.88rem;margin-top:10px}.ltab th{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}.ltab td{padding:7px 8px;border-bottom:1px solid var(--line-soft);vertical-align:top}.ltab td.n{font-family:var(--mono);white-space:nowrap}
 .deals{display:grid;gap:8px;margin-top:10px}.deal{display:grid;grid-template-columns:92px minmax(0,1fr);gap:12px;font-size:.9rem;padding:8px 0;border-top:1px solid var(--line-soft)}.deal .d{font-family:var(--mono);font-size:.74rem;color:var(--green-soft)}.deal .m{color:var(--muted);font-size:.86rem;margin-top:3px}
 .layer{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:9px 13px;border:1px solid var(--line);border-radius:6px;color:var(--muted);background:var(--surface)}
 .layer.on{border-color:var(--green);color:var(--green-soft)}
@@ -121,7 +133,7 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:16px;heigh
 .skel-wrap.is3d.flat .skel3d{display:none}
 .skel-wrap.is3d{cursor:default}
 .skel-tip{z-index:3}
-.skel-credit{position:absolute;right:10px;bottom:12px;z-index:3;font-family:var(--mono);font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);opacity:.8;pointer-events:auto;max-width:40%;text-align:right;line-height:1.3}
+.skel-credit{position:absolute;right:10px;top:10px;z-index:3;font-family:var(--mono);font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);opacity:.8;pointer-events:auto;max-width:60%;text-align:right;line-height:1.3}
 .skel-credit a{color:var(--muted)}
 .bone{fill:none;stroke:var(--bone);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;opacity:.92}
 .bone.fill{fill:var(--bone);stroke:none}
@@ -232,7 +244,9 @@ dialog::backdrop{background:rgba(5,4,10,.7);backdrop-filter:blur(4px)}
 .repo-cat{margin-top:18px}.repo-cat .subhead{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
 .tbl.repo th:nth-child(1){width:30%}.tbl.repo th:nth-child(2){width:18%}.tbl.repo th:nth-child(3){width:14%}.tbl.repo th:nth-child(4){width:10%}
 .tbl.repo button.linklike{text-align:left;font:inherit;color:var(--fg);background:none;border:0;padding:0;cursor:pointer}.tbl.repo button.linklike:hover{color:var(--green-soft)}
-.tbl-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px}
+.tbl-wrap{overflow:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px}
+/* shortcut: fade is shown on every wrap at phone width until scrolled to its end, even if a table happens to fit; JS in app.js clears it */
+@media(max-width:760px){.tbl-wrap:not(.at-end){-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 32px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 32px),transparent)}}
 .tbl-wrap.tall{max-height:540px}
 .payer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 @media(max-width:760px){.payer-grid{grid-template-columns:1fr}}
@@ -290,7 +304,8 @@ html.js .rv.in{opacity:1;transform:none}
 <body>
 <header><nav class="wrap">
   <a class="brand" href="/">Jay <b>Beatty</b></a>
-  <div class="links">
+  <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <div class="links" id="nav-links">
     <a href="/#programs">Programs</a>
     <a href="/#projects">Projects</a>
     <a href="/team-calculator/">TEAM calculator</a>
@@ -1039,6 +1054,16 @@ if ('IntersectionObserver' in window && !reduced) { const io = new IntersectionO
 
 route();
 window.ATLAS = { D, go, state, openProduct, focusRegion, regionLabel: r => (REGION[r] || {}).label || r, get pendingSub() { return pendingSub; }, set pendingSub(v) { pendingSub = v; } };
+
+// phone menu: Escape closes and returns focus; table fade clears at the scroll end
+(function () {
+  const b = document.getElementById('menu-btn'), l = document.getElementById('nav-links'); if (!b || !l) return;
+  const set = o => { l.classList.toggle('open', o); b.setAttribute('aria-expanded', o); };
+  b.addEventListener('click', () => set(!l.classList.contains('open')));
+  l.addEventListener('click', e => { if (e.target.closest('a')) set(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && l.classList.contains('open')) { set(false); b.focus(); } });
+  document.addEventListener('scroll', e => { const w = e.target; if (w.classList && w.classList.contains('tbl-wrap')) w.classList.toggle('at-end', w.scrollWidth - w.clientWidth - w.scrollLeft < 2); }, true);
+})();
 })();
 
 </script>
@@ -1055,6 +1080,8 @@ window.ATLAS = { D, go, state, openProduct, focusRegion, regionLabel: r => (REGI
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+// touch wording at phone width (matches the 560px breakpoint in template.html)
+const hint = last => matchMedia('(max-width:560px)').matches ? 'Drag to rotate · pinch to zoom · ' + last.replace('click', 'tap') : 'Drag to rotate · scroll to zoom · ' + last;
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 
 const CFG = window.ATLAS3D_CONFIG || {};
@@ -1161,7 +1188,7 @@ loader.load(MODEL_URL, gltf => {
   api.ready = true; host.hidden = false; wrap.classList.add('is3d');
   const stats = Object.entries(byRegion).map(([r, l]) => `${r}:${l.length}`).join(' ');
   if (CFG.debug) console.log('ATLAS3D regions', stats);
-  if (tip) tip.textContent = 'Drag to rotate · scroll to zoom · click a bone';
+  if (tip) tip.textContent = hint('click a bone');
   if (pending) { api.focus(pending.region, pending.sub); pending = null; } else if (window.ATLAS && window.ATLAS.state && window.ATLAS.state.region) api.focus(window.ATLAS.state.region, null);
   needsRender = true;
 }, undefined, err => { api.failed = true; host.hidden = true; console.warn('ATLAS3D model failed', err); });
@@ -1206,7 +1233,7 @@ renderer.domElement.addEventListener('pointermove', e => {
   const now = performance.now(); if (now - lastPick < 50 || downAt) return; lastPick = now;
   const m = pickAt(e); const region = m ? m.userData.region : null;
   if (region !== hovered) { hovered = region; restyle(); renderer.domElement.style.cursor = region && region !== 'other' ? 'pointer' : 'grab'; }
-  if (tip) { if (m && region !== 'other') { const lab = (window.ATLAS && window.ATLAS.regionLabel) ? window.ATLAS.regionLabel(region) : region; tip.innerHTML = `<b>${lab}</b>${m.userData.label ? ' · ' + String(m.userData.label).replace(/[_.]/g, ' ') : ''}`; } else if (!downAt) tip.textContent = active ? 'Drag to rotate · scroll to zoom · Zoom out to reset' : 'Drag to rotate · scroll to zoom · click a bone'; }
+  if (tip) { if (m && region !== 'other') { const lab = (window.ATLAS && window.ATLAS.regionLabel) ? window.ATLAS.regionLabel(region) : region; tip.innerHTML = `<b>${lab}</b>${m.userData.label ? ' · ' + String(m.userData.label).replace(/[_.]/g, ' ') : ''}`; } else if (!downAt) tip.textContent = active ? hint('zoom out to reset') : hint('click a bone'); }
 });
 renderer.domElement.addEventListener('pointerdown', e => { downAt = { x: e.clientX, y: e.clientY }; moved = false; controls.autoRotate = false; });
 renderer.domElement.addEventListener('pointerup', e => {

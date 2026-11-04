@@ -254,6 +254,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 .strip .fr.video::after{content:"";position:absolute;left:10px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--green);background-image:linear-gradient(transparent,transparent);box-shadow:0 2px 8px rgba(0,0,0,.4)}
 .strip .fr.video::before{content:"";position:absolute;left:20px;top:17px;z-index:1;border-left:9px solid #041509;border-top:6px solid transparent;border-bottom:6px solid transparent}
 .strip .hint{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+.hint .h-t{display:none}@media(hover:none),(pointer:coarse){.hint .h-m{display:none}.hint .h-t{display:inline}}
 .lb{position:fixed;inset:0;z-index:60;background:rgba(5,4,8,.9);display:grid;place-items:center;padding:24px;cursor:zoom-out;opacity:0;transition:opacity .2s}
 .lb.on{opacity:1}
 .lb img{max-width:min(92vw,1100px);max-height:80vh;border-radius:10px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6)}
@@ -319,8 +320,10 @@ html{scroll-padding-top:62px}
 .menu-tg:hover,.menu-tg:focus-visible{border-color:var(--green-soft);outline:none}
 .menu-tg svg{width:18px;height:18px;display:block}.menu-tg .x,header.open .menu-tg .bars{display:none}header.open .menu-tg .x{display:block}
 @media(max-width:860px){html{scroll-padding-top:100px}}
+/* shortcut: the 601-860px two-row strip fades its right edge with a mask at all times; the last link stays reachable by scrolling, a scroll-aware fade is the upgrade */
+@media(min-width:601px) and (max-width:860px){nav .links{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent)}}
 @media(max-width:600px){
-  html{scroll-padding-top:58px}
+  html{scroll-padding-top:69px}/* header 57px + 12px */
   nav{flex-wrap:nowrap;row-gap:0}
   .menu-tg{display:grid;order:3}
   nav .links{display:none;position:absolute;top:100%;left:0;right:0;order:unset;width:auto;flex-direction:column;gap:8px;padding:12px clamp(16px,4vw,40px) 16px;overflow:visible;background:var(--bg);border-bottom:1px solid var(--line)}
@@ -828,7 +831,7 @@ if(srcs.length&&strip&&track){const make=()=>srcs.map(img=>{const a=document.cre
     const im=document.createElement('img');im.src=img.src;im.alt=img.alt||'';im.loading='lazy';a.appendChild(im);const c=document.createElement('span');c.className='cap';c.textContent=img.dataset.cap||img.alt||'';a.appendChild(c);a.setAttribute('aria-label',img.dataset.cap||img.alt||'Photo');return a;});
   make().forEach(f=>track.appendChild(f));if(!RM)make().forEach(f=>{f.setAttribute('aria-hidden','true');f.tabIndex=-1;track.appendChild(f);});
   strip.hidden=false;document.querySelectorAll('.strip-src').forEach(e=>e.classList.add('strip-src'));
-  const hint=document.createElement('p');hint.className='hint';hint.textContent=RM?'Photos: scroll sideways; click a photo to enlarge.':'Drifts on its own. Hover to pause, click a photo to enlarge.';strip.after(hint);
+  const hint=document.createElement('p');hint.className='hint';hint.innerHTML=(RM?'<span class="h-m">Photos: scroll sideways; click a photo to enlarge.</span><span class="h-t">Photos: swipe sideways; tap a photo to enlarge.</span>':'<span class="h-m">Drifts on its own. Hover to pause, click a photo to enlarge.</span><span class="h-t">Drifts on its own. Tap a photo to enlarge.</span>');strip.after(hint);
   let lb=null;function open(src,cap){lb=document.createElement('div');lb.className='lb';lb.innerHTML='<button class="x" type="button">Close</button>';const im=document.createElement('img');im.src=src;im.alt=cap;const wrapd=document.createElement('div');wrapd.appendChild(im);const c=document.createElement('div');c.className='lbcap';c.textContent=cap;wrapd.appendChild(c);lb.appendChild(wrapd);lb.addEventListener('click',close);document.body.appendChild(lb);requestAnimationFrame(()=>lb.classList.add('on'));document.addEventListener('keydown',esc);}
   function close(){if(!lb)return;lb.classList.remove('on');const l=lb;setTimeout(()=>l.remove(),200);lb=null;document.removeEventListener('keydown',esc);}function esc(e){if(e.key==='Escape')close();}}
 })();
