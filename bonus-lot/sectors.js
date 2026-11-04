@@ -19,16 +19,16 @@ window.SECTORS = {
     // the per-site label and its colour (brand here; concept for restaurants, flag for hotels). Text only, no logos.
     labels: [['Toyota', '#eb0a1e'], ['Ford', '#2a5db0'], ['Chevrolet', '#c9a227'], ['Honda', '#d0202c'], ['Hyundai', '#2457a8'], ['Kia', '#36405a'], ['Nissan', '#c3002f'], ['Subaru', '#2f63d1'], ['Jeep', '#3f6b3f'], ['RAM', '#a6192e'], ['GMC', '#cf0a2c'], ['BMW', '#1c7ad1'], ['Mercedes', '#8c8f98'], ['Lexus', '#5c5f6b'], ['Audi', '#bb0a30'], ['Volkswagen', '#1d3f8a'], ['CDJR', '#4a4f5c'], ['Mitsubishi', '#d7141a']],
     copy: {
-      sub: "A Section 125 Wellness Plan, explained to a general manager. Your store nets more, your people take home more, and you set what that does to your bonus.",
+      sub: "The mission: save your store money without selling a car, and add to the company's bottom line, your people's paychecks and your own pocket. A Section 125 Wellness Plan, explained to a general manager.",
       // the opening panel over the city: three lines a GM reads in five seconds, one paragraph, and a live line filled from the default store
       open: {
-        lines: [['Your store', 'nets more.'], ['Your people', 'take home more.'], ['Your bonus', 'goes up.']],
+        lines: [['Save money', 'without selling a car.'], ['More to', 'the bottom line.'], ['More in every check.', 'Yours too.']],
         para: "A Section 125 Wellness Plan does all three with payroll tax the store already sends out. Designed to be cost-neutral, it can start any month of the year, and nothing is signed on these numbers.",
         live: (emp, lift, units) => `On a ${emp}-person store: ${lift} of net a year, ${units} cars' worth, before you change a number.`
       },
       start: "Three short steps: your group, your plans, your pay plan. The counter at the top right is what the plan adds to store net each year. Drag the city to look around.",
       m1: ['Build your group', "Your store first, then every other store the owner runs. Each one becomes a building, sized by headcount and colored by brand. Up to 30."],
-      obj: { 1: "Build your group: your store, then the owner's other stores", 2: 'Your plans: who enrolls, plan level, how your health plan is funded', 3: 'Set your pay plan', 4: 'Mission passed. Send this to ownership' },
+      obj: { 1: "Build your group: your store, then the owner's other stores", 2: 'Your plans: who enrolls, plan level, how your health plan is funded', 3: 'Set your pay plan', 4: 'Mission passed. Be the ambassador: take it to the owner' },
       // the guided path, in the city before the truck story and on the cars after it. {cue} is a camera position; the engine fills {per} and the sector words.
       orient: [
         { h: 'This city is your dealer group.', s: 'The lot in the middle is your {site}, 64 people on payroll until you change it. Every {site} the {owner} runs becomes a building around it.', cue: 0 },
@@ -43,7 +43,7 @@ window.SECTORS = {
         "Rocky. Back office. Nobody sees me, everybody gets paid. Build your store, then add the owner's other stores. Every one becomes a building.",
         "{n} stores, {emp} on W-2. That's a payroll worth reading. Now tell me about your plans.",
         '{enrolled} enrolled across the group. {lift} a year lands on the P&L and not one tire gets kicked. Last job: how do you get paid?',
-        "{bonus} to you. {units} cars' worth of net nobody had to move. Take it to ownership."
+        "{units} cars' worth of net nobody had to move, and you're the one who found it. {bonus} to you. Now be the ambassador: take it to the owner. Their version is one tap away."
       ],
       unitLine: n => `${n} cars you didn't have to sell`,
       ownerUnitLine: n => `${n} cars' worth of net, with no extra units sold`,

@@ -28,6 +28,10 @@ def terms(name, syn):
     names = [name] + [s for s in syn if s]
     return '(' + ' OR '.join('"%s"[tiab]' % n for n in names) + ')'
 
+def phrases(name, syn):
+    # the same names as terms(), each a quoted phrase joined with OR: unquoted, OpenAlex splits "MOTS-c" into words and counts noise
+    return ' OR '.join('"%s"' % n for n in [name] + [s for s in syn if s])
+
 def pubmed_count(term):
     j = get(EU + 'esearch.fcgi', {'db': 'pubmed', 'term': term, 'retmode': 'json', 'retmax': 0}); time.sleep(.4)
     return int(j['esearchresult']['count'])
@@ -57,18 +61,18 @@ def approved(name, syn):
         if r.get('brand_name'): return {'brand': r['brand_name'][0], 'generic': (r.get('generic_name') or [n])[0]}
     return None
 
-def europepmc_count(name):
+def europepmc_count(name, syn=()):
     try:
-        j = get('https://www.ebi.ac.uk/europepmc/webservices/rest/search', {'query': '"%s"' % name, 'format': 'json', 'resultType': 'lite', 'pageSize': 1}); time.sleep(.3)
+        j = get('https://www.ebi.ac.uk/europepmc/webservices/rest/search', {'query': phrases(name, syn), 'format': 'json', 'resultType': 'lite', 'pageSize': 1}); time.sleep(.3)
         return int(j.get('hitCount', 0))
     except Exception: return None
 
-def openalex(name):
+def openalex(name, syn=()):
     # all works mentioning the compound, and how many are not in English: a measure of the literature PubMed misses
     try:
-        j = get('https://api.openalex.org/works', {'search': name, 'per-page': 1, 'mailto': 'jbeatty1079@icloud.com'}); time.sleep(.3)
+        j = get('https://api.openalex.org/works', {'search': phrases(name, syn), 'per-page': 1, 'mailto': 'jbeatty1079@icloud.com'}); time.sleep(.3)
         total = int(j.get('meta', {}).get('count', 0))
-        k = get('https://api.openalex.org/works', {'search': name, 'filter': 'language:!en', 'per-page': 1, 'mailto': 'jbeatty1079@icloud.com'}); time.sleep(.3)
+        k = get('https://api.openalex.org/works', {'search': phrases(name, syn), 'filter': 'language:!en', 'per-page': 1, 'mailto': 'jbeatty1079@icloud.com'}); time.sleep(.3)
         return {'all': total, 'non_english': int(k.get('meta', {}).get('count', 0))}
     except Exception: return None
 
@@ -78,6 +82,26 @@ def grade(row):
     if (row['human_pubmed'] or 0) >= 3: return 'C'
     return 'D'
 
+def grade_one(cid, name, aka, about, syn):
+    key = name.split(' (')[0]
+    t = terms(key, syn)
+    row = {'id': cid, 'name': name, 'aka': aka, 'about': about, 'synonyms': syn}
+    # each source on its own, so one failing index never loses the row
+    def safe(k, fn, default):
+        try: row[k] = fn()
+        except Exception as e: row[k] = default; row.setdefault('partial', []).append('%s: %s' % (k, str(e)[:60]))
+    safe('human_pubmed', lambda: pubmed_count(t + ' AND humans[mh]'), None)
+    safe('trials_pubmed', lambda: pubmed_count(t + ' AND (clinical trial[pt] OR randomized controlled trial[pt])'), None)
+    safe('all_pubmed', lambda: pubmed_count(t), None)
+    safe('papers', lambda: pubmed_top(t + ' AND humans[mh]') or pubmed_top(t), [])
+    safe('trials_ctgov', lambda: trials_count(key), None)
+    safe('approved', lambda: approved(key, syn), None)
+    safe('europepmc', lambda: europepmc_count(key, syn), None)
+    safe('openalex', lambda: openalex(key, syn), None)
+    row['grade'] = grade(row); row['graded_on'] = str(datetime.date.today())
+    print('%-22s %s  human %5s  trials %4s/%4s  all %6s  %s' % (cid, row['grade'], row['human_pubmed'], row['trials_pubmed'], row['trials_ctgov'], row['all_pubmed'], (row['approved'] or {}).get('brand', '')))
+    return row
+
 def run(only=None):
     rows = []
     for line in open(os.path.join(HERE, 'compounds.txt')):
@@ -85,25 +109,7 @@ def run(only=None):
         if not line or line.startswith('#'): continue
         cid, name, aka, about, syn = (line.split('|') + [''])[:5]
         if only and cid != only: continue
-        syn = [s.strip() for s in syn.split(';') if s.strip()]
-        key = name.split(' (')[0]
-        t = terms(key, syn)
-        row = {'id': cid, 'name': name, 'aka': aka, 'about': about, 'synonyms': syn}
-        # each source on its own, so one failing index never loses the row
-        def safe(k, fn, default):
-            try: row[k] = fn()
-            except Exception as e: row[k] = default; row.setdefault('partial', []).append('%s: %s' % (k, str(e)[:60]))
-        safe('human_pubmed', lambda: pubmed_count(t + ' AND humans[mh]'), None)
-        safe('trials_pubmed', lambda: pubmed_count(t + ' AND (clinical trial[pt] OR randomized controlled trial[pt])'), None)
-        safe('all_pubmed', lambda: pubmed_count(t), None)
-        safe('papers', lambda: pubmed_top(t + ' AND humans[mh]') or pubmed_top(t), [])
-        safe('trials_ctgov', lambda: trials_count(key), None)
-        safe('approved', lambda: approved(key, syn), None)
-        safe('europepmc', lambda: europepmc_count(key), None)
-        safe('openalex', lambda: openalex(key), None)
-        row['grade'] = grade(row); row['graded_on'] = str(datetime.date.today())
-        rows.append(row)
-        print('%-22s %s  human %5s  trials %4s/%4s  all %6s  %s' % (cid, row['grade'], row['human_pubmed'], row['trials_pubmed'], row['trials_ctgov'], row['all_pubmed'], (row['approved'] or {}).get('brand', '')))
+        rows.append(grade_one(cid, name, aka, about, [s.strip() for s in syn.split(';') if s.strip()]))
     if only: print(json.dumps(rows, indent=1)); return
     json.dump(rows, open(OUT, 'w'), indent=1); print('wrote', os.path.normpath(OUT), len(rows), 'compounds')
 

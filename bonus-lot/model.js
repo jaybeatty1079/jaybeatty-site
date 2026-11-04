@@ -2,8 +2,8 @@
    Sector-specific numbers come in through the sector config; nothing here knows what a "store" is. */
 (function (root) {
   // Contribution levels as published in the decks on file (contribution, admin fee). Edit here when the rate sheet changes.
-  // Five ACA levels, $40 admin each; $1,600 is the top plan per the Oct 26 Kind Lending proposal ($82.40 net per enrolled employee per month).
-  const PLANS = [{ c: 1600, admin: 40 }, { c: 1500, admin: 40 }, { c: 1200, admin: 40 }, { c: 1000, admin: 40 }, { c: 675, admin: 40 }];
+  // Five levels, $40 admin each (Jay, 2026-11-03: 1600, 1400, 1200 on top, 1000 and 675 below; there is no 1500 plan). $1,600 is $82.40 net per enrolled employee per month; the default is 1400 so a GM need not pick.
+  const PLANS = [{ c: 1600, admin: 40 }, { c: 1400, admin: 40 }, { c: 1200, admin: 40 }, { c: 1000, admin: 40 }, { c: 675, admin: 40 }];
   const FICA = 0.0765;
   const STATES = 'AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY'.split(' ');
   const NOTAX = new Set(['AK', 'FL', 'NV', 'NH', 'SD', 'TN', 'TX', 'WA', 'WY']);
@@ -14,7 +14,7 @@
 
   function defaults(sector) {
     const b = sector.bench;
-    return { stores: [{ brand: sector.labels[0][0], emp: sector.sizes.emp, state: sector.sizes.state }], qual: 80, plan: PLANS[0].c, hp: 'insured', cost: 9000, defl: 3, scope: 'store', mode: 'all', share: 5, rpe: b.rpe[0], margin: b.margin[0], unit: b.unit[0] };
+    return { stores: [{ brand: sector.labels[0][0], emp: sector.sizes.emp, state: sector.sizes.state }], qual: 80, plan: PLANS[1].c, hp: 'insured', cost: 9000, defl: 3, scope: 'store', mode: 'all', share: 5, rpe: b.rpe[0], margin: b.margin[0], unit: b.unit[0] };
   }
 
   /* Takes anything (a parsed share link) and returns a state every field of which is on the sector's whitelists and inside its ranges. Never throws. */
@@ -28,7 +28,7 @@
     return {
       stores: stores.length ? stores : d.stores,
       qual: num(o.qual, 40, 100, 80),
-      plan: oneOf(+o.plan, PLANS.map(p => p.c), PLANS[0].c),
+      plan: oneOf(+o.plan, PLANS.map(p => p.c), PLANS[1].c),
       hp: oneOf(o.hp, ['insured', 'level', 'self'], 'insured'),
       cost: num(o.cost, 3000, 25000, 9000),
       defl: num(o.defl, 0, 15, 3),

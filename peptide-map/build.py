@@ -3,6 +3,8 @@
 Run: python3 peptide-map/build.py  (from the site repo root). The page is one file with the data inline."""
 import csv, json, re, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import urllib.parse
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tools')); from evidence import terms, phrases  # the same query terms the counts came from
 HERE = os.path.dirname(os.path.abspath(__file__))
 VAULT = '/Users/jaybeatty/Desktop/Claude outputs/Pharma - peptide map'
 AS_OF = '2026-11-02'
@@ -292,6 +294,15 @@ STN = {'brand': [['brand', 'Source', 'Branded API from the manufacturer under cG
        'none': [['no', 'Source', 'No lawful source outside a trial.'], ['no', 'Purify and test', 'No lawful lot to test.'], ['no', 'Fill and finish', 'No 503A or 503B path exists.'], ['no', 'Dispense', 'Nothing can be lawfully prescribed outside a trial.']],
        'listed': [['ok', 'Source', 'Bulk substance from a registered supplier with a certificate of analysis.'], ['ok', 'Purify and test', 'The supplier\'s certificate and the pharmacy\'s own testing under USP <797>.'], ['ok', 'Fill and finish', '503A under Category 1. 503B: not listed.'], ['ok', 'Dispense', 'A prescription for one patient.']],
        'component': [['ok', 'Source', 'Bulk substance for a 503B facility.'], ['ok', 'Purify and test', 'Release testing under cGMP.'], ['cond', 'Fill and finish', '503B: Category 1. 503A: a legal reading, not a listing.'], ['ok', 'Dispense', 'Prescribed or office-use from a 503B batch.']]}
+def index_links(r):
+    # each count with the exact search behind it, from evidence.py's own query terms, so the link reproduces the number (None: the index did not answer)
+    q = urllib.parse.quote; key = r['name'].split(' (')[0]; syn = r.get('synonyms', []); t = terms(key, syn); ph = q(phrases(key, syn)); oa = 'https://api.openalex.org/works?mailto=jbeatty1079@icloud.com&search=' + ph; pm = 'https://pubmed.ncbi.nlm.nih.gov/?term='; o = r.get('openalex') or {}
+    return [['PubMed, human studies', r.get('human_pubmed'), pm + q(t + ' AND humans[mh]')],
+            ['PubMed, clinical trials', r.get('trials_pubmed'), pm + q(t + ' AND (clinical trial[pt] OR randomized controlled trial[pt])')],
+            ['ClinicalTrials.gov, registered trials', r.get('trials_ctgov'), 'https://clinicaltrials.gov/search?intr=' + q(key)],
+            ['Europe PMC, records', r.get('europepmc'), 'https://europepmc.org/search?query=' + ph],
+            ['OpenAlex, works', o.get('all'), oa],  # the API page: its meta.count is the number, and the website turns scripted visits away
+            ['OpenAlex, not in English', o.get('non_english'), oa + '&filter=language:!en']]
 def more_card(r):
     g = r['grade']; key = r['name'].split(' (')[0].lower()
     # openFDA label search is fuzzy (homeopathic labels match single words), so a known brand wins, and a hit counts only when its generic name is the compound
@@ -306,15 +317,20 @@ def more_card(r):
         track, weather = 'closed', {'A': 0, 'B': 2, 'C': 3, 'D': 4}[g]
         a = 'Not on FDA\'s 503A bulks list in any category the register shows; no approved US product.'; b = 'Not on the 503B list.'
         path = 'No lawful bulk-compounding path today, 503A or 503B, and no approved product: what is sold online is an unapproved drug in FDA\'s letters.'
-    o = r.get('openalex') or {}
-    ev = '%s. PubMed: %s human studies, %s clinical trials. ClinicalTrials.gov: %s registered trials. Europe PMC: %s records. OpenAlex: %s works, %s not in English.' % (GRADE_TEXT[g], r['human_pubmed'], r['trials_pubmed'], r['trials_ctgov'], r['europepmc'], o.get('all'), o.get('non_english'))
+    ev = GRADE_TEXT[g] + '.'  # the counts themselves are listed with their links under the grid
     card = {'id': 'm-' + r['id'], 'name': r['name'], 'aka': r['aka'], 'about': r['about'], 'own': 'Graded from the public indexes on %s. Counts are mentions and registrations, not a verdict on whether it works.' % r['graded_on'],
-            'track': track, 'a': a, 'hhs': 'Not in the draft policy.', 'b': b, 'path': path, 'enforce': 'Letters naming this compound were not checked for this entry.', 'dates': [], 'evidence': ev, 'weather': weather, 'papers': r.get('papers', []), 'menu': 'more', 'grade': g}
+            'track': track, 'a': a, 'hhs': 'Not in the draft policy.', 'b': b, 'path': path, 'enforce': 'Letters naming this compound were not checked for this entry.', 'dates': [], 'evidence': ev, 'weather': weather, 'papers': r.get('papers', []), 'menu': 'more', 'grade': g, 'graded_on': r['graded_on'], 'ix': index_links(r)}
     card.update(OVERRIDE.get(r['id'], {}))
     card['stations'] = STN[card['track']]
     if card['track'] == 'closed': card['stop'] = 2
     return card
 MORE_CARDS = [more_card(r) for r in MORE if not r.get('error')]
+# the named cards get the same counts and papers (tools/named_evidence.py); their regulatory text, track, weather and colour stay as written
+try: NAMED_EV = {r['id']: r for r in json.load(open(os.path.join(HERE, 'data', 'named-evidence.json')))}
+except FileNotFoundError: NAMED_EV = {}
+for c in CARDS:
+    r = NAMED_EV.get(c['id'])
+    if r: c.update(papers=r.get('papers', []), grade=r['grade'], graded_on=r['graded_on'], ix=index_links(r))
 for c in CARDS: c['menu'] = 'named'
 for c in MORE_CARDS: c['trackLabel'] = TRACKS[c['track']]
 # ---------- the twelve windows: how a peptide is made, from the idea to the vial ----------

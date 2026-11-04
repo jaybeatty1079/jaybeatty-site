@@ -1,0 +1,733 @@
+[
+ {
+  "id": "bpc-157",
+  "name": "BPC-157",
+  "aka": "",
+  "about": "",
+  "synonyms": [
+   "BPC 157",
+   "BPC157"
+  ],
+  "human_pubmed": 55,
+  "trials_pubmed": 0,
+  "all_pubmed": 230,
+  "papers": [
+   {
+    "pmid": "39325560",
+    "title": "Effect of BPC-157 on Symptoms in Patients with Interstitial Cystitis: A Pilot Study",
+    "year": "2024",
+    "journal": "Altern Ther Health Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39325560/"
+   },
+   {
+    "pmid": "32445447",
+    "title": "BPC 157 Rescued NSAID-cytotoxicity Via Stabilizing Intestinal Permeability and Enhancing Cytoprotection",
+    "year": "2020",
+    "journal": "Curr Pharm Des",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32445447/"
+   },
+   {
+    "pmid": "34324435",
+    "title": "Intra-Articular Injection of BPC 157 for Multiple Types of Knee Pain",
+    "year": "2021",
+    "journal": "Altern Ther Health Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34324435/"
+   },
+   {
+    "pmid": "23755725",
+    "title": "Stable gastric pentadecapeptide BPC 157-NO-system relation",
+    "year": "2014",
+    "journal": "Curr Pharm Des",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23755725/"
+   }
+  ],
+  "trials_ctgov": 4,
+  "approved": null,
+  "europepmc": 316,
+  "openalex": null,
+  "grade": "B",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "tb-500",
+  "name": "TB-500",
+  "aka": "",
+  "about": "",
+  "synonyms": [
+   "TB500",
+   "thymosin beta-4 fragment"
+  ],
+  "human_pubmed": 23,
+  "trials_pubmed": 1,
+  "all_pubmed": 35,
+  "papers": [
+   {
+    "pmid": "41476424",
+    "title": "Injectable Peptide Therapy: A Primer for Orthopaedic and Sports Medicine Physicians",
+    "year": "2026",
+    "journal": "Am J Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41476424/"
+   },
+   {
+    "pmid": "41490200",
+    "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions",
+    "year": "2026",
+    "journal": "J Am Acad Orthop Surg Glob Res Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/"
+   },
+   {
+    "pmid": "41966639",
+    "title": "Safety and Efficacy of Approved and Unapproved Peptide Therapies for Musculoskeletal Injuries and Athletic Performance",
+    "year": "2026",
+    "journal": "Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41966639/"
+   },
+   {
+    "pmid": "28887173",
+    "title": "Adsorption effects of the doping relevant peptides Insulin Lispro, Synachten, TB-500 and GHRP 5",
+    "year": "2017",
+    "journal": "Anal Biochem",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28887173/"
+   }
+  ],
+  "trials_ctgov": 1,
+  "approved": null,
+  "europepmc": 155,
+  "openalex": null,
+  "grade": "C",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "mots-c",
+  "name": "MOTS-c",
+  "aka": "",
+  "about": "",
+  "synonyms": [
+   "MOTSc"
+  ],
+  "human_pubmed": 156,
+  "trials_pubmed": 5,
+  "all_pubmed": 269,
+  "papers": [
+   {
+    "pmid": "37307934",
+    "title": "MOTS-c: A potential anti-pulmonary fibrosis factor derived by mitochondria",
+    "year": "2023",
+    "journal": "Mitochondrion",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37307934/"
+   },
+   {
+    "pmid": "33473109",
+    "title": "MOTS-c is an exercise-induced mitochondrial-encoded regulator of age-dependent physical decline and muscle homeostasis",
+    "year": "2021",
+    "journal": "Nat Commun",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33473109/"
+   },
+   {
+    "pmid": "36233287",
+    "title": "MOTS-c, the Most Recent Mitochondrial Derived Peptide in Human Aging and Age-Related Diseases",
+    "year": "2022",
+    "journal": "Int J Mol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36233287/"
+   },
+   {
+    "pmid": "36761202",
+    "title": "MOTS-c: A promising mitochondrial-derived peptide for therapeutic exploitation",
+    "year": "2023",
+    "journal": "Front Endocrinol (Lausanne)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36761202/"
+   }
+  ],
+  "trials_ctgov": 5,
+  "approved": null,
+  "europepmc": 830,
+  "openalex": null,
+  "grade": "B",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "kpv",
+  "name": "KPV",
+  "aka": "",
+  "about": "",
+  "synonyms": [
+   "Lys-Pro-Val"
+  ],
+  "human_pubmed": 56,
+  "trials_pubmed": 0,
+  "all_pubmed": 130,
+  "papers": [
+   {
+    "pmid": "25298219",
+    "title": "Stability-indicating HPLC assay for lysine-proline-valine (KPV) in aqueous solutions and skin homogenates",
+    "year": "2015",
+    "journal": "Biomed Chromatogr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25298219/"
+   },
+   {
+    "pmid": "38041747",
+    "title": "Non-contrast-enhanced magnetic resonance urography for measuring split kidney function in pediatric patients with hydronephrosis: comparison with renal scintigraphy",
+    "year": "2024",
+    "journal": "Pediatr Nephrol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38041747/"
+   },
+   {
+    "pmid": "41533788",
+    "title": "Inflammation-triggered self-immolative conjugates enable oral peptide delivery by overcoming gastrointestinal barriers",
+    "year": "2026",
+    "journal": "Sci Adv",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41533788/"
+   },
+   {
+    "pmid": "14531843",
+    "title": "Extensive structure-activity studies of lactam derivatives of MT-II and SHU-9119: their activity and selectivity at human melanocortin receptors 3, 4, and 5",
+    "year": "2003",
+    "journal": "J Pept Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14531843/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 1098,
+  "openalex": null,
+  "grade": "C",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "epitalon",
+  "name": "Epitalon",
+  "aka": "",
+  "about": "",
+  "synonyms": [
+   "epithalon",
+   "AEDG peptide"
+  ],
+  "human_pubmed": 39,
+  "trials_pubmed": 1,
+  "all_pubmed": 118,
+  "papers": [
+   {
+    "pmid": "41490200",
+    "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions",
+    "year": "2026",
+    "journal": "J Am Acad Orthop Surg Glob Res Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/"
+   },
+   {
+    "pmid": "40141333",
+    "title": "Overview of Epitalon-Highly Bioactive Pineal Tetrapeptide with Promising Properties",
+    "year": "2025",
+    "journal": "Int J Mol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40141333/"
+   },
+   {
+    "pmid": "12937682",
+    "title": "Epithalon peptide induces telomerase activity and telomere elongation in human somatic cells",
+    "year": "2003",
+    "journal": "Bull Exp Biol Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/12937682/"
+   },
+   {
+    "pmid": "25535022",
+    "title": "Identification of the small research tetra peptide Epitalon, assumed to be a potential treatment for cancer, old age and Retinitis Pigmentosa in two illegal pharmaceutical preparations",
+    "year": "2015",
+    "journal": "Drug Test Anal",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25535022/"
+   }
+  ],
+  "trials_ctgov": 1,
+  "approved": null,
+  "europepmc": 168,
+  "openalex": null,
+  "grade": "C",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "semax",
+  "name": "Semax",
+  "aka": "",
+  "about": "",
+  "synonyms": [],
+  "human_pubmed": 49,
+  "trials_pubmed": 4,
+  "all_pubmed": 210,
+  "papers": [
+   {
+    "pmid": "32342318",
+    "title": "Functional Connectomic Approach to Studying Selank and Semax Effects",
+    "year": "2020",
+    "journal": "Dokl Biol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32342318/"
+   },
+   {
+    "pmid": "41490200",
+    "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions",
+    "year": "2026",
+    "journal": "J Am Acad Orthop Surg Glob Res Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/"
+   },
+   {
+    "pmid": "32580520",
+    "title": "Novel Insights into the Protective Properties of ACTH((4-7))PGP (Semax) Peptide at the Transcriptome Level Following Cerebral Ischaemia-Reperfusion in Rats",
+    "year": "2020",
+    "journal": "Genes (Basel)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32580520/"
+   },
+   {
+    "pmid": "29798983",
+    "title": "[The efficacy of semax in the tretament of patients at different stages of ischemic stroke]",
+    "year": "2018",
+    "journal": "Zh Nevrol Psikhiatr Im S S Korsakova",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29798983/"
+   }
+  ],
+  "trials_ctgov": 0,
+  "approved": null,
+  "europepmc": 334,
+  "openalex": null,
+  "grade": "B",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "ipamorelin",
+  "name": "Ipamorelin",
+  "aka": "",
+  "about": "",
+  "synonyms": [],
+  "human_pubmed": 25,
+  "trials_pubmed": 2,
+  "all_pubmed": 51,
+  "papers": [
+   {
+    "pmid": "41476424",
+    "title": "Injectable Peptide Therapy: A Primer for Orthopaedic and Sports Medicine Physicians",
+    "year": "2026",
+    "journal": "Am J Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41476424/"
+   },
+   {
+    "pmid": "41490200",
+    "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions",
+    "year": "2026",
+    "journal": "J Am Acad Orthop Surg Glob Res Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/"
+   },
+   {
+    "pmid": "41966639",
+    "title": "Safety and Efficacy of Approved and Unapproved Peptide Therapies for Musculoskeletal Injuries and Athletic Performance",
+    "year": "2026",
+    "journal": "Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41966639/"
+   },
+   {
+    "pmid": "42123471",
+    "title": "Therapeutic Peptides in Aesthetic, Metabolic and Endocrine Conditions: Effects, Safety, Clinical Applications, and Future Perspectives",
+    "year": "2026",
+    "journal": "Int J Mol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42123471/"
+   }
+  ],
+  "trials_ctgov": 3,
+  "approved": null,
+  "europepmc": 119,
+  "openalex": null,
+  "grade": "B",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "cjc-1295",
+  "name": "CJC-1295",
+  "aka": "",
+  "about": "",
+  "synonyms": [
+   "CJC 1295"
+  ],
+  "human_pubmed": 22,
+  "trials_pubmed": 2,
+  "all_pubmed": 35,
+  "papers": [
+   {
+    "pmid": "16352683",
+    "title": "Prolonged stimulation of growth hormone (GH) and insulin-like growth factor I secretion by CJC-1295, a long-acting analog of GH-releasing hormone, in healthy adults",
+    "year": "2006",
+    "journal": "J Clin Endocrinol Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16352683/"
+   },
+   {
+    "pmid": "41476424",
+    "title": "Injectable Peptide Therapy: A Primer for Orthopaedic and Sports Medicine Physicians",
+    "year": "2026",
+    "journal": "Am J Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41476424/"
+   },
+   {
+    "pmid": "41490200",
+    "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions",
+    "year": "2026",
+    "journal": "J Am Acad Orthop Surg Glob Res Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/"
+   },
+   {
+    "pmid": "41966639",
+    "title": "Safety and Efficacy of Approved and Unapproved Peptide Therapies for Musculoskeletal Injuries and Athletic Performance",
+    "year": "2026",
+    "journal": "Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41966639/"
+   }
+  ],
+  "trials_ctgov": 1,
+  "approved": null,
+  "europepmc": 62,
+  "openalex": null,
+  "grade": "C",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "kisspeptin-10",
+  "name": "Kisspeptin-10",
+  "aka": "",
+  "about": "",
+  "synonyms": [
+   "kisspeptin 10",
+   "metastin 45-54"
+  ],
+  "human_pubmed": 120,
+  "trials_pubmed": 9,
+  "all_pubmed": 330,
+  "papers": [
+   {
+    "pmid": "38978171",
+    "title": "Investigating the detection of the novel doping\u2010relevant peptide kisspeptin\u201010 in urine using liquid chromatography high\u2010resolution mass spectrometry",
+    "year": "2024",
+    "journal": "Biomed Chromatogr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38978171/"
+   },
+   {
+    "pmid": "15020672",
+    "title": "Kisspeptin-10, a KiSS-1/metastin-derived decapeptide, is a physiological invasion inhibitor of primary human trophoblasts",
+    "year": "2004",
+    "journal": "J Cell Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15020672/"
+   },
+   {
+    "pmid": "26721186",
+    "title": "KISS1R signaling promotes invadopodia formation in human breast cancer cell via \u03b2-arrestin2/ERK",
+    "year": "2016",
+    "journal": "Cell Signal",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26721186/"
+   },
+   {
+    "pmid": "16242330",
+    "title": "Design and synthesis of downsized metastin (45-54) analogs with maintenance of high GPR54 agonistic activity",
+    "year": "2006",
+    "journal": "Bioorg Med Chem Lett",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16242330/"
+   }
+  ],
+  "trials_ctgov": 5,
+  "approved": null,
+  "europepmc": 892,
+  "openalex": null,
+  "grade": "B",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "nad",
+  "name": "NAD+",
+  "aka": "",
+  "about": "",
+  "synonyms": [
+   "nicotinamide adenine dinucleotide"
+  ],
+  "human_pubmed": 18900,
+  "trials_pubmed": 324,
+  "all_pubmed": 58597,
+  "papers": [
+   {
+    "pmid": "33353981",
+    "title": "NAD(+) metabolism and its roles in cellular processes during ageing",
+    "year": "2021",
+    "journal": "Nat Rev Mol Cell Biol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33353981/"
+   },
+   {
+    "pmid": "24786309",
+    "title": "NAD+ and sirtuins in aging and disease",
+    "year": "2014",
+    "journal": "Trends Cell Biol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/24786309/"
+   },
+   {
+    "pmid": "26785480",
+    "title": "NAD\u207a in aging, metabolism, and neurodegeneration",
+    "year": "2015",
+    "journal": "Science",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26785480/"
+   },
+   {
+    "pmid": "37619764",
+    "title": "The Safety and Antiaging Effects of Nicotinamide Mononucleotide in Human Clinical Trials: an Update",
+    "year": "2023",
+    "journal": "Adv Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37619764/"
+   }
+  ],
+  "trials_ctgov": 270,
+  "approved": null,
+  "europepmc": 286464,
+  "openalex": null,
+  "grade": "B",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "ghk-cu",
+  "name": "GHK-Cu",
+  "aka": "",
+  "about": "",
+  "synonyms": [
+   "GHK-Cu peptide",
+   "copper tripeptide",
+   "copper peptide GHK"
+  ],
+  "human_pubmed": 40,
+  "trials_pubmed": 1,
+  "all_pubmed": 103,
+  "papers": [
+   {
+    "pmid": "39795193",
+    "title": "Are We Ready to Measure Skin Permeation of Modern Antiaging GHK-Cu Tripeptide Encapsulated in Liposomes?",
+    "year": "2025",
+    "journal": "Molecules",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39795193/"
+   },
+   {
+    "pmid": "29986520",
+    "title": "Regenerative and Protective Actions of the GHK-Cu Peptide in the Light of the New Gene Data",
+    "year": "2018",
+    "journal": "Int J Mol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29986520/"
+   },
+   {
+    "pmid": "41476424",
+    "title": "Injectable Peptide Therapy: A Primer for Orthopaedic and Sports Medicine Physicians",
+    "year": "2026",
+    "journal": "Am J Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41476424/"
+   },
+   {
+    "pmid": "41490200",
+    "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions",
+    "year": "2026",
+    "journal": "J Am Acad Orthop Surg Glob Res Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/"
+   }
+  ],
+  "trials_ctgov": 4,
+  "approved": null,
+  "europepmc": 252,
+  "openalex": null,
+  "grade": "B",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "sermorelin",
+  "name": "Sermorelin",
+  "aka": "",
+  "about": "",
+  "synonyms": [
+   "Geref"
+  ],
+  "human_pubmed": 28,
+  "trials_pubmed": 4,
+  "all_pubmed": 35,
+  "papers": [
+   {
+    "pmid": "41490200",
+    "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions",
+    "year": "2026",
+    "journal": "J Am Acad Orthop Surg Glob Res Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/"
+   },
+   {
+    "pmid": "41966639",
+    "title": "Safety and Efficacy of Approved and Unapproved Peptide Therapies for Musculoskeletal Injuries and Athletic Performance",
+    "year": "2026",
+    "journal": "Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41966639/"
+   },
+   {
+    "pmid": "18046908",
+    "title": "Sermorelin: a better approach to management of adult-onset growth hormone insufficiency?",
+    "year": "2006",
+    "journal": "Clin Interv Aging",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18046908/"
+   },
+   {
+    "pmid": "34665524",
+    "title": "Advances in the detection of growth hormone releasing hormone synthetic analogs",
+    "year": "2021",
+    "journal": "Drug Test Anal",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34665524/"
+   }
+  ],
+  "trials_ctgov": 27,
+  "approved": null,
+  "europepmc": 520,
+  "openalex": null,
+  "grade": "B",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "semaglutide",
+  "name": "Semaglutide",
+  "aka": "",
+  "about": "",
+  "synonyms": [
+   "Ozempic",
+   "Wegovy",
+   "Rybelsus"
+  ],
+  "human_pubmed": 3358,
+  "trials_pubmed": 346,
+  "all_pubmed": 5959,
+  "papers": [
+   {
+    "pmid": "33667417",
+    "title": "Semaglutide 2\u00b74 mg once a week in adults with overweight or obesity, and type 2 diabetes (STEP 2): a randomised, double-blind, double-dummy, placebo-controlled, phase 3 trial",
+    "year": "2021",
+    "journal": "Lancet",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33667417/"
+   },
+   {
+    "pmid": "40886075",
+    "title": "Semaglutide and Tirzepatide in Patients With Heart Failure With Preserved Ejection Fraction",
+    "year": "2025",
+    "journal": "JAMA",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40886075/"
+   },
+   {
+    "pmid": "29397376",
+    "title": "Semaglutide versus dulaglutide once weekly in patients with type 2 diabetes (SUSTAIN 7): a randomised, open-label, phase 3b trial",
+    "year": "2018",
+    "journal": "Lancet Diabetes Endocrinol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29397376/"
+   },
+   {
+    "pmid": "33269530",
+    "title": "The effect of semaglutide 2.4 mg once weekly on energy intake, appetite, control of eating, and gastric emptying in adults with obesity",
+    "year": "2021",
+    "journal": "Diabetes Obes Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33269530/"
+   }
+  ],
+  "trials_ctgov": 796,
+  "approved": {
+   "brand": "OZEMPIC",
+   "generic": "ORAL SEMAGLUTIDE"
+  },
+  "europepmc": 18876,
+  "openalex": null,
+  "grade": "A",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "tirzepatide",
+  "name": "Tirzepatide",
+  "aka": "",
+  "about": "",
+  "synonyms": [
+   "Mounjaro",
+   "Zepbound"
+  ],
+  "human_pubmed": 1499,
+  "trials_pubmed": 146,
+  "all_pubmed": 2769,
+  "papers": [
+   {
+    "pmid": "40353578",
+    "title": "Tirzepatide as Compared with Semaglutide for the Treatment of Obesity",
+    "year": "2025",
+    "journal": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/"
+   },
+   {
+    "pmid": "38856224",
+    "title": "Tirzepatide for Metabolic Dysfunction-Associated Steatohepatitis with Liver Fibrosis",
+    "year": "2024",
+    "journal": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38856224/"
+   },
+   {
+    "pmid": "40886075",
+    "title": "Semaglutide and Tirzepatide in Patients With Heart Failure With Preserved Ejection Fraction",
+    "year": "2025",
+    "journal": "JAMA",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40886075/"
+   },
+   {
+    "pmid": "38078870",
+    "title": "Continued Treatment With Tirzepatide for Maintenance of Weight Reduction in Adults With Obesity: The SURMOUNT-4 Randomized Clinical Trial",
+    "year": "2024",
+    "journal": "JAMA",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38078870/"
+   }
+  ],
+  "trials_ctgov": 310,
+  "approved": {
+   "brand": "MOUNJARO",
+   "generic": "TIRZEPATIDE"
+  },
+  "europepmc": 8043,
+  "openalex": null,
+  "grade": "A",
+  "graded_on": "2026-11-04"
+ },
+ {
+  "id": "retatrutide",
+  "name": "Retatrutide",
+  "aka": "",
+  "about": "",
+  "synonyms": [
+   "LY3437943"
+  ],
+  "human_pubmed": 129,
+  "trials_pubmed": 11,
+  "all_pubmed": 214,
+  "papers": [
+   {
+    "pmid": "39761578",
+    "title": "Efficacy and Safety of Glucagon-Like Peptide-1 Receptor Agonists for Weight Loss Among Adults Without Diabetes : A Systematic Review of Randomized Controlled Trials",
+    "year": "2025",
+    "journal": "Ann Intern Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39761578/"
+   },
+   {
+    "pmid": "38843460",
+    "title": "Efficacy and Safety of GLP-1 Medicines for Type 2 Diabetes and Obesity",
+    "year": "2024",
+    "journal": "Diabetes Care",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38843460/"
+   },
+   {
+    "pmid": "40685589",
+    "title": "Efficacy and Safety of GLP-1 Receptor Agonists, Dual Agonists, and Retatrutide for Weight Loss in Adults With Overweight or Obesity: A\u00a0Bayesian NMA",
+    "year": "2025",
+    "journal": "Obesity (Silver Spring)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40685589/"
+   },
+   {
+    "pmid": "37366315",
+    "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity - A Phase 2 Trial",
+    "year": "2023",
+    "journal": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/"
+   }
+  ],
+  "trials_ctgov": 33,
+  "approved": null,
+  "europepmc": 1022,
+  "openalex": null,
+  "grade": "B",
+  "graded_on": "2026-11-04"
+ }
+]

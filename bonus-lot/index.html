@@ -161,10 +161,9 @@ body{padding-bottom:calc(52px + env(safe-area-inset-bottom,0px))} /* shortcut: b
   <div id="phone"><svg viewBox="0 0 60 60" id="rockyFace" aria-hidden="true"></svg><div><div class="who" id="who"></div><div class="txt" id="phoneT"></div><button type="button" id="phoneX">Got it</button></div></div>
   <div class="hud" id="story" aria-live="polite"><div id="storyK"></div><div id="storyT"></div><div id="storyS"></div><div id="qaNav"><button id="qaPrev">← Back</button><span class="n" id="qaN"></span><button id="qaNext" class="p">Next →</button><button id="qaAuto">Auto-play ▶</button><button id="qaLoad" style="display:none">Load this group</button><button id="qaClose">Close ✕</button></div></div>
   <div id="banner"><div class="big" id="bannerBig">Mission <span>Passed</span></div><div class="mid" id="bannerMid"></div><div class="sm" id="bannerSm"></div></div>
-  <button id="svcBtn" type="button">Service dept ▾</button>
   <div id="bay"><button id="bayAsk" type="button">Questions ▾</button><button id="bayLeave" type="button">Back to the city ↩</button></div>
   <div id="svc" role="dialog" aria-labelledby="svcH"><div class="hd"><div><h2 id="svcH">Service <span>department</span></h2><p class="lead">Pull in with a question. Each answer plays on the car on the lift in under a minute, and you can leave whenever you like.</p></div><button id="svcClose" type="button">Close ✕</button></div><div class="svcGrid" id="svcList"></div></div>
-  <div id="start"><div id="open"><div id="openLines"></div><p id="startP"></p><p class="live" id="openLive"></p><div class="acts"><button class="btn" id="tourBtn">How it works · 90 seconds ▶</button><button class="btn g" id="startBtn" disabled style="opacity:.5">Loading the city…</button><button class="btn q sm" id="openSvc" type="button">Jump to a question ▾</button></div></div></div>
+  <div id="start"><div id="open"><div id="openLines"></div><p id="startP"></p><p class="live" id="openLive"></p><div class="acts"><button class="btn" id="tourBtn">How it works · 40 seconds ▶</button><button class="btn g" id="startBtn" disabled style="opacity:.5">Loading the city…</button><button class="btn q sm" id="openSvc" type="button">Jump to a question ▾</button></div></div></div>
   <div id="panel">
     <div class="m on" id="m1"><div class="t"><span id="m1T"></span></div><div class="why" id="m1W"></div>
       <div id="stores"></div>
@@ -195,7 +194,7 @@ body{padding-bottom:calc(52px + env(safe-area-inset-bottom,0px))} /* shortcut: b
       <button class="btn next g" id="n3">Show me the money →</button></div>
   </div>
 </div>
-<p id="whats"><b>What you're looking at.</b><span><i style="background:var(--obj)"></i>The city is your group; the lot in the middle is your store</span><span><i style="background:var(--cash)"></i>The counter is what the plan adds to store net each year</span><span><i style="background:var(--magenta)"></i>The Service dept is a bay with your car on the lift; each answer lights up a part of it</span><span><i style="background:#c9bdfd"></i>Drag to look around</span></p>
+<p id="whats"><b>What you're looking at.</b><span><i style="background:var(--obj)"></i>The city is your group; the lot in the middle is your store</span><span><i style="background:var(--cash)"></i>The counter is what the plan adds to store net each year</span><span><i style="background:var(--magenta)"></i>Jump to a question takes you into the service bay, where each answer plays on the car on the lift</span><span><i style="background:#c9bdfd"></i>Drag to look around</span></p>
 
 <div class="sheet" id="sheet">
   <div class="hero"><div class="k" id="liftK">Net profit added, per year</div><div class="n" id="lift">$0</div><div class="s" id="rockyCap" style="display:none"><b style="color:var(--magenta)">Rocky:</b> <span id="rockyCapT"></span></div><div class="u" id="units"></div><div class="s" id="liftS"></div>
@@ -213,7 +212,7 @@ body{padding-bottom:calc(52px + env(safe-area-inset-bottom,0px))} /* shortcut: b
     <div><div class="h" data-t>Your {site}</div><ul><li><b id="winLift"></b> <span id="winLiftS"></span></li><li><b>Richer benefits with nothing added to the benefits budget.</b> The fee comes out of the saving.</li><li><b>Self-funded or level-funded:</b> everyday visits that never reach the company plan, shown as its own tile when you choose that in mission two.</li></ul></div></div>
     <div class="fine" style="margin:10px 0 0"><b>Possible, not counted here.</b> Workers' comp: some carriers have recognized the lower reportable payroll. Ask your broker.</div></div>
   <div class="stat" style="grid-column:1/-1"><div class="k" data-t>What the {site} gets</div><ul id="gets"></ul>
-    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn q" id="howBtn2">How is it paid for? ▶</button><button class="btn g" id="ownerBtn" data-t>Want a version to share with the {owners}? See it now →</button><span class="fine" style="margin:0" data-t>One page, the {group}'s numbers, no bonus math. Comes with a link you can send.</span></div></div>
+    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn q" id="howBtn2">How is it paid for? ▶</button><button class="btn g" id="ownerBtn" data-t>Be the ambassador: take this to the {owners} →</button><span class="fine" style="margin:0" data-t>One page, the {group}'s numbers, no bonus math. Comes with a link you can send.</span></div></div>
 </div>
 <section id="service" aria-labelledby="serviceH"><h2 id="serviceH">Service <span>department</span></h2><p class="lead">Every question a GM has asked, answered on the cars in under a minute each. Pick one; it plays in the city above.</p><div class="svcGrid" id="svcList2"></div></section>
 <div id="owner" style="display:none;margin-top:14px">
@@ -394,17 +393,17 @@ $('#oPrint').onclick=()=>window.print();
 function caption(h,s){$('#storyT').textContent=h;$('#storyS').textContent=s;gsap.fromTo('#story',{opacity:0,y:10},{opacity:1,y:0,duration:.4})}
 let busy=false,stopSt=null; // one scene at a time: the truck story or a question; choosing another stops it (stopSt ends the truck)
 function interrupt(){clearTimeout(autoT);qa=null;if(stopSt){stopSt();stopSt=null}if(window.city)window.city.stage(false,true);busy=false}
-function dimHud(on){$('#panel').style.visibility=on?'hidden':'visible';gsap.to(HUD,{opacity:on||step===0?0:1,duration:.4});$('#svcBtn').style.display=on?'none':'';if(on){gsap.to('#phone',{x:'-130%',duration:.3});if(getComputedStyle($('#start')).display!=='none')gsap.to('#start',{opacity:0,duration:.3,onComplete:()=>$('#start').style.display='none'})}
+function dimHud(on){$('#panel').style.visibility=on?'hidden':'visible';gsap.to(HUD,{opacity:on||step===0?0:1,duration:.4});if(on){gsap.to('#phone',{x:'-130%',duration:.3});if(getComputedStyle($('#start')).display!=='none')gsap.to('#start',{opacity:0,duration:.3,onComplete:()=>$('#start').style.display='none'})}
   else{gsap.to('#story',{opacity:0,duration:.5});if(step===0){$('#start').style.display='';gsap.to('#start',{opacity:1,duration:.4})}}} // before the missions the HUD stays dark: nothing reads through the opening
 
 /* "How is it paid for?": the truck. `after` chains the guided path on without showing the opening in between. */
-function storyLines(){const m=model();return [
-  ['Payroll tax leaves the company every pay period.',t(`On $${S.plan.toLocaleString()} of one enrolled employee's monthly pay, the {site} sends out ${fmt2(m.fica)} in payroll tax before anyone is paid. The truck is that money.`)],
-  ['With the plan, the truck stops here.',`The $${S.plan.toLocaleString()} goes into the Section 125 Wellness Plan pre-tax, so that tax is never owed. Now the load gets redirected.`],
-  [t('The {owner}\'s car: the {site} keeps its share.'),t(`${fmt2(m.per)} a month per enrolled employee stays with the {site}. That is the net lift on the P&L.`)],
-  ['The employees\' car: more take-home, $0 care.','Their tax savings fund $0 doctor visits, urgent care, therapy and generics for the family, and the wellness reward comes back on the same check. The payroll analysis shows each person\'s number before anything is signed.'],
-  ['The administrator\'s motorcycle: the fee.',`${fmt2(m.admin)} a month per enrolled employee runs the plan: enrollment, claims, compliance and audit defense.`],
-  ['Nothing else changes.',t('Major medical stays exactly as it is. What was never tax-free is still paid as tax. A payroll analysis confirms the numbers for your {group} before anything is signed.')]]}
+function storyLines(){return [
+  ['Payroll tax leaves the company every pay period.',t('Before anyone is paid, a slice of every W-2 dollar goes out as payroll tax: the {site}\'s share and the employee\'s share. The truck is that money.')],
+  ['With the plan, the truck stops here.','Employees elect a wellness contribution pre-tax under a Section 125 plan, so the tax on that slice is never owed. Now the load gets redirected.'],
+  [t('The {owner}\'s car: the {site} keeps its share.'),t('The payroll tax the {site} no longer owes stays with the {site}. That is the net lift on the P&L, with no extra units sold.')],
+  ['The employees\' car: more take-home, care at no cost.','Their share funds doctor visits, urgent care, therapy and generics for the whole family at no cost, and the wellness reward comes back on the same check.'],
+  ['The administrator\'s motorcycle: the fee.',t('A fee comes out of the tax saving and runs the plan: enrollment, claims, compliance and audit defense. Nothing comes out of the {site}.')],
+  ['Nothing else changes.',t('Major medical stays exactly as it is. The program is covered entirely by taxes already being paid, and the excess goes back to the {site} and its people. A payroll analysis confirms the numbers before anything is signed.')]]}
 function runStory(after){if(busy&&!after)interrupt();if(busy||!window.city){if(typeof after==='function')after();return}busy=true;$('#storyK').innerHTML='';$('#qaNav').style.display='none';dimHud(true);window.city.stage(false,true);
   stopSt=window.city.story(i=>caption(...storyLines()[i]),()=>{stopSt=null;busy=false;if(typeof after==='function')after();else dimHud(false)})}
 $('#howBtn2').onclick=()=>{$('#game').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(runStory,500)};
@@ -421,19 +420,20 @@ const QUESTIONS=[
   {h:'All of it inside a Section 125 Wellness Plan.',s:'One more plan document beside the ones you have. The pre-tax election is what makes the tax math work. Nothing is signed on these numbers.',lit:{windows:1}},
   {h:'Major medical stays exactly where it is.',s:'Some care overlaps, and that is fine. This one is easy, convenient and has no copays, so people actually use it: participation runs high.',mm:1,lit:{wheels:1}},
   {h:'Out of the tailpipe.',s:'Major medical is a cost. This one is a net saving: {per} a month per enrolled employee lands on the P&L.',mm:1,exhaust:1,lit:{engine:1}}]},
- {q:'Does it replace our health plan?',beats:[
-  {h:'No. It sits beside major medical.',s:'Nothing changes on the plan you have. This is a fixed indemnity benefit, not health insurance.',mm:1,lit:{windows:1}},
-  {h:'Overlap is fine.',s:'Where both cover a visit, ours is the easy, no-copay first stop. People use the one that costs them nothing.',mm:1,lit:{wheels:1}},
-  {h:'One is a cost. One is a net saving.',s:'{per} a month per enrolled employee after the fee, on the {site}\'s P&L.',mm:1,exhaust:1,lit:{engine:1}}]},
+ {q:'We already cover some of this. Does that make it less valuable?',beats:[
+  {h:'Not at all. It sits beside major medical.',s:'Nothing changes on the plan you have. This is a wellness plan with a fixed indemnity benefit, not health insurance, and it never replaces anything.',mm:1,lit:{windows:1}},
+  {h:'The app wins on time and convenience.',s:'Four to eight weeks to see someone, a copay for the visit, a trip to the pharmacy and copays on the prescriptions. Or a visit on the app, no copay, and the prescriptions delivered to the door.',mm:1,lit:{wheels:1}},
+  {h:'Would your people know how to use the virtual benefit they have?',s:'What number do they call? How do they set it up? What is the copay? What if they need someone the same day? For every one of those questions, this one wins. Overlap is not a factor.',mm:1,lit:{wheels:1}},
+  {h:'And the tax savings sit on both sides.',s:'{per} a month per enrolled employee to the {site}, and more take-home for the employee. Major medical never did that.',mm:1,exhaust:1,lit:{engine:1,body:1}}]},
  {q:'What does it cost the {site}?',beats:[
-  {h:'Nothing out of pocket.',s:'The {admin} a month administration fee comes out of the tax saving, never out of the {site}.',lit:{engine:1}},
-  {h:'{per} a month per enrolled employee stays.',s:'{fica} of FICA the {site} no longer owes, less the {admin} fee. Every enrolled employee, every month.',lit:{engine:1},exhaust:1}]},
+  {h:'Nothing out of pocket.',s:'A portion is withheld from the employee\'s tax saving and a fee comes out of the {site}\'s tax saving. The program is covered entirely by taxes already being paid.',lit:{engine:1,body:1}},
+  {h:'The excess goes back to the {site} and its people.',s:'{per} a month per enrolled employee stays with the {site} after the fee. Every enrolled employee, every month.',lit:{engine:1},exhaust:1}]},
  {q:'Why would employees sign up?',beats:[
-  {h:'$0 care for the whole family.',s:'Virtual primary care, urgent care, therapy, dermatology, 70-plus generics, coaching. No copay, no claim, no deductible to meet first.',lit:{wheels:1}},
-  {h:'More take-home on the same check.',s:'The pre-tax election lowers their tax, and the wellness reward comes back on the same paycheck. Only employees who come out ahead are enrolled.',lit:{body:1}},
-  {h:'Nothing to give up.',s:'Major medical stays. This is on top of it, voluntary, with a 30-day window to opt out.',mm:1,lit:{wheels:1,body:1}}]},
+  {h:'They are automatically in.',s:'Enrollment is opt-out. Everyone who qualifies is enrolled, and the payroll analysis confirms each person comes out ahead before go-live.',lit:{body:1}},
+  {h:'More take-home, and an app with care at no cost.',s:'More on the same paycheck, plus virtual primary care, urgent care, therapy, dermatology and generics at no cost for them and their dependents. Anyone who does not want that can opt out.',lit:{wheels:1,body:1}},
+  {h:'Over 90% stay in.',s:'We average over 90% enrollment of qualified participants.',lit:{body:1}}]},
  {q:'We\'re self-funded. Where does it fit?',beats:[
-  {h:'In front of your plan.',s:'The $0 care is the first stop for everyday visits and generics, so those claims never reach the self-funded or level-funded plan.',mm:1,lit:{wheels:1}},
+  {h:'In front of your plan.',s:'Make it the first stop for everyday care. Those visits and prescriptions never reach the self-funded or level-funded plan, so its cost drops.',mm:1,lit:{wheels:1}},
   {h:'Two ways it pays.',s:'The payroll-tax saving on every enrolled employee, plus the claims that never hit the company plan. The second number comes from your TPA\'s 12-month claims summary, not from this page.',mm:1,exhaust:1,lit:{engine:1,wheels:1}},
   {h:'Set it in mission two.',s:'Pick level-funded or self-funded and the claims estimate shows as its own tile, never folded into the tax number.',lit:{windows:1}}]},
  {q:'What\'s the catch?',beats:[
@@ -447,12 +447,12 @@ const QUESTIONS=[
   {h:'KCP: the tax treatment, and the audit.',s:'KCP, a CPA firm, holds that the tax treatment is supported by substantial authority under current law, and signs an audit-defense engagement directly with the {site}. If the IRS asks, KCP answers.',cop:1,lit:{windows:1,engine:1}},
   {h:'Nobody says IRS-approved, because nobody can.',s:'Opinion letters are not binding on the IRS. Each one is conditioned on the plan being run as written, which is what the administrator and the payroll analysis are for. Your CPA and counsel can review the documents before anything is signed.',cop:1,lit:{windows:1}}]},
  {q:'Who qualifies? Porters, flat-rate, part-time, me?',beats:[
-  {h:'Every department.',s:'Sales, F&I, service, parts, the office, porters and detailers. Commission, flat-rate and hourly pay plans all work, full-time and part-time W-2. The payroll analysis sets each person\'s plan level by wages.',lit:{body:1,wheels:1}},
+  {h:'Every job role.',s:'As long as they are W-2 employees who pay enough in taxes, every role qualifies: sales, F&I, service, parts, the office, porters and detailers, full-time and part-time, on any pay plan. The payroll analysis sets each person\'s plan level by wages.',lit:{body:1,wheels:1}},
   {h:'One condition the one-pager skips.',s:'The employee has to be covered by an ACA-compliant group health plan, yours or a spouse\'s. Someone who declined coverage is not in. The analysis counts only the people who qualify.',mm:1,lit:{windows:1}},
   {h:'Not the owner.',s:'Owners above 2% of an S corporation, partners and members paid on a K-1 cannot join a Section 125 plan. They get the {site}\'s saving instead.',lit:{engine:1}}]},
  {q:'How much work is it, and how fast?',beats:[
-  {h:'About eight weeks from payroll file to first payroll.',s:'Analysis, proposal, agreements, a detailed payroll analysis, payroll setup and a dry run, then enrollment and go-live. The administrator runs it with your payroll company.',lit:{windows:1}},
-  {h:'Your team\'s time: a payroll file and a few signatures.',s:'Enrollment meetings are short, by department, on paid time. Nothing changes on major medical and nothing waits for open enrollment.',mm:1,lit:{body:1}},
+  {h:'We do the work.',s:'Front end, back end and in between: we set it up, automate and integrate it with payroll, and monitor everything on an ongoing basis.',lit:{windows:1}},
+  {h:'A 30-day window, then live on the first of a month.',s:'Thirty days to educate everyone involved, short enrollment meetings by department on paid time, and go-live on the first. Nothing waits for open enrollment and nothing changes on major medical.',mm:1,lit:{body:1}},
   {h:'Starting with one {site} is fine.',s:'Groups can start with one {site} and roll it to the rest. Every number is confirmed by the payroll analysis before anything is signed.',lit:{engine:1}}]},
  {q:'Will it cut my workers\' comp?',beats:[
   {h:'It could, in certain states.',s:'Workers\' comp premium is rated on reportable payroll, and in certain states carriers have accepted the lower reportable payroll after the plan and cut the premium. It is very variable: your state, your carrier and your class codes decide it.',lit:{engine:1}},
@@ -470,7 +470,7 @@ function beat(){const b=qa.q.beats[qa.i],m=model();setScene(b);caption(fill(b.h,
 function ask(q,tour){if(busy)interrupt();busy=true;qa={q,i:0,tour:tour||false};auto=!!tour||autoPref;dimHud(true);$('#qaNav').style.display='flex';beat();$('#qaNext').focus()}
 function closeQ(){if(!qa)return;const wasTour=qa.tour,qaScene=qa.q.beats[qa.q.beats.length-1].scene;clearTimeout(autoT);qa=null;$('#storyK').innerHTML='';$('#qaNav').style.display='none';busy=false;
   if(wasTour&&typeof wasTour.then==='function'){wasTour.then();return} // the guided path runs straight on; the opening never flashes back in between
-  if(wasTour&&step===0&&!$('#startBtn').disabled){if(window.city)window.city.stage(false);gsap.to('#story',{opacity:0,duration:.5});$('#panel').style.visibility='visible';$('#svcBtn').style.display='';$('#startBtn').click()} // the tour hands over to the missions
+  if(wasTour&&step===0&&!$('#startBtn').disabled){if(window.city)window.city.stage(false);gsap.to('#story',{opacity:0,duration:.5});$('#panel').style.visibility='visible';$('#startBtn').click()} // the tour hands over to the missions
   else if(window.city&&qaScene!=='city'){gsap.to('#story',{opacity:0,duration:.5});bayBar(true)} // a question ends in the garage; the bar offers the next one or the way out
   else{if(window.city)window.city.stage(false);dimHud(false)}}
 $('#qaNext').onclick=()=>{if(!qa)return;if(qa.i<qa.q.beats.length-1){qa.i++;beat()}else closeQ()};
@@ -492,7 +492,7 @@ function bayBar(on){$('#bay').classList.toggle('on',on)}
 function svcOpen(on,keep){$('#svc').classList.toggle('on',on);if(on)$('#svcClose').focus();if(keep)return;if(on){dimHud(true);bayBar(false);if(window.city)window.city.stage(true)}else bayBar(true)} // opening the list drives into the garage; closing it leaves you there with the bar
 function leaveBay(){bayBar(false);if(window.city)window.city.stage(false);dimHud(false)}
 $('#bayAsk').onclick=()=>svcOpen(true);$('#bayLeave').onclick=leaveBay;
-$('#svcBtn').onclick=()=>svcOpen(true);$('#openSvc').onclick=()=>svcOpen(true);$('#svcClose').onclick=()=>svcOpen(false);
+$('#openSvc').onclick=()=>svcOpen(true);$('#svcClose').onclick=()=>svcOpen(false);
 function renderService(id,inGame){const items=[QUESTIONS[0],TRUCK,...QUESTIONS.slice(1)];const byG={};for(const q of items){const g=q.g||GROUP_OF[q.q]||'store';(byG[g]=byG[g]||[]).push(q)}
   const box=$('#'+id);box.innerHTML='';for(const g of Object.keys(GROUPS)){if(!byG[g])continue;const d=document.createElement('div');d.className='svcGrp';d.innerHTML=`<h3>${esc(GROUPS[g])}</h3>`;
     for(const q of byG[g]){const b=document.createElement('button');b.type='button';b.className='svcRow';b.innerHTML=`<b>${esc(t(q.q))}</b><span>${esc(fill(q.answer||q.beats[0].h,model()))}</span>`;(q.btns=q.btns||[]).push(b);
@@ -743,18 +743,25 @@ function story(caption,done){
   controls.autoRotate=false;camKill();
   gsap.to(camera.position,{x:GX-4,y:18,z:ROADZ+46,duration:1.6,ease:'power2.inOut'});gsap.to(controls.target,{x:GX-4,y:-3,z:ROADZ-4,duration:1.6}); // low target: the road sits in the upper half, above the caption
   const from=new THREE.Vector3(GX+5,3.5,ROADZ-1.5), at=(o,y)=>new THREE.Vector3(o.position.x,y,o.position.z);
-  let tm;const tl=gsap.timeline({onComplete:()=>{tm=setTimeout(()=>{drop(scene,g);cue(lastCue);done()},800)}});
+  const MD=controls.minDistance;controls.minDistance=3; // the close beats sit inside the orbit limit; restored when the story ends or is stopped
+  let tm;const tl=gsap.timeline({onComplete:()=>{tm=setTimeout(()=>{controls.minDistance=MD;drop(scene,g);cue(lastCue);done()},800)}});
+  // every caption holds 6.5 s before the next; the camera eases in 1.8 s ahead of each close beat. Close: low target puts the subject in the top half, above the caption.
+  const GAP=6.5, narrow=camera.aspect<1, close=(o,t,d,ty)=>tl.to(camera.position,{x:o.position.x+3,y:3.4,z:o.position.z+(narrow?d*1.3:d),duration:1.8,ease:'power2.inOut'},t).to(controls.target,{x:o.position.x-.5,y:narrow?ty-1.8:ty,z:o.position.z,duration:1.8,ease:'power2.inOut'},t);
+  const t2=.3+GAP*2,t3=t2+GAP,t4=t3+GAP,t5=t4+GAP;
   tl.call(()=>caption(0),null,.3)
     .to(T.position,{x:GX+7,duration:4.5,ease:'power1.inOut'},.3)
-    .call(()=>caption(1),null,5)
-    .call(()=>caption(2),null,8.5).call(()=>{for(let i=0;i<10;i++)coinTo(from,at(sedan,1.6),i*.12,g)},null,8.6)
-    .call(()=>caption(3),null,12.5).call(()=>{for(let i=0;i<8;i++)coinTo(from,at(compact,1.3),i*.12,g)},null,12.6)
-    .call(()=>caption(4),null,16.5).call(()=>{for(let i=0;i<4;i++)coinTo(from,at(moto,1.1),i*.12,g)},null,16.6)
-    .to(T.userData.cargo.scale,{y:.3,duration:3},9)
-    .call(()=>caption(5),null,20.5)
-    .to(sedan.position,{x:-170,duration:4.5,ease:'power1.in'},20.6).to(compact.position,{x:-170,duration:4.8,ease:'power1.in'},20.8).to(moto.position,{x:-180,duration:3.8,ease:'power1.in'},21) // home along the open road, in view the whole way
-    .to(T.position,{x:-190,duration:6,ease:'power1.in'},21.8);
-  return ()=>{clearTimeout(tm);tl.kill();g.traverse(o=>gsap.killTweensOf([o.position,o.scale]));drop(scene,g)}; // stop: done() never runs, the caller takes over
+    .call(()=>caption(1),null,.3+GAP)
+    .call(()=>caption(2),null,t2).call(()=>{for(let i=0;i<10;i++)coinTo(from,at(sedan,1.6),i*.12,g)},null,t2+.1)
+    .call(()=>caption(3),null,t3).call(()=>{for(let i=0;i<8;i++)coinTo(from,at(compact,1.3),i*.12,g)},null,t3+.1)
+    .call(()=>caption(4),null,t4).call(()=>{for(let i=0;i<4;i++)coinTo(from,at(moto,1.1),i*.12,g)},null,t4+.1)
+    .to(T.userData.cargo.scale,{y:.3,duration:GAP*3,ease:'none'},t2)
+    .call(()=>caption(5),null,t5);
+  close(sedan,t2-1.4,11,1.9);close(compact,t3-1.4,9.5,1.5);close(moto,t4-1.4,8.5,1.3);
+  tl.to(camera.position,{x:GX-4,y:18,z:ROADZ+46,duration:2,ease:'power2.inOut'},t5-.2).to(controls.target,{x:GX-4,y:-3,z:ROADZ-4,duration:2,ease:'power2.inOut'},t5-.2)
+    .to(sedan.position,{x:-170,duration:4.5,ease:'power1.in'},t5+.3).to(compact.position,{x:-170,duration:4.8,ease:'power1.in'},t5+.5).to(moto.position,{x:-180,duration:3.8,ease:'power1.in'},t5+.7) // home along the open road, in view the whole way
+    .to(T.position,{x:-190,duration:6,ease:'power1.in'},t5+1.5);
+  tl.set({},{},t5+GAP); // the last caption holds its 6.5 s too
+  return ()=>{clearTimeout(tm);tl.kill();camKill();controls.minDistance=MD;g.traverse(o=>gsap.killTweensOf([o.position,o.scale]));drop(scene,g)}; // stop: done() never runs, the caller takes over
 }
 
 /* ---------- the questions stage: our car, and major medical beside it ----------
@@ -827,7 +834,8 @@ window.city={setGroup,setRing,celebrate,flyIn,cue,story,stage:stageOn,light,paus
 /* post + loop */
 const composer=new EffectComposer(renderer);composer.addPass(new RenderPass(scene,camera));
 const bloom=new UnrealBloomPass(new THREE.Vector2(1,1),mobile?.25:.34,.5,.92);composer.addPass(bloom);composer.addPass(new OutputPass()); // only the sun, the lamps and lit windows glow
-function resize(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);composer.setSize(w,h);labelRenderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix()}
+function resize(){const w=host.clientWidth,h=host.clientHeight;if(!w||!h)return; // a hidden or still-laying-out host would size the bloom targets to zero and leave the city black
+  renderer.setSize(w,h,false);composer.setSize(w,h);labelRenderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix()}
 new ResizeObserver(resize).observe(host);resize();
 const LIM={x:NX*PITCH/2+ROAD/2-1.5,z:NZ*PITCH/2+ROAD/2-1.5}; // the end of the perimeter road
 let last=performance.now(),paused=false,fpsNow=0,fpsN=0,fpsT=0;
