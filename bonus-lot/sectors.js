@@ -28,14 +28,14 @@ window.SECTORS = {
       },
       start: "Three short steps: your group, your plans, your pay plan. The counter at the top right is what the plan adds to store net each year. Drag the city to look around.",
       m1: ['Build your group', "Your store first, then every other store the owner runs. Each one becomes a building, sized by headcount and colored by brand. Up to 30."],
-      obj: { 1: "Build your group: your store, then the owner's other stores", 2: 'Your plans: who enrolls, plan level, how your health plan is funded', 3: 'Set your pay plan', 4: 'Mission passed. Be the ambassador: take it to the owner' },
+      obj: { 1: "Build your group: your store, then the owner's other stores", 2: 'Your plans: who enrolls, how your health plan is funded', 3: 'Set your pay plan', 4: 'Mission passed. Be the ambassador: take it to the owner' },
       // the guided path, in the city before the truck story and on the cars after it. {cue} is a camera position; the engine fills {per} and the sector words.
       orient: [
         { h: 'This city is your dealer group.', s: 'The lot in the middle is your {site}, 64 people on payroll until you change it. Every {site} the {owner} runs becomes a building around it.', cue: 0 },
         { h: 'Every pay period, payroll tax leaves every building.', s: '7.65% of each W-2 dollar goes out from the {site} before anyone is paid. The wellness plan is a way to send less of it out. Watch the truck.', cue: 1 }
       ],
       landing: [
-        { h: 'Everyone comes out ahead, and the car shows how.', s: 'Wheels: $0 care for the family. Body: more take-home. Hood: the {site}\'s saving, {per} a month per enrolled employee. Glass: the Section 125 Wellness Plan it all rides in.', lit: { wheels: 1, body: 1, engine: 1, windows: 1 } },
+        { h: 'Everyone comes out ahead, and the garage shows how.', s: 'Three bays, three winners: the {owner}\'s SUV, the {site}\'s tax saving, {per} a month per enrolled employee; the employees\' van, more take-home and $0 care for the family; the administrator\'s truck, the fee that runs the plan. All of it inside the Section 125 Wellness Plan above them.', lit: { engine: 1, body: 1, wheels: 1, admin: 1, windows: 1 } },
         { h: 'Now build your own {site}.', s: 'Three short steps: your group, your plans, your pay plan. The counter at the top right shows what the plan adds to {site} net as you go, and the Service department answers any question on the way.', lit: { engine: 1 } }
       ],
       who: 'Rocky · Back office',
