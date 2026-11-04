@@ -392,20 +392,21 @@ $('#oPrint').onclick=()=>window.print();
 
 /* ---------- captions over the city, shared by the truck story and the questions ---------- */
 function caption(h,s){$('#storyT').textContent=h;$('#storyS').textContent=s;gsap.fromTo('#story',{opacity:0,y:10},{opacity:1,y:0,duration:.4})}
-let busy=false; // one scene at a time: the truck story or a question
+let busy=false,stopSt=null; // one scene at a time: the truck story or a question; choosing another stops it (stopSt ends the truck)
+function interrupt(){clearTimeout(autoT);qa=null;if(stopSt){stopSt();stopSt=null}if(window.city)window.city.stage(false,true);busy=false}
 function dimHud(on){$('#panel').style.visibility=on?'hidden':'visible';gsap.to(HUD,{opacity:on||step===0?0:1,duration:.4});$('#svcBtn').style.display=on?'none':'';if(on){gsap.to('#phone',{x:'-130%',duration:.3});if(getComputedStyle($('#start')).display!=='none')gsap.to('#start',{opacity:0,duration:.3,onComplete:()=>$('#start').style.display='none'})}
   else{gsap.to('#story',{opacity:0,duration:.5});if(step===0){$('#start').style.display='';gsap.to('#start',{opacity:1,duration:.4})}}} // before the missions the HUD stays dark: nothing reads through the opening
 
 /* "How is it paid for?": the truck. `after` chains the guided path on without showing the opening in between. */
 function storyLines(){const m=model();return [
-  ['Payroll tax leaves the company every pay period.',t(`On $${S.plan.toLocaleString()} of one enrolled employee's monthly pay: ${fmt2(m.fica)} from the {site}, ${fmt2(m.fica)} from the employee, plus their income tax. The truck is that money.`)],
+  ['Payroll tax leaves the company every pay period.',t(`On $${S.plan.toLocaleString()} of one enrolled employee's monthly pay, the {site} sends out ${fmt2(m.fica)} in payroll tax before anyone is paid. The truck is that money.`)],
   ['With the plan, the truck stops here.',`The $${S.plan.toLocaleString()} goes into the Section 125 Wellness Plan pre-tax, so that tax is never owed. Now the load gets redirected.`],
   [t('The {owner}\'s car: the {site} keeps its share.'),t(`${fmt2(m.per)} a month per enrolled employee stays with the {site}. That is the net lift on the P&L.`)],
   ['The employees\' car: more take-home, $0 care.','Their tax savings fund $0 doctor visits, urgent care, therapy and generics for the family, and the wellness reward comes back on the same check. The payroll analysis shows each person\'s number before anything is signed.'],
   ['The administrator\'s motorcycle: the fee.',`${fmt2(m.admin)} a month per enrolled employee runs the plan: enrollment, claims, compliance and audit defense.`],
   ['Nothing else changes.',t('Major medical stays exactly as it is. What was never tax-free is still paid as tax. A payroll analysis confirms the numbers for your {group} before anything is signed.')]]}
-function runStory(after){if(busy||!window.city){if(typeof after==='function')after();return}busy=true;$('#storyK').innerHTML='';$('#qaNav').style.display='none';dimHud(true);window.city.stage(false,true);
-  window.city.story(i=>caption(...storyLines()[i]),()=>{busy=false;if(typeof after==='function')after();else dimHud(false)})}
+function runStory(after){if(busy&&!after)interrupt();if(busy||!window.city){if(typeof after==='function')after();return}busy=true;$('#storyK').innerHTML='';$('#qaNav').style.display='none';dimHud(true);window.city.stage(false,true);
+  stopSt=window.city.story(i=>caption(...storyLines()[i]),()=>{stopSt=null;busy=false;if(typeof after==='function')after();else dimHud(false)})}
 $('#howBtn2').onclick=()=>{$('#game').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(runStory,500)};
 
 /* ---------- common questions, answered on two cars ----------
@@ -436,7 +437,7 @@ const QUESTIONS=[
   {h:'Two ways it pays.',s:'The payroll-tax saving on every enrolled employee, plus the claims that never hit the company plan. The second number comes from your TPA\'s 12-month claims summary, not from this page.',mm:1,exhaust:1,lit:{engine:1,wheels:1}},
   {h:'Set it in mission two.',s:'Pick level-funded or self-funded and the claims estimate shows as its own tile, never folded into the tax number.',lit:{windows:1}}]},
  {q:'What\'s the catch?',beats:[
-  {h:'The catch is an invoice.',s:'On the $1,500 plan, $265 per enrolled employee a month: $225 is the employee\'s own pre-tax withholding, $40 is the fee. All of it is payroll tax the {site} already sends out.',lit:{engine:1,body:1}},
+  {h:'The catch is an invoice.',s:'An invoice for the plan contribution plus the $40 fee, per enrolled employee a month. All of it is money that was already leaving as payroll tax; nothing new comes out of the {site}.',lit:{engine:1,body:1}},
   {h:'Nothing new comes out of anyone\'s pocket.',s:'The {site} keeps {per} of the {fica} it no longer owes. The employee keeps more take-home. The fee comes out of the same money. Designed to be cost-neutral.',lit:{engine:1},exhaust:1},
   {h:'Owners said the same thing.',s:'The companies in the booklet met it with skepticism, checked it with their CPAs and counsel, then enrolled. Your check is the payroll analysis: no cost, no commitment.',lit:{windows:1}}]},
  {q:'Is it compliant? Who keeps it that way?',beats:[
@@ -466,7 +467,7 @@ function schedule(){clearTimeout(autoT);if(!auto||!qa)return;const b=qa.q.beats[
 function setScene(b){if(!window.city)return;if(b.scene==='city'){window.city.stage(false,true);if(b.cue!=null)window.city.cue(b.cue)}else window.city.stage(true)}
 function beat(){const b=qa.q.beats[qa.i],m=model();setScene(b);caption(fill(b.h,m),fill(b.s,m));$('#storyK').innerHTML=Object.keys(b.lit||{}).filter(k=>b.lit[k]).map(k=>`<span><i style="background:${LEG[k][0]}"></i>${t(LEG[k][1])}</span>`).join('');$('#qaN').textContent=`${qa.i+1} / ${qa.q.beats.length}`;$('#qaPrev').style.visibility=qa.i?'visible':'hidden';$('#qaNext').textContent=qa.i<qa.q.beats.length-1?'Next →':'Done ✓';
   $('#qaLoad').style.display=qa.q.load?'':'none';$('#qaAuto').textContent=auto?'Pause ❚❚':'Auto-play ▶';if(qa.i===qa.q.beats.length-1&&qa.q.btns)qa.q.btns.forEach(x=>x.classList.add('seen'));schedule();if(window.city&&b.scene!=='city')window.city.light(b.lit||{},!!b.mm,!!b.exhaust,!!b.cop)}
-function ask(q,tour){if(busy)return;busy=true;qa={q,i:0,tour:tour||false};auto=!!tour||autoPref;dimHud(true);$('#qaNav').style.display='flex';beat();$('#qaNext').focus()}
+function ask(q,tour){if(busy)interrupt();busy=true;qa={q,i:0,tour:tour||false};auto=!!tour||autoPref;dimHud(true);$('#qaNav').style.display='flex';beat();$('#qaNext').focus()}
 function closeQ(){if(!qa)return;const wasTour=qa.tour,qaScene=qa.q.beats[qa.q.beats.length-1].scene;clearTimeout(autoT);qa=null;$('#storyK').innerHTML='';$('#qaNav').style.display='none';busy=false;
   if(wasTour&&typeof wasTour.then==='function'){wasTour.then();return} // the guided path runs straight on; the opening never flashes back in between
   if(wasTour&&step===0&&!$('#startBtn').disabled){if(window.city)window.city.stage(false);gsap.to('#story',{opacity:0,duration:.5});$('#panel').style.visibility='visible';$('#svcBtn').style.display='';$('#startBtn').click()} // the tour hands over to the missions
@@ -536,7 +537,7 @@ const fill=new THREE.DirectionalLight(0x8f7bd6,.55);scene.add(fill);
 function placeSun(){const d=new THREE.Vector3().subVectors(controls.target,camera.position);d.y=0;d.normalize();const t=controls.target;
   sunDisc.position.set(t.x+d.x*330,24,t.z+d.z*330);sunDisc.lookAt(camera.position);halo.position.copy(sunDisc.position);
   sunLight.position.set(t.x+d.x*170,60,t.z+d.z*170);sunLight.target.position.copy(t);sunLight.target.updateMatrixWorld();fill.position.set(camera.position.x,camera.position.y+40,camera.position.z)}const lotSpot=new THREE.SpotLight(0xffffff,900,90,Math.PI/5,.5,2);lotSpot.position.set(10,40,20);lotSpot.target.position.set(0,0,0);scene.add(lotSpot);scene.add(lotSpot.target);
-const lotLightA=new THREE.PointLight(0xd65db1,60,80,2);lotLightA.position.set(-8,12,8);const lotLightC=new THREE.PointLight(0xfff2cc,40,40,2);lotLightC.position.set(-6,6,-8);scene.add(lotLightC);scene.add(lotLightA);
+const lotLightA=new THREE.PointLight(0xd65db1,60,80,2);lotLightA.position.set(-8,12,8);const lotLightC=new THREE.PointLight(0xfff2cc,10,40,2);lotLightC.position.set(-6,6,-8);scene.add(lotLightC);scene.add(lotLightA);
 const lotLightB=new THREE.PointLight(0x22a85e,50,80,2);lotLightB.position.set(14,10,0);scene.add(lotLightB);
 
 /* ground + roads */
@@ -676,8 +677,7 @@ function setLot(tier,emp,brandColors){
   if(!lot.userData.base){const base=new THREE.Mesh(new THREE.PlaneGeometry(BLOCK-5,BLOCK-5),new THREE.MeshStandardMaterial({color:0x2a2638,roughness:.9}));base.rotation.x=-Math.PI/2;base.position.y=.02;lot.add(base);
     ring=new THREE.Mesh(new THREE.RingGeometry(BLOCK*.68,BLOCK*.7,64),new THREE.MeshStandardMaterial({color:0x000,emissive:0x22a85e,emissiveIntensity:2,side:THREE.DoubleSide,transparent:true,opacity:.0}));ring.rotation.x=-Math.PI/2;ring.position.y=.05;lot.add(ring);lot.userData.base=true}
   showroom=new THREE.Group();
-  const glass=new THREE.Mesh(new THREE.BoxGeometry(W,H,D),new THREE.MeshPhysicalMaterial({color:0xcfe9ff,transparent:true,opacity:.22,roughness:.05,metalness:.0,transmission:0}));glass.position.set(-BLOCK/2+W/2+1,H/2,-BLOCK/2+D/2+1);showroom.add(glass);
-  const inner=new THREE.Mesh(new THREE.BoxGeometry(W-.6,H-.6,D-.6),new THREE.MeshStandardMaterial({color:0x000,emissive:0x8366ea,emissiveIntensity:.12,transparent:true,opacity:.5}));inner.position.copy(glass.position);showroom.add(inner);
+  const glass=new THREE.Mesh(new THREE.BoxGeometry(W,H,D),new THREE.MeshPhysicalMaterial({color:0xcfe9ff,transparent:true,opacity:.1,roughness:.4,metalness:.0,transmission:0}));glass.position.set(-BLOCK/2+W/2+1,H/2,-BLOCK/2+D/2+1);showroom.add(glass);
   const roof=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(W,.2,D)),new THREE.LineBasicMaterial({color:0xff6fd0}));roof.position.set(glass.position.x,H,glass.position.z);showroom.add(roof);
   if(SC.showroom)for(let k=0;k<2;k++){const sc=car(palette[(k*5+1)%8]);sc.scale.setScalar(.8);sc.position.set(glass.position.x-W/4+k*W/2,0,glass.position.z);sc.rotation.y=Math.PI/4;showroom.add(sc)}
   lot.add(showroom);
@@ -743,7 +743,7 @@ function story(caption,done){
   controls.autoRotate=false;camKill();
   gsap.to(camera.position,{x:GX-4,y:18,z:ROADZ+46,duration:1.6,ease:'power2.inOut'});gsap.to(controls.target,{x:GX-4,y:-3,z:ROADZ-4,duration:1.6}); // low target: the road sits in the upper half, above the caption
   const from=new THREE.Vector3(GX+5,3.5,ROADZ-1.5), at=(o,y)=>new THREE.Vector3(o.position.x,y,o.position.z);
-  const tl=gsap.timeline({onComplete:()=>{setTimeout(()=>{drop(scene,g);cue(lastCue);done()},800)}});
+  let tm;const tl=gsap.timeline({onComplete:()=>{tm=setTimeout(()=>{drop(scene,g);cue(lastCue);done()},800)}});
   tl.call(()=>caption(0),null,.3)
     .to(T.position,{x:GX+7,duration:4.5,ease:'power1.inOut'},.3)
     .call(()=>caption(1),null,5)
@@ -754,6 +754,7 @@ function story(caption,done){
     .call(()=>caption(5),null,20.5)
     .to(sedan.position,{x:-170,duration:4.5,ease:'power1.in'},20.6).to(compact.position,{x:-170,duration:4.8,ease:'power1.in'},20.8).to(moto.position,{x:-180,duration:3.8,ease:'power1.in'},21) // home along the open road, in view the whole way
     .to(T.position,{x:-190,duration:6,ease:'power1.in'},21.8);
+  return ()=>{clearTimeout(tm);tl.kill();g.traverse(o=>gsap.killTweensOf([o.position,o.scale]));drop(scene,g)}; // stop: done() never runs, the caller takes over
 }
 
 /* ---------- the questions stage: our car, and major medical beside it ----------
