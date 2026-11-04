@@ -162,7 +162,7 @@ body{padding-bottom:calc(52px + env(safe-area-inset-bottom,0px))} /* shortcut: b
   <div class="hud" id="story" aria-live="polite"><div id="storyK"></div><div id="storyT"></div><div id="storyS"></div><div id="qaNav"><button id="qaPrev">← Back</button><span class="n" id="qaN"></span><button id="qaNext" class="p">Next →</button><button id="qaAuto">Auto-play ▶</button><button id="qaLoad" style="display:none">Load this group</button><button id="qaClose">Close ✕</button></div></div>
   <div id="banner"><div class="big" id="bannerBig">Mission <span>Passed</span></div><div class="mid" id="bannerMid"></div><div class="sm" id="bannerSm"></div></div>
   <div id="bay"><button id="bayAsk" type="button">Questions ▾</button><button id="bayLeave" type="button">Back to the city ↩</button></div>
-  <div id="svc" role="dialog" aria-labelledby="svcH"><div class="hd"><div><h2 id="svcH">Service <span>department</span></h2><p class="lead">Pull in with a question. Each answer plays on the car on the lift in under a minute, and you can leave whenever you like.</p></div><button id="svcClose" type="button">Close ✕</button></div><div class="svcGrid" id="svcList"></div></div>
+  <div id="svc" role="dialog" aria-labelledby="svcH"><div class="hd"><div><h2 id="svcH">Service <span>department</span></h2><p class="lead">Pull in with a question. Each answer plays on the cars in the bay in under a minute, and you can leave whenever you like.</p></div><button id="svcClose" type="button">Close ✕</button></div><div class="svcGrid" id="svcList"></div></div>
   <div id="start"><div id="open"><div id="openLines"></div><p id="startP"></p><p class="live" id="openLive"></p><div class="acts"><button class="btn" id="tourBtn">How it works · 40 seconds ▶</button><button class="btn g" id="startBtn" disabled style="opacity:.5">Loading the city…</button><button class="btn q sm" id="openSvc" type="button">Jump to a question ▾</button></div></div></div>
   <div id="panel">
     <div class="m on" id="m1"><div class="t"><span id="m1T"></span></div><div class="why" id="m1W"></div>
@@ -194,7 +194,7 @@ body{padding-bottom:calc(52px + env(safe-area-inset-bottom,0px))} /* shortcut: b
       <button class="btn next g" id="n3">Show me the money →</button></div>
   </div>
 </div>
-<p id="whats"><b>What you're looking at.</b><span><i style="background:var(--obj)"></i>The city is your group; the lot in the middle is your store</span><span><i style="background:var(--cash)"></i>The counter is what the plan adds to store net each year</span><span><i style="background:var(--magenta)"></i>Jump to a question takes you into the service bay, where each answer plays on the car on the lift</span><span><i style="background:#c9bdfd"></i>Drag to look around</span></p>
+<p id="whats"><b>What you're looking at.</b><span><i style="background:var(--obj)"></i>The city is your group; the lot in the middle is your store</span><span><i style="background:var(--cash)"></i>The counter is what the plan adds to store net each year</span><span><i style="background:var(--magenta)"></i>Jump to a question takes you into the service bay, where each answer lights up the car it is about</span><span><i style="background:#c9bdfd"></i>Drag to look around</span></p>
 
 <div class="sheet" id="sheet">
   <div class="hero"><div class="k" id="liftK">Net profit added, per year</div><div class="n" id="lift">$0</div><div class="s" id="rockyCap" style="display:none"><b style="color:var(--magenta)">Rocky:</b> <span id="rockyCapT"></span></div><div class="u" id="units"></div><div class="s" id="liftS"></div>
@@ -426,7 +426,7 @@ const QUESTIONS=[
   {h:'Would your people know how to use the virtual benefit they have?',s:'What number do they call? How do they set it up? What is the copay? What if they need someone the same day? For every one of those questions, this one wins. Overlap is not a factor.',mm:1,lit:{wheels:1}},
   {h:'And the tax savings sit on both sides.',s:'{per} a month per enrolled employee to the {site}, and more take-home for the employee. Major medical never did that.',mm:1,exhaust:1,lit:{engine:1,body:1}}]},
  {q:'What does it cost the {site}?',beats:[
-  {h:'Nothing out of pocket.',s:'A portion is withheld from the employee\'s tax saving and a fee comes out of the {site}\'s tax saving. The program is covered entirely by taxes already being paid.',lit:{engine:1,body:1}},
+  {h:'Nothing out of pocket.',s:'A portion is withheld from the employee\'s tax saving and a fee comes out of the {site}\'s tax saving. The program is covered entirely by taxes already being paid.',lit:{engine:1,body:1,admin:1}},
   {h:'The excess goes back to the {site} and its people.',s:'{per} a month per enrolled employee stays with the {site} after the fee. Every enrolled employee, every month.',lit:{engine:1},exhaust:1}]},
  {q:'Why would employees sign up?',beats:[
   {h:'They are automatically in.',s:'Enrollment is opt-out. Everyone who qualifies is enrolled, and the payroll analysis confirms each person comes out ahead before go-live.',lit:{body:1}},
@@ -437,8 +437,8 @@ const QUESTIONS=[
   {h:'Two ways it pays.',s:'The payroll-tax saving on every enrolled employee, plus the claims that never hit the company plan. The second number comes from your TPA\'s 12-month claims summary, not from this page.',mm:1,exhaust:1,lit:{engine:1,wheels:1}},
   {h:'Set it in mission two.',s:'Pick level-funded or self-funded and the claims estimate shows as its own tile, never folded into the tax number.',lit:{windows:1}}]},
  {q:'What\'s the catch?',beats:[
-  {h:'The catch is an invoice.',s:'An invoice for the plan contribution plus the $40 fee, per enrolled employee a month. All of it is money that was already leaving as payroll tax; nothing new comes out of the {site}.',lit:{engine:1,body:1}},
-  {h:'Nothing new comes out of anyone\'s pocket.',s:'The {site} keeps {per} of the {fica} it no longer owes. The employee keeps more take-home. The fee comes out of the same money. Designed to be cost-neutral.',lit:{engine:1},exhaust:1},
+  {h:'The catch is an invoice.',s:'An invoice for the plan contribution plus the $40 fee, per enrolled employee a month. All of it is money that was already leaving as payroll tax; nothing new comes out of the {site}.',lit:{engine:1,body:1,admin:1}},
+  {h:'Nothing new comes out of anyone\'s pocket.',s:'The {site} keeps {per} of the {fica} it no longer owes. The employee keeps more take-home. The fee comes out of the same money. Designed to be cost-neutral.',lit:{engine:1,admin:1},exhaust:1},
   {h:'Owners said the same thing.',s:'The companies in the booklet met it with skepticism, checked it with their CPAs and counsel, then enrolled. Your check is the payroll analysis: no cost, no commitment.',lit:{windows:1}}]},
  {q:'Is it compliant? Who keeps it that way?',beats:[
   {h:'Three independent firms keep it in line.',s:'Outside ERISA counsel, CBIZ and KCP, a CPA firm, each review the program and its documents in writing and keep them to the current guidelines. The administrator runs the plan to those documents, and the payroll analysis checks every number before anything is signed.',cop:1,lit:{windows:1}},
@@ -457,7 +457,7 @@ const QUESTIONS=[
  {q:'Will it cut my workers\' comp?',beats:[
   {h:'It could, in certain states.',s:'Workers\' comp premium is rated on reportable payroll, and in certain states carriers have accepted the lower reportable payroll after the plan and cut the premium. It is very variable: your state, your carrier and your class codes decide it.',lit:{engine:1}},
   {h:'Any saving there is on top of this page.',s:'The numbers here are federal payroll tax only, so workers\' comp is never in the counter. Ask your broker to run it for your {site} before counting on it.',lit:{}}]}];
-const LEG={wheels:['#d65db1','Complimentary benefits'],body:['#22a85e','Employee tax saving'],engine:['#ffd166','{Site} tax saving'],windows:['#8366ea','Section 125 Wellness Plan']};
+const LEG={wheels:['#d65db1','Complimentary benefits'],body:['#22a85e','Employee tax saving'],engine:['#ffd166','{Site} tax saving'],windows:['#8366ea','Section 125 Wellness Plan'],admin:['#c9bdfd','Administrator fee']};
 // the guided path: two beats over the city (scene:'city' keeps the city and moves the camera to `cue`), the truck story, two beats on the cars, then the missions
 const ORIENT={q:'How it works',beats:C.orient.map(b=>({...b,scene:'city',lit:{}}))}, LANDING={q:'How it works',beats:C.landing};
 const fill=(s,m)=>t(s).replace(/\{per\}/g,fmt2(m.per)).replace(/\{fica\}/g,fmt2(m.fica)).replace(/\{admin\}/g,fmt2(m.admin));
@@ -769,7 +769,7 @@ function story(caption,done){
    Money: green coins arc out of our tailpipe into a pile under NET SAVINGS; grey fumes puff out of major medical's and fade. */
 const PART={wheels:0xd65db1,body:0x22a85e,engine:0xffd166,windows:0x8366ea};
 const STACK=new THREE.Vector3(-4,0,-3); // where our coins pile up: centre stage, where both tailpipes point
-let stage=null,ours=null,mmCar=null,copCar=null,copLights=[],copFlash=[],exhaust=false,fumes=[],coins=[],spawnT=0,tails=[];
+let cast=[],stage=null,ours=null,mmCar=null,copCar=null,copLights=[],copFlash=[],exhaust=false,fumes=[],coins=[],spawnT=0,tails=[];
 const coinGeo=new THREE.CylinderGeometry(1.1,1.1,.34,16),coinMat=new THREE.MeshStandardMaterial({color:0x5ee39a,metalness:.7,roughness:.3,emissive:0x1e7a46,emissiveIntensity:.5});
 const puffGeo=new THREE.SphereGeometry(.6,10,8);
 [coinGeo,coinMat,puffGeo].forEach(x=>SHARED.add(x));
@@ -809,6 +809,17 @@ function buildStage(){stage=new THREE.Group();stage.position.set(0,0,SZ);
   ours.g=o;o.scale.setScalar(3.2);o.position.set(-13,2.6,0);o.rotation.y=-Math.PI/2-.5;const op=new THREE.Object3D();op.position.set(-2.2,.5,.6);o.add(op);o.userData.pipe=op;stage.add(o); // up on the lift; both cars face the camera with their tailpipes toward the bay line
   const ol=labelSprite('125 WELLNESS PLAN','#4fd486',26);ol.position.set(mobile?-14:-13,mobile?13.8:11.6,0);stage.add(ol);
   mmCar=car(0x6b2630,'suv',(g,p)=>{if(p){p.body.material=p.body.material.clone();Object.assign(p.body.material,{envMap:ENV,envMapIntensity:.3,roughness:.5})}});mmCar.scale.setScalar(3.6);mmCar.position.set(14,0,0);mmCar.rotation.y=-Math.PI/2+.5;const mp=new THREE.Object3D();mp.position.set(-2.4,.55,.65);mmCar.add(mp);mmCar.userData.pipe=mp;stage.add(mmCar);
+  // the story's cast parked on the painted floor, facing the camera: a beat's lit keys pick the vehicle (engine: owner, body/wheels: employees, admin: fee)
+  const castApply=e=>{e.mats.forEach(m=>m.emissiveIntensity=e.k*.5);e.lamp.intensity=e.k*90;e.label.element.style.opacity=.45+.55*e.k};
+  const addCast=(key,o,sc,hex,text,ly,lyAt)=>{const e={key,g:o,k:0,mats:[],sc};
+    e.grab=(m)=>{if(!m.isMesh||!m.material||m.material===wheelMat||m.material===headMat)return;m.material=m.material.clone();m.material.emissive.set(hex);m.material.emissiveIntensity=0;e.mats.push(m.material)};
+    o.scale.setScalar(sc);e.lamp=new THREE.PointLight(hex,0,22,2);e.lamp.position.set(0,6/sc,0);o.add(e.lamp);
+    e.label=labelSprite(text,'#'+hex.toString(16).padStart(6,'0'),22);e.label.position.set(0,ly/sc,0);o.add(e.label);castApply(e);e.apply=()=>castApply(e);stage.add(o);cast.push(e);return e};
+  const wireCast=(e,p)=>{if(p)e.grab(p.body);else e.g.traverse(e.grab);e.apply()};
+  {const pre={},ent={},fl=k=>(g,p)=>{pre[k]=[p];if(ent[k])wireCast(ent[k],p)};
+   const sd=car(0xffd166,'sedan',fl('owner')),hb=car(0x22a85e,'hatchback-sports',fl('staff')),mb=bike(0x8366ea);
+   ent.owner=addCast('owner',sd,2.52,0xffd166,'OWNER',5);ent.staff=addCast('staff',hb,1.73,0x22a85e,'EMPLOYEES',3.9);ent.admin=addCast('admin',mb,2.4,0x8366ea,'ADMIN',4.1);pre.admin=[null];
+   for(const k in pre)wireCast(ent[k],pre[k][0])}
   // compliance: a police car with its light bar going, parked in front of the right lift, and an officer beside it
   copCar=car(0xf4f4f8,'sedan',(g,p)=>{if(p){p.body.material=p.body.material.clone();Object.assign(p.body.material,{envMap:ENV,envMapIntensity:.3,roughness:.5})}});copCar.scale.setScalar(3.2);copCar.position.set(14,0,5);copCar.rotation.y=-Math.PI/2+.25;copCar.visible=false;
   copLights=[new THREE.MeshStandardMaterial({color:0x000,emissive:0xff2040,emissiveIntensity:4}),new THREE.MeshStandardMaterial({color:0x000,emissive:0x2a6cff,emissiveIntensity:4})];[-.42,.42].forEach((z,k)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(.5,.16,.4),copLights[k]);m.position.set(-.15,1.5,z);copCar.add(m);const l=new THREE.PointLight(k?0x2a6cff:0xff2040,0,45,2);l.position.set(14+z*7,6,5);stage.add(l);copFlash.push(l)});
@@ -820,9 +831,12 @@ function buildStage(){stage=new THREE.Group();stage.position.set(0,0,SZ);
   const spot=new THREE.SpotLight(0xffffff,500,80,Math.PI/4,.6,2);spot.position.set(0,13,22);spot.target.position.set(0,0,0);stage.add(spot);stage.add(spot.target);
   scene.add(stage)}
 function stageOn(on,noCue){if(on){if(!stage)buildStage();else if(stage.visible)return;stage.visible=true;controls.autoRotate=false;camKill();const wide=camera.aspect>1.2;
-    gsap.to(camera.position,{x:0,y:wide?11:12,z:SZ+(wide?40:30),duration:1.8,ease:'power2.inOut'});gsap.to(controls.target,{x:0,y:wide?-.5:-5,z:SZ-6,duration:1.8,ease:'power2.inOut'})} // inside the garage, under the lights // a low target keeps the cars in the top half, above the caption panel
+    const LAY=wide?{owner:[-14,10,-.45],staff:[3,11,-.15],admin:[12,10,-.3]}:{owner:[-8,6,-.45],staff:[0,7,-.15],admin:[7,6,-.3]};for(const e of cast){const l=LAY[e.key];e.g.position.set(l[0],0,l[1]);e.g.rotation.y=-Math.PI/2+l[2]}
+    gsap.to(camera.position,{x:0,y:wide?14:17,z:SZ+(wide?47:50),duration:1.8,ease:'power2.inOut'});gsap.to(controls.target,{x:0,y:wide?-3:-8,z:SZ-6,duration:1.8,ease:'power2.inOut'})} // inside the garage, under the lights // a low target keeps the cars in the top half, above the caption panel
   else{if(!stage||!stage.visible){if(!noCue)cue(lastCue);return}stage.visible=false;exhaust=false;for(const b of fumes)drop(stage,b.m);fumes=[];for(const c of coins){gsap.killTweensOf([c.position,c.rotation]);drop(stage,c)}coins=[];if(!noCue)cue(lastCue)}}
-function light(lit,mm,ex,cop){if(!stage)return;for(const k in ours.parts)for(const o of ours.parts[k]){if(o.isLight)gsap.to(o,{intensity:lit[k]?(k==='engine'?80:60):0,duration:.5});else gsap.to(o.material,{emissiveIntensity:lit[k]?(k==='wheels'?.9:.32):0,duration:.5})}
+function light(lit,mm,ex,cop){if(!stage)return;for(const k in ours.parts)for(const o of ours.parts[k]){const on=k==='windows'&&lit[k]; // our car is the plan itself: only its glass lights; the cast takes the other keys
+    if(o.isLight)gsap.to(o,{intensity:on?60:0,duration:.5});else gsap.to(o.material,{emissiveIntensity:on?.32:0,duration:.5})}
+  for(const e of cast)gsap.to(e,{k:(e.key==='owner'?lit.engine:e.key==='staff'?lit.body||lit.wheels:lit.admin)?1:0,duration:.5,onUpdate:e.apply});
   mmCar.visible=mm;mmCar.userData.label.visible=mm;copCar.visible=copCar.userData.label.visible=copCar.userData.cop.visible=!!cop;if(!cop)copFlash.forEach(l=>l.intensity=0);exhaust=ex;tails[0].visible=ex||coins.length>0;tails[1].visible=ex&&mm;spawnT=0}
 function coin(){const n=coins.length;if(n>=48)return;const c=new THREE.Mesh(coinGeo,coinMat);c.position.copy(pipeAt(ours.g));stage.add(c);coins.push(c);
   const col=n%6,a=col/6*Math.PI*2,r=col?2.4:0,to=new THREE.Vector3(STACK.x+Math.cos(a)*r,.19+Math.floor(n/6)*.36,STACK.z+Math.sin(a)*r);
