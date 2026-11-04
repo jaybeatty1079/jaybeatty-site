@@ -1,0 +1,5 @@
+# The pipeline machine (home-page hero band)
+
+`build.mjs` draws the figure with the anatomy kit (`~/.claude/skills/anatomy/kit`, imported by absolute path) and writes `fragment.html`, `live.js`, `machine.css` and two test pages into a scratch folder (edit `OUT` at the top). `integrate.py` splices the fragment, the live script and the kit's drawing CSS on the site palette into `site/index.html`; it refuses to run twice, so remove the old `<section class="machine-band">`, its `<script>` and the CSS block headed "the pipeline machine under the hero" first. The live script needs no kit at runtime: it carries the camera's three axis vectors and moves prebuilt groups with `translate`.
+
+What moves: leads spawn every 2.6 s at the spout and ride the belt at 30 units/s; every third is pushed by the gate paddle into the bin; the door opens as a lead approaches; the press dwells 0.95 s and the lead lights green when the ram is down; it drops into the tray and the counter ticks; the dial reads leads on the belt out of six. Reduced motion renders one populated still frame. Under 600px the viewBox crops to the belt.

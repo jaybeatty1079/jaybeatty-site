@@ -271,12 +271,12 @@ html{scroll-padding-top:62px}
 /* shortcut: the 601-860px two-row strip fades its right edge with a mask at all times; the last link stays reachable by scrolling, a scroll-aware fade is the upgrade */
 @media(min-width:601px) and (max-width:860px){nav .links{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent)}}
 @media(max-width:600px){
-  html{scroll-padding-top:69px}/* header 57px + 12px */
+  html{scroll-padding-top:77px}/* header 65px + 12px */
   nav{flex-wrap:nowrap;row-gap:0}
   .menu-tg{display:grid;order:3}
   nav .links{display:none;position:absolute;top:100%;left:0;right:0;order:unset;width:auto;flex-direction:column;gap:8px;padding:12px clamp(16px,4vw,40px) 16px;overflow:visible;background:var(--bg);border-bottom:1px solid var(--line)}
   header.open nav .links{display:flex}
-  .links a{text-align:center;padding:14px 12px}
+  .links a{text-align:center;padding:15px 12px}
 }
 
 /* motion-v1: shared hover lift, focus ring, plus-to-menu morph and dropdown. Tokens are in :root at the top of this sheet.
@@ -297,7 +297,7 @@ header.open .menu-tg .l1{transform:translateY(5px) rotate(45deg)}
 header.open .menu-tg .l2{opacity:0;transform:scaleX(.2)}
 header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
 @media(max-width:600px){
-  .menu-tg{display:grid}
+  .menu-tg{display:grid}.menu-tg,.theme-tg{width:44px;height:44px}.brand{padding-block:8px}/* 44px touch targets */
   nav .links{display:flex;visibility:hidden;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity var(--t-base) var(--ease-out),transform var(--t-base) var(--ease-out),visibility 0s linear var(--t-base)}
   header.open nav .links{visibility:visible;opacity:1;transform:none;pointer-events:auto;transition-delay:0s}
   nav .links a{opacity:0;transform:translateY(-6px);transition:opacity var(--t-base) var(--ease-out),transform var(--t-base) var(--ease-out),translate var(--t-base) var(--ease-out),box-shadow var(--t-base) var(--ease-out),border-color var(--t-fast) var(--ease-out),background-color var(--t-fast) var(--ease-out),color var(--t-fast) var(--ease-out)}
