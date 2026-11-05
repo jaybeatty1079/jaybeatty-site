@@ -10,12 +10,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Rye&display=swap">
 <style>
-/* Layout: one stage, the ride in first person through autumn hills at golden hour (a fixed cinematic look, whatever the page theme), a counter over it before you board, twelve windows that take the four corners in turn (three cycles, north-west, south-west, north-east, south-east) and a banner over each of the twelve gates, then the standing; the map and the glossary live one link deeper. */
+/* Layout: one stage, the ride in first person through autumn hills at golden hour (a fixed cinematic look, whatever the page theme), a counter over it before you board, twelve windows that open one at a time, left and right in turn, a banner over each gate and one pinned panel that carries the step's words (all of it arrives together, in one short transition, and Pause freezes it sharp), then the standing; the map and the glossary live one link deeper. */
 :root{
   --paper:#edeeea; --paper2:#e3e5df; --ink:#1e2226; --ink2:#4b525a; --muted:#5e666f; --rule:#c9cdc6;
   --cream:#f7f1e4; --cream2:#efe6d3; --cinkd:#2a211a; --cink2:#5a4a3c; --crule:#d8ccb4;
   --tol:#2f4f8f; --enf:#8f2b2b; --ok:#4f6b4a; --warn:#9a6b1f; --single:#8a8f96;
-  --serif:"Source Serif 4",Georgia,"Times New Roman",serif; --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --arrive:.35s; --serif:"Source Serif 4",Georgia,"Times New Roman",serif; --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#161a1e;--paper2:#1e2328;--ink:#e6e8e3;--ink2:#b9bec4;--muted:#8d949c;--rule:#333a41;--tol:#8fb0ec;--enf:#e07a7a;--ok:#9cc08f;--warn:#d9a95a;--single:#8d949c;color-scheme:dark}}
@@ -74,22 +74,22 @@ a{color:var(--tol)}
 .door.l .bar{right:13%}.door.r .bar{left:13%}
 .door .word{position:absolute;top:9%;left:5%;right:5%;white-space:nowrap;text-align:center;font-family:"Rye",Georgia,serif;font-size:clamp(22px,5.4vw,70px);line-height:1.05;color:#f3e4b8;text-shadow:0 2px 0 #7a4a1e,0 5px 12px rgba(0,0,0,.55);letter-spacing:.02em;overflow-wrap:anywhere}
 .door .msg{position:absolute;top:8.5%;left:14%;right:14%;text-align:left;font-family:var(--sans);font-weight:500;font-size:clamp(13px,1.6vw,21px);line-height:1.35;color:#f7ecd2;text-shadow:0 1px 0 rgba(0,0,0,.5)}
-@media (max-width:820px){.door .msg{top:6%;left:10%;right:10%;font-size:12px;line-height:1.3}}
+@media (max-width:820px){.door .msg{top:68px;left:9%;right:9%;font-size:14px;line-height:1.3}.door .small{font-size:11px;letter-spacing:.14em}}
 .door .msg b{display:block;font-family:"Rye",Georgia,serif;font-weight:400;font-size:1.1em;color:#f3e4b8;margin-bottom:.35em}
 .door .small{position:absolute;top:60.5%;left:12%;right:12%;text-align:center;font-family:var(--mono);font-size:clamp(8px,1vw,12px);letter-spacing:.3em;text-transform:uppercase;color:#d9b88a}
 .kiss{position:absolute;bottom:8%;width:13%;filter:drop-shadow(0 4px 4px rgba(0,0,0,.4))}
 .door.l .kiss{left:17%}.door.r .kiss{right:17%}
 .kiss.sm{width:8%;bottom:9%}.door.l .kiss.sm{left:37%}.door.r .kiss.sm{right:37%}
-/* the corner windows: north-west source, south-west purify and test, north-east fill and finish, south-east dispense */
-.panel{position:absolute;z-index:3;width:min(27%,340px);opacity:0;transform:translateY(6px);pointer-events:none;transition:opacity .5s,transform .5s;color:var(--cinkd)}
+/* the windows: one at a time, left then right, at the top; the step's words are pinned along the bottom (#now) so the two never meet */
+.panel{position:absolute;z-index:3;width:min(27%,340px);opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity var(--arrive) ease-out,transform var(--arrive) ease-out;color:var(--cinkd)}
 .panel.on{opacity:1;transform:none}
 .panel .top{background:rgba(247,241,228,.94);border:1px solid var(--cinkd);padding:8px 10px 6px;box-shadow:0 4px 14px rgba(40,25,10,.25)}
 .panel.now .top{box-shadow:0 0 0 2px var(--cinkd),0 4px 14px rgba(40,25,10,.25)}
 .panel .hole{aspect-ratio:16/9;border:1px solid var(--cinkd);border-top:0;background:transparent;box-shadow:0 4px 14px rgba(40,25,10,.25)} /* the live scene shows through from the canvas beneath */
-#p0{left:12px;top:12px}#p1{right:12px;top:12px}#p2{left:12px;bottom:12px}#p3{right:12px;bottom:12px}
-.panel h3{font-family:var(--mono);font-weight:500;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cink2);margin:0 0 5px}
+#p0,#p1{left:12px;top:68px}#p2,#p3{right:12px;top:68px}
+.panel h3{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cink2);margin:0 0 5px}
 .chips{display:flex;flex-wrap:wrap;gap:4px;margin:0}
-.chips span{font-family:var(--mono);font-size:10px;letter-spacing:.04em;border:1px solid var(--crule);padding:1px 5px;color:var(--cink2)}
+.chips span{font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:1px solid var(--crule);padding:1px 5px;color:var(--cink2)}
 .scene{display:block;width:100%;height:auto;color:var(--cinkd);margin:0;font-family:var(--mono)}
 .scene text{font-size:6.5px;fill:var(--cink2);letter-spacing:.04em}
 .panel.s-no .scene{color:var(--enf)}
@@ -103,25 +103,41 @@ a{color:var(--tol)}
 .scene .band{animation:band 3s linear infinite}.scene .draw{stroke-dasharray:260;stroke-dashoffset:260;animation:draw 4s linear infinite}.scene .tick{animation:tick 4s linear infinite}.scene .tick.d1{animation-delay:.6s}.scene .tick.d2{animation-delay:1.2s}
 .scene .belt{animation:belt 1.6s linear infinite}.scene .dip{animation:dip 1.6s ease-in-out infinite}.scene .gauge{animation:gauge 3s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}.scene .out{animation:out 2s linear infinite}
 .scene .pop{animation:pop 3s ease-out infinite;transform-box:fill-box;transform-origin:center}.scene .carry{animation:carry 3s ease-in-out infinite alternate}
-.panel .say{font-family:var(--sans);font-size:.9rem;line-height:1.3;color:var(--cinkd);margin:5px 0 0;min-height:2.6em} /* the scene's words, written here: text painted inside a window this size cannot be read */
-.panel .top .step{font-family:"Rye",Georgia,serif;font-size:.9rem;letter-spacing:0;text-transform:none;color:var(--cinkd);margin-right:6px}
+.panel .say{font-family:var(--sans);font-size:.95rem;line-height:1.3;color:var(--cinkd);margin:5px 0 0;min-height:2.6em} /* the scene's words, written here: text painted inside a window this size cannot be read */
+.panel .top .step{font-family:"Rye",Georgia,serif;font-size:1.05rem;letter-spacing:0;text-transform:none;color:var(--cinkd);margin-right:6px}
 #doors .skip{position:absolute;left:50%;bottom:3.5%;transform:translateX(-50%);z-index:3;font:600 clamp(12px,1.3vw,16px)/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:#3a1c1a;background:linear-gradient(180deg,#f0dca0,#b8892e 60%,#8a6520);border:2px solid #4a2422;border-radius:999px;padding:.8em 1.6em;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.5)}
 #doors .skip:focus-visible{outline:3px solid #fff;outline-offset:3px}#doors.open .skip{display:none}#doors.show{cursor:pointer}
-@media (prefers-reduced-motion:reduce){.scene *{animation:none!important}.door{transition:none}}
+@media (prefers-reduced-motion:reduce){.scene *{animation:none!important}.door{transition:none}.panel,.banner{transition:none}}
 /* the banners, hung over the track, drawn in the scene in real perspective */
-.banner{width:560px;background:#f7f1e4;border:3px solid #2a211a;border-radius:8px;overflow:hidden;padding:0 0 14px;color:var(--cinkd);font-family:var(--sans);opacity:.97;transition:opacity .6s;box-shadow:0 8px 22px rgba(40,25,10,.4);text-align:center}
-.banner.lit{opacity:1}
+.banner{width:560px;background:#f7f1e4;border:3px solid #2a211a;border-radius:8px;overflow:hidden;padding:0 0 14px;color:var(--cinkd);font-family:var(--sans);opacity:0;pointer-events:none;transition:opacity var(--arrive) ease-out;box-shadow:0 8px 22px rgba(40,25,10,.4);text-align:center}
+.banner.on{opacity:1}
+body.paused .banner{opacity:0;transition:none} /* paused: the gate sign steps aside, the pinned panel has the same words and nothing is cut off or overlapped */
 .banner h3{font-family:var(--mono);font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#f7f1e4;background:#2a211a;margin:0 0 10px;padding:9px 12px}
 .banner.s-ok h3{background:#4f6b4a}.banner.s-cond h3{background:#b07a1f}.banner.s-no h3{background:#8f2b2b}.banner.s-brand h3{background:#2f4f8f}
 .banner h3 .chip{color:inherit}
 .banner::after{content:"";display:block;height:10px;margin:12px 0 -14px;background:repeating-linear-gradient(90deg,#2a211a 0 14px,#f7f1e4 14px 28px)}
-.banner .big{font-family:"Rye",Georgia,serif;font-weight:400;font-size:34px;line-height:1.1;margin:0 16px 8px}
+.banner .big{font-family:"Rye",Georgia,serif;font-weight:400;font-size:40px;line-height:1.1;margin:0 16px 0}
 .chip.s-ok{color:var(--ok)}.chip.s-cond{color:var(--warn)}.chip.s-no{color:var(--enf)}.chip.s-brand{color:var(--tol)}
-.banner p{margin:0 18px;font-size:20px;font-weight:500;line-height:1.35;color:var(--cinkd)}
 #flash{position:absolute;inset:0;z-index:2;background:#fff;opacity:0;pointer-events:none}
 #hud{display:none!important} /* the running caption is gone: the banners and the window strips carry the words */
-#now{position:absolute;left:12px;right:12px;bottom:12px;z-index:3;display:none;background:#f7f1e4;border:3px solid #2a211a;border-radius:6px;padding:0 0 8px;font-size:.84rem;color:var(--cinkd);overflow:hidden}
-#now b{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#f7f1e4;background:#2a211a;padding:6px 10px;margin-bottom:6px}#now span{display:block;padding:0 10px}
+/* the pinned panel: the step's whole text in one place, at the bottom, same size at every width, never moving with the camera */
+#now{position:absolute;left:50%;bottom:12px;z-index:3;display:none;width:min(calc(100% - 24px),780px);transform:translateX(-50%);background:#f7f1e4;border:3px solid #2a211a;border-radius:8px;overflow:hidden;color:var(--cinkd);box-shadow:0 8px 22px rgba(40,25,10,.4)}
+#now.on{display:block}
+#now .hd{display:block;font-family:var(--mono);font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#f7f1e4;background:#2a211a;padding:8px 14px}
+#now.s-ok .hd{background:#4f6b4a}#now.s-cond .hd{background:#a46f1a}#now.s-no .hd{background:#8f2b2b}#now.s-brand .hd{background:#2f4f8f}
+#now .nm{display:block;font-family:"Rye",Georgia,serif;font-size:28px;line-height:1.1;padding:10px 14px 0}
+#now .at{display:block;font:500 13px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--cink2);padding:6px 14px 0}
+#now p{margin:0;padding:6px 14px 12px;font-size:18px;line-height:1.4;font-weight:500}
+#now .chips{display:none;padding:0 14px 12px}
+/* pause: a pill at the top left (clear of the gate signs, which hang at the centre), the Paused tag beside it once the ride stands still */
+#pausebar{position:absolute;left:12px;top:12px;z-index:8;display:flex;align-items:center;gap:10px;max-width:calc(100% - 24px)}
+#pausebar[hidden]{display:none}
+#pausedTag{font:600 14px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#f7f1e4;background:#8f2b2b;padding:12px 14px;border-radius:999px}
+#pausedTag[hidden]{display:none}
+#pauseBtn{font:600 15px/1 var(--sans);letter-spacing:.04em;min-height:44px;padding:0 18px;border-radius:999px;border:2px solid #2a211a;background:#f7f1e4;color:#2a211a;cursor:pointer;box-shadow:0 3px 10px rgba(40,25,10,.35);display:inline-flex;align-items:center;gap:10px}
+#pauseBtn:hover{background:#fff}#pauseBtn:focus-visible{outline:3px solid var(--tol);outline-offset:3px}
+#pauseBtn .k{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;border:1px solid #5a4a3c;border-radius:4px;padding:3px 5px;color:#5a4a3c}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 /* the readout plate */
 #fade{position:absolute;inset:0;z-index:5;background:var(--cream);opacity:0;pointer-events:none;transition:opacity .65s}
 #fade.on{opacity:1}
@@ -155,9 +171,9 @@ a{color:var(--tol)}
 .below h2{font-family:var(--serif);font-weight:600;font-size:1.05rem;margin:0 0 4px;color:var(--ink)}
 .below p{margin:0}
 :focus-visible{outline:2px solid var(--tol);outline-offset:2px}
-@media (max-width:820px){.menu{grid-template-columns:minmax(0,1fr)}.panel{display:none}.panel.now{display:block;left:12px;right:12px;top:12px;width:auto}.panel .scene,.panel .hole,.panel .say{display:none}#stage{aspect-ratio:4/5;max-height:none}#stage:has(#counter:not(.off)){aspect-ratio:auto}#counter:not(.off){position:relative;min-height:0}#counter{grid-template-columns:minmax(0,1fr)}.menu{grid-template-columns:1fr 1fr}#now.on{display:block}.grid3,.stations,.below{grid-template-columns:1fr}#hud{font-size:.62rem}}
-/* phone pass: one column picker that cannot clip, one full-width window at a time over the canvas, caption below it */
-@media (max-width:480px){.menu{grid-template-columns:minmax(0,1fr)}.menu>li,.menu button,#counter .steps li>span,#counter p{min-width:0;overflow-wrap:break-word}.menu button{width:100%}.panel.now{left:0;right:0;top:0;width:auto}#now{left:0;right:0;bottom:0;border-width:3px 0 0;border-radius:0}}
+@media (max-width:820px){.menu{grid-template-columns:minmax(0,1fr)}.panel{display:none}#stage{aspect-ratio:auto;height:clamp(540px,calc(100svh - 110px),760px);max-height:none}#stage:has(#counter:not(.off)){height:auto}#now .chips{display:flex}#now p{font-size:16px}#pauseBtn .k{display:none}#counter:not(.off){position:relative;min-height:0}#counter{grid-template-columns:minmax(0,1fr)}.menu{grid-template-columns:1fr 1fr}.grid3,.stations,.below{grid-template-columns:1fr}#hud{font-size:.62rem}}
+/* phone pass: one column picker that cannot clip; no corner window (it would not fit), the pinned panel carries all of the step's words, chips included */
+@media (max-width:480px){.menu{grid-template-columns:minmax(0,1fr)}.menu>li,.menu button,#counter .steps li>span,#counter p{min-width:0;overflow-wrap:break-word}.menu button{width:100%}#now{left:0;right:0;bottom:0;width:auto;transform:none;border-width:3px 0 0;border-radius:0}#now .nm{font-size:24px}}
 </style>
 </head>
 <body>
@@ -176,12 +192,14 @@ a{color:var(--tol)}
   <div class="panel" id="p0"></div><div class="panel" id="p1"></div><div class="panel" id="p2"></div><div class="panel" id="p3"></div>
   <div id="flash"></div>
   <div id="hud"></div>
-  <div id="now"></div>
+  <div id="now" role="region" aria-label="This step" aria-live="polite"></div>
+  <div id="pausebar" hidden><span id="pausedTag" hidden>Paused</span><button type="button" id="pauseBtn" aria-pressed="false" aria-keyshortcuts="Space">Pause<span class="k">Space</span></button></div>
+  <div id="live" class="sr" role="status" aria-live="assertive"></div>
   <div id="fade"></div>
   <div id="readout"><div class="plate" id="plate"></div></div>
 </div>
 <div class="below">
-  <div><h2>How to read the ride</h2><p>Three lifts, four gates each. Twelve windows open as you climb, taking the four corners in turn, and tell how the compound is made: the sequence and where it came from, the raw materials, building the chain, cleaving the crude product, purifying it, the certificate, the border, the facility, formulation, fill and finish, labeling and release, and dispensing. The banner over each gate carries that step's words; its header is green where the rules permit the step, amber with conditions, red where the gate is closed, blue for an approved product. A cart that stops at a gate, or gets shunted onto the research-use-only siding, is the answer. The cart parks at the terminal after the twelfth gate and the standing comes up, coloured green, yellow, orange or red by evidence and oversight.</p></div>
+  <div><h2>How to read the ride</h2><p>Three lifts, four gates each. Twelve windows open as you climb, one at a time and left and right in turn, and tell how the compound is made: the sequence and where it came from, the raw materials, building the chain, cleaving the crude product, purifying it, the certificate, the border, the facility, formulation, fill and finish, labeling and release, and dispensing. The panel along the bottom carries that step's words, and the banner over each gate repeats its name; the header of both is green where the rules permit the step, amber with conditions, red where the gate is closed, blue for an approved product. Press Space, or the Pause button, to stop the ride and read; press it again to go on. A cart that stops at a gate, or gets shunted onto the research-use-only siding, is the answer. The cart parks at the terminal after the twelfth gate and the standing comes up, coloured green, yellow, orange or red by evidence and oversight.</p></div>
   <div><h2>Where the facts come from</h2><p>Every status and date in a standing is a row in the federal register behind this tool: FDA's lists and letters, the Federal Register, Regulations.gov, the courts. The <a href="map.html">map</a> holds the register, the 503B facilities and the documented supply routes; the <a href="glossary.html">glossary</a> holds the words.</p></div>
   <div><h2>What it is not</h2><p>Not legal advice, and not a statement that any peptide is safe or works. "Tolerated" means FDA or HHS says it does not intend to act while conditions are met. It is never approval. The hills are the Pennsylvania countryside the ride is set in; the equipment in the windows is drawn to type, not from any named plant, and the making of a peptide is told as the trade generally does it, not as any one maker does. Barns, silos, the water tower, the factory, the truck and the pines are CC0 models by Quaternius and CreativeTrio via Poly Pizza.</p></div>
 </div>
@@ -236,7 +254,7 @@ function plate(c){const lvl=['Clear skies.','Overcast.','Rain and lightning.','A
   ${c.dates.length?`<div class="k">Dates</div>`:''}<ul class="dates">${c.dates.map(x=>`<li><span class="d">${x.date}</span><span>${esc(x.what)} <a href="${esc(x.url)}" target="_blank" rel="noopener">source</a></span></li>`).join('')}</ul>
   <div class="acts"><button class="btn" id="again">Order another</button><a class="btn ghost" href="map.html" style="text-decoration:none">Go deeper: the map</a><a class="btn ghost" href="glossary.html" style="text-decoration:none">Glossary</a></div>
   <p class="foot">Maps public guidance; not legal advice. Tolerated is never approved. The HHS policy is a draft under comment until 2026-11-13 (<a href="${esc(D.hhsUrl)}" target="_blank" rel="noopener">Federal Register notice</a>).</p>`;
-  $('#fade').classList.add('on');setTimeout(()=>{$('#readout').classList.add('on');$('#again').onclick=reset},650)}
+  $('#fade').classList.add('on');after(650,()=>{$('#readout').classList.add('on');$('#again').onclick=reset})}
 
 /* ---------- the stage: October in the Lebanon Valley, late afternoon ---------- */
 const host=$('#stage');
@@ -307,7 +325,7 @@ function flash(){const f=$('#flash');f.style.transition='none';f.style.opacity=.
   const fwd=camera.getWorldDirection(tmp).clone(),side=new THREE.Vector3(-fwd.z,0,fwd.x),top=camera.position.clone().addScaledVector(fwd,120).addScaledVector(side,(Math.random()-.5)*160).setY(90+Math.random()*40);
   const pts=[];let p=top.clone();pts.push(p.clone());for(let k=0;k<9;k++){p=p.clone().add(new THREE.Vector3((Math.random()-.5)*14,-(8+Math.random()*8),(Math.random()-.5)*14));pts.push(p.clone())}
   bolt.geometry.dispose();bolt.geometry=new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts),40,.35,5,false);bolt.visible=true;WX.bolt=.14;
-  const h0=sun.intensity;sun.intensity=h0+3;setTimeout(()=>{sun.intensity=h0},140)}
+  const h0=sun.intensity;sun.intensity=h0+3;after(140,()=>{sun.intensity=h0})}
 
 /* the steel track: tubular rails on box-section supports, maroon like the picture */
 const steel=new THREE.MeshStandardMaterial({color:0x6e2f2f,roughness:.42,metalness:.55,envMap:ENV,envMapIntensity:.6}),steelDark=new THREE.MeshStandardMaterial({color:0x4a2222,roughness:.6,metalness:.4});
@@ -545,6 +563,8 @@ function setBoard(sb,text){if(sb){sb.children[1].material.map=signTex(text,4.5);
   camera.add(rig);camera.userData.rig=rig;scene.add(camera)}
 
 /* ---------- running the ride ---------- */
+/* one clock the ride keeps (vclock, ms) and timers that run on it, so Pause stops the lot: motion, weather, the windows' scenes, the door hold and the end-of-ride waits */
+let vclock=0,paused=false,held=[];const timers=new Set(),after=(ms,fn)=>{const t={at:vclock+ms,fn};timers.add(t);return t},cancel=t=>timers.delete(t);
 const ride={t:0,s:0,v:0,on:'main',card:null,phase:'idle',roll:0,side:0,sideT:0};const ROLL_MAX=.2618,ROLL_GAIN=.5,ROLL_TAU=.4,ROLL_DWELL=1.5,SHAKE_TAU=.08,SH={x:0,y:0};let anim=null,stopAtT=null;
 const G=9.8;
 function placeCam(dt=0){const c=ride.on==='main'?MAIN:SIDING,t=Math.min(ride.t,1),p=c.getPointAt(t),q=c.getPointAt(Math.min(t+.01,1)),q2=c.getPointAt(Math.min(t+.03,1));
@@ -558,41 +578,55 @@ function placeCam(dt=0){const c=ride.on==='main'?MAIN:SIDING,t=Math.min(ride.t,1
   SH.x+=((Math.random()-.5)*kg-SH.x)*ks;SH.y+=((Math.random()-.5)*kg-SH.y)*ks;camera.position.set(p.x+SH.x*shake,p.y+1.9+SH.y*shake,p.z);camera.lookAt(q.x,q.y+1.55,q.z);camera.rotateZ(ride.roll);
   sun.target.position.copy(p);camera.fov=66+Math.min(10,ride.v*.35);camera.updateProjectionMatrix()}
 function lamp(st,status){const col={ok:0x4f6b4a,cond:0xc98a22,no:0xb8303c,brand:0x2f4f8f}[status]||0x888888;st.lamps.forEach(m=>{m.material.color.set(col);m.material.emissive.set(col);m.material.emissiveIntensity=1});st.pen.forEach(f=>f.material.color.set(col))}
-function fillBanner(i,c){const [s,n,t]=c.steps[i],el=stations[i].el;el.className='banner s-'+s;el.innerHTML=`<h3>Step ${i+1} of ${NSTEP} · <span class="chip s-${s}">${STATUS[s]}</span></h3><div class="big">${esc(n)}</div><p>${esc(t)}</p>`}
-function showPanel(i,c,now){const [s,n,t]=c.steps[i],el=$('#'+PANEL[i%4]),ch=chips(i,c);el.className='panel s-'+s;void el.offsetWidth;el.className='panel on s-'+s+(now?' now':'');el.dataset.step=i;el.innerHTML=`<div class="top"><h3><span class="step">${i+1}</span>${esc(n)} · ${STATUS[s]}</h3>${ch.length?`<div class="chips">${ch.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}<p class="say"></p></div><div class="hole"></div>`;MINI[i].status=s;document.querySelectorAll('.panel').forEach(x=>{if(x.id!==PANEL[i%4])x.classList.remove('now')})}
-function light(i,c){stations[i].el.classList.add('lit');showPanel(i,c,true);const [s,n,t]=c.steps[i];$('#hud').textContent=`${c.name} · step ${i+1} of ${NSTEP} · ${n}`;$('#now').innerHTML=`<b>${i+1} · ${esc(n)} · ${STATUS[s]}</b><span>${esc(t)}</span>`;$('#now').classList.add('on')}
+function fillBanner(i,c){const [s,n,t]=c.steps[i],el=stations[i].el;el.className='banner s-'+s;el.setAttribute('aria-hidden','true');el.innerHTML=`<h3>Step ${i+1} of ${NSTEP} · <span class="chip s-${s}">${STATUS[s]}</span></h3><div class="big">${esc(n)}</div>`}
+function showPanel(i,c,now){const [s,n,t]=c.steps[i],el=$('#'+PANEL[i%4]),ch=chips(i,c);el.className='panel s-'+s;void el.offsetWidth;el.className='panel on s-'+s+(now?' now':'');el.dataset.step=i;el.innerHTML=`<div class="top"><h3><span class="step">${i+1}</span>${esc(n)} · ${STATUS[s]}</h3>${ch.length?`<div class="chips">${ch.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}<p class="say"></p></div><div class="hole"></div>`;MINI[i].status=s;document.querySelectorAll('.panel').forEach(x=>{if(x.id!==PANEL[i%4])x.className='panel'})}
+const boardText=(i,c)=>i===2?{spps:'Synthesis plant',bio:'Bioreactor hall',extract:'Extraction plant',small:'Chemistry plant'}[c.route]:i===7?({brand:'Manufacturer, cGMP',component:'503B facility',closed:'Gate closed',none:'Gate closed'}[c.track]||'503A pharmacy'):BUILD[i];
+function light(i,c){stations.forEach((st,k)=>st.el.classList.toggle('on',k===i));stations[i].el.classList.add('lit');showPanel(i,c,true);const [s,n,t]=c.steps[i],ch=chips(i,c),pl=boardText(i,c),nw=$('#now');$('#hud').textContent=`${c.name} · step ${i+1} of ${NSTEP} · ${n}`;
+  nw.className='on s-'+s;nw.innerHTML=`<b class="hd">Step ${i+1} of ${NSTEP} · ${STATUS[s]}</b><span class="nm">${esc(n)}</span>${pl?`<span class="at">At the gate: ${esc(pl)}</span>`:''}<p>${esc(t)}</p>${ch.length?`<div class="chips">${ch.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}`;
+  if(!reduce)nw.animate([{opacity:0,translate:'0 8px'},{opacity:1,translate:'0 0'}],{duration:350,easing:'ease-out'})} // window, banner and panel all start in this one call, same length
 let shown=-1;
-function start(c,skip){ride.card=c;$('#counter').classList.add('off');$('#readout').classList.remove('on');
+function start(c,skip){setPaused(false);ride.card=c;$('#counter').classList.add('off');$('#readout').classList.remove('on');
   stations.forEach((st,i)=>{lamp(st,c.steps[i][0]);st.barrier.visible=c.stopStep===i;fillBanner(i,c)});MINI.forEach(m=>m.set(c));
-  setBoard(stations[2].sb,{spps:'Synthesis plant',bio:'Bioreactor hall',extract:'Extraction plant',small:'Chemistry plant'}[c.route]);setBoard(stations[7].sb,{brand:'Manufacturer, cGMP',component:'503B facility',closed:'Gate closed',none:'Gate closed'}[c.track]||'503A pharmacy');
+  [2,7].forEach(i=>setBoard(stations[i].sb,boardText(i,c)));
   siding.visible=siding.userData.buffer.visible=siding.userData.label.visible=c.track==='none';setWeather(reduce?0:c.weather);
   if(skip||reduce){document.querySelectorAll('.panel').forEach(p=>p.className='panel');plate(c);return}
   ride.t=0;ride.s=0;ride.v=0;ride.on='main';ride.phase='doors';shown=-1;stopAtT=c.stopStep!=null?T[c.stopStep]-.005:null;placeCam();$('#hud').style.display='block';$('#hud').textContent=c.name+' · the doors';$('#now').classList.remove('on');document.querySelectorAll('.panel').forEach(p=>p.className='panel');
   const dn=$('#doorName');dn.textContent=c.name;dn.dataset.name=c.name;
   $('#doorMsg').innerHTML=matchMedia('(max-width:820px)').matches?`<b>What happens next</b>Twelve steps from paper to vial, and what US rules allow at each.`:`<b>What happens next</b>The twelve steps that get ${esc(c.name)} from a sequence on paper to a vial, and whether US rules allow each one. Then: where it stands today, and how strong the evidence is.`; // the short line keeps the right door clear of the porthole on a phone
-  const doors=$('#doors');doors.classList.remove('open');doors.classList.add('show');fitName();doorsAt=performance.now();clearTimeout(doorT);clearTimeout(doorT2);doorT=setTimeout(openDoors,reduce?2000:6500);$('#boardNow').focus({preventScroll:true})} // held shut long enough to read, then opened
+  const doors=$('#doors');doors.classList.remove('open');doors.classList.add('show');fitName();doorsAt=performance.now();cancel(doorT);cancel(doorT2);doorT=after(reduce?2000:6500,openDoors);$('#boardNow').focus({preventScroll:true})} // held shut long enough to read, then opened
 let doorT=0,doorT2=0,doorsAt=0;
-function openDoors(){const d=$('#doors');if(!d.classList.contains('show')||d.classList.contains('open'))return;clearTimeout(doorT);d.classList.add('open');doorT2=setTimeout(()=>{d.classList.remove('show');ride.phase='lift'},1700)}
+function openDoors(){const d=$('#doors');if(paused||!d.classList.contains('show')||d.classList.contains('open'))return;cancel(doorT);d.classList.add('open');doorT2=after(1700,()=>{d.classList.remove('show');ride.phase='lift'})}
 // the name goes on one line, never broken at a hyphen: measure it and scale the type down until it fits the door
 function fitName(){const dn=$('#doorName');if(!$('#doors').classList.contains('show'))return;const name=dn.dataset.name||dn.textContent;dn.dataset.name=name;dn.textContent=name;dn.style.fontSize='';dn.style.whiteSpace='';
   const r=document.createRange(),span=()=>{r.selectNodeContents(dn);return r.getBoundingClientRect().width},base=parseFloat(getComputedStyle(dn).fontSize),w=dn.clientWidth;let fs=base,nat=span();if(nat>w)fs=Math.floor(base*w/nat*10)/10;dn.style.fontSize=fs+'px';
   // shortcut: below 16px one line is unreadable (phones, the longest names), so those few break at spaces only, each word kept whole, hyphens never; revisit if the door gets wider than one leaf
   if(fs<16&&/ /.test(name)){dn.innerHTML=name.split(' ').map(x=>'<span style="white-space:nowrap">'+esc(x)+'</span>').join(' ');dn.style.whiteSpace='normal';fs=Math.min(base,22);dn.style.fontSize=fs+'px';
     while(fs>12&&[...dn.children].some(e=>e.getBoundingClientRect().width>w))dn.style.fontSize=(fs-=.5)+'px'}}
-$('#doors').addEventListener('click',()=>{if(performance.now()-doorsAt>400)openDoors()});addEventListener('resize',fitName);
+$('#doors').addEventListener('click',()=>{if(performance.now()-doorsAt>400)openDoors()});addEventListener('resize',fitName);document.fonts.ready.then(fitName); // measured again once the wood-type face is in, so the name is fitted to the real letters
+/* Pause: the clock, the timers and the weather stop; transitions that are mid-way finish at once (so the text on screen is whole and sharp), looping animations hold, and the doors hold where they are */
+const pbar=$('#pausebar'),pbtn=$('#pauseBtn'),ptag=$('#pausedTag'),liveEl=$('#live');
+const active=()=>!!ride.card&&['doors','lift','run','siding','stopped'].includes(ride.phase);
+function setPaused(p){if(p===paused||(p&&!active()))return;paused=p;
+  if(p){for(const a of document.getAnimations()){try{const tg=a.effect&&a.effect.target;if((tg&&tg.closest&&tg.closest('#doors'))||(a.effect&&a.effect.getComputedTiming().iterations===Infinity)){a.pause();held.push(a)}else a.finish()}catch(e){}}}
+  else{held.forEach(a=>{try{a.play()}catch(e){}});held=[]}
+  document.body.classList.toggle('paused',p);ptag.hidden=!p;pbtn.setAttribute('aria-pressed',String(p));pbtn.firstChild.nodeValue=p?'Resume':'Pause';
+  liveEl.textContent=p?'Paused. Press Space or Resume to go on.':'Resumed.';if(p)pbtn.focus({preventScroll:true})}
+pbtn.onclick=()=>setPaused(!paused);
+addEventListener('keydown',e=>{if(e.code!=='Space'||e.repeat||e.ctrlKey||e.metaKey||e.altKey||!active())return;const t=e.target;if(t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)))return;e.preventDefault();setPaused(!paused)});
+addEventListener('keyup',e=>{if(e.code==='Space'&&active())e.preventDefault()}); // a focused button would otherwise click on key-up
 function step(dt){const c=ride.card;if(!c||ride.phase==='idle'||ride.phase==='done'||ride.phase==='doors'||ride.phase==='stopped')return;
-  if(ride.phase==='siding'){ride.t+=ride.v*dt/70;if(ride.t>=1){ride.t=1;ride.phase='done';ride.v=0;setTimeout(()=>end(c),1200)}return}
+  if(ride.phase==='siding'){ride.t+=ride.v*dt/70;if(ride.t>=1){ride.t=1;ride.phase='done';ride.v=0;after(1200,()=>end(c))}return}
   const lift=LIFTS.find(([a,b])=>ride.t>=a&&ride.t<=b);let v;
   if(lift){v=9;if(ride.phase!=='lift'){ride.phase='lift';$('#hud').textContent=c.name+' · '+(lift===LIFTS[0]?'leaving the station':'the next lift')}}
   else{const y=MAIN.getPointAt(ride.t).y,H=Math.max(y,...LIFTS.filter(([a,b])=>b<=ride.t).map(([a,b])=>MAIN.getPointAt(b).y))+1.5;v=Math.max(6,Math.sqrt(Math.max(1,2*G*(H-y)))*1.1);if(ride.t>.962)v=Math.max(2,v*(1-(ride.t-.962)/.038));
     if(ride.phase!=='run'){ride.phase='run';$('#hud').textContent=c.name+' · '+(ride.t>crestT?'into the terminal':'over the crest');$('#now').classList.remove('on')}}
   ride.v+=(v-ride.v)*Math.min(1,dt*4);ride.s+=ride.v*dt;ride.t=sToT(ride.s);
-  for(let i=0;i<NSTEP;i++)if(ride.t>=T[i]-.011&&shown<i){shown=i;light(i,c)}
+  for(let i=0;i<NSTEP;i++)if(ride.t>=T[i]-.03&&shown<i){shown=i;light(i,c)}
   if(c.sidingStep!=null&&ride.t>=T[c.sidingStep]+.01){ride.on='siding';ride.t=0;ride.phase='siding';ride.v=5;$('#hud').textContent=c.name+' · shunted onto the research-use-only siding';return}
-  if(stopAtT!=null&&ride.t>=stopAtT){ride.phase='stopped';ride.v=0;if(shown<c.stopStep){shown=c.stopStep;light(c.stopStep,c)}$('#hud').textContent=c.name+' · the gate is closed';setTimeout(()=>end(c),2600);return}
-  if(ride.t>=.999){ride.phase='done';ride.v=0;setTimeout(()=>end(c),600)}}
-function end(c){ride.phase='done';$('#hud').style.display='none';$('#now').classList.remove('on');document.querySelectorAll('.panel').forEach(p=>p.className='panel');plate(c)}
-function reset(){setWeather(0);$('#fade').classList.remove('on');ride.phase='idle';ride.t=.02;ride.s=0;ride.v=0;ride.on='main';ride.roll=0;ride.side=0;ride.sideT=0;SH.x=SH.y=0;clearTimeout(doorT);clearTimeout(doorT2);$('#doors').classList.remove('show','open');placeCam();$('#readout').classList.remove('on');$('#hud').style.display='none';$('#now').classList.remove('on');document.querySelectorAll('.panel').forEach(p=>p.className='panel');stations.forEach(st=>{st.el.className='banner';st.el.innerHTML=''});$('#counter').classList.remove('off')}
+  if(stopAtT!=null&&ride.t>=stopAtT){ride.phase='stopped';ride.v=0;if(shown<c.stopStep){shown=c.stopStep;light(c.stopStep,c)}$('#hud').textContent=c.name+' · the gate is closed';after(2600,()=>end(c));return}
+  if(ride.t>=.999){ride.phase='done';ride.v=0;after(600,()=>end(c))}}
+function end(c){setPaused(false);ride.phase='done';stations.forEach(st=>st.el.classList.remove('on'));$('#hud').style.display='none';$('#now').classList.remove('on');document.querySelectorAll('.panel').forEach(p=>p.className='panel');plate(c)}
+function reset(){setPaused(false);setWeather(0);$('#fade').classList.remove('on');ride.phase='idle';ride.t=.02;ride.s=0;ride.v=0;ride.on='main';ride.roll=0;ride.side=0;ride.sideT=0;SH.x=SH.y=0;cancel(doorT);cancel(doorT2);$('#doors').classList.remove('show','open');placeCam();$('#readout').classList.remove('on');$('#hud').style.display='none';$('#now').classList.remove('on');document.querySelectorAll('.panel').forEach(p=>p.className='panel');stations.forEach(st=>{st.el.className='banner';st.el.innerHTML=''});$('#now').className='';$('#counter').classList.remove('off')}
 $('#board').onclick=()=>picked&&start(picked,false);$('#skipRide').onclick=()=>picked&&start(picked,true);
 ride.t=.02;placeCam();
 
@@ -605,16 +639,19 @@ function leafStep(dt){const fwd=camera.getWorldDirection(tmp).clone(),pos=camera
     if(L.t>7||rel.dot(fwd)<-6||rel.length()>90){L.p.copy(pos).addScaledVector(fwd,16+Math.random()*60).add(new THREE.Vector3((Math.random()-.5)*44,(Math.random()-.4)*16,(Math.random()-.5)*44));L.v.set(-2.2-WX.wind*2.5+Math.random()*1.6,-.7-Math.random()*.6,(Math.random()-.3)*2);L.w.set(Math.random()*4,Math.random()*4,Math.random()*4);L.t=0}
     L.v.x+=Math.sin(L.t*3+i)*.9*dt;L.p.addScaledVector(L.v,dt);L.r.set(L.r.x+L.w.x*dt,L.r.y+L.w.y*dt,L.r.z+L.w.z*dt);o.position.copy(L.p);o.rotation.copy(L.r);o.updateMatrix();leaves.setMatrixAt(i,o.matrix)}leaves.instanceMatrix.needsUpdate=true}
 let last=performance.now();
-function loop(now){const dt=Math.max(0,Math.min(.05,(now-last)/1000));last=now; /* the first frame can be stamped before last, and a negative dt turns the shake into NaN */if(!document.hidden&&host.clientWidth){
+function loop(ts){const dt=Math.max(0,Math.min(.05,(ts-last)/1000));last=ts; /* the first frame can be stamped before last, and a negative dt turns the shake into NaN */if(!document.hidden&&host.clientWidth){
+  const act=active();if(pbar.hidden===act)pbar.hidden=!act;if(!act&&paused)setPaused(false);
+  if(!paused){vclock+=dt*1000;const now=vclock;for(const t of [...timers])if(vclock>=t.at){timers.delete(t);t.fn()}
   if(ride.phase==='idle'){ride.t=.02+Math.sin(now/4000)*.004}else step(dt);placeCam(dt);
   const rig=camera.userData.rig;if(rig)rig.userData.wheel.rotation.z+=ride.v*dt*2.4;
   if(!reduce){leafStep(dt);weatherStep(dt,now)}ferris.rotation.z+=dt*.12;windmill.userData.wheel.rotation.z+=dt*(.6+WX.wind*.5);pennants.forEach((f,k)=>{f.rotation.y=Math.sin(now/260+k)*.5*(1+WX.wind*.4);f.scale.x=.8+.2*Math.sin(now/140+k)});for(const p of puffs){p.t+=dt*.5;if(p.t>3.5)p.t=0;p.m.position.set(p.x+p.t*1.4,22+p.t*4,-2);p.m.scale.setScalar(.6+p.t*.5);p.m.material.opacity=.7*(1-p.t/3.5)}
   if(ride.card&&ride.card.track==='none'&&ride.on==='siding'){const on=Math.floor(now/300)%2;stations.forEach((st,i)=>{if(i>SIDING_AT)st.lamps.forEach(m=>m.material.emissiveIntensity=on?1.4:.1)})}
   for(const k of visibleSteps())MINI[k].tick(dt,now);for(const c of CARS){c.t=(c.t+c.dir*c.sp*dt+1)%1;const p=c.cv.getPointAt(c.t),q=c.cv.getPointAt((c.t+c.dir*.01+1)%1);c.m.position.set(p.x,terrainH(p.x,p.z)+1.1,p.z);c.m.lookAt(q.x,c.m.position.y,q.z)}
-  if(ride.card){stations.forEach((st,k)=>{tmp.copy(st.g.position).setY(st.g.position.y+11.4).applyMatrix4(camera.matrixWorldInverse);st.el.style.visibility=(k<=shown+2&&k>=shown-1&&tmp.z<-3&&tmp.z>-300)?'visible':'hidden'})}
+  if(act&&shown>=0){const st=stations[shown];tmp.copy(st.g.position).setY(st.g.position.y+11.4).applyMatrix4(camera.matrixWorldInverse);st.el.classList.toggle('on',tmp.z<-3&&tmp.z>-300)} // only the gate you are at shows its sign
+  }
   composer.render();renderMinis();labels.render(scene,camera);css3.render(scene,camera)}requestAnimationFrame(loop)}
 requestAnimationFrame(loop);
-window.ride={roll:()=>ride.roll,start:(id,skip)=>start(D.cards.find(c=>c.id===id),!!skip),state:()=>({t:ride.t,v:ride.v,on:ride.on,phase:ride.phase,card:ride.card&&ride.card.id,readout:$('#readout').classList.contains('on'),lit:stations.map(s=>s.el.classList.contains('lit'))}),jump:(t,phase)=>{ride.phase=phase||'run';ride.t=t;ride.s=tToS(t)},T,crestT,LIFTS,dbg:{halo,sunDisc,camera,scene,bloom}}; // test hook
+window.ride={stopStep:id=>{const c=D.cards.find(c=>c.id===id);return c.stopStep??c.sidingStep},pause:()=>setPaused(true),resume:()=>setPaused(false),toggle:()=>setPaused(!paused),paused:()=>paused,clock:()=>vclock,roll:()=>ride.roll,start:(id,skip)=>start(D.cards.find(c=>c.id===id),!!skip),state:()=>({shown,t:ride.t,v:ride.v,on:ride.on,phase:ride.phase,card:ride.card&&ride.card.id,readout:$('#readout').classList.contains('on'),lit:stations.map(s=>s.el.classList.contains('lit'))}),jump:(t,phase)=>{ride.phase=phase||'run';ride.t=t;ride.s=tToS(t)},T,crestT,LIFTS,dbg:{halo,sunDisc,camera,scene,bloom}}; // test hook
 </script>
 </body>
 </html>
