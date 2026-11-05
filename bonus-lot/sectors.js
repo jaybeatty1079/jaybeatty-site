@@ -43,7 +43,7 @@ window.SECTORS = {
         "Rocky. Back office. Nobody sees me, everybody gets paid. Build your store, then add the owner's other stores. Every one becomes a building.",
         "{n} stores, {emp} on W-2. That's a payroll worth reading. Now tell me about your plans.",
         '{enrolled} enrolled across the group. {lift} a year lands on the P&L and not one tire gets kicked. Last job: how do you get paid?',
-        "{units} cars' worth of net nobody had to move, and you're the one who found it. {bonus} to you. Now be the ambassador: take it to the owner. Their version is one tap away."
+        "{units} cars' worth of net nobody had to move, and you're the one who found it. {bonus} to you. Now be the ambassador: take it to the owner. The next step is a talk with an expert."
       ],
       unitLine: n => `${n} cars you didn't have to sell`,
       ownerUnitLine: n => `${n} cars' worth of net, with no extra units sold`,

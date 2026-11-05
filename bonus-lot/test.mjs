@@ -46,3 +46,20 @@ assert.equal(many.stores.length, 30);
 const good = { ...S, stores: [{ brand: 'Ford', emp: 120, state: 'CA' }, { brand: 'Kia', emp: 33, state: 'AZ' }], hp: 'self', scope: 'group', share: 12.5 };
 assert.deepEqual(M.sanitize(JSON.parse(JSON.stringify(good)), d), good);
 console.log('ok: model and sanitize,', Object.keys(SECTORS).length, 'sector(s)');
+
+// the page itself: who the coins pay, where the contact buttons go, what the garage no longer has
+import { readFileSync } from 'node:fs';
+const page = readFileSync(new URL('./index.html', import.meta.url), 'utf8');
+const src = page.slice(page.indexOf('function payOf'), page.indexOf('function setScene'));
+const payOf = new Function(src + '; return payOf')();
+assert.deepEqual(payOf({ pay: 'staff', lit: { body: 1 } }), ['staff'], 'an explicit pay is honoured');
+assert.deepEqual(payOf({ exhaust: 1, lit: { engine: 1 } }), ['owner'], 'a saving beat pays the owner');
+assert.deepEqual(payOf({ exhaust: 1, lit: { engine: 1, body: 1, admin: 1 } }), ['owner', 'staff', 'admin'], 'and the employees and administrator when they are lit');
+assert.deepEqual(payOf({ lit: { windows: 1 } }), [], 'a beat that pays nobody drops no coins');
+for (const m of page.matchAll(/pay:'([a-z,]*)'/g)) assert.ok(m[1].split(',').every(k => ['owner', 'staff', 'admin'].includes(k)), 'pay names a real bay: ' + m[1]);
+for (const m of page.matchAll(/fx:'([a-z]+)'/g)) assert.equal(m[1], 'spill', 'only the spill effect exists');
+for (const id of ['cta', 'ownerBtn']) assert.match(page, new RegExp('id="' + id + '"[^>]*href="mailto:jay@jaybeatty\\.com|href="mailto:jay@jaybeatty\\.com[^"]*"[^>]*id="' + id + '"'), id + ' goes to Jay by email');
+assert.ok(!/href="\/#contact"/.test(page), 'no contact link left on the site root');
+assert.ok(!/id="bay"|id="svcClose"|bayAsk|bayLeave/.test(page), 'the bar and the close button over the Service sign are gone');
+assert.ok(/class="c">← Back to the city/.test(page) && /Click here ▸/.test(page), 'the dock has both faces: the way in and the way back');
+console.log('ok: page wiring');
