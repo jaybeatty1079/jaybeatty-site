@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Owner's Desk</title>
+<meta name="description" content="A Section 125 Wellness Plan explained on the desk where the renewal letter landed: the pay stub, the P&L, the calendar and the binder your CPA will ask for. Illustrative only.">
+<link rel="icon" href="../site/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07060c;--panel:#14121c;--line:#272335;--ink:#ece9f4;--mute:#8f8aa3;--purple:#8366ea;--purple2:#c9bdfd;--green:#22a85e;--cash:#5cf08a;--magenta:#d65db1;--paper:#f3efe6;--paper2:#e6e0d2;--inkp:#1b1826;--wood:#2a1d16;--wood2:#1a120d;
+  --display:"Fraunces",Georgia,serif;--body:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--body)}
+a{color:var(--purple2)}button{font:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header{padding:28px 0 10px}h1{font:600 clamp(30px,5vw,46px)/1.05 var(--display);margin:0;letter-spacing:-.01em}h1 span{color:var(--purple2)}
+.sub{color:var(--mute);margin:8px 0 0;max-width:62ch}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-weight:500;text-decoration:none}
+.btn:hover{border-color:var(--purple)}.btn.g{background:var(--green);border-color:var(--green);color:#06130b;font-weight:600}.btn.p{background:var(--purple);border-color:var(--purple);color:#fff}
+.btn:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--cash);outline-offset:2px}
+.fine{font-size:13px;color:var(--mute)}
+/* ---- the desk ---- */
+#desk{position:relative;margin-top:18px;border-radius:18px;overflow:hidden;min-height:560px;aspect-ratio:16/9;max-height:640px;
+  background:
+   repeating-linear-gradient(92deg,rgba(255,255,255,.025) 0 2px,transparent 2px 9px),
+   repeating-linear-gradient(88deg,rgba(0,0,0,.18) 0 1px,transparent 1px 23px),
+   radial-gradient(120% 90% at 50% 0%,#3a2a1f 0%,var(--wood) 45%,var(--wood2) 100%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05),inset 0 -40px 80px rgba(0,0,0,.45)}
+#desk::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 70% 30%,rgba(255,235,200,.08),transparent 70%);pointer-events:none}
+.hud{position:absolute;right:16px;top:14px;background:rgba(7,6,12,.85);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:230px;backdrop-filter:blur(4px);z-index:3}
+.hud .l{font:600 11px/1 var(--mono);letter-spacing:.08em;color:var(--mute)}.hud .v{font:600 30px/1.1 var(--mono);color:var(--cash);margin-top:6px}.hud .d{font-size:12px;color:var(--mute);margin-top:3px}
+.obj{position:absolute;border:0;padding:0;background:transparent;text-align:left;transition:transform .25s ease,filter .25s ease;filter:drop-shadow(0 14px 18px rgba(0,0,0,.55));z-index:2}
+.obj:hover,.obj:focus-visible{transform:translateY(-6px) rotate(0deg) scale(1.02);z-index:4}
+.obj.on .card{outline:3px solid var(--cash)}
+.card{background:linear-gradient(180deg,var(--paper),var(--paper2));color:var(--inkp);border-radius:4px;padding:12px 14px;width:100%;height:100%;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden}
+.card .k{font:600 10px/1 var(--mono);letter-spacing:.12em;color:#6b6480}.card .t{font:600 16px/1.15 var(--display)}.card .ln{height:5px;border-radius:3px;background:#cfc8bb;width:80%}.card .ln.s{width:55%}
+.card .num{font:600 18px/1 var(--mono);color:var(--green)}
+.obj.letter{left:4%;top:9%;width:24%;min-width:170px;height:38%;transform:rotate(-5deg)}
+.obj.stub{left:31%;top:15%;width:21%;min-width:160px;height:32%;transform:rotate(2deg)}.obj.stub .card{background:linear-gradient(180deg,#e9f3ee,#d9e8df)}
+.obj.pnl{left:55%;top:24%;width:30%;min-width:200px;height:52%;transform:rotate(-1.5deg)}
+.obj.calendar{left:6%;top:56%;width:22%;min-width:160px;height:34%;transform:rotate(3deg)}.obj.calendar .card{background:linear-gradient(180deg,#fff,#eee7f6)}
+.obj.binder{left:32%;top:58%;width:20%;min-width:150px;height:30%;transform:rotate(-2deg)}.obj.binder .card{background:linear-gradient(180deg,#2a2340,#1b1630);color:#ece9f4;border-left:10px solid var(--purple)}.obj.binder .k{color:var(--purple2)}
+.obj.phone{left:86%;top:60%;width:11%;min-width:84px;height:30%;transform:rotate(8deg)}.obj.phone .card{background:#0b0a10;color:#ece9f4;border-radius:14px;border:2px solid #2a2740;padding:10px 8px;justify-content:center;align-items:center;text-align:center}
+.cal{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;margin-top:4px}.cal i{display:block;height:7px;border-radius:2px;background:#d8d0e6}.cal i.on{background:var(--green)}
+#open{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(180deg,rgba(7,6,12,.55),rgba(7,6,12,.82))}
+#open .box{max-width:720px}.ln1{font:600 clamp(24px,4vw,40px)/1.1 var(--display);margin:0 0 10px}.ln1 span{color:var(--cash)}.ln1 em{font-style:normal;color:var(--purple2)}
+#live{color:var(--mute);margin:14px 0 18px}
+@media(max-width:760px){#desk{aspect-ratio:auto;min-height:0;max-height:none;padding:118px 12px 16px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .obj{position:static;width:auto!important;min-width:0!important;height:auto;transform:none!important;min-height:120px}.obj.pnl,.obj.letter{grid-column:1/-1}.obj.phone .card{min-height:120px}
+  .hud{right:12px;left:12px;top:12px;min-width:0}#open{position:fixed;inset:0;overflow:auto;background:rgba(7,6,12,.94)}}
+/* ---- the lifted paper ---- */
+#paper{display:none;margin-top:18px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+#paper.on{display:block}
+.pg{display:none}.pg.on{display:block}
+.pg h2{font:600 clamp(22px,3vw,30px)/1.15 var(--display);margin:0 0 8px}.pg h2 span{color:var(--purple2)}
+.lead{color:var(--mute);max-width:70ch;margin:0 0 16px}
+.nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+.sheet{background:var(--paper);color:var(--inkp);border-radius:6px;padding:18px 20px;max-width:640px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.sheet .head{display:flex;justify-content:space-between;font:600 11px/1 var(--mono);letter-spacing:.12em;color:#6b6480;border-bottom:1px solid #cfc8bb;padding-bottom:8px;margin-bottom:12px}
+.sheet .row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px dashed #d9d2c4;font-size:15px}.sheet .row b{font:600 15px var(--mono);white-space:nowrap}.sheet .row.tot{border-bottom:0;border-top:2px solid var(--inkp);margin-top:4px;font-weight:600}.sheet .row .pos,.sheet .row b.pos{color:var(--green)}.sheet .row b.neg{color:#b3261e}
+.sheet .src{font-size:12px;color:#6b6480;margin-top:10px}.sheet .src a{color:#5a4aa6}
+.stamp{display:inline-block;border:3px solid #b3261e;color:#b3261e;font:600 13px/1 var(--mono);letter-spacing:.14em;padding:6px 10px;transform:rotate(-6deg);border-radius:4px;margin:6px 0 10px}
+.ctl{display:grid;gap:14px;margin:16px 0}.ctl label{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-weight:500}.ctl label b{font:600 15px var(--mono);color:var(--cash)}
+input[type=range]{width:100%;accent-color:var(--purple)}input[type=number],select{font:inherit;background:#0b0a10;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px}
+.toggle{display:flex;gap:6px;flex-wrap:wrap}.toggle button{min-height:44px;padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:#0b0a10}.toggle button.on{background:var(--purple);border-color:var(--purple);color:#fff}
+.loc{display:grid;grid-template-columns:1fr 110px 44px;gap:8px;align-items:center;margin-bottom:8px}.loc .x{min-height:44px;border-radius:10px;border:1px solid var(--line);background:#0b0a10}
+.plan{display:inline-block;background:linear-gradient(180deg,#2a2340,#1b1630);border-left:8px solid var(--purple);color:var(--ink);padding:12px 16px;border-radius:6px;box-shadow:0 10px 24px rgba(0,0,0,.5);margin:12px 0}
+.plan .k{font:600 10px/1 var(--mono);letter-spacing:.12em;color:var(--purple2)}.plan .t{font:600 18px/1.2 var(--display);margin-top:4px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.cta{display:inline-flex;align-items:center;min-height:50px;padding:12px 22px;border-radius:14px;background:var(--green);color:#06130b;font-weight:600;text-decoration:none;font-size:17px}
+.months{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:640px}.months button{min-height:64px;border-radius:12px;border:1px solid var(--line);background:#0b0a10;display:flex;flex-direction:column;align-items:flex-start;padding:10px 12px;gap:4px}
+.months button b{font:600 14px var(--body)}.months button span{font:600 13px var(--mono);color:var(--cash)}.months button.ren{border-color:#b3261e}.months button.ren small{color:#ff8a80}.months button.on{border-color:var(--cash);background:#0f1a13}
+.tabs{display:grid;gap:8px;max-width:760px}.tab{border:1px solid var(--line);border-radius:12px;background:#0b0a10;overflow:hidden}.tab>button{width:100%;text-align:left;display:flex;gap:12px;align-items:center;padding:14px 16px;background:transparent;border:0;min-height:52px}
+.tab>button i{width:10px;height:28px;border-radius:3px;background:var(--purple);flex:none}.tab>button b{font:600 17px/1.2 var(--display)}.tab .b{display:none;padding:0 16px 16px 38px;color:#d6d1e4}.tab.on .b{display:block}.tab.on>button i{background:var(--cash)}
+.qgrp h3{font:600 12px/1 var(--mono);letter-spacing:.12em;color:var(--mute);margin:16px 0 8px}.qrow{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#0b0a10;border-radius:12px;padding:12px 14px;margin-bottom:8px;min-height:48px}.qrow:hover{border-color:var(--purple)}
+.qlist{columns:2;column-gap:14px;max-width:900px}.qgrp{break-inside:avoid}@media(max-width:760px){.qlist{columns:1}}
+.reader{max-width:720px}.reader .h{font:600 clamp(20px,3vw,28px)/1.2 var(--display);margin:0 0 8px}.reader .s{font-size:17px;line-height:1.55;margin:0}.reader .n{font:600 12px var(--mono);color:var(--mute);margin:12px 0 0}
+footer{padding:30px 0 40px}footer p{font-size:12px;color:var(--mute);line-height:1.55}
+/* print: the one page only */
+#onepage{display:none}
+@media print{body{background:#fff;color:#111}body>*{display:none!important}#onepage{display:block!important;font:12pt/1.4 var(--body);color:#111;padding:0}#onepage h2{font:600 22pt var(--display);margin:0 0 4pt}#onepage .fine{color:#444}#onepage table{width:100%;border-collapse:collapse;margin:10pt 0}#onepage td{padding:5pt 0;border-bottom:1px solid #ccc}#onepage td:last-child{text-align:right;font-family:var(--mono)}}
+@media(prefers-reduced-motion:reduce){.obj{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><h1>The Owner's <span>Desk</span></h1><p class="sub" id="sub"></p></header>
+
+<section id="desk" aria-label="The desk">
+  <div class="hud" aria-live="polite"><div class="l">ADDED TO THE BOTTOM LINE, PER YEAR</div><div class="v" id="cashV">$0</div><div class="d" id="cashD"></div></div>
+  <button class="obj letter" data-o="letter" type="button"><div class="card"><span class="k">RENEWAL NOTICE</span><span class="t">Your health plan, next year</span><span class="ln"></span><span class="ln s"></span><span class="ln"></span><span class="fine" style="color:#6b6480;margin-top:auto">1. The problem</span></div></button>
+  <button class="obj stub" data-o="stub" type="button"><div class="card"><span class="k">PAY STUB</span><span class="t">One employee, before and after</span><span class="ln"></span><span class="ln s"></span><span class="fine" style="color:#6b6480;margin-top:auto">2. Who's on payroll</span></div></button>
+  <button class="obj pnl" data-o="pnl" type="button"><div class="card"><span class="k">PROFIT &amp; LOSS</span><span class="t">The plan, slid onto it</span><span class="ln"></span><span class="ln s"></span><span class="ln"></span><span class="num" id="pnlPeek">+$0 / yr</span><span class="fine" style="color:#6b6480;margin-top:auto">3. Show me the money</span></div></button>
+  <button class="obj calendar" data-o="calendar" type="button"><div class="card"><span class="k">CALENDAR</span><span class="t">Start any month</span><div class="cal" id="calPeek"></div><span class="fine" style="color:#6b6480;margin-top:auto">No waiting for open enrollment</span></div></button>
+  <button class="obj binder" data-o="binder" type="button"><div class="card"><span class="k">THE BINDER</span><span class="t">Your CPA has seen one of these.</span><span class="fine" style="color:#b9b1cf;margin-top:auto">Five tabs to check</span></div></button>
+  <button class="obj phone" data-o="phone" type="button"><div class="card"><span class="k">PHONE</span><span class="t" style="font-size:14px">Any question</span><span class="fine" style="color:#8f8aa3">Tap</span></div></button>
+  <div id="open"><div class="box"><div id="openLines"></div><p id="live"></p><button class="btn g" id="startBtn" type="button">Open the letter →</button> <button class="btn" id="skipBtn" type="button">Just show me the desk</button></div></div>
+</section>
+
+<section id="paper" aria-live="polite">
+  <div class="pg" id="pg-letter">
+    <h2>The renewal <span>letter</span></h2>
+    <div class="sheet"><div class="head"><span>RENEWAL NOTICE</span><span id="letterYear"></span></div>
+      <div class="stamp">RATE INCREASE</div>
+      <p style="margin:0 0 10px"><b>Re: your group health plan for the coming plan year.</b> Your renewal rate is up. You know the number; it is on the page in front of you.</p>
+      <p style="margin:0" id="statLine"></p><p class="src" id="statSrc"></p></div>
+    <p class="lead" id="letterTurn" style="margin-top:16px"></p>
+    <div class="nav"><button class="btn" data-go="desk" type="button">← Back to the desk</button><button class="btn p" data-go="stub" type="button">Pick up the pay stub →</button></div>
+  </div>
+
+  <div class="pg" id="pg-stub">
+    <h2 id="stubH"></h2><p class="lead" id="stubNote"></p>
+    <div class="sheet"><div class="head"><span>EARNINGS STATEMENT · ONE EMPLOYEE · ONE MONTH</span><span>EMPLOYER SIDE</span></div>
+      <div class="row"><span>Pre-tax wellness plan contribution (the plan level we set for you)</span><b id="sPlan"></b></div>
+      <div class="row"><span>Employer FICA on that amount, before the plan (7.65%)</span><b id="sFica"></b></div>
+      <div class="row"><span>Employer FICA on that amount, after the plan</span><b>$0.00</b></div>
+      <div class="row"><span>Plan administration fee, out of the saving</span><b class="neg" id="sFee"></b></div>
+      <div class="row tot"><span>The company keeps, per enrolled employee, per month</span><b class="pos" id="sPer"></b></div></div>
+    <div class="ctl">
+      <div><div style="font-weight:500;margin-bottom:8px">Your locations and headcount</div><div id="locs"></div><button class="btn" id="addLoc" type="button" style="min-height:40px">+ Add a location</button></div>
+      <label for="qual"><span>Share who qualify and enroll</span><b id="qualV">80%</b></label><input type="range" id="qual" min="40" max="100" value="80">
+      <p class="fine" id="enrolledLine" style="margin:0"></p></div>
+    <div class="nav"><button class="btn" data-go="letter" type="button">← The letter</button><button class="btn p" data-go="pnl" type="button">Slide it onto the P&amp;L →</button></div>
+  </div>
+
+  <div class="pg" id="pg-pnl">
+    <h2 id="pnlH"></h2>
+    <div class="ctl">
+      <div><div style="font-weight:500;margin-bottom:8px">How is your health plan funded?</div><div class="toggle" id="hp"><button data-v="insured" class="on" type="button">Fully insured</button><button data-v="level" type="button">Level-funded</button><button data-v="self" type="button">Self-funded</button></div></div>
+      <div id="claimsCtl" style="display:none;gap:14px">
+        <label for="cost"><span>Your plan's cost per enrolled employee, per year</span><b id="costV">$9,000</b></label><input type="range" id="cost" min="3000" max="25000" value="9000" step="250">
+        <label for="defl"><span>Share of that care the $0 plan handles first</span><b id="deflV">3%</b></label><input type="range" id="defl" min="0" max="15" value="3" step="0.5">
+        <p class="fine" style="margin:0">Virtual primary care, urgent care, therapy and generics at $0 are the first stop, so some visits and fills never reach your plan. Your TPA's 12-month claims summary sets the real number; this slider is only an illustration.</p></div>
+      <label for="net"><span id="netAsk"></span></label><input type="number" id="net" min="0" step="1000" placeholder="$ net profit, optional" style="max-width:260px">
+    </div>
+    <button class="btn g" id="payoff" type="button" style="font-size:17px">Show me the money →</button>
+    <div id="result" style="display:none">
+      <div class="plan" id="planCard"><div class="k">SECTION 125 WELLNESS PLAN</div><div class="t">Slid onto the P&amp;L</div></div>
+      <div class="sheet"><div class="head"><span>PROFIT &amp; LOSS · THE PLAN'S LINES</span><span>PER YEAR · ESTIMATE</span></div>
+        <div class="row"><span id="rLiftK"></span><b class="pos" id="rLift"></b></div>
+        <div class="row"><span><span id="rFeeK"></span> <span class="fine" id="rFeeNote" style="color:#6b6480"></span></span><b id="rFee">included</b></div>
+        <div class="row" id="rClaimsRow" style="display:none"><span id="rClaimsK"></span><b class="pos" id="rClaims"></b></div>
+        <div class="row tot" id="rNetRow" style="display:none"><span id="rNetK"></span><b id="rNet"></b></div>
+        <p class="src" id="rMath"></p></div>
+      <div class="chips"><button class="btn" data-go="calendar" type="button">Start any month →</button><button class="btn" data-go="binder" type="button">Open the binder →</button><button class="btn" data-go="cpa" id="cpaChip" type="button" style="display:none">What this is for a CPA →</button></div>
+      <div style="margin-top:18px;display:flex;gap:14px;flex-wrap:wrap;align-items:center"><a class="cta" id="cta" href="#"></a><span class="fine" id="ctaFine" style="max-width:38ch"></span></div>
+      <div class="chips"><button class="btn" id="printBtn" type="button"></button><button class="btn" id="copyBtn" type="button">Copy a link to these numbers</button></div>
+    </div>
+    <div class="nav"><button class="btn" data-go="stub" type="button">← The pay stub</button><button class="btn" data-go="desk" type="button">Back to the desk</button></div>
+  </div>
+
+  <div class="pg" id="pg-calendar">
+    <h2 id="calH"></h2><p class="lead" id="calP"></p>
+    <div class="months" id="months"></div>
+    <p class="fine" id="calLine" style="margin-top:12px"></p>
+    <div class="nav"><button class="btn" data-go="pnl" type="button">← The P&amp;L</button><button class="btn p" data-go="binder" type="button">Open the binder →</button></div>
+  </div>
+
+  <div class="pg" id="pg-binder">
+    <h2 id="binderH"></h2><p class="lead" id="binderP"></p>
+    <div class="tabs" id="tabs"></div>
+    <div class="nav"><button class="btn" data-go="pnl" type="button">← The P&amp;L</button><button class="btn" data-go="phone" type="button">Any other question →</button><button class="btn" data-go="desk" type="button">Back to the desk</button></div>
+  </div>
+
+  <div class="pg" id="pg-cpa">
+    <h2 id="cpaH"></h2><div id="cpaBody" style="max-width:70ch"></div>
+    <div class="nav"><button class="btn" data-go="pnl" type="button">← The P&amp;L</button><button class="btn" data-go="binder" type="button">Open the binder →</button></div>
+  </div>
+
+  <div class="pg" id="pg-phone">
+    <h2>Any <span>question</span></h2><p class="lead">Every question an owner has asked, answered in a short read. Pick one.</p>
+    <div class="qlist" id="qlist"></div>
+    <div class="reader" id="reader" style="display:none"><p class="h" id="rdH"></p><p class="s" id="rdS"></p><p class="n" id="rdN"></p>
+      <div class="chips"><button class="btn" id="rdPrev" type="button">← Back</button><button class="btn p" id="rdNext" type="button">Next →</button><button class="btn" id="rdBinder" type="button" style="display:none">Open the binder →</button><button class="btn" id="rdList" type="button">All questions</button></div></div>
+    <div class="nav"><button class="btn" data-go="desk" type="button">← Back to the desk</button></div>
+  </div>
+</section>
+
+<footer><p id="disclaimer"></p><p>Code and text © 2026 Jay Beatty. Illustrative only. <a href="../">jaybeatty.com</a></p></footer>
+</div>
+
+<section id="onepage" aria-hidden="true"></section>
+
+<script src="../bonus-lot/gsap.min.js"></script>
+<script src="../bonus-lot/model.js"></script>
+<script src="copy.js"></script>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=n=>'$'+Math.round(n).toLocaleString('en-US'), fmt2=n=>'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const D=window.DESK, BM=window.BonusModel, SEC=D.sector;
+const door=new URLSearchParams(location.search).get('for')==='cpa'?'cpa':'owner', C=D.doors[door];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, dur=x=>reduce?0:x;
+const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const now=new Date();
+
+/* ---- state: the shared model's fields plus the owner's own net and the start month ---- */
+const S=BM.defaults(SEC); S.net=0; S.start=(now.getMonth()+1)%12;
+const HK=['stores','qual','plan','hp','cost','defl'];
+function toHash(){const o={};for(const k of HK)o[k]=S[k];o.net=S.net;o.start=S.start;return '#d='+btoa(unescape(encodeURIComponent(JSON.stringify(o))))}
+function fromHash(){try{const h=location.hash;if(!h.startsWith('#d='))return false;const raw=JSON.parse(decodeURIComponent(escape(atob(h.slice(3))))),c=BM.sanitize(raw,SEC);for(const k of HK)S[k]=c[k];
+  S.net=Number.isFinite(+raw.net)?Math.min(1e10,Math.max(0,Math.round(+raw.net))):0;S.start=Number.isInteger(raw.start)&&raw.start>=0&&raw.start<12?raw.start:S.start;return true}catch(e){return false}}
+const model=()=>BM.model(S);
+
+/* ---- static copy ---- */
+$('#sub').textContent=C.sub;
+$('#openLines').innerHTML=C.open.map(([a,b])=>`<p class="ln1"><span>${esc(a)}</span> <em>${esc(b)}</em></p>`).join('');
+$('#letterYear').textContent='PLAN YEAR '+(now.getFullYear()+1);$('#statLine').textContent=D.stat.line;$('#statSrc').innerHTML=`Source: <a href="${esc(D.stat.url)}" target="_blank" rel="noopener">${esc(D.stat.src)}</a>.`;$('#letterTurn').textContent=C.letterTurn;
+$('#stubH').textContent=D.stub.h;$('#stubNote').textContent=D.stub.note;$('#pnlH').textContent=D.pnl.h;$('#netAsk').textContent=D.pnl.netAsk;
+$('#rLiftK').textContent=D.pnl.lines.lift;$('#rFeeK').textContent=D.pnl.lines.fee;$('#rFeeNote').textContent='('+D.pnl.lines.feeNote+')';$('#rClaimsK').textContent=D.pnl.lines.claims;$('#rNetK').textContent=D.pnl.lines.net;
+$('#calH').textContent=D.calendar.h;$('#calP').textContent=D.calendar.p;$('#binderH').textContent=D.binder.h;$('#binderP').textContent=D.binder.p;
+$('#cta').textContent=C.cta[0];$('#cta').href='mailto:jay@jaybeatty.com?subject='+encodeURIComponent(C.cta[1]);$('#ctaFine').textContent=C.ctaFine;$('#printBtn').textContent=C.print[0];
+$('#disclaimer').textContent=D.disclaimer;
+if(C.extra){$('#cpaChip').style.display='';$('#cpaH').textContent=C.extra.h;$('#cpaBody').innerHTML=C.extra.p.map(p=>`<p>${esc(p)}</p>`).join('')}
+$('#tabs').innerHTML=D.binder.tabs.map(([h,b],i)=>`<div class="tab${i===0?' on':''}"><button type="button" aria-expanded="${i===0}"><i></i><b>${esc(h)}</b></button><div class="b">${esc(b)}</div></div>`).join('')+`<p class="fine" style="margin:8px 0 0">Ask the others for theirs.</p>`;
+$$('#tabs .tab>button').forEach(b=>b.onclick=()=>{const t=b.parentElement,on=!t.classList.contains('on');$$('#tabs .tab').forEach(x=>{x.classList.remove('on');x.querySelector('button').setAttribute('aria-expanded','false')});if(on){t.classList.add('on');b.setAttribute('aria-expanded','true')}});
+
+/* ---- locations ---- */
+const names=SEC.labels.map(l=>l[0]);
+function renderLocs(){$('#locs').innerHTML=S.stores.map((st,i)=>`<div class="loc"><select data-i="${i}" aria-label="Location ${i+1} name">${names.map(n=>`<option${n===st.brand?' selected':''}>${esc(n)}</option>`).join('')}</select><input type="number" data-i="${i}" min="1" max="${BM.MAX_EMP}" value="${st.emp}" aria-label="Location ${i+1} headcount"><button class="x" data-i="${i}" type="button" aria-label="Remove location ${i+1}"${S.stores.length===1?' disabled':''}>✕</button></div>`).join('');
+  $$('#locs select').forEach(s=>s.onchange=()=>{S.stores[+s.dataset.i].brand=s.value;update()});
+  $$('#locs input').forEach(n=>n.oninput=()=>{S.stores[+n.dataset.i].emp=Math.min(BM.MAX_EMP,Math.max(1,Math.round(+n.value||1)));update()});
+  $$('#locs .x').forEach(x=>x.onclick=()=>{S.stores.splice(+x.dataset.i,1);renderLocs();update()});
+  $('#addLoc').disabled=S.stores.length>=BM.MAX_STORES}
+$('#addLoc').onclick=()=>{S.stores.push({brand:names[S.stores.length%names.length],emp:SEC.sizes.add,state:SEC.sizes.state});renderLocs();update()};
+$('#qual').oninput=e=>{S.qual=+e.target.value;update()};
+$$('#hp button').forEach(b=>b.onclick=()=>{S.hp=b.dataset.v;$$('#hp button').forEach(x=>x.classList.toggle('on',x===b));update()});
+$('#cost').oninput=e=>{S.cost=+e.target.value;update()};$('#defl').oninput=e=>{S.defl=+e.target.value;update()};
+$('#net').oninput=e=>{S.net=Math.max(0,Math.round(+e.target.value||0));update()};
+function syncControls(){$('#qual').value=S.qual;$('#cost').value=S.cost;$('#defl').value=S.defl;$('#net').value=S.net||'';$$('#hp button').forEach(x=>x.classList.toggle('on',x.dataset.v===S.hp))}
+
+/* ---- the numbers, everywhere at once ---- */
+const shown={cash:0};let paid=false;
+function update(){const m=model(),ins=S.hp==='insured';
+  $('#qualV').textContent=S.qual+'%';$('#costV').textContent=fmt(S.cost);$('#deflV').textContent=S.defl+'%';$('#claimsCtl').style.display=ins?'none':'grid';
+  $('#sPlan').textContent=fmt2(S.plan);$('#sFica').textContent=fmt2(m.fica);$('#sFee').textContent='−'+fmt2(m.admin);$('#sPer').textContent=fmt2(m.per);
+  $('#enrolledLine').textContent=`${m.g.enrolled.toLocaleString()} of ${m.g.emp.toLocaleString()} enrolled across ${S.stores.length} location${S.stores.length===1?'':'s'} × ${fmt2(m.per)} a month × 12 = ${fmt(m.g.lift)} a year. Voluntary, with a 30-day opt-out window.`;
+  gsap.to(shown,{cash:m.g.lift,duration:dur(1),ease:'power3.out',onUpdate:()=>{$('#cashV').textContent=fmt(shown.cash)}});
+  $('#cashD').textContent=`${m.g.enrolled.toLocaleString()} enrolled × ${fmt2(m.per)} × 12`;$('#pnlPeek').textContent='+'+fmt(m.g.lift)+' / yr';
+  $('#live').textContent=C.live(m.g.emp.toLocaleString(),'+'+fmt(m.g.lift));
+  $('#rLift').textContent='+'+fmt(m.g.lift);$('#rClaimsRow').style.display=ins?'none':'flex';$('#rClaims').textContent='+'+fmt(m.claims);
+  $('#rNetRow').style.display=S.net>0?'flex':'none';$('#rNet').textContent=fmt(S.net)+' → '+fmt(S.net+m.g.lift)+(S.net>0?` (+${(100*m.g.lift/S.net).toFixed(1)}%)`:'');
+  $('#rMath').textContent=`${m.g.enrolled.toLocaleString()} enrolled × ${fmt2(m.per)} a month (7.65% FICA on the $${S.plan.toLocaleString()} contribution, less the $${m.admin} fee) × 12.`+(ins?'':` Claims line: ${m.g.enrolled.toLocaleString()} × ${fmt(S.cost)} × ${S.defl}% of care handled at $0 first; the real figure comes from your TPA's 12-month claims summary.`);
+  renderMonths(m);history.replaceState(null,'',location.pathname+location.search+toHash())}
+function renderMonths(m){const per=m.g.lift/12;$('#months').innerHTML=MONTHS.map((n,i)=>{const k=(i-S.start+12)%12,ren=i===now.getMonth();return `<button type="button" data-i="${i}" style="order:${k}" class="${i===S.start?'on':''}${ren?' ren':''}"><b>${n}</b>${ren?'<small>renewal landed</small>':''}<span>+${fmt(per*(k+1))}</span></button>`}).join(''); // tiles run from the start month, so the row reads as the first twelve
+  $$('#months button').forEach(b=>b.onclick=()=>{S.start=+b.dataset.i;update()});
+  $('#calLine').textContent=`Start on the first of ${MONTHS[S.start]}: ${fmt(per)} a month, ${fmt(m.g.lift)} by the end of the first twelve. The tiles count up from the month you pick.`;
+  $('#calPeek').innerHTML=MONTHS.map((_,i)=>`<i class="${((i-S.start+12)%12)<6?'on':''}"></i>`).join('')}
+
+/* ---- the papers ---- */
+let cur=null;
+function go(id){if(id==='desk'){$('#paper').classList.remove('on');$$('.obj').forEach(o=>o.classList.remove('on'));cur=null;$('#desk').scrollIntoView({block:'start'});return}
+  $$('.pg').forEach(p=>p.classList.toggle('on',p.id==='pg-'+id));$$('.obj').forEach(o=>o.classList.toggle('on',o.dataset.o===id));const first=!$('#paper').classList.contains('on');$('#paper').classList.add('on');cur=id;
+  if(id==='phone')showList();
+  gsap.fromTo('#paper',{opacity:0,y:18},{opacity:1,y:0,duration:dur(.4),ease:'power3.out'});
+  if(id==='binder'&&!reduce)gsap.from('#tabs .tab',{opacity:0,x:-10,duration:.35,stagger:.07,ease:'power2.out'});
+  if(id==='pnl'&&paid)$('#result').style.display='block';
+  if(first||matchMedia('(max-width:760px)').matches)setTimeout(()=>$('#paper').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}),30)}
+$$('.obj').forEach(o=>o.onclick=()=>go(o.dataset.o));
+$$('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+function openDesk(){gsap.to('#open',{opacity:0,duration:dur(.35),onComplete:()=>$('#open').style.display='none'})}
+$('#startBtn').onclick=()=>{openDesk();go('letter')};$('#skipBtn').onclick=openDesk;
+
+/* ---- the payoff: the plan slides onto the P&L, the lines fill ---- */
+$('#payoff').onclick=()=>{paid=true;const r=$('#result');r.style.display='block';
+  const T=gsap.timeline();T.fromTo('#planCard',{x:-60,y:-30,opacity:0,rotate:-6},{x:0,y:0,opacity:1,rotate:0,duration:dur(.6),ease:'power3.out'})
+   .from('#result .row',{opacity:0,y:8,duration:dur(.3),stagger:dur(.12),ease:'power2.out'},dur(.3)).from('#result .chips, #result .cta',{opacity:0,duration:dur(.3)},'>-.1');
+  const m=model(),o={v:0};gsap.to(o,{v:m.g.lift,duration:dur(1.1),ease:'power3.out',onUpdate:()=>$('#rLift').textContent='+'+fmt(o.v),onComplete:update});
+  $('#payoff').textContent='Run it again →'};
+
+/* ---- the phone ---- */
+let qa=null,qi=0;
+function fill(s){const m=model();return s.replace('{fica}',fmt2(m.fica)).replace('{per}',fmt2(m.per))}
+function showList(){$('#reader').style.display='none';const box=$('#qlist');box.style.display='';box.innerHTML='';for(const g of Object.keys(D.groups)){const qs=D.questions.filter(q=>q.g===g);if(!qs.length)continue;const d=document.createElement('div');d.className='qgrp';d.innerHTML=`<h3>${esc(D.groups[g])}</h3>`;
+  for(const q of qs){const b=document.createElement('button');b.type='button';b.className='qrow';b.innerHTML=`<b>${esc(q.q)}</b><br><span class="fine">${esc(fill(q.beats[0][0]))}</span>`;b.onclick=()=>{qa=q;qi=0;showBeat()};d.appendChild(b)}box.appendChild(d)}}
+function showBeat(){$('#qlist').style.display='none';$('#reader').style.display='block';const [h,s]=qa.beats[qi];$('#rdH').textContent=fill(h);$('#rdS').textContent=fill(s);$('#rdN').textContent=`${qa.q} · ${qi+1} of ${qa.beats.length}`;
+  $('#rdPrev').style.display=qi?'':'none';$('#rdNext').style.display=qi<qa.beats.length-1?'':'none';$('#rdBinder').style.display=qa.binder?'':'none';gsap.fromTo('#reader',{opacity:0,y:8},{opacity:1,y:0,duration:dur(.3)})}
+$('#rdPrev').onclick=()=>{qi--;showBeat()};$('#rdNext').onclick=()=>{qi++;showBeat()};$('#rdList').onclick=showList;$('#rdBinder').onclick=()=>go('binder');
+
+/* ---- the one page, and the link ---- */
+$('#printBtn').onclick=()=>{const m=model(),ins=S.hp==='insured';$('#onepage').innerHTML=`<h2>${esc(C.print[0])}</h2><p class="fine">${esc(C.print[1])}. ${esc(new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}))}.</p>
+  <table>${S.stores.map(st=>`<tr><td>${esc(st.brand)} · ${st.emp} employees</td><td>${Math.round(st.emp*S.qual/100)} enrolled</td></tr>`).join('')}
+  <tr><td><b>${esc(D.pnl.lines.lift)}</b></td><td><b>+${fmt(m.g.lift)} / yr</b></td></tr><tr><td>${esc(D.pnl.lines.fee)} (${esc(D.pnl.lines.feeNote)})</td><td>included</td></tr>
+  ${ins?'':`<tr><td>${esc(D.pnl.lines.claims)}</td><td>+${fmt(m.claims)} / yr</td></tr>`}${S.net>0?`<tr><td>${esc(D.pnl.lines.net)}</td><td>${fmt(S.net)} → ${fmt(S.net+m.g.lift)}</td></tr>`:''}</table>
+  <p>${esc($('#rMath').textContent)} Start on the first of ${MONTHS[S.start]}.</p><h3>Five tabs your CPA will ask for</h3><ol>${D.binder.tabs.map(([h,b])=>`<li><b>${esc(h)}</b> ${esc(b)}</li>`).join('')}</ol>
+  <p>Jay Beatty · jay@jaybeatty.com · 805.218.4663 · ${esc(location.href)}</p><p class="fine">${esc(D.disclaimer)}</p>`;window.print()};
+$('#copyBtn').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);$('#copyBtn').textContent='Link copied'}catch(e){prompt('Copy this link',location.href)}};
+
+/* ---- start ---- */
+const linked=fromHash();syncControls();renderLocs();update();
+if(linked){openDesk();paid=true;go('pnl');$('#result').style.display='block'}
+</script>
+</body>
+</html>
