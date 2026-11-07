@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<script>try{var t=localStorage.getItem('jb-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<title>The Reconciliation Engine</title>
+<meta name="description" content="A mechanical model of one CMS TEAM episode reconciliation: stepped-cone drives, a planetary differential, a ratchet ledger, a stop spring and a gauge, driven by the calculator's own rules.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230B0912%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%238366EA%27/%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a black workshop. The machine is one framed drawing; controls sit above it, the naming panel below it. */
+:root{
+  --bg:#0B0912;--panel:#110e1d;--panel2:#171329;--line:#2b2542;--fg:#ece9f5;--mute:#a79fc0;
+  --purple:#8366EA;--purple-soft:#b7a6ff;--green:#22A85E;--green-soft:#6fe3a3;--magenta:#D65DB1;--magenta-soft:#f09bd2;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gut:max(16px,env(safe-area-inset-left,0px));--gutr:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:dark;
+}
+:root[data-theme="light"]{--bg:#f8f6fc;--panel:#ffffff;--panel2:#efebf7;--line:#ddd6ea;--fg:#1b1528;--mute:#5a5370;--purple:#6d50dd;--purple-soft:#4b3bb0;--green:#1f9a55;--green-soft:#15713f;--magenta:#c2449c;--magenta-soft:#a0307f;color-scheme:light}
+body{transition:background-color .26s,color .26s}
+.theme-tg{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 12px 0 10px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--fg);cursor:pointer;font:inherit;min-height:0}
+.theme-tg:hover,.theme-tg:focus-visible{border-color:var(--green-soft)}
+.theme-tg svg{width:18px;height:18px;display:block}.theme-tg .moon{display:none}
+:root[data-theme="light"] .theme-tg .sun{display:none}:root[data-theme="light"] .theme-tg .moon{display:block}
+.tlab::after{content:"Light mode";font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;line-height:1}
+:root[data-theme="light"] .tlab::after{content:"Dark mode"}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55;padding-left:var(--gut);padding-right:var(--gutr);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--green-soft);outline-offset:3px}
+.wrap{max-width:1360px;margin:0 auto}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:600;font-size:22px;text-decoration:none}
+.nav{display:flex;gap:6px;flex-wrap:wrap;list-style:none;margin:0;padding:0}
+.nav a{display:block;padding:9px 14px;border-radius:99px;text-decoration:none;font-size:15px;font-weight:500;color:var(--mute)}
+.nav a:hover{color:var(--fg);background:var(--panel2)}
+.nav a[aria-current=page]{color:#06150c;background:var(--green)}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(34px,5.4vw,72px);line-height:1;letter-spacing:-.03em;margin:28px 0 14px;text-wrap:balance}
+.lede{color:var(--fg);font-size:clamp(17px,1.5vw,20px);max-width:64ch;margin:0 0 6px}
+.sub{color:var(--mute);max-width:64ch;margin:0}
+.bar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 22px;margin:28px 0 14px;padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.bar label{display:flex;justify-content:space-between;gap:8px;font-size:14px;color:var(--mute);margin-bottom:6px}
+.bar label output{font-family:var(--mono);color:var(--fg);font-weight:500}
+input[type=range]{width:100%;accent-color:var(--purple);height:28px;margin:0}
+.track{grid-column:span 2;min-width:0}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg label{margin:0;display:block}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:block;padding:9px 14px;border:1px solid var(--line);border-radius:8px;color:var(--fg);cursor:pointer;font-size:14px;line-height:1.25;background:var(--panel2)}
+.seg input:checked+span{border-color:var(--green);background:color-mix(in oklab,var(--green) 18%,var(--panel))}
+.seg input:focus-visible+span{outline:2px solid var(--green-soft);outline-offset:2px}
+.seg small{display:block;color:var(--mute);font-size:12px}
+.btns{grid-column:span 2;display:flex;gap:8px;flex-wrap:wrap;align-items:end;min-width:0}
+button{font:inherit;color:var(--fg);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:9px 14px;cursor:pointer;min-height:40px}
+button:hover{border-color:var(--purple)}
+button[aria-pressed=true]{border-color:var(--purple);background:color-mix(in oklab,var(--purple) 22%,var(--panel))}
+button.go{background:var(--green);border-color:var(--green);color:#06150c;font-weight:600}
+button.go:hover{background:var(--green-soft)}
+.chips{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;align-items:center;color:var(--mute);font-size:14px}
+.stagebar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.stagebar .note{color:var(--mute);font-size:14px;margin-left:auto}
+#frame{position:relative;width:100%;aspect-ratio:1800/1040;background:#0B0912;color-scheme:dark;border:1px solid var(--line);border-radius:12px;overflow:hidden;touch-action:pan-y}
+#machine,#machine svg{display:block;width:100%;height:100%}
+#machine .hit{cursor:pointer;outline:none}
+#machine .hit:focus-visible{stroke:var(--green-soft);stroke-width:3}
+.halo{animation:dash 1.6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-34}}
+.mnav{display:none;gap:8px}
+#tip{position:absolute;bottom:14px;max-width:min(480px,calc(100% - 28px));padding:14px 16px;background:rgba(11,9,18,.95);border:1px solid var(--purple);border-radius:10px;font-size:14px;line-height:1.5;pointer-events:none;z-index:2}
+#tip .s{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--purple-soft)}#tip b.n{display:block;font-family:var(--display);font-size:19px;font-weight:600;margin:2px 0 4px}#tip p{margin:0}#tip p b{color:var(--green-soft)}
+#info{margin-top:14px;padding:18px 20px;background:var(--panel);border:1px solid var(--line);border-radius:12px;min-height:118px}
+#info[data-on="1"]{border-color:var(--purple)}
+#info h3{font-family:var(--display);font-weight:600;font-size:24px;margin:0 0 4px;letter-spacing:-.01em}
+#infoStage{font-family:var(--mono);font-size:13px;color:var(--purple-soft);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;min-height:1em}
+#infoText{margin:0;max-width:78ch}
+#infoText b{color:var(--green-soft);font-weight:600}
+.result{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:8px 28px;align-items:center;margin:16px 0;padding:18px 20px;background:var(--panel2);border:1px solid var(--line);border-radius:12px}
+.result .k{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+#npra{font-family:var(--mono);font-weight:600;font-size:clamp(30px,4vw,52px);line-height:1.1}
+#npra.pos{color:var(--green-soft)}#npra.neg{color:var(--magenta-soft)}
+#sentence{margin:0;color:var(--fg);max-width:68ch}
+#sentence b{font-weight:600}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(26px,3.2vw,40px);letter-spacing:-.02em;margin:56px 0 14px;line-height:1.1}
+.map{width:100%;border-collapse:collapse;font-size:15px}
+.map th,.map td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.map th{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);font-weight:500}
+.map td:first-child{font-weight:600;white-space:nowrap}
+.map td code{font-family:var(--mono);color:var(--purple-soft);font-size:14px}
+.scroll{overflow-x:auto}
+#parts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.plist{display:flex;flex-direction:column;gap:6px;min-width:0}
+.plist h4{margin:0 0 4px;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--purple-soft);font-weight:600}
+.plist button{text-align:left;font-size:14px;padding:8px 10px;min-height:36px;line-height:1.3}
+.foot{color:var(--mute);font-size:14px;max-width:80ch;margin:0 0 10px}
+footer{padding-block:48px 64px;border-top:1px solid var(--line);margin-top:56px}
+@media (max-width:900px){
+  .bar{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #parts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .result{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  main{display:flex;flex-direction:column}main>*{order:6}main>h1,main>.lede,main>.sub{order:0}main>.stagebar{order:1}main>#frame{order:2}main>#info{order:3}main>.result{order:4}main>.bar{order:5}
+  #frame{aspect-ratio:auto;height:min(74svh,600px)}
+  .mnav{display:flex}
+  #tip{display:none}
+  .stagebar .note{margin-left:0;width:100%}
+  .track,.btns{grid-column:1/-1}
+  h2{margin-top:44px}
+  .map td:first-child{white-space:normal}
+}
+@media (max-width:420px){.bar{grid-template-columns:1fr}#parts{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.halo{animation:none}}
+.still body{padding:0}.still .wrap{max-width:none}.still header.top,.still main>*:not(#frame){display:none}.still #frame{border:0;border-radius:0}.still footer{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="./">Jay Beatty</a>
+  <ul class="nav" aria-label="Pages"><li><a href="what-i-do.html">What I do</a></li><li><a href="programs.html">Programs</a></li><li><a href="tools.html">AI Tools</a></li><li><a href="track-record.html">Track record</a></li><li><a href="career.html">Career</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="engine.html" aria-current="page">Episode engine</a></li></ul>
+  <button class="theme-tg" type="button" aria-label="Switch to light mode" title="Light or dark mode"><span class="tlab" aria-hidden="true"></span><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6Z"/></svg></button>
+</header>
+
+<main>
+<h1>The Reconciliation Engine</h1>
+<p class="lede">One year of Medicare episodes goes in as punched cards. Gears and belts do what the CMS TEAM rules do: build the target price, subtract what the hospital spent, then apply the track floor, the quality score and the stop limits. The payment comes out on the dial.</p>
+<p class="sub">It runs the same rules as my TEAM episode calculator. Move a control and the belts and springs move with it. Touch any part to see what it is and what it does.</p>
+
+<form class="bar" onsubmit="return false" aria-label="Machine inputs">
+  <div><label for="spend">Average spend per episode <output id="spendOut"></output></label><input id="spend" type="range" min="15000" max="22500" step="50"></div>
+  <div><label for="cqs">Composite quality score <output id="cqsOut"></output></label><input id="cqs" type="range" min="0" max="100" step="1"></div>
+  <div><label for="risk">Risk adjustment <output id="riskOut"></output></label><input id="risk" type="range" min="0.80" max="1.20" step="0.01"></div>
+  <div><label for="episodes">Episodes in the year <output id="episodesOut"></output></label><input id="episodes" type="range" min="100" max="400" step="50"></div>
+  <fieldset class="track" style="border:0;margin:0;padding:0;min-width:0"><legend style="font-size:14px;color:var(--mute);padding:0 0 6px">Participation track</legend>
+    <div class="seg">
+      <label><input type="radio" name="track" value="1"><span>Track 1<small>gain up to 10%, no repayment</small></span></label>
+      <label><input type="radio" name="track" value="2"><span>Track 2<small>gain or loss up to 5%</small></span></label>
+      <label><input type="radio" name="track" value="3" checked><span>Track 3<small>gain or loss up to 20%</small></span></label>
+    </div></fieldset>
+  <div class="btns"><button type="button" id="runBtn" class="go">Run the year again</button><button type="button" id="autoBtn" aria-pressed="true">Auto-replay: on</button></div>
+  <div class="chips"><span>Try:</span>
+    <button type="button" data-preset="beat">Spend under target</button><button type="button" data-preset="over">Spend over target</button><button type="button" data-preset="cap">Stop-gain trips (Track 2)</button><button type="button" data-preset="t1">Track 1 floor</button><button type="button" data-preset="q100">Quality score 100</button></div>
+</form>
+
+<div class="stagebar" role="group" aria-label="Zoom to a stage">
+  <button type="button" data-stage="0" aria-pressed="true">Whole machine</button>
+  <button type="button" data-stage="1">1 Intake</button><button type="button" data-stage="2">2 Target</button><button type="button" data-stage="3">3 Difference</button><button type="button" data-stage="4">4 Rules</button><button type="button" data-stage="5">5 Result</button>
+  <span class="mnav"><button type="button" id="prevBtn" aria-label="Previous view">← Back</button><button type="button" id="nextBtn" aria-label="Next view">Next →</button></span>
+  <span class="note" id="stepNote" aria-live="polite"></span>
+</div>
+
+<div id="frame"><div id="machine"></div><div id="tip" hidden></div></div>
+
+<section id="info" aria-live="polite" data-on="0"><div id="infoStage"></div><h3 id="infoName"></h3><p id="infoText"></p></section>
+
+<div class="result" aria-label="Result at the current settings"><div><div class="k">Estimated NPRA</div><div id="npra">$0</div></div><p id="sentence"></p></div>
+
+<h2>What each rule became</h2>
+<div class="scroll"><table class="map"><thead><tr><th>Rule in the TEAM model</th><th>Machine part</th><th>Why that part</th></tr></thead><tbody>
+<tr><td>Target price = benchmark × trend × (1 − discount) × risk</td><td>Four stepped-cone drives in a row</td><td>A belt between two cones multiplies a shaft's speed by an exact, adjustable ratio.</td></tr>
+<tr><td>Target − spend</td><td>Planetary differential</td><td>The carrier of a planetary gear turns at a weighted average of the sun and ring. With the ring reversed and the ratios chosen, that is the difference.</td></tr>
+<tr><td>× number of episodes</td><td>Cards and the Geneva wheel</td><td>Each card turns the master shaft a fixed amount, so every shaft's total turn is its speed times the episodes counted.</td></tr>
+<tr><td>Track 1: no repayment</td><td>Pawl in front of ledger B</td><td>A pawl lets a bar travel one way only.</td></tr>
+<tr><td>Quality adjustment</td><td>A fifth cone drive</td><td>Another ratio: 1 − 10% × (1 − CQS/100) on a payment, less on a repayment.</td></tr>
+<tr><td>Stop-gain and stop-loss, a percent of the target book</td><td>Spring, two stop blocks and a track cone</td><td>A block catches the bar and the spring stretches by the amount that is not paid. A cone sets the block at 5%, 10% or 20% of the book.</td></tr>
+<tr><td>Net payment reconciliation amount</td><td>Gauge and odometer</td><td>The position of the last bar, read out in dollars.</td></tr>
+</tbody></table></div>
+
+<h2>All <span id="partCount"></span> parts</h2>
+<div id="parts"></div>
+
+<footer>
+<p class="foot" id="checks"></p>
+<p class="foot">Benchmark $18,350.04, trend 1.024534 and the 2% discount are from the CMS PY1 preliminary target price workbook for MS-DRG 470 (joint replacement), census division 2, which makes the target $18,424.23 at a risk multiplier of 1.00. Spend, episode count, quality score and risk adjustment are inputs you set; the defaults are illustrative, not any hospital's numbers. Sequestration is not applied. Estimates only. Not affiliated with CMS. No patient data.</p>
+<p class="foot">Built by Jay Beatty from the model in the TEAM episode calculator. <a href="./">Back to the home page</a>.</p>
+</footer>
+</main>
+</div>
+<script>(function(){var r=document.documentElement;function cur(){return r.getAttribute('data-theme')==='light'?'light':'dark'}function sync(){document.querySelectorAll('.theme-tg').forEach(function(b){b.setAttribute('aria-label',cur()==='light'?'Switch to dark mode':'Switch to light mode')})}document.querySelectorAll('.theme-tg').forEach(function(b){b.addEventListener('click',function(){var n=cur()==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('jb-theme',n)}catch(e){}sync()})});sync()})();</script>
+<script>
+/* Gear kinematics. Angles in radians, SVG convention (positive = clockwise on screen). A gear's tooth 0 points along +x at angle 0.
+   External mesh: gear A (z=zA, angle tA) turns gear B (zB) whose centre lies in direction al from A. Tooth meets gap at the contact. */
+const meshB = (al, tA, zA, zB) => al + Math.PI + (al - tA) * zA / zB - Math.PI / zB;
+/* Planetary set: sun zs, planets zp, internal ring zr. Returns the carrier angle (planet 0 position) that meshes both. */
+const carrierAngle = (tS, tR, zs, zp, zr) => (zs * tS + zr * tR - Math.PI * zp) / (zs + zr);
+/* planet spin from the sun mesh */
+const planetSpin = (al, tS, zs, zp) => meshB(al, tS, zs, zp);
+if (typeof window !== 'undefined') window.KIN = { meshB, carrierAngle, planetSpin };
+
+/* TEAM reconciliation model (same rules as the calculator's engine.js and TEAM_Calculator_Model_Spec.md).
+   Benchmark, trend and discount are the CMS PY1 preliminary target price workbook values for MS-DRG 470,
+   census division 2. Spend, episode count and quality score are illustrative inputs. Sequestration not applied. */
+const BASE = { drg: '470', division: 2, benchmark: 18350.04, trend: 1.024534, discount: 0.02 };
+const TRACKS = { 1: { gain: 0.10, loss: 0, negAdj: 0 }, 2: { gain: 0.05, loss: 0.05, negAdj: 0.15 }, 3: { gain: 0.20, loss: 0.20, negAdj: 0.10 } };
+const targetOf = (risk) => BASE.benchmark * BASE.trend * (1 - BASE.discount) * risk;
+
+/* One pass of the rules. p.gain/p.loss/p.negAdj/p.floor may be fractional while the machine is moving between tracks. */
+function compute(p) {
+  const amount = (p.target - p.spend) * p.n;                       // (target - spend) x episodes
+  const base = amount < 0 ? amount * (1 - p.floor) : amount;      // Track 1: no downside
+  const q = p.cqs / 100;
+  const adjPct = base > 0 ? 0.10 * (1 - q) : base < 0 ? p.negAdj * q : 0;
+  const adjusted = base * (1 - adjPct);                            // quality adjustment
+  const book = p.target * p.n;                                     // aggregated target price amount
+  const gainCap = p.gain * book, lossCap = p.loss * book;
+  const npra = Math.max(-lossCap, Math.min(gainCap, adjusted));    // stop-gain / stop-loss
+  return { amount, base, adjPct, adjusted, book, gainCap, lossCap, npra, capHit: adjusted > gainCap ? 'gain' : adjusted < -lossCap ? 'loss' : null };
+}
+const discrete = (s, n = s.episodes) => {
+  const T = TRACKS[s.track];
+  return compute({ target: targetOf(s.risk), spend: s.spend, n, cqs: s.cqs, gain: T.gain, loss: T.loss || 0, negAdj: T.negAdj, floor: s.track === 1 ? 1 : 0 });
+};
+if (typeof window !== 'undefined') window.TEAM = { BASE, TRACKS, targetOf, compute, discrete };
+
+(function(){const S={spend:17500,episodes:300,cqs:50,track:3,risk:1};const D=Object.assign({},S,{c:0,gain:.2,loss:.2,negAdj:.1,floor:0});window.ENGINE={S,D};})();
+
+/* The Reconciliation Engine: SVG drawing + per-frame kinematics. Needs model.js and kin.js loaded first. */
+(function () {
+  const NS = 'http://www.w3.org/2000/svg', rad = Math.PI / 180, TAU = Math.PI * 2;
+  const E = (tag, a, p) => { const e = document.createElementNS(NS, tag); if (a) for (const k in a) { if (k === 'font-family') e.style.fontFamily = a[k]; else e.setAttribute(k, a[k]); } if (p) p.appendChild(e); return e; };
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const rot = (el, deg) => el.setAttribute('transform', 'rotate(' + deg.toFixed(2) + ')');
+  const f0 = (v) => Math.round(v).toLocaleString('en-US');
+  const usd = (v) => (v < 0 ? '−$' : '$') + f0(Math.abs(v));
+
+  /* palette (matches the page tokens) */
+  const C = { bg: '#0B0912', panel: '#110e1d', line: '#2b2542', fg: '#ece9f5', mute: '#a79fc0', pur: '#8366EA', purS: '#b7a6ff', grn: '#22A85E', grnS: '#6fe3a3', mag: '#D65DB1', magS: '#f09bd2' };
+
+  /* constants of the machine */
+  const Vref = 18750, MDEG = 9, SCX = 1.25e-4, X0 = 1334, RPIN = 22.4, CARD = 10;
+  const ZS = 24, ZP = 12, ZR = 48, MP = 4.2;                   // planetary: sun, planets, internal ring (module 4.2)
+
+  const root = document.getElementById('machine');
+  const svg = E('svg', { viewBox: '0 0 1800 1040', role: 'group', 'aria-label': 'The Reconciliation Engine, an animated mechanical model of a TEAM episode reconciliation' }, root);
+  const defs = E('defs', null, svg);
+  const grad = (id, stops, o) => { const g = E('radialGradient', Object.assign({ id, cx: '50%', cy: '45%', r: '60%' }, o), defs); stops.forEach(([off, col]) => E('stop', { offset: off, 'stop-color': col }, g)); };
+  grad('gP', [[0, '#7168c4'], [0.55, '#453d78'], [1, '#2a2548']]);
+  grad('gG', [[0, '#3fbf7a'], [0.55, '#1f7a49'], [1, '#12482c']]);
+  grad('gM', [[0, '#e07fc0'], [0.55, '#9a3f80'], [1, '#5a2349']]);
+  grad('gD', [[0, '#3a3560'], [1, '#1a1730']]);
+  const lg = (id, c1, c2) => { const g = E('linearGradient', { id, x1: 0, y1: 0, x2: 0, y2: 1 }, defs); E('stop', { offset: 0, 'stop-color': c1 }, g); E('stop', { offset: 1, 'stop-color': c2 }, g); };
+  lg('lP', '#6d64b8', '#2c2750'); lg('lG', '#46c585', '#14502f'); lg('lM', '#e585c7', '#5d254b'); lg('lD', '#2e2a4d', '#15122a'); lg('lC', '#8f87d8', '#3a3466');
+  const bg = E('pattern', { id: 'grid', width: 40, height: 40, patternUnits: 'userSpaceOnUse' }, defs); E('path', { d: 'M40 0H0V40', fill: 'none', stroke: '#1c1830', 'stroke-width': 1 }, bg);
+  const rackPat = E('pattern', { id: 'rack', width: 11.73, height: 14, patternUnits: 'userSpaceOnUse' }, defs);
+  E('path', { d: 'M0 14V6L2.2 0H9.5L11.73 6V14Z', fill: '#4a4380', stroke: '#9d94ea', 'stroke-opacity': .55, 'stroke-width': .8 }, rackPat);
+  const clipR = (id, x, y, w, h) => E('rect', { x, y, width: w, height: h }, E('clipPath', { id }, defs));
+  clipR('clipRail', 1124, 100, 420, 600);
+
+  /* backplate */
+  E('rect', { width: 1800, height: 1040, fill: C.bg }, svg); E('rect', { width: 1800, height: 1040, fill: 'url(#grid)' }, svg);
+  const ZONES = [
+    { n: 1, t: 'INTAKE', x: 16, w: 284, sub: 'episodes, counted' },
+    { n: 2, t: 'TARGET', x: 312, w: 432, sub: 'benchmark to target price' },
+    { n: 3, t: 'DIFFERENCE', x: 756, w: 340, sub: 'target minus spend' },
+    { n: 4, t: 'RULES', x: 1108, w: 452, sub: 'floor, quality, stop limits' },
+    { n: 5, t: 'RESULT', x: 1572, w: 212, sub: 'NPRA' }];
+  ZONES.forEach((z) => {
+    E('rect', { x: z.x, y: 16, width: z.w, height: 906, rx: 10, fill: C.panel, stroke: C.line, 'stroke-width': 1.5 }, svg);
+    const t = E('text', { x: z.x + 18, y: 50, fill: C.fg, 'font-size': 22, 'font-weight': 600, 'letter-spacing': '.14em', 'font-family': 'var(--mono)' }, svg); t.textContent = z.n + '  ' + z.t;
+    const s = E('text', { x: z.x + 18, y: 72, fill: C.mute, 'font-size': 15, 'font-family': 'var(--sans)' }, svg); s.textContent = z.sub;
+    [[z.x + 10, 28], [z.x + z.w - 10, 28], [z.x + 10, 908], [z.x + z.w - 10, 908]].forEach(([cx, cy]) => { E('circle', { cx, cy, r: 3.2, fill: '#2f2a4d', stroke: '#5a5190', 'stroke-width': .8 }, svg); });
+  });
+  const L = { pipes: E('g', null, svg), gears: E('g', null, svg), top: E('g', null, svg), halo: E('g', null, svg), hit: E('g', null, svg) };
+
+  /* ---------- parts registry ---------- */
+  const PARTS = [], K = {};          // K = kinematic and model state for the current frame
+  const part = (id, stage, name, box, text) => PARTS.push({ id, stage, name, box, text });
+  const upd = [];                    // per-frame updaters
+
+  /* ---------- gears ---------- */
+  function teeth(z, m, internal) {
+    const rp = z * m / 2, ra = internal ? rp - m * .95 : rp + m * .95, rf = internal ? rp + m * 1.2 : rp - m * 1.2, p = TAU / z, pts = [];
+    for (let i = 0; i < z; i++) { const a = i * p; [[rf, -.30], [ra, -.15], [ra, .15], [rf, .30]].forEach(([r, k]) => pts.push((r * Math.cos(a + k * p)).toFixed(2) + ' ' + (r * Math.sin(a + k * p)).toFixed(2))); }
+    return 'M' + pts.join('L') + 'Z';
+  }
+  function gear(parent, o) {   // o: z, m, x, y, fill, hub, holes, spokes, ring
+    const m = o.m || 3, rp = o.z * m / 2, g = E('g', { transform: 'translate(' + o.x + ' ' + o.y + ')' }, parent), r = E('g', null, g);
+    E('path', { d: teeth(o.z, m), fill: 'url(#' + (o.fill || 'gP') + ')', stroke: o.stroke || '#a79df0', 'stroke-opacity': .6, 'stroke-width': .9 }, r);
+    const rf = rp - m * 1.2;
+    if (o.holes) { const n = o.holes, rr = rf * .62, hr = Math.min(rf * .2, (Math.PI * rr / n) * .62); for (let i = 0; i < n; i++) E('circle', { cx: (rr * Math.cos(i * TAU / n)).toFixed(2), cy: (rr * Math.sin(i * TAU / n)).toFixed(2), r: hr.toFixed(2), fill: '#120f22', stroke: '#6a61b8', 'stroke-opacity': .5, 'stroke-width': .7 }, r); }
+    if (o.spokes) { for (let i = 0; i < o.spokes; i++) E('line', { x1: 0, y1: 0, x2: (rf * Math.cos(i * TAU / o.spokes)).toFixed(1), y2: (rf * Math.sin(i * TAU / o.spokes)).toFixed(1), stroke: '#120f22', 'stroke-width': Math.max(2, rf * .12), 'stroke-opacity': .55 }, r); }
+    E('circle', { r: Math.max(3, rf * (o.hub || .16)), fill: '#171330', stroke: '#9d94ea', 'stroke-opacity': .7, 'stroke-width': .9 }, r);
+    E('circle', { r: Math.max(1.4, rf * (o.hub || .16) * .35), fill: '#cfc8ff' }, r);
+    E('line', { x1: Math.max(3, rf * (o.hub || .16)) * .55, y1: 0, x2: rf * .3, y2: 0, stroke: '#cfc8ff', 'stroke-width': 1.4, 'stroke-opacity': .55 }, r);   // timing mark: shows rotation on plain bodies
+    return { r, rp, z: o.z, x: o.x, y: o.y, set: (deg) => rot(r, deg) };
+  }
+  const dir = (a, b) => Math.atan2(b.y - a.y, b.x - a.x);
+  const meshDeg = (A, B, degA) => KIN.meshB(dir(A, B), degA * rad, A.z, B.z) / rad;    // angle of B (deg) from A (deg)
+  const KIN = window.KIN;
+
+  /* ---------- pipes (shafts) with moving key stripes ---------- */
+  function pipe(d, color) {
+    E('path', { d, fill: 'none', stroke: '#0a0814', 'stroke-width': 13, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, L.pipes);
+    E('path', { d, fill: 'none', stroke: '#2d2850', 'stroke-width': 9, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, L.pipes);
+    const s = E('path', { d, fill: 'none', stroke: color || '#8d84e0', 'stroke-width': 3.2, 'stroke-dasharray': '3 11', 'stroke-opacity': .85, 'stroke-linejoin': 'round' }, L.pipes);
+    return { spin: (deg) => s.setAttribute('stroke-dashoffset', (-deg * .06).toFixed(2)) };
+  }
+  const label = (x, y, txt, o) => { const t = E('text', Object.assign({ x, y, fill: C.mute, 'font-size': 15, 'font-family': 'var(--sans)' }, o), L.top); t.textContent = txt; return t; };
+  const plate = (x, y, w, h, color) => E('rect', { x, y, width: w, height: h, rx: 5, fill: '#0b0914', stroke: color || '#4a4380', 'stroke-width': 1.2 }, L.gears);
+
+  /* ---------- odometer ---------- */
+  function odometer(x, y, nd, o) {
+    o = o || {}; const w = o.w || 26, h = o.h || 40, g = E('g', { transform: 'translate(' + x + ' ' + y + ')' }, L.top), cols = [];
+    E('rect', { x: -6, y: -6, width: nd * (w + 3) + 9, height: h + 12, rx: 6, fill: '#0b0914', stroke: o.col || '#6b62bd', 'stroke-width': 1.4 }, g);
+    for (let i = 0; i < nd; i++) {
+      const id = 'odo' + Math.random().toString(36).slice(2, 8);
+      E('rect', { x: i * (w + 3), y: 0, width: w, height: h, rx: 3 }, E('clipPath', { id }, defs));
+      const win = E('g', { 'clip-path': 'url(#' + id + ')' }, g); E('rect', { x: i * (w + 3), y: 0, width: w, height: h, fill: '#e9e4fb' }, win);
+      const col = E('g', null, win);
+      for (let d = 0; d < 11; d++) { const t = E('text', { x: i * (w + 3) + w / 2, y: (d + 1) * h - h * .24, 'text-anchor': 'middle', 'font-size': h * .72, 'font-weight': 600, 'font-family': 'var(--mono)', fill: '#15122a' }, col); t.textContent = d % 10; }
+      E('rect', { x: i * (w + 3), y: 0, width: w, height: h * .28, fill: 'url(#lD)', opacity: .35 }, win); E('rect', { x: i * (w + 3), y: h * .72, width: w, height: h * .28, fill: 'url(#lD)', opacity: .25 }, win);
+      cols.push(col);
+    }
+    return { h, set(v) {      // v: non-negative number; rolling carry like a real odometer
+      v = Math.max(0, v); let lower = 0;
+      for (let i = 0; i < nd; i++) {
+        const p = Math.pow(10, i), digit = Math.floor(v / p) % 10, frac = i === 0 ? v % 1 : clamp((lower - 9), 0, 1);
+        const val = i === 0 ? (Math.floor(v) % 10) + (v % 1) : digit + frac;
+        cols[nd - 1 - i].setAttribute('transform', 'translate(0 ' + (-val * h).toFixed(2) + ')');
+        lower = i === 0 ? val : val;
+        lower = (v / p) % 10;   // continuous value of this wheel, used for carry into the next
+      }
+    } };
+  }
+
+  /* ---------- cone pairs (stepped-cone variable drive): output = ratio x input, exactly ---------- */
+  function conePair(o) {   // o: x0,x1,ya,yb,r0,c,mirror,f0,fill,id,name
+    const { x0, x1, ya, yb } = o, r0 = o.r0 || 26, c = o.c || .2, mir = !!o.mirror, K7 = 7, fill = o.fill || 'lP';
+    const rA = (u) => r0 * (1 + c * (mir ? 2 * u - 1 : 1 - 2 * u)), rB = (u) => r0 * (1 - c * (mir ? 2 * u - 1 : 1 - 2 * u));
+    const g = E('g', null, L.gears), xs = (u) => x0 + u * (x1 - x0);
+    const uOf = (f) => { const y = (f - 1) / (f + 1); return clamp(mir ? (1 + y / c) / 2 : (1 - y / c) / 2, 0.04, 0.96); };
+    const cone = (yc, rf) => {
+      const poly = E('path', { d: 'M' + x0 + ' ' + (yc - rf(0)) + 'L' + x1 + ' ' + (yc - rf(1)) + 'L' + x1 + ' ' + (yc + rf(1)) + 'L' + x0 + ' ' + (yc + rf(0)) + 'Z', fill: 'url(#' + fill + ')', stroke: '#a79df0', 'stroke-opacity': .6, 'stroke-width': 1 }, g);
+      E('rect', { x: x0 - 22, y: yc - 4, width: x1 - x0 + 44, height: 8, fill: '#241f40', stroke: '#6a61b8', 'stroke-width': .8, 'stroke-opacity': .5 }, g);   // shaft behind (drawn under cone ends)
+      const ls = []; for (let k = 0; k < K7; k++) ls.push(E('line', { stroke: '#e5e0ff', 'stroke-width': 2, 'stroke-linecap': 'round' }, g));
+      return { yc, rf, ls };
+    };
+    const a = cone(ya, rA), b = cone(yb, rB);
+    const shade = E('path', { d: 'M' + x0 + ' ' + (ya - rA(0)) + 'L' + x1 + ' ' + (ya - rA(1)) + 'L' + x1 + ' ' + (ya + rA(1)) + 'L' + x0 + ' ' + (ya + rA(0)) + 'Z', fill: 'none' }, g);
+    const belt = E('g', null, g), strand = E('rect', { width: 10, rx: 2, fill: '#0b0914', stroke: o.beltCol || C.purS, 'stroke-width': 1.4 }, belt);
+    const wrapA = E('rect', { width: 10, rx: 2, fill: 'none', stroke: o.beltCol || C.purS, 'stroke-width': 1.4 }, belt), wrapB = E('rect', { width: 10, rx: 2, fill: 'none', stroke: o.beltCol || C.purS, 'stroke-width': 1.4 }, belt);
+    const fork = E('path', { fill: 'none', stroke: '#cfc8ff', 'stroke-width': 2 }, belt), knob = E('circle', { r: 5, fill: o.beltCol || C.purS }, belt);
+    let thetaA = 0;
+    const drawStripes = (cn, th) => cn.ls.forEach((ln, k) => {
+      const ang = (th + k * 360 / K7) * rad, s = Math.sin(ang), v = Math.cos(ang);
+      ln.setAttribute('x1', x0 + 3); ln.setAttribute('x2', x1 - 3);
+      ln.setAttribute('y1', (cn.yc + cn.rf(.02) * s).toFixed(1)); ln.setAttribute('y2', (cn.yc + cn.rf(.98) * s).toFixed(1));
+      ln.setAttribute('opacity', v > 0 ? (v * .75).toFixed(2) : 0);
+    });
+    return {
+      ya, yb, x0, x1, ratioAt: (u) => rA(u) / rB(u),
+      set(f, degIn) {          // f = output/input ratio, degIn = input shaft angle
+        const u = uOf(f), x = xs(u);
+        strand.setAttribute('x', x - 5); strand.setAttribute('y', ya + rA(u) - 1); strand.setAttribute('height', Math.max(2, yb - rB(u) - (ya + rA(u)) + 2));
+        wrapA.setAttribute('x', x - 5); wrapA.setAttribute('y', ya - rA(u) - 3); wrapA.setAttribute('height', 2 * rA(u) + 6);
+        wrapB.setAttribute('x', x - 5); wrapB.setAttribute('y', yb - rB(u) - 3); wrapB.setAttribute('height', 2 * rB(u) + 6);
+        const ytop = ya - (o.r0 || 26) * (1 + c) - 12;
+        fork.setAttribute('d', 'M' + x + ' ' + (ya - rA(u) - 3) + 'V' + ytop); knob.setAttribute('cx', x); knob.setAttribute('cy', ytop);
+        drawStripes(a, degIn); drawStripes(b, degIn * f);
+        return degIn * f;
+      },
+      box: [Math.min(x0, x1) - 30, ya - r0 * 1.4 - 18, Math.abs(x1 - x0) + 60, yb - ya + r0 * 2.8 + 30]
+    };
+  }
+
+
+  window.MC = { teeth, svg, defs, K, PARTS, upd, L, C, E, rot, gear, pipe, label, plate, odometer, conePair, part, clamp, f0, usd, meshDeg, dir, TAU, rad, MDEG, Vref, SCX, X0, RPIN, CARD, ZS, ZP, ZR, MP, grad, lg };
+})();
+
+(function(){
+ const {svg,defs,K,upd,L,C,E,rot,gear,pipe,label,plate,odometer,part,clamp,f0,usd,MDEG,CARD,rad}=window.MC;
+  /* ================== STAGE 1: INTAKE ================== */
+  const cardsLayer = E('g', null, L.gears);
+  // hopper
+  E('path', { d: 'M52 90H264L216 182H100Z', fill: 'url(#lD)', stroke: '#6a61b8', 'stroke-width': 1.6 }, L.gears);
+  const stack = E('g', null, L.gears);
+  for (let i = 0; i < 6; i++) E('rect', { x: 86 + i * 2, y: 98 + i * 5, width: 144, height: 28, rx: 3, fill: '#d9d3f4', stroke: '#8d84c9', 'stroke-width': 1, opacity: .55 + i * .07 }, stack);
+  const hopCount = E('text', { x: 158, y: 164, 'text-anchor': 'middle', fill: C.fg, 'font-size': 17, 'font-family': 'var(--mono)', 'font-weight': 600 }, L.top);
+  E('rect', { x: 98, y: 178, width: 120, height: 10, fill: '#241f40', stroke: '#6a61b8' }, L.gears);
+  // feed rollers
+  const fr1 = gear(L.gears, { z: 14, m: 3, x: 137, y: 262, fill: 'gP', holes: 0 }), fr2 = gear(L.gears, { z: 14, m: 3, x: 179, y: 262, fill: 'gP' });
+  // reader
+  E('rect', { x: 92, y: 314, width: 132, height: 80, rx: 8, fill: '#15122a', stroke: '#6a61b8', 'stroke-width': 1.6 }, L.top);
+  const lamps = []; for (let i = 0; i < 5; i++) lamps.push(E('circle', { cx: 130 + i * 14, cy: 382, r: 4.6, fill: '#2a2548', stroke: '#8d84e0', 'stroke-width': 1 }, L.top));
+  E('rect', { x: 100, y: 322, width: 116, height: 10, rx: 3, fill: '#0b0914' }, L.top);
+  // bin
+  E('path', { d: 'M92 440V532H224V440', fill: 'none', stroke: '#6a61b8', 'stroke-width': 2 }, L.gears);
+  const pile = E('rect', { x: 98, width: 120, rx: 3, fill: '#8d84c9', opacity: .55, stroke: '#cfc8ff' }, L.gears);
+  // cards
+  const CARDS = []; for (let i = 0; i < 4; i++) { const g = E('g', null, cardsLayer); E('rect', { x: -36, y: -21, width: 72, height: 42, rx: 4, fill: '#ece9f5', stroke: '#8d84c9', 'stroke-width': 1.2 }, g); E('line', { x1: -30, x2: 30, y1: -13, y2: -13, stroke: '#b9b0e6', 'stroke-width': 3 }, g); const h = []; for (let k = 0; k < 5; k++) h.push(E('rect', { x: -28 + k * 14 - 4, y: 2, width: 8, height: 11, rx: 2, fill: '#15122a' }, g)); CARDS.push({ g, h }); }
+  const hole = (i, k) => ((Math.imul(i + 3, 2654435761) >>> (k * 3 + 2)) & 1) === 1;
+  // Geneva drive
+  const GD = { x: 80, y: 600 }, GA = 40 / Math.sin(Math.PI / 4), GW = { x: 80 + GA, y: 600 };
+  const drv = E('g', { transform: 'translate(' + GD.x + ' ' + GD.y + ')' }, L.gears), drvR = E('g', null, drv);
+  E('circle', { r: 46, fill: 'url(#gP)', stroke: '#a79df0', 'stroke-opacity': .6 }, drvR); E('path', { d: 'M0 -44A44 44 0 0 1 44 0L0 0Z', fill: '#120f22', opacity: .0 }, drvR);
+  E('circle', { r: 33, fill: 'none', stroke: '#120f22', 'stroke-width': 10, 'stroke-opacity': .5, 'stroke-dasharray': '14 12' }, drvR);
+  E('circle', { cx: 40, cy: 0, r: 7, fill: '#cfc8ff', stroke: '#fff' }, drvR); E('circle', { r: 8, fill: '#171330', stroke: '#9d94ea' }, drvR);
+  const wheel = E('g', { transform: 'translate(' + GW.x + ' ' + GW.y + ')' }, L.gears), wheelR = E('g', null, wheel);
+  { const id = 'wclip'; E('circle', { r: 46 }, E('clipPath', { id }, defs)); const wb = E('g', { 'clip-path': 'url(#' + id + ')' }, wheelR);
+    E('circle', { r: 46, fill: 'url(#gP)' }, wb); for (let k = 0; k < 4; k++) { const a = 45 + 90 * k; E('rect', { x: 10, y: -5, width: 40, height: 10, rx: 4, fill: '#0b0914', transform: 'rotate(' + a + ')' }, wb); E('circle', { cx: (GA * Math.cos((a + 45) * rad)).toFixed(2), cy: (GA * Math.sin((a + 45) * rad)).toFixed(2), r: 31, fill: C.panel, stroke: '#6a61b8', 'stroke-width': 1.4 }, wb); }
+    E('circle', { r: 46, fill: 'none', stroke: '#a79df0', 'stroke-opacity': .6 }, wheelR); E('circle', { r: 8, fill: '#171330', stroke: '#9d94ea' }, wheelR); }
+  const GENEVA_D = GA / 40;
+  const genevaProfile = (fr) => { if (fr <= .375) return 0; if (fr >= .625) return 1; const th = (fr - .5) * 360 * rad; return (Math.atan2(Math.sin(th), GENEVA_D - Math.cos(th)) / rad + 45) / 90; };
+  // tally
+  label(70, 714, 'EPISODES COUNTED', { 'font-size': 14, 'letter-spacing': '.08em' });
+  const tally = odometer(78, 728, 3, { w: 34, h: 46 });
+  const N_COUNT = E('text', { x: 36, y: 782, fill: C.mute, 'font-size': 14, 'font-family': 'var(--sans)' }, L.top);
+  part('hopper', 1, 'Hopper of episode cards', [48, 84, 220, 110], () => 'One punched card stands for a bundle of ' + CARD + ' Medicare episodes (an anchor hospital stay plus 30 days after discharge). The hopper holds <b>' + K.cardsTotal + ' cards = ' + K.N + ' episodes</b>, the volume you set below.');
+  part('rollers', 1, 'Feed rollers', [112, 238, 94, 48], () => 'Two meshing gears that grip each card and pull it into the reader. They turn once per card, driven by the Geneva wheel.');
+  part('reader', 1, 'Card reader', [88, 310, 140, 90], () => 'Feeler lamps read the punch holes. The punch pattern is decoration: every card counts as exactly <b>' + CARD + ' episodes</b>, no more and no less.');
+  part('geneva', 1, 'Geneva drive', [30, 540, 160, 120], () => 'A Geneva drive turns a steady rotation into a stop-and-go one. The driver makes one turn per card; the four-slot wheel advances a quarter turn and then locks. This is what makes the cards arrive one at a time. The master shaft then runs at <b>' + MDEG + '° per episode</b>.');
+  part('tally', 1, 'Episode tally', [30, 702, 240, 90], () => 'Odometer wheels count episodes as they pass: <b>' + f0(K.n) + ' of ' + K.N + '</b>. Every shaft downstream turns in proportion to this count, which is how the machine multiplies by the number of episodes.');
+  upd.push(() => {
+    const c = K.c, fl = Math.floor(c), fr = c - fl;
+    // cards: each card index i travels hopper -> rollers -> reader -> bin in steps
+    for (let k = 0; k < CARDS.length; k++) {
+      const i = fl - k + (k === 0 ? 0 : 0), u = c - (fl - k);   // card number fl-k, position parameter u in [k, k+1)
+      const st = k + genevaProfile(fr), Y = [152, 262, 354, 440, 470];
+      const s = clamp(st, 0, 3.999), a = Math.floor(s), yy = Y[a] + (Y[a + 1] - Y[a]) * (s - a), idx = fl - k;
+      const vis = idx >= 0 && idx < K.cardsTotal && st < 3.0 && K.c > 0;
+      CARDS[k].g.setAttribute('transform', 'translate(158 ' + yy.toFixed(1) + ')'); CARDS[k].g.setAttribute('opacity', vis ? 1 : 0);
+      if (vis) for (let q = 0; q < 5; q++) CARDS[k].h[q].setAttribute('opacity', hole(idx, q) ? 1 : 0);
+      if (k === 2 && vis && st > 1.95 && st < 2.1) { for (let q = 0; q < 5; q++) lamps[q].setAttribute('fill', hole(idx, q) ? C.grnS : '#2a2548'); }
+    }
+    if (!(K.c > 0)) lamps.forEach((l) => l.setAttribute('fill', '#2a2548'));
+    const done = clamp(Math.floor(c - 0.625 + 1 - 2), 0, K.cardsTotal);          // cards that reached the bin
+    const ph = clamp(done / Math.max(1, K.cardsTotal), 0, 1), hh = 2 + ph * 80;
+    pile.setAttribute('y', 532 - hh); pile.setAttribute('height', hh);
+    const left = Math.max(0, K.cardsTotal - Math.floor(c + .375));
+    stack.setAttribute('opacity', K.cardsTotal ? Math.min(1, .25 + left / K.cardsTotal) : 0);
+    hopCount.textContent = left + ' cards left';
+    const sgn = 1; fr1.set(c * 180 * sgn); fr2.set(-c * 180 * sgn + 180 / 14);
+    rot(drvR, 360 * (c - .5)); rot(wheelR, -(90 * fl + 90 * genevaProfile(fr)));
+    tally.set(K.n);
+    N_COUNT.textContent = 'of ' + K.N + ' episodes (' + K.cardsTotal + ' cards)';
+  });
+
+
+})();
+
+(function () {
+  const { K, upd, L, C, E, gear, pipe, part, conePair, meshDeg, Vref } = window.MC;
+  /* four stepped-cone multipliers in series: benchmark, trend, discount, risk. Pairs zig-zag; end gears hand the shaft on. */
+  const DEF = [
+    { id: 'bench', left: true, ya: 146, fill: 'lC' }, { id: 'trend', left: false, ya: 298, fill: 'lP' },
+    { id: 'disc', left: true, ya: 450, fill: 'lP' }, { id: 'risk', left: false, ya: 602, fill: 'lG' }];
+  const XL = 370, XR = 676;
+  const P = DEF.map((d, i) => {
+    const cp = conePair({ x0: 418, x1: 630, ya: d.ya, yb: d.ya + 76, r0: 24, c: .3, mirror: !d.left, fill: d.fill, beltCol: i === 3 ? C.grnS : C.purS });
+    const mk = (x, y) => gear(L.gears, { z: 19, m: 4, x, y, fill: i === 3 ? 'gG' : 'gP', holes: 5 });
+    return Object.assign(d, { cp, gin: mk(d.left ? XL : XR, d.ya), gout: mk(d.left ? XR : XL, d.ya + 76) });
+  });
+  const txt = (x, y, s, o) => { const t = E('text', Object.assign({ x, y, fill: C.fg, 'font-size': 16, 'font-family': 'var(--mono)', 'font-weight': 600 }, o), L.top); t.textContent = s; return t; };
+  const lab = (x, y, a, b2, c2, col) => { txt(x, y, a, { fill: col || C.fg }); txt(x, y + 18, b2, { 'font-size': 16 }); txt(x, y + 36, c2, { fill: C.mute, 'font-family': 'var(--sans)', 'font-size': 13, 'font-weight': 400 }); };
+  lab(646, 96, 'BENCHMARK', '$18,350.04', 'DRG 470 · div. 2');
+  lab(332, 238, 'TREND', '×1.024534', 'CMS trend factor');
+  lab(646, 396, 'DISCOUNT', '×0.98', '2%, joint repl.');
+  const riskT = txt(332, 548, 'RISK', { fill: C.grnS }), riskV = txt(332, 566, '×1.00', { fill: C.grnS, 'font-size': 16 }); txt(332, 584, 'your assumption', { fill: C.mute, 'font-family': 'var(--sans)', 'font-size': 13, 'font-weight': 400 });
+  const pM = pipe('M' + XL + ' 86V146', C.purS);
+  const pT = pipe('M' + XL + ' 678V726H926V312', C.grnS);
+  txt(338, 760, 'TARGET', { 'font-size': 14, fill: C.mute, 'font-weight': 400 });
+  const tOut = txt(338, 782, '$18,424', { 'font-size': 20 });
+
+  part('bench', 2, 'Benchmark cone drive', P[0].cp.box, () => '<b>A stepped-cone drive multiplies exactly.</b> The belt rides where the two cone radii are in the ratio wanted, and the second shaft turns at that ratio of the first. This one is fixed at the CMS regional benchmark for MS-DRG 470, division 2: <b>$18,350.04</b>.');
+  part('trend', 2, 'Trend cone drive', P[1].cp.box, () => 'Multiplies by the CMS prospective trend factor, <b>×1.024534</b>. The belt sits just off centre because the ratio is a little above 1.');
+  part('disc', 2, 'Discount cone drive', P[2].cp.box, () => 'Multiplies by <b>×0.98</b>. CMS takes 2% off the benchmark for joint replacement (1.5% for CABG and major bowel), so the target is always a little below what Medicare would normally pay.');
+  part('risk', 2, 'Risk-adjustment cone drive', P[3].cp.box, () => 'The one multiplier you can move. CMS builds a hospital-specific target from patient mix, and hospitals only see their multiplier in the preliminary report, so it is an assumption here. Now <b>×' + K.risk.toFixed(2) + '</b>. Slide the Risk control and watch the belt travel.');
+  part('couplers', 2, 'Meshing gears between drives', [330, 200, 380, 160], () => 'Equal gears hand each shaft to the next cone drive. Each hand-over reverses the direction of rotation, which is why the drives zig-zag down the panel.');
+  part('tshaft', 2, 'Target shaft', [330, 650, 220, 150], () => 'The target price per episode, carried as a speed: <b>' + window.MC.usd(K.T) + '</b> (benchmark × trend × discount × risk). It runs on to the sun gear of the planetary set and, lower down, to the stop-limit drive.');
+
+  /* target-shaft angle for a given master angle (pure, used for the reference position too) */
+  K.tOf = (M) => { const f = [18350.04 / Vref, 1.024534, 0.98, K.risk]; let a = M; P.forEach((p, i) => { const out = a * f[i]; a = i < 3 ? meshDeg(p.gout, P[i + 1].gin, out) : out; }); return a; };
+  upd.push(() => {
+    const f = [18350.04 / Vref, 1.024534, 0.98, K.risk];
+    let a = K.M;
+    P.forEach((p, i) => {
+      p.gin.set(a); const out = p.cp.set(f[i], a); p.gout.set(out); a = out;
+      if (i < 3) a = meshDeg(p.gout, P[i + 1].gin, out);
+    });
+    K.wT = a; K.wT0 = K.tOf(0); pM.spin(K.M); pT.spin(a);
+    riskV.textContent = '×' + K.risk.toFixed(2); tOut.textContent = window.MC.usd(K.T);
+  });
+})();
+
+(function () {
+  const { K, upd, L, C, E, gear, pipe, part, conePair, meshDeg, dir, teeth, rot, Vref, ZS, ZP, ZR, MP, rad, TAU, usd, f0, defs } = window.MC, KIN = window.KIN;
+  const PC = { x: 926, y: 312 }, RS = ZS * MP / 2, RPL = ZP * MP / 2, ORB = RS + RPL;
+  // master-shaft pipes: from the Geneva driver, across the top, down to the spend cone
+  const pM0 = pipe('M80 600H30V84H370', C.purS), pM2 = pipe('M370 84H775V560', C.purS);
+  // spend cone drive (sets belt by spend / reference)
+  const sc = conePair({ x0: 850, x1: 990, ya: 560, yb: 636, r0: 22, c: .3, fill: 'lP', beltCol: C.magS });
+  const sIn = gear(L.gears, { z: 15, m: 4, x: 810, y: 560, fill: 'gP', holes: 4 }), sOut = gear(L.gears, { z: 15, m: 4, x: 1030, y: 636, fill: 'gP', holes: 4 });
+  const pS = pipe('M1030 636V440', C.magS);
+  const txt = (x, y, s, o) => { const t = E('text', Object.assign({ x, y, fill: C.fg, 'font-size': 16, 'font-family': 'var(--mono)', 'font-weight': 600 }, o), L.top); t.textContent = s; return t; };
+  const spT = txt(790, 494, 'SPEND $17,500', { fill: C.magS }); txt(790, 511, 'per episode · your input', { fill: C.mute, 'font-family': 'var(--sans)', 'font-size': 14, 'font-weight': 400 });
+  // back disc hides the shafts inside the ring
+  E('circle', { cx: PC.x, cy: PC.y, r: 108, fill: '#0b0914' }, L.pipes);
+  const pC = pipe('M' + PC.x + ' ' + PC.y + 'V110H1170V152', C.grnS);
+  // second hub disc above the output pipe so the pipe only shows outside the ring
+  E('circle', { cx: PC.x, cy: PC.y, r: 108, fill: '#0b0914' }, L.pipes);
+  // ring: external teeth z=60 (driven by the spend pinion), internal teeth z=48 (planets)
+  const ringG = E('g', { transform: 'translate(' + PC.x + ' ' + PC.y + ')' }, L.gears), ringR = E('g', null, ringG);
+  E('path', { d: teeth(60, MP, false) + teeth(48, MP, true), 'fill-rule': 'evenodd', fill: 'url(#gM)', stroke: '#f09bd2', 'stroke-opacity': .55, 'stroke-width': .9 }, ringR);
+  for (let i = 0; i < 6; i++) E('circle', { cx: (116 * Math.cos(i * 60 * rad + .52)).toFixed(1), cy: (116 * Math.sin(i * 60 * rad + .52)).toFixed(1), r: 4.2, fill: '#120f22' }, ringR);
+  // carrier plate (three arms) behind the planets
+  const carG = E('g', { transform: 'translate(' + PC.x + ' ' + PC.y + ')' }, L.gears), carR = E('g', null, carG);
+  for (let i = 0; i < 3; i++) { const a = i * 120 * rad; E('path', { d: 'M0 -9L' + (ORB * Math.cos(a)).toFixed(1) + ' ' + (ORB * Math.sin(a) - 9).toFixed(1) + 'L' + (ORB * Math.cos(a)).toFixed(1) + ' ' + (ORB * Math.sin(a) + 9).toFixed(1) + 'L0 9Z', transform: 'rotate(0)', fill: '#2a2548', stroke: '#8d84e0', 'stroke-opacity': .5 }, carR); E('circle', { cx: (ORB * Math.cos(a)).toFixed(1), cy: (ORB * Math.sin(a)).toFixed(1), r: 13, fill: '#2a2548', stroke: '#8d84e0', 'stroke-opacity': .6 }, carR); }
+  E('circle', { r: 16, fill: '#2a2548', stroke: '#8d84e0', 'stroke-opacity': .6 }, carR);
+  const planets = [0, 1, 2].map(() => gear(L.gears, { z: ZP, m: MP, x: 0, y: 0, fill: 'gG', hub: .2 }));
+  const sun = gear(L.gears, { z: ZS, m: MP, x: PC.x, y: PC.y, fill: 'gP', hub: .2, holes: 5 });
+  const pin = gear(L.gears, { z: 15, m: MP, x: PC.x + 157.5 * Math.cos(52 * rad), y: PC.y + 157.5 * Math.sin(52 * rad), fill: 'gM', hub: .2 });
+  const ringObj = { z: 60, x: PC.x, y: PC.y };
+  planets.forEach((p) => p.r.parentNode.parentNode.setAttribute('transform', 'translate(0 0)'));
+  txt(790, 108, 'TARGET in', { 'font-size': 14, fill: C.grnS });
+  txt(778, 250, 'SUN', { 'font-size': 13, fill: C.mute, 'font-weight': 400 });
+  txt(770, 780, 'DIFFERENCE', { 'font-size': 14, fill: C.mute, 'font-weight': 400 });
+  const dOut = txt(770, 760, '+$924 / episode', { 'font-size': 20 });
+
+  part('spendcone', 3, 'Spend cone drive', [800, 500, 270, 170], () => 'The other cone drive you control. Its belt position is the hospital\'s <b>average actual spend per episode</b> (anchor stay plus 30 days after discharge), now <b>' + usd(window.ENGINE.D.spend) + '</b> against a reference of ' + usd(Vref) + '. The shaft that leaves it turns at that ratio of the master shaft.');
+  part('planetary', 3, 'Planetary differential', [790, 180, 270, 270], () => '<b>The subtraction.</b> The sun gear is driven by the target-price shaft and the ring gear by the spend shaft, turning the opposite way. The carrier that holds the three planet gears turns at a weighted average of the two, which here works out to their difference, so it crawls when target and spend are close and runs forward when spend is below target, backward when above. Now <b>' + (K.T - window.ENGINE.D.spend >= 0 ? '+' : '−') + '$' + f0(Math.abs(K.T - window.ENGINE.D.spend)) + ' per episode</b> in your favour' + (K.T - window.ENGINE.D.spend >= 0 ? '' : ' (against you)') + '.');
+  part('sun', 3, 'Sun gear (target in)', [PC.x - 40, PC.y - 40, 80, 80], () => 'Driven by the target shaft through a 2:1 reduction hidden behind the hub. Its speed stands for the target price per episode, <b>' + usd(K.T) + '</b>.');
+  part('ring', 3, 'Ring gear (spend in)', [PC.x - 134, PC.y - 134, 268, 268], () => 'An internal gear: teeth on the inside carry the planets, teeth on the outside take the spend shaft through the small magenta pinion. Its speed stands for spend per episode, turning against the sun.');
+  part('carrier', 3, 'Carrier and planets', [PC.x - 100, PC.y - 100, 200, 200], () => 'Three planet gears ride on the carrier plate. How far the carrier has turned is the <b>reconciliation amount before any rules</b>: (target − spend) × episodes. The shaft above the ring takes that turn on to the ledger.');
+  upd.push(() => {
+    const wS = K.M * (window.ENGINE.D.spend / Vref);
+    const wSdeg = sc.set(window.ENGINE.D.spend / Vref, K.M);
+    sIn.set(K.M); sOut.set(wSdeg);
+    const thS = 0.5 * K.wT * rad;                                // sun: 2:1 reduction (the target shaft arrives reversed by its three meshes)
+    const thQ = -wSdeg;                                           // spend pinion (reverser in the shaft)
+    const thR = meshDeg(pin, ringObj, thQ) * rad;                 // ring turned by the pinion
+    const al = KIN.carrierAngle(thS, thR, ZS, ZP, ZR);
+    sun.set(thS / rad); rot(ringR, thR / rad); rot(carR, al / rad);
+    planets.forEach((p, i) => {
+      const a = al + i * TAU / 3; p.r.parentNode.setAttribute('transform', 'translate(' + (PC.x + ORB * Math.cos(a)).toFixed(2) + ' ' + (PC.y + ORB * Math.sin(a)).toFixed(2) + ')');
+      p.set(KIN.planetSpin(a, thS, ZS, ZP) / rad);
+    });
+    pin.set(thQ);
+    K.carrier = al;
+    // reference carrier position at M=0 (all shafts at rest), same ratios: the turn is measured from there
+    const th0S = 0.5 * K.wT0 * rad, th0R = KIN.meshB(dir(pin, ringObj), 0, 15, 60);
+    K.dCar = al - KIN.carrierAngle(th0S, th0R, ZS, ZP, ZR);
+    pM0.spin(K.M); pM2.spin(K.M); pS.spin(-wSdeg); pC.spin(K.dCar / rad);
+    spT.textContent = 'SPEND ' + usd(window.ENGINE.D.spend);
+    const d = K.T - window.ENGINE.D.spend; dOut.textContent = (d >= 0 ? '+' : '−') + '$' + f0(Math.abs(d)) + ' / episode';
+    dOut.setAttribute('fill', d >= 0 ? C.grnS : C.magS);
+  });
+})();
+
+(function () {
+  const { K, upd, L, C, E, gear, pipe, part, conePair, meshDeg, dir, rot, defs, clamp, f0, usd, SCX, X0, RPIN: R, odometer } = window.MC;
+  const PITCH = Math.PI * 2.8, ENG = window.ENGINE;
+  /* ---- helpers: rack bars (teeth by pattern), pinions riding them, springs, rulers ---- */
+  const pat = (id, d) => { const p = E('pattern', { id, width: PITCH, height: 14, patternUnits: 'userSpaceOnUse' }, defs); E('path', { d, fill: '#4a4380', stroke: '#9d94ea', 'stroke-opacity': .6, 'stroke-width': .8 }, p); };
+  pat('rackU', 'M0 14V7.5L1.6 1H7.2L' + PITCH + ' 7.5V14Z'); pat('rackD', 'M0 0V6.5L1.6 13H7.2L' + PITCH + ' 6.5V0Z');
+  const clip = (id, x, y, w, h) => E('rect', { x, y, width: w, height: h }, E('clipPath', { id }, defs));
+  clip('clipW', 1124, 100, 424, 900); clip('clipA', 1276, 100, 272, 130);
+  function rack(yTop, up, col, cp) {
+    const g = E('g', { 'clip-path': 'url(#' + (cp || 'clipW') + ')' }, L.top), b = E('g', null, g);
+    E('rect', { x: -400, y: 0, width: 800, height: 14, fill: 'url(#' + (up ? 'rackU' : 'rackD') + ')' }, b);
+    E('rect', { x: -400, y: up ? 8 : 0, width: 800, height: 6, fill: '#2d2850' }, b);
+    const lug = E('path', { d: up ? 'M0 14L-7 22H7Z' : 'M0 0L-7 -8H7Z', fill: col || C.purS }, b);
+    return { set: (x) => b.setAttribute('transform', 'translate(' + (X0 + x).toFixed(2) + ' ' + yTop + ')') };
+  }
+  const pinAngle = (xc, x, above) => { const u = xc - X0 - x, d = u / R * 180 / Math.PI; return above ? 90 + d : -90 - d; };
+  function spring(col) { const p = E('path', { fill: 'none', stroke: col, 'stroke-width': 3, 'stroke-linejoin': 'round' }, L.top); return { set(x1, y1, x2, y2) {
+    const N = 9, dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy) || 1, nx = -dy / len, ny = dx / len, lead = 8; let d = 'M' + x1 + ' ' + y1;
+    const a = len - 2 * lead;
+    for (let i = 0; i <= N; i++) { const t = lead / len + (a / len) * (i / N), s = i === 0 || i === N ? 0 : (i % 2 ? 1 : -1) * 9; d += 'L' + (x1 + dx * t + nx * s).toFixed(1) + ' ' + (y1 + dy * t + ny * s).toFixed(1); }
+    p.setAttribute('d', d + 'L' + x2 + ' ' + y2); } }; }
+  const txt = (x, y, s, o) => { const t = E('text', Object.assign({ x, y, fill: C.mute, 'font-size': 15, 'font-family': 'var(--sans)' }, o), L.top); t.textContent = s; return t; };
+  function ruler(y, col) {
+    E('line', { x1: X0 - 200, x2: X0 + 200, y1: y, y2: y, stroke: '#5a5190', 'stroke-width': 1.2 }, L.top);
+    for (let k = -4; k <= 4; k++) { const x = X0 + k * 50, h = k % 2 ? 4 : 8; E('line', { x1: x, x2: x, y1: y, y2: y + h, stroke: k < 0 ? C.mag : k > 0 ? C.grn : C.fg, 'stroke-width': 1.4 }, L.top); }
+  }
+  const rulerLabels = (y) => [[-4, '−1.6M'], [-2, '−0.8M'], [0, '0'], [2, '+0.8M'], [4, '+1.6M']].forEach(([k, s]) => txt(X0 + k * 50, y + 22, s, { 'text-anchor': 'middle', 'font-size': 13 }));
+  const post = (x1, y1, y2, col) => E('rect', { width: 6, rx: 2, fill: col, y: y1, height: y2 - y1 }, L.top);
+
+  /* zero line */
+  E('line', { x1: X0, x2: X0, y1: 190, y2: 672, stroke: '#cfc8ff', 'stroke-opacity': .22, 'stroke-dasharray': '3 6' }, L.top);
+
+  /* ---- reduction train from the carrier to the rack of rail A (x4 step-up) ---- */
+  const rA = rack(172, true, C.grnS, 'clipA');
+  const G1 = gear(L.gears, { z: 32, m: 2.8, x: 1170.2, y: 152.3, fill: 'gG', holes: 6 }), G2 = gear(L.gears, { z: 16, m: 2.8, x: 1237.1, y: 146.4, fill: 'gP' });
+  const G2b = gear(L.gears, { z: 32, m: 2.8, x: 1237.1, y: 146.4, fill: 'gP', holes: 6 }), G3 = gear(L.gears, { z: 16, m: 2.8, x: 1304, y: 152.3, fill: 'gG' });
+  L.gears.insertBefore(G2.r.parentNode, G2b.r.parentNode);
+  const oA = odometer(1360, 84, 7, { w: 22, h: 34, col: '#6b62bd' });
+  txt(1360, 142, 'A · AMOUNT BEFORE RULES', { 'font-size': 13, 'letter-spacing': '.06em' });
+    ruler(210, C.fg); rulerLabels(210);
+  const postA = post(0, 186, 236, C.purS);
+
+  /* ---- rail B: Track 1 floor (pawl) ---- */
+  const rB = rack(300, false, C.purS);
+  txt(1128, 296, 'B', { fill: C.fg, 'font-size': 16, 'font-family': 'var(--mono)', 'font-weight': 600 }); txt(1146, 296, 'after the Track 1 floor', { 'font-size': 13 });
+  ruler(332, C.fg); rulerLabels(332);
+  const postB = post(0, 270, 300, C.purS), spAB = spring('#cfc8ff');
+  const pawl = E('g', null, L.top); E('rect', { x: X0 - 17, y: 264, width: 13, height: 36, rx: 2, fill: C.mag, stroke: '#fff', 'stroke-opacity': .5 }, pawl); E('path', { d: 'M' + (X0 - 11) + ' 262V240', stroke: C.magS, 'stroke-width': 4 }, pawl); E('circle', { cx: X0 - 11, cy: 236, r: 7, fill: '#171330', stroke: C.magS, 'stroke-width': 1.5 }, pawl);
+  txt(1128, 262, 'NO-DOWNSIDE PAWL (Track 1)', { 'font-size': 12, fill: C.magS, 'letter-spacing': '.05em' });
+
+  /* ---- quality: cone drive between rail B and rail C ---- */
+  const q = conePair({ x0: 1296, x1: 1470, ya: 372, yb: 448, r0: 24, c: .3, fill: 'lG', beltCol: C.grnS });
+  const qIn = gear(L.gears, { z: 16, m: 2.8, x: 1200, y: 332.8, fill: 'gP' }), qOut = gear(L.gears, { z: 16, m: 2.8, x: 1500, y: 481.2, fill: 'gP' });
+  const pQ1 = pipe('M1200 333V372H1296', C.purS), pQ2 = pipe('M1470 448H1500V481', C.grnS);
+  const qT = txt(1130, 380, 'QUALITY ×0.95', { fill: C.grnS, 'font-size': 16, 'font-family': 'var(--mono)', 'font-weight': 600 }); txt(1130, 398, '1 − 10% × (1 − CQS/100)', { 'font-size': 12 });
+
+  /* ---- rail C + spring + rail D ---- */
+  const rC = rack(500, true, C.grnS);
+  txt(1128, 494, 'C', { fill: C.fg, 'font-size': 16, 'font-family': 'var(--mono)', 'font-weight': 600 }); txt(1146, 494, 'after the quality adjustment', { 'font-size': 13 });
+  ruler(532, C.fg); rulerLabels(532);
+  const postC = post(0, 514, 572, C.grnS), spCD = spring('#cfc8ff');
+  const postD = post(0, 636, 672, C.grnS);
+  const rD = rack(672, false, C.grnS);
+  txt(1128, 700, 'D', { fill: C.fg, 'font-size': 16, 'font-family': 'var(--mono)', 'font-weight': 600 }); txt(1146, 700, 'after the stop limits = payment', { 'font-size': 13 });
+  // blocks seen above bar D; posts run behind it down to the stop racks
+  const blkG = E('rect', { width: 14, y: 618, height: 54, rx: 2, fill: C.grn, stroke: '#fff', 'stroke-opacity': .5 }, L.top), blkL = E('rect', { width: 14, y: 618, height: 54, rx: 2, fill: C.mag, stroke: '#fff', 'stroke-opacity': .5 }, L.top);
+  const stemG = E('rect', { width: 8, y: 672, height: 60, fill: '#2d6b4a' }, L.pipes), stemL = E('rect', { width: 8, y: 672, height: 110, fill: '#7a3563' }, L.pipes);
+  const gPin = gear(L.gears, { z: 16, m: 2.8, x: 1522, y: 704.8, fill: 'gG' });
+  const pGauge = pipe('M1522 705H1678V340', C.grnS);
+
+  /* ---- stop-limit drive: target shaft -> 1:15 -> track cone -> stop pinion + two racks ---- */
+  const pT2 = pipe('M926 726H1118V860H1150', C.grnS);
+  const g1 = gear(L.gears, { z: 16, m: 1.5, x: 1150, y: 860, fill: 'gP' }), g2 = gear(L.gears, { z: 48, m: 1.5, x: 1198, y: 860, fill: 'gP', holes: 6 });
+  const g2b = gear(L.gears, { z: 12, m: 1.5, x: 1198, y: 860, fill: 'gP' }), g3 = gear(L.gears, { z: 60, m: 1.5, x: 1252, y: 860, fill: 'gP', holes: 8 });
+  L.gears.insertBefore(g2b.r.parentNode, g2.r.parentNode); L.gears.appendChild(g2b.r.parentNode);
+  const tc = conePair({ x0: 1330, x1: 1430, ya: 838, yb: 894, r0: 17, c: .5, fill: 'lC', beltCol: C.purS });
+  const pTc1 = pipe('M1252 860V838H1330', C.purS), pTc2 = pipe('M1430 894H1450V757', C.purS);
+  const sPin = gear(L.gears, { z: 16, m: 2.8, x: 1450, y: 756.8, fill: 'gP' });
+  const rGain = rack(724, false, C.grnS), rLoss = rack(775.6, true, C.magS);
+  txt(1124, 754, 'STOP-GAIN', { fill: C.grnS, 'font-size': 12, 'letter-spacing': '.05em' }); txt(1124, 806, 'STOP-LOSS', { fill: C.magS, 'font-size': 12, 'letter-spacing': '.05em' });
+  const tTxt = txt(1318, 808, 'TRACK 3', { fill: C.fg, 'font-size': 13, 'font-family': 'var(--mono)', 'font-weight': 600 });
+  txt(1130, 914, 'target shaft ÷ 15, then the track cone', { 'font-size': 13 });
+
+  const ZB = (x) => clamp(x, -205, 205);
+  part('rackA', 4, 'Ledger A: the running amount', [1124, 90, 424, 150], () => 'A toothed bar slides along a ruler in dollars, centre = zero. It is moved by a pinion at the end of a four-to-one step-up from the planetary carrier, so it reads (target − spend) × episodes as the cards go through: <b>' + usd(K.res.amount) + '</b> now.');
+  part('train', 4, 'Step-up gear train', [1130, 90, 215, 110], () => 'Four gears in two compound pairs. They multiply the carrier\'s slow crawl by four so the ledger bar travels far enough to read.');
+  part('pawl', 4, 'No-downside pawl (Track 1)', [1124, 240, 424, 100], () => '<b>Track 1 has no repayment.</b> A pawl drops in front of the bar at zero so it cannot travel into negative territory. On Track 2 and Track 3 it lifts. Now <b>' + (ENG.S.track === 1 ? 'engaged' : 'lifted') + '</b>. Ledger B reads <b>' + usd(K.res.base) + '</b>.');
+  part('qcone', 4, 'Quality cone drive', [1110, 340, 380, 150], () => '<b>The quality score is a belt position.</b> A payment is cut by 10% × (1 − CQS/100) (zero cut at a score of 100, 10% at zero). A repayment on Track 2 is eased by 15% × CQS/100, on Track 3 by 10% × CQS/100. The cone multiplies ledger B by <b>×' + (1 - K.res.adjPct).toFixed(3) + '</b>; ledger C reads <b>' + usd(K.res.adjusted) + '</b>.');
+  part('spring', 4, 'Stop spring', [1124, 548, 424, 90], () => 'The spring pulls the payment bar toward the quality-adjusted amount. When a stop block catches the bar, the spring stretches, and the stretch is the part CMS will not pay or collect. ' + (K.res.capHit ? '<b>Stop-' + K.res.capHit + ' has caught it.</b>' : 'Nothing is caught right now.'));
+  part('blocks', 4, 'Stop blocks', [1124, 612, 424, 66], () => 'Blocks set at +' + (K.res.gainCap > 0 ? (K.res.gainCap / K.res.book * 100).toFixed(0) : 0) + '% and −' + (K.res.lossCap / K.res.book * 100).toFixed(0) + '% of the aggregated target book (' + usd(K.res.book) + '). Their positions come from the stop-limit drive below, so they move outward as episodes accumulate.');
+  part('stopdrive', 4, 'Stop-limit drive', [1110, 715, 440, 215], () => 'Turns the target shaft into the stop positions: a 1:15 reduction (1:3 then 1:5), a <b>track cone</b> that picks the percentage (Track 1: gain 10%, Track 2: 5%, Track 3: 20%), then a pinion pushing two racks in opposite directions, one for each stop. Track 1 locks the loss side at zero.');
+  part('rackD', 4, 'Ledger D: the payment', [1124, 668, 424, 52], () => 'The bar that is left after the stop limits. Its position is the <b>estimated NPRA</b>, the net payment reconciliation amount: <b>' + usd(K.res.npra) + '</b>. It drives the gauge on the right.');
+
+  upd.push(() => {
+    const r = K.res, wT = K.wT;
+    const xA = ZB(SCX * r.amount), xB = ZB(SCX * r.base), xC = ZB(SCX * r.adjusted), xD = ZB(SCX * r.npra), xg = ZB(SCX * r.gainCap), xl = ZB(SCX * r.lossCap);
+    K.xD = xD;
+    // rail A + reduction train (backward from the pinion so the teeth always meet)
+    rA.set(xA); const aG3 = pinAngle(1304, xA, true); G3.set(aG3);
+    const aG2 = meshDeg(G3, G2, aG3); G2.set(aG2); G2b.set(aG2); const aG1 = meshDeg(G2b, G1, aG2); G1.set(aG1);
+    postA.setAttribute('x', X0 + xA - 3);
+    oA.set(Math.abs(r.amount));
+    // rail B
+    rB.set(xB); postB.setAttribute('x', X0 + xB - 3); spAB.set(X0 + xA, 236, X0 + xB, 270);
+    pawl.setAttribute('transform', 'translate(0 ' + (-(1 - clamp(ENG.D.floor, 0, 1)) * 52).toFixed(1) + ')');
+    // pinion on rack B (below the bar) drives the quality cone
+    const aQi = pinAngle(1200, xB, false); qIn.set(aQi);
+    const f = 1 - r.adjPct; const out = q.set(f, aQi); pQ1.spin(aQi); pQ2.spin(out);
+    qOut.set(pinAngle(1500, xC, true)); qT.textContent = 'QUALITY ×' + f.toFixed(3);
+    // rail C, spring, rail D
+    rC.set(xC); postC.setAttribute('x', X0 + xC - 3); rD.set(xD); postD.setAttribute('x', X0 + xD - 3);
+    spCD.set(X0 + xC, 572, X0 + xD, 636);
+    blkG.setAttribute('x', X0 + xg + 1); blkL.setAttribute('x', X0 - xl - 15);
+    blkL.setAttribute('opacity', xl < 2 ? .35 : 1);
+    stemG.setAttribute('x', X0 + xg + 4); stemL.setAttribute('x', X0 - xl - 12);
+    blkG.setAttribute('stroke-opacity', r.capHit === 'gain' ? 1 : .5); blkL.setAttribute('stroke-opacity', r.capHit === 'loss' ? 1 : .5);
+    gPin.set(pinAngle(1522, xD, false)); pGauge.spin(pinAngle(1522, xD, false));
+    // stop-limit drive
+    g1.set(wT); const a2 = meshDeg(g1, g2, wT); g2.set(a2); g2b.set(a2); const a3 = meshDeg(g2b, g3, a2); g3.set(a3);
+    const ft = ENG.D.gain / 0.1, outT = tc.set(ft, a3); pTc1.spin(a3); pTc2.spin(outT); pT2.spin(wT);
+    rGain.set(xg); rLoss.set(-xl);
+    sPin.set(pinAngle(1450, xg, false));
+    tTxt.textContent = 'TRACK ' + ENG.S.track + ' · gain ' + (ENG.D.gain * 100).toFixed(0) + '% · loss ' + (ENG.D.loss * 100).toFixed(0) + '%';
+  });
+})();
+
+(function () {
+  const { K, upd, L, C, E, part, odometer, usd, f0, clamp, rad } = window.MC;
+  const CX = 1678, CY = 340, R = 86;
+  const pt = (a, r) => [CX + r * Math.sin(a * rad), CY - r * Math.cos(a * rad)];
+  const arc = (a0, a1, r) => { const [x0, y0] = pt(a0, r), [x1, y1] = pt(a1, r); return 'M' + x0.toFixed(1) + ' ' + y0.toFixed(1) + 'A' + r + ' ' + r + ' 0 0 1 ' + x1.toFixed(1) + ' ' + y1.toFixed(1); };
+  E('circle', { cx: CX, cy: CY, r: R + 22, fill: '#0b0914', stroke: '#6b62bd', 'stroke-width': 2 }, L.gears);
+  E('circle', { cx: CX, cy: CY, r: R + 12, fill: 'none', stroke: '#2d2850', 'stroke-width': 1 }, L.gears);
+  E('path', { d: arc(-80, 0, R), fill: 'none', stroke: C.mag, 'stroke-width': 7, 'stroke-opacity': .85 }, L.gears);
+  E('path', { d: arc(0, 80, R), fill: 'none', stroke: C.grn, 'stroke-width': 7, 'stroke-opacity': .85 }, L.gears);
+  for (let a = -80; a <= 80; a += 20) { const [x0, y0] = pt(a, R - 8), [x1, y1] = pt(a, R - (a % 40 ? 16 : 22)); E('line', { x1: x0, y1: y0, x2: x1, y2: y1, stroke: C.fg, 'stroke-width': a % 40 ? 1.2 : 2 }, L.gears); }
+  [[-80, '−1.6M'], [-40, '−0.8M'], [0, '0'], [40, '+0.8M'], [80, '+1.6M']].forEach(([a, s]) => { const [x, y] = pt(a, R - 36); const t = E('text', { x, y: y + 4, 'text-anchor': 'middle', 'font-size': 12, fill: C.mute, 'font-family': 'var(--sans)' }, L.gears); t.textContent = s; });
+  const sg = E('path', { d: 'M0 0L-6 -10H6Z', fill: C.grnS }, L.gears), sl = E('path', { d: 'M0 0L-6 -10H6Z', fill: C.magS }, L.gears);
+  const needle = E('g', null, L.top); E('path', { d: 'M-3 14L0 -' + (R - 4) + 'L3 14Z', fill: '#ece9f5' }, needle); E('circle', { r: 9, fill: '#171330', stroke: '#cfc8ff', 'stroke-width': 2 }, needle);
+  const t0 = E('text', { x: CX, y: CY + 56, 'text-anchor': 'middle', fill: C.mute, 'font-size': 13, 'font-family': 'var(--sans)', 'letter-spacing': '.06em' }, L.top); t0.textContent = 'NPRA, DOLLARS';
+  const lamp = (y, col, txt) => { const c = E('circle', { cx: 1604, cy: y, r: 11, fill: '#201b38', stroke: col, 'stroke-width': 1.6 }, L.top); const t = E('text', { x: 1624, y: y + 5, fill: C.fg, 'font-size': 15, 'font-family': 'var(--sans)', 'font-weight': 600 }, L.top); t.textContent = txt; return c; };
+  const lp = lamp(488, C.grn, 'CMS pays the hospital'), lr = lamp(524, C.mag, 'Hospital repays CMS'), lc = lamp(560, C.purS, 'A stop block holds');
+  const ln = E('text', { x: 1590, y: 618, fill: C.mute, 'font-size': 13, 'font-family': 'var(--sans)', 'letter-spacing': '.06em' }, L.top); ln.textContent = 'ESTIMATED NPRA';
+  const odo = odometer(1590, 628, 7, { w: 22, h: 34, col: C.grn });
+  const sign = E('text', { x: 1590, y: 694, fill: C.fg, 'font-size': 20, 'font-family': 'var(--mono)', 'font-weight': 600 }, L.top);
+  const pct = E('text', { x: 1590, y: 716, fill: C.mute, 'font-size': 14, 'font-family': 'var(--sans)' }, L.top);
+  const cmt = E('text', { x: 1590, y: 738, fill: C.mute, 'font-size': 14, 'font-family': 'var(--sans)' }, L.top);
+  part('gauge', 5, 'NPRA gauge', [1596, 236, 164, 190], () => 'A needle on a dollar scale, driven by the payment bar through a pinion and shaft. Green to the right is money from CMS, magenta to the left is money owed to CMS. The two small markers on the rim are the stop blocks.');
+  part('lamps', 5, 'Result lamps', [1590, 470, 190, 106], () => 'Three lamps say what the result means. The third lights when a stop block is holding the payment bar back, so the quality-adjusted amount was larger than the stop limit allows.');
+  part('npra', 5, 'NPRA odometer', [1586, 604, 190, 150], () => 'The <b>net payment reconciliation amount</b> for the performance year: <b>' + usd(K.res.npra) + '</b>, which is ' + (K.res.book ? (K.res.npra / K.res.book * 100).toFixed(1) : '0.0') + '% of the aggregated target price amount. A positive number is a payment from CMS, a negative number a repayment. Estimate only: sequestration is not applied, and the spend, episode count and quality score are inputs you set.');
+  upd.push(() => {
+    const r = K.res, a = clamp(K.xD / 200 * 80, -85, 85);
+    needle.setAttribute('transform', 'translate(' + CX + ' ' + CY + ') rotate(' + a.toFixed(2) + ')');
+    const ag = clamp(r.gainCap * window.MC.SCX / 200 * 80, 0, 84), al = clamp(r.lossCap * window.MC.SCX / 200 * 80, 0, 84);
+    const [gx, gy] = pt(ag, R + 18), [lx, ly] = pt(-al, R + 18);
+    sg.setAttribute('transform', 'translate(' + gx.toFixed(1) + ' ' + gy.toFixed(1) + ') rotate(' + (180 + ag).toFixed(1) + ')'); sl.setAttribute('transform', 'translate(' + lx.toFixed(1) + ' ' + ly.toFixed(1) + ') rotate(' + (180 - al).toFixed(1) + ')');
+    sl.setAttribute('opacity', al < 2 ? .3 : 1);
+    lp.setAttribute('fill', r.npra > 0.5 ? C.grn : '#201b38'); lr.setAttribute('fill', r.npra < -0.5 ? C.mag : '#201b38'); lc.setAttribute('fill', r.capHit ? C.purS : '#201b38');
+    odo.set(Math.abs(r.npra));
+    sign.textContent = (r.npra < -0.5 ? '−' : r.npra > 0.5 ? '+' : '') + '$' + f0(Math.abs(r.npra)); sign.setAttribute('fill', r.npra < -0.5 ? C.magS : r.npra > 0.5 ? C.grnS : C.fg);
+    pct.textContent = (r.book ? (r.npra / r.book * 100).toFixed(1) : '0.0') + '% of the target book';
+    cmt.textContent = r.capHit ? 'Stop-' + r.capHit + ' limit applies' : 'No stop limit reached';
+  });
+})();
+
+(function () {
+  const { K, upd, L, C, E, gear, pipe, part, rot, meshDeg, clamp, rad, TAU } = window.MC, RM = (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) || /[?&]rm=1/.test(location.search);
+  /* base band: line shaft, flywheel, flyball governor, timing train with escapement. Drawn on the bottom of the frame. */
+  E('rect', { x: 16, y: 934, width: 1768, height: 96, rx: 10, fill: '#0e0b19', stroke: C.line, 'stroke-width': 1.5 }, L.pipes);
+  const Y = 986;
+  const shaft = pipe('M40 ' + Y + 'H1760', C.purS);
+  const bearing = (x) => { E('rect', { x: x - 14, y: Y - 22, width: 28, height: 14, rx: 3, fill: '#2d2850', stroke: '#6a61b8' }, L.gears); E('rect', { x: x - 20, y: Y - 10, width: 40, height: 6, rx: 2, fill: '#1a1630', stroke: '#6a61b8' }, L.gears); };
+  [260, 520, 780, 1040, 1300, 1560].forEach(bearing);
+  const pipeUp = pipe('M48 ' + Y + 'V600H80', C.purS);
+  const txt = (x, y, s, o) => { const t = E('text', Object.assign({ x, y, fill: C.mute, 'font-size': 14, 'font-family': 'var(--sans)' }, o), L.top); t.textContent = s; return t; };
+  // flywheel
+  const fw = gear(L.gears, { z: 36, m: 2.4, x: 120, y: Y, fill: 'gP', holes: 8, spokes: 0 });
+  E('circle', { cx: 120, cy: Y, r: 34, fill: 'none', stroke: '#120f22', 'stroke-width': 3, 'stroke-opacity': .5 }, L.gears);
+  txt(190, 960, 'FLYWHEEL', { 'font-size': 13 });
+  // flyball governor: balls swing out with speed
+  const gx = 400, gov = E('g', null, L.top);
+  E('line', { x1: gx, y1: Y - 40, x2: gx, y2: Y + 6, stroke: '#cfc8ff', 'stroke-width': 4 }, L.top);
+  const arm = (s) => E('line', { x1: gx, y1: Y - 40, stroke: '#cfc8ff', 'stroke-width': 3 }, L.top), a1 = arm(), a2 = arm();
+  const b1 = E('circle', { r: 9, fill: 'url(#gM)', stroke: C.magS }, L.top), b2 = E('circle', { r: 9, fill: 'url(#gM)', stroke: C.magS }, L.top);
+  const collar = E('rect', { x: gx - 9, width: 18, height: 8, rx: 2, fill: C.purS }, L.top);
+  txt(gx + 46, 960, 'GOVERNOR', { 'font-size': 13 }); txt(gx + 46, 976, 'balls rise with speed', { 'font-size': 12 });
+  // timing train + escapement: decorative, time-driven
+  const tx = 760, ty = 985;
+  const e1 = gear(L.gears, { z: 40, m: 2.4, x: tx, y: ty, fill: 'gP', holes: 6 }), e2 = gear(L.gears, { z: 15, m: 2.4, x: tx + 66, y: ty - 6, fill: 'gG' });
+  const e3 = gear(L.gears, { z: 36, m: 2.4, x: tx + 66, y: ty - 6, fill: 'gP', holes: 5 }), e4 = gear(L.gears, { z: 14, m: 2.4, x: tx + 66 + 51.5, y: ty + 1, fill: 'gM' });
+  L.gears.insertBefore(e2.r.parentNode, e3.r.parentNode);
+  const esc = gear(L.gears, { z: 20, m: 2.4, x: tx + 66 + 51.5 + 60, y: ty + 4, fill: 'gP' });
+  const anchor = E('g', { transform: 'translate(' + (tx + 66 + 51.5 + 60) + ' ' + (ty - 28) + ')' }, L.top);
+  E('path', { d: 'M-22 -12L0 4L22 -12L26 -8L0 14L-26 -8Z', fill: C.purS, stroke: '#fff', 'stroke-opacity': .4 }, anchor); E('circle', { r: 4, fill: '#171330', stroke: '#fff' }, anchor);
+  const pend = E('g', { transform: 'translate(' + (tx + 66 + 51.5 + 60) + ' ' + (ty - 28) + ')' }, L.top); E('line', { y2: -26, stroke: '#cfc8ff', 'stroke-width': 2 }, pend); E('circle', { cy: -30, r: 5, fill: C.grnS }, pend);
+  txt(1010, 962, 'TIMING TRAIN + ESCAPEMENT', { 'font-size': 13 }); txt(1010, 980, 'paces the demo, carries no dollars', { 'font-size': 12 });
+  // idle pulleys on the line shaft
+  const pul = [520, 1300, 1560].map((x) => gear(L.gears, { z: 24, m: 2.4, x, y: Y, fill: 'gD', holes: 4 }));
+  part('flywheel', 1, 'Flywheel and line shaft', [40, 936, 340, 90], () => 'A flywheel on the line shaft, turning with the card count. It stores momentum so the cards arrive smoothly. It is for show: no dollar value passes through it.');
+  part('governor', 1, 'Flyball governor', [340, 936, 220, 90], () => 'Two weighted balls fly outward as the shaft speeds up and fall as it slows, as on a steam engine. Here they show how fast cards are going through.');
+  part('timing', 1, 'Timing train with escapement', [690, 936, 360, 90], () => 'A small clock-style train ending in an escapement and a pendulum. It ticks on its own. It paces the demonstration and carries no dollars: a decoration with a real mechanism inside.');
+  let t = 0, rate = 0, lastC = 0, spread = 0;
+  upd.push((dt) => {
+    dt = dt || 1 / 60; if (!RM) t += dt;
+    const dc = (K.c - lastC) / dt; lastC = K.c; rate += (clamp(Math.abs(dc), 0, 8) - rate) * (1 - Math.exp(-dt * 6));
+    fw.set(180 * K.c); shaft.spin(180 * K.c); pipeUp.spin(180 * K.c); pul.forEach((p, i) => p.set(-180 * K.c * (1 + i * .2)));
+    spread += ((rate / 8) * 62 + 14 - spread) * (1 - Math.exp(-dt * 8));
+    const ang = spread * rad, bx = Math.sin(ang) * 46, by = Y - 40 + Math.cos(ang) * 38 * .9;
+    a1.setAttribute('x2', gx - bx); a1.setAttribute('y2', by); a2.setAttribute('x2', gx + bx); a2.setAttribute('y2', by);
+    b1.setAttribute('cx', gx - bx); b1.setAttribute('cy', by); b2.setAttribute('cx', gx + bx); b2.setAttribute('cy', by);
+    collar.setAttribute('y', Y - 40 + (by - (Y - 40)) * .55 - 2);
+    // escapement: 1 s per swing
+    const sw = Math.sin(t * TAU / 2), a = t * 12;
+    e1.set(a); const a2d = meshDeg(e1, e2, a); e2.set(a2d); e3.set(a2d); const a4 = meshDeg(e3, e4, a2d); e4.set(a4);
+    esc.set(Math.floor(t * 2) * 18 + 18 * Math.max(0, Math.min(1, (t * 2 % 1) * 6)));
+    anchor.setAttribute('transform', 'translate(' + (tx + 66 + 51.5 + 60) + ' ' + (ty - 28) + ') rotate(' + (sw * 14).toFixed(1) + ')');
+    pend.setAttribute('transform', 'translate(' + (tx + 66 + 51.5 + 60) + ' ' + (ty - 28) + ') rotate(' + (sw * 20).toFixed(1) + ')');
+  });
+})();
+
+/* controls, run loop, camera, naming of parts */
+(function () {
+  const MC = window.MC, { K, upd, clamp, PARTS, E, L, C, f0, usd } = MC, T = window.TEAM, { S, D } = window.ENGINE;
+  const $ = (id) => document.getElementById(id), RM = (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) || /[?&]rm=1/.test(location.search);
+  const frameEl = $('frame'), svg = MC.svg, cards = () => S.episodes / MC.CARD;
+
+  /* ---------- model checks (the CMS worked examples the calculator also reproduces) ---------- */
+  (function () {
+    const mk = (t, sp, n, tr, q) => { const R = T.TRACKS[tr]; return T.compute({ target: t, spend: sp, n, cqs: q, gain: R.gain, loss: R.loss, negAdj: R.negAdj, floor: tr === 1 ? 1 : 0 }); };
+    const rows = [[mk(10000, 0, 1, 3, 0).adjusted, 9000], [mk(10000, 0, 1, 3, 50).adjusted, 9500], [mk(10000, 0, 1, 3, 100).adjusted, 10000], [mk(0, 10000, 1, 2, 100).adjusted, -8500], [mk(0, 10000, 1, 2, 0).adjusted, -10000], [mk(0, 10000, 1, 3, 100).adjusted, -9000], [mk(0, 10000, 1, 3, 50).adjusted, -9500], [mk(100, 150, 1, 1, 50).npra, 0], [mk(100, 0, 10, 2, 100).npra, 50], [mk(100, 200, 10, 3, 0).npra, -200], [T.targetOf(1), 18424.23]];
+    const ok = rows.filter(([a, b]) => Math.abs(a - b) < 0.5).length;
+    const el = $('checks'); if (el) el.textContent = ok === rows.length ? 'Self-check: the rules in this machine reproduce all ' + rows.length + ' CMS worked examples and the PY1 target price of $18,424.23.' : 'Self-check failed: ' + (rows.length - ok) + ' of ' + rows.length + ' examples differ.';
+  })();
+
+  /* ---------- run control ---------- */
+  const run = { mode: 'run', t: 0, dur: 9.5, hold: 7, auto: !RM };
+  function restart() { run.mode = 'run'; run.t = 0; if (RM) { run.mode = 'hold'; D.c = cards(); } }
+  const ease = (x) => x * x * x * (x * (x * 6 - 15) + 10);
+  function stepRun(dt) {
+    if (RM) { D.c = cards(); return; }
+    if (run.mode === 'run') { run.t += dt; const p = clamp(run.t / run.dur, 0, 1); D.c = cards() * ease(p); if (p >= 1) { run.mode = 'hold'; run.t = 0; } }
+    else if (run.mode === 'hold') { D.c = cards(); run.t += dt; if (run.auto && run.t > run.hold) { run.mode = 'rewind'; run.t = 0; } }
+    else if (run.mode === 'rewind') { run.t += dt; const p = clamp(run.t / 1.4, 0, 1); D.c = cards() * (1 - ease(p)); if (p >= 1) { run.mode = 'rest'; run.t = 0; } }
+    else if (run.mode === 'rest') { D.c = 0; run.t += dt; if (run.t > .7) restart(); }
+  }
+  const poke = () => { if (run.mode === 'hold') run.t = Math.min(run.t, 0); if (run.mode === 'run') return; };
+
+  /* ---------- controls ---------- */
+  function bindRange(id, key, show) {
+    const el = $(id), out = $(id + 'Out'); if (!el) return;
+    const upd1 = () => { S[key] = +el.value; if (out) out.textContent = show(+el.value); settled(); poke(); if (key === 'episodes') { if (run.mode === 'hold') D.c = cards(); } };
+    el.addEventListener('input', upd1); el.value = S[key]; upd1();
+  }
+  bindRange('spend', 'spend', (v) => usd(v)); bindRange('cqs', 'cqs', (v) => v); bindRange('risk', 'risk', (v) => '×' + v.toFixed(2)); bindRange('episodes', 'episodes', (v) => f0(v));
+  document.querySelectorAll('input[name=track]').forEach((r) => { r.addEventListener('change', () => { if (r.checked) { S.track = +r.value; settled(); poke(); } }); });
+  function setAll(o) { Object.assign(S, o); ['spend', 'cqs', 'risk', 'episodes'].forEach((k) => { const el = $(k); el.value = S[k]; el.dispatchEvent(new Event('input')); }); document.querySelectorAll('input[name=track]').forEach((r) => { r.checked = +r.value === S.track; }); settled(); }
+  const PRESETS = { beat: { spend: 17500, cqs: 50, risk: 1, episodes: 300, track: 3 }, over: { spend: 19500, cqs: 50, risk: 1, episodes: 300, track: 3 }, cap: { spend: 17300, cqs: 50, risk: 1, episodes: 300, track: 2 }, t1: { spend: 19500, cqs: 50, risk: 1, episodes: 300, track: 1 }, q100: { spend: 17500, cqs: 100, risk: 1, episodes: 300, track: 3 } };
+  document.querySelectorAll('[data-preset]').forEach((b) => b.addEventListener('click', () => { setAll(PRESETS[b.dataset.preset]); document.querySelectorAll('[data-preset]').forEach((x) => x.setAttribute('aria-pressed', x === b)); }));
+  $('runBtn').addEventListener('click', () => { if (RM) { restart(); return; } run.mode = 'run'; run.t = 0; });
+  const autoBtn = $('autoBtn'); autoBtn.addEventListener('click', () => { run.auto = !run.auto; autoBtn.setAttribute('aria-pressed', run.auto); autoBtn.textContent = run.auto ? 'Auto-replay: on' : 'Auto-replay: off'; });
+  autoBtn.setAttribute('aria-pressed', run.auto); autoBtn.textContent = run.auto ? 'Auto-replay: on' : 'Auto-replay: off'; if (RM) autoBtn.hidden = true;
+
+  /* result readout: the settled answer, not the mid-run number */
+  function settled() {
+    const r = T.discrete(S), sg = r.npra > .5 ? '+' : r.npra < -.5 ? '−' : '';
+    $('npra').textContent = sg + '$' + f0(Math.abs(r.npra));
+    $('npra').className = r.npra > .5 ? 'pos' : r.npra < -.5 ? 'neg' : '';
+    const tgt = T.targetOf(S.risk), pct = (r.npra / r.book * 100).toFixed(1);
+    let s = 'At ' + f0(S.episodes) + ' episodes, a target of ' + usd(tgt) + ' and average spend of ' + usd(S.spend) + ', ';
+    s += r.npra > .5 ? 'CMS would pay the hospital about <b>' + usd(r.npra) + '</b> (' + pct + '% of the target book).' : r.npra < -.5 ? 'the hospital would owe CMS about <b>' + usd(-r.npra) + '</b> (' + pct + '% of the target book).' : 'the hospital would neither be paid nor owe anything.';
+    if (r.capHit) s += ' The stop-' + r.capHit + ' limit is holding the result back: the quality-adjusted amount was ' + usd(r.adjusted) + '.';
+    else if (S.track === 1 && r.amount < 0) s += ' Track 1 has no downside, so the ' + usd(-r.amount) + ' overspend is not repaid.';
+    $('sentence').innerHTML = s;
+  }
+  settled();
+
+  /* ---------- camera ---------- */
+  const mobile = () => frameEl.clientWidth < 700;
+  const ZONES = { 1: [16, 16, 284, 1014], 2: [312, 16, 432, 906], 3: [756, 16, 340, 906], 4: [1108, 16, 452, 906], 5: [1572, 16, 212, 906] };
+  const VIEWS = [{ s: 1, r: [16, 40, 300, 480] }, { s: 1, r: [16, 500, 300, 540] }, { s: 2, r: [312, 40, 432, 480] }, { s: 2, r: [312, 500, 432, 440] }, { s: 3, r: [756, 40, 340, 450] }, { s: 3, r: [756, 480, 340, 460] }, { s: 4, r: [1108, 60, 452, 440] }, { s: 4, r: [1108, 480, 452, 460] }, { s: 5, r: [1572, 220, 212, 540] }];
+  let cam = [0, 0, 1800, 1040], goal = cam.slice(), view = { stage: 0, idx: 0 };
+  function fit(r) { const fw = frameEl.clientWidth, fh = frameEl.clientHeight, asp = fw / fh; let w = r[2], h = r[3]; if (w / h > asp) h = w / asp; else w = h * asp; let x = r[0] + r[2] / 2 - w / 2, y = r[1] + r[3] / 2 - h / 2; x = w >= 1800 ? (1800 - w) / 2 : clamp(x, 0, 1800 - w); y = h >= 1040 ? (1040 - h) / 2 : clamp(y, 0, 1040 - h); return [x, y, w, h]; }
+  function show(stage, idx) {
+    view.stage = stage; view.idx = idx || 0;
+    const r = stage === 0 ? [0, 0, 1800, 1040] : mobile() ? (VIEWS.filter((v) => v.s === stage)[idx || 0] || VIEWS.find((v) => v.s === stage)).r : ZONES[stage];
+    goal = fit(r); if (RM) cam = goal.slice();
+    document.querySelectorAll('[data-stage]').forEach((b) => b.setAttribute('aria-pressed', +b.dataset.stage === stage));
+    const st = $('stepNote'); if (st) st.textContent = stage ? 'Stage ' + stage + ' of 5' + (mobile() ? ', view ' + ((idx || 0) + 1) + ' of ' + VIEWS.filter((v) => v.s === stage).length : '') : 'Whole machine';
+  }
+  document.querySelectorAll('[data-stage]').forEach((b) => b.addEventListener('click', () => show(+b.dataset.stage, 0)));
+  function step(d) {
+    if (!mobile()) { show(clamp((view.stage || 0) + d, 0, 5), 0); return; }
+    let i = VIEWS.findIndex((v) => v.s === view.stage) + (view.idx || 0); if (view.stage === 0) i = -1; i = clamp(i + d, 0, VIEWS.length - 1);
+    const v = VIEWS[i], first = VIEWS.findIndex((x) => x.s === v.s); show(v.s, i - first);
+  }
+  $('prevBtn').addEventListener('click', () => step(-1)); $('nextBtn').addEventListener('click', () => step(1));
+  let touchX = null; frameEl.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+  frameEl.addEventListener('touchend', (e) => { if (touchX == null) return; const dx = e.changedTouches[0].clientX - touchX; if (Math.abs(dx) > 60 && view.stage) step(dx < 0 ? 1 : -1); touchX = null; }, { passive: true });
+  addEventListener('resize', () => show(view.stage, view.idx));
+
+  /* ---------- naming of parts ---------- */
+  const halo = E('rect', { rx: 10, fill: 'rgba(131,102,234,.10)', stroke: C.purS, 'stroke-width': 2.5, 'stroke-dasharray': '10 7', visibility: 'hidden', 'pointer-events': 'none', class: 'halo' }, L.halo);
+  let hov = null, pin = null;
+  const tip = $('tip'), infoName = $('infoName'), infoStage = $('infoStage'), infoText = $('infoText'), info = $('info');
+  function activate(id, fromList) {
+    const p = PARTS.find((x) => x.id === id); if (!p) return;
+    halo.setAttribute('x', p.box[0] - 6); halo.setAttribute('y', p.box[1] - 6); halo.setAttribute('width', p.box[2] + 12); halo.setAttribute('height', p.box[3] + 12); halo.setAttribute('visibility', 'visible');
+    infoName.textContent = p.name; infoStage.textContent = 'Stage ' + p.stage; infoText.innerHTML = p.text(); info.dataset.on = '1'; hov = p;
+    if (tip) { tip.hidden = false; const left = p.box[0] + p.box[2] / 2 > 900; tip.style.left = left ? '14px' : 'auto'; tip.style.right = left ? 'auto' : '14px'; tip.innerHTML = '<span class="s">Stage ' + p.stage + '</span><b class="n">' + p.name + '</b><p>' + p.text() + '</p>'; }
+    document.querySelectorAll('.plist button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.part === id));
+    if (fromList) { show(p.stage, 0); if (mobile()) { const vs = VIEWS.filter((v) => v.s === p.stage); let k = 0; vs.forEach((v, i) => { const cy = p.box[1] + p.box[3] / 2; if (cy >= v.r[1] && cy <= v.r[1] + v.r[3]) k = i; }); show(p.stage, k); } info.scrollIntoView({ block: 'nearest', behavior: RM ? 'auto' : 'smooth' }); }
+  }
+  function clear() { if (pin) return; halo.setAttribute('visibility', 'hidden'); hov = null; if (tip) tip.hidden = true; info.dataset.on = '0'; infoName.textContent = 'Hover, tap or tab to any part'; infoStage.textContent = ''; infoText.innerHTML = 'The machine has ' + PARTS.length + ' named parts. Each one says what it is and what it does in the TEAM reconciliation, with the live value it is carrying.'; document.querySelectorAll('.plist button').forEach((b) => b.setAttribute('aria-pressed', 'false')); }
+  PARTS.slice().sort((a, b) => b.box[2] * b.box[3] - a.box[2] * a.box[3]).forEach((p) => {
+    const r = E('rect', { x: p.box[0], y: p.box[1], width: p.box[2], height: p.box[3], fill: 'transparent', tabindex: 0, role: 'button', 'aria-label': p.name + ', stage ' + p.stage, class: 'hit', 'data-id': p.id }, L.hit);
+    r.addEventListener('pointerenter', (e) => { if (e.pointerType !== 'touch' && !pin) activate(p.id); });
+    r.addEventListener('pointerleave', (e) => { if (e.pointerType !== 'touch' && !pin) clear(); });
+    r.addEventListener('focus', () => { if (!pin) activate(p.id); }); r.addEventListener('blur', () => { if (!pin) clear(); });
+    r.addEventListener('click', () => { if (pin === p.id) { pin = null; clear(); } else { pin = null; activate(p.id); pin = p.id; } });
+  });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') { pin = null; clear(); } });
+  // parts list
+  const plist = $('parts'); [1, 2, 3, 4, 5].forEach((s) => {
+    const ul = document.createElement('div'); ul.className = 'plist'; const h = document.createElement('h4'); h.textContent = ['', 'Intake', 'Target', 'Difference', 'Rules', 'Result'][s]; ul.appendChild(h);
+    PARTS.filter((p) => p.stage === s).forEach((p) => { const b = document.createElement('button'); b.type = 'button'; b.dataset.part = p.id; b.textContent = p.name; b.addEventListener('click', () => { pin = null; activate(p.id, true); pin = p.id; }); ul.appendChild(b); });
+    plist.appendChild(ul);
+  });
+  const pc = $('partCount'); if (pc) pc.textContent = PARTS.length;
+  clear();
+
+  /* ---------- the loop ---------- */
+  function frame(dt) {
+    const k = RM ? 1 : 1 - Math.exp(-dt * 6);
+    ['spend', 'risk', 'cqs'].forEach((p) => { D[p] += (S[p] - D[p]) * k; });
+    const tr = T.TRACKS[S.track], goal2 = { gain: tr.gain, loss: tr.loss || 0, negAdj: tr.negAdj, floor: S.track === 1 ? 1 : 0 };
+    for (const p in goal2) D[p] += (goal2[p] - D[p]) * k;
+    stepRun(dt);
+    K.N = S.episodes; K.cardsTotal = S.episodes / MC.CARD; K.c = D.c; K.n = D.c * MC.CARD; K.M = K.n * MC.MDEG; K.risk = D.risk; K.T = T.targetOf(D.risk);
+    K.res = T.compute({ target: K.T, spend: D.spend, n: K.n, cqs: D.cqs, gain: D.gain, loss: D.loss, negAdj: D.negAdj, floor: D.floor });
+    upd.forEach((f) => f(dt));
+    const kc = RM ? 1 : 1 - Math.exp(-dt * 4.5); for (let i = 0; i < 4; i++) cam[i] += (goal[i] - cam[i]) * kc;
+    svg.setAttribute('viewBox', cam.map((v) => v.toFixed(1)).join(' '));
+  }
+  window.__frame = frame;
+  let last = performance.now(), acc = 0, shown = 0;
+  function loop(now) {
+    const dt = Math.min(.05, (now - last) / 1000); last = now; frame(dt);
+    acc += dt; if (acc > .25) { acc = 0; if (hov) { infoText.innerHTML = hov.text(); if (tip && !tip.hidden) tip.querySelector('p').innerHTML = hov.text(); } }
+    requestAnimationFrame(loop);
+  }
+  const STILL = /[?&]still/.test(location.search); if (STILL) { document.documentElement.classList.add('still'); }
+  show(mobile() ? 1 : 0, 0);
+  restart(); frame(0.016);
+  if (RM) frame(0.016);
+  if ('IntersectionObserver' in window && !RM && !STILL) { /* complete at rest: the finished machine shows first; the run starts when it scrolls into view */
+    run.mode = 'hold'; run.t = -999; D.c = cards(); const io = new IntersectionObserver((en) => { if (en[0].isIntersecting) { io.disconnect(); run.mode = 'rewind'; run.t = 0; } }, { threshold: .25 }); io.observe(frameEl);
+  }
+  if (STILL) { const m = location.search.match(/still=([0-9.]+)/); run.mode = 'still'; D.c = cards() * (m ? parseFloat(m[1]) : 1); }
+  requestAnimationFrame(loop);
+  window.__ui = { run, show, activate, S, D, setAll };
+})();
+
+</script>
+<script data-goatcounter="https://jab.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

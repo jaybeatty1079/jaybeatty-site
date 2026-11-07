@@ -314,15 +314,15 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
 .js .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
 </style>
-</head>
+<style>.theme-tg{width:auto;padding:0 12px 0 10px;grid-auto-flow:column;gap:8px}.tlab::after{content:"Light mode";font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;line-height:1}:root[data-theme="light"] .tlab::after{content:"Dark mode"}</style></head>
 <body>
 <header><div class="wrap"><nav>
   <a class="brand" href="./">Jay <b>Beatty</b></a>
   <div class="links" id="navlinks">
-    <a href="./#work">What I do</a><a href="./#how">How it works</a><a href="./#programs">Programs</a><a href="./#record">Track record</a><a href="./#career">Career</a><a href="./#about">About</a><a href="./#contact">Contact</a>
+    <a href="what-i-do.html">What I do</a><a href="programs.html">Programs</a><a href="tools.html">AI Tools</a><a href="track-record.html">Track record</a><a href="career.html">Career</a><a href="about.html">About</a><a href="contact.html">Contact</a>
   </div>
   <button class="menu-tg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="l1" d="M4 7h16"/><path class="l2" d="M4 12h16"/><path class="l3" d="M4 17h16"/></svg></button>
-  <button class="theme-tg" type="button" aria-label="Switch to light mode" title="Light or dark mode"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6Z"/></svg></button>
+  <button class="theme-tg" type="button" aria-label="Switch to light mode" title="Light or dark mode"><span class="tlab" aria-hidden="true"></span><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6Z"/></svg></button>
 </nav></div></header>
 <main>
 <div class="wrap">
@@ -431,5 +431,6 @@ b.addEventListener('click',function(){set(!h.classList.contains('open'))});
 l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open'))set(false,true)});
 document.addEventListener('click',function(e){if(!h.contains(e.target))set(false)})})();</script>
+<script data-goatcounter="https://jab.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

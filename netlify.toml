@@ -1,5 +1,5 @@
-# Netlify builds jaybeatty.com from this repo on every push to main.
-# It assembles the live site into dist/: the site folder, the TEAM calculator pages, the Biologics Atlas, the Bonus Lot and the Peptide Ride.
+# Netlify builds jaybeatty.com from this repo on every push to main (15 credits a push on the Free plan: batch changes).
+# dist/ is the site folder plus the headers and redirects. The four tools live on GitHub Pages (https://jaybeatty1079.github.io/tools/) and redirect there.
 [build]
-  command = "rm -rf dist && mkdir -p dist/team-calculator/docs && cp -R site/. dist/ && cp team-calculator/index.html team-calculator/map.html dist/team-calculator/ && cp team-calculator/docs/decisions.html dist/team-calculator/docs/ && mkdir -p dist/biologics-atlas && cp biologics-atlas/index.html dist/biologics-atlas/ && (cp biologics-atlas/skeleton.glb dist/biologics-atlas/ 2>/dev/null || true) && mkdir -p dist/bonus-lot && cp bonus-lot/index.html bonus-lot/model.js bonus-lot/sectors.js bonus-lot/gsap.min.js dist/bonus-lot/ && cp -R bonus-lot/models dist/bonus-lot/ && mkdir -p dist/peptide-map && cp peptide-map/index.html peptide-map/map.html peptide-map/glossary.html dist/peptide-map/ && cp -R peptide-map/models dist/peptide-map/ && cp netlify/_headers netlify/_redirects dist/"
+  command = "rm -rf dist && cp -R site/. dist/ && cp netlify/_headers netlify/_redirects dist/"
   publish = "dist"
