@@ -14,9 +14,12 @@ window.DESK = {
     src: 'Mercer, 2026 National Survey of Employer-Sponsored Health Plans, preliminary findings',
     url: 'https://www.mercer.com/en-us/insights/us-health-news/survey-health-benefit-costs-expected-to-jump-in-2027/'
   },
+  // the case, front loaded: shown on the opening of both doors. KCP is never named bare.
+  proof: 'Three independent firms have put written opinions in support: outside ERISA counsel, CBIZ, and KCP (CPAs and former IRS special agents and auditors).',
   doors: {
     owner: {
       sub: 'A Section 125 Wellness Plan, explained on the desk where the renewal letter landed. Pick up anything. Nothing is signed on these numbers.',
+      first: 'letter', start: 'Open the letter →',
       open: [['Health costs went up again.', 'Payroll tax can come down.'], ['Start any month.', 'Nothing changes on your health plan.']],
       live: (emp, lift) => `On a ${emp}-person company: ${lift} a year to the bottom line, before you change a number.`,
       letterTurn: 'This letter is about the plan you have. Keep it. The desk is about a different line on payroll: the 7.65% that leaves every pay period, on every W-2 dollar, before anyone is paid.',
@@ -27,6 +30,7 @@ window.DESK = {
     },
     cpa: {
       sub: 'A Section 125 Wellness Plan, laid out on your client\'s desk. Something to bring to the owner that costs them nothing to look at.',
+      first: 'binder', start: 'See the case →',
       open: [['Your clients just opened their renewals.', 'They will ask you what to do.'], ['Here is one answer', 'that costs them nothing to look at.']],
       live: (emp, lift) => `A ${emp}-person client: ${lift} a year to their bottom line, before you change a number.`,
       letterTurn: 'The letter is about the plan the client has, and it stays. The desk is about a different line on their payroll: the 7.65% employer FICA that leaves every pay period, before anyone is paid.',
@@ -37,7 +41,7 @@ window.DESK = {
         h: 'What this is for a CPA',
         p: [
           'Every renewal season the same question lands on your desk: what do we do about this? Most answers cost the client something. This one is paid for by payroll tax the client already sends out, and it sits beside the health plan they have.',
-          'You see the documents first. Outside ERISA counsel\'s opinion, the CBIZ work and the KCP engagement are in the binder on this desk, and the plan is run to those documents.',
+          'You see the case first. The three written opinions, the CBIZ actuarial work and SOC 1, the KCP engagement and the ERISA-written plan documents are in the binder on this desk, and the plan is run to those documents.',
           'CPAs who bring it to a client sign a written referral agreement. Ask and I\'ll send it.'
         ]
       }
@@ -63,16 +67,16 @@ window.DESK = {
     h: 'Start any month',
     p: 'Nothing waits for open enrollment and nothing changes on major medical. Thirty days to set up and enroll, live on the first of the month you pick. Tap the month.'
   },
-  // the binder: what separates this plan from the ones a CPA has already seen. Facts as Jay stated them 2026-11-07; no dollar figure on the E&O.
+  // the binder: the case, front loaded. Three independent firms in writing, then the documents and the care. Facts as Jay stated them 2026-11-07. No dollar figure on the E&O. Nothing on this page says the IRS approves anything, and nothing claims it does.
   binder: {
-    h: 'Your CPA has seen one of these.',
-    p: 'Probably. Section 125 wellness plans have been pitched for years, and some deserved the skepticism. These are the five tabs to check before anyone signs.',
+    h: 'Three independent firms. Three written opinions in support.',
+    p: 'Section 125 wellness plans have been pitched for years, and a CPA is right to be skeptical. This is the case, in the order a CPA will ask for it.',
     tabs: [
-      ['Counsel, in writing.', 'Outside ERISA counsel has reviewed the program against the legal requirements that apply to it and put the opinion in writing. Your CPA and counsel can read it before anything is signed.'],
-      ['CBIZ: the actuarial work and a SOC 1.', 'CBIZ did the actuarial underwriting on the plan\'s tiers, reviewed the plan document against the Section 125 requirements, and completed a SOC 1 report on the operation. A SOC 1 Type 2 is under way.'],
-      ['KCP, engaged by the company, not by the plan.', 'KCP (CPAs and former IRS special agents and auditors) holds that the tax treatment is supported by substantial authority under current law, and signs its engagement directly with the company: a tax indemnity policy, or an errors-and-omissions policy written on this plan. If the IRS asks, KCP answers.'],
-      ['Care in person, not only on an app.', 'Most plans of this kind are virtual only. This one adds in-person discounts and benefits beside the $0 virtual care, so employees use it.'],
-      ['Nobody says IRS-approved, because nobody can.', 'Opinion letters are not binding on the IRS. Each one is conditioned on the plan being run as written, which is what the administrator and the payroll analysis are for.']
+      ['Outside ERISA counsel: a written opinion.', 'An ERISA law firm has reviewed the program against the legal requirements that apply to it and put its opinion in writing.'],
+      ['CBIZ: the actuarial work, the plan review and a SOC 1.', 'CBIZ did the actuarial underwriting on the plan\'s tiers, reviewed the plan document against the Section 125 requirements in writing, and completed a SOC 1 report on how the plan is run. A SOC 1 Type 2 is under way.'],
+      ['KCP engages with the company directly, as part of the program.', 'KCP (CPAs and former IRS special agents and auditors) holds that the tax treatment is supported by substantial authority under current law. Its engagement is signed directly with the company, with a tax indemnity policy or an errors-and-omissions policy written on this plan. If the IRS asks, KCP answers.'],
+      ['Plan and compliance documents written by ERISA counsel.', 'The plan document and the compliance documents are written and approved by outside ERISA counsel, and the plan is run to them. Your CPA and counsel can read all of it before anything is signed.'],
+      ['Benefits include in-person medical care, not just virtual care.', 'Most plans of this kind are virtual only. This one adds in-person benefits and discounts beside the $0 virtual care, so employees have a reason to use it.']
     ]
   },
   // the phone: every question Dealer City answers, reworded for a company. Each is a short stepped read.
@@ -88,13 +92,13 @@ window.DESK = {
       ['By payroll tax that was already leaving.', 'Every pay period, 7.65% of each W-2 dollar goes out as employer FICA. The pre-tax election lowers the wages that tax is figured on.'],
       ['Three shares of the same money.', 'The company keeps {per} a month per enrolled employee after the fee. The employee keeps more take-home. The administrator takes the fee. Nothing new comes out of anyone\'s pocket.']]},
     { q: 'I\'ve heard this pitched before. What\'s different?', g: 'hard', binder: true, beats: [
-      ['So has your CPA.', 'The binder on this desk has the five tabs to check: counsel\'s written opinion, CBIZ\'s actuarial work and SOC 1, KCP\'s direct engagement with indemnity, in-person care, and the line nobody can say. Open it.']]},
+      ['So has your CPA.', 'The binder on this desk has the case: three independent firms with written opinions in support, CBIZ\'s actuarial work and SOC 1, KCP engaging with the company directly, plan and compliance documents written by ERISA counsel, and in-person care. Open it.']]},
     { q: 'What does it cost the company?', g: 'hard', beats: [
       ['Nothing out of pocket.', 'A portion is withheld from the employee\'s tax saving and a fee comes out of the company\'s tax saving. The program is covered by taxes already being paid.'],
       ['The catch is an invoice.', 'An invoice for the plan contribution plus the $40 fee, per enrolled employee a month. All of it is money that was already leaving as payroll tax. Designed to be cost-neutral.']]},
-    { q: 'Is it compliant? Who keeps it that way?', g: 'hard', beats: [
-      ['Three independent firms keep it in line.', 'Outside ERISA counsel, CBIZ and KCP each review the program and its documents in writing. The administrator runs the plan to those documents, and the payroll analysis checks every number before anything is signed.'],
-      ['Nobody says IRS-approved, because nobody can.', 'Opinion letters are not binding on the IRS. Each one is conditioned on the plan being run as written. Your CPA and counsel can review the documents first.']]},
+    { q: 'Is it compliant? Who keeps it that way?', g: 'hard', binder: true, beats: [
+      ['Three independent firms, three written opinions.', 'Outside ERISA counsel, CBIZ and KCP each put their opinion in writing. The plan and compliance documents are written and approved by ERISA counsel, and the payroll analysis checks every number before anything is signed.'],
+      ['Read it before you decide.', 'Your CPA and counsel can read the opinions, the plan documents and the compliance documents before anything is signed. If it is not a fit, saying no is easy.']]},
     { q: 'We\'re self-funded. Where does it fit?', g: 'hard', beats: [
       ['In front of your plan.', 'Make it the first stop for everyday care. Those visits and prescriptions never reach the self-funded or level-funded plan, so its cost drops.'],
       ['Two ways it pays.', 'The payroll-tax saving on every enrolled employee, plus the claims that never hit the company plan. The second number comes from your TPA\'s 12-month claims summary, not from this page.']]},

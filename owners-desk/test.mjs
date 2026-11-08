@@ -16,9 +16,12 @@ assert.equal(D.binder.tabs.length, 5, 'five binder tabs');
 assert.ok(D.questions.length >= 8 && D.questions.every(q => q.q && D.groups[q.g] && q.beats.length >= 1 && q.beats.every(b => b.length === 2)), 'questions');
 assert.ok(D.stat.line && D.stat.src && /^https:\/\/www\.mercer\.com\//.test(D.stat.url), 'the letter cites its source');
 
-// banned claims: "IRS-approved" only in the line that says nobody can say it; "guarantee" only in the disclaimer; no E&O dollar figure; no fee number
+// banned claims: nothing about IRS approval either way (Jay, 2026-11-07: the IRS approves nothing, so the line goes); "guarantee" only in the disclaimer; no E&O dollar figure; no fee number
 const text = JSON.stringify(D);
-for (const m of text.matchAll(/[^.]{0,40}IRS[- ]approved/gi)) assert.match(m[0], /Nobody says/, 'IRS-approved only as the line nobody can say: ' + m[0]);
+assert.ok(!/IRS[- ]approved|not binding on the IRS/i.test(text), 'no IRS-approval line in either direction');
+assert.ok(/Three independent firms/.test(D.proof) && /ERISA counsel/.test(D.proof) && /CBIZ/.test(D.proof) && /KCP \(CPAs and former IRS special agents and auditors\)/.test(D.proof), 'the opening proof names all three firms, KCP in its long form');
+assert.ok(D.doors.cpa.first === 'binder' && D.doors.owner.first === 'letter' && D.doors.cpa.start && D.doors.owner.start, 'the CPA door opens on the case, the owner door on the letter');
+assert.ok(D.binder.tabs.some(t => /^Benefits include in-person medical care, not just virtual care\.$/.test(t[0])), 'the in-person heading is Jay\'s wording');
 const noDisc = JSON.stringify({ ...D, disclaimer: '' });
 assert.ok(!/guarantee|no net cost|IRS approved program/i.test(noDisc), 'no guarantee outside the disclaimer');
 assert.ok(!/\$\s?\d+\s?(M|million)/i.test(text), 'no E&O or other dollar-million figure');

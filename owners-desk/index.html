@@ -44,8 +44,9 @@ header{padding:28px 0 10px}h1{font:600 clamp(30px,5vw,46px)/1.05 var(--display);
 .obj.binder{left:32%;top:58%;width:20%;min-width:150px;height:30%;transform:rotate(-2deg)}.obj.binder .card{background:linear-gradient(180deg,#2a2340,#1b1630);color:#ece9f4;border-left:10px solid var(--purple)}.obj.binder .k{color:var(--purple2)}
 .obj.phone{left:86%;top:60%;width:11%;min-width:84px;height:30%;transform:rotate(8deg)}.obj.phone .card{background:#0b0a10;color:#ece9f4;border-radius:14px;border:2px solid #2a2740;padding:10px 8px;justify-content:center;align-items:center;text-align:center}
 .cal{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;margin-top:4px}.cal i{display:block;height:7px;border-radius:2px;background:#d8d0e6}.cal i.on{background:var(--green)}
-#open{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(180deg,rgba(7,6,12,.55),rgba(7,6,12,.82))}
+#open{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(180deg,rgba(7,6,12,.9),rgba(7,6,12,.95))}
 #open .box{max-width:720px}.ln1{font:600 clamp(24px,4vw,40px)/1.1 var(--display);margin:0 0 10px}.ln1 span{color:var(--cash)}.ln1 em{font-style:normal;color:var(--purple2)}
+#proof{margin:14px 0 0;max-width:60ch;border-left:3px solid var(--purple);padding-left:12px}
 #live{color:var(--mute);margin:14px 0 18px}
 @media(max-width:760px){#desk{aspect-ratio:auto;min-height:0;max-height:none;padding:118px 12px 16px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .obj{position:static;width:auto!important;min-width:0!important;height:auto;transform:none!important;min-height:120px}.obj.pnl,.obj.letter{grid-column:1/-1}.obj.phone .card{min-height:120px}
@@ -94,9 +95,9 @@ footer{padding:30px 0 40px}footer p{font-size:12px;color:var(--mute);line-height
   <button class="obj stub" data-o="stub" type="button"><div class="card"><span class="k">PAY STUB</span><span class="t">One employee, before and after</span><span class="ln"></span><span class="ln s"></span><span class="fine" style="color:#6b6480;margin-top:auto">2. Who's on payroll</span></div></button>
   <button class="obj pnl" data-o="pnl" type="button"><div class="card"><span class="k">PROFIT &amp; LOSS</span><span class="t">The plan, slid onto it</span><span class="ln"></span><span class="ln s"></span><span class="ln"></span><span class="num" id="pnlPeek">+$0 / yr</span><span class="fine" style="color:#6b6480;margin-top:auto">3. Show me the money</span></div></button>
   <button class="obj calendar" data-o="calendar" type="button"><div class="card"><span class="k">CALENDAR</span><span class="t">Start any month</span><div class="cal" id="calPeek"></div><span class="fine" style="color:#6b6480;margin-top:auto">No waiting for open enrollment</span></div></button>
-  <button class="obj binder" data-o="binder" type="button"><div class="card"><span class="k">THE BINDER</span><span class="t">Your CPA has seen one of these.</span><span class="fine" style="color:#b9b1cf;margin-top:auto">Five tabs to check</span></div></button>
+  <button class="obj binder" data-o="binder" type="button"><div class="card"><span class="k">THE BINDER</span><span class="t">Three independent firms, in writing.</span><span class="fine" style="color:#b9b1cf;margin-top:auto">The case, in five tabs</span></div></button>
   <button class="obj phone" data-o="phone" type="button"><div class="card"><span class="k">PHONE</span><span class="t" style="font-size:14px">Any question</span><span class="fine" style="color:#8f8aa3">Tap</span></div></button>
-  <div id="open"><div class="box"><div id="openLines"></div><p id="live"></p><button class="btn g" id="startBtn" type="button">Open the letter →</button> <button class="btn" id="skipBtn" type="button">Just show me the desk</button></div></div>
+  <div id="open"><div class="box"><div id="openLines"></div><p id="proof"></p><p id="live"></p><button class="btn g" id="startBtn" type="button">Open the letter →</button> <button class="btn" id="skipBtn" type="button">Just show me the desk</button></div></div>
 </section>
 
 <section id="paper" aria-live="polite">
@@ -161,7 +162,7 @@ footer{padding:30px 0 40px}footer p{font-size:12px;color:var(--mute);line-height
   <div class="pg" id="pg-binder">
     <h2 id="binderH"></h2><p class="lead" id="binderP"></p>
     <div class="tabs" id="tabs"></div>
-    <div class="nav"><button class="btn" data-go="pnl" type="button">← The P&amp;L</button><button class="btn" data-go="phone" type="button">Any other question →</button><button class="btn" data-go="desk" type="button">Back to the desk</button></div>
+    <div class="nav"><button class="btn" data-go="pnl" type="button">← The P&amp;L</button><button class="btn" data-go="phone" type="button">Any other question →</button><button class="btn p" id="binderNext" data-go="letter" type="button" style="display:none">Next: the renewal letter →</button><button class="btn" data-go="desk" type="button">Back to the desk</button></div>
   </div>
 
   <div class="pg" id="pg-cpa">
@@ -203,6 +204,7 @@ function toHash(){const o={};for(const k of HK)o[k]=S[k];o.net=S.net;o.start=S.s
 function fromHash(){try{const h=location.hash;if(!h.startsWith('#d='))return false;const raw=JSON.parse(decodeURIComponent(escape(atob(h.slice(3))))),c=BM.sanitize(raw,SEC);for(const k of HK)S[k]=c[k];
   S.net=Number.isFinite(+raw.net)?Math.min(1e10,Math.max(0,Math.round(+raw.net))):0;S.start=Number.isInteger(raw.start)&&raw.start>=0&&raw.start<12?raw.start:S.start;return true}catch(e){return false}}
 const model=()=>BM.model(S);
+const link=()=>{history.replaceState(null,'',location.pathname+location.search+toHash());return location.href}; // the numbers go into the address bar only when someone copies or prints, so a refresh still opens on the opening
 
 /* ---- static copy ---- */
 $('#sub').textContent=C.sub;
@@ -212,7 +214,7 @@ $('#stubH').textContent=D.stub.h;$('#stubNote').textContent=D.stub.note;$('#pnlH
 $('#rLiftK').textContent=D.pnl.lines.lift;$('#rFeeK').textContent=D.pnl.lines.fee;$('#rFeeNote').textContent='('+D.pnl.lines.feeNote+')';$('#rClaimsK').textContent=D.pnl.lines.claims;$('#rNetK').textContent=D.pnl.lines.net;
 $('#calH').textContent=D.calendar.h;$('#calP').textContent=D.calendar.p;$('#binderH').textContent=D.binder.h;$('#binderP').textContent=D.binder.p;
 $('#cta').textContent=C.cta[0];$('#cta').href='mailto:jay@jaybeatty.com?subject='+encodeURIComponent(C.cta[1]);$('#ctaFine').textContent=C.ctaFine;$('#printBtn').textContent=C.print[0];
-$('#disclaimer').textContent=D.disclaimer;
+$('#disclaimer').textContent=D.disclaimer;$('#proof').textContent=D.proof;$('#startBtn').textContent=C.start;if(C.first==='binder')$('#binderNext').style.display='';
 if(C.extra){$('#cpaChip').style.display='';$('#cpaH').textContent=C.extra.h;$('#cpaBody').innerHTML=C.extra.p.map(p=>`<p>${esc(p)}</p>`).join('')}
 $('#tabs').innerHTML=D.binder.tabs.map(([h,b],i)=>`<div class="tab${i===0?' on':''}"><button type="button" aria-expanded="${i===0}"><i></i><b>${esc(h)}</b></button><div class="b">${esc(b)}</div></div>`).join('')+`<p class="fine" style="margin:8px 0 0">Ask the others for theirs.</p>`;
 $$('#tabs .tab>button').forEach(b=>b.onclick=()=>{const t=b.parentElement,on=!t.classList.contains('on');$$('#tabs .tab').forEach(x=>{x.classList.remove('on');x.querySelector('button').setAttribute('aria-expanded','false')});if(on){t.classList.add('on');b.setAttribute('aria-expanded','true')}});
@@ -243,7 +245,7 @@ function update(){const m=model(),ins=S.hp==='insured';
   $('#rLift').textContent='+'+fmt(m.g.lift);$('#rClaimsRow').style.display=ins?'none':'flex';$('#rClaims').textContent='+'+fmt(m.claims);
   $('#rNetRow').style.display=S.net>0?'flex':'none';$('#rNet').textContent=fmt(S.net)+' → '+fmt(S.net+m.g.lift)+(S.net>0?` (+${(100*m.g.lift/S.net).toFixed(1)}%)`:'');
   $('#rMath').textContent=`${m.g.enrolled.toLocaleString()} enrolled × ${fmt2(m.per)} a month (7.65% FICA on the $${S.plan.toLocaleString()} contribution, less the $${m.admin} fee) × 12.`+(ins?'':` Claims line: ${m.g.enrolled.toLocaleString()} × ${fmt(S.cost)} × ${S.defl}% of care handled at $0 first; the real figure comes from your TPA's 12-month claims summary.`);
-  renderMonths(m);history.replaceState(null,'',location.pathname+location.search+toHash())}
+  renderMonths(m)}
 function renderMonths(m){const per=m.g.lift/12;$('#months').innerHTML=MONTHS.map((n,i)=>{const k=(i-S.start+12)%12,ren=i===now.getMonth();return `<button type="button" data-i="${i}" style="order:${k}" class="${i===S.start?'on':''}${ren?' ren':''}"><b>${n}</b>${ren?'<small>renewal landed</small>':''}<span>+${fmt(per*(k+1))}</span></button>`}).join(''); // tiles run from the start month, so the row reads as the first twelve
   $$('#months button').forEach(b=>b.onclick=()=>{S.start=+b.dataset.i;update()});
   $('#calLine').textContent=`Start on the first of ${MONTHS[S.start]}: ${fmt(per)} a month, ${fmt(m.g.lift)} by the end of the first twelve. The tiles count up from the month you pick.`;
@@ -261,7 +263,7 @@ function go(id){if(id==='desk'){$('#paper').classList.remove('on');$$('.obj').fo
 $$('.obj').forEach(o=>o.onclick=()=>go(o.dataset.o));
 $$('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
 function openDesk(){gsap.to('#open',{opacity:0,duration:dur(.35),onComplete:()=>$('#open').style.display='none'})}
-$('#startBtn').onclick=()=>{openDesk();go('letter')};$('#skipBtn').onclick=openDesk;
+$('#startBtn').onclick=()=>{openDesk();go(C.first)};$('#skipBtn').onclick=openDesk;
 
 /* ---- the payoff: the plan slides onto the P&L, the lines fill ---- */
 $('#payoff').onclick=()=>{paid=true;const r=$('#result');r.style.display='block';
@@ -284,9 +286,9 @@ $('#printBtn').onclick=()=>{const m=model(),ins=S.hp==='insured';$('#onepage').i
   <table>${S.stores.map(st=>`<tr><td>${esc(st.brand)} · ${st.emp} employees</td><td>${Math.round(st.emp*S.qual/100)} enrolled</td></tr>`).join('')}
   <tr><td><b>${esc(D.pnl.lines.lift)}</b></td><td><b>+${fmt(m.g.lift)} / yr</b></td></tr><tr><td>${esc(D.pnl.lines.fee)} (${esc(D.pnl.lines.feeNote)})</td><td>included</td></tr>
   ${ins?'':`<tr><td>${esc(D.pnl.lines.claims)}</td><td>+${fmt(m.claims)} / yr</td></tr>`}${S.net>0?`<tr><td>${esc(D.pnl.lines.net)}</td><td>${fmt(S.net)} → ${fmt(S.net+m.g.lift)}</td></tr>`:''}</table>
-  <p>${esc($('#rMath').textContent)} Start on the first of ${MONTHS[S.start]}.</p><h3>Five tabs your CPA will ask for</h3><ol>${D.binder.tabs.map(([h,b])=>`<li><b>${esc(h)}</b> ${esc(b)}</li>`).join('')}</ol>
-  <p>Jay Beatty · jay@jaybeatty.com · 805.218.4663 · ${esc(location.href)}</p><p class="fine">${esc(D.disclaimer)}</p>`;window.print()};
-$('#copyBtn').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);$('#copyBtn').textContent='Link copied'}catch(e){prompt('Copy this link',location.href)}};
+  <p>${esc($('#rMath').textContent)} Start on the first of ${MONTHS[S.start]}.</p><h3>Three independent firms, in writing</h3><ol>${D.binder.tabs.map(([h,b])=>`<li><b>${esc(h)}</b> ${esc(b)}</li>`).join('')}</ol>
+  <p>Jay Beatty · jay@jaybeatty.com · 805.218.4663 · ${esc(link())}</p><p class="fine">${esc(D.disclaimer)}</p>`;window.print()};
+$('#copyBtn').onclick=async()=>{const u=link();try{await navigator.clipboard.writeText(u);$('#copyBtn').textContent='Link copied'}catch(e){prompt('Copy this link',u)}};
 
 /* ---- start ---- */
 const linked=fromHash();syncControls();renderLocs();update();
