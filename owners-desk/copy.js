@@ -74,7 +74,7 @@ window.DESK = {
     tabs: [
       ['Outside ERISA counsel: a written opinion.', 'An ERISA law firm has reviewed the program against the legal requirements that apply to it and put its opinion in writing.'],
       ['CBIZ: the actuarial work, the plan review and a SOC 1.', 'CBIZ did the actuarial underwriting on the plan\'s tiers, reviewed the plan document against the Section 125 requirements in writing, and completed a SOC 1 report on how the plan is run. A SOC 1 Type 2 is under way.'],
-      ['KCP engages with the company directly, as part of the program.', 'KCP (CPAs and former IRS special agents and auditors) holds that the tax treatment is supported by substantial authority under current law. Its engagement is signed directly with the company, with a tax indemnity policy or an errors-and-omissions policy written on this plan. If the IRS asks, KCP answers.'],
+      ['KCP engages with the company directly, as part of the program.', 'KCP (CPAs and former IRS special agents and auditors) holds that the tax treatment is supported by substantial authority under current law. Its engagement is signed directly with the company, and it can include a tax indemnity policy or an errors-and-omissions policy written on this plan. If the IRS asks, KCP answers.'],
       ['Plan and compliance documents written by ERISA counsel.', 'The plan document and the compliance documents are written and approved by outside ERISA counsel, and the plan is run to them. Your CPA and counsel can read all of it before anything is signed.'],
       ['Benefits include in-person medical care, not just virtual care.', 'Most plans of this kind are virtual only. This one adds in-person benefits and discounts beside the $0 virtual care, so employees have a reason to use it.']
     ]
