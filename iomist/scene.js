@@ -51,7 +51,7 @@ class Scene {
   markerPos() { const i = Math.min(4, Math.floor(this.u)), f = this.u - i, a = WP[i], b = WP[i + 1] || WP[i]; let by = b.y; if (i + 1 === 4) by = LANE[this.story.dist].y - 30 * LANE[this.story.dist].s; const e = ease(f); let x = lerp(a.x, b.x, e); if (this.gate === 'closed' && this.story.gateOn) x = Math.min(x, 2326); return { x, y: lerp(a.y, by, e), moving: Math.abs(this.u - this.target) > .01 && x < (this.gate === 'closed' ? 2325 : 1e9) }; }
   scan(x, y) { this.fx.push({ x, y, t0: this.t }); if (this.hooks.onScan && Math.abs(x - this.cam) < this.vw * .55) this.hooks.onScan(); }
   step(dt) {
-    this.t += dt; const d = this.target - this.u; if (Math.abs(d) < .002) this.u = this.target; else this.u += clamp(d * 1.5, -.9, .9) * dt + Math.sign(d) * .02 * dt;
+    this.t += dt; const d = this.target - this.u; if (Math.abs(d) < .002) this.u = this.target; else this.u += clamp(d * 1.2, -.5, .5) * dt + Math.sign(d) * .02 * dt;
     const mp = this.markerPos(), fx = this.gate === 'closed' && this.story.gateOn ? 2470 : mp.x, want = clamp(fx - this.vw * (this.u > 3.6 ? .45 : .5) + (this.u < 4.6 ? 0 : 60), 0, WORLD.W - this.vw);
     this.cam = lerp(this.cam, want, 1 - Math.exp(-dt * 3));
     this.fx = this.fx.filter(f => this.t - f.t0 < 1.4);

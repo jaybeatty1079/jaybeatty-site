@@ -1,5 +1,5 @@
 /* Iomist tool: every published fact the tool may show, with source and date read.
-   Source of truth: vault notes "Iomist fact base 2026-11-05" and "Iomist tool concept brief 2026-11-05".
+   Source of truth: the FDA, retailer, GS1 and Iomist documents listed in `sources`, read on the dates shown.
    Rules: no competitor names, no Iomist customer names, "Not published" instead of a guess,
    anything not in `sources` is an illustration or a viewer input. */
 const IOMIST_DATA = {
@@ -58,6 +58,7 @@ const IOMIST_DATA = {
     { id: 'paper',       label: 'Paper and memory' },
     { id: 'spreadsheet', label: 'Spreadsheets' },
     { id: 'erp',         label: 'An ERP or accounting system' },
+    { id: 'pallet',      label: 'A system that stops at the case or pallet' },
     { id: 'scanning',    label: 'Already scanning each clamshell' }
   ],
 
@@ -100,18 +101,18 @@ const IOMIST_DATA = {
   // What Iomist's own public site says about each question's topic. 'site' = stated on iomist.ag; 'ask' = not stated there.
   iomist: {
     q3: { s: 'site', t: 'The site says each package gets a serialized code tied to its lot.' },
-    q4: { s: 'site', t: 'The site says the app captures lot codes, harvest times and GPS locations. Iomist’s proposal adds that each scan is time- and GPS-stamped at the moment it happens.' },
+    q4: { s: 'site', t: 'The site says the app captures lot codes, harvest times and GPS locations. Iomist’s materials add that each scan is time- and GPS-stamped at the moment it happens.' },
     q5: { s: 'ask',  t: 'Cooling is not mentioned on the site.' },
     q6: { s: 'site', t: 'The site says it documents packing as well as harvesting.' },
-    q7: { s: 'deck', t: 'Iomist’s proposal says each case is built from scanned packs, each pallet is tied to its cases and each shipment to its pallets. The shipping fields themselves (recipient, lot code source, reference document) are not listed.' },
+    q7: { s: 'deck', t: 'Iomist’s materials say each case is built from scanned packs, each pallet is tied to its cases and each shipment to its pallets. The shipping fields themselves (recipient, lot code source, reference document) are not listed.' },
     q8: { s: 'ask',  t: 'A traceability plan or farm map is not mentioned on the site.' },
-    q9: { s: 'deck', t: 'Iomist’s proposal says a trace-back report is available on demand; the FDA’s 24-hour sortable spreadsheet is not mentioned.' },
+    q9: { s: 'deck', t: 'Iomist’s materials say a trace-back report is available on demand; the FDA’s 24-hour sortable spreadsheet is not mentioned.' },
     q10: { s: 'ask', t: 'Shipping notices (EDI 856) are not mentioned on the site.' },
-    q11: { s: 'ask', t: 'The site says its codes use GS1 and PTI standards, and Iomist’s proposal says its QR codes are built for 2D retail with a GS1 US partner; case and pallet label formats are not stated.' },
+    q11: { s: 'ask', t: 'The site says its codes use GS1 and PTI standards, and Iomist’s materials say its QR codes are built for 2D retail with a GS1 US partner; case and pallet label formats are not stated.' },
     q12: { s: 'ask', t: 'Mock recalls are not mentioned on the site.' },
     q13: { s: 'ask', t: 'Audits are outside what the site describes.' },
     q15: { s: 'ask', t: 'Buyer audits are outside what the site describes.' },
-    q14: { s: 'site', t: 'The site says it prints a serialized QR code on the package, and Iomist’s proposal calls it ready for 2D retail under GS1 Sunrise 2027.' }
+    q14: { s: 'site', t: 'The site says it prints a serialized QR code on the package, and Iomist’s materials call it ready for 2D retail under GS1 Sunrise 2027.' }
   },
 
   // Questions. kind: context (not scored) | fda | buyer | watch (shown, never scored)
@@ -153,7 +154,7 @@ IOMIST_DATA.short = {
    kind: data | label | ship | trace | audit | own | none   (none = "Not found" or a note, never scored)
    iomist: 'covers' (assumed: capture, label, shipping-notice data, trace) | 'records' (assumed: Iomist supplies the records an audit asks for)
            | 'own' (the grower's own: certification, membership, self-declaration) | 'none'
-   ALL 'covers' and 'records' marks are an ASSUMPTION to confirm with Iomist (Jay, 2026-11-05).
+   ALL 'covers' and 'records' marks are the author's working assumptions about what Iomist covers.
    conf: High = the buyer's own document; Medium = older or reported by a body quoting it; Low = vendor or snippet. Read 2026-11-04 to 2026-11-05. */
 Object.assign(IOMIST_DATA.sources, {
   krogerPTI:   { label: 'Kroger: PTI case-label letter (Dec 20, 2022)', url: 'https://thekrogerco.com///wp-content/uploads/2024/07/PTI-industry-expectation__Jason-Fowee.pdf' },
@@ -280,7 +281,7 @@ IOMIST_DATA.reqs.push(
   { id: 'f6', buyer: 'fda', stop: 'gate', kind: 'own', q: 'q8', text: 'A written traceability plan with a map of your fields', date: '2028-07-20', dateLabel: 'enforcement not before', conf: 'High', source: 'cfr', iomist: 'own' },
   { id: 'f7', buyer: 'fda', stop: 'gate', kind: 'data', text: 'Keep the records for two years', date: '2028-07-20', dateLabel: 'enforcement not before', conf: 'High', source: 'cfr', iomist: 'covers' }
 );
-// The three scanners and what each is for, as Iomist's own proposal (Nov 2026, shared privately) describes them. Vendor claims until Taylor confirms.
+// The three scanners and what each is for, as Iomist's own sales materials describe them.
 IOMIST_DATA.scanners = {
   field:  'Field scanner: for packing in the field. Scans pallets of clamshells right where they are harvested.',
   line:   'Line scanner: for high-speed packing lines. Mounts on the existing line and scans at full speed.',
@@ -292,6 +293,32 @@ IOMIST_DATA.scanners = {
 IOMIST_DATA.watch = [
   { d: '2027-12-31', t: 'Sunrise 2027', s: 'goal: 2D codes at checkout', url: 'https://www.gs1us.org/industries-and-insights/by-topic/sunrise-2027' },
   { d: '2026-11-06', t: 'FDA public meeting', s: 'lot-level traceability, virtual; Congress asked FDA to talk about flexibilities', url: 'https://www.federalregister.gov/documents/2026/10/09/2026-20720/challenges-and-solutions-in-lot-level-food-traceability-public-meeting' }
+];
+
+
+/* ---------- Start screen, FAQ and the ask (2026-11-09) ----------
+   s: 'iomist' = Iomist's own sales material (read 2026-11-09)
+      'site' = iomist.ag | 'pub' = a published source in sources | 'ask' = not stated anywhere we could read. */
+IOMIST_DATA.contact = { email: 'start@iomist.ag', url: 'https://www.iomist.ag/' };
+IOMIST_DATA.steps = [
+  { h: 'It fits what you have', t: 'The scanner mounts on your existing packing line or field operation, with no rebuild. Line scanner, field scanner or a mobile phone.' },
+  { h: 'Every pack is scanned', t: 'Scans run at full speed. Each one is time-stamped and GPS-tagged.' },
+  { h: 'One connected record', t: 'Each unit links to its case and its pallet, and the record goes to the cloud in real time.' },
+  { h: 'One scan answers', t: 'Anyone who scans the pack sees its harvest record. In a recall, the same code shows the alert.' }
+];
+IOMIST_DATA.faq = [
+  { s: 'iomist', q: 'What is Iomist?', a: 'Fresh produce traceability. Iomist says it connects every item, case, pallet and shipment. Each pack carries its own QR code, and every scan is tied to the lot it came from.' },
+  { s: 'iomist', q: 'Do I have to rebuild my packing line?', a: 'Iomist says no. The scanner mounts on your existing packing line or field operation. There are three ways to scan: a line scanner, a field scanner, or a mobile phone.', go: 'journey', goLabel: 'See where each one sits' },
+  { s: 'ill', q: 'We already have a traceability system. Why look at this?', a: 'Three things to check on the system you have. Does its record reach the single pack on the shelf, or stop at the case or pallet? How much hand work keeps it going each day? Does it give each of your buyers what that buyer has published? The recall call lets you run the same complaint against a system that stops at the pallet.', go: 'drill', goLabel: 'Run that comparison', trk: 'pallet' },
+  { s: 'site', q: 'Does it replace my ERP or my labels?', a: 'No. The site describes an integration-ready API, so your ERP and labeling systems stay.' },
+  { s: 'site', q: 'What if there is no signal in the field?', a: 'The site says it runs on any phone and works offline.' },
+  { s: 'iomist', q: 'What happens in a recall?', a: 'The code on the pack names its lot, so you pull that lot instead of everything in the window. Iomist says recall status is set at the batch or ranch level, every affected QR code updates in real time, and a shopper sees the alert on scanning, with no app to download.', go: 'drill', goLabel: 'Try the recall call' },
+  { s: 'pub', source: 'ria', q: 'How much faster is a trace with a lot code?', a: IOMIST_DATA.reference[0].text + ' That is FDA’s figure for one outbreak, not an Iomist result.' },
+  { s: 'iomist', q: 'What does a shopper see when they scan?', a: 'Iomist says every scan pulls up the harvest record: grower and ranch location, region and farming method, product, pack size and variety, the harvest date and time, and the traceability ID for that batch. You can add your own story, recipes or a taste survey, and Iomist describes the page as white-label.' },
+  { s: 'pub', source: 'fdaRule', q: 'Is this required, and by when?', a: 'For crops on FDA’s Food Traceability List, FDA cannot enforce its rule before July 20, 2028. Buyers publish their own requirements with their own dates, and several are sooner: ' + IOMIST_DATA.buyers.filter(b => b.date).map(b => b.label + ' ' + b.date).join(', ') + '. Sunrise 2027 is an industry goal for 2D codes at checkout, not a rule.', go: 'doors', goLabel: 'See each buyer’s dates' },
+  { s: 'pub', source: 'tlc', q: 'What is a lot?', a: 'Whatever you define: a field, a block, a day, a crew. Under FDA’s rule the traceability lot code is assigned at initial packing.' },
+  { s: 'ask', q: 'Does Iomist make me compliant?', a: 'No tool does that alone. Iomist captures and reports the data. Certifications, audits, your written traceability plan and your self-declarations stay yours.', go: 'ready', goLabel: 'Check where you stand' },
+  { s: 'ask', q: 'What does it cost, and how long does setup take?', a: 'Both depend on your operation. Talk to Iomist: ' + IOMIST_DATA.contact.email + '.' }
 ];
 
 if (typeof module !== 'undefined') module.exports = IOMIST_DATA;

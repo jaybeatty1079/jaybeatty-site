@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Night Map</title>
+<title>How Iomist works</title>
+<meta name="description" content="What Iomist does for a produce grower: run one recall twice, follow one clamshell from the field to the shelf, and read the common questions. An illustration from public sources.">
+<link rel="icon" href="../favicon.svg?v=2" type="image/svg+xml"><link rel="icon" href="../favicon.ico?v=2" sizes="32x32"><link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -222,6 +224,38 @@ footer{border-top:1px solid var(--line);padding:10px 0;font-size:12px;color:var(
 dialog{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:14px;max-width:640px;width:calc(100% - 32px);padding:20px}
 dialog::backdrop{background:rgba(0,0,0,.6)}
 dialog li{margin-bottom:8px;font-size:13px}
+main{overflow:visible}
+.guide{position:sticky;top:0;z-index:6;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:10px 18px;background:var(--bg);border-bottom:1px solid var(--line)}
+#gBack{font-size:15px;padding:9px 13px}
+.gstep{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);font-weight:600}
+.gnext{font-size:17px;padding:11px 18px;animation:glow 1.6s ease-in-out infinite}
+.gnext .arrow{display:inline-block;margin-left:8px;animation:nudge 1s ease-in-out infinite}
+.gnext[disabled],.gnext[disabled] .arrow{animation:none}
+@keyframes nudge{0%,100%{transform:translateX(0);opacity:1}50%{transform:translateX(7px);opacity:.25}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(77,204,199,0)}50%{box-shadow:0 0 0 7px rgba(77,204,199,.28)}}
+@media (prefers-reduced-motion:reduce){.gnext,.gnext .arrow{animation:none}}
+h1{font-size:26px}
+.sub{font-size:16px}
+.hint{font-size:13px}
+.pill,.chip{font-size:14px}
+.story button span{font-size:14px}
+.steps{font-size:14px}
+.rail h3,.stop h3{font-size:17px}
+.kcol{font-size:14px}.kcol h3{font-size:16px}
+.keyrow,.dc{font-size:13px}
+.cmp{margin:0 0 12px}.cmp b{font-size:15px}
+.app.plain aside{display:none}.app.plain .body{grid-template-columns:1fr}
+.app:not(.deep) #layersF{display:none}
+#v-journey:not(.rules) .layers{display:none}
+#v-start h1{font-size:30px;letter-spacing:-.02em;margin-bottom:8px}
+#v-start .sub{font-size:16px;color:#c4cfcf}
+.kcol p{margin:0 0 10px;color:#c4cfcf}
+.kcol .num{font-family:var(--mono);color:var(--teal);font-size:12px;display:block;margin-bottom:2px}
+.faq{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:10px 14px;margin-bottom:8px;max-width:78ch}
+.faq summary{cursor:pointer;font-weight:600;font-size:16px}
+.faq p{margin:8px 0 4px;color:#c4cfcf}
+.ask{border:1px solid var(--teal-d);border-radius:12px;background:rgba(77,204,199,.06);padding:14px 16px;margin-top:18px;max-width:78ch}
+.ask b{font-size:17px}
 @media (max-width:900px){
   .body{grid-template-columns:1fr}
   aside{border-right:0;border-bottom:1px solid var(--line);padding:0}
@@ -232,9 +266,10 @@ dialog li{margin-bottom:8px;font-size:13px}
   .lane canvas{height:230px}
   .jgrid,.rgrid{grid-template-columns:minmax(0,1fr)}
   .scene{height:300px}
-  .story{display:grid;grid-template-columns:1fr 1fr;min-width:0}
+  .story{display:grid;grid-template-columns:repeat(3,1fr);min-width:0;flex-basis:100%}
   .story button{min-width:0}
-  .story button span{font-size:12px}
+  .story button span{display:none}
+  .guide{padding:8px 0}.gnext{font-size:16px;flex:1}
   .tools{width:100%}
   .rgrid canvas{height:300px}
 }
@@ -242,17 +277,17 @@ dialog li{margin-bottom:8px;font-size:13px}
 </style>
 </head>
 <body>
-<div class="app">
+<div class="app plain">
 <header>
   <img src="assets/iomist-logo-teal.svg" alt="Iomist">
   <nav class="story" aria-label="The story">
-    <button data-mode="drill" class="on"><b>1 &middot; Friday</b><span>The call</span></button>
-    <button data-mode="journey"><b>2 &middot; Tuesday</b><span>The clamshell</span></button>
-    <button data-mode="ready"><b>3 &middot; Monday</b><span>Where you stand</span></button>
-    <button data-mode="doors"><b>4 &middot; Next season</b><span>The doors</span></button>
+    <button data-mode="start" class="on"><b>Start</b><span>What Iomist does</span></button>
+    <button data-mode="drill"><b>1 &middot; Try it</b><span>The recall call</span></button>
+    <button data-mode="journey"><b>2 &middot; See it</b><span>One clamshell</span></button>
+    <button data-mode="faq"><b>3 &middot; Ask</b><span>Common questions</span></button>
+    <button data-mode="ready" data-also="doors"><b>Go deeper</b><span>Your buyers&rsquo; rules</span></button>
   </nav>
   <div class="tools">
-    <span class="note">Concept, not reviewed by Iomist</span>
     <button class="pill" id="snd" aria-pressed="false">Sound off</button>
     <button class="pill" id="srcBtn">Sources</button>
   </div>
@@ -267,7 +302,7 @@ dialog li{margin-bottom:8px;font-size:13px}
   <div class="f"><label for="crop">Crop</label><select id="crop"></select><div class="hint" id="cropHint"></div></div>
   <div class="f"><label for="lots">Lots a day <span class="val" id="lotsV"></span></label><input type="range" id="lots" min="2" max="40" value="10"><div class="hint">A lot is whatever you define it: a field, a block, a day, a crew. <span class="tag t-you">yours</span></div></div>
   <div class="f"><div class="lab">Who you sell to</div><div class="chips" id="buyers"></div><div class="hint">Each buyer adds what it has published. Dates are the buyer's own.</div></div>
-  <div class="f"><div class="lab">Layers</div><div class="chips"><button class="chip" id="fdaChip" aria-pressed="true">FDA rule</button><button class="chip" id="ind" aria-pressed="true">PTI / GS1 baseline</button><button class="chip" id="asm" aria-pressed="true">Iomist covers it (assumed)</button></div><div class="hint">Assumed until Iomist confirms. Switch off to see each item as open.</div></div>
+  <div class="f" id="layersF"><div class="lab">Layers</div><div class="chips"><button class="chip" id="fdaChip" aria-pressed="true">FDA rule</button><button class="chip" id="ind" aria-pressed="true">PTI / GS1 baseline</button><button class="chip" id="asm" aria-pressed="true">Iomist covers it</button></div><div class="hint">Switch off to see each item as open.</div></div>
   <div class="f"><label for="trk">How you track today</label><select id="trk"></select></div>
   <div class="legend">Every number here is one of three kinds:<br>
    <span class="tag t-pub">published</span> from a source you can open<br>
@@ -279,10 +314,33 @@ dialog li{margin-bottom:8px;font-size:13px}
 </aside>
 
 <main id="stage">
+ <!-- the one thing to click next, always in view: nextStep() -->
+ <div class="guide"><span class="row"><button class="btn ghost" id="gBack">&#9664; <span id="gBackL">Back</span></button><span class="gstep" id="gStep"></span></span><button class="btn gnext" id="gNext"><span id="gLabel"></span><span class="arrow" aria-hidden="true">&#9654;</span></button></div>
+ <!-- START: what Iomist is, in its own words (D.steps), three things to do, the ask -->
+ <section class="view on" id="v-start" aria-label="What Iomist does">
+  <h1>Every pack knows where it came from.</h1>
+  <p class="sub">Iomist is fresh produce traceability. Each pack carries its own QR code, and every scan ties it to its lot, its case, its pallet and its shipment. When a store calls about one clamshell, the record names the field.</p>
+  <div class="jgrid">
+    <div class="pack"><div id="startPack"></div><div class="cap">One clamshell, one code <span class="tag t-ill">example label</span></div></div>
+    <div>
+      <div class="keeps" id="startSteps"></div>
+      <p class="hint">How it works, from Iomist&rsquo;s own sales materials and iomist.ag.</p>
+    </div>
+  </div>
+  <h2 class="h2">Three things to do here</h2>
+  <div class="keeps">
+    <div class="kcol"><h3>1 &middot; Take the call</h3><p>A store reports one bad clamshell. Run the same recall twice: with the records most farms have today, then with a lot record.</p><button class="btn" data-go="drill">Take the call</button></div>
+    <div class="kcol"><h3>2 &middot; Follow one clamshell</h3><p>From the field to the shelf: where each scan happens, what it records, and what the shopper sees.</p><button class="btn" data-go="journey">Follow the clamshell</button></div>
+    <div class="kcol"><h3>3 &middot; Common questions</h3><p>Hardware, your current systems, recalls, dates, and what it does not do.</p><button class="btn" data-go="faq">Read the answers</button></div>
+  </div>
+  <div class="askSlot"></div>
+ </section>
+
  <!-- DRILL -->
- <section class="view on" id="v-drill" aria-label="Recall drill">
+ <section class="view" id="v-drill" aria-label="Recall drill">
   <h1>A store calls about one clamshell.</h1>
-  <p class="sub">Same farm, same lot, same call, run twice. Left: the records most farms have today. Right: a lot record that starts in the field. <span class="tag t-ill">illustration</span> The counts scale with the farm you set; no times are measured.</p>
+  <p class="sub">Same farm, same lot, same call, run twice. Top: what you have today. Bottom: a code on every pack, scanned in the field. <span class="tag t-ill">illustration</span> The counts scale with the farm you set; no times are measured.</p>
+  <div class="row cmp"><b>Compare against:</b><span class="chips" id="cmp"></span></div>
   <div class="lane bad" id="laneA">
     <canvas aria-hidden="true"></canvas>
     <div class="rail">
@@ -295,14 +353,14 @@ dialog li{margin-bottom:8px;font-size:13px}
   <div class="lane good" id="laneB">
     <canvas aria-hidden="true"></canvas>
     <div class="rail">
-      <h3><span>With a lot record</span><b>Scanned in the field</b></h3>
+      <h3><span>With a code on every pack</span><b>Scanned in the field</b></h3>
       <ol class="steps" id="bSteps"></ol>
       <div class="count"><span class="n" id="bN">0</span> cases pulled<small>of <span id="bTot">0</span> cases in the three-day window <span class="tag t-ill">illustration</span></small></div>
       <button class="btn" id="bPull" disabled>Pull it</button>
     </div>
   </div>
   <div class="result" id="drillRes" role="status">
-    <div><b>Same complaint.</b> <b class="n" id="rA" style="color:var(--coral)"></b> cases pulled without a lot record; <b class="n" id="rB" style="color:var(--teal)"></b> with one. <span class="tag t-ill">illustration scaled to your inputs</span></div>
+    <div><b>Same complaint.</b> <b class="n" id="rA" style="color:var(--coral)"></b> cases pulled today (<span id="rHow"></span>); <b class="n" id="rB" style="color:var(--teal)"></b> with a code on every pack. <span class="tag t-ill">illustration scaled to your inputs</span></div>
     <div class="row" style="margin-top:10px"><button class="btn" data-go="journey">Rewind to Tuesday: follow the clamshell</button><button class="btn ghost" id="again">Run it again</button></div>
   </div>
   <div class="refs" id="refs"></div>
@@ -313,19 +371,20 @@ dialog li{margin-bottom:8px;font-size:13px}
   <h1 id="jTitle">One clamshell, from the field to the shelf.</h1>
   <p class="sub">This is the clamshell behind Friday's call. At each stop, the data a lot record would hold. <span class="tag t-ill">example values</span></p>
   <canvas id="scene" class="scene" role="img" aria-label="A 2D scene: pickers scan trays in a field, the product goes to a cooler, a packing shed and a dock, then on three roads to distributors and stores, ending on a shelf"></canvas>
+  <div class="row" style="margin-bottom:6px"><button class="btn ghost" id="jPrev" style="display:none">&#9664; Previous stop</button><button class="btn" id="jNext">Next stop</button><button class="btn coral" id="jBack" style="display:none">Trace the complaint back</button><button class="btn ghost" data-go="faq" id="jReady" style="display:none">Common questions &rarr;</button><button class="btn ghost" id="jRules" aria-pressed="false">Show each buyer&rsquo;s rules</button></div>
+  <p class="hint" id="jEnd" style="margin:0 0 12px;font-size:15px;color:var(--ink)"></p>
   <div class="jgrid">
     <div class="pack"><div id="packSvg"></div><div class="cap" id="packCap"></div></div>
     <div>
-      <div class="keyrow"><span class="a">FDA key data element</span><span class="b">Iomist's site says it captures this</span><span class="c">Dashed: not on the site, ask Iomist</span></div>
+      <div class="keyrow"><span class="a">FDA key data element</span><span class="b">Iomist's site says it captures this</span><span class="c">Dashed: not listed on the site</span></div>
       <div class="ribbon" id="ribbon"><div class="fill" id="rfill"></div></div>
-      <div class="row"><button class="btn" id="jNext">Next stop</button><button class="btn coral" id="jBack" style="display:none">Trace the complaint back</button><button class="btn ghost" data-go="ready" id="jReady" style="display:none">Where do you stand? &rarr;</button></div>
-      <p class="hint" id="jEnd"></p>
     </div>
   </div>
  </section>
 
  <!-- READINESS -->
  <section class="view" id="v-ready" aria-label="Readiness check">
+  <div class="row" style="margin-bottom:10px"><span class="note">Go deeper:</span><button class="pill" data-go="ready">Where you stand</button><button class="pill" data-go="doors">Each buyer&rsquo;s rules</button><button class="pill" data-go="faq">Back to the questions</button></div>
   <h1>Where do you stand?</h1>
   <p class="sub">A short set of questions against FDA's traceability rule and what your buyers have published. A self-check, not a compliance determination.</p>
   <div class="rgrid">
@@ -338,8 +397,9 @@ dialog li{margin-bottom:8px;font-size:13px}
 
  <!-- DOORS -->
  <section class="view" id="v-doors" aria-label="The doors">
+  <div class="row" style="margin-bottom:10px"><span class="note">Go deeper:</span><button class="pill" data-go="ready">Where you stand</button><button class="pill" data-go="doors">Each buyer&rsquo;s rules</button><button class="pill" data-go="faq">Back to the questions</button></div>
   <h1>Next season: the doors.</h1>
-  <p class="sub">One lot record, many buyers. Each door is a buyer; the ones you switched on in the panel show what they have published. Tap a waiting door to add it. <span class="tag t-ask">Iomist covering them is assumed, to confirm</span></p>
+  <p class="sub">One lot record, many buyers. Each door is a buyer; the ones you switched on in the panel show what they have published. Tap a waiting door to add it.</p>
   <div class="row"><button class="btn" id="dToggle">Add the lot record</button><span class="hint" id="dState"></span></div>
   <div class="clock" id="clock"></div>
   <div class="doors" id="doorGrid"></div>
@@ -350,18 +410,27 @@ dialog li{margin-bottom:8px;font-size:13px}
   <p class="hint" id="doorNote"></p>
  </section>
 
- <div class="intro on" id="intro">
+ <!-- FAQ: D.faq -->
+ <section class="view" id="v-faq" aria-label="Common questions">
+  <h1>Common questions</h1>
+  <p class="sub">Short answers, each marked with where it comes from.</p>
+  <div id="faqList"></div>
+  <div class="askSlot"></div>
+  <p class="hint" style="margin-top:14px">Want the detail? <button class="pill" data-go="ready">Check where you stand</button> <button class="pill" data-go="doors">See each buyer&rsquo;s rules and dates</button></p>
+ </section>
+
+ <div class="intro" id="intro">
   <div class="card">
     <h2>Friday, 4:47 p.m.</h2>
     <p>A store reports a problem with one clamshell of <b id="introCrop">romaine</b>. The question is the oldest one in the business: where did it come from, and what else went with it?</p>
-    <div class="row"><button class="btn" id="take">Take the call</button><button class="btn ghost" data-go="ready">Skip to the readiness check</button></div>
-    <p class="hint" style="margin-top:14px">A private preview built from public sources. Not reviewed by Iomist.</p>
+    <div class="row"><button class="btn" id="take">Take the call</button></div>
+    <p class="hint" style="margin-top:14px">An illustration built from public sources.</p>
   </div>
  </div>
 </main>
 </div>
 
-<footer><span>Illustration built from public sources (read 2026-11-04 and 2026-11-08) and, for the scanner roles, Iomist’s own proposal. Iomist captures and reports the required data; this is not a compliance determination.</span><span>Private preview</span></footer>
+<footer><span>Illustration built from public sources (read 2026-11-04 and 2026-11-08) and Iomist’s own materials. Retailer names refer to their published supplier requirements. This is not a compliance determination.</span><span>Built by <a href="https://www.jaybeatty.com">Jay Beatty</a></span></footer>
 </div>
 
 <dialog id="srcDlg"><h2 style="margin-top:0">Sources</h2><p class="hint">Everything marked published comes from one of these, read 2026-11-04.</p><ul id="srcList"></ul><form method="dialog"><button class="btn">Close</button></form></dialog>
@@ -376,7 +445,7 @@ const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const TODAY = new Date().toISOString().slice(0, 10); // the viewer's own date: statuses and the FDA countdown run from it
-const S = { crop: 'romaine', lots: 10, buyers: new Set(['walmart', 'costco', 'kroger']), tracking: 'paper', fda: true, industry: true, assume: true, doorsOpen: false, answers: {}, size: null, qi: 0, mode: 'drill', net: null, drill: null, jstop: 0, jdone: false };
+const S = { crop: 'romaine', lots: 10, buyers: new Set(['walmart', 'costco', 'kroger']), tracking: 'paper', fda: true, industry: true, assume: true, doorsOpen: false, answers: {}, size: null, qi: 0, mode: 'start', rules: false, net: null, drill: null, jstop: 0, jdone: false };
 const PARAMS = () => ({ lotsPerDay: S.lots, casesPerLot: 100, windowDays: 3, distributors: 3, stores: 12, seed: 4 });
 const cropObj = () => D.crops.find(c => c.id === S.crop);
 const CROPCOL = { romaine: '#7fbf6a', leafy: '#6fb35c', tomato: '#e8553d', cucumber: '#3f9b5a', pepper: '#f2a93b', melon: '#e9b86a', herb: '#58a35f', tropical: '#f0a23d', freshcut: '#9bcf80', berry: '#d6405a', onion: '#c9a27a', other: '#a8b3b3' };
@@ -506,7 +575,7 @@ function resetDrill() {
   $('#aTot').textContent = $('#bTot').textContent = R.totalCasesInWindow;
   ['aSteps', 'bSteps'].forEach((id, i) => { const L = (i ? R.with : R.without).steps; $('#' + id).innerHTML = L.map(t => `<li>${t}</li>`).join(''); });
   $('#aN').textContent = $('#bN').textContent = 0;
-  $('#aPull').disabled = $('#bPull').disabled = true; $('#drillRes').classList.remove('on');
+  $('#aPull').disabled = $('#bPull').disabled = true; $('#aPull').textContent = $('#bPull').textContent = 'Pull it'; $('#drillRes').classList.remove('on');
 }
 function runDrill() {
   resetDrill(); const R = S.run, now = performance.now();
@@ -526,10 +595,14 @@ function tickDrill(now) {
   const cnt = (st, tgt, el) => { if (st && st.pulledAt) $(el).textContent = Math.round(tgt * clamp((now - st.pulledAt) / (RM ? 100 : 900), 0, 1)); };
   cnt(flowA.st, S.run.without.cases, '#aN'); cnt(flowB.st, S.run.with.cases, '#bN');
   if (flowA.st && flowA.st.pulledAt && flowB.st && flowB.st.pulledAt && !DR.done && now - Math.max(flowA.st.pulledAt, flowB.st.pulledAt) > 1000) {
-    DR.done = true; $('#rA').textContent = S.run.without.cases; $('#rB').textContent = S.run.with.cases; $('#drillRes').classList.add('on');
+    DR.done = true; $('#rHow').textContent = D.tracking.find(t => t.id === S.tracking).label; $('#rA').textContent = S.run.without.cases; $('#rB').textContent = S.run.with.cases; $('#drillRes').classList.add('on');
   }
 }
-function pull(f, btn) { if (f.st && !f.st.pulledAt) { f.st.pulledAt = performance.now(); $(btn).disabled = true; beep(f === flowA ? 180 : 660, .2, 'triangle'); } }
+function pull(f, btn) { // a second press puts the cases back
+  if (!f.st) return; const b = $(btn);
+  if (f.st.pulledAt) { f.st.pulledAt = 0; $(f === flowA ? '#aN' : '#bN').textContent = 0; b.textContent = 'Pull it'; DR.done = false; $('#drillRes').classList.remove('on'); }
+  else { f.st.pulledAt = performance.now(); b.textContent = 'Put it back'; beep(f === flowA ? 180 : 660, .2, 'triangle'); }
+}
 
 /* ---------- journey ---------- */
 function qrSvg(seed, size) {
@@ -563,7 +636,7 @@ function stanceTag(r) {
   if (r.iomist === 'none') return '<span class="st nf">not found</span>';
   if (r.iomist === 'own') return '<span class="st ow">yours to hold</span>';
   if (!S.assume) return '<span class="st op">open</span>';
-  return `<span class="st cv">${r.iomist === 'covers' ? 'Iomist covers' : 'Iomist supplies the records'} <i>assumed</i></span>`;
+  return `<span class="st cv">${r.iomist === 'covers' ? 'Iomist covers' : 'Iomist supplies the records'}</span>`;
 }
 function dateTag(r) { if (!r.date) return ''; return `<span class="tag t-pub">${r.dateLabel || (M.daysUntil(r.date, TODAY) <= 0 ? 'in effect since' : 'from')} ${r.date}</span>`; }
 const bname = id => id === 'industry' ? 'PTI / GS1' : id === 'fda' ? 'FDA RULE' : D.buyers.find(b => b.id === id).label.toUpperCase();
@@ -581,17 +654,18 @@ function stops() {
   const R = S.run, L = R.truthLot, f = 'Field ' + (L.field + 1), code = lotCode(), cs = '100 cases';
   const fda = (n, v) => ({ n, v, k: 'fda' }), io = (n, v) => ({ n, v, k: 'both' }), ask = (n, v) => ({ n, v, k: 'ask' });
   const bl = buyerList();
-  const scanNote = k => `<div class="hint" style="margin:8px 0 4px">${D.scanners[k]} <span class="tag t-ill">Iomist’s proposal</span></div>`;
+  const scanNote = k => `<div class="hint" style="margin:8px 0 4px">${D.scanners[k]} <span class="tag t-ill">Iomist’s materials</span></div>`;
   const bigs = bl.length ? '<div class="bigs">' + bl.map(b => `<div class="bigbuyer ${b.status === 'published' ? '' : 'np'}"><b>${b.label.toUpperCase()}</b> <span class="tag t-pub">${M.scoreBuyer(b.id, {}, TODAY).dateStatus}</span><div>${D.short[b.id]}</div><div class="hint">${b.dateNote ? b.dateNote + ' &middot; ' : ''}${srcLink(b.source)}</div></div>`).join('') + '</div>' : '<div class="hint">Pick buyers in the panel to see what each asks for here.</div>';
   const out = [
     { t: 'Harvest', when: 'Tuesday, morning', wp: 0, html: chipsHtml([io('Lot code', code), fda('Field', f), io('Harvest date', 'Tuesday'), io('Where (GPS)', 'field edge, logged'), fda('Quantity', cs), fda('Farm location', 'name, phone, address'), fda('Goes to', 'the packing shed')]) + scanNote('field') + layerHtml('harvest') },
     { t: 'Cooling', when: 'if cooled before packing', wp: 1, html: chipsHtml([ask('Cooling date', 'Tuesday'), ask('Cooling location', 'cooler 2'), ask('Quantity', cs)]) + layerHtml('cooling') },
     { t: 'Packing', when: 'Tuesday, afternoon', wp: 2, html: chipsHtml([io('Lot code assigned', code), fda('Packing date', 'Tuesday'), fda('Packing location', 'main shed'), fda('Harvester', 'crew name, phone'), fda('Product', S.crop === 'berry' ? '1 lb clamshell' : '1 clamshell')]) + scanNote('line') + scanNote('mobile') + layerHtml('packing') }
   ];
-  if (gateLines().length) out.push({ t: 'Audit gate', when: 'to supply these buyers', wp: 3, gate: 'closed', html: '<div class="hint" style="margin-bottom:6px">Certifications and audits are the grower’s to earn. The lot record is what an auditor asks to see. <span class="tag t-ill">Iomist supplying those records is assumed</span></div>' + layerHtml('gate') + (S.buyers.has('costco') ? '<div class="dchips" style="margin-top:8px"><div class="dc ask"><em>Ask Iomist</em><i>Does the lot record answer Costco’s 2-hour trace test?</i></div></div>' : '') });
+  if (gateLines().length) out.push({ t: 'Audit gate', when: 'to supply these buyers', wp: 3, gate: 'closed', html: '<div class="hint" style="margin-bottom:6px">Certifications and audits are the grower’s to earn. The lot record is what an auditor asks to see.</div>' + layerHtml('gate') });
   out.push(
     { t: 'Shipping', when: 'Wednesday', wp: 3, html: chipsHtml([ask('Lot code', code), ask('Ship date', 'Wednesday'), ask('Recipient', 'distributor ' + (R.complaint.dist + 1)), ask('Lot code source', 'main shed'), ask('Reference document', 'bill of lading no.')]) + scanNote('chain') + layerHtml('shipping') },
-    { t: 'Receiving', when: 'Wednesday to Thursday', wp: 5, html: chipsHtml([ask('Received by', 'distributor, then ' + (bl[0] ? bl[0].label : 'the store'))]) + '<div class="hint" style="margin:8px 0 4px">What each buyer you picked asks for at this point <span class="tag t-pub">published</span></div>' + bigs + layerHtml('receiving') },
+    { t: 'Distributor', when: 'Wednesday', wp: 4, html: chipsHtml([ask('Received by', 'distributor ' + (R.complaint.dist + 1)), ask('Receive date', 'Wednesday'), ask('Lot code', code)]) + '<div class="hint" style="margin:8px 0 4px">Cases come off the pallet here and go out to stores. A code on each pack keeps the link to its lot. <span class="tag t-ill">illustration</span></div>' },
+    { t: 'Store receiving', when: 'Thursday', wp: 5, html: chipsHtml([ask('Received by', bl[0] ? bl[0].label : 'the store'), ask('Receive date', 'Thursday')]) + '<div class="hint" style="margin:8px 0 4px">What each buyer you picked asks for at this point <span class="tag t-pub">published</span></div>' + bigs + layerHtml('receiving') },
     { t: 'On the shelf', when: 'a shopper scans the code', wp: 5, consumer: true, html: phoneHtml() }
   );
   return out;
@@ -627,7 +701,7 @@ function renderDoors() {
   const card = (id, label, status, on, d, hintWait) => {
     const today = d.todayPct === null ? 'not scored' : d.todayPct + '%';
     return `<button class="door ${on ? '' : 'wait'} ${open && on ? 'open' : ''}" data-door="${id}" aria-pressed="${on}"><div class="dframe"><div class="dleaf"></div></div><b>${label}</b><span class="tag t-pub">${status}</span>` +
-      (on ? `<div class="dnum"><span>today</span> <em>${today}</em> <span>with a lot record</span> <em class="w">${S.assume ? (d.withPct === null ? 'n/a' : '100%') : 'open'}</em></div><div class="hint">${d.tech} items a lot record answers (assumed) &middot; ${d.own} yours to hold &middot; ${d.notFound} not found</div>` : `<div class="hint">${hintWait}</div>`) + `</button>`;
+      (on ? `<div class="dnum"><span>today</span> <em>${today}</em> <span>with a lot record</span> <em class="w">${S.assume ? (d.withPct === null ? 'n/a' : '100%') : 'open'}</em></div><div class="hint">${d.tech} items a lot record answers &middot; ${d.own} yours to hold &middot; ${d.notFound} not found</div>` : `<div class="hint">${hintWait}</div>`) + `</button>`;
   };
   const left = M.monthsDays(TODAY, D.fdaBuyer.date), fdaApplies = M.fdaApplies({ crop: S.crop, size: S.size || 'over250' });
   const fdaCard = card('fda', 'FDA RULE', fdaApplies.applies ? `${left.months} months to go` : 'does not apply', fdaOn(), byId.fda || M.doors(['fda'], {}, S.tracking, false)[0], fdaApplies.applies ? 'Tap to switch on.' : fdaApplies.reason);
@@ -636,9 +710,9 @@ function renderDoors() {
   $('#matrix').innerHTML = cols.length ? `<table><thead><tr><th>Capture once</th>${cols.map(c => `<th>${bname(c)}</th>`).join('')}<th>asking</th></tr></thead><tbody>${mx.map(r => `<tr><td>${r.label}</td>${cols.map(c => `<td>${r.cells[c] ? `<span class="dot ${r.kind === 'own' || !S.assume ? 'o' : ''}">${'●'.repeat(Math.min(r.cells[c], 4))}</span>` : ''}</td>`).join('')}<td><b>${r.buyers}</b></td></tr>`).join('')}</tbody></table>` : '<div class="hint">Switch buyers on in the panel.</div>';
   const dated = D.buyers.filter(b => b.date && b.status === 'published').sort((a, b) => a.date < b.date ? -1 : 1), aud = [...new Set(D.reqs.filter(r => r.stop === 'gate' && r.kind === 'audit').map(r => r.buyer))].map(id => D.buyers.find(b => b.id === id).label);
   $('#keeps').innerHTML = `<div class="kcol"><h3>What stays</h3><ul><li>Your ERP and labeling systems: the site describes an integration-ready API.</li><li>Your packing stand and conveyor: the scanners fit on them.</li><li>The phones your crews carry: it runs on any phone and works offline.</li></ul><div class="hint">All from iomist.ag, read 2026-11-04. <a href="${D.sources.iomistSite.url}" target="_blank" rel="noopener">source</a></div></div>
-  <div class="kcol"><h3>What is added</h3><ul><li>A serialized QR code on each clamshell, tied to its lot.</li><li>A scan at harvest and at packing: GPS, time, lot.</li><li>A lot record and reports the site says arrive "in seconds."</li><li>A shopper-facing page: the lot's data, with an optional survey of your own <span class="tag t-pub">confirmed with Taylor</span></li></ul></div>
+  <div class="kcol"><h3>What is added</h3><ul><li>A serialized QR code on each clamshell, tied to its lot.</li><li>A scan at harvest and at packing: GPS, time, lot.</li><li>A lot record and reports the site says arrive "in seconds."</li><li>A shopper-facing page: the lot's data, with an optional survey of your own</li></ul></div>
   <div class="kcol"><h3>What it opens</h3><ul><li>Buyers with dates already set: ${dated.map(b => `${b.label} (${M.daysUntil(b.date, TODAY) <= 0 ? 'in effect' : b.date})`).join(', ')}, then the FDA rule.</li><li>Buyers that audit before you supply: ${aud.join(', ')}.</li><li>${D.buyers.length} buyers and the FDA rule publish requirements the same record answers in part. No revenue figure is claimed.</li></ul></div>`;
-  $('#doorNote').innerHTML = 'Every "covers" and "supplies the records" mark assumes Iomist meets the requirement. To confirm with Iomist before anyone outside sees it. Certification, memberships, the traceability plan and self-declarations stay the grower’s own.';
+  $('#doorNote').innerHTML = 'Certification, memberships, the traceability plan and self-declarations stay the grower’s own.';
 }
 function phScreen(mode) {
   const L = S.run.truthLot, code = lotCode(), crop = cropObj().label, bl = buyerList(), where = bl[0] ? bl[0].label : 'the store';
@@ -650,7 +724,7 @@ function phScreen(mode) {
 const PHNOTE = {
   common: 'Many pack QR codes open a marketing survey like this, and little about the lot. <span class="tag t-ill">illustration</span>',
   data: 'The same scan opens the lot’s own record: where it grew, when it was picked, where it went. The site says the code shows origin, harvest date and the journey. <span class="tag t-ill">example values</span>',
-  survey: 'A company can add its own survey on top of the lot data, if it wants one. <span class="tag t-ill">example</span> <span class="tag t-pub">confirmed with Taylor</span>'
+  survey: 'A company can add its own survey on top of the lot data, if it wants one. <span class="tag t-ill">example</span>'
 };
 function phoneHtml() { return `<div class="phonewrap"><div class="phtabs" role="tablist">${[['common', 'A common pack QR'], ['data', 'Lot data'], ['survey', 'Lot data + survey']].map(([k, l], i) => `<button class="pill" data-ph="${k}" aria-pressed="${i === 1}">${l}</button>`).join('')}</div><div class="phone"><div class="screen" id="phScreen">${phScreen('data')}</div></div><div class="hint" id="phNote">${PHNOTE.data}</div></div>`; }
 function renderJourney() {
@@ -660,7 +734,7 @@ function renderJourney() {
   $('#ribbon').innerHTML = '<div class="fill" id="rfill"></div>' + S.stops.map((s, i) => `<div class="stop" data-i="${i}"><h3>${s.t}<small>${s.when}</small></h3>${s.html}</div>`).join('');
   SC.setStory({ crop: CROPCOL[S.crop], cropId: S.crop, code: lotCode(), dist: R.complaint.dist, store: R.complaint.store, field: R.truthLot.field, gateLines: gateLines(), gateOn: gateLines().length > 0, costcoGate: S.buyers.has('costco'), buyers: (fdaOn() ? [{ id: 'fda', label: D.fdaBuyer.label, short: D.short.fda }] : []).concat(buyerList().map(b => ({ id: b.id, label: b.label, short: D.short[b.id] }))) });
   SC.reset(); SC.setFlags({ gate: null, consumer: false }); SC.resize();
-  S.jstop = 0; S.jdone = false; $('#jNext').style.display = ''; $('#jBack').style.display = 'none'; $('#jReady').style.display = 'none'; $('#jEnd').textContent = ''; $('#jNext').textContent = 'First stop: harvest';
+  S.jstop = 0; S.jdone = false; S.jtr = 0; S.jdirty = false; $('#jNext').style.display = ''; $('#jBack').style.display = 'none'; $('#jReady').style.display = 'none'; $('#jEnd').textContent = ''; $('#jNext').textContent = 'First stop: harvest';
 }
 function jFill(i, back) { const f = $('#rfill'), st = $$('.stop'); f.classList.toggle('back', !!back); const el = st[Math.min(i, st.length - 1)]; f.style.height = (el.offsetTop + 22 - 6) + 'px'; }
 function applyStop(i, back) {
@@ -673,13 +747,21 @@ function jNext() {
   if (S.jstop < st.length) $('#jNext').textContent = 'Next stop: ' + S.stops[S.jstop].t.toLowerCase();
   else { $('#jNext').style.display = 'none'; $('#jBack').style.display = ''; $('#jEnd').textContent = 'Friday’s call reaches the store. Now run it backward.'; }
 }
+function jPrev() { // one stop back; from the end it brings the Next button back
+  if (S.jtr === 1 || !S.jstop) return; const st = $$('.stop');
+  if (S.jtr === 2) { st.forEach(x => x.classList.remove('hot')); S.jtr = 0; $('#jReady').style.display = 'none'; }
+  S.jstop--; st[S.jstop].classList.remove('on');
+  $('#jNext').style.display = ''; $('#jBack').style.display = 'none'; $('#jEnd').textContent = '';
+  $('#jNext').textContent = (S.jstop ? 'Next stop: ' : 'First stop: ') + S.stops[S.jstop].t.toLowerCase();
+  if (S.jstop) { jFill(S.jstop - 1); applyStop(S.jstop - 1); } else { $('#rfill').style.height = 0; SC.goTo(0); SC.setFlags({ gate: null, consumer: false }); }
+}
 async function jBack() {
-  const st = $$('.stop'), wait = ms => new Promise(r => setTimeout(r, RM ? 30 : ms)); $('#jBack').style.display = 'none';
+  const st = $$('.stop'), wait = ms => new Promise(r => setTimeout(r, RM ? 30 : ms)); $('#jBack').style.display = 'none'; S.jtr = 1;
   for (let i = st.length - 1; i >= 0; i--) {
     applyStop(i, true); const wp = S.stops[i].wp; for (let k = 0; k < 150 && Math.abs(SC.u - wp) > .06 && !RM; k++) await wait(100);
-    st.forEach(x => x.classList.remove('hot')); st[i].classList.add('hot'); jFill(i, true); beep(150 + (4 - Math.min(i, 4)) * 70, .12, 'sawtooth'); await wait(S.stops[i].gate ? 3200 : 900);
+    st.forEach(x => x.classList.remove('hot')); st[i].classList.add('hot'); jFill(i, true); beep(150 + (4 - Math.min(i, 4)) * 70, .12, 'sawtooth'); await wait(S.stops[i].gate ? 3200 : 1800);
   }
-  const L = S.run.truthLot; $('#jEnd').innerHTML = `The complaint walks back to <b>Field ${L.field + 1}</b>, lot <b class="mono">${lotCode()}</b>, harvested Tuesday. If each stop was recorded, the lot record already holds that answer. Where a stop was not recorded, this is where the hunt begins.`; $('#jReady').style.display = '';
+  const L = S.run.truthLot; $('#jEnd').innerHTML = `The complaint walks back to <b>Field ${L.field + 1}</b>, lot <b class="mono">${lotCode()}</b>, harvested Tuesday. If each stop was recorded, the lot record already holds that answer. Where a stop was not recorded, this is where the hunt begins.`; $('#jReady').style.display = ''; S.jtr = 2;
 }
 
 /* ---------- readiness ---------- */
@@ -729,7 +811,7 @@ function renderResult() {
   const buy = r.buyers.map(b => `<div style="margin-bottom:8px"><b>${b.label}</b> <span class="tag t-pub">${b.dateStatus}</span>${b.pct === null ? `<div class="hint">${b.status === 'not_published' ? 'No public FSMA 204 supplier specification found.' : 'No scored items published.'}</div>` : `<div class="bar"><i style="width:${b.pct}%"></i></div><div class="hint">${b.pct}% &middot; ${b.dateNote} &middot; <a href="${D.sources[b.source].url}" target="_blank" rel="noopener">source</a></div>`}</div>`).join('');
   const seen = new Set(), gaps = []; r.fda.gaps.concat(...r.buyers.map(b => b.gaps)).forEach(g => { if (!seen.has(g.id)) { seen.add(g.id); gaps.push(g); } });
   const gl = gaps.map(g => { const q = M.question(g.id), io = D.iomist[g.id], who = [q.kind === 'fda' ? 'FDA rule' : null, ...D.buyers.filter(b => b.items.includes(g.id) && S.buyers.has(b.id)).map(b => b.label)].filter(Boolean).join(', ');
-    return `<div class="gap"><div>${q.text}</div><div class="why">${who ? 'Asked by: ' + who + ' &middot; ' : ''}you said ${g.answer}</div>${io ? `<div class="why ${io.s === 'ask' ? 'io-ask' : 'io-site'}">${io.s === 'site' ? 'Iomist’s site: ' : io.s === 'deck' ? 'Iomist’s proposal: ' : 'Ask Iomist: '}${io.t}</div>` : ''}</div>`; }).join('') || '<div class="hint">No gaps against what you selected.</div>';
+    return `<div class="gap"><div>${q.text}</div><div class="why">${who ? 'Asked by: ' + who + ' &middot; ' : ''}you said ${g.answer}</div>${io ? `<div class="why ${io.s === 'ask' ? 'io-ask' : 'io-site'}">${io.s === 'site' ? 'Iomist’s site: ' : io.s === 'deck' ? 'Iomist’s materials: ' : ''}${io.t}</div>` : ''}</div>`; }).join('') || '<div class="hint">No gaps against what you selected.</div>';
   const watch = D.questions.find(x => x.kind === 'watch'), wa = S.answers[watch.id];
   c.innerHTML = `<div class="res"><div class="prog">Your result</div><h3>FDA rule</h3>${fda}<h3>Your buyers</h3>${buy || '<div class="hint">Pick buyers in the panel to see theirs.</div>'}<h3>Gaps</h3>${gl}<div class="hint" style="margin-top:10px">${watch.note}${wa ? '' : ''}</div><div class="hint" style="margin-top:8px"><b>A self-check, not a compliance determination.</b></div><div class="row" style="margin-top:10px"><button class="btn ghost" id="qre">Start over</button></div></div>`;
   $('#qre').onclick = () => { S.answers = {}; S.size = null; S.qi = 0; renderQ(); };
@@ -737,15 +819,60 @@ function renderResult() {
 
 /* ---------- panel, modes, loop ---------- */
 function setMode(m) {
-  S.mode = m; $$('.view').forEach(v => v.classList.toggle('on', v.id === 'v-' + m)); $$('.story button').forEach(b => b.classList.toggle('on', b.dataset.mode === m));
+  S.mode = m; $$('.view').forEach(v => v.classList.toggle('on', v.id === 'v-' + m)); $$('.story button').forEach(b => b.classList.toggle('on', b.dataset.mode === m || b.dataset.also === m));
+  deepen();
   $('#intro').classList.toggle('on', m === 'drill' && !DR && !S.introSeen);
-  if (m === 'journey') renderJourney(); if (m === 'doors') renderDoors(); if (m === 'ready') { rc.resize(); renderQ(); } if (m === 'drill') { flowA.resize(); flowB.resize(); }
-  $('#stage').scrollTop = 0;
+  if (m === 'journey') { if (S.jdirty || !S.stops) renderJourney(); else SC.resize(); } if (m === 'doors') renderDoors(); if (m === 'ready') { rc.resize(); renderQ(); } if (m === 'drill') { flowA.resize(); flowB.resize(); }
+  $('#stage').scrollTop = 0; scrollTo(0, 0);
+}
+function nextStep() { // [label, action]: the one thing to click next, in order, through the whole tool; action null = wait
+  const m = S.mode;
+  if (m === 'start') return ['Start: take the recall call', () => setMode('drill')];
+  if (m === 'drill') {
+    if (!DR) return ['Take the call', () => $('#take').click()];
+    if (!flowA.st.pulledAt) return $('#aPull').disabled ? ['Watch the trace', null] : ['Pull it: with what you have today', () => $('#aPull').click()];
+    if (!flowB.st.pulledAt) return ['Pull it: with a code on every pack', () => $('#bPull').click()];
+    return ['Next: follow one clamshell', () => setMode('journey')];
+  }
+  if (m === 'journey') {
+    if (S.jstop < S.stops.length) return [$('#jNext').textContent, jNext];
+    return S.jtr === 2 ? ['Next: common questions', () => setMode('faq')] : S.jtr ? ['Tracing it back', null] : ['Trace the complaint back', jBack];
+  }
+  if (m === 'faq') return ['Last step: talk to Iomist', () => $('#v-faq .ask').scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'center' })];
+  return ['Back to the questions', () => setMode('faq')];
+}
+function prevStep() { // [label, action] or null: always a way back, except on the first screen and while the trace-back plays
+  const m = S.mode;
+  if (m === 'start') return null;
+  if (m === 'drill') return ['Back', () => setMode('start')];
+  if (m === 'journey') return S.jtr === 1 ? null : S.jstop ? ['Previous stop', jPrev] : ['Back', () => setMode('drill')];
+  return ['Back', () => setMode(m === 'faq' ? 'journey' : 'faq')];
+}
+const GSTEP = { start: 'Start here', drill: 'Step 1 of 3 · Try it', journey: 'Step 2 of 3 · See it', faq: 'Step 3 of 3 · Ask', ready: 'Go deeper', doors: 'Go deeper' };
+function guide() { // called every frame: shortcut: cheap string compare instead of wiring every state change, upgrade if the page ever gets slow
+  const [label, act] = nextStep(), b = $('#gNext');
+  if ($('#gLabel').textContent !== label) $('#gLabel').textContent = label;
+  if (b.disabled !== !act) b.disabled = !act;
+  if ($('#gStep').textContent !== GSTEP[S.mode]) $('#gStep').textContent = GSTEP[S.mode];
+  const pv = prevStep(), vis = pv ? 'visible' : 'hidden', jp = S.mode === 'journey' && pv && S.jstop ? '' : 'none';
+  if ($('#gBack').style.visibility !== vis) $('#gBack').style.visibility = vis;
+  if (pv && $('#gBackL').textContent !== pv[0]) $('#gBackL').textContent = pv[0];
+  if ($('#jPrev').style.display !== jp) $('#jPrev').style.display = jp;
+}
+function deepen() { const m = S.mode, a = $('.app'); a.classList.toggle('plain', m === 'start' || m === 'faq'); a.classList.toggle('deep', m === 'ready' || m === 'doors' || (m === 'journey' && S.rules)); $('#v-journey').classList.toggle('rules', S.rules); }
+function renderStatic() { // the start steps, the FAQ and the ask never change with the panel
+  $('#startSteps').innerHTML = D.steps.map((t, i) => `<div class="kcol"><span class="num">0${i + 1}</span><h3>${t.h}</h3>${t.t}</div>`).join('');
+  const src = k => ` <a href="${D.sources[k].url}" target="_blank" rel="noopener">source</a>`;
+  const tag = f => f.s === 'site' ? '<span class="tag t-pub">iomist.ag</span>' + src('iomistSite') : f.s === 'iomist' ? '<span class="tag t-ill">Iomist says</span>' : f.s === 'ill' ? '<span class="tag t-ill">questions to ask, not claims</span>' : f.s === 'pub' ? '<span class="tag t-pub">published</span>' + src(f.source) : '';
+  $('#faqList').innerHTML = D.faq.map(f => `<details class="faq"><summary>${f.q}</summary><p>${f.a}</p><div class="hint">${tag(f)}${f.go ? ` <button class="pill" data-go="${f.go}"${f.trk ? ` data-trk="${f.trk}"` : ''}>${f.goLabel}</button>` : ''}</div></details>`).join('');
+  $$('.askSlot').forEach(e => e.innerHTML = `<div class="ask"><b>Let’s talk.</b> The next step is a conversation with Iomist: <a href="mailto:${D.contact.email}">${D.contact.email}</a> &middot; <a href="${D.contact.url}" target="_blank" rel="noopener">${D.contact.url.replace(/^https?:\/\/|\/$/g, '')}</a><div class="hint">Contact details from Iomist’s own materials. This page sends nothing.</div></div>`);
 }
 function refresh() { // a panel change redraws everything that depends on the farm
   const c = cropObj(); $('#cropHint').innerHTML = c.listed ? 'On FDA’s Food Traceability List. <a href="' + D.sources.ftl.url + '" target="_blank" rel="noopener">source</a>' : 'Not on FDA’s list: its rule does not cover this crop, but many buyers still ask for lot-level data.';
-  $('#introCrop').textContent = c.label.toLowerCase(); $('#lotsV').textContent = S.lots;
-  resetDrill(); if (S.mode === 'journey') renderJourney(); if (S.mode === 'doors') renderDoors();
+  S.jdirty = true; $('#introCrop').textContent = c.label.toLowerCase(); $('#lotsV').textContent = S.lots;
+  $('#trk').value = S.tracking; $$('[data-trk-pick]').forEach(b => b.setAttribute('aria-pressed', b.dataset.trkPick === S.tracking));
+  resetDrill(); $('#startPack').innerHTML = packSvg().replaceAll('"gl"', '"gl0"').replaceAll('#gl)', '#gl0)'); // own gradient id: the journey copy sits in a hidden view
+  if (S.mode === 'journey') renderJourney(); if (S.mode === 'doors') renderDoors();
 }
 function init() {
   $('#crop').innerHTML = D.crops.map(c => `<option value="${c.id}">${c.label}</option>`).join('');
@@ -754,15 +881,20 @@ function init() {
   $('#crop').onchange = e => { S.crop = e.target.value; refresh(); };
   $('#lots').oninput = e => { S.lots = +e.target.value; refresh(); };
   $('#trk').onchange = e => { S.tracking = e.target.value; refresh(); };
-  $$('[data-b]').forEach(b => b.onclick = () => { const id = b.dataset.b; S.buyers.has(id) ? S.buyers.delete(id) : S.buyers.add(id); b.setAttribute('aria-pressed', S.buyers.has(id)); if (S.mode === 'journey') renderJourney(); if (S.mode === 'doors') renderDoors(); if (S.mode === 'ready' && S.qi >= QS().length) renderResult(); });
-  $('#fdaChip').onclick = e => { S.fda = !S.fda; e.currentTarget.setAttribute('aria-pressed', S.fda); if (S.mode === 'journey') renderJourney(); if (S.mode === 'doors') renderDoors(); };
-  $('#ind').onclick = e => { S.industry = !S.industry; e.currentTarget.setAttribute('aria-pressed', S.industry); if (S.mode === 'journey') renderJourney(); if (S.mode === 'doors') renderDoors(); };
-  $('#asm').onclick = e => { S.assume = !S.assume; e.currentTarget.setAttribute('aria-pressed', S.assume); if (S.mode === 'journey') rerenderRibbon(); if (S.mode === 'doors') renderDoors(); };
+  $('#cmp').innerHTML = D.tracking.filter(t => t.id !== 'scanning').map(t => `<button class="chip" data-trk-pick="${t.id}">${t.label}</button>`).join('');
+  $$('[data-trk-pick]').forEach(b => b.onclick = () => { S.tracking = b.dataset.trkPick; refresh(); if (S.introSeen) runDrill(); });
+  $('#gNext').onclick = () => { const act = nextStep()[1]; if (act) act(); };
+  $('#gBack').onclick = () => { const pv = prevStep(); if (pv) pv[1](); };
+  $('#jPrev').onclick = jPrev;
+  $$('[data-b]').forEach(b => b.onclick = () => { S.jdirty = true; const id = b.dataset.b; S.buyers.has(id) ? S.buyers.delete(id) : S.buyers.add(id); b.setAttribute('aria-pressed', S.buyers.has(id)); if (S.mode === 'journey') renderJourney(); if (S.mode === 'doors') renderDoors(); if (S.mode === 'ready' && S.qi >= QS().length) renderResult(); });
+  $('#fdaChip').onclick = e => { S.jdirty = true; S.fda = !S.fda; e.currentTarget.setAttribute('aria-pressed', S.fda); if (S.mode === 'journey') renderJourney(); if (S.mode === 'doors') renderDoors(); };
+  $('#ind').onclick = e => { S.jdirty = true; S.industry = !S.industry; e.currentTarget.setAttribute('aria-pressed', S.industry); if (S.mode === 'journey') renderJourney(); if (S.mode === 'doors') renderDoors(); };
+  $('#asm').onclick = e => { S.jdirty = true; S.assume = !S.assume; e.currentTarget.setAttribute('aria-pressed', S.assume); if (S.mode === 'journey') rerenderRibbon(); if (S.mode === 'doors') renderDoors(); };
   $('#dToggle').onclick = () => { S.doorsOpen = !S.doorsOpen; renderDoors(); beep(S.doorsOpen ? 880 : 200, .15); };
-  $('#doorGrid').onclick = e => { const d = e.target.closest('[data-door]'); if (!d) return; const id = d.dataset.door; S.buyers.has(id) ? S.buyers.delete(id) : S.buyers.add(id); const chip = $(`[data-b="${id}"]`); if (chip) chip.setAttribute('aria-pressed', S.buyers.has(id)); renderDoors(); };
+  $('#doorGrid').onclick = e => { const d = e.target.closest('[data-door]'); if (!d) return; S.jdirty = true; const id = d.dataset.door; S.buyers.has(id) ? S.buyers.delete(id) : S.buyers.add(id); const chip = $(`[data-b="${id}"]`); if (chip) chip.setAttribute('aria-pressed', S.buyers.has(id)); renderDoors(); };
   $$('.story button').forEach(b => b.onclick = () => setMode(b.dataset.mode));
   document.addEventListener('click', e => {
-    const g = e.target.closest('[data-go]'); if (g) setMode(g.dataset.go);
+    const g = e.target.closest('[data-go]'); if (g) { if (g.dataset.trk) { S.tracking = g.dataset.trk; refresh(); } setMode(g.dataset.go); }
     const ph = e.target.closest('[data-ph]'); if (ph) { $$('[data-ph]').forEach(b => b.setAttribute('aria-pressed', b === ph)); $('#phScreen').innerHTML = phScreen(ph.dataset.ph); $('#phNote').innerHTML = PHNOTE[ph.dataset.ph]; beep(740, .06); }
     const st = e.target.closest('[data-star]'); if (st) $$('[data-star]').forEach(b => b.classList.toggle('on', +b.dataset.star <= +st.dataset.star));
     const sv = e.target.closest('[data-sv]'); if (sv) { const box = $('#phSv'); if (box) box.innerHTML = '<div class="ph-q">Thanks. Nothing was sent: this is a demo.</div>'; }
@@ -771,15 +903,18 @@ function init() {
   $('#again').onclick = () => { S.introSeen = true; runDrill(); };
   $('#aPull').onclick = () => pull(flowA, '#aPull'); $('#bPull').onclick = () => pull(flowB, '#bPull');
   $('#jNext').onclick = jNext; $('#jBack').onclick = jBack;
+  $('#jRules').onclick = e => { S.rules = !S.rules; e.currentTarget.setAttribute('aria-pressed', S.rules); deepen(); };
+  renderStatic();
   $('#snd').onclick = e => { S.sound = !S.sound; e.target.setAttribute('aria-pressed', S.sound); e.target.textContent = S.sound ? 'Sound on' : 'Sound off'; beep(660, .1); };
   $('#srcBtn').onclick = () => { $('#srcList').innerHTML = Object.values(D.sources).map(s => `<li><a href="${s.url}" target="_blank" rel="noopener">${s.label}</a></li>`).join('') + '<li>' + D.reference.map(r => `${r.text} <a href="${D.sources[r.source].url}" target="_blank" rel="noopener">source</a>`).join('</li><li>') + '</li>'; $('#srcDlg').showModal(); };
   $('#refs').innerHTML = D.reference.slice(0, 3).map(r => `<div class="ref"><span class="tag t-pub">published</span> ${r.text} <a href="${D.sources[r.source].url}" target="_blank" rel="noopener">source</a></div>`).join('');
   SC = new Scene($('#scene'), { onScan: () => beep(980, .05) }); flowA = new Flow($('#laneA canvas')); flowB = new Flow($('#laneB canvas')); rc = new Ready($('#rcv'));
   if (innerWidth < 900) $('#panel').open = false;
   refresh();
+  if (GSTEP[location.hash.slice(1)]) setMode(location.hash.slice(1)); // deep link: #faq, #drill, #journey, #doors, #ready
   addEventListener('resize', () => { flowA.resize(); flowB.resize(); rc.resize(); SC.resize(); });
   let lastT = performance.now();
-  (function loop(now) { const dt = Math.min(.05, (now - lastT) / 1000); lastT = now; if (S.mode === 'journey') { SC.step(dt); SC.draw(now); } if (S.mode === 'drill') { flowA.draw(now); flowB.draw(now); tickDrill(now); } else if (S.mode === 'ready') rc.draw(now); requestAnimationFrame(loop); })(performance.now());
+  (function loop(now) { const dt = Math.min(.05, (now - lastT) / 1000); lastT = now; guide(); if (S.mode === 'journey') { SC.step(dt); SC.draw(now); } if (S.mode === 'drill') { flowA.draw(now); flowB.draw(now); tickDrill(now); } else if (S.mode === 'ready') rc.draw(now); requestAnimationFrame(loop); })(performance.now());
 }
 init();
 window.tool = { S, runDrill, setMode, flowA: () => flowA, flowB: () => flowB, pull, jNext, jBack };

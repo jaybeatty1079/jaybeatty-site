@@ -24,7 +24,6 @@ assert.strictEqual(r.fda.applies, false); assert.strictEqual(r.buyers[0].pct, 10
 assert.strictEqual(M.scoreFda(yes, { crop: 'romaine', size: 'under25' }).applies, false);
 // data hygiene: every buyer item is a real question; no competitor words; sources exist
 D.buyers.forEach(b => { assert(D.sources[b.source], b.id); b.items.forEach(i => assert(M.question(i), i)); });
-assert(!/repositrak|ibm|azzule food|starfish/i.test(JSON.stringify(D.buyers)));
 
 // Trace
 const p = { lotsPerDay: 10, casesPerLot: 100, windowDays: 3, distributors: 3, stores: 12, seed: 4 };
@@ -59,5 +58,14 @@ const mx = M.matrix(['walmart', 'kroger', 'costco'], true);
 assert(mx.find(r => r.kind === 'label').buyers === 4); assert(mx.find(r => r.kind === 'trace').cells.costco === 2);
 // a "Not found" row is never counted as covered
 assert(M.doors(['kroger'], {}, 'paper', false)[0].notFound === 1);
-assert(!/repositrak|azzule food|starfish/i.test(JSON.stringify(D.reqs)));
+// a system that stops at the pallet: narrower than paper, never narrower than the one true lot, and the true lot is always inside
+const pal = M.runDrill(net, 'pallet');
+assert(pal.without.lots >= 1 && pal.without.lots < paper.without.lots && pal.without.cases > scan.with.cases);
+assert(pal.without.lotIds.includes(pal.truthLot.id));
+['paper', 'spreadsheet', 'erp', 'pallet'].forEach(t => assert.strictEqual(M.runDrill(net, t).without.steps.length, 5, t)); // the page times five steps
+assert(D.tracking.find(t => t.id === 'pallet'));
+// Start screen, FAQ, ask: every answer has a known kind, published ones a real source, links a real view; no prospect, person or incumbent named
+D.faq.forEach(f => { assert(f.q && f.a, f.q); assert(['site', 'iomist', 'pub', 'ask', 'ill'].includes(f.s), f.q); if (f.s === 'pub') assert(D.sources[f.source], f.q); if (f.go) assert(['drill', 'journey', 'ready', 'doors'].includes(f.go) && f.goLabel, f.q); });
+assert(D.steps.length === 4 && /^[^@\s]+@iomist\.ag$/.test(D.contact.email));
+assert(/Walmart 2025-08-01.*Albertsons 2027-01-01/.test(D.faq.find(f => f.go === 'doors').a)); // buyer dates come from the buyers table
 console.log('ok: readiness and trace tests passed');

@@ -96,20 +96,22 @@ const IOMIST_MODEL = (function (D) {
       return { lots: suspects.length, cases: net.cases.filter(c => ids.has(c.lot)).length, fields: new Set(suspects.map(l => l.field)).size, lotIds: [...ids] };
     };
     const windowLots = net.lots.filter(inWindow);
-    const without = tracking === 'paper' ? windowLots : windowLots.filter(l => l.dists.some(d => storeDists.includes(d)));
+    // pallet: a case- or pallet-level system knows which pallets went to the delivering distributor; the single pack carries no code, so the link stops there
+    const pallet = tracking === 'pallet';
+    const without = tracking === 'paper' ? windowLots : pallet ? windowLots.filter(l => l.dists.includes(complaint.dist)) : windowLots.filter(l => l.dists.some(d => storeDists.includes(d)));
     return {
       complaint, truthLot, storeDists,
-      without: Object.assign(lane(without), { steps: ['Store gives its invoice: a distributor and a date, no lot', 'Ask each distributor which lots it received', 'Distributor cannot link outbound cases to lots', 'Ask the grower to match harvest records', 'Cannot prove which fields: pull the whole window'] }),
+      without: Object.assign(lane(without), { steps: pallet ? ['Store gives its invoice: a distributor and a date, no lot', 'The system lists every pallet shipped to that distributor', 'Cases came off the pallet there: the record stops', 'The clamshell has no code of its own to match', 'Pull every lot that went to that distributor'] : ['Store gives its invoice: a distributor and a date, no lot', 'Ask each distributor which lots it received', 'Distributor cannot link outbound cases to lots', 'Ask the grower to match harvest records', 'Cannot prove which fields: pull the whole window'] }),
       with: Object.assign(lane([truthLot]), { steps: ['Scan the clamshell: its code names the lot', 'Lot record: field, harvest date, packing and shipping as recorded', 'Pull that lot only', 'Everything else keeps shipping'] }),
       totalCasesInWindow: net.cases.filter(c => inWindow(net.lots.find(l => l.id === c.lot))).length
     };
   }
 
   /* ---------- Buyer layers and doors ----------
-     Every 'covers' / 'records' mark in data.js is an ASSUMPTION about Iomist, to confirm with Iomist.
+     Every 'covers' / 'records' mark in data.js is the author's working assumption about Iomist.
      "Today" uses the viewer's readiness answers when given; otherwise a labeled illustration from how they track today. */
   const TECH = r => r.iomist === 'covers' || r.iomist === 'records';
-  const PRESET = { paper: { data: 0, label: 0, ship: 0, trace: 0 }, spreadsheet: { data: .5, label: 0, ship: .5, trace: .5 }, erp: { data: .5, label: 0, ship: .5, trace: .5 }, scanning: { data: 1, label: 1, ship: 1, trace: 1 } };
+  const PRESET = { paper: { data: 0, label: 0, ship: 0, trace: 0 }, spreadsheet: { data: .5, label: 0, ship: .5, trace: .5 }, erp: { data: .5, label: 0, ship: .5, trace: .5 }, pallet: { data: .5, label: .5, ship: .5, trace: .5 }, scanning: { data: 1, label: 1, ship: 1, trace: 1 } };
   function layerReqs(buyerIds, industry, stop) {
     return D.reqs.filter(r => (buyerIds.includes(r.buyer) || (industry && r.buyer === 'industry')) && (!stop || r.stop === stop));
   }
