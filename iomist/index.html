@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Night Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#111111; --panel:#171b1b; --panel2:#1d2222; --line:#2a3232; --ink:#e8ecec; --mute:#8d9a9a;
+  --teal:#4dccc7; --teal-d:#2a7f7c; --coral:#ff7a59; --coral-d:#7a3a2b; --gold:#d9c36a;
+  --sans:'Inter Tight',system-ui,-apple-system,Segoe UI,sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.45}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--teal)}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+:root{color-scheme:dark}
+.app{display:grid;grid-template-rows:auto 1fr auto;min-height:100vh;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.note{font-size:12px;color:var(--mute)}
+header{display:flex;align-items:center;gap:18px;padding:10px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+header img{height:22px;display:block}
+.story{display:flex;gap:6px;flex:1;min-width:260px}
+.story button{flex:1;background:none;border:1px solid var(--line);border-radius:8px;padding:7px 10px;text-align:left;color:var(--mute);transition:.2s}
+.story button b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.story button span{font-size:13px}
+.story button.on{border-color:var(--teal);color:var(--ink);background:rgba(77,204,199,.07)}
+.story button.on b{color:var(--teal)}
+.tools{display:flex;gap:8px;align-items:center}
+.pill{background:none;border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:13px;color:var(--mute)}
+.pill:hover{color:var(--ink);border-color:var(--teal-d)}
+.pill[aria-pressed=true]{color:var(--teal);border-color:var(--teal)}
+.body{display:grid;grid-template-columns:292px 1fr;min-height:0}
+aside{border-right:1px solid var(--line);padding:16px;background:var(--panel);overflow:auto}
+aside h2{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin:0 0 14px;font-weight:600}
+aside summary{display:none}
+.f{margin-bottom:18px}
+.f label,.f .lab{display:block;font-size:13px;color:var(--mute);margin-bottom:6px}
+select{width:100%;background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 10px;font:inherit}
+input[type=range]{width:100%;accent-color:var(--teal)}
+.val{font-family:var(--mono);color:var(--teal);float:right}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--panel2);border:1px solid var(--line);border-radius:99px;padding:5px 11px;font-size:13px;color:var(--mute)}
+.chip[aria-pressed=true]{border-color:var(--teal);color:var(--ink);background:rgba(77,204,199,.1)}
+.chip small{color:var(--mute);font-size:11px}
+.hint{font-size:12px;color:var(--mute);margin-top:6px}
+.legend{margin-top:22px;border-top:1px solid var(--line);padding-top:14px;font-size:12px;color:var(--mute)}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.04em;padding:1px 6px;border-radius:4px;border:1px solid;vertical-align:1px;white-space:nowrap}
+.t-pub{color:var(--teal);border-color:var(--teal-d)}
+.t-you{color:var(--gold);border-color:#6b6030}
+.t-ill{color:var(--mute);border:1px dashed #5a6666}
+main{position:relative;min-width:0;overflow:auto}
+.view{display:none;padding:14px 18px 18px}
+.view.on{display:block}
+h1{font-size:22px;margin:0 0 4px;font-weight:600;letter-spacing:-.01em}
+.sub{color:var(--mute);margin:0 0 12px;max-width:70ch}
+.lane{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:0;border:1px solid var(--line);border-radius:12px;background:#0d0f0f;margin-bottom:12px;overflow:hidden}
+.lane canvas{width:100%;height:268px;display:block}
+.lane .rail{border-left:1px solid var(--line);padding:12px 14px;display:flex;flex-direction:column;gap:8px;background:var(--panel)}
+.rail h3{margin:0;font-size:15px;font-weight:600}
+.rail h3 span{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.lane.bad h3 span{color:var(--coral)} .lane.good h3 span{color:var(--teal)}
+.steps{list-style:none;margin:0;padding:0;font-size:13px;min-height:100px}
+.steps li{opacity:0;transform:translateY(4px);transition:.4s;padding:3px 0 3px 16px;position:relative;color:var(--ink)}
+.steps li::before{content:"";position:absolute;left:2px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--mute)}
+.lane.bad .steps li.on::before{background:var(--coral)} .lane.good .steps li.on::before{background:var(--teal)}
+.steps li.on{opacity:1;transform:none}
+.count{margin-top:auto;font-family:var(--mono)}
+.count .n{font-size:30px;font-weight:500;line-height:1}
+.lane.bad .count .n{color:var(--coral)} .lane.good .count .n{color:var(--teal)}
+.count small{display:block;color:var(--mute);font-size:11px;margin-top:3px;font-family:var(--sans)}
+.btn{background:var(--teal);color:#06201f;border:0;border-radius:8px;padding:9px 14px;font-weight:600}
+.btn:hover{filter:brightness(1.1)}
+.btn[disabled]{background:#243030;color:#5b6a6a;cursor:default;filter:none}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--teal)}
+.btn.coral{background:var(--coral);color:#2b0e06}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.intro{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(17,17,17,.78);backdrop-filter:blur(3px);z-index:5;padding:20px}
+.intro.on{display:flex}
+.intro .card{max-width:520px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 26px}
+.intro h2{margin:0 0 8px;font-size:26px;letter-spacing:-.02em;font-weight:600}
+.intro p{color:#c4cfcf;margin:0 0 16px}
+.result{display:none;border:1px solid var(--teal-d);background:rgba(77,204,199,.06);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.result.on{display:block}
+.result b.n{font-family:var(--mono);font-size:18px}
+.refs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:4px}
+.ref{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel);font-size:13px}
+.ref a{font-size:12px}
+/* journey */
+.scene{width:100%;height:400px;display:block;border:1px solid var(--line);border-radius:12px;margin-bottom:14px;background:#080d0f}
+.jgrid{display:grid;grid-template-columns:300px 1fr;gap:18px;align-items:start}
+.pack{border:1px solid var(--line);border-radius:12px;background:#0d0f0f;padding:14px;text-align:center}
+.pack svg{width:100%;height:auto;max-width:300px}
+.pack .cap{font-size:12px;color:var(--mute)}
+.ribbon{position:relative;padding-left:26px}
+.ribbon::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:3px;background:var(--line);border-radius:2px}
+.ribbon .fill{position:absolute;left:8px;top:6px;width:3px;background:var(--teal);border-radius:2px;height:0;transition:height .6s;box-shadow:0 0 12px var(--teal)}
+.ribbon .fill.back{background:var(--coral);box-shadow:0 0 12px var(--coral)}
+.stop{position:relative;margin-bottom:12px;opacity:.25;transition:.5s;border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:var(--panel)}
+.stop.on{opacity:1}
+.stop::before{content:"";position:absolute;left:-23px;top:16px;width:11px;height:11px;border-radius:50%;background:#2a3232;border:2px solid var(--bg);transition:.4s}
+.stop.on::before{background:var(--teal);box-shadow:0 0 10px var(--teal)}
+.stop.hot{border-color:var(--coral);background:rgba(255,122,89,.07)}
+.stop.hot::before{background:var(--coral);box-shadow:0 0 10px var(--coral)}
+.stop h3{margin:0 0 6px;font-size:15px;font-weight:600;display:flex;justify-content:space-between;gap:8px}
+.stop h3 small{font-weight:400;color:var(--mute);font-size:12px}
+.dchips{display:flex;flex-wrap:wrap;gap:6px}
+.dc{border:1px solid var(--line);border-radius:8px;padding:4px 8px;font-size:12px;background:#121616}
+.dc i{display:block;font-style:normal;font-family:var(--mono);font-size:12px;color:var(--ink)}
+.dc em{font-style:normal;color:var(--mute)}
+.dc .k{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;vertical-align:0}
+.k-fda{background:var(--gold)} .k-io{background:var(--teal)} .k-ask{border:1px dashed var(--mute)}
+.dc.ask{border-style:dashed}
+.t-ask{color:var(--gold);border:1px dashed #6b6030}
+.bigs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}
+.bigbuyer{border:1px solid var(--teal-d);border-radius:10px;padding:10px 12px;background:#101515;font-size:13px}
+.bigbuyer b{font-size:22px;font-weight:800;letter-spacing:.01em;display:inline-block;margin-right:6px}
+.bigbuyer.np{border-style:dashed;border-color:#5a6666}
+.gatebox{border:1px solid #6b6030;border-radius:10px;padding:10px 12px;background:rgba(217,195,106,.06);font-size:13px}
+.gatebox .gk b{font-size:22px;font-weight:800;color:var(--gold)}
+.gatebox ul{margin:6px 0 8px;padding-left:18px}
+.gatebox li{margin-bottom:3px}
+.phonewrap{display:grid;gap:8px}
+.phtabs{display:flex;gap:6px;flex-wrap:wrap}
+.phone{width:262px;max-width:100%;border:2px solid #3b4a4a;border-radius:30px;padding:12px 10px;background:#0a0d0d;justify-self:center}
+.screen{background:#f3f7f7;color:#111;border-radius:20px;padding:14px 14px 12px;min-height:330px;font-size:13px;font-family:var(--sans)}
+.ph-h{font-weight:800;font-size:19px;line-height:1.15;margin-bottom:2px}
+.ph-sub{font-family:var(--mono);font-size:10.5px;color:#4a5757;margin-bottom:10px}
+.ph-d{display:grid;grid-template-columns:78px 1fr;gap:5px 8px;margin:0 0 10px}
+.ph-d dt{color:#5b6a6a;font-size:11.5px} .ph-d dd{margin:0;font-weight:600}
+.ph-j{list-style:none;display:flex;flex-wrap:wrap;gap:3px 9px;margin:6px 0 4px;padding:0;font-size:9.5px;color:#2a7f7c;font-family:var(--mono)}
+.phonewrap,.phone,.screen,.stop{min-width:0}
+.ph-j li::before{content:"\2713 ";}
+.ph-q{font-weight:700;margin:10px 0 6px}
+.ph-o,.ph-b{border:1.5px solid #b9c7c7;border-radius:8px;padding:7px 10px;margin-bottom:6px;cursor:pointer}
+.ph-o.on{background:#dff3f2;border-color:#2a7f7c}
+.ph-b{background:#111;color:#fff;text-align:center;border-color:#111}
+.ph-s{color:#8a9696;font-size:11px}
+.ph-st{display:flex;gap:2px;margin-bottom:6px}
+.ph-st button{background:none;border:0;font-size:24px;color:#b9c7c7;cursor:pointer;padding:0 2px}
+.ph-st button.on{color:#e0a82e}
+.ph-sv{border-top:1px solid #cfdada;margin-top:8px;padding-top:2px}
+.ph.common p{margin:6px 0}
+.layers{margin-top:10px;display:grid;gap:8px}
+.lyr{border-left:3px solid var(--teal-d);padding-left:10px}
+.lyr>b{display:block;font-size:16px;font-weight:800;letter-spacing:.02em;margin-bottom:3px}
+.req{font-size:12.5px;margin-bottom:4px;color:#cfd8d8}
+.req.nf{color:var(--mute);font-style:italic}
+.req a{font-size:11px}
+.st{display:inline-block;font-family:var(--mono);font-size:10px;padding:1px 6px;border-radius:4px;border:1px solid;white-space:nowrap}
+.st i{font-style:normal;color:var(--gold)}
+.st.cv{color:var(--teal);border-color:var(--teal-d);background:rgba(77,204,199,.08)}
+.st.op{color:var(--coral);border-color:var(--coral-d)}
+.st.ow{color:var(--mute);border-color:#4a5656}
+.st.nf{color:var(--mute);border:1px dashed #5a6666}
+.clock{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:14px 16px 10px;margin-top:12px}
+.cl-big{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:6px}
+.cl-big b{font-size:30px;font-weight:800;color:var(--teal);letter-spacing:-.01em}
+.cl-big span{color:#cfd8d8;font-size:13px;max-width:62ch}
+.cl-axis{position:relative;height:150px;margin:10px 6px 0}
+.cl-axis::before{content:"";position:absolute;left:0;right:0;top:74px;height:3px;background:var(--line);border-radius:2px}
+.cl-win{position:absolute;left:0;width:93.7%;top:74px;height:3px;background:linear-gradient(90deg,var(--teal),rgba(77,204,199,.15));box-shadow:0 0 12px rgba(77,204,199,.5);border-radius:2px}
+.cl-tick{position:absolute;top:69px;width:3px;height:13px;margin-left:-1px;background:var(--ink);border-radius:2px}
+.cl-now{position:absolute;left:0;top:84px;font-family:var(--mono);font-size:10px;color:var(--teal)}
+.cl-ev{position:absolute;display:grid;gap:1px;width:172px;font-size:11.5px;color:#cfd8d8;text-decoration:none;line-height:1.25}
+.cl-ev b{font-size:15px;font-weight:800;color:var(--ink);letter-spacing:.01em}
+.cl-ev em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--teal)}
+.cl-ev.up{top:0} .cl-ev.dn{top:92px}
+.cl-ev.big b{color:var(--gold);font-size:18px}
+.cl-ev.watch b{color:var(--mute)}
+.cl-ev:hover{background:rgba(77,204,199,.06)}
+.cl-msg{margin-top:8px}
+.h2{font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:20px 0 8px;font-weight:600}
+.doors{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:10px;margin-top:12px}
+.door{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:left;display:grid;gap:6px;align-content:start;color:var(--ink)}
+.door b{font-size:19px;font-weight:800;letter-spacing:.01em}
+.door.wait{opacity:.5;border-style:dashed}
+.door.wait:hover{opacity:.9}
+.dframe{width:58px;height:84px;border:3px solid #5a6666;border-radius:4px 4px 0 0;position:relative;background:#060808;perspective:240px;overflow:visible;margin-bottom:2px}
+.dleaf{position:absolute;inset:0;background:#26302f;border:2px solid #3b4a4a;transform-origin:left center;transition:transform .9s cubic-bezier(.3,.7,.2,1)}
+.dleaf::after{content:"";position:absolute;right:7px;top:42px;width:6px;height:6px;border-radius:50%;background:var(--coral)}
+.door .dframe{border-color:var(--coral-d)}
+.door.open .dframe{border-color:var(--teal);box-shadow:0 0 28px rgba(77,204,199,.45) inset,0 0 18px rgba(77,204,199,.25)}
+.door.open .dleaf{transform:rotateY(-72deg);background:#1a2a29}
+.door.open .dleaf::after{background:var(--teal)}
+.dnum{font-size:12px;color:var(--mute)}
+.dnum em{font-style:normal;font-family:var(--mono);color:var(--coral);font-size:14px}
+.dnum em.w{color:var(--teal)}
+.mxwrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.mxwrap table{border-collapse:collapse;width:100%;font-size:12.5px}
+.mxwrap th,.mxwrap td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+.mxwrap th:first-child,.mxwrap td:first-child{text-align:left;position:sticky;left:0;background:var(--panel)}
+.mxwrap th{font-size:11px;letter-spacing:.04em;color:var(--mute);font-weight:600}
+.dot{color:var(--teal);letter-spacing:1px} .dot.o{color:#6b7878}
+.keeps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.kcol{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--panel);font-size:13px}
+.kcol h3{margin:0 0 6px;font-size:14px}
+.kcol ul{margin:0 0 6px;padding-left:18px}
+.kcol li{margin-bottom:4px}
+.keyrow{font-size:12px;color:var(--mute);margin:0 0 10px;display:flex;gap:14px;flex-wrap:wrap}
+.keyrow span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px}
+.keyrow .a::before{background:var(--gold)} .keyrow .b::before{background:var(--teal)} .keyrow .c::before{border:1px dashed var(--mute)}
+/* readiness */
+.rgrid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:14px}
+.rgrid canvas{width:100%;height:380px;display:block;border:1px solid var(--line);border-radius:12px;background:#0d0f0f}
+.qcard{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:16px}
+.qcard .prog{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.qcard h3{font-size:18px;margin:6px 0 12px;font-weight:600;line-height:1.3}
+.qcard .src{font-size:12px;margin-top:10px;color:var(--mute)}
+.ans{display:flex;gap:8px;flex-wrap:wrap}
+.ans .btn{flex:1;min-width:80px}
+.res h3{margin:14px 0 6px;font-size:14px}
+.bar{height:8px;border-radius:4px;background:var(--line);overflow:hidden;margin:4px 0 2px}
+.bar i{display:block;height:100%;background:var(--teal)}
+.gap{border-top:1px solid var(--line);padding:8px 0;font-size:13px}
+.gap .why{color:var(--mute);font-size:12px}
+.io-site{color:var(--teal)} .io-ask{color:var(--gold)}
+footer{border-top:1px solid var(--line);padding:10px 0;font-size:12px;color:var(--mute);display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
+dialog{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:14px;max-width:640px;width:calc(100% - 32px);padding:20px}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+dialog li{margin-bottom:8px;font-size:13px}
+@media (max-width:900px){
+  .body{grid-template-columns:1fr}
+  aside{border-right:0;border-bottom:1px solid var(--line);padding:0}
+  aside summary{display:block;padding:12px 16px;font-weight:600;cursor:pointer}
+  aside .inner{padding:0 16px 14px}
+  .lane{grid-template-columns:1fr}
+  .lane .rail{border-left:0;border-top:1px solid var(--line)}
+  .lane canvas{height:230px}
+  .jgrid,.rgrid{grid-template-columns:minmax(0,1fr)}
+  .scene{height:300px}
+  .story{display:grid;grid-template-columns:1fr 1fr;min-width:0}
+  .story button{min-width:0}
+  .story button span{font-size:12px}
+  .tools{width:100%}
+  .rgrid canvas{height:300px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <img src="assets/iomist-logo-teal.svg" alt="Iomist">
+  <nav class="story" aria-label="The story">
+    <button data-mode="drill" class="on"><b>1 &middot; Friday</b><span>The call</span></button>
+    <button data-mode="journey"><b>2 &middot; Tuesday</b><span>The clamshell</span></button>
+    <button data-mode="ready"><b>3 &middot; Monday</b><span>Where you stand</span></button>
+    <button data-mode="doors"><b>4 &middot; Next season</b><span>The doors</span></button>
+  </nav>
+  <div class="tools">
+    <span class="note">Concept, not reviewed by Iomist</span>
+    <button class="pill" id="snd" aria-pressed="false">Sound off</button>
+    <button class="pill" id="srcBtn">Sources</button>
+  </div>
+</header>
+
+<div class="body">
+<aside>
+ <details id="panel" open>
+  <summary>Your farm</summary>
+  <div class="inner">
+  <h2>Your farm</h2>
+  <div class="f"><label for="crop">Crop</label><select id="crop"></select><div class="hint" id="cropHint"></div></div>
+  <div class="f"><label for="lots">Lots a day <span class="val" id="lotsV"></span></label><input type="range" id="lots" min="2" max="40" value="10"><div class="hint">A lot is whatever you define it: a field, a block, a day, a crew. <span class="tag t-you">yours</span></div></div>
+  <div class="f"><div class="lab">Who you sell to</div><div class="chips" id="buyers"></div><div class="hint">Each buyer adds what it has published. Dates are the buyer's own.</div></div>
+  <div class="f"><div class="lab">Layers</div><div class="chips"><button class="chip" id="fdaChip" aria-pressed="true">FDA rule</button><button class="chip" id="ind" aria-pressed="true">PTI / GS1 baseline</button><button class="chip" id="asm" aria-pressed="true">Iomist covers it (assumed)</button></div><div class="hint">Assumed until Iomist confirms. Switch off to see each item as open.</div></div>
+  <div class="f"><label for="trk">How you track today</label><select id="trk"></select></div>
+  <div class="legend">Every number here is one of three kinds:<br>
+   <span class="tag t-pub">published</span> from a source you can open<br>
+   <span class="tag t-you">yours</span> typed into this panel<br>
+   <span class="tag t-ill">illustration</span> drawn to show how it works, not measured.
+  </div>
+  </div>
+ </details>
+</aside>
+
+<main id="stage">
+ <!-- DRILL -->
+ <section class="view on" id="v-drill" aria-label="Recall drill">
+  <h1>A store calls about one clamshell.</h1>
+  <p class="sub">Same farm, same lot, same call, run twice. Left: the records most farms have today. Right: a lot record that starts in the field. <span class="tag t-ill">illustration</span> The counts scale with the farm you set; no times are measured.</p>
+  <div class="lane bad" id="laneA">
+    <canvas aria-hidden="true"></canvas>
+    <div class="rail">
+      <h3><span>Today</span><b id="aTitle">Paper and memory</b></h3>
+      <ol class="steps" id="aSteps"></ol>
+      <div class="count"><span class="n" id="aN">0</span> cases pulled<small>of <span id="aTot">0</span> cases in the three-day window <span class="tag t-ill">illustration</span></small></div>
+      <button class="btn coral" id="aPull" disabled>Pull it</button>
+    </div>
+  </div>
+  <div class="lane good" id="laneB">
+    <canvas aria-hidden="true"></canvas>
+    <div class="rail">
+      <h3><span>With a lot record</span><b>Scanned in the field</b></h3>
+      <ol class="steps" id="bSteps"></ol>
+      <div class="count"><span class="n" id="bN">0</span> cases pulled<small>of <span id="bTot">0</span> cases in the three-day window <span class="tag t-ill">illustration</span></small></div>
+      <button class="btn" id="bPull" disabled>Pull it</button>
+    </div>
+  </div>
+  <div class="result" id="drillRes" role="status">
+    <div><b>Same complaint.</b> <b class="n" id="rA" style="color:var(--coral)"></b> cases pulled without a lot record; <b class="n" id="rB" style="color:var(--teal)"></b> with one. <span class="tag t-ill">illustration scaled to your inputs</span></div>
+    <div class="row" style="margin-top:10px"><button class="btn" data-go="journey">Rewind to Tuesday: follow the clamshell</button><button class="btn ghost" id="again">Run it again</button></div>
+  </div>
+  <div class="refs" id="refs"></div>
+ </section>
+
+ <!-- JOURNEY -->
+ <section class="view" id="v-journey" aria-label="A clamshell's journey">
+  <h1 id="jTitle">One clamshell, from the field to the shelf.</h1>
+  <p class="sub">This is the clamshell behind Friday's call. At each stop, the data a lot record would hold. <span class="tag t-ill">example values</span></p>
+  <canvas id="scene" class="scene" role="img" aria-label="A 2D scene: pickers scan trays in a field, the product goes to a cooler, a packing shed and a dock, then on three roads to distributors and stores, ending on a shelf"></canvas>
+  <div class="jgrid">
+    <div class="pack"><div id="packSvg"></div><div class="cap" id="packCap"></div></div>
+    <div>
+      <div class="keyrow"><span class="a">FDA key data element</span><span class="b">Iomist's site says it captures this</span><span class="c">Dashed: not on the site, ask Iomist</span></div>
+      <div class="ribbon" id="ribbon"><div class="fill" id="rfill"></div></div>
+      <div class="row"><button class="btn" id="jNext">Next stop</button><button class="btn coral" id="jBack" style="display:none">Trace the complaint back</button><button class="btn ghost" data-go="ready" id="jReady" style="display:none">Where do you stand? &rarr;</button></div>
+      <p class="hint" id="jEnd"></p>
+    </div>
+  </div>
+ </section>
+
+ <!-- READINESS -->
+ <section class="view" id="v-ready" aria-label="Readiness check">
+  <h1>Where do you stand?</h1>
+  <p class="sub">A short set of questions against FDA's traceability rule and what your buyers have published. A self-check, not a compliance determination.</p>
+  <div class="rgrid">
+    <canvas id="rcv" aria-label="A map of your farm's records, lit by your answers"></canvas>
+    <div>
+      <div class="qcard" id="qcard"></div>
+    </div>
+  </div>
+ </section>
+
+ <!-- DOORS -->
+ <section class="view" id="v-doors" aria-label="The doors">
+  <h1>Next season: the doors.</h1>
+  <p class="sub">One lot record, many buyers. Each door is a buyer; the ones you switched on in the panel show what they have published. Tap a waiting door to add it. <span class="tag t-ask">Iomist covering them is assumed, to confirm</span></p>
+  <div class="row"><button class="btn" id="dToggle">Add the lot record</button><span class="hint" id="dState"></span></div>
+  <div class="clock" id="clock"></div>
+  <div class="doors" id="doorGrid"></div>
+  <h2 class="h2">Capture once, answer many</h2>
+  <div class="mxwrap" id="matrix"></div>
+  <h2 class="h2">What stays, what is added, what it opens</h2>
+  <div class="keeps" id="keeps"></div>
+  <p class="hint" id="doorNote"></p>
+ </section>
+
+ <div class="intro on" id="intro">
+  <div class="card">
+    <h2>Friday, 4:47 p.m.</h2>
+    <p>A store reports a problem with one clamshell of <b id="introCrop">romaine</b>. The question is the oldest one in the business: where did it come from, and what else went with it?</p>
+    <div class="row"><button class="btn" id="take">Take the call</button><button class="btn ghost" data-go="ready">Skip to the readiness check</button></div>
+    <p class="hint" style="margin-top:14px">A private preview built from public sources. Not reviewed by Iomist.</p>
+  </div>
+ </div>
+</main>
+</div>
+
+<footer><span>Illustration built from public sources (read 2026-11-04 and 2026-11-08) and, for the scanner roles, Iomist’s own proposal. Iomist captures and reports the required data; this is not a compliance determination.</span><span>Private preview</span></footer>
+</div>
+
+<dialog id="srcDlg"><h2 style="margin-top:0">Sources</h2><p class="hint">Everything marked published comes from one of these, read 2026-11-04.</p><ul id="srcList"></ul><form method="dialog"><button class="btn">Close</button></form></dialog>
+
+<script src="data.js"></script>
+<script src="model.js"></script>
+<script src="scene.js"></script>
+<script>
+'use strict';
+const D = IOMIST_DATA, M = IOMIST_MODEL;
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const TODAY = new Date().toISOString().slice(0, 10); // the viewer's own date: statuses and the FDA countdown run from it
+const S = { crop: 'romaine', lots: 10, buyers: new Set(['walmart', 'costco', 'kroger']), tracking: 'paper', fda: true, industry: true, assume: true, doorsOpen: false, answers: {}, size: null, qi: 0, mode: 'drill', net: null, drill: null, jstop: 0, jdone: false };
+const PARAMS = () => ({ lotsPerDay: S.lots, casesPerLot: 100, windowDays: 3, distributors: 3, stores: 12, seed: 4 });
+const cropObj = () => D.crops.find(c => c.id === S.crop);
+const CROPCOL = { romaine: '#7fbf6a', leafy: '#6fb35c', tomato: '#e8553d', cucumber: '#3f9b5a', pepper: '#f2a93b', melon: '#e9b86a', herb: '#58a35f', tropical: '#f0a23d', freshcut: '#9bcf80', berry: '#d6405a', onion: '#c9a27a', other: '#a8b3b3' };
+
+/* ---------- sound (off until asked) ---------- */
+let AC = null;
+function beep(f, d, type) { if (!S.sound) return; try { AC = AC || new (window.AudioContext || window.webkitAudioContext)(); const o = AC.createOscillator(), g = AC.createGain(); o.type = type || 'sine'; o.frequency.value = f; g.gain.value = .0001; o.connect(g); g.connect(AC.destination); const t = AC.currentTime; g.gain.exponentialRampToValueAtTime(.06, t + .01); g.gain.exponentialRampToValueAtTime(.0001, t + d); o.start(t); o.stop(t + d + .02); } catch (e) {} }
+
+/* ---------- geometry ---------- */
+const lerp = (a, b, t) => a + (b - a) * t;
+const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+function bez(a, b, u) { // horizontal-tangent cubic from a (left) to b (right)
+  const dx = (b.x - a.x) / 2, x1 = a.x + dx, x2 = b.x - dx, v = 1 - u;
+  return { x: v*v*v*a.x + 3*v*v*u*x1 + 3*v*u*u*x2 + u*u*u*b.x, y: v*v*v*a.y + 3*v*v*u*a.y + 3*v*u*u*b.y + u*u*u*b.y };
+}
+
+/* ---------- the flow canvas (one lane) ---------- */
+class Flow {
+  constructor(cv, tone) { this.cv = cv; this.ctx = cv.getContext('2d'); this.tone = tone; this.parts = []; this.st = null; this.last = performance.now(); this.resize(); }
+  resize() { const r = this.cv.getBoundingClientRect(); this.dpr = Math.min(2, devicePixelRatio || 1); this.w = Math.max(200, r.width); this.h = Math.max(120, r.height); this.cv.width = this.w * this.dpr; this.cv.height = this.h * this.dpr; if (this.net) this.layout(); }
+  setNet(net) {
+    this.net = net; this.layout();
+    const cases = net.cases, n = Math.min(380, cases.length), parts = [];
+    for (let k = 0; k < n; k++) {
+      const c = cases[Math.floor(k * cases.length / n)], lot = net.lots.find(l => l.id === c.lot);
+      parts.push({ lot: c.lot, field: lot.field, dist: c.dist, store: c.store, t: ((k * 0.6180339) % 1), sp: .045 + ((k * 37) % 17) / 17 * .03, frozen: false, fade: 1 });
+    }
+    this.parts = parts; this.st = null;
+  }
+  layout() {
+    const { w, h, net } = this, px = 26, py = 26, x = f => px + f * (w - 2 * px);
+    this.xs = [x(.07), x(.35), x(.62), x(.93)];
+    const col = (n, x0) => Array.from({ length: n }, (_, i) => ({ x: x0, y: lerp(py, h - py, (i + .5) / n) }));
+    this.fields = col(net.fields, this.xs[0]);
+    this.packer = { x: this.xs[1], y: h / 2, hh: h * .3 };
+    this.dists = col(net.params.distributors, this.xs[2]).map(p => ({ x: p.x, y: lerp(py + h * .1, h - py - h * .1, (p.y - py) / (h - 2 * py)) }));
+    this.stores = col(net.params.stores, this.xs[3]);
+  }
+  nodeOf(key) { const k = key[0], i = +key.slice(1); return k === 'f' ? this.fields[i] : k === 'd' ? this.dists[i] : k === 's' ? this.stores[i] : this.packer; }
+  pathOf(p) { return [this.fields[p.field], this.packer, this.dists[p.dist], this.stores[p.store]]; }
+  pos(p) { const P = this.pathOf(p), s = clamp(Math.floor(p.t * 3), 0, 2), u = p.t * 3 - s; return bez(P[s], P[s + 1], u); }
+  /* st: { t0, complaint:{store,dists[],lot,field}, kind:'bad'|'good', resolveAt, suspects:Set, pulledAt, sweep } */
+  start(st) { this.st = st; this.parts.forEach(p => { p.frozen = false; p.fade = 1; }); }
+  elapsed(now) { return this.st ? (now - this.st.t0) * (RM ? 8 : 1) : -1; }
+  draw(now) {
+    const { ctx, dpr, w, h } = this, dt = Math.min(.05, (now - this.last) / 1000); this.last = now;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
+    const st = this.st, e = this.elapsed(now), resolved = st && e >= st.resolveAt;
+    // sweep bar position (top lane pull)
+    let sweepX = -1; if (st && st.pulledAt) sweepX = clamp((now - st.pulledAt) / (RM ? 100 : 1000), 0, 1) * (w + 20);
+    // nodes
+    const amberNodes = new Set(); let waveP = 0;
+    if (st) { waveP = this.wave(e); amberNodes.add('s' + st.complaint.store);
+      if (st.kind === 'bad') { if (waveP >= .34) st.complaint.dists.forEach(d => amberNodes.add('d' + d)); if (waveP >= .67) amberNodes.add('pk'); if (waveP >= .99) st.fieldSet.forEach(f => amberNodes.add('f' + f)); }
+      else { if (waveP >= .34) amberNodes.add('d' + st.complaint.dist); if (waveP >= .67) amberNodes.add('pk'); if (waveP >= .99) amberNodes.add('f' + st.complaint.field); } }
+    this.drawNodes(amberNodes, now);
+    // wave trails
+    if (st) this.drawTrails(e, waveP, now);
+    // particles
+    ctx.globalCompositeOperation = 'lighter';
+    for (const p of this.parts) {
+      const sus = resolved && st.suspects.has(p.lot);
+      if (!p.frozen) { if (!RM) p.t = (p.t + dt * p.sp) % 1; }
+      const q = this.pos(p);
+      if (sus && st.pulledAt && !p.frozen && q.x <= sweepX) p.frozen = true;
+      if (p.frozen) p.fade = Math.max(.14, p.fade - dt * 1.4);
+      ctx.fillStyle = sus ? `rgba(255,122,89,${.9 * p.fade})` : `rgba(77,204,199,${.78 * p.fade})`;
+      ctx.beginPath(); ctx.arc(q.x, q.y, sus ? 2.3 : 1.7, 0, 7); ctx.fill();
+      if (!sus) { ctx.fillStyle = `rgba(77,204,199,${.12 * p.fade})`; ctx.beginPath(); ctx.arc(q.x, q.y, 4.5, 0, 7); ctx.fill(); }
+    }
+    ctx.globalCompositeOperation = 'source-over';
+    if (sweepX > 0 && sweepX < w + 20) { const g = ctx.createLinearGradient(sweepX - 40, 0, sweepX, 0); g.addColorStop(0, 'rgba(255,122,89,0)'); g.addColorStop(1, 'rgba(255,122,89,.55)'); ctx.fillStyle = g; ctx.fillRect(sweepX - 40, 0, 40, h); }
+    // column labels
+    ctx.fillStyle = '#6f7d7d'; ctx.font = '10px "JetBrains Mono",monospace'; ctx.textAlign = 'center';
+    const lab = this.w < 420 ? ['', '', '', ''] : ['FIELDS', 'PACKING', 'DISTRIBUTORS', 'STORES'];
+    lab.forEach((t, i) => ctx.fillText(t, this.xs[i], 12));
+  }
+  wave(e) { // 0 store -> 1 field. top lane stalls at the distributor.
+    const st = this.st; if (!st || e < 900) return 0;
+    if (st.kind === 'good') return clamp((e - 900) / 1000, 0, 1);
+    if (e < 1800) return clamp((e - 900) / 900, 0, 1) * .34;
+    if (e < 2700) return .34;
+    if (e < 3300) return .34 + (e - 2700) / 600 * .33;
+    return clamp(.67 + (e - 3300) / 900 * .33, 0, 1);
+  }
+  drawNodes(amber, now) {
+    const { ctx } = this, st = this.st;
+    const dot = (n, key, r) => { const a = amber.has(key); ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, 7); ctx.fillStyle = a ? 'rgba(255,122,89,.25)' : 'rgba(77,204,199,.10)'; ctx.fill(); ctx.lineWidth = 1.4; ctx.strokeStyle = a ? '#ff7a59' : '#2f6f6c'; ctx.stroke(); };
+    this.fields.forEach((n, i) => dot(n, 'f' + i, 4));
+    this.dists.forEach((n, i) => dot(n, 'd' + i, 8));
+    this.stores.forEach((n, i) => dot(n, 's' + i, 3.6));
+    const k = this.packer, a = amber.has('pk');
+    ctx.beginPath(); ctx.roundRect(k.x - 10, k.y - k.hh, 20, k.hh * 2, 10); ctx.fillStyle = a ? 'rgba(255,122,89,.18)' : 'rgba(77,204,199,.07)'; ctx.fill(); ctx.strokeStyle = a ? '#ff7a59' : '#2f6f6c'; ctx.lineWidth = 1.4; ctx.stroke();
+    if (st) { // the call: a ring pulsing on the complaint store
+      const e = this.elapsed(now), s = this.stores[st.complaint.store];
+      if (e >= 0) { const ph = (e / 700) % 1, r = 6 + ph * 16, al = (1 - ph) * (e < 2600 || st.kind === 'bad' ? 1 : .35); ctx.beginPath(); ctx.arc(s.x, s.y, r, 0, 7); ctx.strokeStyle = `rgba(255,122,89,${al})`; ctx.lineWidth = 2; ctx.stroke(); ctx.beginPath(); ctx.arc(s.x, s.y, 5, 0, 7); ctx.fillStyle = '#ff7a59'; ctx.fill(); }
+    }
+  }
+  curve(a, b, n = 28) { return Array.from({ length: n + 1 }, (_, i) => bez(a, b, i / n)); }
+  trail(a, b, prog, style) { // draws from b back toward a
+    const pts = this.curve(a, b).reverse(), m = Math.ceil(pts.length * clamp(prog, 0, 1)); if (m < 2) return;
+    const { ctx } = this; ctx.beginPath(); pts.slice(0, m).forEach((p, i) => i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y));
+    ctx.strokeStyle = style.c; ctx.lineWidth = style.w; ctx.setLineDash(style.d || []); ctx.shadowColor = style.c; ctx.shadowBlur = style.glow || 0; ctx.stroke(); ctx.setLineDash([]); ctx.shadowBlur = 0;
+  }
+  drawTrails(e, wp) {
+    const st = this.st, c = st.complaint, s = this.stores[c.store], seg = x => clamp((wp - x) / .33, 0, 1);
+    if (st.kind === 'bad') {
+      const sty = { c: 'rgba(255,122,89,.55)', w: 1.4, d: [4, 4] };
+      c.dists.forEach(d => this.trail(this.dists[d], s, seg(0), sty));
+      c.dists.forEach(d => this.trail(this.packer, this.dists[d], seg(.34), sty));
+      st.fieldSet.forEach(f => this.trail(this.fields[f], this.packer, seg(.67), sty));
+    } else {
+      const sty = { c: '#4dccc7', w: 2.6, glow: 14 };
+      this.trail(this.dists[c.dist], s, seg(0) , sty); this.trail(this.packer, this.dists[c.dist], seg(.34), sty); this.trail(this.fields[c.field], this.packer, seg(.67), sty);
+    }
+  }
+}
+
+/* ---------- drill ---------- */
+let flowA, flowB, SC, DR = null;
+const STEP_TIMES_A = [900, 1800, 2700, 3300, 4200], STEP_TIMES_B = [900, 1300, 1700, 1900];
+function buildNet() { S.net = M.buildNetwork(PARAMS()); const tr = S.tracking === 'erp' ? 'erp' : S.tracking; S.run = M.runDrill(S.net, tr); }
+function resetDrill() {
+  buildNet(); const R = S.run;
+  flowA.setNet(S.net); flowB.setNet(S.net); flowA.st = flowB.st = null; DR = null;
+  $('#aTitle').textContent = D.tracking.find(t => t.id === S.tracking).label;
+  $('#aTot').textContent = $('#bTot').textContent = R.totalCasesInWindow;
+  ['aSteps', 'bSteps'].forEach((id, i) => { const L = (i ? R.with : R.without).steps; $('#' + id).innerHTML = L.map(t => `<li>${t}</li>`).join(''); });
+  $('#aN').textContent = $('#bN').textContent = 0;
+  $('#aPull').disabled = $('#bPull').disabled = true; $('#drillRes').classList.remove('on');
+}
+function runDrill() {
+  resetDrill(); const R = S.run, now = performance.now();
+  const base = { store: R.complaint.store };
+  flowA.start({ t0: now, kind: 'bad', complaint: Object.assign({ dists: R.storeDists, lot: R.truthLot.id, field: R.truthLot.field }, base), resolveAt: 4200, suspects: new Set(R.without.lotIds), fieldSet: new Set(R.without.lotIds.map(id => S.net.lots.find(l => l.id === id).field)), pulledAt: 0 });
+  flowB.start({ t0: now, kind: 'good', complaint: Object.assign({ dist: R.complaint.dist, lot: R.truthLot.id, field: R.truthLot.field }, base), resolveAt: 1900, suspects: new Set([R.truthLot.id]), pulledAt: 0 });
+  DR = { t0: now, shownA: 0, shownB: 0, pulledA: 0, pulledB: 0 };
+  beep(440, .25);
+}
+function tickDrill(now) {
+  if (!DR) return;
+  const sc = RM ? 8 : 1, e = (now - DR.t0) * sc;
+  STEP_TIMES_A.forEach((t, i) => { if (e >= t && DR.shownA <= i) { DR.shownA = i + 1; $$('#aSteps li')[i].classList.add('on'); beep(i === 4 ? 150 : 520, .12, i === 4 ? 'sawtooth' : 'sine'); } });
+  STEP_TIMES_B.forEach((t, i) => { if (e >= t && DR.shownB <= i) { DR.shownB = i + 1; $$('#bSteps li')[i].classList.add('on'); beep(880 + i * 90, .09); } });
+  if (e >= 4200 && !DR.pullA) { DR.pullA = 1; $('#aPull').disabled = false; }
+  if (e >= 1900 && !DR.pullB) { DR.pullB = 1; $('#bPull').disabled = false; }
+  const cnt = (st, tgt, el) => { if (st && st.pulledAt) $(el).textContent = Math.round(tgt * clamp((now - st.pulledAt) / (RM ? 100 : 900), 0, 1)); };
+  cnt(flowA.st, S.run.without.cases, '#aN'); cnt(flowB.st, S.run.with.cases, '#bN');
+  if (flowA.st && flowA.st.pulledAt && flowB.st && flowB.st.pulledAt && !DR.done && now - Math.max(flowA.st.pulledAt, flowB.st.pulledAt) > 1000) {
+    DR.done = true; $('#rA').textContent = S.run.without.cases; $('#rB').textContent = S.run.with.cases; $('#drillRes').classList.add('on');
+  }
+}
+function pull(f, btn) { if (f.st && !f.st.pulledAt) { f.st.pulledAt = performance.now(); $(btn).disabled = true; beep(f === flowA ? 180 : 660, .2, 'triangle'); } }
+
+/* ---------- journey ---------- */
+function qrSvg(seed, size) {
+  let h = 2166136261; for (const ch of seed) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619) >>> 0; }
+  const rnd = () => { h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0; h = Math.imul(h ^ (h >>> 13), 3266489909) >>> 0; h ^= h >>> 16; return (h >>> 0) / 4294967296; };
+  const n = 21, c = size / n; let r = '';
+  const finder = (x, y) => (x < 7 && y < 7) || (x > 13 && y < 7) || (x < 7 && y > 13);
+  const fin = (x, y) => { const lx = x > 13 ? x - 14 : x, ly = y > 13 ? y - 14 : y; return lx === 0 || lx === 6 || ly === 0 || ly === 6 || (lx >= 2 && lx <= 4 && ly >= 2 && ly <= 4); };
+  for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) { const on = finder(x, y) ? fin(x, y) : rnd() > .52; if (on) r += `<rect x="${(x * c).toFixed(2)}" y="${(y * c).toFixed(2)}" width="${(c + .3).toFixed(2)}" height="${(c + .3).toFixed(2)}"/>`; }
+  return `<g fill="#111">${r}</g>`;
+}
+const lotCode = () => { const L = S.run.truthLot; return 'L-' + (2700 + L.day * 100 + +L.id.split('-')[1]) + '-' + String.fromCharCode(65 + L.field % 26); };
+function packSvg() {
+  const col = CROPCOL[S.crop], code = lotCode(), dots = Array.from({ length: 34 }, (_, i) => { const a = i * 2.399, r = 8 + 11 * Math.sqrt(i + 1); return `<ellipse cx="${150 + r * Math.cos(a) * 1.6}" cy="${96 + r * Math.sin(a) * .75}" rx="${9 + (i % 4)}" ry="${6 + (i % 3)}" fill="${col}" opacity="${.55 + (i % 5) * .08}" transform="rotate(${(i * 37) % 180} ${150 + r * Math.cos(a) * 1.6} ${96 + r * Math.sin(a) * .75})"/>`; }).join('');
+  return `<svg viewBox="0 0 300 250" role="img" aria-label="A clamshell of ${cropObj().label} with a code label"><defs><linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity=".02"/></linearGradient></defs>
+  <rect x="26" y="40" width="248" height="124" rx="16" fill="#0f1414" stroke="#3b4a4a" stroke-width="2"/>${dots}
+  <rect x="26" y="40" width="248" height="124" rx="16" fill="url(#gl)" stroke="#8fa3a3" stroke-opacity=".5"/>
+  <path d="M40 44 l220 0" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>
+  <rect x="58" y="148" width="184" height="86" rx="8" fill="#e8ecec"/>
+  <g transform="translate(66 156)"><rect width="70" height="70" fill="#fff"/><g transform="scale(.0) "></g><svg width="70" height="70" viewBox="0 0 70 70">${qrSvg(code, 70)}</svg></g>
+  <text x="148" y="176" font-family="JetBrains Mono,monospace" font-size="13" font-weight="500" fill="#111">${code}</text>
+  <text x="148" y="194" font-family="Inter Tight,sans-serif" font-size="11" fill="#333">${cropObj().label.split(' and ')[0]}</text>
+  <text x="148" y="209" font-family="Inter Tight,sans-serif" font-size="11" fill="#333">Field ${S.run.truthLot.field + 1} &middot; Tuesday</text>
+  <text x="148" y="224" font-family="Inter Tight,sans-serif" font-size="9" fill="#777">example label, not a real code</text></svg>`;
+}
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+const chipsHtml = c => '<div class="dchips">' + c.map(d => `<div class="dc ${d.k === 'ask' ? 'ask' : ''}"><em>${d.n}</em><i><span class="k k-${d.k === 'both' ? 'io' : 'fda'}"></span>${d.v}</i></div>`).join('') + '</div>';
+const srcLink = k => `<a href="${D.sources[k].url}" target="_blank" rel="noopener">${D.sources[k].label}</a>`;
+function buyerList() { return D.buyers.filter(b => S.buyers.has(b.id)); }
+function stanceTag(r) {
+  if (r.iomist === 'none') return '<span class="st nf">not found</span>';
+  if (r.iomist === 'own') return '<span class="st ow">yours to hold</span>';
+  if (!S.assume) return '<span class="st op">open</span>';
+  return `<span class="st cv">${r.iomist === 'covers' ? 'Iomist covers' : 'Iomist supplies the records'} <i>assumed</i></span>`;
+}
+function dateTag(r) { if (!r.date) return ''; return `<span class="tag t-pub">${r.dateLabel || (M.daysUntil(r.date, TODAY) <= 0 ? 'in effect since' : 'from')} ${r.date}</span>`; }
+const bname = id => id === 'industry' ? 'PTI / GS1' : id === 'fda' ? 'FDA RULE' : D.buyers.find(b => b.id === id).label.toUpperCase();
+function layerHtml(stop) {
+  const rs = M.layerReqs(layerIds(), S.industry, stop); if (!rs.length) return '';
+  const groups = {}; rs.forEach(r => (groups[r.buyer] = groups[r.buyer] || []).push(r));
+  return '<div class="layers">' + Object.entries(groups).map(([id, list]) => `<div class="lyr"><b>${bname(id)}</b>${list.map(r => `<div class="req ${r.iomist === 'none' ? 'nf' : ''}"><span>${r.text}</span> ${dateTag(r)} ${r.conf && r.conf !== 'High' ? `<span class="tag t-ill">${r.conf.toLowerCase()} confidence</span>` : ''} ${stanceTag(r)} <a href="${D.sources[r.source].url}" target="_blank" rel="noopener">source</a></div>`).join('')}</div>`).join('') + '</div>';
+}
+function gateLines() {
+  const out = fdaOn() ? [{ b: 'FDA RULE', t: D.gateLine.fda }] : []; buyerList().forEach(b => { if (D.reqs.some(r => r.buyer === b.id && r.stop === 'gate' && r.iomist !== 'none')) out.push({ b: b.label.toUpperCase(), t: D.gateLine[b.id] }); });
+  if (S.buyers.has('costco')) out.push({ b: 'COSTCO', t: 'Trace test: one lot, 2 hours, mock recall' });
+  return out;
+}
+function stops() {
+  const R = S.run, L = R.truthLot, f = 'Field ' + (L.field + 1), code = lotCode(), cs = '100 cases';
+  const fda = (n, v) => ({ n, v, k: 'fda' }), io = (n, v) => ({ n, v, k: 'both' }), ask = (n, v) => ({ n, v, k: 'ask' });
+  const bl = buyerList();
+  const scanNote = k => `<div class="hint" style="margin:8px 0 4px">${D.scanners[k]} <span class="tag t-ill">Iomist’s proposal</span></div>`;
+  const bigs = bl.length ? '<div class="bigs">' + bl.map(b => `<div class="bigbuyer ${b.status === 'published' ? '' : 'np'}"><b>${b.label.toUpperCase()}</b> <span class="tag t-pub">${M.scoreBuyer(b.id, {}, TODAY).dateStatus}</span><div>${D.short[b.id]}</div><div class="hint">${b.dateNote ? b.dateNote + ' &middot; ' : ''}${srcLink(b.source)}</div></div>`).join('') + '</div>' : '<div class="hint">Pick buyers in the panel to see what each asks for here.</div>';
+  const out = [
+    { t: 'Harvest', when: 'Tuesday, morning', wp: 0, html: chipsHtml([io('Lot code', code), fda('Field', f), io('Harvest date', 'Tuesday'), io('Where (GPS)', 'field edge, logged'), fda('Quantity', cs), fda('Farm location', 'name, phone, address'), fda('Goes to', 'the packing shed')]) + scanNote('field') + layerHtml('harvest') },
+    { t: 'Cooling', when: 'if cooled before packing', wp: 1, html: chipsHtml([ask('Cooling date', 'Tuesday'), ask('Cooling location', 'cooler 2'), ask('Quantity', cs)]) + layerHtml('cooling') },
+    { t: 'Packing', when: 'Tuesday, afternoon', wp: 2, html: chipsHtml([io('Lot code assigned', code), fda('Packing date', 'Tuesday'), fda('Packing location', 'main shed'), fda('Harvester', 'crew name, phone'), fda('Product', S.crop === 'berry' ? '1 lb clamshell' : '1 clamshell')]) + scanNote('line') + scanNote('mobile') + layerHtml('packing') }
+  ];
+  if (gateLines().length) out.push({ t: 'Audit gate', when: 'to supply these buyers', wp: 3, gate: 'closed', html: '<div class="hint" style="margin-bottom:6px">Certifications and audits are the grower’s to earn. The lot record is what an auditor asks to see. <span class="tag t-ill">Iomist supplying those records is assumed</span></div>' + layerHtml('gate') + (S.buyers.has('costco') ? '<div class="dchips" style="margin-top:8px"><div class="dc ask"><em>Ask Iomist</em><i>Does the lot record answer Costco’s 2-hour trace test?</i></div></div>' : '') });
+  out.push(
+    { t: 'Shipping', when: 'Wednesday', wp: 3, html: chipsHtml([ask('Lot code', code), ask('Ship date', 'Wednesday'), ask('Recipient', 'distributor ' + (R.complaint.dist + 1)), ask('Lot code source', 'main shed'), ask('Reference document', 'bill of lading no.')]) + scanNote('chain') + layerHtml('shipping') },
+    { t: 'Receiving', when: 'Wednesday to Thursday', wp: 5, html: chipsHtml([ask('Received by', 'distributor, then ' + (bl[0] ? bl[0].label : 'the store'))]) + '<div class="hint" style="margin:8px 0 4px">What each buyer you picked asks for at this point <span class="tag t-pub">published</span></div>' + bigs + layerHtml('receiving') },
+    { t: 'On the shelf', when: 'a shopper scans the code', wp: 5, consumer: true, html: phoneHtml() }
+  );
+  return out;
+}
+function rerenderRibbon() { // keeps the scene where it is; only the ribbon text changes
+  const open = S.jstop; S.stops = stops();
+  $('#ribbon').innerHTML = '<div class="fill" id="rfill"></div>' + S.stops.map((s, i) => `<div class="stop" data-i="${i}"><h3>${s.t}<small>${s.when}</small></h3>${s.html}</div>`).join('');
+  $$('.stop').forEach((el, i) => { if (i < open) el.classList.add('on'); }); if (open) jFill(open - 1);
+}
+
+/* ---------- Doors ---------- */
+const fdaOn = () => S.fda && M.fdaApplies({ crop: S.crop, size: S.size || 'over250' }).applies;
+const layerIds = () => [...S.buyers].concat(fdaOn() ? ['fda'] : []);
+function clockHtml() {
+  const t0 = Date.parse(TODAY), t1 = Date.parse('2028-08-31'), pos = d => Math.max(0, Math.min(100, (Date.parse(d) - t0) / (t1 - t0) * 100));
+  const fda = D.fdaBuyer, left = M.monthsDays(TODAY, fda.date), days = M.daysUntil(fda.date, TODAY);
+  const ev = [];
+  if (S.fda) ev.push({ d: fda.date, t: 'FDA RULE', s: 'enforcement cannot begin before', big: 1, url: D.sources.fdaRule.url });
+  buyerList().forEach(b => { if (b.date && M.daysUntil(b.date, TODAY) > 0) ev.push({ d: b.date, t: b.label.toUpperCase(), s: b.dateNote, url: D.sources[b.source].url }); });
+  if (S.buyers.has('walmart') && M.daysUntil('2027-08-01', TODAY) > 0) ev.push({ d: '2027-08-01', t: 'WALMART', s: 'harvest inside the audit scope', url: D.sources.walmartProduce.url });
+  D.watch.filter(w => M.daysUntil(w.d, TODAY) > 0).forEach(w => ev.push({ d: w.d, t: w.t.toUpperCase(), s: w.s, watch: 1, url: w.url }));
+  ev.sort((a, b) => a.d < b.d ? -1 : 1);
+  const eff = buyerList().filter(b => b.date && M.daysUntil(b.date, TODAY) <= 0).map(b => `<b>${b.label.toUpperCase()}</b> <span class="tag t-pub">since ${b.date}</span>`);
+  const fdaTxt = !S.fda ? '' : fdaOn() ? `<div class="cl-big"><b>${left.months} months ${left.days} days</b><span>until FDA enforcement can begin (${days} days). Congress barred it before Jul 20, 2028; FDA’s own date change is proposed, not final. <a href="${D.sources.fdaRule.url}" target="_blank" rel="noopener">source</a></span></div>` : `<div class="cl-big"><span>FDA’s rule does not apply to this crop or size (see the readiness check). Your buyers’ dates below still do.</span></div>`;
+  return `${fdaTxt}<div class="cl-axis"><div class="cl-win" style="width:${pos(fda.date)}%"></div>${ev.map((e, i) => { const p = pos(e.d), up = i % 2 === 0; return `<a class="cl-ev ${e.big ? 'big' : ''} ${e.watch ? 'watch' : ''} ${up ? 'up' : 'dn'}" style="left:${p}%;${p > 78 ? 'transform:translateX(-100%)' : p < 8 ? 'transform:translateX(0)' : 'transform:translateX(-50%)'}" href="${e.url}" target="_blank" rel="noopener"><b>${e.t}</b><em>${e.d}</em><span>${e.s}</span></a><i class="cl-tick" style="left:${p}%"></i>`; }).join('')}<div class="cl-now">today</div></div>${eff.length ? `<div class="hint" style="margin-top:6px">Already in effect: ${eff.join(' &middot; ')}</div>` : ''}<div class="hint cl-msg">Running before the date means the first season under enforcement is not the first season you capture the data. <span class="tag t-pub">Sunrise 2027: an industry goal for 2D codes at checkout, not a rule <a href="https://www.gs1us.org/industries-and-insights/by-topic/sunrise-2027" target="_blank" rel="noopener">source</a></span></div>`;
+}
+function renderDoors() {
+  const ids = layerIds(), dr = M.doors(ids, S.answers, S.tracking, S.industry), byId = Object.fromEntries(dr.map(d => [d.id, d])), open = S.assume && S.doorsOpen;
+  const fromAnswers = Object.keys(S.answers).length > 0, tech = dr.filter(d => d.id !== 'industry').reduce((s, d) => s + d.tech, 0), nb = ids.length;
+  $('#clock').innerHTML = clockHtml();
+  $('#dToggle').textContent = S.doorsOpen ? 'Take the lot record away' : 'Add the lot record'; $('#dToggle').classList.toggle('ghost', !!S.doorsOpen);
+  $('#dState').innerHTML = (S.doorsOpen ? `With a lot record: ${tech} published requirements across ${nb} door${nb === 1 ? '' : 's'} answered from one record.` : 'Today: how far your current records get you.') + ` <span class="tag t-ill">${fromAnswers ? 'today = your readiness answers' : 'today = illustration from how you track'}</span>`;
+  const card = (id, label, status, on, d, hintWait) => {
+    const today = d.todayPct === null ? 'not scored' : d.todayPct + '%';
+    return `<button class="door ${on ? '' : 'wait'} ${open && on ? 'open' : ''}" data-door="${id}" aria-pressed="${on}"><div class="dframe"><div class="dleaf"></div></div><b>${label}</b><span class="tag t-pub">${status}</span>` +
+      (on ? `<div class="dnum"><span>today</span> <em>${today}</em> <span>with a lot record</span> <em class="w">${S.assume ? (d.withPct === null ? 'n/a' : '100%') : 'open'}</em></div><div class="hint">${d.tech} items a lot record answers (assumed) &middot; ${d.own} yours to hold &middot; ${d.notFound} not found</div>` : `<div class="hint">${hintWait}</div>`) + `</button>`;
+  };
+  const left = M.monthsDays(TODAY, D.fdaBuyer.date), fdaApplies = M.fdaApplies({ crop: S.crop, size: S.size || 'over250' });
+  const fdaCard = card('fda', 'FDA RULE', fdaApplies.applies ? `${left.months} months to go` : 'does not apply', fdaOn(), byId.fda || M.doors(['fda'], {}, S.tracking, false)[0], fdaApplies.applies ? 'Tap to switch on.' : fdaApplies.reason);
+  $('#doorGrid').innerHTML = fdaCard + D.buyers.map(b => { const on = S.buyers.has(b.id), d = on ? byId[b.id] : M.doors([b.id], {}, S.tracking, false)[0]; return card(b.id, b.label.toUpperCase(), M.scoreBuyer(b.id, {}, TODAY).dateStatus, on, d, `${d.published} published. Tap to switch on.`); }).join('');
+  const mx = M.matrix(ids, S.industry), cols = ids.concat(S.industry ? ['industry'] : []);
+  $('#matrix').innerHTML = cols.length ? `<table><thead><tr><th>Capture once</th>${cols.map(c => `<th>${bname(c)}</th>`).join('')}<th>asking</th></tr></thead><tbody>${mx.map(r => `<tr><td>${r.label}</td>${cols.map(c => `<td>${r.cells[c] ? `<span class="dot ${r.kind === 'own' || !S.assume ? 'o' : ''}">${'●'.repeat(Math.min(r.cells[c], 4))}</span>` : ''}</td>`).join('')}<td><b>${r.buyers}</b></td></tr>`).join('')}</tbody></table>` : '<div class="hint">Switch buyers on in the panel.</div>';
+  const dated = D.buyers.filter(b => b.date && b.status === 'published').sort((a, b) => a.date < b.date ? -1 : 1), aud = [...new Set(D.reqs.filter(r => r.stop === 'gate' && r.kind === 'audit').map(r => r.buyer))].map(id => D.buyers.find(b => b.id === id).label);
+  $('#keeps').innerHTML = `<div class="kcol"><h3>What stays</h3><ul><li>Your ERP and labeling systems: the site describes an integration-ready API.</li><li>Your packing stand and conveyor: the scanners fit on them.</li><li>The phones your crews carry: it runs on any phone and works offline.</li></ul><div class="hint">All from iomist.ag, read 2026-11-04. <a href="${D.sources.iomistSite.url}" target="_blank" rel="noopener">source</a></div></div>
+  <div class="kcol"><h3>What is added</h3><ul><li>A serialized QR code on each clamshell, tied to its lot.</li><li>A scan at harvest and at packing: GPS, time, lot.</li><li>A lot record and reports the site says arrive "in seconds."</li><li>A shopper-facing page: the lot's data, with an optional survey of your own <span class="tag t-pub">confirmed with Taylor</span></li></ul></div>
+  <div class="kcol"><h3>What it opens</h3><ul><li>Buyers with dates already set: ${dated.map(b => `${b.label} (${M.daysUntil(b.date, TODAY) <= 0 ? 'in effect' : b.date})`).join(', ')}, then the FDA rule.</li><li>Buyers that audit before you supply: ${aud.join(', ')}.</li><li>${D.buyers.length} buyers and the FDA rule publish requirements the same record answers in part. No revenue figure is claimed.</li></ul></div>`;
+  $('#doorNote').innerHTML = 'Every "covers" and "supplies the records" mark assumes Iomist meets the requirement. To confirm with Iomist before anyone outside sees it. Certification, memberships, the traceability plan and self-declarations stay the grower’s own.';
+}
+function phScreen(mode) {
+  const L = S.run.truthLot, code = lotCode(), crop = cropObj().label, bl = buyerList(), where = bl[0] ? bl[0].label : 'the store';
+  if (mode === 'common') return `<div class="ph common"><div class="ph-h">Thanks for picking us!</div><p>Two quick questions and you could win a prize.</p><div class="ph-q">How did you hear about us?</div><div class="ph-o">A friend</div><div class="ph-o">In store</div><div class="ph-o">Online</div><div class="ph-b">Next</div><p class="ph-s">No record of this lot.</p></div>`;
+  const data = `<div class="ph-h">${crop}</div><div class="ph-sub">Digital product passport &middot; lot ${code}</div><dl class="ph-d"><dt>Grower</dt><dd>Your farm (example)</dd><dt>Grown in</dt><dd>Field ${L.field + 1}</dd><dt>Harvested</dt><dd>Tuesday</dd><dt>Packed</dt><dd>Tuesday, main shed</dd><dt>Shipped</dt><dd>Wednesday</dd><dt>Arrived at</dt><dd>${where}, Thursday</dd></dl><ol class="ph-j"><li>Harvest</li><li>Cooling</li><li>Packing</li><li>Shipping</li><li>Receiving</li></ol>`;
+  if (mode === 'data') return `<div class="ph">${data}</div>`;
+  return `<div class="ph">${data}<div class="ph-sv" id="phSv"><div class="ph-q">Quick question: how was it?</div><div class="ph-st">${[1, 2, 3, 4, 5].map(n => `<button data-star="${n}" aria-label="${n} stars">★</button>`).join('')}</div><div class="ph-o" data-sv="yes">I would buy it again</div><div class="ph-o" data-sv="no">Maybe not</div></div></div>`;
+}
+const PHNOTE = {
+  common: 'Many pack QR codes open a marketing survey like this, and little about the lot. <span class="tag t-ill">illustration</span>',
+  data: 'The same scan opens the lot’s own record: where it grew, when it was picked, where it went. The site says the code shows origin, harvest date and the journey. <span class="tag t-ill">example values</span>',
+  survey: 'A company can add its own survey on top of the lot data, if it wants one. <span class="tag t-ill">example</span> <span class="tag t-pub">confirmed with Taylor</span>'
+};
+function phoneHtml() { return `<div class="phonewrap"><div class="phtabs" role="tablist">${[['common', 'A common pack QR'], ['data', 'Lot data'], ['survey', 'Lot data + survey']].map(([k, l], i) => `<button class="pill" data-ph="${k}" aria-pressed="${i === 1}">${l}</button>`).join('')}</div><div class="phone"><div class="screen" id="phScreen">${phScreen('data')}</div></div><div class="hint" id="phNote">${PHNOTE.data}</div></div>`; }
+function renderJourney() {
+  const R = S.run; $('#packSvg').innerHTML = packSvg(); $('#packCap').textContent = 'Lot ' + lotCode() + ' (example)';
+  $('#jTitle').textContent = 'Tuesday: the clamshell behind Friday’s call.';
+  S.stops = stops();
+  $('#ribbon').innerHTML = '<div class="fill" id="rfill"></div>' + S.stops.map((s, i) => `<div class="stop" data-i="${i}"><h3>${s.t}<small>${s.when}</small></h3>${s.html}</div>`).join('');
+  SC.setStory({ crop: CROPCOL[S.crop], cropId: S.crop, code: lotCode(), dist: R.complaint.dist, store: R.complaint.store, field: R.truthLot.field, gateLines: gateLines(), gateOn: gateLines().length > 0, costcoGate: S.buyers.has('costco'), buyers: (fdaOn() ? [{ id: 'fda', label: D.fdaBuyer.label, short: D.short.fda }] : []).concat(buyerList().map(b => ({ id: b.id, label: b.label, short: D.short[b.id] }))) });
+  SC.reset(); SC.setFlags({ gate: null, consumer: false }); SC.resize();
+  S.jstop = 0; S.jdone = false; $('#jNext').style.display = ''; $('#jBack').style.display = 'none'; $('#jReady').style.display = 'none'; $('#jEnd').textContent = ''; $('#jNext').textContent = 'First stop: harvest';
+}
+function jFill(i, back) { const f = $('#rfill'), st = $$('.stop'); f.classList.toggle('back', !!back); const el = st[Math.min(i, st.length - 1)]; f.style.height = (el.offsetTop + 22 - 6) + 'px'; }
+function applyStop(i, back) {
+  const s = S.stops[i], gi = S.stops.findIndex(x => x.gate);
+  SC.goTo(s.wp, back); SC.setFlags({ gate: gi < 0 || i < gi ? null : i === gi ? 'closed' : 'open', consumer: !!s.consumer });
+}
+function jNext() {
+  const st = $$('.stop'); if (S.jstop >= st.length) return;
+  st[S.jstop].classList.add('on'); jFill(S.jstop); applyStop(S.jstop); beep(880, .1); S.jstop++;
+  if (S.jstop < st.length) $('#jNext').textContent = 'Next stop: ' + S.stops[S.jstop].t.toLowerCase();
+  else { $('#jNext').style.display = 'none'; $('#jBack').style.display = ''; $('#jEnd').textContent = 'Friday’s call reaches the store. Now run it backward.'; }
+}
+async function jBack() {
+  const st = $$('.stop'), wait = ms => new Promise(r => setTimeout(r, RM ? 30 : ms)); $('#jBack').style.display = 'none';
+  for (let i = st.length - 1; i >= 0; i--) {
+    applyStop(i, true); const wp = S.stops[i].wp; for (let k = 0; k < 150 && Math.abs(SC.u - wp) > .06 && !RM; k++) await wait(100);
+    st.forEach(x => x.classList.remove('hot')); st[i].classList.add('hot'); jFill(i, true); beep(150 + (4 - Math.min(i, 4)) * 70, .12, 'sawtooth'); await wait(S.stops[i].gate ? 3200 : 900);
+  }
+  const L = S.run.truthLot; $('#jEnd').innerHTML = `The complaint walks back to <b>Field ${L.field + 1}</b>, lot <b class="mono">${lotCode()}</b>, harvested Tuesday. If each stop was recorded, the lot record already holds that answer. Where a stop was not recorded, this is where the hunt begins.`; $('#jReady').style.display = '';
+}
+
+/* ---------- readiness ---------- */
+const QS = () => D.questions.filter(q => q.id !== 'q1');
+const NODEQ = { field: ['q4'], cooler: ['q5'], packer: ['q3', 'q6'], ship: ['q7'], buyer: ['q10', 'q11', 'q12'], records: ['q8', 'q9'], audit: ['q13'] };
+let rc = null;
+class Ready {
+  constructor(cv) { this.cv = cv; this.ctx = cv.getContext('2d'); this.b = {}; this.resize(); }
+  resize() { const r = this.cv.getBoundingClientRect(); this.dpr = Math.min(2, devicePixelRatio || 1); this.w = Math.max(240, r.width); this.h = Math.max(160, r.height); this.cv.width = this.w * this.dpr; this.cv.height = this.h * this.dpr; }
+  level(ids) { const v = ids.map(i => S.answers[i]).filter(a => a && a !== 'na'); if (!v.length) return null; return v.reduce((s, a) => s + ({ yes: 1, partly: .5, no: 0 })[a], 0) / v.length; }
+  draw(now) {
+    const { ctx, dpr, w, h } = this; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
+    const cols = [['field', 'FIELD'], ['cooler', 'COOLER'], ['packer', 'PACKING'], ['ship', 'SHIPPING'], ['buyer', 'BUYERS']], px = 48, nodes = {};
+    cols.forEach(([k, l], i) => nodes[k] = { x: lerp(px, w - px - 20, i / 4), y: h * .42, l });
+    ctx.lineWidth = 2; for (let i = 0; i < 4; i++) { const a = nodes[cols[i][0]], b = nodes[cols[i + 1][0]], la = this.level(NODEQ[cols[i][0]]), lb = this.level(NODEQ[cols[i + 1][0]]), l = Math.min(la ?? 0, lb ?? 0); ctx.strokeStyle = `rgba(77,204,199,${.12 + .6 * l})`; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+    // records bar
+    const lr = this.level(NODEQ.records), bx = px - 20, bw = w - 2 * px + 20; ctx.fillStyle = '#1a2020'; ctx.beginPath(); ctx.roundRect(bx, h * .82, bw, 12, 6); ctx.fill();
+    this.b.records = lerp(this.b.records ?? 0, lr ?? 0, .06); ctx.fillStyle = '#4dccc7'; ctx.shadowColor = '#4dccc7'; ctx.shadowBlur = 10 * this.b.records; ctx.beginPath(); ctx.roundRect(bx, h * .82, Math.max(12, bw * this.b.records), 12, 6); ctx.fill(); ctx.shadowBlur = 0;
+    ctx.fillStyle = '#6f7d7d'; ctx.font = '10px "JetBrains Mono",monospace'; ctx.textAlign = 'left'; ctx.fillText('YOUR PLAN AND THE 24-HOUR SPREADSHEET', bx, h * .82 - 8);
+    ctx.textAlign = 'center';
+    cols.forEach(([k, l]) => {
+      const n = nodes[k], lv = this.level(NODEQ[k]); this.b[k] = lerp(this.b[k] ?? 0, lv ?? 0, .06); const a = this.b[k], un = lv === null;
+      ctx.beginPath(); ctx.arc(n.x, n.y, 15 + 4 * a, 0, 7); ctx.fillStyle = un ? 'rgba(255,255,255,.03)' : `rgba(77,204,199,${.12 + .5 * a})`; ctx.shadowColor = '#4dccc7'; ctx.shadowBlur = un ? 0 : 22 * a; ctx.fill(); ctx.shadowBlur = 0;
+      ctx.lineWidth = 1.6; ctx.setLineDash(un ? [3, 4] : []); ctx.strokeStyle = un ? '#3b4646' : (lv < .5 ? '#ff7a59' : '#4dccc7'); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = '#8d9a9a'; ctx.font = '10px "JetBrains Mono",monospace'; ctx.fillText(l, n.x, n.y + (k === 'buyer' ? 28 + 8 * S.buyers.size + 14 : 36));
+    });
+    // audit ring around the field
+    const la = this.level(NODEQ.audit); if (la !== null) { const n = nodes.field; ctx.beginPath(); ctx.arc(n.x, n.y, 28, -Math.PI / 2, -Math.PI / 2 + 2 * Math.PI * Math.max(.04, la)); ctx.strokeStyle = '#d9c36a'; ctx.lineWidth = 2; ctx.stroke(); ctx.fillStyle = '#d9c36a'; ctx.fillText('AUDIT', n.x, n.y - 36); }
+    // buyer rings
+    const bn = nodes.buyer; [...S.buyers].forEach((id, i) => { const r = M.scoreBuyer(id, S.answers, TODAY), rad = 28 + i * 8; ctx.beginPath(); ctx.arc(bn.x, bn.y, rad, 0, 7); ctx.strokeStyle = '#222b2b'; ctx.lineWidth = 3; ctx.stroke(); if (r.pct !== null) { const k = `r${id}`; this.b[k] = lerp(this.b[k] ?? 0, r.pct / 100, .06); ctx.beginPath(); ctx.arc(bn.x, bn.y, rad, -Math.PI / 2, -Math.PI / 2 + 2 * Math.PI * Math.max(.015, this.b[k])); ctx.strokeStyle = r.pct >= 100 ? '#4dccc7' : '#8fdad6'; ctx.stroke(); } });
+    ctx.textAlign = 'left'; ctx.fillStyle = '#8d9a9a'; ctx.font = '11px "Inter Tight",sans-serif';
+    [...S.buyers].forEach((id, i) => { const r = M.scoreBuyer(id, S.answers, TODAY); ctx.fillText(`${r.label}: ${r.pct === null ? r.dateStatus : r.pct + '% · ' + r.dateStatus}`, px - 20, h * .08 + i * 15); });
+  }
+}
+function renderQ() {
+  const Q = QS(), c = $('#qcard');
+  if (S.qi >= Q.length) { renderResult(); return; }
+  const q = Q[S.qi], opts = q.options || [{ id: 'yes', label: 'Yes' }, { id: 'partly', label: 'Partly' }, { id: 'no', label: 'No' }].concat(q.allowNa ? [{ id: 'na', label: 'Doesn’t apply' }] : []);
+  const src = q.source ? D.sources[q.source] : null;
+  c.innerHTML = `<div class="prog">${S.qi + 1} of ${Q.length}</div><h3>${q.text}</h3><div class="ans">${opts.map(o => `<button class="btn ${S.answers[q.id] === o.id || (q.id === 'q2' && S.size === o.id) ? '' : 'ghost'}" data-a="${o.id}">${o.label}</button>`).join('')}</div>${q.note ? `<div class="src">${q.note}</div>` : ''}${src ? `<div class="src"><span class="tag t-pub">published</span> <a href="${src.url}" target="_blank" rel="noopener">${src.label}</a></div>` : ''}<div class="row" style="margin-top:12px">${S.qi ? '<button class="btn ghost" id="qprev">Back</button>' : ''}</div>`;
+  $$('[data-a]', c).forEach(b => b.onclick = () => { if (q.id === 'q2') S.size = b.dataset.a; else S.answers[q.id] = b.dataset.a; beep(740, .07); S.qi++; renderQ(); });
+  const p = $('#qprev'); if (p) p.onclick = () => { S.qi--; renderQ(); };
+}
+function renderResult() {
+  const ctx = { crop: S.crop, size: S.size || 'over250' }, r = M.readiness(S.answers, ctx, [...S.buyers], TODAY), c = $('#qcard');
+  const fda = r.fda.applies ? `<div><b class="mono" style="font-size:20px;color:var(--teal)">${r.fda.pct}%</b> of ${r.fda.total} records in place</div><div class="bar"><i style="width:${r.fda.pct}%"></i></div><div class="hint">FDA enforcement cannot begin before July 20, 2028. <a href="${D.sources.fdaRule.url}" target="_blank" rel="noopener">source</a></div>` : `<div>${r.fda.reason}</div>`;
+  const buy = r.buyers.map(b => `<div style="margin-bottom:8px"><b>${b.label}</b> <span class="tag t-pub">${b.dateStatus}</span>${b.pct === null ? `<div class="hint">${b.status === 'not_published' ? 'No public FSMA 204 supplier specification found.' : 'No scored items published.'}</div>` : `<div class="bar"><i style="width:${b.pct}%"></i></div><div class="hint">${b.pct}% &middot; ${b.dateNote} &middot; <a href="${D.sources[b.source].url}" target="_blank" rel="noopener">source</a></div>`}</div>`).join('');
+  const seen = new Set(), gaps = []; r.fda.gaps.concat(...r.buyers.map(b => b.gaps)).forEach(g => { if (!seen.has(g.id)) { seen.add(g.id); gaps.push(g); } });
+  const gl = gaps.map(g => { const q = M.question(g.id), io = D.iomist[g.id], who = [q.kind === 'fda' ? 'FDA rule' : null, ...D.buyers.filter(b => b.items.includes(g.id) && S.buyers.has(b.id)).map(b => b.label)].filter(Boolean).join(', ');
+    return `<div class="gap"><div>${q.text}</div><div class="why">${who ? 'Asked by: ' + who + ' &middot; ' : ''}you said ${g.answer}</div>${io ? `<div class="why ${io.s === 'ask' ? 'io-ask' : 'io-site'}">${io.s === 'site' ? 'Iomist’s site: ' : io.s === 'deck' ? 'Iomist’s proposal: ' : 'Ask Iomist: '}${io.t}</div>` : ''}</div>`; }).join('') || '<div class="hint">No gaps against what you selected.</div>';
+  const watch = D.questions.find(x => x.kind === 'watch'), wa = S.answers[watch.id];
+  c.innerHTML = `<div class="res"><div class="prog">Your result</div><h3>FDA rule</h3>${fda}<h3>Your buyers</h3>${buy || '<div class="hint">Pick buyers in the panel to see theirs.</div>'}<h3>Gaps</h3>${gl}<div class="hint" style="margin-top:10px">${watch.note}${wa ? '' : ''}</div><div class="hint" style="margin-top:8px"><b>A self-check, not a compliance determination.</b></div><div class="row" style="margin-top:10px"><button class="btn ghost" id="qre">Start over</button></div></div>`;
+  $('#qre').onclick = () => { S.answers = {}; S.size = null; S.qi = 0; renderQ(); };
+}
+
+/* ---------- panel, modes, loop ---------- */
+function setMode(m) {
+  S.mode = m; $$('.view').forEach(v => v.classList.toggle('on', v.id === 'v-' + m)); $$('.story button').forEach(b => b.classList.toggle('on', b.dataset.mode === m));
+  $('#intro').classList.toggle('on', m === 'drill' && !DR && !S.introSeen);
+  if (m === 'journey') renderJourney(); if (m === 'doors') renderDoors(); if (m === 'ready') { rc.resize(); renderQ(); } if (m === 'drill') { flowA.resize(); flowB.resize(); }
+  $('#stage').scrollTop = 0;
+}
+function refresh() { // a panel change redraws everything that depends on the farm
+  const c = cropObj(); $('#cropHint').innerHTML = c.listed ? 'On FDA’s Food Traceability List. <a href="' + D.sources.ftl.url + '" target="_blank" rel="noopener">source</a>' : 'Not on FDA’s list: its rule does not cover this crop, but many buyers still ask for lot-level data.';
+  $('#introCrop').textContent = c.label.toLowerCase(); $('#lotsV').textContent = S.lots;
+  resetDrill(); if (S.mode === 'journey') renderJourney(); if (S.mode === 'doors') renderDoors();
+}
+function init() {
+  $('#crop').innerHTML = D.crops.map(c => `<option value="${c.id}">${c.label}</option>`).join('');
+  $('#trk').innerHTML = D.tracking.filter(t => t.id !== 'scanning').map(t => `<option value="${t.id}">${t.label}</option>`).join('');
+  $('#buyers').innerHTML = D.buyers.map(b => `<button class="chip" aria-pressed="${S.buyers.has(b.id)}" data-b="${b.id}">${b.label}${b.status === 'not_published' ? ' <small>not published</small>' : ''}</button>`).join('');
+  $('#crop').onchange = e => { S.crop = e.target.value; refresh(); };
+  $('#lots').oninput = e => { S.lots = +e.target.value; refresh(); };
+  $('#trk').onchange = e => { S.tracking = e.target.value; refresh(); };
+  $$('[data-b]').forEach(b => b.onclick = () => { const id = b.dataset.b; S.buyers.has(id) ? S.buyers.delete(id) : S.buyers.add(id); b.setAttribute('aria-pressed', S.buyers.has(id)); if (S.mode === 'journey') renderJourney(); if (S.mode === 'doors') renderDoors(); if (S.mode === 'ready' && S.qi >= QS().length) renderResult(); });
+  $('#fdaChip').onclick = e => { S.fda = !S.fda; e.currentTarget.setAttribute('aria-pressed', S.fda); if (S.mode === 'journey') renderJourney(); if (S.mode === 'doors') renderDoors(); };
+  $('#ind').onclick = e => { S.industry = !S.industry; e.currentTarget.setAttribute('aria-pressed', S.industry); if (S.mode === 'journey') renderJourney(); if (S.mode === 'doors') renderDoors(); };
+  $('#asm').onclick = e => { S.assume = !S.assume; e.currentTarget.setAttribute('aria-pressed', S.assume); if (S.mode === 'journey') rerenderRibbon(); if (S.mode === 'doors') renderDoors(); };
+  $('#dToggle').onclick = () => { S.doorsOpen = !S.doorsOpen; renderDoors(); beep(S.doorsOpen ? 880 : 200, .15); };
+  $('#doorGrid').onclick = e => { const d = e.target.closest('[data-door]'); if (!d) return; const id = d.dataset.door; S.buyers.has(id) ? S.buyers.delete(id) : S.buyers.add(id); const chip = $(`[data-b="${id}"]`); if (chip) chip.setAttribute('aria-pressed', S.buyers.has(id)); renderDoors(); };
+  $$('.story button').forEach(b => b.onclick = () => setMode(b.dataset.mode));
+  document.addEventListener('click', e => {
+    const g = e.target.closest('[data-go]'); if (g) setMode(g.dataset.go);
+    const ph = e.target.closest('[data-ph]'); if (ph) { $$('[data-ph]').forEach(b => b.setAttribute('aria-pressed', b === ph)); $('#phScreen').innerHTML = phScreen(ph.dataset.ph); $('#phNote').innerHTML = PHNOTE[ph.dataset.ph]; beep(740, .06); }
+    const st = e.target.closest('[data-star]'); if (st) $$('[data-star]').forEach(b => b.classList.toggle('on', +b.dataset.star <= +st.dataset.star));
+    const sv = e.target.closest('[data-sv]'); if (sv) { const box = $('#phSv'); if (box) box.innerHTML = '<div class="ph-q">Thanks. Nothing was sent: this is a demo.</div>'; }
+  });
+  $('#take').onclick = () => { S.introSeen = true; $('#intro').classList.remove('on'); runDrill(); };
+  $('#again').onclick = () => { S.introSeen = true; runDrill(); };
+  $('#aPull').onclick = () => pull(flowA, '#aPull'); $('#bPull').onclick = () => pull(flowB, '#bPull');
+  $('#jNext').onclick = jNext; $('#jBack').onclick = jBack;
+  $('#snd').onclick = e => { S.sound = !S.sound; e.target.setAttribute('aria-pressed', S.sound); e.target.textContent = S.sound ? 'Sound on' : 'Sound off'; beep(660, .1); };
+  $('#srcBtn').onclick = () => { $('#srcList').innerHTML = Object.values(D.sources).map(s => `<li><a href="${s.url}" target="_blank" rel="noopener">${s.label}</a></li>`).join('') + '<li>' + D.reference.map(r => `${r.text} <a href="${D.sources[r.source].url}" target="_blank" rel="noopener">source</a>`).join('</li><li>') + '</li>'; $('#srcDlg').showModal(); };
+  $('#refs').innerHTML = D.reference.slice(0, 3).map(r => `<div class="ref"><span class="tag t-pub">published</span> ${r.text} <a href="${D.sources[r.source].url}" target="_blank" rel="noopener">source</a></div>`).join('');
+  SC = new Scene($('#scene'), { onScan: () => beep(980, .05) }); flowA = new Flow($('#laneA canvas')); flowB = new Flow($('#laneB canvas')); rc = new Ready($('#rcv'));
+  if (innerWidth < 900) $('#panel').open = false;
+  refresh();
+  addEventListener('resize', () => { flowA.resize(); flowB.resize(); rc.resize(); SC.resize(); });
+  let lastT = performance.now();
+  (function loop(now) { const dt = Math.min(.05, (now - lastT) / 1000); lastT = now; if (S.mode === 'journey') { SC.step(dt); SC.draw(now); } if (S.mode === 'drill') { flowA.draw(now); flowB.draw(now); tickDrill(now); } else if (S.mode === 'ready') rc.draw(now); requestAnimationFrame(loop); })(performance.now());
+}
+init();
+window.tool = { S, runDrill, setMode, flowA: () => flowA, flowB: () => flowB, pull, jNext, jBack };
+</script>
+</body>
+</html>
