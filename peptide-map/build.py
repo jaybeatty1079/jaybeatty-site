@@ -296,7 +296,7 @@ STN = {'brand': [['brand', 'Source', 'Branded API from the manufacturer under cG
        'component': [['ok', 'Source', 'Bulk substance for a 503B facility.'], ['ok', 'Purify and test', 'Release testing under cGMP.'], ['cond', 'Fill and finish', '503B: Category 1. 503A: a legal reading, not a listing.'], ['ok', 'Dispense', 'Prescribed or office-use from a 503B batch.']]}
 def index_links(r):
     # each count with the exact search behind it, from evidence.py's own query terms, so the link reproduces the number (None: the index did not answer)
-    q = urllib.parse.quote; key = r['name'].split(' (')[0]; syn = r.get('synonyms', []); t = terms(key, syn); ph = q(phrases(key, syn)); oa = 'https://api.openalex.org/works?mailto=jbeatty1079@icloud.com&search=' + ph; pm = 'https://pubmed.ncbi.nlm.nih.gov/?term='; o = r.get('openalex') or {}
+    q = urllib.parse.quote; key = r['name'].split(' (')[0]; syn = r.get('synonyms', []); t = terms(key, syn); ph = q(phrases(key, syn)); oa = 'https://api.openalex.org/works?search=' + ph; pm = 'https://pubmed.ncbi.nlm.nih.gov/?term='; o = r.get('openalex') or {}
     return [['PubMed, human studies', r.get('human_pubmed'), pm + q(t + ' AND humans[mh]')],
             ['PubMed, clinical trials', r.get('trials_pubmed'), pm + q(t + ' AND (clinical trial[pt] OR randomized controlled trial[pt])')],
             ['ClinicalTrials.gov, registered trials', r.get('trials_ctgov'), 'https://clinicaltrials.gov/search?intr=' + q(key)],

@@ -70,9 +70,9 @@ def europepmc_count(name, syn=()):
 def openalex(name, syn=()):
     # all works mentioning the compound, and how many are not in English: a measure of the literature PubMed misses
     try:
-        j = get('https://api.openalex.org/works', {'search': phrases(name, syn), 'per-page': 1, 'mailto': 'jbeatty1079@icloud.com'}); time.sleep(.3)
+        j = get('https://api.openalex.org/works', {'search': phrases(name, syn), 'per-page': 1}); time.sleep(.3)
         total = int(j.get('meta', {}).get('count', 0))
-        k = get('https://api.openalex.org/works', {'search': phrases(name, syn), 'filter': 'language:!en', 'per-page': 1, 'mailto': 'jbeatty1079@icloud.com'}); time.sleep(.3)
+        k = get('https://api.openalex.org/works', {'search': phrases(name, syn), 'filter': 'language:!en', 'per-page': 1}); time.sleep(.3)
         return {'all': total, 'non_english': int(k.get('meta', {}).get('count', 0))}
     except Exception: return None
 
