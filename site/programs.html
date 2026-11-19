@@ -27,7 +27,7 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+html,body{overflow-x:clip}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:var(--purple-soft);text-decoration:none}
 a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--green-soft);outline-offset:3px}
@@ -285,6 +285,7 @@ html{scroll-padding-top:62px}
   html{scroll-padding-top:77px}/* header 65px + 12px */
   nav{flex-wrap:nowrap;row-gap:0}
   .menu-tg{display:grid;order:3}
+  @media(max-width:400px){.theme-tg{width:36px;padding:0;gap:0}.theme-tg .tlab{display:none}}/* at 320px the labelled toggle pushed the menu button off the right edge */
   nav .links{display:none;position:absolute;top:100%;left:0;right:0;order:unset;width:auto;flex-direction:column;gap:8px;padding:12px clamp(16px,4vw,40px) 16px;overflow:visible;background:var(--bg);border-bottom:1px solid var(--line)}
   header.open nav .links{display:flex}
   .links a{text-align:center;padding:15px 12px}
@@ -777,27 +778,6 @@ ROAD.people.forEach(p=>{const g=el('g');const x0=x(p.s)+3,x1=x(p.e)-3;
  else{g.appendChild(el('path',{d:`M${x0} ${cy(p.a)} L${x1} ${cy(p.b)}`,fill:'none',stroke:MAG,'stroke-width':2.5,'stroke-linecap':'round'}));g.appendChild(el('circle',{cx:x1,cy:cy(p.b),r:4,fill:MAG,stroke:C.surface,'stroke-width':2}));
   const flat=p.a===p.b;g.appendChild(el('text',{x:flat?(x0+x1)/2:x1-8,y:cy(p.b)-(flat?8:6),'text-anchor':flat?'middle':'end','font-size':'10.5',class:'strong'},p.l));}
  g.appendChild(el('rect',{x:x(p.s),y:Cc.top-8,width:x(p.e)-x(p.s),height:Cc.h+8,class:'hit'}));tip(g,`${p.l} (${p.s} to ${p.e>2026?'now':p.e}). ${p.d}`);S.ppl.push([g,p]);svg.appendChild(g);});
-/* scroll story (GSAP + ScrollTrigger, deferred): above 760px the figure pins for 1.5 screens while a playhead sweeps 2005 to now and each lane draws in its years; 601-760px it draws once on entry; reduced motion or no GSAP leaves it fully drawn */
-addEventListener('DOMContentLoaded',()=>{if(!window.gsap||!window.ScrollTrigger)return;gsap.registerPlugin(ScrollTrigger);
- const fig=svg.closest('figure'),T=yr=>yr-Y0,cr=svg.appendChild(el('clipPath',{id:'road-clip'})).appendChild(el('rect',{x:x(Y0),y:0,width:x(Y1)-x(Y0),height:H}));S.area.setAttribute('clip-path','url(#road-clip)');const D=Y1-Y0,grow={scaleX:1,transformOrigin:'0% 50%'},show={opacity:1,duration:.6};
- const build=ph=>{const tl=gsap.timeline({paused:!ph,defaults:{ease:'none'}});
-  S.prod.forEach(([g,yr])=>tl.fromTo(g.children[0],{scaleX:0},{...grow,duration:Y1-yr},T(yr)).fromTo(g.children[1],{opacity:0},{...show},T(yr)));
-  let L=0;const seg=ROAD.territory.map((t,i)=>{const n=ROAD.territory[i+1],a=L+x(t.e)-x(t.s),b=a+(n?Math.abs(by(n.lv)-by(t.lv)):0),r=[t,L,a,b];L=b;return r;});
-  seg.forEach(([t,s0,a,b],i)=>{const v=b>a?.15:0;tl.fromTo(S.line,{strokeDasharray:L+1,strokeDashoffset:L-s0},{strokeDashoffset:L-a,duration:t.e-t.s-v,immediateRender:!i},T(t.s));if(v)tl.fromTo(S.line,{strokeDashoffset:L-a},{strokeDashoffset:L-b,duration:v,immediateRender:false},T(t.e)-v);});
-  tl.fromTo(cr,{scaleX:0},{scaleX:1,svgOrigin:x(Y0)+' 0',duration:D},0);/* the area under the territory line is revealed by its clip rect */
-  S.terr.forEach(([g,yr])=>tl.fromTo(g.children[0],{opacity:0},{...show},T(yr)));
-  S.ppl.forEach(([g,p])=>{const k=g.children,dur=p.e-p.s;if(p.net){tl.fromTo(k[0],{scaleX:0},{...grow,duration:dur},T(p.s)).fromTo(k[1],{opacity:0},{...show},T(p.s));return;}
-   const len=Math.hypot(x(p.e)-x(p.s)-6,cy(p.b)-cy(p.a));tl.fromTo(k[0],{strokeDasharray:len+' '+(len+10),strokeDashoffset:len+5},{strokeDashoffset:0,duration:dur},T(p.s)).fromTo([k[1],k[2]],{opacity:0},{...show},T(p.e)-.6);});
-  if(ph){S.band.forEach(([r0,o,r])=>{tl.to(r0,{opacity:.1,duration:.3},T(r.s));if(r.e<Y1)tl.to(r0,{opacity:o,duration:.3},T(r.e)-.3);});
-   tl.fromTo(ph,{x:0},{x:x(Y1)-x(Y0),duration:D},0);let shown;tl.eventCallback('onUpdate',()=>{const y=Y0+tl.time(),t=y>Y1-.05?'now':String(Math.floor(y));if(t!==shown)ph.lastChild.textContent=shown=t;});}
-  return tl;};
- const mm=gsap.matchMedia();
- mm.add('(min-width:761px) and (prefers-reduced-motion:no-preference)',()=>{fig.classList.remove('rv');/* a pinned element must not carry the reveal transform */const ph=svg.appendChild(el('g',{'aria-hidden':'true'}));
-  ph.appendChild(el('line',{x1:x(Y0),x2:x(Y0),y1:hdr-6,y2:H-14,stroke:C.fg,'stroke-width':1.5,opacity:.55}));ph.appendChild(el('text',{x:x(Y0),y:hdr-12,'text-anchor':'middle',style:'font-family:var(--mono)'},'2005'));
-  ScrollTrigger.create({trigger:fig,pin:true,start:()=>'top '+Math.min(72,innerHeight-fig.offsetHeight)+'px',end:'+=150%',scrub:.6,animation:build(ph),invalidateOnRefresh:true,anticipatePin:1});
-  return ()=>ph.remove();});
- mm.add('(min-width:601px) and (max-width:760px) and (prefers-reduced-motion:no-preference)',()=>{const tl=build(null).timeScale(11);ScrollTrigger.create({trigger:fig,start:'top 75%',once:true,onEnter:()=>tl.play()});});
-});
 /* table twin */
 table('road-table',['Role','Years','Added to the bag','Territory','Team'],ROAD.roles.map((r,i)=>{const t=ROAD.territory[i],p=ROAD.people[i];
  return [r.n,`${r.s} to ${r.e>2026?'now':r.e}`,ROAD.products.filter(q=>q.y>=r.s&&q.y<r.e).map(q=>(q.est?'≈ ':'')+q.l).join('; ')||'(same lines)',t.l+': '+t.d,p.l+': '+p.d];}));

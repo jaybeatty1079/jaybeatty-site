@@ -543,6 +543,10 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
 .rare h3{font-size:1.12rem}.rare p{color:var(--muted);font-size:.92rem}.rare .go{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green-soft)}
 @media(hover:hover){.rare:hover,a.tcard:hover{translate:0 -2px;border-color:var(--green-soft)}}
 .tcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.bench{margin-top:20px;border:1px solid var(--line);border-radius:12px;padding:14px 20px 6px}.bench .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.brow{display:grid;grid-template-columns:11rem minmax(0,1fr) auto;gap:16px;align-items:baseline;padding:12px 0;border-top:1px solid var(--line);color:var(--fg);text-decoration:none}.bench .k+.brow{border-top:0}
+.brow .t{font-family:var(--display);font-size:1.1rem}.brow .t em{color:var(--purple-soft)}.brow .d{color:var(--muted);font-size:.92rem}.brow .go{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green-soft)}
+@media(hover:hover){.brow:hover .t{color:var(--green-soft)}}@media(max-width:620px){.brow{grid-template-columns:minmax(0,1fr) auto;gap:4px 12px}.brow .d{grid-column:1/-1;grid-row:2}}
 .tcard{display:grid;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;color:var(--fg);text-decoration:none;min-width:0;transition:translate var(--t-base) var(--ease-out),border-color var(--t-base) var(--ease-out)}
 .tcard .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.tcard .t{font-family:var(--display);font-size:1.5rem;line-height:1.1}.tcard .t em{color:var(--purple-soft)}.tcard p{color:var(--muted);font-size:.95rem}.tcard .big{font-family:var(--display);font-size:1.25rem;line-height:1.15;color:var(--green-soft)}.lead-note{margin-top:22px;color:var(--muted);max-width:90ch}#lead .tcard{align-content:start}.tcard .go{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green-soft)}
 .rowlink{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
@@ -612,6 +616,10 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
 <a class="tcard" href="https://jaybeatty1079.github.io/tools/team-calculator/"><span class="k">CMS TEAM · mandatory bundled payment</span><span class="t">Episode <em>Calculator</em></span><p>What will TEAM pay your hospital, or cost it? Now on CMS's 2027 preliminary prices.</p><span class="go">Open the calculator →</span></a>
 <a class="tcard" href="https://jaybeatty1079.github.io/tools/biologics-atlas/"><span class="k">Orthobiologics by surgical application</span><span class="t">Biologics <em>Atlas</em></span><p>Click a bone. See what the market actually has for it.</p><span class="go">Open the atlas →</span></a>
 <a class="tcard" href="https://jaybeatty1079.github.io/tools/iomist/"><span class="k">Produce traceability, shown to a grower</span><span class="t">How Iomist <em>Works</em></span><p>A store calls about one clamshell. Run the recall twice.</p><span class="go">Open How Iomist Works →</span></a>
+</div>
+<div class="bench" aria-labelledby="bench-h"><span class="k" id="bench-h">Small tools · open on a phone, add to the home screen</span>
+<a class="brow" href="https://jaybeatty1079.github.io/tools/coin-drop/"><span class="t">Payroll <em>Coin Drop</em></span><span class="d">Section 125 wellness plan money flow illustration</span><span class="go">Open →</span></a>
+<a class="brow" href="https://jaybeatty1079.github.io/tools/aca-fountain/"><span class="t">Payroll <em>Fountain</em></span><span class="d">Section 125 wellness plan money flow illustration</span><span class="go">Open →</span></a>
 </div><p class="rowlink"><a class="btn" href="tools.html">All the tools, with how each was built →</a></p></section>
 <section id="press" aria-label="In the press"><div class="roles"><span class="k">In the press</span>
 <span class="press"><a href="https://www.denver7.com/news/coronavirus/we-aint-going-to-wait-colorado-will-ramp-up-testing-processing-as-national-lab-backlog-grows" target="_blank" rel="noopener">Denver7, July 2020: Governor Polis names ATCG Labs for Colorado's community testing sites</a> · <a href="https://thebidlab.com/case/atcg/" target="_blank" rel="noopener">The Bid Lab: how ATCG won a state contract</a>. Role by role on the <a href="track-record.html">track record</a>; year by year on the <a href="career.html">career path</a>.</span></div><!-- reference quotes go here when Jay has them; never write one for him --></section>
@@ -775,27 +783,6 @@ ROAD.people.forEach(p=>{const g=el('g');const x0=x(p.s)+3,x1=x(p.e)-3;
  else{g.appendChild(el('path',{d:`M${x0} ${cy(p.a)} L${x1} ${cy(p.b)}`,fill:'none',stroke:MAG,'stroke-width':2.5,'stroke-linecap':'round'}));g.appendChild(el('circle',{cx:x1,cy:cy(p.b),r:4,fill:MAG,stroke:C.surface,'stroke-width':2}));
   const flat=p.a===p.b;g.appendChild(el('text',{x:flat?(x0+x1)/2:x1-8,y:cy(p.b)-(flat?8:6),'text-anchor':flat?'middle':'end','font-size':'10.5',class:'strong'},p.l));}
  g.appendChild(el('rect',{x:x(p.s),y:Cc.top-8,width:x(p.e)-x(p.s),height:Cc.h+8,class:'hit'}));tip(g,`${p.l} (${p.s} to ${p.e>2026?'now':p.e}). ${p.d}`);S.ppl.push([g,p]);svg.appendChild(g);});
-/* scroll story (GSAP + ScrollTrigger, deferred): above 760px the figure pins for 1.5 screens while a playhead sweeps 2005 to now and each lane draws in its years; 601-760px it draws once on entry; reduced motion or no GSAP leaves it fully drawn */
-addEventListener('DOMContentLoaded',()=>{if(!window.gsap||!window.ScrollTrigger)return;gsap.registerPlugin(ScrollTrigger);
- const fig=svg.closest('figure'),T=yr=>yr-Y0,cr=svg.appendChild(el('clipPath',{id:'road-clip'})).appendChild(el('rect',{x:x(Y0),y:0,width:x(Y1)-x(Y0),height:H}));S.area.setAttribute('clip-path','url(#road-clip)');const D=Y1-Y0,grow={scaleX:1,transformOrigin:'0% 50%'},show={opacity:1,duration:.6};
- const build=ph=>{const tl=gsap.timeline({paused:!ph,defaults:{ease:'none'}});
-  S.prod.forEach(([g,yr])=>tl.fromTo(g.children[0],{scaleX:0},{...grow,duration:Y1-yr},T(yr)).fromTo(g.children[1],{opacity:0},{...show},T(yr)));
-  let L=0;const seg=ROAD.territory.map((t,i)=>{const n=ROAD.territory[i+1],a=L+x(t.e)-x(t.s),b=a+(n?Math.abs(by(n.lv)-by(t.lv)):0),r=[t,L,a,b];L=b;return r;});
-  seg.forEach(([t,s0,a,b],i)=>{const v=b>a?.15:0;tl.fromTo(S.line,{strokeDasharray:L+1,strokeDashoffset:L-s0},{strokeDashoffset:L-a,duration:t.e-t.s-v,immediateRender:!i},T(t.s));if(v)tl.fromTo(S.line,{strokeDashoffset:L-a},{strokeDashoffset:L-b,duration:v,immediateRender:false},T(t.e)-v);});
-  tl.fromTo(cr,{scaleX:0},{scaleX:1,svgOrigin:x(Y0)+' 0',duration:D},0);/* the area under the territory line is revealed by its clip rect */
-  S.terr.forEach(([g,yr])=>tl.fromTo(g.children[0],{opacity:0},{...show},T(yr)));
-  S.ppl.forEach(([g,p])=>{const k=g.children,dur=p.e-p.s;if(p.net){tl.fromTo(k[0],{scaleX:0},{...grow,duration:dur},T(p.s)).fromTo(k[1],{opacity:0},{...show},T(p.s));return;}
-   const len=Math.hypot(x(p.e)-x(p.s)-6,cy(p.b)-cy(p.a));tl.fromTo(k[0],{strokeDasharray:len+' '+(len+10),strokeDashoffset:len+5},{strokeDashoffset:0,duration:dur},T(p.s)).fromTo([k[1],k[2]],{opacity:0},{...show},T(p.e)-.6);});
-  if(ph){S.band.forEach(([r0,o,r])=>{tl.to(r0,{opacity:.1,duration:.3},T(r.s));if(r.e<Y1)tl.to(r0,{opacity:o,duration:.3},T(r.e)-.3);});
-   tl.fromTo(ph,{x:0},{x:x(Y1)-x(Y0),duration:D},0);let shown;tl.eventCallback('onUpdate',()=>{const y=Y0+tl.time(),t=y>Y1-.05?'now':String(Math.floor(y));if(t!==shown)ph.lastChild.textContent=shown=t;});}
-  return tl;};
- const mm=gsap.matchMedia();
- mm.add('(min-width:761px) and (prefers-reduced-motion:no-preference)',()=>{fig.classList.remove('rv');/* a pinned element must not carry the reveal transform */const ph=svg.appendChild(el('g',{'aria-hidden':'true'}));
-  ph.appendChild(el('line',{x1:x(Y0),x2:x(Y0),y1:hdr-6,y2:H-14,stroke:C.fg,'stroke-width':1.5,opacity:.55}));ph.appendChild(el('text',{x:x(Y0),y:hdr-12,'text-anchor':'middle',style:'font-family:var(--mono)'},'2005'));
-  ScrollTrigger.create({trigger:fig,pin:true,start:()=>'top '+Math.min(72,innerHeight-fig.offsetHeight)+'px',end:'+=150%',scrub:.6,animation:build(ph),invalidateOnRefresh:true,anticipatePin:1});
-  return ()=>ph.remove();});
- mm.add('(min-width:601px) and (max-width:760px) and (prefers-reduced-motion:no-preference)',()=>{const tl=build(null).timeScale(11);ScrollTrigger.create({trigger:fig,start:'top 75%',once:true,onEnter:()=>tl.play()});});
-});
 /* table twin */
 table('road-table',['Role','Years','Added to the bag','Territory','Team'],ROAD.roles.map((r,i)=>{const t=ROAD.territory[i],p=ROAD.people[i];
  return [r.n,`${r.s} to ${r.e>2026?'now':r.e}`,ROAD.products.filter(q=>q.y>=r.s&&q.y<r.e).map(q=>(q.est?'≈ ':'')+q.l).join('; ')||'(same lines)',t.l+': '+t.d,p.l+': '+p.d];}));
