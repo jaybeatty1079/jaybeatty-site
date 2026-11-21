@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="color-scheme" content="dark light">
 <script>try{var t=localStorage.getItem('jb-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <title>About | Jay Beatty</title><meta name="description" content="About Jay Beatty: from the operating room to running a laboratory. Biomedical physics degree, based between Ventura, California and Central Pennsylvania.">
 <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml"><link rel="icon" href="/favicon.ico?v=2" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
@@ -24,17 +24,18 @@
   --display:"Fraunces",Georgia,"Times New Roman",serif;
   --body:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --ctl:#7d7599;       /* form control border, 4.0:1 on panel */
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-html,body{overflow-x:clip}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+html,body{overflow-x:clip}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1rem;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:var(--purple-soft);text-decoration:none}
 a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--green-soft);outline-offset:3px}
 h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
 h1{font-size:clamp(2.4rem,5.2vw,4.2rem);letter-spacing:-.01em}
 h2{font-size:clamp(1.8rem,3.2vw,2.6rem)}
-h3{font-size:1.25rem;font-weight:600}
+h3,.h3l{font-size:1.25rem;font-weight:600}
 p{margin:0}
 .wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green-soft)}
@@ -46,10 +47,10 @@ section{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--line)}
 
 /* nav */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
 .brand{white-space:nowrap;flex-shrink:0;font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
 .brand b{color:var(--green-soft);font-weight:400}
-.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color var(--t-fast),background-color var(--t-fast),color var(--t-fast)}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
+.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color var(--t-fast),background-color var(--t-fast),color var(--t-fast)}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#06150c}
 
 
 @media(max-width:860px){nav{height:auto;flex-wrap:wrap;padding-block:10px;row-gap:8px}.links{width:100%;padding-bottom:2px;-webkit-overflow-scrolling:touch}}
@@ -163,7 +164,7 @@ details.tbl th{color:var(--muted);font-weight:500}
 .cform{margin-top:32px;padding-top:28px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;max-width:720px}
 .cform .f{display:grid;gap:6px;min-width:0}.cform .f.w{grid-column:1/-1}
 .cform label{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.cform input,.cform textarea{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--fg);border-radius:6px;padding:11px 12px;font:inherit;font-size:.95rem}
+.cform input,.cform textarea{width:100%;background:var(--panel);border:1px solid var(--ctl);color:var(--fg);border-radius:6px;padding:11px 12px;font:inherit;font-size:.95rem}
 .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--purple)}.cform textarea{min-height:120px;resize:vertical}
 .cform .act{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:14px}.cform .note{font-size:.8rem;color:var(--muted)}.cform .ok{grid-column:1/-1;display:none;color:var(--green-soft);font-size:.95rem}
 .cform .sr{position:absolute;left:-9999px}
@@ -257,6 +258,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
   --fg:#1b1528;--muted:#5a5370;
   --purple:#6d50dd;--purple-soft:#4b3bb0;
   --green:#1f9a55;--green-soft:#15713f;--teal:#0e8f86;
+  --ctl:#7a7194;
   color-scheme:light;
 }
 body{transition:background-color var(--t-base),color var(--t-base)}
@@ -418,7 +420,8 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
 .pvbar{background:#D65DB1;color:#1a0a15;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;text-align:center;padding:9px max(16px,env(safe-area-inset-right,0px)) 9px max(16px,env(safe-area-inset-left,0px));line-height:1.35}
 .pvbar b{font-weight:700}
 .links a[aria-current=page]{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent)}
-.links a.cta-last[aria-current=page]{background:var(--green);color:#fff}
+.links a.cta-last[aria-current=page]{background:var(--green);color:#06150c}
+:root[data-theme="light"] .links a:last-child:hover,:root[data-theme="light"] .links a:last-child:focus-visible,:root[data-theme="light"] .links a.cta-last[aria-current=page]{background:#15713f;border-color:#15713f;color:#fff}
 .hubgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 @media(max-width:900px){.hubgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.hubgrid{grid-template-columns:1fr}}
@@ -578,7 +581,7 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
       <img class="hs-about" src="img/jay-beatty.jpg" alt="Jay Beatty" width="620" height="930" fetchpriority="high"><p style="margin-top:18px">My healthcare career started in the operating room, next to orthopedic surgeons, with hundreds of products to know: hardware, biologics, allografts, capital equipment and DME. I have been blessed to learn from some of the best surgeons, sales reps, managers and inventors in the business. Startup hire, manager, executive, consultant: I have delivered in every seat. I live for the hard challenges, and I hold myself to the highest standard.</p>
       <p>I've spent my career in healthcare sales and operations, first selling implants and biologics to orthopedic surgeons, then leading national sales through independent distributors, then running a clinical laboratory as COO through the largest testing program in its history. For the last two years I've worked as an independent business development consultant, usually running two engines at once for companies in an early growth phase.</p>
       <p>I am bicoastal. I spent twenty years in Ventura, California, selling across the West, and I am based between Ventura and Mechanicsburg, Pennsylvania, where I grew up between Harrisburg, York and Lancaster. I travel when the work calls for it.</p><p>My degree is in Biomedical Physics from Cal State University, Northridge. It blends several hard sciences, then asks you to understand them well enough to apply them. That is very much me: I love finding the through line, then crafting the plan and carrying it out. I hold a California Life, Accident and Health producer license, transferring to Pennsylvania, and held a DoD Secret clearance earlier in my career. I run my own prospecting, research and forecasting with AI agents every day, with HubSpot as the system of record.</p>
-      <h3 style="margin-top:28px">Good fit if you are</h3>
+      <h2 class="h3l" style="margin-top:28px">Good fit if you are</h2>
       <ul class="fit">
         <li>A medtech, diagnostics or healthcare AI company opening a territory or a new specialty</li>
         <li>A founder who needs booked meetings with surgeons, hospital executives or physician practices</li>
@@ -587,13 +590,13 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
         <li>A company hiring a full-time BD or sales leader who has built the function before</li>
 <li>A board or founder who wants a BD leader who has also run the P&amp;L</li>
       </ul>
-<h3 style="margin-top:28px">Off the clock</h3>
+<h2 class="h3l" style="margin-top:28px">Off the clock</h2>
     <p style="margin-top:10px">At 14 I became snakeboarding's first world champion, in Germany in 1994, and spent the next four years traveling the country and the world doing demos, exhibitions and contests. That was my first job performing in front of a crowd, and it never really stopped. These days the competition is pool: several leagues, national tournaments, a national ranking and a few open pro events. I still like a room where the result is on the scoreboard.</p>
     </div>
     <div>
       <a class="vid" href="https://www.youtube.com/watch?v=T79Q1lhMB0w" aria-label="Watch Snakeboarding First World Champion on YouTube"><img data-strip="sm" data-ar="16/10" data-cap="Snakeboarding's first world champion, 1994. Brand X footage, 1996. Click to watch." data-href="https://www.youtube.com/watch?v=T79Q1lhMB0w" src="img/photo-about-1.jpg" width="960" height="540" loading="lazy" decoding="async" alt="Jay Beatty mid-slide on a snakeboard in a parking lot, 1996 footage"><span class="play" aria-hidden="true"></span><span class="vcap"><b>Snakeboarding First World Champion</b>Brand X spotlight, 1996 · watch on YouTube</span></a>
       <a class="vid" href="https://www.youtube.com/watch?v=b45bAjOTxZo" target="_blank" rel="noopener" aria-label="Watch DRGNCAST Ep015 with Jay Beatty on YouTube"><img data-strip="md" data-ar="16/10" data-cap="DRGNCAST Ep015: podcast interview with Dragan Boards. Click to watch." data-href="https://www.youtube.com/watch?v=b45bAjOTxZo" src="img/photo-about-2.jpg" width="924" height="620" loading="lazy" decoding="async" alt="DRGNCAST Ep015: podcast interview with Dragan Boards." style="object-position:50% 35%"><span class="play"></span><span class="vcap"><b>DRGNCAST Ep015: Jay Beatty</b>Podcast interview with Dragan Boards</span></a>
-    <div class="fbembed"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F100057545105479%2Fvideos%2F429472941097562%2F&show_text=false&t=0" title="10-ball, 9-ball and 8-ball break-and-run" loading="lazy" scrolling="no" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
+    <div class="fbembed"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F100057545105479%2Fvideos%2F429472941097562%2F&show_text=false&t=0" title="10-ball, 9-ball and 8-ball break-and-run" loading="lazy" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
     <div class="cap">10-ball, 9-ball and 8-ball, break and run back to back. Challenge completed.</div>
         <a class="fbcard" href="https://www.facebook.com/profile.php?id=100057545105479&sk=videos" target="_blank" rel="noopener"><span class="thumb"><img src="img/photo-about-3.jpg" width="999" height="1520" loading="lazy" decoding="async" alt=""><span class="play"></span></span><span><strong>More pool videos on Facebook</strong><span class="t">Drills, run-outs and match play.</span></span></a>
     </div>
@@ -601,7 +604,7 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
 </section></div>
 </main>
 <footer><div class="wrap"><span>© 2026 Jay Beatty. JAB Industries LLC. Remote-first. Open to fractional engagements and full-time leadership roles.</span><span>Ventura, CA and Central Pennsylvania. Working with clients nationwide.</span></div></footer>
-<div hidden aria-hidden="true"><svg id="matrix"></svg><div id="matrix-table"></div><svg id="vest"></svg><svg id="gantt"></svg><div id="gantt-table"></div><svg id="mult"></svg><div id="mult-table"></div><svg id="road"></svg><div id="road-table"></div></div><div class="tip" id="tip" role="status" aria-live="polite"></div>
+<div hidden aria-hidden="true"><svg id="matrix"></svg><div id="matrix-table"></div><svg id="vest"></svg><svg id="gantt"></svg><div id="gantt-table"></div><svg id="mult"></svg><div id="mult-table"></div><svg id="road"></svg><div id="road-table"></div></div><div class="tip" id="tip" aria-hidden="true"></div>
 <script>(function(){var r=document.documentElement;function cur(){return r.getAttribute('data-theme')==='light'?'light':'dark'}function sync(){document.querySelectorAll('.theme-tg').forEach(function(b){b.setAttribute('aria-label',cur()==='light'?'Switch to dark mode':'Switch to light mode')})}document.querySelectorAll('.theme-tg').forEach(function(b){b.addEventListener('click',function(){var n=cur()==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('jb-theme',n)}catch(e){}sync()})});sync()})();</script><script>/* motion-v1: header menu. Escape closes and returns focus to the button; links get a stagger index for the dropdown. */
 (function(){var h=document.querySelector('header'),b=h&&h.querySelector('.menu-tg'),l=h&&h.querySelector('.links');if(!b||!l)return;
 l.querySelectorAll('a').forEach(function(a,i){a.style.setProperty('--k',i)});

@@ -66,7 +66,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:co
 nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
 .brand{white-space:nowrap;flex-shrink:0;font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
 .brand b{color:var(--green-soft);font-weight:400}
-.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color var(--t-fast),background-color var(--t-fast),color var(--t-fast)}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
+.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color var(--t-fast),background-color var(--t-fast),color var(--t-fast)}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#06150c}
 
 
 @media(max-width:860px){nav{height:auto;flex-wrap:wrap;padding-block:10px;row-gap:8px}.links{width:100%;padding-bottom:2px;-webkit-overflow-scrolling:touch}}
@@ -79,7 +79,7 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:16px;heigh
 .chip{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .btn{font-weight:700;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:6px;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--purple);color:var(--fg)}
-.btn.primary{background:var(--purple);border-color:var(--purple)}
+.btn.primary{background:#6d50dd;border-color:#6d50dd;color:#fff}
 .btn:hover{text-decoration:none;filter:brightness(1.1)}
 
 /* scoreboard */
@@ -296,8 +296,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 .copy[open] summary span:first-child::after{content:"  \2013"}
 .copy summary .sm{font-size:.82rem;color:var(--muted)}
 .copy-body{padding:4px 18px 22px;max-width:70ch;font-size:1.02rem;line-height:1.65}
-.copy-body h4{font-family:var(--display);font-weight:600;font-size:1.2rem;line-height:1.25;margin:26px 0 8px;color:var(--fg)}
-.copy-body h4:first-child{margin-top:6px}
+.copy-body h3{font-family:var(--display);font-weight:600;font-size:1.2rem;line-height:1.25;margin:26px 0 8px;color:var(--fg)}
+.copy-body h3:first-child{margin-top:6px}
 .copy-body p{color:var(--fg);opacity:.88}.copy-body p+p{margin-top:12px}
 .copy-body ul{margin:10px 0 0;padding-left:20px;color:var(--fg);opacity:.88}.copy-body li{margin:6px 0}
 .copy-body ul.sub{margin-top:0}
@@ -321,14 +321,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 .copy-body th,.copy-body td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
 .copy-body th{color:var(--muted);font-weight:500}
 /* zoom viewer */
-dialog.viewer{padding:0;border:0;max-width:none;max-height:none;width:100vw;height:100dvh;margin:0;background:rgba(6,5,10,.96);color:var(--fg)}
-dialog.viewer::backdrop{background:rgba(6,5,10,.9)}
+dialog.viewer{padding:0;border:0;max-width:none;max-height:none;width:100vw;height:100dvh;margin:0;background:rgba(6,5,10,.96);color:var(--fg);overscroll-behavior:contain}
+dialog.viewer::backdrop{background:rgba(6,5,10,.9);overflow:hidden;overscroll-behavior:contain}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .vbar{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;padding-top:max(10px,env(safe-area-inset-top));background:rgba(11,10,16,.92);border-bottom:1px solid var(--line);z-index:2}
 .vbar .lab{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(max-width:560px){.vbar button{padding:7px 9px;font-size:.64rem}.vbar .grp{gap:4px}.vbar .lab .t{display:none}}
 .vbar button{background:none;border:1px solid var(--line);color:var(--fg);border-radius:6px;padding:8px 12px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
 .vbar .grp{display:flex;gap:6px}
-.vstage{height:calc(100dvh - 58px);overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom;display:block;text-align:center}
+.vstage{height:calc(100dvh - 58px);overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom;display:block;text-align:center;overscroll-behavior:contain}
 .vstage img{display:block;margin:0 auto;width:min(100%,760px);height:auto;cursor:zoom-in}
 .vstage.z img{width:auto;max-width:none;cursor:zoom-out}
 @media(max-width:700px){.vstage.z img{width:230%}}
@@ -440,7 +441,8 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
 .pvbar{background:#D65DB1;color:#1a0a15;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;text-align:center;padding:9px max(16px,env(safe-area-inset-right,0px)) 9px max(16px,env(safe-area-inset-left,0px));line-height:1.35}
 .pvbar b{font-weight:700}
 .links a[aria-current=page]{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent)}
-.links a.cta-last[aria-current=page]{background:var(--green);color:#fff}
+.links a.cta-last[aria-current=page]{background:var(--green);color:#06150c}
+:root[data-theme="light"] .links a:last-child:hover,:root[data-theme="light"] .links a:last-child:focus-visible,:root[data-theme="light"] .links a.cta-last[aria-current=page]{background:#15713f;border-color:#15713f;color:#fff}
 .hubgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 @media(max-width:900px){.hubgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.hubgrid{grid-template-columns:1fr}}
@@ -552,33 +554,33 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
     <div class="hint">Inside spread, 4 panels. Tap any panel to zoom.</div>
     <div class="spread n4"><button class="panel" type="button" data-full="portfolio/atcg/pgx-1.jpg" aria-label="Open panel 1 of 4, Pharmacogenomics, full size"><img src="portfolio/atcg/pgx-1.jpg" width="1100" height="1700" loading="lazy" decoding="async" alt="Pharmacogenomics brochure, inside panel 1 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/pgx-2.jpg" aria-label="Open panel 2 of 4, Pharmacogenomics, full size"><img src="portfolio/atcg/pgx-2.jpg" width="1100" height="1700" loading="lazy" decoding="async" alt="Pharmacogenomics brochure, inside panel 2 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/pgx-3.jpg" aria-label="Open panel 3 of 4, Pharmacogenomics, full size"><img src="portfolio/atcg/pgx-3.jpg" width="1100" height="1700" loading="lazy" decoding="async" alt="Pharmacogenomics brochure, inside panel 3 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/pgx-4.jpg" aria-label="Open panel 4 of 4, Pharmacogenomics, full size"><img src="portfolio/atcg/pgx-4.jpg" width="1100" height="1700" loading="lazy" decoding="async" alt="Pharmacogenomics brochure, inside panel 4 of 4"></button></div>
     <details class="copy">
-      <summary><span>Read the copy</span><span class="sm">Full text, sized for a phone</span></summary>
+      <summary><span>Read the copy<b class="vh"> for the Pharmacogenomics physician brochure</b></span><span class="sm">Full text, sized for a phone</span></summary>
       <div class="copy-body">
-<h4>Less trial, more precision</h4>
-<h4>Who is this test for?</h4>
+<h3>Less trial, more precision</h3>
+<h3>Who is this test for?</h3>
 <p>Indications for PGX testing include: use of medications with known polymorphisms (examples include: cardiology, anti-thrombotic, pain, and psychiatric medications), patients on multiple medications (one of which is a medication with known polymorphisms), and patients who have experienced treatment failure, side effects, or toxicity during use of a medication with known polymorphisms.</p>
-<h4>What are the potential benefits for my patient?</h4>
+<h3>What are the potential benefits for my patient?</h3>
 <p>Moving beyond trial and error, PGX testing may allow for a more precise and customized treatment plan for your patients. The results provide details about how your patient metabolizes medications and suggests alternative prescriptions when increased sensitivity or reduced response is likely.</p>
 <p>By examining the role genetics play in drug metabolism, you can help treat your patients more effectively by identifying genetic variants and prescribing medications accordingly. Treatment plans may be customized and you can offer truly personalized medicine that is unique to each one of your patients.</p>
 <p class="cta-line">Make testing a standard in your practice today.</p>
-<h4>Test selection</h4>
+<h3>Test selection</h3>
 <ul><li>Comprehensive Panel</li><li>Pain Management Panel</li><li>Cardiology and Thrombophilia Panel</li><li>Mental Health Panel</li></ul>
 <p class="pull">Drug response is not the same for all people. ATCG’s Pharmacogenetic test can identify people in all areas of the traditional bell curve, including non-responders and those at risk for adverse drug reactions.</p>
-<h4>Our process</h4>
+<h3>Our process</h3>
 <ol class="steps-c"><li><b>Complete test requisition forms</b><span>Request printed or digital forms from Client Services.</span></li><li><b>Saliva sample collection</b><span>Buccal swab or oral collection kits. Request swabs and kits from Client Services.</span></li><li><b>Get results quickly</b><span>Our CLIA accredited laboratory will deliver results in less than a week to a HIPAA electronic portal.</span></li><li><b>Plan and prevent</b><span>The finished report will be interpreted so the data can be clearly utilized by the clinician. A sample report is available on request.</span></li></ol>
-<h4>Why ATCG?</h4><dl class="why"><dt>Spectrum</dt><dd>Customized testing for your patients allowing truly personalized medicine</dd><dt>Advanced</dt><dd>Helping you and your patients stay progressive in the universe of cancer</dd><dt>Workflow</dt><dd>Electronic ordering and reporting portals streamline workflow for seamless adoption</dd><dt>Engage</dt><dd>We are committed to tests that produce actionable information that truly makes a difference</dd></dl>
-<h4>Malignant hyperthermia susceptibility (MHS) testing</h4>
+<h3>Why ATCG?</h3><dl class="why"><dt>Spectrum</dt><dd>Customized testing for your patients allowing truly personalized medicine</dd><dt>Advanced</dt><dd>Helping you and your patients stay progressive in the universe of cancer</dd><dt>Workflow</dt><dd>Electronic ordering and reporting portals streamline workflow for seamless adoption</dd><dt>Engage</dt><dd>We are committed to tests that produce actionable information that truly makes a difference</dd></dl>
+<h3>Malignant hyperthermia susceptibility (MHS) testing</h3>
 <p class="pull">Malignant Hyperthermia is identified as an autosomal dominant pharmacogenetic trait. This is an inherited condition which, when exposed to drugs primarily used for general anesthesia, causes a severe and sometimes fatal reaction.</p>
-<h4>Who is this test for?</h4>
+<h3>Who is this test for?</h3>
 <p>This condition mostly occurs during or after surgery. However, it can occur wherever anesthetic medications are used, which include: emergency rooms, dental offices, surgeons’ offices, and intensive care units. The majority of patients who carry the genetic variant for MH will never develop symptoms. Identifying patients should include: family history of MH, unknown family history or gaps in family tree, a history of heat stroke or hyperthermia after exercise, muscle abnormalities that are linked to MHS (example: Duchenne and Becker Muscular Dystrophy). Other common conditions associated are respiratory acidosis, metabolic acidosis, and excessive heat production.</p>
-<h4>What are the potential benefits for my patient?</h4>
+<h3>What are the potential benefits for my patient?</h3>
 <p>Prevention of Malignant Hyperthermia can be achieved by performing genetic testing. Healthcare professionals who familiarize themselves with genomic information can help identify patients and family members who are high risk. This disorder and its severe complications can be mitigated with the MHS panel diagnostic test.</p>
 <p>The advantage of using this genetic test as opposed to a contracture test are reduced invasiveness, lower cost and lack of morbidity from a muscle biopsy. The innovations in genetics yield tests that are inexpensive, noninvasive, and quick, which could pave the way to eliminate malignant hyperthermia altogether.</p>
 <p class="cta-line">Make testing a standard in your practice today.</p>
-<h4>Our process</h4>
+<h3>Our process</h3>
 <ol class="steps-c"><li><b>Complete test requisition forms</b><span>The MHS panel can be ordered from the Pharmacogenomic Test Requisition form, available from Client Services.</span></li><li><b>Saliva sample collection</b><span>If a PGX test is ordered, please use an additional oral collection swab for the MHS panel. Sample requirements, PDF instructions and a video are on the lab’s website.</span></li><li><b>Get results quickly</b><span>Our CLIA accredited laboratory will deliver results in less than 3 weeks to a HIPAA electronic portal.</span></li><li><b>Plan and prevent</b><span>Genetic Counselors will help you and your patient interpret results and choose the best prevention options.</span></li></ol>
-<h4>Test selection</h4><ul><li>Malignant Hyperthermia Susceptibility Panel</li></ul>
-<h4>References and resources</h4>
+<h3>Test selection</h3><ul><li>Malignant Hyperthermia Susceptibility Panel</li></ul>
+<h3>References and resources</h3>
 <ul><li>Malignant Hyperthermia Association of the United States</li><li>National Institute of Arthritis and Musculoskeletal and Skin Diseases</li><li>National Organization for Rare Disorders</li></ul>
 </div>
     </details>
@@ -597,22 +599,22 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
     <div class="hint">Inside spread, 2 panels. Tap any panel to zoom.</div>
     <div class="spread n2"><button class="panel" type="button" data-full="portfolio/atcg/hcp-1.jpg" aria-label="Open panel 1 of 2, Hereditary cancer, full size"><img src="portfolio/atcg/hcp-1.jpg" width="1100" height="1700" loading="lazy" decoding="async" alt="Hereditary cancer brochure, inside panel 1 of 2"></button><button class="panel" type="button" data-full="portfolio/atcg/hcp-2.jpg" aria-label="Open panel 2 of 2, Hereditary cancer, full size"><img src="portfolio/atcg/hcp-2.jpg" width="1100" height="1700" loading="lazy" decoding="async" alt="Hereditary cancer brochure, inside panel 2 of 2"></button></div>
     <details class="copy">
-      <summary><span>Read the copy</span><span class="sm">Full text, sized for a phone</span></summary>
+      <summary><span>Read the copy<b class="vh"> for the Hereditary cancer physician brochure</b></span><span class="sm">Full text, sized for a phone</span></summary>
       <div class="copy-body">
-<h4>Early detection is the best defense</h4>
+<h3>Early detection is the best defense</h3>
 <p class="pull">Some of the most prevalent hereditary cancers have much higher survival rates when diagnosed early. ATCG’s Hereditary Cancer Solution provides knowledge that can assist with prevention and early detection.</p>
-<h4>Who is this test for?</h4>
+<h3>Who is this test for?</h3>
 <p>Patients with a personal or family history suggestive of a hereditary cancer syndrome. Red flags for hereditary cancers can include onset of cancer before age 50, more than one primary cancer in a single person, or multiple affected people within a family. This test is designed to detect germline pathogenic variants and is not validated to detect somatic mutations.</p>
 <p><b>Characteristics of hereditary cancer:</b> early onset, multiple family members affected, rare cancers, multiple body parts affected.</p>
-<h4>What are the potential benefits for my patient?</h4>
+<h3>What are the potential benefits for my patient?</h3>
 <p>Hereditary cancer testing can establish or confirm a diagnosis, identify risks for other cancers and health conditions, help define the best management plan for patients with a positive test result (including increased surveillance, pharmacological treatments, and prophylactic surgeries), and determine whether close family members (children, siblings, and parents) may also be at risk. If a pathogenic variant is identified in your patient, their close relatives can have as high as a 50 percent risk of carrying the same variant and therefore also be at risk for cancer.</p>
 <p>By examining the role genetics play in the development of cancer, you can steer your patients’ futures towards the long lives you imagine for them. Implement proactive measures and establish new treatment protocols for your patients.</p>
 <p class="cta-line">Make testing a standard in your practice today.</p>
-<h4>Test selection</h4>
+<h3>Test selection</h3>
 <ul><li>Focus Panel</li><li>Breast and Ovarian Panel</li><li>Prostate Panel</li><li>Gastroenterology Panel</li><li>Lynch Panel</li></ul>
-<h4>Our process</h4>
+<h3>Our process</h3>
 <ol class="steps-c"><li><b>Complete test requisition forms</b><span>Request printed or digital forms from Client Services.</span></li><li><b>Saliva sample collection</b><span>Sample requirements, PDF instructions and a video are on the lab’s website.</span></li><li><b>Get results quickly</b><span>Our CLIA accredited laboratory will deliver results in less than 3 weeks to a HIPAA electronic portal.</span></li><li><b>Plan and prevent</b><span>Genetic Counselors will help you and your patient interpret results and choose the best prevention options.</span></li></ol>
-<h4>Why ATCG?</h4><dl class="why"><dt>Spectrum</dt><dd>Customized testing for your patients allowing truly personalized medicine</dd><dt>Advanced</dt><dd>Helping you and your patients stay progressive in the universe of cancer</dd><dt>Workflow</dt><dd>Electronic ordering and reporting portals streamline workflow for seamless adoption</dd><dt>Engage</dt><dd>We are committed to tests that produce actionable information that truly makes a difference</dd></dl>
+<h3>Why ATCG?</h3><dl class="why"><dt>Spectrum</dt><dd>Customized testing for your patients allowing truly personalized medicine</dd><dt>Advanced</dt><dd>Helping you and your patients stay progressive in the universe of cancer</dd><dt>Workflow</dt><dd>Electronic ordering and reporting portals streamline workflow for seamless adoption</dd><dt>Engage</dt><dd>We are committed to tests that produce actionable information that truly makes a difference</dd></dl>
 </div>
     </details>
   </div>
@@ -630,19 +632,19 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
     <div class="hint">Inside spread, 3 panels. Tap any panel to zoom.</div>
     <div class="spread n3"><button class="panel" type="button" data-full="portfolio/atcg/hered-1.jpg" aria-label="Open panel 1 of 3, Hereditary cancers, full size"><img src="portfolio/atcg/hered-1.jpg" width="1100" height="2550" loading="lazy" decoding="async" alt="Hereditary cancers brochure, inside panel 1 of 3"></button><button class="panel" type="button" data-full="portfolio/atcg/hered-2.jpg" aria-label="Open panel 2 of 3, Hereditary cancers, full size"><img src="portfolio/atcg/hered-2.jpg" width="1100" height="2550" loading="lazy" decoding="async" alt="Hereditary cancers brochure, inside panel 2 of 3"></button><button class="panel" type="button" data-full="portfolio/atcg/hered-3.jpg" aria-label="Open panel 3 of 3, Hereditary cancers, full size"><img src="portfolio/atcg/hered-3.jpg" width="1100" height="2550" loading="lazy" decoding="async" alt="Hereditary cancers brochure, inside panel 3 of 3"></button></div>
     <details class="copy">
-      <summary><span>Read the copy</span><span class="sm">Full text, sized for a phone</span></summary>
+      <summary><span>Read the copy<b class="vh"> for the Hereditary cancers patient brochure</b></span><span class="sm">Full text, sized for a phone</span></summary>
       <div class="copy-body">
-<h4>Early detection is the best defense</h4>
+<h3>Early detection is the best defense</h3>
 <p class="pull">Some of the most prevalent hereditary cancers have much higher survival rates when diagnosed early. ATCG’s Hereditary Cancer Solution provides knowledge that can assist with prevention and early detection.</p>
-<h4>Our process</h4>
+<h3>Our process</h3>
 <ol class="steps-c"><li><b>Qualification</b><span>Your physician will help determine which test is medically necessary. A genetic counselor can also be utilized by your doctor to aid in this assessment.</span></li><li><b>Collect DNA</b><span>Simple, painless saliva sample is collected and then sent to the lab for testing.</span></li><li><b>Analyze results</b><span>Our CLIA Certified laboratory analyzes the DNA and reports results to your physician in 2-3 weeks.</span></li><li><b>Plan</b><span>A clear report and genetic counseling services are provided by the lab to help your doctor and YOU discuss all options.</span></li></ol>
-<h4>Statistics</h4>
+<h3>Statistics</h3>
 <p class="src" style="margin-top:0">Five-year survival</p>
 <div class="stats"><div><b>90% vs 15%</b><span>breast and ovarian: diagnosed early vs advanced stage</span></div><div><b>91% vs 11%</b><span>colon: diagnosed early vs advanced stage</span></div><div><b>100%</b><span>prostate: diagnosed early</span></div></div>
 <p class="src">Source: American Cancer Society</p>
-<h4>The hereditary cancer test</h4>
+<h3>The hereditary cancer test</h3>
 <p>The Hereditary Cancer Test can empower you to change the course of cancer. Testing can help evaluate a genetic predisposition for cancer. This means you and your doctor can take proactive steps to decrease your risk and inform other family members about their risks. If cancer runs in your family, it’s better to find out sooner rather than later.</p>
-<h4>Knowledge is power</h4>
+<h3>Knowledge is power</h3>
 <p>To change your future you must know what the future holds and steer your life in another direction. If you have a family history of cancer, or already had cancer, taking the test to establish if you carry an inherited cancer mutation can determine how closely you should be monitored with screenings and exams as well as help shape future treatment. It can also aid in determining your risk for other cancers and any pertinent medical management options.</p>
 </div>
     </details>
@@ -661,20 +663,20 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
     <div class="hint">Inside spread, 3 panels. Tap any panel to zoom.</div>
     <div class="spread n3"><button class="panel" type="button" data-full="portfolio/atcg/cardio-1.jpg" aria-label="Open panel 1 of 3, Genetic testing for cardiovascular disease, full size"><img src="portfolio/atcg/cardio-1.jpg" width="1100" height="2550" loading="lazy" decoding="async" alt="Genetic testing for cardiovascular disease brochure, inside panel 1 of 3"></button><button class="panel" type="button" data-full="portfolio/atcg/cardio-2.jpg" aria-label="Open panel 2 of 3, Genetic testing for cardiovascular disease, full size"><img src="portfolio/atcg/cardio-2.jpg" width="1100" height="2550" loading="lazy" decoding="async" alt="Genetic testing for cardiovascular disease brochure, inside panel 2 of 3"></button><button class="panel" type="button" data-full="portfolio/atcg/cardio-3.jpg" aria-label="Open panel 3 of 3, Genetic testing for cardiovascular disease, full size"><img src="portfolio/atcg/cardio-3.jpg" width="1100" height="2550" loading="lazy" decoding="async" alt="Genetic testing for cardiovascular disease brochure, inside panel 3 of 3"></button></div>
     <details class="copy">
-      <summary><span>Read the copy</span><span class="sm">Full text, sized for a phone</span></summary>
+      <summary><span>Read the copy<b class="vh"> for the cardiovascular disease genetic testing patient brochure</b></span><span class="sm">Full text, sized for a phone</span></summary>
       <div class="copy-body">
-<h4>Early detection is the best defense</h4>
+<h3>Early detection is the best defense</h3>
 <p class="pull">According to the American Heart Association, an estimated 80% of cardiovascular disease, including heart disease and stroke, is preventable. ATCG’s Hereditary Cardio Solution provides knowledge that can assist with early detection and prevention.</p>
-<h4>Our process</h4>
+<h3>Our process</h3>
 <ol class="steps-c"><li><b>Qualification</b><span>Your physician will help determine which test is medically necessary. A genetic counselor can also be utilized by your doctor to aid in this assessment.</span></li><li><b>Collect DNA</b><span>Simple, painless saliva sample is collected and then sent to the lab for testing.</span></li><li><b>Analyze results</b><span>Our CLIA Certified laboratory analyzes the DNA and reports results to your physician in 2-3 weeks.</span></li><li><b>Plan</b><span>A clear report and genetic counseling services are provided by the lab to help your doctor and YOU discuss all options.</span></li></ol>
 <p>If your test results are “Pathogenic” or “Likely Pathogenic”, ATCG gives you the option to have your report sent to you directly.</p>
 <p>ATCG’s Patient Card is our way of helping you take action by sending you a QR code that’s the size of a credit card, so that your information is available to you and any doctor you see with no delays. The QR code is for your privacy and is HIPAA compliant.</p>
-<h4>Statistics</h4>
+<h3>Statistics</h3>
 <div class="stats"><div><b>610,000</b><span>people die in the US of heart disease each year</span></div><div><b>735,000</b><span>people have heart attacks in the US each year</span></div><div><b>Every 80 seconds</b><span>cardiovascular disease claims the life of a woman</span></div></div>
 <p class="src">Source: CDC</p>
-<h4>The hereditary cardio test</h4>
+<h3>The hereditary cardio test</h3>
 <p>The Hereditary Cardio Test can empower you to change the course of cardiovascular disease. Testing can help evaluate a genetic predisposition for cardiovascular disease. This means you and your doctor can take proactive steps to decrease your risk and inform other family members about their risks. If cardiovascular and other heart related diseases run in your family, it’s better to find out sooner rather than later.</p>
-<h4>Knowledge is power</h4>
+<h3>Knowledge is power</h3>
 <p>To change your future you must know what the future holds and steer your life in another direction. If you have a family history of cardiovascular diseases, or already have a cardiovascular disease or heart condition, taking the test to establish if you carry an inherited mutation can determine how closely you should be monitored with screenings, intervention prescription drugs, and exams, as well as help shape future treatment. It can also aid in determining your risk for other cardio related diseases and any pertinent medical management options.</p>
 </div>
     </details>
@@ -693,37 +695,37 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
     <div class="hint">Inside spread, 4 panels. Tap any panel to zoom.</div>
     <div class="spread n4"><button class="panel" type="button" data-full="portfolio/atcg/screen-1.jpg" aria-label="Open panel 1 of 4, Understanding your hereditary cancer screening options, full size"><img src="portfolio/atcg/screen-1.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Understanding your hereditary cancer screening options brochure, inside panel 1 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/screen-2.jpg" aria-label="Open panel 2 of 4, Understanding your hereditary cancer screening options, full size"><img src="portfolio/atcg/screen-2.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Understanding your hereditary cancer screening options brochure, inside panel 2 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/screen-3.jpg" aria-label="Open panel 3 of 4, Understanding your hereditary cancer screening options, full size"><img src="portfolio/atcg/screen-3.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Understanding your hereditary cancer screening options brochure, inside panel 3 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/screen-4.jpg" aria-label="Open panel 4 of 4, Understanding your hereditary cancer screening options, full size"><img src="portfolio/atcg/screen-4.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Understanding your hereditary cancer screening options brochure, inside panel 4 of 4"></button></div>
     <details class="copy">
-      <summary><span>Read the copy</span><span class="sm">Full text, sized for a phone</span></summary>
-      <div class="copy-body"><h4>What is cancer?</h4>
+      <summary><span>Read the copy<b class="vh"> for the hereditary cancer screening options patient brochure</b></span><span class="sm">Full text, sized for a phone</span></summary>
+      <div class="copy-body"><h3>What is cancer?</h3>
 <p>Cancer is a class of disease where there is uncontrolled growth of abnormal cells in the body. Cancer develops when the body’s normal process of cell growth goes wrong and new cells form when the body doesn’t need them and old or damaged cells do not die as they should. Buildups of these abnormal cells often invade healthy cells and may form a mass of tissue, called a lump, growth or tumor.</p>
 <p>There are some cancers, like leukemia, cancer of the blood that does not form tumors. They grow in the blood cells or other cells of the body.</p>
-<h4>Cancer is not just one disease</h4>
+<h3>Cancer is not just one disease</h3>
 <p>There are many types of cancer. It’s not just one disease. Cancer can start in the lungs, breast, colon, or even in blood. Cancer cells can also spread to other parts of the body. For instance, cancer cells in the lung can travel to the bones and grow there. When cancer cells spread, it’s called metastasis. When lung cancer spreads to the bones, it’s still called lung cancer. It’s not called bone cancer unless it started in the bones.</p>
-<h4>Cancer and genetics</h4>
+<h3>Cancer and genetics</h3>
 <p>Cancers that run in families can be caused by an abnormal gene that is passed from generation to generation. Although this is often referred to as inherited cancer, what is inherited is the abnormal gene that can lead to cancer, not the cancer itself. Only about 5 to 10% of all cancers are thought to result directly from gene defects or mutations inherited from a parent.</p>
-<h4>Gene mutations can be inherited or acquired</h4>
+<h3>Gene mutations can be inherited or acquired</h3>
 <p>An inherited gene mutation is present in the egg or sperm cell that formed the child and is passed down through generations. An acquired gene mutation does not come from a parent, but is acquired some time later. It starts in one cell, and then is passed on to any new cells that are created from that cell. This kind of mutation is not present in egg or sperm cells, so it is not passed on to the next generation. Acquired mutations are much more common than inherited mutations. Most cancers are caused by acquired mutations.</p>
-<h4>Risk factors</h4>
+<h3>Risk factors</h3>
 <p>Certain things make it more likely that cancers in a family are caused by a family cancer syndrome, such as:</p>
 <ul><li>Many cases of the same type of cancer, especially if it is an uncommon or rare type of cancer.</li><li>Cancers occurring at younger ages than usual such as colon cancer in a 20-year-old.</li><li>More than one type of cancer in a single person such as a woman with both breast and ovarian cancer.</li><li>Cancers occurring in both of a pair of organs like both eyes, both kidneys, or both breasts.</li><li>More than one childhood cancer in siblings for example sarcoma in both a brother and a sister.</li><li>Cancer occurring in the gender not usually affected such as breast cancer in a man.</li><li>Cancer occurring in many generations, like in a grandfather, father, and son.</li></ul>
-<h4>When trying to determine if cancer might run in your family, first gather some information. Look at:</h4>
+<h3>When trying to determine if cancer might run in your family, first gather some information. Look at:</h3>
 <ul><li>Who has the cancer? How are you related? Which side of the family are they on (mother’s or father’s)?</li><li>What type of cancer is it? Is it rare?</li><li>How old was this relative when they were diagnosed?</li><li>Did this person get more than one type of cancer?</li><li>Did they have any known risk factors for their type of cancer (such as smoking for lung cancer)?</li></ul>
-<h4>ATCG laboratories inherited cancer screening panels</h4>
+<h3>ATCG laboratories inherited cancer screening panels</h3>
 <ul><li>Breast and Ovarian Cancer – 8 genes ATM, CDH1, PALB2, STK11, TP53, PTEN, BRCA1, BRCA2</li><li>Gastroenterology Cancer - 14 genes APC, BRCA1, BRCA2, CDH1, EPCAM, MLH1, MSH2, MSH6, MUTYH, PALB2, PMS2, PTEN, STK11, TP53</li><li>Lynch Syndrome - 5 genes EPCAM, MLH1, MSH2, MSH6, PMS2</li><li>Prostate Cancer – 10 genes ATM, BRCA1, BRCA2, CHEK2, EPCAM, MLH1, MSH2, NBN, PMS2, TP53</li><li>Cancer Focus Panel – 27 genes linked to Breast, Ovarian, Endometrial, Colorectal, Lynch Syndrome, Gastric, Melanoma, Pancreatic, Polyposis, Prostate, Renal, Thyroid/Parathyroid, Uterine and other major cancers ABRAXAS1, ATM, APC, BARD1, BRIP1, CDH1, CHEK2, EPCAM, MLH1, MRE11A, MSH2, MSH6, MUTYH, NBN, PALB2, PIK3CA, PMS2, PTEN, RAD50, RAD51C, RAD51D, STK11, TP53, XRCC2, PMS2CL</li></ul>
 <p>Mutations in each gene may be rare when evaluated individually, however they collectively account for a significant amount of hereditary cancer susceptibility. This panel may be appropriate in a number of scenarios, particularly if the family history shares features of several different hereditary cancer syndromes with multiple cancer types.</p>
-<h4>Examples of hereditary cancer syndromes</h4>
+<h3>Examples of hereditary cancer syndromes</h3>
 <p><b>Breast Cancer</b> is the most common cancer in women in developed countries, affecting about 1 in 8 (12.5%) women in their lifetime. The National Cancer Institute (NCI) estimates that approximately 231,840 new cases of female breast cancer and 2,350 new cases of male breast cancer will be diagnosed in the U.S. in 2017.</p>
 <p>The majority of breast cancers are sporadic, but 5-10% are due to inherited causes. Hereditary breast cancer tends to occur earlier in life than non-familial cases and is more likely to occur in both breasts. The BRCA1 and BRCA2 genes appear to be responsible for ~half of hereditary breast cancer. However, additional genes are associated with increased breast cancer risk as well. Mutations in the genes included in the Comprehensive Panel can confer an estimated 20–87% lifetime risk for breast cancer. Some of these genes are associated with increased risks for other cancers, such as pancreatic cancer with PALB2, ovarian cancer with BRCA1, BRCA2, RAD51C, and sarcoma with TP53.</p>
 <p><b>Ovarian Cancer</b> is the fifth most common cancer among women in developed countries, affecting approximately 1 in 71 (1.4%) women in their lifetime. The NCI estimates that approximately 21,290 new cases of ovarian cancer will be diagnosed and 14,180 ovarian cancer deaths will occur in the U.S. in 2017. BRCA1 and BRCA2 are the most common causes of hereditary ovarian cancer, but several other genes are associated with increased ovarian cancer risk as well.</p><p><b>Colorectal Cancer (CRC)</b> affects about 1 in 20 (5%) men and women in their lifetime. The NCI estimates that ~132,700 new cases will be diagnosed and ~49,700 CRC deaths will occur in the U.S. in 2017. Lynch syndrome is the most common form of hereditary CRC, but other genes on the Panel are also associated with increased CRC risk.</p><p><b>Uterine Cancer</b> affects about 1 in 38 (2.6%) women in their lifetime. The NCI estimates that approximately 54,870 new cases of uterine cancer will be diagnosed and ~10,170 uterine cancer deaths will occur in the U.S. in 2017. Increased risk for uterine cancer has been identified in a number of hereditary cancer syndromes, including Lynch syndrome and Cowden syndrome.</p><p><b>Prostate Cancer</b> is the second most common cancer in men in the United States, after skin cancer. The NCI estimates that approximately 180,890 new cases of prostate cancer will be diagnosed in the U.S. in 2017. Hereditary prostate cancer may be diagnosed at younger ages and may also be more aggressive. For example, BRCA1 and BRCA2 gene mutations have been shown to be associated with more aggressive prostate cancer.</p>
-<h4>What do my test results mean?</h4>
+<h3>What do my test results mean?</h3>
 <p>Testing does not tell you if you currently have cancer. Your test results tell you about your inherited risk of having breast and ovarian cancer, or other cancers.</p>
 <p>A negative test result means that you do not have a gene mutation in what were evaluated in the Gene Panel Testing. Although the gene test can detect the majority of mutations:</p>
 <ul><li>You could have a gene mutation or type of mutations that the test wasn’t targeted to detect.</li><li>Or if your family carries a high-risk gene mutation that researchers haven’t yet identified then the test would not be able to detect this gene mutation and you could be a carrier.</li></ul>
 <p>A negative test result does not eliminate the chance of developing non-hereditary cancer. You may have the same cancer risk as that of the general population.</p>
 <p>A positive test result means that you have a gene mutation that is associated with cancer. A positive test result does not mean that you have cancer or that you will certainly have cancer. A positive test result tells you that you have a higher risk of developing cancer compared with someone who does not have the mutation.</p>
-<h4>Hereditary cancer mutations can be passed on in a family</h4>
+<h3>Hereditary cancer mutations can be passed on in a family</h3>
 <ul><li>If you have a mutation in one of these genes, your parents, your children, and your brothers and sisters have a chance that they have the same mutation.</li><li>Other relatives may be at risk to carry the same mutation. Testing is the only way to accurately identify mutation carriers.</li><li>It is important to share test results with family members.</li><li>Individuals may differ in their viewpoints and reactions to genetic testing.</li></ul>
-<h4>Cancer risk management</h4>
+<h3>Cancer risk management</h3>
 <p>Options for reducing cancer risk are available whether or not you have already had a diagnosis of cancer and/or polyps (adenomas). Your healthcare providers will discuss your testing options and medical management options for reducing risk such as Increased Surveillance, Surgical Management, and Chemoprevention.</p></div>
     </details>
   </div>
@@ -741,36 +743,36 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
     <div class="hint">Inside spread, 4 panels. Tap any panel to zoom.</div>
     <div class="spread n4"><button class="panel" type="button" data-full="portfolio/atcg/hboc-1.jpg" aria-label="Open panel 1 of 4, Hereditary breast and ovarian cancer (HBOC), full size"><img src="portfolio/atcg/hboc-1.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Hereditary breast and ovarian cancer (HBOC) brochure, inside panel 1 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/hboc-2.jpg" aria-label="Open panel 2 of 4, Hereditary breast and ovarian cancer (HBOC), full size"><img src="portfolio/atcg/hboc-2.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Hereditary breast and ovarian cancer (HBOC) brochure, inside panel 2 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/hboc-3.jpg" aria-label="Open panel 3 of 4, Hereditary breast and ovarian cancer (HBOC), full size"><img src="portfolio/atcg/hboc-3.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Hereditary breast and ovarian cancer (HBOC) brochure, inside panel 3 of 4"></button><button class="panel" type="button" data-full="portfolio/atcg/hboc-4.jpg" aria-label="Open panel 4 of 4, Hereditary breast and ovarian cancer (HBOC), full size"><img src="portfolio/atcg/hboc-4.jpg" width="1100" height="2669" loading="lazy" decoding="async" alt="Hereditary breast and ovarian cancer (HBOC) brochure, inside panel 4 of 4"></button></div>
     <details class="copy">
-      <summary><span>Read the copy</span><span class="sm">Full text, sized for a phone</span></summary>
-      <div class="copy-body"><h4>What is hereditary breast and ovarian cancer (HBOC) syndrome?</h4>
+      <summary><span>Read the copy<b class="vh"> for the Hereditary breast and ovarian cancer patient brochure</b></span><span class="sm">Full text, sized for a phone</span></summary>
+      <div class="copy-body"><h3>What is hereditary breast and ovarian cancer (HBOC) syndrome?</h3>
 <p>HBOC syndrome is an inherited genetic condition. This means that the cancer risk is passed from generation to generation in a family. If you have HBOC syndrome, you carry a gene mutation you inherited from your father or your mother, or sometimes from both parents, that significantly increases your risk for certain cancers. Hereditary Breast and Ovarian Cancer (HBOC) syndrome can be inherited from either the father’s side or the mother’s side of the family.</p>
-<h4>What causes HBOC?</h4>
+<h3>What causes HBOC?</h3>
 <p>BRCA1 and BRCA2 (BReast CAncer genes 1 and 2) are the most well-known genes linked to breast cancer risk and are associated with the majority of HBOC families. BRCA1/2 mutations can be passed to you from either parent and can affect the risk of cancers in both women and men. Inherited mutations of either the BRCA1 or the BRCA2 gene causes about 10% of breast and ovarian cancers. A mutation or alteration in either BRCA1 or BRCA2 increases a woman’s lifetime risk of developing breast and ovarian cancers. A person with BRCA1/2 mutations not only has a higher risk of developing these cancers, but also may pass that gene mutation on to his or her children. Men with these gene mutations also have an increased risk of breast cancer and prostate cancer. Not all families with multiple cases of breast and ovarian cancer have mutations in BRCA1 or BRCA2.</p>
-<h4>How common is hereditary breast and ovarian cancer?</h4>
+<h3>How common is hereditary breast and ovarian cancer?</h3>
 <p>Like other gene mutations, BRCA1/2 mutations are rare in the general population. Women in the general population have about an 8% chance of getting breast cancer by age 70 and about a 12% chance by age 85. Current estimates are less than 1% of the general population has a BRCA1/2 mutation.</p>
-<h4>BRCA1 and BRCA2 gene mutations and ethnicity</h4>
+<h3>BRCA1 and BRCA2 gene mutations and ethnicity</h3>
 <p>Among Ashkenazi Jewish men and women, about one in 40 have a BRCA1/2 mutation. Approximately 1 in 10 women with breast cancer and 1 in 3 women with ovarian cancer in Ashkenazi families have BRCA1/2 mutations. The table below shows how the prevalence of BRCA1/2 mutations varies among breast cancer survivors from different ethnic groups in alphabetical order.</p>
 <div class="tblwrap"><table><thead><tr><th>Ethnicity</th><th>BRCA1</th><th>BRCA2</th></tr></thead><tbody><tr><td>African-American</td><td>1%</td><td>3%</td></tr><tr><td>Ashkenazi Jewish</td><td>8-10%</td><td>1%</td></tr><tr><td>Asian-American</td><td>Less than 1%</td><td>Data not available</td></tr><tr><td>Caucasian (non-Ashkenazi Jewish)</td><td>2-3%</td><td>2%</td></tr><tr><td>Hispanic</td><td>4%</td><td>Data not available</td></tr></tbody></table></div>
-<h4>Factors that increase inherited risk for cancer</h4>
+<h3>Factors that increase inherited risk for cancer</h3>
 <p>Many people are unaware of their inherited risk, though they may be aware of a cancer history in their family. You should consider talking with a doctor about genetic testing for hereditary breast and ovarian cancer (HBOC) syndrome if at least one of the following applies to you or your family:</p>
 <ul><li>Breast cancer before age 50</li><li>One or more relatives diagnosed at age 45 or younger</li><li>Two or more relatives who’ve had breast cancer</li><li>A male relative who’s had breast cancer</li><li>Breast cancer in both breasts or twice in the same breast</li><li>Being in a family of Ashkenazi or Eastern European Jewish ancestry</li><li>Ovarian cancer at any age</li><li>A family member with a BRCA1/2 mutation or mutations in other related breast cancer risk genes</li><li>A history of breast cancer, ovarian cancer, prostate and/or pancreatic cancer on the same side of the family</li></ul>
-<h4>Cancer risks for women with BRCA1/2 mutation</h4>
+<h3>Cancer risks for women with BRCA1/2 mutation</h3>
 <ul><li>Lifetime risk of breast cancer: 50% to 85%</li><li>Risk of breast cancer before age 50: 30% to 50%</li><li>Lifetime risk of ovarian cancer:<ul><li>BRCA1 gene mutation: 25% to 50%</li><li>BRCA2 gene mutation: 15% to 30%</li></ul></li><li>Developing a second breast cancer: 40% to 60%. The risk of breast cancer occurring in the other breast rises approximately 2% to 3% per year.</li></ul>
-<h4>BRCA1/2 mutations and cancer in men</h4>
+<h3>BRCA1/2 mutations and cancer in men</h3>
 <p>Men can also have BRCA1/2 mutations and may pass them on to their children.</p>
 <ul><li>Lifetime risk of breast cancer<ul><li>BRCA1 gene mutation: 1% to 2%. This is a 10-fold increase over the general population.</li><li>BRCA2 gene mutation: 6%</li></ul></li><li>Risk of prostate cancer<ul><li>BRCA1 gene mutation: some increased risk.</li><li>BRCA2 gene mutation: 20%</li></ul></li><li>Men with a BRCA2 gene mutation have a significantly increased risk of developing more aggressive prostate cancer before age 65 and therefore screening should begin at age 40.</li></ul>
-<h4>Screening for BRCA1/2 gene mutations</h4>
+<h3>Screening for BRCA1/2 gene mutations</h3>
 <p>The BRCA gene test is most often a saliva or blood test. Your test sample is collected in your doctor’s office and sent to a laboratory for DNA analysis. It takes 2-4 weeks before test results are available. Your doctor or genetic counselor will contact you with your test results, discuss their implications and go over your options. Federal and state laws help ensure the privacy of your genetic information and protect against discrimination in health insurance and employment.</p>
-<h4>What do the test results mean?</h4>
+<h3>What do the test results mean?</h3>
 <p>Testing does not tell you if you currently have cancer. Your test results tell you about your inherited risk of having breast and ovarian cancer.</p>
 <p>A negative test result means that you do not have a BRCA1 or BRCA2 gene mutation. Although the BRCA gene test can detect the majority of mutations in the BRCA1 and BRCA2 genes:</p>
 <ul><li>You could have a gene mutation that the test wasn’t able to detect.</li><li>Or if your family carries a high-risk gene mutation that researchers haven’t yet identified then the test would not be able to detect this gene mutation and you could be a carrier.</li></ul>
 <p>A negative test result does not eliminate the chance of developing a non-hereditary breast cancer. You still have the same cancer risk as that of the general population.</p>
 <p>A positive test result means that you have a BRCA1 or BRCA2 gene mutation. A positive test result does not mean that you have cancer or that you will have cancer. Having the BRCA1/2 mutations does not mean that you will get breast cancer. Many women with a BRCA1/2 mutation will never have breast cancer.</p>
 <p>A positive test result tells you that you have a much higher risk of developing breast cancer or ovarian cancer compared with someone who does not have the mutation. A positive test result helps you to better understand your personal risk of developing breast and ovarian cancers. You can then make choices on what to do to reduce your risk and about what follow up care is right for you.</p>
-<h4>Should I talk with my relatives about my result?</h4>
+<h3>Should I talk with my relatives about my result?</h3>
 <p>You are encouraged to share these results with your relatives. It is normal to feel some anxiety about this. But knowing this information may help your relatives understand their own future risk of developing cancer, which may help them prevent a cancer or detect it early.</p>
-<h4>Follow-up care after a positive test result</h4>
+<h3>Follow-up care after a positive test result</h3>
 <p>You might choose to take specific measures to reduce your cancer risk. What you choose to do depends on many factors, including your age, medical history, prior treatments, past surgeries and personal preferences. You and your healthcare provider will discuss your options for medical management.</p></div>
     </details>
   </div>

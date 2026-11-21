@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="color-scheme" content="dark light">
 <script>try{var t=localStorage.getItem('jb-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <title>Government contracts, won one on the back of the last | Jay Beatty</title><meta name="description" content="As COO of ATCG, a CLIA high-complexity laboratory, I won a municipal RFP and then earned each larger award on the performance of the one before it.">
 <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml"><link rel="icon" href="/favicon.ico?v=2" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
@@ -24,10 +24,11 @@
   --display:"Fraunces",Georgia,"Times New Roman",serif;
   --body:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --ctl:#7d7599;       /* form control border, 4.0:1 on panel */
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-html,body{overflow-x:clip}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+html,body{overflow-x:clip}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1rem;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:var(--purple-soft);text-decoration:none}
 a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--green-soft);outline-offset:3px}
@@ -46,10 +47,10 @@ section{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--line)}
 
 /* nav */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
 .brand{white-space:nowrap;flex-shrink:0;font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
 .brand b{color:var(--green-soft);font-weight:400}
-.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color var(--t-fast),background-color var(--t-fast),color var(--t-fast)}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
+.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color var(--t-fast),background-color var(--t-fast),color var(--t-fast)}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#06150c}
 
 
 @media(max-width:860px){nav{height:auto;flex-wrap:wrap;padding-block:10px;row-gap:8px}.links{width:100%;padding-bottom:2px;-webkit-overflow-scrolling:touch}}
@@ -163,7 +164,7 @@ details.tbl th{color:var(--muted);font-weight:500}
 .cform{margin-top:32px;padding-top:28px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;max-width:720px}
 .cform .f{display:grid;gap:6px;min-width:0}.cform .f.w{grid-column:1/-1}
 .cform label{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.cform input,.cform textarea{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--fg);border-radius:6px;padding:11px 12px;font:inherit;font-size:.95rem}
+.cform input,.cform textarea{width:100%;background:var(--panel);border:1px solid var(--ctl);color:var(--fg);border-radius:6px;padding:11px 12px;font:inherit;font-size:.95rem}
 .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--purple)}.cform textarea{min-height:120px;resize:vertical}
 .cform .act{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:14px}.cform .note{font-size:.8rem;color:var(--muted)}.cform .ok{grid-column:1/-1;display:none;color:var(--green-soft);font-size:.95rem}
 .cform .sr{position:absolute;left:-9999px}
@@ -257,6 +258,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
   --fg:#1b1528;--muted:#5a5370;
   --purple:#6d50dd;--purple-soft:#4b3bb0;
   --green:#1f9a55;--green-soft:#15713f;--teal:#0e8f86;
+  --ctl:#7a7194;
   color-scheme:light;
 }
 body{transition:background-color var(--t-base),color var(--t-base)}
@@ -418,7 +420,8 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
 .pvbar{background:#D65DB1;color:#1a0a15;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;text-align:center;padding:9px max(16px,env(safe-area-inset-right,0px)) 9px max(16px,env(safe-area-inset-left,0px));line-height:1.35}
 .pvbar b{font-weight:700}
 .links a[aria-current=page]{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent)}
-.links a.cta-last[aria-current=page]{background:var(--green);color:#fff}
+.links a.cta-last[aria-current=page]{background:var(--green);color:#06150c}
+:root[data-theme="light"] .links a:last-child:hover,:root[data-theme="light"] .links a:last-child:focus-visible,:root[data-theme="light"] .links a.cta-last[aria-current=page]{background:#15713f;border-color:#15713f;color:#fff}
 .hubgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 @media(max-width:900px){.hubgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.hubgrid{grid-template-columns:1fr}}
@@ -570,7 +573,7 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
 </nav></div></header>
 <main id="top"><div class="wrap"><section><div class="sec-head"><div><div class="eyebrow">Case · government contracting</div><h1 class="pg-h" style="margin-top:12px">Government contracts, won one on the back of the last</h1></div><p class="lede">As COO of ATCG, a CLIA high-complexity laboratory, I won a municipal RFP and then earned each larger award on the performance of the one before it.</p></div><div class="case"><div><div class="step"><span class="k">The problem</span><h2>The national labs were two weeks behind</h2><p>In July 2020 the national labs were taking up to two weeks to return COVID results, and Colorado decided to stop waiting for them. I was in the state's emergency sessions for the lab.</p></div><div class="step"><span class="k">The fix</span><h2>Win the first contract, then perform</h2><p>We won the City of Denver community testing contract by competitive RFP. On performance, the state expanded it to rural areas, jails and schools.</p><p>A second award followed: a statewide long-term-care program. When another RFP winner lost its end users, the state asked me to take over that footprint too.</p></div><div class="step"><span class="k">The proof</span><h2>Named at the Governor's news conference</h2><p>On July 23, 2020, Governor Jared Polis named the labs Colorado would run on. ATCG was one of them: up to 1,200 tests a day for the state's 50 community-based testing sites.</p><p>More than $20M in government contract wins, delivered as COO.</p></div><div class="step"><span class="k">The ask</span><h2>Selling to a state, a city or the VA?</h2><p>I know what the committee needs to see before it says yes, and how long it really takes. If government or enterprise contracting is in your plan, email me.</p></div><p class="rowlink"><a class="btn primary" href="mailto:jay@jaybeatty.com">Email me</a><a class="btn" href="track-record.html">The full track record →</a></p></div><aside><span class="dr" aria-hidden="true"><img class="dr-d" src="img/draw-capitol-dark.webp" alt="" width="560" height="414" loading="lazy"><img class="dr-l" src="img/draw-capitol-light.webp" alt="" width="560" height="414" loading="lazy"></span><div class="tile"><span class="lab">Government contract wins</span><span class="val">$20M+</span><span class="delta">won and delivered as COO of ATCG</span></div><div class="tile"><span class="lab">Community testing sites</span><span class="val">50</span><span class="delta">up to 1,200 tests a day</span></div><div class="tile"><span class="lab">Awards in sequence</span><span class="val">3</span><span class="delta">city, statewide expansion, long-term care</span></div><p style="color:var(--muted);font-size:.9rem">In the press: <a href="https://www.denver7.com/news/coronavirus/we-aint-going-to-wait-colorado-will-ramp-up-testing-processing-as-national-lab-backlog-grows" target="_blank" rel="noopener">Denver7, July 23, 2020</a> · <a href="https://thebidlab.com/case/atcg/" target="_blank" rel="noopener">The Bid Lab case study</a></p></aside></div></section></div></main>
 <footer><div class="wrap"><span>© 2026 Jay Beatty. JAB Industries LLC. Remote-first. Open to fractional engagements and full-time leadership roles.</span><span>Ventura, CA and Central Pennsylvania. Working with clients nationwide.</span></div></footer>
-<div hidden aria-hidden="true"><svg id="matrix"></svg><div id="matrix-table"></div><svg id="vest"></svg><svg id="gantt"></svg><div id="gantt-table"></div><svg id="mult"></svg><div id="mult-table"></div><svg id="road"></svg><div id="road-table"></div></div><div class="tip" id="tip" role="status" aria-live="polite"></div>
+<div hidden aria-hidden="true"><svg id="matrix"></svg><div id="matrix-table"></div><svg id="vest"></svg><svg id="gantt"></svg><div id="gantt-table"></div><svg id="mult"></svg><div id="mult-table"></div><svg id="road"></svg><div id="road-table"></div></div><div class="tip" id="tip" aria-hidden="true"></div>
 <script>(function(){var r=document.documentElement;function cur(){return r.getAttribute('data-theme')==='light'?'light':'dark'}function sync(){document.querySelectorAll('.theme-tg').forEach(function(b){b.setAttribute('aria-label',cur()==='light'?'Switch to dark mode':'Switch to light mode')})}document.querySelectorAll('.theme-tg').forEach(function(b){b.addEventListener('click',function(){var n=cur()==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('jb-theme',n)}catch(e){}sync()})});sync()})();</script><script>/* motion-v1: header menu. Escape closes and returns focus to the button; links get a stagger index for the dropdown. */
 (function(){var h=document.querySelector('header'),b=h&&h.querySelector('.menu-tg'),l=h&&h.querySelector('.links');if(!b||!l)return;
 l.querySelectorAll('a').forEach(function(a,i){a.style.setProperty('--k',i)});

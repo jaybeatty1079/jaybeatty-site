@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="color-scheme" content="dark light">
 <script>try{var t=localStorage.getItem('jb-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <title>Jay Beatty | Healthcare Business Development</title><meta name="description" content="Medtech I&#x27;ve sold. Healthcare AI I&#x27;ve built. Government RFP wins, a Class III relaunch, a decade and a half leading teams, and working healthcare AI tools.">
 <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml"><link rel="icon" href="/favicon.ico?v=2" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
@@ -24,10 +24,11 @@
   --display:"Fraunces",Georgia,"Times New Roman",serif;
   --body:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --ctl:#7d7599;       /* form control border, 4.0:1 on panel */
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-html,body{overflow-x:clip}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+html,body{overflow-x:clip}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1rem;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:var(--purple-soft);text-decoration:none}
 a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--green-soft);outline-offset:3px}
@@ -46,10 +47,10 @@ section{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--line)}
 
 /* nav */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
 .brand{white-space:nowrap;flex-shrink:0;font-family:var(--display);font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
 .brand b{color:var(--green-soft);font-weight:400}
-.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color var(--t-fast),background-color var(--t-fast),color var(--t-fast)}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
+.links{display:flex;gap:6px;min-width:0;overflow-x:auto;scrollbar-width:none;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.links::-webkit-scrollbar{display:none}.links a{color:var(--fg);font-weight:600;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in oklab,var(--fg) 6%,transparent);white-space:nowrap;line-height:1;transition:border-color var(--t-fast),background-color var(--t-fast),color var(--t-fast)}.links a:hover,.links a:focus-visible{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent);color:var(--fg);text-decoration:none}.links a:last-child{background:var(--green-soft);border-color:var(--green-soft);color:var(--bg)}.links a:last-child:hover,.links a:last-child:focus-visible{background:var(--green);border-color:var(--green);color:#06150c}
 
 
 @media(max-width:860px){nav{height:auto;flex-wrap:wrap;padding-block:10px;row-gap:8px}.links{width:100%;padding-bottom:2px;-webkit-overflow-scrolling:touch}}
@@ -163,7 +164,7 @@ details.tbl th{color:var(--muted);font-weight:500}
 .cform{margin-top:32px;padding-top:28px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;max-width:720px}
 .cform .f{display:grid;gap:6px;min-width:0}.cform .f.w{grid-column:1/-1}
 .cform label{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.cform input,.cform textarea{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--fg);border-radius:6px;padding:11px 12px;font:inherit;font-size:.95rem}
+.cform input,.cform textarea{width:100%;background:var(--panel);border:1px solid var(--ctl);color:var(--fg);border-radius:6px;padding:11px 12px;font:inherit;font-size:.95rem}
 .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--purple)}.cform textarea{min-height:120px;resize:vertical}
 .cform .act{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:14px}.cform .note{font-size:.8rem;color:var(--muted)}.cform .ok{grid-column:1/-1;display:none;color:var(--green-soft);font-size:.95rem}
 .cform .sr{position:absolute;left:-9999px}
@@ -257,6 +258,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
   --fg:#1b1528;--muted:#5a5370;
   --purple:#6d50dd;--purple-soft:#4b3bb0;
   --green:#1f9a55;--green-soft:#15713f;--teal:#0e8f86;
+  --ctl:#7a7194;
   color-scheme:light;
 }
 body{transition:background-color var(--t-base),color var(--t-base)}
@@ -418,7 +420,8 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
 .pvbar{background:#D65DB1;color:#1a0a15;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;text-align:center;padding:9px max(16px,env(safe-area-inset-right,0px)) 9px max(16px,env(safe-area-inset-left,0px));line-height:1.35}
 .pvbar b{font-weight:700}
 .links a[aria-current=page]{border-color:var(--green-soft);background:color-mix(in oklab,var(--green-soft) 16%,transparent)}
-.links a.cta-last[aria-current=page]{background:var(--green);color:#fff}
+.links a.cta-last[aria-current=page]{background:var(--green);color:#06150c}
+:root[data-theme="light"] .links a:last-child:hover,:root[data-theme="light"] .links a:last-child:focus-visible,:root[data-theme="light"] .links a.cta-last[aria-current=page]{background:#15713f;border-color:#15713f;color:#fff}
 .hubgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 @media(max-width:900px){.hubgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.hubgrid{grid-template-columns:1fr}}
@@ -580,7 +583,7 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
     <h1 style="margin-top:16px">Medtech I’ve sold. Healthcare AI I’ve <em>built</em>.</h1>
     <p class="lede" style="margin-top:20px">Twenty years selling to surgeons, hospital executives, physician practices and payers. I build the pipeline, the channel and the contracts for healthcare companies in a growth phase, as a fractional operator or in a full-time seat.</p>
 <p class="proof">Government RFPs won back to back. A Class III relaunch, hospital by hospital. A decade and a half leading teams, up to COO of a $20M laboratory.</p>
-    <div class="chips"><span class="chip">Medical devices</span><span class="chip">Diagnostics</span><span class="chip">Healthcare AI</span><span class="chip">Employer benefits</span></div>
+    <div class="chips"><span class="chip">Medical devices</span><span class="chip">Diagnostics</span><span class="chip">Healthcare AI</span></div>
     <div class="cta"><a class="btn primary" href="mailto:jay@jaybeatty.com">Email me</a><a class="btn" href="https://linkedin.com/in/jaybeatty">LinkedIn profile</a><a class="btn" href="resume.html">Résumé</a></div>
   </div>
   
@@ -617,10 +620,11 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
 <a class="tcard" href="https://jaybeatty1079.github.io/tools/biologics-atlas/"><span class="k">Orthobiologics by surgical application</span><span class="t">Biologics <em>Atlas</em></span><p>Click a bone. See what the market actually has for it.</p><span class="go">Open the atlas →</span></a>
 <a class="tcard" href="https://jaybeatty1079.github.io/tools/iomist/"><span class="k">Produce traceability, shown to a grower</span><span class="t">How Iomist <em>Works</em></span><p>A store calls about one clamshell. Run the recall twice.</p><span class="go">Open How Iomist Works →</span></a>
 </div>
-<div class="bench" aria-labelledby="bench-h"><span class="k" id="bench-h">Small tools · open on a phone, add to the home screen</span>
+<p class="rowlink"><a class="btn" href="tools.html">All the tools, with how each was built →</a></p></section>
+<section id="benefits" aria-labelledby="ben-h"><div class="sec-head"><div><div class="eyebrow">Employer benefits</div><h2 id="ben-h" style="margin-top:12px">Programs I represent for employers</h2></div><p class="lede">Alongside healthcare business development, I represent three employer programs: a Section 125 wellness plan, non-qualified deferred compensation and No Surprises Act revenue recovery. California Life, Accident and Health license earned in 2024, sold to owners, CFOs and HR leaders through CPAs, payroll firms, PEOs and brokers.</p></div><div class="bench" role="group" aria-labelledby="bench-h"><span class="k" id="bench-h">Section 125 tools · open on a phone, add to the home screen</span>
 <a class="brow" href="https://jaybeatty1079.github.io/tools/coin-drop/"><span class="t">Payroll <em>Coin Drop</em></span><span class="d">Section 125 wellness plan money flow illustration</span><span class="go">Open →</span></a>
 <a class="brow" href="https://jaybeatty1079.github.io/tools/aca-fountain/"><span class="t">Payroll <em>Fountain</em></span><span class="d">Section 125 wellness plan money flow illustration</span><span class="go">Open →</span></a>
-</div><p class="rowlink"><a class="btn" href="tools.html">All the tools, with how each was built →</a></p></section>
+</div><p class="rowlink"><a class="btn" href="programs.html">The three programs →</a><a class="btn" href="section-125.html">Section 125, explained →</a></p></section>
 <section id="press" aria-label="In the press"><div class="roles"><span class="k">In the press</span>
 <span class="press"><a href="https://www.denver7.com/news/coronavirus/we-aint-going-to-wait-colorado-will-ramp-up-testing-processing-as-national-lab-backlog-grows" target="_blank" rel="noopener">Denver7, July 2020: Governor Polis names ATCG Labs for Colorado's community testing sites</a> · <a href="https://thebidlab.com/case/atcg/" target="_blank" rel="noopener">The Bid Lab: how ATCG won a state contract</a>. Role by role on the <a href="track-record.html">track record</a>; year by year on the <a href="career.html">career path</a>.</span></div><!-- reference quotes go here when Jay has them; never write one for him --></section>
 <section id="about"><div class="about-t" style="grid-template-columns:minmax(0,1fr);max-width:860px"><div><div class="eyebrow">About</div><h2 style="margin-top:12px">Jay Beatty</h2><p style="margin-top:18px">My healthcare career started in the operating room, next to orthopedic surgeons, with hundreds of products to know: hardware, biologics, allografts, capital equipment and DME. I have been blessed to learn from some of the best surgeons, sales reps, managers and inventors in the business. Startup hire, manager, executive, consultant: I have delivered in every seat. I live for the hard challenges, and I hold myself to the highest standard.</p><p style="margin-top:12px;color:var(--muted)">My degree is in Biomedical Physics from Cal State University, Northridge. It blends several hard sciences, then asks you to understand them well enough to apply them. That is very much me: I love finding the through line, then crafting the plan and carrying it out.</p><p class="rowlink"><a class="btn" href="about.html">More about me, with the interviews →</a><a class="btn" href="programs.html">Programs I represent →</a></p></div></div></section>
@@ -628,7 +632,7 @@ header.open .menu-tg .l3{transform:translateY(-5px) rotate(-45deg)}
 </div>
 </main>
 <footer><div class="wrap"><span>© 2026 Jay Beatty. JAB Industries LLC. Remote-first. Open to fractional engagements and full-time leadership roles.</span><span>Ventura, CA and Central Pennsylvania. Working with clients nationwide.</span></div></footer>
-<div hidden aria-hidden="true"><svg id="matrix"></svg><div id="matrix-table"></div><svg id="mult"></svg><div id="mult-table"></div><svg id="road"></svg><div id="road-table"></div></div><div hidden aria-hidden="true"><svg id="vest"></svg><svg id="gantt"></svg><div id="gantt-table"></div></div><div class="tip" id="tip" role="status" aria-live="polite"></div>
+<div hidden aria-hidden="true"><svg id="matrix"></svg><div id="matrix-table"></div><svg id="mult"></svg><div id="mult-table"></div><svg id="road"></svg><div id="road-table"></div></div><div hidden aria-hidden="true"><svg id="vest"></svg><svg id="gantt"></svg><div id="gantt-table"></div></div><div class="tip" id="tip" aria-hidden="true"></div>
 <script>(function(){var r=document.documentElement;function cur(){return r.getAttribute('data-theme')==='light'?'light':'dark'}function sync(){document.querySelectorAll('.theme-tg').forEach(function(b){b.setAttribute('aria-label',cur()==='light'?'Switch to dark mode':'Switch to light mode')})}document.querySelectorAll('.theme-tg').forEach(function(b){b.addEventListener('click',function(){var n=cur()==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('jb-theme',n)}catch(e){}sync()})});sync()})();</script><script>/* motion-v1: header menu. Escape closes and returns focus to the button; links get a stagger index for the dropdown. */
 (function(){var h=document.querySelector('header'),b=h&&h.querySelector('.menu-tg'),l=h&&h.querySelector('.links');if(!b||!l)return;
 l.querySelectorAll('a').forEach(function(a,i){a.style.setProperty('--k',i)});

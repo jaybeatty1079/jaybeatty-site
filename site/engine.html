@@ -24,44 +24,46 @@ body{transition:background-color .26s,color .26s}
 .theme-tg:hover,.theme-tg:focus-visible{border-color:var(--green-soft)}
 .theme-tg svg{width:18px;height:18px;display:block}.theme-tg .moon{display:none}
 :root[data-theme="light"] .theme-tg .sun{display:none}:root[data-theme="light"] .theme-tg .moon{display:block}
-.tlab::after{content:"Light mode";font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;line-height:1}
+.tlab::after{content:"Light mode";font-family:var(--mono);font-size:0.6875rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;line-height:1}
 :root[data-theme="light"] .tlab::after{content:"Dark mode"}
 *{box-sizing:border-box}
 html{background:var(--bg)}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55;padding-left:var(--gut);padding-right:var(--gutr);-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:1rem;line-height:1.55;padding-left:var(--gut);padding-right:var(--gutr);-webkit-font-smoothing:antialiased}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--green-soft);outline-offset:3px}
 .wrap{max-width:1360px;margin:0 auto}
 header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;flex-wrap:wrap}
-.brand{font-family:var(--display);font-weight:600;font-size:22px;text-decoration:none}
+.brand{font-family:var(--display);font-weight:600;font-size:1.375rem;text-decoration:none}
 .nav{display:flex;gap:6px;flex-wrap:wrap;list-style:none;margin:0;padding:0}
-.nav a{display:block;padding:9px 14px;border-radius:99px;text-decoration:none;font-size:15px;font-weight:500;color:var(--mute)}
+.nav a{display:block;padding:9px 14px;border-radius:99px;text-decoration:none;font-size:0.9375rem;font-weight:500;color:var(--mute)}
 .nav a:hover{color:var(--fg);background:var(--panel2)}
 .nav a[aria-current=page]{color:#06150c;background:var(--green)}
-h1{font-family:var(--display);font-weight:500;font-size:clamp(34px,5.4vw,72px);line-height:1;letter-spacing:-.03em;margin:28px 0 14px;text-wrap:balance}
-.lede{color:var(--fg);font-size:clamp(17px,1.5vw,20px);max-width:64ch;margin:0 0 6px}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(2.125rem,5.4vw,4.5rem);line-height:1;letter-spacing:-.03em;margin:28px 0 14px;text-wrap:balance}
+.lede{color:var(--fg);font-size:clamp(1.0625rem,1.5vw,1.25rem);max-width:64ch;margin:0 0 6px}
 .sub{color:var(--mute);max-width:64ch;margin:0}
 .bar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 22px;margin:28px 0 14px;padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
-.bar label{display:flex;justify-content:space-between;gap:8px;font-size:14px;color:var(--mute);margin-bottom:6px}
+.bar label{display:flex;justify-content:space-between;gap:8px;font-size:0.875rem;color:var(--mute);margin-bottom:6px}
 .bar label output{font-family:var(--mono);color:var(--fg);font-weight:500}
 input[type=range]{width:100%;accent-color:var(--purple);height:28px;margin:0}
 .track{grid-column:span 2;min-width:0}
 .seg{display:flex;gap:8px;flex-wrap:wrap}
 .seg label{margin:0;display:block}
 .seg input{position:absolute;opacity:0;pointer-events:none}
-.seg span{display:block;padding:9px 14px;border:1px solid var(--line);border-radius:8px;color:var(--fg);cursor:pointer;font-size:14px;line-height:1.25;background:var(--panel2)}
+.seg span{display:block;padding:9px 14px;border:1px solid var(--line);border-radius:8px;color:var(--fg);cursor:pointer;font-size:0.875rem;line-height:1.25;background:var(--panel2)}
+.seg input:checked+span::before,button[aria-pressed=true]::before{content:"\2713\00a0";content:"\2713\00a0" / ""}
 .seg input:checked+span{border-color:var(--green);background:color-mix(in oklab,var(--green) 18%,var(--panel))}
 .seg input:focus-visible+span{outline:2px solid var(--green-soft);outline-offset:2px}
-.seg small{display:block;color:var(--mute);font-size:12px}
+.seg small{display:block;color:var(--mute);font-size:0.75rem}
 .btns{grid-column:span 2;display:flex;gap:8px;flex-wrap:wrap;align-items:end;min-width:0}
 button{font:inherit;color:var(--fg);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:9px 14px;cursor:pointer;min-height:40px}
 button:hover{border-color:var(--purple)}
 button[aria-pressed=true]{border-color:var(--purple);background:color-mix(in oklab,var(--purple) 22%,var(--panel))}
 button.go{background:var(--green);border-color:var(--green);color:#06150c;font-weight:600}
 button.go:hover{background:var(--green-soft)}
-.chips{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;align-items:center;color:var(--mute);font-size:14px}
+:root[data-theme="light"] button.go:hover{background:#15713f;border-color:#15713f;color:#fff}
+.chips{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;align-items:center;color:var(--mute);font-size:0.875rem}
 .stagebar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}
-.stagebar .note{color:var(--mute);font-size:14px;margin-left:auto}
+.stagebar .note{color:var(--mute);font-size:0.875rem;margin-left:auto}
 #frame{position:relative;width:100%;aspect-ratio:1800/1040;background:#0B0912;color-scheme:dark;border:1px solid var(--line);border-radius:12px;overflow:hidden;touch-action:pan-y}
 #machine,#machine svg{display:block;width:100%;height:100%}
 #machine .hit{cursor:pointer;outline:none}
@@ -69,32 +71,32 @@ button.go:hover{background:var(--green-soft)}
 .halo{animation:dash 1.6s linear infinite}
 @keyframes dash{to{stroke-dashoffset:-34}}
 .mnav{display:none;gap:8px}
-#tip{position:absolute;bottom:14px;max-width:min(480px,calc(100% - 28px));padding:14px 16px;background:rgba(11,9,18,.95);border:1px solid var(--purple);border-radius:10px;font-size:14px;line-height:1.5;pointer-events:none;z-index:2;color:#ece9f5}
-#tip .s{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b7a6ff}#tip b.n{display:block;font-family:var(--display);font-size:19px;font-weight:600;margin:2px 0 4px}#tip p{margin:0}#tip p b{color:#6fe3a3}
+#tip{position:absolute;bottom:14px;max-width:min(480px,calc(100% - 28px));padding:14px 16px;background:rgba(11,9,18,.95);border:1px solid var(--purple);border-radius:10px;font-size:0.875rem;line-height:1.5;pointer-events:none;z-index:2;color:#ece9f5}
+#tip .s{font-family:var(--mono);font-size:0.75rem;letter-spacing:.08em;text-transform:uppercase;color:#b7a6ff}#tip b.n{display:block;font-family:var(--display);font-size:1.1875rem;font-weight:600;margin:2px 0 4px}#tip p{margin:0}#tip p b{color:#6fe3a3}
 #info{margin-top:14px;padding:18px 20px;background:var(--panel);border:1px solid var(--line);border-radius:12px;min-height:118px}
 #info[data-on="1"]{border-color:var(--purple)}
-#info h3{font-family:var(--display);font-weight:600;font-size:24px;margin:0 0 4px;letter-spacing:-.01em}
-#infoStage{font-family:var(--mono);font-size:13px;color:var(--purple-soft);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;min-height:1em}
+#info h2{font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.55;margin:0 0 4px;letter-spacing:-.01em}
+#infoStage{font-family:var(--mono);font-size:0.8125rem;color:var(--purple-soft);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;min-height:1em}
 #infoText{margin:0;max-width:78ch}
 #infoText b{color:var(--green-soft);font-weight:600}
 .result{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:8px 28px;align-items:center;margin:16px 0;padding:18px 20px;background:var(--panel2);border:1px solid var(--line);border-radius:12px}
-.result .k{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
-#npra{font-family:var(--mono);font-weight:600;font-size:clamp(30px,4vw,52px);line-height:1.1}
+.result .k{font-size:0.8125rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+#npra{font-family:var(--mono);font-weight:600;font-size:clamp(1.875rem,4vw,3.25rem);line-height:1.1}
 #npra.pos{color:var(--green-soft)}#npra.neg{color:var(--magenta-soft)}
 #sentence{margin:0;color:var(--fg);max-width:68ch}
 #sentence b{font-weight:600}
-h2{font-family:var(--display);font-weight:500;font-size:clamp(26px,3.2vw,40px);letter-spacing:-.02em;margin:56px 0 14px;line-height:1.1}
-.map{width:100%;border-collapse:collapse;font-size:15px}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(1.625rem,3.2vw,2.5rem);letter-spacing:-.02em;margin:56px 0 14px;line-height:1.1}
+.map{width:100%;border-collapse:collapse;font-size:0.9375rem}
 .map th,.map td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
-.map th{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);font-weight:500}
+.map th{font-size:0.8125rem;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);font-weight:500}
 .map td:first-child{font-weight:600;white-space:nowrap}
-.map td code{font-family:var(--mono);color:var(--purple-soft);font-size:14px}
+.map td code{font-family:var(--mono);color:var(--purple-soft);font-size:0.875rem}
 .scroll{overflow-x:auto}
 #parts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
 .plist{display:flex;flex-direction:column;gap:6px;min-width:0}
-.plist h4{margin:0 0 4px;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--purple-soft);font-weight:600}
-.plist button{text-align:left;font-size:14px;padding:8px 10px;min-height:36px;line-height:1.3}
-.foot{color:var(--mute);font-size:14px;max-width:80ch;margin:0 0 10px}
+.plist h3{margin:0 0 4px;font-size:0.8125rem;letter-spacing:.09em;text-transform:uppercase;color:var(--purple-soft);font-weight:600}
+.plist button{text-align:left;font-size:0.875rem;padding:8px 10px;min-height:36px;line-height:1.3}
+.foot{color:var(--mute);font-size:0.875rem;max-width:80ch;margin:0 0 10px}
 footer{padding-block:48px 64px;border-top:1px solid var(--line);margin-top:56px}
 @media (max-width:900px){
   .bar{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -115,16 +117,21 @@ footer{padding-block:48px 64px;border-top:1px solid var(--line);margin-top:56px}
 @media (prefers-reduced-motion:reduce){.halo{animation:none}}
 .still body{padding:0}.still .wrap{max-width:none}.still header.top,.still main>*:not(#frame){display:none}.still #frame{border:0;border-radius:0}.still footer{display:none}
 </style>
+<style>.skip{position:absolute;left:12px;top:-100px;z-index:100;padding:10px 14px;border-radius:6px;border:1px solid var(--purple);background:var(--bg);color:var(--fg);font-family:var(--mono);font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+.skip:focus{top:12px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
 <header class="top">
   <a class="brand" href="./">Jay Beatty</a>
-  <ul class="nav" aria-label="Pages"><li><a href="what-i-do.html">What I do</a></li><li><a href="programs.html">Programs</a></li><li><a href="tools.html">AI Tools</a></li><li><a href="track-record.html">Track record</a></li><li><a href="career.html">Career</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="engine.html" aria-current="page">Episode engine</a></li></ul>
+  <nav aria-label="Pages"><ul class="nav"><li><a href="what-i-do.html">What I do</a></li><li><a href="programs.html">Programs</a></li><li><a href="tools.html">AI Tools</a></li><li><a href="track-record.html">Track record</a></li><li><a href="career.html">Career</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="engine.html" aria-current="page">Episode engine</a></li></ul></nav>
   <button class="theme-tg" type="button" aria-label="Switch to light mode" title="Light or dark mode"><span class="tlab" aria-hidden="true"></span><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6Z"/></svg></button>
 </header>
 
-<main>
+<main id="main">
 <h1>The Reconciliation Engine</h1>
 <p class="lede">One year of Medicare episodes goes in as punched cards. Gears and belts do what the CMS TEAM rules do: build the target price, subtract what the hospital spent, then apply the track floor, the quality score and the stop limits. The payment comes out on the dial.</p>
 <p class="sub">It runs the same rules as my TEAM episode calculator. Move a control and the belts and springs move with it. Touch any part to see what it is and what it does.</p>
@@ -134,7 +141,7 @@ footer{padding-block:48px 64px;border-top:1px solid var(--line);margin-top:56px}
   <div><label for="cqs">Composite quality score <output id="cqsOut"></output></label><input id="cqs" type="range" min="0" max="100" step="1"></div>
   <div><label for="risk">Risk adjustment <output id="riskOut"></output></label><input id="risk" type="range" min="0.80" max="1.20" step="0.01"></div>
   <div><label for="episodes">Episodes in the year <output id="episodesOut"></output></label><input id="episodes" type="range" min="100" max="400" step="50"></div>
-  <fieldset class="track" style="border:0;margin:0;padding:0;min-width:0"><legend style="font-size:14px;color:var(--mute);padding:0 0 6px">Participation track</legend>
+  <fieldset class="track" style="border:0;margin:0;padding:0;min-width:0"><legend style="font-size:0.875rem;color:var(--mute);padding:0 0 6px">Participation track</legend>
     <div class="seg">
       <label><input type="radio" name="track" value="1"><span>Track 1<small>gain up to 10%, no repayment</small></span></label>
       <label><input type="radio" name="track" value="2"><span>Track 2<small>gain or loss up to 5%</small></span></label>
@@ -154,9 +161,9 @@ footer{padding-block:48px 64px;border-top:1px solid var(--line);margin-top:56px}
 
 <div id="frame"><div id="machine"></div><div id="tip" hidden></div></div>
 
-<section id="info" aria-live="polite" data-on="0"><div id="infoStage"></div><h3 id="infoName"></h3><p id="infoText"></p></section>
+<section id="info" data-on="0"><span class="vh" id="partSt" role="status"></span><div id="infoStage"></div><h2 id="infoName"></h2><p id="infoText"></p></section>
 
-<div class="result" aria-label="Result at the current settings"><div><div class="k">Estimated NPRA</div><div id="npra">$0</div></div><p id="sentence"></p></div>
+<div class="result" role="status" aria-label="Result at the current settings"><div><div class="k">Estimated NPRA</div><div id="npra">$0</div></div><p id="sentence"></p></div>
 
 <h2>What each rule became</h2>
 <div class="scroll"><table class="map"><thead><tr><th>Rule in the TEAM model</th><th>Machine part</th><th>Why that part</th></tr></thead><tbody>
@@ -172,12 +179,12 @@ footer{padding-block:48px 64px;border-top:1px solid var(--line);margin-top:56px}
 <h2>All <span id="partCount"></span> parts</h2>
 <div id="parts"></div>
 
+</main>
 <footer>
 <p class="foot" id="checks"></p>
 <p class="foot">Benchmark $18,350.04, trend 1.024534 and the 2% discount are from the CMS PY1 preliminary target price workbook for MS-DRG 470 (joint replacement), census division 2, which makes the target $18,424.23 at a risk multiplier of 1.00. Spend, episode count, quality score and risk adjustment are inputs you set; the defaults are illustrative, not any hospital's numbers. Sequestration is not applied. Estimates only. Not affiliated with CMS. No patient data.</p>
 <p class="foot">Built by Jay Beatty from the model in the TEAM episode calculator. <a href="./">Back to the home page</a>.</p>
 </footer>
-</main>
 </div>
 <script>(function(){var r=document.documentElement;function cur(){return r.getAttribute('data-theme')==='light'?'light':'dark'}function sync(){document.querySelectorAll('.theme-tg').forEach(function(b){b.setAttribute('aria-label',cur()==='light'?'Switch to dark mode':'Switch to light mode')})}document.querySelectorAll('.theme-tg').forEach(function(b){b.addEventListener('click',function(){var n=cur()==='light'?'dark':'light';r.setAttribute('data-theme',n);try{localStorage.setItem('jb-theme',n)}catch(e){}sync()})});sync()})();</script>
 <script>
@@ -799,7 +806,7 @@ if (typeof window !== 'undefined') window.TEAM = { BASE, TRACKS, targetOf, compu
   /* ---------- controls ---------- */
   function bindRange(id, key, show) {
     const el = $(id), out = $(id + 'Out'); if (!el) return;
-    const upd1 = () => { S[key] = +el.value; if (out) out.textContent = show(+el.value); settled(); poke(); if (key === 'episodes') { if (run.mode === 'hold') D.c = cards(); } };
+    const upd1 = () => { S[key] = +el.value; const tx = String(show(+el.value)); if (out) out.textContent = tx; el.setAttribute('aria-valuetext', tx); settled(); poke(); if (key === 'episodes') { if (run.mode === 'hold') D.c = cards(); } };
     el.addEventListener('input', upd1); el.value = S[key]; upd1();
   }
   bindRange('spend', 'spend', (v) => usd(v)); bindRange('cqs', 'cqs', (v) => v); bindRange('risk', 'risk', (v) => '×' + v.toFixed(2)); bindRange('episodes', 'episodes', (v) => f0(v));
@@ -856,12 +863,12 @@ if (typeof window !== 'undefined') window.TEAM = { BASE, TRACKS, targetOf, compu
   function activate(id, fromList) {
     const p = PARTS.find((x) => x.id === id); if (!p) return;
     halo.setAttribute('x', p.box[0] - 6); halo.setAttribute('y', p.box[1] - 6); halo.setAttribute('width', p.box[2] + 12); halo.setAttribute('height', p.box[3] + 12); halo.setAttribute('visibility', 'visible');
-    infoName.textContent = p.name; infoStage.textContent = 'Stage ' + p.stage; infoText.innerHTML = p.text(); info.dataset.on = '1'; hov = p;
+    infoName.textContent = p.name; $('partSt').textContent = p.name + ', stage ' + p.stage; infoStage.textContent = 'Stage ' + p.stage; infoText.innerHTML = p.text(); info.dataset.on = '1'; hov = p;
     if (tip) { tip.hidden = false; const left = p.box[0] + p.box[2] / 2 > 900; tip.style.left = left ? '14px' : 'auto'; tip.style.right = left ? 'auto' : '14px'; tip.innerHTML = '<span class="s">Stage ' + p.stage + '</span><b class="n">' + p.name + '</b><p>' + p.text() + '</p>'; }
     document.querySelectorAll('.plist button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.part === id));
     if (fromList) { show(p.stage, 0); if (mobile()) { const vs = VIEWS.filter((v) => v.s === p.stage); let k = 0; vs.forEach((v, i) => { const cy = p.box[1] + p.box[3] / 2; if (cy >= v.r[1] && cy <= v.r[1] + v.r[3]) k = i; }); show(p.stage, k); } info.scrollIntoView({ block: 'nearest', behavior: RM ? 'auto' : 'smooth' }); }
   }
-  function clear() { if (pin) return; halo.setAttribute('visibility', 'hidden'); hov = null; if (tip) tip.hidden = true; info.dataset.on = '0'; infoName.textContent = 'Hover, tap or tab to any part'; infoStage.textContent = ''; infoText.innerHTML = 'The machine has ' + PARTS.length + ' named parts. Each one says what it is and what it does in the TEAM reconciliation, with the live value it is carrying.'; document.querySelectorAll('.plist button').forEach((b) => b.setAttribute('aria-pressed', 'false')); }
+  function clear() { if (pin) return; halo.setAttribute('visibility', 'hidden'); hov = null; if (tip) tip.hidden = true; info.dataset.on = '0'; $('partSt').textContent = ''; infoName.textContent = 'Hover, tap or tab to any part'; infoStage.textContent = ''; infoText.innerHTML = 'The machine has ' + PARTS.length + ' named parts. Each one says what it is and what it does in the TEAM reconciliation, with the live value it is carrying.'; document.querySelectorAll('.plist button').forEach((b) => b.setAttribute('aria-pressed', 'false')); }
   PARTS.slice().sort((a, b) => b.box[2] * b.box[3] - a.box[2] * a.box[3]).forEach((p) => {
     const r = E('rect', { x: p.box[0], y: p.box[1], width: p.box[2], height: p.box[3], fill: 'transparent', tabindex: 0, role: 'button', 'aria-label': p.name + ', stage ' + p.stage, class: 'hit', 'data-id': p.id }, L.hit);
     r.addEventListener('pointerenter', (e) => { if (e.pointerType !== 'touch' && !pin) activate(p.id); });
@@ -872,7 +879,7 @@ if (typeof window !== 'undefined') window.TEAM = { BASE, TRACKS, targetOf, compu
   addEventListener('keydown', (e) => { if (e.key === 'Escape') { pin = null; clear(); } });
   // parts list
   const plist = $('parts'); [1, 2, 3, 4, 5].forEach((s) => {
-    const ul = document.createElement('div'); ul.className = 'plist'; const h = document.createElement('h4'); h.textContent = ['', 'Intake', 'Target', 'Difference', 'Rules', 'Result'][s]; ul.appendChild(h);
+    const ul = document.createElement('div'); ul.className = 'plist'; const h = document.createElement('h3'); h.textContent = ['', 'Intake', 'Target', 'Difference', 'Rules', 'Result'][s]; ul.appendChild(h);
     PARTS.filter((p) => p.stage === s).forEach((p) => { const b = document.createElement('button'); b.type = 'button'; b.dataset.part = p.id; b.textContent = p.name; b.addEventListener('click', () => { pin = null; activate(p.id, true); pin = p.id; }); ul.appendChild(b); });
     plist.appendChild(ul);
   });
